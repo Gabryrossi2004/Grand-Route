@@ -22,6 +22,10 @@ export async function createTrip(
   const startDate = String(formData.get("start_date") ?? "") || null;
   const endDate = String(formData.get("end_date") ?? "") || null;
   const clientId = String(formData.get("client_id") ?? "") || null;
+  const priceMode = String(formData.get("price_mode") ?? "nessuno");
+  const priceAmount = formData.get("price_amount") ? Number(formData.get("price_amount")) : null;
+  const priceNet = formData.get("price_net") ? Number(formData.get("price_net")) : null;
+  const priceCommission = formData.get("price_commission") ? Number(formData.get("price_commission")) : null;
 
   if (!title) {
     return { error: "Il titolo del viaggio è obbligatorio." };
@@ -37,6 +41,10 @@ export async function createTrip(
       end_date: endDate,
       client_id: clientId,
       public_slug: generatePublicSlug(),
+      price_mode: priceMode,
+      price_amount: priceMode === "lordo" ? priceAmount : null,
+      price_net: priceMode === "commissioni" ? priceNet : null,
+      price_commission: priceMode === "commissioni" ? priceCommission : null,
     })
     .select("id")
     .single();

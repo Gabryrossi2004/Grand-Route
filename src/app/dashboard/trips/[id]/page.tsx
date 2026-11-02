@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, ActivityTemplate, Trip, TripDay, TripDocument } from "@/lib/types";
+import Link from "next/link";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
+import TripPriceFields from "@/components/TripPriceFields";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -184,6 +186,7 @@ function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
             />
           </div>
         </div>
+        <TripPriceFields trip={trip} />
         <div className="sm:col-span-2">
           <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
             Salva informazioni
@@ -204,6 +207,14 @@ function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
             {trip.is_published ? "Metti in bozza" : "Pubblica"}
           </button>
         </form>
+
+        <Link
+          href={`/dashboard/trips/${trip.id}/overview`}
+          target="_blank"
+          className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+        >
+          Overview
+        </Link>
 
         {trip.is_published && (
           <a

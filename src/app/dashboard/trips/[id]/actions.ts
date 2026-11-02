@@ -121,10 +121,23 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
   const destination = String(formData.get("destination") ?? "").trim() || null;
   const startDate = String(formData.get("start_date") ?? "") || null;
   const endDate = String(formData.get("end_date") ?? "") || null;
+  const priceMode = String(formData.get("price_mode") ?? "nessuno");
+  const priceAmount = formData.get("price_amount") ? Number(formData.get("price_amount")) : null;
+  const priceNet = formData.get("price_net") ? Number(formData.get("price_net")) : null;
+  const priceCommission = formData.get("price_commission") ? Number(formData.get("price_commission")) : null;
 
   await supabase
     .from("trips")
-    .update({ title, destination, start_date: startDate, end_date: endDate })
+    .update({
+      title,
+      destination,
+      start_date: startDate,
+      end_date: endDate,
+      price_mode: priceMode,
+      price_amount: priceMode === "lordo" ? priceAmount : null,
+      price_net: priceMode === "commissioni" ? priceNet : null,
+      price_commission: priceMode === "commissioni" ? priceCommission : null,
+    })
     .eq("id", tripId);
 
   revalidatePath(`/dashboard/trips/${tripId}`);

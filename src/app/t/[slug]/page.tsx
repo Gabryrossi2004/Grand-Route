@@ -4,6 +4,8 @@ import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
+import { formatEuro, getDisplayPrice } from "@/lib/price";
+import PhotoGallery from "@/components/PhotoGallery";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -41,6 +43,7 @@ export default async function PublicTripPage({
 
   const brandColor = (owner as Profile | null)?.brand_color || "#2563eb";
   const agencyName = (owner as Profile | null)?.agency_name;
+  const price = getDisplayPrice(trip);
 
   const dateRange =
     trip.start_date && trip.end_date
@@ -131,17 +134,7 @@ export default async function PublicTripPage({
                           </dl>
                         )}
                         {activity.activity_photos && activity.activity_photos.length > 0 && (
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            {activity.activity_photos.map((photo) => (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img
-                                key={photo.id}
-                                src={photo.url}
-                                alt=""
-                                className="h-20 w-20 rounded-md object-cover"
-                              />
-                            ))}
-                          </div>
+                          <PhotoGallery photos={activity.activity_photos} />
                         )}
                       </li>
                     );
@@ -154,6 +147,35 @@ export default async function PublicTripPage({
             );
           })}
         </div>
+
+        {price && (
+          <section className="mt-10 rounded-lg border border-slate-200 bg-white p-5">
+            <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">Quota di partecipazione</h2>
+            {price.breakdown ? (
+              <div className="flex flex-col gap-1 text-sm text-slate-600">
+                <div className="flex justify-between">
+                  <span>Costo del viaggio</span>
+                  <span>{formatEuro(price.breakdown.net)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Servizio di organizzazione</span>
+                  <span>{formatEuro(price.breakdown.commission)}</span>
+                </div>
+                <div
+                  style={{ color: brandColor }}
+                  className="mt-1 flex justify-between border-t border-slate-200 pt-1 text-base font-semibold"
+                >
+                  <span>Totale</span>
+                  <span>{formatEuro(price.total)}</span>
+                </div>
+              </div>
+            ) : (
+              <div style={{ color: brandColor }} className="text-2xl font-bold">
+                {formatEuro(price.total)}
+              </div>
+            )}
+          </section>
+        )}
       </main>
     </div>
   );

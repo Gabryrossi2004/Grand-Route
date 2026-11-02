@@ -14,21 +14,21 @@ function TripCard({ trip }: { trip: Trip }) {
   return (
     <Link
       href={`/dashboard/trips/${trip.id}`}
-      className="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-blue-300 hover:shadow"
+      className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-slate-200/60"
     >
       <div
-        className="h-28 bg-slate-200 bg-cover bg-center"
+        className="h-32 bg-slate-200 bg-cover bg-center transition duration-300 group-hover:scale-[1.03]"
         style={
           trip.cover_image_url
             ? { backgroundImage: `url(${trip.cover_image_url})` }
-            : { backgroundImage: "linear-gradient(135deg, #e2e8f0, #cbd5e1)" }
+            : { backgroundImage: "linear-gradient(135deg, #dbeafe, #e0e7ff)" }
         }
       />
       <div className="p-4">
-        <div className="mb-1 flex items-center justify-between">
+        <div className="mb-1 flex items-center justify-between gap-2">
           <h3 className="font-medium text-slate-900">{trip.title}</h3>
           {trip.is_published && (
-            <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+            <span className="shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
               Pubblicato
             </span>
           )}
@@ -63,14 +63,14 @@ export default async function TripsPage() {
         <h1 className="text-2xl font-semibold text-slate-900">Viaggi</h1>
         <Link
           href="/dashboard/trips/new"
-          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700"
         >
           + Nuovo viaggio
         </Link>
       </div>
 
       {allTrips.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
+        <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center">
           <p className="text-slate-500">Non hai ancora creato nessun viaggio.</p>
           <Link href="/dashboard/trips/new" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
             Crea il primo viaggio

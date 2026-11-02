@@ -29,6 +29,8 @@ export type TripGroup = {
   created_at: string;
 };
 
+export type PriceMode = "nessuno" | "lordo" | "commissioni";
+
 export type Trip = {
   id: string;
   owner_id: string;
@@ -41,6 +43,10 @@ export type Trip = {
   cover_image_url: string | null;
   public_slug: string;
   is_published: boolean;
+  price_mode: PriceMode;
+  price_amount: number | null;
+  price_net: number | null;
+  price_commission: number | null;
   created_at: string;
 };
 

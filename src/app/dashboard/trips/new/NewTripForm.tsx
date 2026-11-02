@@ -1,11 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { createTrip } from "./actions";
-import type { Client } from "@/lib/types";
+import type { Client, PriceMode } from "@/lib/types";
 
 export default function NewTripForm({ clients }: { clients: Client[] }) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
+  const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
 
   return (
     <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-6">
@@ -80,6 +81,70 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
           </select>
         </div>
       )}
+
+      <div className="rounded-md bg-slate-50 p-3">
+        <label htmlFor="price_mode" className="mb-1 block text-sm font-medium text-slate-700">
+          Come mostrare il prezzo al cliente
+        </label>
+        <select
+          id="price_mode"
+          name="price_mode"
+          value={priceMode}
+          onChange={(e) => setPriceMode(e.target.value as PriceMode)}
+          className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+        >
+          <option value="nessuno">Senza costi (non mostrare nessun prezzo)</option>
+          <option value="lordo">Prezzo lordo (un unico totale)</option>
+          <option value="commissioni">Con commissioni esposte (costo + commissione separati)</option>
+        </select>
+
+        {priceMode === "lordo" && (
+          <div className="mt-3">
+            <label htmlFor="price_amount" className="mb-1 block text-xs font-medium text-slate-600">
+              Prezzo totale (€)
+            </label>
+            <input
+              id="price_amount"
+              name="price_amount"
+              type="number"
+              step="0.01"
+              min="0"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+            />
+          </div>
+        )}
+
+        {priceMode === "commissioni" && (
+          <div className="mt-3 grid grid-cols-2 gap-3">
+            <div>
+              <label htmlFor="price_net" className="mb-1 block text-xs font-medium text-slate-600">
+                Costo netto (€)
+              </label>
+              <input
+                id="price_net"
+                name="price_net"
+                type="number"
+                step="0.01"
+                min="0"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="price_commission" className="mb-1 block text-xs font-medium text-slate-600">
+                Tua commissione (€)
+              </label>
+              <input
+                id="price_commission"
+                name="price_commission"
+                type="number"
+                step="0.01"
+                min="0"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              />
+            </div>
+          </div>
+        )}
+      </div>
 
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
 

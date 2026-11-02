@@ -313,7 +313,13 @@ function SortableActivityRow({
         >
           <GripVertical size={16} />
         </button>
-        <button type="button" onClick={onToggleExpand} className="flex w-full min-w-0 items-center gap-2 py-2 text-left">
+        <button
+          type="button"
+          onClick={onToggleExpand}
+          onDoubleClick={onEdit}
+          title="Doppio click per modificare"
+          className="flex w-full min-w-0 items-center gap-2 py-2 text-left"
+        >
           <span
             style={{ backgroundColor: meta.color }}
             className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"

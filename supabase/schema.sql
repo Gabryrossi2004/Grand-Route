@@ -75,6 +75,10 @@ create table if not exists public.trips (
   cover_image_url text,
   public_slug text not null unique,
   is_published boolean not null default false,
+  price_mode text not null default 'nessuno' check (price_mode in ('nessuno', 'lordo', 'commissioni')),
+  price_amount numeric(10, 2),
+  price_net numeric(10, 2),
+  price_commission numeric(10, 2),
   created_at timestamptz not null default now()
 );
 

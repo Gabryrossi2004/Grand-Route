@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Compass } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import type { Profile } from "@/lib/types";
@@ -23,6 +24,8 @@ export default async function DashboardLayout({
     profile = data;
   }
 
+  const brandColor = profile?.brand_color || "#2563eb";
+
   const navItems = [
     { href: "/dashboard/trips", label: "Viaggi" },
     { href: "/dashboard/clients", label: "Clienti" },
@@ -31,26 +34,39 @@ export default async function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-          <Link href="/dashboard/trips" className="font-semibold text-slate-900">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+          <Link href="/dashboard/trips" className="flex items-center gap-2 font-semibold text-slate-900">
+            <span
+              style={{ backgroundColor: brandColor }}
+              className="flex h-7 w-7 items-center justify-center rounded-lg text-white"
+            >
+              <Compass size={16} />
+            </span>
             {profile?.agency_name || "Il mio gestionale viaggi"}
           </Link>
-          <nav className="flex items-center gap-4 text-sm">
+          <nav className="flex items-center gap-1 text-sm">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-slate-600 hover:text-slate-900">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-3 py-1.5 font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+              >
                 {item.label}
               </Link>
             ))}
-            <form action={signOut}>
-              <button type="submit" className="text-slate-500 hover:text-slate-900">
+            <form action={signOut} className="ml-1">
+              <button
+                type="submit"
+                className="rounded-md px-3 py-1.5 font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+              >
                 Esci
               </button>
             </form>
           </nav>
         </div>
       </header>
-      <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
     </div>
   );
 }
