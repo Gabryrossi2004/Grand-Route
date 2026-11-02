@@ -4,7 +4,116 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
+import { CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import type { Activity, TripDay } from "@/lib/types";
+
+type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
+
+// Tutte le date (incluse) tra il giorno dopo "startDate" e "endDate".
+function dateRange(startDate: string, endDate: string): string[] {
+  const dates: string[] = [];
+  const cursor = new Date(`${startDate}T00:00:00Z`);
+  const end = new Date(`${endDate}T00:00:00Z`);
+  cursor.setUTCDate(cursor.getUTCDate() + 1);
+  while (cursor <= end) {
+    dates.push(cursor.toISOString().slice(0, 10));
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
+  return dates;
+}
+
+// Trova il giorno del viaggio con questa data, o lo crea se non esiste ancora.
+async function ensureDayForDate(
+  supabase: SupabaseServerClient,
+  tripId: string,
+  dateStr: string,
+): Promise<string | null> {
+  const { data: existing } = await supabase
+    .from("trip_days")
+    .select("id")
+    .eq("trip_id", tripId)
+    .eq("day_date", dateStr)
+    .maybeSingle();
+  if (existing) return existing.id;
+
+  const { data: created } = await supabase
+    .from("trip_days")
+    .insert({ trip_id: tripId, day_date: dateStr, day_order: 0 })
+    .select("id")
+    .single();
+  return created?.id ?? null;
+}
+
+// Rimette in ordine cronologico i giorni del viaggio (quelli senza data restano
+// nella loro posizione relativa), dopo che ne sono stati creati di nuovi.
+async function resyncDayOrder(supabase: SupabaseServerClient, tripId: string) {
+  const { data: days } = await supabase
+    .from("trip_days")
+    .select("id, day_date, day_order")
+    .eq("trip_id", tripId);
+  if (!days) return;
+
+  const sorted = [...days].sort((a, b) => {
+    if (a.day_date && b.day_date) return a.day_date.localeCompare(b.day_date);
+    if (a.day_date && !b.day_date) return -1;
+    if (!a.day_date && b.day_date) return 1;
+    return a.day_order - b.day_order;
+  });
+
+  await Promise.all(
+    sorted.map((day, index) => supabase.from("trip_days").update({ day_order: index }).eq("id", day.id)),
+  );
+}
+
+// Quando un alloggio ha una data di check-out, crea automaticamente i giorni
+// mancanti dell'itinerario e aggiunge un'attività "Check-out" nel giorno giusto.
+async function handleLodgingCheckout(
+  supabase: SupabaseServerClient,
+  tripId: string,
+  dayId: string,
+  title: string,
+  details: Record<string, string>,
+) {
+  const checkOutDate = details[CHECK_OUT_DATE_KEY];
+  if (!checkOutDate) return;
+
+  const { data: currentDay } = await supabase.from("trip_days").select("day_date").eq("id", dayId).single();
+  if (!currentDay?.day_date || checkOutDate <= currentDay.day_date) return;
+
+  const datesToEnsure = dateRange(currentDay.day_date, checkOutDate);
+  let checkoutDayId: string | null = null;
+  for (const dateStr of datesToEnsure) {
+    const id = await ensureDayForDate(supabase, tripId, dateStr);
+    if (dateStr === checkOutDate) checkoutDayId = id;
+  }
+
+  if (checkoutDayId) {
+    const checkoutTitle = `Check-out: ${title}`;
+    const { data: existingCheckout } = await supabase
+      .from("activities")
+      .select("id")
+      .eq("trip_day_id", checkoutDayId)
+      .eq("title", checkoutTitle)
+      .maybeSingle();
+
+    if (!existingCheckout) {
+      const { count } = await supabase
+        .from("activities")
+        .select("id", { count: "exact", head: true })
+        .eq("trip_day_id", checkoutDayId);
+
+      await supabase.from("activities").insert({
+        trip_day_id: checkoutDayId,
+        title: checkoutTitle,
+        activity_type: "alloggio",
+        start_time: details.check_out || null,
+        activity_order: count ?? 0,
+      });
+    }
+  }
+
+  await resyncDayOrder(supabase, tripId);
+}
 
 export async function updateTripInfo(tripId: string, formData: FormData) {
   const supabase = await createClient();
@@ -115,6 +224,10 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
     });
   }
 
+  if (activityType === "alloggio") {
+    await handleLodgingCheckout(supabase, tripId, dayId, title, details);
+  }
+
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
@@ -174,6 +287,16 @@ export async function moveActivity(
   await supabase.from("activities").update({ activity_order: swapWith.activity_order }).eq("id", current.id);
   await supabase.from("activities").update({ activity_order: current.activity_order }).eq("id", swapWith.id);
 
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function reorderActivities(tripId: string, orderedActivityIds: string[]) {
+  const supabase = await createClient();
+  await Promise.all(
+    orderedActivityIds.map((activityId, index) =>
+      supabase.from("activities").update({ activity_order: index }).eq("id", activityId),
+    ),
+  );
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 

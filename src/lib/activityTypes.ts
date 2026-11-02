@@ -26,9 +26,13 @@ export const activityTypeOptions = Object.entries(activityTypes).map(([value, me
 export type DetailField = {
   key: string;
   label: string;
-  type: "text" | "time" | "number" | "select";
+  type: "text" | "time" | "date" | "number" | "select";
   options?: string[];
 };
+
+// Chiave speciale: quando presente in "details" per un alloggio, il sistema
+// crea automaticamente i giorni mancanti fino a questa data e segna il check-out.
+export const CHECK_OUT_DATE_KEY = "data_check_out";
 
 // Campi extra specifici per ogni tipologia di attività. Vengono salvati dentro
 // la colonna "details" (un contenitore flessibile), così ogni tipo può avere
@@ -52,6 +56,7 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
     },
     { key: "check_in", label: "Orario check-in", type: "time" },
     { key: "check_out", label: "Orario check-out", type: "time" },
+    { key: CHECK_OUT_DATE_KEY, label: "Data check-out", type: "date" },
     { key: "numero_conferma", label: "Numero di conferma", type: "text" },
   ],
   trasporto: [

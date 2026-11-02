@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import type { Activity, ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
-import { activityTypeOptions, detailFields } from "@/lib/activityTypes";
+import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
 import { toSafeHtml } from "@/lib/richText";
 
@@ -11,11 +11,13 @@ export default function ActivityForm({
   templates,
   initialActivity,
   onCancel,
+  onSubmitted,
 }: {
-  action: (formData: FormData) => void;
+  action: (formData: FormData) => void | Promise<void>;
   templates: ActivityTemplate[];
   initialActivity?: Activity;
   onCancel?: () => void;
+  onSubmitted?: () => void;
 }) {
   const isEdit = Boolean(initialActivity);
 
@@ -48,7 +50,7 @@ export default function ActivityForm({
     setDetails(template.details ?? {});
   }
 
-  function resetAll(formEl: HTMLFormElement) {
+  function resetAll(formEl: HTMLFormElement | null) {
     setActivityType("altro");
     setTitle("");
     setLocation("");
@@ -57,22 +59,27 @@ export default function ActivityForm({
     setDetails({});
     setTemplateId("");
     setSaveToLibrary(false);
-    formEl.reset();
+    formEl?.reset();
   }
 
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Si aspetta che il salvataggio sul server sia davvero concluso prima di
+  // chiudere il modale o svuotare il form, invece di indovinare un tempo
+  // d'attesa: così non si perde mai un'attività per una chiusura troppo rapida.
+  const [, dispatch, pending] = useActionState(async (_prevState: null, formData: FormData) => {
+    await action(formData);
+    if (isEdit) {
+      onCancel?.();
+    } else {
+      resetAll(formRef.current);
+      onSubmitted?.();
+    }
+    return null;
+  }, null);
+
   return (
-    <form
-      action={action}
-      onSubmit={(e) => {
-        const formEl = e.currentTarget;
-        if (isEdit) {
-          onCancel?.();
-        } else {
-          setTimeout(() => resetAll(formEl), 0);
-        }
-      }}
-      className="flex flex-col gap-2 border-t border-slate-100 pt-3"
-    >
+    <form ref={formRef} action={dispatch} className="flex flex-col gap-2 border-t border-slate-100 pt-3">
       <input type="hidden" name="details" value={JSON.stringify(details)} />
 
       <div className="grid gap-2 sm:grid-cols-[100px_140px_1fr]">
@@ -162,6 +169,11 @@ export default function ActivityForm({
                   className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-blue-500"
                 />
               )}
+              {field.key === CHECK_OUT_DATE_KEY && !isEdit && (
+                <p className="mt-1 text-xs text-slate-400">
+                  Crea automaticamente i giorni mancanti e aggiunge il check-out nel giorno giusto.
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -182,15 +194,17 @@ export default function ActivityForm({
       <div className="flex gap-2">
         <button
           type="submit"
-          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          disabled={pending}
+          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
         >
-          {isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
+          {pending ? "Salvataggio…" : isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
         </button>
         {isEdit && (
           <button
             type="button"
             onClick={onCancel}
-            className="w-fit rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50"
+            disabled={pending}
+            className="w-fit rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60"
           >
             Annulla
           </button>
