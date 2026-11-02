@@ -491,40 +491,40 @@ function SortableActivityRow({
             </div>
 
             <div className="flex shrink-0 flex-col items-end gap-1">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <form action={saveActivityToLibrary.bind(null, tripId, activity.id)}>
                   <button
                     type="submit"
                     title="Salva in libreria"
-                    className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                    className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
                   >
-                    <BookmarkPlus size={13} />
+                    <BookmarkPlus size={18} />
                   </button>
                 </form>
                 <form action={duplicateActivity.bind(null, tripId, dayId, activity.id)}>
                   <button
                     type="submit"
                     title="Duplica attività"
-                    className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                    className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
                   >
-                    <Copy size={13} />
+                    <Copy size={18} />
                   </button>
                 </form>
                 <button
                   type="button"
                   onClick={onEdit}
                   title="Modifica"
-                  className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                  className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
                 >
-                  <Pencil size={13} />
+                  <Pencil size={18} />
                 </button>
                 <button
                   type="button"
                   onClick={onDelete}
                   title="Elimina"
-                  className="flex items-center gap-1 text-xs text-red-500 hover:underline"
+                  className="rounded-md p-2 text-red-500 transition hover:bg-red-50 active:scale-90"
                 >
-                  <Trash2 size={13} />
+                  <Trash2 size={18} />
                 </button>
               </div>
               <div className="flex gap-1">
@@ -533,9 +533,9 @@ function SortableActivityRow({
                     type="submit"
                     disabled={index === 0}
                     title="Sposta su"
-                    className="rounded border border-slate-300 p-1 text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                    className="rounded-md border border-slate-300 p-1.5 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100"
                   >
-                    <ChevronUp size={13} />
+                    <ChevronUp size={16} />
                   </button>
                 </form>
                 <form action={moveActivity.bind(null, tripId, dayId, activity.id, "down")}>
@@ -543,9 +543,9 @@ function SortableActivityRow({
                     type="submit"
                     disabled={index === total - 1}
                     title="Sposta giù"
-                    className="rounded border border-slate-300 p-1 text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                    className="rounded-md border border-slate-300 p-1.5 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100"
                   >
-                    <ChevronDown size={13} />
+                    <ChevronDown size={16} />
                   </button>
                 </form>
               </div>
@@ -606,9 +606,9 @@ function SortableActivityRow({
                     <button
                       type="submit"
                       title="Elimina documento"
-                      className="flex shrink-0 items-center text-xs text-red-500 hover:underline"
+                      className="shrink-0 rounded-md p-1.5 text-red-500 transition hover:bg-red-50 active:scale-90"
                     >
-                      <Trash2 size={13} />
+                      <Trash2 size={15} />
                     </button>
                   </form>
                 </li>
