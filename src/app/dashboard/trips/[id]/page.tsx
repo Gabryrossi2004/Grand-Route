@@ -1,23 +1,27 @@
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
-import type { Activity, Trip, TripDay, TripDocument } from "@/lib/types";
-import { activityTypeOptions, activityTypes } from "@/lib/activityTypes";
+import type { Activity, ActivityPhoto, ActivityTemplate, Trip, TripDay, TripDocument } from "@/lib/types";
+import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import ActivityForm from "@/components/ActivityForm";
 import {
   addActivity,
   addDay,
   deleteActivity,
+  deleteActivityPhoto,
   deleteDay,
   deleteDocument,
   duplicateTripAsVariant,
   togglePublish,
   updateTripInfo,
+  uploadActivityPhoto,
   uploadCover,
   uploadDocument,
 } from "./actions";
 
-type DayWithActivities = TripDay & { activities: Activity[] };
+type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
+type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
 export default async function TripDetailPage({
   params,
@@ -30,11 +34,14 @@ export default async function TripDetailPage({
   const { data: trip } = await supabase.from("trips").select("*").eq("id", id).single();
   if (!trip) notFound();
 
-  const { data: days } = await supabase
-    .from("trip_days")
-    .select("*, activities(*)")
-    .eq("trip_id", id)
-    .order("day_order", { ascending: true });
+  const [{ data: days }, { data: templates }] = await Promise.all([
+    supabase
+      .from("trip_days")
+      .select("*, activities(*, activity_photos(*))")
+      .eq("trip_id", id)
+      .order("day_order", { ascending: true }),
+    supabase.from("activity_templates").select("*").order("title", { ascending: true }),
+  ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
@@ -69,7 +76,13 @@ export default async function TripDetailPage({
         <h2 className="mb-4 text-lg font-semibold text-slate-900">Itinerario</h2>
         <div className="flex flex-col gap-6">
           {orderedDays.map((day, index) => (
-            <DayCard key={day.id} day={day} tripId={id} dayNumber={index + 1} />
+            <DayCard
+              key={day.id}
+              day={day}
+              tripId={id}
+              dayNumber={index + 1}
+              templates={(templates as ActivityTemplate[]) || []}
+            />
           ))}
         </div>
 
@@ -256,10 +269,12 @@ function DayCard({
   day,
   tripId,
   dayNumber,
+  templates,
 }: {
   day: DayWithActivities;
   tripId: string;
   dayNumber: number;
+  templates: ActivityTemplate[];
 }) {
   const dateLabel = day.day_date
     ? new Date(day.day_date).toLocaleDateString("it-IT", { weekday: "long", day: "numeric", month: "long" })
@@ -276,80 +291,88 @@ function DayCard({
         </form>
       </div>
 
-      <ul className="mb-4 flex flex-col gap-2">
+      <ul className="mb-4 flex flex-col gap-3">
         {day.activities.map((activity) => {
           const meta = activityTypes[activity.activity_type];
+          const detailEntries = Object.entries(activity.details || {});
           return (
             <li
               key={activity.id}
               style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
-              className="flex items-start justify-between gap-3 rounded-md border-l-4 px-3 py-2"
+              className="rounded-md border-l-4 px-3 py-2"
             >
-              <div>
-                <p className="text-sm font-medium text-slate-900">
-                  {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
-                  {activity.title}
-                  <span
-                    style={{ color: meta.color, borderColor: meta.color }}
-                    className="ml-2 rounded-full border px-2 py-0.5 text-xs font-medium"
-                  >
-                    {meta.label}
-                  </span>
-                </p>
-                {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
-                {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-medium text-slate-900">
+                    {activity.start_time && (
+                      <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>
+                    )}
+                    {activity.title}
+                    <span
+                      style={{ color: meta.color, borderColor: meta.color }}
+                      className="ml-2 rounded-full border px-2 py-0.5 text-xs font-medium"
+                    >
+                      {meta.label}
+                    </span>
+                  </p>
+                  {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
+                  {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+                  {detailEntries.length > 0 && (
+                    <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
+                      {detailEntries.map(([key, value]) => (
+                        <div key={key} className="flex gap-1">
+                          <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
+                          <dd>{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+                </div>
+                <form action={deleteActivity.bind(null, tripId, activity.id)}>
+                  <button type="submit" className="text-xs text-red-500 hover:underline">
+                    Elimina
+                  </button>
+                </form>
               </div>
-              <form action={deleteActivity.bind(null, tripId, activity.id)}>
-                <button type="submit" className="text-xs text-red-500 hover:underline">
-                  Elimina
-                </button>
-              </form>
+
+              {activity.activity_photos && activity.activity_photos.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {activity.activity_photos.map((photo) => (
+                    <div key={photo.id} className="group relative">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={photo.url} alt="" className="h-16 w-16 rounded-md object-cover" />
+                      <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
+                        <button
+                          type="submit"
+                          className="absolute -right-1 -top-1 hidden h-5 w-5 rounded-full bg-red-600 text-xs text-white group-hover:block"
+                        >
+                          ×
+                        </button>
+                      </form>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <details className="mt-2">
+                <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">
+                  + Aggiungi foto
+                </summary>
+                <form
+                  action={uploadActivityPhoto.bind(null, tripId, activity.id)}
+                  encType="multipart/form-data"
+                  className="mt-2 max-w-xs"
+                >
+                  <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" />
+                </form>
+              </details>
             </li>
           );
         })}
         {day.activities.length === 0 && <p className="text-sm text-slate-400">Nessuna attività ancora.</p>}
       </ul>
 
-      <form action={addActivity.bind(null, tripId, day.id)} className="grid gap-2 border-t border-slate-100 pt-3 sm:grid-cols-[100px_140px_1fr_1fr]">
-        <input
-          name="start_time"
-          type="time"
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-        />
-        <select
-          name="activity_type"
-          defaultValue="altro"
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-        >
-          {activityTypeOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <input
-          name="title"
-          type="text"
-          placeholder="Attività (es. Check-in hotel)"
-          required
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-        />
-        <input
-          name="location"
-          type="text"
-          placeholder="Luogo (opzionale)"
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-        />
-        <input
-          name="description"
-          type="text"
-          placeholder="Note (opzionale)"
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500 sm:col-span-3"
-        />
-        <button type="submit" className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50">
-          + Aggiungi attività
-        </button>
-      </form>
+      <ActivityForm action={addActivity.bind(null, tripId, day.id)} templates={templates} />
     </div>
   );
 }

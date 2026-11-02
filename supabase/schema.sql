@@ -101,7 +101,36 @@ create table if not exists public.activities (
   location text,
   activity_type text not null default 'altro'
     check (activity_type in ('volo', 'alloggio', 'trasporto', 'ristorante', 'attivita', 'altro')),
+  -- Campi extra specifici per tipo (es. per un volo: compagnia, PNR; per un hotel: tipo camera, trattamento)
+  details jsonb not null default '{}'::jsonb,
   activity_order integer not null default 0
+);
+
+-- ============================================================
+-- 6b. ACTIVITY_TEMPLATES: libreria di attività riutilizzabili
+-- ============================================================
+create table if not exists public.activity_templates (
+  id uuid primary key default gen_random_uuid(),
+  owner_id uuid not null references public.profiles (id) on delete cascade,
+  activity_type text not null default 'altro'
+    check (activity_type in ('volo', 'alloggio', 'trasporto', 'ristorante', 'attivita', 'altro')),
+  title text not null,
+  description text,
+  location text,
+  details jsonb not null default '{}'::jsonb,
+  cover_photo_url text,
+  created_at timestamptz not null default now()
+);
+
+-- ============================================================
+-- 6c. ACTIVITY_PHOTOS: foto allegate a un'attività
+-- ============================================================
+create table if not exists public.activity_photos (
+  id uuid primary key default gen_random_uuid(),
+  activity_id uuid not null references public.activities (id) on delete cascade,
+  url text not null,
+  file_path text not null,
+  created_at timestamptz not null default now()
 );
 
 -- ============================================================
@@ -129,6 +158,8 @@ alter table public.trip_groups enable row level security;
 alter table public.trips enable row level security;
 alter table public.trip_days enable row level security;
 alter table public.activities enable row level security;
+alter table public.activity_templates enable row level security;
+alter table public.activity_photos enable row level security;
 alter table public.documents enable row level security;
 
 -- PROFILES: ognuno vede e modifica solo il proprio profilo
@@ -209,6 +240,41 @@ create policy "activities_select_published" on public.activities
       select 1 from public.trip_days
       join public.trips on trips.id = trip_days.trip_id
       where trip_days.id = activities.trip_day_id and trips.is_published = true
+    )
+  );
+
+-- ACTIVITY_TEMPLATES: la libreria è privata di ogni utente
+drop policy if exists "activity_templates_all_own" on public.activity_templates;
+create policy "activity_templates_all_own" on public.activity_templates
+  for all using (auth.uid() = owner_id) with check (auth.uid() = owner_id);
+
+-- ACTIVITY_PHOTOS: stessa logica delle attività
+drop policy if exists "activity_photos_all_own" on public.activity_photos;
+create policy "activity_photos_all_own" on public.activity_photos
+  for all using (
+    exists (
+      select 1 from public.activities
+      join public.trip_days on trip_days.id = activities.trip_day_id
+      join public.trips on trips.id = trip_days.trip_id
+      where activities.id = activity_photos.activity_id and trips.owner_id = auth.uid()
+    )
+  ) with check (
+    exists (
+      select 1 from public.activities
+      join public.trip_days on trip_days.id = activities.trip_day_id
+      join public.trips on trips.id = trip_days.trip_id
+      where activities.id = activity_photos.activity_id and trips.owner_id = auth.uid()
+    )
+  );
+
+drop policy if exists "activity_photos_select_published" on public.activity_photos;
+create policy "activity_photos_select_published" on public.activity_photos
+  for select using (
+    exists (
+      select 1 from public.activities
+      join public.trip_days on trip_days.id = activities.trip_day_id
+      join public.trips on trips.id = trip_days.trip_id
+      where activities.id = activity_photos.activity_id and trips.is_published = true
     )
   );
 

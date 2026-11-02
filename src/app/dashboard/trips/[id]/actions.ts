@@ -58,8 +58,26 @@ export async function deleteDay(tripId: string, dayId: string) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+function parseDetails(formData: FormData): Record<string, string> {
+  const raw = String(formData.get("details") ?? "{}");
+  try {
+    const parsed = JSON.parse(raw);
+    const clean: Record<string, string> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (typeof value === "string" && value.trim()) clean[key] = value.trim();
+    }
+    return clean;
+  } catch {
+    return {};
+  }
+}
+
 export async function addActivity(tripId: string, dayId: string, formData: FormData) {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const title = String(formData.get("title") ?? "").trim();
   if (!title) return;
 
@@ -67,6 +85,8 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
   const description = String(formData.get("description") ?? "").trim() || null;
   const location = String(formData.get("location") ?? "").trim() || null;
   const activityType = String(formData.get("activity_type") ?? "altro");
+  const details = parseDetails(formData);
+  const saveToLibrary = formData.get("save_to_library") === "on";
 
   const { count } = await supabase
     .from("activities")
@@ -80,8 +100,20 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
     description,
     location,
     activity_type: activityType,
+    details,
     activity_order: count ?? 0,
   });
+
+  if (saveToLibrary && user) {
+    await supabase.from("activity_templates").insert({
+      owner_id: user.id,
+      activity_type: activityType,
+      title,
+      description,
+      location,
+      details,
+    });
+  }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
@@ -124,6 +156,39 @@ export async function deleteDocument(tripId: string, documentId: string, filePat
   const supabase = await createClient();
   await supabase.storage.from("trip-documents").remove([filePath]);
   await supabase.from("documents").delete().eq("id", documentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function uploadActivityPhoto(tripId: string, activityId: string, formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const file = formData.get("photo");
+  if (!(file instanceof File) || file.size === 0) return;
+
+  const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${file.name}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("public-assets")
+    .upload(filePath, file, { contentType: file.type || undefined });
+
+  if (uploadError) return;
+
+  const { data } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+
+  await supabase
+    .from("activity_photos")
+    .insert({ activity_id: activityId, url: data.publicUrl, file_path: filePath });
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function deleteActivityPhoto(tripId: string, photoId: string, filePath: string) {
+  const supabase = await createClient();
+  await supabase.storage.from("public-assets").remove([filePath]);
+  await supabase.from("activity_photos").delete().eq("id", photoId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
@@ -216,6 +281,7 @@ export async function duplicateTripAsVariant(tripId: string) {
           description: activity.description,
           location: activity.location,
           activity_type: activity.activity_type,
+          details: activity.details,
           activity_order: activity.activity_order,
         })),
       );

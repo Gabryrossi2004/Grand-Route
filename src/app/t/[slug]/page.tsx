@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import type { Activity, Profile, TripDay } from "@/lib/types";
-import { activityTypes } from "@/lib/activityTypes";
+import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
+import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 
-type DayWithActivities = TripDay & { activities: Activity[] };
+type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
+type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
 export default async function PublicTripPage({
   params,
@@ -25,7 +26,7 @@ export default async function PublicTripPage({
   const [{ data: days }, { data: owner }] = await Promise.all([
     supabase
       .from("trip_days")
-      .select("*, activities(*)")
+      .select("*, activities(*, activity_photos(*))")
       .eq("trip_id", trip.id)
       .order("day_order", { ascending: true }),
     supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
@@ -105,6 +106,29 @@ export default async function PublicTripPage({
                         </div>
                         {activity.location && <p className="text-sm text-slate-500">{activity.location}</p>}
                         {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+                        {Object.entries(activity.details || {}).length > 0 && (
+                          <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
+                            {Object.entries(activity.details).map(([key, value]) => (
+                              <div key={key} className="flex gap-1">
+                                <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
+                                <dd>{value}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        )}
+                        {activity.activity_photos && activity.activity_photos.length > 0 && (
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {activity.activity_photos.map((photo) => (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                key={photo.id}
+                                src={photo.url}
+                                alt=""
+                                className="h-20 w-20 rounded-md object-cover"
+                              />
+                            ))}
+                          </div>
+                        )}
                       </li>
                     );
                   })}

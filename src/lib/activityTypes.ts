@@ -13,3 +13,61 @@ export const activityTypeOptions = Object.entries(activityTypes).map(([value, me
   value: value as ActivityType,
   ...meta,
 }));
+
+export type DetailField = {
+  key: string;
+  label: string;
+  type: "text" | "time" | "number" | "select";
+  options?: string[];
+};
+
+// Campi extra specifici per ogni tipologia di attività. Vengono salvati dentro
+// la colonna "details" (un contenitore flessibile), così ogni tipo può avere
+// le sue informazioni senza bisogno di decine di colonne quasi sempre vuote.
+export const detailFields: Record<ActivityType, DetailField[]> = {
+  volo: [
+    { key: "compagnia", label: "Compagnia aerea", type: "text" },
+    { key: "numero_volo", label: "Numero volo", type: "text" },
+    { key: "pnr", label: "PNR / Codice prenotazione", type: "text" },
+    { key: "aeroporto_partenza", label: "Aeroporto di partenza", type: "text" },
+    { key: "aeroporto_arrivo", label: "Aeroporto di arrivo", type: "text" },
+    { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+  ],
+  alloggio: [
+    { key: "tipo_camera", label: "Tipologia camera", type: "text" },
+    {
+      key: "trattamento",
+      label: "Trattamento",
+      type: "select",
+      options: ["Solo pernottamento", "B&B", "Mezza pensione", "Pensione completa", "All inclusive"],
+    },
+    { key: "check_in", label: "Orario check-in", type: "time" },
+    { key: "check_out", label: "Orario check-out", type: "time" },
+    { key: "numero_conferma", label: "Numero di conferma", type: "text" },
+  ],
+  trasporto: [
+    {
+      key: "mezzo",
+      label: "Mezzo",
+      type: "select",
+      options: ["Treno", "Bus", "Traghetto", "Transfer privato", "Altro"],
+    },
+    { key: "numero", label: "Numero treno / corsa", type: "text" },
+    { key: "pnr", label: "PNR / Codice prenotazione", type: "text" },
+    { key: "luogo_arrivo", label: "Luogo di arrivo", type: "text" },
+    { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+  ],
+  ristorante: [
+    { key: "numero_persone", label: "Numero persone", type: "number" },
+    { key: "note_prenotazione", label: "Note prenotazione", type: "text" },
+  ],
+  attivita: [
+    { key: "punto_incontro", label: "Punto di incontro", type: "text" },
+    { key: "durata", label: "Durata", type: "text" },
+  ],
+  altro: [],
+};
+
+export const detailFieldLabels: Record<string, string> = Object.values(detailFields)
+  .flat()
+  .reduce((acc, field) => ({ ...acc, [field.key]: field.label }), {} as Record<string, string>);

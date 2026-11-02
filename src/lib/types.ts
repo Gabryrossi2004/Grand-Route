@@ -60,6 +60,8 @@ export type ActivityType =
   | "attivita"
   | "altro";
 
+export type ActivityDetails = Record<string, string>;
+
 export type Activity = {
   id: string;
   trip_day_id: string;
@@ -68,7 +70,28 @@ export type Activity = {
   description: string | null;
   location: string | null;
   activity_type: ActivityType;
+  details: ActivityDetails;
   activity_order: number;
+};
+
+export type ActivityTemplate = {
+  id: string;
+  owner_id: string;
+  activity_type: ActivityType;
+  title: string;
+  description: string | null;
+  location: string | null;
+  details: ActivityDetails;
+  cover_photo_url: string | null;
+  created_at: string;
+};
+
+export type ActivityPhoto = {
+  id: string;
+  activity_id: string;
+  url: string;
+  file_path: string;
+  created_at: string;
 };
 
 export type TripDocument = {
