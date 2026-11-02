@@ -3,6 +3,15 @@ import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, ActivityTemplate, Trip, TripDay, TripDocument } from "@/lib/types";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  Calendar,
+  Copy,
+  ExternalLink,
+  FileText,
+  MapPin,
+  Rocket,
+} from "lucide-react";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import TripPriceFields from "@/components/TripPriceFields";
@@ -17,6 +26,10 @@ import {
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
+
+const inputClass =
+  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100";
+const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 
 export default async function TripDetailPage({
   params,
@@ -53,7 +66,7 @@ export default async function TripDetailPage({
     .eq("trip_id", id)
     .order("uploaded_at", { ascending: false });
 
-  const documentsWithUrl = await Promise.all(
+  const allDocumentsWithUrl = await Promise.all(
     ((documents as TripDocument[]) || []).map(async (document) => {
       const { data } = await supabase.storage
         .from("trip-documents")
@@ -62,39 +75,67 @@ export default async function TripDetailPage({
     }),
   );
 
+  const documentsWithUrl = allDocumentsWithUrl.filter((document) => !document.activity_id);
+
+  const documentsByActivity: Record<string, typeof allDocumentsWithUrl> = {};
+  for (const document of allDocumentsWithUrl) {
+    if (!document.activity_id) continue;
+    (documentsByActivity[document.activity_id] ??= []).push(document);
+  }
+
   return (
     <div className="flex flex-col gap-8">
-      <CoverHero trip={trip} />
-      <TripHeader trip={trip} publicUrl={publicUrl} />
+      <CoverHero trip={trip} publicUrl={publicUrl} />
+      <TripInfoForm trip={trip} />
 
       <section>
         <h2 className="mb-4 text-lg font-semibold text-slate-900">Itinerario</h2>
-        <ItineraryEditor tripId={id} days={orderedDays} templates={(templates as ActivityTemplate[]) || []} />
+        <ItineraryEditor
+          tripId={id}
+          days={orderedDays}
+          templates={(templates as ActivityTemplate[]) || []}
+          documentsByActivity={documentsByActivity}
+        />
       </section>
 
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-slate-900">Documenti</h2>
-        <div className="rounded-xl border border-slate-200 bg-white p-5">
+        <div className="mb-4 flex items-center gap-2">
+          <FileText size={18} className="text-slate-400" />
+          <div>
+            <h2 className="text-lg font-semibold text-slate-900">Documenti del viaggio</h2>
+            <p className="text-sm text-slate-500">
+              Passaporto, visti e documenti di ingresso. Biglietti e voucher si caricano invece dentro ogni
+              singola attività, nell&apos;itinerario qui sopra.
+            </p>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
           {documentsWithUrl.length === 0 ? (
-            <p className="mb-4 text-sm text-slate-400">Nessun documento caricato (biglietti, voucher, ecc.).</p>
+            <p className="mb-4 text-sm text-slate-400">Nessun documento caricato ancora.</p>
           ) : (
             <ul className="mb-4 flex flex-col gap-2">
               {documentsWithUrl.map((document) => (
-                <li key={document.id} className="flex items-center justify-between rounded-md bg-slate-50 px-3 py-2">
-                  {document.signedUrl ? (
-                    <a
-                      href={document.signedUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm font-medium text-blue-600 hover:underline"
-                    >
-                      {document.file_name}
-                    </a>
-                  ) : (
-                    <span className="text-sm text-slate-700">{document.file_name}</span>
-                  )}
+                <li
+                  key={document.id}
+                  className="flex items-center justify-between gap-2 rounded-lg bg-slate-50 px-3 py-2"
+                >
+                  <span className="flex min-w-0 items-center gap-2">
+                    <FileText size={15} className="shrink-0 text-slate-400" />
+                    {document.signedUrl ? (
+                      <a
+                        href={document.signedUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="truncate text-sm font-medium text-blue-600 hover:underline"
+                      >
+                        {document.file_name}
+                      </a>
+                    ) : (
+                      <span className="truncate text-sm text-slate-700">{document.file_name}</span>
+                    )}
+                  </span>
                   <form action={deleteDocument.bind(null, id, document.id, document.file_path)}>
-                    <button type="submit" className="text-xs text-red-500 hover:underline">
+                    <button type="submit" className="shrink-0 text-xs text-red-500 hover:underline">
                       Elimina
                     </button>
                   </form>
@@ -104,11 +145,11 @@ export default async function TripDetailPage({
           )}
 
           <form
-            action={uploadDocument.bind(null, id)}
+            action={uploadDocument.bind(null, id, null)}
             encType="multipart/form-data"
             className="border-t border-slate-100 pt-4"
           >
-            <DropzoneUpload name="file" label="Carica un biglietto o voucher" />
+            <DropzoneUpload name="file" label="Carica passaporto, visto o altro documento" />
           </form>
         </div>
       </section>
@@ -116,16 +157,100 @@ export default async function TripDetailPage({
   );
 }
 
-function CoverHero({ trip }: { trip: Trip }) {
+function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
+  const dateRange =
+    trip.start_date && trip.end_date
+      ? `${new Date(trip.start_date).toLocaleDateString("it-IT")} – ${new Date(trip.end_date).toLocaleDateString("it-IT")}`
+      : null;
+
   return (
-    <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-      <div
-        className="relative flex h-48 items-end bg-slate-800 bg-cover bg-center p-6"
-        style={trip.cover_image_url ? { backgroundImage: `url(${trip.cover_image_url})` } : undefined}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-        <h1 className="relative text-2xl font-semibold text-white">{trip.title}</h1>
+    <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="relative flex h-64 flex-col justify-between bg-slate-800 p-6">
+        {trip.cover_image_url && (
+          <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10" />
+
+        <div className="relative flex items-start justify-between">
+          <span
+            className={
+              trip.is_published
+                ? "rounded-full bg-green-500/90 px-3 py-1 text-xs font-semibold text-white"
+                : "rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur"
+            }
+          >
+            {trip.is_published ? "Pubblicato" : "Bozza"}
+          </span>
+        </div>
+
+        <div className="relative text-white">
+          <h1 className="text-3xl font-bold leading-tight drop-shadow-sm">{trip.title}</h1>
+          <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-white/90">
+            {trip.destination && (
+              <span className="flex items-center gap-1">
+                <MapPin size={14} /> {trip.destination}
+              </span>
+            )}
+            {dateRange && (
+              <span className="flex items-center gap-1">
+                <Calendar size={14} /> {dateRange}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
+
+      <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 p-4">
+        <form action={togglePublish.bind(null, trip.id, trip.is_published)}>
+          <button
+            type="submit"
+            className={
+              trip.is_published
+                ? "flex items-center gap-1.5 rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-200"
+                : "flex items-center gap-1.5 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-green-200 transition hover:bg-green-700"
+            }
+          >
+            <Rocket size={15} />
+            {trip.is_published ? "Metti in bozza" : "Pubblica"}
+          </button>
+        </form>
+
+        <Link
+          href={`/trips/${trip.id}/overview`}
+          target="_blank"
+          className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+        >
+          <FileText size={15} />
+          Overview
+        </Link>
+
+        <form action={duplicateTripAsVariant.bind(null, trip.id)}>
+          <button
+            type="submit"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          >
+            <Copy size={15} />
+            Crea variante
+          </button>
+        </form>
+
+        {trip.is_published ? (
+          <a
+            href={publicUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:underline"
+          >
+            {publicUrl}
+            <ExternalLink size={13} />
+          </a>
+        ) : (
+          <span className="ml-auto text-sm text-slate-400">
+            Pubblica per ottenere un link da condividere col cliente.
+          </span>
+        )}
+      </div>
+
       <form action={uploadCover.bind(null, trip.id)} encType="multipart/form-data" className="p-4">
         <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" />
       </form>
@@ -133,36 +258,26 @@ function CoverHero({ trip }: { trip: Trip }) {
   );
 }
 
-function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
+function TripInfoForm({ trip }: { trip: Trip }) {
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-6">
+    <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">Informazioni viaggio</h2>
       <form action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="title" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="title" className={labelClass}>
             Titolo
           </label>
-          <input
-            id="title"
-            name="title"
-            defaultValue={trip.title}
-            required
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
-          />
+          <input id="title" name="title" defaultValue={trip.title} required className={inputClass} />
         </div>
         <div>
-          <label htmlFor="destination" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="destination" className={labelClass}>
             Destinazione
           </label>
-          <input
-            id="destination"
-            name="destination"
-            defaultValue={trip.destination ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
-          />
+          <input id="destination" name="destination" defaultValue={trip.destination ?? ""} className={inputClass} />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="start_date" className="mb-1 block text-sm font-medium text-slate-700">
+            <label htmlFor="start_date" className={labelClass}>
               Data inizio
             </label>
             <input
@@ -170,11 +285,11 @@ function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
               name="start_date"
               type="date"
               defaultValue={trip.start_date ?? ""}
-              className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className={inputClass}
             />
           </div>
           <div>
-            <label htmlFor="end_date" className="mb-1 block text-sm font-medium text-slate-700">
+            <label htmlFor="end_date" className={labelClass}>
               Data fine
             </label>
             <input
@@ -182,63 +297,20 @@ function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
               name="end_date"
               type="date"
               defaultValue={trip.end_date ?? ""}
-              className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className={inputClass}
             />
           </div>
         </div>
         <TripPriceFields trip={trip} />
         <div className="sm:col-span-2">
-          <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+          <button
+            type="submit"
+            className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          >
             Salva informazioni
           </button>
         </div>
       </form>
-
-      <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-4">
-        <form action={togglePublish.bind(null, trip.id, trip.is_published)}>
-          <button
-            type="submit"
-            className={
-              trip.is_published
-                ? "rounded-md bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200"
-                : "rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
-            }
-          >
-            {trip.is_published ? "Metti in bozza" : "Pubblica"}
-          </button>
-        </form>
-
-        <Link
-          href={`/dashboard/trips/${trip.id}/overview`}
-          target="_blank"
-          className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
-        >
-          Overview
-        </Link>
-
-        {trip.is_published && (
-          <a
-            href={publicUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm font-medium text-blue-600 hover:underline"
-          >
-            {publicUrl}
-          </a>
-        )}
-        {!trip.is_published && (
-          <span className="text-sm text-slate-400">
-            Pubblica il viaggio per ottenere un link da condividere col cliente.
-          </span>
-        )}
-
-        <form action={duplicateTripAsVariant.bind(null, trip.id)} className="ml-auto">
-          <button type="submit" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
-            Crea una variante di questo viaggio
-          </button>
-        </form>
-      </div>
     </section>
   );
 }
-

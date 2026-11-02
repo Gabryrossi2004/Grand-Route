@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   DndContext,
   PointerSensor,
@@ -16,8 +17,8 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { ChevronDown, GripVertical, Plus } from "lucide-react";
-import type { Activity, ActivityPhoto, ActivityTemplate, TripDay } from "@/lib/types";
+import { ChevronDown, FileText, GripVertical, Plus } from "lucide-react";
+import type { Activity, ActivityPhoto, ActivityTemplate, TripDay, TripDocument } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
@@ -30,15 +31,18 @@ import {
   deleteActivity,
   deleteActivityPhoto,
   deleteDay,
+  deleteDocument,
   moveActivity,
   reorderActivities,
   sortActivitiesByTime,
   updateActivity,
   uploadActivityPhoto,
+  uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
+type ActivityDocument = TripDocument & { signedUrl: string | null };
 
 function dayLabel(day: DayWithActivities, index: number, long = false) {
   if (!day.day_date) return `Giorno ${index + 1}`;
@@ -53,10 +57,12 @@ export default function ItineraryEditor({
   tripId,
   days,
   templates,
+  documentsByActivity,
 }: {
   tripId: string;
   days: DayWithActivities[];
   templates: ActivityTemplate[];
+  documentsByActivity: Record<string, ActivityDocument[]>;
 }) {
   const [selectedDayId, setSelectedDayId] = useState<string | null>(days[0]?.id ?? null);
   const selectedDay = days.find((day) => day.id === selectedDayId) ?? days[0] ?? null;
@@ -112,7 +118,13 @@ export default function ItineraryEditor({
 
       <div className="min-w-0 flex-1">
         {selectedDay ? (
-          <DayPanel key={selectedDay.id} day={selectedDay} tripId={tripId} templates={templates} />
+          <DayPanel
+            key={selectedDay.id}
+            day={selectedDay}
+            tripId={tripId}
+            templates={templates}
+            documentsByActivity={documentsByActivity}
+          />
         ) : (
           <p className="text-sm text-slate-400">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
         )}
@@ -125,10 +137,12 @@ function DayPanel({
   day,
   tripId,
   templates,
+  documentsByActivity,
 }: {
   day: DayWithActivities;
   tripId: string;
   templates: ActivityTemplate[];
+  documentsByActivity: Record<string, ActivityDocument[]>;
 }) {
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
@@ -219,6 +233,7 @@ function DayPanel({
                 tripId={tripId}
                 dayId={day.id}
                 templates={templates}
+                documents={documentsByActivity[activity.id] ?? []}
                 isEditing={editingActivityId === activity.id}
                 isExpanded={!collapsedIds.has(activity.id)}
                 onToggleExpand={() => toggleCollapsed(activity.id)}
@@ -251,6 +266,7 @@ function SortableActivityRow({
   tripId,
   dayId,
   templates,
+  documents,
   isEditing,
   isExpanded,
   onToggleExpand,
@@ -263,6 +279,7 @@ function SortableActivityRow({
   tripId: string;
   dayId: string;
   templates: ActivityTemplate[];
+  documents: ActivityDocument[];
   isEditing: boolean;
   isExpanded: boolean;
   onToggleExpand: () => void;
@@ -403,9 +420,10 @@ function SortableActivityRow({
           {activity.activity_photos && activity.activity_photos.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">
               {activity.activity_photos.map((photo) => (
-                <div key={photo.id} className="group relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={photo.url} alt="" className="h-16 w-16 rounded-md object-cover" />
+                <div key={photo.id} className="group relative h-16 w-16">
+                  <div className="relative h-full w-full overflow-hidden rounded-md">
+                    <Image src={photo.url} alt="" fill sizes="4rem" className="object-cover" />
+                  </div>
                   <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
                     <button
                       type="submit"
@@ -427,6 +445,48 @@ function SortableActivityRow({
               className="mt-2 max-w-xs"
             >
               <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" />
+            </form>
+          </details>
+
+          {documents.length > 0 && (
+            <ul className="mt-2 flex flex-col gap-1">
+              {documents.map((document) => (
+                <li key={document.id} className="flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2 py-1">
+                  <span className="flex min-w-0 items-center gap-1.5 text-xs text-slate-700">
+                    <FileText size={13} className="shrink-0 text-slate-400" />
+                    {document.signedUrl ? (
+                      <a
+                        href={document.signedUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="truncate font-medium text-blue-600 hover:underline"
+                      >
+                        {document.file_name}
+                      </a>
+                    ) : (
+                      <span className="truncate">{document.file_name}</span>
+                    )}
+                  </span>
+                  <form action={deleteDocument.bind(null, tripId, document.id, document.file_path)}>
+                    <button type="submit" className="shrink-0 text-xs text-red-500 hover:underline">
+                      Elimina
+                    </button>
+                  </form>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <details className="mt-2">
+            <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">
+              + Aggiungi documento (voucher, biglietto…)
+            </summary>
+            <form
+              action={uploadDocument.bind(null, tripId, activity.id)}
+              encType="multipart/form-data"
+              className="mt-2 max-w-xs"
+            >
+              <DropzoneUpload name="file" label="Trascina un documento qui" />
             </form>
           </details>
         </div>

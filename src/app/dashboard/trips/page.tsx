@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 import type { Trip, TripGroup } from "@/lib/types";
 
@@ -16,14 +17,17 @@ function TripCard({ trip }: { trip: Trip }) {
       href={`/dashboard/trips/${trip.id}`}
       className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-slate-200/60"
     >
-      <div
-        className="h-32 bg-slate-200 bg-cover bg-center transition duration-300 group-hover:scale-[1.03]"
-        style={
-          trip.cover_image_url
-            ? { backgroundImage: `url(${trip.cover_image_url})` }
-            : { backgroundImage: "linear-gradient(135deg, #dbeafe, #e0e7ff)" }
-        }
-      />
+      <div className="relative h-32 overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100">
+        {trip.cover_image_url && (
+          <Image
+            src={trip.cover_image_url}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition duration-300 group-hover:scale-[1.03]"
+          />
+        )}
+      </div>
       <div className="p-4">
         <div className="mb-1 flex items-center justify-between gap-2">
           <h3 className="font-medium text-slate-900">{trip.title}</h3>

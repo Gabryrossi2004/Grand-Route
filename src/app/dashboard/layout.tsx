@@ -37,12 +37,17 @@ export default async function DashboardLayout({
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/dashboard/trips" className="flex items-center gap-2 font-semibold text-slate-900">
-            <span
-              style={{ backgroundColor: brandColor }}
-              className="flex h-7 w-7 items-center justify-center rounded-lg text-white"
-            >
-              <Compass size={16} />
-            </span>
+            {profile?.logo_url ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={profile.logo_url} alt="" className="h-8 w-8 rounded-lg object-contain" />
+            ) : (
+              <span
+                style={{ backgroundColor: brandColor }}
+                className="flex h-7 w-7 items-center justify-center rounded-lg text-white"
+              >
+                <Compass size={16} />
+              </span>
+            )}
             {profile?.agency_name || "Il mio gestionale viaggi"}
           </Link>
           <nav className="flex items-center gap-1 text-sm">

@@ -143,6 +143,9 @@ create table if not exists public.activity_photos (
 create table if not exists public.documents (
   id uuid primary key default gen_random_uuid(),
   trip_id uuid not null references public.trips (id) on delete cascade,
+  -- Se impostato, il documento è collegato a una singola attività (es. voucher, biglietto).
+  -- Se vuoto, è un documento generale del viaggio (passaporto, visti, ecc.).
+  activity_id uuid references public.activities (id) on delete cascade,
   file_name text not null,
   file_path text not null,
   file_type text,

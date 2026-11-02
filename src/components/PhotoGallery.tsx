@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function PhotoGallery({ photos }: { photos: { id: string; url: string }[] }) {
@@ -27,10 +28,15 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
         <button
           type="button"
           onClick={() => setOpenIndex(0)}
-          className="h-48 overflow-hidden rounded-md"
+          className="relative h-48 overflow-hidden rounded-md"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={first.url} alt="" className="h-full w-full object-cover transition hover:opacity-90" />
+          <Image
+            src={first.url}
+            alt=""
+            fill
+            sizes="(min-width: 640px) 32rem, 80vw"
+            className="object-cover transition hover:scale-105 hover:opacity-95"
+          />
         </button>
         {rest.length > 0 && (
           <div className="flex max-h-48 flex-col gap-1.5 overflow-y-auto">
@@ -39,10 +45,9 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
                 key={photo.id}
                 type="button"
                 onClick={() => setOpenIndex(index + 1)}
-                className="h-[2.85rem] shrink-0 overflow-hidden rounded-md"
+                className="relative h-[2.85rem] shrink-0 overflow-hidden rounded-md"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo.url} alt="" className="h-full w-full object-cover transition hover:opacity-90" />
+                <Image src={photo.url} alt="" fill sizes="5rem" className="object-cover transition hover:opacity-90" />
               </button>
             ))}
           </div>
@@ -77,13 +82,18 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
             </button>
           )}
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={photos[openIndex].url}
-            alt=""
+          <div
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[90vh] max-w-[90vw] rounded-md object-contain"
-          />
+            className="relative h-[85vh] w-[90vw] sm:w-[80vw]"
+          >
+            <Image
+              src={photos[openIndex].url}
+              alt=""
+              fill
+              sizes="90vw"
+              className="rounded-md object-contain"
+            />
+          </div>
 
           {photos.length > 1 && (
             <button

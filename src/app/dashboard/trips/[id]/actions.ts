@@ -338,7 +338,11 @@ export async function sortActivitiesByTime(tripId: string, dayId: string) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
-export async function uploadDocument(tripId: string, formData: FormData) {
+export async function uploadDocument(
+  tripId: string,
+  activityId: string | null,
+  formData: FormData,
+) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -358,6 +362,7 @@ export async function uploadDocument(tripId: string, formData: FormData) {
 
   await supabase.from("documents").insert({
     trip_id: tripId,
+    activity_id: activityId,
     file_name: file.name,
     file_path: filePath,
     file_type: file.type || null,

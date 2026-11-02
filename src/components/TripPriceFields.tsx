@@ -7,7 +7,7 @@ export default function TripPriceFields({ trip }: { trip: Trip }) {
   const [priceMode, setPriceMode] = useState<PriceMode>(trip.price_mode);
 
   return (
-    <div className="rounded-md bg-slate-50 p-3 sm:col-span-2">
+    <div className="rounded-lg bg-slate-50 p-4 sm:col-span-2">
       <label htmlFor="price_mode" className="mb-1 block text-sm font-medium text-slate-700">
         Come mostrare il prezzo al cliente
       </label>

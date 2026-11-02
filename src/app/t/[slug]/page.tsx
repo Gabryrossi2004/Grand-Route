@@ -6,6 +6,7 @@ import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import PhotoGallery from "@/components/PhotoGallery";
+import Image from "next/image";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -43,6 +44,7 @@ export default async function PublicTripPage({
 
   const brandColor = (owner as Profile | null)?.brand_color || "#2563eb";
   const agencyName = (owner as Profile | null)?.agency_name;
+  const logoUrl = (owner as Profile | null)?.logo_url;
   const price = getDisplayPrice(trip);
 
   const dateRange =
@@ -53,15 +55,32 @@ export default async function PublicTripPage({
   return (
     <div className="min-h-screen bg-slate-50">
       <header
-        className="relative flex min-h-[16rem] items-end bg-cover bg-center px-4 py-10 text-white"
-        style={{
-          backgroundColor: brandColor,
-          backgroundImage: trip.cover_image_url ? `url(${trip.cover_image_url})` : undefined,
-        }}
+        className="relative flex min-h-[16rem] items-end overflow-hidden px-4 py-10 text-white"
+        style={{ backgroundColor: brandColor }}
       >
-        {trip.cover_image_url && <div className="absolute inset-0 bg-black/40" />}
+        {trip.cover_image_url && (
+          <>
+            <Image
+              src={trip.cover_image_url}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </>
+        )}
         <div className="relative mx-auto w-full max-w-3xl">
-          {agencyName && <p className="mb-2 text-sm font-medium opacity-80">{agencyName}</p>}
+          {(logoUrl || agencyName) && (
+            <div className="mb-3 flex items-center gap-2">
+              {logoUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={logoUrl} alt="" className="h-8 rounded bg-white/90 p-1" />
+              )}
+              {agencyName && <span className="text-sm font-medium opacity-90">{agencyName}</span>}
+            </div>
+          )}
           <h1 className="text-3xl font-semibold">{trip.title}</h1>
           {trip.destination && <p className="mt-1 text-white/90">{trip.destination}</p>}
           {dateRange && <p className="mt-1 text-sm text-white/80">{dateRange}</p>}
@@ -94,7 +113,7 @@ export default async function PublicTripPage({
                       <li
                         key={activity.id}
                         style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
-                        className="rounded-md border-l-4 px-4 py-2"
+                        className="rounded-md border-l-4 px-4 py-2 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
                       >
                         <div className="flex flex-wrap items-center gap-2">
                           <span
