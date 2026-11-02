@@ -2,14 +2,18 @@ import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, Trip, TripDay, TripDocument } from "@/lib/types";
+import { activityTypeOptions, activityTypes } from "@/lib/activityTypes";
+import DropzoneUpload from "@/components/DropzoneUpload";
 import {
   addActivity,
   addDay,
   deleteActivity,
   deleteDay,
   deleteDocument,
+  duplicateTripAsVariant,
   togglePublish,
   updateTripInfo,
+  uploadCover,
   uploadDocument,
 } from "./actions";
 
@@ -58,6 +62,7 @@ export default async function TripDetailPage({
 
   return (
     <div className="flex flex-col gap-8">
+      <CoverHero trip={trip} />
       <TripHeader trip={trip} publicUrl={publicUrl} />
 
       <section>
@@ -120,21 +125,30 @@ export default async function TripDetailPage({
           <form
             action={uploadDocument.bind(null, id)}
             encType="multipart/form-data"
-            className="flex items-center gap-3 border-t border-slate-100 pt-4"
+            className="border-t border-slate-100 pt-4"
           >
-            <input
-              type="file"
-              name="file"
-              required
-              className="text-sm text-slate-600 file:mr-3 file:rounded-md file:border file:border-slate-300 file:bg-white file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-slate-700 hover:file:bg-slate-50"
-            />
-            <button type="submit" className="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50">
-              Carica
-            </button>
+            <DropzoneUpload name="file" label="Carica un biglietto o voucher" />
           </form>
         </div>
       </section>
     </div>
+  );
+}
+
+function CoverHero({ trip }: { trip: Trip }) {
+  return (
+    <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+      <div
+        className="relative flex h-48 items-end bg-slate-800 bg-cover bg-center p-6"
+        style={trip.cover_image_url ? { backgroundImage: `url(${trip.cover_image_url})` } : undefined}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <h1 className="relative text-2xl font-semibold text-white">{trip.title}</h1>
+      </div>
+      <form action={uploadCover.bind(null, trip.id)} encType="multipart/form-data" className="p-4">
+        <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" />
+      </form>
+    </section>
   );
 }
 
@@ -227,6 +241,12 @@ function TripHeader({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
             Pubblica il viaggio per ottenere un link da condividere col cliente.
           </span>
         )}
+
+        <form action={duplicateTripAsVariant.bind(null, trip.id)} className="ml-auto">
+          <button type="submit" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
+            Crea una variante di questo viaggio
+          </button>
+        </form>
       </div>
     </section>
   );
@@ -257,32 +277,56 @@ function DayCard({
       </div>
 
       <ul className="mb-4 flex flex-col gap-2">
-        {day.activities.map((activity) => (
-          <li key={activity.id} className="flex items-start justify-between gap-3 rounded-md bg-slate-50 px-3 py-2">
-            <div>
-              <p className="text-sm font-medium text-slate-900">
-                {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
-                {activity.title}
-              </p>
-              {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
-              {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
-            </div>
-            <form action={deleteActivity.bind(null, tripId, activity.id)}>
-              <button type="submit" className="text-xs text-red-500 hover:underline">
-                Elimina
-              </button>
-            </form>
-          </li>
-        ))}
+        {day.activities.map((activity) => {
+          const meta = activityTypes[activity.activity_type];
+          return (
+            <li
+              key={activity.id}
+              style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
+              className="flex items-start justify-between gap-3 rounded-md border-l-4 px-3 py-2"
+            >
+              <div>
+                <p className="text-sm font-medium text-slate-900">
+                  {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
+                  {activity.title}
+                  <span
+                    style={{ color: meta.color, borderColor: meta.color }}
+                    className="ml-2 rounded-full border px-2 py-0.5 text-xs font-medium"
+                  >
+                    {meta.label}
+                  </span>
+                </p>
+                {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
+                {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+              </div>
+              <form action={deleteActivity.bind(null, tripId, activity.id)}>
+                <button type="submit" className="text-xs text-red-500 hover:underline">
+                  Elimina
+                </button>
+              </form>
+            </li>
+          );
+        })}
         {day.activities.length === 0 && <p className="text-sm text-slate-400">Nessuna attività ancora.</p>}
       </ul>
 
-      <form action={addActivity.bind(null, tripId, day.id)} className="grid gap-2 border-t border-slate-100 pt-3 sm:grid-cols-[100px_1fr_1fr]">
+      <form action={addActivity.bind(null, tripId, day.id)} className="grid gap-2 border-t border-slate-100 pt-3 sm:grid-cols-[100px_140px_1fr_1fr]">
         <input
           name="start_time"
           type="time"
           className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
         />
+        <select
+          name="activity_type"
+          defaultValue="altro"
+          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+        >
+          {activityTypeOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
         <input
           name="title"
           type="text"
@@ -300,7 +344,7 @@ function DayCard({
           name="description"
           type="text"
           placeholder="Note (opzionale)"
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500 sm:col-span-2"
+          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500 sm:col-span-3"
         />
         <button type="submit" className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50">
           + Aggiungi attività

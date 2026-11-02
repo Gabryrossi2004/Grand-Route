@@ -49,12 +49,25 @@ create table if not exists public.clients (
 );
 
 -- ============================================================
--- 3. TRIPS: i viaggi/itinerari
+-- 3. TRIP_GROUPS: raggruppa più varianti/proposte dello stesso viaggio
+-- per lo stesso cliente (es. "Opzione economica" / "Opzione lusso")
+-- ============================================================
+create table if not exists public.trip_groups (
+  id uuid primary key default gen_random_uuid(),
+  owner_id uuid not null references public.profiles (id) on delete cascade,
+  client_id uuid references public.clients (id) on delete set null,
+  title text not null,
+  created_at timestamptz not null default now()
+);
+
+-- ============================================================
+-- 4. TRIPS: i viaggi/itinerari
 -- ============================================================
 create table if not exists public.trips (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references public.profiles (id) on delete cascade,
   client_id uuid references public.clients (id) on delete set null,
+  group_id uuid references public.trip_groups (id) on delete set null,
   title text not null,
   destination text,
   start_date date,
@@ -66,7 +79,7 @@ create table if not exists public.trips (
 );
 
 -- ============================================================
--- 4. TRIP_DAYS: i giorni di un viaggio
+-- 5. TRIP_DAYS: i giorni di un viaggio
 -- ============================================================
 create table if not exists public.trip_days (
   id uuid primary key default gen_random_uuid(),
@@ -77,7 +90,7 @@ create table if not exists public.trip_days (
 );
 
 -- ============================================================
--- 5. ACTIVITIES: le attività dentro ogni giorno
+-- 6. ACTIVITIES: le attività dentro ogni giorno
 -- ============================================================
 create table if not exists public.activities (
   id uuid primary key default gen_random_uuid(),
@@ -86,11 +99,13 @@ create table if not exists public.activities (
   title text not null,
   description text,
   location text,
+  activity_type text not null default 'altro'
+    check (activity_type in ('volo', 'alloggio', 'trasporto', 'ristorante', 'attivita', 'altro')),
   activity_order integer not null default 0
 );
 
 -- ============================================================
--- 6. DOCUMENTS: file allegati a un viaggio (biglietti, voucher, ecc.)
+-- 7. DOCUMENTS: file allegati a un viaggio (biglietti, voucher, ecc.)
 -- ============================================================
 create table if not exists public.documents (
   id uuid primary key default gen_random_uuid(),
@@ -102,7 +117,7 @@ create table if not exists public.documents (
 );
 
 -- ============================================================
--- 7. SICUREZZA (Row Level Security)
+-- 8. SICUREZZA (Row Level Security)
 -- Regola generale: ognuno vede e modifica SOLO le proprie righe.
 -- Eccezione: un viaggio pubblicato (is_published = true) è leggibile da chiunque
 -- abbia il link, perché serve per la pagina condivisibile col cliente.
@@ -110,6 +125,7 @@ create table if not exists public.documents (
 
 alter table public.profiles enable row level security;
 alter table public.clients enable row level security;
+alter table public.trip_groups enable row level security;
 alter table public.trips enable row level security;
 alter table public.trip_days enable row level security;
 alter table public.activities enable row level security;
@@ -138,6 +154,11 @@ create policy "profiles_select_public_trip_owner" on public.profiles
 -- CLIENTS: solo il proprietario
 drop policy if exists "clients_all_own" on public.clients;
 create policy "clients_all_own" on public.clients
+  for all using (auth.uid() = owner_id) with check (auth.uid() = owner_id);
+
+-- TRIP_GROUPS: solo il proprietario
+drop policy if exists "trip_groups_all_own" on public.trip_groups;
+create policy "trip_groups_all_own" on public.trip_groups
   for all using (auth.uid() = owner_id) with check (auth.uid() = owner_id);
 
 -- TRIPS: il proprietario fa tutto; chiunque può leggere un viaggio pubblicato
@@ -201,7 +222,7 @@ create policy "documents_all_own" on public.documents
   );
 
 -- ============================================================
--- 8. STORAGE: bucket per i file caricati (biglietti, voucher, loghi)
+-- 9. STORAGE: bucket per i file caricati (biglietti, voucher, loghi)
 -- Convenzione: ogni file viene salvato come "<id-utente>/<resto-del-percorso>"
 -- così la regola di sicurezza sa subito di chi è, senza bisogno di altre tabelle.
 -- ============================================================

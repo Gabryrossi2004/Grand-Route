@@ -3,6 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { generatePublicSlug } from "@/lib/slug";
+import type { Activity, TripDay } from "@/lib/types";
 
 export async function updateTripInfo(tripId: string, formData: FormData) {
   const supabase = await createClient();
@@ -64,6 +66,7 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
   const startTime = String(formData.get("start_time") ?? "") || null;
   const description = String(formData.get("description") ?? "").trim() || null;
   const location = String(formData.get("location") ?? "").trim() || null;
+  const activityType = String(formData.get("activity_type") ?? "altro");
 
   const { count } = await supabase
     .from("activities")
@@ -76,6 +79,7 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
     start_time: startTime,
     description,
     location,
+    activity_type: activityType,
     activity_order: count ?? 0,
   });
 
@@ -121,4 +125,103 @@ export async function deleteDocument(tripId: string, documentId: string, filePat
   await supabase.storage.from("trip-documents").remove([filePath]);
   await supabase.from("documents").delete().eq("id", documentId);
   revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function uploadCover(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const file = formData.get("cover");
+  if (!(file instanceof File) || file.size === 0) return;
+
+  const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${file.name}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("public-assets")
+    .upload(filePath, file, { contentType: file.type || undefined });
+
+  if (uploadError) return;
+
+  const { data } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+
+  await supabase.from("trips").update({ cover_image_url: data.publicUrl }).eq("id", tripId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard/trips");
+}
+
+export async function duplicateTripAsVariant(tripId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).single();
+  if (!trip) return;
+
+  let groupId: string | null = trip.group_id;
+  if (!groupId) {
+    const { data: group } = await supabase
+      .from("trip_groups")
+      .insert({ owner_id: user.id, client_id: trip.client_id, title: trip.title })
+      .select("id")
+      .single();
+    groupId = group?.id ?? null;
+    if (groupId) {
+      await supabase.from("trips").update({ group_id: groupId }).eq("id", tripId);
+    }
+  }
+
+  const { data: newTrip } = await supabase
+    .from("trips")
+    .insert({
+      owner_id: user.id,
+      client_id: trip.client_id,
+      group_id: groupId,
+      title: `${trip.title} (variante)`,
+      destination: trip.destination,
+      start_date: trip.start_date,
+      end_date: trip.end_date,
+      cover_image_url: trip.cover_image_url,
+      public_slug: generatePublicSlug(),
+      is_published: false,
+    })
+    .select("id")
+    .single();
+
+  if (!newTrip) return;
+
+  const { data: days } = await supabase
+    .from("trip_days")
+    .select("*, activities(*)")
+    .eq("trip_id", tripId)
+    .order("day_order", { ascending: true });
+
+  for (const day of (days as (TripDay & { activities: Activity[] })[]) || []) {
+    const { data: newDay } = await supabase
+      .from("trip_days")
+      .insert({ trip_id: newTrip.id, day_date: day.day_date, day_order: day.day_order, notes: day.notes })
+      .select("id")
+      .single();
+
+    if (newDay && day.activities?.length) {
+      await supabase.from("activities").insert(
+        day.activities.map((activity) => ({
+          trip_day_id: newDay.id,
+          start_time: activity.start_time,
+          title: activity.title,
+          description: activity.description,
+          location: activity.location,
+          activity_type: activity.activity_type,
+          activity_order: activity.activity_order,
+        })),
+      );
+    }
+  }
+
+  revalidatePath("/dashboard/trips");
+  redirect(`/dashboard/trips/${newTrip.id}`);
 }

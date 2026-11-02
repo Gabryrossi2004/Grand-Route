@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, Profile, TripDay } from "@/lib/types";
+import { activityTypes } from "@/lib/activityTypes";
 
 type DayWithActivities = TripDay & { activities: Activity[] };
 
@@ -45,8 +46,15 @@ export default async function PublicTripPage({
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header style={{ backgroundColor: brandColor }} className="px-4 py-10 text-white">
-        <div className="mx-auto max-w-3xl">
+      <header
+        className="relative flex min-h-[16rem] items-end bg-cover bg-center px-4 py-10 text-white"
+        style={{
+          backgroundColor: brandColor,
+          backgroundImage: trip.cover_image_url ? `url(${trip.cover_image_url})` : undefined,
+        }}
+      >
+        {trip.cover_image_url && <div className="absolute inset-0 bg-black/40" />}
+        <div className="relative mx-auto w-full max-w-3xl">
           {agencyName && <p className="mb-2 text-sm font-medium opacity-80">{agencyName}</p>}
           <h1 className="text-3xl font-semibold">{trip.title}</h1>
           {trip.destination && <p className="mt-1 text-white/90">{trip.destination}</p>}
@@ -72,21 +80,34 @@ export default async function PublicTripPage({
             return (
               <section key={day.id}>
                 <h2 className="mb-3 text-lg font-semibold capitalize text-slate-900">{dateLabel}</h2>
-                <ol className="flex flex-col gap-3 border-l-2 border-slate-200 pl-4">
-                  {day.activities.map((activity) => (
-                    <li key={activity.id}>
-                      <div className="flex items-baseline gap-2">
-                        {activity.start_time && (
-                          <span className="text-sm font-medium" style={{ color: brandColor }}>
-                            {activity.start_time.slice(0, 5)}
+                <ol className="flex flex-col gap-3">
+                  {day.activities.map((activity) => {
+                    const meta = activityTypes[activity.activity_type];
+                    return (
+                      <li
+                        key={activity.id}
+                        style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
+                        className="rounded-md border-l-4 px-4 py-2"
+                      >
+                        <div className="flex flex-wrap items-baseline gap-2">
+                          {activity.start_time && (
+                            <span className="text-sm font-medium" style={{ color: meta.color }}>
+                              {activity.start_time.slice(0, 5)}
+                            </span>
+                          )}
+                          <span className="font-medium text-slate-900">{activity.title}</span>
+                          <span
+                            style={{ color: meta.color, borderColor: meta.color }}
+                            className="rounded-full border px-2 py-0.5 text-xs font-medium"
+                          >
+                            {meta.label}
                           </span>
-                        )}
-                        <span className="font-medium text-slate-900">{activity.title}</span>
-                      </div>
-                      {activity.location && <p className="text-sm text-slate-500">{activity.location}</p>}
-                      {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
-                    </li>
-                  ))}
+                        </div>
+                        {activity.location && <p className="text-sm text-slate-500">{activity.location}</p>}
+                        {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+                      </li>
+                    );
+                  })}
                   {day.activities.length === 0 && (
                     <li className="text-sm text-slate-400">Nessuna attività pianificata.</li>
                   )}

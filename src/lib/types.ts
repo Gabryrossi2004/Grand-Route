@@ -21,10 +21,19 @@ export type Client = {
   created_at: string;
 };
 
+export type TripGroup = {
+  id: string;
+  owner_id: string;
+  client_id: string | null;
+  title: string;
+  created_at: string;
+};
+
 export type Trip = {
   id: string;
   owner_id: string;
   client_id: string | null;
+  group_id: string | null;
   title: string;
   destination: string | null;
   start_date: string | null;
@@ -43,6 +52,14 @@ export type TripDay = {
   notes: string | null;
 };
 
+export type ActivityType =
+  | "volo"
+  | "alloggio"
+  | "trasporto"
+  | "ristorante"
+  | "attivita"
+  | "altro";
+
 export type Activity = {
   id: string;
   trip_day_id: string;
@@ -50,6 +67,7 @@ export type Activity = {
   title: string;
   description: string | null;
   location: string | null;
+  activity_type: ActivityType;
   activity_order: number;
 };
 
