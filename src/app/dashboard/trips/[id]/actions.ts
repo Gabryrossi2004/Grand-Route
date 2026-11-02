@@ -283,6 +283,30 @@ export async function saveActivityToLibrary(tripId: string, activityId: string) 
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+export async function duplicateActivity(tripId: string, dayId: string, activityId: string) {
+  const supabase = await createClient();
+  const { data: activity } = await supabase.from("activities").select("*").eq("id", activityId).single();
+  if (!activity) return;
+
+  const { count } = await supabase
+    .from("activities")
+    .select("id", { count: "exact", head: true })
+    .eq("trip_day_id", dayId);
+
+  await supabase.from("activities").insert({
+    trip_day_id: dayId,
+    title: `${activity.title} (copia)`,
+    start_time: activity.start_time,
+    description: activity.description,
+    location: activity.location,
+    activity_type: activity.activity_type,
+    details: activity.details,
+    activity_order: count ?? 0,
+  });
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 export async function moveActivity(
   tripId: string,
   dayId: string,

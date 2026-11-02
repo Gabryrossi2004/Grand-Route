@@ -17,7 +17,19 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { BookmarkPlus, ChevronDown, FileText, GripVertical, Plus } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowUpDown,
+  BookmarkPlus,
+  ChevronDown,
+  ChevronUp,
+  Copy,
+  FileText,
+  GripVertical,
+  Pencil,
+  Plus,
+  Trash2,
+} from "lucide-react";
 import type { Activity, ActivityPhoto, ActivityTemplate, TripDay, TripDocument } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
@@ -32,6 +44,7 @@ import {
   deleteActivityPhoto,
   deleteDay,
   deleteDocument,
+  duplicateActivity,
   moveActivity,
   reorderActivities,
   saveActivityToLibrary,
@@ -67,6 +80,7 @@ export default function ItineraryEditor({
 }) {
   const [selectedDayId, setSelectedDayId] = useState<string | null>(days[0]?.id ?? null);
   const selectedDay = days.find((day) => day.id === selectedDayId) ?? days[0] ?? null;
+  const todayStr = new Date().toISOString().slice(0, 10);
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
@@ -74,6 +88,7 @@ export default function ItineraryEditor({
         {days.map((day, index) => {
           const types = Array.from(new Set(day.activities.map((a) => a.activity_type)));
           const isActive = day.id === selectedDay?.id;
+          const isToday = day.day_date === todayStr;
           return (
             <button
               key={day.id}
@@ -83,7 +98,14 @@ export default function ItineraryEditor({
                 isActive ? "border-blue-400 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"
               }`}
             >
-              <p className="text-xs uppercase text-slate-400">Giorno {index + 1}</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs uppercase text-slate-400">Giorno {index + 1}</p>
+                {isToday && (
+                  <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold text-white">
+                    Oggi
+                  </span>
+                )}
+              </div>
               <p className="text-sm font-medium capitalize text-slate-900">{dayLabel(day, index, true)}</p>
               {types.length > 0 && (
                 <div className="mt-1 flex gap-1">
@@ -148,6 +170,9 @@ function DayPanel({
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
   const [isAddingActivity, setIsAddingActivity] = useState(false);
+  const [pendingDeleteIds, setPendingDeleteIds] = useState<Set<string>>(new Set());
+  const deleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+  const deleteRemovedAt = useRef<Map<string, number>>(new Map());
 
   const sortedActivities = [...day.activities].sort((a, b) => a.activity_order - b.activity_order);
   const serverOrderKey = sortedActivities.map((a) => a.id).join(",");
@@ -166,6 +191,54 @@ function DayPanel({
   const orderedActivities = orderIds
     .map((id) => activityById.get(id))
     .filter((activity): activity is ActivityWithPhotos => Boolean(activity));
+
+  // Orari duplicati nello stesso giorno (non sappiamo le durate, ma almeno
+  // segnaliamo quando due attività iniziano esattamente alla stessa ora).
+  const startTimeCounts = new Map<string, number>();
+  for (const activity of orderedActivities) {
+    if (!activity.start_time) continue;
+    const key = activity.start_time.slice(0, 5);
+    startTimeCounts.set(key, (startTimeCounts.get(key) ?? 0) + 1);
+  }
+
+  function requestDeleteActivity(activityId: string) {
+    const index = orderIds.indexOf(activityId);
+    if (index === -1) return;
+    deleteRemovedAt.current.set(activityId, index);
+    setOrderIds((prev) => prev.filter((id) => id !== activityId));
+    setPendingDeleteIds((prev) => new Set(prev).add(activityId));
+
+    const timer = setTimeout(() => {
+      deleteTimers.current.delete(activityId);
+      deleteRemovedAt.current.delete(activityId);
+      setPendingDeleteIds((prev) => {
+        const next = new Set(prev);
+        next.delete(activityId);
+        return next;
+      });
+      deleteActivity(tripId, activityId);
+    }, 5000);
+    deleteTimers.current.set(activityId, timer);
+  }
+
+  function undoDeleteActivity(activityId: string) {
+    const timer = deleteTimers.current.get(activityId);
+    if (timer) clearTimeout(timer);
+    deleteTimers.current.delete(activityId);
+
+    const index = deleteRemovedAt.current.get(activityId) ?? 0;
+    deleteRemovedAt.current.delete(activityId);
+    setOrderIds((prev) => {
+      const next = [...prev];
+      next.splice(index, 0, activityId);
+      return next;
+    });
+    setPendingDeleteIds((prev) => {
+      const next = new Set(prev);
+      next.delete(activityId);
+      return next;
+    });
+  }
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
 
@@ -202,14 +275,14 @@ function DayPanel({
         <div className="flex items-center gap-3">
           {sortedActivities.length > 1 && (
             <form action={sortActivitiesByTime.bind(null, tripId, day.id)}>
-              <button type="submit" className="text-xs text-slate-500 hover:underline">
-                Ordina per orario
+              <button type="submit" className="flex items-center gap-1 text-xs text-slate-500 hover:underline">
+                <ArrowUpDown size={12} /> Ordina per orario
               </button>
             </form>
           )}
           <form action={deleteDay.bind(null, tripId, day.id)}>
-            <button type="submit" className="text-xs text-red-500 hover:underline">
-              Elimina giorno
+            <button type="submit" className="flex items-center gap-1 text-xs text-red-500 hover:underline">
+              <Trash2 size={12} /> Elimina giorno
             </button>
           </form>
           <button
@@ -235,11 +308,13 @@ function DayPanel({
                 dayId={day.id}
                 templates={templates}
                 documents={documentsByActivity[activity.id] ?? []}
+                hasTimeClash={Boolean(activity.start_time && (startTimeCounts.get(activity.start_time.slice(0, 5)) ?? 0) > 1)}
                 isEditing={editingActivityId === activity.id}
                 isExpanded={!collapsedIds.has(activity.id)}
                 onToggleExpand={() => toggleCollapsed(activity.id)}
                 onEdit={() => setEditingActivityId(activity.id)}
                 onCancelEdit={() => setEditingActivityId(null)}
+                onDelete={() => requestDeleteActivity(activity.id)}
               />
             ))}
           </ul>
@@ -256,6 +331,28 @@ function DayPanel({
           />
         </Modal>
       )}
+
+      {pendingDeleteIds.size > 0 && (
+        <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-col gap-2">
+          {Array.from(pendingDeleteIds).map((id) => (
+            <div
+              key={id}
+              className="flex items-center gap-3 rounded-lg bg-slate-900 px-4 py-2.5 text-sm text-white shadow-lg"
+            >
+              <span>
+                &quot;{activityById.get(id)?.title ?? "Attività"}&quot; eliminata
+              </span>
+              <button
+                type="button"
+                onClick={() => undoDeleteActivity(id)}
+                className="font-semibold text-blue-300 hover:text-blue-200"
+              >
+                Annulla
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -268,11 +365,13 @@ function SortableActivityRow({
   dayId,
   templates,
   documents,
+  hasTimeClash,
   isEditing,
   isExpanded,
   onToggleExpand,
   onEdit,
   onCancelEdit,
+  onDelete,
 }: {
   activity: ActivityWithPhotos;
   index: number;
@@ -281,11 +380,13 @@ function SortableActivityRow({
   dayId: string;
   templates: ActivityTemplate[];
   documents: ActivityDocument[];
+  hasTimeClash: boolean;
   isEditing: boolean;
   isExpanded: boolean;
   onToggleExpand: () => void;
   onEdit: () => void;
   onCancelEdit: () => void;
+  onDelete: () => void;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: activity.id,
@@ -298,40 +399,36 @@ function SortableActivityRow({
     opacity: isDragging ? 0.5 : 1,
   };
 
-  if (isEditing) {
-    return (
-      <li
-        ref={setNodeRef}
-        style={style}
-        className="relative z-10 scale-[1.02] rounded-lg border border-blue-200 bg-blue-50/60 p-3 shadow-xl ring-2 ring-blue-200"
-      >
-        <ActivityForm
-          action={updateActivity.bind(null, tripId, activity.id)}
-          templates={templates}
-          initialActivity={activity}
-          onCancel={onCancelEdit}
-        />
-      </li>
-    );
-  }
+  const editModal = isEditing && (
+    <Modal title={`Modifica: ${activity.title}`} onClose={onCancelEdit} wide>
+      <ActivityForm
+        action={updateActivity.bind(null, tripId, activity.id)}
+        templates={templates}
+        initialActivity={activity}
+        onCancel={onCancelEdit}
+      />
+    </Modal>
+  );
 
   const meta = activityTypes[activity.activity_type];
   const Icon = meta.icon;
   const detailEntries = Object.entries(activity.details || {});
 
   return (
-    <li
-      ref={setNodeRef}
-      style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
-      className="rounded-md border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
-    >
+    <>
+      {editModal}
+      <li
+        ref={setNodeRef}
+        style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
+        className="group rounded-md border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
+      >
       <div className="flex items-center gap-1 px-1">
         <button
           type="button"
           {...attributes}
           {...listeners}
           aria-label="Trascina per riordinare"
-          className="shrink-0 cursor-grab touch-none p-1 text-slate-300 hover:text-slate-500 active:cursor-grabbing"
+          className="shrink-0 cursor-grab touch-none p-1 text-slate-300 opacity-0 transition-opacity hover:text-slate-500 focus:opacity-100 group-hover:opacity-100 active:cursor-grabbing"
         >
           <GripVertical size={16} />
         </button>
@@ -351,6 +448,11 @@ function SortableActivityRow({
           <span className="min-w-0 flex-1 text-sm font-medium text-slate-900">
             {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
             {activity.title}
+            {hasTimeClash && (
+              <span title="Stesso orario di un'altra attività" className="ml-1.5 inline-block align-middle">
+                <AlertTriangle size={13} className="text-amber-500" />
+              </span>
+            )}
           </span>
           <ChevronDown
             size={16}
@@ -396,35 +498,54 @@ function SortableActivityRow({
                     title="Salva in libreria"
                     className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
                   >
-                    <BookmarkPlus size={13} /> Salva in libreria
+                    <BookmarkPlus size={13} />
                   </button>
                 </form>
-                <button type="button" onClick={onEdit} className="text-xs text-slate-500 hover:underline">
-                  Modifica
+                <form action={duplicateActivity.bind(null, tripId, dayId, activity.id)}>
+                  <button
+                    type="submit"
+                    title="Duplica attività"
+                    className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                  >
+                    <Copy size={13} />
+                  </button>
+                </form>
+                <button
+                  type="button"
+                  onClick={onEdit}
+                  title="Modifica"
+                  className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                >
+                  <Pencil size={13} />
                 </button>
-                <form action={deleteActivity.bind(null, tripId, activity.id)}>
-                  <button type="submit" className="text-xs text-red-500 hover:underline">
-                    Elimina
-                  </button>
-                </form>
+                <button
+                  type="button"
+                  onClick={onDelete}
+                  title="Elimina"
+                  className="flex items-center gap-1 text-xs text-red-500 hover:underline"
+                >
+                  <Trash2 size={13} />
+                </button>
               </div>
               <div className="flex gap-1">
                 <form action={moveActivity.bind(null, tripId, dayId, activity.id, "up")}>
                   <button
                     type="submit"
                     disabled={index === 0}
-                    className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                    title="Sposta su"
+                    className="rounded border border-slate-300 p-1 text-slate-500 hover:bg-slate-100 disabled:opacity-30"
                   >
-                    ▲
+                    <ChevronUp size={13} />
                   </button>
                 </form>
                 <form action={moveActivity.bind(null, tripId, dayId, activity.id, "down")}>
                   <button
                     type="submit"
                     disabled={index === total - 1}
-                    className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                    title="Sposta giù"
+                    className="rounded border border-slate-300 p-1 text-slate-500 hover:bg-slate-100 disabled:opacity-30"
                   >
-                    ▼
+                    <ChevronDown size={13} />
                   </button>
                 </form>
               </div>
@@ -482,8 +603,12 @@ function SortableActivityRow({
                     )}
                   </span>
                   <form action={deleteDocument.bind(null, tripId, document.id, document.file_path)}>
-                    <button type="submit" className="shrink-0 text-xs text-red-500 hover:underline">
-                      Elimina
+                    <button
+                      type="submit"
+                      title="Elimina documento"
+                      className="flex shrink-0 items-center text-xs text-red-500 hover:underline"
+                    >
+                      <Trash2 size={13} />
                     </button>
                   </form>
                 </li>
@@ -505,6 +630,7 @@ function SortableActivityRow({
           </details>
         </div>
       )}
-    </li>
+      </li>
+    </>
   );
 }

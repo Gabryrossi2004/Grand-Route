@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
+import { Check, Plus, X } from "lucide-react";
 import type { Activity, ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
 import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
@@ -183,17 +184,18 @@ export default function ActivityForm({
             type="button"
             onClick={onCancel}
             disabled={pending}
-            className="w-fit rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60"
+            className="flex w-fit items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60"
           >
-            Annulla
+            <X size={15} /> Annulla
           </button>
         )}
         <button
           type="submit"
           disabled={pending}
-          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+          className="flex w-fit items-center gap-1.5 rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
         >
-          {pending ? "Salvataggio…" : isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
+          {!pending && (isEdit ? <Check size={15} /> : <Plus size={15} />)}
+          {pending ? "Salvataggio…" : isEdit ? "Salva modifiche" : "Aggiungi attività"}
         </button>
       </div>
     </form>
