@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
+import { richTextClassName, toSafeHtml } from "@/lib/richText";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -84,13 +86,20 @@ export default async function PublicTripPage({
                 <ol className="flex flex-col gap-3">
                   {day.activities.map((activity) => {
                     const meta = activityTypes[activity.activity_type];
+                    const Icon = meta.icon;
                     return (
                       <li
                         key={activity.id}
                         style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
                         className="rounded-md border-l-4 px-4 py-2"
                       >
-                        <div className="flex flex-wrap items-baseline gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span
+                            style={{ backgroundColor: meta.color }}
+                            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white"
+                          >
+                            <Icon size={13} />
+                          </span>
                           {activity.start_time && (
                             <span className="text-sm font-medium" style={{ color: meta.color }}>
                               {activity.start_time.slice(0, 5)}
@@ -104,8 +113,13 @@ export default async function PublicTripPage({
                             {meta.label}
                           </span>
                         </div>
-                        {activity.location && <p className="text-sm text-slate-500">{activity.location}</p>}
-                        {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
+                        {activity.location && <p className="mt-1 text-sm text-slate-500">{activity.location}</p>}
+                        {activity.description && (
+                          <div
+                            className={richTextClassName + " mt-1"}
+                            dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
+                          />
+                        )}
                         {Object.entries(activity.details || {}).length > 0 && (
                           <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
                             {Object.entries(activity.details).map(([key, value]) => (

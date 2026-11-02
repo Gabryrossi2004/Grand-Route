@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import type { Activity, ActivityPhoto, ActivityTemplate, TripDay } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
+import { richTextClassName, toSafeHtml } from "@/lib/richText";
+import { sanitizeHtml } from "@/lib/sanitize";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ActivityForm from "@/components/ActivityForm";
 import {
@@ -111,7 +114,20 @@ function DayPanel({
   templates: ActivityTemplate[];
 }) {
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
+  const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
   const sortedActivities = [...day.activities].sort((a, b) => a.activity_order - b.activity_order);
+
+  function toggleCollapsed(activityId: string) {
+    setCollapsedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(activityId)) {
+        next.delete(activityId);
+      } else {
+        next.add(activityId);
+      }
+      return next;
+    });
+  }
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5">
@@ -149,111 +165,139 @@ function DayPanel({
           }
 
           const meta = activityTypes[activity.activity_type];
+          const Icon = meta.icon;
           const detailEntries = Object.entries(activity.details || {});
+          const isExpanded = !collapsedIds.has(activity.id);
 
           return (
             <li
               key={activity.id}
               style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
-              className="rounded-md border-l-4 px-3 py-2"
+              className="rounded-md border-l-4"
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <p className="text-sm font-medium text-slate-900">
-                    {activity.start_time && (
-                      <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>
-                    )}
-                    {activity.title}
-                    <span
-                      style={{ color: meta.color, borderColor: meta.color }}
-                      className="ml-2 rounded-full border px-2 py-0.5 text-xs font-medium"
-                    >
-                      {meta.label}
-                    </span>
-                  </p>
-                  {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
-                  {activity.description && <p className="mt-1 text-sm text-slate-600">{activity.description}</p>}
-                  {detailEntries.length > 0 && (
-                    <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
-                      {detailEntries.map(([key, value]) => (
-                        <div key={key} className="flex gap-1">
-                          <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
-                          <dd>{value}</dd>
+              <button
+                type="button"
+                onClick={() => toggleCollapsed(activity.id)}
+                className="flex w-full items-center gap-2 px-3 py-2 text-left"
+              >
+                <span
+                  style={{ backgroundColor: meta.color }}
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
+                >
+                  <Icon size={14} />
+                </span>
+                <span className="min-w-0 flex-1 text-sm font-medium text-slate-900">
+                  {activity.start_time && (
+                    <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>
+                  )}
+                  {activity.title}
+                </span>
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 text-slate-400 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isExpanded && (
+                <div className="px-3 pb-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <span
+                        style={{ color: meta.color, borderColor: meta.color }}
+                        className="mb-1 inline-block rounded-full border px-2 py-0.5 text-xs font-medium"
+                      >
+                        {meta.label}
+                      </span>
+                      {activity.location && <p className="text-xs text-slate-500">{activity.location}</p>}
+                      {activity.description && (
+                        <div
+                          className={richTextClassName + " mt-1"}
+                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
+                        />
+                      )}
+                      {detailEntries.length > 0 && (
+                        <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
+                          {detailEntries.map(([key, value]) => (
+                            <div key={key} className="flex gap-1">
+                              <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
+                              <dd>{value}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      )}
+                    </div>
+
+                    <div className="flex shrink-0 flex-col items-end gap-1">
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setEditingActivityId(activity.id)}
+                          className="text-xs text-slate-500 hover:underline"
+                        >
+                          Modifica
+                        </button>
+                        <form action={deleteActivity.bind(null, tripId, activity.id)}>
+                          <button type="submit" className="text-xs text-red-500 hover:underline">
+                            Elimina
+                          </button>
+                        </form>
+                      </div>
+                      <div className="flex gap-1">
+                        <form action={moveActivity.bind(null, tripId, day.id, activity.id, "up")}>
+                          <button
+                            type="submit"
+                            disabled={index === 0}
+                            className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                          >
+                            ▲
+                          </button>
+                        </form>
+                        <form action={moveActivity.bind(null, tripId, day.id, activity.id, "down")}>
+                          <button
+                            type="submit"
+                            disabled={index === sortedActivities.length - 1}
+                            className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
+                          >
+                            ▼
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  {activity.activity_photos && activity.activity_photos.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {activity.activity_photos.map((photo) => (
+                        <div key={photo.id} className="group relative">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={photo.url} alt="" className="h-16 w-16 rounded-md object-cover" />
+                          <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
+                            <button
+                              type="submit"
+                              className="absolute -right-1 -top-1 hidden h-5 w-5 rounded-full bg-red-600 text-xs text-white group-hover:block"
+                            >
+                              ×
+                            </button>
+                          </form>
                         </div>
                       ))}
-                    </dl>
-                  )}
-                </div>
-
-                <div className="flex shrink-0 flex-col items-end gap-1">
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setEditingActivityId(activity.id)}
-                      className="text-xs text-slate-500 hover:underline"
-                    >
-                      Modifica
-                    </button>
-                    <form action={deleteActivity.bind(null, tripId, activity.id)}>
-                      <button type="submit" className="text-xs text-red-500 hover:underline">
-                        Elimina
-                      </button>
-                    </form>
-                  </div>
-                  <div className="flex gap-1">
-                    <form action={moveActivity.bind(null, tripId, day.id, activity.id, "up")}>
-                      <button
-                        type="submit"
-                        disabled={index === 0}
-                        className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
-                      >
-                        ▲
-                      </button>
-                    </form>
-                    <form action={moveActivity.bind(null, tripId, day.id, activity.id, "down")}>
-                      <button
-                        type="submit"
-                        disabled={index === sortedActivities.length - 1}
-                        className="rounded border border-slate-300 px-1.5 text-xs text-slate-500 hover:bg-slate-100 disabled:opacity-30"
-                      >
-                        ▼
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              {activity.activity_photos && activity.activity_photos.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {activity.activity_photos.map((photo) => (
-                    <div key={photo.id} className="group relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={photo.url} alt="" className="h-16 w-16 rounded-md object-cover" />
-                      <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
-                        <button
-                          type="submit"
-                          className="absolute -right-1 -top-1 hidden h-5 w-5 rounded-full bg-red-600 text-xs text-white group-hover:block"
-                        >
-                          ×
-                        </button>
-                      </form>
                     </div>
-                  ))}
+                  )}
+
+                  <details className="mt-2">
+                    <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">
+                      + Aggiungi foto
+                    </summary>
+                    <form
+                      action={uploadActivityPhoto.bind(null, tripId, activity.id)}
+                      encType="multipart/form-data"
+                      className="mt-2 max-w-xs"
+                    >
+                      <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" />
+                    </form>
+                  </details>
                 </div>
               )}
-
-              <details className="mt-2">
-                <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">
-                  + Aggiungi foto
-                </summary>
-                <form
-                  action={uploadActivityPhoto.bind(null, tripId, activity.id)}
-                  encType="multipart/form-data"
-                  className="mt-2 max-w-xs"
-                >
-                  <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" />
-                </form>
-              </details>
             </li>
           );
         })}

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { Activity, ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
 import { activityTypeOptions, detailFields } from "@/lib/activityTypes";
+import RichTextEditor from "@/components/RichTextEditor";
+import { toSafeHtml } from "@/lib/richText";
 
 export default function ActivityForm({
   action,
@@ -20,7 +22,7 @@ export default function ActivityForm({
   const [activityType, setActivityType] = useState<ActivityType>(initialActivity?.activity_type ?? "altro");
   const [title, setTitle] = useState(initialActivity?.title ?? "");
   const [location, setLocation] = useState(initialActivity?.location ?? "");
-  const [description, setDescription] = useState(initialActivity?.description ?? "");
+  const [description, setDescription] = useState(toSafeHtml(initialActivity?.description));
   const [startTime, setStartTime] = useState(initialActivity?.start_time?.slice(0, 5) ?? "");
   const [details, setDetails] = useState<ActivityDetails>(initialActivity?.details ?? {});
   const [templateId, setTemplateId] = useState("");
@@ -42,7 +44,7 @@ export default function ActivityForm({
     if (!template) return;
     setTitle(template.title);
     setLocation(template.location ?? "");
-    setDescription(template.description ?? "");
+    setDescription(toSafeHtml(template.description));
     setDetails(template.details ?? {});
   }
 
@@ -131,14 +133,8 @@ export default function ActivityForm({
         placeholder="Luogo (opzionale)"
         className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
       />
-      <textarea
-        name="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Descrizione (opzionale)"
-        rows={2}
-        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-      />
+      <input type="hidden" name="description" value={description} />
+      <RichTextEditor value={description} onChange={setDescription} placeholder="Descrizione (opzionale)" />
 
       {fields.length > 0 && (
         <div className="grid gap-2 rounded-md bg-slate-50 p-3 sm:grid-cols-2">
