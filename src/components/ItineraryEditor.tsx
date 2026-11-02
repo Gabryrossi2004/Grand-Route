@@ -17,7 +17,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { ChevronDown, FileText, GripVertical, Plus } from "lucide-react";
+import { BookmarkPlus, ChevronDown, FileText, GripVertical, Plus } from "lucide-react";
 import type { Activity, ActivityPhoto, ActivityTemplate, TripDay, TripDocument } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
@@ -34,6 +34,7 @@ import {
   deleteDocument,
   moveActivity,
   reorderActivities,
+  saveActivityToLibrary,
   sortActivitiesByTime,
   updateActivity,
   uploadActivityPhoto,
@@ -299,7 +300,11 @@ function SortableActivityRow({
 
   if (isEditing) {
     return (
-      <li ref={setNodeRef} style={style} className="rounded-md border border-blue-200 bg-blue-50/40 p-3">
+      <li
+        ref={setNodeRef}
+        style={style}
+        className="relative z-10 scale-[1.02] rounded-lg border border-blue-200 bg-blue-50/60 p-3 shadow-xl ring-2 ring-blue-200"
+      >
         <ActivityForm
           action={updateActivity.bind(null, tripId, activity.id)}
           templates={templates}
@@ -318,7 +323,7 @@ function SortableActivityRow({
     <li
       ref={setNodeRef}
       style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
-      className="rounded-md border-l-4"
+      className="rounded-md border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-center gap-1 px-1">
         <button
@@ -384,7 +389,16 @@ function SortableActivityRow({
             </div>
 
             <div className="flex shrink-0 flex-col items-end gap-1">
-              <div className="flex gap-2">
+              <div className="flex items-center gap-2">
+                <form action={saveActivityToLibrary.bind(null, tripId, activity.id)}>
+                  <button
+                    type="submit"
+                    title="Salva in libreria"
+                    className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+                  >
+                    <BookmarkPlus size={13} /> Salva in libreria
+                  </button>
+                </form>
                 <button type="button" onClick={onEdit} className="text-xs text-slate-500 hover:underline">
                   Modifica
                 </button>

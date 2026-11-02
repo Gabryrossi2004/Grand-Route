@@ -28,7 +28,6 @@ export default function ActivityForm({
   const [startTime, setStartTime] = useState(initialActivity?.start_time?.slice(0, 5) ?? "");
   const [details, setDetails] = useState<ActivityDetails>(initialActivity?.details ?? {});
   const [templateId, setTemplateId] = useState("");
-  const [saveToLibrary, setSaveToLibrary] = useState(false);
 
   const availableTemplates = templates.filter((t) => t.activity_type === activityType);
   const fields = detailFields[activityType];
@@ -58,7 +57,6 @@ export default function ActivityForm({
     setStartTime("");
     setDetails({});
     setTemplateId("");
-    setSaveToLibrary(false);
     formEl?.reset();
   }
 
@@ -179,26 +177,7 @@ export default function ActivityForm({
         </div>
       )}
 
-      {!isEdit && (
-        <label className="flex items-center gap-2 text-xs text-slate-600">
-          <input
-            type="checkbox"
-            name="save_to_library"
-            checked={saveToLibrary}
-            onChange={(e) => setSaveToLibrary(e.target.checked)}
-          />
-          Salva questa attività nella libreria per riusarla in altri viaggi
-        </label>
-      )}
-
-      <div className="flex gap-2">
-        <button
-          type="submit"
-          disabled={pending}
-          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
-        >
-          {pending ? "Salvataggio…" : isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
-        </button>
+      <div className="flex justify-end gap-2">
         {isEdit && (
           <button
             type="button"
@@ -209,6 +188,13 @@ export default function ActivityForm({
             Annulla
           </button>
         )}
+        <button
+          type="submit"
+          disabled={pending}
+          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+        >
+          {pending ? "Salvataggio…" : isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
+        </button>
       </div>
     </form>
   );

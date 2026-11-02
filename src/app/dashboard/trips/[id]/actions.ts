@@ -196,9 +196,6 @@ function parseDetails(formData: FormData): Record<string, string> {
 
 export async function addActivity(tripId: string, dayId: string, formData: FormData) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
 
   const title = String(formData.get("title") ?? "").trim();
   if (!title) return;
@@ -208,7 +205,6 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
   const location = String(formData.get("location") ?? "").trim() || null;
   const activityType = String(formData.get("activity_type") ?? "altro");
   const details = parseDetails(formData);
-  const saveToLibrary = formData.get("save_to_library") === "on";
 
   const { count } = await supabase
     .from("activities")
@@ -225,17 +221,6 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
     details,
     activity_order: count ?? 0,
   });
-
-  if (saveToLibrary && user) {
-    await supabase.from("activity_templates").insert({
-      owner_id: user.id,
-      activity_type: activityType,
-      title,
-      description,
-      location,
-      details,
-    });
-  }
 
   if (activityType === "alloggio") {
     await handleLodgingCheckout(supabase, tripId, dayId, title, details);
@@ -272,6 +257,28 @@ export async function updateActivity(tripId: string, activityId: string, formDat
       details,
     })
     .eq("id", activityId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function saveActivityToLibrary(tripId: string, activityId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const { data: activity } = await supabase.from("activities").select("*").eq("id", activityId).single();
+  if (!activity) return;
+
+  await supabase.from("activity_templates").insert({
+    owner_id: user.id,
+    activity_type: activity.activity_type,
+    title: activity.title,
+    description: activity.description,
+    location: activity.location,
+    details: activity.details,
+  });
 
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
