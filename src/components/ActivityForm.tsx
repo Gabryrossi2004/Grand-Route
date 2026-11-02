@@ -1,21 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import type { ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
+import type { Activity, ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
 import { activityTypeOptions, detailFields } from "@/lib/activityTypes";
 
 export default function ActivityForm({
   action,
   templates,
+  initialActivity,
+  onCancel,
 }: {
   action: (formData: FormData) => void;
   templates: ActivityTemplate[];
+  initialActivity?: Activity;
+  onCancel?: () => void;
 }) {
-  const [activityType, setActivityType] = useState<ActivityType>("altro");
-  const [title, setTitle] = useState("");
-  const [location, setLocation] = useState("");
-  const [description, setDescription] = useState("");
-  const [details, setDetails] = useState<ActivityDetails>({});
+  const isEdit = Boolean(initialActivity);
+
+  const [activityType, setActivityType] = useState<ActivityType>(initialActivity?.activity_type ?? "altro");
+  const [title, setTitle] = useState(initialActivity?.title ?? "");
+  const [location, setLocation] = useState(initialActivity?.location ?? "");
+  const [description, setDescription] = useState(initialActivity?.description ?? "");
+  const [startTime, setStartTime] = useState(initialActivity?.start_time?.slice(0, 5) ?? "");
+  const [details, setDetails] = useState<ActivityDetails>(initialActivity?.details ?? {});
   const [templateId, setTemplateId] = useState("");
   const [saveToLibrary, setSaveToLibrary] = useState(false);
 
@@ -44,6 +51,7 @@ export default function ActivityForm({
     setTitle("");
     setLocation("");
     setDescription("");
+    setStartTime("");
     setDetails({});
     setTemplateId("");
     setSaveToLibrary(false);
@@ -55,7 +63,11 @@ export default function ActivityForm({
       action={action}
       onSubmit={(e) => {
         const formEl = e.currentTarget;
-        setTimeout(() => resetAll(formEl), 0);
+        if (isEdit) {
+          onCancel?.();
+        } else {
+          setTimeout(() => resetAll(formEl), 0);
+        }
       }}
       className="flex flex-col gap-2 border-t border-slate-100 pt-3"
     >
@@ -65,6 +77,8 @@ export default function ActivityForm({
         <input
           name="start_time"
           type="time"
+          value={startTime}
+          onChange={(e) => setStartTime(e.target.value)}
           className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
         />
         <select
@@ -79,24 +93,25 @@ export default function ActivityForm({
             </option>
           ))}
         </select>
-        {availableTemplates.length > 0 ? (
-          <select
-            value={templateId}
-            onChange={(e) => applyTemplate(e.target.value)}
-            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-          >
-            <option value="">Scrivi da zero…</option>
-            {availableTemplates.map((template) => (
-              <option key={template.id} value={template.id}>
-                Dalla libreria: {template.title}
-              </option>
-            ))}
-          </select>
-        ) : (
-          <span className="flex items-center text-xs text-slate-400">
-            Nessuna attività di questo tipo in libreria
-          </span>
-        )}
+        {!isEdit &&
+          (availableTemplates.length > 0 ? (
+            <select
+              value={templateId}
+              onChange={(e) => applyTemplate(e.target.value)}
+              className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+            >
+              <option value="">Scrivi da zero…</option>
+              {availableTemplates.map((template) => (
+                <option key={template.id} value={template.id}>
+                  Dalla libreria: {template.title}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <span className="flex items-center text-xs text-slate-400">
+              Nessuna attività di questo tipo in libreria
+            </span>
+          ))}
       </div>
 
       <input
@@ -156,22 +171,35 @@ export default function ActivityForm({
         </div>
       )}
 
-      <label className="flex items-center gap-2 text-xs text-slate-600">
-        <input
-          type="checkbox"
-          name="save_to_library"
-          checked={saveToLibrary}
-          onChange={(e) => setSaveToLibrary(e.target.checked)}
-        />
-        Salva questa attività nella libreria per riusarla in altri viaggi
-      </label>
+      {!isEdit && (
+        <label className="flex items-center gap-2 text-xs text-slate-600">
+          <input
+            type="checkbox"
+            name="save_to_library"
+            checked={saveToLibrary}
+            onChange={(e) => setSaveToLibrary(e.target.checked)}
+          />
+          Salva questa attività nella libreria per riusarla in altri viaggi
+        </label>
+      )}
 
-      <button
-        type="submit"
-        className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
-      >
-        + Aggiungi attività
-      </button>
+      <div className="flex gap-2">
+        <button
+          type="submit"
+          className="w-fit rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+        >
+          {isEdit ? "Salva modifiche" : "+ Aggiungi attività"}
+        </button>
+        {isEdit && (
+          <button
+            type="button"
+            onClick={onCancel}
+            className="w-fit rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50"
+          >
+            Annulla
+          </button>
+        )}
+      </div>
     </form>
   );
 }

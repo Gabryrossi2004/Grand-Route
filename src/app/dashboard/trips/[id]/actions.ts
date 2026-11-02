@@ -124,6 +124,84 @@ export async function deleteActivity(tripId: string, activityId: string) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+export async function updateActivity(tripId: string, activityId: string, formData: FormData) {
+  const supabase = await createClient();
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) return;
+
+  const startTime = String(formData.get("start_time") ?? "") || null;
+  const description = String(formData.get("description") ?? "").trim() || null;
+  const location = String(formData.get("location") ?? "").trim() || null;
+  const activityType = String(formData.get("activity_type") ?? "altro");
+  const details = parseDetails(formData);
+
+  await supabase
+    .from("activities")
+    .update({
+      title,
+      start_time: startTime,
+      description,
+      location,
+      activity_type: activityType,
+      details,
+    })
+    .eq("id", activityId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function moveActivity(
+  tripId: string,
+  dayId: string,
+  activityId: string,
+  direction: "up" | "down",
+) {
+  const supabase = await createClient();
+  const { data: activities } = await supabase
+    .from("activities")
+    .select("id, activity_order")
+    .eq("trip_day_id", dayId)
+    .order("activity_order", { ascending: true });
+
+  if (!activities) return;
+  const index = activities.findIndex((a) => a.id === activityId);
+  const swapIndex = direction === "up" ? index - 1 : index + 1;
+  if (index === -1 || swapIndex < 0 || swapIndex >= activities.length) return;
+
+  const current = activities[index];
+  const swapWith = activities[swapIndex];
+
+  await supabase.from("activities").update({ activity_order: swapWith.activity_order }).eq("id", current.id);
+  await supabase.from("activities").update({ activity_order: current.activity_order }).eq("id", swapWith.id);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function sortActivitiesByTime(tripId: string, dayId: string) {
+  const supabase = await createClient();
+  const { data: activities } = await supabase
+    .from("activities")
+    .select("id, start_time")
+    .eq("trip_day_id", dayId);
+
+  if (!activities) return;
+
+  const sorted = [...activities].sort((a, b) => {
+    if (!a.start_time && !b.start_time) return 0;
+    if (!a.start_time) return 1;
+    if (!b.start_time) return -1;
+    return a.start_time.localeCompare(b.start_time);
+  });
+
+  await Promise.all(
+    sorted.map((activity, index) =>
+      supabase.from("activities").update({ activity_order: index }).eq("id", activity.id),
+    ),
+  );
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 export async function uploadDocument(tripId: string, formData: FormData) {
   const supabase = await createClient();
   const {
