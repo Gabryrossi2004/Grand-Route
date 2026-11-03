@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
+import LibraryPanel from "@/components/LibraryPanel";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
@@ -100,12 +101,17 @@ export default async function TripDetailPage({
 
       <section>
         <h2 className="mb-4 text-lg font-semibold text-slate-900">Itinerario</h2>
-        <ItineraryEditor
-          tripId={id}
-          days={orderedDays}
-          templates={(templates as ActivityTemplate[]) || []}
-          documentsByActivity={documentsByActivity}
-        />
+        <div className="flex items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <ItineraryEditor
+              tripId={id}
+              days={orderedDays}
+              templates={(templates as ActivityTemplate[]) || []}
+              documentsByActivity={documentsByActivity}
+            />
+          </div>
+          <LibraryPanel templates={(templates as ActivityTemplate[]) || []} />
+        </div>
       </section>
 
       <section>

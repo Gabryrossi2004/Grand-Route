@@ -29,7 +29,6 @@ export default async function DashboardLayout({
   const navItems = [
     { href: "/dashboard/trips", label: "Viaggi" },
     { href: "/dashboard/clients", label: "Clienti" },
-    { href: "/dashboard/library", label: "Libreria" },
     { href: "/dashboard/settings", label: "Impostazioni" },
   ];
 

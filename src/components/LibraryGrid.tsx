@@ -6,7 +6,13 @@ import type { ActivityTemplate } from "@/lib/types";
 import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
 import { deleteTemplate } from "@/app/dashboard/library/actions";
 
-export default function LibraryGrid({ templates }: { templates: ActivityTemplate[] }) {
+export default function LibraryGrid({
+  templates,
+  compact = false,
+}: {
+  templates: ActivityTemplate[];
+  compact?: boolean;
+}) {
   const [query, setQuery] = useState("");
 
   const filtered = templates.filter((template) => {
@@ -36,7 +42,7 @@ export default function LibraryGrid({ templates }: { templates: ActivityTemplate
       ) : filtered.length === 0 ? (
         <p className="text-sm text-slate-400">Nessun risultato per &quot;{query}&quot;.</p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-4 ${compact ? "grid-cols-1" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
           {filtered.map((template) => {
             const meta = activityTypes[template.activity_type];
             const Icon = meta.icon;
