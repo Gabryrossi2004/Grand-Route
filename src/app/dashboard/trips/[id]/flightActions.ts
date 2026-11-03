@@ -107,7 +107,20 @@ export async function searchFlight(
     // decollato) e una con tutti gli orari completi. Teniamo solo quelle
     // complete, così non si vedono doppioni confusi con l'orario mancante.
     const complete = allResults.filter((r) => r.departureTime && r.arrivalTime);
-    const data = complete.length > 0 ? complete : allResults;
+    const candidates = complete.length > 0 ? complete : allResults;
+
+    // A volte anche tra i risultati "completi" l'API restituisce due righe
+    // praticamente identiche per lo stesso volo (gli orari esatti possono
+    // variare di qualche minuto perché i dati live si aggiornano). Teniamo
+    // una sola riga per ogni combinazione aeroporto-partenza/aeroporto-arrivo/
+    // giorno di arrivo, così non si vede più un doppione da scegliere.
+    const seen = new Set<string>();
+    const data = candidates.filter((r) => {
+      const key = `${r.departureAirport}|${r.arrivalAirport}|${r.arrivalDate}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
 
     return { data };
   } catch {
