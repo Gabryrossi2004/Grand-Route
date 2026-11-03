@@ -28,25 +28,42 @@ export default async function PublicTripPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  let debugInfo: string | null = null;
+  try {
+    return await renderTrip(slug);
+  } catch (err) {
+    const digest = (err as { digest?: string } | null)?.digest;
+    if (digest?.startsWith("NEXT_HTTP_ERROR_FALLBACK")) throw err;
+    debugInfo = err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err);
+  }
+  return <pre style={{ whiteSpace: "pre-wrap", padding: 20 }}>DEBUG TEMPORANEO:{"\n"}{debugInfo}</pre>;
+}
+
+async function renderTrip(slug: string) {
   const supabase = await createClient();
 
-  const { data: trip } = await supabase
+  const { data: trip, error: tripError } = await supabase
     .from("trips")
     .select("*")
     .eq("public_slug", slug)
     .eq("is_published", true)
     .single();
 
+  if (tripError) throw new Error("TRIP_ERROR: " + JSON.stringify(tripError));
   if (!trip) notFound();
 
-  const [{ data: days }, { data: owner }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", trip.id)
-      .order("day_order", { ascending: true }),
-    supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
-  ]);
+  const daysResult = await supabase
+    .from("trip_days")
+    .select("*, activities(*, activity_photos(*))")
+    .eq("trip_id", trip.id)
+    .order("day_order", { ascending: true });
+  if (daysResult.error) throw new Error("DAYS_ERROR: " + JSON.stringify(daysResult.error));
+
+  const ownerResult = await supabase.from("profiles").select("*").eq("id", trip.owner_id).single();
+  if (ownerResult.error) throw new Error("OWNER_ERROR: " + JSON.stringify(ownerResult.error));
+
+  const days = daysResult.data;
+  const owner = ownerResult.data;
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
