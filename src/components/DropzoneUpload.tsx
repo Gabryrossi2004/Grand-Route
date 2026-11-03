@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { ImagePlus } from "lucide-react";
 
 export default function DropzoneUpload({
   name,
@@ -17,9 +18,12 @@ export default function DropzoneUpload({
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
 
-  function applyFiles(files: FileList | null) {
-    if (!files || files.length === 0 || !inputRef.current) return;
-    inputRef.current.files = files;
+  function applyFiles(fileList: FileList | File[] | null) {
+    if (!fileList || fileList.length === 0 || !inputRef.current) return;
+    const files = Array.from(fileList);
+    const dataTransfer = new DataTransfer();
+    files.forEach((file) => dataTransfer.items.add(file));
+    inputRef.current.files = dataTransfer.files;
     setFileName(files[0].name);
     if (autoSubmit) {
       inputRef.current.form?.requestSubmit();
@@ -42,7 +46,22 @@ export default function DropzoneUpload({
         setDragOver(false);
         applyFiles(e.dataTransfer.files);
       }}
-      className={`flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors ${
+      onPaste={(e) => {
+        const items = e.clipboardData?.items;
+        if (!items) return;
+        const files: File[] = [];
+        for (const item of Array.from(items)) {
+          if (item.kind === "file") {
+            const file = item.getAsFile();
+            if (file) files.push(file);
+          }
+        }
+        if (files.length > 0) {
+          e.preventDefault();
+          applyFiles(files);
+        }
+      }}
+      className={`flex cursor-pointer flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-200 ${
         dragOver ? "border-blue-500 bg-blue-50" : "border-slate-300 bg-slate-50 hover:bg-slate-100"
       }`}
     >
@@ -54,8 +73,9 @@ export default function DropzoneUpload({
         className="hidden"
         onChange={(e) => applyFiles(e.target.files)}
       />
+      <ImagePlus size={18} className="text-slate-400" />
       <p className="text-sm font-medium text-slate-700">{fileName ?? label}</p>
-      <p className="mt-1 text-xs text-slate-400">Trascina un file qui oppure clicca per scegliere</p>
+      <p className="text-xs text-slate-400">Trascina, clicca per scegliere, o incolla con Ctrl+V</p>
     </div>
   );
 }

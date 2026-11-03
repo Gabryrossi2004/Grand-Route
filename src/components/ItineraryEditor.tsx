@@ -406,6 +406,8 @@ function SortableActivityRow({
         templates={templates}
         initialActivity={activity}
         onCancel={onCancelEdit}
+        tripId={tripId}
+        photos={activity.activity_photos}
       />
     </Modal>
   );

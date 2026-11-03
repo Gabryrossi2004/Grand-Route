@@ -1,11 +1,14 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
-import { Check, Plus, X } from "lucide-react";
-import type { Activity, ActivityDetails, ActivityTemplate, ActivityType } from "@/lib/types";
+import Image from "next/image";
+import { Check, Plus, Trash2, X } from "lucide-react";
+import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, ActivityType } from "@/lib/types";
 import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
+import DropzoneUpload from "@/components/DropzoneUpload";
 import { toSafeHtml } from "@/lib/richText";
+import { deleteActivityPhoto, uploadActivityPhoto } from "@/app/dashboard/trips/[id]/actions";
 
 export default function ActivityForm({
   action,
@@ -13,12 +16,16 @@ export default function ActivityForm({
   initialActivity,
   onCancel,
   onSubmitted,
+  tripId,
+  photos,
 }: {
   action: (formData: FormData) => void | Promise<void>;
   templates: ActivityTemplate[];
   initialActivity?: Activity;
   onCancel?: () => void;
   onSubmitted?: () => void;
+  tripId?: string;
+  photos?: ActivityPhoto[];
 }) {
   const isEdit = Boolean(initialActivity);
 
@@ -78,6 +85,7 @@ export default function ActivityForm({
   }, null);
 
   return (
+    <>
     <form ref={formRef} action={dispatch} className="flex flex-col gap-2 border-t border-slate-100 pt-3">
       <input type="hidden" name="details" value={JSON.stringify(details)} />
 
@@ -199,5 +207,35 @@ export default function ActivityForm({
         </button>
       </div>
     </form>
+
+    {isEdit && initialActivity && tripId && (
+      <div className="mt-4 border-t border-slate-100 pt-4">
+        <p className="mb-2 text-sm font-medium text-slate-700">Foto</p>
+        {photos && photos.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-2">
+            {photos.map((photo) => (
+              <div key={photo.id} className="group relative h-20 w-20">
+                <div className="relative h-full w-full overflow-hidden rounded-md">
+                  <Image src={photo.url} alt="" fill sizes="5rem" className="object-cover" />
+                </div>
+                <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
+                  <button
+                    type="submit"
+                    title="Elimina foto"
+                    className="absolute -right-1.5 -top-1.5 hidden rounded-full bg-red-600 p-1 text-white group-hover:block"
+                  >
+                    <Trash2 size={12} />
+                  </button>
+                </form>
+              </div>
+            ))}
+          </div>
+        )}
+        <form action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
+          <DropzoneUpload name="photo" accept="image/*" label="Aggiungi una foto" />
+        </form>
+      </div>
+    )}
+    </>
   );
 }
