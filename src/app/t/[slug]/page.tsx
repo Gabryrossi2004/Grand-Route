@@ -27,6 +27,18 @@ export default async function PublicTripPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  let debugInfo: string | null = null;
+  try {
+    return await renderTrip(slug);
+  } catch (err) {
+    const digest = (err as { digest?: string } | null)?.digest;
+    if (digest?.startsWith("NEXT_HTTP_ERROR_FALLBACK")) throw err;
+    debugInfo = err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err);
+  }
+  return <pre style={{ whiteSpace: "pre-wrap", padding: 20 }}>DEBUG TEMPORANEO:{"\n"}{debugInfo}</pre>;
+}
+
+async function renderTrip(slug: string) {
   const supabase = await createClient();
 
   const { data: trip } = await supabase
@@ -59,13 +71,18 @@ export default async function PublicTripPage({
   const sanitizedDescriptions = new Map<string, string>();
   const hasDescriptions = orderedDays.some((day) => day.activities.some((a) => a.description));
   if (hasDescriptions) {
-    const { sanitizeHtml } = await import("@/lib/sanitize");
-    for (const day of orderedDays) {
-      for (const activity of day.activities) {
-        if (activity.description) {
-          sanitizedDescriptions.set(activity.id, sanitizeHtml(toSafeHtml(activity.description)));
+    try {
+      const { sanitizeHtml } = await import("@/lib/sanitize");
+      for (const day of orderedDays) {
+        for (const activity of day.activities) {
+          if (activity.description) {
+            sanitizedDescriptions.set(activity.id, sanitizeHtml(toSafeHtml(activity.description)));
+          }
         }
       }
+    } catch (err) {
+      const msg = err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err);
+      throw new Error("SANITIZE_ERROR: " + msg);
     }
   }
 
