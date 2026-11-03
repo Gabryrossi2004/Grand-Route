@@ -306,6 +306,7 @@ function DayPanel({
                 total={orderedActivities.length}
                 tripId={tripId}
                 dayId={day.id}
+                dayDate={day.day_date}
                 templates={templates}
                 documents={documentsByActivity[activity.id] ?? []}
                 hasTimeClash={Boolean(activity.start_time && (startTimeCounts.get(activity.start_time.slice(0, 5)) ?? 0) > 1)}
@@ -328,6 +329,7 @@ function DayPanel({
             action={addActivity.bind(null, tripId, day.id)}
             templates={templates}
             onSubmitted={() => setIsAddingActivity(false)}
+            dayDate={day.day_date}
           />
         </Modal>
       )}
@@ -363,6 +365,7 @@ function SortableActivityRow({
   total,
   tripId,
   dayId,
+  dayDate,
   templates,
   documents,
   hasTimeClash,
@@ -378,6 +381,7 @@ function SortableActivityRow({
   total: number;
   tripId: string;
   dayId: string;
+  dayDate: string | null;
   templates: ActivityTemplate[];
   documents: ActivityDocument[];
   hasTimeClash: boolean;
@@ -408,6 +412,7 @@ function SortableActivityRow({
         onCancel={onCancelEdit}
         tripId={tripId}
         photos={activity.activity_photos}
+        dayDate={dayDate}
       />
     </Modal>
   );

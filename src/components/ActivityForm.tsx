@@ -2,13 +2,14 @@
 
 import { useActionState, useRef, useState } from "react";
 import Image from "next/image";
-import { Check, Plus, Trash2, X } from "lucide-react";
+import { Check, Plane, Plus, Search, Trash2, X } from "lucide-react";
 import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, ActivityType } from "@/lib/types";
 import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import { toSafeHtml } from "@/lib/richText";
 import { deleteActivityPhoto, uploadActivityPhoto } from "@/app/dashboard/trips/[id]/actions";
+import { searchFlight, type FlightLookupResult } from "@/app/dashboard/trips/[id]/flightActions";
 
 export default function ActivityForm({
   action,
@@ -18,6 +19,7 @@ export default function ActivityForm({
   onSubmitted,
   tripId,
   photos,
+  dayDate,
 }: {
   action: (formData: FormData) => void | Promise<void>;
   templates: ActivityTemplate[];
@@ -26,6 +28,7 @@ export default function ActivityForm({
   onSubmitted?: () => void;
   tripId?: string;
   photos?: ActivityPhoto[];
+  dayDate?: string | null;
 }) {
   const isEdit = Boolean(initialActivity);
 
@@ -36,6 +39,10 @@ export default function ActivityForm({
   const [startTime, setStartTime] = useState(initialActivity?.start_time?.slice(0, 5) ?? "");
   const [details, setDetails] = useState<ActivityDetails>(initialActivity?.details ?? {});
   const [templateId, setTemplateId] = useState("");
+  const [flightNumberInput, setFlightNumberInput] = useState("");
+  const [flightSearchState, setFlightSearchState] = useState<
+    { status: "idle" } | { status: "loading" } | { status: "error"; message: string } | { status: "results"; results: FlightLookupResult[] }
+  >({ status: "idle" });
 
   const availableTemplates = templates.filter((t) => t.activity_type === activityType);
   const fields = detailFields[activityType];
@@ -44,6 +51,45 @@ export default function ActivityForm({
     setActivityType(newType);
     setDetails({});
     setTemplateId("");
+    setFlightSearchState({ status: "idle" });
+  }
+
+  function applyFlightResult(result: FlightLookupResult) {
+    setDetails((prev) => ({
+      ...prev,
+      compagnia: result.airline || prev.compagnia,
+      numero_volo: result.flightNumber,
+      aeroporto_partenza: result.departureAirport || prev.aeroporto_partenza,
+      aeroporto_arrivo: result.arrivalAirport || prev.aeroporto_arrivo,
+      orario_arrivo: result.arrivalTime || prev.orario_arrivo,
+    }));
+    if (result.departureTime) setStartTime(result.departureTime);
+    if (!title.trim() && result.departureAirport && result.arrivalAirport) {
+      setTitle(`Volo ${result.departureAirport.split(" – ")[0]} → ${result.arrivalAirport.split(" – ")[0]}`);
+    }
+    setFlightSearchState({ status: "idle" });
+  }
+
+  async function runFlightSearch() {
+    if (!dayDate) {
+      setFlightSearchState({ status: "error", message: "Imposta prima la data di questo giorno del viaggio." });
+      return;
+    }
+    if (!flightNumberInput.trim()) {
+      setFlightSearchState({ status: "error", message: "Inserisci un numero di volo." });
+      return;
+    }
+    setFlightSearchState({ status: "loading" });
+    const result = await searchFlight(flightNumberInput, dayDate);
+    if (result.error || !result.data) {
+      setFlightSearchState({ status: "error", message: result.error ?? "Volo non trovato." });
+      return;
+    }
+    if (result.data.length === 1) {
+      applyFlightResult(result.data[0]);
+    } else {
+      setFlightSearchState({ status: "results", results: result.data });
+    }
   }
 
   function applyTemplate(id: string) {
@@ -149,6 +195,62 @@ export default function ActivityForm({
       />
       <input type="hidden" name="description" value={description} />
       <RichTextEditor value={description} onChange={setDescription} placeholder="Descrizione (opzionale)" />
+
+      {activityType === "volo" && (
+        <div className="rounded-md border border-blue-100 bg-blue-50/60 p-3">
+          <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-blue-900">
+            <Plane size={13} /> Compila automaticamente da numero di volo
+          </div>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={flightNumberInput}
+              onChange={(e) => setFlightNumberInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  runFlightSearch();
+                }
+              }}
+              placeholder="Es. AZ610"
+              className="w-32 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+            />
+            <button
+              type="button"
+              onClick={runFlightSearch}
+              disabled={flightSearchState.status === "loading"}
+              className="flex items-center gap-1 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60"
+            >
+              <Search size={13} />
+              {flightSearchState.status === "loading" ? "Cerco…" : "Cerca"}
+            </button>
+          </div>
+          {!dayDate && (
+            <p className="mt-1.5 text-xs text-amber-600">
+              Questo giorno non ha una data: imposta prima la data per poter cercare il volo.
+            </p>
+          )}
+          {flightSearchState.status === "error" && (
+            <p className="mt-1.5 text-xs text-red-600">{flightSearchState.message}</p>
+          )}
+          {flightSearchState.status === "results" && (
+            <ul className="mt-2 flex flex-col gap-1">
+              {flightSearchState.results.map((result, i) => (
+                <li key={i}>
+                  <button
+                    type="button"
+                    onClick={() => applyFlightResult(result)}
+                    className="w-full rounded-md border border-slate-200 bg-white px-2 py-1.5 text-left text-xs text-slate-700 hover:border-blue-300 hover:bg-blue-50"
+                  >
+                    {result.airline} {result.flightNumber}: {result.departureAirport} ({result.departureTime}) →{" "}
+                    {result.arrivalAirport} ({result.arrivalTime})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       {fields.length > 0 && (
         <div className="grid gap-2 rounded-md bg-slate-50 p-3 sm:grid-cols-2">
