@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
@@ -21,9 +21,13 @@ const LONG_PRESS_MS = 550;
 export default function TripCard({ trip }: { trip: Trip }) {
   const [menuPos, setMenuPos] = useState<{ x: number; y: number } | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
-  const [deleting, setDeleting] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const suppressClick = useRef(false);
+
+  const [, confirmDelete, deleting] = useActionState(async () => {
+    await deleteTrip(trip.id);
+    return null;
+  }, null);
 
   function openMenuAt(x: number, y: number) {
     setMenuPos({ x, y });
@@ -123,17 +127,15 @@ export default function TripCard({ trip }: { trip: Trip }) {
             >
               Annulla
             </button>
-            <button
-              type="button"
-              disabled={deleting}
-              onClick={() => {
-                setDeleting(true);
-                deleteTrip(trip.id);
-              }}
-              className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60"
-            >
-              {deleting ? "Eliminazione…" : "Sì, elimina definitivamente"}
-            </button>
+            <form action={confirmDelete}>
+              <button
+                type="submit"
+                disabled={deleting}
+                className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60"
+              >
+                {deleting ? "Eliminazione…" : "Sì, elimina definitivamente"}
+              </button>
+            </form>
           </div>
         </Modal>
       )}
