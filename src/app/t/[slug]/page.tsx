@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import { activityTypes } from "@/lib/activityTypes";
 import { themeFontVariables } from "@/lib/themeFonts";
+import { richTextClassName, toSafeHtml } from "@/lib/richText";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -107,6 +109,12 @@ export default async function PublicTripPage({
                         </span>
                         <span className="font-medium">{activity.title}</span>
                       </div>
+                      {activity.description && (
+                        <div
+                          className={richTextClassName + " mt-1"}
+                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
+                        />
+                      )}
                     </li>
                   );
                 })}
