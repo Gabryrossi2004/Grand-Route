@@ -46,6 +46,7 @@ import {
   deleteDocument,
   duplicateActivity,
   moveActivity,
+  moveActivityToDay,
   reorderActivities,
   saveActivityToLibrary,
   sortActivitiesByTime,
@@ -85,8 +86,17 @@ export default function ItineraryEditor({
   const todayStr = new Date().toISOString().slice(0, 10);
   const [draggedDayId, setDraggedDayId] = useState<string | null>(null);
   const [dragOverDayId, setDragOverDayId] = useState<string | null>(null);
+  const [draggedActivity, setDraggedActivity] = useState<{ id: string; sourceDayId: string } | null>(null);
 
   function handleDropDay(targetDayId: string) {
+    if (draggedActivity) {
+      if (draggedActivity.sourceDayId !== targetDayId) {
+        moveActivityToDay(tripId, draggedActivity.id, targetDayId);
+      }
+      setDraggedActivity(null);
+      setDragOverDayId(null);
+      return;
+    }
     if (draggedDayId && draggedDayId !== targetDayId) {
       swapDayContent(tripId, draggedDayId, targetDayId);
     }
@@ -123,9 +133,16 @@ export default function ItineraryEditor({
             isDragOver={dragOverDayId === day.id}
             onSelect={() => setSelectedDayId(day.id)}
             onDragStart={() => setDraggedDayId(day.id)}
-            onDragEnter={() => draggedDayId && draggedDayId !== day.id && setDragOverDayId(day.id)}
+            onDragEnter={() => {
+              if (draggedActivity) {
+                if (draggedActivity.sourceDayId !== day.id) setDragOverDayId(day.id);
+                return;
+              }
+              if (draggedDayId && draggedDayId !== day.id) setDragOverDayId(day.id);
+            }}
             onDragEnd={() => {
               setDraggedDayId(null);
+              setDraggedActivity(null);
               setDragOverDayId(null);
             }}
             onDrop={() => handleDropDay(day.id)}
@@ -141,6 +158,8 @@ export default function ItineraryEditor({
             tripId={tripId}
             templates={templates}
             documentsByActivity={documentsByActivity}
+            onActivityDragStart={(activityId) => setDraggedActivity({ id: activityId, sourceDayId: selectedDay.id })}
+            onActivityDragEnd={() => setDraggedActivity(null)}
           />
         ) : (
           <p className="text-sm text-slate-400">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
@@ -277,11 +296,15 @@ function DayPanel({
   tripId,
   templates,
   documentsByActivity,
+  onActivityDragStart,
+  onActivityDragEnd,
 }: {
   day: DayWithActivities;
   tripId: string;
   templates: ActivityTemplate[];
   documentsByActivity: Record<string, ActivityDocument[]>;
+  onActivityDragStart: (activityId: string) => void;
+  onActivityDragEnd: () => void;
 }) {
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
@@ -435,6 +458,8 @@ function DayPanel({
                 onEdit={() => setEditingActivityId(activity.id)}
                 onCancelEdit={() => setEditingActivityId(null)}
                 onDelete={() => requestDeleteActivity(activity.id)}
+                onDragStart={() => onActivityDragStart(activity.id)}
+                onDragEnd={onActivityDragEnd}
               />
             ))}
           </ul>
@@ -494,6 +519,8 @@ function SortableActivityRow({
   onEdit,
   onCancelEdit,
   onDelete,
+  onDragStart,
+  onDragEnd,
 }: {
   activity: ActivityWithPhotos;
   index: number;
@@ -510,6 +537,8 @@ function SortableActivityRow({
   onEdit: () => void;
   onCancelEdit: () => void;
   onDelete: () => void;
+  onDragStart: () => void;
+  onDragEnd: () => void;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: activity.id,
@@ -545,12 +574,17 @@ function SortableActivityRow({
       {editModal}
       <li
         ref={setNodeRef}
+        draggable
+        onDragStart={onDragStart}
+        onDragEnd={onDragEnd}
+        title="Trascina per spostare in un altro giorno"
         style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
         className="group rounded-md border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
       >
       <div className="flex items-center gap-1 px-1">
         <button
           type="button"
+          draggable={false}
           {...attributes}
           {...listeners}
           aria-label="Trascina per riordinare"

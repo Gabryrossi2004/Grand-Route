@@ -302,6 +302,27 @@ export async function swapDayContent(tripId: string, dayAId: string, dayBId: str
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+export async function moveActivityToDay(tripId: string, activityId: string, targetDayId: string) {
+  const supabase = await createClient();
+
+  const { data: lastActivity } = await supabase
+    .from("activities")
+    .select("activity_order")
+    .eq("trip_day_id", targetDayId)
+    .order("activity_order", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  const nextOrder = lastActivity ? lastActivity.activity_order + 1 : 0;
+
+  await supabase
+    .from("activities")
+    .update({ trip_day_id: targetDayId, activity_order: nextOrder })
+    .eq("id", activityId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 function parseDetails(formData: FormData): Record<string, string> {
   const raw = String(formData.get("details") ?? "{}");
   try {
