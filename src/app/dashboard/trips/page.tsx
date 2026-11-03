@@ -5,10 +5,21 @@ import TripCard from "@/components/TripCard";
 
 export default async function TripsPage() {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   const [{ data: trips }, { data: groups }] = await Promise.all([
-    supabase.from("trips").select("*").order("created_at", { ascending: false }),
-    supabase.from("trip_groups").select("*").order("created_at", { ascending: false }),
+    supabase
+      .from("trips")
+      .select("*")
+      .eq("owner_id", user?.id ?? "")
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("trip_groups")
+      .select("*")
+      .eq("owner_id", user?.id ?? "")
+      .order("created_at", { ascending: false }),
   ]);
 
   const allTrips = (trips as Trip[]) || [];

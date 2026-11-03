@@ -40,8 +40,16 @@ export default async function TripDetailPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", id).single();
+  const { data: trip } = await supabase
+    .from("trips")
+    .select("*")
+    .eq("id", id)
+    .eq("owner_id", user?.id ?? "")
+    .single();
   if (!trip) notFound();
 
   const [{ data: days }, { data: templates }] = await Promise.all([
