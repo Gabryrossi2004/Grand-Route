@@ -203,6 +203,15 @@ export async function togglePublish(tripId: string, isPublished: boolean) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+export async function updateTripTheme(tripId: string, formData: FormData) {
+  const theme = String(formData.get("theme") ?? "");
+  if (!theme) return;
+  const supabase = await createClient();
+  await supabase.from("trips").update({ theme }).eq("id", tripId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/trips/${tripId}/overview`);
+}
+
 export async function deleteTrip(tripId: string) {
   const supabase = await createClient();
   await supabase.from("trips").delete().eq("id", tripId);
@@ -231,6 +240,16 @@ export async function addDay(tripId: string, formData: FormData) {
 export async function deleteDay(tripId: string, dayId: string) {
   const supabase = await createClient();
   await supabase.from("trip_days").delete().eq("id", dayId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function updateDayTitle(tripId: string, dayId: string, title: string) {
+  const supabase = await createClient();
+  const clean = title.trim();
+  await supabase
+    .from("trip_days")
+    .update({ title: clean || null })
+    .eq("id", dayId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 

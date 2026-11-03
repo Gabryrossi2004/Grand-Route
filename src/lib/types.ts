@@ -31,6 +31,18 @@ export type TripGroup = {
 
 export type PriceMode = "nessuno" | "lordo" | "commissioni";
 
+export type TripTheme =
+  | "elegante"
+  | "azteco"
+  | "giungla"
+  | "deserto"
+  | "egizio"
+  | "nordico"
+  | "citta"
+  | "marocco"
+  | "giapponese"
+  | "tropicale";
+
 export type Trip = {
   id: string;
   owner_id: string;
@@ -47,6 +59,7 @@ export type Trip = {
   price_amount: number | null;
   price_net: number | null;
   price_commission: number | null;
+  theme: TripTheme;
   created_at: string;
 };
 
@@ -56,6 +69,7 @@ export type TripDay = {
   day_date: string | null;
   day_order: number;
   notes: string | null;
+  title: string | null;
 };
 
 export type ActivityType =

@@ -50,6 +50,7 @@ import {
   saveActivityToLibrary,
   sortActivitiesByTime,
   updateActivity,
+  updateDayTitle,
   uploadActivityPhoto,
   uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
@@ -84,44 +85,18 @@ export default function ItineraryEditor({
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-      <aside className="flex shrink-0 flex-col gap-2 sm:w-56">
-        {days.map((day, index) => {
-          const types = Array.from(new Set(day.activities.map((a) => a.activity_type)));
-          const isActive = day.id === selectedDay?.id;
-          const isToday = day.day_date === todayStr;
-          return (
-            <button
-              key={day.id}
-              type="button"
-              onClick={() => setSelectedDayId(day.id)}
-              className={`rounded-lg border px-3 py-2 text-left ${
-                isActive ? "border-blue-400 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"
-              }`}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-xs uppercase text-slate-400">Giorno {index + 1}</p>
-                {isToday && (
-                  <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold text-white">
-                    Oggi
-                  </span>
-                )}
-              </div>
-              <p className="text-sm font-medium capitalize text-slate-900">{dayLabel(day, index, true)}</p>
-              {types.length > 0 && (
-                <div className="mt-1 flex gap-1">
-                  {types.map((type) => (
-                    <span
-                      key={type}
-                      className="h-2 w-2 rounded-full"
-                      style={{ backgroundColor: activityTypes[type].color }}
-                      title={activityTypes[type].label}
-                    />
-                  ))}
-                </div>
-              )}
-            </button>
-          );
-        })}
+      <aside className="flex shrink-0 flex-col gap-2 sm:sticky sm:top-20 sm:max-h-[calc(100vh-6rem)] sm:w-56 sm:self-start sm:overflow-y-auto">
+        {days.map((day, index) => (
+          <DaySidebarItem
+            key={day.id}
+            day={day}
+            index={index}
+            tripId={tripId}
+            isActive={day.id === selectedDay?.id}
+            isToday={day.day_date === todayStr}
+            onSelect={() => setSelectedDayId(day.id)}
+          />
+        ))}
 
         <form action={addDay.bind(null, tripId)} className="flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
           <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
@@ -152,6 +127,101 @@ export default function ItineraryEditor({
           <p className="text-sm text-slate-400">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
         )}
       </div>
+    </div>
+  );
+}
+
+function DaySidebarItem({
+  day,
+  index,
+  tripId,
+  isActive,
+  isToday,
+  onSelect,
+}: {
+  day: DayWithActivities;
+  index: number;
+  tripId: string;
+  isActive: boolean;
+  isToday: boolean;
+  onSelect: () => void;
+}) {
+  const [isEditingTitle, setIsEditingTitle] = useState(false);
+  const [titleInput, setTitleInput] = useState(day.title ?? "");
+  const titleInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isEditingTitle) titleInputRef.current?.focus();
+  }, [isEditingTitle]);
+
+  function saveTitle() {
+    setIsEditingTitle(false);
+    if (titleInput.trim() !== (day.title ?? "")) {
+      updateDayTitle(tripId, day.id, titleInput);
+    }
+  }
+
+  const types = Array.from(new Set(day.activities.map((a) => a.activity_type)));
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onSelect();
+      }}
+      onDoubleClick={() => setIsEditingTitle(true)}
+      className={`cursor-pointer rounded-lg border px-3 py-2 text-left ${
+        isActive ? "border-blue-400 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"
+      }`}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-xs uppercase text-slate-400">Giorno {index + 1}</p>
+        {isToday && (
+          <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold text-white">
+            Oggi
+          </span>
+        )}
+      </div>
+      <p className="text-sm font-medium capitalize text-slate-900">{dayLabel(day, index, true)}</p>
+      {isEditingTitle ? (
+        <input
+          ref={titleInputRef}
+          type="text"
+          value={titleInput}
+          onChange={(e) => setTitleInput(e.target.value)}
+          onClick={(e) => e.stopPropagation()}
+          onDoubleClick={(e) => e.stopPropagation()}
+          onBlur={saveTitle}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              saveTitle();
+            }
+            if (e.key === "Escape") {
+              setTitleInput(day.title ?? "");
+              setIsEditingTitle(false);
+            }
+          }}
+          placeholder="Titolo del giorno (es. Benvenuti!)"
+          className="mt-1 w-full rounded border border-blue-300 px-1.5 py-0.5 text-xs outline-none"
+        />
+      ) : (
+        day.title && <p className="mt-0.5 truncate text-xs italic text-slate-500">{day.title}</p>
+      )}
+      {types.length > 0 && (
+        <div className="mt-1 flex gap-1">
+          {types.map((type) => (
+            <span
+              key={type}
+              className="h-2 w-2 rounded-full"
+              style={{ backgroundColor: activityTypes[type].color }}
+              title={activityTypes[type].label}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -271,7 +341,10 @@ function DayPanel({
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5">
       <div className="sticky top-4 z-10 mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 py-1 backdrop-blur">
-        <h3 className="font-medium capitalize text-slate-900">{dayLabel(day, 0, true)}</h3>
+        <h3 className="font-medium capitalize text-slate-900">
+          {dayLabel(day, 0, true)}
+          {day.title && <span className="font-normal text-slate-500"> — {day.title}</span>}
+        </h3>
         <div className="flex items-center gap-3">
           {sortedActivities.length > 1 && (
             <form action={sortActivitiesByTime.bind(null, tripId, day.id)}>

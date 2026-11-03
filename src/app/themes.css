@@ -1,0 +1,199 @@
+/* ============================================================
+   Stili grafici del viaggio (10 temi)
+   Si applicano solo dentro un contenitore con classe "themed-page"
+   e l'attributo data-theme="<id-tema>" (pagina pubblica, overview),
+   quindi non toccano mai la grafica del pannello di gestione.
+   ============================================================ */
+
+.themed-page {
+  --theme-radius: 0.75rem;
+  --theme-border-width: 1px;
+  --theme-border-style: solid;
+  background-color: var(--theme-bg);
+  background-image: var(--theme-pattern, none);
+  color: var(--theme-text);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.themed-page h1,
+.themed-page h2,
+.themed-page h3,
+.themed-page .theme-heading-font {
+  font-family: var(--font-heading), serif;
+  color: var(--theme-heading);
+}
+
+.themed-page .theme-card {
+  background-color: var(--theme-surface);
+  border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
+  border-radius: var(--theme-radius);
+}
+
+.themed-page .theme-accent {
+  color: var(--theme-accent);
+}
+
+.themed-page .theme-accent-bg {
+  background-color: var(--theme-accent);
+}
+
+.themed-page .theme-border {
+  border-color: var(--theme-border-color);
+}
+
+.themed-page .theme-muted {
+  color: var(--theme-muted);
+}
+
+/* ---------------- 1. ELEGANTE (predefinito) ---------------- */
+.themed-page[data-theme="elegante"] {
+  --font-heading: var(--font-elegante-heading);
+  --font-body: var(--font-elegante-body);
+  --theme-bg: #faf8f4;
+  --theme-surface: #ffffff;
+  --theme-text: #2b2420;
+  --theme-muted: #7a7064;
+  --theme-heading: #22190f;
+  --theme-accent: #9c7a3c;
+  --theme-border-color: #e7ded0;
+  --theme-radius: 0.9rem;
+  --theme-pattern: none;
+}
+
+/* ---------------- 2. AZTECO ---------------- */
+.themed-page[data-theme="azteco"] {
+  --font-heading: var(--font-azteco-heading);
+  --font-body: var(--font-azteco-body);
+  --theme-bg: #fcf1dd;
+  --theme-surface: #fffaf0;
+  --theme-text: #3a2415;
+  --theme-muted: #8a6a4e;
+  --theme-heading: #7a2a1b;
+  --theme-accent: #b1442e;
+  --theme-border-color: #d8a768;
+  --theme-border-width: 2px;
+  --theme-radius: 0.4rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M0 28 L14 14 L28 28 L42 14 L56 28 L42 42 L28 28 L14 42 Z' fill='none' stroke='%23b1442e' stroke-width='1.5' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 3. GIUNGLA ---------------- */
+.themed-page[data-theme="giungla"] {
+  --font-heading: var(--font-giungla-heading);
+  --font-body: var(--font-giungla-body);
+  --theme-bg: #f2f8f0;
+  --theme-surface: #ffffff;
+  --theme-text: #1f3a24;
+  --theme-muted: #5e7a63;
+  --theme-heading: #1f4a28;
+  --theme-accent: #2f6b3c;
+  --theme-border-color: #bfe0c3;
+  --theme-radius: 1.25rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'%3E%3Cpath d='M10 55 C10 35, 25 20, 45 15 C35 25, 28 40, 30 58 Z' fill='%232f6b3c' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 4. DESERTO ---------------- */
+.themed-page[data-theme="deserto"] {
+  --font-heading: var(--font-deserto-heading);
+  --font-body: var(--font-deserto-body);
+  --theme-bg: #fbf1dd;
+  --theme-surface: #fffdf7;
+  --theme-text: #4a3a22;
+  --theme-muted: #8a7652;
+  --theme-heading: #7a4e1f;
+  --theme-accent: #c2703d;
+  --theme-border-color: #e6cd9c;
+  --theme-radius: 0.6rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24' viewBox='0 0 120 24'%3E%3Cpath d='M0 16 Q15 4 30 16 T60 16 T90 16 T120 16' fill='none' stroke='%23c2703d' stroke-width='1.5' opacity='0.1'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 5. EGIZIO ---------------- */
+.themed-page[data-theme="egizio"] {
+  --font-heading: var(--font-egizio-heading);
+  --font-body: var(--font-egizio-body);
+  --theme-bg: #faf2db;
+  --theme-surface: #fffdf5;
+  --theme-text: #2e2410;
+  --theme-muted: #7c6a3a;
+  --theme-heading: #1b3a6b;
+  --theme-accent: #c9a227;
+  --theme-border-color: #c9a227;
+  --theme-border-width: 2px;
+  --theme-radius: 0.3rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect x='20' y='4' width='8' height='8' fill='%231b3a6b' opacity='0.07'/%3E%3Crect x='4' y='20' width='8' height='8' fill='%23c9a227' opacity='0.07'/%3E%3Crect x='36' y='20' width='8' height='8' fill='%23c9a227' opacity='0.07'/%3E%3Crect x='20' y='36' width='8' height='8' fill='%231b3a6b' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 6. NORDICO ---------------- */
+.themed-page[data-theme="nordico"] {
+  --font-heading: var(--font-nordico-heading);
+  --font-body: var(--font-nordico-body);
+  --theme-bg: #f3f7f9;
+  --theme-surface: #ffffff;
+  --theme-text: #1f2d35;
+  --theme-muted: #607079;
+  --theme-heading: #2e5266;
+  --theme-accent: #2e5266;
+  --theme-border-color: #d3e1e6;
+  --theme-radius: 0.3rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 L50 54 L32 44 L14 54 Z' fill='none' stroke='%232e5266' stroke-width='1' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 7. CITTÀ ---------------- */
+.themed-page[data-theme="citta"] {
+  --font-heading: var(--font-citta-heading);
+  --font-body: var(--font-citta-body);
+  --theme-bg: #f4f4f6;
+  --theme-surface: #ffffff;
+  --theme-text: #1a1a1f;
+  --theme-muted: #6b6b73;
+  --theme-heading: #111114;
+  --theme-accent: #3461eb;
+  --theme-border-color: #d8d8de;
+  --theme-radius: 0.2rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 0 H40 V40' fill='none' stroke='%231a1a1f' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 8. MAROCCO ---------------- */
+.themed-page[data-theme="marocco"] {
+  --font-heading: var(--font-marocco-heading);
+  --font-body: var(--font-marocco-body);
+  --theme-bg: #fbf2f7;
+  --theme-surface: #ffffff;
+  --theme-text: #3a1f33;
+  --theme-muted: #85617a;
+  --theme-heading: #7a2457;
+  --theme-accent: #b23b6e;
+  --theme-border-color: #e9c1da;
+  --theme-radius: 1.5rem 1.5rem 0.4rem 0.4rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 4 L32 20 L48 26 L32 32 L26 48 L20 32 L4 26 L20 20 Z' fill='none' stroke='%23b23b6e' stroke-width='1' opacity='0.09'/%3E%3C/svg%3E");
+}
+
+/* ---------------- 9. GIAPPONESE ---------------- */
+.themed-page[data-theme="giapponese"] {
+  --font-heading: var(--font-giapponese-heading);
+  --font-body: var(--font-giapponese-body);
+  --theme-bg: #faf9f6;
+  --theme-surface: #ffffff;
+  --theme-text: #2b2b2b;
+  --theme-muted: #7a7a76;
+  --theme-heading: #2b2b2b;
+  --theme-accent: #c0392b;
+  --theme-border-color: #e3e0da;
+  --theme-border-width: 1px;
+  --theme-radius: 0.15rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23c0392b' opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3Ccircle cx='60' cy='45' r='2.5'/%3E%3Ccircle cx='40' cy='65' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ---------------- 10. TROPICALE ---------------- */
+.themed-page[data-theme="tropicale"] {
+  --font-heading: var(--font-tropicale-heading);
+  --font-body: var(--font-tropicale-body);
+  --theme-bg: #e9faf7;
+  --theme-surface: #ffffff;
+  --theme-text: #104a43;
+  --theme-muted: #4f8a80;
+  --theme-heading: #0d6e62;
+  --theme-accent: #ff6f59;
+  --theme-border-color: #b7ece2;
+  --theme-radius: 1.75rem;
+  --theme-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cpath d='M0 20 Q25 5 50 20 T100 20' fill='none' stroke='%2317a398' stroke-width='2' opacity='0.1'/%3E%3C/svg%3E");
+}

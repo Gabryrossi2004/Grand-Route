@@ -15,6 +15,7 @@ import {
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import TripPriceFields from "@/components/TripPriceFields";
+import ThemePicker from "@/components/ThemePicker";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -311,6 +312,14 @@ function TripInfoForm({ trip }: { trip: Trip }) {
           </button>
         </div>
       </form>
+
+      <div className="mt-6 border-t border-slate-100 pt-5">
+        <h3 className={labelClass}>Personalizza interfaccia viaggio</h3>
+        <p className="mb-3 text-xs text-slate-500">
+          Scegli lo stile grafico della pagina che vedrà il cliente (font, colori, sfondi). Puoi cambiarlo quando vuoi.
+        </p>
+        <ThemePicker tripId={trip.id} current={trip.theme} />
+      </div>
     </section>
   );
 }
