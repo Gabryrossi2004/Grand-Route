@@ -89,7 +89,7 @@ export async function searchFlight(
       return { error: "Nessun volo trovato con questo numero per questa data." };
     }
 
-    const data: FlightLookupResult[] = flights.map((flight) => ({
+    const allResults: FlightLookupResult[] = flights.map((flight) => ({
       airline: flight.airline?.name ?? "",
       flightNumber: flight.number ?? cleanNumber,
       departureAirport: formatAirport(flight.departure?.airport),
@@ -101,6 +101,13 @@ export async function searchFlight(
       arrivalTime: formatTime(flight.arrival?.scheduledTime?.local),
       aircraft: flight.aircraft?.model ?? null,
     }));
+
+    // Per i voli già in corso, l'API a volte restituisce due righe per lo
+    // stesso volo: una "live" senza l'orario di partenza (perché è già
+    // decollato) e una con tutti gli orari completi. Teniamo solo quelle
+    // complete, così non si vedono doppioni confusi con l'orario mancante.
+    const complete = allResults.filter((r) => r.departureTime && r.arrivalTime);
+    const data = complete.length > 0 ? complete : allResults;
 
     return { data };
   } catch {
