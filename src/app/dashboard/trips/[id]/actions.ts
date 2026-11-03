@@ -214,9 +214,29 @@ export async function updateTripTheme(tripId: string, formData: FormData) {
   revalidatePath(`/trips/${tripId}/overview`);
 }
 
-export async function deleteTrip(tripId: string) {
+export async function deleteTrip(tripId: string): Promise<{ error: string } | undefined> {
   const supabase = await createClient();
-  await supabase.from("trips").delete().eq("id", tripId);
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return { error: "Sessione scaduta: ricarica la pagina ed effettua di nuovo l'accesso." };
+  }
+
+  const { error, count } = await supabase
+    .from("trips")
+    .delete({ count: "exact" })
+    .eq("id", tripId);
+
+  if (error) {
+    return { error: "Impossibile eliminare il viaggio: " + error.message };
+  }
+  if (!count) {
+    return {
+      error: "Il viaggio non risulta eliminabile da questo account (non ne sei il proprietario o non esiste più).",
+    };
+  }
+
   revalidatePath("/dashboard/trips");
   redirect("/dashboard/trips");
 }

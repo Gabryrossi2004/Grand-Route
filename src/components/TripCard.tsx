@@ -24,9 +24,9 @@ export default function TripCard({ trip }: { trip: Trip }) {
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const suppressClick = useRef(false);
 
-  const [, confirmDelete, deleting] = useActionState(async () => {
-    await deleteTrip(trip.id);
-    return null;
+  const [deleteState, confirmDelete, deleting] = useActionState(async () => {
+    const result = await deleteTrip(trip.id);
+    return result ?? null;
   }, null);
 
   function openMenuAt(x: number, y: number) {
@@ -119,6 +119,9 @@ export default function TripCard({ trip }: { trip: Trip }) {
             Stai per eliminare definitivamente <strong>&quot;{trip.title}&quot;</strong>, con tutto l&apos;itinerario,
             i documenti e le foto collegate. Questa azione non si può annullare.
           </p>
+          {deleteState?.error && (
+            <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{deleteState.error}</p>
+          )}
           <div className="mt-5 flex justify-end gap-2">
             <button
               type="button"
