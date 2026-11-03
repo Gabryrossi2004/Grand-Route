@@ -1,48 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 import type { Trip, TripGroup } from "@/lib/types";
-
-function formatDateRange(trip: Trip) {
-  if (!trip.start_date) return "Date da definire";
-  const start = new Date(trip.start_date).toLocaleDateString("it-IT");
-  if (!trip.end_date) return start;
-  const end = new Date(trip.end_date).toLocaleDateString("it-IT");
-  return `${start} – ${end}`;
-}
-
-function TripCard({ trip }: { trip: Trip }) {
-  return (
-    <Link
-      href={`/dashboard/trips/${trip.id}`}
-      className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-slate-200/60"
-    >
-      <div className="relative h-32 overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100">
-        {trip.cover_image_url && (
-          <Image
-            src={trip.cover_image_url}
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition duration-300 group-hover:scale-[1.03]"
-          />
-        )}
-      </div>
-      <div className="p-4">
-        <div className="mb-1 flex items-center justify-between gap-2">
-          <h3 className="font-medium text-slate-900">{trip.title}</h3>
-          {trip.is_published && (
-            <span className="shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
-              Pubblicato
-            </span>
-          )}
-        </div>
-        {trip.destination && <p className="text-sm text-slate-500">{trip.destination}</p>}
-        <p className="mt-2 text-xs text-slate-400">{formatDateRange(trip)}</p>
-      </div>
-    </Link>
-  );
-}
+import TripCard from "@/components/TripCard";
 
 export default async function TripsPage() {
   const supabase = await createClient();

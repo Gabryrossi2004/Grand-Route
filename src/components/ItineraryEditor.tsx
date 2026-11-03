@@ -97,6 +97,21 @@ export default function ItineraryEditor({
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
       <aside className="flex shrink-0 flex-col gap-2 sm:sticky sm:top-20 sm:max-h-[calc(100vh-6rem)] sm:w-56 sm:self-start sm:overflow-y-auto">
+        <form action={addDay.bind(null, tripId)} className="flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
+          <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
+            Aggiungi un giorno
+          </label>
+          <input
+            id="day_date"
+            name="day_date"
+            type="date"
+            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+          />
+          <button type="submit" className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
+            + Aggiungi
+          </button>
+        </form>
+
         {days.map((day, index) => (
           <DaySidebarItem
             key={day.id}
@@ -116,21 +131,6 @@ export default function ItineraryEditor({
             onDrop={() => handleDropDay(day.id)}
           />
         ))}
-
-        <form action={addDay.bind(null, tripId)} className="flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
-          <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
-            Aggiungi un giorno
-          </label>
-          <input
-            id="day_date"
-            name="day_date"
-            type="date"
-            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
-          />
-          <button type="submit" className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
-            + Aggiungi
-          </button>
-        </form>
       </aside>
 
       <div className="min-w-0 flex-1">
