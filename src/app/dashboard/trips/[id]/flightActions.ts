@@ -83,11 +83,21 @@ export async function searchFlight(
     }
 
     const json = await res.json();
-    const flights: AeroDataBoxFlight[] = Array.isArray(json) ? json : [json];
+    const rawFlights: AeroDataBoxFlight[] = Array.isArray(json) ? json : [json];
 
-    if (flights.length === 0) {
+    if (rawFlights.length === 0) {
       return { error: "Nessun volo trovato con questo numero per questa data." };
     }
+
+    // Per i voli con lo stesso numero tutti i giorni (es. un volo giornaliero),
+    // l'API può restituire anche l'istanza del giorno precedente (ancora in
+    // atterraggio) insieme a quella di oggi: a video sembrerebbero due voli
+    // identici perché mostriamo solo l'orario, non la data. Teniamo solo
+    // l'istanza che parte esattamente nel giorno cercato.
+    const sameDayFlights = rawFlights.filter(
+      (flight) => formatDate(flight.departure?.scheduledTime?.local) === date,
+    );
+    const flights = sameDayFlights.length > 0 ? sameDayFlights : rawFlights;
 
     const allResults: FlightLookupResult[] = flights.map((flight) => ({
       airline: flight.airline?.name ?? "",
