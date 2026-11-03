@@ -16,6 +16,7 @@ import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
+import TitleColorField from "@/components/TitleColorField";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -303,6 +304,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
           </div>
         </div>
         <TripPriceFields trip={trip} />
+        <TitleColorField defaultValue={trip.title_color} />
         <div className="sm:col-span-2">
           <button
             type="submit"

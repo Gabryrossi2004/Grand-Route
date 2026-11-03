@@ -64,7 +64,12 @@ export default async function TripOverviewPage({
           </div>
           <div className="relative">
             <p className="text-xs font-semibold uppercase tracking-widest opacity-80">La tua prossima avventura</p>
-            <h1 className="theme-heading-font mt-1 text-4xl font-bold leading-tight text-white">{trip.title}</h1>
+            <h1
+              className="theme-heading-font mt-1 text-4xl font-bold leading-tight"
+              style={{ color: trip.title_color || "#ffffff" }}
+            >
+              {trip.title}
+            </h1>
             <div className="mt-2 flex flex-wrap gap-3 text-sm opacity-90">
               {trip.destination && <span>{trip.destination}</span>}
               {dateRange && <span>· {dateRange}</span>}

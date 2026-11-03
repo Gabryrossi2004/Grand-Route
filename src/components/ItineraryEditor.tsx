@@ -49,6 +49,7 @@ import {
   reorderActivities,
   saveActivityToLibrary,
   sortActivitiesByTime,
+  swapDayContent,
   updateActivity,
   updateDayTitle,
   uploadActivityPhoto,
@@ -82,6 +83,16 @@ export default function ItineraryEditor({
   const [selectedDayId, setSelectedDayId] = useState<string | null>(days[0]?.id ?? null);
   const selectedDay = days.find((day) => day.id === selectedDayId) ?? days[0] ?? null;
   const todayStr = new Date().toISOString().slice(0, 10);
+  const [draggedDayId, setDraggedDayId] = useState<string | null>(null);
+  const [dragOverDayId, setDragOverDayId] = useState<string | null>(null);
+
+  function handleDropDay(targetDayId: string) {
+    if (draggedDayId && draggedDayId !== targetDayId) {
+      swapDayContent(tripId, draggedDayId, targetDayId);
+    }
+    setDraggedDayId(null);
+    setDragOverDayId(null);
+  }
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
@@ -94,7 +105,15 @@ export default function ItineraryEditor({
             tripId={tripId}
             isActive={day.id === selectedDay?.id}
             isToday={day.day_date === todayStr}
+            isDragOver={dragOverDayId === day.id}
             onSelect={() => setSelectedDayId(day.id)}
+            onDragStart={() => setDraggedDayId(day.id)}
+            onDragEnter={() => draggedDayId && draggedDayId !== day.id && setDragOverDayId(day.id)}
+            onDragEnd={() => {
+              setDraggedDayId(null);
+              setDragOverDayId(null);
+            }}
+            onDrop={() => handleDropDay(day.id)}
           />
         ))}
 
@@ -137,14 +156,24 @@ function DaySidebarItem({
   tripId,
   isActive,
   isToday,
+  isDragOver,
   onSelect,
+  onDragStart,
+  onDragEnter,
+  onDragEnd,
+  onDrop,
 }: {
   day: DayWithActivities;
   index: number;
   tripId: string;
   isActive: boolean;
   isToday: boolean;
+  isDragOver: boolean;
   onSelect: () => void;
+  onDragStart: () => void;
+  onDragEnter: () => void;
+  onDragEnd: () => void;
+  onDrop: () => void;
 }) {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [titleInput, setTitleInput] = useState(day.title ?? "");
@@ -167,17 +196,34 @@ function DaySidebarItem({
     <div
       role="button"
       tabIndex={0}
+      draggable
       onClick={onSelect}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") onSelect();
       }}
       onDoubleClick={() => setIsEditingTitle(true)}
-      className={`cursor-pointer rounded-lg border px-3 py-2 text-left ${
-        isActive ? "border-blue-400 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"
+      onDragStart={onDragStart}
+      onDragEnter={onDragEnter}
+      onDragOver={(e) => e.preventDefault()}
+      onDragEnd={onDragEnd}
+      onDrop={(e) => {
+        e.preventDefault();
+        onDrop();
+      }}
+      title="Trascina per scambiare il contenuto con un altro giorno"
+      className={`cursor-grab rounded-lg border px-3 py-2 text-left transition active:cursor-grabbing ${
+        isDragOver
+          ? "border-blue-500 bg-blue-100 ring-2 ring-blue-300"
+          : isActive
+            ? "border-blue-400 bg-blue-50"
+            : "border-slate-200 bg-white hover:bg-slate-50"
       }`}
     >
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs uppercase text-slate-400">Giorno {index + 1}</p>
+        <p className="flex items-center gap-1 text-xs uppercase text-slate-400">
+          <GripVertical size={12} className="text-slate-300" />
+          Giorno {index + 1}
+        </p>
         {isToday && (
           <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold text-white">
             Oggi

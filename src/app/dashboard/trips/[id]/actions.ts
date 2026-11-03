@@ -179,6 +179,7 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
   const priceAmount = formData.get("price_amount") ? Number(formData.get("price_amount")) : null;
   const priceNet = formData.get("price_net") ? Number(formData.get("price_net")) : null;
   const priceCommission = formData.get("price_commission") ? Number(formData.get("price_commission")) : null;
+  const titleColor = String(formData.get("title_color") ?? "").trim() || null;
 
   await supabase
     .from("trips")
@@ -191,6 +192,7 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
       price_amount: priceMode === "lordo" ? priceAmount : null,
       price_net: priceMode === "commissioni" ? priceNet : null,
       price_commission: priceMode === "commissioni" ? priceCommission : null,
+      title_color: titleColor,
     })
     .eq("id", tripId);
 
@@ -250,6 +252,33 @@ export async function updateDayTitle(tripId: string, dayId: string, title: strin
     .from("trip_days")
     .update({ title: clean || null })
     .eq("id", dayId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+// Scambia il contenuto (attività, titolo, note) tra due giorni trascinati
+// uno sull'altro. Le date e l'ordine dei giorni restano fissi: cambia solo
+// cosa c'è pianificato in ciascuna data.
+export async function swapDayContent(tripId: string, dayAId: string, dayBId: string) {
+  if (dayAId === dayBId) return;
+  const supabase = await createClient();
+
+  const [{ data: activitiesA }, { data: activitiesB }, { data: dayA }, { data: dayB }] = await Promise.all([
+    supabase.from("activities").select("id").eq("trip_day_id", dayAId),
+    supabase.from("activities").select("id").eq("trip_day_id", dayBId),
+    supabase.from("trip_days").select("title, notes").eq("id", dayAId).single(),
+    supabase.from("trip_days").select("title, notes").eq("id", dayBId).single(),
+  ]);
+
+  const idsA = (activitiesA || []).map((a) => a.id);
+  const idsB = (activitiesB || []).map((a) => a.id);
+
+  await Promise.all([
+    idsA.length > 0 ? supabase.from("activities").update({ trip_day_id: dayBId }).in("id", idsA) : null,
+    idsB.length > 0 ? supabase.from("activities").update({ trip_day_id: dayAId }).in("id", idsB) : null,
+    supabase.from("trip_days").update({ title: dayB?.title ?? null, notes: dayB?.notes ?? null }).eq("id", dayAId),
+    supabase.from("trip_days").update({ title: dayA?.title ?? null, notes: dayA?.notes ?? null }).eq("id", dayBId),
+  ]);
+
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 

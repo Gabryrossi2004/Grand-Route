@@ -89,7 +89,12 @@ export default async function PublicTripPage({
               {agencyName && <span className="text-sm font-medium opacity-90">{agencyName}</span>}
             </div>
           )}
-          <h1 className="theme-heading-font text-3xl font-semibold text-white">{trip.title}</h1>
+          <h1
+            className="theme-heading-font text-3xl font-semibold"
+            style={{ color: trip.title_color || "#ffffff" }}
+          >
+            {trip.title}
+          </h1>
           {trip.destination && <p className="mt-1 text-white/90">{trip.destination}</p>}
           {dateRange && <p className="mt-1 text-sm text-white/80">{dateRange}</p>}
         </div>

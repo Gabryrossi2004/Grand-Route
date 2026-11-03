@@ -1,8 +1,8 @@
-// Font per i 10 stili grafici del viaggio. Ogni tema ha un font per i titoli
-// e uno per il testo, caricati una sola volta qui (Next.js li ottimizza e li
-// serve dal nostro dominio, nessuna chiamata a Google a runtime).
-// Le variabili CSS generate vengono poi lette da src/app/themes.css in base
-// al tema attivo (data-theme sul contenitore).
+// Font per gli 8 stili grafici del viaggio. Ogni tema ha un font per i
+// titoli e uno per il testo, caricati una sola volta qui (Next.js li
+// ottimizza e li serve dal nostro dominio, nessuna chiamata a Google a
+// runtime). Le variabili CSS generate vengono poi lette da
+// src/app/themes.css in base al tema attivo (data-theme sul contenitore).
 import {
   Playfair_Display,
   Lora,
@@ -12,12 +12,8 @@ import {
   Mulish,
   Cinzel,
   Work_Sans,
-  Cinzel_Decorative,
-  EB_Garamond,
   Fjalla_One,
   Karla,
-  Oswald,
-  Inter,
   Marcellus,
   Jost,
   Cormorant_Garamond,
@@ -38,14 +34,8 @@ const giunglaBody = Mulish({ subsets: ["latin"], variable: "--font-giungla-body"
 const desertoHeading = Cinzel({ subsets: ["latin"], variable: "--font-deserto-heading" });
 const desertoBody = Work_Sans({ subsets: ["latin"], variable: "--font-deserto-body" });
 
-const egizioHeading = Cinzel_Decorative({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-egizio-heading" });
-const egizioBody = EB_Garamond({ subsets: ["latin"], variable: "--font-egizio-body" });
-
 const nordicoHeading = Fjalla_One({ subsets: ["latin"], weight: "400", variable: "--font-nordico-heading" });
 const nordicoBody = Karla({ subsets: ["latin"], variable: "--font-nordico-body" });
-
-const cittaHeading = Oswald({ subsets: ["latin"], variable: "--font-citta-heading" });
-const cittaBody = Inter({ subsets: ["latin"], variable: "--font-citta-body" });
 
 const maroccoHeading = Marcellus({ subsets: ["latin"], weight: "400", variable: "--font-marocco-heading" });
 const maroccoBody = Jost({ subsets: ["latin"], variable: "--font-marocco-body" });
@@ -68,12 +58,8 @@ export const themeFontVariables = [
   giunglaBody.variable,
   desertoHeading.variable,
   desertoBody.variable,
-  egizioHeading.variable,
-  egizioBody.variable,
   nordicoHeading.variable,
   nordicoBody.variable,
-  cittaHeading.variable,
-  cittaBody.variable,
   maroccoHeading.variable,
   maroccoBody.variable,
   giapponeseHeading.variable,

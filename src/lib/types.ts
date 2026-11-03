@@ -36,9 +36,7 @@ export type TripTheme =
   | "azteco"
   | "giungla"
   | "deserto"
-  | "egizio"
   | "nordico"
-  | "citta"
   | "marocco"
   | "giapponese"
   | "tropicale";
@@ -53,6 +51,7 @@ export type Trip = {
   start_date: string | null;
   end_date: string | null;
   cover_image_url: string | null;
+  title_color: string | null;
   public_slug: string;
   is_published: boolean;
   price_mode: PriceMode;
