@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import { activityTypes, detailFieldLabels, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import { themeFontVariables } from "@/lib/themeFonts";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -27,18 +28,6 @@ export default async function PublicTripPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let debugInfo: string | null = null;
-  try {
-    return await renderTrip(slug);
-  } catch (err) {
-    const digest = (err as { digest?: string } | null)?.digest;
-    if (digest?.startsWith("NEXT_HTTP_ERROR_FALLBACK")) throw err;
-    debugInfo = err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err);
-  }
-  return <pre style={{ whiteSpace: "pre-wrap", padding: 20 }}>DEBUG TEMPORANEO:{"\n"}{debugInfo}</pre>;
-}
-
-async function renderTrip(slug: string) {
   const supabase = await createClient();
 
   const { data: trip } = await supabase
@@ -63,28 +52,6 @@ async function renderTrip(slug: string) {
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
-
-  // La libreria di pulizia HTML (isomorphic-dompurify) è pesante: la
-  // importiamo "al volo" solo se serve davvero, invece di caricarla sempre
-  // insieme a tutti i font dei temi. In produzione le due cose insieme
-  // mandavano in crash questa pagina.
-  const sanitizedDescriptions = new Map<string, string>();
-  const hasDescriptions = orderedDays.some((day) => day.activities.some((a) => a.description));
-  if (hasDescriptions) {
-    try {
-      const { sanitizeHtml } = await import("@/lib/sanitize");
-      for (const day of orderedDays) {
-        for (const activity of day.activities) {
-          if (activity.description) {
-            sanitizedDescriptions.set(activity.id, sanitizeHtml(toSafeHtml(activity.description)));
-          }
-        }
-      }
-    } catch (err) {
-      const msg = err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err);
-      throw new Error("SANITIZE_ERROR: " + msg);
-    }
-  }
 
   const theme = trip.theme || "elegante";
   const agencyName = (owner as Profile | null)?.agency_name;
@@ -206,7 +173,7 @@ async function renderTrip(slug: string) {
                         {activity.description && (
                           <div
                             className={richTextClassName + " mt-1"}
-                            dangerouslySetInnerHTML={{ __html: sanitizedDescriptions.get(activity.id) ?? "" }}
+                            dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
                           />
                         )}
                         {visibleDetailEntries(activity.details).length > 0 && (
