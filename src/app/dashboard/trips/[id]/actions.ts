@@ -115,6 +115,60 @@ async function handleLodgingCheckout(
   await resyncDayOrder(supabase, tripId);
 }
 
+// Quando un volo ha i dati di arrivo (città, IATA e data presi dalla ricerca
+// automatica), crea il blocco "Arrivo a ..." nel giorno giusto: lo stesso
+// giorno della partenza se il volo arriva in giornata, oppure crea i giorni
+// mancanti dell'itinerario se arriva il giorno dopo (o più avanti).
+async function handleFlightArrival(
+  supabase: SupabaseServerClient,
+  tripId: string,
+  dayId: string,
+  details: Record<string, string>,
+) {
+  const arrivalCity = details._arrivo_citta;
+  const arrivalIata = details._arrivo_iata;
+  const arrivalDate = details._arrivo_data;
+  if (!arrivalCity || !arrivalIata || !arrivalDate) return;
+
+  const { data: currentDay } = await supabase.from("trip_days").select("day_date").eq("id", dayId).single();
+  if (!currentDay?.day_date || arrivalDate < currentDay.day_date) return;
+
+  let arrivalDayId: string | null = dayId;
+  if (arrivalDate > currentDay.day_date) {
+    arrivalDayId = null;
+    for (const dateStr of dateRange(currentDay.day_date, arrivalDate)) {
+      const id = await ensureDayForDate(supabase, tripId, dateStr);
+      if (dateStr === arrivalDate) arrivalDayId = id;
+    }
+  }
+  if (!arrivalDayId) return;
+
+  const arrivalTitle = `Arrivo a ${arrivalCity} (${arrivalIata})`;
+  const { data: existingArrival } = await supabase
+    .from("activities")
+    .select("id")
+    .eq("trip_day_id", arrivalDayId)
+    .eq("title", arrivalTitle)
+    .maybeSingle();
+
+  if (!existingArrival) {
+    const { count } = await supabase
+      .from("activities")
+      .select("id", { count: "exact", head: true })
+      .eq("trip_day_id", arrivalDayId);
+
+    await supabase.from("activities").insert({
+      trip_day_id: arrivalDayId,
+      title: arrivalTitle,
+      activity_type: "volo",
+      start_time: details.orario_arrivo || null,
+      activity_order: count ?? 0,
+    });
+  }
+
+  await resyncDayOrder(supabase, tripId);
+}
+
 export async function updateTripInfo(tripId: string, formData: FormData) {
   const supabase = await createClient();
   const title = String(formData.get("title") ?? "").trim();
@@ -224,6 +278,8 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
 
   if (activityType === "alloggio") {
     await handleLodgingCheckout(supabase, tripId, dayId, title, details);
+  } else if (activityType === "volo") {
+    await handleFlightArrival(supabase, tripId, dayId, details);
   }
 
   revalidatePath(`/dashboard/trips/${tripId}`);

@@ -31,7 +31,7 @@ import {
   Trash2,
 } from "lucide-react";
 import type { Activity, ActivityPhoto, ActivityTemplate, TripDay, TripDocument } from "@/lib/types";
-import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
+import { activityTypes, detailFieldLabels, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import DropzoneUpload from "@/components/DropzoneUpload";
@@ -419,7 +419,7 @@ function SortableActivityRow({
 
   const meta = activityTypes[activity.activity_type];
   const Icon = meta.icon;
-  const detailEntries = Object.entries(activity.details || {});
+  const detailEntries = visibleDetailEntries(activity.details);
 
   return (
     <>

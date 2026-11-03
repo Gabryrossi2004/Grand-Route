@@ -6,6 +6,9 @@ export type FlightLookupResult = {
   departureAirport: string;
   departureTime: string;
   arrivalAirport: string;
+  arrivalCity: string;
+  arrivalIata: string;
+  arrivalDate: string;
   arrivalTime: string;
   aircraft: string | null;
 };
@@ -13,6 +16,7 @@ export type FlightLookupResult = {
 type AeroDataBoxAirport = {
   iata?: string;
   name?: string;
+  municipalityName?: string;
 };
 
 type AeroDataBoxLeg = {
@@ -36,6 +40,11 @@ function formatAirport(airport?: AeroDataBoxAirport): string {
 function formatTime(local?: string): string {
   // L'orario arriva come "2026-12-15 14:55+01:00": prendiamo solo "14:55".
   return local?.slice(11, 16) ?? "";
+}
+
+function formatDate(local?: string): string {
+  // Stessa stringa di sopra, ma prendiamo la data "2026-12-15".
+  return local?.slice(0, 10) ?? "";
 }
 
 export async function searchFlight(
@@ -86,6 +95,9 @@ export async function searchFlight(
       departureAirport: formatAirport(flight.departure?.airport),
       departureTime: formatTime(flight.departure?.scheduledTime?.local),
       arrivalAirport: formatAirport(flight.arrival?.airport),
+      arrivalCity: flight.arrival?.airport?.municipalityName ?? flight.arrival?.airport?.name ?? "",
+      arrivalIata: flight.arrival?.airport?.iata ?? "",
+      arrivalDate: formatDate(flight.arrival?.scheduledTime?.local),
       arrivalTime: formatTime(flight.arrival?.scheduledTime?.local),
       aircraft: flight.aircraft?.model ?? null,
     }));

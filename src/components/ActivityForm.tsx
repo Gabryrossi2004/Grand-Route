@@ -62,6 +62,11 @@ export default function ActivityForm({
       aeroporto_partenza: result.departureAirport || prev.aeroporto_partenza,
       aeroporto_arrivo: result.arrivalAirport || prev.aeroporto_arrivo,
       orario_arrivo: result.arrivalTime || prev.orario_arrivo,
+      // Chiavi interne (non mostrate), usate dal server per creare in automatico
+      // il blocco "Arrivo a ..." nel giorno giusto, anche se diverso da questo.
+      _arrivo_citta: result.arrivalCity,
+      _arrivo_iata: result.arrivalIata,
+      _arrivo_data: result.arrivalDate,
     }));
     if (result.departureTime) setStartTime(result.departureTime);
     if (!title.trim() && result.departureAirport && result.arrivalAirport) {

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
-import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
+import { activityTypes, detailFieldLabels, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
@@ -142,9 +142,9 @@ export default async function PublicTripPage({
                             dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
                           />
                         )}
-                        {Object.entries(activity.details || {}).length > 0 && (
+                        {visibleDetailEntries(activity.details).length > 0 && (
                           <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
-                            {Object.entries(activity.details).map(([key, value]) => (
+                            {visibleDetailEntries(activity.details).map(([key, value]) => (
                               <div key={key} className="flex gap-1">
                                 <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
                                 <dd>{value}</dd>

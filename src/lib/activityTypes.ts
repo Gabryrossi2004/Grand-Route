@@ -85,3 +85,9 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
 export const detailFieldLabels: Record<string, string> = Object.values(detailFields)
   .flat()
   .reduce((acc, field) => ({ ...acc, [field.key]: field.label }), {} as Record<string, string>);
+
+// Le chiavi che iniziano con "_" sono dati interni (es. usati per creare in
+// automatico il blocco "Arrivo" di un volo) e non vanno mai mostrati.
+export function visibleDetailEntries(details: Record<string, string> | null | undefined): [string, string][] {
+  return Object.entries(details || {}).filter(([key]) => !key.startsWith("_"));
+}
