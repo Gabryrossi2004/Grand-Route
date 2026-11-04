@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Compass } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { clientSignOut } from "./actions";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
@@ -19,7 +20,7 @@ export default async function ClientPortalLayout({ children }: { children: React
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
       <div className="pointer-events-none fixed -top-32 left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
       <div className="pointer-events-none fixed bottom-[-15%] right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
-      <header className="sticky top-0 z-20 border-b border-[#e6d7bb] bg-[#faf3e6]/80 backdrop-blur">
+      <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <Link href="/client" className="flex items-center gap-2 font-semibold text-[#2b333e]">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2b333e] text-white">
@@ -39,7 +40,7 @@ export default async function ClientPortalLayout({ children }: { children: React
             </form>
           </nav>
         </div>
-      </header>
+      </HeaderAutoHide>
       <main className="mx-auto max-w-3xl px-4 py-8">{children}</main>
     </div>
   );

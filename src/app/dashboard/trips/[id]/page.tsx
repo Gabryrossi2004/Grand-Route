@@ -14,6 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Calendar,
+  ChevronDown,
   Copy,
   ExternalLink,
   FileText,
@@ -293,9 +294,25 @@ function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
 }
 
 function TripInfoForm({ trip }: { trip: Trip }) {
+  const needsAttention = !trip.destination || !trip.start_date;
+
   return (
-    <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-6 shadow-sm">
-      <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">Informazioni viaggio</h2>
+    <details
+      className="group overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] shadow-sm"
+      open={needsAttention}
+    >
+      <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+        <span className="flex items-center gap-2">
+          Informazioni viaggio
+          {needsAttention && (
+            <span className="rounded-full bg-[#f2e2c4] px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-[#8c7a5e]">
+              da completare
+            </span>
+          )}
+        </span>
+        <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+      </summary>
+      <div className="p-6 pt-4">
       <form action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label htmlFor="title" className={labelClass}>
@@ -354,6 +371,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
         </p>
         <ThemePicker tripId={trip.id} current={trip.theme} />
       </details>
-    </section>
+      </div>
+    </details>
   );
 }
