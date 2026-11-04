@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
+import AuthBrandHeader from "@/components/AuthBrandHeader";
 import { signup } from "./actions";
 
 export default function SignupPage() {
@@ -11,6 +12,7 @@ export default function SignupPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4">
         <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg shadow-slate-200/50">
+          <AuthBrandHeader />
           <h1 className="mb-2 text-xl font-semibold text-slate-900">Controlla la tua email</h1>
           <p className="text-sm text-slate-500">
             Ti abbiamo mandato un link di conferma. Clicca sul link e poi torna qui per accedere.
@@ -26,6 +28,7 @@ export default function SignupPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4">
       <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+        <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Crea il tuo account</h1>
         <p className="mb-6 text-sm text-slate-500">Inizia a creare itinerari in pochi minuti</p>
 

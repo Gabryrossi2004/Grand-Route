@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
+import AuthBrandHeader from "@/components/AuthBrandHeader";
 import { login } from "./actions";
 
 export default function LoginPage() {
@@ -10,6 +11,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4">
       <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+        <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Accedi</h1>
         <p className="mb-6 text-sm text-slate-500">Entra nel tuo gestionale viaggi</p>
 

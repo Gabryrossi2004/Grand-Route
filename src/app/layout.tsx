@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gestionale Viaggi",
-  description: "Crea itinerari di viaggio brandizzati da condividere con i tuoi clienti",
+  title: "Grand Route",
+  description: "Grand Route: crea itinerari di viaggio brandizzati da condividere con i tuoi clienti",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
