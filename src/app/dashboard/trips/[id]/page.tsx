@@ -119,7 +119,7 @@ export default async function TripDetailPage({
           <h2 className="text-lg font-semibold text-white">Itinerario</h2>
           <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
         </div>
-        <div className="flex items-start gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5">
+        <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">
             <ItineraryEditor
               tripId={id}
