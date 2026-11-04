@@ -47,7 +47,7 @@ export default function Home() {
           </span>
           <div className="relative">
             <h2 className={`${playfair.className} text-2xl font-semibold text-[#faf3e6]`}>Sono un cliente</h2>
-            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#b9ad96]">
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#f2e9d8]">
               Accedi alla tua area riservata e ritrova tutti i viaggi che la tua agenzia ha organizzato per te.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
             >
               Accedi ai miei viaggi
             </Link>
-            <Link href="/client/signup" className="text-sm font-medium text-[#b9ad96] hover:text-[#faf3e6] hover:underline">
+            <Link href="/client/signup" className="text-sm font-medium text-[#e3d9c4] hover:text-[#faf3e6] hover:underline">
               Prima volta? Registrati qui
             </Link>
           </div>
