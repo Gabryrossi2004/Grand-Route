@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
-import type { Activity, TripDay } from "@/lib/types";
+import type { Activity, TripChecklistItem, TripDay } from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
 
@@ -687,23 +687,27 @@ export async function duplicateTripAsVariant(tripId: string) {
   redirect(`/dashboard/trips/${newTrip.id}`);
 }
 
-export async function addChecklistItem(tripId: string, formData: FormData) {
+export async function addChecklistItem(
+  tripId: string,
+  formData: FormData,
+): Promise<TripChecklistItem | null> {
   const supabase = await createClient();
   const label = String(formData.get("label") ?? "").trim();
-  if (!label) return;
+  if (!label) return null;
 
   const { count } = await supabase
     .from("trip_checklist_items")
     .select("id", { count: "exact", head: true })
     .eq("trip_id", tripId);
 
-  await supabase.from("trip_checklist_items").insert({
-    trip_id: tripId,
-    label,
-    item_order: count ?? 0,
-  });
+  const { data } = await supabase
+    .from("trip_checklist_items")
+    .insert({ trip_id: tripId, label, item_order: count ?? 0 })
+    .select()
+    .single();
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return (data as TripChecklistItem) ?? null;
 }
 
 export async function toggleChecklistItem(tripId: string, itemId: string, done: boolean) {
