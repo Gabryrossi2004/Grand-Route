@@ -47,7 +47,7 @@ const tropicaleHeading = Pacifico({ subsets: ["latin"], weight: "400", variable:
 const tropicaleBody = Quicksand({ subsets: ["latin"], variable: "--font-tropicale-body" });
 
 // Classi di tutte le variabili dei font, da applicare al contenitore della
-// pagina che userà i temi (pagina pubblica, overview). Il CSS sceglie quale
+// pagina che userà i temi (pagina pubblica, preview). Il CSS sceglie quale
 // coppia usare in base al tema attivo.
 export const themeFontVariables = [
   eleganteHeading.variable,

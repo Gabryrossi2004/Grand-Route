@@ -211,7 +211,7 @@ export async function updateTripTheme(tripId: string, formData: FormData) {
   const supabase = await createClient();
   await supabase.from("trips").update({ theme }).eq("id", tripId);
   revalidatePath(`/dashboard/trips/${tripId}`);
-  revalidatePath(`/trips/${tripId}/overview`);
+  revalidatePath(`/trips/${tripId}/preview`);
 }
 
 export async function deleteTrip(tripId: string): Promise<{ error: string } | undefined> {

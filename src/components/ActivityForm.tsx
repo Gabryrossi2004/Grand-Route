@@ -146,13 +146,13 @@ export default function ActivityForm({
           type="time"
           value={startTime}
           onChange={(e) => setStartTime(e.target.value)}
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+          className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
         <select
           name="activity_type"
           value={activityType}
           onChange={(e) => changeType(e.target.value as ActivityType)}
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+          className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         >
           {activityTypeOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -165,7 +165,7 @@ export default function ActivityForm({
             <select
               value={templateId}
               onChange={(e) => applyTemplate(e.target.value)}
-              className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+              className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             >
               <option value="">Scrivi da zero…</option>
               {availableTemplates.map((template) => (
@@ -188,7 +188,7 @@ export default function ActivityForm({
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Titolo attività (es. Check-in hotel)"
         required
-        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+        className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
       />
       <input
         name="location"
@@ -196,7 +196,7 @@ export default function ActivityForm({
         value={location}
         onChange={(e) => setLocation(e.target.value)}
         placeholder="Luogo (opzionale)"
-        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+        className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
       />
       <input type="hidden" name="description" value={description} />
       <RichTextEditor value={description} onChange={setDescription} placeholder="Descrizione (opzionale)" />
@@ -218,7 +218,7 @@ export default function ActivityForm({
                 }
               }}
               placeholder="Es. AZ610"
-              className="w-32 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+              className="w-32 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             />
             <button
               type="button"
@@ -266,7 +266,7 @@ export default function ActivityForm({
                 <select
                   value={details[field.key] ?? ""}
                   onChange={(e) => setDetails({ ...details, [field.key]: e.target.value })}
-                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
                 >
                   <option value="">—</option>
                   {field.options?.map((opt) => (
@@ -280,7 +280,7 @@ export default function ActivityForm({
                   type={field.type}
                   value={details[field.key] ?? ""}
                   onChange={(e) => setDetails({ ...details, [field.key]: e.target.value })}
-                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
                 />
               )}
               {field.key === CHECK_OUT_DATE_KEY && !isEdit && (
