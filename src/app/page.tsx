@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Compass, MapPin, Plane, Sparkles } from "lucide-react";
+import { Compass, MapPin, Plane, Sparkles, User } from "lucide-react";
 
 export default function Home() {
   return (
@@ -8,13 +9,15 @@ export default function Home() {
       <div className="pointer-events-none absolute bottom-[-10%] left-[-10%] h-96 w-96 rounded-full bg-indigo-100 blur-3xl" />
 
       <main className="relative mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
+        <Image src="/grand-route-logo.jpg" alt="Grand Route" width={56} height={56} className="mb-4 rounded-xl shadow-sm" />
+
         <div className="mb-6 flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm backdrop-blur">
           <Sparkles size={14} className="text-blue-500" />
           Itinerari che fanno colpo
         </div>
 
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-          Gestionale <span className="text-blue-600">Viaggi</span>
+          Grand <span className="text-blue-600">Route</span>
         </h1>
         <p className="mt-4 max-w-md text-balance text-base text-slate-500 sm:text-lg">
           Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata,
@@ -35,6 +38,15 @@ export default function Home() {
             Accedi
           </Link>
         </div>
+        <p className="mt-3 text-xs text-slate-400">Area riservata alle agenzie di viaggio</p>
+
+        <Link
+          href="/client/login"
+          className="mt-8 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+        >
+          <User size={15} />
+          Sei un cliente? Accedi alla tua area viaggi
+        </Link>
 
         <div className="mt-16 grid grid-cols-3 gap-6 text-slate-400 sm:gap-10">
           <div className="flex flex-col items-center gap-1.5">

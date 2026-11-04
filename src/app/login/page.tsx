@@ -63,6 +63,12 @@ export default function LoginPage() {
             Registrati
           </Link>
         </p>
+        <p className="mt-2 text-center text-xs text-slate-400">
+          Sei un cliente?{" "}
+          <Link href="/client/login" className="font-medium hover:underline">
+            Accedi qui
+          </Link>
+        </p>
       </div>
     </div>
   );
