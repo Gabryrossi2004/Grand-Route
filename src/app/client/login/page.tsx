@@ -9,8 +9,8 @@ export default function ClientLoginPage() {
   const [state, formAction, pending] = useActionState(clientLogin, undefined);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4">
-      <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+    <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
+      <div className="w-full max-w-sm rounded-2xl border border-[#e6d7bb] bg-white p-8 shadow-lg shadow-[#e6d7bb]/40">
         <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Area clienti</h1>
         <p className="mb-6 text-sm text-slate-500">Accedi per vedere i tuoi viaggi</p>
@@ -25,7 +25,7 @@ export default function ClientLoginPage() {
               name="email"
               type="email"
               required
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
             />
           </div>
           <div>
@@ -33,7 +33,7 @@ export default function ClientLoginPage() {
               <label htmlFor="password" className="block text-sm font-medium text-slate-700">
                 Password
               </label>
-              <Link href="/forgot-password" className="text-xs font-medium text-blue-600 hover:underline">
+              <Link href="/forgot-password" className="text-xs font-medium text-[#2b333e] hover:underline">
                 Password dimenticata?
               </Link>
             </div>
@@ -42,7 +42,7 @@ export default function ClientLoginPage() {
               name="password"
               type="password"
               required
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
             />
           </div>
 
@@ -51,7 +51,7 @@ export default function ClientLoginPage() {
           <button
             type="submit"
             disabled={pending}
-            className="mt-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700 disabled:opacity-60"
+            className="mt-2 rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
           >
             {pending ? "Accesso in corso…" : "Accedi"}
           </button>
@@ -59,7 +59,7 @@ export default function ClientLoginPage() {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           Non hai un account?{" "}
-          <Link href="/client/signup" className="font-medium text-blue-600 hover:underline">
+          <Link href="/client/signup" className="font-medium text-[#2b333e] hover:underline">
             Registrati
           </Link>
         </p>
