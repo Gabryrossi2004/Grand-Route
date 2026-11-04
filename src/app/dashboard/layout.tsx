@@ -37,8 +37,8 @@ export default async function DashboardLayout({
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
-      <div className="pointer-events-none fixed -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
-      <div className="pointer-events-none fixed bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-32 right-[-8%] z-0 h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-15%] left-[-8%] z-0 h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
       <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
           <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold text-[#2b333e]">

@@ -4,6 +4,22 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 
+const MAX_AUTO_DAYS = 90;
+
+function dateRange(start: string, end: string): string[] {
+  const startDate = new Date(`${start}T00:00:00Z`);
+  const endDate = new Date(`${end}T00:00:00Z`);
+  if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime()) || startDate > endDate) return [];
+
+  const dates: string[] = [];
+  const cursor = startDate;
+  while (cursor <= endDate && dates.length < MAX_AUTO_DAYS) {
+    dates.push(cursor.toISOString().slice(0, 10));
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
+  return dates;
+}
+
 export async function createTrip(
   _prevState: { error?: string } | undefined,
   formData: FormData,
@@ -51,6 +67,19 @@ export async function createTrip(
 
   if (error || !trip) {
     return { error: "Errore durante la creazione del viaggio. Riprova." };
+  }
+
+  if (startDate && endDate) {
+    const days = dateRange(startDate, endDate);
+    if (days.length > 0) {
+      await supabase.from("trip_days").insert(
+        days.map((day_date, index) => ({
+          trip_id: trip.id,
+          day_date,
+          day_order: index,
+        })),
+      );
+    }
   }
 
   redirect(`/dashboard/trips/${trip.id}`);
