@@ -8,7 +8,28 @@ import sanitizeHtmlLib from "sanitize-html";
 // problema di compatibilità ESM/CommonJS in una sua dipendenza interna.
 export function sanitizeHtml(html: string): string {
   return sanitizeHtmlLib(html, {
-    allowedTags: ["p", "strong", "em", "ul", "ol", "li", "br"],
-    allowedAttributes: {},
+    allowedTags: [
+      "p",
+      "strong",
+      "em",
+      "ul",
+      "ol",
+      "li",
+      "br",
+      "a",
+      "table",
+      "thead",
+      "tbody",
+      "tr",
+      "th",
+      "td",
+    ],
+    allowedAttributes: {
+      a: ["href", "target", "rel"],
+    },
+    allowedSchemes: ["http", "https", "mailto"],
+    transformTags: {
+      a: sanitizeHtmlLib.simpleTransform("a", { target: "_blank", rel: "noopener noreferrer" }),
+    },
   });
 }

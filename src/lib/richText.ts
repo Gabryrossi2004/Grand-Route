@@ -3,7 +3,11 @@
 // Tailwind di base toglie gli stili predefiniti di liste/titoli.
 export const richTextClassName =
   "text-sm text-slate-700 [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-semibold [&_em]:italic " +
-  "[&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-0.5";
+  "[&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-0.5 " +
+  "[&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 " +
+  "[&_table]:my-2 [&_table]:w-full [&_table]:border-collapse [&_table]:text-left " +
+  "[&_th]:border [&_th]:border-slate-300 [&_th]:bg-slate-100 [&_th]:px-2 [&_th]:py-1 [&_th]:font-semibold " +
+  "[&_td]:border [&_td]:border-slate-300 [&_td]:px-2 [&_td]:py-1";
 
 // Le descrizioni create prima dell'editor di testo formattato sono testo semplice,
 // non HTML. Le riconosciamo e le "proteggiamo" (scappiamo i caratteri speciali)

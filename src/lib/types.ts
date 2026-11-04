@@ -77,6 +77,7 @@ export type ActivityType =
   | "trasporto"
   | "ristorante"
   | "attivita"
+  | "info"
   | "altro";
 
 export type ActivityDetails = Record<string, string>;

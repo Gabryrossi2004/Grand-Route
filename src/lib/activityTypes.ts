@@ -2,6 +2,7 @@ import {
   BedDouble,
   CircleEllipsis,
   Compass,
+  Info,
   Plane,
   TrainFront,
   UtensilsCrossed,
@@ -15,6 +16,7 @@ export const activityTypes: Record<ActivityType, { label: string; color: string;
   trasporto: { label: "Trasporto", color: "#ea580c", bg: "#fff7ed", icon: TrainFront },
   ristorante: { label: "Ristorante", color: "#dc2626", bg: "#fef2f2", icon: UtensilsCrossed },
   attivita: { label: "Attività", color: "#16a34a", bg: "#f0fdf4", icon: Compass },
+  info: { label: "Info", color: "#0891b2", bg: "#ecfeff", icon: Info },
   altro: { label: "Altro", color: "#64748b", bg: "#f8fafc", icon: CircleEllipsis },
 };
 
@@ -79,6 +81,7 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
     { key: "punto_incontro", label: "Punto di incontro", type: "text" },
     { key: "durata", label: "Durata", type: "text" },
   ],
+  info: [],
   altro: [],
 };
 
