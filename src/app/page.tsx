@@ -1,68 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Compass, MapPin, Plane, Sparkles, User } from "lucide-react";
+import { Briefcase, Sparkles, User } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div className="pointer-events-none absolute -top-24 right-[-10%] h-96 w-96 rounded-full bg-blue-100 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-[-10%] left-[-10%] h-96 w-96 rounded-full bg-indigo-100 blur-3xl" />
-
-      <main className="relative mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
-        <Image src="/grand-route-logo.jpg" alt="Grand Route" width={56} height={56} className="mb-4 rounded-xl shadow-sm" />
-
-        <div className="mb-6 flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm backdrop-blur">
-          <Sparkles size={14} className="text-blue-500" />
-          Itinerari che fanno colpo
-        </div>
-
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+    <div className="flex min-h-screen flex-col bg-white">
+      <header className="flex items-center justify-center gap-2.5 border-b border-slate-100 px-4 py-5">
+        <Image src="/grand-route-logo.jpg" alt="Grand Route" width={36} height={36} className="rounded-lg shadow-sm" />
+        <span className="text-lg font-bold tracking-tight text-slate-900">
           Grand <span className="text-blue-600">Route</span>
-        </h1>
-        <p className="mt-4 max-w-md text-balance text-base text-slate-500 sm:text-lg">
-          Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata,
-          elegante e pronta da mandare — come su Travefy.
-        </p>
+        </span>
+      </header>
 
-        <div className="mt-9 flex gap-3">
-          <Link
-            href="/signup"
-            className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700 hover:shadow-md"
-          >
-            Inizia gratis
-          </Link>
-          <Link
-            href="/login"
-            className="rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-          >
-            Accedi
-          </Link>
-        </div>
-        <p className="mt-3 text-xs text-slate-400">Area riservata alle agenzie di viaggio</p>
+      <main className="grid flex-1 grid-cols-1 sm:grid-cols-2">
+        {/* Agenzie */}
+        <section className="group relative flex flex-col items-center justify-center gap-5 overflow-hidden border-b border-slate-100 bg-gradient-to-br from-slate-50 to-white px-6 py-16 text-center transition sm:border-b-0 sm:border-r">
+          <div className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-blue-100 opacity-70 blur-3xl" />
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-sm shadow-blue-200">
+            <Briefcase size={24} />
+          </span>
+          <div className="relative">
+            <h2 className="text-2xl font-bold text-slate-900">Sono un&apos;agenzia</h2>
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-slate-500">
+              Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata ed elegante.
+            </p>
+          </div>
+          <div className="relative flex flex-col items-center gap-2.5">
+            <Link
+              href="/signup"
+              className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700 hover:shadow-md"
+            >
+              Inizia gratis
+            </Link>
+            <Link href="/login" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
+              Accedi al tuo account agenzia
+            </Link>
+          </div>
+        </section>
 
-        <Link
-          href="/client/login"
-          className="mt-8 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
-        >
-          <User size={15} />
-          Sei un cliente? Accedi alla tua area viaggi
-        </Link>
-
-        <div className="mt-16 grid grid-cols-3 gap-6 text-slate-400 sm:gap-10">
-          <div className="flex flex-col items-center gap-1.5">
-            <Plane size={20} />
-            <span className="text-xs font-medium">Itinerari</span>
+        {/* Clienti */}
+        <section className="group relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-gradient-to-bl from-amber-50 to-white px-6 py-16 text-center transition">
+          <div className="pointer-events-none absolute -bottom-24 left-[-10%] h-72 w-72 rounded-full bg-amber-100 opacity-70 blur-3xl" />
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-sm">
+            <User size={24} />
+          </span>
+          <div className="relative">
+            <h2 className="text-2xl font-bold text-slate-900">Sono un cliente</h2>
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-slate-500">
+              Accedi alla tua area riservata e ritrova tutti i viaggi che la tua agenzia ha organizzato per te.
+            </p>
           </div>
-          <div className="flex flex-col items-center gap-1.5">
-            <MapPin size={20} />
-            <span className="text-xs font-medium">Tappe</span>
+          <div className="relative flex flex-col items-center gap-2.5">
+            <Link
+              href="/client/login"
+              className="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 hover:shadow-md"
+            >
+              Accedi ai miei viaggi
+            </Link>
+            <Link href="/client/signup" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
+              Prima volta? Registrati qui
+            </Link>
           </div>
-          <div className="flex flex-col items-center gap-1.5">
-            <Compass size={20} />
-            <span className="text-xs font-medium">Esperienze</span>
-          </div>
-        </div>
+        </section>
       </main>
+
+      <footer className="flex items-center justify-center gap-2 border-t border-slate-100 px-4 py-4 text-xs font-medium text-slate-400">
+        <Sparkles size={13} className="text-blue-400" />
+        Itinerari che fanno colpo
+      </footer>
     </div>
   );
 }
