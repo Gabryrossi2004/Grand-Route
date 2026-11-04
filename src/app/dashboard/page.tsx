@@ -72,7 +72,7 @@ export default async function DashboardHomePage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-semibold text-slate-900">Panoramica</h1>
+      <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Panoramica</h1>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
@@ -89,7 +89,7 @@ export default async function DashboardHomePage() {
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
-            <CalendarClock size={18} className="text-slate-400" />
+            <CalendarClock size={18} className="text-[#2b333e]" />
             <h2 className="text-lg font-semibold text-slate-900">Prossime partenze</h2>
           </div>
           {upcomingTrips.length === 0 ? (
@@ -126,7 +126,7 @@ export default async function DashboardHomePage() {
 
         <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
-            <ListChecks size={18} className="text-slate-400" />
+            <ListChecks size={18} className="text-[#2b333e]" />
             <h2 className="text-lg font-semibold text-slate-900">Promemoria da fare</h2>
           </div>
           {!pendingItems || pendingItems.length === 0 ? (

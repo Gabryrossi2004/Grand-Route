@@ -17,7 +17,7 @@ export default async function CalendarPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-slate-900">Calendario delle partenze</h1>
+        <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Calendario delle partenze</h1>
         <p className="text-sm text-slate-500">Tutte le partenze (✈) e i rientri (↩) dei tuoi viaggi, mese per mese.</p>
       </div>
 

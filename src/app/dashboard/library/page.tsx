@@ -12,7 +12,7 @@ export default async function LibraryPage() {
   return (
     <div>
       <div className="mb-1 flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-slate-900">Libreria</h1>
+        <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Libreria</h1>
       </div>
       <p className="mb-6 text-sm text-slate-500">
         Le attività che hai salvato per riusarle in altri viaggi. Per aggiungerne una, apri un&apos;attività

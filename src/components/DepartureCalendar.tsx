@@ -70,7 +70,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
           <button
             type="button"
             onClick={() => setViewDate(new Date(today.getFullYear(), today.getMonth(), 1))}
-            className="rounded-md border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50"
+            className="rounded-md border border-[#2b333e]/30 px-3 py-1.5 text-xs font-medium text-[#2b333e] transition hover:bg-[#2b333e]/5"
           >
             Oggi
           </button>
@@ -87,7 +87,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
 
       <div className="grid grid-cols-7 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200">
         {WEEKDAY_LABELS.map((label) => (
-          <div key={label} className="bg-slate-50 px-2 py-1.5 text-center text-xs font-semibold text-slate-500">
+          <div key={label} className="bg-[#2b333e] px-2 py-1.5 text-center text-xs font-semibold text-white">
             {label}
           </div>
         ))}

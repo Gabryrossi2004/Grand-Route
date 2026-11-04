@@ -25,7 +25,7 @@ export default async function TripsPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-slate-900">Viaggi</h1>
+        <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Viaggi</h1>
         <Link
           href="/dashboard/trips/new"
           className="rounded-lg bg-[#2b333e] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d]"

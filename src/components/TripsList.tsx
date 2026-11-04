@@ -55,7 +55,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
               type="button"
               onClick={() => setStatus(option.value)}
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                status === option.value ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-100"
+                status === option.value ? "bg-[#2b333e] text-white" : "text-slate-600 hover:bg-slate-100"
               }`}
             >
               {option.label}

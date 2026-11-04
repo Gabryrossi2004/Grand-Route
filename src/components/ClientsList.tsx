@@ -47,13 +47,18 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
             <Link
               key={client.id}
               href={`/dashboard/clients/${client.id}`}
-              className="flex items-center justify-between px-5 py-4 hover:bg-slate-50"
+              className="flex items-center justify-between gap-3 px-5 py-4 hover:bg-slate-50"
             >
-              <div>
-                <p className="font-medium text-slate-900">{client.full_name}</p>
-                {client.email && <p className="text-sm text-slate-500">{client.email}</p>}
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2b333e] text-sm font-semibold text-white">
+                  {client.full_name.trim().charAt(0).toUpperCase()}
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate font-medium text-slate-900">{client.full_name}</p>
+                  {client.email && <p className="truncate text-sm text-slate-500">{client.email}</p>}
+                </div>
               </div>
-              {client.phone && <p className="text-sm text-slate-400">{client.phone}</p>}
+              {client.phone && <p className="shrink-0 text-sm text-slate-400">{client.phone}</p>}
             </Link>
           ))}
         </div>
