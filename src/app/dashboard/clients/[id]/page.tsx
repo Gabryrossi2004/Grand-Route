@@ -4,6 +4,7 @@ import { Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import type { Trip } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
+import SubmitButton from "@/components/SubmitButton";
 import { deleteClient, linkTripToClient, unlinkTripFromClient, updateClient } from "../actions";
 
 export default async function ClientDetailPage({
@@ -109,9 +110,12 @@ export default async function ClientDetailPage({
 
         <ClientDetailsFields client={client} />
 
-        <button type="submit" className="w-fit rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+        <SubmitButton
+          pendingLabel="Salvataggio…"
+          className="w-fit rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+        >
           Salva modifiche
-        </button>
+        </SubmitButton>
       </form>
 
       <section>
@@ -127,9 +131,12 @@ export default async function ClientDetailPage({
                   {trip.destination && <span className="text-sm text-slate-500"> · {trip.destination}</span>}
                 </Link>
                 <form action={unlinkTripFromClient.bind(null, id, trip.id)}>
-                  <button type="submit" className="shrink-0 text-xs text-slate-400 hover:text-red-500 hover:underline">
+                  <SubmitButton
+                    pendingLabel="Rimozione…"
+                    className="shrink-0 text-xs text-slate-400 hover:text-red-500 hover:underline disabled:opacity-60"
+                  >
                     Rimuovi associazione
-                  </button>
+                  </SubmitButton>
                 </form>
               </li>
             ))}
@@ -154,20 +161,20 @@ export default async function ClientDetailPage({
                 </option>
               ))}
             </select>
-            <button
-              type="submit"
-              className="shrink-0 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            <SubmitButton
+              pendingLabel="Associazione…"
+              className="shrink-0 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
             >
               Associa
-            </button>
+            </SubmitButton>
           </form>
         )}
       </section>
 
       <form action={deleteClient.bind(null, id)}>
-        <button type="submit" className="text-sm text-red-500 hover:underline">
+        <SubmitButton pendingLabel="Eliminazione…" className="text-sm text-red-500 hover:underline disabled:opacity-60">
           Elimina cliente
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );
