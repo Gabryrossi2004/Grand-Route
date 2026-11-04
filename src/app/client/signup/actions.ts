@@ -25,5 +25,10 @@ export async function clientSignup(
     return { error: error.message };
   }
 
+  // Se la conferma email non è richiesta, signUp crea già una sessione
+  // attiva: colleghiamo subito le schede cliente corrispondenti, invece di
+  // aspettare un login separato che potrebbe non arrivare mai.
+  await supabase.rpc("claim_client_profiles");
+
   return { success: true };
 }
