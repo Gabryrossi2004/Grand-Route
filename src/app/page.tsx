@@ -1,71 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
 import { Briefcase, Sparkles, User } from "lucide-react";
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"] });
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <header className="flex items-center justify-center gap-2.5 border-b border-slate-100 px-4 py-5">
+    <div className="flex min-h-screen flex-col bg-[#faf3e6]">
+      <header className="flex items-center justify-center gap-2.5 border-b border-[#e6d7bb] bg-[#faf3e6] px-4 py-5">
         <Image src="/grand-route-logo.jpg" alt="Grand Route" width={36} height={36} className="rounded-lg shadow-sm" />
-        <span className="text-lg font-bold tracking-tight text-slate-900">
-          Grand <span className="text-blue-600">Route</span>
+        <span className={`${playfair.className} text-lg font-semibold tracking-wide text-[#2b333e]`}>
+          Grand Route
         </span>
       </header>
 
       <main className="grid flex-1 grid-cols-1 sm:grid-cols-2">
         {/* Agenzie */}
-        <section className="group relative flex flex-col items-center justify-center gap-5 overflow-hidden border-b border-slate-100 bg-gradient-to-br from-slate-50 to-white px-6 py-16 text-center transition sm:border-b-0 sm:border-r">
-          <div className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-blue-100 opacity-70 blur-3xl" />
-          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-sm shadow-blue-200">
+        <section className="relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-[#faf3e6] px-6 py-16 text-center">
+          <div className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-[#cda876]/20 blur-3xl" />
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2b333e] text-[#e6d7bb] shadow-sm">
             <Briefcase size={24} />
           </span>
           <div className="relative">
-            <h2 className="text-2xl font-bold text-slate-900">Sono un&apos;agenzia</h2>
-            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-slate-500">
+            <h2 className={`${playfair.className} text-2xl font-semibold text-[#2b333e]`}>Sono un&apos;agenzia</h2>
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#6b5f4a]">
               Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata ed elegante.
             </p>
           </div>
           <div className="relative flex flex-col items-center gap-2.5">
             <Link
               href="/signup"
-              className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700 hover:shadow-md"
+              className="rounded-lg bg-[#2b333e] px-6 py-3 text-sm font-semibold text-[#faf3e6] shadow-sm transition hover:bg-[#1e242d] hover:shadow-md"
             >
               Inizia gratis
             </Link>
-            <Link href="/login" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
+            <Link href="/login" className="text-sm font-medium text-[#6b5f4a] hover:text-[#2b333e] hover:underline">
               Accedi al tuo account agenzia
             </Link>
           </div>
         </section>
 
         {/* Clienti */}
-        <section className="group relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-gradient-to-bl from-amber-50 to-white px-6 py-16 text-center transition">
-          <div className="pointer-events-none absolute -bottom-24 left-[-10%] h-72 w-72 rounded-full bg-amber-100 opacity-70 blur-3xl" />
-          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-sm">
+        <section className="relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-[#2b333e] px-6 py-16 text-center">
+          <div className="pointer-events-none absolute -bottom-24 left-[-10%] h-72 w-72 rounded-full bg-[#cda876]/10 blur-3xl" />
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#cda876] text-[#2b333e] shadow-sm">
             <User size={24} />
           </span>
           <div className="relative">
-            <h2 className="text-2xl font-bold text-slate-900">Sono un cliente</h2>
-            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-slate-500">
+            <h2 className={`${playfair.className} text-2xl font-semibold text-[#faf3e6]`}>Sono un cliente</h2>
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#b9ad96]">
               Accedi alla tua area riservata e ritrova tutti i viaggi che la tua agenzia ha organizzato per te.
             </p>
           </div>
           <div className="relative flex flex-col items-center gap-2.5">
             <Link
               href="/client/login"
-              className="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 hover:shadow-md"
+              className="rounded-lg bg-[#cda876] px-6 py-3 text-sm font-semibold text-[#2b333e] shadow-sm transition hover:bg-[#bd9765] hover:shadow-md"
             >
               Accedi ai miei viaggi
             </Link>
-            <Link href="/client/signup" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">
+            <Link href="/client/signup" className="text-sm font-medium text-[#b9ad96] hover:text-[#faf3e6] hover:underline">
               Prima volta? Registrati qui
             </Link>
           </div>
         </section>
       </main>
 
-      <footer className="flex items-center justify-center gap-2 border-t border-slate-100 px-4 py-4 text-xs font-medium text-slate-400">
-        <Sparkles size={13} className="text-blue-400" />
+      <footer className="flex items-center justify-center gap-2 border-t border-[#e6d7bb] bg-[#faf3e6] px-4 py-4 text-xs font-medium text-[#8c7a5e]">
+        <Sparkles size={13} className="text-[#cda876]" />
         Itinerari che fanno colpo
       </footer>
     </div>
