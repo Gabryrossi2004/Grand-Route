@@ -15,10 +15,9 @@ export default function Home() {
         </span>
       </header>
 
-      <main className="grid flex-1 grid-cols-1 sm:grid-cols-2">
+      <main className="grid flex-1 grid-cols-1 bg-gradient-to-b from-[#f2e2c4] via-[#cda876] to-[#2b333e] sm:grid-cols-2 sm:bg-gradient-to-r">
         {/* Agenzie */}
-        <section className="relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-[#faf3e6] px-6 py-16 text-center">
-          <div className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-[#cda876]/20 blur-3xl" />
+        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-16 text-center">
           <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2b333e] text-[#e6d7bb] shadow-sm">
             <Briefcase size={24} />
           </span>
@@ -42,8 +41,7 @@ export default function Home() {
         </section>
 
         {/* Clienti */}
-        <section className="relative flex flex-col items-center justify-center gap-5 overflow-hidden bg-[#2b333e] px-6 py-16 text-center">
-          <div className="pointer-events-none absolute -bottom-24 left-[-10%] h-72 w-72 rounded-full bg-[#cda876]/10 blur-3xl" />
+        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-16 text-center">
           <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#cda876] text-[#2b333e] shadow-sm">
             <User size={24} />
           </span>
