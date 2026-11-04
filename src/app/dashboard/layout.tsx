@@ -27,6 +27,7 @@ export default async function DashboardLayout({
   const brandColor = profile?.brand_color || "#2563eb";
 
   const navItems = [
+    { href: "/dashboard", label: "Home" },
     { href: "/dashboard/trips", label: "Viaggi" },
     { href: "/dashboard/clients", label: "Clienti" },
     { href: "/dashboard/calendar", label: "Calendario" },
