@@ -18,6 +18,15 @@ export type Client = {
   email: string | null;
   phone: string | null;
   notes: string | null;
+  date_of_birth: string | null;
+  place_of_birth: string | null;
+  nationality: string | null;
+  fiscal_code: string | null;
+  residence_address: string | null;
+  id_card_number: string | null;
+  id_card_expiry: string | null;
+  passport_number: string | null;
+  passport_expiry: string | null;
   created_at: string;
 };
 
