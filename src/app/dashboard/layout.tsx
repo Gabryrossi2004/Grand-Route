@@ -35,8 +35,10 @@ export default async function DashboardLayout({
   ];
 
   return (
-    <div className="min-h-screen bg-[#faf3e6]">
-      <header className="sticky top-0 z-20 border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
+      <div className="pointer-events-none fixed -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
+      <div className="pointer-events-none fixed bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
+      <header className="sticky top-0 z-20 border-b border-[#e6d7bb] bg-[#faf3e6]/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-[#2b333e]">
             {profile?.logo_url ? (

@@ -76,7 +76,7 @@ export default async function DashboardHomePage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
-          <div key={stat.label} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div key={stat.label} className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
             <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${stat.bg} ${stat.color}`}>
               <stat.icon size={18} />
             </span>
@@ -87,7 +87,7 @@ export default async function DashboardHomePage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
             <CalendarClock size={18} className="text-slate-400" />
             <h2 className="text-lg font-semibold text-slate-900">Prossime partenze</h2>
@@ -124,7 +124,7 @@ export default async function DashboardHomePage() {
           </Link>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
             <ListChecks size={18} className="text-slate-400" />
             <h2 className="text-lg font-semibold text-slate-900">Promemoria da fare</h2>

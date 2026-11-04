@@ -114,9 +114,12 @@ export default async function TripDetailPage({
       <TripInfoForm trip={trip} />
       <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
-      <section>
-        <h2 className="mb-4 text-lg font-semibold text-slate-900">Itinerario</h2>
-        <div className="flex items-start gap-3">
+      <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">
+        <div className="bg-gradient-to-r from-[#2b333e] via-[#333d4a] to-[#1e242d] px-5 py-4">
+          <h2 className="text-lg font-semibold text-white">Itinerario</h2>
+          <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
+        </div>
+        <div className="flex items-start gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5">
           <div className="min-w-0 flex-1">
             <ItineraryEditor
               tripId={id}
@@ -140,7 +143,7 @@ export default async function TripDetailPage({
             </p>
           </div>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           {documentsWithUrl.length === 0 ? (
             <p className="mb-4 text-sm text-slate-400">Nessun documento caricato ancora.</p>
           ) : (
@@ -291,7 +294,7 @@ function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
 
 function TripInfoForm({ trip }: { trip: Trip }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-6 shadow-sm">
       <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">Informazioni viaggio</h2>
       <form action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
