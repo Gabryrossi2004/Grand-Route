@@ -686,3 +686,34 @@ export async function duplicateTripAsVariant(tripId: string) {
   revalidatePath("/dashboard/trips");
   redirect(`/dashboard/trips/${newTrip.id}`);
 }
+
+export async function addChecklistItem(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const label = String(formData.get("label") ?? "").trim();
+  if (!label) return;
+
+  const { count } = await supabase
+    .from("trip_checklist_items")
+    .select("id", { count: "exact", head: true })
+    .eq("trip_id", tripId);
+
+  await supabase.from("trip_checklist_items").insert({
+    trip_id: tripId,
+    label,
+    item_order: count ?? 0,
+  });
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function toggleChecklistItem(tripId: string, itemId: string, done: boolean) {
+  const supabase = await createClient();
+  await supabase.from("trip_checklist_items").update({ done }).eq("id", itemId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function deleteChecklistItem(tripId: string, itemId: string) {
+  const supabase = await createClient();
+  await supabase.from("trip_checklist_items").delete().eq("id", itemId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}

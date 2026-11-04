@@ -29,6 +29,7 @@ export default async function DashboardLayout({
   const navItems = [
     { href: "/dashboard/trips", label: "Viaggi" },
     { href: "/dashboard/clients", label: "Clienti" },
+    { href: "/dashboard/calendar", label: "Calendario" },
     { href: "/dashboard/settings", label: "Impostazioni" },
   ];
 
@@ -36,7 +37,7 @@ export default async function DashboardLayout({
     <div className="min-h-screen bg-slate-50">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <Link href="/dashboard/trips" className="flex items-center gap-2 font-semibold text-slate-900">
+          <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-slate-900">
             {profile?.logo_url ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={profile.logo_url} alt="" className="h-8 w-8 rounded-lg object-contain" />

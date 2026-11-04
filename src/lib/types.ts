@@ -117,6 +117,15 @@ export type ActivityPhoto = {
   created_at: string;
 };
 
+export type TripChecklistItem = {
+  id: string;
+  trip_id: string;
+  label: string;
+  done: boolean;
+  item_order: number;
+  created_at: string;
+};
+
 export type TripDocument = {
   id: string;
   trip_id: string;

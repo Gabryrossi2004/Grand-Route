@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { Client } from "@/lib/types";
+import ClientsList from "@/components/ClientsList";
 
 export default async function ClientsPage() {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const { data: clients } = await supabase
     .from("clients")
     .select("*")
+    .eq("owner_id", user?.id ?? "")
     .order("full_name", { ascending: true });
 
   return (
@@ -21,30 +27,7 @@ export default async function ClientsPage() {
         </Link>
       </div>
 
-      {!clients || clients.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
-          <p className="text-slate-500">Non hai ancora nessun cliente in rubrica.</p>
-          <Link href="/dashboard/clients/new" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
-            Aggiungi il primo cliente
-          </Link>
-        </div>
-      ) : (
-        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
-          {(clients as Client[]).map((client) => (
-            <Link
-              key={client.id}
-              href={`/dashboard/clients/${client.id}`}
-              className="flex items-center justify-between px-5 py-4 hover:bg-slate-50"
-            >
-              <div>
-                <p className="font-medium text-slate-900">{client.full_name}</p>
-                {client.email && <p className="text-sm text-slate-500">{client.email}</p>}
-              </div>
-              {client.phone && <p className="text-sm text-slate-400">{client.phone}</p>}
-            </Link>
-          ))}
-        </div>
-      )}
+      <ClientsList clients={(clients as Client[]) || []} />
     </div>
   );
 }

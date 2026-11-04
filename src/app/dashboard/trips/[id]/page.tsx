@@ -1,7 +1,15 @@
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
-import type { Activity, ActivityPhoto, ActivityTemplate, Trip, TripDay, TripDocument } from "@/lib/types";
+import type {
+  Activity,
+  ActivityPhoto,
+  ActivityTemplate,
+  Trip,
+  TripChecklistItem,
+  TripDay,
+  TripDocument,
+} from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -18,6 +26,7 @@ import LibraryPanel from "@/components/LibraryPanel";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
+import TripChecklist from "@/components/TripChecklist";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -53,13 +62,18 @@ export default async function TripDetailPage({
     .single();
   if (!trip) notFound();
 
-  const [{ data: days }, { data: templates }] = await Promise.all([
+  const [{ data: days }, { data: templates }, { data: checklistItems }] = await Promise.all([
     supabase
       .from("trip_days")
       .select("*, activities(*, activity_photos(*))")
       .eq("trip_id", id)
       .order("day_order", { ascending: true }),
     supabase.from("activity_templates").select("*").order("title", { ascending: true }),
+    supabase
+      .from("trip_checklist_items")
+      .select("*")
+      .eq("trip_id", id)
+      .order("item_order", { ascending: true }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -98,6 +112,7 @@ export default async function TripDetailPage({
     <div className="flex flex-col gap-8">
       <CoverHero trip={trip} publicUrl={publicUrl} />
       <TripInfoForm trip={trip} />
+      <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
       <section>
         <h2 className="mb-4 text-lg font-semibold text-slate-900">Itinerario</h2>
