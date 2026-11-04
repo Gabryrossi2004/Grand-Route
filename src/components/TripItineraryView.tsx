@@ -52,7 +52,7 @@ export default function TripItineraryView({
         {trip.cover_image_url && (
           <>
             <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/25" />
           </>
         )}
         <div className="relative mx-auto w-full max-w-3xl">

@@ -56,7 +56,7 @@ export default async function TripOverviewPage({
             backgroundImage: trip.cover_image_url ? `url(${trip.cover_image_url})` : undefined,
           }}
         >
-          {trip.cover_image_url && <div className="absolute inset-0 bg-black/45" />}
+          {trip.cover_image_url && <div className="absolute inset-0 bg-black/30" />}
           <div className="relative flex items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             {logoUrl && <img src={logoUrl} alt="" className="h-8 rounded bg-white/90 p-1" />}

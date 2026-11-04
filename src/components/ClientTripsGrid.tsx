@@ -42,11 +42,13 @@ export default function ClientTripsGrid({
             href={tripHref(trip.id)}
             className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <div className="relative h-32 w-full bg-slate-800">
+            <div className="relative h-32 w-full bg-[#2b333e]">
               {trip.cover_image_url && (
-                <Image src={trip.cover_image_url} alt="" fill sizes="50vw" className="object-cover" />
+                <>
+                  <Image src={trip.cover_image_url} alt="" fill sizes="50vw" className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+                </>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <span
                 className={
                   trip.is_published

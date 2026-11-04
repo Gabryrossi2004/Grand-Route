@@ -200,11 +200,13 @@ function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
 
   return (
     <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="relative flex h-64 flex-col justify-between bg-slate-800 p-6">
+      <div className="relative flex h-64 flex-col justify-between bg-[#2b333e] p-6">
         {trip.cover_image_url && (
-          <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
+          <>
+            <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+          </>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10" />
 
         <div className="relative flex items-start justify-between">
           <span

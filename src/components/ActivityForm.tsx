@@ -321,17 +321,17 @@ export default function ActivityForm({
         {photos && photos.length > 0 && (
           <div className="mb-3 flex flex-wrap gap-2">
             {photos.map((photo) => (
-              <div key={photo.id} className="group relative h-20 w-20">
+              <div key={photo.id} className="group relative h-28 w-28">
                 <div className="relative h-full w-full overflow-hidden rounded-md">
-                  <Image src={photo.url} alt="" fill sizes="5rem" className="object-cover" />
+                  <Image src={photo.url} alt="" fill sizes="7rem" className="object-cover" />
                 </div>
                 <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
                   <button
                     type="submit"
                     title="Elimina foto"
-                    className="absolute -right-1.5 -top-1.5 hidden rounded-full bg-red-600 p-1 text-white group-hover:block"
+                    className="absolute -right-2 -top-2 hidden rounded-full bg-red-600 p-1.5 text-white group-hover:block"
                   >
-                    <Trash2 size={12} />
+                    <Trash2 size={14} />
                   </button>
                 </form>
               </div>

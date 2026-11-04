@@ -601,9 +601,9 @@ function SortableActivityRow({
         >
           <span
             style={{ backgroundColor: meta.color }}
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
           >
-            <Icon size={14} />
+            <Icon size={17} />
           </span>
           <span className="min-w-0 flex-1 text-sm font-medium text-slate-900">
             {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
@@ -622,7 +622,7 @@ function SortableActivityRow({
       </div>
 
       {isExpanded && (
-        <div className="px-3 pb-3 pl-11">
+        <div className="px-3 pb-3 pl-12">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <span
@@ -715,14 +715,14 @@ function SortableActivityRow({
           {activity.activity_photos && activity.activity_photos.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">
               {activity.activity_photos.map((photo) => (
-                <div key={photo.id} className="group relative h-16 w-16">
+                <div key={photo.id} className="group relative h-24 w-24">
                   <div className="relative h-full w-full overflow-hidden rounded-md">
-                    <Image src={photo.url} alt="" fill sizes="4rem" className="object-cover" />
+                    <Image src={photo.url} alt="" fill sizes="6rem" className="object-cover" />
                   </div>
                   <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
                     <button
                       type="submit"
-                      className="absolute -right-1 -top-1 hidden h-5 w-5 rounded-full bg-red-600 text-xs text-white group-hover:block"
+                      className="absolute -right-1.5 -top-1.5 hidden h-6 w-6 rounded-full bg-red-600 text-sm text-white group-hover:block"
                     >
                       ×
                     </button>
