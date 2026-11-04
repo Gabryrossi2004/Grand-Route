@@ -31,20 +31,23 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const isPrivateRoute = request.nextUrl.pathname.startsWith("/dashboard");
+  const pathname = request.nextUrl.pathname;
+  const isClientAuthRoute = pathname.startsWith("/client/login") || pathname.startsWith("/client/signup");
+  const isClientPrivateRoute = pathname.startsWith("/client") && !isClientAuthRoute;
+
+  const isPrivateRoute = pathname.startsWith("/dashboard") || isClientPrivateRoute;
   const isAuthRoute =
-    request.nextUrl.pathname.startsWith("/login") ||
-    request.nextUrl.pathname.startsWith("/signup");
+    pathname.startsWith("/login") || pathname.startsWith("/signup") || isClientAuthRoute;
 
   if (!user && isPrivateRoute) {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = isClientPrivateRoute ? "/client/login" : "/login";
     return NextResponse.redirect(url);
   }
 
   if (user && isAuthRoute) {
     const url = request.nextUrl.clone();
-    url.pathname = "/dashboard";
+    url.pathname = isClientAuthRoute ? "/client" : "/dashboard";
     return NextResponse.redirect(url);
   }
 

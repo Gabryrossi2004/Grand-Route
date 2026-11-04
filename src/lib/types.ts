@@ -14,6 +14,7 @@ export type Profile = {
 export type Client = {
   id: string;
   owner_id: string;
+  user_id: string | null;
   full_name: string;
   email: string | null;
   phone: string | null;

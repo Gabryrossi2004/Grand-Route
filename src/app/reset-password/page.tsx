@@ -2,15 +2,14 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
 export default function ResetPasswordPage() {
-  const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -37,9 +36,15 @@ export default function ResetPasswordPage() {
       return;
     }
 
+    // Non possiamo sapere con certezza se chi ha reimpostato la password è
+    // un'agenzia o un cliente: controlliamo se risulta collegato ad almeno
+    // una scheda cliente prima di disconnetterlo, così sappiamo quale link
+    // di accesso evidenziare nel passaggio successivo.
+    const { data: linkedClient } = await supabase.from("clients").select("id").limit(1).maybeSingle();
+    setIsClient(Boolean(linkedClient));
+
     await supabase.auth.signOut();
     setStatus("success");
-    setTimeout(() => router.push("/login"), 2000);
   }
 
   if (status === "success") {
@@ -47,7 +52,30 @@ export default function ResetPasswordPage() {
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 px-4">
         <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg shadow-slate-200/50">
           <h1 className="mb-2 text-xl font-semibold text-slate-900">Password aggiornata</h1>
-          <p className="text-sm text-slate-500">Ti reindirizziamo al login…</p>
+          <p className="mb-6 text-sm text-slate-500">Ora puoi accedere con la nuova password.</p>
+          <Link
+            href={isClient ? "/client/login" : "/login"}
+            className="inline-block rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition hover:bg-blue-700"
+          >
+            Vai al login
+          </Link>
+          <p className="mt-4 text-xs text-slate-400">
+            {isClient ? (
+              <>
+                Sei un&apos;agenzia?{" "}
+                <Link href="/login" className="font-medium hover:underline">
+                  Accedi qui
+                </Link>
+              </>
+            ) : (
+              <>
+                Accedi all&apos;area clienti?{" "}
+                <Link href="/client/login" className="font-medium hover:underline">
+                  Accedi qui
+                </Link>
+              </>
+            )}
+          </p>
         </div>
       </div>
     );

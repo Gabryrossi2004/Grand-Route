@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import type { Trip } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
@@ -36,7 +37,26 @@ export default async function ClientDetailPage({
 
   return (
     <div className="mx-auto flex max-w-lg flex-col gap-6">
-      <h1 className="text-2xl font-semibold text-slate-900">{client.full_name}</h1>
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="text-2xl font-semibold text-slate-900">{client.full_name}</h1>
+        <Link
+          href={`/dashboard/clients/${id}/preview`}
+          className="flex shrink-0 items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+        >
+          <Eye size={15} /> Vedi come questo cliente
+        </Link>
+      </div>
+
+      {client.user_id ? (
+        <p className="-mt-4 text-xs text-green-600">
+          Questo cliente ha già un account nell&apos;area clienti.
+        </p>
+      ) : (
+        <p className="-mt-4 text-xs text-slate-400">
+          Questo cliente non si è ancora registrato nell&apos;area clienti. Quando lo farà con questa email, vedrà
+          subito i suoi viaggi.
+        </p>
+      )}
 
       <form action={updateClient.bind(null, id)} className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-6">
         <div>
