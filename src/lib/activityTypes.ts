@@ -1,9 +1,12 @@
 import {
   BedDouble,
+  Car,
   CircleEllipsis,
   Compass,
   Info,
   Plane,
+  Sailboat,
+  Ship,
   TrainFront,
   UtensilsCrossed,
   type LucideIcon,
@@ -13,7 +16,10 @@ import type { ActivityType } from "./types";
 export const activityTypes: Record<ActivityType, { label: string; color: string; bg: string; icon: LucideIcon }> = {
   volo: { label: "Volo", color: "#2563eb", bg: "#eff6ff", icon: Plane },
   alloggio: { label: "Alloggio", color: "#7c3aed", bg: "#f5f3ff", icon: BedDouble },
-  trasporto: { label: "Trasporto", color: "#ea580c", bg: "#fff7ed", icon: TrainFront },
+  transfer: { label: "Transfer", color: "#ea580c", bg: "#fff7ed", icon: Car },
+  treno: { label: "Treno", color: "#4f46e5", bg: "#eef2ff", icon: TrainFront },
+  traghetto: { label: "Traghetto", color: "#0d9488", bg: "#f0fdfa", icon: Ship },
+  crociera: { label: "Crociera", color: "#db2777", bg: "#fdf2f8", icon: Sailboat },
   ristorante: { label: "Ristorante", color: "#dc2626", bg: "#fef2f2", icon: UtensilsCrossed },
   attivita: { label: "Attività", color: "#16a34a", bg: "#f0fdf4", icon: Compass },
   info: { label: "Info", color: "#0891b2", bg: "#ecfeff", icon: Info },
@@ -61,17 +67,33 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
     { key: CHECK_OUT_DATE_KEY, label: "Data check-out", type: "date" },
     { key: "numero_conferma", label: "Numero di conferma", type: "text" },
   ],
-  trasporto: [
-    {
-      key: "mezzo",
-      label: "Mezzo",
-      type: "select",
-      options: ["Treno", "Bus", "Traghetto", "Transfer privato", "Altro"],
-    },
-    { key: "numero", label: "Numero treno / corsa", type: "text" },
-    { key: "pnr", label: "PNR / Codice prenotazione", type: "text" },
+  transfer: [
+    { key: "fornitore", label: "Azienda / Autista", type: "text" },
+    { key: "pnr", label: "Codice prenotazione", type: "text" },
     { key: "luogo_arrivo", label: "Luogo di arrivo", type: "text" },
     { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+  ],
+  treno: [
+    { key: "compagnia", label: "Compagnia", type: "text" },
+    { key: "numero_treno", label: "Numero treno", type: "text" },
+    { key: "pnr", label: "PNR / Codice prenotazione", type: "text" },
+    { key: "carrozza_posto", label: "Carrozza / Posto", type: "text" },
+    { key: "stazione_arrivo", label: "Stazione di arrivo", type: "text" },
+    { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+  ],
+  traghetto: [
+    { key: "compagnia", label: "Compagnia", type: "text" },
+    { key: "numero_corsa", label: "Numero corsa", type: "text" },
+    { key: "pnr", label: "PNR / Codice prenotazione", type: "text" },
+    { key: "porto_arrivo", label: "Porto di arrivo", type: "text" },
+    { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+  ],
+  crociera: [
+    { key: "compagnia", label: "Compagnia crociere", type: "text" },
+    { key: "nome_nave", label: "Nome nave", type: "text" },
+    { key: "numero_cabina", label: "Numero cabina", type: "text" },
+    { key: "porto_partenza", label: "Porto di partenza", type: "text" },
+    { key: "porto_arrivo", label: "Porto di arrivo / sbarco", type: "text" },
   ],
   ristorante: [
     { key: "numero_persone", label: "Numero persone", type: "number" },
@@ -85,9 +107,19 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
   altro: [],
 };
 
+// Mappa "di riserva": usata solo come ultima spiaggia (es. per chiavi rimaste
+// da un tipo precedente dopo un cambio di tipologia). Più tipologie possono
+// condividere la stessa chiave (es. "pnr"): quando capita, vince l'ultima
+// definizione incontrata, perciò per l'etichetta giusta va sempre preferita
+// detailFieldLabel(tipo, chiave), che guarda prima nei campi di QUEL tipo.
 export const detailFieldLabels: Record<string, string> = Object.values(detailFields)
   .flat()
   .reduce((acc, field) => ({ ...acc, [field.key]: field.label }), {} as Record<string, string>);
+
+export function detailFieldLabel(type: ActivityType, key: string): string {
+  const field = detailFields[type]?.find((f) => f.key === key);
+  return field?.label ?? detailFieldLabels[key] ?? key;
+}
 
 // Le chiavi che iniziano con "_" sono dati interni (es. usati per creare in
 // automatico il blocco "Arrivo" di un volo) e non vanno mai mostrati.

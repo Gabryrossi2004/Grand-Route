@@ -74,7 +74,10 @@ export type TripDay = {
 export type ActivityType =
   | "volo"
   | "alloggio"
-  | "trasporto"
+  | "transfer"
+  | "treno"
+  | "traghetto"
+  | "crociera"
   | "ristorante"
   | "attivita"
   | "info"

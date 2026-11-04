@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Search, Trash2 } from "lucide-react";
 import type { ActivityTemplate } from "@/lib/types";
-import { activityTypes, detailFieldLabels } from "@/lib/activityTypes";
+import { activityTypes, detailFieldLabel } from "@/lib/activityTypes";
 import { deleteTemplate } from "@/app/dashboard/library/actions";
 
 export default function LibraryGrid({
@@ -84,7 +84,7 @@ export default function LibraryGrid({
                   <dl className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-600">
                     {detailEntries.map(([key, value]) => (
                       <div key={key} className="flex gap-1">
-                        <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
+                        <dt className="font-medium">{detailFieldLabel(template.activity_type, key)}:</dt>
                         <dd>{value}</dd>
                       </div>
                     ))}

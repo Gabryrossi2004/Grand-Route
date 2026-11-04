@@ -31,7 +31,7 @@ import {
   Trash2,
 } from "lucide-react";
 import type { Activity, ActivityPhoto, ActivityTemplate, TripDay, TripDocument } from "@/lib/types";
-import { activityTypes, detailFieldLabels, visibleDetailEntries } from "@/lib/activityTypes";
+import { activityTypes, detailFieldLabel, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import DropzoneUpload from "@/components/DropzoneUpload";
@@ -642,7 +642,7 @@ function SortableActivityRow({
                 <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
                   {detailEntries.map(([key, value]) => (
                     <div key={key} className="flex gap-1">
-                      <dt className="font-medium">{detailFieldLabels[key] ?? key}:</dt>
+                      <dt className="font-medium">{detailFieldLabel(activity.activity_type, key)}:</dt>
                       <dd>{value}</dd>
                     </div>
                   ))}
