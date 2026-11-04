@@ -20,7 +20,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
           type="text"
           required
           placeholder="Es. Luna di miele in Giappone"
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
       </div>
 
@@ -33,7 +33,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
           name="destination"
           type="text"
           placeholder="Es. Giappone"
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
       </div>
 
@@ -46,7 +46,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
             id="start_date"
             name="start_date"
             type="date"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -57,7 +57,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
             id="end_date"
             name="end_date"
             type="date"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
           <select
             id="client_id"
             name="client_id"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           >
             <option value="">Nessuno</option>
             {clients.map((client) => (
@@ -91,7 +91,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
           name="price_mode"
           value={priceMode}
           onChange={(e) => setPriceMode(e.target.value as PriceMode)}
-          className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+          className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         >
           <option value="nessuno">Senza costi (non mostrare nessun prezzo)</option>
           <option value="lordo">Prezzo lordo (un unico totale)</option>
@@ -109,7 +109,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
               type="number"
               step="0.01"
               min="0"
-              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             />
           </div>
         )}
@@ -126,7 +126,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
                 type="number"
                 step="0.01"
                 min="0"
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
               />
             </div>
             <div>
@@ -139,7 +139,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
                 type="number"
                 step="0.01"
                 min="0"
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
               />
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
       <button
         type="submit"
         disabled={pending}
-        className="mt-2 w-fit rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60"
+        className="mt-2 w-fit rounded-md bg-[#2b333e] px-4 py-2 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
       >
         {pending ? "Creazione…" : "Crea viaggio"}
       </button>

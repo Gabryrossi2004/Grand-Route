@@ -38,9 +38,9 @@ export default async function ClientPreviewPage({
         <ArrowLeft size={14} /> Torna alla scheda cliente
       </Link>
 
-      <div className="mb-6 flex items-center gap-2 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3">
-        <Eye size={16} className="shrink-0 text-blue-600" />
-        <p className="text-sm text-blue-900">
+      <div className="mb-6 flex items-center gap-2 rounded-xl border border-[#f2e2c4] bg-[#faf3e6] px-4 py-3">
+        <Eye size={16} className="shrink-0 text-[#2b333e]" />
+        <p className="text-sm text-[#11161b]">
           Stai vedendo in anteprima, in sola lettura, esattamente cosa vede <strong>{client.full_name}</strong> nella
           sua area clienti.
         </p>

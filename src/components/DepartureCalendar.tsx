@@ -103,7 +103,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
             <div key={i} className="min-h-24 bg-white p-1.5 sm:min-h-28">
               <span
                 className={`mb-1 inline-flex h-5 w-5 items-center justify-center rounded-full text-xs ${
-                  isToday ? "bg-blue-600 font-semibold text-white" : "text-slate-500"
+                  isToday ? "bg-[#2b333e] font-semibold text-white" : "text-slate-500"
                 }`}
               >
                 {date.getDate()}
@@ -114,7 +114,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
                     key={`dep-${trip.id}`}
                     href={`/dashboard/trips/${trip.id}`}
                     title={`Partenza: ${trip.title}`}
-                    className="block truncate rounded bg-blue-100 px-1.5 py-0.5 text-[11px] font-medium text-blue-800 hover:bg-blue-200"
+                    className="block truncate rounded bg-[#f2e2c4] px-1.5 py-0.5 text-[11px] font-medium text-[#182026] hover:bg-[#e6d7bb]"
                   >
                     ✈ {trip.title}
                   </Link>

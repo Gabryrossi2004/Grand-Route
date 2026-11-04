@@ -115,7 +115,7 @@ export default function ItineraryEditor({
             id="day_date"
             name="day_date"
             type="date"
-            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
           />
           <button type="submit" className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
             + Aggiungi
@@ -232,9 +232,9 @@ function DaySidebarItem({
       title="Trascina per scambiare il contenuto con un altro giorno"
       className={`cursor-grab rounded-lg border px-3 py-2 text-left transition active:cursor-grabbing ${
         isDragOver
-          ? "border-blue-500 bg-blue-100 ring-2 ring-blue-300"
+          ? "border-[#cda876] bg-[#f2e2c4] ring-2 ring-[#ddc8a0]"
           : isActive
-            ? "border-blue-400 bg-blue-50"
+            ? "border-[#d3b589] bg-[#faf3e6]"
             : "border-slate-200 bg-white hover:bg-slate-50"
       }`}
     >
@@ -244,7 +244,7 @@ function DaySidebarItem({
           Giorno {index + 1}
         </p>
         {isToday && (
-          <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold text-white">
+          <span className="rounded-full bg-[#2b333e] px-2 py-0.5 text-[10px] font-semibold text-white">
             Oggi
           </span>
         )}
@@ -270,7 +270,7 @@ function DaySidebarItem({
             }
           }}
           placeholder="Titolo del giorno (es. Benvenuti!)"
-          className="mt-1 w-full rounded border border-blue-300 px-1.5 py-0.5 text-xs outline-none"
+          className="mt-1 w-full rounded border border-[#ddc8a0] px-1.5 py-0.5 text-xs outline-none"
         />
       ) : (
         day.title && <p className="mt-0.5 truncate text-xs italic text-slate-500">{day.title}</p>
@@ -430,7 +430,7 @@ function DayPanel({
           <button
             type="button"
             onClick={() => setIsAddingActivity(true)}
-            className="flex items-center gap-1 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+            className="flex items-center gap-1 rounded-md bg-[#2b333e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d]"
           >
             <Plus size={15} /> Attività
           </button>
@@ -491,7 +491,7 @@ function DayPanel({
               <button
                 type="button"
                 onClick={() => undoDeleteActivity(id)}
-                className="font-semibold text-blue-300 hover:text-blue-200"
+                className="font-semibold text-[#ddc8a0] hover:text-[#e6d7bb]"
               >
                 Annulla
               </button>
@@ -754,7 +754,7 @@ function SortableActivityRow({
                         href={document.signedUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="truncate font-medium text-blue-600 hover:underline"
+                        className="truncate font-medium text-[#2b333e] hover:underline"
                       >
                         {document.file_name}
                       </a>

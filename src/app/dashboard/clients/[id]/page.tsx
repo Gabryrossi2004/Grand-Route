@@ -68,7 +68,7 @@ export default async function ClientDetailPage({
             name="full_name"
             defaultValue={client.full_name}
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -80,7 +80,7 @@ export default async function ClientDetailPage({
             name="email"
             type="email"
             defaultValue={client.email ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -91,7 +91,7 @@ export default async function ClientDetailPage({
             id="phone"
             name="phone"
             defaultValue={client.phone ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -103,7 +103,7 @@ export default async function ClientDetailPage({
             name="notes"
             rows={3}
             defaultValue={client.notes ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
 
@@ -142,7 +142,7 @@ export default async function ClientDetailPage({
               name="trip_id"
               required
               defaultValue=""
-              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             >
               <option value="" disabled>
                 Associa un viaggio esistente…

@@ -15,7 +15,7 @@ export default function ThemePicker({ tripId, current }: { tripId: string; curre
             value={theme.id}
             title={theme.description}
             className={`flex flex-col items-center gap-1.5 rounded-lg border p-2.5 text-center transition ${
-              isActive ? "border-blue-400 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"
+              isActive ? "border-[#d3b589] bg-[#faf3e6]" : "border-slate-200 bg-white hover:bg-slate-50"
             }`}
           >
             <span

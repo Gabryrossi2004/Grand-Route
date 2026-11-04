@@ -45,7 +45,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cerca per titolo o destinazione…"
-            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
           />
         </div>
         <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1">
@@ -67,7 +67,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
       {trips.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center">
           <p className="text-slate-500">Non hai ancora creato nessun viaggio.</p>
-          <Link href="/dashboard/trips/new" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
+          <Link href="/dashboard/trips/new" className="mt-3 inline-block text-sm font-medium text-[#2b333e] hover:underline">
             Crea il primo viaggio
           </Link>
         </div>

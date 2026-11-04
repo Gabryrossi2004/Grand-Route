@@ -60,7 +60,7 @@ export default async function DashboardHomePage() {
   const stats = [
     { label: "Viaggi pubblicati", value: publishedCount, icon: Rocket, color: "text-green-600", bg: "bg-green-50" },
     { label: "Viaggi in bozza", value: draftCount, icon: FileEdit, color: "text-amber-600", bg: "bg-amber-50" },
-    { label: "Clienti in rubrica", value: clientsCount ?? 0, icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
+    { label: "Clienti in rubrica", value: clientsCount ?? 0, icon: Users, color: "text-[#2b333e]", bg: "bg-[#faf3e6]" },
     {
       label: "Fatturato stimato",
       value: formatEuro(estimatedRevenue),
@@ -118,7 +118,7 @@ export default async function DashboardHomePage() {
           )}
           <Link
             href="/dashboard/calendar"
-            className="mt-3 inline-block text-xs font-medium text-blue-600 hover:underline"
+            className="mt-3 inline-block text-xs font-medium text-[#2b333e] hover:underline"
           >
             Apri il calendario completo →
           </Link>
@@ -155,7 +155,7 @@ export default async function DashboardHomePage() {
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
           <Plane size={24} className="mx-auto mb-2 text-slate-300" />
           <p className="text-slate-500">Non hai ancora creato nessun viaggio.</p>
-          <Link href="/dashboard/trips/new" className="mt-2 inline-block text-sm font-medium text-blue-600 hover:underline">
+          <Link href="/dashboard/trips/new" className="mt-2 inline-block text-sm font-medium text-[#2b333e] hover:underline">
             Crea il primo viaggio
           </Link>
         </div>

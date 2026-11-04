@@ -1,7 +1,7 @@
 import type { Client } from "@/lib/types";
 
 const inputClass =
-  "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500";
+  "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 
 export default function ClientDetailsFields({ client }: { client?: Client }) {

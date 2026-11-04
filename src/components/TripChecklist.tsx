@@ -75,7 +75,7 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
                 type="button"
                 onClick={() => handleToggle(item)}
                 title={item.done ? "Segna come da fare" : "Segna come fatto"}
-                className="flex shrink-0 items-center text-slate-400 transition hover:text-blue-600 disabled:opacity-40"
+                className="flex shrink-0 items-center text-slate-400 transition hover:text-[#2b333e] disabled:opacity-40"
                 disabled={item.id.startsWith("temp-")}
               >
                 {item.done ? <CheckSquare size={18} className="text-green-600" /> : <Square size={18} />}
@@ -110,7 +110,7 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
           type="text"
           placeholder="Nuovo promemoria (es. Richiedere saldo)"
           required
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
         />
         <button
           type="submit"

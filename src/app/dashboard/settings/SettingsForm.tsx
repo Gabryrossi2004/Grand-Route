@@ -31,7 +31,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
           id="agency_name"
           name="agency_name"
           defaultValue={profile.agency_name ?? ""}
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
       </div>
 
@@ -68,7 +68,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
       <button
         type="submit"
         disabled={pending}
-        className="w-fit rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60"
+        className="w-fit rounded-md bg-[#2b333e] px-4 py-2 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
       >
         {pending ? "Salvataggio…" : "Salva impostazioni"}
       </button>

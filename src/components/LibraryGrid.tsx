@@ -30,7 +30,7 @@ export default function LibraryGrid({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cerca nella libreria…"
-            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
           />
         </div>
       )}

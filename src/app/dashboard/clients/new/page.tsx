@@ -19,7 +19,7 @@ export default function NewClientPage() {
             id="full_name"
             name="full_name"
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -30,7 +30,7 @@ export default function NewClientPage() {
             id="email"
             name="email"
             type="email"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -40,7 +40,7 @@ export default function NewClientPage() {
           <input
             id="phone"
             name="phone"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
         <div>
@@ -51,7 +51,7 @@ export default function NewClientPage() {
             id="notes"
             name="notes"
             rows={3}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
 
@@ -62,7 +62,7 @@ export default function NewClientPage() {
         <button
           type="submit"
           disabled={pending}
-          className="mt-2 w-fit rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60"
+          className="mt-2 w-fit rounded-md bg-[#2b333e] px-4 py-2 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
         >
           {pending ? "Creazione…" : "Crea cliente"}
         </button>

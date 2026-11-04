@@ -61,8 +61,8 @@ export default function DropzoneUpload({
           applyFiles(files);
         }
       }}
-      className={`flex cursor-pointer flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-200 ${
-        dragOver ? "border-blue-500 bg-blue-50" : "border-slate-300 bg-slate-50 hover:bg-slate-100"
+      className={`flex cursor-pointer flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#e6d7bb] ${
+        dragOver ? "border-[#cda876] bg-[#faf3e6]" : "border-slate-300 bg-slate-50 hover:bg-slate-100"
       }`}
     >
       <input

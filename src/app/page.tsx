@@ -22,7 +22,7 @@ export default function Home() {
             <Briefcase size={24} />
           </span>
           <div className="relative">
-            <h2 className={`${playfair.className} text-2xl font-semibold text-[#2b333e]`}>Sono un&apos;agenzia</h2>
+            <h2 className={`${playfair.className} text-2xl font-semibold text-[#2b333e]`}>Agenti di viaggio</h2>
             <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#6b5f4a]">
               Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata ed elegante.
             </p>
@@ -46,7 +46,7 @@ export default function Home() {
             <User size={24} />
           </span>
           <div className="relative">
-            <h2 className={`${playfair.className} text-2xl font-semibold text-[#faf3e6]`}>Sono un cliente</h2>
+            <h2 className={`${playfair.className} text-2xl font-semibold text-[#faf3e6]`}>Viaggiatore</h2>
             <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#f2e9d8]">
               Accedi alla tua area riservata e ritrova tutti i viaggi che la tua agenzia ha organizzato per te.
             </p>

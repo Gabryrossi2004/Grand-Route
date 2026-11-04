@@ -16,21 +16,21 @@ export default async function ClientPortalLayout({ children }: { children: React
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div className="min-h-screen bg-[#faf3e6]">
+      <header className="sticky top-0 z-20 border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-          <Link href="/client" className="flex items-center gap-2 font-semibold text-slate-900">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-white">
+          <Link href="/client" className="flex items-center gap-2 font-semibold text-[#2b333e]">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2b333e] text-white">
               <Compass size={16} />
             </span>
             Area clienti
           </Link>
           <nav className="flex items-center gap-2 text-sm">
-            {fullName && <span className="hidden px-1 text-slate-500 sm:inline">Ciao, {fullName.split(" ")[0]}</span>}
+            {fullName && <span className="hidden px-1 text-[#6b5f4a] sm:inline">Ciao, {fullName.split(" ")[0]}</span>}
             <form action={clientSignOut}>
               <button
                 type="submit"
-                className="rounded-md px-3 py-1.5 font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
               >
                 Esci
               </button>

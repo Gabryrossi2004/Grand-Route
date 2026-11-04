@@ -40,7 +40,7 @@ type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100";
+  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 
 export default async function TripDetailPage({
@@ -157,7 +157,7 @@ export default async function TripDetailPage({
                         href={document.signedUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="truncate text-sm font-medium text-blue-600 hover:underline"
+                        className="truncate text-sm font-medium text-[#2b333e] hover:underline"
                       >
                         {document.file_name}
                       </a>
@@ -270,7 +270,7 @@ function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
             href={publicUrl}
             target="_blank"
             rel="noreferrer"
-            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:underline"
+            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-[#2b333e] hover:underline"
           >
             {publicUrl}
             <ExternalLink size={13} />

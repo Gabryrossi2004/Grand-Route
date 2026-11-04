@@ -24,7 +24,7 @@ export default async function DashboardLayout({
     profile = data;
   }
 
-  const brandColor = profile?.brand_color || "#2563eb";
+  const brandColor = profile?.brand_color || "#2b333e";
 
   const navItems = [
     { href: "/dashboard", label: "Home" },
@@ -35,10 +35,10 @@ export default async function DashboardLayout({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div className="min-h-screen bg-[#faf3e6]">
+      <header className="sticky top-0 z-20 border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-slate-900">
+          <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-[#2b333e]">
             {profile?.logo_url ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={profile.logo_url} alt="" className="h-8 w-8 rounded-lg object-contain" />
@@ -57,7 +57,7 @@ export default async function DashboardLayout({
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-1.5 font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-md px-3 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
               >
                 {item.label}
               </Link>
@@ -65,7 +65,7 @@ export default async function DashboardLayout({
             <form action={signOut} className="ml-1">
               <button
                 type="submit"
-                className="rounded-md px-3 py-1.5 font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
               >
                 Esci
               </button>

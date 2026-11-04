@@ -146,13 +146,13 @@ export default function ActivityForm({
           type="time"
           value={startTime}
           onChange={(e) => setStartTime(e.target.value)}
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
         />
         <select
           name="activity_type"
           value={activityType}
           onChange={(e) => changeType(e.target.value as ActivityType)}
-          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+          className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
         >
           {activityTypeOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -165,7 +165,7 @@ export default function ActivityForm({
             <select
               value={templateId}
               onChange={(e) => applyTemplate(e.target.value)}
-              className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+              className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
             >
               <option value="">Scrivi da zero…</option>
               {availableTemplates.map((template) => (
@@ -188,7 +188,7 @@ export default function ActivityForm({
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Titolo attività (es. Check-in hotel)"
         required
-        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
       />
       <input
         name="location"
@@ -196,14 +196,14 @@ export default function ActivityForm({
         value={location}
         onChange={(e) => setLocation(e.target.value)}
         placeholder="Luogo (opzionale)"
-        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
       />
       <input type="hidden" name="description" value={description} />
       <RichTextEditor value={description} onChange={setDescription} placeholder="Descrizione (opzionale)" />
 
       {activityType === "volo" && (
-        <div className="rounded-md border border-blue-100 bg-blue-50/60 p-3">
-          <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-blue-900">
+        <div className="rounded-md border border-[#f2e2c4] bg-[#faf3e6]/60 p-3">
+          <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-[#11161b]">
             <Plane size={13} /> Compila automaticamente da numero di volo
           </div>
           <div className="flex gap-2">
@@ -218,13 +218,13 @@ export default function ActivityForm({
                 }
               }}
               placeholder="Es. AZ610"
-              className="w-32 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+              className="w-32 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
             />
             <button
               type="button"
               onClick={runFlightSearch}
               disabled={flightSearchState.status === "loading"}
-              className="flex items-center gap-1 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60"
+              className="flex items-center gap-1 rounded-md bg-[#2b333e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
             >
               <Search size={13} />
               {flightSearchState.status === "loading" ? "Cerco…" : "Cerca"}
@@ -245,7 +245,7 @@ export default function ActivityForm({
                   <button
                     type="button"
                     onClick={() => applyFlightResult(result)}
-                    className="w-full rounded-md border border-slate-200 bg-white px-2 py-1.5 text-left text-xs text-slate-700 hover:border-blue-300 hover:bg-blue-50"
+                    className="w-full rounded-md border border-slate-200 bg-white px-2 py-1.5 text-left text-xs text-slate-700 hover:border-[#ddc8a0] hover:bg-[#faf3e6]"
                   >
                     {result.airline} {result.flightNumber}: {result.departureAirport} ({result.departureTime}) →{" "}
                     {result.arrivalAirport} ({result.arrivalTime})
@@ -266,7 +266,7 @@ export default function ActivityForm({
                 <select
                   value={details[field.key] ?? ""}
                   onChange={(e) => setDetails({ ...details, [field.key]: e.target.value })}
-                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
                 >
                   <option value="">—</option>
                   {field.options?.map((opt) => (
@@ -280,7 +280,7 @@ export default function ActivityForm({
                   type={field.type}
                   value={details[field.key] ?? ""}
                   onChange={(e) => setDetails({ ...details, [field.key]: e.target.value })}
-                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                  className="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
                 />
               )}
               {field.key === CHECK_OUT_DATE_KEY && !isEdit && (

@@ -16,7 +16,7 @@ export default function TripPriceFields({ trip }: { trip: Trip }) {
         name="price_mode"
         value={priceMode}
         onChange={(e) => setPriceMode(e.target.value as PriceMode)}
-        className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500 sm:w-auto"
+        className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876] sm:w-auto"
       >
         <option value="nessuno">Senza costi (non mostrare nessun prezzo)</option>
         <option value="lordo">Prezzo lordo (un unico totale)</option>
@@ -35,7 +35,7 @@ export default function TripPriceFields({ trip }: { trip: Trip }) {
             step="0.01"
             min="0"
             defaultValue={trip.price_amount ?? ""}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
       )}
@@ -53,7 +53,7 @@ export default function TripPriceFields({ trip }: { trip: Trip }) {
               step="0.01"
               min="0"
               defaultValue={trip.price_net ?? ""}
-              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             />
           </div>
           <div>
@@ -67,7 +67,7 @@ export default function TripPriceFields({ trip }: { trip: Trip }) {
               step="0.01"
               min="0"
               defaultValue={trip.price_commission ?? ""}
-              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             />
           </div>
         </div>

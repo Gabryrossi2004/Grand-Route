@@ -27,7 +27,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cerca per nome, email o telefono…"
-            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
           />
         </div>
       )}
@@ -35,7 +35,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
       {clients.length === 0 ? (
         <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
           <p className="text-slate-500">Non hai ancora nessun cliente in rubrica.</p>
-          <Link href="/dashboard/clients/new" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
+          <Link href="/dashboard/clients/new" className="mt-3 inline-block text-sm font-medium text-[#2b333e] hover:underline">
             Aggiungi il primo cliente
           </Link>
         </div>
