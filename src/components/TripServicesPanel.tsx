@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ClipboardList, Pencil, Trash2 } from "lucide-react";
 import type { Supplier, TripService } from "@/lib/types";
 import { serviceStatusOptions, serviceStatuses } from "@/lib/serviceStatus";
@@ -26,9 +27,11 @@ function ServiceForm({
 }) {
   const isEdit = Boolean(service);
   const action = isEdit ? updateTripService.bind(null, tripId, service!.id) : addTripService.bind(null, tripId);
+  const router = useRouter();
 
   const [, dispatch, pending] = useActionState(async (_prevState: null, formData: FormData) => {
     await action(formData);
+    router.refresh();
     onDone();
     return null;
   }, null);

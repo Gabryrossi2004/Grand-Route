@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Pencil, Search, Trash2 } from "lucide-react";
 import type { Supplier, SupplierCategory } from "@/lib/types";
 import { supplierCategories, supplierCategoryOptions } from "@/lib/serviceStatus";
@@ -11,9 +12,11 @@ import { createSupplier, deleteSupplier, updateSupplier } from "@/app/dashboard/
 function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () => void }) {
   const isEdit = Boolean(supplier);
   const action = isEdit ? updateSupplier.bind(null, supplier!.id) : createSupplier;
+  const router = useRouter();
 
   const [, dispatch, pending] = useActionState(async (_prevState: null, formData: FormData) => {
     await action(formData);
+    router.refresh();
     onDone();
     return null;
   }, null);

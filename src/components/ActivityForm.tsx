@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Check, Plane, Plus, Search, Trash2, X } from "lucide-react";
 import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, ActivityType } from "@/lib/types";
@@ -120,12 +121,17 @@ export default function ActivityForm({
   }
 
   const formRef = useRef<HTMLFormElement>(null);
+  const router = useRouter();
 
   // Si aspetta che il salvataggio sul server sia davvero concluso prima di
   // chiudere il modale o svuotare il form, invece di indovinare un tempo
   // d'attesa: così non si perde mai un'attività per una chiusura troppo rapida.
+  // router.refresh() forza l'aggiornamento immediato dei dati della pagina:
+  // avvolgendo l'azione in questa funzione client, Next.js non la riconosce
+  // più come invio diretto di una Server Action e non la rinfresca da solo.
   const [, dispatch, pending] = useActionState(async (_prevState: null, formData: FormData) => {
     await action(formData);
+    router.refresh();
     if (isEdit) {
       onCancel?.();
     } else {
