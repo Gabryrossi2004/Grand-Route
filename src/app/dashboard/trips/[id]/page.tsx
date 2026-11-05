@@ -5,10 +5,12 @@ import type {
   Activity,
   ActivityPhoto,
   ActivityTemplate,
+  Supplier,
   Trip,
   TripChecklistItem,
   TripDay,
   TripDocument,
+  TripService,
 } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,6 +31,7 @@ import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
 import TripChecklist from "@/components/TripChecklist";
+import TripServicesPanel from "@/components/TripServicesPanel";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -64,24 +67,38 @@ export default async function TripDetailPage({
     .single();
   if (!trip) notFound();
 
-  const [{ data: days }, { data: templates }, { data: checklistItems }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", id)
-      .order("day_order", { ascending: true }),
-    supabase.from("activity_templates").select("*").order("title", { ascending: true }),
-    supabase
-      .from("trip_checklist_items")
-      .select("*")
-      .eq("trip_id", id)
-      .order("item_order", { ascending: true }),
-  ]);
+  const [{ data: days }, { data: templates }, { data: checklistItems }, { data: tripServices }, { data: suppliers }] =
+    await Promise.all([
+      supabase
+        .from("trip_days")
+        .select("*, activities(*, activity_photos(*))")
+        .eq("trip_id", id)
+        .order("day_order", { ascending: true }),
+      supabase.from("activity_templates").select("*").order("title", { ascending: true }),
+      supabase
+        .from("trip_checklist_items")
+        .select("*")
+        .eq("trip_id", id)
+        .order("item_order", { ascending: true }),
+      supabase
+        .from("trip_services")
+        .select("*")
+        .eq("trip_id", id)
+        .order("service_order", { ascending: true }),
+      supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
+    ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
+
+  const activityOptions = orderedDays.flatMap((day, dayIndex) =>
+    day.activities.map((activity) => ({
+      id: activity.id,
+      label: `Giorno ${dayIndex + 1} — ${activity.title}`,
+    })),
+  );
 
   const host = (await headers()).get("host");
   const protocol = host?.includes("localhost") ? "http" : "https";
@@ -112,7 +129,13 @@ export default async function TripDetailPage({
 
   return (
     <div className="flex flex-col gap-8">
-      <CoverHero trip={trip} publicUrl={publicUrl} />
+      <CoverHero
+        trip={trip}
+        publicUrl={publicUrl}
+        services={(tripServices as TripService[]) || []}
+        suppliers={(suppliers as Supplier[]) || []}
+        activityOptions={activityOptions}
+      />
       <TripInfoForm trip={trip} />
       <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
@@ -193,7 +216,19 @@ export default async function TripDetailPage({
   );
 }
 
-function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
+function CoverHero({
+  trip,
+  publicUrl,
+  services,
+  suppliers,
+  activityOptions,
+}: {
+  trip: Trip;
+  publicUrl: string;
+  services: TripService[];
+  suppliers: Supplier[];
+  activityOptions: { id: string; label: string }[];
+}) {
   const dateRange =
     trip.start_date && trip.end_date
       ? `${new Date(trip.start_date).toLocaleDateString("it-IT")} – ${new Date(trip.end_date).toLocaleDateString("it-IT")}`
@@ -271,6 +306,13 @@ function CoverHero({ trip, publicUrl }: { trip: Trip; publicUrl: string }) {
             Crea variante
           </button>
         </form>
+
+        <TripServicesPanel
+          tripId={trip.id}
+          services={services}
+          suppliers={suppliers}
+          activityOptions={activityOptions}
+        />
 
         {trip.is_published ? (
           <a

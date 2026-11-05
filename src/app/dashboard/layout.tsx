@@ -31,6 +31,7 @@ export default async function DashboardLayout({
     { href: "/dashboard", label: "Home" },
     { href: "/dashboard/trips", label: "Viaggi" },
     { href: "/dashboard/clients", label: "Clienti" },
+    { href: "/dashboard/suppliers", label: "Fornitori" },
     { href: "/dashboard/calendar", label: "Calendario" },
     { href: "/dashboard/settings", label: "Impostazioni" },
   ];

@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
-import type { Activity, TripChecklistItem, TripDay } from "@/lib/types";
+import type { Activity, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
 
@@ -719,5 +719,48 @@ export async function toggleChecklistItem(tripId: string, itemId: string, done: 
 export async function deleteChecklistItem(tripId: string, itemId: string) {
   const supabase = await createClient();
   await supabase.from("trip_checklist_items").delete().eq("id", itemId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+// Servizi e fornitori: pannello separato, opzionale, apribile dalla pagina
+// del viaggio ma non parte della costruzione dell'itinerario.
+function readServiceFields(formData: FormData) {
+  return {
+    title: String(formData.get("title") ?? "").trim(),
+    status: (String(formData.get("status") ?? "da_prenotare") || "da_prenotare") as ServiceStatus,
+    supplier_id: String(formData.get("supplier_id") ?? "") || null,
+    activity_id: String(formData.get("activity_id") ?? "") || null,
+    net_cost: formData.get("net_cost") ? Number(formData.get("net_cost")) : null,
+    confirmation_number: String(formData.get("confirmation_number") ?? "").trim() || null,
+    notes: String(formData.get("notes") ?? "").trim() || null,
+  };
+}
+
+export async function addTripService(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const fields = readServiceFields(formData);
+  if (!fields.title) return;
+
+  const { count } = await supabase
+    .from("trip_services")
+    .select("id", { count: "exact", head: true })
+    .eq("trip_id", tripId);
+
+  await supabase.from("trip_services").insert({ trip_id: tripId, service_order: count ?? 0, ...fields });
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function updateTripService(tripId: string, serviceId: string, formData: FormData) {
+  const supabase = await createClient();
+  const fields = readServiceFields(formData);
+  if (!fields.title) return;
+
+  await supabase.from("trip_services").update(fields).eq("id", serviceId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function deleteTripService(tripId: string, serviceId: string) {
+  const supabase = await createClient();
+  await supabase.from("trip_services").delete().eq("id", serviceId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }

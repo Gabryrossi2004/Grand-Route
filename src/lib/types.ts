@@ -145,3 +145,32 @@ export type TripDocument = {
   file_type: string | null;
   uploaded_at: string;
 };
+
+export type SupplierCategory = "alloggio" | "trasporto" | "attivita" | "ristorazione" | "altro";
+
+export type Supplier = {
+  id: string;
+  owner_id: string;
+  full_name: string;
+  category: SupplierCategory;
+  email: string | null;
+  phone: string | null;
+  notes: string | null;
+  created_at: string;
+};
+
+export type ServiceStatus = "da_prenotare" | "richiesto" | "confermato" | "cancellato";
+
+export type TripService = {
+  id: string;
+  trip_id: string;
+  activity_id: string | null;
+  supplier_id: string | null;
+  title: string;
+  status: ServiceStatus;
+  net_cost: number | null;
+  confirmation_number: string | null;
+  notes: string | null;
+  service_order: number;
+  created_at: string;
+};
