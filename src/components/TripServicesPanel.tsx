@@ -2,10 +2,11 @@
 
 import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, Circle, ClipboardList, Pencil, Trash2 } from "lucide-react";
+import { CheckCircle2, Circle, ClipboardList, Inbox, Mail, Pencil, Trash2 } from "lucide-react";
 import type { PaymentDirection, Supplier, TripPayment, TripService } from "@/lib/types";
 import { serviceStatusOptions, serviceStatuses } from "@/lib/serviceStatus";
 import { formatEuro } from "@/lib/price";
+import { parseSupplierReply } from "@/lib/replyParser";
 import Modal from "@/components/Modal";
 import SubmitButton from "@/components/SubmitButton";
 import {
@@ -308,6 +309,229 @@ function formatDate(value: string | null) {
   return new Date(`${value}T00:00:00`).toLocaleDateString("it-IT");
 }
 
+// Costruisce il FormData completo per updateTripService partendo dal
+// servizio esistente, con alcuni campi sovrascritti: serve perché l'azione
+// aggiorna sempre tutti i campi insieme, e qui modifichiamo solo quelli che
+// ci interessano (es. solo lo stato, oppure i dati estratti da una risposta).
+function serviceToFormData(service: TripService, overrides: Record<string, string>) {
+  const fd = new FormData();
+  fd.set("title", service.title);
+  fd.set("supplier_id", service.supplier_id ?? "");
+  fd.set("activity_id", service.activity_id ?? "");
+  fd.set("status", service.status);
+  fd.set("net_cost", service.net_cost != null ? String(service.net_cost) : "");
+  fd.set("confirmation_number", service.confirmation_number ?? "");
+  fd.set("notes", service.notes ?? "");
+  for (const [key, value] of Object.entries(overrides)) fd.set(key, value);
+  return fd;
+}
+
+function MailComposer({
+  tripId,
+  service,
+  supplierEmail,
+  onClose,
+}: {
+  tripId: string;
+  service: TripService;
+  supplierEmail: string;
+  onClose: () => void;
+}) {
+  const [subject, setSubject] = useState(`Richiesta disponibilità: ${service.title}`);
+  const [body, setBody] = useState(
+    `Buongiorno,\n\nvorremmo verificare la disponibilità per il seguente servizio:\n\n${service.title}\n\nRestiamo in attesa di un vostro riscontro.\n\nCordiali saluti`,
+  );
+  const router = useRouter();
+
+  const mailtoHref = `mailto:${encodeURIComponent(supplierEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  async function handleOpenMail() {
+    if (service.status === "da_prenotare") {
+      await updateTripService(tripId, service.id, serviceToFormData(service, { status: "richiesto" }));
+      router.refresh();
+    }
+  }
+
+  return (
+    <div className="mt-3 flex flex-col gap-2 rounded-lg border border-[#cda876]/40 bg-[#faf3e6]/60 p-3">
+      <p className="text-xs text-slate-500">
+        Si aprirà la tua app di posta (Gmail, Outlook o quella che usi di solito), già pronta con questo testo: la
+        invii tu, dal tuo indirizzo. A: <span className="font-medium text-slate-700">{supplierEmail}</span>
+      </p>
+      <input
+        value={subject}
+        onChange={(e) => setSubject(e.target.value)}
+        className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+      />
+      <textarea
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        rows={5}
+        className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+      />
+      <div className="flex justify-end gap-2">
+        <button
+          type="button"
+          onClick={onClose}
+          className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50"
+        >
+          Chiudi
+        </button>
+        <a
+          href={mailtoHref}
+          onClick={handleOpenMail}
+          className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d]"
+        >
+          Apri nella tua email
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function ReplyAnalyzer({
+  tripId,
+  service,
+  onDone,
+}: {
+  tripId: string;
+  service: TripService;
+  onDone: () => void;
+}) {
+  const [rawText, setRawText] = useState("");
+  const [analyzed, setAnalyzed] = useState(false);
+  const [confirmationNumber, setConfirmationNumber] = useState(service.confirmation_number ?? "");
+  const [amount, setAmount] = useState(service.net_cost != null ? String(service.net_cost) : "");
+  const [status, setStatus] = useState(service.status);
+  const [pending, setPending] = useState(false);
+  const router = useRouter();
+
+  function analyze() {
+    const result = parseSupplierReply(rawText);
+    setConfirmationNumber(result.confirmationNumber ?? service.confirmation_number ?? "");
+    setAmount(result.amount != null ? String(result.amount) : service.net_cost != null ? String(service.net_cost) : "");
+    setStatus(result.suggestedStatus ?? service.status);
+    setAnalyzed(true);
+  }
+
+  async function apply() {
+    setPending(true);
+    const stamp = new Date().toLocaleDateString("it-IT");
+    const notes = service.notes
+      ? `${service.notes}\n\n— Risposta fornitore (${stamp}) —\n${rawText}`
+      : `— Risposta fornitore (${stamp}) —\n${rawText}`;
+    await updateTripService(
+      tripId,
+      service.id,
+      serviceToFormData(service, {
+        confirmation_number: confirmationNumber,
+        net_cost: amount,
+        status,
+        notes,
+      }),
+    );
+    router.refresh();
+    setPending(false);
+    onDone();
+  }
+
+  return (
+    <div className="mt-3 flex flex-col gap-3 rounded-lg border border-[#cda876]/40 bg-[#faf3e6]/60 p-3">
+      {!analyzed ? (
+        <>
+          <label className="text-sm font-medium text-slate-700">
+            Incolla qui il testo della risposta del fornitore
+          </label>
+          <textarea
+            value={rawText}
+            onChange={(e) => setRawText(e.target.value)}
+            rows={5}
+            placeholder="Es. Buongiorno, confermiamo la prenotazione. Numero conferma: ABC123. Totale: 250€..."
+            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+          />
+          <div className="flex justify-end gap-2">
+            <button
+              type="button"
+              onClick={onDone}
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50"
+            >
+              Annulla
+            </button>
+            <button
+              type="button"
+              onClick={analyze}
+              disabled={!rawText.trim()}
+              className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+            >
+              Analizza risposta
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <p className="text-xs text-slate-500">
+            Questo è quello che ho trovato nel testo: controllalo e correggilo se serve prima di applicarlo al
+            servizio. Il testo originale resta comunque salvato nelle note.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label className="mb-1 block text-xs font-medium text-slate-600">Numero di conferma</label>
+              <input
+                value={confirmationNumber}
+                onChange={(e) => setConfirmationNumber(e.target.value)}
+                className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-slate-600">Costo netto (€)</label>
+              <input
+                type="number"
+                step="0.01"
+                min="0"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-medium text-slate-600">Stato del servizio</label>
+            <select
+              value={status}
+              onChange={(e) => setStatus(e.target.value as TripService["status"])}
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+            >
+              {serviceStatusOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex justify-end gap-2">
+            <button
+              type="button"
+              onClick={() => setAnalyzed(false)}
+              disabled={pending}
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60"
+            >
+              Indietro
+            </button>
+            <button
+              type="button"
+              onClick={apply}
+              disabled={pending}
+              className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+            >
+              {pending ? "Applicazione…" : "Applica al servizio"}
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function TripServicesPanel({
   tripId,
   services,
@@ -325,8 +549,11 @@ export default function TripServicesPanel({
   const [tab, setTab] = useState<"servizi" | "pagamenti">("servizi");
   const [serviceFormTarget, setServiceFormTarget] = useState<"new" | TripService | null>(null);
   const [paymentFormTarget, setPaymentFormTarget] = useState<"new" | TripPayment | null>(null);
+  const [mailOpenId, setMailOpenId] = useState<string | null>(null);
+  const [replyOpenId, setReplyOpenId] = useState<string | null>(null);
 
   const supplierName = (id: string | null) => suppliers.find((s) => s.id === id)?.full_name ?? null;
+  const supplierEmail = (id: string | null) => suppliers.find((s) => s.id === id)?.email ?? null;
   const activityLabel = (id: string | null) => activityOptions.find((a) => a.id === id)?.label ?? null;
   const serviceTitle = (id: string | null) => services.find((s) => s.id === id)?.title ?? null;
 
@@ -415,48 +642,87 @@ export default function TripServicesPanel({
                             onDone={() => setServiceFormTarget(null)}
                           />
                         ) : (
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="min-w-0">
-                              <div className="flex flex-wrap items-center gap-2">
-                                <span className="font-medium text-slate-900">{service.title}</span>
-                                <span
-                                  style={{ color: meta.color, backgroundColor: meta.bg }}
-                                  className="rounded-full px-2 py-0.5 text-xs font-medium"
-                                >
-                                  {meta.label}
-                                </span>
+                          <>
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <span className="font-medium text-slate-900">{service.title}</span>
+                                  <span
+                                    style={{ color: meta.color, backgroundColor: meta.bg }}
+                                    className="rounded-full px-2 py-0.5 text-xs font-medium"
+                                  >
+                                    {meta.label}
+                                  </span>
+                                </div>
+                                <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-slate-500">
+                                  {supplierName(service.supplier_id) && (
+                                    <span>Fornitore: {supplierName(service.supplier_id)}</span>
+                                  )}
+                                  {service.net_cost != null && <span>Costo netto: {formatEuro(service.net_cost)}</span>}
+                                  {service.confirmation_number && <span>Conferma: {service.confirmation_number}</span>}
+                                  {activityLabel(service.activity_id) && (
+                                    <span>Collegato a: {activityLabel(service.activity_id)}</span>
+                                  )}
+                                </p>
+                                {service.notes && (
+                                  <p className="mt-1 whitespace-pre-line text-sm text-slate-600">{service.notes}</p>
+                                )}
                               </div>
-                              <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-slate-500">
-                                {supplierName(service.supplier_id) && (
-                                  <span>Fornitore: {supplierName(service.supplier_id)}</span>
+                              <div className="flex shrink-0 items-center gap-1">
+                                {supplierEmail(service.supplier_id) && (
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setMailOpenId(mailOpenId === service.id ? null : service.id);
+                                      setReplyOpenId(null);
+                                    }}
+                                    title="Invia richiesta via email"
+                                    className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+                                  >
+                                    <Mail size={15} />
+                                  </button>
                                 )}
-                                {service.net_cost != null && <span>Costo netto: {formatEuro(service.net_cost)}</span>}
-                                {service.confirmation_number && <span>Conferma: {service.confirmation_number}</span>}
-                                {activityLabel(service.activity_id) && (
-                                  <span>Collegato a: {activityLabel(service.activity_id)}</span>
-                                )}
-                              </p>
-                              {service.notes && <p className="mt-1 text-sm text-slate-600">{service.notes}</p>}
-                            </div>
-                            <div className="flex shrink-0 items-center gap-1">
-                              <button
-                                type="button"
-                                onClick={() => setServiceFormTarget(service)}
-                                title="Modifica servizio"
-                                className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
-                              >
-                                <Pencil size={15} />
-                              </button>
-                              <form action={deleteTripService.bind(null, tripId, service.id)}>
-                                <SubmitButton
-                                  pendingLabel="…"
-                                  className="rounded-md p-2 text-red-500 transition hover:bg-red-50 disabled:opacity-60"
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setReplyOpenId(replyOpenId === service.id ? null : service.id);
+                                    setMailOpenId(null);
+                                  }}
+                                  title="Incolla la risposta del fornitore"
+                                  className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
                                 >
-                                  <Trash2 size={15} />
-                                </SubmitButton>
-                              </form>
+                                  <Inbox size={15} />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => setServiceFormTarget(service)}
+                                  title="Modifica servizio"
+                                  className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+                                >
+                                  <Pencil size={15} />
+                                </button>
+                                <form action={deleteTripService.bind(null, tripId, service.id)}>
+                                  <SubmitButton
+                                    pendingLabel="…"
+                                    className="rounded-md p-2 text-red-500 transition hover:bg-red-50 disabled:opacity-60"
+                                  >
+                                    <Trash2 size={15} />
+                                  </SubmitButton>
+                                </form>
+                              </div>
                             </div>
-                          </div>
+                            {mailOpenId === service.id && (
+                              <MailComposer
+                                tripId={tripId}
+                                service={service}
+                                supplierEmail={supplierEmail(service.supplier_id)!}
+                                onClose={() => setMailOpenId(null)}
+                              />
+                            )}
+                            {replyOpenId === service.id && (
+                              <ReplyAnalyzer tripId={tripId} service={service} onDone={() => setReplyOpenId(null)} />
+                            )}
+                          </>
                         )}
                       </li>
                     );
