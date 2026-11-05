@@ -39,11 +39,11 @@ function ServiceForm({
   return (
     <form action={dispatch} className="flex flex-col gap-3">
       <div>
-        <label htmlFor="title" className="mb-1 block text-sm font-medium text-slate-700">
+        <label htmlFor="service_title" className="mb-1 block text-sm font-medium text-slate-700">
           Servizio *
         </label>
         <input
-          id="title"
+          id="service_title"
           name="title"
           required
           defaultValue={service?.title ?? ""}
@@ -54,11 +54,11 @@ function ServiceForm({
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label htmlFor="supplier_id" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="service_supplier_id" className="mb-1 block text-sm font-medium text-slate-700">
             Fornitore
           </label>
           <select
-            id="supplier_id"
+            id="service_supplier_id"
             name="supplier_id"
             defaultValue={service?.supplier_id ?? ""}
             className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
@@ -72,11 +72,11 @@ function ServiceForm({
           </select>
         </div>
         <div>
-          <label htmlFor="status" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="service_status" className="mb-1 block text-sm font-medium text-slate-700">
             Stato
           </label>
           <select
-            id="status"
+            id="service_status"
             name="status"
             defaultValue={service?.status ?? "da_prenotare"}
             className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
@@ -92,11 +92,11 @@ function ServiceForm({
 
       {activityOptions.length > 0 && (
         <div>
-          <label htmlFor="activity_id" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="service_activity_id" className="mb-1 block text-sm font-medium text-slate-700">
             Collega a un&apos;attività dell&apos;itinerario (opzionale)
           </label>
           <select
-            id="activity_id"
+            id="service_activity_id"
             name="activity_id"
             defaultValue={service?.activity_id ?? ""}
             className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
@@ -113,11 +113,11 @@ function ServiceForm({
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label htmlFor="net_cost" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="service_net_cost" className="mb-1 block text-sm font-medium text-slate-700">
             Costo netto (€)
           </label>
           <input
-            id="net_cost"
+            id="service_net_cost"
             name="net_cost"
             type="number"
             step="0.01"
@@ -127,11 +127,11 @@ function ServiceForm({
           />
         </div>
         <div>
-          <label htmlFor="confirmation_number" className="mb-1 block text-sm font-medium text-slate-700">
+          <label htmlFor="service_confirmation_number" className="mb-1 block text-sm font-medium text-slate-700">
             Numero conferma
           </label>
           <input
-            id="confirmation_number"
+            id="service_confirmation_number"
             name="confirmation_number"
             defaultValue={service?.confirmation_number ?? ""}
             className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
@@ -140,11 +140,11 @@ function ServiceForm({
       </div>
 
       <div>
-        <label htmlFor="notes" className="mb-1 block text-sm font-medium text-slate-700">
+        <label htmlFor="service_notes" className="mb-1 block text-sm font-medium text-slate-700">
           Note
         </label>
         <textarea
-          id="notes"
+          id="service_notes"
           name="notes"
           rows={2}
           defaultValue={service?.notes ?? ""}
