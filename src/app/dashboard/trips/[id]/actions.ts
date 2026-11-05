@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
-import type { Activity, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
+import type { Activity, PaymentDirection, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
 
@@ -763,4 +763,54 @@ export async function deleteTripService(tripId: string, serviceId: string) {
   const supabase = await createClient();
   await supabase.from("trip_services").delete().eq("id", serviceId);
   revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+// Scadenzario pagamenti: incassi dal cliente e pagamenti ai fornitori,
+// con scadenza e data di incasso/pagamento effettivo. Stesso pannello
+// "Servizi e fornitori", non obbligatorio, mai visibile al cliente.
+function readPaymentFields(formData: FormData) {
+  return {
+    direction: (String(formData.get("direction") ?? "incasso") || "incasso") as PaymentDirection,
+    service_id: String(formData.get("service_id") ?? "") || null,
+    amount: Number(formData.get("amount") ?? 0),
+    due_date: String(formData.get("due_date") ?? "") || null,
+    notes: String(formData.get("notes") ?? "").trim() || null,
+  };
+}
+
+export async function addTripPayment(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const fields = readPaymentFields(formData);
+  if (!fields.amount) return;
+
+  await supabase.from("trip_payments").insert({ trip_id: tripId, ...fields });
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard");
+}
+
+export async function updateTripPayment(tripId: string, paymentId: string, formData: FormData) {
+  const supabase = await createClient();
+  const fields = readPaymentFields(formData);
+  if (!fields.amount) return;
+
+  await supabase.from("trip_payments").update(fields).eq("id", paymentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard");
+}
+
+export async function toggleTripPaymentPaid(tripId: string, paymentId: string, paid: boolean) {
+  const supabase = await createClient();
+  await supabase
+    .from("trip_payments")
+    .update({ paid_date: paid ? new Date().toISOString().slice(0, 10) : null })
+    .eq("id", paymentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard");
+}
+
+export async function deleteTripPayment(tripId: string, paymentId: string) {
+  const supabase = await createClient();
+  await supabase.from("trip_payments").delete().eq("id", paymentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard");
 }

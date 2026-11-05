@@ -7,6 +7,7 @@ import {
   Rocket,
   Users,
   Wallet,
+  Banknote,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
@@ -33,15 +34,30 @@ export default async function DashboardHomePage() {
   const allTrips = (trips as Trip[]) || [];
   const tripIds = allTrips.map((trip) => trip.id);
 
-  const { data: pendingItems } = tripIds.length
-    ? await supabase
-        .from("trip_checklist_items")
-        .select("*, trips(title)")
-        .in("trip_id", tripIds)
-        .eq("done", false)
-        .order("created_at", { ascending: true })
-        .limit(8)
-    : { data: [] };
+  const [{ data: pendingItems }, { data: paidIncome }] = await Promise.all([
+    tripIds.length
+      ? supabase
+          .from("trip_checklist_items")
+          .select("*, trips(title)")
+          .in("trip_id", tripIds)
+          .eq("done", false)
+          .order("created_at", { ascending: true })
+          .limit(8)
+      : Promise.resolve({ data: [] }),
+    tripIds.length
+      ? supabase
+          .from("trip_payments")
+          .select("amount")
+          .in("trip_id", tripIds)
+          .eq("direction", "incasso")
+          .not("paid_date", "is", null)
+      : Promise.resolve({ data: [] }),
+  ]);
+
+  const incassatoReale = ((paidIncome as { amount: number }[] | null) || []).reduce(
+    (sum, payment) => sum + payment.amount,
+    0,
+  );
 
   const publishedCount = allTrips.filter((trip) => trip.is_published).length;
   const draftCount = allTrips.length - publishedCount;
@@ -68,13 +84,20 @@ export default async function DashboardHomePage() {
       color: "text-purple-600",
       bg: "bg-purple-50",
     },
+    {
+      label: "Incassato reale",
+      value: formatEuro(incassatoReale),
+      icon: Banknote,
+      color: "text-green-700",
+      bg: "bg-green-50",
+    },
   ];
 
   return (
     <div className="flex flex-col gap-8">
       <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Panoramica</h1>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map((stat) => (
           <div key={stat.label} className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
             <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${stat.bg} ${stat.color}`}>

@@ -10,6 +10,7 @@ import type {
   TripChecklistItem,
   TripDay,
   TripDocument,
+  TripPayment,
   TripService,
 } from "@/lib/types";
 import Link from "next/link";
@@ -67,26 +68,33 @@ export default async function TripDetailPage({
     .single();
   if (!trip) notFound();
 
-  const [{ data: days }, { data: templates }, { data: checklistItems }, { data: tripServices }, { data: suppliers }] =
-    await Promise.all([
-      supabase
-        .from("trip_days")
-        .select("*, activities(*, activity_photos(*))")
-        .eq("trip_id", id)
-        .order("day_order", { ascending: true }),
-      supabase.from("activity_templates").select("*").order("title", { ascending: true }),
-      supabase
-        .from("trip_checklist_items")
-        .select("*")
-        .eq("trip_id", id)
-        .order("item_order", { ascending: true }),
-      supabase
-        .from("trip_services")
-        .select("*")
-        .eq("trip_id", id)
-        .order("service_order", { ascending: true }),
-      supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
-    ]);
+  const [
+    { data: days },
+    { data: templates },
+    { data: checklistItems },
+    { data: tripServices },
+    { data: suppliers },
+    { data: tripPayments },
+  ] = await Promise.all([
+    supabase
+      .from("trip_days")
+      .select("*, activities(*, activity_photos(*))")
+      .eq("trip_id", id)
+      .order("day_order", { ascending: true }),
+    supabase.from("activity_templates").select("*").order("title", { ascending: true }),
+    supabase
+      .from("trip_checklist_items")
+      .select("*")
+      .eq("trip_id", id)
+      .order("item_order", { ascending: true }),
+    supabase
+      .from("trip_services")
+      .select("*")
+      .eq("trip_id", id)
+      .order("service_order", { ascending: true }),
+    supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
+    supabase.from("trip_payments").select("*").eq("trip_id", id).order("due_date", { ascending: true }),
+  ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
@@ -134,6 +142,7 @@ export default async function TripDetailPage({
         publicUrl={publicUrl}
         services={(tripServices as TripService[]) || []}
         suppliers={(suppliers as Supplier[]) || []}
+        payments={(tripPayments as TripPayment[]) || []}
         activityOptions={activityOptions}
       />
       <TripInfoForm trip={trip} />
@@ -221,12 +230,14 @@ function CoverHero({
   publicUrl,
   services,
   suppliers,
+  payments,
   activityOptions,
 }: {
   trip: Trip;
   publicUrl: string;
   services: TripService[];
   suppliers: Supplier[];
+  payments: TripPayment[];
   activityOptions: { id: string; label: string }[];
 }) {
   const dateRange =
@@ -311,6 +322,7 @@ function CoverHero({
           tripId={trip.id}
           services={services}
           suppliers={suppliers}
+          payments={payments}
           activityOptions={activityOptions}
         />
 

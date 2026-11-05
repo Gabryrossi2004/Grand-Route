@@ -174,3 +174,17 @@ export type TripService = {
   service_order: number;
   created_at: string;
 };
+
+export type PaymentDirection = "incasso" | "pagamento";
+
+export type TripPayment = {
+  id: string;
+  trip_id: string;
+  service_id: string | null;
+  direction: PaymentDirection;
+  amount: number;
+  due_date: string | null;
+  paid_date: string | null;
+  notes: string | null;
+  created_at: string;
+};
