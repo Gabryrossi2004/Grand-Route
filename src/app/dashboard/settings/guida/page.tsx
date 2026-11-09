@@ -358,7 +358,7 @@ const sections: Section[] = [
 
 export default function GuidaPage() {
   return (
-    <div className="mx-auto max-w-3xl pb-16">
+    <div className="mx-auto max-w-5xl pb-16">
       <Link
         href="/dashboard/settings"
         className="mb-4 flex w-fit items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-800"
@@ -366,17 +366,17 @@ export default function GuidaPage() {
         <ArrowLeft size={14} /> Impostazioni
       </Link>
 
-      <h1 className="mb-2 border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">
+      <h1 className="mb-2 border-l-4 border-[#2b333e] pl-3 text-3xl font-semibold text-slate-900">
         Guida all&apos;uso del gestionale
       </h1>
-      <p className="mb-8 pl-4 text-sm text-slate-500">
+      <p className="mb-8 pl-4 text-base text-slate-500">
         Una spiegazione passo per passo, pensata per chi parte da zero: dalla configurazione iniziale fino al link
         che arriva al cliente.
       </p>
 
-      <nav className="mb-10 rounded-2xl border border-slate-200 bg-white p-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">Indice</p>
-        <ol className="grid gap-1.5 text-sm sm:grid-cols-2">
+      <nav className="mb-10 rounded-2xl border border-slate-200 bg-white p-6">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">Indice</p>
+        <ol className="grid gap-2 text-base sm:grid-cols-2">
           {sections.map((section) => (
             <li key={section.id}>
               <a href={`#${section.id}`} className="text-[#2b333e] hover:underline">
@@ -390,16 +390,16 @@ export default function GuidaPage() {
       <div className="flex flex-col gap-14">
         {sections.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-20">
-            <h2 className="mb-2 text-xl font-semibold text-slate-900">{section.title}</h2>
-            {section.intro && <p className="mb-6 text-sm text-slate-600">{section.intro}</p>}
+            <h2 className="mb-2 text-2xl font-semibold text-slate-900">{section.title}</h2>
+            {section.intro && <p className="mb-6 text-base leading-relaxed text-slate-600">{section.intro}</p>}
 
-            <div className="flex flex-col gap-8 border-l-2 border-[#f2e2c4] pl-5">
+            <div className="flex flex-col gap-10 border-l-2 border-[#f2e2c4] pl-6">
               {section.steps.map((step) => (
                 <div key={step.id} id={step.id} className="scroll-mt-20">
-                  <h3 className="mb-1.5 text-base font-semibold text-slate-800">{step.title}</h3>
-                  <p className="mb-3 text-sm leading-relaxed text-slate-600">{step.body}</p>
+                  <h3 className="mb-2 text-lg font-semibold text-slate-800">{step.title}</h3>
+                  <p className="mb-4 text-base leading-relaxed text-slate-600">{step.body}</p>
                   {step.images && step.images.length > 0 && (
-                    <div className={step.images.length > 1 ? "grid gap-3 sm:grid-cols-2" : ""}>
+                    <div className={step.images.length > 1 ? "grid gap-4 sm:grid-cols-2" : ""}>
                       {step.images.map((image) => (
                         <figure
                           key={image.src}
@@ -411,9 +411,9 @@ export default function GuidaPage() {
                             width={1024}
                             height={700}
                             className="w-full"
-                            sizes="(max-width: 768px) 100vw, 700px"
+                            sizes="(max-width: 768px) 100vw, 900px"
                           />
-                          <figcaption className="border-t border-slate-200 bg-white px-3 py-2 text-xs text-slate-500">
+                          <figcaption className="border-t border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-500">
                             {image.caption}
                           </figcaption>
                         </figure>
@@ -428,7 +428,7 @@ export default function GuidaPage() {
       </div>
 
       <div className="mt-14 rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ec] p-6 text-center">
-        <p className="text-sm text-slate-600">
+        <p className="text-base text-slate-600">
           Hai ancora dubbi su qualcosa? Questa guida si aggiorna insieme al gestionale: se manca una spiegazione,
           segnalacelo.
         </p>
