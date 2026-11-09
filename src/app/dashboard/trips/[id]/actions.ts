@@ -777,20 +777,24 @@ async function syncConfirmationToActivity(
 ) {
   if (!activityId || !confirmationNumber) return;
 
-  const { data: activity } = await supabase
-    .from("activities")
-    .select("activity_type, details")
-    .eq("id", activityId)
-    .single();
-  if (!activity) return;
+  try {
+    const { data: activity } = await supabase
+      .from("activities")
+      .select("activity_type, details")
+      .eq("id", activityId)
+      .single();
+    if (!activity) return;
 
-  const key = confirmationDetailKey[activity.activity_type as Activity["activity_type"]];
-  if (!key) return;
+    const key = confirmationDetailKey[activity.activity_type as Activity["activity_type"]];
+    if (!key) return;
 
-  await supabase
-    .from("activities")
-    .update({ details: { ...(activity.details ?? {}), [key]: confirmationNumber } })
-    .eq("id", activityId);
+    await supabase
+      .from("activities")
+      .update({ details: { ...(activity.details ?? {}), [key]: confirmationNumber } })
+      .eq("id", activityId);
+  } catch {
+    // Il servizio resta comunque salvato anche se la sincronizzazione fallisce.
+  }
 }
 
 export async function addTripService(tripId: string, formData: FormData) {
