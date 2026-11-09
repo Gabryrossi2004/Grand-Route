@@ -38,6 +38,7 @@ export default async function TripPreviewPage({
       days={orderedDays}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
+      agencyTerms={(owner as Profile | null)?.terms_and_conditions}
       headerExtra={
         <div className="flex justify-center bg-[#faf3e6] px-4 py-3 print:hidden">
           <PrintButton />

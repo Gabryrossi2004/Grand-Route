@@ -5,6 +5,7 @@ import type {
   Activity,
   ActivityPhoto,
   ActivityTemplate,
+  Profile,
   Supplier,
   Trip,
   TripChecklistItem,
@@ -28,6 +29,7 @@ import {
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
+import RateBlockForm from "@/components/RateBlockForm";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
@@ -75,6 +77,7 @@ export default async function TripDetailPage({
     { data: tripServices },
     { data: suppliers },
     { data: tripPayments },
+    { data: ownerProfile },
   ] = await Promise.all([
     supabase
       .from("trip_days")
@@ -94,6 +97,7 @@ export default async function TripDetailPage({
       .order("service_order", { ascending: true }),
     supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
     supabase.from("trip_payments").select("*").eq("trip_id", id).order("due_date", { ascending: true }),
+    supabase.from("profiles").select("*").eq("id", user?.id ?? "").single(),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -146,6 +150,24 @@ export default async function TripDetailPage({
         activityOptions={activityOptions}
       />
       <TripInfoForm trip={trip} />
+
+      <details className="group overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
+        <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+          <span className="flex items-center gap-2">
+            Tariffa &amp; Termini
+            {trip.show_rate_block && (
+              <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
+                visibile al cliente
+              </span>
+            )}
+          </span>
+          <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="p-6 pt-4">
+          <RateBlockForm trip={trip} hasAgencyTerms={Boolean((ownerProfile as Profile | null)?.terms_and_conditions)} />
+        </div>
+      </details>
+
       <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
       <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">

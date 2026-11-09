@@ -16,11 +16,13 @@ export async function updateProfile(
   const accountType = String(formData.get("account_type") ?? "individual");
   const agencyName = String(formData.get("agency_name") ?? "").trim() || null;
   const brandColor = String(formData.get("brand_color") ?? "#2563eb");
+  const termsAndConditions = String(formData.get("terms_and_conditions") ?? "").trim() || null;
 
   const updates: Record<string, unknown> = {
     account_type: accountType === "agency" ? "agency" : "individual",
     agency_name: agencyName,
     brand_color: brandColor,
+    terms_and_conditions: termsAndConditions,
   };
 
   const logoFile = formData.get("logo");

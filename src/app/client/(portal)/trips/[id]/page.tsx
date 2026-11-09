@@ -46,6 +46,7 @@ export default async function ClientTripPage({
       days={orderedDays}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
+      agencyTerms={(owner as Profile | null)?.terms_and_conditions}
       headerExtra={
         <div className="bg-white/90 px-4 py-2 backdrop-blur">
           <Link

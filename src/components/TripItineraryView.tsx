@@ -29,12 +29,14 @@ export default function TripItineraryView({
   days,
   agencyName,
   logoUrl,
+  agencyTerms,
   headerExtra,
 }: {
   trip: Trip;
   days: DayWithActivities[];
   agencyName?: string | null;
   logoUrl?: string | null;
+  agencyTerms?: string | null;
   headerExtra?: React.ReactNode;
 }) {
   const theme = trip.theme || "elegante";
@@ -193,6 +195,48 @@ export default function TripItineraryView({
               </div>
             ) : (
               <div className="theme-accent text-2xl font-bold">{formatEuro(price.total)}</div>
+            )}
+          </section>
+        )}
+
+        {trip.show_rate_block && (trip.rate_includes || trip.rate_excludes || agencyTerms) && (
+          <section className="theme-card mt-10 p-5">
+            <h2 className="theme-heading-font mb-3 text-lg font-semibold">Tariffa &amp; Termini</h2>
+            {(trip.rate_includes || trip.rate_excludes) && (
+              <div className="grid gap-4 sm:grid-cols-2">
+                {trip.rate_includes && (
+                  <div>
+                    <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
+                      La quota include
+                    </h3>
+                    <ul className="list-inside list-disc text-sm">
+                      {trip.rate_includes.split("\n").filter(Boolean).map((line, i) => (
+                        <li key={i}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {trip.rate_excludes && (
+                  <div>
+                    <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
+                      La quota non include
+                    </h3>
+                    <ul className="list-inside list-disc text-sm">
+                      {trip.rate_excludes.split("\n").filter(Boolean).map((line, i) => (
+                        <li key={i}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+            {agencyTerms && (
+              <div className="theme-border mt-4 border-t pt-4">
+                <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
+                  Termini e Condizioni
+                </h3>
+                <p className="theme-muted whitespace-pre-line text-sm">{agencyTerms}</p>
+              </div>
             )}
           </section>
         )}

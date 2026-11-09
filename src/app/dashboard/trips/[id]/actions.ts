@@ -199,6 +199,24 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+// Blocco "Tariffa & Termini": facoltativo, specifico per viaggio (incluso/
+// escluso), riusa invece il testo dei Termini e Condizioni scritto una volta
+// sola nelle Impostazioni dell'agenzia. Visibile al cliente solo se attivato.
+export async function updateTripRateBlock(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const rateIncludes = String(formData.get("rate_includes") ?? "").trim() || null;
+  const rateExcludes = String(formData.get("rate_excludes") ?? "").trim() || null;
+  const showRateBlock = formData.get("show_rate_block") === "on";
+
+  await supabase
+    .from("trips")
+    .update({ rate_includes: rateIncludes, rate_excludes: rateExcludes, show_rate_block: showRateBlock })
+    .eq("id", tripId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/trips/${tripId}/preview`);
+}
+
 export async function togglePublish(tripId: string, isPublished: boolean) {
   const supabase = await createClient();
   await supabase.from("trips").update({ is_published: !isPublished }).eq("id", tripId);

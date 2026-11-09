@@ -62,6 +62,24 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
         />
       </div>
 
+      <div>
+        <label htmlFor="terms_and_conditions" className="mb-1 block text-sm font-medium text-slate-700">
+          Termini e Condizioni standard
+        </label>
+        <p className="mb-2 text-xs text-slate-500">
+          Testo riutilizzato in tutti i viaggi per cui attivi il blocco &quot;Tariffa &amp; Termini&quot; (es. politica
+          di cancellazione, modalità di pagamento, responsabilità). Lo scrivi una volta sola qui.
+        </p>
+        <textarea
+          id="terms_and_conditions"
+          name="terms_and_conditions"
+          rows={8}
+          defaultValue={profile.terms_and_conditions ?? ""}
+          placeholder="Es. È richiesto un acconto del 25% per confermare la prenotazione..."
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+        />
+      </div>
+
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
       {state?.success && <p className="text-sm text-green-600">Impostazioni salvate.</p>}
 

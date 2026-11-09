@@ -8,6 +8,7 @@ export type Profile = {
   agency_name: string | null;
   logo_url: string | null;
   brand_color: string | null;
+  terms_and_conditions: string | null;
   created_at: string;
 };
 
@@ -69,6 +70,9 @@ export type Trip = {
   price_net: number | null;
   price_commission: number | null;
   theme: TripTheme;
+  rate_includes: string | null;
+  rate_excludes: string | null;
+  show_rate_block: boolean;
   created_at: string;
 };
 

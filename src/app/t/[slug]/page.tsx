@@ -43,6 +43,7 @@ export default async function PublicTripPage({
       days={orderedDays}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
+      agencyTerms={(owner as Profile | null)?.terms_and_conditions}
     />
   );
 }

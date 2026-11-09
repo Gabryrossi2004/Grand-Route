@@ -12,6 +12,25 @@ import { toSafeHtml } from "@/lib/richText";
 import { deleteActivityPhoto, uploadActivityPhoto } from "@/app/dashboard/trips/[id]/actions";
 import { searchFlight, type FlightLookupResult } from "@/app/dashboard/trips/[id]/flightActions";
 
+// Quanto il titolo scritto dall'utente assomiglia al titolo di un template di
+// libreria (parole in comune / parole totali): usato solo per ordinare i
+// suggerimenti, mai per inventare testo nuovo.
+function titleSimilarity(a: string, b: string): number {
+  const normalize = (s: string) =>
+    s
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .split(/[^a-z0-9]+/)
+      .filter(Boolean);
+  const wordsA = new Set(normalize(a));
+  const wordsB = new Set(normalize(b));
+  if (wordsA.size === 0 || wordsB.size === 0) return 0;
+  let common = 0;
+  for (const word of wordsA) if (wordsB.has(word)) common++;
+  return common / Math.max(wordsA.size, wordsB.size);
+}
+
 export default function ActivityForm({
   action,
   templates,
@@ -46,6 +65,11 @@ export default function ActivityForm({
   >({ status: "idle" });
 
   const availableTemplates = templates.filter((t) => t.activity_type === activityType);
+  const sortedTemplates = [...availableTemplates].sort(
+    (a, b) => titleSimilarity(title, b.title) - titleSimilarity(title, a.title),
+  );
+  const bestMatchId =
+    title.trim() && titleSimilarity(title, sortedTemplates[0]?.title ?? "") > 0 ? sortedTemplates[0].id : null;
   const fields = detailFields[activityType];
 
   function changeType(newType: ActivityType) {
@@ -174,9 +198,10 @@ export default function ActivityForm({
               className="rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
             >
               <option value="">Scrivi da zero…</option>
-              {availableTemplates.map((template) => (
+              {sortedTemplates.map((template) => (
                 <option key={template.id} value={template.id}>
-                  Dalla libreria: {template.title}
+                  {template.id === bestMatchId ? "⭐ Suggerito: " : "Dalla libreria: "}
+                  {template.title}
                 </option>
               ))}
             </select>
