@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
-import type { Trip } from "@/lib/types";
+import { decryptField } from "@/lib/encryption";
+import type { Client, Trip } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
 import SubmitButton from "@/components/SubmitButton";
 import { deleteClient, linkTripToClient, unlinkTripFromClient, updateClient } from "../actions";
@@ -25,6 +26,21 @@ export default async function ClientDetailPage({
     .eq("owner_id", user?.id ?? "")
     .single();
   if (!client) notFound();
+
+  // I dati anagrafici/documenti sono cifrati nel database: vanno decifrati
+  // qui, lato server, solo per mostrarli al proprietario di questa scheda.
+  const decryptedClient: Client = {
+    ...client,
+    date_of_birth: decryptField(client.date_of_birth),
+    place_of_birth: decryptField(client.place_of_birth),
+    nationality: decryptField(client.nationality),
+    fiscal_code: decryptField(client.fiscal_code),
+    residence_address: decryptField(client.residence_address),
+    id_card_number: decryptField(client.id_card_number),
+    id_card_expiry: decryptField(client.id_card_expiry),
+    passport_number: decryptField(client.passport_number),
+    passport_expiry: decryptField(client.passport_expiry),
+  };
 
   const [{ data: trips }, { data: otherTrips }] = await Promise.all([
     supabase.from("trips").select("*").eq("client_id", id).order("created_at", { ascending: false }),
@@ -108,7 +124,7 @@ export default async function ClientDetailPage({
           />
         </div>
 
-        <ClientDetailsFields client={client} />
+        <ClientDetailsFields client={decryptedClient} />
 
         <SubmitButton
           pendingLabel="Salvataggio…"

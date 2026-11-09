@@ -3,18 +3,22 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { encryptField } from "@/lib/encryption";
 
+// Dati anagrafici e documenti d'identità: cifrati prima di essere salvati
+// (vedi src/lib/encryption.ts), così restano illeggibili anche con accesso
+// diretto al database.
 function parseDetailFields(formData: FormData) {
   return {
-    date_of_birth: String(formData.get("date_of_birth") ?? "").trim() || null,
-    place_of_birth: String(formData.get("place_of_birth") ?? "").trim() || null,
-    nationality: String(formData.get("nationality") ?? "").trim() || null,
-    fiscal_code: String(formData.get("fiscal_code") ?? "").trim() || null,
-    residence_address: String(formData.get("residence_address") ?? "").trim() || null,
-    id_card_number: String(formData.get("id_card_number") ?? "").trim() || null,
-    id_card_expiry: String(formData.get("id_card_expiry") ?? "").trim() || null,
-    passport_number: String(formData.get("passport_number") ?? "").trim() || null,
-    passport_expiry: String(formData.get("passport_expiry") ?? "").trim() || null,
+    date_of_birth: encryptField(String(formData.get("date_of_birth") ?? "").trim() || null),
+    place_of_birth: encryptField(String(formData.get("place_of_birth") ?? "").trim() || null),
+    nationality: encryptField(String(formData.get("nationality") ?? "").trim() || null),
+    fiscal_code: encryptField(String(formData.get("fiscal_code") ?? "").trim() || null),
+    residence_address: encryptField(String(formData.get("residence_address") ?? "").trim() || null),
+    id_card_number: encryptField(String(formData.get("id_card_number") ?? "").trim() || null),
+    id_card_expiry: encryptField(String(formData.get("id_card_expiry") ?? "").trim() || null),
+    passport_number: encryptField(String(formData.get("passport_number") ?? "").trim() || null),
+    passport_expiry: encryptField(String(formData.get("passport_expiry") ?? "").trim() || null),
   };
 }
 

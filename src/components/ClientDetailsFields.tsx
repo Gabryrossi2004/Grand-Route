@@ -1,8 +1,56 @@
+"use client";
+
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import type { Client } from "@/lib/types";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
+
+// Campo testo che, come per una password, resta nascosto finché non lo
+// riveli tu: evita di mostrare codice fiscale, documenti o indirizzo a chi
+// ti guarda lo schermo da dietro le spalle. Il dato resta comunque cifrato
+// nel database indipendentemente da questo (vedi src/lib/encryption.ts).
+function MaskedField({
+  id,
+  name,
+  label,
+  defaultValue,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  defaultValue: string;
+}) {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <div>
+      <label htmlFor={id} className={labelClass}>
+        {label}
+      </label>
+      <div className="relative">
+        <input
+          id={id}
+          name={name}
+          type={visible ? "text" : "password"}
+          autoComplete="off"
+          defaultValue={defaultValue}
+          className={`${inputClass} pr-9`}
+        />
+        <button
+          type="button"
+          onClick={() => setVisible((v) => !v)}
+          title={visible ? "Nascondi" : "Mostra"}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+        >
+          {visible ? <EyeOff size={15} /> : <Eye size={15} />}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function ClientDetailsFields({ client }: { client?: Client }) {
   return (
@@ -45,40 +93,26 @@ export default function ClientDetailsFields({ client }: { client?: Client }) {
             className={inputClass}
           />
         </div>
-        <div>
-          <label htmlFor="fiscal_code" className={labelClass}>
-            Codice fiscale
-          </label>
-          <input
-            id="fiscal_code"
-            name="fiscal_code"
-            defaultValue={client?.fiscal_code ?? ""}
-            className={inputClass}
-          />
-        </div>
+        <MaskedField
+          id="fiscal_code"
+          name="fiscal_code"
+          label="Codice fiscale"
+          defaultValue={client?.fiscal_code ?? ""}
+        />
         <div className="sm:col-span-2">
-          <label htmlFor="residence_address" className={labelClass}>
-            Indirizzo di residenza
-          </label>
-          <input
+          <MaskedField
             id="residence_address"
             name="residence_address"
-            placeholder="Via, civico, città, CAP"
+            label="Indirizzo di residenza"
             defaultValue={client?.residence_address ?? ""}
-            className={inputClass}
           />
         </div>
-        <div>
-          <label htmlFor="id_card_number" className={labelClass}>
-            Numero carta d&apos;identità
-          </label>
-          <input
-            id="id_card_number"
-            name="id_card_number"
-            defaultValue={client?.id_card_number ?? ""}
-            className={inputClass}
-          />
-        </div>
+        <MaskedField
+          id="id_card_number"
+          name="id_card_number"
+          label="Numero carta d'identità"
+          defaultValue={client?.id_card_number ?? ""}
+        />
         <div>
           <label htmlFor="id_card_expiry" className={labelClass}>
             Scadenza carta d&apos;identità
@@ -91,17 +125,12 @@ export default function ClientDetailsFields({ client }: { client?: Client }) {
             className={inputClass}
           />
         </div>
-        <div>
-          <label htmlFor="passport_number" className={labelClass}>
-            Numero passaporto
-          </label>
-          <input
-            id="passport_number"
-            name="passport_number"
-            defaultValue={client?.passport_number ?? ""}
-            className={inputClass}
-          />
-        </div>
+        <MaskedField
+          id="passport_number"
+          name="passport_number"
+          label="Numero passaporto"
+          defaultValue={client?.passport_number ?? ""}
+        />
         <div>
           <label htmlFor="passport_expiry" className={labelClass}>
             Scadenza passaporto
