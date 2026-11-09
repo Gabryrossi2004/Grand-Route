@@ -42,6 +42,8 @@ export type TripGroup = {
 
 export type PriceMode = "nessuno" | "lordo" | "commissioni";
 
+export type ItineraryStage = "preliminare" | "finale";
+
 export type TripTheme =
   | "elegante"
   | "azteco"
@@ -73,6 +75,7 @@ export type Trip = {
   rate_includes: string | null;
   rate_excludes: string | null;
   show_rate_block: boolean;
+  itinerary_stage: ItineraryStage;
   created_at: string;
 };
 

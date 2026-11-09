@@ -76,6 +76,13 @@ export default function TripItineraryView({
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-10">
+        {trip.itinerary_stage === "preliminare" && (
+          <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            <strong>Itinerario preliminare.</strong> Voli, alloggi e servizi sono ancora indicativi e potrebbero
+            cambiare prima della conferma definitiva.
+          </div>
+        )}
+
         {days.length === 0 && <p className="theme-muted">L&apos;itinerario sarà disponibile a breve.</p>}
 
         {days.length > 0 && (

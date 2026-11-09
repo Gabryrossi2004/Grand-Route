@@ -22,6 +22,7 @@ import {
   Copy,
   ExternalLink,
   Eye,
+  FileCheck2,
   FileText,
   MapPin,
   Rocket,
@@ -39,6 +40,7 @@ import {
   deleteDocument,
   duplicateTripAsVariant,
   togglePublish,
+  updateItineraryStage,
   updateTripInfo,
   uploadCover,
   uploadDocument,
@@ -277,7 +279,7 @@ function CoverHero({
           </>
         )}
 
-        <div className="relative flex items-start justify-between">
+        <div className="relative flex items-start justify-between gap-2">
           <span
             className={
               trip.is_published
@@ -286,6 +288,15 @@ function CoverHero({
             }
           >
             {trip.is_published ? "Pubblicato" : "Bozza"}
+          </span>
+          <span
+            className={
+              trip.itinerary_stage === "finale"
+                ? "rounded-full bg-blue-500/90 px-3 py-1 text-xs font-semibold text-white"
+                : "rounded-full bg-amber-500/90 px-3 py-1 text-xs font-semibold text-white"
+            }
+          >
+            Itinerario {trip.itinerary_stage === "finale" ? "finale" : "preliminare"}
           </span>
         </div>
 
@@ -329,6 +340,17 @@ function CoverHero({
           <Eye size={15} />
           Preview
         </Link>
+
+        <form action={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}>
+          <button
+            type="submit"
+            title="Il cliente vede l'etichetta corrispondente in cima all'itinerario"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          >
+            <FileCheck2 size={15} />
+            {trip.itinerary_stage === "finale" ? "Segna come preliminare" : "Segna come finale"}
+          </button>
+        </form>
 
         <form action={duplicateTripAsVariant.bind(null, trip.id)}>
           <button

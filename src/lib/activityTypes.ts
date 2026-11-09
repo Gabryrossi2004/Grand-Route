@@ -107,6 +107,18 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
   altro: [],
 };
 
+// Chiave dei dettagli che rappresenta il "numero di conferma" per ogni
+// tipologia (dove esiste): usata solo per sincronizzare automaticamente il
+// numero di conferma dal pannello Servizi e fornitori all'attività collegata
+// dell'itinerario, mai per generare testo.
+export const confirmationDetailKey: Partial<Record<ActivityType, string>> = {
+  volo: "pnr",
+  alloggio: "numero_conferma",
+  transfer: "pnr",
+  treno: "pnr",
+  traghetto: "pnr",
+};
+
 // Mappa "di riserva": usata solo come ultima spiaggia (es. per chiavi rimaste
 // da un tipo precedente dopo un cambio di tipologia). Più tipologie possono
 // condividere la stessa chiave (es. "pnr"): quando capita, vince l'ultima

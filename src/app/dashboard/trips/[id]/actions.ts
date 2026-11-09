@@ -4,8 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
-import { CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
-import type { Activity, PaymentDirection, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
+import { CHECK_OUT_DATE_KEY, confirmationDetailKey } from "@/lib/activityTypes";
+import type { Activity, ItineraryStage, PaymentDirection, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
 
@@ -213,6 +213,17 @@ export async function updateTripRateBlock(tripId: string, formData: FormData) {
     .update({ rate_includes: rateIncludes, rate_excludes: rateExcludes, show_rate_block: showRateBlock })
     .eq("id", tripId);
 
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/trips/${tripId}/preview`);
+}
+
+// "2 versioni" dello stesso viaggio: preliminare (bozza generica, inviata al
+// cliente/agente per conferma) o finale (dettagli reali dopo la prenotazione
+// dei servizi). Un unico interruttore, nessuna scheda duplicata.
+export async function updateItineraryStage(tripId: string, currentStage: ItineraryStage) {
+  const supabase = await createClient();
+  const nextStage: ItineraryStage = currentStage === "finale" ? "preliminare" : "finale";
+  await supabase.from("trips").update({ itinerary_stage: nextStage }).eq("id", tripId);
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath(`/trips/${tripId}/preview`);
 }
@@ -754,6 +765,34 @@ function readServiceFields(formData: FormData) {
   };
 }
 
+// Quando un Servizio collegato a un'attività riceve un numero di conferma,
+// lo copia nel campo dettaglio corrispondente di quell'attività (es. "pnr"
+// per un volo, "numero_conferma" per un alloggio) così l'itinerario mostra
+// subito il dato reale, senza bisogno di ricopiarlo a mano. Copia solo il
+// dato strutturato: nessun testo viene generato o modificato.
+async function syncConfirmationToActivity(
+  supabase: SupabaseServerClient,
+  activityId: string | null,
+  confirmationNumber: string | null,
+) {
+  if (!activityId || !confirmationNumber) return;
+
+  const { data: activity } = await supabase
+    .from("activities")
+    .select("activity_type, details")
+    .eq("id", activityId)
+    .single();
+  if (!activity) return;
+
+  const key = confirmationDetailKey[activity.activity_type as Activity["activity_type"]];
+  if (!key) return;
+
+  await supabase
+    .from("activities")
+    .update({ details: { ...(activity.details ?? {}), [key]: confirmationNumber } })
+    .eq("id", activityId);
+}
+
 export async function addTripService(tripId: string, formData: FormData) {
   const supabase = await createClient();
   const fields = readServiceFields(formData);
@@ -765,6 +804,7 @@ export async function addTripService(tripId: string, formData: FormData) {
     .eq("trip_id", tripId);
 
   await supabase.from("trip_services").insert({ trip_id: tripId, service_order: count ?? 0, ...fields });
+  await syncConfirmationToActivity(supabase, fields.activity_id, fields.confirmation_number);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
@@ -774,6 +814,7 @@ export async function updateTripService(tripId: string, serviceId: string, formD
   if (!fields.title) return;
 
   await supabase.from("trip_services").update(fields).eq("id", serviceId);
+  await syncConfirmationToActivity(supabase, fields.activity_id, fields.confirmation_number);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
