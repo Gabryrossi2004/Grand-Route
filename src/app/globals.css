@@ -21,6 +21,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Preferenze di lettura dell'agenzia (Impostazioni): dimensione e stile del
+   carattere, applicate via attributi su <html> solo nelle pagine del
+   gestionale (vedi FontPreference.tsx), mai nell'itinerario del cliente. */
+html[data-ui-font="leggibile"] body {
+  font-family: var(--font-readable), ui-sans-serif, system-ui, sans-serif;
+}
+
+html[data-ui-font="classico"] body {
+  font-family: var(--font-classic), ui-serif, Georgia, serif;
+}
+
 ::selection {
   background: #bfdbfe;
 }

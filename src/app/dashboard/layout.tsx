@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import type { Profile } from "@/lib/types";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
+import FontPreference from "@/components/FontPreference";
 
 export default async function DashboardLayout({
   children,
@@ -38,6 +39,10 @@ export default async function DashboardLayout({
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
+      <FontPreference
+        fontSize={profile?.ui_font_size ?? "normale"}
+        fontFamily={profile?.ui_font_family ?? "predefinito"}
+      />
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
         <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />

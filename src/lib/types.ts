@@ -1,5 +1,8 @@
 export type AccountType = "individual" | "agency";
 
+export type UiFontSize = "normale" | "grande" | "molto_grande";
+export type UiFontFamily = "predefinito" | "leggibile" | "classico";
+
 export type Profile = {
   id: string;
   email: string;
@@ -9,6 +12,8 @@ export type Profile = {
   logo_url: string | null;
   brand_color: string | null;
   terms_and_conditions: string | null;
+  ui_font_size: UiFontSize;
+  ui_font_family: UiFontFamily;
   created_at: string;
 };
 

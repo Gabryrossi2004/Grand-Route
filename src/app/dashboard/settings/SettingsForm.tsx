@@ -63,6 +63,51 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
       </div>
 
       <div>
+        <label className="mb-2 block text-sm font-medium text-slate-700">Dimensione del testo</label>
+        <p className="mb-2 text-xs text-slate-500">Si applica a tutte le pagine del gestionale (non all&apos;itinerario che vede il cliente).</p>
+        <div className="flex flex-wrap gap-4 text-sm">
+          <label className="flex items-center gap-2">
+            <input
+              type="radio"
+              name="ui_font_size"
+              value="normale"
+              defaultChecked={profile.ui_font_size === "normale" || !profile.ui_font_size}
+            />
+            Normale
+          </label>
+          <label className="flex items-center gap-2">
+            <input type="radio" name="ui_font_size" value="grande" defaultChecked={profile.ui_font_size === "grande"} />
+            Grande
+          </label>
+          <label className="flex items-center gap-2">
+            <input
+              type="radio"
+              name="ui_font_size"
+              value="molto_grande"
+              defaultChecked={profile.ui_font_size === "molto_grande"}
+            />
+            Molto grande
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="ui_font_family" className="mb-1 block text-sm font-medium text-slate-700">
+          Stile del carattere
+        </label>
+        <select
+          id="ui_font_family"
+          name="ui_font_family"
+          defaultValue={profile.ui_font_family ?? "predefinito"}
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+        >
+          <option value="predefinito">Predefinito</option>
+          <option value="leggibile">Leggibile (più chiaro e spazioso)</option>
+          <option value="classico">Classico (con grazie)</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="terms_and_conditions" className="mb-1 block text-sm font-medium text-slate-700">
           Termini e Condizioni standard
         </label>

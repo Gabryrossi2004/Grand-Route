@@ -17,12 +17,16 @@ export async function updateProfile(
   const agencyName = String(formData.get("agency_name") ?? "").trim() || null;
   const brandColor = String(formData.get("brand_color") ?? "#2563eb");
   const termsAndConditions = String(formData.get("terms_and_conditions") ?? "").trim() || null;
+  const uiFontSize = String(formData.get("ui_font_size") ?? "normale");
+  const uiFontFamily = String(formData.get("ui_font_family") ?? "predefinito");
 
   const updates: Record<string, unknown> = {
     account_type: accountType === "agency" ? "agency" : "individual",
     agency_name: agencyName,
     brand_color: brandColor,
     terms_and_conditions: termsAndConditions,
+    ui_font_size: ["normale", "grande", "molto_grande"].includes(uiFontSize) ? uiFontSize : "normale",
+    ui_font_family: ["predefinito", "leggibile", "classico"].includes(uiFontFamily) ? uiFontFamily : "predefinito",
   };
 
   const logoFile = formData.get("logo");
