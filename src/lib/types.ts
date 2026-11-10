@@ -14,7 +14,15 @@ export type Profile = {
   terms_and_conditions: string | null;
   ui_font_size: UiFontSize;
   ui_font_family: UiFontFamily;
+  is_professional: boolean;
   created_at: string;
+};
+
+export type CommunityProfileDirectoryEntry = {
+  id: string;
+  full_name: string | null;
+  agency_name: string | null;
+  logo_url: string | null;
 };
 
 export type Client = {
@@ -198,5 +206,59 @@ export type TripPayment = {
   due_date: string | null;
   paid_date: string | null;
   notes: string | null;
+  created_at: string;
+};
+
+export type CommunityGroup = {
+  id: string;
+  name: string;
+  description: string | null;
+  created_by: string;
+  created_at: string;
+};
+
+export type CommunityGroupMemberRole = "owner" | "member";
+
+export type CommunityGroupMember = {
+  group_id: string;
+  profile_id: string;
+  role: CommunityGroupMemberRole;
+  joined_at: string;
+};
+
+export type CommunityGroupInvite = {
+  id: string;
+  group_id: string;
+  token: string;
+  created_by: string;
+  max_uses: number | null;
+  use_count: number;
+  expires_at: string | null;
+  revoked: boolean;
+  created_at: string;
+};
+
+export type CommunityPost = {
+  id: string;
+  group_id: string | null;
+  author_id: string;
+  title: string | null;
+  body: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type CommunityPostPhoto = {
+  id: string;
+  post_id: string;
+  url: string;
+  created_at: string;
+};
+
+export type CommunityComment = {
+  id: string;
+  post_id: string;
+  author_id: string;
+  body: string;
   created_at: string;
 };

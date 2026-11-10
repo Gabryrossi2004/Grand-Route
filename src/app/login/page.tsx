@@ -1,12 +1,22 @@
 "use client";
 
-import { useActionState } from "react";
+import { Suspense, useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
 import { login } from "./actions";
 
 export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const [state, formAction, pending] = useActionState(login, undefined);
+  const next = useSearchParams().get("next") ?? "";
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
@@ -16,6 +26,7 @@ export default function LoginPage() {
         <p className="mb-6 text-sm text-slate-500">Entra nel tuo gestionale viaggi</p>
 
         <form action={formAction} className="flex flex-col gap-4">
+          <input type="hidden" name="next" value={next} />
           <div>
             <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700">
               Email

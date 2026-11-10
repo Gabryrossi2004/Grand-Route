@@ -40,8 +40,13 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith("/login") || pathname.startsWith("/signup") || isClientAuthRoute;
 
   if (!user && isPrivateRoute) {
+    const next = `${pathname}${request.nextUrl.search}`;
     const url = request.nextUrl.clone();
     url.pathname = isClientPrivateRoute ? "/client/login" : "/login";
+    url.search = "";
+    if (!isClientPrivateRoute) {
+      url.searchParams.set("next", next);
+    }
     return NextResponse.redirect(url);
   }
 

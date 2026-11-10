@@ -14,5 +14,6 @@ export async function login(_prevState: { error?: string } | undefined, formData
     return { error: "Email o password non corrette." };
   }
 
-  redirect("/dashboard");
+  const next = String(formData.get("next") ?? "");
+  redirect(next.startsWith("/dashboard") ? next : "/dashboard");
 }
