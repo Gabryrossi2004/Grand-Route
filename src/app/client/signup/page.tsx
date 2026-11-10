@@ -74,6 +74,26 @@ export default function ClientSignupPage() {
             />
           </div>
 
+          <label className="flex items-start gap-2 text-xs text-slate-500">
+            <input
+              type="checkbox"
+              name="acceptTerms"
+              required
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-[#2b333e] focus:ring-[#cda876]"
+            />
+            <span>
+              Ho letto e accetto i{" "}
+              <Link href="/termini" target="_blank" className="font-medium text-[#2b333e] hover:underline">
+                Termini di Servizio
+              </Link>{" "}
+              e l&apos;
+              <Link href="/privacy" target="_blank" className="font-medium text-[#2b333e] hover:underline">
+                Informativa sulla Privacy
+              </Link>
+              .
+            </span>
+          </label>
+
           {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
 
           <button

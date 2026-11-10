@@ -14,6 +14,10 @@ export async function clientSignup(
     return { error: "La password deve avere almeno 6 caratteri." };
   }
 
+  if (!formData.get("acceptTerms")) {
+    return { error: "Devi accettare i Termini di Servizio e l'Informativa sulla Privacy." };
+  }
+
   const supabase = await createClient();
   const { error } = await supabase.auth.signUp({
     email,
