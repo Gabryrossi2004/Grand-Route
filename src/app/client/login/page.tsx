@@ -33,7 +33,7 @@ export default function ClientLoginPage() {
               <label htmlFor="password" className="block text-sm font-medium text-slate-700">
                 Password
               </label>
-              <Link href="/forgot-password" className="text-xs font-medium text-[#2b333e] hover:underline">
+              <Link href="/forgot-password" className="text-xs font-medium text-[#233c5e] hover:underline">
                 Password dimenticata?
               </Link>
             </div>
@@ -51,7 +51,7 @@ export default function ClientLoginPage() {
           <button
             type="submit"
             disabled={pending}
-            className="mt-2 rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+            className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
             {pending ? "Accesso in corso…" : "Accedi"}
           </button>
@@ -59,7 +59,7 @@ export default function ClientLoginPage() {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           Non hai un account?{" "}
-          <Link href="/client/signup" className="font-medium text-[#2b333e] hover:underline">
+          <Link href="/client/signup" className="font-medium text-[#233c5e] hover:underline">
             Registrati
           </Link>
         </p>

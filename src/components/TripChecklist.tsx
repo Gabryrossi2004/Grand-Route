@@ -75,7 +75,7 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
                 type="button"
                 onClick={() => handleToggle(item)}
                 title={item.done ? "Segna come da fare" : "Segna come fatto"}
-                className="flex shrink-0 items-center text-slate-400 transition hover:text-[#2b333e] disabled:opacity-40"
+                className="flex shrink-0 items-center text-slate-400 transition hover:text-[#233c5e] disabled:opacity-40"
                 disabled={item.id.startsWith("temp-")}
               >
                 {item.done ? <CheckSquare size={18} className="text-green-600" /> : <Square size={18} />}

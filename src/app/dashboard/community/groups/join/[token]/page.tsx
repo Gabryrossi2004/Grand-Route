@@ -15,7 +15,7 @@ export default async function JoinGroupPage({ params }: { params: Promise<{ toke
         <p className="text-sm text-slate-500">
           {error?.message || "Questo link di invito non è valido, è scaduto o è stato revocato."}
         </p>
-        <Link href="/dashboard/community/groups" className="mt-6 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/dashboard/community/groups" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
           Torna ai gruppi
         </Link>
       </div>

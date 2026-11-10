@@ -17,7 +17,7 @@ export default async function SuppliersPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Fornitori</h1>
+        <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">Fornitori</h1>
         <p className="mt-1 text-sm text-slate-500">
           La rubrica di hotel, trasporti, guide e altri fornitori: riusali nei servizi dei tuoi viaggi.
         </p>

@@ -30,10 +30,10 @@ export default async function CommunityGroupsPage() {
   return (
     <div className="mx-auto max-w-2xl">
       <div className="mb-6">
-        <Link href="/dashboard/community" className="text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/dashboard/community" className="text-sm font-medium text-[#233c5e] hover:underline">
           ← Torna alla bacheca
         </Link>
-        <h1 className="mt-2 border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">I miei gruppi</h1>
+        <h1 className="mt-2 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">I miei gruppi</h1>
         <p className="mt-1 text-sm text-slate-500">
           Gruppi privati, visibili solo a chi è stato invitato: ideali per reti commerciali o gruppi di tour operator.
         </p>

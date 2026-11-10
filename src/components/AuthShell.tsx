@@ -14,7 +14,7 @@ export default function AuthShell({
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#faf3e6] px-4 py-12">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
-        <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
+        <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
       </div>
       <div
         className={`relative z-10 w-full overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-lg shadow-[#e6d7bb]/40 ${

@@ -30,7 +30,7 @@ export default function CommentForm({
       <button
         type="submit"
         disabled={pending}
-        className="shrink-0 rounded-lg bg-[#2b333e] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-[#1e242d] disabled:opacity-60"
+        className="shrink-0 rounded-lg bg-[#233c5e] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-[#17283f] disabled:opacity-60"
       >
         Invia
       </button>

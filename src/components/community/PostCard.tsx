@@ -27,7 +27,7 @@ function AuthorAvatar({ author }: { author: CommunityProfileDirectoryEntry | und
     return <img src={author.logo_url} alt="" className="h-9 w-9 shrink-0 rounded-full object-cover" />;
   }
   return (
-    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2b333e] text-white">
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#233c5e] text-white">
       <Compass size={16} />
     </span>
   );

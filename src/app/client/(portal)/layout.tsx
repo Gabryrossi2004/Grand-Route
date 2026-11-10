@@ -19,13 +19,13 @@ export default async function ClientPortalLayout({ children }: { children: React
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute -top-32 left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
+        <div className="absolute -top-32 left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
         <div className="absolute bottom-[-15%] right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
       </div>
       <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-          <Link href="/client" className="flex items-center gap-2 font-semibold text-[#2b333e]">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2b333e] text-white">
+          <Link href="/client" className="flex items-center gap-2 font-semibold text-[#233c5e]">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#233c5e] text-white">
               <Compass size={16} />
             </span>
             Area clienti
@@ -35,7 +35,7 @@ export default async function ClientPortalLayout({ children }: { children: React
             <form action={clientSignOut}>
               <button
                 type="submit"
-                className="rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
+                className="rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#233c5e]"
               >
                 Esci
               </button>

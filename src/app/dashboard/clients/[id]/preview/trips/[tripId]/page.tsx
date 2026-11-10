@@ -57,7 +57,7 @@ export default async function ClientPreviewTripPage({
           >
             <ArrowLeft size={14} /> I miei viaggi
           </Link>
-          <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 text-xs text-[#1e242d]">
+          <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 text-xs text-[#17283f]">
             <Eye size={12} className="shrink-0" /> Anteprima in sola lettura
           </div>
         </div>

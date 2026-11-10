@@ -19,7 +19,7 @@ export default function ClientSignupPage() {
             Ti abbiamo mandato un link di conferma. Clicca sul link e poi torna qui per accedere: troverai subito i
             tuoi viaggi, se la tua agenzia ha già usato questa email per te.
           </p>
-          <Link href="/client/login" className="mt-6 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+          <Link href="/client/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Vai al login
           </Link>
         </div>
@@ -79,15 +79,15 @@ export default function ClientSignupPage() {
               type="checkbox"
               name="acceptTerms"
               required
-              className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-[#2b333e] focus:ring-[#cda876]"
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-[#233c5e] focus:ring-[#cda876]"
             />
             <span>
               Ho letto e accetto i{" "}
-              <Link href="/termini" target="_blank" className="font-medium text-[#2b333e] hover:underline">
+              <Link href="/termini" target="_blank" className="font-medium text-[#233c5e] hover:underline">
                 Termini di Servizio
               </Link>{" "}
               e l&apos;
-              <Link href="/privacy" target="_blank" className="font-medium text-[#2b333e] hover:underline">
+              <Link href="/privacy" target="_blank" className="font-medium text-[#233c5e] hover:underline">
                 Informativa sulla Privacy
               </Link>
               .
@@ -99,7 +99,7 @@ export default function ClientSignupPage() {
           <button
             type="submit"
             disabled={pending}
-            className="mt-2 rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+            className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
             {pending ? "Creazione account…" : "Registrati"}
           </button>
@@ -107,7 +107,7 @@ export default function ClientSignupPage() {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           Hai già un account?{" "}
-          <Link href="/client/login" className="font-medium text-[#2b333e] hover:underline">
+          <Link href="/client/login" className="font-medium text-[#233c5e] hover:underline">
             Accedi
           </Link>
         </p>

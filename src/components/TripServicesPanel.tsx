@@ -172,7 +172,7 @@ function ServiceForm({
         </button>
         <SubmitButton
           pendingLabel={isEdit ? "Salvataggio…" : "Creazione…"}
-          className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+          className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
         >
           {isEdit ? "Salva modifiche" : "Aggiungi servizio"}
         </SubmitButton>
@@ -295,7 +295,7 @@ function PaymentForm({
         </button>
         <SubmitButton
           pendingLabel={isEdit ? "Salvataggio…" : "Creazione…"}
-          className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+          className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
         >
           {isEdit ? "Salva modifiche" : "Aggiungi scadenza"}
         </SubmitButton>
@@ -380,7 +380,7 @@ function MailComposer({
         <a
           href={mailtoHref}
           onClick={handleOpenMail}
-          className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d]"
+          className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f]"
         >
           Apri nella tua email
         </a>
@@ -461,7 +461,7 @@ function ReplyAnalyzer({
               type="button"
               onClick={analyze}
               disabled={!rawText.trim()}
-              className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+              className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
             >
               Analizza risposta
             </button>
@@ -521,7 +521,7 @@ function ReplyAnalyzer({
               type="button"
               onClick={apply}
               disabled={pending}
-              className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+              className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
             >
               {pending ? "Applicazione…" : "Applica al servizio"}
             </button>
@@ -601,7 +601,7 @@ export default function TripServicesPanel({
               onClick={() => setTab("servizi")}
               className={`px-3 py-2 text-sm font-medium transition ${
                 tab === "servizi"
-                  ? "border-b-2 border-[#2b333e] text-[#2b333e]"
+                  ? "border-b-2 border-[#233c5e] text-[#233c5e]"
                   : "text-slate-500 hover:text-slate-700"
               }`}
             >
@@ -612,7 +612,7 @@ export default function TripServicesPanel({
               onClick={() => setTab("pagamenti")}
               className={`px-3 py-2 text-sm font-medium transition ${
                 tab === "pagamenti"
-                  ? "border-b-2 border-[#2b333e] text-[#2b333e]"
+                  ? "border-b-2 border-[#233c5e] text-[#233c5e]"
                   : "text-slate-500 hover:text-slate-700"
               }`}
             >
@@ -753,7 +753,7 @@ export default function TripServicesPanel({
                 <p className="mt-4 text-xs text-slate-400">
                   Non hai ancora fornitori in rubrica: puoi comunque aggiungere un servizio senza collegarlo a
                   nessuno, o{" "}
-                  <a href="/dashboard/suppliers" className="font-medium text-[#2b333e] hover:underline">
+                  <a href="/dashboard/suppliers" className="font-medium text-[#233c5e] hover:underline">
                     crearne uno
                   </a>
                   .
@@ -800,7 +800,7 @@ export default function TripServicesPanel({
                                 <button
                                   type="submit"
                                   title={payment.paid_date ? "Segna come non fatto" : isIncasso ? "Segna come incassato" : "Segna come pagato"}
-                                  className="mt-0.5 shrink-0 text-slate-400 transition hover:text-[#2b333e]"
+                                  className="mt-0.5 shrink-0 text-slate-400 transition hover:text-[#233c5e]"
                                 >
                                   {payment.paid_date ? (
                                     <CheckCircle2 size={18} className="text-green-600" />

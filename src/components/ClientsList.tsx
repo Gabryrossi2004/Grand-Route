@@ -35,7 +35,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
       {clients.length === 0 ? (
         <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
           <p className="text-slate-500">Non hai ancora nessun cliente in rubrica.</p>
-          <Link href="/dashboard/clients/new" className="mt-3 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+          <Link href="/dashboard/clients/new" className="mt-3 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Aggiungi il primo cliente
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
               className="flex items-center justify-between gap-3 px-5 py-4 hover:bg-slate-50"
             >
               <div className="flex min-w-0 items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2b333e] text-sm font-semibold text-white">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#233c5e] text-sm font-semibold text-white">
                   {client.full_name.trim().charAt(0).toUpperCase()}
                 </span>
                 <div className="min-w-0">

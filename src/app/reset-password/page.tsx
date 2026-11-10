@@ -58,7 +58,7 @@ export default function ResetPasswordPage() {
           <p className="mb-6 text-sm text-slate-500">Ora puoi accedere con la nuova password.</p>
           <Link
             href={isClient ? "/client/login" : "/login"}
-            className="inline-block rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d]"
+            className="inline-block rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f]"
           >
             Vai al login
           </Link>
@@ -125,14 +125,14 @@ export default function ResetPasswordPage() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-2 rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+            className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
             {status === "loading" ? "Salvataggio…" : "Salva la nuova password"}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
-          <Link href="/login" className="font-medium text-[#2b333e] hover:underline">
+          <Link href="/login" className="font-medium text-[#233c5e] hover:underline">
             Torna al login
           </Link>
         </p>

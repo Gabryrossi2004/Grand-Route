@@ -26,7 +26,7 @@ export default async function DashboardLayout({
     profile = data;
   }
 
-  const brandColor = profile?.brand_color || "#2b333e";
+  const brandColor = profile?.brand_color || "#233c5e";
 
   const navItems = [
     { href: "/dashboard", label: "Home" },
@@ -46,11 +46,11 @@ export default async function DashboardLayout({
       />
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
-        <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#2b333e]/10 blur-3xl" />
+        <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
       </div>
       <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
-          <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold text-[#2b333e]">
+          <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold text-[#233c5e]">
             {profile?.logo_url ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={profile.logo_url} alt="" className="h-8 w-8 rounded-lg object-contain" />
@@ -71,7 +71,7 @@ export default async function DashboardLayout({
               <Link
                 key={item.href}
                 href={item.href}
-                className="shrink-0 whitespace-nowrap rounded-md px-3 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
+                className="shrink-0 whitespace-nowrap rounded-md px-3 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#f2e2c4] hover:text-[#233c5e]"
               >
                 {item.label}
               </Link>
@@ -79,7 +79,7 @@ export default async function DashboardLayout({
             <form action={signOut} className="ml-1 shrink-0">
               <button
                 type="submit"
-                className="whitespace-nowrap rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#2b333e]"
+                className="whitespace-nowrap rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#233c5e]"
               >
                 Esci
               </button>

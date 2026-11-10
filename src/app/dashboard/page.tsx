@@ -76,7 +76,7 @@ export default async function DashboardHomePage() {
   const stats = [
     { label: "Viaggi pubblicati", value: publishedCount, icon: Rocket, color: "text-[#3f6b52]", bg: "bg-[#e6efe8]" },
     { label: "Viaggi in bozza", value: draftCount, icon: FileEdit, color: "text-[#8c7a5e]", bg: "bg-[#f2e2c4]/50" },
-    { label: "Clienti in rubrica", value: clientsCount ?? 0, icon: Users, color: "text-[#2b333e]", bg: "bg-[#faf3e6]" },
+    { label: "Clienti in rubrica", value: clientsCount ?? 0, icon: Users, color: "text-[#233c5e]", bg: "bg-[#faf3e6]" },
     {
       label: "Fatturato stimato",
       value: formatEuro(estimatedRevenue),
@@ -88,7 +88,7 @@ export default async function DashboardHomePage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">Panoramica</h1>
+      <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">Panoramica</h1>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map((stat) => (
@@ -106,7 +106,7 @@ export default async function DashboardHomePage() {
 
         {/* L'incassato reale è il dato più importante (soldi già confermati, non
             una stima): unico riquadro pieno invece delle schede chiare uguali. */}
-        <div className="rounded-2xl bg-[#2b333e] p-5 shadow-sm shadow-[#2b333e]/30">
+        <div className="rounded-2xl bg-[#233c5e] p-5 shadow-sm shadow-[#233c5e]/30">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-[#e4cc98]">
             <Banknote size={18} />
           </span>
@@ -118,7 +118,7 @@ export default async function DashboardHomePage() {
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
-            <CalendarClock size={18} className="text-[#2b333e]" />
+            <CalendarClock size={18} className="text-[#233c5e]" />
             <h2 className="text-lg font-semibold text-slate-900">Prossime partenze</h2>
           </div>
           {upcomingTrips.length === 0 ? (
@@ -147,7 +147,7 @@ export default async function DashboardHomePage() {
           )}
           <Link
             href="/dashboard/calendar"
-            className="mt-3 inline-block text-xs font-medium text-[#2b333e] hover:underline"
+            className="mt-3 inline-block text-xs font-medium text-[#233c5e] hover:underline"
           >
             Apri il calendario completo →
           </Link>
@@ -155,7 +155,7 @@ export default async function DashboardHomePage() {
 
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
-            <ListChecks size={18} className="text-[#2b333e]" />
+            <ListChecks size={18} className="text-[#233c5e]" />
             <h2 className="text-lg font-semibold text-slate-900">Promemoria da fare</h2>
           </div>
           {!pendingItems || pendingItems.length === 0 ? (
@@ -184,7 +184,7 @@ export default async function DashboardHomePage() {
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
           <Plane size={24} className="mx-auto mb-2 text-slate-300" />
           <p className="text-slate-500">Non hai ancora creato nessun viaggio.</p>
-          <Link href="/dashboard/trips/new" className="mt-2 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+          <Link href="/dashboard/trips/new" className="mt-2 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Crea il primo viaggio
           </Link>
         </div>

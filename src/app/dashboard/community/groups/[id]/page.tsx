@@ -28,7 +28,7 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
     return (
       <div className="mx-auto max-w-md text-center">
         <p className="text-sm text-slate-500">Non hai accesso a questo gruppo, oppure non esiste più.</p>
-        <Link href="/dashboard/community/groups" className="mt-4 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/dashboard/community/groups" className="mt-4 inline-block text-sm font-medium text-[#233c5e] hover:underline">
           ← Torna ai gruppi
         </Link>
       </div>
@@ -62,12 +62,12 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
   return (
     <div className="mx-auto max-w-2xl">
       <div className="mb-6">
-        <Link href="/dashboard/community/groups" className="text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/dashboard/community/groups" className="text-sm font-medium text-[#233c5e] hover:underline">
           ← Torna ai gruppi
         </Link>
         <div className="mt-2 flex items-start justify-between gap-3">
           <div>
-            <h1 className="border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">{typedGroup.name}</h1>
+            <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">{typedGroup.name}</h1>
             {typedGroup.description && <p className="mt-1 pl-3 text-sm text-slate-500">{typedGroup.description}</p>}
           </div>
           {isOwner ? (

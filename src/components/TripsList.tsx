@@ -55,7 +55,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
               type="button"
               onClick={() => setStatus(option.value)}
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                status === option.value ? "bg-[#2b333e] text-white" : "text-slate-600 hover:bg-slate-100"
+                status === option.value ? "bg-[#233c5e] text-white" : "text-slate-600 hover:bg-slate-100"
               }`}
             >
               {option.label}
@@ -67,7 +67,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
       {trips.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center">
           <p className="text-slate-500">Non hai ancora creato nessun viaggio.</p>
-          <Link href="/dashboard/trips/new" className="mt-3 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+          <Link href="/dashboard/trips/new" className="mt-3 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Crea il primo viaggio
           </Link>
         </div>

@@ -173,7 +173,7 @@ export default async function TripDetailPage({
       <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
       <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">
-        <div className="bg-gradient-to-r from-[#2b333e] via-[#333d4a] to-[#1e242d] px-5 py-4">
+        <div className="bg-gradient-to-r from-[#233c5e] via-[#333d4a] to-[#17283f] px-5 py-4">
           <h2 className="text-lg font-semibold text-white">Itinerario</h2>
           <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
         </div>
@@ -218,7 +218,7 @@ export default async function TripDetailPage({
                         href={document.signedUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="truncate text-sm font-medium text-[#2b333e] hover:underline"
+                        className="truncate text-sm font-medium text-[#233c5e] hover:underline"
                       >
                         {document.file_name}
                       </a>
@@ -271,7 +271,7 @@ function CoverHero({
 
   return (
     <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
-      <div className="relative flex h-64 flex-col justify-between bg-[#2b333e] p-6">
+      <div className="relative flex h-64 flex-col justify-between bg-[#233c5e] p-6">
         {trip.cover_image_url && (
           <>
             <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
@@ -375,7 +375,7 @@ function CoverHero({
             href={publicUrl}
             target="_blank"
             rel="noreferrer"
-            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-[#2b333e] hover:underline"
+            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-[#233c5e] hover:underline"
           >
             {publicUrl}
             <ExternalLink size={13} />

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
               Il titolare del trattamento dei dati raccolti tramite la piattaforma Grand Route
               (il &quot;Servizio&quot;) è Gabriele Rossi. Per qualsiasi richiesta relativa al trattamento dei
               dati personali è possibile scrivere a{" "}
-              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#2b333e] hover:underline">
+              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">
                 privacy@grandroute.it
               </a>
               .
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
               Titolare a garantire sicurezza e funzionamento del Servizio per i dati tecnici. I dati
               anagrafici dei Clienti sono trattati dall&apos;Utente Agenzia in qualità di autonomo
               titolare del trattamento nei confronti dei propri Clienti (si veda la sezione 8 dei{" "}
-              <Link href="/termini" className="font-medium text-[#2b333e] hover:underline">
+              <Link href="/termini" className="font-medium text-[#233c5e] hover:underline">
                 Termini di Servizio
               </Link>
               ); Grand Route agisce, per tali dati, come responsabile del trattamento ai sensi
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
               In qualsiasi momento è possibile esercitare i diritti previsti dagli artt. 15-22 GDPR:
               accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento,
               scrivendo a{" "}
-              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#2b333e] hover:underline">
+              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">
                 privacy@grandroute.it
               </a>
               . È inoltre possibile presentare reclamo al Garante per la protezione dei dati
@@ -146,7 +146,7 @@ export default function PrivacyPage() {
                 href="https://www.garanteprivacy.it"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-[#2b333e] hover:underline"
+                className="font-medium text-[#233c5e] hover:underline"
               >
                 www.garanteprivacy.it
               </a>
@@ -173,7 +173,7 @@ export default function PrivacyPage() {
           </section>
         </div>
 
-        <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">
           ← Torna alla home
         </Link>
     </AuthShell>

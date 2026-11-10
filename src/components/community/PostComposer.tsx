@@ -44,7 +44,7 @@ export default function PostComposer({
       <RichTextEditor value={body} onChange={setBody} placeholder={placeholder ?? "Scrivi qualcosa…"} />
 
       <div className="flex items-center justify-between">
-        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-[#6b5f4a] hover:text-[#2b333e]">
+        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-[#6b5f4a] hover:text-[#233c5e]">
           <ImagePlus size={16} />
           {photoCount > 0 ? `${photoCount} foto selezionate` : "Allega foto"}
           <input
@@ -60,7 +60,7 @@ export default function PostComposer({
         <button
           type="submit"
           disabled={pending}
-          className="rounded-lg bg-[#2b333e] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+          className="rounded-lg bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
         >
           {pending ? "Pubblicazione…" : "Pubblica"}
         </button>

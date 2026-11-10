@@ -88,7 +88,7 @@ export default function InvitePanel({ groupId, invites }: { groupId: string; inv
         </div>
         <button
           type="submit"
-          className="rounded-lg bg-[#2b333e] px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-[#1e242d]"
+          className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-[#17283f]"
         >
           Genera link
         </button>

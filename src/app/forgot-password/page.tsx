@@ -18,7 +18,7 @@ export default function ForgotPasswordPage() {
           <p className="text-sm text-slate-500">
             Se quell&apos;indirizzo è registrato, ti abbiamo mandato un link per scegliere una nuova password.
           </p>
-          <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+          <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Torna al login
           </Link>
         </div>
@@ -53,14 +53,14 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={pending}
-            className="mt-2 rounded-lg bg-[#2b333e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+            className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
             {pending ? "Invio in corso…" : "Invia il link"}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
-          <Link href="/login" className="font-medium text-[#2b333e] hover:underline">
+          <Link href="/login" className="font-medium text-[#233c5e] hover:underline">
             Torna al login
           </Link>
         </p>

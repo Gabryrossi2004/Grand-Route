@@ -244,7 +244,7 @@ function DaySidebarItem({
           Giorno {index + 1}
         </p>
         {isToday && (
-          <span className="rounded-full bg-[#2b333e] px-2 py-0.5 text-[10px] font-semibold text-white">
+          <span className="rounded-full bg-[#233c5e] px-2 py-0.5 text-[10px] font-semibold text-white">
             Oggi
           </span>
         )}
@@ -430,7 +430,7 @@ function DayPanel({
           <button
             type="button"
             onClick={() => setIsAddingActivity(true)}
-            className="flex items-center gap-1 rounded-md bg-[#2b333e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d]"
+            className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f]"
           >
             <Plus size={15} /> Attività
           </button>
@@ -753,7 +753,7 @@ function SortableActivityRow({
                         href={document.signedUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="truncate font-medium text-[#2b333e] hover:underline"
+                        className="truncate font-medium text-[#233c5e] hover:underline"
                       >
                         {document.file_name}
                       </a>

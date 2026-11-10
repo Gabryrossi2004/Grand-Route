@@ -255,7 +255,7 @@ export default function ActivityForm({
               type="button"
               onClick={runFlightSearch}
               disabled={flightSearchState.status === "loading"}
-              className="flex items-center gap-1 rounded-md bg-[#2b333e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+              className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
             >
               <Search size={13} />
               {flightSearchState.status === "loading" ? "Cerco…" : "Cerca"}

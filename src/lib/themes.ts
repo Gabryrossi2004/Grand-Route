@@ -15,7 +15,7 @@ export const themeOptions: ThemeOption[] = [
     label: "Elegante",
     description: "Beige e antracite, pulito e raffinato: lo stile predefinito.",
     swatchFrom: "#f5ebd9",
-    swatchTo: "#2b333e",
+    swatchTo: "#233c5e",
   },
   {
     id: "azteco",

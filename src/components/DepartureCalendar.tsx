@@ -70,7 +70,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
           <button
             type="button"
             onClick={() => setViewDate(new Date(today.getFullYear(), today.getMonth(), 1))}
-            className="rounded-md border border-[#2b333e]/30 px-3 py-1.5 text-xs font-medium text-[#2b333e] transition hover:bg-[#2b333e]/5"
+            className="rounded-md border border-[#233c5e]/30 px-3 py-1.5 text-xs font-medium text-[#233c5e] transition hover:bg-[#233c5e]/5"
           >
             Oggi
           </button>
@@ -87,7 +87,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
 
       <div className="grid grid-cols-7 gap-px overflow-hidden rounded-xl border border-[#e6d7bb] bg-slate-200">
         {WEEKDAY_LABELS.map((label) => (
-          <div key={label} className="bg-[#2b333e] px-2 py-1.5 text-center text-xs font-semibold text-white">
+          <div key={label} className="bg-[#233c5e] px-2 py-1.5 text-center text-xs font-semibold text-white">
             {label}
           </div>
         ))}
@@ -103,7 +103,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
             <div key={i} className="min-h-24 bg-white p-1.5 sm:min-h-28">
               <span
                 className={`mb-1 inline-flex h-5 w-5 items-center justify-center rounded-full text-xs ${
-                  isToday ? "bg-[#2b333e] font-semibold text-white" : "text-slate-500"
+                  isToday ? "bg-[#233c5e] font-semibold text-white" : "text-slate-500"
                 }`}
               >
                 {date.getDate()}

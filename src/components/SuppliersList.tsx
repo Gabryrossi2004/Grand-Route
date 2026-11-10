@@ -101,7 +101,7 @@ function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () =>
         </button>
         <SubmitButton
           pendingLabel={isEdit ? "Salvataggio…" : "Creazione…"}
-          className="rounded-md bg-[#2b333e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+          className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
         >
           {isEdit ? "Salva modifiche" : "Aggiungi fornitore"}
         </SubmitButton>
@@ -139,7 +139,7 @@ export default function SuppliersList({ suppliers }: { suppliers: Supplier[] }) 
         <button
           type="button"
           onClick={() => setModal("new")}
-          className="shrink-0 rounded-md bg-[#2b333e] px-4 py-2 text-sm font-medium text-white hover:bg-[#1e242d]"
+          className="shrink-0 rounded-md bg-[#233c5e] px-4 py-2 text-sm font-medium text-white hover:bg-[#17283f]"
         >
           + Nuovo fornitore
         </button>

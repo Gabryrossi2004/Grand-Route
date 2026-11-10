@@ -39,14 +39,14 @@ export default async function ClientPreviewPage({
       </Link>
 
       <div className="mb-6 flex items-center gap-2 rounded-xl border border-[#f2e2c4] bg-[#faf3e6] px-4 py-3">
-        <Eye size={16} className="shrink-0 text-[#2b333e]" />
+        <Eye size={16} className="shrink-0 text-[#233c5e]" />
         <p className="text-sm text-[#11161b]">
           Stai vedendo in anteprima, in sola lettura, esattamente cosa vede <strong>{client.full_name}</strong> nella
           sua area clienti.
         </p>
       </div>
 
-      <h1 className="mb-6 border-l-4 border-[#2b333e] pl-3 text-2xl font-semibold text-slate-900">I miei viaggi</h1>
+      <h1 className="mb-6 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">I miei viaggi</h1>
       <ClientTripsGrid
         trips={(trips as TripWithAgency[]) || []}
         tripHref={(tripId) => `/dashboard/clients/${id}/preview/trips/${tripId}`}

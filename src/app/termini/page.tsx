@@ -88,7 +88,7 @@ export default function TerminiPage() {
               Il Fornitore può sospendere o chiudere un account in caso di violazione dei presenti
               Termini o di uso illecito del Servizio. L&apos;Utente può chiudere il proprio account in
               qualsiasi momento richiedendo la cancellazione dei propri dati scrivendo a{" "}
-              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#2b333e] hover:underline">
+              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">
                 privacy@grandroute.it
               </a>
               .
@@ -107,7 +107,7 @@ export default function TerminiPage() {
               Fornitore agisce, in questo contesto, come responsabile del trattamento ai sensi
               dell&apos;art. 28 GDPR, fornendo esclusivamente l&apos;infrastruttura tecnica. Si veda
               l&apos;
-              <Link href="/privacy" className="font-medium text-[#2b333e] hover:underline">
+              <Link href="/privacy" className="font-medium text-[#233c5e] hover:underline">
                 Informativa sulla Privacy
               </Link>{" "}
               per maggiori dettagli.
@@ -145,7 +145,7 @@ export default function TerminiPage() {
             <h2 className="mb-1 font-semibold text-slate-800">12. Contatti</h2>
             <p>
               Per qualsiasi domanda relativa a questi Termini è possibile scrivere a{" "}
-              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#2b333e] hover:underline">
+              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">
                 privacy@grandroute.it
               </a>
               .
@@ -153,7 +153,7 @@ export default function TerminiPage() {
           </section>
         </div>
 
-        <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#2b333e] hover:underline">
+        <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">
           ← Torna alla home
         </Link>
     </AuthShell>

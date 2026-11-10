@@ -26,7 +26,7 @@ export default function CreateGroupForm() {
       <button
         type="submit"
         disabled={pending}
-        className="self-start rounded-lg bg-[#2b333e] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#1e242d] disabled:opacity-60"
+        className="self-start rounded-lg bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
       >
         {pending ? "Creazione…" : "Crea gruppo"}
       </button>

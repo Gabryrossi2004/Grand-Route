@@ -366,7 +366,7 @@ export default function GuidaPage() {
         <ArrowLeft size={14} /> Impostazioni
       </Link>
 
-      <h1 className="mb-2 border-l-4 border-[#2b333e] pl-3 text-3xl font-semibold text-slate-900">
+      <h1 className="mb-2 border-l-4 border-[#233c5e] pl-3 text-3xl font-semibold text-slate-900">
         Guida all&apos;uso del gestionale
       </h1>
       <p className="mb-8 pl-4 text-base text-slate-500">
@@ -379,7 +379,7 @@ export default function GuidaPage() {
         <ol className="grid gap-2 text-base sm:grid-cols-2">
           {sections.map((section) => (
             <li key={section.id}>
-              <a href={`#${section.id}`} className="text-[#2b333e] hover:underline">
+              <a href={`#${section.id}`} className="text-[#233c5e] hover:underline">
                 {section.title}
               </a>
             </li>

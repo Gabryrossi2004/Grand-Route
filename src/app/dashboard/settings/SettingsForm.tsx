@@ -131,7 +131,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
       <button
         type="submit"
         disabled={pending}
-        className="w-fit rounded-md bg-[#2b333e] px-4 py-2 text-sm font-medium text-white hover:bg-[#1e242d] disabled:opacity-60"
+        className="w-fit rounded-md bg-[#233c5e] px-4 py-2 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
       >
         {pending ? "Salvataggio…" : "Salva impostazioni"}
       </button>

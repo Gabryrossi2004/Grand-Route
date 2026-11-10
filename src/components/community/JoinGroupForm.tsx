@@ -21,7 +21,7 @@ export default function JoinGroupForm() {
       <button
         type="submit"
         disabled={pending}
-        className="self-start rounded-lg border border-[#2b333e] px-4 py-2 text-sm font-semibold text-[#2b333e] transition hover:bg-[#f2e2c4] disabled:opacity-60"
+        className="self-start rounded-lg border border-[#233c5e] px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4] disabled:opacity-60"
       >
         {pending ? "Verifica…" : "Unisciti"}
       </button>

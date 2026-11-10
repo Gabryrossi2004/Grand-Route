@@ -15,7 +15,7 @@ export default function AuthBrandHeader() {
         height={48}
         className="rounded-xl shadow-sm"
       />
-      <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-[#2b333e]">
+      <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-[#233c5e]">
         Grand Route
       </span>
     </div>
