@@ -175,9 +175,13 @@ create policy "profiles_select_as_professional_peer" on public.profiles
   for select using (is_professional and public.is_current_user_professional());
 
 -- GRUPPI
+-- (il creatore deve poter vedere la riga appena inserita subito dopo
+-- l'insert, prima che il trigger che lo rende "owner" in
+-- community_group_members abbia effetto: per questo controlliamo anche
+-- created_by, non solo l'appartenenza al gruppo)
 drop policy if exists "community_groups_select_member" on public.community_groups;
 create policy "community_groups_select_member" on public.community_groups
-  for select using (public.is_community_group_member(id));
+  for select using (created_by = auth.uid() or public.is_community_group_member(id));
 
 drop policy if exists "community_groups_insert_professional" on public.community_groups;
 create policy "community_groups_insert_professional" on public.community_groups
