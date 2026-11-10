@@ -28,6 +28,7 @@ import {
   Rocket,
 } from "lucide-react";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -167,6 +168,23 @@ export default async function TripDetailPage({
         </summary>
         <div className="p-6 pt-4">
           <RateBlockForm trip={trip} hasAgencyTerms={Boolean((ownerProfile as Profile | null)?.terms_and_conditions)} />
+        </div>
+      </details>
+
+      <details className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
+        <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+          <span className="flex items-center gap-2">
+            Emergenza
+            {trip.show_emergency_button && (
+              <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
+                visibile al cliente
+              </span>
+            )}
+          </span>
+          <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="p-6 pt-4">
+          <EmergencyButtonForm trip={trip} hasEmergencyPhone={Boolean((ownerProfile as Profile | null)?.emergency_phone)} />
         </div>
       </details>
 

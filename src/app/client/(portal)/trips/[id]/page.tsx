@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
+import EmergencyButton from "@/components/EmergencyButton";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -19,12 +20,14 @@ export default async function ClientTripPage({
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: myClientRows } = await supabase.from("clients").select("id").eq("user_id", user?.id ?? "");
+  const { data: myClientRows } = await supabase.from("clients").select("id, full_name").eq("user_id", user?.id ?? "");
   const clientIds = (myClientRows || []).map((row) => row.id);
   if (clientIds.length === 0) notFound();
 
   const { data: trip } = await supabase.from("trips").select("*").eq("id", id).in("client_id", clientIds).single();
   if (!trip) notFound();
+
+  const clientName = (myClientRows || []).find((row) => row.id === trip.client_id)?.full_name || "Il cliente";
 
   const [{ data: days }, { data: owner }] = await Promise.all([
     supabase
@@ -40,23 +43,36 @@ export default async function ClientTripPage({
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
 
+  const ownerProfile = owner as Profile | null;
+  const showEmergencyButton = trip.show_emergency_button && Boolean(ownerProfile?.emergency_phone);
+
   return (
-    <TripItineraryView
-      trip={trip}
-      days={orderedDays}
-      agencyName={(owner as Profile | null)?.agency_name}
-      logoUrl={(owner as Profile | null)?.logo_url}
-      agencyTerms={(owner as Profile | null)?.terms_and_conditions}
-      headerExtra={
-        <div className="bg-white/90 px-4 py-2 backdrop-blur">
-          <Link
-            href="/client"
-            className="mx-auto flex max-w-3xl items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900"
-          >
-            <ArrowLeft size={14} /> I miei viaggi
-          </Link>
-        </div>
-      }
-    />
+    <>
+      <TripItineraryView
+        trip={trip}
+        days={orderedDays}
+        agencyName={ownerProfile?.agency_name}
+        logoUrl={ownerProfile?.logo_url}
+        agencyTerms={ownerProfile?.terms_and_conditions}
+        headerExtra={
+          <div className="bg-white/90 px-4 py-2 backdrop-blur">
+            <Link
+              href="/client"
+              className="mx-auto flex max-w-3xl items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900"
+            >
+              <ArrowLeft size={14} /> I miei viaggi
+            </Link>
+          </div>
+        }
+      />
+      {showEmergencyButton && (
+        <EmergencyButton
+          tripId={trip.id}
+          tripTitle={trip.title}
+          clientName={clientName}
+          agencyPhone={ownerProfile!.emergency_phone!}
+        />
+      )}
+    </>
   );
 }

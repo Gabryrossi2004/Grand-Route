@@ -43,7 +43,7 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
       .from("community_group_members")
       .select("role, profile_id, community_profile_directory(id, full_name, agency_name, logo_url)")
       .eq("group_id", id),
-    loadCommunityFeed(supabase, id),
+    loadCommunityFeed(supabase, id, user.id),
   ]);
 
   const isOwner = membership?.role === "owner";
@@ -133,6 +133,8 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
             currentUserId={user.id}
             groupId={id}
             canModerate={isOwner}
+            likeCount={feed.likeCountByPost[post.id] || 0}
+            likedByMe={Boolean(feed.likedByMe[post.id])}
           />
         ))}
       </div>

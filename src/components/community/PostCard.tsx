@@ -4,6 +4,7 @@ import { richTextClassName } from "@/lib/richText";
 import { addComment, deleteComment, deletePost } from "@/app/dashboard/community/actions";
 import ConfirmDeleteButton from "@/components/community/ConfirmDeleteButton";
 import CommentForm from "@/components/community/CommentForm";
+import DoubleTapLike from "@/components/community/DoubleTapLike";
 import type { CommunityComment, CommunityPost, CommunityPostPhoto, CommunityProfileDirectoryEntry } from "@/lib/types";
 
 function authorLabel(author: CommunityProfileDirectoryEntry | undefined) {
@@ -41,6 +42,8 @@ export default function PostCard({
   currentUserId,
   groupId,
   canModerate,
+  likeCount,
+  likedByMe,
 }: {
   post: CommunityPost;
   photos: CommunityPostPhoto[];
@@ -49,6 +52,8 @@ export default function PostCard({
   currentUserId: string;
   groupId: string | null;
   canModerate: boolean;
+  likeCount: number;
+  likedByMe: boolean;
 }) {
   const author = authors[post.author_id];
   const canDeletePost = post.author_id === currentUserId || canModerate;
@@ -71,25 +76,27 @@ export default function PostCard({
         )}
       </div>
 
-      {post.title && <h3 className="mt-3 font-semibold text-slate-900">{post.title}</h3>}
-      <div
-        className={`mt-2 ${richTextClassName}`}
-        dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.body) }}
-      />
+      <DoubleTapLike postId={post.id} initialLiked={likedByMe} initialCount={likeCount}>
+        {post.title && <h3 className="mt-3 font-semibold text-slate-900">{post.title}</h3>}
+        <div
+          className={`mt-2 ${richTextClassName}`}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.body) }}
+        />
 
-      {photos.length > 0 && (
-        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
-          {photos.map((photo) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={photo.id}
-              src={photo.url}
-              alt=""
-              className="aspect-square w-full rounded-lg object-cover"
-            />
-          ))}
-        </div>
-      )}
+        {photos.length > 0 && (
+          <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
+            {photos.map((photo) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={photo.id}
+                src={photo.url}
+                alt=""
+                className="aspect-square w-full rounded-lg object-cover"
+              />
+            ))}
+          </div>
+        )}
+      </DoubleTapLike>
 
       <div className="mt-4 border-t border-slate-100 pt-3">
         {comments.map((comment) => {

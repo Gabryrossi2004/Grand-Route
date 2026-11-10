@@ -12,7 +12,11 @@ export default async function CommunityPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { posts, photosByPost, commentsByPost, authors } = await loadCommunityFeed(supabase, null);
+  const { posts, photosByPost, commentsByPost, authors, likeCountByPost, likedByMe } = await loadCommunityFeed(
+    supabase,
+    null,
+    user?.id,
+  );
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -52,6 +56,8 @@ export default async function CommunityPage() {
             currentUserId={user?.id ?? ""}
             groupId={null}
             canModerate={false}
+            likeCount={likeCountByPost[post.id] || 0}
+            likedByMe={Boolean(likedByMe[post.id])}
           />
         ))}
       </div>

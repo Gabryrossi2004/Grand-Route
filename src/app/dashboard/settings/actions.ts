@@ -20,6 +20,7 @@ export async function updateProfile(
   const termsAndConditions = String(formData.get("terms_and_conditions") ?? "").trim() || null;
   const uiFontSize = String(formData.get("ui_font_size") ?? "normale");
   const uiFontFamily = String(formData.get("ui_font_family") ?? "predefinito");
+  const emergencyPhone = String(formData.get("emergency_phone") ?? "").trim() || null;
 
   const updates: Record<string, unknown> = {
     account_type: accountType === "agency" ? "agency" : "individual",
@@ -28,6 +29,10 @@ export async function updateProfile(
     terms_and_conditions: termsAndConditions,
     ui_font_size: ["normale", "grande", "molto_grande"].includes(uiFontSize) ? uiFontSize : "normale",
     ui_font_family: ["predefinito", "leggibile", "classico"].includes(uiFontFamily) ? uiFontFamily : "predefinito",
+    emergency_phone: emergencyPhone,
+    notify_trips: formData.get("notify_trips") === "on",
+    notify_community: formData.get("notify_community") === "on",
+    notify_emergencies: formData.get("notify_emergencies") === "on",
   };
 
   const logoFile = formData.get("logo");

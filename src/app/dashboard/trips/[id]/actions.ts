@@ -218,6 +218,19 @@ export async function updateTripRateBlock(tripId: string, formData: FormData) {
   revalidatePath(`/trips/${tripId}/preview`);
 }
 
+// Tasto "Emergenza" mostrato al cliente nella sua area riservata: facoltativo
+// per singolo viaggio, visto che non tutte le agenzie hanno un numero attivo
+// h24 (il numero stesso si imposta una volta sola nelle Impostazioni).
+export async function updateTripEmergencyButton(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const showEmergencyButton = formData.get("show_emergency_button") === "on";
+
+  await supabase.from("trips").update({ show_emergency_button: showEmergencyButton }).eq("id", tripId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/client/trips/${tripId}`);
+}
+
 // "2 versioni" dello stesso viaggio: preliminare (bozza generica, inviata al
 // cliente/agente per conferma) o finale (dettagli reali dopo la prenotazione
 // dei servizi). Un unico interruttore, nessuna scheda duplicata.

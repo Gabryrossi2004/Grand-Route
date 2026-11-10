@@ -15,6 +15,10 @@ export type Profile = {
   ui_font_size: UiFontSize;
   ui_font_family: UiFontFamily;
   is_professional: boolean;
+  emergency_phone: string | null;
+  notify_trips: boolean;
+  notify_community: boolean;
+  notify_emergencies: boolean;
   created_at: string;
 };
 
@@ -88,6 +92,7 @@ export type Trip = {
   rate_includes: string | null;
   rate_excludes: string | null;
   show_rate_block: boolean;
+  show_emergency_button: boolean;
   itinerary_stage: ItineraryStage;
   created_at: string;
 };
@@ -260,5 +265,20 @@ export type CommunityComment = {
   post_id: string;
   author_id: string;
   body: string;
+  created_at: string;
+};
+
+export type CommunityPostLike = {
+  post_id: string;
+  profile_id: string;
+  created_at: string;
+};
+
+export type PushSubscriptionRow = {
+  id: string;
+  profile_id: string;
+  endpoint: string;
+  p256dh: string;
+  auth: string;
   created_at: string;
 };

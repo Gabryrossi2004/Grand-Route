@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { validateImageFile } from "@/lib/fileValidation";
+import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 
 const MAX_PHOTOS_PER_POST = 6;
 
@@ -58,7 +59,43 @@ export async function createPost(
   }
 
   revalidatePath(communityPath(groupId));
+
+  const { data: targets } = await supabase.rpc("get_community_post_push_targets", { p_post_id: post.id });
+  const typedTargets = (targets as PushTarget[]) || [];
+  if (typedTargets.length > 0) {
+    const preview = (title || body.replace(/<[^>]+>/g, " ").trim()).slice(0, 120);
+    const { expiredEndpoints } = await sendPushToTargets(typedTargets, {
+      title: groupId ? "Nuovo post nel gruppo" : "Nuovo post nella community",
+      body: preview || "Nuovo post",
+      url: communityPath(groupId),
+    });
+    if (expiredEndpoints.length > 0) {
+      await supabase.from("push_subscriptions").delete().in("endpoint", expiredEndpoints);
+    }
+  }
+
   return { error: undefined };
+}
+
+export async function likePost(postId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+  await supabase.from("community_post_likes").upsert(
+    { post_id: postId, profile_id: user.id },
+    { onConflict: "post_id,profile_id", ignoreDuplicates: true },
+  );
+}
+
+export async function unlikePost(postId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+  await supabase.from("community_post_likes").delete().eq("post_id", postId).eq("profile_id", user.id);
 }
 
 export async function deletePost(groupId: string | null, postId: string) {
