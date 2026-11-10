@@ -1,16 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Playfair_Display } from "next/font/google";
 import { Briefcase, Sparkles, User } from "lucide-react";
-
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"] });
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#faf3e6]">
       <header className="flex items-center justify-center gap-2.5 border-b border-[#e6d7bb] bg-[#faf3e6] px-4 py-5">
         <Image src="/grand-route-logo.jpg" alt="Grand Route" width={36} height={36} className="rounded-lg shadow-sm" />
-        <span className={`${playfair.className} text-lg font-semibold tracking-wide text-[#2b333e]`}>
+        <span className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-[#2b333e]">
           Grand Route
         </span>
       </header>
@@ -22,7 +19,7 @@ export default function Home() {
             <Briefcase size={24} />
           </span>
           <div className="relative">
-            <h2 className={`${playfair.className} text-2xl font-semibold text-[#2b333e]`}>Agenti di viaggio</h2>
+            <h2 className="text-2xl font-semibold text-[#2b333e]">Agenti di viaggio</h2>
             <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#6b5f4a]">
               Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata ed elegante.
             </p>
@@ -46,7 +43,7 @@ export default function Home() {
             <User size={24} />
           </span>
           <div className="relative">
-            <h2 className={`${playfair.className} text-2xl font-semibold text-[#faf3e6]`}>Viaggiatore</h2>
+            <h2 className="text-2xl font-semibold text-[#faf3e6]">Viaggiatore</h2>
             <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#f2e9d8]">
               Accedi alla tua area riservata e ritrova tutti i viaggi che la tua agenzia ha organizzato per te.
             </p>

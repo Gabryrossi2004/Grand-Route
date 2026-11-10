@@ -62,7 +62,9 @@ export default async function DashboardLayout({
                 <Compass size={16} />
               </span>
             )}
-            <span className="hidden sm:inline">{profile?.agency_name || "Il mio gestionale viaggi"}</span>
+            <span className="hidden font-[family-name:var(--font-display)] sm:inline">
+              {profile?.agency_name || "Il mio gestionale viaggi"}
+            </span>
           </Link>
           <nav className="flex items-center gap-1 overflow-x-auto text-sm">
             {navItems.map((item) => (

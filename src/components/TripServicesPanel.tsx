@@ -595,7 +595,7 @@ export default function TripServicesPanel({
             obbligatorio, e non viene mai mostrato al cliente.
           </p>
 
-          <div className="mb-4 flex gap-1 border-b border-slate-200">
+          <div className="mb-4 flex gap-1 border-b border-[#e6d7bb]">
             <button
               type="button"
               onClick={() => setTab("servizi")}
@@ -632,7 +632,7 @@ export default function TripServicesPanel({
                     const meta = serviceStatuses[service.status];
                     const isEditingThis = serviceFormTarget !== "new" && serviceFormTarget?.id === service.id;
                     return (
-                      <li key={service.id} className="rounded-lg border border-slate-200 p-3">
+                      <li key={service.id} className="rounded-lg border border-[#e6d7bb] p-3">
                         {isEditingThis ? (
                           <ServiceForm
                             tripId={tripId}
@@ -785,7 +785,7 @@ export default function TripServicesPanel({
                     const isEditingThis = paymentFormTarget !== "new" && paymentFormTarget?.id === payment.id;
                     const isIncasso = payment.direction === "incasso";
                     return (
-                      <li key={payment.id} className="rounded-lg border border-slate-200 p-3">
+                      <li key={payment.id} className="rounded-lg border border-[#e6d7bb] p-3">
                         {isEditingThis ? (
                           <PaymentForm
                             tripId={tripId}

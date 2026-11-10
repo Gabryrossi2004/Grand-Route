@@ -155,7 +155,7 @@ export default function SuppliersList({ suppliers }: { suppliers: Supplier[] }) 
       ) : filtered.length === 0 ? (
         <p className="text-sm text-slate-400">Nessun fornitore corrisponde alla ricerca.</p>
       ) : (
-        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
           {filtered.map((supplier) => (
             <div key={supplier.id} className="flex items-center justify-between gap-3 px-5 py-4 hover:bg-slate-50">
               <div className="min-w-0 flex-1">

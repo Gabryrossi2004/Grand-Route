@@ -51,7 +51,7 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
   }
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
+    <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
       <div className="mb-3 flex items-center gap-2">
         <ListChecks size={18} className="text-slate-400" />
         <div>

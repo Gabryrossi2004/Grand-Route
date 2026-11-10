@@ -8,7 +8,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
   const [state, formAction, pending] = useActionState(updateProfile, undefined);
 
   return (
-    <form action={formAction} encType="multipart/form-data" className="flex flex-col gap-5 rounded-xl border border-slate-200 bg-white p-6">
+    <form action={formAction} encType="multipart/form-data" className="flex flex-col gap-5 rounded-xl border border-[#e6d7bb] bg-white p-6">
       <div>
         <label className="mb-2 block text-sm font-medium text-slate-700">Tipo di account</label>
         <div className="flex gap-4 text-sm">
@@ -52,7 +52,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
         <label className="mb-1 block text-sm font-medium text-slate-700">Logo</label>
         {profile.logo_url && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={profile.logo_url} alt="Logo attuale" className="mb-2 h-12 rounded border border-slate-200 bg-white p-1" />
+          <img src={profile.logo_url} alt="Logo attuale" className="mb-2 h-12 rounded border border-[#e6d7bb] bg-white p-1" />
         )}
         <input
           type="file"

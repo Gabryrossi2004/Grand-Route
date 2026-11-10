@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
+import AuthShell from "@/components/AuthShell";
 import { signup } from "./actions";
 
 export default function SignupPage() {
@@ -10,8 +11,8 @@ export default function SignupPage() {
 
   if (state?.success) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
-        <div className="w-full max-w-sm rounded-2xl border border-[#e6d7bb] bg-white p-8 text-center shadow-lg shadow-[#e6d7bb]/40">
+      <AuthShell>
+        <div className="text-center">
           <AuthBrandHeader />
           <h1 className="mb-2 text-xl font-semibold text-slate-900">Controlla la tua email</h1>
           <p className="text-sm text-slate-500">
@@ -21,14 +22,13 @@ export default function SignupPage() {
             Vai al login
           </Link>
         </div>
-      </div>
+      </AuthShell>
     );
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
-      <div className="w-full max-w-sm rounded-2xl border border-[#e6d7bb] bg-white p-8 shadow-lg shadow-[#e6d7bb]/40">
-        <AuthBrandHeader />
+    <AuthShell>
+      <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Crea il tuo account</h1>
         <p className="mb-6 text-sm text-slate-500">Inizia a creare itinerari in pochi minuti</p>
 
@@ -114,7 +114,6 @@ export default function SignupPage() {
             Accedi alla tua area qui
           </Link>
         </p>
-      </div>
-    </div>
+    </AuthShell>
   );
 }

@@ -2,23 +2,32 @@
 @import "./themes.css";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #faf3e6;
+  --foreground: #2b333e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-ui);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-ui), ui-sans-serif, system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Il carattere da titolo (fuori dall'itinerario a tema, che ha il suo) —
+   un serif con più carattere per i titoli di pagina del gestionale e delle
+   pagine di accesso, mentre il corpo del testo resta sul sans leggibile. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: 600;
 }
 
 /* Preferenze di lettura dell'agenzia (Impostazioni): dimensione e stile del
@@ -33,7 +42,7 @@ html[data-ui-font="classico"] body {
 }
 
 ::selection {
-  background: #bfdbfe;
+  background: #e4cc98;
 }
 
 @media print {

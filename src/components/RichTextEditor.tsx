@@ -98,7 +98,7 @@ export default function RichTextEditor({
 
   return (
     <div className="rounded-md border border-slate-300 bg-white">
-      <div className="flex gap-0.5 border-b border-slate-200 p-1">
+      <div className="flex gap-0.5 border-b border-[#e6d7bb] p-1">
         <ToolbarButton
           onClick={() => editor.chain().focus().toggleBold().run()}
           active={editor.isActive("bold")}
@@ -153,7 +153,7 @@ export default function RichTextEditor({
       </div>
 
       {editor.isActive("table") && (
-        <div className="flex flex-wrap gap-0.5 border-b border-slate-200 bg-slate-50 p-1">
+        <div className="flex flex-wrap gap-0.5 border-b border-[#e6d7bb] bg-slate-50 p-1">
           <ToolbarTextButton onClick={() => editor.chain().focus().addColumnAfter().run()}>
             + Colonna
           </ToolbarTextButton>

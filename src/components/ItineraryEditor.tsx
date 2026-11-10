@@ -235,7 +235,7 @@ function DaySidebarItem({
           ? "border-[#cda876] bg-[#f2e2c4] ring-2 ring-[#ddc8a0]"
           : isActive
             ? "border-[#d3b589] bg-[#faf3e6]"
-            : "border-slate-200 bg-white hover:bg-slate-50"
+            : "border-[#e6d7bb] bg-white hover:bg-slate-50"
       }`}
     >
       <div className="flex items-center justify-between gap-2">
@@ -408,7 +408,7 @@ function DayPanel({
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5">
+    <div className="rounded-xl border border-[#e6d7bb] bg-white p-5">
       <div className="sticky top-4 z-10 mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 py-1 backdrop-blur">
         <h3 className="font-medium capitalize text-slate-900">
           {dayLabel(day, 0, true)}

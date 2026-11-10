@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
+import AuthShell from "@/components/AuthShell";
 
 export const metadata = {
   title: "Informativa sulla Privacy — Grand Route",
@@ -7,9 +8,8 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#faf3e6] px-4 py-12">
-      <div className="mx-auto max-w-2xl rounded-2xl border border-[#e6d7bb] bg-white p-8 shadow-lg shadow-[#e6d7bb]/40">
-        <AuthBrandHeader />
+    <AuthShell wide>
+      <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Informativa sulla Privacy</h1>
         <p className="mb-6 text-xs text-slate-400">Ultimo aggiornamento: 10 novembre 2026</p>
 
@@ -176,7 +176,6 @@ export default function PrivacyPage() {
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#2b333e] hover:underline">
           ← Torna alla home
         </Link>
-      </div>
-    </div>
+    </AuthShell>
   );
 }

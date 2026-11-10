@@ -74,22 +74,15 @@ export default async function DashboardHomePage() {
     .slice(0, 6);
 
   const stats = [
-    { label: "Viaggi pubblicati", value: publishedCount, icon: Rocket, color: "text-green-600", bg: "bg-green-50" },
-    { label: "Viaggi in bozza", value: draftCount, icon: FileEdit, color: "text-amber-600", bg: "bg-amber-50" },
+    { label: "Viaggi pubblicati", value: publishedCount, icon: Rocket, color: "text-[#3f6b52]", bg: "bg-[#e6efe8]" },
+    { label: "Viaggi in bozza", value: draftCount, icon: FileEdit, color: "text-[#8c7a5e]", bg: "bg-[#f2e2c4]/50" },
     { label: "Clienti in rubrica", value: clientsCount ?? 0, icon: Users, color: "text-[#2b333e]", bg: "bg-[#faf3e6]" },
     {
       label: "Fatturato stimato",
       value: formatEuro(estimatedRevenue),
       icon: Wallet,
-      color: "text-purple-600",
-      bg: "bg-purple-50",
-    },
-    {
-      label: "Incassato reale",
-      value: formatEuro(incassatoReale),
-      icon: Banknote,
-      color: "text-green-700",
-      bg: "bg-green-50",
+      color: "text-[#6b5f4a]",
+      bg: "bg-[#f2e2c4]/50",
     },
   ];
 
@@ -99,7 +92,10 @@ export default async function DashboardHomePage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map((stat) => (
-          <div key={stat.label} className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
+          <div
+            key={stat.label}
+            className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm"
+          >
             <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${stat.bg} ${stat.color}`}>
               <stat.icon size={18} />
             </span>
@@ -107,10 +103,20 @@ export default async function DashboardHomePage() {
             <p className="text-sm text-slate-500">{stat.label}</p>
           </div>
         ))}
+
+        {/* L'incassato reale è il dato più importante (soldi già confermati, non
+            una stima): unico riquadro pieno invece delle schede chiare uguali. */}
+        <div className="rounded-2xl bg-[#2b333e] p-5 shadow-sm shadow-[#2b333e]/30">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-[#e4cc98]">
+            <Banknote size={18} />
+          </span>
+          <p className="mt-3 text-2xl font-semibold text-white">{formatEuro(incassatoReale)}</p>
+          <p className="text-sm text-[#cbbfa6]">Incassato reale</p>
+        </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
+        <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
             <CalendarClock size={18} className="text-[#2b333e]" />
             <h2 className="text-lg font-semibold text-slate-900">Prossime partenze</h2>
@@ -147,7 +153,7 @@ export default async function DashboardHomePage() {
           </Link>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
+        <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
             <ListChecks size={18} className="text-[#2b333e]" />
             <h2 className="text-lg font-semibold text-slate-900">Promemoria da fare</h2>

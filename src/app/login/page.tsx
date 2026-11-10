@@ -4,6 +4,7 @@ import { Suspense, useActionState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
+import AuthShell from "@/components/AuthShell";
 import { login } from "./actions";
 
 export default function LoginPage() {
@@ -19,9 +20,8 @@ function LoginForm() {
   const next = useSearchParams().get("next") ?? "";
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
-      <div className="w-full max-w-sm rounded-2xl border border-[#e6d7bb] bg-white p-8 shadow-lg shadow-[#e6d7bb]/40">
-        <AuthBrandHeader />
+    <AuthShell>
+      <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Accedi</h1>
         <p className="mb-6 text-sm text-slate-500">Entra nel tuo gestionale viaggi</p>
 
@@ -80,7 +80,6 @@ function LoginForm() {
             Accedi qui
           </Link>
         </p>
-      </div>
-    </div>
+    </AuthShell>
   );
 }

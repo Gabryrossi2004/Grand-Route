@@ -48,7 +48,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
             className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
           />
         </div>
-        <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1">
+        <div className="flex items-center gap-1 rounded-lg border border-[#e6d7bb] bg-white p-1">
           {statusOptions.map((option) => (
             <button
               key={option.value}

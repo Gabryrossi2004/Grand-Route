@@ -153,7 +153,7 @@ export default async function TripDetailPage({
       />
       <TripInfoForm trip={trip} />
 
-      <details className="group overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
+      <details className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
         <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
           <span className="flex items-center gap-2">
             Tariffa &amp; Termini
@@ -201,7 +201,7 @@ export default async function TripDetailPage({
             </p>
           </div>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
+        <div className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           {documentsWithUrl.length === 0 ? (
             <p className="mb-4 text-sm text-slate-400">Nessun documento caricato ancora.</p>
           ) : (
@@ -270,7 +270,7 @@ function CoverHero({
       : null;
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
       <div className="relative flex h-64 flex-col justify-between bg-[#2b333e] p-6">
         {trip.cover_image_url && (
           <>
@@ -399,7 +399,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
 
   return (
     <details
-      className="group overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-[#faf7ee] shadow-sm"
+      className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm"
       open={needsAttention}
     >
       <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">

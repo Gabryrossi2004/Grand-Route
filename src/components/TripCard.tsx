@@ -65,7 +65,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
         onTouchStart={startLongPress}
         onTouchEnd={cancelLongPress}
         onTouchMove={cancelLongPress}
-        className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#e6d7bb] hover:shadow-lg hover:shadow-slate-200/60"
+        className="group block overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#e6d7bb] hover:shadow-lg hover:shadow-slate-200/60"
       >
         <div className="relative h-32 overflow-hidden bg-gradient-to-br from-[#f2e2c4] to-indigo-100">
           {trip.cover_image_url && (
@@ -97,7 +97,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
           <div className="fixed inset-0 z-40" onClick={() => setMenuPos(null)} onContextMenu={(e) => e.preventDefault()} />
           <div
             style={{ top: menuPos.y, left: menuPos.x }}
-            className="fixed z-50 min-w-[180px] rounded-lg border border-slate-200 bg-white py-1 shadow-xl"
+            className="fixed z-50 min-w-[180px] rounded-lg border border-[#e6d7bb] bg-white py-1 shadow-xl"
           >
             <button
               type="button"

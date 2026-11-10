@@ -3,15 +3,15 @@
 import { useActionState } from "react";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
+import AuthShell from "@/components/AuthShell";
 import { clientLogin } from "./actions";
 
 export default function ClientLoginPage() {
   const [state, formAction, pending] = useActionState(clientLogin, undefined);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#faf3e6] px-4">
-      <div className="w-full max-w-sm rounded-2xl border border-[#e6d7bb] bg-white p-8 shadow-lg shadow-[#e6d7bb]/40">
-        <AuthBrandHeader />
+    <AuthShell>
+      <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Area clienti</h1>
         <p className="mb-6 text-sm text-slate-500">Accedi per vedere i tuoi viaggi</p>
 
@@ -69,7 +69,6 @@ export default function ClientLoginPage() {
             Accedi qui
           </Link>
         </p>
-      </div>
-    </div>
+    </AuthShell>
   );
 }

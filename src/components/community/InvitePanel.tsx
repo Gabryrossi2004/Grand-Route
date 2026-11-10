@@ -24,7 +24,7 @@ function InviteRow({ groupId, invite }: { groupId: string; invite: CommunityGrou
   }
 
   return (
-    <div className="flex items-center justify-between gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm">
+    <div className="flex items-center justify-between gap-2 rounded-lg border border-[#e6d7bb] px-3 py-2 text-sm">
       <div>
         <p className={isActive ? "text-slate-700" : "text-slate-400 line-through"}>
           Usato {invite.use_count}
@@ -40,7 +40,7 @@ function InviteRow({ groupId, invite }: { groupId: string; invite: CommunityGrou
           <button
             type="button"
             onClick={copyLink}
-            className="flex items-center gap-1 rounded-md border border-slate-300 px-2 py-1 text-xs font-medium text-slate-600 hover:bg-slate-50"
+            className="flex items-center gap-1 rounded-md border border-[#e6d7bb] px-2 py-1 text-xs font-medium text-[#6b5f4a] hover:bg-[#faf3e6]"
           >
             {copied ? <Check size={13} /> : <Copy size={13} />}
             {copied ? "Copiato" : "Copia link"}

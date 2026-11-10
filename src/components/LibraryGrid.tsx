@@ -52,7 +52,7 @@ export default function LibraryGrid({
               <div
                 key={template.id}
                 style={{ borderLeftColor: meta.color, backgroundColor: meta.bg }}
-                className="rounded-xl border-l-4 border-y border-r border-slate-200 bg-white p-4 shadow-sm"
+                className="rounded-xl border-l-4 border-y border-r border-[#e6d7bb] bg-white p-4 shadow-sm"
               >
                 <div className="mb-2 flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2">

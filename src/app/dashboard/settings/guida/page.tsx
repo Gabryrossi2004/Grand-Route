@@ -374,7 +374,7 @@ export default function GuidaPage() {
         che arriva al cliente.
       </p>
 
-      <nav className="mb-10 rounded-2xl border border-slate-200 bg-white p-6">
+      <nav className="mb-10 rounded-2xl border border-[#e6d7bb] bg-white p-6">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">Indice</p>
         <ol className="grid gap-2 text-base sm:grid-cols-2">
           {sections.map((section) => (
@@ -403,7 +403,7 @@ export default function GuidaPage() {
                       {step.images.map((image) => (
                         <figure
                           key={image.src}
-                          className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm"
+                          className="overflow-hidden rounded-xl border border-[#e6d7bb] bg-slate-50 shadow-sm"
                         >
                           <Image
                             src={image.src}
@@ -413,7 +413,7 @@ export default function GuidaPage() {
                             className="w-full"
                             sizes="(max-width: 768px) 100vw, 900px"
                           />
-                          <figcaption className="border-t border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-500">
+                          <figcaption className="border-t border-[#e6d7bb] bg-white px-3 py-2.5 text-sm text-slate-500">
                             {image.caption}
                           </figcaption>
                         </figure>

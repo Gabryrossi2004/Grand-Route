@@ -9,7 +9,7 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
   const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
 
   return (
-    <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-6">
+    <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">
       <div>
         <label htmlFor="title" className="mb-1 block text-sm font-medium text-slate-700">
           Titolo del viaggio *

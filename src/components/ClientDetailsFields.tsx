@@ -54,7 +54,7 @@ function MaskedField({
 
 export default function ClientDetailsFields({ client }: { client?: Client }) {
   return (
-    <details className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+    <details className="rounded-lg border border-[#e6d7bb] bg-slate-50 p-3">
       <summary className="cursor-pointer select-none text-sm font-medium text-slate-700">
         Dati anagrafici e documenti (opzionali)
       </summary>

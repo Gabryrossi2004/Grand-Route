@@ -7,7 +7,7 @@ import Image from "next/image";
 // dashboard e sulle pagine dei viaggi, non qui.
 export default function AuthBrandHeader() {
   return (
-    <div className="mb-6 flex flex-col items-center gap-2">
+    <div className="mb-7 flex flex-col items-center gap-3">
       <Image
         src="/grand-route-logo.jpg"
         alt="Grand Route"
@@ -15,7 +15,9 @@ export default function AuthBrandHeader() {
         height={48}
         className="rounded-xl shadow-sm"
       />
-      <span className="text-sm font-semibold tracking-wide text-slate-700">Grand Route</span>
+      <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-[#2b333e]">
+        Grand Route
+      </span>
     </div>
   );
 }

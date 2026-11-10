@@ -42,7 +42,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
       ) : filtered.length === 0 ? (
         <p className="text-sm text-slate-400">Nessun cliente corrisponde alla ricerca.</p>
       ) : (
-        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
           {filtered.map((client) => (
             <Link
               key={client.id}

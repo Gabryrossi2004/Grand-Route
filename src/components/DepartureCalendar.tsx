@@ -85,7 +85,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-7 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200">
+      <div className="grid grid-cols-7 gap-px overflow-hidden rounded-xl border border-[#e6d7bb] bg-slate-200">
         {WEEKDAY_LABELS.map((label) => (
           <div key={label} className="bg-[#2b333e] px-2 py-1.5 text-center text-xs font-semibold text-white">
             {label}
@@ -143,7 +143,7 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
               <Link
                 key={trip.id}
                 href={`/dashboard/trips/${trip.id}`}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50"
+                className="rounded-lg border border-[#e6d7bb] bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50"
               >
                 {trip.title}
               </Link>

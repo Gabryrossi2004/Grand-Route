@@ -75,7 +75,7 @@ export default async function ClientDetailPage({
         </p>
       )}
 
-      <form action={updateClient.bind(null, id)} className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-6">
+      <form action={updateClient.bind(null, id)} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">
         <div>
           <label htmlFor="full_name" className="mb-1 block text-sm font-medium text-slate-700">
             Nome e cognome
@@ -139,7 +139,7 @@ export default async function ClientDetailPage({
         {!trips || trips.length === 0 ? (
           <p className="mb-3 text-sm text-slate-400">Nessun viaggio collegato ancora.</p>
         ) : (
-          <ul className="mb-3 divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
+          <ul className="mb-3 divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
             {(trips as Trip[]).map((trip) => (
               <li key={trip.id} className="flex items-center justify-between gap-2 px-4 py-3 hover:bg-slate-50">
                 <Link href={`/dashboard/trips/${trip.id}`} className="min-w-0 flex-1">
