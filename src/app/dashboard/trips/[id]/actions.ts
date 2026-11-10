@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey } from "@/lib/activityTypes";
+import { validateDocumentFile, validateImageFile } from "@/lib/fileValidation";
 import type { Activity, ItineraryStage, PaymentDirection, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
@@ -556,6 +557,7 @@ export async function uploadDocument(
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return;
+  if (validateDocumentFile(file)) return;
 
   const filePath = `${user.id}/${tripId}/${Date.now()}-${file.name}`;
 
@@ -592,6 +594,7 @@ export async function uploadActivityPhoto(tripId: string, activityId: string, fo
 
   const file = formData.get("photo");
   if (!(file instanceof File) || file.size === 0) return;
+  if (validateImageFile(file)) return;
 
   const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${file.name}`;
 
@@ -625,6 +628,7 @@ export async function uploadCover(tripId: string, formData: FormData) {
 
   const file = formData.get("cover");
   if (!(file instanceof File) || file.size === 0) return;
+  if (validateImageFile(file)) return;
 
   const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${file.name}`;
 
