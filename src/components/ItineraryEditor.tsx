@@ -487,22 +487,34 @@ function DayPanel({
         <h3 className="font-medium capitalize text-slate-900">
           {day.day_order === 0 ? (
             isEditingStartDate ? (
-              <form action={rebaseTripDates.bind(null, tripId)} className="inline-flex align-middle">
+              <form
+                action={rebaseTripDates.bind(null, tripId)}
+                onSubmit={() => setIsEditingStartDate(false)}
+                className="inline-flex items-center gap-1.5 align-middle"
+              >
                 <input
                   type="date"
                   name="new_first_date"
                   defaultValue={day.day_date ?? ""}
                   autoFocus
-                  onBlur={() => setIsEditingStartDate(false)}
-                  onChange={(e) => {
-                    e.currentTarget.form?.requestSubmit();
-                    setIsEditingStartDate(false);
-                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Escape") setIsEditingStartDate(false);
                   }}
-                  className="rounded border border-[#ddc8a0] px-1.5 py-0.5 text-sm font-normal normal-case outline-none"
+                  className="rounded border border-[#ddc8a0] px-2 py-1 text-sm font-normal normal-case outline-none focus:border-[#cda876]"
                 />
+                <button
+                  type="submit"
+                  className="rounded-md bg-[#233c5e] px-2.5 py-1 text-xs font-semibold text-white hover:bg-[#17283f]"
+                >
+                  Conferma
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsEditingStartDate(false)}
+                  className="rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100"
+                >
+                  Annulla
+                </button>
               </form>
             ) : (
               <span
