@@ -318,6 +318,16 @@ function DayPanel({
   const [orderIds, setOrderIds] = useState<string[]>(sortedActivities.map((a) => a.id));
   const lastServerOrderKey = useRef(serverOrderKey);
 
+  // Da telefono le schede aperte di default rendono la pagina lunghissima da
+  // scorrere: partiamo con tutte le attività già esistenti chiuse (solo la
+  // prima volta), lasciando intatto il comportamento desktop.
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 640) {
+      setCollapsedIds(new Set(sortedActivities.map((activity) => activity.id)));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     if (lastServerOrderKey.current !== serverOrderKey) {
       setOrderIds(sortedActivities.map((a) => a.id));
