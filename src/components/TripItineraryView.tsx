@@ -147,23 +147,23 @@ export default function TripItineraryView({
                       >
                         <div
                           style={{ backgroundColor: meta.bg }}
-                          className="flex flex-wrap items-center gap-2 px-4 py-3"
+                          className="flex flex-wrap items-center gap-2 px-4 py-4"
                         >
                           <span
                             style={{ backgroundColor: meta.color }}
                             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white"
                           >
-                            <Icon size={16} strokeWidth={1.75} />
+                            <Icon size={16} weight="light" />
                           </span>
                           {activity.start_time && (
-                            <span className="text-[15px] font-medium" style={{ color: meta.color }}>
+                            <span className="shrink-0 text-[15px] font-medium" style={{ color: meta.color }}>
                               {activity.start_time.slice(0, 5)}
                             </span>
                           )}
-                          <span className="text-[17px] font-medium">{activity.title}</span>
+                          <span className="min-w-0 flex-1 text-[17px] font-medium">{activity.title}</span>
                           <span
                             style={{ color: meta.color, borderColor: meta.color }}
-                            className="rounded-full border px-2 py-0.5 text-[13px] font-medium"
+                            className="shrink-0 rounded-full border px-1.5 py-0.5 text-[11px] font-medium"
                           >
                             {meta.label}
                           </span>
