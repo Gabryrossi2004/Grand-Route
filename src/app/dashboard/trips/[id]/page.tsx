@@ -38,6 +38,7 @@ import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
 import TripChecklist from "@/components/TripChecklist";
+import TripTitleEditor from "@/components/TripTitleEditor";
 import TripServicesPanel from "@/components/TripServicesPanel";
 import {
   deleteDocument,
@@ -152,43 +153,45 @@ export default async function TripDetailPage({
         payments={(tripPayments as TripPayment[]) || []}
         activityOptions={activityOptions}
       />
-      <TripInfoForm trip={trip} />
+      <div className="flex flex-wrap items-start gap-4">
+        <TripInfoForm trip={trip} />
 
-      <details className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
-        <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
-          <span className="flex items-center gap-2">
-            Tariffa &amp; Termini
-            {trip.show_rate_block && (
-              <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
-                visibile al cliente
-              </span>
-            )}
-          </span>
-          <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
-        </summary>
-        <div className="p-6 pt-4">
-          <RateBlockForm trip={trip} hasAgencyTerms={Boolean((ownerProfile as Profile | null)?.terms_and_conditions)} />
-        </div>
-      </details>
+        <details className="group min-w-[280px] flex-1 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
+          <summary className="flex cursor-pointer select-none items-center justify-between gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+            <span className="flex items-center gap-2">
+              Tariffa &amp; Termini
+              {trip.show_rate_block && (
+                <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
+                  visibile al cliente
+                </span>
+              )}
+            </span>
+            <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="border-t border-slate-100 px-6 pb-6 pt-4">
+            <RateBlockForm trip={trip} hasAgencyTerms={Boolean((ownerProfile as Profile | null)?.terms_and_conditions)} />
+          </div>
+        </details>
 
-      <details className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
-        <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
-          <span className="flex items-center gap-2">
-            Emergenza
-            {trip.show_emergency_button && (
-              <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
-                visibile al cliente
-              </span>
-            )}
-          </span>
-          <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
-        </summary>
-        <div className="p-6 pt-4">
-          <EmergencyButtonForm trip={trip} hasEmergencyPhone={Boolean((ownerProfile as Profile | null)?.emergency_phone)} />
-        </div>
-      </details>
+        <details className="group min-w-[280px] flex-1 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
+          <summary className="flex cursor-pointer select-none items-center justify-between gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+            <span className="flex items-center gap-2">
+              Emergenza
+              {trip.show_emergency_button && (
+                <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-green-700">
+                  visibile al cliente
+                </span>
+              )}
+            </span>
+            <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="border-t border-slate-100 px-6 pb-6 pt-4">
+            <EmergencyButtonForm trip={trip} hasEmergencyPhone={Boolean((ownerProfile as Profile | null)?.emergency_phone)} />
+          </div>
+        </details>
 
-      <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
+        <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
+      </div>
 
       <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">
         <div className="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-[#233c5e] via-[#333d4a] to-[#17283f] px-5 py-4">
@@ -324,7 +327,7 @@ function CoverHero({
         </div>
 
         <div className="relative text-white">
-          <h1 className="text-3xl font-bold leading-tight drop-shadow-sm">{trip.title}</h1>
+          <TripTitleEditor tripId={trip.id} title={trip.title} />
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-white/90">
             {trip.destination && (
               <span className="flex items-center gap-1">
@@ -422,10 +425,10 @@ function TripInfoForm({ trip }: { trip: Trip }) {
 
   return (
     <details
-      className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm"
+      className="group min-w-[280px] flex-1 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm"
       open={needsAttention}
     >
-      <summary className="flex cursor-pointer select-none items-center justify-between gap-2 p-6 pb-0 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
+      <summary className="flex cursor-pointer select-none items-center justify-between gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
         <span className="flex items-center gap-2">
           Informazioni viaggio
           {needsAttention && (
@@ -436,7 +439,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
         </span>
         <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
       </summary>
-      <div className="p-6 pt-4">
+      <div className="border-t border-slate-100 px-6 pb-6 pt-4">
       <form action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label htmlFor="title" className={labelClass}>

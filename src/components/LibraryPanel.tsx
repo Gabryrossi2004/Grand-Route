@@ -14,11 +14,11 @@ export default function LibraryPanel({ templates }: { templates: ActivityTemplat
         type="button"
         onClick={() => setOpen(true)}
         title="Apri la libreria"
-        className="flex w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-[#e6d7bb] bg-white px-3 py-2.5 text-slate-500 transition hover:bg-slate-50 hover:text-slate-700 sm:sticky sm:top-20 sm:w-auto sm:flex-col sm:items-center sm:gap-2 sm:self-start sm:px-1.5 sm:py-3"
+        className="flex w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-[#e6d7bb] bg-white px-4 py-3 text-slate-500 transition hover:bg-slate-50 hover:text-slate-700 sm:sticky sm:top-20 sm:w-auto sm:flex-col sm:items-center sm:gap-2.5 sm:self-start sm:px-2.5 sm:py-5"
       >
-        <ChevronLeft size={16} className="hidden sm:block" />
-        <Library size={16} />
-        <span className="text-xs font-medium sm:[writing-mode:vertical-rl]">Libreria</span>
+        <ChevronLeft size={18} className="hidden sm:block" />
+        <Library size={20} />
+        <span className="text-sm font-medium sm:[writing-mode:vertical-rl]">Libreria</span>
       </button>
     );
   }

@@ -210,6 +210,17 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+// Modifica rapida del solo titolo (doppio click sul titolo in cima alla
+// pagina del viaggio), separata da updateTripInfo che invece salva l'intero
+// modulo "Informazioni viaggio" insieme.
+export async function updateTripTitle(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) return;
+  await supabase.from("trips").update({ title }).eq("id", tripId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 // Blocco "Tariffa & Termini": facoltativo, specifico per viaggio (incluso/
 // escluso), riusa invece il testo dei Termini e Condizioni scritto una volta
 // sola nelle Impostazioni dell'agenzia. Visibile al cliente solo se attivato.
