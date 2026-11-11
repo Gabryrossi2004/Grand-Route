@@ -82,11 +82,46 @@ export default function ItineraryEditor({
   documentsByActivity: Record<string, ActivityDocument[]>;
 }) {
   const [selectedDayId, setSelectedDayId] = useState<string | null>(days[0]?.id ?? null);
-  const selectedDay = days.find((day) => day.id === selectedDayId) ?? days[0] ?? null;
   const todayStr = new Date().toISOString().slice(0, 10);
   const [draggedDayId, setDraggedDayId] = useState<string | null>(null);
   const [dragOverDayId, setDragOverDayId] = useState<string | null>(null);
   const [draggedActivity, setDraggedActivity] = useState<{ id: string; sourceDayId: string } | null>(null);
+
+  // Eliminazione giorno con "Annulla", stessa logica già usata per le
+  // attività: sparisce subito dalla vista (nessuna attesa del server, nessun
+  // popup di conferma) e viene davvero cancellato solo dopo qualche secondo,
+  // a meno che l'agenzia non prema "Annulla" nel frattempo.
+  const [pendingDeleteDayIds, setPendingDeleteDayIds] = useState<Set<string>>(new Set());
+  const dayDeleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+
+  const visibleDays = days.filter((day) => !pendingDeleteDayIds.has(day.id));
+  const selectedDay = visibleDays.find((day) => day.id === selectedDayId) ?? visibleDays[0] ?? null;
+
+  function requestDeleteDay(dayId: string) {
+    setPendingDeleteDayIds((prev) => new Set(prev).add(dayId));
+
+    const timer = setTimeout(() => {
+      dayDeleteTimers.current.delete(dayId);
+      setPendingDeleteDayIds((prev) => {
+        const next = new Set(prev);
+        next.delete(dayId);
+        return next;
+      });
+      deleteDay(tripId, dayId);
+    }, 5000);
+    dayDeleteTimers.current.set(dayId, timer);
+  }
+
+  function undoDeleteDay(dayId: string) {
+    const timer = dayDeleteTimers.current.get(dayId);
+    if (timer) clearTimeout(timer);
+    dayDeleteTimers.current.delete(dayId);
+    setPendingDeleteDayIds((prev) => {
+      const next = new Set(prev);
+      next.delete(dayId);
+      return next;
+    });
+  }
 
   function handleDropDay(targetDayId: string) {
     if (draggedActivity) {
@@ -122,7 +157,7 @@ export default function ItineraryEditor({
           </button>
         </form>
 
-        {days.map((day, index) => (
+        {visibleDays.map((day, index) => (
           <DaySidebarItem
             key={day.id}
             day={day}
@@ -160,11 +195,36 @@ export default function ItineraryEditor({
             documentsByActivity={documentsByActivity}
             onActivityDragStart={(activityId) => setDraggedActivity({ id: activityId, sourceDayId: selectedDay.id })}
             onActivityDragEnd={() => setDraggedActivity(null)}
+            onDeleteDay={() => requestDeleteDay(selectedDay.id)}
           />
         ) : (
           <p className="text-sm text-slate-400">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
         )}
       </div>
+
+      {pendingDeleteDayIds.size > 0 && (
+        <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-col gap-2">
+          {Array.from(pendingDeleteDayIds).map((id) => {
+            const removedDay = days.find((day) => day.id === id);
+            const index = days.findIndex((day) => day.id === id);
+            return (
+              <div
+                key={id}
+                className="flex items-center gap-3 rounded-lg bg-slate-900 px-4 py-2.5 text-sm text-white shadow-lg"
+              >
+                <span>{removedDay ? dayLabel(removedDay, index, true) : "Giorno"} eliminato</span>
+                <button
+                  type="button"
+                  onClick={() => undoDeleteDay(id)}
+                  className="font-semibold text-[#ddc8a0] hover:text-[#e6d7bb]"
+                >
+                  Annulla
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -298,6 +358,7 @@ function DayPanel({
   documentsByActivity,
   onActivityDragStart,
   onActivityDragEnd,
+  onDeleteDay,
 }: {
   day: DayWithActivities;
   tripId: string;
@@ -305,6 +366,7 @@ function DayPanel({
   documentsByActivity: Record<string, ActivityDocument[]>;
   onActivityDragStart: (activityId: string) => void;
   onActivityDragEnd: () => void;
+  onDeleteDay: () => void;
 }) {
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
@@ -432,11 +494,13 @@ function DayPanel({
               </button>
             </form>
           )}
-          <form action={deleteDay.bind(null, tripId, day.id)}>
-            <button type="submit" className="flex items-center gap-1 text-xs text-red-500 hover:underline">
-              <Trash2 size={12} /> Elimina giorno
-            </button>
-          </form>
+          <button
+            type="button"
+            onClick={onDeleteDay}
+            className="flex items-center gap-1 text-xs text-red-500 hover:underline"
+          >
+            <Trash2 size={12} /> Elimina giorno
+          </button>
           <button
             type="button"
             onClick={() => setIsAddingActivity(true)}
