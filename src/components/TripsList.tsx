@@ -8,26 +8,39 @@ import TripCard from "@/components/TripCard";
 
 type StatusFilter = "tutti" | "pubblicati" | "bozze";
 
+// Mostra un'unica card per ogni gruppo di varianti (la più vecchia, di
+// solito l'originale), con un'etichetta "N varianti": altrimenti con
+// qualche gruppo e tante varianti create nel tempo la lista diventerebbe
+// caotica. Le altre varianti restano raggiungibili dalla sezione dedicata
+// dentro la pagina del viaggio.
 export default function TripsList({ trips, groups }: { trips: Trip[]; groups: TripGroup[] }) {
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<StatusFilter>("tutti");
 
+  const displayTrips = useMemo((): (Trip & { variantCount?: number })[] => {
+    const representatives: (Trip & { variantCount?: number })[] = [];
+    for (const group of groups) {
+      const groupTrips = [...trips]
+        .filter((trip) => trip.group_id === group.id)
+        .sort((a, b) => a.created_at.localeCompare(b.created_at));
+      if (groupTrips.length > 0) {
+        representatives.push({ ...groupTrips[0], variantCount: groupTrips.length });
+      }
+    }
+    const standalone: (Trip & { variantCount?: number })[] = trips.filter((trip) => !trip.group_id);
+    return [...representatives, ...standalone].sort((a, b) => b.created_at.localeCompare(a.created_at));
+  }, [trips, groups]);
+
   const filteredTrips = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return trips.filter((trip) => {
+    return displayTrips.filter((trip) => {
       if (status === "pubblicati" && !trip.is_published) return false;
       if (status === "bozze" && trip.is_published) return false;
       if (!q) return true;
       const haystack = `${trip.title} ${trip.destination ?? ""}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [trips, query, status]);
-
-  const groupedSections = groups
-    .map((group) => ({ group, trips: filteredTrips.filter((trip) => trip.group_id === group.id) }))
-    .filter((section) => section.trips.length > 0);
-
-  const ungroupedTrips = filteredTrips.filter((trip) => !trip.group_id);
+  }, [displayTrips, query, status]);
 
   const statusOptions: { value: StatusFilter; label: string }[] = [
     { value: "tutti", label: "Tutti" },
@@ -74,32 +87,10 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
       ) : filteredTrips.length === 0 ? (
         <p className="text-sm text-slate-400">Nessun viaggio corrisponde alla ricerca.</p>
       ) : (
-        <div className="flex flex-col gap-8">
-          {groupedSections.map(({ group, trips: variantTrips }) => (
-            <section key={group.id}>
-              <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                {group.title} · {variantTrips.length} {variantTrips.length === 1 ? "variante" : "varianti"}
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {variantTrips.map((trip) => (
-                  <TripCard key={trip.id} trip={trip} />
-                ))}
-              </div>
-            </section>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredTrips.map((trip) => (
+            <TripCard key={trip.id} trip={trip} variantCount={trip.variantCount} />
           ))}
-
-          {ungroupedTrips.length > 0 && (
-            <section>
-              {groupedSections.length > 0 && (
-                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">Altri viaggi</h2>
-              )}
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {ungroupedTrips.map((trip) => (
-                  <TripCard key={trip.id} trip={trip} />
-                ))}
-              </div>
-            </section>
-          )}
         </div>
       )}
     </div>
