@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { BookOpen, ChevronRight } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: profile } = await supabase
     .from("profiles")

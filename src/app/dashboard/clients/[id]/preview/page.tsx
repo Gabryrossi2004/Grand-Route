@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Eye } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import ClientTripsGrid, { type TripWithAgency } from "@/components/ClientTripsGrid";
 
 export default async function ClientPreviewPage({
@@ -11,9 +11,7 @@ export default async function ClientPreviewPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: client } = await supabase
     .from("clients")

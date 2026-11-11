@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { decryptField } from "@/lib/encryption";
 import type { Client } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
@@ -9,9 +9,7 @@ import { updateClientTravelDocuments } from "../actions";
 
 export default async function ClientDocumentsPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: rows } = await supabase.from("clients").select("*").eq("user_id", user?.id ?? "");
   const clients = ((rows as Client[]) || []).map((client) => ({

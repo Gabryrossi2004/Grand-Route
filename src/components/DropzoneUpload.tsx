@@ -2,25 +2,42 @@
 
 import { useRef, useState } from "react";
 import { ImagePlus } from "lucide-react";
+import { compressImageFile } from "@/lib/compressImage";
 
 export default function DropzoneUpload({
   name,
   accept,
   label,
   autoSubmit = true,
+  compressImages = false,
 }: {
   name: string;
   accept?: string;
   label: string;
   autoSubmit?: boolean;
+  // Vero solo per le foto destinate a essere semplicemente guardate (foto
+  // attività, copertine): vengono ridimensionate/ricompresse nel browser
+  // prima dell'upload, molto più pesanti altrimenti se scattate da telefono.
+  // Mai per documenti scansionati o foto caricate per l'analisi AI, dove
+  // la definizione originale conta.
+  compressImages?: boolean;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [processing, setProcessing] = useState(false);
 
-  function applyFiles(fileList: FileList | File[] | null) {
+  async function applyFiles(fileList: FileList | File[] | null) {
     if (!fileList || fileList.length === 0 || !inputRef.current) return;
-    const files = Array.from(fileList);
+    let files = Array.from(fileList);
+    if (compressImages) {
+      setProcessing(true);
+      try {
+        files = await Promise.all(files.map((file) => compressImageFile(file)));
+      } finally {
+        setProcessing(false);
+      }
+    }
     const dataTransfer = new DataTransfer();
     files.forEach((file) => dataTransfer.items.add(file));
     inputRef.current.files = dataTransfer.files;
@@ -74,7 +91,7 @@ export default function DropzoneUpload({
         onChange={(e) => applyFiles(e.target.files)}
       />
       <ImagePlus size={18} className="text-slate-400" />
-      <p className="text-sm font-medium text-slate-700">{fileName ?? label}</p>
+      <p className="text-sm font-medium text-slate-700">{processing ? "Comprimo l'immagine…" : fileName ?? label}</p>
       <p className="text-xs text-slate-400">Trascina, clicca per scegliere, o incolla con Ctrl+V</p>
     </div>
   );

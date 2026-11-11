@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import CreateGroupForm from "@/components/community/CreateGroupForm";
 import JoinGroupForm from "@/components/community/JoinGroupForm";
 
@@ -15,9 +15,7 @@ type GroupMembership = {
 
 export default async function CommunityGroupsPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: memberships } = await supabase
     .from("community_group_members")

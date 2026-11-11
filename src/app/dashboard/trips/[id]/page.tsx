@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type {
   Activity,
   ActivityPhoto,
@@ -67,9 +67,7 @@ export default async function TripDetailPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: trip } = await supabase
     .from("trips")
@@ -410,7 +408,7 @@ function CoverHero({
       )}
 
       <form action={uploadCover.bind(null, trip.id)} encType="multipart/form-data" className="p-4">
-        <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" />
+        <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" compressImages />
       </form>
     </section>
   );

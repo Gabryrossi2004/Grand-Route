@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripGroup } from "@/lib/types";
 import TripsList from "@/components/TripsList";
 
 export default async function TripsPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const [{ data: trips }, { data: groups }] = await Promise.all([
     supabase

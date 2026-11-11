@@ -1,11 +1,9 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import ClientTripsGrid, { type TripWithAgency } from "@/components/ClientTripsGrid";
 
 export default async function ClientHomePage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: myClientRows } = await supabase.from("clients").select("id").eq("user_id", user?.id ?? "");
   const clientIds = (myClientRows || []).map((row) => row.id);

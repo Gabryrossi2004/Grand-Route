@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Compass } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { clientSignOut } from "./actions";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   let fullName: string | null = null;
   if (user) {

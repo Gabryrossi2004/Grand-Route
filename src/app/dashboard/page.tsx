@@ -9,7 +9,7 @@ import {
   Wallet,
   Banknote,
 } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 
@@ -19,9 +19,7 @@ function dateLabel(value: string) {
 
 export default async function DashboardHomePage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const [{ data: trips }, { count: clientsCount }] = await Promise.all([
     supabase.from("trips").select("*").eq("owner_id", user?.id ?? ""),

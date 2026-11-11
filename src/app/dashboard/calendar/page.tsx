@@ -1,12 +1,10 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip } from "@/lib/types";
 import DepartureCalendar from "@/components/DepartureCalendar";
 
 export default async function CalendarPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: trips } = await supabase
     .from("trips")

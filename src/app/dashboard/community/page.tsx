@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Users } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { loadCommunityFeed } from "@/lib/community";
 import { createPost } from "@/app/dashboard/community/actions";
 import PostComposer from "@/components/community/PostComposer";
@@ -8,9 +8,7 @@ import PostCard from "@/components/community/PostCard";
 
 export default async function CommunityPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { posts, photosByPost, commentsByPost, authors, likeCountByPost, likedByMe } = await loadCommunityFeed(
     supabase,

@@ -906,7 +906,7 @@ function SortableActivityRow({
               encType="multipart/form-data"
               className="mt-2 max-w-xs"
             >
-              <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" />
+              <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" compressImages />
             </form>
           </details>
 

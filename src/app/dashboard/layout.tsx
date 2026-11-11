@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Compass } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import type { Profile } from "@/lib/types";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
@@ -12,9 +12,7 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   let profile: Profile | null = null;
   if (user) {

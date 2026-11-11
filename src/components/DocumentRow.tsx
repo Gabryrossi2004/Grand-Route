@@ -82,7 +82,7 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
         {isAddingCover && (
           <div className="mt-2 flex items-start gap-2">
             <form action={uploadDocumentCover.bind(null, tripId, document.id)} encType="multipart/form-data">
-              <DropzoneUpload name="file" accept="image/*" label="Foto di copertina" />
+              <DropzoneUpload name="file" accept="image/*" label="Foto di copertina" compressImages />
             </form>
             {document.cover_image_path && (
               <form action={deleteDocumentCover.bind(null, tripId, document.id, document.cover_image_path)}>

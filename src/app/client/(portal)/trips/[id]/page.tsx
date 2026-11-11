@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay, TripPayment } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
 import EmergencyButton from "@/components/EmergencyButton";
@@ -22,9 +22,7 @@ export default async function ClientTripPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: myClientRows } = await supabase
     .from("clients")

@@ -1,12 +1,10 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Supplier } from "@/lib/types";
 import SuppliersList from "@/components/SuppliersList";
 
 export default async function SuppliersPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: suppliers } = await supabase
     .from("suppliers")

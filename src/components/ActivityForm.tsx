@@ -370,7 +370,7 @@ export default function ActivityForm({
           </div>
         )}
         <form action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
-          <DropzoneUpload name="photo" accept="image/*" label="Aggiungi una foto" />
+          <DropzoneUpload name="photo" accept="image/*" label="Aggiungi una foto" compressImages />
         </form>
       </div>
     )}

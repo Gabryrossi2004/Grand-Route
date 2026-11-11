@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { loadCommunityFeed } from "@/lib/community";
 import { createPost } from "@/app/dashboard/community/actions";
 import { deleteGroup, leaveGroup, removeMember } from "@/app/dashboard/community/groups/actions";
@@ -18,9 +18,7 @@ type MemberRow = {
 export default async function CommunityGroupPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCachedUser();
 
   const { data: group } = await supabase.from("community_groups").select("*").eq("id", id).single();
 
