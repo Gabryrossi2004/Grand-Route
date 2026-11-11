@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { CheckSquare, ChevronDown, ListChecks, Square, Trash2 } from "lucide-react";
+import { CheckSquare, Square, Trash2 } from "lucide-react";
 import type { TripChecklistItem } from "@/lib/types";
+import ExpandableSection from "@/components/ExpandableSection";
 import { addChecklistItem, deleteChecklistItem, toggleChecklistItem } from "@/app/dashboard/trips/[id]/actions";
 
 export default function TripChecklist({ tripId, items: initialItems }: { tripId: string; items: TripChecklistItem[] }) {
@@ -51,20 +52,16 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
   }
 
   return (
-    <details className="group/panel min-w-[280px] flex-1 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] shadow-sm">
-      <summary className="flex cursor-pointer select-none items-center justify-between gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-500 marker:content-none">
-        <span className="flex items-center gap-2">
-          <ListChecks size={15} className="text-slate-400" />
-          Promemoria
-          {pending > 0 && (
-            <span className="rounded-full bg-[#233c5e] px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-white">
-              {pending}
-            </span>
-          )}
-        </span>
-        <ChevronDown size={16} className="shrink-0 text-slate-400 transition-transform group-open/panel:rotate-180" />
-      </summary>
-      <div className="border-t border-slate-100 px-6 pb-6 pt-4">
+    <ExpandableSection
+      title="Promemoria"
+      badge={
+        pending > 0 && (
+          <span className="rounded-full bg-[#233c5e] px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-white">
+            {pending}
+          </span>
+        )
+      }
+    >
       <p className="mb-3 text-sm text-slate-500">
         Una checklist privata, visibile solo a te: non appare mai sulla pagina del cliente.
       </p>
@@ -125,7 +122,6 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
           + Aggiungi
         </button>
       </form>
-      </div>
-    </details>
+    </ExpandableSection>
   );
 }
