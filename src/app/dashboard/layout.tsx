@@ -49,7 +49,7 @@ export default async function DashboardLayout({
         <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
       </div>
       <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-4">
           <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold text-[#233c5e]">
             {profile?.logo_url ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -87,7 +87,7 @@ export default async function DashboardLayout({
           </nav>
         </div>
       </HeaderAutoHide>
-      <main className="mx-auto max-w-7xl px-4 py-8">{children}</main>
+      <main className="mx-auto max-w-7xl px-3 py-8 sm:px-4">{children}</main>
     </div>
   );
 }
