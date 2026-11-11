@@ -622,8 +622,8 @@ function SortableActivityRow({
 
       {isExpanded && (
         <div className="px-3 pb-3 pl-12">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
+          <div className="flex flex-wrap items-start gap-3">
+            <div className="min-w-0 flex-1">
               <span
                 style={{ color: meta.color, borderColor: meta.color }}
                 className="mb-1 inline-block rounded-full border px-2 py-0.5 text-xs font-medium"
@@ -649,8 +649,8 @@ function SortableActivityRow({
               )}
             </div>
 
-            <div className="flex shrink-0 flex-col items-end gap-1">
-              <div className="flex items-center gap-1">
+            <div className="ml-auto flex shrink-0 flex-col items-end gap-1">
+              <div className="flex flex-wrap items-center justify-end gap-1">
                 <form action={saveActivityToLibrary.bind(null, tripId, activity.id)}>
                   <button
                     type="submit"
