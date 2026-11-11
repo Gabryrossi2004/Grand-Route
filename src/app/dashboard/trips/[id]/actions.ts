@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
-import { validateDocumentFile, validateImageFile, validateSpreadsheetFile } from "@/lib/fileValidation";
+import { validateDocumentFile, validateImageFile, validateSpreadsheetFile, validateTextFile } from "@/lib/fileValidation";
 import { generateItineraryFromDraft, type DraftImage } from "@/lib/itineraryAi";
 import { parseExcelToText } from "@/lib/itineraryFileParsing";
 import type {
@@ -946,6 +946,11 @@ export async function applyAiItineraryDraft(
       if (validationError) return { error: validationError };
       const buffer = Buffer.from(await draftFile.arrayBuffer());
       draftText = [draftText, buffer.toString("utf-8")].filter(Boolean).join("\n\n");
+    } else if (draftFile.name.toLowerCase().endsWith(".txt") || draftFile.name.toLowerCase().endsWith(".md")) {
+      const validationError = validateTextFile(draftFile);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await draftFile.arrayBuffer());
+      draftText = [draftText, buffer.toString("utf-8")].filter(Boolean).join("\n\n");
     } else if (draftFile.name.toLowerCase().endsWith(".xlsx")) {
       const validationError = validateSpreadsheetFile(draftFile);
       if (validationError) return { error: validationError };
@@ -959,7 +964,8 @@ export async function applyAiItineraryDraft(
       draftText = [draftText, fileText].filter(Boolean).join("\n\n");
     } else {
       return {
-        error: "Formato file non supportato: carica una foto (JPG/PNG), un file Excel (.xlsx) o un .csv.",
+        error:
+          "Formato file non supportato: carica una foto (JPG/PNG), un file Excel (.xlsx), un .csv o un testo (.txt/.md).",
       };
     }
   }

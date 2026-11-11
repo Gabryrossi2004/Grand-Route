@@ -79,8 +79,8 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
             />
             <DropzoneUpload
               name="draft_file"
-              accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv"
-              label="Carica un file (Excel/CSV o una foto della bozza)"
+              accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv,.txt,.md"
+              label="Carica un file (Excel/CSV, testo, o una foto della bozza)"
               autoSubmit={false}
             />
             {state?.error && <p className="text-sm text-red-600">{state.error}</p>}

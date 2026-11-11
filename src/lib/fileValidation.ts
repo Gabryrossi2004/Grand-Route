@@ -42,3 +42,17 @@ export function validateSpreadsheetFile(file: File): string | null {
   }
   return null;
 }
+
+const TEXT_FILE_EXTENSIONS = [".txt", ".md"];
+const MAX_TEXT_FILE_SIZE_BYTES = 2 * 1024 * 1024;
+
+export function validateTextFile(file: File): string | null {
+  const name = file.name.toLowerCase();
+  if (!TEXT_FILE_EXTENSIONS.some((ext) => name.endsWith(ext))) {
+    return "Formato non supportato: usa un file .txt o .md.";
+  }
+  if (file.size > MAX_TEXT_FILE_SIZE_BYTES) {
+    return `Il file supera la dimensione massima di ${Math.floor(MAX_TEXT_FILE_SIZE_BYTES / (1024 * 1024))}MB.`;
+  }
+  return null;
+}
