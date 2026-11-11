@@ -42,6 +42,7 @@ import TitleColorField from "@/components/TitleColorField";
 import TripChecklist from "@/components/TripChecklist";
 import TripTitleEditor from "@/components/TripTitleEditor";
 import TripServicesPanel from "@/components/TripServicesPanel";
+import VariantLink from "@/components/VariantLink";
 import {
   deleteDocument,
   duplicateTripAsVariant,
@@ -403,14 +404,7 @@ function CoverHero({
         <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
           <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Varianti di questo viaggio:</span>
           {variantTrips.map((variant) => (
-            <Link
-              key={variant.id}
-              href={`/dashboard/trips/${variant.id}`}
-              className="flex items-center gap-1.5 rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-sm font-medium text-[#233c5e] transition hover:bg-[#faf3e6]"
-            >
-              {variant.title}
-              {!variant.is_published && <span className="text-xs text-slate-400">(bozza)</span>}
-            </Link>
+            <VariantLink key={variant.id} currentTripId={trip.id} variant={variant} />
           ))}
         </div>
       )}

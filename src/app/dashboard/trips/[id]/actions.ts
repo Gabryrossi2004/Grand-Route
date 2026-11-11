@@ -305,6 +305,37 @@ export async function deleteTrip(tripId: string): Promise<{ error: string } | un
   redirect("/dashboard/trips");
 }
 
+// Eliminare una variante dalla pagina di un'ALTRA variante dello stesso
+// gruppo (sezione "Varianti di questo viaggio"): a differenza di
+// deleteTrip, qui non si reindirizza alla lista viaggi, perché l'agenzia
+// deve restare sul viaggio che stava guardando.
+export async function deleteTripVariant(
+  currentTripId: string,
+  variantId: string,
+): Promise<{ error: string } | undefined> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return { error: "Sessione scaduta: ricarica la pagina ed effettua di nuovo l'accesso." };
+  }
+
+  const { error, count } = await supabase.from("trips").delete({ count: "exact" }).eq("id", variantId);
+
+  if (error) {
+    return { error: "Impossibile eliminare la variante: " + error.message };
+  }
+  if (!count) {
+    return {
+      error: "La variante non risulta eliminabile da questo account (non ne sei il proprietario o non esiste più).",
+    };
+  }
+
+  revalidatePath(`/dashboard/trips/${currentTripId}`);
+  revalidatePath("/dashboard/trips");
+}
+
 export async function addDay(tripId: string, formData: FormData) {
   const supabase = await createClient();
   const dayDate = String(formData.get("day_date") ?? "") || null;
