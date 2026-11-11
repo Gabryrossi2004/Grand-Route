@@ -81,21 +81,44 @@ REGOLE FONDAMENTALI:
 6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${chosenStylePart}${stylePart}`;
 }
 
-// Fase 1: bozza come testo libero (incollato). Le fasi successive
-// (Excel, foto) riusano questa stessa funzione, cambia solo come viene
-// preparato il contenuto passato come messaggio utente.
+export type DraftImage = {
+  base64: string;
+  mediaType: "image/jpeg" | "image/png" | "image/webp" | "image/gif";
+};
+
+// Bozza come testo libero (incollato o estratto da un Excel/CSV), e/o una
+// foto della bozza: quando c'è un'immagine, Claude la legge direttamente
+// (anche testo scritto a mano, con risultati migliori su documenti
+// stampati/leggibili). Il testo, se presente, è trattato come contesto
+// aggiuntivo insieme alla foto, non alternativo.
 export async function generateItineraryFromDraft(params: {
   draftText: string;
   styleExamples: string[];
   styleInstructions?: string | null;
+  image?: DraftImage | null;
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
+
+  const userContent: Anthropic.MessageParam["content"] = params.image
+    ? [
+        {
+          type: "image",
+          source: { type: "base64", media_type: params.image.mediaType, data: params.image.base64 },
+        },
+        {
+          type: "text",
+          text:
+            params.draftText ||
+            "Analizza questa foto della bozza di itinerario e trasformala secondo le istruzioni.",
+        },
+      ]
+    : params.draftText;
 
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 16000,
     system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null),
-    messages: [{ role: "user", content: params.draftText }],
+    messages: [{ role: "user", content: userContent }],
     // "medium" invece del default "high": questo compito (estrarre e
     // strutturare, non ragionare su un problema complesso) non sembra avere
     // bisogno del ragionamento più approfondito, e un effort più basso

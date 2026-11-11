@@ -5,8 +5,9 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
-import { validateDocumentFile, validateImageFile } from "@/lib/fileValidation";
-import { generateItineraryFromDraft } from "@/lib/itineraryAi";
+import { validateDocumentFile, validateImageFile, validateSpreadsheetFile } from "@/lib/fileValidation";
+import { generateItineraryFromDraft, type DraftImage } from "@/lib/itineraryAi";
+import { parseExcelToText } from "@/lib/itineraryFileParsing";
 import type {
   Activity,
   ActivityType,
@@ -911,11 +912,12 @@ function addDaysToDate(dateStr: string, days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-// Genera un itinerario a partire da una bozza scritta liberamente (Fase 1:
-// solo testo incollato) e lo inserisce come giorni/attività veri, pronti per
-// essere rivisti e corretti dall'agenzia prima di passare a "finale".
-// Pensata solo per un viaggio con itinerario ancora vuoto: fonde dati nuovi
-// con un itinerario già popolato è un rischio che rimandiamo a dopo.
+// Genera un itinerario a partire da una bozza (testo incollato, e/o un file
+// caricato: foto della bozza o foglio Excel/CSV) e lo inserisce come
+// giorni/attività veri, pronti per essere rivisti e corretti dall'agenzia
+// prima di passare a "finale". Pensata solo per un viaggio con itinerario
+// ancora vuoto: fonderla con un itinerario già popolato è un rischio che
+// rimandiamo a dopo.
 export async function applyAiItineraryDraft(
   tripId: string,
   formData: FormData,
@@ -926,8 +928,45 @@ export async function applyAiItineraryDraft(
   } = await supabase.auth.getUser();
   if (!user) return { error: "Non autenticato." };
 
-  const draftText = String(formData.get("draft_text") ?? "").trim();
-  if (!draftText) return { error: "Incolla prima il testo della bozza." };
+  let draftText = String(formData.get("draft_text") ?? "").trim();
+  let image: DraftImage | null = null;
+
+  const draftFile = formData.get("draft_file");
+  if (draftFile instanceof File && draftFile.size > 0) {
+    if (draftFile.type.startsWith("image/")) {
+      const validationError = validateImageFile(draftFile);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await draftFile.arrayBuffer());
+      image = {
+        base64: buffer.toString("base64"),
+        mediaType: draftFile.type as DraftImage["mediaType"],
+      };
+    } else if (draftFile.name.toLowerCase().endsWith(".csv")) {
+      const validationError = validateSpreadsheetFile(draftFile);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await draftFile.arrayBuffer());
+      draftText = [draftText, buffer.toString("utf-8")].filter(Boolean).join("\n\n");
+    } else if (draftFile.name.toLowerCase().endsWith(".xlsx")) {
+      const validationError = validateSpreadsheetFile(draftFile);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await draftFile.arrayBuffer());
+      let fileText: string;
+      try {
+        fileText = await parseExcelToText(buffer);
+      } catch {
+        return { error: "Non sono riuscito a leggere il file Excel. Controlla che sia un file .xlsx valido." };
+      }
+      draftText = [draftText, fileText].filter(Boolean).join("\n\n");
+    } else {
+      return {
+        error: "Formato file non supportato: carica una foto (JPG/PNG), un file Excel (.xlsx) o un .csv.",
+      };
+    }
+  }
+
+  if (!draftText && !image) {
+    return { error: "Incolla un testo, oppure carica un file Excel o una foto della bozza." };
+  }
 
   const promptStyleId = String(formData.get("prompt_style_id") ?? "") || null;
 
@@ -975,7 +1014,7 @@ export async function applyAiItineraryDraft(
 
   let generated;
   try {
-    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions });
+    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions, image });
   } catch {
     return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
   }

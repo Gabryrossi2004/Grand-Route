@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Sparkles } from "lucide-react";
 import type { PromptStyle } from "@/lib/types";
+import DropzoneUpload from "@/components/DropzoneUpload";
 import Modal from "@/components/Modal";
 import SubmitButton from "@/components/SubmitButton";
 import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
@@ -36,9 +37,9 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
       {isOpen && (
         <Modal title="Genera itinerario da una bozza" onClose={() => setIsOpen(false)}>
           <p className="mb-3 -mt-2 text-sm text-slate-500">
-            Incolla qui la bozza dell&apos;itinerario, anche scritta in modo informale: l&apos;AI la trasformerà in
-            giorni e attività, da rivedere con calma prima di passare l&apos;itinerario a &quot;finale&quot;. Non
-            inventa orari, numeri o altri dati che non sono già nella bozza.
+            Incolla la bozza dell&apos;itinerario, carica un file (Excel/CSV o una foto), o entrambi: l&apos;AI la
+            trasformerà in giorni e attività, da rivedere con calma prima di passare l&apos;itinerario a
+            &quot;finale&quot;. Non inventa orari, numeri o altri dati che non sono già nella bozza.
           </p>
           <form action={dispatch} className="flex flex-col gap-3">
             {promptStyles.length > 0 && (
@@ -70,12 +71,17 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
             )}
             <textarea
               name="draft_text"
-              rows={10}
-              required
+              rows={8}
               placeholder={
                 "Es.\nGiorno 1: arrivo a Roma, check-in Hotel Roma Centro (via...). Cena libera.\nGiorno 2: ore 9:30 visita guidata al Colosseo, punto di incontro davanti all'ingresso. Pranzo libero. Pomeriggio al Foro Romano."
               }
               className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+            />
+            <DropzoneUpload
+              name="draft_file"
+              accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv"
+              label="Carica un file (Excel/CSV o una foto della bozza)"
+              autoSubmit={false}
             />
             {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
             <div className="mt-1 flex justify-end gap-2">
