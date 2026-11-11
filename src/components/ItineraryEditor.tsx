@@ -36,6 +36,7 @@ import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import ActivityForm from "@/components/ActivityForm";
+import MiniDatePicker from "@/components/MiniDatePicker";
 import Modal from "@/components/Modal";
 import {
   addActivity,
@@ -486,37 +487,7 @@ function DayPanel({
       <div className="sticky top-4 z-10 mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 py-1 backdrop-blur">
         <h3 className="font-medium capitalize text-slate-900">
           {day.day_order === 0 ? (
-            isEditingStartDate ? (
-              <form
-                action={rebaseTripDates.bind(null, tripId)}
-                onSubmit={() => setIsEditingStartDate(false)}
-                className="inline-flex items-center gap-1.5 align-middle"
-              >
-                <input
-                  type="date"
-                  name="new_first_date"
-                  defaultValue={day.day_date ?? ""}
-                  autoFocus
-                  onKeyDown={(e) => {
-                    if (e.key === "Escape") setIsEditingStartDate(false);
-                  }}
-                  className="rounded border border-[#ddc8a0] px-2 py-1 text-sm font-normal normal-case outline-none focus:border-[#cda876]"
-                />
-                <button
-                  type="submit"
-                  className="rounded-md bg-[#233c5e] px-2.5 py-1 text-xs font-semibold text-white hover:bg-[#17283f]"
-                >
-                  Conferma
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setIsEditingStartDate(false)}
-                  className="rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100"
-                >
-                  Annulla
-                </button>
-              </form>
-            ) : (
+            <span className="relative inline-block">
               <span
                 role="button"
                 tabIndex={0}
@@ -526,7 +497,19 @@ function DayPanel({
               >
                 {dayLabel(day, 0, true)}
               </span>
-            )
+              {isEditingStartDate && (
+                <MiniDatePicker
+                  initialDate={day.day_date}
+                  onCancel={() => setIsEditingStartDate(false)}
+                  onConfirm={(iso) => {
+                    const fd = new FormData();
+                    fd.set("new_first_date", iso);
+                    rebaseTripDates(tripId, fd);
+                    setIsEditingStartDate(false);
+                  }}
+                />
+              )}
+            </span>
           ) : (
             dayLabel(day, 0, true)
           )}
@@ -700,7 +683,7 @@ function SortableActivityRow({
         onDoubleClick={onEdit}
         title="Trascina per spostare in un altro giorno · doppio click per modificare"
         style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
-        className="group rounded-md border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
+        className="group rounded-xl border-l-[5px] shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
       >
       <div className="flex items-center gap-1 px-1">
         <button
@@ -719,13 +702,17 @@ function SortableActivityRow({
           className="flex w-full min-w-0 items-center gap-2 py-2 text-left"
         >
           <span
-            style={{ backgroundColor: meta.color }}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
+            style={{ backgroundColor: meta.color, boxShadow: `0 2px 8px -1px ${meta.color}66` }}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white"
           >
             <Icon size={17} />
           </span>
-          <span className="min-w-0 flex-1 text-sm font-medium text-slate-900">
-            {activity.start_time && <span className="mr-2 text-slate-500">{activity.start_time.slice(0, 5)}</span>}
+          <span className="min-w-0 flex-1 font-[family-name:var(--font-display)] text-[15px] font-medium text-slate-900">
+            {activity.start_time && (
+              <span className="mr-2 font-[family-name:var(--font-sans)] text-sm text-slate-500">
+                {activity.start_time.slice(0, 5)}
+              </span>
+            )}
             {activity.title}
             {hasTimeClash && (
               <span title="Stesso orario di un'altra attività" className="ml-1.5 inline-block align-middle">
@@ -741,12 +728,12 @@ function SortableActivityRow({
       </div>
 
       {isExpanded && (
-        <div className="px-3 pb-3 pl-12">
+        <div className="border-t border-black/5 px-3 pb-3 pl-12 pt-3">
           <div className="flex flex-wrap items-start gap-3">
             <div className="min-w-0 flex-1">
               <span
-                style={{ color: meta.color, borderColor: meta.color }}
-                className="mb-1 inline-block rounded-full border px-2 py-0.5 text-xs font-medium"
+                style={{ color: meta.color, backgroundColor: "white" }}
+                className="mb-1 inline-block rounded-full px-2 py-0.5 text-xs font-semibold shadow-sm"
               >
                 {meta.label}
               </span>
