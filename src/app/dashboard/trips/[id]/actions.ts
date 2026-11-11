@@ -814,27 +814,44 @@ export async function duplicateTripAsVariant(tripId: string) {
     .select("*, activities(*)")
     .eq("trip_id", tripId)
     .order("day_order", { ascending: true });
+  const sourceDays = (days as (TripDay & { activities: Activity[] })[]) || [];
 
-  for (const day of (days as (TripDay & { activities: Activity[] })[]) || []) {
-    const { data: newDay } = await supabase
+  // Un solo inserimento per tutti i giorni, poi uno solo per tutte le
+  // attività: con viaggi lunghi (tanti giorni/attività), inserire riga per
+  // riga in sequenza era lento e dava l'impressione che il tasto non
+  // avesse funzionato.
+  if (sourceDays.length > 0) {
+    const { data: newDays } = await supabase
       .from("trip_days")
-      .insert({ trip_id: newTrip.id, day_date: day.day_date, day_order: day.day_order, notes: day.notes })
-      .select("id")
-      .single();
-
-    if (newDay && day.activities?.length) {
-      await supabase.from("activities").insert(
-        day.activities.map((activity) => ({
-          trip_day_id: newDay.id,
-          start_time: activity.start_time,
-          title: activity.title,
-          description: activity.description,
-          location: activity.location,
-          activity_type: activity.activity_type,
-          details: activity.details,
-          activity_order: activity.activity_order,
+      .insert(
+        sourceDays.map((day) => ({
+          trip_id: newTrip.id,
+          day_date: day.day_date,
+          day_order: day.day_order,
+          notes: day.notes,
         })),
-      );
+      )
+      .select("id, day_order");
+
+    const newDayIdByOrder = new Map((newDays || []).map((d) => [d.day_order, d.id as string]));
+
+    const activityRows = sourceDays.flatMap((day) => {
+      const newDayId = newDayIdByOrder.get(day.day_order);
+      if (!newDayId || !day.activities?.length) return [];
+      return day.activities.map((activity) => ({
+        trip_day_id: newDayId,
+        start_time: activity.start_time,
+        title: activity.title,
+        description: activity.description,
+        location: activity.location,
+        activity_type: activity.activity_type,
+        details: activity.details,
+        activity_order: activity.activity_order,
+      }));
+    });
+
+    if (activityRows.length > 0) {
+      await supabase.from("activities").insert(activityRows);
     }
   }
 

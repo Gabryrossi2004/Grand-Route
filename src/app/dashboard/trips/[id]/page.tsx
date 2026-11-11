@@ -35,6 +35,7 @@ import ExpandableSection from "@/components/ExpandableSection";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
+import SubmitButton from "@/components/SubmitButton";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
@@ -352,13 +353,13 @@ function CoverHero({
         </form>
 
         <form action={duplicateTripAsVariant.bind(null, trip.id)}>
-          <button
-            type="submit"
-            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          <SubmitButton
+            pendingLabel="Creazione variante…"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
           >
             <Copy size={15} />
             Crea variante
-          </button>
+          </SubmitButton>
         </form>
 
         <TripServicesPanel
