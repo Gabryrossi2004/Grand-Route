@@ -144,6 +144,14 @@ export type ActivityTemplate = {
   created_at: string;
 };
 
+export type PromptStyle = {
+  id: string;
+  owner_id: string;
+  title: string;
+  prompt_text: string;
+  created_at: string;
+};
+
 export type ActivityPhoto = {
   id: string;
   activity_id: string;

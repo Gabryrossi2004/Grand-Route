@@ -6,6 +6,7 @@ import type {
   ActivityPhoto,
   ActivityTemplate,
   Profile,
+  PromptStyle,
   Supplier,
   Trip,
   TripChecklistItem,
@@ -83,6 +84,7 @@ export default async function TripDetailPage({
     { data: tripPayments },
     { data: ownerProfile },
     { data: documents },
+    { data: promptStyles },
   ] = await Promise.all([
     supabase
       .from("trip_days")
@@ -104,6 +106,7 @@ export default async function TripDetailPage({
     supabase.from("trip_payments").select("*").eq("trip_id", id).order("due_date", { ascending: true }),
     supabase.from("profiles").select("*").eq("id", user?.id ?? "").single(),
     supabase.from("documents").select("*").eq("trip_id", id).order("uploaded_at", { ascending: false }),
+    supabase.from("prompt_styles").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: true }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -193,7 +196,9 @@ export default async function TripDetailPage({
             <h2 className="text-lg font-semibold text-white">Itinerario</h2>
             <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
           </div>
-          {orderedDays.length === 0 && <AiItineraryGenerator tripId={id} />}
+          {orderedDays.length === 0 && (
+            <AiItineraryGenerator tripId={id} promptStyles={(promptStyles as PromptStyle[]) || []} />
+          )}
         </div>
         <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">

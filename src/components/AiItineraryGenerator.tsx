@@ -3,11 +3,12 @@
 import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Sparkles } from "lucide-react";
+import type { PromptStyle } from "@/lib/types";
 import Modal from "@/components/Modal";
 import SubmitButton from "@/components/SubmitButton";
 import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 
-export default function AiItineraryGenerator({ tripId }: { tripId: string }) {
+export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId: string; promptStyles: PromptStyle[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const action = applyAiItineraryDraft.bind(null, tripId);
@@ -40,6 +41,33 @@ export default function AiItineraryGenerator({ tripId }: { tripId: string }) {
             inventa orari, numeri o altri dati che non sono già nella bozza.
           </p>
           <form action={dispatch} className="flex flex-col gap-3">
+            {promptStyles.length > 0 && (
+              <div>
+                <label htmlFor="prompt_style_id" className="mb-1 block text-sm font-medium text-slate-700">
+                  Stile di scrittura (opzionale)
+                </label>
+                <select
+                  id="prompt_style_id"
+                  name="prompt_style_id"
+                  defaultValue=""
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+                >
+                  <option value="">Nessuno in particolare</option>
+                  {promptStyles.map((style) => (
+                    <option key={style.id} value={style.id}>
+                      {style.title}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-1 text-xs text-slate-400">
+                  Gestisci gli stili disponibili dalla{" "}
+                  <a href="/dashboard/library" className="font-medium text-[#233c5e] hover:underline">
+                    Libreria
+                  </a>
+                  .
+                </p>
+              </div>
+            )}
             <textarea
               name="draft_text"
               rows={10}

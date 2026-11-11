@@ -929,6 +929,17 @@ export async function applyAiItineraryDraft(
   const draftText = String(formData.get("draft_text") ?? "").trim();
   if (!draftText) return { error: "Incolla prima il testo della bozza." };
 
+  const promptStyleId = String(formData.get("prompt_style_id") ?? "") || null;
+  let styleInstructions: string | null = null;
+  if (promptStyleId) {
+    const { data: styleRow } = await supabase
+      .from("prompt_styles")
+      .select("prompt_text")
+      .eq("id", promptStyleId)
+      .maybeSingle();
+    styleInstructions = styleRow?.prompt_text ?? null;
+  }
+
   const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).single();
   if (!trip) return { error: "Viaggio non trovato." };
 
@@ -971,7 +982,7 @@ export async function applyAiItineraryDraft(
 
   let generated;
   try {
-    generated = await generateItineraryFromDraft({ draftText, styleExamples });
+    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions });
   } catch {
     return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
   }

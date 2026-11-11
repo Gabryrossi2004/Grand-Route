@@ -55,13 +55,17 @@ function describeActivityTypes(): string {
     .join("\n");
 }
 
-function buildSystemPrompt(styleExamples: string[]): string {
+function buildSystemPrompt(styleExamples: string[], styleInstructions: string | null): string {
   const stylePart =
     styleExamples.length > 0
       ? `\n\nSTILE DI SCRITTURA DI QUESTA AGENZIA (esempi reali da loro itinerari precedenti — scrivi le nuove descrizioni con un tono e uno stile simile a questi):\n${styleExamples
           .map((example, index) => `${index + 1}. ${example}`)
           .join("\n")}`
       : "";
+
+  const chosenStylePart = styleInstructions
+    ? `\n\nSTILE RICHIESTO PER QUESTO VIAGGIO (scelto dall'agenzia per questo cliente/tipo di viaggio specifico — ha priorità sul tono generico della regola 6):\n${styleInstructions}`
+    : "";
 
   return `Sei un assistente che trasforma la bozza di un itinerario di viaggio (scritta liberamente da un'agenzia o tour operator) in un itinerario strutturato, giorno per giorno, usando le categorie di attività del loro gestionale.
 
@@ -74,7 +78,7 @@ REGOLE FONDAMENTALI:
 3. Dividi le attività nei giorni corretti, in ordine cronologico, a partire da day_index 0.
 4. Ogni attività ha un titolo breve e chiaro.
 5. Non aggiungere attività non presenti nella bozza, anche se "scontate" per quel tipo di viaggio.
-6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${stylePart}`;
+6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${chosenStylePart}${stylePart}`;
 }
 
 // Fase 1: bozza come testo libero (incollato). Le fasi successive
@@ -83,13 +87,14 @@ REGOLE FONDAMENTALI:
 export async function generateItineraryFromDraft(params: {
   draftText: string;
   styleExamples: string[];
+  styleInstructions?: string | null;
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
 
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 16000,
-    system: buildSystemPrompt(params.styleExamples),
+    system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null),
     messages: [{ role: "user", content: params.draftText }],
     output_config: { format: zodOutputFormat(GeneratedItinerarySchema) },
   });
