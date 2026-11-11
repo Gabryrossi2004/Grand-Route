@@ -4,9 +4,18 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
-import { CHECK_OUT_DATE_KEY, confirmationDetailKey } from "@/lib/activityTypes";
+import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
 import { validateDocumentFile, validateImageFile } from "@/lib/fileValidation";
-import type { Activity, ItineraryStage, PaymentDirection, ServiceStatus, TripChecklistItem, TripDay } from "@/lib/types";
+import { generateItineraryFromDraft } from "@/lib/itineraryAi";
+import type {
+  Activity,
+  ActivityType,
+  ItineraryStage,
+  PaymentDirection,
+  ServiceStatus,
+  TripChecklistItem,
+  TripDay,
+} from "@/lib/types";
 
 type SupabaseServerClient = Awaited<ReturnType<typeof createClient>>;
 
@@ -894,4 +903,115 @@ export async function deleteTripPayment(tripId: string, paymentId: string) {
   await supabase.from("trip_payments").delete().eq("id", paymentId);
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath("/dashboard");
+}
+
+function addDaysToDate(dateStr: string, days: number): string {
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+// Genera un itinerario a partire da una bozza scritta liberamente (Fase 1:
+// solo testo incollato) e lo inserisce come giorni/attività veri, pronti per
+// essere rivisti e corretti dall'agenzia prima di passare a "finale".
+// Pensata solo per un viaggio con itinerario ancora vuoto: fonde dati nuovi
+// con un itinerario già popolato è un rischio che rimandiamo a dopo.
+export async function applyAiItineraryDraft(
+  tripId: string,
+  formData: FormData,
+): Promise<{ error: string | null }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Non autenticato." };
+
+  const draftText = String(formData.get("draft_text") ?? "").trim();
+  if (!draftText) return { error: "Incolla prima il testo della bozza." };
+
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).single();
+  if (!trip) return { error: "Viaggio non trovato." };
+
+  const { count: existingDaysCount } = await supabase
+    .from("trip_days")
+    .select("id", { count: "exact", head: true })
+    .eq("trip_id", tripId);
+  if ((existingDaysCount ?? 0) > 0) {
+    return {
+      error: "Questo viaggio ha già un itinerario: la generazione AI è pensata solo per un viaggio nuovo e vuoto.",
+    };
+  }
+
+  // Esempi di stile: alcune descrizioni scritte in passato da questa stessa
+  // agenzia su altri viaggi, per far scrivere all'AI con un tono simile.
+  const { data: ownerTripRows } = await supabase
+    .from("trips")
+    .select("id")
+    .eq("owner_id", user.id)
+    .neq("id", tripId)
+    .limit(10);
+  const ownerTripIds = (ownerTripRows || []).map((t) => t.id);
+  let styleExamples: string[] = [];
+  if (ownerTripIds.length > 0) {
+    const { data: ownerDayRows } = await supabase.from("trip_days").select("id").in("trip_id", ownerTripIds);
+    const dayIds = (ownerDayRows || []).map((d) => d.id);
+    if (dayIds.length > 0) {
+      const { data: styleActs } = await supabase
+        .from("activities")
+        .select("description")
+        .in("trip_day_id", dayIds)
+        .not("description", "is", null)
+        .limit(40);
+      styleExamples = (styleActs || [])
+        .map((a) => String(a.description).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
+        .filter((text) => text.length > 40)
+        .slice(0, 5);
+    }
+  }
+
+  let generated;
+  try {
+    generated = await generateItineraryFromDraft({ draftText, styleExamples });
+  } catch {
+    return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
+  }
+
+  const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);
+
+  for (const [dayOrder, day] of sortedDays.entries()) {
+    const dayDate = trip.start_date ? addDaysToDate(trip.start_date, dayOrder) : null;
+    const { data: insertedDay } = await supabase
+      .from("trip_days")
+      .insert({ trip_id: tripId, day_order: dayOrder, day_date: dayDate, title: day.title || null })
+      .select("id")
+      .single();
+    if (!insertedDay) continue;
+
+    for (const [activityOrder, activity] of day.activities.entries()) {
+      const activityType = activity.activity_type as ActivityType;
+      const allowedKeys = new Set(detailFields[activityType].map((field) => field.key));
+      const cleanDetails: Record<string, string> = {};
+      for (const [key, value] of Object.entries(activity.details || {})) {
+        if (allowedKeys.has(key) && typeof value === "string" && value.trim()) cleanDetails[key] = value.trim();
+      }
+
+      await supabase.from("activities").insert({
+        trip_day_id: insertedDay.id,
+        title: activity.title || "Attività",
+        start_time: activity.start_time || null,
+        description: activity.description || null,
+        location: activity.location || null,
+        activity_type: activityType,
+        details: cleanDetails,
+        activity_order: activityOrder,
+      });
+
+      if (activityType === "alloggio") {
+        await handleLodgingCheckout(supabase, tripId, insertedDay.id, activity.title || "Attività", cleanDetails);
+      }
+    }
+  }
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  return { error: null };
 }

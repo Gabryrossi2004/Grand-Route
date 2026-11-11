@@ -27,6 +27,7 @@ import {
   MapPin,
   Rocket,
 } from "lucide-react";
+import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ItineraryEditor from "@/components/ItineraryEditor";
@@ -187,9 +188,12 @@ export default async function TripDetailPage({
       <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
 
       <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">
-        <div className="bg-gradient-to-r from-[#233c5e] via-[#333d4a] to-[#17283f] px-5 py-4">
-          <h2 className="text-lg font-semibold text-white">Itinerario</h2>
-          <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-[#233c5e] via-[#333d4a] to-[#17283f] px-5 py-4">
+          <div>
+            <h2 className="text-lg font-semibold text-white">Itinerario</h2>
+            <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
+          </div>
+          {orderedDays.length === 0 && <AiItineraryGenerator tripId={id} />}
         </div>
         <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">
