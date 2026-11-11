@@ -1,4 +1,4 @@
-import type { Activity, ActivityPhoto, Trip, TripDay } from "@/lib/types";
+import type { Activity, ActivityPhoto, Trip, TripDay, TripPayment } from "@/lib/types";
 import { activityTypes, detailFieldLabel, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
@@ -9,6 +9,11 @@ import Image from "next/image";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
+
+function formatDate(value: string | null) {
+  if (!value) return null;
+  return new Date(`${value}T00:00:00`).toLocaleDateString("it-IT");
+}
 
 function dayDateLabel(day: TripDay, index: number) {
   return day.day_date
@@ -31,6 +36,7 @@ export default function TripItineraryView({
   logoUrl,
   agencyTerms,
   headerExtra,
+  payments,
 }: {
   trip: Trip;
   days: DayWithActivities[];
@@ -38,6 +44,7 @@ export default function TripItineraryView({
   logoUrl?: string | null;
   agencyTerms?: string | null;
   headerExtra?: React.ReactNode;
+  payments?: TripPayment[];
 }) {
   const theme = trip.theme || "elegante";
   const price = getDisplayPrice(trip);
@@ -245,6 +252,35 @@ export default function TripItineraryView({
                 <p className="theme-muted whitespace-pre-line text-sm">{agencyTerms}</p>
               </div>
             )}
+          </section>
+        )}
+
+        {payments && payments.length > 0 && (
+          <section className="theme-card mt-10 p-5">
+            <h2 className="theme-heading-font mb-3 text-lg font-semibold">Pagamenti</h2>
+            <ul className="flex flex-col gap-2">
+              {payments.map((payment) => (
+                <li
+                  key={payment.id}
+                  className="theme-border flex flex-wrap items-center justify-between gap-2 border-b pb-2 text-sm last:border-0 last:pb-0"
+                >
+                  <div>
+                    <p className="font-medium">{payment.notes || "Quota viaggio"}</p>
+                    {payment.due_date && <p className="theme-muted text-xs">Scadenza: {formatDate(payment.due_date)}</p>}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold">{formatEuro(payment.amount)}</span>
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                        payment.paid_date ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"
+                      }`}
+                    >
+                      {payment.paid_date ? "Pagato" : "Da pagare"}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
       </main>

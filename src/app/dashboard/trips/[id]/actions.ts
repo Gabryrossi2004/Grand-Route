@@ -777,6 +777,7 @@ function readServiceFields(formData: FormData) {
     supplier_id: String(formData.get("supplier_id") ?? "") || null,
     activity_id: String(formData.get("activity_id") ?? "") || null,
     net_cost: formData.get("net_cost") ? Number(formData.get("net_cost")) : null,
+    sell_price: formData.get("sell_price") ? Number(formData.get("sell_price")) : null,
     confirmation_number: String(formData.get("confirmation_number") ?? "").trim() || null,
     notes: String(formData.get("notes") ?? "").trim() || null,
   };

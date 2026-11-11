@@ -32,6 +32,12 @@ export default async function ClientPortalLayout({ children }: { children: React
           </Link>
           <nav className="flex items-center gap-2 text-sm">
             {fullName && <span className="hidden px-1 text-[#6b5f4a] sm:inline">Ciao, {fullName.split(" ")[0]}</span>}
+            <Link
+              href="/client/documenti"
+              className="rounded-md px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#f2e2c4] hover:text-[#233c5e]"
+            >
+              I tuoi dati
+            </Link>
             <form action={clientSignOut}>
               <button
                 type="submit"

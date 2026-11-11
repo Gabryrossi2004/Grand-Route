@@ -136,16 +136,32 @@ function ServiceForm({
           />
         </div>
         <div>
-          <label htmlFor="service_confirmation_number" className="mb-1 block text-sm font-medium text-slate-700">
-            Numero conferma
+          <label htmlFor="service_sell_price" className="mb-1 block text-sm font-medium text-slate-700">
+            Prezzo di vendita (€)
           </label>
           <input
-            id="service_confirmation_number"
-            name="confirmation_number"
-            defaultValue={service?.confirmation_number ?? ""}
+            id="service_sell_price"
+            name="sell_price"
+            type="number"
+            step="0.01"
+            min="0"
+            placeholder="Opzionale, per il margine"
+            defaultValue={service?.sell_price ?? ""}
             className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="service_confirmation_number" className="mb-1 block text-sm font-medium text-slate-700">
+          Numero conferma
+        </label>
+        <input
+          id="service_confirmation_number"
+          name="confirmation_number"
+          defaultValue={service?.confirmation_number ?? ""}
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+        />
       </div>
 
       <div>
@@ -320,6 +336,7 @@ function serviceToFormData(service: TripService, overrides: Record<string, strin
   fd.set("activity_id", service.activity_id ?? "");
   fd.set("status", service.status);
   fd.set("net_cost", service.net_cost != null ? String(service.net_cost) : "");
+  fd.set("sell_price", service.sell_price != null ? String(service.sell_price) : "");
   fd.set("confirmation_number", service.confirmation_number ?? "");
   fd.set("notes", service.notes ?? "");
   for (const [key, value] of Object.entries(overrides)) fd.set(key, value);
@@ -559,6 +576,10 @@ export default function TripServicesPanel({
 
   const sortedServices = [...services].sort((a, b) => a.service_order - b.service_order);
   const toBookCount = services.filter((s) => s.status === "da_prenotare" || s.status === "richiesto").length;
+  const totalMargin = services
+    .filter((s) => s.sell_price != null)
+    .reduce((sum, s) => sum + (s.sell_price! - (s.net_cost ?? 0)), 0);
+  const servicesWithMargin = services.filter((s) => s.sell_price != null).length;
 
   const sortedPayments = [...payments].sort((a, b) => {
     if (!a.due_date) return 1;
@@ -622,6 +643,15 @@ export default function TripServicesPanel({
 
           {tab === "servizi" && (
             <>
+              {servicesWithMargin > 0 && (
+                <div className="mb-4 rounded-lg bg-green-50 p-3">
+                  <p className="text-xs font-medium uppercase tracking-wide text-green-700">
+                    Margine totale ({servicesWithMargin} {servicesWithMargin === 1 ? "servizio" : "servizi"} con prezzo di vendita)
+                  </p>
+                  <p className="text-lg font-semibold text-green-700">{formatEuro(totalMargin)}</p>
+                </div>
+              )}
+
               {sortedServices.length === 0 && serviceFormTarget !== "new" && (
                 <p className="mb-4 text-sm text-slate-400">Nessun servizio aggiunto ancora.</p>
               )}
@@ -659,6 +689,12 @@ export default function TripServicesPanel({
                                     <span>Fornitore: {supplierName(service.supplier_id)}</span>
                                   )}
                                   {service.net_cost != null && <span>Costo netto: {formatEuro(service.net_cost)}</span>}
+                                  {service.sell_price != null && <span>Vendita: {formatEuro(service.sell_price)}</span>}
+                                  {service.sell_price != null && (
+                                    <span className="font-medium text-green-700">
+                                      Margine: {formatEuro(service.sell_price - (service.net_cost ?? 0))}
+                                    </span>
+                                  )}
                                   {service.confirmation_number && <span>Conferma: {service.confirmation_number}</span>}
                                   {activityLabel(service.activity_id) && (
                                     <span>Collegato a: {activityLabel(service.activity_id)}</span>

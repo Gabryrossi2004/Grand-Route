@@ -52,12 +52,18 @@ function MaskedField({
   );
 }
 
-export default function ClientDetailsFields({ client }: { client?: Client }) {
+export default function ClientDetailsFields({
+  client,
+  defaultOpen = false,
+  summaryLabel = "Dati anagrafici e documenti (opzionali)",
+}: {
+  client?: Client;
+  defaultOpen?: boolean;
+  summaryLabel?: string;
+}) {
   return (
-    <details className="rounded-lg border border-[#e6d7bb] bg-slate-50 p-3">
-      <summary className="cursor-pointer select-none text-sm font-medium text-slate-700">
-        Dati anagrafici e documenti (opzionali)
-      </summary>
+    <details open={defaultOpen} className="rounded-lg border border-[#e6d7bb] bg-slate-50 p-3">
+      <summary className="cursor-pointer select-none text-sm font-medium text-slate-700">{summaryLabel}</summary>
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="date_of_birth" className={labelClass}>

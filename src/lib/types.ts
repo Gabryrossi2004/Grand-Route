@@ -194,6 +194,7 @@ export type TripService = {
   title: string;
   status: ServiceStatus;
   net_cost: number | null;
+  sell_price: number | null;
   confirmation_number: string | null;
   notes: string | null;
   service_order: number;
