@@ -60,7 +60,7 @@ export default function LibraryGrid({
                       style={{ backgroundColor: meta.color }}
                       className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
                     >
-                      <Icon size={14} weight="light" />
+                      <Icon size={14} />
                     </span>
                     <div>
                       <p className="font-medium text-slate-900">{template.title}</p>

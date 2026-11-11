@@ -1,29 +1,29 @@
 import {
-  Airplane,
-  Bed,
-  Boat,
+  BedDouble,
   Car,
+  CircleEllipsis,
   Compass,
-  DotsThreeCircle,
-  ForkKnife,
   Info,
+  Plane,
   Sailboat,
-  Train,
-} from "@phosphor-icons/react/dist/ssr";
-import type { Icon } from "@phosphor-icons/react";
+  Ship,
+  TrainFront,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
 import type { ActivityType } from "./types";
 
-export const activityTypes: Record<ActivityType, { label: string; color: string; bg: string; icon: Icon }> = {
-  volo: { label: "Volo", color: "#2563eb", bg: "#eff6ff", icon: Airplane },
-  alloggio: { label: "Alloggio", color: "#7c3aed", bg: "#f5f3ff", icon: Bed },
+export const activityTypes: Record<ActivityType, { label: string; color: string; bg: string; icon: LucideIcon }> = {
+  volo: { label: "Volo", color: "#2563eb", bg: "#eff6ff", icon: Plane },
+  alloggio: { label: "Alloggio", color: "#7c3aed", bg: "#f5f3ff", icon: BedDouble },
   transfer: { label: "Transfer", color: "#ea580c", bg: "#fff7ed", icon: Car },
-  treno: { label: "Treno", color: "#4f46e5", bg: "#eef2ff", icon: Train },
-  traghetto: { label: "Traghetto", color: "#0d9488", bg: "#f0fdfa", icon: Boat },
+  treno: { label: "Treno", color: "#4f46e5", bg: "#eef2ff", icon: TrainFront },
+  traghetto: { label: "Traghetto", color: "#0d9488", bg: "#f0fdfa", icon: Ship },
   crociera: { label: "Crociera", color: "#db2777", bg: "#fdf2f8", icon: Sailboat },
-  ristorante: { label: "Ristorante", color: "#dc2626", bg: "#fef2f2", icon: ForkKnife },
+  ristorante: { label: "Ristorante", color: "#dc2626", bg: "#fef2f2", icon: UtensilsCrossed },
   attivita: { label: "Attività", color: "#16a34a", bg: "#f0fdf4", icon: Compass },
   info: { label: "Info", color: "#0891b2", bg: "#ecfeff", icon: Info },
-  altro: { label: "Altro", color: "#64748b", bg: "#f8fafc", icon: DotsThreeCircle },
+  altro: { label: "Altro", color: "#64748b", bg: "#f8fafc", icon: CircleEllipsis },
 };
 
 export const activityTypeOptions = Object.entries(activityTypes).map(([value, meta]) => ({

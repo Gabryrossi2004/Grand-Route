@@ -760,17 +760,17 @@ function SortableActivityRow({
         <button
           type="button"
           onClick={onToggleExpand}
-          className="flex w-full min-w-0 items-center gap-2 py-2.5 text-left"
+          className="flex w-full min-w-0 items-center gap-2 py-1.5 text-left"
         >
           <span
             style={{ backgroundColor: meta.color, boxShadow: `0 2px 8px -1px ${meta.color}66` }}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
           >
-            <Icon size={19} weight="light" />
+            <Icon size={17} strokeWidth={1.75} />
           </span>
-          <span className="min-w-0 flex-1 font-[family-name:var(--font-display)] text-base font-medium text-slate-900">
+          <span className="min-w-0 flex-1 font-[family-name:var(--font-display)] text-lg font-medium text-slate-900">
             {activity.start_time && (
-              <span className="mr-2 font-[family-name:var(--font-sans)] text-[14px] text-slate-500">
+              <span className="mr-2 font-[family-name:var(--font-sans)] text-[15px] text-slate-500">
                 {activity.start_time.slice(0, 5)}
               </span>
             )}
