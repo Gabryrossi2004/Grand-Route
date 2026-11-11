@@ -88,6 +88,7 @@ export default async function TripDetailPage({
     { data: ownerProfile },
     { data: documents },
     { data: promptStyles },
+    { data: variantTrips },
   ] = await Promise.all([
     supabase
       .from("trip_days")
@@ -110,6 +111,14 @@ export default async function TripDetailPage({
     supabase.from("profiles").select("*").eq("id", user?.id ?? "").single(),
     supabase.from("documents").select("*").eq("trip_id", id).order("uploaded_at", { ascending: false }),
     supabase.from("prompt_styles").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: true }),
+    trip.group_id
+      ? supabase
+          .from("trips")
+          .select("id, title, is_published")
+          .eq("group_id", trip.group_id)
+          .neq("id", id)
+          .order("created_at", { ascending: true })
+      : Promise.resolve({ data: [] as { id: string; title: string; is_published: boolean }[] }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -158,6 +167,7 @@ export default async function TripDetailPage({
         suppliers={(suppliers as Supplier[]) || []}
         payments={(tripPayments as TripPayment[]) || []}
         activityOptions={activityOptions}
+        variantTrips={variantTrips || []}
       />
       <div className="flex flex-wrap items-start gap-4">
         <TripInfoForm trip={trip} />
@@ -256,6 +266,7 @@ function CoverHero({
   suppliers,
   payments,
   activityOptions,
+  variantTrips,
 }: {
   trip: Trip;
   publicUrl: string;
@@ -263,6 +274,7 @@ function CoverHero({
   suppliers: Supplier[];
   payments: TripPayment[];
   activityOptions: { id: string; label: string }[];
+  variantTrips: { id: string; title: string; is_published: boolean }[];
 }) {
   const dateRange =
     trip.start_date && trip.end_date
@@ -386,6 +398,22 @@ function CoverHero({
           </span>
         )}
       </div>
+
+      {variantTrips.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Varianti di questo viaggio:</span>
+          {variantTrips.map((variant) => (
+            <Link
+              key={variant.id}
+              href={`/dashboard/trips/${variant.id}`}
+              className="flex items-center gap-1.5 rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-sm font-medium text-[#233c5e] transition hover:bg-[#faf3e6]"
+            >
+              {variant.title}
+              {!variant.is_published && <span className="text-xs text-slate-400">(bozza)</span>}
+            </Link>
+          ))}
+        </div>
+      )}
 
       <form action={uploadCover.bind(null, trip.id)} encType="multipart/form-data" className="p-4">
         <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" />
