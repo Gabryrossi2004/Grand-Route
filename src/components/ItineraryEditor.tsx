@@ -764,13 +764,13 @@ function SortableActivityRow({
         >
           <span
             style={{ backgroundColor: meta.color, boxShadow: `0 2px 8px -1px ${meta.color}66` }}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white"
           >
-            <Icon size={17} />
+            <Icon size={19} strokeWidth={1.75} />
           </span>
-          <span className="min-w-0 flex-1 font-[family-name:var(--font-display)] text-[15px] font-medium text-slate-900">
+          <span className="min-w-0 flex-1 font-[family-name:var(--font-display)] text-base font-medium text-slate-900">
             {activity.start_time && (
-              <span className="mr-2 font-[family-name:var(--font-sans)] text-sm text-slate-500">
+              <span className="mr-2 font-[family-name:var(--font-sans)] text-[14px] text-slate-500">
                 {activity.start_time.slice(0, 5)}
               </span>
             )}
@@ -794,7 +794,7 @@ function SortableActivityRow({
             <div className="min-w-0 flex-1">
               <span
                 style={{ color: meta.color, backgroundColor: "white" }}
-                className="mb-1 inline-block rounded-full px-2 py-0.5 text-xs font-semibold shadow-sm"
+                className="mb-1 inline-block rounded-full px-2 py-0.5 text-[13px] font-semibold shadow-sm"
               >
                 {meta.label}
               </span>
