@@ -5,8 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const WEEKDAY_LABELS = ["L", "M", "M", "G", "V", "S", "D"];
 
+// Formatta usando i componenti locali della data (anno/mese/giorno così come
+// l'ha costruita "new Date(year, month, day)"), MAI passando per
+// toISOString(): quella converte in UTC, e con un fuso avanti rispetto a UTC
+// (come l'Italia) sposta la data indietro di un giorno.
 function toDateKey(date: Date) {
-  return date.toISOString().slice(0, 10);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 // Calendario compatto per scegliere una data: si naviga tra i mesi, si

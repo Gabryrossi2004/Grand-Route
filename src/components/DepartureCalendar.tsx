@@ -7,8 +7,16 @@ import type { Trip } from "@/lib/types";
 
 const WEEKDAY_LABELS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 
+// Formatta usando i componenti locali della data, MAI passando per
+// toISOString(): quella converte in UTC, e con un fuso avanti rispetto a UTC
+// (come l'Italia) sposta la data indietro di un giorno — il giorno 13
+// risulterebbe "12" nella chiave, disallineando partenze/rientri dalla
+// cella giusta del calendario.
 function toDateKey(date: Date) {
-  return date.toISOString().slice(0, 10);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
