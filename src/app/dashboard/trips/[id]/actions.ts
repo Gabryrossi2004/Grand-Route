@@ -645,8 +645,65 @@ export async function uploadDocument(
 
 export async function deleteDocument(tripId: string, documentId: string, filePath: string) {
   const supabase = await createClient();
-  await supabase.storage.from("trip-documents").remove([filePath]);
+  const { data: existing } = await supabase
+    .from("documents")
+    .select("cover_image_path")
+    .eq("id", documentId)
+    .maybeSingle();
+
+  const pathsToRemove = [filePath, ...(existing?.cover_image_path ? [existing.cover_image_path] : [])];
+  await supabase.storage.from("trip-documents").remove(pathsToRemove);
   await supabase.from("documents").delete().eq("id", documentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function renameDocument(tripId: string, documentId: string, formData: FormData) {
+  const supabase = await createClient();
+  const fileName = String(formData.get("file_name") ?? "").trim();
+  if (!fileName) return;
+  await supabase.from("documents").update({ file_name: fileName }).eq("id", documentId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+// Foto di copertina opzionale per un documento già caricato: puramente
+// organizzativa (es. riconoscere a colpo d'occhio la prima pagina di un
+// passaporto), salvata nello stesso bucket privato dei documenti stessi.
+export async function uploadDocumentCover(tripId: string, documentId: string, formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const file = formData.get("file");
+  if (!(file instanceof File) || file.size === 0) return;
+  if (validateImageFile(file)) return;
+
+  const { data: existing } = await supabase
+    .from("documents")
+    .select("cover_image_path")
+    .eq("id", documentId)
+    .maybeSingle();
+
+  const coverPath = `${user.id}/${tripId}/covers/${documentId}-${Date.now()}-${file.name}`;
+  const { error: uploadError } = await supabase.storage
+    .from("trip-documents")
+    .upload(coverPath, file, { contentType: file.type || undefined });
+  if (uploadError) return;
+
+  await supabase.from("documents").update({ cover_image_path: coverPath }).eq("id", documentId);
+
+  if (existing?.cover_image_path) {
+    await supabase.storage.from("trip-documents").remove([existing.cover_image_path]);
+  }
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
+export async function deleteDocumentCover(tripId: string, documentId: string, coverPath: string) {
+  const supabase = await createClient();
+  await supabase.storage.from("trip-documents").remove([coverPath]);
+  await supabase.from("documents").update({ cover_image_path: null }).eq("id", documentId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 

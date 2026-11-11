@@ -176,6 +176,7 @@ export type TripDocument = {
   file_name: string;
   file_path: string;
   file_type: string | null;
+  cover_image_path: string | null;
   uploaded_at: string;
 };
 

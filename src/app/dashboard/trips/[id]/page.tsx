@@ -29,6 +29,7 @@ import {
   Rocket,
 } from "lucide-react";
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
+import DocumentRow from "@/components/DocumentRow";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ItineraryEditor from "@/components/ItineraryEditor";
@@ -131,7 +132,11 @@ export default async function TripDetailPage({
       const { data } = await supabase.storage
         .from("trip-documents")
         .createSignedUrl(document.file_path, 60 * 10);
-      return { ...document, signedUrl: data?.signedUrl ?? null };
+      const coverUrl = document.cover_image_path
+        ? (await supabase.storage.from("trip-documents").createSignedUrl(document.cover_image_path, 60 * 10)).data
+            ?.signedUrl ?? null
+        : null;
+      return { ...document, signedUrl: data?.signedUrl ?? null, coverUrl };
     }),
   );
 
@@ -233,31 +238,7 @@ export default async function TripDetailPage({
           ) : (
             <ul className="mb-4 flex flex-col gap-2">
               {documentsWithUrl.map((document) => (
-                <li
-                  key={document.id}
-                  className="flex items-center justify-between gap-2 rounded-lg bg-slate-50 px-3 py-2"
-                >
-                  <span className="flex min-w-0 items-center gap-2">
-                    <FileText size={15} className="shrink-0 text-slate-400" />
-                    {document.signedUrl ? (
-                      <a
-                        href={document.signedUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="truncate text-sm font-medium text-[#233c5e] hover:underline"
-                      >
-                        {document.file_name}
-                      </a>
-                    ) : (
-                      <span className="truncate text-sm text-slate-700">{document.file_name}</span>
-                    )}
-                  </span>
-                  <form action={deleteDocument.bind(null, id, document.id, document.file_path)}>
-                    <button type="submit" className="shrink-0 text-xs text-red-500 hover:underline">
-                      Elimina
-                    </button>
-                  </form>
-                </li>
+                <DocumentRow key={document.id} tripId={id} document={document} />
               ))}
             </ul>
           )}
