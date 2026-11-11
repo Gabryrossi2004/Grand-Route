@@ -19,9 +19,10 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import {
   AlertTriangle,
-  ArrowUpDown,
   BookmarkPlus,
   ChevronDown,
+  ChevronsDown,
+  ChevronsUp,
   ChevronUp,
   Copy,
   FileText,
@@ -51,7 +52,6 @@ import {
   rebaseTripDates,
   reorderActivities,
   saveActivityToLibrary,
-  sortActivitiesByTime,
   swapDayContent,
   updateActivity,
   updateDayTitle,
@@ -401,6 +401,12 @@ function DayPanel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serverOrderKey]);
 
+  const allExpanded = sortedActivities.length > 0 && sortedActivities.every((a) => !collapsedIds.has(a.id));
+
+  function toggleAllExpanded() {
+    setCollapsedIds(allExpanded ? new Set(sortedActivities.map((a) => a.id)) : new Set());
+  }
+
   const activityById = new Map(sortedActivities.map((activity) => [activity.id, activity]));
   const orderedActivities = orderIds
     .map((id) => activityById.get(id))
@@ -517,11 +523,21 @@ function DayPanel({
         </h3>
         <div className="flex items-center gap-3">
           {sortedActivities.length > 1 && (
-            <form action={sortActivitiesByTime.bind(null, tripId, day.id)}>
-              <button type="submit" className="flex items-center gap-1 text-xs text-slate-500 hover:underline">
-                <ArrowUpDown size={12} /> Ordina per orario
-              </button>
-            </form>
+            <button
+              type="button"
+              onClick={toggleAllExpanded}
+              className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+            >
+              {allExpanded ? (
+                <>
+                  <ChevronsUp size={12} /> Chiudi tutte
+                </>
+              ) : (
+                <>
+                  <ChevronsDown size={12} /> Apri tutte
+                </>
+              )}
+            </button>
           )}
           <button
             type="button"
