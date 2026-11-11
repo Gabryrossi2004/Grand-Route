@@ -96,7 +96,12 @@ export async function generateItineraryFromDraft(params: {
     max_tokens: 16000,
     system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null),
     messages: [{ role: "user", content: params.draftText }],
-    output_config: { format: zodOutputFormat(GeneratedItinerarySchema) },
+    // "medium" invece del default "high": questo compito (estrarre e
+    // strutturare, non ragionare su un problema complesso) non sembra avere
+    // bisogno del ragionamento più approfondito, e un effort più basso
+    // genera meno token quindi risponde più in fretta (e costa un po' meno).
+    // Da tenere d'occhio sulla qualità del risultato nell'uso reale.
+    output_config: { effort: "medium", format: zodOutputFormat(GeneratedItinerarySchema) },
   });
 
   if (!response.parsed_output) {

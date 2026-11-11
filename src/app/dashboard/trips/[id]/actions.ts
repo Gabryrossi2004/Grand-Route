@@ -930,23 +930,22 @@ export async function applyAiItineraryDraft(
   if (!draftText) return { error: "Incolla prima il testo della bozza." };
 
   const promptStyleId = String(formData.get("prompt_style_id") ?? "") || null;
-  let styleInstructions: string | null = null;
-  if (promptStyleId) {
-    const { data: styleRow } = await supabase
-      .from("prompt_styles")
-      .select("prompt_text")
-      .eq("id", promptStyleId)
-      .maybeSingle();
-    styleInstructions = styleRow?.prompt_text ?? null;
-  }
 
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).single();
+  // Queste letture sono indipendenti tra loro: le facciamo in parallelo
+  // invece che una dopo l'altra, per non sommare i tempi di andata/ritorno
+  // al database (che è in un'altra regione rispetto al sito).
+  const [{ data: styleRow }, { data: trip }, { count: existingDaysCount }, { data: ownerTripRows }] =
+    await Promise.all([
+      promptStyleId
+        ? supabase.from("prompt_styles").select("prompt_text").eq("id", promptStyleId).maybeSingle()
+        : Promise.resolve({ data: null as { prompt_text: string } | null }),
+      supabase.from("trips").select("*").eq("id", tripId).single(),
+      supabase.from("trip_days").select("id", { count: "exact", head: true }).eq("trip_id", tripId),
+      supabase.from("trips").select("id").eq("owner_id", user.id).neq("id", tripId).limit(10),
+    ]);
+  const styleInstructions = styleRow?.prompt_text ?? null;
+
   if (!trip) return { error: "Viaggio non trovato." };
-
-  const { count: existingDaysCount } = await supabase
-    .from("trip_days")
-    .select("id", { count: "exact", head: true })
-    .eq("trip_id", tripId);
   if ((existingDaysCount ?? 0) > 0) {
     return {
       error: "Questo viaggio ha già un itinerario: la generazione AI è pensata solo per un viaggio nuovo e vuoto.",
@@ -955,12 +954,6 @@ export async function applyAiItineraryDraft(
 
   // Esempi di stile: alcune descrizioni scritte in passato da questa stessa
   // agenzia su altri viaggi, per far scrivere all'AI con un tono simile.
-  const { data: ownerTripRows } = await supabase
-    .from("trips")
-    .select("id")
-    .eq("owner_id", user.id)
-    .neq("id", tripId)
-    .limit(10);
   const ownerTripIds = (ownerTripRows || []).map((t) => t.id);
   let styleExamples: string[] = [];
   if (ownerTripIds.length > 0) {
@@ -989,16 +982,40 @@ export async function applyAiItineraryDraft(
 
   const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);
 
-  for (const [dayOrder, day] of sortedDays.entries()) {
-    const dayDate = trip.start_date ? addDaysToDate(trip.start_date, dayOrder) : null;
-    const { data: insertedDay } = await supabase
-      .from("trip_days")
-      .insert({ trip_id: tripId, day_order: dayOrder, day_date: dayDate, title: day.title || null })
-      .select("id")
-      .single();
-    if (!insertedDay) continue;
+  // Un solo inserimento per tutti i giorni, poi uno solo per tutte le
+  // attività: molti giri di andata/ritorno al database in sequenza erano la
+  // parte più lenta della generazione, molto più del tempo preso dall'AI.
+  const { data: insertedDays } = await supabase
+    .from("trip_days")
+    .insert(
+      sortedDays.map((day, dayOrder) => ({
+        trip_id: tripId,
+        day_order: dayOrder,
+        day_date: trip.start_date ? addDaysToDate(trip.start_date, dayOrder) : null,
+        title: day.title || null,
+      })),
+    )
+    .select("id, day_order");
 
-    for (const [activityOrder, activity] of day.activities.entries()) {
+  const dayIdByOrder = new Map((insertedDays || []).map((d) => [d.day_order, d.id as string]));
+
+  const activityRows: {
+    trip_day_id: string;
+    title: string;
+    start_time: string | null;
+    description: string | null;
+    location: string | null;
+    activity_type: ActivityType;
+    details: Record<string, string>;
+    activity_order: number;
+  }[] = [];
+  const lodgingChecks: { dayId: string; title: string; details: Record<string, string> }[] = [];
+
+  sortedDays.forEach((day, dayOrder) => {
+    const dayId = dayIdByOrder.get(dayOrder);
+    if (!dayId) return;
+
+    day.activities.forEach((activity, activityOrder) => {
       const activityType = activity.activity_type as ActivityType;
       const allowedKeys = new Set(detailFields[activityType].map((field) => field.key));
       const cleanDetails: Record<string, string> = {};
@@ -1006,8 +1023,8 @@ export async function applyAiItineraryDraft(
         if (allowedKeys.has(key) && typeof value === "string" && value.trim()) cleanDetails[key] = value.trim();
       }
 
-      await supabase.from("activities").insert({
-        trip_day_id: insertedDay.id,
+      activityRows.push({
+        trip_day_id: dayId,
         title: activity.title || "Attività",
         start_time: activity.start_time || null,
         description: activity.description || null,
@@ -1018,9 +1035,19 @@ export async function applyAiItineraryDraft(
       });
 
       if (activityType === "alloggio") {
-        await handleLodgingCheckout(supabase, tripId, insertedDay.id, activity.title || "Attività", cleanDetails);
+        lodgingChecks.push({ dayId, title: activity.title || "Attività", details: cleanDetails });
       }
-    }
+    });
+  });
+
+  if (activityRows.length > 0) {
+    await supabase.from("activities").insert(activityRows);
+  }
+
+  // Effetto collaterale raro (solo se l'AI ha trovato una data di check-out
+  // esplicita nella bozza): resta sequenziale perché può creare altri giorni.
+  for (const check of lodgingChecks) {
+    await handleLodgingCheckout(supabase, tripId, check.dayId, check.title, check.details);
   }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
