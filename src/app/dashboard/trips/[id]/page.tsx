@@ -81,6 +81,7 @@ export default async function TripDetailPage({
     { data: suppliers },
     { data: tripPayments },
     { data: ownerProfile },
+    { data: documents },
   ] = await Promise.all([
     supabase
       .from("trip_days")
@@ -101,6 +102,7 @@ export default async function TripDetailPage({
     supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
     supabase.from("trip_payments").select("*").eq("trip_id", id).order("due_date", { ascending: true }),
     supabase.from("profiles").select("*").eq("id", user?.id ?? "").single(),
+    supabase.from("documents").select("*").eq("trip_id", id).order("uploaded_at", { ascending: false }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -118,12 +120,6 @@ export default async function TripDetailPage({
   const host = (await headers()).get("host");
   const protocol = host?.includes("localhost") ? "http" : "https";
   const publicUrl = `${protocol}://${host}/t/${trip.public_slug}`;
-
-  const { data: documents } = await supabase
-    .from("documents")
-    .select("*")
-    .eq("trip_id", id)
-    .order("uploaded_at", { ascending: false });
 
   const allDocumentsWithUrl = await Promise.all(
     ((documents as TripDocument[]) || []).map(async (document) => {
