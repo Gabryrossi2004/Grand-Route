@@ -558,8 +558,8 @@ function DayPanel({
             <span
               role="button"
               tabIndex={0}
-              onDoubleClick={() => setIsEditingDayTitle(true)}
-              title="Doppio click per modificare il titolo del giorno"
+              onClick={() => setIsEditingDayTitle(true)}
+              title="Clicca per modificare il titolo del giorno"
               className="cursor-pointer rounded font-normal normal-case text-slate-500 hover:bg-[#faf3e6]"
             >
               {day.title ? `— ${day.title}` : "+ aggiungi titolo"}
