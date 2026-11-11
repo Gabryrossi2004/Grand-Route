@@ -374,9 +374,23 @@ function DayPanel({
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
   const [isAddingActivity, setIsAddingActivity] = useState(false);
   const [isEditingStartDate, setIsEditingStartDate] = useState(false);
+  const [isEditingDayTitle, setIsEditingDayTitle] = useState(false);
+  const [dayTitleInput, setDayTitleInput] = useState(day.title ?? "");
+  const dayTitleInputRef = useRef<HTMLInputElement>(null);
   const [pendingDeleteIds, setPendingDeleteIds] = useState<Set<string>>(new Set());
   const deleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
   const deleteRemovedAt = useRef<Map<string, number>>(new Map());
+
+  useEffect(() => {
+    if (isEditingDayTitle) dayTitleInputRef.current?.focus();
+  }, [isEditingDayTitle]);
+
+  function saveDayTitle() {
+    setIsEditingDayTitle(false);
+    if (dayTitleInput.trim() !== (day.title ?? "")) {
+      updateDayTitle(tripId, day.id, dayTitleInput);
+    }
+  }
 
   const sortedActivities = [...day.activities].sort((a, b) => a.activity_order - b.activity_order);
   const serverOrderKey = sortedActivities.map((a) => a.id).join(",");
@@ -519,7 +533,38 @@ function DayPanel({
           ) : (
             dayLabel(day, 0, true)
           )}
-          {day.title && <span className="font-normal text-slate-500"> — {day.title}</span>}
+          {" "}
+          {isEditingDayTitle ? (
+            <input
+              ref={dayTitleInputRef}
+              type="text"
+              value={dayTitleInput}
+              onChange={(e) => setDayTitleInput(e.target.value)}
+              onBlur={saveDayTitle}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  saveDayTitle();
+                }
+                if (e.key === "Escape") {
+                  setDayTitleInput(day.title ?? "");
+                  setIsEditingDayTitle(false);
+                }
+              }}
+              placeholder="Titolo del giorno (es. Benvenuti!)"
+              className="ml-1 rounded border border-[#ddc8a0] px-1.5 py-0.5 text-sm font-normal normal-case outline-none"
+            />
+          ) : (
+            <span
+              role="button"
+              tabIndex={0}
+              onDoubleClick={() => setIsEditingDayTitle(true)}
+              title="Doppio click per modificare il titolo del giorno"
+              className="cursor-pointer rounded font-normal normal-case text-slate-500 hover:bg-[#faf3e6]"
+            >
+              {day.title ? `— ${day.title}` : "+ aggiungi titolo"}
+            </span>
+          )}
         </h3>
         <div className="flex items-center gap-3">
           {sortedActivities.length > 1 && (
