@@ -73,7 +73,8 @@ REGOLE FONDAMENTALI:
 2. Scrivi sempre in italiano.
 3. Dividi le attività nei giorni corretti, in ordine cronologico, a partire da day_index 0.
 4. Ogni attività ha un titolo breve e chiaro.
-5. Non aggiungere attività non presenti nella bozza, anche se "scontate" per quel tipo di viaggio.${stylePart}`;
+5. Non aggiungere attività non presenti nella bozza, anche se "scontate" per quel tipo di viaggio.
+6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${stylePart}`;
 }
 
 // Fase 1: bozza come testo libero (incollato). Le fasi successive
