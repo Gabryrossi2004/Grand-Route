@@ -47,6 +47,7 @@ import {
   duplicateActivity,
   moveActivity,
   moveActivityToDay,
+  rebaseTripDates,
   reorderActivities,
   saveActivityToLibrary,
   sortActivitiesByTime,
@@ -371,6 +372,7 @@ function DayPanel({
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
   const [isAddingActivity, setIsAddingActivity] = useState(false);
+  const [isEditingStartDate, setIsEditingStartDate] = useState(false);
   const [pendingDeleteIds, setPendingDeleteIds] = useState<Set<string>>(new Set());
   const deleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
   const deleteRemovedAt = useRef<Map<string, number>>(new Map());
@@ -483,7 +485,39 @@ function DayPanel({
     <div className="rounded-xl border border-[#e6d7bb] bg-white p-5">
       <div className="sticky top-4 z-10 mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 py-1 backdrop-blur">
         <h3 className="font-medium capitalize text-slate-900">
-          {dayLabel(day, 0, true)}
+          {day.day_order === 0 ? (
+            isEditingStartDate ? (
+              <form action={rebaseTripDates.bind(null, tripId)} className="inline-flex align-middle">
+                <input
+                  type="date"
+                  name="new_first_date"
+                  defaultValue={day.day_date ?? ""}
+                  autoFocus
+                  onBlur={() => setIsEditingStartDate(false)}
+                  onChange={(e) => {
+                    e.currentTarget.form?.requestSubmit();
+                    setIsEditingStartDate(false);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setIsEditingStartDate(false);
+                  }}
+                  className="rounded border border-[#ddc8a0] px-1.5 py-0.5 text-sm font-normal normal-case outline-none"
+                />
+              </form>
+            ) : (
+              <span
+                role="button"
+                tabIndex={0}
+                onDoubleClick={() => setIsEditingStartDate(true)}
+                title="Doppio click per impostare la data di partenza: sposta tutte le date dell'itinerario di conseguenza"
+                className="cursor-pointer rounded hover:bg-[#faf3e6]"
+              >
+                {dayLabel(day, 0, true)}
+              </span>
+            )
+          ) : (
+            dayLabel(day, 0, true)
+          )}
           {day.title && <span className="font-normal text-slate-500"> — {day.title}</span>}
         </h3>
         <div className="flex items-center gap-3">

@@ -328,6 +328,37 @@ export async function updateDayTitle(tripId: string, dayId: string, title: strin
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+// Imposta la data del primo giorno e sposta di conseguenza tutte le altre
+// date dell'itinerario, mantenendo la stessa distanza in giorni tra loro
+// (day_order è già un indice continuo a partire da 0, tenuto in ordine da
+// resyncDayOrder). Aggiorna anche start_date/end_date del viaggio, usati
+// altrove (lista viaggi, calendario, promemoria di partenza).
+export async function rebaseTripDates(tripId: string, formData: FormData) {
+  const supabase = await createClient();
+  const newFirstDate = String(formData.get("new_first_date") ?? "");
+  if (!newFirstDate) return;
+
+  const { data: days } = await supabase
+    .from("trip_days")
+    .select("id, day_order")
+    .eq("trip_id", tripId)
+    .order("day_order", { ascending: true });
+  if (!days || days.length === 0) return;
+
+  const updatedRows = days.map((day) => ({
+    id: day.id,
+    trip_id: tripId,
+    day_order: day.day_order,
+    day_date: addDaysToDate(newFirstDate, day.day_order),
+  }));
+  await supabase.from("trip_days").upsert(updatedRows, { onConflict: "id" });
+
+  const lastDate = addDaysToDate(newFirstDate, days[days.length - 1].day_order);
+  await supabase.from("trips").update({ start_date: newFirstDate, end_date: lastDate }).eq("id", tripId);
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 // Scambia il contenuto (attività, titolo, note) tra due giorni trascinati
 // uno sull'altro. Le date e l'ordine dei giorni restano fissi: cambia solo
 // cosa c'è pianificato in ciascuna data.
