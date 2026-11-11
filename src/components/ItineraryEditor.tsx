@@ -682,10 +682,10 @@ function SortableActivityRow({
         onDragEnd={onDragEnd}
         onDoubleClick={onEdit}
         title="Trascina per spostare in un altro giorno · doppio click per modificare"
-        style={{ ...style, borderLeftColor: meta.color, backgroundColor: meta.bg }}
-        className="group rounded-xl border-l-[5px] shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
+        style={{ ...style, borderLeftColor: meta.color }}
+        className="group overflow-hidden rounded-xl border-l-[5px] bg-white shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
       >
-      <div className="flex items-center gap-1 px-1">
+      <div style={{ backgroundColor: meta.bg }} className="flex items-center gap-1 px-1">
         <button
           type="button"
           draggable={false}

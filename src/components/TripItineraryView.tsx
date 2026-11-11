@@ -133,13 +133,22 @@ export default function TripItineraryView({
                   {day.activities.map((activity) => {
                     const meta = activityTypes[activity.activity_type];
                     const Icon = meta.icon;
+                    const detailEntries = visibleDetailEntries(activity.details);
+                    const hasBody =
+                      activity.location ||
+                      activity.description ||
+                      detailEntries.length > 0 ||
+                      (activity.activity_photos && activity.activity_photos.length > 0);
                     return (
                       <li
                         key={activity.id}
                         style={{ borderLeftColor: meta.color }}
-                        className="theme-card border-l-4 px-4 py-3 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
+                        className="theme-card overflow-hidden border-l-4 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
                       >
-                        <div className="flex flex-wrap items-center gap-2">
+                        <div
+                          style={{ backgroundColor: meta.bg }}
+                          className="flex flex-wrap items-center gap-2 px-4 py-3"
+                        >
                           <span
                             style={{ backgroundColor: meta.color }}
                             className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white"
@@ -159,25 +168,29 @@ export default function TripItineraryView({
                             {meta.label}
                           </span>
                         </div>
-                        {activity.location && <p className="theme-muted mt-1 text-sm">{activity.location}</p>}
-                        {activity.description && (
-                          <div
-                            className={richTextClassName + " mt-1"}
-                            dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
-                          />
-                        )}
-                        {visibleDetailEntries(activity.details).length > 0 && (
-                          <dl className="theme-muted mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                            {visibleDetailEntries(activity.details).map(([key, value]) => (
-                              <div key={key} className="flex gap-1">
-                                <dt className="font-medium">{detailFieldLabel(activity.activity_type, key)}:</dt>
-                                <dd>{value}</dd>
-                              </div>
-                            ))}
-                          </dl>
-                        )}
-                        {activity.activity_photos && activity.activity_photos.length > 0 && (
-                          <PhotoGallery photos={activity.activity_photos} />
+                        {hasBody && (
+                          <div className="px-4 py-3">
+                            {activity.location && <p className="theme-muted text-sm">{activity.location}</p>}
+                            {activity.description && (
+                              <div
+                                className={richTextClassName}
+                                dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description)) }}
+                              />
+                            )}
+                            {detailEntries.length > 0 && (
+                              <dl className="theme-muted mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                                {detailEntries.map(([key, value]) => (
+                                  <div key={key} className="flex gap-1">
+                                    <dt className="font-medium">{detailFieldLabel(activity.activity_type, key)}:</dt>
+                                    <dd>{value}</dd>
+                                  </div>
+                                ))}
+                              </dl>
+                            )}
+                            {activity.activity_photos && activity.activity_photos.length > 0 && (
+                              <PhotoGallery photos={activity.activity_photos} />
+                            )}
+                          </div>
                         )}
                       </li>
                     );
