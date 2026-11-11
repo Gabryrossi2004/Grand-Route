@@ -44,7 +44,7 @@ export async function createPost(
     .single();
 
   if (error || !post) {
-    return { error: `Errore durante la pubblicazione${error ? `: ${error.message}` : ""}.` };
+    return { error: "Errore durante la pubblicazione." };
   }
 
   for (const photo of photos) {

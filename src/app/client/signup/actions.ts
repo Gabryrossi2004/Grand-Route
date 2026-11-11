@@ -33,6 +33,9 @@ export async function clientSignup(
   // attiva: colleghiamo subito le schede cliente corrispondenti, invece di
   // aspettare un login separato che potrebbe non arrivare mai.
   await supabase.rpc("claim_client_profiles");
+  // Marca l'account come cliente SOLO qui, alla registrazione: mai ad ogni
+  // login (vedi 0023_fix_is_professional_on_login.sql).
+  await supabase.rpc("mark_current_user_as_client");
 
   return { success: true };
 }
