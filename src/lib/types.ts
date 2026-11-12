@@ -195,6 +195,24 @@ export type Supplier = {
 
 export type ServiceStatus = "da_prenotare" | "richiesto" | "confermato" | "cancellato";
 
+// Una riga del listino prezzi di un fornitore: catalogo riutilizzabile,
+// indipendente dai viaggi (diverso da TripService, che è legato a un
+// singolo viaggio).
+export type SupplierPriceListItem = {
+  id: string;
+  owner_id: string;
+  supplier_id: string;
+  category: SupplierCategory;
+  title: string;
+  description: string | null;
+  price: number | null;
+  unit: string | null;
+  valid_from: string | null;
+  valid_to: string | null;
+  notes: string | null;
+  created_at: string;
+};
+
 export type TripService = {
   id: string;
   trip_id: string;

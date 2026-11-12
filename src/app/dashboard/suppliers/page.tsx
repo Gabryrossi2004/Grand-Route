@@ -1,16 +1,24 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import type { Supplier } from "@/lib/types";
+import type { Supplier, SupplierPriceListItem } from "@/lib/types";
 import SuppliersList from "@/components/SuppliersList";
 
 export default async function SuppliersPage() {
   const supabase = await createClient();
   const user = await getCachedUser();
 
-  const { data: suppliers } = await supabase
-    .from("suppliers")
-    .select("*")
-    .eq("owner_id", user?.id ?? "")
-    .order("full_name", { ascending: true });
+  const [{ data: suppliers }, { data: priceListItems }] = await Promise.all([
+    supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
+    supabase
+      .from("supplier_price_list_items")
+      .select("*")
+      .eq("owner_id", user?.id ?? "")
+      .order("title", { ascending: true }),
+  ]);
+
+  const itemsBySupplier: Record<string, SupplierPriceListItem[]> = {};
+  for (const item of (priceListItems as SupplierPriceListItem[]) || []) {
+    (itemsBySupplier[item.supplier_id] ??= []).push(item);
+  }
 
   return (
     <div>
@@ -21,7 +29,7 @@ export default async function SuppliersPage() {
         </p>
       </div>
 
-      <SuppliersList suppliers={(suppliers as Supplier[]) || []} />
+      <SuppliersList suppliers={(suppliers as Supplier[]) || []} itemsBySupplier={itemsBySupplier} />
     </div>
   );
 }

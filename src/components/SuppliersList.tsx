@@ -2,11 +2,12 @@
 
 import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Pencil, Search, Trash2 } from "lucide-react";
-import type { Supplier, SupplierCategory } from "@/lib/types";
+import { ClipboardList, Pencil, Search, Trash2 } from "lucide-react";
+import type { Supplier, SupplierCategory, SupplierPriceListItem } from "@/lib/types";
 import { supplierCategories, supplierCategoryOptions } from "@/lib/serviceStatus";
 import Modal from "@/components/Modal";
 import SubmitButton from "@/components/SubmitButton";
+import SupplierPriceList from "@/components/SupplierPriceList";
 import { createSupplier, deleteSupplier, updateSupplier } from "@/app/dashboard/suppliers/actions";
 
 function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () => void }) {
@@ -110,9 +111,16 @@ function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () =>
   );
 }
 
-export default function SuppliersList({ suppliers }: { suppliers: Supplier[] }) {
+export default function SuppliersList({
+  suppliers,
+  itemsBySupplier,
+}: {
+  suppliers: Supplier[];
+  itemsBySupplier: Record<string, SupplierPriceListItem[]>;
+}) {
   const [query, setQuery] = useState("");
   const [modal, setModal] = useState<"new" | Supplier | null>(null);
+  const [priceListSupplier, setPriceListSupplier] = useState<Supplier | null>(null);
 
   const filtered = suppliers.filter((supplier) => {
     const q = query.trim().toLowerCase();
@@ -174,6 +182,19 @@ export default function SuppliersList({ suppliers }: { suppliers: Supplier[] }) 
               <div className="flex shrink-0 items-center gap-1">
                 <button
                   type="button"
+                  onClick={() => setPriceListSupplier(supplier)}
+                  title="Listino prezzi"
+                  className="flex items-center gap-1 rounded-md px-2 py-2 text-xs font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+                >
+                  <ClipboardList size={15} />
+                  {(itemsBySupplier[supplier.id]?.length ?? 0) > 0 && (
+                    <span className="rounded-full bg-[#f2e2c4] px-1.5 text-[10px] font-semibold text-[#8c7a5e]">
+                      {itemsBySupplier[supplier.id].length}
+                    </span>
+                  )}
+                </button>
+                <button
+                  type="button"
                   onClick={() => setModal(supplier)}
                   title="Modifica fornitore"
                   className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
@@ -201,6 +222,14 @@ export default function SuppliersList({ suppliers }: { suppliers: Supplier[] }) 
         >
           <SupplierForm supplier={modal === "new" ? undefined : modal} onDone={() => setModal(null)} />
         </Modal>
+      )}
+
+      {priceListSupplier && (
+        <SupplierPriceList
+          supplier={priceListSupplier}
+          items={itemsBySupplier[priceListSupplier.id] ?? []}
+          onClose={() => setPriceListSupplier(null)}
+        />
       )}
     </div>
   );
