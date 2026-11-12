@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Trip } from "@/lib/types";
+import Modal from "@/components/Modal";
 
 const WEEKDAY_LABELS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 
@@ -22,6 +23,7 @@ function toDateKey(date: Date) {
 export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
   const today = new Date();
   const [viewDate, setViewDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
+  const [selectedDay, setSelectedDay] = useState<{ date: Date; departures: Trip[]; returns: Trip[] } | null>(null);
 
   const tripsByDeparture = useMemo(() => {
     const map = new Map<string, Trip[]>();
@@ -106,9 +108,27 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
           const departures = tripsByDeparture.get(key) ?? [];
           const returns = tripsByReturn.get(key) ?? [];
           const isToday = key === todayKey;
+          const total = departures.length + returns.length;
+          const visibleDepartures = departures.slice(0, 2);
+          const visibleReturns = returns.slice(0, Math.max(0, 2 - visibleDepartures.length));
+          const hiddenCount = total - visibleDepartures.length - visibleReturns.length;
 
           return (
-            <div key={i} className="min-h-24 bg-white p-1.5 sm:min-h-28">
+            <div
+              key={i}
+              role={total > 0 ? "button" : undefined}
+              tabIndex={total > 0 ? 0 : undefined}
+              onClick={() => total > 0 && setSelectedDay({ date, departures, returns })}
+              onKeyDown={(e) => {
+                if (total > 0 && (e.key === "Enter" || e.key === " ")) {
+                  e.preventDefault();
+                  setSelectedDay({ date, departures, returns });
+                }
+              }}
+              className={`min-h-24 bg-white p-1.5 sm:min-h-28 ${
+                total > 0 ? "cursor-pointer transition hover:bg-[#faf3e6]" : ""
+              }`}
+            >
               <span
                 className={`mb-1 inline-flex h-5 w-5 items-center justify-center rounded-full text-xs ${
                   isToday ? "bg-[#233c5e] font-semibold text-white" : "text-slate-500"
@@ -117,31 +137,86 @@ export default function DepartureCalendar({ trips }: { trips: Trip[] }) {
                 {date.getDate()}
               </span>
               <div className="flex flex-col gap-1">
-                {departures.map((trip) => (
-                  <Link
+                {visibleDepartures.map((trip) => (
+                  <span
                     key={`dep-${trip.id}`}
-                    href={`/dashboard/trips/${trip.id}`}
                     title={`Partenza: ${trip.title}`}
-                    className="block truncate rounded bg-[#f2e2c4] px-1.5 py-0.5 text-[11px] font-medium text-[#182026] hover:bg-[#e6d7bb]"
+                    className="block truncate rounded bg-[#f2e2c4] px-1.5 py-0.5 text-[11px] font-medium text-[#182026]"
                   >
                     ✈ {trip.title}
-                  </Link>
+                  </span>
                 ))}
-                {returns.map((trip) => (
-                  <Link
+                {visibleReturns.map((trip) => (
+                  <span
                     key={`ret-${trip.id}`}
-                    href={`/dashboard/trips/${trip.id}`}
                     title={`Rientro: ${trip.title}`}
-                    className="block truncate rounded bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600 hover:bg-slate-200"
+                    className="block truncate rounded bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600"
                   >
                     ↩ {trip.title}
-                  </Link>
+                  </span>
                 ))}
+                {hiddenCount > 0 && (
+                  <span className="block truncate rounded px-1.5 py-0.5 text-[11px] font-semibold text-[#233c5e]">
+                    +{hiddenCount} altri
+                  </span>
+                )}
               </div>
             </div>
           );
         })}
       </div>
+
+      {selectedDay && (
+        <Modal
+          title={selectedDay.date.toLocaleDateString("it-IT", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+          })}
+          onClose={() => setSelectedDay(null)}
+        >
+          <div className="flex flex-col gap-4">
+            {selectedDay.departures.length > 0 && (
+              <div>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Partenze ({selectedDay.departures.length})
+                </h4>
+                <div className="flex flex-col gap-1.5">
+                  {selectedDay.departures.map((trip) => (
+                    <Link
+                      key={trip.id}
+                      href={`/dashboard/trips/${trip.id}`}
+                      className="flex items-center gap-2 rounded-lg bg-[#faf3e6] px-3 py-2 text-sm font-medium text-[#182026] hover:bg-[#f2e2c4]"
+                    >
+                      ✈ {trip.title}
+                      {trip.destination && <span className="text-slate-500">— {trip.destination}</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            {selectedDay.returns.length > 0 && (
+              <div>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Rientri ({selectedDay.returns.length})
+                </h4>
+                <div className="flex flex-col gap-1.5">
+                  {selectedDay.returns.map((trip) => (
+                    <Link
+                      key={trip.id}
+                      href={`/dashboard/trips/${trip.id}`}
+                      className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                    >
+                      ↩ {trip.title}
+                      {trip.destination && <span className="text-slate-500">— {trip.destination}</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </Modal>
+      )}
 
       {tripsWithoutDate.length > 0 && (
         <div className="mt-6">
