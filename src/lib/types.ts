@@ -94,6 +94,7 @@ export type Trip = {
   show_rate_block: boolean;
   show_emergency_button: boolean;
   itinerary_stage: ItineraryStage;
+  client_request_notes: string | null;
   created_at: string;
 };
 

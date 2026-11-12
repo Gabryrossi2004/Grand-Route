@@ -3,6 +3,9 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
+import { validateImageFile, validateTextFile } from "@/lib/fileValidation";
+import { extractClientRequest as extractClientRequestAi, type ClientRequest } from "@/lib/clientRequestAi";
+import type { DraftImage } from "@/lib/itineraryAi";
 
 const MAX_AUTO_DAYS = 90;
 
@@ -38,6 +41,7 @@ export async function createTrip(
   const startDate = String(formData.get("start_date") ?? "") || null;
   const endDate = String(formData.get("end_date") ?? "") || null;
   const clientId = String(formData.get("client_id") ?? "") || null;
+  const clientRequestNotes = String(formData.get("client_request_notes") ?? "").trim() || null;
   const priceMode = String(formData.get("price_mode") ?? "nessuno");
   const priceAmount = formData.get("price_amount") ? Number(formData.get("price_amount")) : null;
   const priceNet = formData.get("price_net") ? Number(formData.get("price_net")) : null;
@@ -56,6 +60,7 @@ export async function createTrip(
       start_date: startDate,
       end_date: endDate,
       client_id: clientId,
+      client_request_notes: clientRequestNotes,
       public_slug: generatePublicSlug(),
       price_mode: priceMode,
       price_amount: priceMode === "lordo" ? priceAmount : null,
@@ -83,4 +88,40 @@ export async function createTrip(
   }
 
   redirect(`/dashboard/trips/${trip.id}`);
+}
+
+// Legge la mail/richiesta di un cliente (testo e/o foto) e la fa
+// interpretare dall'AI, restituendo i dati suggeriti SENZA creare nulla:
+// l'agente li rivede e corregge nel form prima di creare il viaggio.
+export async function extractClientRequest(formData: FormData): Promise<{ data: ClientRequest } | { error: string }> {
+  let text = String(formData.get("text") ?? "").trim();
+  let image: DraftImage | null = null;
+
+  const file = formData.get("file");
+  if (file instanceof File && file.size > 0) {
+    if (file.type.startsWith("image/")) {
+      const validationError = validateImageFile(file);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await file.arrayBuffer());
+      image = { base64: buffer.toString("base64"), mediaType: file.type as DraftImage["mediaType"] };
+    } else if (file.name.toLowerCase().endsWith(".txt") || file.name.toLowerCase().endsWith(".md")) {
+      const validationError = validateTextFile(file);
+      if (validationError) return { error: validationError };
+      const buffer = Buffer.from(await file.arrayBuffer());
+      text = [text, buffer.toString("utf-8")].filter(Boolean).join("\n\n");
+    } else {
+      return { error: "Formato non supportato: carica una foto (JPG/PNG) o un file di testo (.txt/.md)." };
+    }
+  }
+
+  if (!text && !image) {
+    return { error: "Incolla il testo della mail, oppure carica una foto o un file di testo." };
+  }
+
+  try {
+    const data = await extractClientRequestAi({ text, image });
+    return { data };
+  } catch {
+    return { error: "Non sono riuscito a interpretare la richiesta. Riprova, o compila il viaggio a mano." };
+  }
 }
