@@ -29,7 +29,10 @@ export default async function PublicTripPage({
       .select("*, activities(*, activity_photos(*))")
       .eq("trip_id", trip.id)
       .order("day_order", { ascending: true }),
-    supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
+    // Solo le colonne che un visitatore non registrato può leggere
+    // (vedi migrazione 0029): non "*", che includerebbe email e
+    // recapiti dell'agenzia e verrebbe rifiutato dal database.
+    supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions").eq("id", trip.owner_id).single(),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({

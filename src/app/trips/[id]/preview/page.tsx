@@ -24,7 +24,9 @@ export default async function TripPreviewPage({
       .select("*, activities(*, activity_photos(*))")
       .eq("trip_id", id)
       .order("day_order", { ascending: true }),
-    supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
+    // Come in /t/[slug]: solo le colonne leggibili senza login
+    // (vedi migrazione 0029).
+    supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions").eq("id", trip.owner_id).single(),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
