@@ -96,20 +96,36 @@ export default function ItineraryEditor({
   const [pendingDeleteDayIds, setPendingDeleteDayIds] = useState<Set<string>>(new Set());
   const dayDeleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
 
+  useEffect(() => {
+    setPendingDeleteDayIds((prev) => {
+      if (prev.size === 0) return prev;
+      const stillPresent = new Set(days.map((day) => day.id));
+      const next = new Set([...prev].filter((id) => stillPresent.has(id)));
+      return next.size === prev.size ? prev : next;
+    });
+  }, [days]);
+
   const visibleDays = days.filter((day) => !pendingDeleteDayIds.has(day.id));
   const selectedDay = visibleDays.find((day) => day.id === selectedDayId) ?? visibleDays[0] ?? null;
 
   function requestDeleteDay(dayId: string) {
     setPendingDeleteDayIds((prev) => new Set(prev).add(dayId));
 
+    // Il giorno resta nascosto anche dopo la scadenza dei 5 secondi: lo
+    // "sblocchiamo" solo quando il server l'ha davvero tolto dai dati
+    // (vedi l'effetto sotto). Se lo sbloccassimo subito, per il tempo che il
+    // server impiega a cancellarlo (il database è in un'altra regione) il
+    // giorno ricomparirebbe per un attimo, uno alla volta se se ne
+    // eliminano molti di fila.
     const timer = setTimeout(() => {
       dayDeleteTimers.current.delete(dayId);
-      setPendingDeleteDayIds((prev) => {
-        const next = new Set(prev);
-        next.delete(dayId);
-        return next;
+      deleteDay(tripId, dayId).catch(() => {
+        setPendingDeleteDayIds((prev) => {
+          const next = new Set(prev);
+          next.delete(dayId);
+          return next;
+        });
       });
-      deleteDay(tripId, dayId);
     }, 5000);
     dayDeleteTimers.current.set(dayId, timer);
   }

@@ -1126,22 +1126,32 @@ export async function applyAiItineraryDraft(
   // Queste letture sono indipendenti tra loro: le facciamo in parallelo
   // invece che una dopo l'altra, per non sommare i tempi di andata/ritorno
   // al database (che è in un'altra regione rispetto al sito).
-  const [{ data: styleRow }, { data: trip }, { count: existingDaysCount }, { data: ownerTripRows }] =
+  const [{ data: styleRow }, { data: trip }, { data: existingDays }, { data: ownerTripRows }] =
     await Promise.all([
       promptStyleId
         ? supabase.from("prompt_styles").select("prompt_text").eq("id", promptStyleId).maybeSingle()
         : Promise.resolve({ data: null as { prompt_text: string } | null }),
       supabase.from("trips").select("*").eq("id", tripId).single(),
-      supabase.from("trip_days").select("id", { count: "exact", head: true }).eq("trip_id", tripId),
+      supabase.from("trip_days").select("id").eq("trip_id", tripId),
       supabase.from("trips").select("id").eq("owner_id", user.id).neq("id", tripId).limit(10),
     ]);
   const styleInstructions = styleRow?.prompt_text ?? null;
 
   if (!trip) return { error: "Viaggio non trovato." };
-  if ((existingDaysCount ?? 0) > 0) {
-    return {
-      error: "Questo viaggio ha già un itinerario: la generazione AI è pensata solo per un viaggio nuovo e vuoto.",
-    };
+  // Un viaggio creato con le date ha già i suoi giorni, ma vuoti: quelli si
+  // possono sostituire. Si rifiuta solo se c'è già del contenuto da non
+  // sovrascrivere.
+  const existingDayIds = (existingDays || []).map((d) => d.id as string);
+  if (existingDayIds.length > 0) {
+    const { count: existingActivitiesCount } = await supabase
+      .from("activities")
+      .select("id", { count: "exact", head: true })
+      .in("trip_day_id", existingDayIds);
+    if ((existingActivitiesCount ?? 0) > 0) {
+      return {
+        error: "Questo viaggio ha già delle attività: la generazione AI è pensata solo per un itinerario vuoto.",
+      };
+    }
   }
 
   // Esempi di stile: alcune descrizioni scritte in passato da questa stessa
@@ -1173,6 +1183,12 @@ export async function applyAiItineraryDraft(
   }
 
   const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);
+
+  // Solo ora, a generazione riuscita, togliamo i giorni vuoti preesistenti:
+  // se l'AI fallisce restano intatti.
+  if (existingDayIds.length > 0) {
+    await supabase.from("trip_days").delete().in("id", existingDayIds);
+  }
 
   // Un solo inserimento per tutti i giorni, poi uno solo per tutte le
   // attività: molti giri di andata/ritorno al database in sequenza erano la

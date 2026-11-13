@@ -206,7 +206,7 @@ export default async function TripDetailPage({
             <h2 className="text-lg font-semibold text-white">Itinerario</h2>
             <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
           </div>
-          {orderedDays.length === 0 && (
+          {orderedDays.every((day) => (day.activities?.length ?? 0) === 0) && (
             <AiItineraryGenerator tripId={id} promptStyles={(promptStyles as PromptStyle[]) || []} />
           )}
         </div>
