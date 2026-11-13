@@ -740,6 +740,7 @@ function SortableActivityRow({
         onCancel={onCancelEdit}
         tripId={tripId}
         photos={activity.activity_photos}
+        documents={documents}
         dayDate={dayDate}
       />
     </Modal>
@@ -915,17 +916,6 @@ function SortableActivityRow({
             </div>
           )}
 
-          <details className="mt-2">
-            <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">+ Aggiungi foto</summary>
-            <form
-              action={uploadActivityPhoto.bind(null, tripId, activity.id)}
-              encType="multipart/form-data"
-              className="mt-2 max-w-xs"
-            >
-              <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto qui" compressImages />
-            </form>
-          </details>
-
           {documents.length > 0 && (
             <ul className="mt-2 flex flex-col gap-1">
               {documents.map((document) => (
@@ -959,18 +949,14 @@ function SortableActivityRow({
             </ul>
           )}
 
-          <details className="mt-2">
-            <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-600">
-              + Aggiungi documento (voucher, biglietto…)
-            </summary>
-            <form
-              action={uploadDocument.bind(null, tripId, activity.id)}
-              encType="multipart/form-data"
-              className="mt-2 max-w-xs"
-            >
-              <DropzoneUpload name="file" label="Trascina un documento qui" />
+          <div className="mt-3 grid max-w-xl gap-2 sm:grid-cols-2">
+            <form action={uploadActivityPhoto.bind(null, tripId, activity.id)} encType="multipart/form-data">
+              <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto" compressImages />
             </form>
-          </details>
+            <form action={uploadDocument.bind(null, tripId, activity.id)} encType="multipart/form-data">
+              <DropzoneUpload name="file" label="Trascina un documento" />
+            </form>
+          </div>
         </div>
       )}
       </li>

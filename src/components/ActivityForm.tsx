@@ -3,13 +3,18 @@
 import { useActionState, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Check, Plane, Plus, Search, Trash2, X } from "lucide-react";
-import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, ActivityType } from "@/lib/types";
+import { Check, FileText, Plane, Plus, Search, Trash2, X } from "lucide-react";
+import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, ActivityType, TripDocument } from "@/lib/types";
 import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import { toSafeHtml } from "@/lib/richText";
-import { deleteActivityPhoto, uploadActivityPhoto } from "@/app/dashboard/trips/[id]/actions";
+import {
+  deleteActivityPhoto,
+  deleteDocument,
+  uploadActivityPhoto,
+  uploadDocument,
+} from "@/app/dashboard/trips/[id]/actions";
 import { searchFlight, type FlightLookupResult } from "@/app/dashboard/trips/[id]/flightActions";
 
 // Quanto il titolo scritto dall'utente assomiglia al titolo di un template di
@@ -39,6 +44,7 @@ export default function ActivityForm({
   onSubmitted,
   tripId,
   photos,
+  documents,
   dayDate,
 }: {
   action: (formData: FormData) => void | Promise<void>;
@@ -48,6 +54,7 @@ export default function ActivityForm({
   onSubmitted?: () => void;
   tripId?: string;
   photos?: ActivityPhoto[];
+  documents?: (TripDocument & { signedUrl: string | null })[];
   dayDate?: string | null;
 }) {
   const isEdit = Boolean(initialActivity);
@@ -347,31 +354,72 @@ export default function ActivityForm({
     </form>
 
     {isEdit && initialActivity && tripId && (
-      <div className="mt-4 border-t border-slate-100 pt-4">
-        <p className="mb-2 text-sm font-medium text-slate-700">Foto</p>
-        {photos && photos.length > 0 && (
-          <div className="mb-3 flex flex-wrap gap-2">
-            {photos.map((photo) => (
-              <div key={photo.id} className="group relative h-28 w-28">
-                <div className="relative h-full w-full overflow-hidden rounded-md">
-                  <Image src={photo.url} alt="" fill sizes="7rem" className="object-cover" />
+      <div className="mt-4 grid gap-4 border-t border-slate-100 pt-4 sm:grid-cols-2">
+        <div>
+          <p className="mb-2 text-sm font-medium text-slate-700">Foto</p>
+          {photos && photos.length > 0 && (
+            <div className="mb-3 flex flex-wrap gap-2">
+              {photos.map((photo) => (
+                <div key={photo.id} className="group relative h-28 w-28">
+                  <div className="relative h-full w-full overflow-hidden rounded-md">
+                    <Image src={photo.url} alt="" fill sizes="7rem" className="object-cover" />
+                  </div>
+                  <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
+                    <button
+                      type="submit"
+                      title="Elimina foto"
+                      className="absolute -right-2 -top-2 hidden rounded-full bg-red-600 p-1.5 text-white group-hover:block"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </form>
                 </div>
-                <form action={deleteActivityPhoto.bind(null, tripId, photo.id, photo.file_path)}>
-                  <button
-                    type="submit"
-                    title="Elimina foto"
-                    className="absolute -right-2 -top-2 hidden rounded-full bg-red-600 p-1.5 text-white group-hover:block"
-                  >
-                    <Trash2 size={14} />
-                  </button>
-                </form>
-              </div>
-            ))}
-          </div>
-        )}
-        <form action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
-          <DropzoneUpload name="photo" accept="image/*" label="Aggiungi una foto" compressImages />
-        </form>
+              ))}
+            </div>
+          )}
+          <form action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
+            <DropzoneUpload name="photo" accept="image/*" label="Trascina o aggiungi una foto" compressImages />
+          </form>
+        </div>
+
+        <div>
+          <p className="mb-2 text-sm font-medium text-slate-700">Documenti</p>
+          {documents && documents.length > 0 && (
+            <ul className="mb-3 flex flex-col gap-1">
+              {documents.map((document) => (
+                <li key={document.id} className="flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2 py-1.5">
+                  <span className="flex min-w-0 items-center gap-1.5 text-sm text-slate-700">
+                    <FileText size={14} className="shrink-0 text-slate-400" />
+                    {document.signedUrl ? (
+                      <a
+                        href={document.signedUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="truncate font-medium text-[#233c5e] hover:underline"
+                      >
+                        {document.file_name}
+                      </a>
+                    ) : (
+                      <span className="truncate">{document.file_name}</span>
+                    )}
+                  </span>
+                  <form action={deleteDocument.bind(null, tripId, document.id, document.file_path)}>
+                    <button
+                      type="submit"
+                      title="Elimina documento"
+                      className="shrink-0 rounded-md p-1.5 text-red-500 transition hover:bg-red-50"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </form>
+                </li>
+              ))}
+            </ul>
+          )}
+          <form action={uploadDocument.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
+            <DropzoneUpload name="file" label="Trascina o aggiungi un documento (voucher, biglietto…)" />
+          </form>
+        </div>
       </div>
     )}
     </>
