@@ -1,5 +1,6 @@
 "use server";
 
+import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
@@ -1120,6 +1121,7 @@ export async function applyAiItineraryDraft(
   if (!draftText && !image) {
     return { error: "Incolla un testo, oppure carica un file Excel o una foto della bozza." };
   }
+  if (draftText.length > MAX_DRAFT_CHARS) return { error: tooLongMessage(MAX_DRAFT_CHARS) };
 
   const promptStyleId = String(formData.get("prompt_style_id") ?? "") || null;
 
@@ -1174,6 +1176,9 @@ export async function applyAiItineraryDraft(
         .slice(0, 5);
     }
   }
+
+  const quota = await reserveAiCall("itinerary");
+  if (!quota.ok) return { error: quota.error };
 
   let generated;
   try {

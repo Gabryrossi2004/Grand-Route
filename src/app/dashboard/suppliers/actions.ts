@@ -1,5 +1,6 @@
 "use server";
 
+import { reserveAiCall, MAX_PRICE_LIST_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { revalidatePath } from "next/cache";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { SupplierCategory } from "@/lib/types";
@@ -127,6 +128,10 @@ export async function extractPriceListFromFile(
   }
 
   if (!draftText) return { error: "Incolla il testo del listino, oppure carica un file Excel, CSV o di testo." };
+  if (draftText.length > MAX_PRICE_LIST_CHARS) return { error: tooLongMessage(MAX_PRICE_LIST_CHARS) };
+
+  const quota = await reserveAiCall("price_list");
+  if (!quota.ok) return { error: quota.error };
 
   try {
     const result = await extractPriceListItems(draftText);

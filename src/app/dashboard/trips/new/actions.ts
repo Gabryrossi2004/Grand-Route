@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { validateImageFile, validateTextFile } from "@/lib/fileValidation";
+import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { extractClientRequest as extractClientRequestAi, type ClientRequest } from "@/lib/clientRequestAi";
 import type { DraftImage } from "@/lib/itineraryAi";
 
@@ -117,6 +118,10 @@ export async function extractClientRequest(formData: FormData): Promise<{ data: 
   if (!text && !image) {
     return { error: "Incolla il testo della mail, oppure carica una foto o un file di testo." };
   }
+  if (text.length > MAX_DRAFT_CHARS) return { error: tooLongMessage(MAX_DRAFT_CHARS) };
+
+  const quota = await reserveAiCall("client_request");
+  if (!quota.ok) return { error: quota.error };
 
   try {
     const data = await extractClientRequestAi({ text, image });
