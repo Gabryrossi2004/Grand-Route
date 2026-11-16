@@ -9,7 +9,7 @@ export default function NewClientPage() {
 
   return (
     <div className="mx-auto max-w-lg">
-      <h1 className="mb-6 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">Nuovo cliente</h1>
+      <h1 className="mb-6 text-3xl font-medium tracking-tight text-[#233c5e]">Nuovo cliente</h1>
       <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">
         <div>
           <label htmlFor="full_name" className="mb-1 block text-sm font-medium text-slate-700">

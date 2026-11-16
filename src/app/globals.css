@@ -50,3 +50,41 @@ html[data-ui-font="classico"] body {
     margin: 1.2cm;
   }
 }
+
+/* ── Stile "elegante classico" del gestionale (agenzia) ─────────────────
+   Si attiva con data-ui="agency" sul contenitore del gestionale. Angoli
+   quasi squadrati, linee sottili al posto delle ombre, titoli serif. Le
+   classi Tailwind restano le stesse: qui si cambiano solo i valori. */
+[data-ui="agency"] {
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 4px;
+}
+
+[data-ui="agency"] .shadow-sm,
+[data-ui="agency"] .shadow-md,
+[data-ui="agency"] .shadow-lg,
+[data-ui="agency"] .hover\:shadow-md:hover,
+[data-ui="agency"] .hover\:shadow-lg:hover {
+  box-shadow: none;
+}
+
+[data-ui="agency"] .hover\:-translate-y-0\.5:hover {
+  transform: none;
+}
+
+/* ── Area clienti: eleganza del gestionale con la morbidezza "da viaggio" ── */
+[data-ui="client"] {
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 1.75rem;
+}
+
+/* Etichetta maiuscola con spaziatura, sopra i titoli di pagina */
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b08d57;
+}

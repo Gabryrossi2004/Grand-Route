@@ -40,9 +40,9 @@ export default function ClientTripsGrid({
           <Link
             key={trip.id}
             href={tripHref(trip.id)}
-            className="group overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            className="group overflow-hidden rounded-3xl border border-[#e6d7bb] bg-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#233c5e]/10"
           >
-            <div className="relative h-32 w-full bg-[#233c5e]">
+            <div className="relative h-44 w-full bg-[#233c5e]">
               {trip.cover_image_url && (
                 <>
                   <Image src={trip.cover_image_url} alt="" fill sizes="50vw" className="object-cover" />
@@ -58,9 +58,9 @@ export default function ClientTripsGrid({
               >
                 {trip.is_published ? "Confermato" : "In preparazione"}
               </span>
-              <p className="absolute bottom-2 left-3 right-3 truncate font-semibold text-white">{trip.title}</p>
+              <p className="absolute bottom-3 left-4 right-4 truncate font-[family-name:var(--font-display)] text-lg font-medium text-white">{trip.title}</p>
             </div>
-            <div className="p-3">
+            <div className="p-4">
               {trip.destination && (
                 <p className="flex items-center gap-1 text-sm text-slate-600">
                   <MapPin size={13} className="shrink-0 text-slate-400" /> {trip.destination}

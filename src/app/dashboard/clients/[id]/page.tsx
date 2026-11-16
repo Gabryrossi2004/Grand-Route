@@ -53,7 +53,7 @@ export default async function ClientDetailPage({
   return (
     <div className="mx-auto flex max-w-lg flex-col gap-6">
       <div className="flex items-center justify-between gap-3">
-        <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">{client.full_name}</h1>
+        <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">{client.full_name}</h1>
         <Link
           href={`/dashboard/clients/${id}/preview`}
           className="flex shrink-0 items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50"

@@ -44,7 +44,7 @@ export default async function ClientPreviewPage({
         </p>
       </div>
 
-      <h1 className="mb-6 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">I miei viaggi</h1>
+      <h1 className="mb-6 text-3xl font-medium tracking-tight text-[#233c5e]">I miei viaggi</h1>
       <ClientTripsGrid
         trips={(trips as TripWithAgency[]) || []}
         tripHref={(tripId) => `/dashboard/clients/${id}/preview/trips/${tripId}`}

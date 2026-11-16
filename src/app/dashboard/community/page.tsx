@@ -20,7 +20,7 @@ export default async function CommunityPage() {
     <div className="mx-auto max-w-2xl">
       <div className="mb-6 flex items-center justify-between gap-3">
         <div>
-          <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">Community</h1>
+          <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Community</h1>
           <p className="mt-1 text-sm text-slate-500">
             La bacheca pubblica tra agenzie: recensioni di hotel e fornitori, avvisi, consigli di viaggio.
           </p>

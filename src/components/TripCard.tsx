@@ -8,6 +8,12 @@ import type { Trip } from "@/lib/types";
 import Modal from "@/components/Modal";
 import { deleteTrip } from "@/app/dashboard/trips/[id]/actions";
 
+function dayCount(trip: Trip) {
+  if (!trip.start_date || !trip.end_date) return null;
+  const diff = Math.round((new Date(trip.end_date).getTime() - new Date(trip.start_date).getTime()) / 86400000) + 1;
+  return diff > 0 ? diff : null;
+}
+
 function formatDateRange(trip: Trip) {
   if (!trip.start_date) return "Date da definire";
   const start = new Date(trip.start_date).toLocaleDateString("it-IT");
@@ -67,7 +73,7 @@ export default function TripCard({ trip, variantCount }: { trip: Trip; variantCo
         onTouchMove={cancelLongPress}
         className="group block overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#e6d7bb] hover:shadow-lg hover:shadow-slate-200/60"
       >
-        <div className="relative h-32 overflow-hidden bg-gradient-to-br from-[#f2e2c4] to-indigo-100">
+        <div className="relative h-36 overflow-hidden bg-gradient-to-br from-[#f2e2c4] to-[#e4cc98]">
           {trip.cover_image_url && (
             <Image
               src={trip.cover_image_url}
@@ -77,10 +83,15 @@ export default function TripCard({ trip, variantCount }: { trip: Trip; variantCo
               className="object-cover transition duration-300 group-hover:scale-[1.03]"
             />
           )}
+          {dayCount(trip) && (
+            <span className="absolute bottom-0 left-0 bg-[#233c5e] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white">
+              {dayCount(trip)} {dayCount(trip) === 1 ? "giorno" : "giorni"}
+            </span>
+          )}
         </div>
         <div className="p-4">
           <div className="mb-1 flex items-center justify-between gap-2">
-            <h3 className="font-medium text-slate-900">{trip.title}</h3>
+            <h3 className="text-lg font-medium text-[#233c5e]">{trip.title}</h3>
             {trip.is_published && (
               <span className="shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
                 Pubblicato

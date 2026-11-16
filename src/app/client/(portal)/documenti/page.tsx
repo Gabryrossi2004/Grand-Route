@@ -30,7 +30,7 @@ export default async function ClientDocumentsPage() {
       <Link href="/client" className="mb-4 flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900">
         <ArrowLeft size={14} /> I miei viaggi
       </Link>
-      <h1 className="mb-2 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">
+      <h1 className="mb-2 text-3xl font-medium tracking-tight text-[#233c5e]">
         I tuoi dati di viaggio
       </h1>
       <p className="mb-6 pl-3 text-sm text-slate-500">

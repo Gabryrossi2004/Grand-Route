@@ -16,7 +16,7 @@ export default async function SettingsPage() {
 
   return (
     <div className="mx-auto max-w-lg">
-      <h1 className="mb-6 border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">Impostazioni</h1>
+      <h1 className="mb-6 text-3xl font-medium tracking-tight text-[#233c5e]">Impostazioni</h1>
 
       <Link
         href="/dashboard/settings/guida"

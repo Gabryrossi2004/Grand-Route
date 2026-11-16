@@ -65,7 +65,7 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
         </Link>
         <div className="mt-2 flex items-start justify-between gap-3">
           <div>
-            <h1 className="border-l-4 border-[#233c5e] pl-3 text-2xl font-semibold text-slate-900">{typedGroup.name}</h1>
+            <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">{typedGroup.name}</h1>
             {typedGroup.description && <p className="mt-1 pl-3 text-sm text-slate-500">{typedGroup.description}</p>}
           </div>
           {isOwner ? (

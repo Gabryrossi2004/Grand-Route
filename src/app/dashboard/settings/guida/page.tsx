@@ -366,7 +366,7 @@ export default function GuidaPage() {
         <ArrowLeft size={14} /> Impostazioni
       </Link>
 
-      <h1 className="mb-2 border-l-4 border-[#233c5e] pl-3 text-3xl font-semibold text-slate-900">
+      <h1 className="mb-2 text-3xl font-medium tracking-tight text-[#233c5e]">
         Guida all&apos;uso del gestionale
       </h1>
       <p className="mb-8 pl-4 text-base text-slate-500">
