@@ -6,7 +6,8 @@ import HeaderAutoHide from "@/components/HeaderAutoHide";
 import FontPreference from "@/components/FontPreference";
 import DashboardNav from "@/components/DashboardNav";
 import ZefiroFloating from "@/components/ZefiroFloating";
-import { isAvatarVisible } from "@/lib/assistant";
+import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
+import { ZefiroStyleProvider } from "@/components/ZefiroStyle";
 
 export default async function DashboardLayout({
   children,
@@ -29,6 +30,7 @@ export default async function DashboardLayout({
   const brandColor = profile?.brand_color || "#233c5e";
 
   return (
+    <ZefiroStyleProvider variant={getAvatarStyle(profile?.ai_preferences)}>
     <div
       data-ui="agency"
       className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]"
@@ -60,5 +62,6 @@ export default async function DashboardLayout({
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>
       {isAvatarVisible(profile?.ai_preferences) && <ZefiroFloating />}
     </div>
+    </ZefiroStyleProvider>
   );
 }

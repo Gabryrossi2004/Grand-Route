@@ -5,6 +5,8 @@ import { useState } from "react";
 import AssistantIcon from "@/components/AssistantIcon";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import type { ZefiroState } from "@/components/ZefiroAvatar3D";
+import { useZefiroVariant } from "@/components/ZefiroStyle";
+import type { ZefiroVariantId } from "@/lib/assistant";
 
 // Caricato solo nel browser e solo quando serve: la parte 3D è la più pesante
 // del sito e non deve rallentare le pagine che non la mostrano.
@@ -15,13 +17,17 @@ const ZefiroAvatar3D = dynamic(() => import("@/components/ZefiroAvatar3D"), { ss
 export default function Zefiro({
   size = 96,
   state = "idle",
+  variant,
   className,
 }: {
   size?: number;
   state?: ZefiroState;
+  // Se non indicato vale il costume scelto dall'agenzia nelle Impostazioni.
+  variant?: ZefiroVariantId;
   className?: string;
 }) {
   const [unsupported, setUnsupported] = useState(false);
+  const chosen = useZefiroVariant();
 
   return (
     <div
@@ -33,7 +39,7 @@ export default function Zefiro({
       {unsupported ? (
         <AssistantIcon size={Math.round(size * 0.7)} className="mx-auto mt-[15%]" />
       ) : (
-        <ZefiroAvatar3D size={size} state={state} onUnsupported={() => setUnsupported(true)} />
+        <ZefiroAvatar3D size={size} state={state} variant={variant ?? chosen} onUnsupported={() => setUnsupported(true)} />
       )}
     </div>
   );

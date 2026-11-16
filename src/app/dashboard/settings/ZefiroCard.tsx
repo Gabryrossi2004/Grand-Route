@@ -2,16 +2,46 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Zefiro from "@/components/Zefiro";
 import { ZEFIRO_RESET_EVENT } from "@/components/ZefiroFloating";
-import { ASSISTANT_NAME } from "@/lib/assistant";
-import { setAvatarVisible } from "./actions";
+import { ASSISTANT_NAME, ZEFIRO_VARIANTS, type ZefiroVariantId } from "@/lib/assistant";
+import { setAvatarStyle, setAvatarVisible } from "./actions";
 
 // Mostra o nasconde Zefiro che fluttua sullo schermo, e lo rimette al suo posto.
-export default function ZefiroCard({ initiallyVisible }: { initiallyVisible: boolean }) {
+export default function ZefiroCard({
+  initiallyVisible,
+  initialStyle,
+}: {
+  initiallyVisible: boolean;
+  initialStyle: ZefiroVariantId;
+}) {
   const router = useRouter();
   const [visible, setVisible] = useState(initiallyVisible);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [style, setStyle] = useState<ZefiroVariantId>(initialStyle);
+  const [mood, setMood] = useState<"idle" | "happy">("idle");
+
+  async function chooseStyle(next: ZefiroVariantId) {
+    if (next === style) return;
+    const previous = style;
+    setStyle(next);
+    setMood("happy");
+    setTimeout(() => setMood("idle"), 1600);
+    setMessage(null);
+    try {
+      const result = await setAvatarStyle(next);
+      if ("error" in result) {
+        setStyle(previous);
+        setMessage(result.error);
+      } else {
+        router.refresh();
+      }
+    } catch {
+      setStyle(previous);
+      setMessage("Non è stato possibile salvare. Controlla la connessione e riprova.");
+    }
+  }
 
   async function toggle(next: boolean) {
     setVisible(next);
@@ -40,6 +70,38 @@ export default function ZefiroCard({ initiallyVisible }: { initiallyVisible: boo
         {ASSISTANT_NAME} fluttua in un angolo dello schermo: lo trascini dove ti dà meno fastidio e lo clicchi quando
         ti serve una mano (creare un viaggio, rivedere un itinerario). La posizione si ricorda su questo dispositivo.
       </p>
+      <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <div className="shrink-0 self-center rounded-2xl bg-[#faf3e6]/80 p-2">
+          <Zefiro size={150} state={mood} variant={style} />
+        </div>
+        <fieldset className="min-w-0 flex-1">
+          <legend className="mb-2 text-sm font-medium text-slate-700">Il costume di {ASSISTANT_NAME}</legend>
+          <div className="flex flex-col gap-2">
+            {ZEFIRO_VARIANTS.map((variant) => (
+              <label
+                key={variant.id}
+                className={`flex cursor-pointer items-start gap-2.5 rounded-lg border px-3 py-2 transition ${
+                  style === variant.id ? "border-[#cda876] bg-[#faf3e6]" : "border-slate-200 hover:bg-slate-50"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="zefiro_style"
+                  value={variant.id}
+                  checked={style === variant.id}
+                  onChange={() => chooseStyle(variant.id)}
+                  className="mt-1"
+                />
+                <span>
+                  <span className="block text-sm font-medium text-slate-800">{variant.name}</span>
+                  <span className="block text-xs text-slate-500">{variant.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      </div>
+
       <label className="flex items-center gap-2 text-sm text-slate-800">
         <input
           type="checkbox"

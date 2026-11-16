@@ -169,3 +169,23 @@ export async function setAvatarVisible(visible: boolean): Promise<{ ok: true } |
   revalidatePath("/dashboard", "layout");
   return { ok: true };
 }
+
+// Sceglie il costume di Zefiro.
+export async function setAvatarStyle(style: string): Promise<{ ok: true } | { error: string }> {
+  if (!["classico", "seta", "grecia", "egitto"].includes(style)) return { error: "Costume non valido." };
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), avatar_style: style };
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  if (error) {
+    console.error("[setAvatarStyle]", error.message);
+    return { error: "Non è stato possibile salvare il costume. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard", "layout");
+  return { ok: true };
+}

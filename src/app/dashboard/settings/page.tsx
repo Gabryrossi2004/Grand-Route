@@ -7,7 +7,7 @@ import LogoUploader from "./LogoUploader";
 import AiRulesCard from "./AiRulesCard";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import ZefiroCard from "./ZefiroCard";
-import { isAvatarVisible } from "@/lib/assistant";
+import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -48,7 +48,10 @@ export default async function SettingsPage() {
       <SettingsForm profile={profile as Profile} />
 
       <div className="mt-6">
-        <ZefiroCard initiallyVisible={isAvatarVisible((profile as Profile).ai_preferences)} />
+        <ZefiroCard
+          initiallyVisible={isAvatarVisible((profile as Profile).ai_preferences)}
+          initialStyle={getAvatarStyle((profile as Profile).ai_preferences)}
+        />
         <AiRulesCard profile={profile as Profile} />
       </div>
 
