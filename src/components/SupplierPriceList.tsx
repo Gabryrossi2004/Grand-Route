@@ -15,6 +15,7 @@ import {
   savePriceListItems,
   updatePriceListItem,
 } from "@/app/dashboard/suppliers/actions";
+import DateField from "@/components/DateField";
 
 type ProposedItem = {
   category: SupplierCategory;
@@ -135,25 +136,13 @@ function ItemForm({
           <label htmlFor="valid_from" className="mb-1 block text-sm font-medium text-slate-700">
             Valido dal
           </label>
-          <input
-            id="valid_from"
-            name="valid_from"
-            type="date"
-            defaultValue={item?.valid_from ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-          />
+          <DateField id="valid_from" name="valid_from" defaultValue={item?.valid_from ?? ""} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
         </div>
         <div>
           <label htmlFor="valid_to" className="mb-1 block text-sm font-medium text-slate-700">
             Valido al
           </label>
-          <input
-            id="valid_to"
-            name="valid_to"
-            type="date"
-            defaultValue={item?.valid_to ?? ""}
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-          />
+          <DateField id="valid_to" name="valid_to" defaultValue={item?.valid_to ?? ""} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
         </div>
       </div>
       <div>

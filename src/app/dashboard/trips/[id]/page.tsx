@@ -52,6 +52,7 @@ import {
   uploadCover,
   uploadDocument,
 } from "./actions";
+import DateField from "@/components/DateField";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -446,25 +447,13 @@ function TripInfoForm({ trip }: { trip: Trip }) {
             <label htmlFor="start_date" className={labelClass}>
               Data inizio
             </label>
-            <input
-              id="start_date"
-              name="start_date"
-              type="date"
-              defaultValue={trip.start_date ?? ""}
-              className={inputClass}
-            />
+            <DateField id="start_date" name="start_date" defaultValue={trip.start_date ?? ""} className={inputClass} />
           </div>
           <div>
             <label htmlFor="end_date" className={labelClass}>
               Data fine
             </label>
-            <input
-              id="end_date"
-              name="end_date"
-              type="date"
-              defaultValue={trip.end_date ?? ""}
-              className={inputClass}
-            />
+            <DateField id="end_date" name="end_date" defaultValue={trip.end_date ?? ""} openAt={trip.start_date} className={inputClass} />
           </div>
         </div>
         <TripPriceFields trip={trip} />

@@ -18,6 +18,7 @@ import {
   updateTripPayment,
   updateTripService,
 } from "@/app/dashboard/trips/[id]/actions";
+import DateField from "@/components/DateField";
 
 type ActivityOption = { id: string; label: string };
 
@@ -278,13 +279,7 @@ function PaymentForm({
         <label htmlFor="payment_due_date" className="mb-1 block text-sm font-medium text-slate-700">
           Scadenza
         </label>
-        <input
-          id="payment_due_date"
-          name="due_date"
-          type="date"
-          defaultValue={payment?.due_date ?? ""}
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-        />
+        <DateField id="payment_due_date" name="due_date" defaultValue={payment?.due_date ?? ""} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
       </div>
 
       <div>

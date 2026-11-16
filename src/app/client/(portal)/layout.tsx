@@ -14,8 +14,15 @@ export default async function ClientPortalLayout({ children }: { children: React
   }
 
   return (
-    <div data-ui="client" className="min-h-screen bg-[#faf3e6]">
-      <HeaderAutoHide className="bg-[#faf3e6]/95 backdrop-blur">
+    <div
+      data-ui="client"
+      className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]"
+    >
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-32 left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
+        <div className="absolute bottom-[-15%] right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
+      </div>
+      <HeaderAutoHide className="bg-[#faf3e6]/80 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-4">
           <Link href="/client" className="flex items-center gap-2.5 text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />

@@ -58,6 +58,7 @@ import {
   uploadActivityPhoto,
   uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
+import DateField from "@/components/DateField";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -164,12 +165,7 @@ export default function ItineraryEditor({
           <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
             Aggiungi un giorno
           </label>
-          <input
-            id="day_date"
-            name="day_date"
-            type="date"
-            className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
-          />
+          <DateField id="day_date" name="day_date" className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]" />
           <button type="submit" className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
             + Aggiungi
           </button>

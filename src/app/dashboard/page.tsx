@@ -78,7 +78,7 @@ export default async function DashboardHomePage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map((stat) => (
-          <div key={stat.label} className="border border-[#e6d7bb] bg-white p-5">
+          <div key={stat.label} className="border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5">
             <p className="font-[family-name:var(--font-display)] text-3xl font-medium text-[#233c5e]">{stat.value}</p>
             <p className="eyebrow mt-2 !text-[#8c7a5e]">{stat.label}</p>
           </div>
@@ -95,7 +95,7 @@ export default async function DashboardHomePage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="border border-[#e6d7bb] bg-white p-5">
+        <section className="border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5">
           <h2 className="mb-3 border-b border-[#e6d7bb] pb-3 text-xl font-medium text-[#233c5e]">Prossime partenze</h2>
           {upcomingTrips.length === 0 ? (
             <p className="text-sm text-slate-400">Nessuna partenza in programma.</p>
@@ -129,7 +129,7 @@ export default async function DashboardHomePage() {
           </Link>
         </section>
 
-        <section className="border border-[#e6d7bb] bg-white p-5">
+        <section className="border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5">
           <h2 className="mb-3 border-b border-[#e6d7bb] pb-3 text-xl font-medium text-[#233c5e]">Promemoria da fare</h2>
           {!pendingItems || pendingItems.length === 0 ? (
             <p className="text-sm text-slate-400">Nessun promemoria aperto. Tutto in ordine.</p>

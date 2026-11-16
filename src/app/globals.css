@@ -88,3 +88,77 @@ html[data-ui-font="classico"] body {
   text-transform: uppercase;
   color: #b08d57;
 }
+
+/* ── Piccoli dettagli condivisi: campi, focus, calendari, barre di scorrimento ── */
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="range"]),
+select,
+textarea {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="range"]):focus,
+select:focus,
+textarea:focus {
+  border-color: #cda876;
+  box-shadow: 0 0 0 3px rgba(205, 168, 118, 0.22);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: #233c5e;
+}
+
+input[type="time"] {
+  color-scheme: light;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #cda876;
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d9c8a4 transparent;
+}
+
+/* Apparizione morbida di finestre e calendari */
+@keyframes soft-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.picker-pop,
+.modal-card {
+  animation: soft-pop 0.16s ease-out;
+}
+
+@keyframes soft-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-backdrop {
+  animation: soft-fade 0.16s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .picker-pop,
+  .modal-card,
+  .modal-backdrop {
+    animation: none;
+  }
+}

@@ -27,12 +27,19 @@ export default async function DashboardLayout({
   const brandColor = profile?.brand_color || "#233c5e";
 
   return (
-    <div data-ui="agency" className="min-h-screen bg-[#faf3e6]">
+    <div
+      data-ui="agency"
+      className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]"
+    >
       <FontPreference
         fontSize={profile?.ui_font_size ?? "normale"}
         fontFamily={profile?.ui_font_family ?? "predefinito"}
       />
-      <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/95 backdrop-blur">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-32 right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
+        <div className="absolute bottom-[-15%] left-[-8%] h-96 w-96 rounded-full bg-[#233c5e]/10 blur-3xl" />
+      </div>
+      <HeaderAutoHide className="border-b border-[#e6d7bb] bg-[#faf3e6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-6">
           <Link href="/dashboard" className="flex shrink-0 items-center gap-2.5 text-[#233c5e]">
             {profile?.logo_url ? (

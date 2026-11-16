@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import type { Client } from "@/lib/types";
+import DateField from "@/components/DateField";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -69,13 +70,7 @@ export default function ClientDetailsFields({
           <label htmlFor="date_of_birth" className={labelClass}>
             Data di nascita
           </label>
-          <input
-            id="date_of_birth"
-            name="date_of_birth"
-            type="date"
-            defaultValue={client?.date_of_birth ?? ""}
-            className={inputClass}
-          />
+          <DateField id="date_of_birth" name="date_of_birth" defaultValue={client?.date_of_birth ?? ""} className={inputClass} />
         </div>
         <div>
           <label htmlFor="place_of_birth" className={labelClass}>
@@ -123,13 +118,7 @@ export default function ClientDetailsFields({
           <label htmlFor="id_card_expiry" className={labelClass}>
             Scadenza carta d&apos;identità
           </label>
-          <input
-            id="id_card_expiry"
-            name="id_card_expiry"
-            type="date"
-            defaultValue={client?.id_card_expiry ?? ""}
-            className={inputClass}
-          />
+          <DateField id="id_card_expiry" name="id_card_expiry" defaultValue={client?.id_card_expiry ?? ""} className={inputClass} />
         </div>
         <MaskedField
           id="passport_number"
@@ -141,13 +130,7 @@ export default function ClientDetailsFields({
           <label htmlFor="passport_expiry" className={labelClass}>
             Scadenza passaporto
           </label>
-          <input
-            id="passport_expiry"
-            name="passport_expiry"
-            type="date"
-            defaultValue={client?.passport_expiry ?? ""}
-            className={inputClass}
-          />
+          <DateField id="passport_expiry" name="passport_expiry" defaultValue={client?.passport_expiry ?? ""} className={inputClass} />
         </div>
       </div>
     </details>

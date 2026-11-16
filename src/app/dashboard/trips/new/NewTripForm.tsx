@@ -7,6 +7,7 @@ import type { Client, PriceMode } from "@/lib/types";
 import type { ClientRequest } from "@/lib/clientRequestAi";
 import Modal from "@/components/Modal";
 import ClientRequestExtractor from "./ClientRequestExtractor";
+import DateField from "@/components/DateField";
 
 export default function NewTripForm({ clients }: { clients: Client[] }) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
@@ -15,16 +16,16 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
 
   const titleRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
-  const startDateRef = useRef<HTMLInputElement>(null);
-  const endDateRef = useRef<HTMLInputElement>(null);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const clientSelectRef = useRef<HTMLSelectElement>(null);
   const notesRef = useRef<HTMLTextAreaElement>(null);
 
   function handleExtracted(data: ClientRequest) {
     if (titleRef.current) titleRef.current.value = data.suggested_title;
     if (destinationRef.current) destinationRef.current.value = data.destination ?? "";
-    if (startDateRef.current) startDateRef.current.value = data.start_date ?? "";
-    if (endDateRef.current) endDateRef.current.value = data.end_date ?? "";
+    setStartDate(data.start_date ?? "");
+    setEndDate(data.end_date ?? "");
     if (notesRef.current) notesRef.current.value = data.notes ?? "";
 
     // Se il nome estratto corrisponde (anche parzialmente) a un cliente già
@@ -88,25 +89,13 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
             <label htmlFor="start_date" className="mb-1 block text-sm font-medium text-slate-700">
               Data inizio
             </label>
-            <input
-              ref={startDateRef}
-              id="start_date"
-              name="start_date"
-              type="date"
-              className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-            />
+            <DateField id="start_date" name="start_date" value={startDate} onChange={setStartDate} highlightFrom={startDate} highlightTo={endDate} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
           </div>
           <div>
             <label htmlFor="end_date" className="mb-1 block text-sm font-medium text-slate-700">
               Data fine
             </label>
-            <input
-              ref={endDateRef}
-              id="end_date"
-              name="end_date"
-              type="date"
-              className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-            />
+            <DateField id="end_date" name="end_date" value={endDate} onChange={setEndDate} openAt={startDate} highlightFrom={startDate} highlightTo={endDate} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
           </div>
         </div>
 
