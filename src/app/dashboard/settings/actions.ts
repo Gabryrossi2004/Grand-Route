@@ -35,26 +35,54 @@ export async function updateProfile(
     notify_emergencies: formData.get("notify_emergencies") === "on",
   };
 
-  const logoFile = formData.get("logo");
-  if (logoFile instanceof File && logoFile.size > 0) {
-    const validationError = validateImageFile(logoFile) ?? (await verifyFileSignature(logoFile));
-    if (validationError) return { error: validationError };
-
-    const path = `${user.id}/logo-${Date.now()}-${safeStorageName(logoFile.name)}`;
-    const { error: uploadError } = await supabase.storage
-      .from("public-assets")
-      .upload(path, logoFile, { contentType: logoFile.type || undefined });
-
-    if (!uploadError) {
-      const { data } = supabase.storage.from("public-assets").getPublicUrl(path);
-      updates.logo_url = data.publicUrl;
-    }
-  }
-
   const { error } = await supabase.from("profiles").update(updates).eq("id", user.id);
   if (error) return { error: "Errore durante il salvataggio." };
 
   revalidatePath("/dashboard/settings");
   revalidatePath("/dashboard", "layout");
   return { success: true };
+}
+
+// Carica il logo dell'agenzia e lo collega al profilo. Restituisce { ok: true }
+// oppure { error } con la causa, che la zona di caricamento mostra a schermo.
+export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const file = formData.get("logo");
+  if (!(file instanceof File) || file.size === 0) return { error: "Nessun file selezionato." };
+  const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
+  if (fileError) return { error: fileError };
+
+  const { data: current } = await supabase.from("profiles").select("logo_url").eq("id", user.id).maybeSingle();
+
+  const path = `${user.id}/logo-${Date.now()}-${safeStorageName(file.name)}`;
+  const { error: uploadError } = await supabase.storage
+    .from("public-assets")
+    .upload(path, file, { contentType: file.type || undefined });
+  if (uploadError) {
+    console.error("[uploadLogo]", uploadError.message);
+    return { error: "Non è stato possibile caricare il logo. Riprova tra poco." };
+  }
+
+  const { data } = supabase.storage.from("public-assets").getPublicUrl(path);
+  const { error: updateError } = await supabase.from("profiles").update({ logo_url: data.publicUrl }).eq("id", user.id);
+  if (updateError) {
+    console.error("[uploadLogo] salvataggio:", updateError.message);
+    await supabase.storage.from("public-assets").remove([path]);
+    return { error: "Il logo è stato caricato ma non è stato possibile salvarlo. Riprova." };
+  }
+
+  // Pulizia: il vecchio logo non serve più (solo file della propria cartella).
+  const oldPath = current?.logo_url?.split("/public-assets/")[1];
+  if (oldPath && oldPath.startsWith(`${user.id}/`) && oldPath !== path) {
+    await supabase.storage.from("public-assets").remove([decodeURIComponent(oldPath)]);
+  }
+
+  revalidatePath("/dashboard/settings");
+  revalidatePath("/dashboard", "layout");
+  return { ok: true };
 }

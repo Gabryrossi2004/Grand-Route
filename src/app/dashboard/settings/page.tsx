@@ -3,6 +3,7 @@ import { BookOpen, ChevronRight } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
+import LogoUploader from "./LogoUploader";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -35,6 +36,8 @@ export default async function SettingsPage() {
         </span>
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
+
+      <LogoUploader logoUrl={(profile as Profile).logo_url} />
 
       <SettingsForm profile={profile as Profile} />
     </div>

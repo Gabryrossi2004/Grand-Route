@@ -76,8 +76,9 @@ export default function UploadForm({
         setStatus({ state: "error", message: result.error });
         settleLater(10000);
       } else {
-        setStatus({ state: "done" });
-        settleLater(2500);
+        // Nessuna conferma da mostrare: l'utente vede subito il risultato
+        // (la foto, il documento) nella pagina aggiornata.
+        setStatus({ state: "idle" });
       }
     } catch {
       form.reset();
