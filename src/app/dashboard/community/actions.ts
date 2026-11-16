@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
+import { detectFileMime, safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 
 const MAX_PHOTOS_PER_POST = 6;
@@ -50,7 +50,7 @@ export async function createPost(
   for (const photo of photos) {
     const path = `${user.id}/community/${post.id}/${Date.now()}-${safeStorageName(photo.name)}`;
     const { error: uploadError } = await supabase.storage.from("public-assets").upload(path, photo, {
-      contentType: photo.type || undefined,
+      contentType: (await detectFileMime(photo)) ?? (photo.type || undefined),
     });
     if (!uploadError) {
       const { data } = supabase.storage.from("public-assets").getPublicUrl(path);

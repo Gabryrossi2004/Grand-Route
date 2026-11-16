@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, ImagePlus, Loader2 } from "lucide-react";
 import { compressImageFile } from "@/lib/compressImage";
+import { normalizeImageFile } from "@/lib/normalizeImage";
 import { useUploadStatus } from "@/components/UploadForm";
 
 // Il limite delle richieste verso il server è di 10 MB: oltre, il caricamento
@@ -43,13 +44,16 @@ export default function DropzoneUpload({
     if (!fileList || fileList.length === 0 || !inputRef.current || busy) return;
     setLocalError(null);
     let files = Array.from(fileList);
-    if (compressImages) {
-      setProcessing(true);
-      try {
+    setProcessing(true);
+    try {
+      // Corregge i file con estensione sbagliata (es. WebP chiamato .jpg) o
+      // in formati non accettati, poi, se richiesto, riduce le foto.
+      files = await Promise.all(files.map((file) => normalizeImageFile(file)));
+      if (compressImages) {
         files = await Promise.all(files.map((file) => compressImageFile(file)));
-      } finally {
-        setProcessing(false);
       }
+    } finally {
+      setProcessing(false);
     }
     const tooBig = files.find((file) => file.size > MAX_UPLOAD_BYTES);
     if (tooBig) {

@@ -1,3 +1,5 @@
+import { sniffMime, type SniffedMime } from "@/lib/imageSniff";
+
 const IMAGE_MIME_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 const DOCUMENT_MIME_TYPES = [...IMAGE_MIME_TYPES, "application/pdf"];
 
@@ -57,36 +59,28 @@ export function validateTextFile(file: File): string | null {
   return null;
 }
 
-// Il tipo di file dichiarato dal browser (file.type) lo decide chi carica:
-// un file qualsiasi può dichiararsi "image/png". Qui guardiamo i primi byte
-// del contenuto vero ("firma" del formato) e rifiutiamo se non corrispondono.
-function startsWith(head: Uint8Array, bytes: number[], offset = 0) {
-  return bytes.every((byte, i) => head[offset + i] === byte);
+// Il tipo di file dichiarato dal browser (file.type) viene dall'estensione,
+// e un file può avere l'estensione sbagliata senza colpa (capita spesso con
+// immagini salvate da generatori AI o da WhatsApp: ".jpg" ma contenuto WebP).
+// Qui guardiamo i primi byte del contenuto vero: si accetta qualunque formato
+// consentito (JPG, PNG, GIF, WebP e, dove previsto, PDF) e si rifiuta tutto il
+// resto (HTML, script, programmi...) anche se si dichiara "image/png".
+export async function detectFileMime(file: Blob): Promise<SniffedMime | null> {
+  const head = new Uint8Array(await file.slice(0, 16).arrayBuffer());
+  return sniffMime(head);
 }
 
-export async function verifyFileSignature(file: File): Promise<string | null> {
-  const head = new Uint8Array(await file.slice(0, 16).arrayBuffer());
-  let ok: boolean;
-  switch (file.type) {
-    case "image/jpeg":
-      ok = startsWith(head, [0xff, 0xd8, 0xff]);
-      break;
-    case "image/png":
-      ok = startsWith(head, [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-      break;
-    case "image/gif":
-      ok = startsWith(head, [0x47, 0x49, 0x46, 0x38]); // "GIF8"
-      break;
-    case "image/webp":
-      ok = startsWith(head, [0x52, 0x49, 0x46, 0x46]) && startsWith(head, [0x57, 0x45, 0x42, 0x50], 8); // "RIFF....WEBP"
-      break;
-    case "application/pdf":
-      ok = startsWith(head, [0x25, 0x50, 0x44, 0x46, 0x2d]); // "%PDF-"
-      break;
-    default:
-      return "Tipo di file non supportato.";
+export async function verifyFileSignature(file: File, allowPdf = false): Promise<string | null> {
+  const detected = await detectFileMime(file);
+  if (!detected) {
+    return allowPdf
+      ? "Formato non riconosciuto: usa una foto (JPG, PNG, WebP, GIF) oppure un PDF."
+      : "Formato non riconosciuto: usa una foto JPG, PNG, WebP o GIF.";
   }
-  return ok ? null : "Il contenuto del file non corrisponde al suo tipo: usa una foto o un PDF valido.";
+  if (detected === "application/pdf" && !allowPdf) {
+    return "Qui serve una foto (JPG, PNG, WebP o GIF), non un PDF.";
+  }
+  return null;
 }
 
 // Nome file sicuro da usare nel percorso dello Storage: solo lettere, numeri,

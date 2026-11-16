@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
+import { detectFileMime, safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
 
 export async function updateProfile(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -62,7 +62,7 @@ export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { e
   const path = `${user.id}/logo-${Date.now()}-${safeStorageName(file.name)}`;
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
-    .upload(path, file, { contentType: file.type || undefined });
+    .upload(path, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
   if (uploadError) {
     console.error("[uploadLogo]", uploadError.message);
     return { error: "Non è stato possibile caricare il logo. Riprova tra poco." };

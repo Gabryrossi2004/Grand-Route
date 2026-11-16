@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
 import {
+  detectFileMime,
   safeStorageName,
   validateDocumentFile,
   validateImageFile,
@@ -666,14 +667,14 @@ export async function uploadDocument(
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
-  const fileError = validateDocumentFile(file) ?? (await verifyFileSignature(file));
+  const fileError = validateDocumentFile(file) ?? (await verifyFileSignature(file, true));
   if (fileError) return { error: fileError };
 
   const filePath = `${user.id}/${tripId}/${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
-    .upload(filePath, file, { contentType: file.type || undefined });
+    .upload(filePath, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
 
   if (uploadError) {
     console.error("[uploadDocument]", uploadError.message);
@@ -747,7 +748,7 @@ export async function uploadDocumentCover(
   const coverPath = `${user.id}/${tripId}/covers/${documentId}-${Date.now()}-${safeStorageName(file.name)}`;
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
-    .upload(coverPath, file, { contentType: file.type || undefined });
+    .upload(coverPath, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
   if (uploadError) {
     console.error("[uploadDocumentCover]", uploadError.message);
     return { error: UPLOAD_FAILED };
@@ -798,7 +799,7 @@ export async function uploadActivityPhoto(
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
-    .upload(filePath, file, { contentType: file.type || undefined });
+    .upload(filePath, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
 
   if (uploadError) {
     console.error("[uploadActivityPhoto]", uploadError.message);
@@ -843,7 +844,7 @@ export async function uploadCover(tripId: string, formData: FormData): Promise<{
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
-    .upload(filePath, file, { contentType: file.type || undefined });
+    .upload(filePath, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
 
   if (uploadError) {
     console.error("[uploadCover]", uploadError.message);
@@ -1155,7 +1156,7 @@ export async function applyAiItineraryDraft(
       const buffer = Buffer.from(await draftFile.arrayBuffer());
       image = {
         base64: buffer.toString("base64"),
-        mediaType: draftFile.type as DraftImage["mediaType"],
+        mediaType: ((await detectFileMime(draftFile)) ?? draftFile.type) as DraftImage["mediaType"],
       };
     } else if (draftFile.name.toLowerCase().endsWith(".csv")) {
       const validationError = validateSpreadsheetFile(draftFile);
