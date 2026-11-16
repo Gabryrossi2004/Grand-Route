@@ -401,6 +401,9 @@ export default function ZefiroAvatar3D({
       window.removeEventListener("pointermove", onPointerMove);
       geometries.forEach((geometry) => geometry.dispose());
       materials.forEach((m) => m.dispose());
+      // Libera subito il contesto grafico: i browser ne concedono pochi in
+      // contemporanea, e a forza di aprire e chiudere finestre si esaurirebbero.
+      renderer.forceContextLoss();
       renderer.dispose();
       renderer.domElement.remove();
     };
