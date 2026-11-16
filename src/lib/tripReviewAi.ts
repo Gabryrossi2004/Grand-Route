@@ -128,12 +128,12 @@ REGOLE:
 5. Tieni conto delle risposte dell'agente alle domande di contesto, se presenti.
 6. Se l'itinerario è già molto buono restituisci pochi suggerimenti: non riempire la lista.`;
 
-export async function generateReviewQuestions(digest: string): Promise<ReviewQuestions> {
+export async function generateReviewQuestions(digest: string, rulesBlock = ""): Promise<ReviewQuestions> {
   const client = new Anthropic();
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 2000,
-    system: QUESTIONS_SYSTEM,
+    system: rulesBlock ? `${QUESTIONS_SYSTEM}\n\n${rulesBlock}` : QUESTIONS_SYSTEM,
     messages: [{ role: "user", content: digest }],
     output_config: { effort: "low", format: zodOutputFormat(QuestionsSchema) },
   });
@@ -144,6 +144,7 @@ export async function generateReviewQuestions(digest: string): Promise<ReviewQue
 export async function generateReviewSuggestions(
   digest: string,
   answers: { question: string; answer: string }[],
+  rulesBlock = "",
 ): Promise<ReviewSuggestions> {
   const client = new Anthropic();
   const answered = answers.filter((item) => item.answer.trim().length > 0);
@@ -156,7 +157,7 @@ export async function generateReviewSuggestions(
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 6000,
-    system: SUGGESTIONS_SYSTEM,
+    system: rulesBlock ? `${SUGGESTIONS_SYSTEM}\n\n${rulesBlock}` : SUGGESTIONS_SYSTEM,
     messages: [{ role: "user", content: `${digest}${context}` }],
     output_config: { effort: "medium", format: zodOutputFormat(SuggestionsSchema) },
   });

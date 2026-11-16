@@ -1,6 +1,7 @@
 "use server";
 
 import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
+import { loadAiRules } from "@/lib/aiRulesServer";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
@@ -1150,7 +1151,7 @@ function addDaysToDate(dateStr: string, days: number): string {
 export async function applyAiItineraryDraft(
   tripId: string,
   formData: FormData,
-): Promise<{ error: string | null }> {
+): Promise<{ error: string | null; questions?: string[] }> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -1201,6 +1202,13 @@ export async function applyAiItineraryDraft(
 
   if (!draftText && !image) {
     return { error: "Incolla un testo, oppure carica un file Excel o una foto della bozza." };
+  }
+
+  // Risposte dell'agente alle domande dell'AI (secondo giro): si aggiungono
+  // alla bozza e l'AI non fa altre domande.
+  const clarifications = String(formData.get("clarifications") ?? "").trim().slice(0, 4000);
+  if (clarifications) {
+    draftText = `${draftText}\n\nCHIARIMENTI DELL'AGENTE (risposte alle tue domande):\n${clarifications}`.trim();
   }
   if (draftText.length > MAX_DRAFT_CHARS) return { error: tooLongMessage(MAX_DRAFT_CHARS) };
 
@@ -1272,9 +1280,26 @@ export async function applyAiItineraryDraft(
         ) + 1;
       if (diff >= 1 && diff <= 90) tripDays = diff;
     }
-    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions, image, tripDays });
+    const rules = await loadAiRules();
+    generated = await generateItineraryFromDraft({
+      draftText,
+      styleExamples,
+      styleInstructions,
+      image,
+      tripDays,
+      rulesBlock: rules.text,
+      allowQuestions: !clarifications,
+    });
   } catch {
     return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
+  }
+
+  // L'AI ha dei dubbi importanti: restituisce le domande, senza toccare il viaggio.
+  if (generated.questions.length > 0 && generated.days.length === 0 && !clarifications) {
+    return { error: null, questions: generated.questions };
+  }
+  if (generated.days.length === 0) {
+    return { error: "L'AI non è riuscita a ricavare dei giorni dalla bozza. Prova con un testo più chiaro." };
   }
 
   const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);
@@ -1351,6 +1376,17 @@ export async function applyAiItineraryDraft(
   // esplicita nella bozza): resta sequenziale perché può creare altri giorni.
   for (const check of lodgingChecks) {
     await handleLodgingCheckout(supabase, tripId, check.dayId, check.title, check.details);
+  }
+
+  // Note lasciate dall'AI per l'agente (ipotesi, dubbi, verifiche su distanze e
+  // tempi). Se la colonna non esiste ancora (migrazione 0033) si ignora.
+  const notes = generated.agent_notes.map((note) => note.trim()).filter(Boolean);
+  if (notes.length > 0) {
+    const { error: notesError } = await supabase
+      .from("trips")
+      .update({ ai_notes: notes.map((note) => `• ${note}`).join("\n") })
+      .eq("id", tripId);
+    if (notesError) console.error("[applyAiItineraryDraft] note AI non salvate:", notesError.message);
   }
 
   revalidatePath(`/dashboard/trips/${tripId}`);

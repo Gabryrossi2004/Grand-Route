@@ -12,7 +12,7 @@ const GeneratedActivitySchema = z.object({
   start_time: z
     .string()
     .nullable()
-    .describe("Orario in formato HH:MM se indicato nella bozza, altrimenti null. Non inventare un orario."),
+    .describe("Orario in formato HH:MM a 24 ore se indicato nella bozza (anche se scritto con AM/PM), altrimenti null. Non inventare un orario."),
   description: z
     .string()
     .nullable()
@@ -35,6 +35,18 @@ const GeneratedDaySchema = z.object({
 
 export const GeneratedItinerarySchema = z.object({
   days: z.array(GeneratedDaySchema),
+  agent_notes: z
+    .array(z.string())
+    .max(8)
+    .describe(
+      "Note brevi per l'agente (massimo 8): ipotesi che hai fatto, dubbi di poco conto, tragitti troppo lunghi o tempi troppo stretti con la tua stima (da verificare). Vuoto se non c'è nulla da segnalare.",
+    ),
+  questions: z
+    .array(z.string())
+    .max(5)
+    .describe(
+      "Domande brevi e concrete per l'agente, SOLO se hai dubbi importanti che non puoi risolvere dalla bozza. In questo caso lascia 'days' vuoto. Vuoto se non servono domande.",
+    ),
 });
 
 export type GeneratedItinerary = z.infer<typeof GeneratedItinerarySchema>;
@@ -55,7 +67,13 @@ function describeActivityTypes(): string {
     .join("\n");
 }
 
-function buildSystemPrompt(styleExamples: string[], styleInstructions: string | null, tripDays: number | null = null): string {
+function buildSystemPrompt(
+  styleExamples: string[],
+  styleInstructions: string | null,
+  tripDays: number | null = null,
+  rulesBlock = "",
+  allowQuestions = true,
+): string {
   const stylePart =
     styleExamples.length > 0
       ? `\n\nSTILE DI SCRITTURA DI QUESTA AGENZIA (esempi reali da loro itinerari precedenti — scrivi le nuove descrizioni con un tono e uno stile simile a questi):\n${styleExamples
@@ -64,25 +82,28 @@ function buildSystemPrompt(styleExamples: string[], styleInstructions: string | 
       : "";
 
   const chosenStylePart = styleInstructions
-    ? `\n\nSTILE RICHIESTO PER QUESTO VIAGGIO (scelto dall'agenzia per questo cliente/tipo di viaggio specifico — ha priorità sul tono generico della regola 6):\n${styleInstructions}`
+    ? `\n\nSTILE RICHIESTO PER QUESTO VIAGGIO (scelto dall'agenzia per questo cliente/tipo di viaggio specifico — ha priorità sul tono generico):\n${styleInstructions}`
     : "";
 
   const durationPart = tripDays
-    ? `\n7. DURATA: il viaggio dura esattamente ${tripDays} giorni (day_index da 0 a ${tripDays - 1}). Distribuisci la bozza su questi giorni. Se la bozza descrive meno giorni, i giorni finali restano senza attività (elenco "activities" vuoto); se ne descrive di più, includili comunque tutti, senza scartare nulla.`
+    ? `\n- DURATA: il viaggio dura esattamente ${tripDays} giorni (day_index da 0 a ${tripDays - 1}). Distribuisci la bozza su questi giorni. Se la bozza descrive meno giorni, i giorni finali restano senza attività (elenco "activities" vuoto); se ne descrive di più, includili comunque tutti, senza scartare nulla.`
     : "";
+
+  const questionsPart = allowQuestions
+    ? `\n- DOMANDE: se hai dubbi importanti (vedi regola sul chiedere in caso di dubbio) compila "questions" e lascia "days" vuoto. Altrimenti "questions" resta vuoto e generi l'itinerario.`
+    : `\n- DOMANDE: l'agente ha già risposto ai tuoi chiarimenti: NON fare altre domande ("questions" vuoto). Genera l'itinerario usando le risposte e, per ciò che resta incerto, l'ipotesi più ragionevole indicata in "agent_notes".`;
 
   return `Sei un assistente che trasforma la bozza di un itinerario di viaggio (scritta liberamente da un'agenzia o tour operator) in un itinerario strutturato, giorno per giorno, usando le categorie di attività del loro gestionale.
 
 TIPI DI ATTIVITÀ DISPONIBILI (scegli sempre il più adatto, non inventarne altri):
 ${describeActivityTypes()}
 
-REGOLE FONDAMENTALI:
-1. Non inventare MAI un dato che non è presente nella bozza originale: orari, numeri di telefono, punti di incontro, numeri di conferma, nomi di fornitori, ecc. Se un'informazione non c'è, lascia il campo null (o non inserire quella chiave in "details") e limitati a descrivere a parole quello che si sa.
-2. Scrivi sempre in italiano.
-3. Dividi le attività nei giorni corretti, in ordine cronologico, a partire da day_index 0.
-4. Ogni attività ha un titolo breve e chiaro.
-5. Non aggiungere attività non presenti nella bozza, anche se "scontate" per quel tipo di viaggio.
-6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${durationPart}${chosenStylePart}${stylePart}`;
+STRUTTURA DEL RISULTATO:
+- Dividi le attività nei giorni corretti, in ordine cronologico, a partire da day_index 0.
+- Ogni attività ha un titolo breve e chiaro.${durationPart}${questionsPart}
+- Usa "agent_notes" per le note all'agente (ipotesi fatte, dubbi minori, verifiche su distanze e tempi).
+
+${rulesBlock}${chosenStylePart}${stylePart}`;
 }
 
 export type DraftImage = {
@@ -102,6 +123,10 @@ export async function generateItineraryFromDraft(params: {
   image?: DraftImage | null;
   // Durata del viaggio in giorni, se le date sono già note.
   tripDays?: number | null;
+  // Regole di base della piattaforma + regole dell'agenzia, già formattate.
+  rulesBlock?: string;
+  // Falso se l'agente ha già risposto alle domande: non se ne fanno altre.
+  allowQuestions?: boolean;
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
 
@@ -123,7 +148,13 @@ export async function generateItineraryFromDraft(params: {
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 16000,
-    system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null, params.tripDays ?? null),
+    system: buildSystemPrompt(
+      params.styleExamples,
+      params.styleInstructions ?? null,
+      params.tripDays ?? null,
+      params.rulesBlock ?? "",
+      params.allowQuestions ?? true,
+    ),
     messages: [{ role: "user", content: userContent }],
     // "medium" invece del default "high": questo compito (estrarre e
     // strutturare, non ragionare su un problema complesso) non sembra avere

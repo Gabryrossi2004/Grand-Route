@@ -16,6 +16,8 @@ export type Profile = {
   ui_font_family: UiFontFamily;
   is_professional: boolean;
   emergency_phone: string | null;
+  ai_rules: string | null;
+  ai_preferences: Record<string, string> | null;
   notify_trips: boolean;
   notify_community: boolean;
   notify_emergencies: boolean;
@@ -82,6 +84,7 @@ export type Trip = {
   end_date: string | null;
   cover_image_url: string | null;
   title_color: string | null;
+  ai_notes: string | null;
   public_slug: string;
   is_published: boolean;
   price_mode: PriceMode;

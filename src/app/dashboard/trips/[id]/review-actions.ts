@@ -2,6 +2,7 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { reserveAiCall } from "@/lib/aiQuota";
+import { loadAiRules } from "@/lib/aiRulesServer";
 import {
   buildTripDigest,
   generateReviewQuestions,
@@ -50,7 +51,8 @@ export async function getReviewQuestions(tripId: string): Promise<{ questions: R
   if (!quota.ok) return { error: quota.error };
 
   try {
-    const result = await generateReviewQuestions(loaded.digest);
+    const rules = await loadAiRules();
+    const result = await generateReviewQuestions(loaded.digest, rules.text);
     return { questions: result.questions };
   } catch (error) {
     console.error("[getReviewQuestions]", error);
@@ -77,7 +79,8 @@ export async function getReviewSuggestions(
   if (!quota.ok) return { error: quota.error };
 
   try {
-    const result = await generateReviewSuggestions(loaded.digest, cleanAnswers);
+    const rules = await loadAiRules();
+    const result = await generateReviewSuggestions(loaded.digest, cleanAnswers, rules.text);
     return { result };
   } catch (error) {
     console.error("[getReviewSuggestions]", error);

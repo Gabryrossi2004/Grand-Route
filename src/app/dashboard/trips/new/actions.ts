@@ -129,7 +129,7 @@ const MAX_AI_DAYS = 30;
 export async function createTripWithAi(
   _prevState: { error?: string } | undefined,
   formData: FormData,
-): Promise<{ error?: string }> {
+): Promise<{ error?: string; questions?: string[] }> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -166,9 +166,12 @@ export async function createTripWithAi(
   if ("error" in created) return { error: created.error };
 
   const result = await applyAiItineraryDraft(created.id, formData);
-  if (result.error) {
+  if (result.error || result.questions) {
+    // L'AI ha un errore o delle domande: il viaggio appena creato non serve
+    // ancora, lo si rifà quando l'agente avrà risposto.
     await supabase.from("trips").delete().eq("id", created.id);
-    return { error: result.error };
+    if (result.questions) return { questions: result.questions };
+    return { error: result.error ?? undefined };
   }
 
   redirect(`/dashboard/trips/${created.id}`);
