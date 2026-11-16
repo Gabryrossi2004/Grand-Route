@@ -8,6 +8,7 @@ import type { Activity, ActivityDetails, ActivityPhoto, ActivityTemplate, Activi
 import { activityTypeOptions, detailFields, CHECK_OUT_DATE_KEY } from "@/lib/activityTypes";
 import RichTextEditor from "@/components/RichTextEditor";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import UploadForm from "@/components/UploadForm";
 import { toSafeHtml } from "@/lib/richText";
 import {
   deleteActivityPhoto,
@@ -377,9 +378,9 @@ export default function ActivityForm({
               ))}
             </div>
           )}
-          <form action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
-            <DropzoneUpload name="photo" accept="image/*" label="Trascina o aggiungi una foto" compressImages />
-          </form>
+          <UploadForm action={uploadActivityPhoto.bind(null, tripId, initialActivity.id)}>
+            <DropzoneUpload name="photo" accept="image/*" label="Carica foto" compressImages />
+          </UploadForm>
         </div>
 
         <div>
@@ -416,9 +417,9 @@ export default function ActivityForm({
               ))}
             </ul>
           )}
-          <form action={uploadDocument.bind(null, tripId, initialActivity.id)} encType="multipart/form-data">
-            <DropzoneUpload name="file" label="Trascina o aggiungi un documento (voucher, biglietto…)" />
-          </form>
+          <UploadForm action={uploadDocument.bind(null, tripId, initialActivity.id)}>
+            <DropzoneUpload name="file" label="Carica documento (voucher, biglietto…)" />
+          </UploadForm>
         </div>
       </div>
     )}

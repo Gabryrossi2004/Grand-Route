@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { FileText, ImagePlus, Pencil, Trash2, X } from "lucide-react";
 import type { TripDocument } from "@/lib/types";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import UploadForm from "@/components/UploadForm";
 import SubmitButton from "@/components/SubmitButton";
 import {
   deleteDocument,
@@ -81,9 +82,9 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
 
         {isAddingCover && (
           <div className="mt-2 flex items-start gap-2">
-            <form action={uploadDocumentCover.bind(null, tripId, document.id)} encType="multipart/form-data">
-              <DropzoneUpload name="file" accept="image/*" label="Foto di copertina" compressImages />
-            </form>
+            <UploadForm action={uploadDocumentCover.bind(null, tripId, document.id)}>
+              <DropzoneUpload name="file" accept="image/*" label="Carica foto di copertina" compressImages />
+            </UploadForm>
             {document.cover_image_path && (
               <form action={deleteDocumentCover.bind(null, tripId, document.id, document.cover_image_path)}>
                 <SubmitButton

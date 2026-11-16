@@ -30,6 +30,7 @@ import {
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import DocumentRow from "@/components/DocumentRow";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import UploadForm from "@/components/UploadForm";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import ItineraryEditor from "@/components/ItineraryEditor";
@@ -246,13 +247,9 @@ export default async function TripDetailPage({
             </ul>
           )}
 
-          <form
-            action={uploadDocument.bind(null, id, null)}
-            encType="multipart/form-data"
-            className="border-t border-slate-100 pt-4"
-          >
+          <UploadForm action={uploadDocument.bind(null, id, null)} className="border-t border-slate-100 pt-4">
             <DropzoneUpload name="file" label="Carica passaporto, visto o altro documento" />
-          </form>
+          </UploadForm>
         </div>
       </section>
     </div>
@@ -408,9 +405,9 @@ function CoverHero({
         </div>
       )}
 
-      <form action={uploadCover.bind(null, trip.id)} encType="multipart/form-data" className="p-4">
-        <DropzoneUpload name="cover" accept="image/*" label="Trascina qui l'immagine di copertina" compressImages />
-      </form>
+      <UploadForm action={uploadCover.bind(null, trip.id)} className="p-4">
+        <DropzoneUpload name="cover" accept="image/*" label="Carica immagine di copertina" compressImages />
+      </UploadForm>
     </section>
   );
 }

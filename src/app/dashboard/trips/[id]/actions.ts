@@ -648,20 +648,26 @@ export async function sortActivitiesByTime(tripId: string, dayId: string) {
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+const UPLOAD_FAILED = "Non è stato possibile caricare il file. Riprova tra poco.";
+const UPLOAD_NOT_SAVED = "Il file è stato caricato ma non è stato possibile salvarlo. Riprova.";
+const SESSION_EXPIRED = "Sessione scaduta: accedi di nuovo.";
+const NO_FILE = "Nessun file selezionato.";
+
 export async function uploadDocument(
   tripId: string,
   activityId: string | null,
   formData: FormData,
-) {
+): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return;
+  if (!user) return { error: SESSION_EXPIRED };
 
   const file = formData.get("file");
-  if (!(file instanceof File) || file.size === 0) return;
-  if (validateDocumentFile(file) || (await verifyFileSignature(file))) return;
+  if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
+  const fileError = validateDocumentFile(file) ?? (await verifyFileSignature(file));
+  if (fileError) return { error: fileError };
 
   const filePath = `${user.id}/${tripId}/${Date.now()}-${safeStorageName(file.name)}`;
 
@@ -669,17 +675,26 @@ export async function uploadDocument(
     .from("trip-documents")
     .upload(filePath, file, { contentType: file.type || undefined });
 
-  if (uploadError) return;
+  if (uploadError) {
+    console.error("[uploadDocument]", uploadError.message);
+    return { error: UPLOAD_FAILED };
+  }
 
-  await supabase.from("documents").insert({
+  const { error: insertError } = await supabase.from("documents").insert({
     trip_id: tripId,
     activity_id: activityId,
     file_name: file.name,
     file_path: filePath,
     file_type: file.type || null,
   });
+  if (insertError) {
+    console.error("[uploadDocument] salvataggio:", insertError.message);
+    await supabase.storage.from("trip-documents").remove([filePath]);
+    return { error: UPLOAD_NOT_SAVED };
+  }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
 }
 
 export async function deleteDocument(tripId: string, documentId: string, filePath: string) {
@@ -707,16 +722,21 @@ export async function renameDocument(tripId: string, documentId: string, formDat
 // Foto di copertina opzionale per un documento già caricato: puramente
 // organizzativa (es. riconoscere a colpo d'occhio la prima pagina di un
 // passaporto), salvata nello stesso bucket privato dei documenti stessi.
-export async function uploadDocumentCover(tripId: string, documentId: string, formData: FormData) {
+export async function uploadDocumentCover(
+  tripId: string,
+  documentId: string,
+  formData: FormData,
+): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return;
+  if (!user) return { error: SESSION_EXPIRED };
 
   const file = formData.get("file");
-  if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
+  if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
+  const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
+  if (fileError) return { error: fileError };
 
   const { data: existing } = await supabase
     .from("documents")
@@ -728,15 +748,27 @@ export async function uploadDocumentCover(tripId: string, documentId: string, fo
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
     .upload(coverPath, file, { contentType: file.type || undefined });
-  if (uploadError) return;
+  if (uploadError) {
+    console.error("[uploadDocumentCover]", uploadError.message);
+    return { error: UPLOAD_FAILED };
+  }
 
-  await supabase.from("documents").update({ cover_image_path: coverPath }).eq("id", documentId);
+  const { error: updateError } = await supabase
+    .from("documents")
+    .update({ cover_image_path: coverPath })
+    .eq("id", documentId);
+  if (updateError) {
+    console.error("[uploadDocumentCover] salvataggio:", updateError.message);
+    await supabase.storage.from("trip-documents").remove([coverPath]);
+    return { error: UPLOAD_NOT_SAVED };
+  }
 
   if (existing?.cover_image_path) {
     await supabase.storage.from("trip-documents").remove([existing.cover_image_path]);
   }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
 }
 
 export async function deleteDocumentCover(tripId: string, documentId: string, coverPath: string) {
@@ -746,16 +778,21 @@ export async function deleteDocumentCover(tripId: string, documentId: string, co
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
-export async function uploadActivityPhoto(tripId: string, activityId: string, formData: FormData) {
+export async function uploadActivityPhoto(
+  tripId: string,
+  activityId: string,
+  formData: FormData,
+): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return;
+  if (!user) return { error: SESSION_EXPIRED };
 
   const file = formData.get("photo");
-  if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
+  if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
+  const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
+  if (fileError) return { error: fileError };
 
   const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${safeStorageName(file.name)}`;
 
@@ -763,14 +800,24 @@ export async function uploadActivityPhoto(tripId: string, activityId: string, fo
     .from("public-assets")
     .upload(filePath, file, { contentType: file.type || undefined });
 
-  if (uploadError) return;
+  if (uploadError) {
+    console.error("[uploadActivityPhoto]", uploadError.message);
+    return { error: UPLOAD_FAILED };
+  }
 
   const { data } = supabase.storage.from("public-assets").getPublicUrl(filePath);
 
-  await supabase
+  const { error: insertError } = await supabase
     .from("activity_photos")
     .insert({ activity_id: activityId, url: data.publicUrl, file_path: filePath });
+  if (insertError) {
+    console.error("[uploadActivityPhoto] salvataggio:", insertError.message);
+    await supabase.storage.from("public-assets").remove([filePath]);
+    return { error: UPLOAD_NOT_SAVED };
+  }
+
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
 }
 
 export async function deleteActivityPhoto(tripId: string, photoId: string, filePath: string) {
@@ -780,16 +827,17 @@ export async function deleteActivityPhoto(tripId: string, photoId: string, fileP
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
-export async function uploadCover(tripId: string, formData: FormData) {
+export async function uploadCover(tripId: string, formData: FormData): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return;
+  if (!user) return { error: SESSION_EXPIRED };
 
   const file = formData.get("cover");
-  if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
+  if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
+  const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
+  if (fileError) return { error: fileError };
 
   const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${safeStorageName(file.name)}`;
 
@@ -797,13 +845,26 @@ export async function uploadCover(tripId: string, formData: FormData) {
     .from("public-assets")
     .upload(filePath, file, { contentType: file.type || undefined });
 
-  if (uploadError) return;
+  if (uploadError) {
+    console.error("[uploadCover]", uploadError.message);
+    return { error: UPLOAD_FAILED };
+  }
 
   const { data } = supabase.storage.from("public-assets").getPublicUrl(filePath);
 
-  await supabase.from("trips").update({ cover_image_url: data.publicUrl }).eq("id", tripId);
+  const { error: updateError } = await supabase
+    .from("trips")
+    .update({ cover_image_url: data.publicUrl })
+    .eq("id", tripId);
+  if (updateError) {
+    console.error("[uploadCover] salvataggio:", updateError.message);
+    await supabase.storage.from("public-assets").remove([filePath]);
+    return { error: UPLOAD_NOT_SAVED };
+  }
+
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath("/dashboard/trips");
+  return { ok: true };
 }
 
 export async function duplicateTripAsVariant(tripId: string) {

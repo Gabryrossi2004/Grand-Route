@@ -36,6 +36,7 @@ import { activityTypes, detailFieldLabel, visibleDetailEntries } from "@/lib/act
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
 import { sanitizeHtml } from "@/lib/sanitize";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import UploadForm from "@/components/UploadForm";
 import ActivityForm from "@/components/ActivityForm";
 import MiniDatePicker from "@/components/MiniDatePicker";
 import Modal from "@/components/Modal";
@@ -946,12 +947,12 @@ function SortableActivityRow({
           )}
 
           <div className="mt-3 grid max-w-xl gap-2 sm:grid-cols-2">
-            <form action={uploadActivityPhoto.bind(null, tripId, activity.id)} encType="multipart/form-data">
-              <DropzoneUpload name="photo" accept="image/*" label="Trascina una foto" compressImages />
-            </form>
-            <form action={uploadDocument.bind(null, tripId, activity.id)} encType="multipart/form-data">
-              <DropzoneUpload name="file" label="Trascina un documento" />
-            </form>
+            <UploadForm action={uploadActivityPhoto.bind(null, tripId, activity.id)}>
+              <DropzoneUpload name="photo" accept="image/*" label="Carica foto" compressImages />
+            </UploadForm>
+            <UploadForm action={uploadDocument.bind(null, tripId, activity.id)}>
+              <DropzoneUpload name="file" label="Carica documento" />
+            </UploadForm>
           </div>
         </div>
       )}
