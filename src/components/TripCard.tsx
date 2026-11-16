@@ -84,7 +84,7 @@ export default function TripCard({ trip, variantCount }: { trip: Trip; variantCo
             />
           )}
           {dayCount(trip) && (
-            <span className="absolute bottom-0 left-0 bg-[#233c5e] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white">
+            <span className="absolute bottom-0 left-0 rounded-tr-xl bg-[#233c5e] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white">
               {dayCount(trip)} {dayCount(trip) === 1 ? "giorno" : "giorni"}
             </span>
           )}

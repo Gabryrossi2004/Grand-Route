@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import type { UiFontFamily, UiFontSize } from "@/lib/types";
 
 const fontSizeScale: Record<UiFontSize, string> = {
-  normale: "",
-  grande: "112.5%",
-  molto_grande: "125%",
+  normale: "106.25%",
+  grande: "118.75%",
+  molto_grande: "131.25%",
 };
 
 // Applica la preferenza di dimensione/stile del carattere dell'agenzia a

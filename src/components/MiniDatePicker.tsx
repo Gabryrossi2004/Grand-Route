@@ -103,9 +103,9 @@ export default function MiniDatePicker({
   }
 
   const navButton =
-    "rounded-[4px] p-1.5 text-[#8c7a5e] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";
+    "rounded-lg p-1.5 text-[#8c7a5e] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";
   const titleButton =
-    "rounded-[4px] px-1.5 py-0.5 font-[family-name:var(--font-display)] text-[17px] text-[#233c5e] transition hover:bg-[#faf3e6]";
+    "rounded-lg px-1.5 py-0.5 font-[family-name:var(--font-display)] text-[17px] text-[#233c5e] transition hover:bg-[#faf3e6]";
 
   const panel = (
     <div
@@ -113,7 +113,7 @@ export default function MiniDatePicker({
       style={fixedPos ? { position: "fixed", zIndex: 70, ...fixedPos } : undefined}
       className={`${
         fixedPos ? "" : "absolute left-0 top-full z-30 mt-2"
-      } picker-pop w-[19rem] rounded-[6px] border border-[#e6d7bb] bg-white p-4 text-left normal-case shadow-[0_18px_40px_-12px_rgba(35,60,94,0.28)]`}
+      } picker-pop w-[19rem] rounded-2xl border border-[#e6d7bb] bg-white p-4 text-left normal-case shadow-[0_18px_40px_-12px_rgba(35,60,94,0.28)]`}
     >
       <div className="mb-3 flex items-center justify-between border-b border-[#f2e2c4] pb-3">
         {view === "days" && (
@@ -201,7 +201,7 @@ export default function MiniDatePicker({
                 key={i}
                 type="button"
                 onClick={() => pick(key)}
-                className={`mx-auto flex h-9 w-9 items-center justify-center rounded-[5px] text-sm transition ${
+                className={`mx-auto flex h-9 w-9 items-center justify-center rounded-full text-sm transition ${
                   isSelected
                     ? "bg-[#233c5e] font-semibold text-white"
                     : inRange
@@ -230,7 +230,7 @@ export default function MiniDatePicker({
                 setViewDate(new Date(year, index, 1));
                 setView("days");
               }}
-              className={`rounded-[5px] py-2.5 text-sm capitalize transition ${
+              className={`rounded-xl py-2.5 text-sm capitalize transition ${
                 index === month
                   ? "bg-[#233c5e] font-semibold text-white"
                   : "text-slate-700 hover:bg-[#faf3e6]"
@@ -252,7 +252,7 @@ export default function MiniDatePicker({
                 setViewDate(new Date(y, month, 1));
                 setView("months");
               }}
-              className={`rounded-[5px] py-2.5 text-sm transition ${
+              className={`rounded-xl py-2.5 text-sm transition ${
                 y === year ? "bg-[#233c5e] font-semibold text-white" : "text-slate-700 hover:bg-[#faf3e6]"
               }`}
             >
@@ -268,7 +268,7 @@ export default function MiniDatePicker({
             <button
               type="button"
               onClick={() => pick(todayKey)}
-              className="rounded-[4px] px-2 py-1.5 text-sm font-medium text-[#b08d57] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+              className="rounded-lg px-2 py-1.5 text-sm font-medium text-[#b08d57] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
             >
               Oggi
             </button>
@@ -276,7 +276,7 @@ export default function MiniDatePicker({
               <button
                 type="button"
                 onClick={onClear}
-                className="rounded-[4px] px-2 py-1.5 text-sm font-medium text-slate-400 transition hover:bg-slate-50 hover:text-slate-600"
+                className="rounded-lg px-2 py-1.5 text-sm font-medium text-slate-400 transition hover:bg-slate-50 hover:text-slate-600"
               >
                 Cancella
               </button>
