@@ -7,6 +7,7 @@ import { MAX_AGENCY_RULES_CHARS, PREFERENCE_OPTIONS, RULE_EXAMPLES, type Prefere
 import { saveAiRules, testAiRules } from "./actions";
 import { ASSISTANT_NAME, ASSISTANT_TAGLINE } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
+import Zefiro from "@/components/Zefiro";
 
 const keys = Object.keys(PREFERENCE_OPTIONS) as PreferenceKey[];
 
@@ -76,7 +77,10 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
 
   return (
     <section className="mb-6 rounded-xl border border-[#e6d7bb] bg-white p-6">
-      <h2 className="mb-1 text-lg font-medium text-[#233c5e]">Regole per {ASSISTANT_NAME}</h2>
+      <div className="mb-1 flex items-center justify-between gap-3">
+        <h2 className="text-lg font-medium text-[#233c5e]">Regole per {ASSISTANT_NAME}</h2>
+        <Zefiro size={72} state={testing ? "thinking" : sample ? "happy" : "idle"} className="shrink-0" />
+      </div>
       <p className="mb-5 text-xs text-slate-500">
         Come vuoi che {ASSISTANT_NAME}, {ASSISTANT_TAGLINE}, scriva e ragioni per la tua agenzia. Valgono per la generazione degli itinerari e per i
         suggerimenti, solo per te, in aggiunta alle regole di base di Grand Route (che non inventano dati e verificano

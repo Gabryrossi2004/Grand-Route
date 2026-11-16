@@ -1,6 +1,6 @@
 "use client";
 
-import AssistantIcon from "@/components/AssistantIcon";
+import Zefiro from "@/components/Zefiro";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 
 // Domande dell'AI all'agente prima di generare l'itinerario: si risponde (anche
@@ -16,9 +16,10 @@ export default function AiQuestions({
 }) {
   return (
     <div className="rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/70 p-4">
-      <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#233c5e]">
-        <AssistantIcon size={20} /> Prima di partire, {ASSISTANT_NAME} ha qualche dubbio
-      </p>
+      <div className="mb-3 flex items-center gap-3">
+        <Zefiro size={64} state="thinking" className="shrink-0" />
+        <p className="text-sm font-semibold text-[#233c5e]">Prima di partire, {ASSISTANT_NAME} ha qualche dubbio</p>
+      </div>
       <p className="mb-3 text-xs text-slate-600">
         Rispondi a quelle che sai, anche in poche parole. Per le altre farà l&apos;ipotesi più ragionevole e te lo
         segnalerà nelle note.

@@ -9,6 +9,7 @@ import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
+import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
 
 export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId: string; promptStyles: PromptStyle[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,6 +121,12 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
               <p className="text-sm text-red-600" role="alert">
                 {error}
               </p>
+            )}
+            {pending && (
+              <ZefiroThinking
+                title={`${ASSISTANT_NAME} sta scrivendo l'itinerario…`}
+                hint="Può richiedere fino a un minuto."
+              />
             )}
             <div className="mt-1 flex justify-end gap-2">
               <button

@@ -9,6 +9,7 @@ import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { createTripWithAi } from "./actions";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
+import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -193,8 +194,13 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
                 {error}
               </p>
             )}
+            {pending && (
+              <ZefiroThinking
+                title={`${ASSISTANT_NAME} sta preparando il viaggio…`}
+                hint="Legge la bozza e la distribuisce sui giorni. Può richiedere fino a un minuto."
+              />
+            )}
             <div className="mt-1 flex items-center justify-end gap-2">
-              {pending && <span className="mr-auto text-xs text-slate-500">Può richiedere fino a un minuto…</span>}
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

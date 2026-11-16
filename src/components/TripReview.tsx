@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import Modal from "@/components/Modal";
 import { getReviewQuestions, getReviewSuggestions } from "@/app/dashboard/trips/[id]/review-actions";
 import type { ReviewCategory, ReviewSuggestions } from "@/lib/tripReviewAi";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
+import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
 
 type Stage = "intro" | "loading-questions" | "questions" | "loading-suggestions" | "results";
 type Question = { question: string; why: string | null };
@@ -141,13 +142,14 @@ export default function TripReview({ tripId }: { tripId: string }) {
           )}
 
           {(stage === "loading-questions" || stage === "loading-suggestions") && (
-            <div className="flex flex-col items-center gap-3 py-8 text-center">
-              <Loader2 size={26} className="animate-spin text-[#233c5e]" />
-              <p className="text-sm font-medium text-slate-700">
-                {stage === "loading-questions" ? "Sto rileggendo il viaggio…" : "Preparo i suggerimenti…"}
-              </p>
-              <p className="text-xs text-slate-500">Può richiedere qualche decina di secondi.</p>
-            </div>
+            <ZefiroThinking
+              title={
+                stage === "loading-questions"
+                  ? `${ASSISTANT_NAME} sta rileggendo il viaggio…`
+                  : `${ASSISTANT_NAME} sta preparando i suggerimenti…`
+              }
+              hint="Può richiedere qualche decina di secondi."
+            />
           )}
 
           {stage === "questions" && (
