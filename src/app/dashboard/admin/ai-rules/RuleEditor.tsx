@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ActionForm from "@/components/ActionForm";
 import { addRule, resetRule, saveRule } from "./actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 export type EditableRule = {
   key: string;
@@ -52,7 +53,7 @@ export default function RuleEditor({ rules }: { rules: EditableRule[] }) {
           </label>
           <input id={`title_${rule.key}`} name="title" defaultValue={rule.title} className={`${inputClass} mb-3`} />
           <label htmlFor={`body_${rule.key}`} className="mb-1 block text-sm font-medium text-slate-700">
-            Testo (quello che l&apos;AI legge)
+            Testo (quello che {ASSISTANT_NAME} legge)
           </label>
           <textarea id={`body_${rule.key}`} name="body" rows={5} defaultValue={rule.body} className={inputClass} />
           <div className="mt-3 flex flex-wrap items-center gap-3">

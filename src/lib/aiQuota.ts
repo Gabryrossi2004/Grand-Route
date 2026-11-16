@@ -54,13 +54,13 @@ export async function reserveAiCall(kind: AiKind): Promise<{ ok: true } | { ok: 
     if ((hourly.count ?? 0) >= MAX_CALLS_PER_HOUR) {
       return {
         ok: false,
-        error: "Hai usato molte volte l'AI nell'ultima ora. Riprova tra un po', oppure continua a mano.",
+        error: "Hai fatto molte richieste nell'ultima ora. Riprova tra un po', oppure continua a mano.",
       };
     }
     if ((daily.count ?? 0) >= MAX_CALLS_PER_DAY) {
       return {
         ok: false,
-        error: "Hai raggiunto il limite giornaliero di richieste all'AI. Riprova domani, oppure continua a mano.",
+        error: "Hai raggiunto il limite giornaliero di richieste. Riprova domani, oppure continua a mano.",
       };
     }
 

@@ -7,17 +7,22 @@ export default function Modal({
   onClose,
   children,
   wide,
+  icon,
 }: {
   title: string;
   onClose: () => void;
   children: React.ReactNode;
   wide?: boolean;
+  icon?: React.ReactNode;
 }) {
   return (
     <div className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#17283f]/45 p-4 pt-12 backdrop-blur-sm">
       <div className={`modal-card w-full ${wide ? "max-w-4xl" : "max-w-lg"} rounded-xl border border-[#e6d7bb] bg-white shadow-2xl`}>
         <div className="flex items-center justify-between border-b border-[#f2e2c4] px-6 py-4">
-          <h3 className="text-xl font-medium text-[#233c5e]">{title}</h3>
+          <h3 className="flex items-center gap-2.5 text-xl font-medium text-[#233c5e]">
+            {icon}
+            {title}
+          </h3>
           <button
             type="button"
             onClick={onClose}

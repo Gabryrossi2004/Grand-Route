@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Lightbulb, Loader2, RotateCcw } from "lucide-react";
+import { Loader2, RotateCcw } from "lucide-react";
 import Modal from "@/components/Modal";
 import { getReviewQuestions, getReviewSuggestions } from "@/app/dashboard/trips/[id]/review-actions";
 import type { ReviewCategory, ReviewSuggestions } from "@/lib/tripReviewAi";
+import { ASSISTANT_NAME } from "@/lib/assistant";
+import AssistantIcon from "@/components/AssistantIcon";
 
 type Stage = "intro" | "loading-questions" | "questions" | "loading-suggestions" | "results";
 type Question = { question: string; why: string | null };
@@ -92,16 +94,21 @@ export default function TripReview({ tripId }: { tripId: string }) {
         onClick={open}
         className="flex items-center gap-1.5 rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
       >
-        <Lightbulb size={15} />
-        Suggerimenti
+        <AssistantIcon size={20} />
+        {ASSISTANT_NAME}: suggerimenti
       </button>
 
       {isOpen && (
-        <Modal title="Suggerimenti sul viaggio" onClose={close} wide={stage === "results"}>
+        <Modal
+          title={`I suggerimenti di ${ASSISTANT_NAME}`}
+          icon={<AssistantIcon size={26} />}
+          onClose={close}
+          wide={stage === "results"}
+        >
           {stage === "intro" && (
             <div className="flex flex-col gap-4">
               <p className="text-sm text-slate-600">
-                L&apos;AI rilegge l&apos;itinerario e propone correzioni e miglioramenti: orari che non tornano, tappe
+                {ASSISTANT_NAME} rilegge l&apos;itinerario e propone correzioni e miglioramenti: orari che non tornano, tappe
                 troppo ravvicinate, giorni troppo pieni o vuoti, descrizioni mancanti, idee per migliorare
                 l&apos;esperienza.
               </p>
@@ -230,7 +237,7 @@ export default function TripReview({ tripId }: { tripId: string }) {
                 ))}
 
               <p className="text-xs text-slate-500">
-                Sono proposte dell&apos;AI, non verificate: controllale prima di applicarle. Dopo aver fatto modifiche
+                Sono proposte di {ASSISTANT_NAME}, non verificate: controllale prima di applicarle. Dopo aver fatto modifiche
                 puoi rianalizzare il viaggio.
               </p>
               <div className="flex justify-end gap-2">

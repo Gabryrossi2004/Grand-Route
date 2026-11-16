@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { DEFAULT_PLATFORM_RULES, mergePlatformRules, type PlatformRule } from "@/lib/aiRules";
 import RuleEditor, { type EditableRule } from "./RuleEditor";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 // Pagina riservata agli amministratori della piattaforma: le regole di base
 // che l'AI segue per TUTTE le agenzie. Le agenzie non la vedono.
@@ -35,10 +36,10 @@ export default async function AiRulesAdminPage() {
       >
         <ArrowLeft size={14} /> Impostazioni
       </Link>
-      <h1 className="mb-2 text-3xl font-medium tracking-tight text-[#233c5e]">Regole di base dell&apos;AI</h1>
+      <h1 className="mb-2 text-3xl font-medium tracking-tight text-[#233c5e]">Regole di base di {ASSISTANT_NAME}</h1>
       <p className="mb-6 text-sm text-slate-600">
         Valgono per <strong>tutte le agenzie</strong>, sempre. Ogni agenzia può aggiungere le proprie regole di tono e
-        stile, ma non può superare queste. Le modifiche sono attive subito, per le prossime richieste all&apos;AI.
+        stile, ma non può superare queste. Le modifiche sono attive subito, per le prossime richieste a {ASSISTANT_NAME}.
         Scrivile in italiano semplice, come istruzioni a un collaboratore.
       </p>
       <RuleEditor rules={rules} />

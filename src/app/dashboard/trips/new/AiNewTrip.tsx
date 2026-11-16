@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
 import type { Client, PromptStyle } from "@/lib/types";
 import DateField from "@/components/DateField";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import Modal from "@/components/Modal";
 import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { createTripWithAi } from "./actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
+import AssistantIcon from "@/components/AssistantIcon";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -40,7 +41,7 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
         setQuestions(result.questions);
         setAnswers(result.questions.map(() => ""));
       } else if (result?.error || result?.questions) {
-        setError(result.error ?? "L'AI ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.");
+        setError(result.error ?? `${ASSISTANT_NAME} ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.`);
       }
     } catch (caught) {
       // Il reindirizzamento al nuovo viaggio non è un errore.
@@ -62,13 +63,17 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-1.5 rounded-md border border-[#cda876]/60 bg-[#faf3e6]/60 px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#f2e2c4]"
       >
-        <Sparkles size={14} /> Genera con AI
+        <AssistantIcon size={18} /> Chiedi a {ASSISTANT_NAME}
       </button>
 
       {isOpen && (
-        <Modal title="Genera il viaggio con l'AI" onClose={() => !pending && setIsOpen(false)}>
+        <Modal
+          title={`${ASSISTANT_NAME} crea il tuo viaggio`}
+          icon={<AssistantIcon size={26} />}
+          onClose={() => !pending && setIsOpen(false)}
+        >
           <p className="mb-3 -mt-2 text-sm text-slate-500">
-            Indica le date, incolla la bozza dell&apos;itinerario o carica un file: l&apos;AI crea il viaggio e lo
+            Indica le date, incolla la bozza dell&apos;itinerario o carica un file: {ASSISTANT_NAME} crea il viaggio e lo
             distribuisce sui giorni, in attività da rivedere con calma. Non inventa orari o dati che non sono nella
             bozza.
           </p>

@@ -5,6 +5,7 @@ import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
 import LogoUploader from "./LogoUploader";
 import AiRulesCard from "./AiRulesCard";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -54,9 +55,9 @@ export default async function SettingsPage() {
           className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#233c5e]/30 bg-white px-5 py-4 transition hover:shadow-sm"
         >
           <span>
-            <span className="block text-sm font-semibold text-slate-900">Regole di base dell&apos;AI (amministratore)</span>
+            <span className="block text-sm font-semibold text-slate-900">Regole di base di {ASSISTANT_NAME} (amministratore)</span>
             <span className="block text-xs text-slate-500">
-              Le regole che l&apos;AI segue per tutte le agenzie: puoi modificarle, disattivarle o aggiungerne.
+              Le regole che {ASSISTANT_NAME} segue per tutte le agenzie: puoi modificarle, disattivarle o aggiungerne.
             </span>
           </span>
           <ChevronRight size={16} className="shrink-0 text-slate-500" />

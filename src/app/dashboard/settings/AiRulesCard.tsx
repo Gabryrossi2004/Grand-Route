@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Plus, Sparkles } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import type { Profile } from "@/lib/types";
 import { MAX_AGENCY_RULES_CHARS, PREFERENCE_OPTIONS, RULE_EXAMPLES, type PreferenceKey } from "@/lib/aiRules";
 import { saveAiRules, testAiRules } from "./actions";
+import { ASSISTANT_NAME, ASSISTANT_TAGLINE } from "@/lib/assistant";
+import AssistantIcon from "@/components/AssistantIcon";
 
 const keys = Object.keys(PREFERENCE_OPTIONS) as PreferenceKey[];
 
@@ -74,9 +76,9 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
 
   return (
     <section className="mb-6 rounded-xl border border-[#e6d7bb] bg-white p-6">
-      <h2 className="mb-1 text-lg font-medium text-[#233c5e]">Regole per l&apos;AI</h2>
+      <h2 className="mb-1 text-lg font-medium text-[#233c5e]">Regole per {ASSISTANT_NAME}</h2>
       <p className="mb-5 text-xs text-slate-500">
-        Come vuoi che l&apos;AI scriva e ragioni per la tua agenzia. Valgono per la generazione degli itinerari e per i
+        Come vuoi che {ASSISTANT_NAME}, {ASSISTANT_TAGLINE}, scriva e ragioni per la tua agenzia. Valgono per la generazione degli itinerari e per i
         suggerimenti, solo per te, in aggiunta alle regole di base di Grand Route (che non inventano dati e verificano
         che l&apos;itinerario sia fattibile).
       </p>
@@ -149,7 +151,7 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
           disabled={testing}
           className="flex items-center gap-1.5 rounded-md border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-medium text-[#233c5e] hover:bg-[#f2e2c4] disabled:opacity-60"
         >
-          {testing ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />}
+          {testing ? <Loader2 size={14} className="animate-spin" /> : <AssistantIcon size={18} />}
           {testing ? "Preparo l'esempio…" : "Prova le mie regole"}
         </button>
         {status?.kind === "saved" && <span className="text-sm font-medium text-green-700">{status.message}</span>}

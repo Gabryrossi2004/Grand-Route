@@ -36,7 +36,7 @@ async function loadDigest(tripId: string): Promise<{ digest: string } | { error:
   const typedDays = (days as DayWithActivities[] | null) ?? [];
   const activityCount = typedDays.reduce((sum, day) => sum + (day.activities?.length ?? 0), 0);
   if (activityCount === 0) {
-    return { error: "Aggiungi prima qualche attività al viaggio: l'AI ha bisogno di un itinerario da rileggere." };
+    return { error: "Aggiungi prima qualche attività al viaggio: serve un itinerario da rileggere." };
   }
 
   return { digest: buildTripDigest(trip as Trip, typedDays) };
@@ -56,7 +56,7 @@ export async function getReviewQuestions(tripId: string): Promise<{ questions: R
     return { questions: result.questions };
   } catch (error) {
     console.error("[getReviewQuestions]", error);
-    return { error: "L'AI non è riuscita a leggere il viaggio. Riprova tra poco." };
+    return { error: "Non è stato possibile leggere il viaggio. Riprova tra poco." };
   }
 }
 
@@ -84,6 +84,6 @@ export async function getReviewSuggestions(
     return { result };
   } catch (error) {
     console.error("[getReviewSuggestions]", error);
-    return { error: "L'AI non è riuscita a preparare i suggerimenti. Riprova tra poco." };
+    return { error: "Non è stato possibile preparare i suggerimenti. Riprova tra poco." };
   }
 }

@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Sparkles } from "lucide-react";
 import type { PromptStyle } from "@/lib/types";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import Modal from "@/components/Modal";
 import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
+import AssistantIcon from "@/components/AssistantIcon";
 
 export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId: string; promptStyles: PromptStyle[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
         setQuestions(result.questions);
         setAnswers(result.questions.map(() => ""));
       } else if (result.error || result.questions) {
-        setError(result.error ?? "L'AI ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.");
+        setError(result.error ?? `${ASSISTANT_NAME} ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.`);
       } else {
         router.refresh();
         setIsOpen(false);
@@ -51,14 +52,18 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-1.5 rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
       >
-        <Sparkles size={15} />
-        Genera itinerario con l&apos;AI
+        <AssistantIcon size={20} />
+        {ASSISTANT_NAME}: crea l&apos;itinerario
       </button>
 
       {isOpen && (
-        <Modal title="Genera itinerario da una bozza" onClose={() => setIsOpen(false)}>
+        <Modal
+          title={`${ASSISTANT_NAME} crea l'itinerario`}
+          icon={<AssistantIcon size={26} />}
+          onClose={() => setIsOpen(false)}
+        >
           <p className="mb-3 -mt-2 text-sm text-slate-500">
-            Incolla la bozza dell&apos;itinerario, carica un file (Excel/CSV o una foto), o entrambi: l&apos;AI la
+            Incolla la bozza dell&apos;itinerario, carica un file (Excel/CSV o una foto), o entrambi: {ASSISTANT_NAME} la
             trasformerà in giorni e attività, da rivedere con calma prima di passare l&apos;itinerario a
             &quot;finale&quot;. Non inventa orari, numeri o altri dati che non sono già nella bozza.
           </p>

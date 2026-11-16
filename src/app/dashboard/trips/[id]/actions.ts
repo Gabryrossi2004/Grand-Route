@@ -1240,7 +1240,7 @@ export async function applyAiItineraryDraft(
       .in("trip_day_id", existingDayIds);
     if ((existingActivitiesCount ?? 0) > 0) {
       return {
-        error: "Questo viaggio ha già delle attività: la generazione AI è pensata solo per un itinerario vuoto.",
+        error: "Questo viaggio ha già delle attività: la generazione automatica è pensata solo per un itinerario vuoto.",
       };
     }
   }
@@ -1291,7 +1291,7 @@ export async function applyAiItineraryDraft(
       allowQuestions: !clarifications,
     });
   } catch {
-    return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
+    return { error: "Non è stato possibile generare l'itinerario. Riprova, magari con un testo più chiaro." };
   }
 
   // L'AI ha dei dubbi importanti: restituisce le domande, senza toccare il viaggio.
@@ -1299,7 +1299,7 @@ export async function applyAiItineraryDraft(
     return { error: null, questions: generated.questions };
   }
   if (generated.days.length === 0) {
-    return { error: "L'AI non è riuscita a ricavare dei giorni dalla bozza. Prova con un testo più chiaro." };
+    return { error: "Non è stato possibile ricavare dei giorni dalla bozza. Prova con un testo più chiaro." };
   }
 
   const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);

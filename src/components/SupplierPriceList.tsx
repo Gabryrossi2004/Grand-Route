@@ -16,6 +16,7 @@ import {
   updatePriceListItem,
 } from "@/app/dashboard/suppliers/actions";
 import DateField from "@/components/DateField";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 type ProposedItem = {
   category: SupplierCategory;
@@ -290,7 +291,7 @@ function ImportPanel({ supplierId, onSaved }: { supplierId: string; onSaved: () 
           pendingLabel="Leggo il listino…"
           className="flex items-center gap-1.5 rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
         >
-          <Sparkles size={14} /> Leggi il listino con l&apos;AI
+          <Sparkles size={14} /> Fai leggere il listino a {ASSISTANT_NAME}
         </SubmitButton>
       </div>
       {extracting && <p className="mt-1 text-xs text-slate-500">Può richiedere qualche secondo…</p>}

@@ -140,7 +140,7 @@ export async function testAiRules(formData: FormData): Promise<{ sample: string 
   const rulesBlock = formatRulesForPrompt(platform, buildAgencyRulesBlock(preferences, text));
   try {
     const sample = await generateRulesSample(rulesBlock);
-    return sample ? { sample } : { error: "L'AI non ha restituito nessun testo. Riprova." };
+    return sample ? { sample } : { error: "Non è stato restituito nessun testo. Riprova." };
   } catch (error) {
     console.error("[testAiRules]", error);
     return { error: "Non è stato possibile preparare l'esempio. Riprova tra poco." };

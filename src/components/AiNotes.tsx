@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lightbulb, X } from "lucide-react";
+import { X } from "lucide-react";
 import { clearAiNotes } from "@/app/dashboard/trips/[id]/actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
+import AssistantIcon from "@/components/AssistantIcon";
 
 // Note lasciate dall'AI dopo la generazione dell'itinerario (ipotesi fatte,
 // dubbi, tragitti da verificare). Si leggono e poi si nascondono.
@@ -27,7 +29,7 @@ export default function AiNotes({ tripId, notes }: { tripId: string; notes: stri
     <div className="mx-5 mt-5 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3">
       <div className="flex items-start justify-between gap-3">
         <p className="flex items-center gap-2 text-sm font-semibold text-amber-900">
-          <Lightbulb size={16} /> Note dell&apos;AI da verificare
+          <AssistantIcon size={20} /> Note di {ASSISTANT_NAME} da verificare
         </p>
         <button
           type="button"

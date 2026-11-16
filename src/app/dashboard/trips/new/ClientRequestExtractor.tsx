@@ -6,6 +6,7 @@ import DropzoneUpload from "@/components/DropzoneUpload";
 import SubmitButton from "@/components/SubmitButton";
 import type { ClientRequest } from "@/lib/clientRequestAi";
 import { extractClientRequest } from "./actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 // Legge la mail del cliente (testo o foto) e propone i dati del viaggio:
 // non crea nulla, l'agente rivede sempre il risultato nel form prima di
@@ -61,7 +62,7 @@ export default function ClientRequestExtractor({
           pendingLabel="Leggo la richiesta…"
           className="flex items-center gap-1.5 rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
         >
-          <Sparkles size={14} /> Estrai con l&apos;AI
+          <Sparkles size={14} /> Fai leggere a {ASSISTANT_NAME}
         </SubmitButton>
       </div>
     </form>

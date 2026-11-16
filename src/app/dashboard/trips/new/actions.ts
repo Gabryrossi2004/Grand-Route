@@ -142,12 +142,12 @@ export async function createTripWithAi(
 
   if (!title) return { error: "Il titolo del viaggio è obbligatorio." };
   if (!startDate || !endDate) {
-    return { error: "Per generare con l'AI servono la data di inizio e la data di fine del viaggio." };
+    return { error: "Per generare servono la data di inizio e la data di fine del viaggio." };
   }
   const days = dateRange(startDate, endDate);
   if (days.length === 0) return { error: "La data di fine deve essere uguale o successiva a quella di inizio." };
   if (days.length > MAX_AI_DAYS) {
-    return { error: `Per la generazione con l'AI il viaggio può durare al massimo ${MAX_AI_DAYS} giorni.` };
+    return { error: `Per la generazione il viaggio può durare al massimo ${MAX_AI_DAYS} giorni.` };
   }
 
   const draftText = String(formData.get("draft_text") ?? "").trim();

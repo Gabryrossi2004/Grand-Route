@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { ActivityTemplate, PromptStyle } from "@/lib/types";
 import LibraryTabs from "@/components/LibraryTabs";
 import { seedDefaultPromptStylesIfEmpty } from "./actions";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 
 export default async function LibraryPage() {
   await seedDefaultPromptStylesIfEmpty();
@@ -19,7 +20,7 @@ export default async function LibraryPage() {
       </div>
       <p className="mb-6 text-sm text-slate-500">
         I Blocchi sono le attività salvate per riusarle in altri viaggi (apri un&apos;attività e clicca l&apos;icona
-        del segnalibro). Gli Stili sono invece istruzioni di tono da usare quando generi un itinerario con l&apos;AI.
+        del segnalibro). Gli Stili sono invece istruzioni di tono da usare quando chiedi un itinerario a {ASSISTANT_NAME}.
       </p>
 
       <LibraryTabs

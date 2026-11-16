@@ -44,11 +44,11 @@ function StyleForm({ style, onDone }: { style?: PromptStyle; onDone: () => void 
           required
           rows={4}
           defaultValue={style?.prompt_text ?? ""}
-          placeholder="Descrivi il tono/taglio che l'AI deve usare per questo tipo di viaggio o cliente…"
+          placeholder="Descrivi il tono/taglio che deve usare l'assistente per questo tipo di viaggio o cliente…"
           className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
         <p className="mt-1 text-xs text-slate-500">
-          Riguarda solo lo stile della scrittura: l&apos;AI continua a non inventare mai dati non presenti nella
+          Riguarda solo lo stile della scrittura: l&apos;assistente continua a non inventare mai dati non presenti nella
           bozza.
         </p>
       </div>
@@ -78,7 +78,7 @@ export default function PromptStyleGrid({ styles }: { styles: PromptStyle[] }) {
   return (
     <div>
       <p className="mb-4 text-sm text-slate-500">
-        Scegli uno di questi stili (o aggiungine uno tuo) quando generi un itinerario con l&apos;AI, per guidare il
+        Scegli uno di questi stili (o aggiungine uno tuo) quando chiedi un itinerario all&apos;assistente, per guidare il
         tono delle descrizioni verso il tipo di viaggio o di cliente giusto.
       </p>
 
