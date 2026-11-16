@@ -23,7 +23,7 @@ export default async function ClientPreviewPage({
 
   const { data: trips } = await supabase
     .from("trips")
-    .select("*, profiles(agency_name, logo_url)")
+    .select("*, profiles(agency_name, logo_url, brand_color)")
     .eq("client_id", id)
     .order("start_date", { ascending: false });
 

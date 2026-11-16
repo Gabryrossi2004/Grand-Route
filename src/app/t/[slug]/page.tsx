@@ -35,6 +35,10 @@ export default async function PublicTripPage({
     supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions").eq("id", trip.owner_id).single(),
   ]);
 
+  // Il colore del brand si legge a parte e senza bloccare nulla se non è
+  // ancora consentito ai visitatori (vedi migrazione 0032).
+  const { data: brandRow } = await supabase.from("profiles").select("brand_color").eq("id", trip.owner_id).maybeSingle();
+
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
@@ -47,6 +51,7 @@ export default async function PublicTripPage({
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
       agencyTerms={(owner as Profile | null)?.terms_and_conditions}
+      brandColor={(brandRow as { brand_color: string | null } | null)?.brand_color}
     />
   );
 }

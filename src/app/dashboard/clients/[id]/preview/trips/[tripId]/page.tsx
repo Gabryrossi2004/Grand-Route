@@ -47,6 +47,7 @@ export default async function ClientPreviewTripPage({
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
       agencyTerms={(owner as Profile | null)?.terms_and_conditions}
+      brandColor={(owner as Profile | null)?.brand_color}
       headerExtra={
         <div className="flex flex-col gap-2 bg-white/90 px-4 py-2 backdrop-blur">
           <Link

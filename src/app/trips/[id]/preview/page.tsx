@@ -26,7 +26,7 @@ export default async function TripPreviewPage({
       .order("day_order", { ascending: true }),
     // Come in /t/[slug]: solo le colonne leggibili senza login
     // (vedi migrazione 0029).
-    supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions").eq("id", trip.owner_id).single(),
+    supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions, brand_color").eq("id", trip.owner_id).single(),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -41,6 +41,7 @@ export default async function TripPreviewPage({
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
       agencyTerms={(owner as Profile | null)?.terms_and_conditions}
+      brandColor={(owner as Profile | null)?.brand_color}
       headerExtra={
         <div className="flex justify-center bg-[#faf3e6] px-4 py-3 print:hidden">
           <PrintButton />

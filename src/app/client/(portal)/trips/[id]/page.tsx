@@ -73,6 +73,7 @@ export default async function ClientTripPage({
         agencyName={ownerProfile?.agency_name}
         logoUrl={ownerProfile?.logo_url}
         agencyTerms={ownerProfile?.terms_and_conditions}
+        brandColor={ownerProfile?.brand_color}
         payments={(incomingPayments as TripPayment[]) || []}
         headerExtra={
           <div className="flex flex-col bg-white/90 backdrop-blur">

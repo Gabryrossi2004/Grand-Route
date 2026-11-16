@@ -2,8 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, MapPin, Plane } from "lucide-react";
 import type { Trip } from "@/lib/types";
+import { darkenForWhiteText, sanitizeHex } from "@/lib/brandColor";
 
-export type TripWithAgency = Trip & { profiles: { agency_name: string | null; logo_url: string | null } | null };
+export type TripWithAgency = Trip & {
+  profiles: { agency_name: string | null; logo_url: string | null; brand_color: string | null } | null;
+};
 
 export default function ClientTripsGrid({
   trips,
@@ -42,7 +45,10 @@ export default function ClientTripsGrid({
             href={tripHref(trip.id)}
             className="group overflow-hidden rounded-3xl border border-[#e6d7bb] bg-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#233c5e]/10"
           >
-            <div className="relative h-44 w-full bg-[#233c5e]">
+            <div
+              className="relative h-44 w-full bg-[#233c5e]"
+              style={sanitizeHex(trip.profiles?.brand_color) ? { backgroundColor: darkenForWhiteText(sanitizeHex(trip.profiles?.brand_color)!) } : undefined}
+            >
               {trip.cover_image_url && (
                 <>
                   <Image src={trip.cover_image_url} alt="" fill sizes="50vw" className="object-cover" />

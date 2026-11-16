@@ -1,5 +1,5 @@
 -- ============================================================
--- GRAND ROUTE - creazione completa del database (migrazioni 0001-0031)
+-- GRAND ROUTE - creazione completa del database (migrazioni 0001-0032)
 -- Da incollare UNA VOLTA nell'SQL Editor di un progetto Supabase NUOVO e vuoto.
 -- Tutto in una transazione: se qualcosa fallisce non viene applicato nulla,
 -- quindi si può correggere e rilanciare senza lasciare il database a metà.
@@ -1911,5 +1911,16 @@ revoke execute on function public.get_community_post_push_targets(uuid) from pub
 --    dentro le regole di sicurezza (RLS), anche su "profiles" che i
 --    visitatori leggono dalla pagina pubblica di un viaggio: togliere il
 --    permesso agli anonimi la romperebbe.
+
+
+-- >>>>>>>>>> 0032_brand_color_public.sql <<<<<<<<<<
+-- Migrazione: il colore del brand dell'agenzia deve essere leggibile anche da
+-- chi apre la pagina pubblica di un viaggio (senza login), per colorare
+-- l'intestazione. È solo un codice colore, non un dato personale.
+-- Esegui questo file nell'SQL Editor di Supabase DOPO aver eseguito 0031_...
+--
+-- Il sito funziona anche prima di questo passaggio (il colore semplicemente
+-- non compare nella pagina pubblica).
+grant select (brand_color) on public.profiles to anon;
 
 commit;

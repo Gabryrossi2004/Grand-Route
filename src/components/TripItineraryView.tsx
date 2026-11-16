@@ -5,6 +5,7 @@ import { sanitizeHtml } from "@/lib/sanitize";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import { themeFontVariables } from "@/lib/themeFonts";
 import PhotoGallery from "@/components/PhotoGallery";
+import { darkenForWhiteText, sanitizeHex } from "@/lib/brandColor";
 import Image from "next/image";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
@@ -35,6 +36,7 @@ export default function TripItineraryView({
   agencyName,
   logoUrl,
   agencyTerms,
+  brandColor,
   headerExtra,
   payments,
 }: {
@@ -43,6 +45,8 @@ export default function TripItineraryView({
   agencyName?: string | null;
   logoUrl?: string | null;
   agencyTerms?: string | null;
+  // Colore del brand dell'agenzia: colora l'intestazione (se non c'è la foto) e la fascia sotto di essa.
+  brandColor?: string | null;
   headerExtra?: React.ReactNode;
   payments?: TripPayment[];
 }) {
@@ -54,10 +58,16 @@ export default function TripItineraryView({
       ? `${new Date(trip.start_date).toLocaleDateString("it-IT")} – ${new Date(trip.end_date).toLocaleDateString("it-IT")}`
       : null;
 
+  const brand = sanitizeHex(brandColor);
+  const headerBackground = brand ? darkenForWhiteText(brand) : null;
+
   return (
     <div data-theme={theme} className={`themed-page ${themeFontVariables} min-h-screen`}>
       {headerExtra}
-      <header className="theme-accent-bg relative flex min-h-[18rem] items-end overflow-hidden px-4 py-10 text-white">
+      <header
+        className="theme-accent-bg relative flex min-h-[18rem] items-end overflow-hidden px-4 py-10 text-white"
+        style={headerBackground && !trip.cover_image_url ? { backgroundColor: headerBackground } : undefined}
+      >
         {trip.cover_image_url && (
           <>
             <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
@@ -80,6 +90,7 @@ export default function TripItineraryView({
           {trip.destination && <p className="mt-1 text-white/90">{trip.destination}</p>}
           {dateRange && <p className="mt-1 text-sm text-white/80">{dateRange}</p>}
         </div>
+        {brand && <div className="absolute inset-x-0 bottom-0 h-1.5" style={{ backgroundColor: brand }} aria-hidden />}
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-10">
