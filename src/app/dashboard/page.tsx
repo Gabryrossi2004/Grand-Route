@@ -80,7 +80,7 @@ export default async function DashboardHomePage() {
         {stats.map((stat) => (
           <div key={stat.label} className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
             <p className="font-[family-name:var(--font-display)] text-3xl font-medium text-[#233c5e]">{stat.value}</p>
-            <p className="eyebrow mt-2 !text-[#8c7a5e]">{stat.label}</p>
+            <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
           </div>
         ))}
 
@@ -90,7 +90,7 @@ export default async function DashboardHomePage() {
           <p className="font-[family-name:var(--font-display)] text-3xl font-medium text-white">
             {formatEuro(incassatoReale)}
           </p>
-          <p className="eyebrow mt-2 !text-[#e4cc98]">Incassato reale</p>
+          <p className="mt-1 text-sm text-[#cbbfa6]">Incassato reale</p>
         </div>
       </div>
 

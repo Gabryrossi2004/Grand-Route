@@ -122,7 +122,7 @@ export default function MiniDatePicker({
               <button type="button" onClick={() => setView("months")} className={`${titleButton} capitalize`}>
                 {monthName}
               </button>
-              <button type="button" onClick={() => setView("years")} className={`${titleButton} text-[#b08d57]`}>
+              <button type="button" onClick={() => setView("years")} className={`${titleButton} !text-slate-500`}>
                 {year}
               </button>
             </div>
@@ -183,7 +183,7 @@ export default function MiniDatePicker({
           {WEEKDAY_LABELS.map((label) => (
             <div
               key={label}
-              className="flex h-7 items-center justify-center text-[11px] font-semibold uppercase tracking-wider text-[#b08d57]"
+              className="flex h-7 items-center justify-center text-[11px] font-semibold uppercase tracking-wider text-slate-400"
             >
               {label}
             </div>
@@ -268,7 +268,7 @@ export default function MiniDatePicker({
             <button
               type="button"
               onClick={() => pick(todayKey)}
-              className="rounded-lg px-2 py-1.5 text-sm font-medium text-[#b08d57] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+              className="rounded-lg px-2 py-1.5 text-sm font-medium text-[#233c5e] transition hover:bg-[#faf3e6]"
             >
               Oggi
             </button>

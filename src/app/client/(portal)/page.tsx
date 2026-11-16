@@ -27,7 +27,7 @@ export default async function ClientHomePage() {
     <div>
       <div className="relative mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-[#233c5e] to-[#34527c] px-7 py-9 text-white">
         <div className="pointer-events-none absolute -right-14 -top-14 h-56 w-56 rounded-full bg-[#cda876]/25" />
-        <p className="eyebrow !text-[#e4cc98]">{firstName ? `Ciao, ${firstName}` : "Benvenuto"}</p>
+        <p className="eyebrow !text-white/70">{firstName ? `Ciao, ${firstName}` : "Benvenuto"}</p>
         <h1 className="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">I tuoi viaggi</h1>
         <p className="mt-2 max-w-md text-sm text-[#d9cdb4]">
           Itinerari, documenti e scadenze del tuo viaggio, sempre a portata di mano.
