@@ -30,7 +30,7 @@ export default async function DashboardLayout({
   const brandColor = profile?.brand_color || "#233c5e";
 
   return (
-    <ZefiroStyleProvider variant={getAvatarStyle(profile?.ai_preferences)}>
+    <ZefiroStyleProvider mode={getAvatarStyle(profile?.ai_preferences)}>
     <div
       data-ui="agency"
       className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]"

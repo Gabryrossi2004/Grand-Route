@@ -12,17 +12,38 @@ export function isAvatarVisible(preferences: Record<string, string> | null | und
 }
 
 // I costumi di Zefiro: l'agenzia sceglie quello che preferisce nelle
-// Impostazioni (preferenza salvata in ai_preferences.avatar_style).
-export type ZefiroVariantId = "classico" | "seta" | "grecia" | "egitto";
+// Impostazioni (preferenza salvata in ai_preferences.avatar_style), oppure
+// "dinamico": Zefiro si veste secondo la meta del viaggio che sta guardando.
+export type ZefiroVariantId =
+  | "classico"
+  | "seta"
+  | "giappone"
+  | "grecia"
+  | "egitto"
+  | "arabo"
+  | "africa"
+  | "messico"
+  | "nordico"
+  | "tropicale";
+
+export type ZefiroMode = ZefiroVariantId | "dinamico";
 
 export const ZEFIRO_VARIANTS: { id: ZefiroVariantId; name: string; description: string }[] = [
   { id: "classico", name: "Classico", description: "Berretto blu notte e sciarpa dorata" },
-  { id: "seta", name: "Via della Seta", description: "Cappello conico di paglia e sciarpa di seta rossa" },
+  { id: "seta", name: "Via della Seta", description: "Cappello conico e seta rossa: Cina, Asia centrale, India" },
+  { id: "giappone", name: "Giappone", description: "Fascia con il sole rosso, obi e fiori di ciliegio" },
   { id: "grecia", name: "Grecia", description: "Corona d'alloro e sciarpa blu Egeo" },
   { id: "egitto", name: "Egitto", description: "Copricapo a strisce e collare dorato con perle" },
+  { id: "arabo", name: "Medio Oriente", description: "Turbante con gioiello: Marocco, Emirati, Giordania, Turchia" },
+  { id: "africa", name: "Safari", description: "Cappello da safari e sciarpa a righe: Africa" },
+  { id: "messico", name: "Messico", description: "Sombrero e poncho a righe: America Latina" },
+  { id: "nordico", name: "Nord", description: "Elmo con le corna e sciarpa di lana: Scandinavia, Islanda" },
+  { id: "tropicale", name: "Tropici", description: "Cappello di paglia con ibisco e collana di fiori: isole e mari caldi" },
 ];
 
-export function getAvatarStyle(preferences: Record<string, string> | null | undefined): ZefiroVariantId {
-  const style = preferences?.avatar_style;
-  return ZEFIRO_VARIANTS.some((variant) => variant.id === style) ? (style as ZefiroVariantId) : "classico";
+export const ZEFIRO_MODES: ZefiroMode[] = ["dinamico", ...ZEFIRO_VARIANTS.map((variant) => variant.id)];
+
+export function getAvatarStyle(preferences: Record<string, string> | null | undefined): ZefiroMode {
+  const style = preferences?.avatar_style as ZefiroMode | undefined;
+  return style && ZEFIRO_MODES.includes(style) ? style : "classico";
 }

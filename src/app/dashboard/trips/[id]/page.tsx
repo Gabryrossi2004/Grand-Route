@@ -30,6 +30,7 @@ import {
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import TripReview from "@/components/TripReview";
 import AiNotes from "@/components/AiNotes";
+import { ZefiroDestination } from "@/components/ZefiroStyle";
 import DocumentRow from "@/components/DocumentRow";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import UploadForm from "@/components/UploadForm";
@@ -206,6 +207,7 @@ export default async function TripDetailPage({
         <TripChecklist tripId={id} items={(checklistItems as TripChecklistItem[]) || []} />
       </div>
 
+      <ZefiroDestination destination={trip.destination} title={trip.title} />
       <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-md shadow-[#e6d7bb]/30">
         <div className="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-[#233c5e] via-[#333d4a] to-[#17283f] px-5 py-4">
           <div>

@@ -13,6 +13,7 @@ import {
   type PreferenceKey,
 } from "@/lib/aiRules";
 import { generateRulesSample } from "@/lib/rulesSampleAi";
+import { ZEFIRO_MODES } from "@/lib/assistant";
 
 export async function updateProfile(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -172,7 +173,7 @@ export async function setAvatarVisible(visible: boolean): Promise<{ ok: true } |
 
 // Sceglie il costume di Zefiro.
 export async function setAvatarStyle(style: string): Promise<{ ok: true } | { error: string }> {
-  if (!["classico", "seta", "grecia", "egitto"].includes(style)) return { error: "Costume non valido." };
+  if (!(ZEFIRO_MODES as string[]).includes(style)) return { error: "Costume non valido." };
   const supabase = await createClient();
   const {
     data: { user },
