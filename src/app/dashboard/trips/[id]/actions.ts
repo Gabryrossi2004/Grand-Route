@@ -189,7 +189,7 @@ async function handleFlightArrival(
   await resyncDayOrder(supabase, tripId);
 }
 
-export async function updateTripInfo(tripId: string, formData: FormData) {
+export async function updateTripInfo(tripId: string, formData: FormData): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const title = String(formData.get("title") ?? "").trim();
   const destination = String(formData.get("destination") ?? "").trim() || null;
@@ -201,7 +201,9 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
   const priceCommission = formData.get("price_commission") ? Number(formData.get("price_commission")) : null;
   const titleColor = String(formData.get("title_color") ?? "").trim() || null;
 
-  await supabase
+  if (!title) return { error: "Il titolo non può essere vuoto." };
+
+  const { data: updated, error } = await supabase
     .from("trips")
     .update({
       title,
@@ -214,9 +216,19 @@ export async function updateTripInfo(tripId: string, formData: FormData) {
       price_commission: priceMode === "commissioni" ? priceCommission : null,
       title_color: titleColor,
     })
-    .eq("id", tripId);
+    .eq("id", tripId)
+    .select("public_slug")
+    .maybeSingle();
+
+  if (error) {
+    console.error("[updateTripInfo]", error.message);
+    return { error: "Non è stato possibile salvare le informazioni. Riprova." };
+  }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/trips/${tripId}/preview`);
+  if (updated?.public_slug) revalidatePath(`/t/${updated.public_slug}`);
+  return { ok: true };
 }
 
 // Modifica rapida del solo titolo (doppio click sul titolo in cima alla

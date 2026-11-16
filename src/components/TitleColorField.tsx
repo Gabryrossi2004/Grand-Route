@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 
-export default function TitleColorField({ defaultValue }: { defaultValue: string | null }) {
+export default function TitleColorField({
+  defaultValue,
+  title,
+  coverUrl,
+}: {
+  defaultValue: string | null;
+  title?: string;
+  coverUrl?: string | null;
+}) {
   const [useCustom, setUseCustom] = useState(Boolean(defaultValue));
   const [color, setColor] = useState(defaultValue ?? "#ffffff");
 
@@ -33,6 +41,16 @@ export default function TitleColorField({ defaultValue }: { defaultValue: string
         )}
       </div>
       <input type="hidden" name="title_color" value={useCustom ? color : ""} />
+
+      <div
+        className="mt-3 flex h-20 items-end overflow-hidden rounded-lg border border-slate-200 bg-[#233c5e] bg-cover bg-center p-3"
+        style={coverUrl ? { backgroundImage: `linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,.1)), url(${coverUrl})` } : undefined}
+        aria-label="Anteprima del titolo sulla copertina"
+      >
+        <p className="truncate text-xl font-semibold" style={{ color: useCustom ? color : "#ffffff" }}>
+          {title || "Titolo del viaggio"}
+        </p>
+      </div>
     </div>
   );
 }

@@ -31,6 +31,7 @@ import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import DocumentRow from "@/components/DocumentRow";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import UploadForm from "@/components/UploadForm";
+import ActionForm from "@/components/ActionForm";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import ItineraryEditor from "@/components/ItineraryEditor";
@@ -310,7 +311,7 @@ function CoverHero({
         </div>
 
         <div className="relative text-white">
-          <TripTitleEditor tripId={trip.id} title={trip.title} />
+          <TripTitleEditor tripId={trip.id} title={trip.title} color={trip.title_color} />
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-white/90">
             {trip.destination && (
               <span className="flex items-center gap-1">
@@ -426,7 +427,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
         )
       }
     >
-      <form action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
+      <ActionForm action={updateTripInfo.bind(null, trip.id)} className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label htmlFor="title" className={labelClass}>
             Titolo
@@ -454,7 +455,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
           </div>
         </div>
         <TripPriceFields trip={trip} />
-        <TitleColorField defaultValue={trip.title_color} />
+        <TitleColorField defaultValue={trip.title_color} title={trip.title} coverUrl={trip.cover_image_url} />
         <div className="sm:col-span-2">
           <button
             type="submit"
@@ -463,7 +464,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
             Salva informazioni
           </button>
         </div>
-      </form>
+      </ActionForm>
 
       <details className="mt-6 border-t border-slate-100 pt-5">
         <summary className={`${labelClass} cursor-pointer select-none`}>Personalizza interfaccia viaggio</summary>

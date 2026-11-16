@@ -4,7 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateTripTitle } from "@/app/dashboard/trips/[id]/actions";
 
-export default function TripTitleEditor({ tripId, title }: { tripId: string; title: string }) {
+export default function TripTitleEditor({
+  tripId,
+  title,
+  color,
+}: {
+  tripId: string;
+  title: string;
+  color?: string | null;
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(title);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -47,7 +55,8 @@ export default function TripTitleEditor({ tripId, title }: { tripId: string; tit
             setIsEditing(false);
           }
         }}
-        className="w-full rounded-lg border border-white/40 bg-white/10 px-2 py-1 text-3xl font-bold leading-tight text-white outline-none backdrop-blur placeholder:text-white/50"
+        style={{ color: color || "#ffffff" }}
+        className="w-full rounded-lg border border-white/40 bg-white/10 px-2 py-1 text-3xl font-bold leading-tight outline-none backdrop-blur placeholder:text-white/50"
       />
     );
   }
@@ -56,6 +65,7 @@ export default function TripTitleEditor({ tripId, title }: { tripId: string; tit
     <h1
       onDoubleClick={() => setIsEditing(true)}
       title="Doppio click per modificare il titolo"
+      style={{ color: color || "#ffffff" }}
       className="cursor-pointer rounded text-3xl font-bold leading-tight drop-shadow-sm hover:bg-white/10"
     >
       {title}
