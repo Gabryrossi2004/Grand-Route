@@ -52,7 +52,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
     <div>
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full max-w-sm">
-          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             value={query}
@@ -85,7 +85,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
           </Link>
         </div>
       ) : filteredTrips.length === 0 ? (
-        <p className="text-sm text-slate-400">Nessun viaggio corrisponde alla ricerca.</p>
+        <p className="text-sm text-slate-500">Nessun viaggio corrisponde alla ricerca.</p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredTrips.map((trip) => (

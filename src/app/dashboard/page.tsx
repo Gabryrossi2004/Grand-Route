@@ -98,7 +98,7 @@ export default async function DashboardHomePage() {
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <h2 className="mb-3 border-b border-[#e6d7bb] pb-3 text-xl font-medium text-[#233c5e]">Prossime partenze</h2>
           {upcomingTrips.length === 0 ? (
-            <p className="text-sm text-slate-400">Nessuna partenza in programma.</p>
+            <p className="text-sm text-slate-500">Nessuna partenza in programma.</p>
           ) : (
             <ul className="flex flex-col gap-1">
               {upcomingTrips.map((trip) => (
@@ -132,7 +132,7 @@ export default async function DashboardHomePage() {
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           <h2 className="mb-3 border-b border-[#e6d7bb] pb-3 text-xl font-medium text-[#233c5e]">Promemoria da fare</h2>
           {!pendingItems || pendingItems.length === 0 ? (
-            <p className="text-sm text-slate-400">Nessun promemoria aperto. Tutto in ordine.</p>
+            <p className="text-sm text-slate-500">Nessun promemoria aperto. Tutto in ordine.</p>
           ) : (
             <ul className="flex flex-col gap-1">
               {(pendingItems as (TripChecklistItem & { trips: { title: string } | null })[]).map((item) => (
@@ -143,7 +143,7 @@ export default async function DashboardHomePage() {
                   >
                     <span className="min-w-0 truncate text-sm text-slate-700">{item.label}</span>
                     {item.trips?.title && (
-                      <span className="shrink-0 truncate text-xs text-slate-400">{item.trips.title}</span>
+                      <span className="shrink-0 truncate text-xs text-slate-500">{item.trips.title}</span>
                     )}
                   </Link>
                 </li>

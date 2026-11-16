@@ -47,7 +47,7 @@ function StyleForm({ style, onDone }: { style?: PromptStyle; onDone: () => void 
           placeholder="Descrivi il tono/taglio che l'AI deve usare per questo tipo di viaggio o cliente…"
           className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
-        <p className="mt-1 text-xs text-slate-400">
+        <p className="mt-1 text-xs text-slate-500">
           Riguarda solo lo stile della scrittura: l&apos;AI continua a non inventare mai dati non presenti nella
           bozza.
         </p>
@@ -83,7 +83,7 @@ export default function PromptStyleGrid({ styles }: { styles: PromptStyle[] }) {
       </p>
 
       {styles.length === 0 && formTarget !== "new" && (
-        <p className="mb-4 text-sm text-slate-400">Nessuno stile ancora.</p>
+        <p className="mb-4 text-sm text-slate-500">Nessuno stile ancora.</p>
       )}
 
       <div className="mb-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -213,7 +213,7 @@ export default function ActivityForm({
               ))}
             </select>
           ) : (
-            <span className="flex items-center text-xs text-slate-400">
+            <span className="flex items-center text-xs text-slate-500">
               Nessuna attività di questo tipo in libreria
             </span>
           ))}
@@ -322,7 +322,7 @@ export default function ActivityForm({
                 />
               )}
               {field.key === CHECK_OUT_DATE_KEY && !isEdit && (
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="mt-1 text-xs text-slate-500">
                   Crea automaticamente i giorni mancanti e aggiunge il check-out nel giorno giusto.
                 </p>
               )}
@@ -389,7 +389,7 @@ export default function ActivityForm({
               {documents.map((document) => (
                 <li key={document.id} className="flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2 py-1.5">
                   <span className="flex min-w-0 items-center gap-1.5 text-sm text-slate-700">
-                    <FileText size={14} className="shrink-0 text-slate-400" />
+                    <FileText size={14} className="shrink-0 text-slate-500" />
                     {document.signedUrl ? (
                       <a
                         href={document.signedUrl}

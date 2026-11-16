@@ -91,7 +91,7 @@ export default async function CommunityGroupPage({ params }: { params: Promise<{
             <div key={m.profile_id} className="flex items-center justify-between text-sm">
               <span className="text-slate-700">
                 {m.community_profile_directory?.agency_name || m.community_profile_directory?.full_name || "Professionista"}
-                {m.role === "owner" && <span className="ml-1.5 text-xs text-[#8c7a5e]">(Responsabile)</span>}
+                {m.role === "owner" && <span className="ml-1.5 text-xs text-[#756548]">(Responsabile)</span>}
               </span>
               {isOwner && m.profile_id !== user.id && (
                 <ConfirmDeleteButton

@@ -103,7 +103,7 @@ export default function MiniDatePicker({
   }
 
   const navButton =
-    "rounded-lg p-1.5 text-[#8c7a5e] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";
+    "rounded-lg p-1.5 text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";
   const titleButton =
     "rounded-lg px-1.5 py-0.5 font-[family-name:var(--font-display)] text-[17px] text-[#233c5e] transition hover:bg-[#faf3e6]";
 
@@ -183,7 +183,7 @@ export default function MiniDatePicker({
           {WEEKDAY_LABELS.map((label) => (
             <div
               key={label}
-              className="flex h-7 items-center justify-center text-[11px] font-semibold uppercase tracking-wider text-slate-400"
+              className="flex h-7 items-center justify-center text-[11px] font-semibold uppercase tracking-wider text-slate-500"
             >
               {label}
             </div>
@@ -276,7 +276,7 @@ export default function MiniDatePicker({
               <button
                 type="button"
                 onClick={onClear}
-                className="rounded-lg px-2 py-1.5 text-sm font-medium text-slate-400 transition hover:bg-slate-50 hover:text-slate-600"
+                className="rounded-lg px-2 py-1.5 text-sm font-medium text-slate-500 transition hover:bg-slate-50 hover:text-slate-600"
               >
                 Cancella
               </button>

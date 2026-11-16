@@ -375,7 +375,7 @@ export default function GuidaPage() {
       </p>
 
       <nav className="mb-10 rounded-2xl border border-[#e6d7bb] bg-white p-6">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">Indice</p>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">Indice</p>
         <ol className="grid gap-2 text-base sm:grid-cols-2">
           {sections.map((section) => (
             <li key={section.id}>

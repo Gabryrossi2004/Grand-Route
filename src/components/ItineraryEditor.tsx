@@ -212,7 +212,7 @@ export default function ItineraryEditor({
             onDeleteDay={() => requestDeleteDay(selectedDay.id)}
           />
         ) : (
-          <p className="text-sm text-slate-400">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
+          <p className="text-sm text-slate-500">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
         )}
       </div>
 
@@ -313,7 +313,7 @@ function DaySidebarItem({
       }`}
     >
       <div className="flex items-center justify-between gap-2">
-        <p className="flex items-center gap-1 text-xs uppercase text-slate-400">
+        <p className="flex items-center gap-1 text-xs uppercase text-slate-500">
           <GripVertical size={12} className="text-slate-300" />
           Giorno {index + 1}
         </p>
@@ -641,7 +641,7 @@ function DayPanel({
           </ul>
         </SortableContext>
       </DndContext>
-      {orderedActivities.length === 0 && <p className="mb-2 text-sm text-slate-400">Nessuna attività ancora.</p>}
+      {orderedActivities.length === 0 && <p className="mb-2 text-sm text-slate-500">Nessuna attività ancora.</p>}
 
       {isAddingActivity && (
         <Modal title="Nuova attività" onClose={() => setIsAddingActivity(false)}>
@@ -796,7 +796,7 @@ function SortableActivityRow({
           </span>
           <ChevronDown
             size={16}
-            className={`shrink-0 text-slate-400 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+            className={`shrink-0 text-slate-500 transition-transform ${isExpanded ? "rotate-180" : ""}`}
           />
         </button>
       </div>
@@ -917,7 +917,7 @@ function SortableActivityRow({
               {documents.map((document) => (
                 <li key={document.id} className="flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2 py-1">
                   <span className="flex min-w-0 items-center gap-1.5 text-xs text-slate-700">
-                    <FileText size={13} className="shrink-0 text-slate-400" />
+                    <FileText size={13} className="shrink-0 text-slate-500" />
                     {document.signedUrl ? (
                       <a
                         href={document.signedUrl}

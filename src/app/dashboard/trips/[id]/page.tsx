@@ -226,7 +226,7 @@ export default async function TripDetailPage({
 
       <section>
         <div className="mb-4 flex items-center gap-2">
-          <FileText size={18} className="text-slate-400" />
+          <FileText size={18} className="text-slate-500" />
           <div>
             <h2 className="text-lg font-semibold text-slate-900">Documenti del viaggio</h2>
             <p className="text-sm text-slate-500">
@@ -237,7 +237,7 @@ export default async function TripDetailPage({
         </div>
         <div className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
           {documentsWithUrl.length === 0 ? (
-            <p className="mb-4 text-sm text-slate-400">Nessun documento caricato ancora.</p>
+            <p className="mb-4 text-sm text-slate-500">Nessun documento caricato ancora.</p>
           ) : (
             <ul className="mb-4 flex flex-col gap-2">
               {documentsWithUrl.map((document) => (
@@ -393,7 +393,7 @@ function CoverHero({
             <ExternalLink size={13} />
           </a>
         ) : (
-          <span className="ml-auto text-sm text-slate-400">
+          <span className="ml-auto text-sm text-slate-500">
             Pubblica per ottenere un link da condividere col cliente.
           </span>
         )}
@@ -401,7 +401,7 @@ function CoverHero({
 
       {variantTrips.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
-          <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Varianti di questo viaggio:</span>
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Varianti di questo viaggio:</span>
           {variantTrips.map((variant) => (
             <VariantLink key={variant.id} currentTripId={trip.id} variant={variant} />
           ))}
@@ -423,7 +423,7 @@ function TripInfoForm({ trip }: { trip: Trip }) {
       title="Informazioni viaggio"
       badge={
         needsAttention && (
-          <span className="rounded-full bg-[#f2e2c4] px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-[#8c7a5e]">
+          <span className="rounded-full bg-[#f2e2c4] px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-[#756548]">
             da completare
           </span>
         )

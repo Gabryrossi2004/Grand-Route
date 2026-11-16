@@ -24,7 +24,7 @@ export default function LibraryGrid({
     <div>
       {templates.length > 0 && (
         <div className="relative mb-5 max-w-sm">
-          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             value={query}
@@ -40,7 +40,7 @@ export default function LibraryGrid({
           <p className="text-slate-500">Non hai ancora salvato nessuna attività in libreria.</p>
         </div>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-slate-400">Nessun risultato per &quot;{query}&quot;.</p>
+        <p className="text-sm text-slate-500">Nessun risultato per &quot;{query}&quot;.</p>
       ) : (
         <div className={`grid gap-4 ${compact ? "grid-cols-1" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
           {filtered.map((template) => {

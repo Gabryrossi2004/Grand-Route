@@ -648,7 +648,7 @@ export default function TripServicesPanel({
               )}
 
               {sortedServices.length === 0 && serviceFormTarget !== "new" && (
-                <p className="mb-4 text-sm text-slate-400">Nessun servizio aggiunto ancora.</p>
+                <p className="mb-4 text-sm text-slate-500">Nessun servizio aggiunto ancora.</p>
               )}
 
               {sortedServices.length > 0 && (
@@ -781,7 +781,7 @@ export default function TripServicesPanel({
               )}
 
               {suppliers.length === 0 && (
-                <p className="mt-4 text-xs text-slate-400">
+                <p className="mt-4 text-xs text-slate-500">
                   Non hai ancora fornitori in rubrica: puoi comunque aggiungere un servizio senza collegarlo a
                   nessuno, o{" "}
                   <a href="/dashboard/suppliers" className="font-medium text-[#233c5e] hover:underline">
@@ -807,7 +807,7 @@ export default function TripServicesPanel({
               </div>
 
               {sortedPayments.length === 0 && paymentFormTarget !== "new" && (
-                <p className="mb-4 text-sm text-slate-400">Nessuna scadenza aggiunta ancora.</p>
+                <p className="mb-4 text-sm text-slate-500">Nessuna scadenza aggiunta ancora.</p>
               )}
 
               {sortedPayments.length > 0 && (
@@ -831,7 +831,7 @@ export default function TripServicesPanel({
                                 <button
                                   type="submit"
                                   title={payment.paid_date ? "Segna come non fatto" : isIncasso ? "Segna come incassato" : "Segna come pagato"}
-                                  className="mt-0.5 shrink-0 text-slate-400 transition hover:text-[#233c5e]"
+                                  className="mt-0.5 shrink-0 text-slate-500 transition hover:text-[#233c5e]"
                                 >
                                   {payment.paid_date ? (
                                     <CheckCircle2 size={18} className="text-green-600" />

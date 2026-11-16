@@ -33,7 +33,7 @@ export default async function SettingsPage() {
             </span>
           </span>
         </span>
-        <ChevronRight size={16} className="shrink-0 text-slate-400" />
+        <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
 
       <SettingsForm profile={profile as Profile} />

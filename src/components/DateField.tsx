@@ -87,8 +87,8 @@ export default function DateField({
         aria-expanded={open}
         className={`flex w-full items-center gap-2 text-left ${className ?? ""} ${open ? "!border-[#cda876]" : ""}`}
       >
-        <Calendar size={15} className="shrink-0 text-slate-400" />
-        <span className={`min-w-0 flex-1 truncate ${current ? "text-slate-900" : "text-slate-400"}`}>
+        <Calendar size={15} className="shrink-0 text-slate-500" />
+        <span className={`min-w-0 flex-1 truncate ${current ? "text-slate-900" : "text-slate-500"}`}>
           {current ? formatDisplay(current) : placeholder}
         </span>
       </button>

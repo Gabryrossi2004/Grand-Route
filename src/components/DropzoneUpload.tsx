@@ -90,9 +90,9 @@ export default function DropzoneUpload({
         className="hidden"
         onChange={(e) => applyFiles(e.target.files)}
       />
-      <ImagePlus size={18} className="text-slate-400" />
+      <ImagePlus size={18} className="text-slate-500" />
       <p className="text-sm font-medium text-slate-700">{processing ? "Comprimo l'immagine…" : fileName ?? label}</p>
-      <p className="text-xs text-slate-400">Trascina, clicca per scegliere, o incolla con Ctrl+V</p>
+      <p className="text-xs text-slate-500">Trascina, clicca per scegliere, o incolla con Ctrl+V</p>
     </div>
   );
 }

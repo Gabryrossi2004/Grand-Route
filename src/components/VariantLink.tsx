@@ -69,7 +69,7 @@ export default function VariantLink({
         className="flex items-center gap-1.5 rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-sm font-medium text-[#233c5e] transition hover:bg-[#faf3e6]"
       >
         {variant.title}
-        {!variant.is_published && <span className="text-xs text-slate-400">(bozza)</span>}
+        {!variant.is_published && <span className="text-xs text-slate-500">(bozza)</span>}
       </Link>
 
       {menuPos && (

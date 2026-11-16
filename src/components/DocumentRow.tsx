@@ -41,7 +41,7 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
         // eslint-disable-next-line @next/next/no-img-element
         <img src={document.coverUrl} alt="" className="h-11 w-11 shrink-0 rounded-md object-cover" />
       ) : (
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-slate-200 text-slate-400">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-slate-200 text-slate-500">
           <FileText size={18} />
         </span>
       )}
@@ -104,7 +104,7 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
           onClick={() => setIsAddingCover((v) => !v)}
           title="Copertina"
           className={`rounded-md p-1.5 transition hover:bg-slate-100 ${
-            isAddingCover ? "text-[#233c5e]" : "text-slate-400 hover:text-slate-700"
+            isAddingCover ? "text-[#233c5e]" : "text-slate-500 hover:text-slate-700"
           }`}
         >
           {isAddingCover ? <X size={15} /> : <ImagePlus size={15} />}
@@ -113,7 +113,7 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
           type="button"
           onClick={() => setIsRenaming(true)}
           title="Rinomina"
-          className="rounded-md p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+          className="rounded-md p-1.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
         >
           <Pencil size={15} />
         </button>

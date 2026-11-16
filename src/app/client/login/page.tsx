@@ -63,7 +63,7 @@ export default function ClientLoginPage() {
             Registrati
           </Link>
         </p>
-        <p className="mt-2 text-center text-xs text-slate-400">
+        <p className="mt-2 text-center text-xs text-slate-500">
           Sei un&apos;agenzia?{" "}
           <Link href="/login" className="font-medium text-slate-500 hover:underline">
             Accedi qui

@@ -33,7 +33,7 @@ export default function LibraryPanel({ templates }: { templates: ActivityTemplat
           type="button"
           onClick={() => setOpen(false)}
           title="Chiudi la libreria"
-          className="rounded-md p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+          className="rounded-md p-1.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
         >
           <ChevronRight size={16} />
         </button>

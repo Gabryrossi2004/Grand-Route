@@ -67,7 +67,7 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
       </p>
 
       {sorted.length === 0 ? (
-        <p className="mb-3 text-sm text-slate-400">Nessun promemoria ancora.</p>
+        <p className="mb-3 text-sm text-slate-500">Nessun promemoria ancora.</p>
       ) : (
         <ul className="mb-3 flex flex-col gap-1">
           {sorted.map((item) => (
@@ -79,14 +79,14 @@ export default function TripChecklist({ tripId, items: initialItems }: { tripId:
                 type="button"
                 onClick={() => handleToggle(item)}
                 title={item.done ? "Segna come da fare" : "Segna come fatto"}
-                className="flex shrink-0 items-center text-slate-400 transition hover:text-[#233c5e] disabled:opacity-40"
+                className="flex shrink-0 items-center text-slate-500 transition hover:text-[#233c5e] disabled:opacity-40"
                 disabled={item.id.startsWith("temp-")}
               >
                 {item.done ? <CheckSquare size={18} className="text-green-600" /> : <Square size={18} />}
               </button>
               <span
                 className={`min-w-0 flex-1 truncate text-sm ${
-                  item.done ? "text-slate-400 line-through" : "text-slate-700"
+                  item.done ? "text-slate-500 line-through" : "text-slate-700"
                 }`}
               >
                 {item.label}

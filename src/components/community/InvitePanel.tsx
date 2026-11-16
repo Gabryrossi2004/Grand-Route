@@ -26,11 +26,11 @@ function InviteRow({ groupId, invite }: { groupId: string; invite: CommunityGrou
   return (
     <div className="flex items-center justify-between gap-2 rounded-lg border border-[#e6d7bb] px-3 py-2 text-sm">
       <div>
-        <p className={isActive ? "text-slate-700" : "text-slate-400 line-through"}>
+        <p className={isActive ? "text-slate-700" : "text-slate-500 line-through"}>
           Usato {invite.use_count}
           {invite.max_uses ? ` / ${invite.max_uses}` : ""} volte
         </p>
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-slate-500">
           {invite.expires_at ? `Scade il ${new Date(invite.expires_at).toLocaleDateString("it-IT")}` : "Senza scadenza"}
           {invite.revoked ? " · Revocato" : ""}
         </p>
@@ -95,7 +95,7 @@ export default function InvitePanel({ groupId, invites }: { groupId: string; inv
       </form>
 
       <div className="flex flex-col gap-2">
-        {invites.length === 0 && <p className="text-sm text-slate-400">Nessun invito creato ancora.</p>}
+        {invites.length === 0 && <p className="text-sm text-slate-500">Nessun invito creato ancora.</p>}
         {invites.map((invite) => (
           <InviteRow key={invite.id} groupId={groupId} invite={invite} />
         ))}

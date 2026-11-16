@@ -30,7 +30,7 @@ export default function ExpandableSection({
           {title}
           {badge}
         </span>
-        <ChevronRight size={16} className="shrink-0 text-slate-400" />
+        <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </button>
 
       {open && (

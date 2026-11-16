@@ -108,7 +108,7 @@ export default function SignupPage() {
             Accedi
           </Link>
         </p>
-        <p className="mt-2 text-center text-xs text-slate-400">
+        <p className="mt-2 text-center text-xs text-slate-500">
           Sei un cliente?{" "}
           <Link href="/client/login" className="font-medium hover:underline">
             Accedi alla tua area qui

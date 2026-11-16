@@ -40,13 +40,13 @@ export default async function ClientDocumentsPage() {
       </p>
 
       {clients.length === 0 && (
-        <p className="text-sm text-slate-400">Non abbiamo trovato nessuna scheda cliente collegata al tuo account.</p>
+        <p className="text-sm text-slate-500">Non abbiamo trovato nessuna scheda cliente collegata al tuo account.</p>
       )}
 
       {clients.map((client, index) => (
         <form key={client.id} action={updateClientTravelDocuments.bind(null, client.id)} className="mb-6">
           {clients.length > 1 && (
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
               Scheda {index + 1} di {clients.length}
             </p>
           )}

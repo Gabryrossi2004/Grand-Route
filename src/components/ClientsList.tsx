@@ -21,7 +21,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
     <div>
       {clients.length > 0 && (
         <div className="relative mb-5 max-w-sm">
-          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             value={query}
@@ -40,7 +40,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
           </Link>
         </div>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-slate-400">Nessun cliente corrisponde alla ricerca.</p>
+        <p className="text-sm text-slate-500">Nessun cliente corrisponde alla ricerca.</p>
       ) : (
         <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
           {filtered.map((client) => (
@@ -58,7 +58,7 @@ export default function ClientsList({ clients }: { clients: Client[] }) {
                   {client.email && <p className="truncate text-sm text-slate-500">{client.email}</p>}
                 </div>
               </div>
-              {client.phone && <p className="shrink-0 text-sm text-slate-400">{client.phone}</p>}
+              {client.phone && <p className="shrink-0 text-sm text-slate-500">{client.phone}</p>}
             </Link>
           ))}
         </div>

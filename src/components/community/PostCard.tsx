@@ -65,7 +65,7 @@ export default function PostCard({
           <AuthorAvatar author={author} />
           <div>
             <p className="text-sm font-semibold text-slate-900">{authorLabel(author)}</p>
-            <p className="text-xs text-slate-400">{formatDate(post.created_at)}</p>
+            <p className="text-xs text-slate-500">{formatDate(post.created_at)}</p>
           </div>
         </div>
         {canDeletePost && (

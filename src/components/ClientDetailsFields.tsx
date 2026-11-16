@@ -44,7 +44,7 @@ function MaskedField({
           type="button"
           onClick={() => setVisible((v) => !v)}
           title={visible ? "Nascondi" : "Mostra"}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600"
         >
           {visible ? <EyeOff size={15} /> : <Eye size={15} />}
         </button>

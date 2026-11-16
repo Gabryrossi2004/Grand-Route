@@ -259,7 +259,7 @@ function ImportPanel({ supplierId, onSaved }: { supplierId: string; onSaved: () 
                 type="button"
                 onClick={() => removeProposed(index)}
                 title="Rimuovi questa voce"
-                className="shrink-0 rounded-md p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-500"
+                className="shrink-0 rounded-md p-1.5 text-slate-500 hover:bg-red-50 hover:text-red-500"
               >
                 <X size={14} />
               </button>
@@ -293,7 +293,7 @@ function ImportPanel({ supplierId, onSaved }: { supplierId: string; onSaved: () 
           <Sparkles size={14} /> Leggi il listino con l&apos;AI
         </SubmitButton>
       </div>
-      {extracting && <p className="mt-1 text-xs text-slate-400">Può richiedere qualche secondo…</p>}
+      {extracting && <p className="mt-1 text-xs text-slate-500">Può richiedere qualche secondo…</p>}
     </form>
   );
 }
@@ -327,7 +327,7 @@ export default function SupplierPriceList({
         </div>
 
         {items.length === 0 ? (
-          <p className="text-sm text-slate-400">Nessuna voce in listino: importa un file o aggiungine una a mano.</p>
+          <p className="text-sm text-slate-500">Nessuna voce in listino: importa un file o aggiungine una a mano.</p>
         ) : (
           <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
             {items.map((item) => (

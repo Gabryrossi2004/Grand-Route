@@ -134,7 +134,7 @@ export default function SuppliersList({
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {suppliers.length > 0 && (
           <div className="relative w-full max-w-sm">
-            <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
             <input
               type="text"
               value={query}
@@ -156,12 +156,12 @@ export default function SuppliersList({
       {suppliers.length === 0 ? (
         <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
           <p className="text-slate-500">Non hai ancora nessun fornitore in rubrica.</p>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-slate-500">
             Hotel, compagnie di trasporto, guide: aggiungili qui per collegarli ai servizi dei tuoi viaggi.
           </p>
         </div>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-slate-400">Nessun fornitore corrisponde alla ricerca.</p>
+        <p className="text-sm text-slate-500">Nessun fornitore corrisponde alla ricerca.</p>
       ) : (
         <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
           {filtered.map((supplier) => (
@@ -188,7 +188,7 @@ export default function SuppliersList({
                 >
                   <ClipboardList size={15} />
                   {(itemsBySupplier[supplier.id]?.length ?? 0) > 0 && (
-                    <span className="rounded-full bg-[#f2e2c4] px-1.5 text-[10px] font-semibold text-[#8c7a5e]">
+                    <span className="rounded-full bg-[#f2e2c4] px-1.5 text-[10px] font-semibold text-[#756548]">
                       {itemsBySupplier[supplier.id].length}
                     </span>
                   )}

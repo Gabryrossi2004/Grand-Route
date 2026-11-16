@@ -40,7 +40,7 @@ export default function DashboardNav({ signOut }: { signOut: () => Promise<void>
       <form action={signOut} className="ml-1 shrink-0">
         <button
           type="submit"
-          className="whitespace-nowrap px-3 py-1.5 font-medium text-[#8c7a5e] transition hover:text-[#233c5e]"
+          className="whitespace-nowrap px-3 py-1.5 font-medium text-[#756548] transition hover:text-[#233c5e]"
         >
           Esci
         </button>

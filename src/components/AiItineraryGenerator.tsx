@@ -60,7 +60,7 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
                     </option>
                   ))}
                 </select>
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="mt-1 text-xs text-slate-500">
                   Gestisci gli stili disponibili dalla{" "}
                   <a href="/dashboard/library" className="font-medium text-[#233c5e] hover:underline">
                     Libreria

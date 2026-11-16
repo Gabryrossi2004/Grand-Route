@@ -46,7 +46,7 @@ export default async function ClientPortalLayout({ children }: { children: React
             <form action={clientSignOut}>
               <button
                 type="submit"
-                className="rounded-full px-3.5 py-1.5 font-medium text-[#8c7a5e] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+                className="rounded-full px-3.5 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
               >
                 Esci
               </button>

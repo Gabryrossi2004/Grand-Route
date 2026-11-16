@@ -22,7 +22,7 @@ export default function Modal({
             type="button"
             onClick={onClose}
             aria-label="Chiudi"
-            className="rounded p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+            className="rounded p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-700"
           >
             <X size={20} />
           </button>

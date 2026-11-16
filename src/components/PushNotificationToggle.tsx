@@ -81,12 +81,12 @@ export default function PushNotificationToggle() {
   if (status === "checking") return null;
 
   if (status === "unsupported") {
-    return <p className="text-xs text-slate-400">Il tuo browser non supporta le notifiche push.</p>;
+    return <p className="text-xs text-slate-500">Il tuo browser non supporta le notifiche push.</p>;
   }
 
   if (status === "denied") {
     return (
-      <p className="text-xs text-slate-400">
+      <p className="text-xs text-slate-500">
         Hai bloccato le notifiche per questo sito dal browser: per riattivarle devi sbloccarle dalle impostazioni del
         browser stesso.
       </p>

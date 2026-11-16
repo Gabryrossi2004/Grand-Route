@@ -62,7 +62,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="flex items-center justify-center gap-2 border-t border-[#e6d7bb] bg-[#faf3e6] px-4 py-4 text-xs font-medium text-[#8c7a5e]">
+      <footer className="flex items-center justify-center gap-2 border-t border-[#e6d7bb] bg-[#faf3e6] px-4 py-4 text-xs font-medium text-[#756548]">
         <Sparkles size={13} className="text-[#cda876]" />
         Itinerari che fanno colpo
       </footer>

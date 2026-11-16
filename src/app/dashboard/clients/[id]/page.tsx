@@ -67,7 +67,7 @@ export default async function ClientDetailPage({
           Questo cliente ha già un account nell&apos;area clienti.
         </p>
       ) : (
-        <p className="-mt-4 text-xs text-slate-400">
+        <p className="-mt-4 text-xs text-slate-500">
           Questo cliente non si è ancora registrato nell&apos;area clienti. Quando lo farà con questa email, vedrà
           subito i suoi viaggi.
         </p>
@@ -135,7 +135,7 @@ export default async function ClientDetailPage({
       <section>
         <h2 className="mb-3 text-lg font-semibold text-slate-900">Viaggi di questo cliente</h2>
         {!trips || trips.length === 0 ? (
-          <p className="mb-3 text-sm text-slate-400">Nessun viaggio collegato ancora.</p>
+          <p className="mb-3 text-sm text-slate-500">Nessun viaggio collegato ancora.</p>
         ) : (
           <ul className="mb-3 divide-y divide-slate-200 overflow-hidden rounded-xl border border-[#e6d7bb] bg-white">
             {(trips as Trip[]).map((trip) => (
@@ -147,7 +147,7 @@ export default async function ClientDetailPage({
                 <form action={unlinkTripFromClient.bind(null, id, trip.id)}>
                   <SubmitButton
                     pendingLabel="Rimozione…"
-                    className="shrink-0 text-xs text-slate-400 hover:text-red-500 hover:underline disabled:opacity-60"
+                    className="shrink-0 text-xs text-slate-500 hover:text-red-500 hover:underline disabled:opacity-60"
                   >
                     Rimuovi associazione
                   </SubmitButton>

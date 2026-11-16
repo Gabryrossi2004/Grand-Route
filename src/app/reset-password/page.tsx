@@ -62,7 +62,7 @@ export default function ResetPasswordPage() {
           >
             Vai al login
           </Link>
-          <p className="mt-4 text-xs text-slate-400">
+          <p className="mt-4 text-xs text-slate-500">
             {isClient ? (
               <>
                 Sei un&apos;agenzia?{" "}

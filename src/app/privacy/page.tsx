@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <AuthShell wide>
       <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Informativa sulla Privacy</h1>
-        <p className="mb-6 text-xs text-slate-400">Ultimo aggiornamento: 10 novembre 2026</p>
+        <p className="mb-6 text-xs text-slate-500">Ultimo aggiornamento: 10 novembre 2026</p>
 
         <div className="flex flex-col gap-5 text-sm leading-relaxed text-slate-600">
           <section>
