@@ -3,13 +3,14 @@
 import { useActionState, useRef, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { createTrip } from "./actions";
-import type { Client, PriceMode } from "@/lib/types";
+import type { Client, PriceMode, PromptStyle } from "@/lib/types";
 import type { ClientRequest } from "@/lib/clientRequestAi";
 import Modal from "@/components/Modal";
 import ClientRequestExtractor from "./ClientRequestExtractor";
+import AiNewTrip from "./AiNewTrip";
 import DateField from "@/components/DateField";
 
-export default function NewTripForm({ clients }: { clients: Client[] }) {
+export default function NewTripForm({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
   const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
   const [showExtractor, setShowExtractor] = useState(false);
@@ -44,14 +45,15 @@ export default function NewTripForm({ clients }: { clients: Client[] }) {
 
   return (
     <>
-      <div className="mb-4 flex justify-end">
+      <div className="mb-4 flex flex-wrap justify-end gap-2">
         <button
           type="button"
           onClick={() => setShowExtractor(true)}
           className="flex items-center gap-1.5 rounded-md border border-[#233c5e]/30 px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#233c5e]/5"
         >
-          <Sparkles size={14} /> Compila da richiesta cliente
+          <Sparkles size={14} /> Parti da una richiesta
         </button>
+        <AiNewTrip clients={clients} promptStyles={promptStyles} />
       </div>
 
       <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">

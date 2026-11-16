@@ -1263,7 +1263,16 @@ export async function applyAiItineraryDraft(
 
   let generated;
   try {
-    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions, image });
+    let tripDays: number | null = existingDayIds.length > 0 ? existingDayIds.length : null;
+    if (trip.start_date && trip.end_date) {
+      const diff =
+        Math.round(
+          (new Date(`${trip.end_date}T00:00:00Z`).getTime() - new Date(`${trip.start_date}T00:00:00Z`).getTime()) /
+            86400000,
+        ) + 1;
+      if (diff >= 1 && diff <= 90) tripDays = diff;
+    }
+    generated = await generateItineraryFromDraft({ draftText, styleExamples, styleInstructions, image, tripDays });
   } catch {
     return { error: "L'AI non è riuscita a generare l'itinerario. Riprova, magari con un testo più chiaro." };
   }

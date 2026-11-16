@@ -55,7 +55,7 @@ function describeActivityTypes(): string {
     .join("\n");
 }
 
-function buildSystemPrompt(styleExamples: string[], styleInstructions: string | null): string {
+function buildSystemPrompt(styleExamples: string[], styleInstructions: string | null, tripDays: number | null = null): string {
   const stylePart =
     styleExamples.length > 0
       ? `\n\nSTILE DI SCRITTURA DI QUESTA AGENZIA (esempi reali da loro itinerari precedenti — scrivi le nuove descrizioni con un tono e uno stile simile a questi):\n${styleExamples
@@ -65,6 +65,10 @@ function buildSystemPrompt(styleExamples: string[], styleInstructions: string | 
 
   const chosenStylePart = styleInstructions
     ? `\n\nSTILE RICHIESTO PER QUESTO VIAGGIO (scelto dall'agenzia per questo cliente/tipo di viaggio specifico — ha priorità sul tono generico della regola 6):\n${styleInstructions}`
+    : "";
+
+  const durationPart = tripDays
+    ? `\n7. DURATA: il viaggio dura esattamente ${tripDays} giorni (day_index da 0 a ${tripDays - 1}). Distribuisci la bozza su questi giorni. Se la bozza descrive meno giorni, i giorni finali restano senza attività (elenco "activities" vuoto); se ne descrive di più, includili comunque tutti, senza scartare nulla.`
     : "";
 
   return `Sei un assistente che trasforma la bozza di un itinerario di viaggio (scritta liberamente da un'agenzia o tour operator) in un itinerario strutturato, giorno per giorno, usando le categorie di attività del loro gestionale.
@@ -78,7 +82,7 @@ REGOLE FONDAMENTALI:
 3. Dividi le attività nei giorni corretti, in ordine cronologico, a partire da day_index 0.
 4. Ogni attività ha un titolo breve e chiaro.
 5. Non aggiungere attività non presenti nella bozza, anche se "scontate" per quel tipo di viaggio.
-6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${chosenStylePart}${stylePart}`;
+6. Scrivi le descrizioni con un tono invitante e curato, come farebbe un'agenzia di viaggi per presentare l'esperienza al proprio cliente finale: non un elenco asettico di fatti logistici, ma 2-4 frasi scorrevoli e piacevoli da leggere. Questo riguarda SOLO lo stile della frase, mai il contenuto: continua a non aggiungere nessun dettaglio, luogo o dato che non sia già nella bozza (vedi regola 1).${durationPart}${chosenStylePart}${stylePart}`;
 }
 
 export type DraftImage = {
@@ -96,6 +100,8 @@ export async function generateItineraryFromDraft(params: {
   styleExamples: string[];
   styleInstructions?: string | null;
   image?: DraftImage | null;
+  // Durata del viaggio in giorni, se le date sono già note.
+  tripDays?: number | null;
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
 
@@ -117,7 +123,7 @@ export async function generateItineraryFromDraft(params: {
   const response = await client.messages.parse({
     model: "claude-sonnet-5-5",
     max_tokens: 16000,
-    system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null),
+    system: buildSystemPrompt(params.styleExamples, params.styleInstructions ?? null, params.tripDays ?? null),
     messages: [{ role: "user", content: userContent }],
     // "medium" invece del default "high": questo compito (estrarre e
     // strutturare, non ragionare su un problema complesso) non sembra avere

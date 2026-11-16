@@ -1,12 +1,14 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { detectFileMime, validateImageFile, validateTextFile, verifyFileSignature } from "@/lib/fileValidation";
 import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { extractClientRequest as extractClientRequestAi, type ClientRequest } from "@/lib/clientRequestAi";
 import type { DraftImage } from "@/lib/itineraryAi";
+import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 
 const MAX_AUTO_DAYS = 90;
 
@@ -24,6 +26,65 @@ function dateRange(start: string, end: string): string[] {
   return dates;
 }
 
+type NewTripFields = {
+  title: string;
+  destination: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  clientId: string | null;
+  clientRequestNotes?: string | null;
+  priceMode?: string;
+  priceAmount?: number | null;
+  priceNet?: number | null;
+  priceCommission?: number | null;
+};
+
+// Crea il viaggio e, se ci sono le date, un giorno vuoto per ciascuna.
+async function insertTripWithDays(
+  supabase: SupabaseClient,
+  userId: string,
+  fields: NewTripFields,
+): Promise<{ id: string } | { error: string }> {
+  const priceMode = fields.priceMode ?? "nessuno";
+  const { data: trip, error } = await supabase
+    .from("trips")
+    .insert({
+      owner_id: userId,
+      title: fields.title,
+      destination: fields.destination,
+      start_date: fields.startDate,
+      end_date: fields.endDate,
+      client_id: fields.clientId,
+      client_request_notes: fields.clientRequestNotes ?? null,
+      public_slug: generatePublicSlug(),
+      price_mode: priceMode,
+      price_amount: priceMode === "lordo" ? (fields.priceAmount ?? null) : null,
+      price_net: priceMode === "commissioni" ? (fields.priceNet ?? null) : null,
+      price_commission: priceMode === "commissioni" ? (fields.priceCommission ?? null) : null,
+    })
+    .select("id")
+    .single();
+
+  if (error || !trip) {
+    return { error: "Errore durante la creazione del viaggio. Riprova." };
+  }
+
+  if (fields.startDate && fields.endDate) {
+    const days = dateRange(fields.startDate, fields.endDate);
+    if (days.length > 0) {
+      await supabase.from("trip_days").insert(
+        days.map((day_date, index) => ({
+          trip_id: trip.id,
+          day_date,
+          day_order: index,
+        })),
+      );
+    }
+  }
+
+  return { id: trip.id };
+}
+
 export async function createTrip(
   _prevState: { error?: string } | undefined,
   formData: FormData,
@@ -38,57 +99,79 @@ export async function createTrip(
   }
 
   const title = String(formData.get("title") ?? "").trim();
-  const destination = String(formData.get("destination") ?? "").trim() || null;
-  const startDate = String(formData.get("start_date") ?? "") || null;
-  const endDate = String(formData.get("end_date") ?? "") || null;
-  const clientId = String(formData.get("client_id") ?? "") || null;
-  const clientRequestNotes = String(formData.get("client_request_notes") ?? "").trim() || null;
-  const priceMode = String(formData.get("price_mode") ?? "nessuno");
-  const priceAmount = formData.get("price_amount") ? Number(formData.get("price_amount")) : null;
-  const priceNet = formData.get("price_net") ? Number(formData.get("price_net")) : null;
-  const priceCommission = formData.get("price_commission") ? Number(formData.get("price_commission")) : null;
-
   if (!title) {
     return { error: "Il titolo del viaggio è obbligatorio." };
   }
 
-  const { data: trip, error } = await supabase
-    .from("trips")
-    .insert({
-      owner_id: user.id,
-      title,
-      destination,
-      start_date: startDate,
-      end_date: endDate,
-      client_id: clientId,
-      client_request_notes: clientRequestNotes,
-      public_slug: generatePublicSlug(),
-      price_mode: priceMode,
-      price_amount: priceMode === "lordo" ? priceAmount : null,
-      price_net: priceMode === "commissioni" ? priceNet : null,
-      price_commission: priceMode === "commissioni" ? priceCommission : null,
-    })
-    .select("id")
-    .single();
+  const created = await insertTripWithDays(supabase, user.id, {
+    title,
+    destination: String(formData.get("destination") ?? "").trim() || null,
+    startDate: String(formData.get("start_date") ?? "") || null,
+    endDate: String(formData.get("end_date") ?? "") || null,
+    clientId: String(formData.get("client_id") ?? "") || null,
+    clientRequestNotes: String(formData.get("client_request_notes") ?? "").trim() || null,
+    priceMode: String(formData.get("price_mode") ?? "nessuno"),
+    priceAmount: formData.get("price_amount") ? Number(formData.get("price_amount")) : null,
+    priceNet: formData.get("price_net") ? Number(formData.get("price_net")) : null,
+    priceCommission: formData.get("price_commission") ? Number(formData.get("price_commission")) : null,
+  });
+  if ("error" in created) return created;
 
-  if (error || !trip) {
-    return { error: "Errore durante la creazione del viaggio. Riprova." };
+  redirect(`/dashboard/trips/${created.id}`);
+}
+
+const MAX_AI_DAYS = 30;
+
+// Crea un viaggio nuovo e ne genera subito l'itinerario con l'AI da una
+// bozza. Le date di inizio e fine sono obbligatorie: servono per sapere su
+// quanti giorni distribuire la bozza. Se la generazione non riesce, il
+// viaggio appena creato viene rimosso, per non lasciare viaggi vuoti.
+export async function createTripWithAi(
+  _prevState: { error?: string } | undefined,
+  formData: FormData,
+): Promise<{ error?: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Devi essere loggato." };
+
+  const title = String(formData.get("title") ?? "").trim();
+  const startDate = String(formData.get("start_date") ?? "") || null;
+  const endDate = String(formData.get("end_date") ?? "") || null;
+
+  if (!title) return { error: "Il titolo del viaggio è obbligatorio." };
+  if (!startDate || !endDate) {
+    return { error: "Per generare con l'AI servono la data di inizio e la data di fine del viaggio." };
+  }
+  const days = dateRange(startDate, endDate);
+  if (days.length === 0) return { error: "La data di fine deve essere uguale o successiva a quella di inizio." };
+  if (days.length > MAX_AI_DAYS) {
+    return { error: `Per la generazione con l'AI il viaggio può durare al massimo ${MAX_AI_DAYS} giorni.` };
   }
 
-  if (startDate && endDate) {
-    const days = dateRange(startDate, endDate);
-    if (days.length > 0) {
-      await supabase.from("trip_days").insert(
-        days.map((day_date, index) => ({
-          trip_id: trip.id,
-          day_date,
-          day_order: index,
-        })),
-      );
-    }
+  const draftText = String(formData.get("draft_text") ?? "").trim();
+  const draftFile = formData.get("draft_file");
+  if (!draftText && !(draftFile instanceof File && draftFile.size > 0)) {
+    return { error: "Incolla un testo, oppure carica un file Excel o una foto della bozza." };
   }
 
-  redirect(`/dashboard/trips/${trip.id}`);
+  const created = await insertTripWithDays(supabase, user.id, {
+    title,
+    destination: String(formData.get("destination") ?? "").trim() || null,
+    startDate,
+    endDate,
+    clientId: String(formData.get("client_id") ?? "") || null,
+  });
+  if ("error" in created) return { error: created.error };
+
+  const result = await applyAiItineraryDraft(created.id, formData);
+  if (result.error) {
+    await supabase.from("trips").delete().eq("id", created.id);
+    return { error: result.error };
+  }
+
+  redirect(`/dashboard/trips/${created.id}`);
 }
 
 // Legge la mail/richiesta di un cliente (testo e/o foto) e la fa
