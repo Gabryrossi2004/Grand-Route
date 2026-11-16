@@ -6,7 +6,14 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
-import { validateDocumentFile, validateImageFile, validateSpreadsheetFile, validateTextFile } from "@/lib/fileValidation";
+import {
+  safeStorageName,
+  validateDocumentFile,
+  validateImageFile,
+  validateSpreadsheetFile,
+  validateTextFile,
+  verifyFileSignature,
+} from "@/lib/fileValidation";
 import { generateItineraryFromDraft, type DraftImage } from "@/lib/itineraryAi";
 import { parseExcelToText } from "@/lib/itineraryFileParsing";
 import type {
@@ -654,9 +661,9 @@ export async function uploadDocument(
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return;
-  if (validateDocumentFile(file)) return;
+  if (validateDocumentFile(file) || (await verifyFileSignature(file))) return;
 
-  const filePath = `${user.id}/${tripId}/${Date.now()}-${file.name}`;
+  const filePath = `${user.id}/${tripId}/${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
@@ -709,7 +716,7 @@ export async function uploadDocumentCover(tripId: string, documentId: string, fo
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file)) return;
+  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
 
   const { data: existing } = await supabase
     .from("documents")
@@ -717,7 +724,7 @@ export async function uploadDocumentCover(tripId: string, documentId: string, fo
     .eq("id", documentId)
     .maybeSingle();
 
-  const coverPath = `${user.id}/${tripId}/covers/${documentId}-${Date.now()}-${file.name}`;
+  const coverPath = `${user.id}/${tripId}/covers/${documentId}-${Date.now()}-${safeStorageName(file.name)}`;
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
     .upload(coverPath, file, { contentType: file.type || undefined });
@@ -748,9 +755,9 @@ export async function uploadActivityPhoto(tripId: string, activityId: string, fo
 
   const file = formData.get("photo");
   if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file)) return;
+  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
 
-  const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${file.name}`;
+  const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
@@ -782,9 +789,9 @@ export async function uploadCover(tripId: string, formData: FormData) {
 
   const file = formData.get("cover");
   if (!(file instanceof File) || file.size === 0) return;
-  if (validateImageFile(file)) return;
+  if (validateImageFile(file) || (await verifyFileSignature(file))) return;
 
-  const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${file.name}`;
+  const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
@@ -1082,7 +1089,7 @@ export async function applyAiItineraryDraft(
   const draftFile = formData.get("draft_file");
   if (draftFile instanceof File && draftFile.size > 0) {
     if (draftFile.type.startsWith("image/")) {
-      const validationError = validateImageFile(draftFile);
+      const validationError = validateImageFile(draftFile) ?? (await verifyFileSignature(draftFile));
       if (validationError) return { error: validationError };
       const buffer = Buffer.from(await draftFile.arrayBuffer());
       image = {

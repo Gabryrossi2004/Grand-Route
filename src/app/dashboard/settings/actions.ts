@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { validateImageFile } from "@/lib/fileValidation";
+import { safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
 
 export async function updateProfile(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -37,10 +37,10 @@ export async function updateProfile(
 
   const logoFile = formData.get("logo");
   if (logoFile instanceof File && logoFile.size > 0) {
-    const validationError = validateImageFile(logoFile);
+    const validationError = validateImageFile(logoFile) ?? (await verifyFileSignature(logoFile));
     if (validationError) return { error: validationError };
 
-    const path = `${user.id}/logo-${Date.now()}-${logoFile.name}`;
+    const path = `${user.id}/logo-${Date.now()}-${safeStorageName(logoFile.name)}`;
     const { error: uploadError } = await supabase.storage
       .from("public-assets")
       .upload(path, logoFile, { contentType: logoFile.type || undefined });

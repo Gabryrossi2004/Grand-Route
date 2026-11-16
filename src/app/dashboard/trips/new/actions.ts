@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
-import { validateImageFile, validateTextFile } from "@/lib/fileValidation";
+import { validateImageFile, validateTextFile, verifyFileSignature } from "@/lib/fileValidation";
 import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { extractClientRequest as extractClientRequestAi, type ClientRequest } from "@/lib/clientRequestAi";
 import type { DraftImage } from "@/lib/itineraryAi";
@@ -101,7 +101,7 @@ export async function extractClientRequest(formData: FormData): Promise<{ data: 
   const file = formData.get("file");
   if (file instanceof File && file.size > 0) {
     if (file.type.startsWith("image/")) {
-      const validationError = validateImageFile(file);
+      const validationError = validateImageFile(file) ?? (await verifyFileSignature(file));
       if (validationError) return { error: validationError };
       const buffer = Buffer.from(await file.arrayBuffer());
       image = { base64: buffer.toString("base64"), mediaType: file.type as DraftImage["mediaType"] };
