@@ -10,7 +10,15 @@ import ClientRequestExtractor from "./ClientRequestExtractor";
 import AiNewTrip from "./AiNewTrip";
 import DateField from "@/components/DateField";
 
-export default function NewTripForm({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
+export default function NewTripForm({
+  clients,
+  promptStyles,
+  showAiButton = true,
+}: {
+  clients: Client[];
+  promptStyles: PromptStyle[];
+  showAiButton?: boolean;
+}) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
   const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
   const [showExtractor, setShowExtractor] = useState(false);
@@ -53,7 +61,7 @@ export default function NewTripForm({ clients, promptStyles }: { clients: Client
         >
           <Sparkles size={14} /> Parti da una richiesta
         </button>
-        <AiNewTrip clients={clients} promptStyles={promptStyles} />
+        <AiNewTrip clients={clients} promptStyles={promptStyles} showButton={showAiButton} />
       </div>
 
       <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">

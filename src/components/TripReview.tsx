@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RotateCcw } from "lucide-react";
 import Modal from "@/components/Modal";
 import { getReviewQuestions, getReviewSuggestions } from "@/app/dashboard/trips/[id]/review-actions";
@@ -8,6 +8,7 @@ import type { ReviewCategory, ReviewSuggestions } from "@/lib/tripReviewAi";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
 import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
+import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 
 type Stage = "intro" | "loading-questions" | "questions" | "loading-suggestions" | "results";
 type Question = { question: string; why: string | null };
@@ -30,7 +31,7 @@ const priorityMeta = {
 
 // "Suggerimenti": l'AI rilegge il viaggio, chiede se serve un po' di contesto
 // e propone correzioni e miglioramenti. Sono solo proposte da leggere.
-export default function TripReview({ tripId }: { tripId: string }) {
+export default function TripReview({ tripId, showButton = true }: { tripId: string; showButton?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [stage, setStage] = useState<Stage>("intro");
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -43,6 +44,15 @@ export default function TripReview({ tripId }: { tripId: string }) {
     setStage("intro");
     setError(null);
   }
+
+  useEffect(() => {
+    const onAction = (event: Event) => {
+      if ((event as CustomEvent).detail === "trip-assist") open();
+    };
+    window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
+    return () => window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function close() {
     if (stage === "loading-questions" || stage === "loading-suggestions") return;
@@ -90,14 +100,15 @@ export default function TripReview({ tripId }: { tripId: string }) {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={open}
-        className="flex items-center gap-1.5 rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
-      >
-        <AssistantIcon size={20} />
-        {ASSISTANT_NAME}: suggerimenti
-      </button>
+      {showButton && (
+        <button
+          type="button"
+          onClick={open}
+          className="rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
+        >
+          {ASSISTANT_NAME}: suggerimenti
+        </button>
+      )}
 
       {isOpen && (
         <Modal

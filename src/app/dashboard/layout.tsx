@@ -5,6 +5,8 @@ import type { Profile } from "@/lib/types";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
 import FontPreference from "@/components/FontPreference";
 import DashboardNav from "@/components/DashboardNav";
+import ZefiroFloating from "@/components/ZefiroFloating";
+import { isAvatarVisible } from "@/lib/assistant";
 
 export default async function DashboardLayout({
   children,
@@ -56,6 +58,7 @@ export default async function DashboardLayout({
         </div>
       </HeaderAutoHide>
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>
+      {isAvatarVisible(profile?.ai_preferences) && <ZefiroFloating />}
     </div>
   );
 }

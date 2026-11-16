@@ -117,9 +117,13 @@ export async function saveAiRules(formData: FormData): Promise<{ ok: true } | { 
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
 
   const { preferences, text } = readAiRules(formData);
+  // Si uniscono alle altre preferenze già salvate (per esempio se Zefiro è
+  // visibile sullo schermo), che non vanno perse.
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), ...preferences };
   const { error } = await supabase
     .from("profiles")
-    .update({ ai_rules: text || null, ai_preferences: preferences })
+    .update({ ai_rules: text || null, ai_preferences: merged })
     .eq("id", user.id);
   if (error) {
     console.error("[saveAiRules]", error.message);
@@ -145,4 +149,23 @@ export async function testAiRules(formData: FormData): Promise<{ sample: string 
     console.error("[testAiRules]", error);
     return { error: "Non è stato possibile preparare l'esempio. Riprova tra poco." };
   }
+}
+
+// Mostra o nasconde Zefiro fluttuante sullo schermo.
+export async function setAvatarVisible(visible: boolean): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), avatar: visible ? "on" : "off" };
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  if (error) {
+    console.error("[setAvatarVisible]", error.message);
+    return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard", "layout");
+  return { ok: true };
 }

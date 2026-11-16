@@ -57,6 +57,7 @@ import {
   uploadDocument,
 } from "./actions";
 import DateField from "@/components/DateField";
+import { isAvatarVisible } from "@/lib/assistant";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -212,9 +213,13 @@ export default async function TripDetailPage({
             <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
           </div>
           {orderedDays.every((day) => (day.activities?.length ?? 0) === 0) ? (
-            <AiItineraryGenerator tripId={id} promptStyles={(promptStyles as PromptStyle[]) || []} />
+            <AiItineraryGenerator
+              tripId={id}
+              promptStyles={(promptStyles as PromptStyle[]) || []}
+              showButton={!isAvatarVisible((ownerProfile as Profile | null)?.ai_preferences)}
+            />
           ) : (
-            <TripReview tripId={id} />
+            <TripReview tripId={id} showButton={!isAvatarVisible((ownerProfile as Profile | null)?.ai_preferences)} />
           )}
         </div>
         {trip.ai_notes && <AiNotes tripId={id} notes={trip.ai_notes} />}

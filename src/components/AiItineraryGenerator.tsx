@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { PromptStyle } from "@/lib/types";
 import DropzoneUpload from "@/components/DropzoneUpload";
@@ -10,9 +10,26 @@ import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
 import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
+import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 
-export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId: string; promptStyles: PromptStyle[] }) {
+export default function AiItineraryGenerator({
+  tripId,
+  promptStyles,
+  showButton = true,
+}: {
+  tripId: string;
+  promptStyles: PromptStyle[];
+  showButton?: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const onAction = (event: Event) => {
+      if ((event as CustomEvent).detail === "trip-assist") setIsOpen(true);
+    };
+    window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
+    return () => window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
+  }, []);
   const router = useRouter();
   const action = applyAiItineraryDraft.bind(null, tripId);
   const [pending, setPending] = useState(false);
@@ -48,14 +65,15 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setIsOpen(true)}
-        className="flex items-center gap-1.5 rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
-      >
-        <AssistantIcon size={20} />
-        {ASSISTANT_NAME}: crea l&apos;itinerario
-      </button>
+      {showButton && (
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          className="rounded-lg border border-[#cda876]/60 bg-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#233c5e] transition hover:bg-[#f2e2c4]"
+        >
+          {ASSISTANT_NAME}: crea l&apos;itinerario
+        </button>
+      )}
 
       {isOpen && (
         <Modal

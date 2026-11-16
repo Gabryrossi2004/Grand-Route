@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Client, PromptStyle } from "@/lib/types";
 import DateField from "@/components/DateField";
 import DropzoneUpload from "@/components/DropzoneUpload";
@@ -10,6 +10,7 @@ import { createTripWithAi } from "./actions";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
 import Zefiro, { ZefiroThinking } from "@/components/Zefiro";
+import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -18,8 +19,27 @@ const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 // "Genera con AI" dalla pagina Nuovo viaggio: prima si indicano le date (che
 // servono per distribuire la bozza sui giorni), poi si dà la bozza, e il
 // viaggio viene creato già con l'itinerario generato.
-export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
+export default function AiNewTrip({
+  clients,
+  promptStyles,
+  showButton = true,
+}: {
+  clients: Client[];
+  promptStyles: PromptStyle[];
+  // Falso quando Zefiro è sullo schermo: è lui il punto di accesso.
+  showButton?: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Si apre dal personaggio fluttuante, oppure arrivando da "Creami un viaggio".
+  useEffect(() => {
+    const onAction = (event: Event) => {
+      if ((event as CustomEvent).detail === "new-trip") setIsOpen(true);
+    };
+    window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
+    if (new URLSearchParams(window.location.search).get("zefiro")) setIsOpen(true);
+    return () => window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
+  }, []);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [pending, setPending] = useState(false);
@@ -59,13 +79,15 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setIsOpen(true)}
-        className="flex items-center gap-1.5 rounded-md border border-[#cda876]/60 bg-[#faf3e6]/60 px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#f2e2c4]"
-      >
-        <AssistantIcon size={18} /> Chiedi a {ASSISTANT_NAME}
-      </button>
+      {showButton && (
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          className="rounded-md border border-[#cda876]/60 bg-[#faf3e6]/60 px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#f2e2c4]"
+        >
+          Chiedi a {ASSISTANT_NAME}
+        </button>
+      )}
 
       {isOpen && (
         <Modal
