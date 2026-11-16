@@ -1,0 +1,71 @@
+# Copia di sicurezza giornaliera del database Supabase.
+#
+# Ogni notte fa una copia di tabelle e utenti (schemi public, auth, storage),
+# la comprime, la CIFRA con una password e la conserva per 30 giorni come
+# "artifact" di GitHub (Actions → la corsa → Artifacts in fondo alla pagina).
+# Cifrata, la copia è inutilizzabile da chi non ha la password: per questo è
+# sicuro anche se il repository fosse pubblico.
+#
+# Non copia i FILE (foto e documenti nello Storage): vedi docs/BACKUP.md.
+#
+# Servono due "Secrets" nel repository (Settings → Secrets and variables →
+# Actions): SUPABASE_DB_URL e BACKUP_PASSPHRASE. Istruzioni in docs/BACKUP.md.
+name: Backup database
+
+on:
+  schedule:
+    - cron: "17 2 * * *" # ogni notte alle 02:17 UTC
+  workflow_dispatch: {} # si può lanciare a mano da Actions → Run workflow
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Controlla i secrets
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          if [ -z "$DB_URL" ] || [ -z "$PASS" ]; then
+            echo "Mancano SUPABASE_DB_URL o BACKUP_PASSPHRASE tra i Secrets del repository."
+            exit 1
+          fi
+
+      - name: Copia del database
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          # Il client pg_dump deve essere uguale o più nuovo del database.
+          docker run --rm postgres:17 pg_dump "$DB_URL" \
+            --schema=public --schema=auth --schema=storage \
+            --no-owner --no-privileges --quote-all-identifiers \
+            | gzip -9 > backup.sql.gz
+          SIZE=$(stat -c%s backup.sql.gz)
+          echo "Dimensione della copia compressa: $SIZE byte"
+          # Una copia troppo piccola significa che qualcosa è andato storto.
+          if [ "$SIZE" -lt 2000 ]; then
+            echo "La copia è sospettamente piccola: interrompo."
+            exit 1
+          fi
+
+      - name: Cifra la copia
+        env:
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          STAMP=$(date -u +%Y-%m-%d)
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt \
+            -in backup.sql.gz -out "grandroute-db-$STAMP.sql.gz.enc" -pass env:PASS
+          rm backup.sql.gz
+          echo "STAMP=$STAMP" >> "$GITHUB_ENV"
+
+      - name: Conserva la copia cifrata per 30 giorni
+        uses: actions/upload-artifact@v4
+        with:
+          name: grandroute-db-${{ env.STAMP }}
+          path: grandroute-db-${{ env.STAMP }}.sql.gz.enc
+          retention-days: 30
+          if-no-files-found: error
