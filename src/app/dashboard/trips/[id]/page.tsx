@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import TripReview from "@/components/TripReview";
+import AiNotes from "@/components/AiNotes";
 import DocumentRow from "@/components/DocumentRow";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import UploadForm from "@/components/UploadForm";
@@ -216,6 +217,7 @@ export default async function TripDetailPage({
             <TripReview tripId={id} />
           )}
         </div>
+        {trip.ai_notes && <AiNotes tripId={id} notes={trip.ai_notes} />}
         <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">
             <ItineraryEditor

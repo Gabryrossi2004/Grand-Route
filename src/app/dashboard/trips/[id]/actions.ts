@@ -1392,3 +1392,10 @@ export async function applyAiItineraryDraft(
   revalidatePath(`/dashboard/trips/${tripId}`);
   return { error: null };
 }
+
+// Nasconde le note lasciate dall'AI dopo la generazione (si cancellano).
+export async function clearAiNotes(tripId: string) {
+  const supabase = await createClient();
+  await supabase.from("trips").update({ ai_notes: null }).eq("id", tripId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}

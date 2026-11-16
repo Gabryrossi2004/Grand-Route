@@ -4,6 +4,7 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
 import LogoUploader from "./LogoUploader";
+import AiRulesCard from "./AiRulesCard";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -14,6 +15,8 @@ export default async function SettingsPage() {
     .select("*")
     .eq("id", user!.id)
     .single();
+
+  const { data: isAdmin } = await supabase.rpc("is_platform_admin");
 
   return (
     <div className="mx-auto max-w-lg">
@@ -40,6 +43,25 @@ export default async function SettingsPage() {
       <LogoUploader logoUrl={(profile as Profile).logo_url} />
 
       <SettingsForm profile={profile as Profile} />
+
+      <div className="mt-6">
+        <AiRulesCard profile={profile as Profile} />
+      </div>
+
+      {isAdmin === true && (
+        <Link
+          href="/dashboard/admin/ai-rules"
+          className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#233c5e]/30 bg-white px-5 py-4 transition hover:shadow-sm"
+        >
+          <span>
+            <span className="block text-sm font-semibold text-slate-900">Regole di base dell&apos;AI (amministratore)</span>
+            <span className="block text-xs text-slate-500">
+              Le regole che l&apos;AI segue per tutte le agenzie: puoi modificarle, disattivarle o aggiungerne.
+            </span>
+          </span>
+          <ChevronRight size={16} className="shrink-0 text-slate-500" />
+        </Link>
+      )}
     </div>
   );
 }

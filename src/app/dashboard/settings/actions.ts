@@ -3,6 +3,16 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { detectFileMime, safeStorageName, validateImageFile, verifyFileSignature } from "@/lib/fileValidation";
+import { reserveAiCall } from "@/lib/aiQuota";
+import { loadAiRules } from "@/lib/aiRulesServer";
+import {
+  MAX_AGENCY_RULES_CHARS,
+  PREFERENCE_OPTIONS,
+  buildAgencyRulesBlock,
+  formatRulesForPrompt,
+  type PreferenceKey,
+} from "@/lib/aiRules";
+import { generateRulesSample } from "@/lib/rulesSampleAi";
 
 export async function updateProfile(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -85,4 +95,54 @@ export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { e
   revalidatePath("/dashboard/settings");
   revalidatePath("/dashboard", "layout");
   return { ok: true };
+}
+
+// Legge le scelte rapide e il testo libero dal modulo, scartando i valori non validi.
+function readAiRules(formData: FormData) {
+  const preferences: Record<string, string> = {};
+  for (const key of Object.keys(PREFERENCE_OPTIONS) as PreferenceKey[]) {
+    const value = String(formData.get(`pref_${key}`) ?? "");
+    if (PREFERENCE_OPTIONS[key].choices.some((choice) => choice.value === value)) preferences[key] = value;
+  }
+  const text = String(formData.get("ai_rules") ?? "").trim().slice(0, MAX_AGENCY_RULES_CHARS);
+  return { preferences, text };
+}
+
+// Salva le regole che l'agenzia ha scritto per l'AI.
+export async function saveAiRules(formData: FormData): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { preferences, text } = readAiRules(formData);
+  const { error } = await supabase
+    .from("profiles")
+    .update({ ai_rules: text || null, ai_preferences: preferences })
+    .eq("id", user.id);
+  if (error) {
+    console.error("[saveAiRules]", error.message);
+    return { error: "Non è stato possibile salvare le regole. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard/settings");
+  return { ok: true };
+}
+
+// Mostra un esempio scritto dall'AI con le regole attualmente nel modulo
+// (anche non salvate), per provarle prima di tenerle.
+export async function testAiRules(formData: FormData): Promise<{ sample: string } | { error: string }> {
+  const quota = await reserveAiCall("rules_test");
+  if (!quota.ok) return { error: quota.error };
+
+  const { preferences, text } = readAiRules(formData);
+  const platform = (await loadAiRules()).platform;
+  const rulesBlock = formatRulesForPrompt(platform, buildAgencyRulesBlock(preferences, text));
+  try {
+    const sample = await generateRulesSample(rulesBlock);
+    return sample ? { sample } : { error: "L'AI non ha restituito nessun testo. Riprova." };
+  } catch (error) {
+    console.error("[testAiRules]", error);
+    return { error: "Non è stato possibile preparare l'esempio. Riprova tra poco." };
+  }
 }

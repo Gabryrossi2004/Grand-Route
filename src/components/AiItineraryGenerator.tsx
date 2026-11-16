@@ -1,27 +1,48 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Sparkles } from "lucide-react";
 import type { PromptStyle } from "@/lib/types";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import Modal from "@/components/Modal";
-import SubmitButton from "@/components/SubmitButton";
+import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 
 export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId: string; promptStyles: PromptStyle[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const action = applyAiItineraryDraft.bind(null, tripId);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [questions, setQuestions] = useState<string[] | null>(null);
+  const [answers, setAnswers] = useState<string[]>([]);
 
-  const [state, dispatch, pending] = useActionState(async (_prev: { error: string | null } | null, formData: FormData) => {
-    const result = await action(formData);
-    if (!result.error) {
-      router.refresh();
-      setIsOpen(false);
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (pending) return;
+    const formData = new FormData(event.currentTarget);
+    if (questions) formData.set("clarifications", formatClarifications(questions, answers));
+
+    setPending(true);
+    setError(null);
+    try {
+      const result = await action(formData);
+      if (result.questions && !questions) {
+        setQuestions(result.questions);
+        setAnswers(result.questions.map(() => ""));
+      } else if (result.error || result.questions) {
+        setError(result.error ?? "L'AI ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.");
+      } else {
+        router.refresh();
+        setIsOpen(false);
+      }
+    } catch {
+      setError("Generazione non riuscita. Controlla la connessione e riprova.");
+    } finally {
+      setPending(false);
     }
-    return result;
-  }, null);
+  }
 
   return (
     <>
@@ -41,7 +62,7 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
             trasformerà in giorni e attività, da rivedere con calma prima di passare l&apos;itinerario a
             &quot;finale&quot;. Non inventa orari, numeri o altri dati che non sono già nella bozza.
           </p>
-          <form action={dispatch} className="flex flex-col gap-3">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             {promptStyles.length > 0 && (
               <div>
                 <label htmlFor="prompt_style_id" className="mb-1 block text-sm font-medium text-slate-700">
@@ -83,7 +104,18 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
               label="Carica un file (Excel/CSV, testo, o una foto della bozza)"
               autoSubmit={false}
             />
-            {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
+            {questions && (
+              <AiQuestions
+                questions={questions}
+                answers={answers}
+                onChange={(index, value) => setAnswers((prev) => prev.map((item, i) => (i === index ? value : item)))}
+              />
+            )}
+            {error && (
+              <p className="text-sm text-red-600" role="alert">
+                {error}
+              </p>
+            )}
             <div className="mt-1 flex justify-end gap-2">
               <button
                 type="button"
@@ -93,12 +125,13 @@ export default function AiItineraryGenerator({ tripId, promptStyles }: { tripId:
               >
                 Annulla
               </button>
-              <SubmitButton
-                pendingLabel="Generazione in corso…"
+              <button
+                type="submit"
+                disabled={pending}
                 className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
               >
-                Genera
-              </SubmitButton>
+                {pending ? "Generazione in corso…" : questions ? "Genera con le risposte" : "Genera"}
+              </button>
             </div>
           </form>
         </Modal>

@@ -1,11 +1,12 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import type { Client, PromptStyle } from "@/lib/types";
 import DateField from "@/components/DateField";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import Modal from "@/components/Modal";
+import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import { createTripWithAi } from "./actions";
 
 const inputClass =
@@ -19,7 +20,38 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
   const [isOpen, setIsOpen] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [state, dispatch, pending] = useActionState(createTripWithAi, undefined);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [questions, setQuestions] = useState<string[] | null>(null);
+  const [answers, setAnswers] = useState<string[]>([]);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (pending) return;
+    const formData = new FormData(event.currentTarget);
+    if (questions) formData.set("clarifications", formatClarifications(questions, answers));
+
+    setPending(true);
+    setError(null);
+    try {
+      // Se va a buon fine il server porta direttamente alla pagina del viaggio.
+      const result = await createTripWithAi(undefined, formData);
+      if (result?.questions && !questions) {
+        setQuestions(result.questions);
+        setAnswers(result.questions.map(() => ""));
+      } else if (result?.error || result?.questions) {
+        setError(result.error ?? "L'AI ha ancora dubbi: aggiungi più dettagli alla bozza e riprova.");
+      }
+    } catch (caught) {
+      // Il reindirizzamento al nuovo viaggio non è un errore.
+      if (caught && typeof caught === "object" && "digest" in caught && String((caught as { digest: string }).digest).startsWith("NEXT_REDIRECT")) {
+        throw caught;
+      }
+      setError("Generazione non riuscita. Controlla la connessione e riprova.");
+    } finally {
+      setPending(false);
+    }
+  }
 
   const missingDates = !startDate || !endDate;
 
@@ -40,7 +72,7 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
             distribuisce sui giorni, in attività da rivedere con calma. Non inventa orari o dati che non sono nella
             bozza.
           </p>
-          <form action={dispatch} className="flex flex-col gap-3">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <div>
               <label htmlFor="ai_title" className={labelClass}>
                 Titolo del viaggio *
@@ -144,9 +176,16 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
             {missingDates && (
               <p className="text-xs text-amber-700">Scegli la data di inizio e di fine per poter generare.</p>
             )}
-            {state?.error && (
+            {questions && (
+              <AiQuestions
+                questions={questions}
+                answers={answers}
+                onChange={(index, value) => setAnswers((prev) => prev.map((item, i) => (i === index ? value : item)))}
+              />
+            )}
+            {error && (
               <p className="text-sm text-red-600" role="alert">
-                {state.error}
+                {error}
               </p>
             )}
             <div className="mt-1 flex items-center justify-end gap-2">
@@ -164,7 +203,7 @@ export default function AiNewTrip({ clients, promptStyles }: { clients: Client[]
                 disabled={pending || missingDates}
                 className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
               >
-                {pending ? "Creo il viaggio e genero…" : "Crea e genera"}
+                {pending ? "Creo il viaggio e genero…" : questions ? "Genera con le risposte" : "Crea e genera"}
               </button>
             </div>
           </form>
