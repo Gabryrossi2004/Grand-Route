@@ -119,8 +119,8 @@ export default function TripItineraryView({
             <div className="flex flex-col gap-3">
               {days.map((day, index) => (
                 <div key={day.id} className="theme-border border-t pt-3 first:border-t-0 first:pt-0">
-                  <p className="theme-heading-font text-sm font-semibold capitalize">
-                    {dayDateLabel(day, index)}
+                  <p className="theme-heading-font text-sm font-semibold">
+                    <span className="capitalize">{dayDateLabel(day, index)}</span>
                     {day.title && <span className="font-normal"> — {day.title}</span>}
                   </p>
                   <ul className="mt-1 flex flex-col gap-0.5">
@@ -146,8 +146,8 @@ export default function TripItineraryView({
 
             return (
               <section key={day.id}>
-                <h2 className="theme-heading-font mb-3 text-lg font-semibold capitalize">
-                  {dateLabel}
+                <h2 className="theme-heading-font mb-3 text-lg font-semibold">
+                  <span className="capitalize">{dateLabel}</span>
                   {day.title && <span className="font-normal"> — {day.title}</span>}
                 </h2>
                 <ol className="flex flex-col gap-3">
@@ -168,27 +168,36 @@ export default function TripItineraryView({
                       >
                         <div
                           style={{ backgroundColor: meta.bg }}
-                          className="flex flex-wrap items-center gap-2 px-4 py-2"
+                          className="flex items-start gap-2.5 px-4 py-2.5"
                         >
                           <span
                             style={{ backgroundColor: meta.color }}
-                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
+                            className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
                           >
                             <Icon size={15} strokeWidth={1.75} />
                           </span>
-                          {activity.start_time && (
-                            <span className="shrink-0 text-base font-medium" style={{ color: meta.color }}>
-                              {activity.start_time.slice(0, 5)}
+                          <div className="min-w-0 flex-1">
+                            <p className="break-words text-lg font-medium leading-snug">
+                              {activity.start_time && (
+                                <span className="mr-2 text-base font-medium" style={{ color: meta.color }}>
+                                  {activity.start_time.slice(0, 5)}
+                                </span>
+                              )}
+                              {activity.title}
+                            </p>
+                            <span
+                              style={{ color: meta.color, borderColor: meta.color }}
+                              className="mt-1 inline-block rounded-full border px-1.5 py-0.5 text-xs font-medium sm:hidden"
+                            >
+                              {meta.label}
                             </span>
-                          )}
-                          <span className="min-w-0 flex-1 text-lg font-medium">{activity.title}</span>
+                          </div>
                           <span
                             style={{ color: meta.color, borderColor: meta.color }}
-                            className="shrink-0 rounded-full border px-1.5 py-0.5 text-xs font-medium"
+                            className="mt-1 hidden shrink-0 rounded-full border px-1.5 py-0.5 text-xs font-medium sm:inline-block"
                           >
                             {meta.label}
                           </span>
-                          {activityAction?.(activity.id)}
                         </div>
                         {hasBody && (
                           <div className="px-4 py-3">
@@ -214,6 +223,7 @@ export default function TripItineraryView({
                             )}
                           </div>
                         )}
+                        {activityAction && <div className="px-4 pb-3 pt-1">{activityAction(activity.id)}</div>}
                       </li>
                     );
                   })}

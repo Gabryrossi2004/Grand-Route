@@ -85,8 +85,12 @@ export default function TripDialoguePanel({
 
   // Segna come letti i messaggi dell'altra parte quando si apre la conversazione
   useEffect(() => {
-    if (unread > 0) markTripMessagesRead(tripId).catch(() => {});
-  }, [unread, tripId]);
+    if (unread > 0) {
+      markTripMessagesRead(tripId)
+        .then(() => router.refresh())
+        .catch(() => {});
+    }
+  }, [unread, tripId, router]);
 
   // Scorre in fondo ai messaggi nuovi
   useEffect(() => {

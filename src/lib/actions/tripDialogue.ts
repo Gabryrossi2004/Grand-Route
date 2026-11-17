@@ -211,5 +211,12 @@ export async function sendTripForApproval(tripId: string): Promise<Result> {
 
 export async function markTripMessagesRead(tripId: string): Promise<void> {
   const supabase = await createClient();
-  await supabase.rpc("mark_trip_messages_read", { p_trip_id: tripId });
+  const { error } = await supabase.rpc("mark_trip_messages_read", { p_trip_id: tripId });
+  if (error) {
+    console.error("[markTripMessagesRead]", error.code, error.message);
+    return;
+  }
+  // I numeri dei messaggi non letti (pulsante, menù, Home) devono aggiornarsi
+  revalidatePath("/dashboard", "layout");
+  revalidatePath(`/client/trips/${tripId}`);
 }

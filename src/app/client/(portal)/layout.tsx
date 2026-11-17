@@ -24,29 +24,29 @@ export default async function ClientPortalLayout({ children }: { children: React
         <div className="absolute bottom-[-15%] right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
       </div>
       <HeaderAutoHide className="bg-[#faf3e6]/80 backdrop-blur">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-4">
-          <Link href="/client" className="flex items-center gap-2.5 text-[#233c5e]">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
+          <Link href="/client" className="flex shrink-0 items-center gap-2 whitespace-nowrap text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />
-            <span className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-wide">
+            <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">
               Area clienti
             </span>
           </Link>
-          <nav className="flex items-center gap-1 rounded-full border border-[#e6d7bb] bg-white p-1 text-sm">
+          <nav className="flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm sm:gap-1">
             <Link
               href="/client"
-              className="rounded-full px-3.5 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+              className="rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
             >
               I viaggi
             </Link>
             <Link
               href="/client/documenti"
-              className="rounded-full px-3.5 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+              className="rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
             >
               I tuoi dati
             </Link>
             <ClientSignOutForm
               action={clientSignOut}
-              className="rounded-full px-3.5 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+              className="rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
             />
           </nav>
         </div>

@@ -30,7 +30,19 @@ export default function ClientTripChat({
   // Il numero dei messaggi nuovi si aggiorna anche a chat chiusa
   useTripRealtime(tripId, !open);
   const [preset, setPreset] = useState<PanelPreset | undefined>(undefined);
-  const unread = messages.filter((m) => m.author_role === "agency" && !m.read_at).length;
+  // Messaggi già visti aprendo la chat: il numero sparisce subito, senza aspettare il server
+  const [seen, setSeen] = useState<Set<string>>(new Set());
+  const unread = open
+    ? 0
+    : messages.filter((m) => m.author_role === "agency" && !m.read_at && !seen.has(m.id)).length;
+  useEffect(() => {
+    if (!open) return;
+    setSeen((current) => {
+      const next = new Set(current);
+      for (const m of messages) if (m.author_role === "agency") next.add(m.id);
+      return next;
+    });
+  }, [open, messages]);
 
   useEffect(() => {
     const onOpen = (event: Event) => {
