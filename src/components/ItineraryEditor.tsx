@@ -161,8 +161,8 @@ export default function ItineraryEditor({
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-      <aside className="flex shrink-0 flex-col gap-2 sm:sticky sm:top-20 sm:max-h-[calc(100vh-6rem)] sm:w-56 sm:self-start sm:overflow-y-auto">
-        <form action={addDay.bind(null, tripId)} className="flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
+      <aside className="grid shrink-0 grid-cols-2 gap-2 sm:sticky sm:top-20 sm:max-h-[calc(100vh-6rem)] sm:w-56 sm:self-start sm:flex sm:flex-col sm:overflow-y-auto">
+        <form action={addDay.bind(null, tripId)} className="col-span-2 flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
           <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
             Aggiungi un giorno
           </label>
@@ -516,8 +516,8 @@ function DayPanel({
   }
 
   return (
-    <div className="rounded-xl border border-[#e6d7bb] bg-white p-5">
-      <div className="sticky top-4 z-10 mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 py-1 backdrop-blur">
+    <div className="rounded-xl border border-[#e6d7bb] bg-white p-3 sm:p-5">
+      <div className="mb-3 flex flex-col gap-2 rounded-lg bg-white/95 py-1 backdrop-blur sm:sticky sm:top-4 sm:z-10 sm:flex-row sm:items-center sm:justify-between">
         <h3 className="font-medium capitalize text-slate-900">
           {day.day_order === 0 ? (
             <span className="relative inline-block">
@@ -579,12 +579,12 @@ function DayPanel({
             </span>
           )}
         </h3>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           {sortedActivities.length > 1 && (
             <button
               type="button"
               onClick={toggleAllExpanded}
-              className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+              className="flex min-h-10 items-center gap-1 rounded-md px-2 text-sm text-slate-500 hover:underline sm:min-h-0 sm:px-0 sm:text-xs"
             >
               {allExpanded ? (
                 <>
@@ -600,14 +600,14 @@ function DayPanel({
           <button
             type="button"
             onClick={onDeleteDay}
-            className="flex items-center gap-1 text-xs text-red-500 hover:underline"
+            className="flex min-h-10 items-center gap-1 rounded-md px-2 text-sm text-red-500 hover:underline sm:min-h-0 sm:px-0 sm:text-xs"
           >
             <Trash2 size={12} /> Elimina giorno
           </button>
           <button
             type="button"
             onClick={() => setIsAddingActivity(true)}
-            className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f]"
+            className="order-first flex min-h-11 w-full items-center justify-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] sm:order-none sm:min-h-0 sm:w-auto"
           >
             <Plus size={15} /> Attività
           </button>
@@ -767,7 +767,7 @@ function SortableActivityRow({
           {...attributes}
           {...listeners}
           aria-label="Trascina per riordinare"
-          className="shrink-0 cursor-grab touch-none p-1 text-slate-300 opacity-0 transition-opacity hover:text-slate-500 focus:opacity-100 group-hover:opacity-100 active:cursor-grabbing"
+          className="shrink-0 cursor-grab touch-none p-2 text-slate-400 opacity-60 sm:p-1 sm:text-slate-300 sm:opacity-0 transition-opacity hover:text-slate-500 focus:opacity-100 group-hover:opacity-100 active:cursor-grabbing"
         >
           <GripVertical size={16} />
         </button>
@@ -803,8 +803,8 @@ function SortableActivityRow({
       </div>
 
       {isExpanded && (
-        <div className="border-t border-black/5 px-3 pb-3 pl-12 pt-3">
-          <div className="flex flex-wrap items-start gap-3">
+        <div className="border-t border-black/5 px-3 pb-3 pt-3 sm:pl-12">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start">
             <div className="min-w-0 flex-1">
               <span
                 style={{ color: meta.color, backgroundColor: "white" }}
@@ -831,13 +831,13 @@ function SortableActivityRow({
               )}
             </div>
 
-            <div className="ml-auto flex shrink-0 flex-col items-end gap-1">
-              <div className="flex flex-wrap items-center justify-end gap-1">
+            <div className="flex w-full items-center justify-between gap-2 border-t border-black/5 pt-2 sm:ml-auto sm:w-auto sm:shrink-0 sm:flex-col sm:items-end sm:gap-1 sm:border-0 sm:pt-0">
+              <div className="flex items-center gap-1 sm:flex-wrap sm:justify-end">
                 <form action={saveActivityToLibrary.bind(null, tripId, activity.id)}>
                   <button
                     type="submit"
                     title="Salva in libreria"
-                    className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
+                    className="rounded-md p-3 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90 sm:p-2"
                   >
                     <BookmarkPlus size={18} />
                   </button>
@@ -846,7 +846,7 @@ function SortableActivityRow({
                   <button
                     type="submit"
                     title="Duplica attività"
-                    className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
+                    className="rounded-md p-3 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90 sm:p-2"
                   >
                     <Copy size={18} />
                   </button>
@@ -855,7 +855,7 @@ function SortableActivityRow({
                   type="button"
                   onClick={onEdit}
                   title="Modifica"
-                  className="rounded-md p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90"
+                  className="rounded-md p-3 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 active:scale-90 sm:p-2"
                 >
                   <Pencil size={18} />
                 </button>
@@ -863,7 +863,7 @@ function SortableActivityRow({
                   type="button"
                   onClick={onDelete}
                   title="Elimina"
-                  className="rounded-md p-2 text-red-500 transition hover:bg-red-50 active:scale-90"
+                  className="rounded-md p-3 text-red-500 transition hover:bg-red-50 active:scale-90 sm:p-2"
                 >
                   <Trash2 size={18} />
                 </button>
@@ -874,7 +874,7 @@ function SortableActivityRow({
                     type="submit"
                     disabled={index === 0}
                     title="Sposta su"
-                    className="rounded-md border border-slate-300 p-1.5 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100"
+                    className="rounded-md border border-slate-300 p-3 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100 sm:p-1.5"
                   >
                     <ChevronUp size={16} />
                   </button>
@@ -884,7 +884,7 @@ function SortableActivityRow({
                     type="submit"
                     disabled={index === total - 1}
                     title="Sposta giù"
-                    className="rounded-md border border-slate-300 p-1.5 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100"
+                    className="rounded-md border border-slate-300 p-3 text-slate-500 transition hover:bg-slate-100 active:scale-90 disabled:opacity-30 disabled:active:scale-100 sm:p-1.5"
                   >
                     <ChevronDown size={16} />
                   </button>

@@ -225,7 +225,7 @@ export default async function TripDetailPage({
           )}
         </div>
         {trip.ai_notes && <AiNotes tripId={id} notes={trip.ai_notes} />}
-        <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-5 sm:flex-row sm:items-start">
+        <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-2 sm:flex-row sm:items-start sm:p-5">
           <div className="min-w-0 flex-1">
             <ItineraryEditor
               tripId={id}
