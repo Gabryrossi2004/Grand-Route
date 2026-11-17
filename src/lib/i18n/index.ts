@@ -2,6 +2,10 @@ import { entries, type TKey } from "./dictionary";
 
 export type { TKey };
 export type Lang = "it" | "en";
+// Interruttore generale: per ora il sito è solo in italiano (l'inglese è pronto ma nascosto).
+// Per riattivarlo: metti true.
+export const LANGUAGE_SWITCH_ENABLED = false;
+
 export const LANGS: { code: Lang; label: string; short: string }[] = [
   { code: "it", label: "Italiano", short: "IT" },
   { code: "en", label: "English", short: "EN" },

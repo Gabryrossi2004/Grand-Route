@@ -3,7 +3,7 @@
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
-import { LANGS } from "@/lib/i18n";
+import { LANGS, LANGUAGE_SWITCH_ENABLED } from "@/lib/i18n";
 import { setLanguage } from "@/lib/actions/language";
 import { useI18n } from "@/components/I18nProvider";
 
@@ -12,6 +12,7 @@ export default function LanguageSwitch({ className = "" }: { className?: string 
   const { lang, t } = useI18n();
   const router = useRouter();
   const [pending, startTransition] = useTransition();
+  if (!LANGUAGE_SWITCH_ENABLED) return null;
 
   return (
     <div
