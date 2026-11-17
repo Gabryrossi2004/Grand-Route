@@ -27,6 +27,9 @@ export function checkTripBeforeSend(params: {
     return issues;
   }
 
+  if (trip.start_date && trip.end_date && trip.end_date.slice(0, 10) < trip.start_date.slice(0, 10)) {
+    issues.push({ level: "problema", text: "La data di fine del viaggio è precedente a quella di partenza." });
+  }
   if (!trip.start_date) issues.push({ level: "attenzione", text: "Manca la data di partenza del viaggio." });
   else if (days[0].day_date && days[0].day_date.slice(0, 10) !== trip.start_date.slice(0, 10)) {
     issues.push({ level: "attenzione", text: "La data del primo giorno non coincide con la data di partenza del viaggio." });

@@ -84,6 +84,7 @@ export default function TripDialoguePanel({
   const [optimistic, setOptimistic] = useState<TripMessage[]>([]);
   const [statusOverride, setStatusOverride] = useState<ApprovalStatus | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLTextAreaElement>(null);
 
   // Quando arrivano i dati veri dal server, quelli provvisori non servono più
   useEffect(() => {
@@ -106,6 +107,15 @@ export default function TripDialoguePanel({
         .catch(() => {});
     }
   }, [unread, tripId, router]);
+
+  // La casella di scrittura cresce con il testo (fino a metà schermo), così una
+  // bozza lunga si legge tutta senza scorrere dentro una casella di tre righe
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight + 2, Math.round(window.innerHeight * 0.55))}px`;
+  }, [text, mode]);
 
   // Scorre in fondo ai messaggi nuovi
   useEffect(() => {
@@ -176,6 +186,8 @@ export default function TripDialoguePanel({
       else {
         setText(result.message.slice(0, 2000));
         setNotice("Bozza di Zefiro: rileggila e modificala prima di inviarla.");
+        // Porta la bozza in vista (la casella si allarga da sola)
+        requestAnimationFrame(() => textRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }));
       }
     } catch {
       setError("Non è stato possibile scrivere la bozza. Controlla la connessione e riprova.");
@@ -403,12 +415,13 @@ export default function TripDialoguePanel({
           </div>
         )}
         <textarea
+          ref={textRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
           maxLength={2000}
           rows={mode === "changes" ? 4 : 3}
           placeholder={mode === "changes" ? "Es. Vorrei un hotel più vicino al centro nel giorno 2" : "Scrivi un messaggio…"}
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+          className="w-full resize-y rounded-md border border-slate-300 px-3 py-2 text-sm leading-relaxed outline-none focus:border-[#cda876]"
         />
         <div className="flex flex-wrap items-center gap-2">
           <button
