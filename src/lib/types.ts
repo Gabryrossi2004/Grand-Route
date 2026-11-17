@@ -75,9 +75,24 @@ export type TripTheme =
   | "giapponese"
   | "tropicale";
 
+export type ApprovalStatus = "none" | "pending" | "approved" | "changes_requested";
+
+export type TripMessage = {
+  id: string;
+  trip_id: string;
+  author_id: string;
+  author_role: "agency" | "client";
+  kind: "message" | "change_request" | "approved" | "sent_for_approval";
+  body: string;
+  day_id: string | null;
+  read_at: string | null;
+  created_at: string;
+};
+
 export type Trip = {
   id: string;
   owner_id: string;
+  approval_status?: ApprovalStatus;
   client_id: string | null;
   group_id: string | null;
   title: string;

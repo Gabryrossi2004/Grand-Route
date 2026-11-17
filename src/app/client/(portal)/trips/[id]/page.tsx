@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import type { Activity, ActivityPhoto, Profile, TripDay, TripPayment } from "@/lib/types";
+import type { Activity, ActivityPhoto, ApprovalStatus, Profile, TripDay, TripMessage, TripPayment } from "@/lib/types";
+import ClientTripChat, { ApprovalBanner } from "@/components/ClientTripChat";
 import TripItineraryView from "@/components/TripItineraryView";
 import EmergencyButton from "@/components/EmergencyButton";
 
@@ -39,7 +40,7 @@ export default async function ClientTripPage({
   const clientName = myClient?.full_name || "Il cliente";
   const hasIdentityDocument = Boolean(myClient?.id_card_number || myClient?.passport_number);
 
-  const [{ data: days }, { data: owner }, { data: incomingPayments }] = await Promise.all([
+  const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }] = await Promise.all([
     supabase
       .from("trip_days")
       .select("*, activities(*, activity_photos(*))")
@@ -47,6 +48,7 @@ export default async function ClientTripPage({
       .order("day_order", { ascending: true }),
     supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
     supabase.from("trip_payments").select("*").eq("trip_id", trip.id).eq("direction", "incasso"),
+    supabase.from("trip_messages").select("*").eq("trip_id", trip.id).order("created_at", { ascending: true }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -55,6 +57,7 @@ export default async function ClientTripPage({
   }));
 
   const ownerProfile = owner as Profile | null;
+  const approvalStatus = (trip.approval_status ?? "none") as ApprovalStatus;
   const showEmergencyButton = trip.show_emergency_button && Boolean(ownerProfile?.emergency_phone);
 
   const daysUntilDeparture = trip.start_date
@@ -87,6 +90,7 @@ export default async function ClientTripPage({
                 <ArrowLeft size={14} /> I miei viaggi
               </Link>
             </div>
+            <ApprovalBanner approvalStatus={approvalStatus} />
             {showDocumentsReminder && (
               <div className="bg-amber-50 px-4 py-2">
                 <Link
@@ -100,6 +104,13 @@ export default async function ClientTripPage({
             )}
           </div>
         }
+      />
+      <ClientTripChat
+        tripId={trip.id}
+        messages={(tripMessages as TripMessage[] | null) ?? []}
+        days={orderedDays.map((day, index) => ({ id: day.id, label: `Giorno ${index + 1}` }))}
+        approvalStatus={approvalStatus}
+        agencyLabel={ownerProfile?.agency_name || "Agenzia"}
       />
       {showEmergencyButton && (
         <EmergencyButton

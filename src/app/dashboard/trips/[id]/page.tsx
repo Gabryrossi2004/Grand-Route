@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type {
+  ApprovalStatus,
+  TripMessage,
   Activity,
   ActivityPhoto,
   ActivityTemplate,
@@ -37,6 +39,7 @@ import UploadForm from "@/components/UploadForm";
 import ActionForm from "@/components/ActionForm";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
+import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -95,6 +98,7 @@ export default async function TripDetailPage({
     { data: documents },
     { data: promptStyles },
     { data: variantTrips },
+    { data: tripMessages },
   ] = await Promise.all([
     supabase
       .from("trip_days")
@@ -125,6 +129,9 @@ export default async function TripDetailPage({
           .neq("id", id)
           .order("created_at", { ascending: true })
       : Promise.resolve({ data: [] as { id: string; title: string; is_published: boolean }[] }),
+    trip.client_id
+      ? supabase.from("trip_messages").select("*").eq("trip_id", id).order("created_at", { ascending: true })
+      : Promise.resolve({ data: [] as TripMessage[] }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -177,6 +184,33 @@ export default async function TripDetailPage({
       />
       <div className="flex flex-wrap items-start gap-4">
         <TripInfoForm trip={trip} />
+
+        {trip.client_id && (
+          <ExpandableSection
+            title="Messaggi e approvazione"
+            badge={
+              <>
+                <ApprovalChip status={(trip.approval_status ?? "none") as ApprovalStatus} />
+                {((tripMessages as TripMessage[] | null) ?? []).filter((m) => m.author_role === "client" && !m.read_at).length >
+                  0 && (
+                  <span className="rounded-full bg-[#cda876] px-2 py-0.5 text-[10px] font-bold normal-case tracking-normal text-[#17283f]">
+                    {((tripMessages as TripMessage[] | null) ?? []).filter((m) => m.author_role === "client" && !m.read_at).length}{" "}
+                    nuovi
+                  </span>
+                )}
+              </>
+            }
+          >
+            <TripDialoguePanel
+              tripId={id}
+              role="agency"
+              messages={(tripMessages as TripMessage[] | null) ?? []}
+              days={orderedDays.map((day, index) => ({ id: day.id, label: `Giorno ${index + 1}` }))}
+              approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
+              agencyLabel="Tu"
+            />
+          </ExpandableSection>
+        )}
 
         <ExpandableSection
           title="Tariffa & Termini"
