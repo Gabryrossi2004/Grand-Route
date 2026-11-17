@@ -33,6 +33,35 @@ async function notifyOtherParty(
   }
 }
 
+type Db = Awaited<ReturnType<typeof createClient>>;
+
+// L'errore tipico quando il database non ha ancora l'aggiornamento 0037
+// (colonna o parametro "activity" mancante): in quel caso si procede lo stesso,
+// scrivendo il nome dell'attività nel testo.
+function isMissingActivitySupport(error: { code?: string; message?: string } | null) {
+  if (!error) return false;
+  return (
+    error.code === "PGRST202" ||
+    error.code === "PGRST204" ||
+    error.code === "42703" ||
+    /activity_id|p_activity_id|schema cache/i.test(error.message ?? "")
+  );
+}
+
+async function withActivityName(supabase: Db, activityId: string, text: string) {
+  const { data } = await supabase.from("activities").select("title").eq("id", activityId).maybeSingle();
+  return data?.title ? `[${data.title}] ${text}` : text;
+}
+
+// Messaggi più chiari per gli errori più comuni
+function errorMessageFor(error: { code?: string; message?: string }) {
+  if (error.code === "PGRST202" || /function .* schema cache/i.test(error.message ?? "")) {
+    return "Manca un aggiornamento del database (script 0036 o 0037). Avvisa la tua agenzia.";
+  }
+  if (/non autorizzato/i.test(error.message ?? "")) return "Non risulti collegato a questo viaggio.";
+  return GENERIC_ERROR;
+}
+
 function refresh(tripId: string) {
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath(`/client/trips/${tripId}`);
@@ -62,18 +91,24 @@ export async function sendTripMessage(
   const who = await currentRole(supabase, tripId);
   if (!who) return { error: "Sessione scaduta: accedi di nuovo." };
 
-  const { error } = await supabase.from("trip_messages").insert({
+  const row = {
     trip_id: tripId,
     author_id: who.user.id,
     author_role: who.role,
-    kind: "message",
+    kind: "message" as const,
     body: text,
     day_id: dayId || null,
-    // Solo se indicata: prima della migrazione 0037 la colonna non esiste
-    ...(activityId ? { activity_id: activityId } : {}),
-  });
+  };
+  // activity_id solo se indicata: prima della migrazione 0037 la colonna non esiste
+  const payload: Record<string, unknown> = activityId ? { ...row, activity_id: activityId } : row;
+  let { error } = await supabase.from("trip_messages").insert(payload);
+  if (error && activityId && isMissingActivitySupport(error)) {
+    ({ error } = await supabase
+      .from("trip_messages")
+      .insert({ ...row, body: (await withActivityName(supabase, activityId, text)).slice(0, MAX_BODY) }));
+  }
   if (error) {
-    console.error("[sendTripMessage]", error.message);
+    console.error("[sendTripMessage]", error.code, error.message);
     return { error: GENERIC_ERROR };
   }
 
@@ -95,8 +130,8 @@ export async function approveTrip(tripId: string): Promise<Result> {
 
   const { error } = await supabase.rpc("client_set_trip_approval", { p_trip_id: tripId, p_status: "approved" });
   if (error) {
-    console.error("[approveTrip]", error.message);
-    return { error: GENERIC_ERROR };
+    console.error("[approveTrip]", error.code, error.message);
+    return { error: errorMessageFor(error) };
   }
   await notifyOtherParty(supabase, tripId, "Itinerario approvato", `Il cliente ha approvato "${who.title}".`);
   refresh(tripId);
@@ -118,16 +153,22 @@ export async function requestTripChanges(
   const who = await currentRole(supabase, tripId);
   if (!who) return { error: "Sessione scaduta: accedi di nuovo." };
 
-  const { error } = await supabase.rpc("client_set_trip_approval", {
+  const args = {
     p_trip_id: tripId,
     p_status: "changes_requested",
     p_note: text,
     p_day_id: dayId || null,
-    ...(activityId ? { p_activity_id: activityId } : {}),
-  });
+  };
+  let { error } = await supabase.rpc("client_set_trip_approval", activityId ? { ...args, p_activity_id: activityId } : args);
+  if (error && activityId && isMissingActivitySupport(error)) {
+    ({ error } = await supabase.rpc("client_set_trip_approval", {
+      ...args,
+      p_note: (await withActivityName(supabase, activityId, text)).slice(0, MAX_BODY),
+    }));
+  }
   if (error) {
-    console.error("[requestTripChanges]", error.message);
-    return { error: GENERIC_ERROR };
+    console.error("[requestTripChanges]", error.code, error.message);
+    return { error: errorMessageFor(error) };
   }
   await notifyOtherParty(supabase, tripId, "Richiesta di modifiche", `${who.title}: ${text}`);
   refresh(tripId);
