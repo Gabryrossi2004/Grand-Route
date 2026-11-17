@@ -64,7 +64,22 @@ export default function TripDialoguePanel({
   const [mode, setMode] = useState<"message" | "changes">(preset?.mode ?? "message");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Conferma visibile e messaggio mostrato subito, in attesa che il server confermi
+  const [notice, setNotice] = useState<string | null>(null);
+  const [optimistic, setOptimistic] = useState<TripMessage[]>([]);
+  const [statusOverride, setStatusOverride] = useState<ApprovalStatus | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+
+  // Quando arrivano i dati veri dal server, quelli provvisori non servono più
+  useEffect(() => {
+    setStatusOverride(null);
+    setOptimistic((current) =>
+      current.filter((o) => !messages.some((m) => m.author_role === o.author_role && m.kind === o.kind && m.body === o.body)),
+    );
+  }, [messages, approvalStatus]);
+
+  const shownMessages = [...messages, ...optimistic];
+  const shownStatus = statusOverride ?? approvalStatus;
 
   const unread = messages.filter((m) => m.author_role !== role && !m.read_at).length;
 
@@ -76,7 +91,7 @@ export default function TripDialoguePanel({
   // Scorre in fondo ai messaggi nuovi
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: "end" });
-  }, [messages.length]);
+  }, [shownMessages.length]);
 
   // Nuovi messaggi in tempo reale, più un aggiornamento di riserva ogni tanto
   useTripRealtime(tripId);
@@ -87,14 +102,41 @@ export default function TripDialoguePanel({
     return () => clearInterval(timer);
   }, [router]);
 
-  async function run(action: () => Promise<{ ok: true } | { error: string }>, after?: () => void) {
+  function addLocal(kind: TripMessage["kind"], body: string, dayId: string | null, activityId: string | null) {
+    setOptimistic((current) => [
+      ...current,
+      {
+        id: `tmp-${Date.now()}`,
+        trip_id: tripId,
+        author_id: "",
+        author_role: role,
+        kind,
+        body,
+        day_id: dayId,
+        activity_id: activityId,
+        read_at: null,
+        created_at: new Date().toISOString(),
+      },
+    ]);
+  }
+
+  async function run(
+    action: () => Promise<{ ok: true } | { error: string }>,
+    after?: () => void,
+    confirmation?: string,
+  ) {
     setBusy(true);
     setError(null);
+    setNotice(null);
     try {
       const result = await action();
       if ("error" in result) setError(result.error);
       else {
         after?.();
+        if (confirmation) {
+          setNotice(confirmation);
+          setTimeout(() => setNotice(null), 6000);
+        }
         router.refresh();
       }
     } catch {
@@ -107,17 +149,29 @@ export default function TripDialoguePanel({
   function submit() {
     const dayId = ref.startsWith("day:") ? ref.slice(4) : null;
     const activityId = ref.startsWith("activity:") ? ref.slice(9) : null;
+    const body = text.trim();
     if (mode === "changes") {
-      run(() => requestTripChanges(tripId, text, dayId, activityId), () => {
-        setText("");
-        setRef("");
-        setMode("message");
-      });
+      run(
+        () => requestTripChanges(tripId, text, dayId, activityId),
+        () => {
+          addLocal("change_request", body, dayId, activityId);
+          setStatusOverride("changes_requested");
+          setText("");
+          setRef("");
+          setMode("message");
+        },
+        "Richiesta inviata all'agenzia ✓",
+      );
     } else {
-      run(() => sendTripMessage(tripId, text, dayId, activityId), () => {
-        setText("");
-        setRef("");
-      });
+      run(
+        () => sendTripMessage(tripId, text, dayId, activityId),
+        () => {
+          addLocal("message", body, dayId, activityId);
+          setText("");
+          setRef("");
+        },
+        "Messaggio inviato ✓",
+      );
     }
   }
 
@@ -134,23 +188,41 @@ export default function TripDialoguePanel({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        {canApprove && <ApprovalChip status={approvalStatus} />}
+        {canApprove && <ApprovalChip status={shownStatus} />}
         {role === "agency" && canApprove && (
           <button
             type="button"
             disabled={busy}
-            onClick={() => run(() => sendTripForApproval(tripId))}
+            onClick={() =>
+              run(
+                () => sendTripForApproval(tripId),
+                () => {
+                  addLocal("sent_for_approval", "Ti ho inviato l'itinerario: guardalo con calma e poi approvalo, oppure chiedimi le modifiche.", null, null);
+                  setStatusOverride("pending");
+                },
+                "Itinerario inviato al cliente per l'approvazione ✓",
+              )
+            }
             className="rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
           >
-            {approvalStatus === "none" ? "Invia al cliente per approvazione" : "Invia di nuovo per approvazione"}
+            {shownStatus === "none" ? "Invia al cliente per approvazione" : "Invia di nuovo per approvazione"}
           </button>
         )}
-        {role === "client" && canApprove && approvalStatus === "pending" && mode === "message" && (
+        {role === "client" && canApprove && shownStatus === "pending" && mode === "message" && (
           <>
             <button
               type="button"
               disabled={busy}
-              onClick={() => run(() => approveTrip(tripId))}
+              onClick={() =>
+                run(
+                  () => approveTrip(tripId),
+                  () => {
+                    addLocal("approved", "Itinerario approvato", null, null);
+                    setStatusOverride("approved");
+                  },
+                  "Approvazione inviata ✓",
+                )
+              }
               className="flex min-h-11 items-center gap-1.5 rounded-xl bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-60"
             >
               <CheckCircle2 size={16} /> Approva l&apos;itinerario
@@ -168,7 +240,7 @@ export default function TripDialoguePanel({
       </div>
 
       <div className="flex max-h-[45vh] min-h-32 flex-col gap-2 overflow-y-auto rounded-xl bg-[#faf3e6]/60 p-3" aria-live="polite">
-        {messages.length === 0 && (
+        {shownMessages.length === 0 && (
           <p className="m-auto text-center text-sm text-slate-500">
             {role === "client"
               ? "Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile."
@@ -177,7 +249,7 @@ export default function TripDialoguePanel({
                 : "Nessun messaggio. Scrivi al cliente quando vuoi."}
           </p>
         )}
-        {messages.map((m) => {
+        {shownMessages.map((m) => {
           const mine = m.author_role === role;
           const reference = refLabel(m);
           return (
@@ -262,6 +334,11 @@ export default function TripDialoguePanel({
             </button>
           )}
         </div>
+        {notice && (
+          <p className="rounded-lg bg-green-50 px-3 py-2 text-sm font-medium text-green-800" role="status">
+            {notice}
+          </p>
+        )}
         {error && (
           <p className="text-sm text-red-700" role="alert">
             {error}
