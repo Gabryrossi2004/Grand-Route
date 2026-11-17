@@ -18,6 +18,10 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 - **Itinerario tradotto in automatico per chi legge in inglese** (migrazione 0041): titoli, descrizioni e note dell'itinerario si traducono alla prima visita del cliente e restano salvati; si rifanno solo se l'agenzia modifica il viaggio. Non ancora tradotti: titoli nella lista viaggi e nell'intestazione della chat
 
 ## Da fare, in ordine
+**0. Prossimi passi richiesti (da fare prima del resto)**
+- **Pubblicazione del viaggio migliorata** — quando il viaggio viene pubblicato: invio automatico per mail all'indirizzo del cliente (con il link) e possibilità di salvarlo in PDF
+- **Creazione con AI più semplice** — oggi ha troppi passaggi ed è macchinosa: ridurre i passaggi (da un solo testo/richiesta all'itinerario pronto)
+
 **1. Mappamondo dei viaggi, fase A** — globo 3D nell'area clienti con i viaggi fatti (tappe ricavate dagli itinerari); il cliente può vedere dove si trova adesso, solo sul proprio telefono
 **2. Pacchetti e fatturazione** — tetto mensile di consumo incluso nell'abbonamento, extra a consumo con ricarico (consigliato costo + 60-100%), fatturazione mensile (serve partita IVA); blocco degli argomenti di Zefiro per pacchetto (GATE_TOPICS_BY_PLAN)
 **3. Ampliamento a pubblico senza agenzia** — utenti privati che organizzano i propri viaggi con Zefiro, senza passare da un'agenzia; qui anche la fase B del mappamondo (social: condividere viaggi e posizione, con consenso e privacy)
