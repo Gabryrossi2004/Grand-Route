@@ -41,6 +41,7 @@ import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel";
 import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
+import TranslateTripButton from "@/components/TranslateTripButton";
 import { checkTripBeforeSend } from "@/lib/tripPreflight";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
@@ -440,6 +441,8 @@ function CoverHero({
             Crea variante
           </SubmitButton>
         </form>
+
+        <TranslateTripButton tripId={trip.id} />
 
         <TripServicesPanel
           tripId={trip.id}
