@@ -15,6 +15,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 - **Zefiro per il cliente, argomenti e guida** (nessuna migrazione): l'agenzia sceglie gli argomenti (paese, consigli sul posto, muoversi, servizi vicini con mappa) e scrive la propria guida; servizi vicini da OpenStreetMap; blocco per pacchetto pronto ma spento (GATE_TOPICS_BY_PLAN in src/lib/zefiroTopics.ts)
 
 ## Da fare, in ordine
+(proposta, da confermare) **Mappamondo dei viaggi** — fase A: globo 3D con i viaggi fatti del cliente (tappe ricavate dagli itinerari), senza posizione condivisa; fase B (social: condividere la posizione e i viaggi con altri) insieme all'apertura al pubblico senza agenzia
 **1. Zefiro per l'agenzia, più strumenti** — briefing in Home (partenze, documenti mancanti, pagamenti), bozze di messaggi al cliente, traduzione dell'itinerario, controllo prima dell'invio
 **2. Pacchetti e fatturazione** — tetto mensile di consumo incluso nell'abbonamento, extra a consumo con ricarico (consigliato costo + 60-100%), fatturazione mensile (serve partita IVA)
 **3. Ampliamento a pubblico senza agenzia** — utenti privati che organizzano i propri viaggi con Zefiro, senza passare da un'agenzia

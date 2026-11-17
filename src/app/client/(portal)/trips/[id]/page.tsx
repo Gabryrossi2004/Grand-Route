@@ -1,5 +1,6 @@
 import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
+import ZefiroClientFloating from "@/components/ZefiroClientFloating";
 import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
 import { getAvatarStyle } from "@/lib/assistant";
 import { resolveTopics } from "@/lib/zefiroTopics";
@@ -156,8 +157,14 @@ export default async function ClientTripPage({
         agencyLabel={ownerProfile?.agency_name || "Agenzia"}
         stage={stage}
         zefiroEnabled={zefiroEnabled}
-        zefiroTopics={resolveTopics(owner?.ai_preferences, parseAiPlan(zefiroRow?.plan))}
       />
+      {zefiroEnabled && (
+        <ZefiroClientFloating
+          tripId={trip.id}
+          topics={resolveTopics(owner?.ai_preferences, parseAiPlan(zefiroRow?.plan))}
+          sosVisible={showEmergencyButton}
+        />
+      )}
       {showEmergencyButton && (
         <EmergencyButton
           tripId={trip.id}

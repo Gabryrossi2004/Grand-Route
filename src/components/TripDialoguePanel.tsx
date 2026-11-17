@@ -253,7 +253,7 @@ export default function TripDialoguePanel({
         {shownMessages.length === 0 && (
           <p className="m-auto text-center text-sm text-slate-500">
             {role === "client"
-              ? `Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile.${zefiroHint ? " Fuori orario puoi chiedere a Zefiro nella scheda qui sopra." : ""}`
+              ? `Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile.${zefiroHint ? " Fuori orario puoi chiedere a Zefiro, in basso a destra." : ""}`
               : canApprove
                 ? "Nessun messaggio. Scrivi al cliente o invia l'itinerario in approvazione."
                 : "Nessun messaggio. Scrivi al cliente quando vuoi."}
