@@ -28,7 +28,8 @@ const Schema = z.object({ items: z.array(z.object({ id: z.string(), text: z.stri
 async function translateChunk(chunk: TranslationItem[]): Promise<TranslationItem[]> {
   const anthropic = new Anthropic();
   const response = await anthropic.messages.parse({
-    model: "claude-haiku-5-5",
+    // Stesso modello già usato (e provato) per la traduzione dei viaggi dell'agenzia
+    model: "claude-sonnet-5-5",
     max_tokens: 16000,
     system: `You are a professional travel-text translator. Translate from Italian into English every text in the JSON list you receive (fields "id" and "text").
 
@@ -49,7 +50,10 @@ const hashOf = (items: TranslationItem[]) => createHash("sha256").update(JSON.st
 
 async function loadItems(supabase: Db, tripId: string, hash: string): Promise<TranslationItem[] | null> {
   const { data, error } = await supabase.rpc("get_trip_translation", { p_trip_id: tripId, p_lang: "en" });
-  if (error) return null; // migrazione 0041 non ancora eseguita
+  if (error) {
+    console.error("[tripTranslation] lettura (script 0041 eseguito?)", error.message);
+    return null;
+  }
   const row = (data as { source_hash: string; items: TranslationItem[] }[] | null)?.[0];
   return row && row.source_hash === hash && Array.isArray(row.items) ? row.items : null;
 }
@@ -71,9 +75,11 @@ export async function translateItineraryView<D extends WithActivities<TripDay, A
 
     const hash = hashOf(items);
     let result = await loadItems(supabase, trip.id, hash);
+    if (!result && !generate) return { trip, days };
 
     if (!result && generate) {
       const { translated } = await runTranslation(items, translateChunk);
+      if (translated.size === 0) console.error("[tripTranslation] nessun testo tradotto per il viaggio", trip.id);
       if (translated.size > 0) {
         result = items.map((item) => ({ id: item.id, text: translated.get(item.id) ?? item.text }));
         const { error } = await supabase.rpc("save_trip_translation", {

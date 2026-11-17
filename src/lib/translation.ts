@@ -4,7 +4,11 @@ import type { Activity, Trip, TripDay } from "@/lib/types";
 // descrizioni, alcune note), si dividono in blocchi e si rimettono al loro
 // posto nella copia. Codici, orari, numeri di volo e nomi di luogo restano
 // com'erano.
-export const TRANSLATION_LANGUAGES: { code: string; name: string; english: string }[] = [
+export const TRANSLATION_LANGUAGES: {
+  code: string;
+  name: string;
+  english: string;
+}[] = [
   { code: "en", name: "Inglese", english: "English" },
   { code: "fr", name: "Francese", english: "French" },
   { code: "de", name: "Tedesco", english: "German" },
@@ -19,7 +23,12 @@ export const TRANSLATION_LANGUAGES: { code: string; name: string; english: strin
 
 // Dettagli delle attività che sono testo libero (gli altri sono codici, orari,
 // nomi propri o scelte da elenco e non si toccano).
-export const TRANSLATABLE_DETAIL_KEYS = ["tipo_camera", "note_prenotazione", "punto_incontro", "durata"];
+export const TRANSLATABLE_DETAIL_KEYS = [
+  "tipo_camera",
+  "note_prenotazione",
+  "punto_incontro",
+  "durata",
+];
 
 export type TranslationItem = { id: string; text: string };
 type DayWithActivities = TripDay & { activities: Activity[] };
@@ -44,7 +53,9 @@ export function collectItems(
       add(`d${d}a${a}.title`, activity.title);
       add(`d${d}a${a}.desc`, activity.description);
       for (const key of TRANSLATABLE_DETAIL_KEYS) {
-        const value = (activity.details as Record<string, string> | null)?.[key];
+        const value = (activity.details as Record<string, string> | null)?.[
+          key
+        ];
         add(`d${d}a${a}.k.${key}`, value);
       }
     });
@@ -54,7 +65,10 @@ export function collectItems(
 
 // Blocchi di dimensione contenuta: ogni richiesta resta rapida e un viaggio
 // lungo si traduce in parallelo.
-export function chunkItems(items: TranslationItem[], maxChars = 6000): TranslationItem[][] {
+export function chunkItems(
+  items: TranslationItem[],
+  maxChars = 6000,
+): TranslationItem[][] {
   const chunks: TranslationItem[][] = [];
   let current: TranslationItem[] = [];
   let size = 0;
@@ -78,13 +92,27 @@ export async function runTranslation(
   translateChunk: (chunk: TranslationItem[]) => Promise<TranslationItem[]>,
 ): Promise<{ translated: Map<string, string>; missing: number }> {
   const translated = new Map<string, string>();
-  const results = await Promise.all(chunkItems(items).map((chunk) => translateChunk(chunk).catch(() => [] as TranslationItem[])));
+  const results = await Promise.all(
+    chunkItems(items).map((chunk) =>
+      translateChunk(chunk).catch((error) => {
+        console.error(
+          "[translation] blocco non tradotto:",
+          (error as Error).message,
+        );
+        return [] as TranslationItem[];
+      }),
+    ),
+  );
   for (const result of results) {
-    for (const item of result) if (clean(item.text)) translated.set(item.id, item.text.trim());
+    for (const item of result)
+      if (clean(item.text)) translated.set(item.id, item.text.trim());
   }
   const missing = items.filter((item) => !translated.has(item.id)).length;
   return { translated, missing };
 }
 
-export const pick = (map: Map<string, string>, id: string, fallback: string | null | undefined) =>
-  map.get(id) ?? (fallback ?? null);
+export const pick = (
+  map: Map<string, string>,
+  id: string,
+  fallback: string | null | undefined,
+) => map.get(id) ?? fallback ?? null;
