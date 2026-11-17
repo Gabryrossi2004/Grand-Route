@@ -1,5 +1,5 @@
 -- ============================================================
--- GRAND ROUTE - creazione completa del database (migrazioni 0001-0038)
+-- GRAND ROUTE - creazione completa del database (migrazioni 0001-0039)
 -- Da incollare UNA VOLTA nell'SQL Editor di un progetto Supabase NUOVO e vuoto.
 -- Tutto in una transazione: se qualcosa fallisce non viene applicato nulla,
 -- quindi si può correggere e rilanciare senza lasciare il database a metà.
@@ -2287,6 +2287,30 @@ exception
   when duplicate_object then null;  -- già attivo
   when undefined_object then null;  -- publication non presente
 end $$;
+
+
+-- >>>>>>>>>> 0039_client_documents.sql <<<<<<<<<<
+alter table public.documents
+  add column if not exists visible_to_client boolean not null default false;
+
+drop policy if exists "documents_select_as_client" on public.documents;
+create policy "documents_select_as_client" on public.documents
+  for select to authenticated
+  using (visible_to_client and public.is_trip_client(trip_id));
+
+-- Il cliente può scaricare i file (e le copertine) dei documenti visibili.
+drop policy if exists "trip_documents_read_as_client" on storage.objects;
+create policy "trip_documents_read_as_client" on storage.objects
+  for select to authenticated
+  using (
+    bucket_id = 'trip-documents'
+    and exists (
+      select 1 from public.documents d
+      where (d.file_path = storage.objects.name or d.cover_image_path = storage.objects.name)
+        and d.visible_to_client
+        and public.is_trip_client(d.trip_id)
+    )
+  );
 
 
 -- ── Per diventare amministratore (una volta sola, solo per il tuo utente) ──

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { clientSignOut } from "./actions";
+import { ClientSignOutForm, RegisterServiceWorker } from "@/components/ClientOfflineSupport";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -43,17 +44,14 @@ export default async function ClientPortalLayout({ children }: { children: React
             >
               I tuoi dati
             </Link>
-            <form action={clientSignOut}>
-              <button
-                type="submit"
-                className="rounded-full px-3.5 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
-              >
-                Esci
-              </button>
-            </form>
+            <ClientSignOutForm
+              action={clientSignOut}
+              className="rounded-full px-3.5 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+            />
           </nav>
         </div>
       </HeaderAutoHide>
+      <RegisterServiceWorker />
       <main className="mx-auto max-w-3xl px-4 pb-12 pt-4">{children}</main>
     </div>
   );

@@ -199,6 +199,7 @@ export type TripDocument = {
   file_path: string;
   file_type: string | null;
   cover_image_path: string | null;
+  visible_to_client?: boolean;
   uploaded_at: string;
 };
 

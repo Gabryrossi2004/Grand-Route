@@ -115,6 +115,16 @@ export default function PrivacyPage() {
                 recupero password).
               </li>
               <li>
+                <strong>Anthropic</strong> — elaborazione delle richieste all&apos;assistente Zefiro (ad
+                esempio i testi degli itinerari, le richieste dei clienti e i listini che l&apos;agenzia
+                sceglie di sottoporgli). Quando si usa Zefiro, solo il testo necessario alla richiesta
+                viene inviato per l&apos;elaborazione.
+              </li>
+              <li>
+                <strong>Open-Meteo</strong> — previsioni del tempo nell&apos;area clienti. Riceve
+                soltanto il nome della località di destinazione, nessun dato personale.
+              </li>
+              <li>
                 <strong>Sentry</strong> — monitoraggio tecnico degli errori applicativi, per garantire
                 la stabilità del Servizio.
               </li>

@@ -725,6 +725,25 @@ export async function deleteDocument(tripId: string, documentId: string, filePat
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
 
+// L'agenzia decide se un documento è visibile al cliente collegato al viaggio.
+export async function setDocumentVisibility(tripId: string, documentId: string, visible: boolean) {
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("documents")
+    .update({ visible_to_client: visible })
+    .eq("id", documentId)
+    .eq("trip_id", tripId);
+  if (error) {
+    console.error("[setDocumentVisibility]", error.message);
+    return { error: error.message.includes("visible_to_client")
+      ? "Manca un aggiornamento del database (migrazione 0039). Eseguilo nell'SQL Editor di Supabase e riprova."
+      : "Non è stato possibile cambiare la visibilità. Riprova." };
+  }
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/client/trips/${tripId}`);
+  return { ok: true as const };
+}
+
 export async function renameDocument(tripId: string, documentId: string, formData: FormData) {
   const supabase = await createClient();
   const fileName = String(formData.get("file_name") ?? "").trim();

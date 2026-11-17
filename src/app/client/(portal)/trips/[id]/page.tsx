@@ -1,9 +1,12 @@
 import { parseLogoShape } from "@/lib/logoShape";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import type { Activity, ActivityPhoto, ApprovalStatus, Profile, TripDay, TripMessage, TripPayment } from "@/lib/types";
+import type { Activity, ActivityPhoto, ApprovalStatus, Profile, TripDay, TripDocument, TripMessage, TripPayment } from "@/lib/types";
+import TripGlance from "@/components/TripGlance";
+import ClientDocuments, { type ClientDoc } from "@/components/ClientDocuments";
 import ClientTripChat, { ActivityChangeButton, ApprovalBanner } from "@/components/ClientTripChat";
 import TripItineraryView from "@/components/TripItineraryView";
 import EmergencyButton from "@/components/EmergencyButton";
@@ -40,7 +43,7 @@ export default async function ClientTripPage({
   const clientName = myClient?.full_name || "Il cliente";
   const hasIdentityDocument = Boolean(myClient?.id_card_number || myClient?.passport_number);
 
-  const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }] = await Promise.all([
+  const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }, { data: sharedDocuments }] = await Promise.all([
     supabase
       .from("trip_days")
       .select("*, activities(*, activity_photos(*))")
@@ -49,12 +52,28 @@ export default async function ClientTripPage({
     supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
     supabase.from("trip_payments").select("*").eq("trip_id", trip.id).eq("direction", "incasso"),
     supabase.from("trip_messages").select("*").eq("trip_id", trip.id).order("created_at", { ascending: true }),
+    // Solo i documenti che l'agenzia ha reso visibili (lo garantisce il database)
+    supabase.from("documents").select("*").eq("trip_id", trip.id).order("uploaded_at", { ascending: true }),
   ]);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
+
+  const activityTitles = new Map<string, string>();
+  for (const day of orderedDays) for (const activity of day.activities) activityTitles.set(activity.id, activity.title);
+  const clientDocuments: ClientDoc[] = await Promise.all(
+    ((sharedDocuments as TripDocument[] | null) ?? []).map(async (document) => {
+      const { data } = await supabase.storage.from("trip-documents").createSignedUrl(document.file_path, 60 * 60);
+      return {
+        id: document.id,
+        name: document.file_name,
+        url: data?.signedUrl ?? null,
+        where: document.activity_id ? (activityTitles.get(document.activity_id) ?? null) : null,
+      };
+    }),
+  );
 
   const ownerProfile = owner as Profile | null;
   const approvalStatus = (trip.approval_status ?? "none") as ApprovalStatus;
@@ -81,6 +100,14 @@ export default async function ClientTripPage({
         agencyTerms={ownerProfile?.terms_and_conditions}
         brandColor={ownerProfile?.brand_color}
         payments={(incomingPayments as TripPayment[]) || []}
+        contentTop={
+          <>
+            <Suspense fallback={null}>
+              <TripGlance trip={trip} />
+            </Suspense>
+            <ClientDocuments documents={clientDocuments} />
+          </>
+        }
         // Il pulsante di richiesta modifica serve solo finché l'itinerario è preliminare
         activityAction={stage === "preliminare" ? (activityId) => <ActivityChangeButton activityId={activityId} /> : undefined}
         headerExtra={

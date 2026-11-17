@@ -1,5 +1,6 @@
 "use client";
 
+import DocumentVisibilityToggle from "@/components/DocumentVisibilityToggle";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
@@ -932,6 +933,7 @@ function SortableActivityRow({
                       <span className="truncate">{document.file_name}</span>
                     )}
                   </span>
+                  <DocumentVisibilityToggle tripId={tripId} documentId={document.id} initial={Boolean(document.visible_to_client)} />
                   <form action={deleteDocument.bind(null, tripId, document.id, document.file_path)}>
                     <button
                       type="submit"

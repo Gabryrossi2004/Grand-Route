@@ -43,6 +43,7 @@ export default function TripItineraryView({
   headerExtra,
   payments,
   activityAction,
+  contentTop,
 }: {
   trip: Trip;
   days: DayWithActivities[];
@@ -56,6 +57,8 @@ export default function TripItineraryView({
   payments?: TripPayment[];
   // Pulsante opzionale su ogni attività (usato dall'area clienti per chiedere modifiche)
   activityAction?: (activityId: string) => React.ReactNode;
+  // Contenuto in cima alla pagina, sotto l'intestazione (conto alla rovescia, documenti...)
+  contentTop?: React.ReactNode;
 }) {
   const theme = trip.theme || "elegante";
   const price = getDisplayPrice(trip);
@@ -100,6 +103,7 @@ export default function TripItineraryView({
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-10">
+        {contentTop}
         {trip.itinerary_stage === "preliminare" && (
           <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
             <strong>Itinerario preliminare.</strong> Voli, alloggi e servizi sono ancora indicativi e potrebbero

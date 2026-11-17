@@ -7,6 +7,7 @@ import type { TripDocument } from "@/lib/types";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import UploadForm from "@/components/UploadForm";
 import SubmitButton from "@/components/SubmitButton";
+import DocumentVisibilityToggle from "@/components/DocumentVisibilityToggle";
 import {
   deleteDocument,
   deleteDocumentCover,
@@ -100,6 +101,7 @@ export default function DocumentRow({ tripId, document }: { tripId: string; docu
       </div>
 
       <div className="flex shrink-0 items-center gap-1">
+        <DocumentVisibilityToggle tripId={tripId} documentId={document.id} initial={Boolean(document.visible_to_client)} />
         <button
           type="button"
           onClick={() => setIsAddingCover((v) => !v)}
