@@ -252,3 +252,36 @@ export async function setClientZefiroDefault(enabled: boolean): Promise<{ ok: tr
   revalidatePath("/dashboard/settings");
   return { ok: true };
 }
+
+// Argomenti su cui Zefiro può rispondere ai clienti, e la "guida dell'agenzia"
+// (consigli scritti a mano: ristoranti, cose da fare, contatti utili).
+export async function saveClientZefiroConfig(
+  topics: string[],
+  guide: string,
+): Promise<{ ok: true } | { error: string }> {
+  const allowed = ["paese", "consigli", "trasporti", "servizi"];
+  const chosen = topics.filter((t) => allowed.includes(t));
+  const cleanGuide = String(guide ?? "").trim().slice(0, 3000);
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged: Record<string, string> = {
+    ...((current?.ai_preferences as Record<string, string> | null) ?? {}),
+    client_topics: chosen.join(","),
+  };
+  if (cleanGuide) merged.client_guide = cleanGuide;
+  else delete merged.client_guide;
+
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  if (error) {
+    console.error("[saveClientZefiroConfig]", error.message);
+    return { error: "Non è stato possibile salvare. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard/settings");
+  return { ok: true };
+}

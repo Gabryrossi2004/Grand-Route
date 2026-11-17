@@ -9,6 +9,7 @@ import { ASSISTANT_NAME } from "@/lib/assistant";
 import ZefiroCard from "./ZefiroCard";
 import ZefiroUsageCard from "./ZefiroUsageCard";
 import ClientZefiroCard from "./ClientZefiroCard";
+import { parseAiPlan } from "@/lib/aiPricing";
 import { getAiUsageSummary } from "@/lib/aiQuota";
 import { parseLogoShape } from "@/lib/logoShape";
 import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
@@ -55,7 +56,12 @@ export default async function SettingsPage() {
       <div className="mt-6">
         <AiRulesCard profile={profile as Profile} />
         {usage && <ZefiroUsageCard summary={usage} />}
-        <ClientZefiroCard initiallyOn={((profile as Profile).ai_preferences?.client_zefiro ?? "on") !== "off"} />
+        <ClientZefiroCard
+          initiallyOn={((profile as Profile).ai_preferences?.client_zefiro ?? "on") !== "off"}
+          preferences={(profile as Profile).ai_preferences}
+          plan={parseAiPlan((profile as Profile).ai_plan)}
+          initialGuide={(profile as Profile).ai_preferences?.client_guide ?? ""}
+        />
         <ZefiroCard
           initiallyVisible={isAvatarVisible((profile as Profile).ai_preferences)}
           initialStyle={getAvatarStyle((profile as Profile).ai_preferences)}

@@ -1,14 +1,33 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Send } from "lucide-react";
+import { MapPin, MessageCircle, Send } from "lucide-react";
 import Zefiro from "@/components/Zefiro";
 import { ASSISTANT_NAME } from "@/lib/assistant";
-import { askZefiroAboutTrip, type ZefiroReply, type ZefiroTurn } from "@/lib/actions/zefiroClient";
+import { askZefiroAboutTrip, type ZefiroLocation, type ZefiroReply, type ZefiroTurn } from "@/lib/actions/zefiroClient";
 
 type Bubble = { role: "user" | "assistant"; content: string; needsAgency?: boolean; question?: string };
 
-const STARTERS = ["Cosa faccio oggi?", "Dove dormo?", "Quali pagamenti devo fare?", "A che ora è il prossimo spostamento?"];
+// Le domande suggerite dipendono dagli argomenti che l'agenzia ha attivato
+function startersFor(topics: string[]) {
+  const list = ["Cosa faccio oggi?", "Dove dormo?"];
+  if (topics.includes("consigli")) list.push("Dove posso mangiare bene?", "Cosa faccio nel tempo libero?");
+  if (topics.includes("servizi")) list.push("Qual è la farmacia più vicina?");
+  if (topics.includes("paese")) list.push("Cosa mi porto in valigia?");
+  if (list.length < 4) list.push("Quali pagamenti devo fare?");
+  return list.slice(0, 6);
+}
+
+function readPosition(): Promise<ZefiroLocation | null> {
+  return new Promise((resolve) => {
+    if (typeof navigator === "undefined" || !navigator.geolocation) return resolve(null);
+    navigator.geolocation.getCurrentPosition(
+      (p) => resolve({ lat: p.coords.latitude, lon: p.coords.longitude }),
+      () => resolve(null),
+      { enableHighAccuracy: false, timeout: 8000, maximumAge: 120000 },
+    );
+  });
+}
 
 // La conversazione con Zefiro resta solo in questa scheda del browser (non viene salvata).
 const storeKey = (tripId: string) => `zefiro-chat:${tripId}`;
@@ -18,17 +37,23 @@ const storeKey = (tripId: string) => `zefiro-chat:${tripId}`;
 export default function ZefiroClientChat({
   tripId,
   onAskAgency,
+  topics = ["viaggio"],
   ask = askZefiroAboutTrip,
 }: {
   tripId: string;
   onAskAgency: (draft: string) => void;
-  ask?: (tripId: string, question: string, history?: ZefiroTurn[]) => Promise<ZefiroReply>;
+  // Gli argomenti attivati dall'agenzia (decidono domande suggerite e posizione)
+  topics?: string[];
+  ask?: (tripId: string, question: string, history?: ZefiroTurn[], location?: ZefiroLocation) => Promise<ZefiroReply>;
 }) {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<{ message: string; suggestAgency?: boolean; question: string } | null>(null);
   const [mood, setMood] = useState<"idle" | "happy">("idle");
+  const [shareLocation, setShareLocation] = useState(false);
+  const [locationNote, setLocationNote] = useState<string | null>(null);
+  const canShareLocation = topics.includes("servizi");
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,8 +82,16 @@ export default function ZefiroClientChat({
     setText("");
     setError(null);
     setBusy(true);
+    setLocationNote(null);
     try {
-      const reply = await ask(tripId, question, history);
+      // La posizione (solo se il cliente l'ha chiesto) serve per questa domanda e non viene salvata
+      let location: ZefiroLocation | undefined;
+      if (shareLocation && canShareLocation) {
+        const position = await readPosition();
+        if (position) location = position;
+        else setLocationNote("Non riesco a leggere la tua posizione: uso il centro della località in cui ti trovi.");
+      }
+      const reply = await ask(tripId, question, history, location);
       if ("error" in reply) {
         setError({ message: reply.error, suggestAgency: reply.suggestAgency, question });
       } else {
@@ -83,7 +116,9 @@ export default function ZefiroClientChat({
         <div className="min-w-0">
           <p className="text-sm font-semibold text-[#233c5e]">Ciao, sono {ASSISTANT_NAME}!</p>
           <p className="text-xs text-slate-600">
-            Chiedimi del tuo viaggio: programma, orari, alloggi, pagamenti. Rispondo con i dati del tuo itinerario.
+            {topics.includes("consigli") || topics.includes("servizi") || topics.includes("paese")
+              ? "Chiedimi del tuo viaggio e di cosa c'è sul posto: programma, orari, dove mangiare, servizi vicini."
+              : "Chiedimi del tuo viaggio: programma, orari, alloggi, pagamenti. Rispondo con i dati del tuo itinerario."}
           </p>
         </div>
       </div>
@@ -91,7 +126,7 @@ export default function ZefiroClientChat({
       <div className="flex max-h-[38vh] min-h-24 flex-col gap-2 overflow-y-auto rounded-xl bg-[#faf3e6]/60 p-3" aria-live="polite">
         {bubbles.length === 0 && !busy && (
           <div className="flex flex-wrap gap-2">
-            {STARTERS.map((starter) => (
+            {startersFor(topics).map((starter) => (
               <button
                 key={starter}
                 type="button"
@@ -145,6 +180,21 @@ export default function ZefiroClientChat({
           )}
         </div>
       )}
+
+      {canShareLocation && (
+        <label className="flex items-start gap-2 text-xs text-slate-600">
+          <input
+            type="checkbox"
+            checked={shareLocation}
+            onChange={(e) => setShareLocation(e.target.checked)}
+            className="mt-0.5"
+          />
+          <span className="flex items-center gap-1">
+            <MapPin size={12} className="shrink-0" /> Usa la mia posizione per «vicino a me» (solo per la domanda, non viene salvata)
+          </span>
+        </label>
+      )}
+      {locationNote && <p className="text-xs text-amber-700">{locationNote}</p>}
 
       <div className="flex items-end gap-2">
         <textarea

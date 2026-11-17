@@ -6,7 +6,9 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { costInEuro, parseAiPlan, planById, type PricedModel } from "@/lib/aiPricing";
 import { buildClientSystemPrompt, buildClientTripDigest, toneInstructions } from "@/lib/clientTripDigest";
-import { romeToday } from "@/lib/destinationInfo";
+import { loadTripStops, romeToday, type DayInput } from "@/lib/destinationInfo";
+import { detectNearbyCategory, fetchNearby, formatNearby } from "@/lib/nearbyPlaces";
+import { guideFor, resolveTopics } from "@/lib/zefiroTopics";
 import type { Activity, Trip, TripDay, TripPayment } from "@/lib/types";
 
 // Zefiro risponde alle domande dei clienti sul loro viaggio. Si usa il modello
@@ -79,7 +81,23 @@ function cleanHistory(history: ZefiroTurn[] | undefined): ZefiroTurn[] {
   return alternating;
 }
 
-export async function askZefiroAboutTrip(tripId: string, question: string, history?: ZefiroTurn[]): Promise<ZefiroReply> {
+export type ZefiroLocation = { lat: number; lon: number };
+
+// Coordinate valide, arrotondate a circa 100 metri (la posizione non viene salvata)
+function cleanLocation(location: ZefiroLocation | undefined): ZefiroLocation | null {
+  if (!location) return null;
+  const { lat, lon } = location;
+  if (typeof lat !== "number" || typeof lon !== "number" || !Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  if (Math.abs(lat) > 90 || Math.abs(lon) > 180) return null;
+  return { lat: Math.round(lat * 1000) / 1000, lon: Math.round(lon * 1000) / 1000 };
+}
+
+export async function askZefiroAboutTrip(
+  tripId: string,
+  question: string,
+  history?: ZefiroTurn[],
+  location?: ZefiroLocation,
+): Promise<ZefiroReply> {
   const text = String(question ?? "").trim();
   if (!text) return { error: "Scrivi la tua domanda." };
   if (text.length > MAX_QUESTION) return { error: `La domanda è troppo lunga (massimo ${MAX_QUESTION} caratteri).` };
@@ -144,12 +162,45 @@ export async function askZefiroAboutTrip(tripId: string, question: string, histo
       today,
     });
     const ownerRow = owner as { agency_name: string | null; emergency_phone: string | null; ai_preferences: Record<string, string> | null } | null;
+    const plan = parseAiPlan(status.plan);
+    const topics = resolveTopics(ownerRow?.ai_preferences, plan);
+    const guide = guideFor(ownerRow?.ai_preferences, plan);
+
+    // Ricerca sulla mappa (solo se l'argomento è attivo e la domanda chiede "cosa c'è vicino"):
+    // dalla posizione del cliente, se l'ha condivisa, altrimenti dal centro della tappa di oggi.
+    let nearby: string | null = null;
+    const category = topics.includes("servizi") ? detectNearbyCategory(text) : null;
+    if (category) {
+      let origin = cleanLocation(location);
+      let originLabel = "la posizione condivisa dal cliente";
+      if (!origin) {
+        const inputs: DayInput[] = orderedDays.map((day) => ({
+          date: day.day_date,
+          title: day.title,
+          places: day.activities.map((a) => ({ location: a.location, type: a.activity_type })),
+        }));
+        const stops = await loadTripStops((trip as Trip).destination, (trip as Trip).start_date, inputs);
+        const todayIndex = orderedDays.findIndex((d) => d.day_date?.slice(0, 10) === today);
+        const stop = stops.find((s) => todayIndex >= 0 && s.firstDay <= todayIndex + 1 && todayIndex + 1 <= s.lastDay) ?? stops[0];
+        if (stop) {
+          origin = { lat: Math.round(stop.latitude * 1000) / 1000, lon: Math.round(stop.longitude * 1000) / 1000 };
+          originLabel = `il centro di ${stop.place} (il cliente non ha condiviso la posizione: dillo e suggerisci di usare il pulsante della posizione per risultati più precisi)`;
+        }
+      }
+      nearby = origin
+        ? formatNearby(category, await fetchNearby(origin.lat, origin.lon, category), originLabel)
+        : formatNearby(category, null, "");
+    }
+
     const system = buildClientSystemPrompt({
       agencyName: ownerRow?.agency_name || "di viaggi",
       agencyPhone: (trip as Trip).show_emergency_button ? (ownerRow?.emergency_phone ?? null) : null,
       today,
       digest,
       tone: toneInstructions(ownerRow?.ai_preferences),
+      topics,
+      guide,
+      nearby,
     });
 
     const messages: ZefiroTurn[] = [...cleanHistory(history), { role: "user", content: text }];

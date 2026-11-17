@@ -21,6 +21,7 @@ export default function ClientTripChat({
   agencyLabel,
   stage,
   zefiroEnabled = false,
+  zefiroTopics,
 }: {
   tripId: string;
   messages: TripMessage[];
@@ -30,6 +31,7 @@ export default function ClientTripChat({
   stage: "preliminare" | "finale";
   // Zefiro risponde alle domande sul viaggio (se l'agenzia lo ha acceso)
   zefiroEnabled?: boolean;
+  zefiroTopics?: string[];
 }) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"agency" | "zefiro">("agency");
@@ -107,6 +109,7 @@ export default function ClientTripChat({
           {zefiroEnabled && tab === "zefiro" ? (
             <ZefiroClientChat
               tripId={tripId}
+              topics={zefiroTopics}
               onAskAgency={(draft) => {
                 setPreset({ mode: "message", text: draft });
                 setTab("agency");

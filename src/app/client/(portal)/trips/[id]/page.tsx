@@ -2,6 +2,8 @@ import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
 import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
 import { getAvatarStyle } from "@/lib/assistant";
+import { resolveTopics } from "@/lib/zefiroTopics";
+import { parseAiPlan } from "@/lib/aiPricing";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
@@ -59,7 +61,8 @@ export default async function ClientTripPage({
     // Zefiro acceso per questo viaggio? (se lo script 0040 non c'è, resta spento)
     supabase.rpc("client_zefiro_status", { p_trip_id: trip.id }),
   ]);
-  const zefiroEnabled = Boolean((zefiroStatus as { enabled: boolean }[] | null)?.[0]?.enabled);
+  const zefiroRow = (zefiroStatus as { enabled: boolean; plan: string }[] | null)?.[0];
+  const zefiroEnabled = Boolean(zefiroRow?.enabled);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
@@ -153,6 +156,7 @@ export default async function ClientTripPage({
         agencyLabel={ownerProfile?.agency_name || "Agenzia"}
         stage={stage}
         zefiroEnabled={zefiroEnabled}
+        zefiroTopics={resolveTopics(owner?.ai_preferences, parseAiPlan(zefiroRow?.plan))}
       />
       {showEmergencyButton && (
         <EmergencyButton

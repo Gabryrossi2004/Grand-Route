@@ -122,6 +122,11 @@ export default function PrivacyPage() {
                 vedere vengono inviati per l&apos;elaborazione.
               </li>
               <li>
+                <strong>OpenStreetMap (Overpass)</strong> — ricerca di luoghi vicini (farmacie, bancomat, ristoranti)
+                quando il cliente la chiede a Zefiro. Riceve soltanto coordinate approssimate (circa 100 metri) e il tipo
+                di luogo cercato: la posizione del cliente non viene salvata.
+              </li>
+              <li>
                 <strong>Open-Meteo</strong> — previsioni del tempo nell&apos;area clienti. Riceve
                 soltanto il nome della località di destinazione, nessun dato personale.
               </li>

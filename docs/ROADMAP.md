@@ -12,6 +12,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 - **Rifiniture area cliente** (migrazione 0039): conto alla rovescia, ora e meteo della meta, documenti di viaggio visibili al cliente (scelti dall'agenzia) e salvabili per l'uso senza rete, pagine già aperte consultabili offline
 
 - **Zefiro per il cliente** (migrazione 0040): scheda Zefiro nella chat con avatar 3D, risponde solo con i dati del viaggio visibili al cliente; acceso/spento dalle Impostazioni e per viaggio; costi sul budget dell'agenzia (clienti max 70%, 8 domande/ora e 25/giorno per cliente); modello Haiku con ripiego su Sonnet
+- **Zefiro per il cliente, argomenti e guida** (nessuna migrazione): l'agenzia sceglie gli argomenti (paese, consigli sul posto, muoversi, servizi vicini con mappa) e scrive la propria guida; servizi vicini da OpenStreetMap; blocco per pacchetto pronto ma spento (GATE_TOPICS_BY_PLAN in src/lib/zefiroTopics.ts)
 
 ## Da fare, in ordine
 **1. Zefiro per l'agenzia, più strumenti** — briefing in Home (partenze, documenti mancanti, pagamenti), bozze di messaggi al cliente, traduzione dell'itinerario, controllo prima dell'invio

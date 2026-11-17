@@ -82,6 +82,8 @@ export type Forecast = { date: string; min: number; max: number; code: number };
 export type StopInfo = {
   place: string;
   country: string | null;
+  latitude: number;
+  longitude: number;
   firstDay: number; // numero del giorno (1, 2, ...)
   lastDay: number;
   from: string | null; // date AAAA-MM-GG
@@ -307,6 +309,8 @@ export async function loadTripStops(
       return {
         place: group.geo.name,
         country: group.geo.country ?? null,
+        latitude: group.geo.latitude,
+        longitude: group.geo.longitude,
         firstDay: group.firstDay,
         lastDay: group.lastDay,
         from,
