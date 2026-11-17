@@ -12,12 +12,14 @@ export default function ExpandableSection({
   title,
   badge,
   children,
+  defaultOpen = false,
 }: {
   title: string;
   badge?: React.ReactNode;
   children: React.ReactNode;
+  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <>

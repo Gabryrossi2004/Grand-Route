@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTripRealtime } from "@/lib/useTripRealtime";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, MessageSquareWarning, Send } from "lucide-react";
 import PushNotificationToggle from "@/components/PushNotificationToggle";
@@ -43,6 +44,7 @@ export default function TripDialoguePanel({
   approvalStatus,
   agencyLabel = "Agenzia",
   preset,
+  stage = "preliminare",
 }: {
   tripId: string;
   role: "agency" | "client";
@@ -51,7 +53,10 @@ export default function TripDialoguePanel({
   approvalStatus: ApprovalStatus;
   agencyLabel?: string;
   preset?: PanelPreset;
+  // Approvazione e richieste di modifica hanno senso solo finché l'itinerario è preliminare
+  stage?: "preliminare" | "finale";
 }) {
+  const canApprove = stage === "preliminare";
   const router = useRouter();
   const [text, setText] = useState("");
   // A cosa si riferisce il messaggio: "" (tutto il viaggio), "day:<id>" o "activity:<id>"
@@ -73,11 +78,12 @@ export default function TripDialoguePanel({
     endRef.current?.scrollIntoView({ block: "end" });
   }, [messages.length]);
 
-  // Aggiorna da solo ogni tanto, finché la scheda è aperta
+  // Nuovi messaggi in tempo reale, più un aggiornamento di riserva ogni tanto
+  useTripRealtime(tripId);
   useEffect(() => {
     const timer = setInterval(() => {
       if (!document.hidden) router.refresh();
-    }, 20000);
+    }, 30000);
     return () => clearInterval(timer);
   }, [router]);
 
@@ -128,8 +134,8 @@ export default function TripDialoguePanel({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        <ApprovalChip status={approvalStatus} />
-        {role === "agency" && (
+        {canApprove && <ApprovalChip status={approvalStatus} />}
+        {role === "agency" && canApprove && (
           <button
             type="button"
             disabled={busy}
@@ -139,7 +145,7 @@ export default function TripDialoguePanel({
             {approvalStatus === "none" ? "Invia al cliente per approvazione" : "Invia di nuovo per approvazione"}
           </button>
         )}
-        {role === "client" && approvalStatus === "pending" && mode === "message" && (
+        {role === "client" && canApprove && approvalStatus === "pending" && mode === "message" && (
           <>
             <button
               type="button"
@@ -165,8 +171,10 @@ export default function TripDialoguePanel({
         {messages.length === 0 && (
           <p className="m-auto text-center text-sm text-slate-500">
             {role === "client"
-              ? "Nessun messaggio. Scrivi qui se hai domande sul viaggio."
-              : "Nessun messaggio. Scrivi al cliente o invia l'itinerario in approvazione."}
+              ? "Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile."
+              : canApprove
+                ? "Nessun messaggio. Scrivi al cliente o invia l'itinerario in approvazione."
+                : "Nessun messaggio. Scrivi al cliente quando vuoi."}
           </p>
         )}
         {messages.map((m) => {

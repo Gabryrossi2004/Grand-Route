@@ -12,6 +12,7 @@ type NavItem = NavLink | NavGroup;
 const navItems: NavItem[] = [
   { href: "/dashboard", label: "Home" },
   { href: "/dashboard/trips", label: "Viaggi" },
+  { href: "/dashboard/messages", label: "Messaggi" },
   {
     label: "Anagrafiche",
     children: [
@@ -23,6 +24,14 @@ const navItems: NavItem[] = [
   { href: "/dashboard/calendar", label: "Calendario" },
   { href: "/dashboard/settings", label: "Impostazioni" },
 ];
+
+function CountBadge({ count }: { count: number }) {
+  return (
+    <span className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#cda876] px-1 text-xs font-bold text-[#17283f]">
+      {count}
+    </span>
+  );
+}
 
 const isGroup = (item: NavItem): item is NavGroup => "children" in item;
 
@@ -38,7 +47,13 @@ const linkOff = "border-transparent text-[#6b5f4a] hover:text-[#233c5e]";
 // Su computer: voci in linea, con "Anagrafiche" che apre un sottomenù.
 // Su telefono: un solo pulsante menù che apre un elenco a tutta larghezza,
 // con voci grandi e facili da toccare (niente più scorrimento orizzontale).
-export default function DashboardNav({ signOut }: { signOut: () => Promise<void> | void }) {
+export default function DashboardNav({
+  signOut,
+  unreadMessages = 0,
+}: {
+  signOut: () => Promise<void> | void;
+  unreadMessages?: number;
+}) {
   const pathname = usePathname();
   const [groupOpen, setGroupOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -76,7 +91,7 @@ export default function DashboardNav({ signOut }: { signOut: () => Promise<void>
   return (
     <div ref={wrapRef} className="relative text-sm">
       {/* Computer */}
-      <nav className="hidden items-center gap-1 lg:flex" aria-label="Menù principale">
+      <nav className="hidden items-center gap-1 xl:flex" aria-label="Menù principale">
         {navItems.map((item) => {
           if (isGroup(item)) {
             const active = item.children.some((c) => isActive(pathname, c.href));
@@ -127,6 +142,7 @@ export default function DashboardNav({ signOut }: { signOut: () => Promise<void>
               className={`${linkBase} ${active ? linkOn : linkOff}`}
             >
               {item.label}
+              {item.href === "/dashboard/messages" && unreadMessages > 0 && <CountBadge count={unreadMessages} />}
             </Link>
           );
         })}
@@ -143,14 +159,14 @@ export default function DashboardNav({ signOut }: { signOut: () => Promise<void>
         aria-label={mobileOpen ? "Chiudi il menù" : "Apri il menù"}
         aria-expanded={mobileOpen}
         onClick={() => setMobileOpen((v) => !v)}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e6d7bb] bg-white/70 text-[#233c5e] transition hover:bg-white lg:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e6d7bb] bg-white/70 text-[#233c5e] transition hover:bg-white xl:hidden"
       >
         {mobileOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
       {mobileOpen && (
         <nav
           aria-label="Menù principale"
-          className="absolute right-0 top-full z-30 mt-2 w-[min(18rem,calc(100vw-1.5rem))] overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-2 shadow-xl lg:hidden"
+          className="absolute right-0 top-full z-30 mt-2 w-[min(18rem,calc(100vw-1.5rem))] overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-2 shadow-xl xl:hidden"
         >
           {navItems.map((item) => {
             if (isGroup(item)) {
@@ -186,6 +202,7 @@ export default function DashboardNav({ signOut }: { signOut: () => Promise<void>
                 }`}
               >
                 {item.label}
+                {item.href === "/dashboard/messages" && unreadMessages > 0 && <CountBadge count={unreadMessages} />}
               </Link>
             );
           })}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Pencil } from "lucide-react";
 import Modal from "@/components/Modal";
+import { useTripRealtime } from "@/lib/useTripRealtime";
 import TripDialoguePanel, { type DayOption, type PanelPreset } from "@/components/TripDialoguePanel";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 
@@ -16,14 +17,18 @@ export default function ClientTripChat({
   days,
   approvalStatus,
   agencyLabel,
+  stage,
 }: {
   tripId: string;
   messages: TripMessage[];
   days: DayOption[];
   approvalStatus: ApprovalStatus;
   agencyLabel: string;
+  stage: "preliminare" | "finale";
 }) {
   const [open, setOpen] = useState(false);
+  // Il numero dei messaggi nuovi si aggiorna anche a chat chiusa
+  useTripRealtime(tripId, !open);
   const [preset, setPreset] = useState<PanelPreset | undefined>(undefined);
   const unread = messages.filter((m) => m.author_role === "agency" && !m.read_at).length;
 
@@ -47,7 +52,7 @@ export default function ClientTripChat({
         className="fixed bottom-4 left-4 z-40 flex min-h-12 items-center gap-2 rounded-full bg-[#233c5e] px-4 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-[#17283f] print:hidden"
       >
         <MessageCircle size={18} />
-        Scrivi all&apos;agenzia
+        Chat con l&apos;agenzia
         {unread > 0 && (
           <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#cda876] px-1 text-xs font-bold text-[#17283f]">
             {unread}
@@ -55,7 +60,7 @@ export default function ClientTripChat({
         )}
       </button>
       {open && (
-        <Modal title="Il tuo viaggio: messaggi" onClose={() => setOpen(false)}>
+        <Modal title="Chat con l'agenzia" onClose={() => setOpen(false)}>
           <TripDialoguePanel
             key={`${preset?.activityId ?? ""}-${preset?.mode ?? ""}`}
             preset={preset}
@@ -65,6 +70,7 @@ export default function ClientTripChat({
             days={days}
             approvalStatus={approvalStatus}
             agencyLabel={agencyLabel}
+            stage={stage}
           />
         </Modal>
       )}
@@ -88,8 +94,14 @@ export function ActivityChangeButton({ activityId }: { activityId: string }) {
 }
 
 // Banner in cima alla pagina del viaggio quando l'agenzia aspetta una risposta.
-export function ApprovalBanner({ approvalStatus }: { approvalStatus: ApprovalStatus }) {
-  if (approvalStatus !== "pending") return null;
+export function ApprovalBanner({
+  approvalStatus,
+  stage,
+}: {
+  approvalStatus: ApprovalStatus;
+  stage: "preliminare" | "finale";
+}) {
+  if (approvalStatus !== "pending" || stage !== "preliminare") return null;
   return (
     <div className="bg-[#fdf1d6] px-4 py-2.5">
       <button

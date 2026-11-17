@@ -1,5 +1,5 @@
 -- ============================================================
--- GRAND ROUTE - creazione completa del database (migrazioni 0001-0037)
+-- GRAND ROUTE - creazione completa del database (migrazioni 0001-0038)
 -- Da incollare UNA VOLTA nell'SQL Editor di un progetto Supabase NUOVO e vuoto.
 -- Tutto in una transazione: se qualcosa fallisce non viene applicato nulla,
 -- quindi si può correggere e rilanciare senza lasciare il database a metà.
@@ -2277,6 +2277,16 @@ $$;
 
 revoke all on function public.client_set_trip_approval(uuid, text, text, uuid, uuid) from public, anon;
 grant execute on function public.client_set_trip_approval(uuid, text, text, uuid, uuid) to authenticated;
+
+
+-- >>>>>>>>>> 0038_trip_chat_realtime.sql <<<<<<<<<<
+do $$
+begin
+  alter publication supabase_realtime add table public.trip_messages;
+exception
+  when duplicate_object then null;  -- già attivo
+  when undefined_object then null;  -- publication non presente
+end $$;
 
 
 -- ── Per diventare amministratore (una volta sola, solo per il tuo utente) ──

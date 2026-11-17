@@ -58,6 +58,7 @@ export default async function ClientTripPage({
 
   const ownerProfile = owner as Profile | null;
   const approvalStatus = (trip.approval_status ?? "none") as ApprovalStatus;
+  const stage: "preliminare" | "finale" = trip.itinerary_stage === "finale" ? "finale" : "preliminare";
   const showEmergencyButton = trip.show_emergency_button && Boolean(ownerProfile?.emergency_phone);
 
   const daysUntilDeparture = trip.start_date
@@ -80,7 +81,8 @@ export default async function ClientTripPage({
         agencyTerms={ownerProfile?.terms_and_conditions}
         brandColor={ownerProfile?.brand_color}
         payments={(incomingPayments as TripPayment[]) || []}
-        activityAction={(activityId) => <ActivityChangeButton activityId={activityId} />}
+        // Il pulsante di richiesta modifica serve solo finché l'itinerario è preliminare
+        activityAction={stage === "preliminare" ? (activityId) => <ActivityChangeButton activityId={activityId} /> : undefined}
         headerExtra={
           <div className="flex flex-col bg-white/90 backdrop-blur">
             <div className="px-4 py-2">
@@ -91,7 +93,7 @@ export default async function ClientTripPage({
                 <ArrowLeft size={14} /> I miei viaggi
               </Link>
             </div>
-            <ApprovalBanner approvalStatus={approvalStatus} />
+            <ApprovalBanner approvalStatus={approvalStatus} stage={stage} />
             {showDocumentsReminder && (
               <div className="bg-amber-50 px-4 py-2">
                 <Link
@@ -116,6 +118,7 @@ export default async function ClientTripPage({
         }))}
         approvalStatus={approvalStatus}
         agencyLabel={ownerProfile?.agency_name || "Agenzia"}
+        stage={stage}
       />
       {showEmergencyButton && (
         <EmergencyButton

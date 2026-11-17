@@ -72,10 +72,13 @@ const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 
 export default async function TripDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ chat?: string }>;
 }) {
   const { id } = await params;
+  const { chat } = await searchParams;
   const supabase = await createClient();
   const user = await getCachedUser();
 
@@ -187,10 +190,13 @@ export default async function TripDetailPage({
 
         {trip.client_id && (
           <ExpandableSection
-            title="Messaggi e approvazione"
+            title="Chat con il cliente"
+            defaultOpen={chat === "1"}
             badge={
               <>
-                <ApprovalChip status={(trip.approval_status ?? "none") as ApprovalStatus} />
+                {trip.itinerary_stage !== "finale" && (
+                  <ApprovalChip status={(trip.approval_status ?? "none") as ApprovalStatus} />
+                )}
                 {((tripMessages as TripMessage[] | null) ?? []).filter((m) => m.author_role === "client" && !m.read_at).length >
                   0 && (
                   <span className="rounded-full bg-[#cda876] px-2 py-0.5 text-[10px] font-bold normal-case tracking-normal text-[#17283f]">
@@ -212,6 +218,7 @@ export default async function TripDetailPage({
               }))}
               approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
               agencyLabel="Tu"
+              stage={trip.itinerary_stage === "finale" ? "finale" : "preliminare"}
             />
           </ExpandableSection>
         )}

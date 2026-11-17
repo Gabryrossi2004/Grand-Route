@@ -20,13 +20,20 @@ export default async function DashboardLayout({
   const user = await getCachedUser();
 
   let profile: Profile | null = null;
+  let unreadMessages = 0;
   if (user) {
-    const { data } = await supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", user.id)
-      .single();
+    const [{ data }, { count }] = await Promise.all([
+      supabase.from("profiles").select("*").eq("id", user.id).single(),
+      // Messaggi dei clienti non ancora letti (0 se la chat non è ancora attiva)
+      supabase
+        .from("trip_messages")
+        .select("id", { count: "exact", head: true })
+        .eq("author_role", "client")
+        .is("read_at", null)
+        .neq("author_id", user.id),
+    ]);
     profile = data;
+    unreadMessages = count ?? 0;
   }
 
   const brandColor = profile?.brand_color || "#233c5e";
@@ -57,7 +64,7 @@ export default async function DashboardLayout({
               {profile?.agency_name || "Il mio gestionale viaggi"}
             </span>
           </Link>
-          <DashboardNav signOut={signOut} />
+          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} />
         </div>
       </HeaderAutoHide>
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>

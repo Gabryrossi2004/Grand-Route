@@ -62,7 +62,7 @@ export default async function DashboardHomePage() {
     .map((trip) => ({
       trip,
       unread: unreadByTrip.get(trip.id) ?? 0,
-      status: trip.approval_status ?? "none",
+      status: trip.itinerary_stage === "finale" ? "none" : (trip.approval_status ?? "none"),
     }))
     .filter((item) => item.unread > 0 || item.status === "changes_requested" || item.status === "pending")
     .sort((a, b) => {
