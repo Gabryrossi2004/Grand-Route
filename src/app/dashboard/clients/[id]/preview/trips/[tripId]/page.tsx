@@ -5,9 +5,14 @@ import { ArrowLeft, Eye } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
+import { getLang } from "@/lib/i18n/server";
+import { translateItineraryView } from "@/lib/tripTranslation";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
+
+// La prima visita in inglese traduce l'itinerario: può richiedere qualche secondo
+export const maxDuration = 60;
 
 export default async function ClientPreviewTripPage({
   params,
@@ -41,10 +46,12 @@ export default async function ClientPreviewTripPage({
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
 
+  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang(), true);
+
   return (
     <TripItineraryView
-      trip={trip}
-      days={orderedDays}
+      trip={view.trip}
+      days={view.days}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
       logoShape={parseLogoShape((owner as Profile | null)?.logo_shape)}

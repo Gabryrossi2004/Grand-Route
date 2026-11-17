@@ -1,6 +1,7 @@
 import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
 import { getT } from "@/lib/i18n/server";
+import { translateItineraryView } from "@/lib/tripTranslation";
 import ZefiroClientFloating from "@/components/ZefiroClientFloating";
 import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
 import { getAvatarStyle } from "@/lib/assistant";
@@ -26,13 +27,16 @@ const DOCUMENTS_REMINDER_WINDOW_DAYS = 21;
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
+// La prima visita in inglese traduce l'itinerario: può richiedere qualche secondo
+export const maxDuration = 60;
+
 export default async function ClientTripPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const { t } = await getT();
+  const { t, lang } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
 
@@ -72,8 +76,11 @@ export default async function ClientTripPage({
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
 
+  // Per chi legge in inglese, i testi dell'itinerario vengono tradotti (una volta sola, poi restano salvati)
+  const view = await translateItineraryView(supabase, trip, orderedDays, lang, true);
+
   const activityTitles = new Map<string, string>();
-  for (const day of orderedDays) for (const activity of day.activities) activityTitles.set(activity.id, activity.title);
+  for (const day of view.days) for (const activity of day.activities) activityTitles.set(activity.id, activity.title);
   const clientDocuments: ClientDoc[] = await Promise.all(
     ((sharedDocuments as TripDocument[] | null) ?? []).map(async (document) => {
       const { data } = await supabase.storage.from("trip-documents").createSignedUrl(document.file_path, 60 * 60);
@@ -104,8 +111,8 @@ export default async function ClientTripPage({
     <ZefiroStyleProvider mode={getAvatarStyle(ownerProfile?.ai_preferences)}>
       <ZefiroDestination destination={trip.destination} title={trip.title} />
       <TripItineraryView
-        trip={trip}
-        days={orderedDays}
+        trip={view.trip}
+        days={view.days}
         agencyName={ownerProfile?.agency_name}
         logoUrl={ownerProfile?.logo_url}
         logoShape={parseLogoShape(ownerProfile?.logo_shape)}

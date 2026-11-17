@@ -15,6 +15,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 - **Zefiro per il cliente, argomenti e guida** (nessuna migrazione): l'agenzia sceglie gli argomenti (paese, consigli sul posto, muoversi, servizi vicini con mappa) e scrive la propria guida; servizi vicini da OpenStreetMap; blocco per pacchetto pronto ma spento (GATE_TOPICS_BY_PLAN in src/lib/zefiroTopics.ts)
 - **Zefiro per l'agenzia, strumenti**: briefing in Home (senza AI), controllo prima dell'invio al cliente, bozze di messaggi, traduzione dell'itinerario (copia del viaggio in 10 lingue, senza foto/documenti)
 - **Sito in inglese per i clienti** (nessuna migrazione): interruttore IT | EN (cookie `gr_lang`, altrimenti lingua del browser) nell'area clienti, nelle pagine di accesso/registrazione/recupero password e nella pagina pubblica del viaggio; Zefiro risponde nella lingua del cliente. Restano in italiano: pagine legali, notifiche push, messaggio WhatsApp di emergenza, tutta la dashboard dell'agenzia. Testi in `src/lib/i18n/dictionary.ts`
+- **Itinerario tradotto in automatico per chi legge in inglese** (migrazione 0041): titoli, descrizioni e note dell'itinerario si traducono alla prima visita del cliente e restano salvati; si rifanno solo se l'agenzia modifica il viaggio. Non ancora tradotti: titoli nella lista viaggi e nell'intestazione della chat
 
 ## Da fare, in ordine
 **1. Mappamondo dei viaggi, fase A** — globo 3D nell'area clienti con i viaggi fatti (tappe ricavate dagli itinerari); il cliente può vedere dove si trova adesso, solo sul proprio telefono

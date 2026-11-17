@@ -4,6 +4,8 @@ import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
 import LanguageSwitch from "@/components/LanguageSwitch";
+import { getLang } from "@/lib/i18n/server";
+import { translateItineraryView } from "@/lib/tripTranslation";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -59,14 +61,17 @@ export default async function PublicTripPage({
     ),
   }));
 
+  // Pagina pubblica: si mostra la traduzione già salvata (la crea un cliente collegato al viaggio)
+  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang(), false);
+
   return (
     <>
       <div className="fixed right-3 top-3 z-40 print:hidden">
         <LanguageSwitch />
       </div>
       <TripItineraryView
-        trip={trip}
-        days={orderedDays}
+        trip={view.trip}
+        days={view.days}
         agencyName={(owner as Profile | null)?.agency_name}
         logoUrl={(owner as Profile | null)?.logo_url}
         logoShape={logoShape}
