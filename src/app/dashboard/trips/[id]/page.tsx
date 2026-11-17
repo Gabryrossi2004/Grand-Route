@@ -41,6 +41,7 @@ import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel";
 import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
+import { checkTripBeforeSend } from "@/lib/tripPreflight";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -222,6 +223,7 @@ export default async function TripDetailPage({
               }))}
               approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
               agencyLabel="Tu"
+              preflight={checkTripBeforeSend({ trip, days: orderedDays, paymentsCount: ((tripPayments as TripPayment[]) || []).length })}
               stage={trip.itinerary_stage === "finale" ? "finale" : "preliminare"}
               extra={
                 <ClientZefiroTripSetting

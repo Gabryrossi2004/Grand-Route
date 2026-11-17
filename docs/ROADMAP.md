@@ -15,10 +15,10 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 - **Zefiro per il cliente, argomenti e guida** (nessuna migrazione): l'agenzia sceglie gli argomenti (paese, consigli sul posto, muoversi, servizi vicini con mappa) e scrive la propria guida; servizi vicini da OpenStreetMap; blocco per pacchetto pronto ma spento (GATE_TOPICS_BY_PLAN in src/lib/zefiroTopics.ts)
 
 ## Da fare, in ordine
-(proposta, da confermare) **Mappamondo dei viaggi** — fase A: globo 3D con i viaggi fatti del cliente (tappe ricavate dagli itinerari), senza posizione condivisa; fase B (social: condividere la posizione e i viaggi con altri) insieme all'apertura al pubblico senza agenzia
-**1. Zefiro per l'agenzia, più strumenti** — briefing in Home (partenze, documenti mancanti, pagamenti), bozze di messaggi al cliente, traduzione dell'itinerario, controllo prima dell'invio
-**2. Pacchetti e fatturazione** — tetto mensile di consumo incluso nell'abbonamento, extra a consumo con ricarico (consigliato costo + 60-100%), fatturazione mensile (serve partita IVA)
-**3. Ampliamento a pubblico senza agenzia** — utenti privati che organizzano i propri viaggi con Zefiro, senza passare da un'agenzia
+**1. Zefiro per l'agenzia, più strumenti** (in corso) — fatti: briefing in Home (senza AI), controllo prima dell'invio al cliente, bozze di messaggi al cliente. Da fare: traduzione dell'itinerario (copia del viaggio in un'altra lingua)
+**2. Mappamondo dei viaggi, fase A** — globo 3D nell'area clienti con i viaggi fatti (tappe ricavate dagli itinerari); il cliente può vedere dove si trova adesso, solo sul proprio telefono
+**3. Pacchetti e fatturazione** — tetto mensile di consumo incluso nell'abbonamento, extra a consumo con ricarico (consigliato costo + 60-100%), fatturazione mensile (serve partita IVA); blocco degli argomenti di Zefiro per pacchetto (GATE_TOPICS_BY_PLAN)
+**4. Ampliamento a pubblico senza agenzia** — utenti privati che organizzano i propri viaggi con Zefiro, senza passare da un'agenzia; qui anche la fase B del mappamondo (social: condividere viaggi e posizione, con consenso e privacy)
 
 ## Prima del lancio commerciale
 Supabase Pro e Vercel Pro, revisione legale (compresa l'informativa privacy: ora cita Anthropic e Open-Meteo) (privacy, termini, contratto con le agenzie), partita IVA e fatturazione, rinnovo del dominio.

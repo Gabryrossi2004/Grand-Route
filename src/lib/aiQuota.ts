@@ -13,7 +13,7 @@ const MAX_CALLS_PER_DAY = 40;
 export const MAX_DRAFT_CHARS = 60_000;
 export const MAX_PRICE_LIST_CHARS = 150_000;
 
-export type AiKind = "itinerary" | "client_request" | "price_list" | "review" | "rules_test";
+export type AiKind = "itinerary" | "client_request" | "price_list" | "review" | "rules_test" | "message_draft";
 
 export function tooLongMessage(maxChars: number) {
   return `Il testo è troppo lungo (massimo circa ${Math.round(maxChars / 1000)}.000 caratteri). Dividilo in più parti.`;

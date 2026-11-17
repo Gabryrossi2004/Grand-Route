@@ -1,4 +1,7 @@
 import Link from "next/link";
+import ZefiroBriefing from "@/components/ZefiroBriefing";
+import { buildBriefing } from "@/lib/agencyBriefing";
+import { romeToday } from "@/lib/destinationInfo";
 import { Plane } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
@@ -23,7 +26,7 @@ export default async function DashboardHomePage() {
   const allTrips = (trips as Trip[]) || [];
   const tripIds = allTrips.map((trip) => trip.id);
 
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -50,7 +53,33 @@ export default async function DashboardHomePage() {
           .eq("author_role", "client")
           .is("read_at", null)
       : Promise.resolve({ data: [] }),
+    // Pagamenti da incassare, per il briefing di Zefiro
+    tripIds.length
+      ? supabase
+          .from("trip_payments")
+          .select("trip_id, amount, due_date, paid_date")
+          .in("trip_id", tripIds)
+          .eq("direction", "incasso")
+          .is("paid_date", null)
+          .not("due_date", "is", null)
+      : Promise.resolve({ data: [] }),
+    // Clienti dei viaggi (per sapere se mancano i documenti d'identità)
+    allTrips.some((trip) => trip.client_id)
+      ? supabase
+          .from("clients")
+          .select("id, full_name, id_card_number, passport_number")
+          .eq("owner_id", user?.id ?? "")
+      : Promise.resolve({ data: [] }),
   ]);
+
+  const briefing = buildBriefing({
+    today: romeToday(),
+    trips: allTrips,
+    payments: (dueIncome as { trip_id: string; amount: number; due_date: string | null; paid_date: string | null }[] | null) ?? [],
+    clients:
+      (briefingClients as { id: string; full_name: string; id_card_number: string | null; passport_number: string | null }[] | null) ?? [],
+  });
+  const romeHour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 
   const unreadByTrip = new Map<string, number>();
   for (const row of (unreadClientMessages as { trip_id: string }[] | null) ?? []) {
@@ -121,6 +150,8 @@ export default async function DashboardHomePage() {
           <p className="mt-1 text-sm text-[#cbbfa6]">Incassato reale</p>
         </div>
       </div>
+
+      <ZefiroBriefing items={briefing} hour={romeHour} />
 
       {clientAttention.length > 0 && (
         <section className="rounded-2xl border border-[#cda876] bg-gradient-to-b from-[#fdf6e6] to-[#faf3e6] p-5 shadow-sm">

@@ -14,6 +14,7 @@ const FEATURE_LABELS: Record<string, string> = {
   price_list: "Lettura listini",
   rules_test: "Prova delle regole",
   "client:zefiro": "Zefiro per i clienti",
+  message_draft: "Bozze di messaggi",
 };
 
 // Quanto ha usato Zefiro oggi e nel mese (con il costo reale in euro) e il

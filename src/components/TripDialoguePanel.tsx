@@ -2,9 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTripRealtime } from "@/lib/useTripRealtime";
+import type { PreflightIssue } from "@/lib/tripPreflight";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, MessageSquareWarning, Send } from "lucide-react";
 import PushNotificationToggle from "@/components/PushNotificationToggle";
+import AssistantIcon from "@/components/AssistantIcon";
+import { DRAFT_KINDS, type DraftKind } from "@/lib/messageDrafts";
+import { draftClientMessage } from "@/lib/actions/zefiroAgency";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 import {
   approveTrip,
@@ -47,6 +51,7 @@ export default function TripDialoguePanel({
   stage = "preliminare",
   zefiroHint = false,
   extra,
+  preflight = [],
 }: {
   tripId: string;
   role: "agency" | "client";
@@ -61,7 +66,11 @@ export default function TripDialoguePanel({
   zefiroHint?: boolean;
   // Contenuto in fondo (usato dall'agenzia per l'impostazione di Zefiro)
   extra?: React.ReactNode;
+  // Controlli da mostrare all'agenzia prima di inviare l'itinerario al cliente
+  preflight?: PreflightIssue[];
 }) {
+  const [showPreflight, setShowPreflight] = useState(false);
+  const [drafting, setDrafting] = useState<DraftKind | null>(null);
   const canApprove = stage === "preliminare";
   const router = useRouter();
   const [text, setText] = useState(preset?.text ?? "");
@@ -156,6 +165,37 @@ export default function TripDialoguePanel({
     }
   }
 
+  // Zefiro scrive una bozza e la mette nella casella: da rileggere e modificare, non parte da sola
+  async function draft(kind: DraftKind) {
+    setDrafting(kind);
+    setError(null);
+    setNotice(null);
+    try {
+      const result = await draftClientMessage(tripId, kind, text);
+      if ("error" in result) setError(result.error);
+      else {
+        setText(result.message.slice(0, 2000));
+        setNotice("Bozza di Zefiro: rileggila e modificala prima di inviarla.");
+      }
+    } catch {
+      setError("Non è stato possibile scrivere la bozza. Controlla la connessione e riprova.");
+    } finally {
+      setDrafting(null);
+    }
+  }
+
+  function doSend() {
+    setShowPreflight(false);
+    run(
+      () => sendTripForApproval(tripId),
+      () => {
+        addLocal("sent_for_approval", "Ti ho inviato l'itinerario: guardalo con calma e poi approvalo, oppure chiedimi le modifiche.", null, null);
+        setStatusOverride("pending");
+      },
+      "Itinerario inviato al cliente per l'approvazione ✓",
+    );
+  }
+
   function submit() {
     const dayId = ref.startsWith("day:") ? ref.slice(4) : null;
     const activityId = ref.startsWith("activity:") ? ref.slice(9) : null;
@@ -203,16 +243,7 @@ export default function TripDialoguePanel({
           <button
             type="button"
             disabled={busy}
-            onClick={() =>
-              run(
-                () => sendTripForApproval(tripId),
-                () => {
-                  addLocal("sent_for_approval", "Ti ho inviato l'itinerario: guardalo con calma e poi approvalo, oppure chiedimi le modifiche.", null, null);
-                  setStatusOverride("pending");
-                },
-                "Itinerario inviato al cliente per l'approvazione ✓",
-              )
-            }
+            onClick={() => (preflight.some((i) => i.level !== "nota") ? setShowPreflight(true) : doSend())}
             className="rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
           >
             {shownStatus === "none" ? "Invia al cliente per approvazione" : "Invia di nuovo per approvazione"}
@@ -248,6 +279,40 @@ export default function TripDialoguePanel({
           </>
         )}
       </div>
+
+      {showPreflight && (
+        <div className="rounded-xl border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900" role="alert">
+          <p className="mb-1.5 font-semibold">Prima di inviare, controlla:</p>
+          <ul className="mb-3 flex flex-col gap-1">
+            {preflight.map((issue, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="mt-0.5 shrink-0">{issue.level === "problema" ? "⛔" : issue.level === "attenzione" ? "⚠️" : "ℹ️"}</span>
+                <span>{issue.text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setShowPreflight(false)}
+              className="min-h-10 rounded-lg bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f]"
+            >
+              Torna a modificare
+            </button>
+            <button
+              type="button"
+              onClick={doSend}
+              disabled={preflight.some((i) => i.level === "problema")}
+              className="min-h-10 rounded-lg border border-amber-400 bg-white px-3 py-1.5 text-sm font-medium text-amber-900 hover:bg-amber-100 disabled:opacity-50"
+            >
+              Invia comunque
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-amber-800">
+            Per una rilettura più approfondita usa «Suggerimenti» di Zefiro, nella scheda del viaggio.
+          </p>
+        </div>
+      )}
 
       <div className="flex max-h-[45vh] min-h-32 flex-col gap-2 overflow-y-auto rounded-xl bg-[#faf3e6]/60 p-3" aria-live="polite">
         {shownMessages.length === 0 && (
@@ -313,6 +378,29 @@ export default function TripDialoguePanel({
               </optgroup>
             ))}
           </select>
+        )}
+        {role === "agency" && (
+          <div className="rounded-xl border border-[#e6d7bb] bg-[#faf3e6]/60 p-2.5">
+            <p className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-slate-600">
+              <AssistantIcon size={16} /> Zefiro scrive per me
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {DRAFT_KINDS.map((kind) => (
+                <button
+                  key={kind.id}
+                  type="button"
+                  onClick={() => draft(kind.id)}
+                  disabled={drafting !== null || (kind.id === "migliora" && !text.trim())}
+                  className="min-h-9 rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-xs font-medium text-[#233c5e] transition hover:bg-[#faf3e6] disabled:opacity-50"
+                >
+                  {drafting === kind.id ? "Scrivo…" : kind.label}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1.5 text-[11px] text-slate-500">
+              Se scrivi qualche nota nella casella prima di toccare un pulsante, Zefiro ne tiene conto.
+            </p>
+          </div>
         )}
         <textarea
           value={text}
