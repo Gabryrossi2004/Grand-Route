@@ -7,6 +7,7 @@ import LogoUploader from "./LogoUploader";
 import AiRulesCard from "./AiRulesCard";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import ZefiroCard from "./ZefiroCard";
+import { parseLogoShape } from "@/lib/logoShape";
 import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 
 export default async function SettingsPage() {
@@ -43,7 +44,7 @@ export default async function SettingsPage() {
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
 
-      <LogoUploader logoUrl={(profile as Profile).logo_url} />
+      <LogoUploader logoUrl={(profile as Profile).logo_url} initialShape={parseLogoShape((profile as Profile).logo_shape)} />
 
       <SettingsForm profile={profile as Profile} />
 

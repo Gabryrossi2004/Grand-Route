@@ -1,3 +1,4 @@
+import { parseLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
@@ -46,6 +47,7 @@ export default async function ClientPreviewTripPage({
       days={orderedDays}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
+      logoShape={parseLogoShape((owner as Profile | null)?.logo_shape)}
       agencyTerms={(owner as Profile | null)?.terms_and_conditions}
       brandColor={(owner as Profile | null)?.brand_color}
       headerExtra={

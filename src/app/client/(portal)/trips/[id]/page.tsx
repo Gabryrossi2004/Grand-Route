@@ -1,3 +1,4 @@
+import { parseLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
@@ -72,6 +73,7 @@ export default async function ClientTripPage({
         days={orderedDays}
         agencyName={ownerProfile?.agency_name}
         logoUrl={ownerProfile?.logo_url}
+        logoShape={parseLogoShape(ownerProfile?.logo_shape)}
         agencyTerms={ownerProfile?.terms_and_conditions}
         brandColor={ownerProfile?.brand_color}
         payments={(incomingPayments as TripPayment[]) || []}

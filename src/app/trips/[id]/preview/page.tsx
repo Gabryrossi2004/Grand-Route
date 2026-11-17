@@ -1,3 +1,4 @@
+import { fetchLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
@@ -29,6 +30,8 @@ export default async function TripPreviewPage({
     supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions, brand_color").eq("id", trip.owner_id).single(),
   ]);
 
+  const logoShape = await fetchLogoShape(supabase, trip.owner_id);
+
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
@@ -40,6 +43,7 @@ export default async function TripPreviewPage({
       days={orderedDays}
       agencyName={(owner as Profile | null)?.agency_name}
       logoUrl={(owner as Profile | null)?.logo_url}
+      logoShape={logoShape}
       agencyTerms={(owner as Profile | null)?.terms_and_conditions}
       brandColor={(owner as Profile | null)?.brand_color}
       headerExtra={

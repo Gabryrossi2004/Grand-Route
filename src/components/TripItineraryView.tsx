@@ -1,3 +1,5 @@
+import AgencyLogo from "@/components/AgencyLogo";
+import type { LogoShape } from "@/lib/logoShape";
 import type { Activity, ActivityPhoto, Trip, TripDay, TripPayment } from "@/lib/types";
 import { activityTypes, detailFieldLabel, visibleDetailEntries } from "@/lib/activityTypes";
 import { richTextClassName, toSafeHtml } from "@/lib/richText";
@@ -35,6 +37,7 @@ export default function TripItineraryView({
   days,
   agencyName,
   logoUrl,
+  logoShape,
   agencyTerms,
   brandColor,
   headerExtra,
@@ -44,6 +47,7 @@ export default function TripItineraryView({
   days: DayWithActivities[];
   agencyName?: string | null;
   logoUrl?: string | null;
+  logoShape?: LogoShape;
   agencyTerms?: string | null;
   // Colore del brand dell'agenzia: colora l'intestazione (se non c'è la foto) e la fascia sotto di essa.
   brandColor?: string | null;
@@ -78,8 +82,7 @@ export default function TripItineraryView({
           {(logoUrl || agencyName) && (
             <div className="mb-3 flex items-center gap-2">
               {logoUrl && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={logoUrl} alt="" className="h-8 rounded bg-white/90 p-1" />
+                <AgencyLogo src={logoUrl} shape={logoShape ?? "smussato"} size={36} boxClassName="bg-white/90" />
               )}
               {agencyName && <span className="text-sm font-medium opacity-90">{agencyName}</span>}
             </div>

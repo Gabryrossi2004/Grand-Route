@@ -1,5 +1,5 @@
 -- ============================================================
--- GRAND ROUTE - creazione completa del database (migrazioni 0001-0033)
+-- GRAND ROUTE - creazione completa del database (migrazioni 0001-0034)
 -- Da incollare UNA VOLTA nell'SQL Editor di un progetto Supabase NUOVO e vuoto.
 -- Tutto in una transazione: se qualcosa fallisce non viene applicato nulla,
 -- quindi si può correggere e rilanciare senza lasciare il database a metà.
@@ -2001,6 +2001,13 @@ as $$
 $$;
 revoke all on function public.get_ai_platform_rules() from public, anon;
 grant execute on function public.get_ai_platform_rules() to authenticated;
+
+-- >>>>>>>>>> 0034_logo_shape.sql <<<<<<<<<<
+alter table public.profiles
+  add column if not exists logo_shape text not null default 'smussato'
+  check (logo_shape in ('squadrato', 'smussato', 'tondo', 'personalizzato'));
+
+grant select (logo_shape) on public.profiles to anon;
 
 -- ── Per diventare amministratore (una volta sola, solo per il tuo utente) ──
 -- Sostituisci l'email qui sotto con quella con cui accedi e premi Run:

@@ -10,6 +10,7 @@ export type Profile = {
   account_type: AccountType;
   agency_name: string | null;
   logo_url: string | null;
+  logo_shape?: string | null;
   brand_color: string | null;
   terms_and_conditions: string | null;
   ui_font_size: UiFontSize;

@@ -190,3 +190,25 @@ export async function setAvatarStyle(style: string): Promise<{ ok: true } | { er
   revalidatePath("/dashboard", "layout");
   return { ok: true };
 }
+
+export async function setLogoShape(shape: string): Promise<{ ok: true } | { error: string }> {
+  const allowed = ["squadrato", "smussato", "tondo", "personalizzato"];
+  if (!allowed.includes(shape)) return { error: "Forma non valida." };
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { error } = await supabase.from("profiles").update({ logo_shape: shape }).eq("id", user.id);
+  if (error) {
+    console.error("[setLogoShape]", error.message);
+    return {
+      error: error.message.includes("logo_shape")
+        ? "Manca un aggiornamento del database (migrazione 0034). Eseguilo nell'SQL Editor di Supabase e riprova."
+        : "Non è stato possibile salvare la forma del logo. Riprova tra poco.",
+    };
+  }
+  revalidatePath("/dashboard", "layout");
+  return { ok: true };
+}

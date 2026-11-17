@@ -5,6 +5,8 @@ import type { Profile } from "@/lib/types";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
 import FontPreference from "@/components/FontPreference";
 import DashboardNav from "@/components/DashboardNav";
+import AgencyLogo from "@/components/AgencyLogo";
+import { parseLogoShape } from "@/lib/logoShape";
 import ZefiroFloating from "@/components/ZefiroFloating";
 import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 import { ZefiroStyleProvider } from "@/components/ZefiroStyle";
@@ -47,8 +49,7 @@ export default async function DashboardLayout({
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-6">
           <Link href="/dashboard" className="flex shrink-0 items-center gap-2.5 text-[#233c5e]">
             {profile?.logo_url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={profile.logo_url} alt="" className="h-8 w-8 object-contain" />
+              <AgencyLogo src={profile.logo_url} shape={parseLogoShape(profile.logo_shape)} size={36} />
             ) : (
               <span style={{ backgroundColor: brandColor }} className="h-2.5 w-2.5 rounded-full" />
             )}

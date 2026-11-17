@@ -16,6 +16,7 @@ export default function DropzoneUpload({
   label,
   autoSubmit = true,
   compressImages = false,
+  processFile,
 }: {
   name: string;
   accept?: string;
@@ -27,6 +28,8 @@ export default function DropzoneUpload({
   // Mai per documenti scansionati o foto caricate per l'analisi AI, dove
   // la definizione originale conta.
   compressImages?: boolean;
+  // Elaborazione aggiuntiva scelta da chi usa il componente (es. ritaglio del logo)
+  processFile?: (file: File) => Promise<File>;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragOver, setDragOver] = useState(false);
@@ -49,6 +52,7 @@ export default function DropzoneUpload({
       // Corregge i file con estensione sbagliata (es. WebP chiamato .jpg) o
       // in formati non accettati, poi, se richiesto, riduce le foto.
       files = await Promise.all(files.map((file) => normalizeImageFile(file)));
+      if (processFile) files = await Promise.all(files.map((file) => processFile(file)));
       if (compressImages) {
         files = await Promise.all(files.map((file) => compressImageFile(file)));
       }
