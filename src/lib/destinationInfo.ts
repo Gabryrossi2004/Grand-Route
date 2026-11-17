@@ -76,16 +76,37 @@ export function describeWeather(code: number): { label: string; icon: string } {
   return { label: "Variabile", icon: "🌥️" };
 }
 
-export type DestinationInfo = {
+export type Forecast = { date: string; min: number; max: number; code: number };
+
+// Una tappa del viaggio: una località con i giorni che ci si trascorre
+export type StopInfo = {
   place: string;
+  country: string | null;
+  firstDay: number; // numero del giorno (1, 2, ...)
+  lastDay: number;
+  from: string | null; // date AAAA-MM-GG
+  to: string | null;
   timeZone: string;
   localTime: string; // "14:32"
   hoursFromItaly: number;
   current: { temp: number; code: number } | null;
-  daily: { date: string; min: number; max: number; code: number }[];
+  daily: Forecast[]; // previsioni per i giorni della tappa (solo se rientrano nei prossimi 7)
 };
 
-type GeoResult = { name: string; latitude: number; longitude: number; timezone?: string; country?: string };
+export type DayInput = {
+  date: string | null;
+  title: string | null;
+  places: { location: string | null; type?: string | null }[];
+};
+
+type GeoResult = {
+  name: string;
+  latitude: number;
+  longitude: number;
+  timezone?: string;
+  country?: string;
+  feature_code?: string;
+};
 
 async function getJson(url: string, revalidate: number): Promise<unknown | null> {
   try {
@@ -97,30 +118,85 @@ async function getJson(url: string, revalidate: number): Promise<unknown | null>
   }
 }
 
-// Prima prova il nome intero ("Marrakech, Marocco"), poi la prima parte.
-function candidateNames(destination: string): string[] {
-  const full = destination.trim();
-  const first = full.split(/[,;/\-–]| e | - /i)[0].trim();
-  return [...new Set([full, first].filter((n) => n.length >= 2))];
+const normalize = (text: string) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+// Nomi di luogo possibili ricavati da un testo libero ("Riad Jasmine, Derb X, Marrakech"):
+// prima l'ultima parte (di solito la città), poi le altre, anche senza "Aeroporto di".
+export function placeCandidates(text: string | null | undefined): string[] {
+  if (!text) return [];
+  // Tolgo le parentesi e i CAP ("40000 Marrakech" → "Marrakech")
+  const cleaned = text
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\b\d{3,6}\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const out: string[] = [];
+  const add = (value: string) => {
+    const v = value.trim().replace(/^[-–\s]+|[-–\s]+$/g, "");
+    if (v.length >= 3 && !/\d/.test(v) && !out.includes(v)) out.push(v);
+  };
+  for (const segment of cleaned.split(",").reverse()) {
+    add(segment);
+    const afterPreposition = segment.match(/\b(?:di|a|ad|in|da)\s+([^,]+)$/i);
+    if (afterPreposition) {
+      add(afterPreposition[1]);
+      // "Marrakech-Menara" → anche "Marrakech"
+      for (const part of afterPreposition[1].split(/\s?[-–]\s?/)) add(part);
+    }
+    for (const part of segment.split(/\s?[-–]\s?/)) if (part !== segment) add(part);
+  }
+  return out.slice(0, 8);
 }
 
-export async function loadDestinationInfo(destination: string | null | undefined): Promise<DestinationInfo | null> {
-  if (!destination?.trim()) return null;
+// "Arrivo a Marrakech" → "Marrakech" (nomi propri dopo a / in / per / verso)
+export function titleHints(title: string | null | undefined): string[] {
+  if (!title) return [];
+  const re = /\b(?:a|ad|in|per|verso|da|di)\s+((?:[A-ZÀ-Ý][\p{L}'’]+)(?:[ -][A-ZÀ-Ý][\p{L}'’]+){0,2})/gu;
+  return [...title.matchAll(re)].map((m) => m[1]).slice(0, 3);
+}
 
-  let geo: GeoResult | null = null;
-  for (const name of candidateNames(destination)) {
-    const data = (await getJson(
-      `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=1&language=it`,
-      60 * 60 * 24 * 30,
-    )) as { results?: GeoResult[] } | null;
-    if (data?.results?.[0]) {
-      geo = data.results[0];
-      break;
-    }
-  }
-  if (!geo) return null;
+// Per ogni giorno, i nomi da provare: prima il titolo ("Arrivo a Marrakech"), poi
+// le località delle attività (gli alloggi per primi).
+export function dayCandidates(day: DayInput): string[] {
+  const ordered = [...day.places].sort((a, b) => (a.type === "alloggio" ? -1 : 0) - (b.type === "alloggio" ? -1 : 0));
+  const all = [...titleHints(day.title), ...ordered.flatMap((p) => placeCandidates(p.location))];
+  return [...new Set(all)].slice(0, 8);
+}
 
-  const forecast = (await getJson(
+function countryMatches(hint: string, country: string | undefined) {
+  if (!hint) return true;
+  if (!country) return false;
+  return hint.includes(normalize(country));
+}
+
+const PLACE_CODES = /^(PPL|ADM|PCL)/;
+
+async function geocode(name: string, countryHint: string): Promise<GeoResult | null> {
+  const data = (await getJson(
+    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=10&language=it`,
+    60 * 60 * 24 * 30,
+  )) as { results?: GeoResult[] } | null;
+  return (
+    data?.results?.find(
+      (r) => (!r.feature_code || PLACE_CODES.test(r.feature_code)) && countryMatches(countryHint, r.country),
+    ) ?? null
+  );
+}
+
+type Forecasted = {
+  timeZone: string;
+  utcOffsetSeconds: number | null;
+  current: { temp: number; code: number } | null;
+  daily: Forecast[];
+};
+
+async function loadForecast(geo: GeoResult): Promise<Forecasted | null> {
+  const data = (await getJson(
     `https://api.open-meteo.com/v1/forecast?latitude=${geo.latitude}&longitude=${geo.longitude}` +
       `&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min` +
       `&forecast_days=7&timezone=auto`,
@@ -131,24 +207,117 @@ export async function loadDestinationInfo(destination: string | null | undefined
     current?: { temperature_2m: number; weather_code: number };
     daily?: { time: string[]; weather_code: number[]; temperature_2m_max: number[]; temperature_2m_min: number[] };
   } | null;
-
-  const timeZone = forecast?.timezone ?? geo.timezone;
+  const timeZone = data?.timezone ?? geo.timezone;
   if (!timeZone) return null;
-
-  const now = new Date();
   return {
-    place: geo.name,
     timeZone,
-    localTime: localTimeAt(timeZone, now, forecast?.utc_offset_seconds),
-    hoursFromItaly: hoursFromItaly(timeZone, now, forecast?.utc_offset_seconds),
-    current: forecast?.current ? { temp: forecast.current.temperature_2m, code: forecast.current.weather_code } : null,
-    daily: forecast?.daily
-      ? forecast.daily.time.map((date, i) => ({
+    utcOffsetSeconds: data?.utc_offset_seconds ?? null,
+    current: data?.current ? { temp: data.current.temperature_2m, code: data.current.weather_code } : null,
+    daily: data?.daily
+      ? data.daily.time.map((date, i) => ({
           date,
-          min: forecast.daily!.temperature_2m_min[i],
-          max: forecast.daily!.temperature_2m_max[i],
-          code: forecast.daily!.weather_code[i],
+          min: data.daily!.temperature_2m_min[i],
+          max: data.daily!.temperature_2m_max[i],
+          code: data.daily!.weather_code[i],
         }))
       : [],
   };
+}
+
+function addDays(iso: string, n: number) {
+  const d = new Date(`${iso}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+// Le tappe del viaggio con il loro meteo. Le località si ricavano dall'itinerario
+// (titoli dei giorni e luoghi delle attività), non dal titolo del viaggio, che
+// spesso è solo la nazione. Se non se ne trova nessuna si usa la destinazione.
+export async function loadTripStops(
+  destination: string | null | undefined,
+  startDate: string | null,
+  days: DayInput[],
+): Promise<StopInfo[]> {
+  const countryHint = normalize(destination ?? "");
+  const geoCache = new Map<string, Promise<GeoResult | null>>();
+  const geocodeOnce = (name: string, hint: string) => {
+    const key = `${hint}|${name}`;
+    if (!geoCache.has(key)) geoCache.set(key, geocode(name, hint));
+    return geoCache.get(key)!;
+  };
+
+  // 1. Località di ogni giorno (i giorni si risolvono in parallelo)
+  const perDay = await Promise.all(
+    days.map(async (day) => {
+      for (const name of dayCandidates(day)) {
+        const geo = await geocodeOnce(name, countryHint);
+        if (geo) return geo;
+      }
+      return null;
+    }),
+  );
+
+  // 2. Giorni consecutivi nello stesso posto = una tappa (un giorno senza
+  // località segue la tappa precedente)
+  type Group = { geo: GeoResult; firstDay: number; lastDay: number };
+  const groups: Group[] = [];
+  perDay.forEach((geo, index) => {
+    const last = groups[groups.length - 1];
+    if (!geo) {
+      if (last) last.lastDay = index + 1;
+      return;
+    }
+    if (last && last.geo.latitude === geo.latitude && last.geo.longitude === geo.longitude) {
+      last.lastDay = index + 1;
+    } else {
+      groups.push({ geo, firstDay: index + 1, lastDay: index + 1 });
+    }
+  });
+
+  // 3. Senza località nell'itinerario: la destinazione del viaggio
+  if (groups.length === 0) {
+    const names = (destination ?? "")
+      .trim()
+      .split(/[,;/\-–]| e | - /i)
+      .map((n) => n.trim())
+      .filter((n) => n.length >= 2);
+    for (const name of [(destination ?? "").trim(), ...names]) {
+      if (!name) continue;
+      const geo = await geocodeOnce(name, "");
+      if (geo) {
+        groups.push({ geo, firstDay: 1, lastDay: Math.max(1, days.length) });
+        break;
+      }
+    }
+  }
+
+  const limited = groups.slice(0, 6);
+  const now = new Date();
+  const stops = await Promise.all(
+    limited.map(async (group): Promise<StopInfo | null> => {
+      const forecast = await loadForecast(group.geo);
+      if (!forecast) return null;
+      const dateOf = (dayNumber: number) => {
+        const own = days[dayNumber - 1]?.date;
+        if (own) return own.slice(0, 10);
+        return startDate ? addDays(startDate, dayNumber - 1) : null;
+      };
+      const from = dateOf(group.firstDay);
+      const to = dateOf(group.lastDay);
+      return {
+        place: group.geo.name,
+        country: group.geo.country ?? null,
+        firstDay: group.firstDay,
+        lastDay: group.lastDay,
+        from,
+        to,
+        timeZone: forecast.timeZone,
+        localTime: localTimeAt(forecast.timeZone, now, forecast.utcOffsetSeconds),
+        hoursFromItaly: hoursFromItaly(forecast.timeZone, now, forecast.utcOffsetSeconds),
+        current: forecast.current,
+        daily: from && to ? forecast.daily.filter((d) => d.date >= from && d.date <= to) : [],
+      };
+    }),
+  );
+  return stops.filter((s): s is StopInfo => s !== null);
 }

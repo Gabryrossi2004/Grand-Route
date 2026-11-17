@@ -103,7 +103,7 @@ export default async function ClientTripPage({
         contentTop={
           <>
             <Suspense fallback={null}>
-              <TripGlance trip={trip} />
+              <TripGlance trip={trip} days={orderedDays} />
             </Suspense>
             <ClientDocuments documents={clientDocuments} />
           </>
