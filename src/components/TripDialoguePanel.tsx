@@ -15,7 +15,7 @@ import {
 } from "@/lib/actions/tripDialogue";
 
 export type DayOption = { id: string; label: string; activities?: { id: string; label: string }[] };
-export type PanelPreset = { activityId?: string; mode?: "message" | "changes" };
+export type PanelPreset = { activityId?: string; mode?: "message" | "changes"; text?: string };
 
 const STATUS_LABEL: Record<ApprovalStatus, { text: string; className: string }> = {
   none: { text: "Non ancora inviato", className: "bg-slate-100 text-slate-600" },
@@ -45,6 +45,8 @@ export default function TripDialoguePanel({
   agencyLabel = "Agenzia",
   preset,
   stage = "preliminare",
+  zefiroHint = false,
+  extra,
 }: {
   tripId: string;
   role: "agency" | "client";
@@ -55,10 +57,14 @@ export default function TripDialoguePanel({
   preset?: PanelPreset;
   // Approvazione e richieste di modifica hanno senso solo finché l'itinerario è preliminare
   stage?: "preliminare" | "finale";
+  // Lato cliente: ricorda che fuori orario si può chiedere a Zefiro
+  zefiroHint?: boolean;
+  // Contenuto in fondo (usato dall'agenzia per l'impostazione di Zefiro)
+  extra?: React.ReactNode;
 }) {
   const canApprove = stage === "preliminare";
   const router = useRouter();
-  const [text, setText] = useState("");
+  const [text, setText] = useState(preset?.text ?? "");
   // A cosa si riferisce il messaggio: "" (tutto il viaggio), "day:<id>" o "activity:<id>"
   const [ref, setRef] = useState(preset?.activityId ? `activity:${preset.activityId}` : "");
   const [mode, setMode] = useState<"message" | "changes">(preset?.mode ?? "message");
@@ -247,7 +253,7 @@ export default function TripDialoguePanel({
         {shownMessages.length === 0 && (
           <p className="m-auto text-center text-sm text-slate-500">
             {role === "client"
-              ? "Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile."
+              ? `Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile.${zefiroHint ? " Fuori orario puoi chiedere a Zefiro nella scheda qui sopra." : ""}`
               : canApprove
                 ? "Nessun messaggio. Scrivi al cliente o invia l'itinerario in approvazione."
                 : "Nessun messaggio. Scrivi al cliente quando vuoi."}
@@ -354,6 +360,7 @@ export default function TripDialoguePanel({
         <p className="mb-1 text-xs text-slate-500">Ricevi un avviso sul telefono quando arriva una risposta:</p>
         <PushNotificationToggle />
       </div>
+      {extra}
     </div>
   );
 }

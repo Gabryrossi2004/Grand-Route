@@ -744,6 +744,24 @@ export async function setDocumentVisibility(tripId: string, documentId: string, 
   return { ok: true as const };
 }
 
+// Zefiro nell'area clienti, per un viaggio: come nelle Impostazioni, sempre acceso o spento.
+export async function setTripClientZefiro(tripId: string, mode: string) {
+  if (!["default", "on", "off"].includes(mode)) return { error: "Valore non valido." };
+  const supabase = await createClient();
+  const { error } = await supabase.from("trips").update({ client_zefiro: mode }).eq("id", tripId);
+  if (error) {
+    console.error("[setTripClientZefiro]", error.message);
+    return {
+      error: error.message.includes("client_zefiro")
+        ? "Manca un aggiornamento del database (migrazione 0040). Eseguilo nell'SQL Editor di Supabase e riprova."
+        : "Non è stato possibile salvare. Riprova.",
+    };
+  }
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath(`/client/trips/${tripId}`);
+  return { ok: true as const };
+}
+
 export async function renameDocument(tripId: string, documentId: string, formData: FormData) {
   const supabase = await createClient();
   const fileName = String(formData.get("file_name") ?? "").trim();

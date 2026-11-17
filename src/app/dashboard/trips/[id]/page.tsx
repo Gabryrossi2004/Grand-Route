@@ -40,6 +40,7 @@ import ActionForm from "@/components/ActionForm";
 import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel";
+import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -222,6 +223,12 @@ export default async function TripDetailPage({
               approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
               agencyLabel="Tu"
               stage={trip.itinerary_stage === "finale" ? "finale" : "preliminare"}
+              extra={
+                <ClientZefiroTripSetting
+                  tripId={id}
+                  initial={(["on", "off"].includes(trip.client_zefiro) ? trip.client_zefiro : "default") as "default" | "on" | "off"}
+                />
+              }
             />
           </ExpandableSection>
         )}

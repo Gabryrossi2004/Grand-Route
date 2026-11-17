@@ -79,7 +79,7 @@ export async function getAiUsageSummary(): Promise<AiUsageSummary | null> {
     .from("ai_usage")
     .select("kind, cost_eur, created_at")
     .eq("user_id", user.id)
-    .like("kind", "cost:%")
+    .or("kind.like.cost:%,kind.eq.client:zefiro")
     .gte("created_at", month.toISOString())
     .limit(5000);
 
@@ -138,12 +138,14 @@ export async function reserveAiCall(kind: AiKind): Promise<{ ok: true } | { ok: 
         .select("id", { count: "exact", head: true })
         .eq("user_id", user.id)
         .not("kind", "like", "cost:%")
+        .not("kind", "like", "client:%")
         .gte("created_at", hourAgo),
       supabase
         .from("ai_usage")
         .select("id", { count: "exact", head: true })
         .eq("user_id", user.id)
         .not("kind", "like", "cost:%")
+        .not("kind", "like", "client:%")
         .gte("created_at", dayAgo),
     ]);
 

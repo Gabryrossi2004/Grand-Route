@@ -14,14 +14,27 @@ export type AiUsageTokens = {
   input_tokens?: number | null;
   output_tokens?: number | null;
   cache_read_input_tokens?: number | null;
+  cache_creation_input_tokens?: number | null;
 };
 
-export function costInEuro(usage: AiUsageTokens): number {
+// Prezzi in dollari per milione di token. Per Haiku 5.5 (le domande dei
+// clienti a Zefiro) i token letti dalla cache si contano, per prudenza, al
+// prezzo pieno di ingresso: il costo mostrato può solo essere un po' più alto
+// di quello reale, mai più basso.
+export type PricedModel = "sonnet" | "haiku";
+const PRICES: Record<PricedModel, { input: number; output: number; cacheRead: number }> = {
+  sonnet: { input: USD_PER_MTOK_INPUT, output: USD_PER_MTOK_OUTPUT, cacheRead: USD_PER_MTOK_CACHE_READ },
+  haiku: { input: 0.1, output: 0.5, cacheRead: 0.1 },
+};
+
+export function costInEuro(usage: AiUsageTokens, model: PricedModel = "sonnet"): number {
+  const price = PRICES[model];
   const input = usage.input_tokens ?? 0;
   const output = usage.output_tokens ?? 0;
   const cached = usage.cache_read_input_tokens ?? 0;
+  const written = usage.cache_creation_input_tokens ?? 0; // scrittura in cache: 1,25 volte l'ingresso
   const dollars =
-    (input * USD_PER_MTOK_INPUT + output * USD_PER_MTOK_OUTPUT + cached * USD_PER_MTOK_CACHE_READ) / 1_000_000;
+    (input * price.input + written * price.input * 1.25 + output * price.output + cached * price.cacheRead) / 1_000_000;
   return dollars * USD_TO_EUR;
 }
 

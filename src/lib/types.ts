@@ -94,6 +94,7 @@ export type Trip = {
   id: string;
   owner_id: string;
   approval_status?: ApprovalStatus;
+  client_zefiro?: "default" | "on" | "off";
   client_id: string | null;
   group_id: string | null;
   title: string;

@@ -1,5 +1,7 @@
 import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
+import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
+import { getAvatarStyle } from "@/lib/assistant";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
@@ -43,7 +45,7 @@ export default async function ClientTripPage({
   const clientName = myClient?.full_name || "Il cliente";
   const hasIdentityDocument = Boolean(myClient?.id_card_number || myClient?.passport_number);
 
-  const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }, { data: sharedDocuments }] = await Promise.all([
+  const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }, { data: sharedDocuments }, { data: zefiroStatus }] = await Promise.all([
     supabase
       .from("trip_days")
       .select("*, activities(*, activity_photos(*))")
@@ -54,7 +56,10 @@ export default async function ClientTripPage({
     supabase.from("trip_messages").select("*").eq("trip_id", trip.id).order("created_at", { ascending: true }),
     // Solo i documenti che l'agenzia ha reso visibili (lo garantisce il database)
     supabase.from("documents").select("*").eq("trip_id", trip.id).order("uploaded_at", { ascending: true }),
+    // Zefiro acceso per questo viaggio? (se lo script 0040 non c'è, resta spento)
+    supabase.rpc("client_zefiro_status", { p_trip_id: trip.id }),
   ]);
+  const zefiroEnabled = Boolean((zefiroStatus as { enabled: boolean }[] | null)?.[0]?.enabled);
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
@@ -90,7 +95,8 @@ export default async function ClientTripPage({
     daysUntilDeparture <= DOCUMENTS_REMINDER_WINDOW_DAYS;
 
   return (
-    <>
+    <ZefiroStyleProvider mode={getAvatarStyle(ownerProfile?.ai_preferences)}>
+      <ZefiroDestination destination={trip.destination} title={trip.title} />
       <TripItineraryView
         trip={trip}
         days={orderedDays}
@@ -146,6 +152,7 @@ export default async function ClientTripPage({
         approvalStatus={approvalStatus}
         agencyLabel={ownerProfile?.agency_name || "Agenzia"}
         stage={stage}
+        zefiroEnabled={zefiroEnabled}
       />
       {showEmergencyButton && (
         <EmergencyButton
@@ -155,6 +162,6 @@ export default async function ClientTripPage({
           agencyPhone={ownerProfile!.emergency_phone!}
         />
       )}
-    </>
+    </ZefiroStyleProvider>
   );
 }

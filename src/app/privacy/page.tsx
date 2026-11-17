@@ -117,8 +117,9 @@ export default function PrivacyPage() {
               <li>
                 <strong>Anthropic</strong> — elaborazione delle richieste all&apos;assistente Zefiro (ad
                 esempio i testi degli itinerari, le richieste dei clienti e i listini che l&apos;agenzia
-                sceglie di sottoporgli). Quando si usa Zefiro, solo il testo necessario alla richiesta
-                viene inviato per l&apos;elaborazione.
+                sceglie di sottoporgli e le domande che i clienti rivolgono a Zefiro sul proprio viaggio). Quando
+                si usa Zefiro, solo il testo necessario alla richiesta e i dati del viaggio che il cliente può già
+                vedere vengono inviati per l&apos;elaborazione.
               </li>
               <li>
                 <strong>Open-Meteo</strong> — previsioni del tempo nell&apos;area clienti. Riceve

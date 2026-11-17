@@ -233,3 +233,22 @@ export async function setAiPlan(plan: string): Promise<{ ok: true } | { error: s
   revalidatePath("/dashboard/settings");
   return { ok: true };
 }
+
+// Zefiro risponde ai clienti nell'area clienti? (valore predefinito dell'agenzia)
+export async function setClientZefiroDefault(enabled: boolean): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), client_zefiro: enabled ? "on" : "off" };
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  if (error) {
+    console.error("[setClientZefiroDefault]", error.message);
+    return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard/settings");
+  return { ok: true };
+}
