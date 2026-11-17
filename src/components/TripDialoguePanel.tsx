@@ -26,7 +26,7 @@ const STATUS_LABEL: Record<ApprovalStatus, { text: string; className: string }> 
 
 export function ApprovalChip({ status }: { status: ApprovalStatus }) {
   const s = STATUS_LABEL[status] ?? STATUS_LABEL.none;
-  return <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${s.className}`}>{s.text}</span>;
+  return <span className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold normal-case tracking-normal ${s.className}`}>{s.text}</span>;
 }
 
 function formatWhen(iso: string) {

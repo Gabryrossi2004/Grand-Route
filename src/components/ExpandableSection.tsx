@@ -28,9 +28,9 @@ export default function ExpandableSection({
         onClick={() => setOpen(true)}
         className="flex min-w-[280px] flex-1 items-center justify-between gap-2 rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] px-6 py-4 text-left text-sm font-semibold uppercase tracking-wide text-slate-500 shadow-sm transition hover:border-[#cda876]"
       >
-        <span className="flex items-center gap-2">
-          {title}
-          {badge}
+        <span className="flex min-w-0 flex-col items-start gap-1.5">
+          <span>{title}</span>
+          {badge && <span className="flex flex-wrap items-center gap-1.5">{badge}</span>}
         </span>
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </button>

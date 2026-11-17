@@ -197,13 +197,16 @@ export default async function TripDetailPage({
                 {trip.itinerary_stage !== "finale" && (
                   <ApprovalChip status={(trip.approval_status ?? "none") as ApprovalStatus} />
                 )}
-                {((tripMessages as TripMessage[] | null) ?? []).filter((m) => m.author_role === "client" && !m.read_at).length >
-                  0 && (
-                  <span className="rounded-full bg-[#cda876] px-2 py-0.5 text-[10px] font-bold normal-case tracking-normal text-[#17283f]">
-                    {((tripMessages as TripMessage[] | null) ?? []).filter((m) => m.author_role === "client" && !m.read_at).length}{" "}
-                    nuovi
-                  </span>
-                )}
+                {(() => {
+                  const unreadCount = ((tripMessages as TripMessage[] | null) ?? []).filter(
+                    (m) => m.author_role === "client" && !m.read_at,
+                  ).length;
+                  return unreadCount > 0 ? (
+                    <span className="whitespace-nowrap rounded-full bg-[#cda876] px-2.5 py-0.5 text-xs font-bold normal-case tracking-normal text-[#17283f]">
+                      {unreadCount} {unreadCount === 1 ? "nuovo messaggio" : "nuovi messaggi"}
+                    </span>
+                  ) : null;
+                })()}
               </>
             }
           >
