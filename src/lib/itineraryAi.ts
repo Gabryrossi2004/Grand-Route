@@ -1,3 +1,4 @@
+import { recordAiCost } from "@/lib/aiQuota";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
@@ -163,6 +164,8 @@ export async function generateItineraryFromDraft(params: {
     // Da tenere d'occhio sulla qualità del risultato nell'uso reale.
     output_config: { effort: "medium", format: zodOutputFormat(GeneratedItinerarySchema) },
   });
+
+  await recordAiCost("itinerary", response.usage);
 
   if (!response.parsed_output) {
     throw new Error("L'AI non è riuscita a interpretare la bozza in un formato valido.");

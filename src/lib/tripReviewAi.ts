@@ -1,3 +1,4 @@
+import { recordAiCost } from "@/lib/aiQuota";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
@@ -137,6 +138,7 @@ export async function generateReviewQuestions(digest: string, rulesBlock = ""): 
     messages: [{ role: "user", content: digest }],
     output_config: { effort: "low", format: zodOutputFormat(QuestionsSchema) },
   });
+  await recordAiCost("review", response.usage);
   if (!response.parsed_output) throw new Error("Domande non valide.");
   return response.parsed_output;
 }
@@ -161,6 +163,7 @@ export async function generateReviewSuggestions(
     messages: [{ role: "user", content: `${digest}${context}` }],
     output_config: { effort: "medium", format: zodOutputFormat(SuggestionsSchema) },
   });
+  await recordAiCost("review", response.usage);
   if (!response.parsed_output) throw new Error("Suggerimenti non validi.");
   return response.parsed_output;
 }

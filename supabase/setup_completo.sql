@@ -1,5 +1,5 @@
 -- ============================================================
--- GRAND ROUTE - creazione completa del database (migrazioni 0001-0034)
+-- GRAND ROUTE - creazione completa del database (migrazioni 0001-0035)
 -- Da incollare UNA VOLTA nell'SQL Editor di un progetto Supabase NUOVO e vuoto.
 -- Tutto in una transazione: se qualcosa fallisce non viene applicato nulla,
 -- quindi si può correggere e rilanciare senza lasciare il database a metà.
@@ -2008,6 +2008,16 @@ alter table public.profiles
   check (logo_shape in ('squadrato', 'smussato', 'tondo', 'personalizzato'));
 
 grant select (logo_shape) on public.profiles to anon;
+
+-- >>>>>>>>>> 0035_ai_budget.sql <<<<<<<<<<
+alter table public.ai_usage
+  add column if not exists input_tokens integer not null default 0 check (input_tokens >= 0),
+  add column if not exists output_tokens integer not null default 0 check (output_tokens >= 0),
+  add column if not exists cost_eur numeric(10, 5) not null default 0 check (cost_eur >= 0);
+
+alter table public.profiles
+  add column if not exists ai_plan text not null default 'start'
+  check (ai_plan in ('start', 'plus', 'pro'));
 
 -- ── Per diventare amministratore (una volta sola, solo per il tuo utente) ──
 -- Sostituisci l'email qui sotto con quella con cui accedi e premi Run:

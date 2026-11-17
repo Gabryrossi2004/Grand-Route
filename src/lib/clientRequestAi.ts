@@ -1,3 +1,4 @@
+import { recordAiCost } from "@/lib/aiQuota";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
@@ -64,6 +65,7 @@ export async function extractClientRequest(params: {
     output_config: { effort: "medium", format: zodOutputFormat(ClientRequestSchema) },
   });
 
+  await recordAiCost("client_request", response.usage);
   if (!response.parsed_output) {
     throw new Error("L'AI non è riuscita a interpretare la richiesta in un formato valido.");
   }

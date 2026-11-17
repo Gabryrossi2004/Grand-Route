@@ -1,3 +1,4 @@
+import { recordAiCost } from "@/lib/aiQuota";
 import Anthropic from "@anthropic-ai/sdk";
 
 // Genera un breve esempio che applica le regole (di base + dell'agenzia), per
@@ -17,6 +18,7 @@ export async function generateRulesSample(rulesBlock: string): Promise<string> {
     ],
     output_config: { effort: "low" },
   });
+  await recordAiCost("rules_test", response.usage);
   return response.content
     .map((block) => (block.type === "text" ? block.text : ""))
     .join("")

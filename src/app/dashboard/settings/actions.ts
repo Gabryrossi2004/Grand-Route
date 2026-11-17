@@ -212,3 +212,24 @@ export async function setLogoShape(shape: string): Promise<{ ok: true } | { erro
   revalidatePath("/dashboard", "layout");
   return { ok: true };
 }
+
+export async function setAiPlan(plan: string): Promise<{ ok: true } | { error: string }> {
+  if (!["start", "plus", "pro"].includes(plan)) return { error: "Pacchetto non valido." };
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { error } = await supabase.from("profiles").update({ ai_plan: plan }).eq("id", user.id);
+  if (error) {
+    console.error("[setAiPlan]", error.message);
+    return {
+      error: error.message.includes("ai_plan")
+        ? "Manca un aggiornamento del database (migrazione 0035). Eseguilo nell'SQL Editor di Supabase e riprova."
+        : "Non è stato possibile salvare il pacchetto. Riprova tra poco.",
+    };
+  }
+  revalidatePath("/dashboard/settings");
+  return { ok: true };
+}

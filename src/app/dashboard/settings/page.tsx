@@ -7,6 +7,8 @@ import LogoUploader from "./LogoUploader";
 import AiRulesCard from "./AiRulesCard";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import ZefiroCard from "./ZefiroCard";
+import ZefiroUsageCard from "./ZefiroUsageCard";
+import { getAiUsageSummary } from "@/lib/aiQuota";
 import { parseLogoShape } from "@/lib/logoShape";
 import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 
@@ -21,6 +23,7 @@ export default async function SettingsPage() {
     .single();
 
   const { data: isAdmin } = await supabase.rpc("is_platform_admin");
+  const usage = await getAiUsageSummary();
 
   return (
     <div className="mx-auto max-w-lg">
@@ -50,6 +53,7 @@ export default async function SettingsPage() {
 
       <div className="mt-6">
         <AiRulesCard profile={profile as Profile} />
+        {usage && <ZefiroUsageCard summary={usage} />}
         <ZefiroCard
           initiallyVisible={isAvatarVisible((profile as Profile).ai_preferences)}
           initialStyle={getAvatarStyle((profile as Profile).ai_preferences)}
