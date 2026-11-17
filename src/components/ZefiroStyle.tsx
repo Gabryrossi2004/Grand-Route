@@ -31,7 +31,7 @@ export function ZefiroStyleProvider({ mode, children }: { mode: ZefiroMode; chil
   const [variant, setVariant] = useState<ZefiroVariantId>(target);
   useEffect(() => {
     if (target === variant) return;
-    const timer = setTimeout(() => setVariant(target), mode === "dinamico" ? 350 : 0);
+    const timer = setTimeout(() => setVariant(target), mode === "dinamico" ? 120 : 0);
     return () => clearTimeout(timer);
   }, [target, variant, mode]);
 

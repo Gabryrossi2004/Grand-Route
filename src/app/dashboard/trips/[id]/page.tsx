@@ -323,7 +323,7 @@ function CoverHero({
         </div>
 
         <div className="relative text-white">
-          <TripTitleEditor tripId={trip.id} title={trip.title} color={trip.title_color} />
+          <TripTitleEditor tripId={trip.id} title={trip.title} destination={trip.destination} color={trip.title_color} />
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-white/90">
             {trip.destination && (
               <span className="flex items-center gap-1">

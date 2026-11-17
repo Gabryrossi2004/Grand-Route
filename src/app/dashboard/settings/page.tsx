@@ -48,11 +48,11 @@ export default async function SettingsPage() {
       <SettingsForm profile={profile as Profile} />
 
       <div className="mt-6">
+        <AiRulesCard profile={profile as Profile} />
         <ZefiroCard
           initiallyVisible={isAvatarVisible((profile as Profile).ai_preferences)}
           initialStyle={getAvatarStyle((profile as Profile).ai_preferences)}
         />
-        <AiRulesCard profile={profile as Profile} />
       </div>
 
       {isAdmin === true && (

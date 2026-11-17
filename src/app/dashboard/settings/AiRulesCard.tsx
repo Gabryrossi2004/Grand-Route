@@ -5,7 +5,7 @@ import { Loader2, Plus } from "lucide-react";
 import type { Profile } from "@/lib/types";
 import { MAX_AGENCY_RULES_CHARS, PREFERENCE_OPTIONS, RULE_EXAMPLES, type PreferenceKey } from "@/lib/aiRules";
 import { saveAiRules, testAiRules } from "./actions";
-import { ASSISTANT_NAME, ASSISTANT_TAGLINE } from "@/lib/assistant";
+import { ASSISTANT_NAME } from "@/lib/assistant";
 import AssistantIcon from "@/components/AssistantIcon";
 import Zefiro from "@/components/Zefiro";
 
@@ -82,9 +82,8 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
         <Zefiro size={72} state={testing ? "thinking" : sample ? "happy" : "idle"} className="shrink-0" />
       </div>
       <p className="mb-5 text-xs text-slate-500">
-        Come vuoi che {ASSISTANT_NAME}, {ASSISTANT_TAGLINE}, scriva e ragioni per la tua agenzia. Valgono per la generazione degli itinerari e per i
-        suggerimenti, solo per te, in aggiunta alle regole di base di Grand Route (che non inventano dati e verificano
-        che l&apos;itinerario sia fattibile).
+        Come deve scrivere e ragionare {ASSISTANT_NAME}. Valgono solo per la tua agenzia, in aggiunta alle regole di base di
+        Grand Route.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -125,7 +124,7 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
         <p className="mt-1 text-right text-xs text-slate-500">
           {text.length}/{MAX_AGENCY_RULES_CHARS}
         </p>
-        <p className="mb-1.5 text-xs font-medium text-slate-600">Esempi da aggiungere con un clic</p>
+        <p className="mb-1.5 text-xs font-medium text-slate-600">Esempi (clic per aggiungere)</p>
         <div className="flex flex-wrap gap-2">
           {RULE_EXAMPLES.map((example) => (
             <button
@@ -175,9 +174,7 @@ export default function AiRulesCard({ profile }: { profile: Profile }) {
         <div className="mt-4 rounded-lg border border-[#e6d7bb] bg-[#faf3e6]/60 p-4">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Esempio con le tue regole</p>
           <p className="whitespace-pre-line text-sm leading-relaxed text-slate-800">{sample}</p>
-          <p className="mt-2 text-xs text-slate-500">
-            Se non ti piace, cambia le regole e riprova. Ricorda di premere &quot;Salva le regole&quot; per tenerle.
-          </p>
+          <p className="mt-2 text-xs text-slate-500">Ti piace? Premi &quot;Salva le regole&quot;.</p>
         </div>
       )}
     </section>

@@ -73,23 +73,19 @@ export default function ZefiroCard({
 
   return (
     <section id="zefiro" className="mb-6 scroll-mt-24 rounded-xl border border-[#e6d7bb] bg-white p-6">
-      <h2 className="mb-1 text-lg font-medium text-[#233c5e]">{ASSISTANT_NAME} sullo schermo</h2>
-      <p className="mb-4 text-xs text-slate-500">
-        {ASSISTANT_NAME} fluttua in un angolo dello schermo: lo trascini dove ti dà meno fastidio e lo clicchi quando
-        ti serve una mano (creare un viaggio, rivedere un itinerario). La posizione si ricorda su questo dispositivo.
-      </p>
+      <h2 className="mb-4 text-lg font-medium text-[#233c5e]">Aspetto di {ASSISTANT_NAME}</h2>
       <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
         <div className="shrink-0 self-center rounded-2xl bg-[#faf3e6]/80 p-2">
           <Zefiro size={170} state={mood} variant={previewVariant} />
         </div>
         <fieldset className="min-w-0 flex-1">
-          <legend className="mb-2 text-sm font-medium text-slate-700">Il costume di {ASSISTANT_NAME}</legend>
+          <legend className="mb-2 text-sm font-medium text-slate-700">Costume</legend>
           <div className="grid gap-2 sm:grid-cols-2">
             {[
               {
                 id: "dinamico" as ZefiroMode,
                 name: "Dinamico",
-                description: `${ASSISTANT_NAME} si veste secondo la meta del viaggio che stai guardando`,
+                description: "Cambia con la meta del viaggio",
               },
               ...ZEFIRO_VARIANTS,
             ].map((option) => (
@@ -109,7 +105,9 @@ export default function ZefiroCard({
                 />
                 <span className="min-w-0">
                   <span className="block text-sm font-medium text-slate-800">{option.name}</span>
-                  <span className="block text-xs text-slate-500">{option.description}</span>
+                  {option.id === "dinamico" && (
+                    <span className="block text-xs text-slate-500">{option.description}</span>
+                  )}
                 </span>
               </label>
             ))}
@@ -124,17 +122,14 @@ export default function ZefiroCard({
           disabled={saving}
           onChange={(e) => toggle(e.target.checked)}
         />
-        Mostra {ASSISTANT_NAME} sullo schermo
+        Mostra {ASSISTANT_NAME} sullo schermo (trascinabile)
       </label>
-      <p className="mt-1 text-xs text-slate-500">
-        Se lo nascondi, trovi i pulsanti di {ASSISTANT_NAME} dentro le pagine (Nuovo viaggio e pagina del viaggio).
-      </p>
       <button
         type="button"
         onClick={() => window.dispatchEvent(new Event(ZEFIRO_RESET_EVENT))}
         className="mt-4 rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
       >
-        Rimetti {ASSISTANT_NAME} al suo posto
+        Riporta {ASSISTANT_NAME} al suo posto
       </button>
       {message && (
         <p className="mt-3 text-sm text-red-700" role="alert">
