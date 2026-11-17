@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, ApprovalStatus, Profile, TripDay, TripMessage, TripPayment } from "@/lib/types";
-import ClientTripChat, { ApprovalBanner } from "@/components/ClientTripChat";
+import ClientTripChat, { ActivityChangeButton, ApprovalBanner } from "@/components/ClientTripChat";
 import TripItineraryView from "@/components/TripItineraryView";
 import EmergencyButton from "@/components/EmergencyButton";
 
@@ -80,6 +80,7 @@ export default async function ClientTripPage({
         agencyTerms={ownerProfile?.terms_and_conditions}
         brandColor={ownerProfile?.brand_color}
         payments={(incomingPayments as TripPayment[]) || []}
+        activityAction={(activityId) => <ActivityChangeButton activityId={activityId} />}
         headerExtra={
           <div className="flex flex-col bg-white/90 backdrop-blur">
             <div className="px-4 py-2">
@@ -108,7 +109,11 @@ export default async function ClientTripPage({
       <ClientTripChat
         tripId={trip.id}
         messages={(tripMessages as TripMessage[] | null) ?? []}
-        days={orderedDays.map((day, index) => ({ id: day.id, label: `Giorno ${index + 1}` }))}
+        days={orderedDays.map((day, index) => ({
+          id: day.id,
+          label: `Giorno ${index + 1}`,
+          activities: day.activities.map((activity) => ({ id: activity.id, label: activity.title })),
+        }))}
         approvalStatus={approvalStatus}
         agencyLabel={ownerProfile?.agency_name || "Agenzia"}
       />

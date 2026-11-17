@@ -42,6 +42,7 @@ export default function TripItineraryView({
   brandColor,
   headerExtra,
   payments,
+  activityAction,
 }: {
   trip: Trip;
   days: DayWithActivities[];
@@ -53,6 +54,8 @@ export default function TripItineraryView({
   brandColor?: string | null;
   headerExtra?: React.ReactNode;
   payments?: TripPayment[];
+  // Pulsante opzionale su ogni attività (usato dall'area clienti per chiedere modifiche)
+  activityAction?: (activityId: string) => React.ReactNode;
 }) {
   const theme = trip.theme || "elegante";
   const price = getDisplayPrice(trip);
@@ -181,6 +184,7 @@ export default function TripItineraryView({
                           >
                             {meta.label}
                           </span>
+                          {activityAction?.(activity.id)}
                         </div>
                         {hasBody && (
                           <div className="px-4 py-3">

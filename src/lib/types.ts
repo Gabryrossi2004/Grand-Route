@@ -85,6 +85,7 @@ export type TripMessage = {
   kind: "message" | "change_request" | "approved" | "sent_for_approval";
   body: string;
   day_id: string | null;
+  activity_id?: string | null;
   read_at: string | null;
   created_at: string;
 };

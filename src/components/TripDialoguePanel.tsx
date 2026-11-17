@@ -13,7 +13,8 @@ import {
   sendTripMessage,
 } from "@/lib/actions/tripDialogue";
 
-export type DayOption = { id: string; label: string };
+export type DayOption = { id: string; label: string; activities?: { id: string; label: string }[] };
+export type PanelPreset = { activityId?: string; mode?: "message" | "changes" };
 
 const STATUS_LABEL: Record<ApprovalStatus, { text: string; className: string }> = {
   none: { text: "Non ancora inviato", className: "bg-slate-100 text-slate-600" },
@@ -41,6 +42,7 @@ export default function TripDialoguePanel({
   days,
   approvalStatus,
   agencyLabel = "Agenzia",
+  preset,
 }: {
   tripId: string;
   role: "agency" | "client";
@@ -48,11 +50,13 @@ export default function TripDialoguePanel({
   days: DayOption[];
   approvalStatus: ApprovalStatus;
   agencyLabel?: string;
+  preset?: PanelPreset;
 }) {
   const router = useRouter();
   const [text, setText] = useState("");
-  const [dayId, setDayId] = useState("");
-  const [mode, setMode] = useState<"message" | "changes">("message");
+  // A cosa si riferisce il messaggio: "" (tutto il viaggio), "day:<id>" o "activity:<id>"
+  const [ref, setRef] = useState(preset?.activityId ? `activity:${preset.activityId}` : "");
+  const [mode, setMode] = useState<"message" | "changes">(preset?.mode ?? "message");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
@@ -95,21 +99,31 @@ export default function TripDialoguePanel({
   }
 
   function submit() {
+    const dayId = ref.startsWith("day:") ? ref.slice(4) : null;
+    const activityId = ref.startsWith("activity:") ? ref.slice(9) : null;
     if (mode === "changes") {
-      run(() => requestTripChanges(tripId, text, dayId || null), () => {
+      run(() => requestTripChanges(tripId, text, dayId, activityId), () => {
         setText("");
-        setDayId("");
+        setRef("");
         setMode("message");
       });
     } else {
-      run(() => sendTripMessage(tripId, text, dayId || null), () => {
+      run(() => sendTripMessage(tripId, text, dayId, activityId), () => {
         setText("");
-        setDayId("");
+        setRef("");
       });
     }
   }
 
-  const dayLabel = (id: string | null) => days.find((d) => d.id === id)?.label;
+  function refLabel(m: TripMessage) {
+    if (m.activity_id) {
+      for (const d of days) {
+        const a = d.activities?.find((x) => x.id === m.activity_id);
+        if (a) return `${d.label} — ${a.label}`;
+      }
+    }
+    return days.find((d) => d.id === m.day_id)?.label;
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -157,7 +171,7 @@ export default function TripDialoguePanel({
         )}
         {messages.map((m) => {
           const mine = m.author_role === role;
-          const ref = dayLabel(m.day_id);
+          const reference = refLabel(m);
           return (
             <div key={m.id} className={`flex max-w-[85%] flex-col gap-0.5 ${mine ? "self-end items-end" : "self-start"}`}>
               <div
@@ -174,7 +188,7 @@ export default function TripDialoguePanel({
                 {m.kind === "approved" && <span className="mb-0.5 block text-xs font-semibold">✓ Itinerario approvato</span>}
                 {m.kind === "change_request" && <span className="mb-0.5 block text-xs font-semibold">Richiesta di modifica</span>}
                 {m.kind === "sent_for_approval" && <span className="mb-0.5 block text-xs font-semibold opacity-80">Inviato per approvazione</span>}
-                {ref && <span className="mb-0.5 block text-xs opacity-80">{ref}</span>}
+                {reference && <span className="mb-0.5 block text-xs opacity-80">{reference}</span>}
                 <span className="whitespace-pre-line break-words">{m.body}</span>
               </div>
               <span className="px-1 text-[11px] text-slate-500">
@@ -192,16 +206,21 @@ export default function TripDialoguePanel({
         )}
         {days.length > 0 && (
           <select
-            value={dayId}
-            onChange={(e) => setDayId(e.target.value)}
-            aria-label="Giorno a cui si riferisce"
+            value={ref}
+            onChange={(e) => setRef(e.target.value)}
+            aria-label="Giorno o attività a cui si riferisce"
             className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm"
           >
             <option value="">Riguarda tutto il viaggio</option>
             {days.map((d) => (
-              <option key={d.id} value={d.id}>
-                {d.label}
-              </option>
+              <optgroup key={d.id} label={d.label}>
+                <option value={`day:${d.id}`}>Tutto il {d.label.toLowerCase()}</option>
+                {(d.activities ?? []).map((a) => (
+                  <option key={a.id} value={`activity:${a.id}`}>
+                    {a.label}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         )}

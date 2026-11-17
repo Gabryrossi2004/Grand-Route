@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Pencil } from "lucide-react";
 import Modal from "@/components/Modal";
-import TripDialoguePanel, { type DayOption } from "@/components/TripDialoguePanel";
+import TripDialoguePanel, { type DayOption, type PanelPreset } from "@/components/TripDialoguePanel";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 
 export const OPEN_TRIP_CHAT_EVENT = "trip-chat:open";
@@ -24,10 +24,14 @@ export default function ClientTripChat({
   agencyLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [preset, setPreset] = useState<PanelPreset | undefined>(undefined);
   const unread = messages.filter((m) => m.author_role === "agency" && !m.read_at).length;
 
   useEffect(() => {
-    const onOpen = () => setOpen(true);
+    const onOpen = (event: Event) => {
+      setPreset((event as CustomEvent<PanelPreset | undefined>).detail);
+      setOpen(true);
+    };
     window.addEventListener(OPEN_TRIP_CHAT_EVENT, onOpen);
     return () => window.removeEventListener(OPEN_TRIP_CHAT_EVENT, onOpen);
   }, []);
@@ -36,7 +40,10 @@ export default function ClientTripChat({
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setPreset(undefined);
+          setOpen(true);
+        }}
         className="fixed bottom-4 left-4 z-40 flex min-h-12 items-center gap-2 rounded-full bg-[#233c5e] px-4 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-[#17283f] print:hidden"
       >
         <MessageCircle size={18} />
@@ -50,6 +57,8 @@ export default function ClientTripChat({
       {open && (
         <Modal title="Il tuo viaggio: messaggi" onClose={() => setOpen(false)}>
           <TripDialoguePanel
+            key={`${preset?.activityId ?? ""}-${preset?.mode ?? ""}`}
+            preset={preset}
             tripId={tripId}
             role="client"
             messages={messages}
@@ -60,6 +69,21 @@ export default function ClientTripChat({
         </Modal>
       )}
     </>
+  );
+}
+
+// Pulsante su ogni attività: apre la richiesta di modifica già riferita a quella attività.
+export function ActivityChangeButton({ activityId }: { activityId: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        window.dispatchEvent(new CustomEvent(OPEN_TRIP_CHAT_EVENT, { detail: { activityId, mode: "changes" } }))
+      }
+      className="flex min-h-9 shrink-0 items-center gap-1 rounded-full border border-current/30 bg-white/70 px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:bg-white print:hidden"
+    >
+      <Pencil size={12} /> Chiedi una modifica
+    </button>
   );
 }
 

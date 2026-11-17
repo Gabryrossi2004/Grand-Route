@@ -205,7 +205,11 @@ export default async function TripDetailPage({
               tripId={id}
               role="agency"
               messages={(tripMessages as TripMessage[] | null) ?? []}
-              days={orderedDays.map((day, index) => ({ id: day.id, label: `Giorno ${index + 1}` }))}
+              days={orderedDays.map((day, index) => ({
+                id: day.id,
+                label: `Giorno ${index + 1}`,
+                activities: day.activities.map((activity) => ({ id: activity.id, label: activity.title })),
+              }))}
               approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
               agencyLabel="Tu"
             />

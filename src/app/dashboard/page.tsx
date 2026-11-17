@@ -23,7 +23,7 @@ export default async function DashboardHomePage() {
   const allTrips = (trips as Trip[]) || [];
   const tripIds = allTrips.map((trip) => trip.id);
 
-  const [{ data: pendingItems }, { data: paidIncome }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -41,7 +41,35 @@ export default async function DashboardHomePage() {
           .eq("direction", "incasso")
           .not("paid_date", "is", null)
       : Promise.resolve({ data: [] }),
+    // Messaggi dei clienti non ancora letti (se la tabella non c'è, resta vuoto)
+    tripIds.length
+      ? supabase
+          .from("trip_messages")
+          .select("trip_id")
+          .in("trip_id", tripIds)
+          .eq("author_role", "client")
+          .is("read_at", null)
+      : Promise.resolve({ data: [] }),
   ]);
+
+  const unreadByTrip = new Map<string, number>();
+  for (const row of (unreadClientMessages as { trip_id: string }[] | null) ?? []) {
+    unreadByTrip.set(row.trip_id, (unreadByTrip.get(row.trip_id) ?? 0) + 1);
+  }
+  // Viaggi che aspettano qualcosa dal cliente o dall'agenzia: prima quelli in cui
+  // il cliente ha chiesto modifiche o scritto, poi quelli in attesa di risposta.
+  const clientAttention = allTrips
+    .map((trip) => ({
+      trip,
+      unread: unreadByTrip.get(trip.id) ?? 0,
+      status: trip.approval_status ?? "none",
+    }))
+    .filter((item) => item.unread > 0 || item.status === "changes_requested" || item.status === "pending")
+    .sort((a, b) => {
+      const rank = (x: typeof a) => (x.status === "changes_requested" ? 0 : x.unread > 0 ? 1 : 2);
+      return rank(a) - rank(b);
+    })
+    .slice(0, 8);
 
   const incassatoReale = ((paidIncome as { amount: number }[] | null) || []).reduce(
     (sum, payment) => sum + payment.amount,
@@ -93,6 +121,41 @@ export default async function DashboardHomePage() {
           <p className="mt-1 text-sm text-[#cbbfa6]">Incassato reale</p>
         </div>
       </div>
+
+      {clientAttention.length > 0 && (
+        <section className="rounded-2xl border border-[#cda876] bg-gradient-to-b from-[#fdf6e6] to-[#faf3e6] p-5 shadow-sm">
+          <h2 className="mb-3 border-b border-[#e6d7bb] pb-3 text-xl font-medium text-[#233c5e]">Dai tuoi clienti</h2>
+          <ul className="flex flex-col gap-1">
+            {clientAttention.map(({ trip, unread, status }) => (
+              <li key={trip.id}>
+                <Link
+                  href={`/dashboard/trips/${trip.id}`}
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-lg px-2 py-2 transition hover:bg-white/70"
+                >
+                  <span className="min-w-0 truncate font-medium text-[#233c5e]">{trip.title}</span>
+                  <span className="flex items-center gap-2 text-xs">
+                    {unread > 0 && (
+                      <span className="rounded-full bg-[#233c5e] px-2 py-0.5 font-semibold text-white">
+                        {unread} {unread === 1 ? "messaggio" : "messaggi"}
+                      </span>
+                    )}
+                    {status === "changes_requested" && (
+                      <span className="rounded-full bg-orange-100 px-2 py-0.5 font-semibold text-orange-800">
+                        Modifiche richieste
+                      </span>
+                    )}
+                    {status === "pending" && (
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 font-semibold text-amber-800">
+                        In attesa del cliente
+                      </span>
+                    )}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">

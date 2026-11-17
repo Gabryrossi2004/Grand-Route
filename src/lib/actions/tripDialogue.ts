@@ -48,7 +48,12 @@ async function currentRole(supabase: Awaited<ReturnType<typeof createClient>>, t
   return { user, title: trip.title as string, role: (trip.owner_id === user.id ? "agency" : "client") as "agency" | "client" };
 }
 
-export async function sendTripMessage(tripId: string, body: string, dayId?: string | null): Promise<Result> {
+export async function sendTripMessage(
+  tripId: string,
+  body: string,
+  dayId?: string | null,
+  activityId?: string | null,
+): Promise<Result> {
   const text = body.trim();
   if (!text) return { error: "Scrivi un messaggio." };
   if (text.length > MAX_BODY) return { error: `Il messaggio è troppo lungo (massimo ${MAX_BODY} caratteri).` };
@@ -64,6 +69,8 @@ export async function sendTripMessage(tripId: string, body: string, dayId?: stri
     kind: "message",
     body: text,
     day_id: dayId || null,
+    // Solo se indicata: prima della migrazione 0037 la colonna non esiste
+    ...(activityId ? { activity_id: activityId } : {}),
   });
   if (error) {
     console.error("[sendTripMessage]", error.message);
@@ -97,7 +104,12 @@ export async function approveTrip(tripId: string): Promise<Result> {
 }
 
 // Il cliente chiede modifiche (con una nota, e se vuole un giorno preciso).
-export async function requestTripChanges(tripId: string, note: string, dayId?: string | null): Promise<Result> {
+export async function requestTripChanges(
+  tripId: string,
+  note: string,
+  dayId?: string | null,
+  activityId?: string | null,
+): Promise<Result> {
   const text = note.trim();
   if (!text) return { error: "Descrivi cosa vuoi cambiare." };
   if (text.length > MAX_BODY) return { error: `Il testo è troppo lungo (massimo ${MAX_BODY} caratteri).` };
@@ -111,6 +123,7 @@ export async function requestTripChanges(tripId: string, note: string, dayId?: s
     p_status: "changes_requested",
     p_note: text,
     p_day_id: dayId || null,
+    ...(activityId ? { p_activity_id: activityId } : {}),
   });
   if (error) {
     console.error("[requestTripChanges]", error.message);
