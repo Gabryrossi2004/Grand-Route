@@ -49,7 +49,7 @@ export default async function DashboardLayout({
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-6">
           <Link href="/dashboard" className="flex shrink-0 items-center gap-2.5 text-[#233c5e]">
             {profile?.logo_url ? (
-              <AgencyLogo src={profile.logo_url} shape={parseLogoShape(profile.logo_shape)} size={36} />
+              <AgencyLogo src={profile.logo_url} shape={parseLogoShape(profile.logo_shape)} size={44} />
             ) : (
               <span style={{ backgroundColor: brandColor }} className="h-2.5 w-2.5 rounded-full" />
             )}

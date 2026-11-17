@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AgencyLogo from "@/components/AgencyLogo";
 import DropzoneUpload from "@/components/DropzoneUpload";
@@ -18,6 +18,31 @@ export default function LogoUploader({ logoUrl, initialShape }: { logoUrl: strin
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  // Un logo caricato prima del ritaglio automatico può avere ancora bordi
+  // vuoti o sfondo bianco: lo sistemiamo una volta sola, in silenzio.
+  useEffect(() => {
+    if (!logoUrl) return;
+    const key = `logo-trimmed:${logoUrl}`;
+    try {
+      if (sessionStorage.getItem(key)) return;
+      sessionStorage.setItem(key, "1");
+    } catch {
+      /* senza sessionStorage si prova comunque, una volta per visita */
+    }
+    let cancelled = false;
+    (async () => {
+      const trimmed = await trimLogoFromUrl(logoUrl);
+      if (cancelled || !trimmed || !trimmed.changed) return;
+      const formData = new FormData();
+      formData.set("logo", trimmed.file);
+      const uploaded = await uploadLogo(formData);
+      if (!(uploaded && "error" in uploaded)) router.refresh();
+    })().catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [logoUrl, router]);
+
   async function chooseShape(next: LogoShape) {
     if (next === shape || busy) return;
     const previous = shape;
@@ -25,17 +50,6 @@ export default function LogoUploader({ logoUrl, initialShape }: { logoUrl: strin
     setMessage(null);
     setBusy(true);
     try {
-      // "Personalizzato" ricalca il disegno: se il logo ha ancora lo sfondo
-      // o i bordi bianchi, lo ritagliamo e lo ricarichiamo al volo.
-      if (next === "personalizzato" && logoUrl) {
-        const trimmed = await trimLogoFromUrl(logoUrl);
-        if (trimmed) {
-          const formData = new FormData();
-          formData.set("logo", trimmed);
-          const uploaded = await uploadLogo(formData);
-          if (uploaded && "error" in uploaded) throw new Error(uploaded.error);
-        }
-      }
       const result = await setLogoShape(next);
       if ("error" in result) {
         setShape(previous);
@@ -60,7 +74,7 @@ export default function LogoUploader({ logoUrl, initialShape }: { logoUrl: strin
       </p>
       <div className="flex items-center gap-4">
         {logoUrl ? (
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-[#faf3e6]">
+          <div className="flex h-20 min-w-20 max-w-48 shrink-0 items-center justify-center rounded-lg bg-[#faf3e6] px-2">
             <AgencyLogo src={logoUrl} shape={shape} size={64} />
           </div>
         ) : (
@@ -97,8 +111,8 @@ export default function LogoUploader({ logoUrl, initialShape }: { logoUrl: strin
                   onChange={() => chooseShape(option.id)}
                   className="sr-only"
                 />
-                <span className="flex h-12 items-center justify-center">
-                  <AgencyLogo src={logoUrl} shape={option.id} size={44} boxClassName="bg-white ring-1 ring-[#e6d7bb]" />
+                <span className="flex h-14 items-center justify-center">
+                  <AgencyLogo src={logoUrl} shape={option.id} size={48} />
                 </span>
                 <span className="text-xs font-medium text-slate-800">{option.label}</span>
               </label>

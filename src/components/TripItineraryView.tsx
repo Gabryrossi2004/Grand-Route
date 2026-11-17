@@ -82,7 +82,7 @@ export default function TripItineraryView({
           {(logoUrl || agencyName) && (
             <div className="mb-3 flex items-center gap-2">
               {logoUrl && (
-                <AgencyLogo src={logoUrl} shape={logoShape ?? "smussato"} size={36} boxClassName="bg-white/90" />
+                <AgencyLogo src={logoUrl} shape={logoShape ?? "smussato"} size={44} />
               )}
               {agencyName && <span className="text-sm font-medium opacity-90">{agencyName}</span>}
             </div>
