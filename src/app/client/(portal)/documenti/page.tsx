@@ -6,8 +6,10 @@ import type { Client } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
 import SubmitButton from "@/components/SubmitButton";
 import { updateClientTravelDocuments } from "../actions";
+import { getT } from "@/lib/i18n/server";
 
 export default async function ClientDocumentsPage() {
+  const { t } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
 
@@ -28,35 +30,33 @@ export default async function ClientDocumentsPage() {
   return (
     <div>
       <Link href="/client" className="mb-4 flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900">
-        <ArrowLeft size={14} /> I miei viaggi
+        <ArrowLeft size={14} /> {t("portal.backToTrips")}
       </Link>
       <h1 className="mb-2 text-3xl font-medium tracking-tight text-[#233c5e]">
-        I tuoi dati di viaggio
+        {t("details.title")}
       </h1>
       <p className="mb-6 pl-3 text-sm text-slate-500">
-        Compila qui i tuoi dati anagrafici e i documenti d&apos;identità: la tua agenzia li usa per le pratiche di
-        viaggio (es. prenotazioni che richiedono i dati del passaporto). Sono facoltativi, ma utile averli pronti
-        prima della partenza.
+        {t("details.intro")}
       </p>
 
       {clients.length === 0 && (
-        <p className="text-sm text-slate-500">Non abbiamo trovato nessuna scheda cliente collegata al tuo account.</p>
+        <p className="text-sm text-slate-500">{t("details.noClient")}</p>
       )}
 
       {clients.map((client, index) => (
         <form key={client.id} action={updateClientTravelDocuments.bind(null, client.id)} className="mb-6">
           {clients.length > 1 && (
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Scheda {index + 1} di {clients.length}
+              {t("details.recordOf", { n: index + 1, total: clients.length })}
             </p>
           )}
-          <ClientDetailsFields client={client} defaultOpen summaryLabel="Dati anagrafici e documenti" />
+          <ClientDetailsFields client={client} defaultOpen summaryLabel={t("details.summary")} />
           <div className="mt-3 flex justify-end">
             <SubmitButton
-              pendingLabel="Salvataggio…"
+              pendingLabel={t("common.saving")}
               className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
             >
-              Salva
+              {t("common.save")}
             </SubmitButton>
           </div>
         </form>

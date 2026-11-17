@@ -3,18 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, MessageCircle, Send } from "lucide-react";
 import Zefiro from "@/components/Zefiro";
-import { ASSISTANT_NAME } from "@/lib/assistant";
+import { useI18n } from "@/components/I18nProvider";
+import type { TKey } from "@/lib/i18n";
 import { askZefiroAboutTrip, type ZefiroLocation, type ZefiroReply, type ZefiroTurn } from "@/lib/actions/zefiroClient";
 
 type Bubble = { role: "user" | "assistant"; content: string; needsAgency?: boolean; question?: string };
 
 // Le domande suggerite dipendono dagli argomenti che l'agenzia ha attivato
-function startersFor(topics: string[]) {
-  const list = ["Cosa faccio oggi?", "Dove dormo?"];
-  if (topics.includes("consigli")) list.push("Dove posso mangiare bene?", "Cosa faccio nel tempo libero?");
-  if (topics.includes("servizi")) list.push("Qual è la farmacia più vicina?");
-  if (topics.includes("paese")) list.push("Cosa mi porto in valigia?");
-  if (list.length < 4) list.push("Quali pagamenti devo fare?");
+function startersFor(topics: string[]): TKey[] {
+  const list: TKey[] = ["zefiro.s.today", "zefiro.s.sleep"];
+  if (topics.includes("consigli")) list.push("zefiro.s.eat", "zefiro.s.free");
+  if (topics.includes("servizi")) list.push("zefiro.s.pharmacy");
+  if (topics.includes("paese")) list.push("zefiro.s.pack");
+  if (list.length < 4) list.push("zefiro.s.payments");
   return list.slice(0, 6);
 }
 
@@ -46,6 +47,7 @@ export default function ZefiroClientChat({
   topics?: string[];
   ask?: (tripId: string, question: string, history?: ZefiroTurn[], location?: ZefiroLocation) => Promise<ZefiroReply>;
 }) {
+  const { t } = useI18n();
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
@@ -89,7 +91,7 @@ export default function ZefiroClientChat({
       if (shareLocation && canShareLocation) {
         const position = await readPosition();
         if (position) location = position;
-        else setLocationNote("Non riesco a leggere la tua posizione: uso il centro della località in cui ti trovi.");
+        else setLocationNote(t("zefiro.locationFail"));
       }
       const reply = await ask(tripId, question, history, location);
       if ("error" in reply) {
@@ -103,7 +105,7 @@ export default function ZefiroClientChat({
         setTimeout(() => setMood("idle"), 1600);
       }
     } catch {
-      setError({ message: "Non è stato possibile contattare Zefiro. Controlla la connessione e riprova.", question });
+      setError({ message: t("zefiro.contactError"), question });
     } finally {
       setBusy(false);
     }
@@ -114,11 +116,11 @@ export default function ZefiroClientChat({
       <div className="flex items-center gap-3 rounded-2xl bg-[#faf3e6]/80 px-3 py-2">
         <Zefiro size={88} state={busy ? "thinking" : mood} className="shrink-0" />
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-[#233c5e]">Ciao, sono {ASSISTANT_NAME}!</p>
+          <p className="text-sm font-semibold text-[#233c5e]">{t("zefiro.hello")}</p>
           <p className="text-xs text-slate-600">
             {topics.includes("consigli") || topics.includes("servizi") || topics.includes("paese")
-              ? "Chiedimi del tuo viaggio e di cosa c'è sul posto: programma, orari, dove mangiare, servizi vicini."
-              : "Chiedimi del tuo viaggio: programma, orari, alloggi, pagamenti. Rispondo con i dati del tuo itinerario."}
+              ? t("zefiro.introMore")
+              : t("zefiro.introBasic")}
           </p>
         </div>
       </div>
@@ -126,14 +128,14 @@ export default function ZefiroClientChat({
       <div className="flex max-h-[38vh] min-h-24 flex-col gap-2 overflow-y-auto rounded-xl bg-[#faf3e6]/60 p-3" aria-live="polite">
         {bubbles.length === 0 && !busy && (
           <div className="flex flex-wrap gap-2">
-            {startersFor(topics).map((starter) => (
+            {startersFor(topics).map((starterKey) => (
               <button
-                key={starter}
+                key={starterKey}
                 type="button"
-                onClick={() => send(starter)}
+                onClick={() => send(t(starterKey))}
                 className="min-h-10 rounded-full border border-[#e6d7bb] bg-white px-3.5 py-1.5 text-left text-sm text-[#233c5e] transition hover:bg-[#faf3e6]"
               >
-                {starter}
+                {t(starterKey)}
               </button>
             ))}
           </div>
@@ -153,14 +155,14 @@ export default function ZefiroClientChat({
                 onClick={() => onAskAgency(b.question ?? "")}
                 className="flex min-h-9 items-center gap-1.5 rounded-full border border-[#cda876] bg-white px-3 py-1 text-xs font-medium text-[#233c5e] hover:bg-[#faf3e6]"
               >
-                <MessageCircle size={13} /> Chiedilo all&apos;agenzia
+                <MessageCircle size={13} /> {t("zefiro.askAgency")}
               </button>
             )}
           </div>
         ))}
         {busy && (
           <p className="self-start rounded-2xl bg-white px-3.5 py-2 text-sm text-slate-500 shadow-sm">
-            Sto guardando il tuo itinerario…
+            {t("zefiro.looking")}
           </p>
         )}
         <div ref={endRef} />
@@ -175,7 +177,7 @@ export default function ZefiroClientChat({
               onClick={() => onAskAgency(error.question)}
               className="mt-1 flex min-h-9 items-center gap-1.5 rounded-full border border-red-300 bg-white px-3 py-1 text-xs font-medium text-red-900"
             >
-              <MessageCircle size={13} /> Scrivi all&apos;agenzia
+              <MessageCircle size={13} /> {t("zefiro.writeAgency")}
             </button>
           )}
         </div>
@@ -190,7 +192,7 @@ export default function ZefiroClientChat({
             className="mt-0.5"
           />
           <span className="flex items-center gap-1">
-            <MapPin size={12} className="shrink-0" /> Usa la mia posizione per «vicino a me» (solo per la domanda, non viene salvata)
+            <MapPin size={12} className="shrink-0" /> {t("zefiro.location")}
           </span>
         </label>
       )}
@@ -202,21 +204,21 @@ export default function ZefiroClientChat({
           onChange={(e) => setText(e.target.value)}
           maxLength={500}
           rows={2}
-          placeholder="Scrivi la tua domanda…"
+          placeholder={t("zefiro.placeholder")}
           className="min-h-12 flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
         <button
           type="button"
           onClick={() => send(text)}
           disabled={busy || !text.trim()}
-          aria-label="Invia la domanda"
+          aria-label={t("zefiro.sendAria")}
           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#233c5e] text-white hover:bg-[#17283f] disabled:opacity-50"
         >
           <Send size={18} />
         </button>
       </div>
       <p className="text-[11px] text-slate-500">
-        {ASSISTANT_NAME} è un assistente automatico e può sbagliare: per cose importanti conferma con l&apos;agenzia.
+        {t("zefiro.disclaimer")}
       </p>
     </div>
   );

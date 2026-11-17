@@ -6,6 +6,7 @@ import Modal from "@/components/Modal";
 import Zefiro from "@/components/Zefiro";
 import ZefiroClientChat from "@/components/ZefiroClientChat";
 import { OPEN_TRIP_CHAT_EVENT } from "@/components/ClientTripChat";
+import { useI18n } from "@/components/I18nProvider";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 
 const MIN_KEY = "zefiro:client-min";
@@ -23,6 +24,7 @@ export default function ZefiroClientFloating({
   topics: string[];
   sosVisible: boolean;
 }) {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const [showHint, setShowHint] = useState(false);
@@ -65,14 +67,14 @@ export default function ZefiroClientFloating({
             }}
             className="max-w-[12rem] rounded-2xl rounded-br-sm bg-white px-3 py-2 text-left text-xs text-[#233c5e] shadow-lg ring-1 ring-[#e6d7bb]"
           >
-            Ciao, sono {ASSISTANT_NAME}! Chiedimi del tuo viaggio.
+            {t("zefiro.hint")}
           </button>
         )}
         {minimized ? (
           <button
             type="button"
             onClick={() => setOpen(true)}
-            aria-label={`Chiedi a ${ASSISTANT_NAME}`}
+            aria-label={t("zefiro.floatingAria")}
             className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-[#e6d7bb]"
           >
             <AssistantIcon size={34} />
@@ -81,7 +83,7 @@ export default function ZefiroClientFloating({
           <button
             type="button"
             onClick={() => setOpen(true)}
-            aria-label={`Chiedi a ${ASSISTANT_NAME}`}
+            aria-label={t("zefiro.floatingAria")}
             className="rounded-full drop-shadow-lg [-webkit-tap-highlight-color:transparent]"
           >
             <Zefiro size={76} state={open ? "happy" : "idle"} />
@@ -104,7 +106,7 @@ export default function ZefiroClientFloating({
             onClick={() => setMin(!minimized)}
             className="mt-3 text-xs text-slate-500 underline underline-offset-2"
           >
-            {minimized ? `Mostra ${ASSISTANT_NAME} animato nell'angolo` : `Riduci ${ASSISTANT_NAME} a una piccola icona`}
+            {minimized ? t("zefiro.restore") : t("zefiro.minimize")}
           </button>
         </Modal>
       )}

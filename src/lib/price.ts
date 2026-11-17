@@ -1,7 +1,7 @@
 import type { Trip } from "./types";
 
-export function formatEuro(value: number): string {
-  return new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(value);
+export function formatEuro(value: number, locale = "it-IT"): string {
+  return new Intl.NumberFormat(locale, { style: "currency", currency: "EUR" }).format(value);
 }
 
 export type DisplayPrice = {

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { CheckCircle2, MessageSquareWarning, Send } from "lucide-react";
 import PushNotificationToggle from "@/components/PushNotificationToggle";
 import AssistantIcon from "@/components/AssistantIcon";
+import { useI18n } from "@/components/I18nProvider";
 import { DRAFT_KINDS, type DraftKind } from "@/lib/messageDrafts";
 import { draftClientMessage } from "@/lib/actions/zefiroAgency";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
@@ -21,20 +22,27 @@ import {
 export type DayOption = { id: string; label: string; activities?: { id: string; label: string }[] };
 export type PanelPreset = { activityId?: string; mode?: "message" | "changes"; text?: string };
 
-const STATUS_LABEL: Record<ApprovalStatus, { text: string; className: string }> = {
-  none: { text: "Non ancora inviato", className: "bg-slate-100 text-slate-600" },
-  pending: { text: "In attesa del cliente", className: "bg-amber-100 text-amber-800" },
-  approved: { text: "Approvato dal cliente", className: "bg-green-100 text-green-800" },
-  changes_requested: { text: "Modifiche richieste", className: "bg-orange-100 text-orange-800" },
+const STATUS_STYLE: Record<ApprovalStatus, string> = {
+  none: "bg-slate-100 text-slate-600",
+  pending: "bg-amber-100 text-amber-800",
+  approved: "bg-green-100 text-green-800",
+  changes_requested: "bg-orange-100 text-orange-800",
 };
 
-export function ApprovalChip({ status }: { status: ApprovalStatus }) {
-  const s = STATUS_LABEL[status] ?? STATUS_LABEL.none;
-  return <span className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold normal-case tracking-normal ${s.className}`}>{s.text}</span>;
+// Vista dell'agenzia o del cliente: cambiano le parole ("In attesa del cliente" / "In attesa della tua risposta")
+export function ApprovalChip({ status, role = "agency" }: { status: ApprovalStatus; role?: "agency" | "client" }) {
+  const { t } = useI18n();
+  const key = (
+    role === "client"
+      ? ({ none: "chat.status.none", pending: "chat.status.pendingClient", approved: "chat.status.approvedClient", changes_requested: "chat.status.changesClient" } as const)
+      : ({ none: "chat.status.none", pending: "chat.status.pending", approved: "chat.status.approved", changes_requested: "chat.status.changes_requested" } as const)
+  )[status ?? "none"];
+  const style = STATUS_STYLE[status] ?? STATUS_STYLE.none;
+  return <span className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold normal-case tracking-normal ${style}`}>{t(key)}</span>;
 }
 
-function formatWhen(iso: string) {
-  return new Date(iso).toLocaleString("it-IT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+function formatWhen(iso: string, locale: string) {
+  return new Date(iso).toLocaleString(locale, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 }
 
 // Conversazione e approvazione dell'itinerario, uguale per agenzia e cliente
@@ -71,6 +79,7 @@ export default function TripDialoguePanel({
 }) {
   const [showPreflight, setShowPreflight] = useState(false);
   const [drafting, setDrafting] = useState<DraftKind | null>(null);
+  const { t, locale } = useI18n();
   const canApprove = stage === "preliminare";
   const router = useRouter();
   const [text, setText] = useState(preset?.text ?? "");
@@ -169,7 +178,7 @@ export default function TripDialoguePanel({
         router.refresh();
       }
     } catch {
-      setError("Non è stato possibile inviare. Controlla la connessione e riprova.");
+      setError(t("chat.sendError"));
     } finally {
       setBusy(false);
     }
@@ -222,7 +231,7 @@ export default function TripDialoguePanel({
           setRef("");
           setMode("message");
         },
-        "Richiesta inviata all'agenzia ✓",
+        t("chat.noticeRequest"),
       );
     } else {
       run(
@@ -232,7 +241,7 @@ export default function TripDialoguePanel({
           setText("");
           setRef("");
         },
-        "Messaggio inviato ✓",
+        t("chat.noticeMessage"),
       );
     }
   }
@@ -250,7 +259,7 @@ export default function TripDialoguePanel({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        {canApprove && <ApprovalChip status={shownStatus} />}
+        {canApprove && <ApprovalChip status={shownStatus} role={role} />}
         {role === "agency" && canApprove && (
           <button
             type="button"
@@ -273,12 +282,12 @@ export default function TripDialoguePanel({
                     addLocal("approved", "Itinerario approvato", null, null);
                     setStatusOverride("approved");
                   },
-                  "Approvazione inviata ✓",
+                  t("chat.noticeApproval"),
                 )
               }
               className="flex min-h-11 items-center gap-1.5 rounded-xl bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-60"
             >
-              <CheckCircle2 size={16} /> Approva l&apos;itinerario
+              <CheckCircle2 size={16} /> {t("chat.approve")}
             </button>
             <button
               type="button"
@@ -286,7 +295,7 @@ export default function TripDialoguePanel({
               onClick={() => setMode("changes")}
               className="flex min-h-11 items-center gap-1.5 rounded-xl border border-[#cda876] bg-white px-4 py-2 text-sm font-semibold text-[#233c5e] hover:bg-[#faf3e6]"
             >
-              <MessageSquareWarning size={16} /> Chiedi modifiche
+              <MessageSquareWarning size={16} /> {t("chat.askChanges")}
             </button>
           </>
         )}
@@ -330,7 +339,7 @@ export default function TripDialoguePanel({
         {shownMessages.length === 0 && (
           <p className="m-auto text-center text-sm text-slate-500">
             {role === "client"
-              ? `Nessun messaggio. Scrivi qui se hai domande sul viaggio: l'agenzia ti risponde appena possibile.${zefiroHint ? " Fuori orario puoi chiedere a Zefiro, in basso a destra." : ""}`
+              ? `${t("chat.emptyClient")}${zefiroHint ? t("chat.emptyZefiroHint") : ""}`
               : canApprove
                 ? "Nessun messaggio. Scrivi al cliente o invia l'itinerario in approvazione."
                 : "Nessun messaggio. Scrivi al cliente quando vuoi."}
@@ -352,14 +361,18 @@ export default function TripDialoguePanel({
                         : "bg-white text-slate-800 shadow-sm"
                 }`}
               >
-                {m.kind === "approved" && <span className="mb-0.5 block text-xs font-semibold">✓ Itinerario approvato</span>}
-                {m.kind === "change_request" && <span className="mb-0.5 block text-xs font-semibold">Richiesta di modifica</span>}
-                {m.kind === "sent_for_approval" && <span className="mb-0.5 block text-xs font-semibold opacity-80">Inviato per approvazione</span>}
+                {m.kind === "approved" && <span className="mb-0.5 block text-xs font-semibold">{t("chat.kind.approved")}</span>}
+                {m.kind === "change_request" && <span className="mb-0.5 block text-xs font-semibold">{t("chat.kind.change")}</span>}
+                {m.kind === "sent_for_approval" && <span className="mb-0.5 block text-xs font-semibold opacity-80">{t("chat.kind.sent")}</span>}
                 {reference && <span className="mb-0.5 block text-xs opacity-80">{reference}</span>}
-                <span className="whitespace-pre-line break-words">{m.body}</span>
+                {m.kind === "approved" ? null : (
+                  <span className="whitespace-pre-line break-words">
+                    {m.kind === "sent_for_approval" && role === "client" ? t("chat.sentBody") : m.body}
+                  </span>
+                )}
               </div>
               <span className="px-1 text-[11px] text-slate-500">
-                {m.author_role === "agency" ? agencyLabel : "Cliente"} · {formatWhen(m.created_at)}
+                {m.author_role === "agency" ? agencyLabel : t("common.client")} · {formatWhen(m.created_at, locale)}
               </span>
             </div>
           );
@@ -369,19 +382,19 @@ export default function TripDialoguePanel({
 
       <div className="flex flex-col gap-2">
         {mode === "changes" && (
-          <p className="text-sm font-medium text-[#233c5e]">Cosa vuoi cambiare nell&apos;itinerario?</p>
+          <p className="text-sm font-medium text-[#233c5e]">{t("chat.whatChange")}</p>
         )}
         {days.length > 0 && (
           <select
             value={ref}
             onChange={(e) => setRef(e.target.value)}
-            aria-label="Giorno o attività a cui si riferisce"
+            aria-label={t("chat.refAria")}
             className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm"
           >
-            <option value="">Riguarda tutto il viaggio</option>
+            <option value="">{t("chat.refAll")}</option>
             {days.map((d) => (
               <optgroup key={d.id} label={d.label}>
-                <option value={`day:${d.id}`}>Tutto il {d.label.toLowerCase()}</option>
+                <option value={`day:${d.id}`}>{t("chat.refDay", { day: d.label.toLowerCase() })}</option>
                 {(d.activities ?? []).map((a) => (
                   <option key={a.id} value={`activity:${a.id}`}>
                     {a.label}
@@ -420,7 +433,7 @@ export default function TripDialoguePanel({
           onChange={(e) => setText(e.target.value)}
           maxLength={2000}
           rows={mode === "changes" ? 4 : 3}
-          placeholder={mode === "changes" ? "Es. Vorrei un hotel più vicino al centro nel giorno 2" : "Scrivi un messaggio…"}
+          placeholder={mode === "changes" ? t("chat.placeholderChange") : t("chat.placeholderMessage")}
           className="w-full resize-y rounded-md border border-slate-300 px-3 py-2 text-sm leading-relaxed outline-none focus:border-[#cda876]"
         />
         <div className="flex flex-wrap items-center gap-2">
@@ -430,7 +443,7 @@ export default function TripDialoguePanel({
             onClick={submit}
             className="flex min-h-11 items-center gap-1.5 rounded-xl bg-[#233c5e] px-4 py-2 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-50"
           >
-            <Send size={15} /> {mode === "changes" ? "Invia la richiesta" : "Invia"}
+            <Send size={15} /> {mode === "changes" ? t("chat.sendRequest") : t("common.send")}
           </button>
           {mode === "changes" && (
             <button
@@ -441,7 +454,7 @@ export default function TripDialoguePanel({
               }}
               className="rounded-xl px-3 py-2 text-sm text-slate-600 hover:bg-slate-100"
             >
-              Annulla
+              {t("common.cancel")}
             </button>
           )}
         </div>
@@ -458,7 +471,7 @@ export default function TripDialoguePanel({
       </div>
 
       <div className="border-t border-[#f2e2c4] pt-3">
-        <p className="mb-1 text-xs text-slate-500">Ricevi un avviso sul telefono quando arriva una risposta:</p>
+        <p className="mb-1 text-xs text-slate-500">{t("chat.pushHint")}</p>
         <PushNotificationToggle />
       </div>
       {extra}

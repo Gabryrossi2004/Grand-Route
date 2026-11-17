@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import type { Client } from "@/lib/types";
 import DateField from "@/components/DateField";
+import { useI18n } from "@/components/I18nProvider";
 
 const inputClass =
   "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -25,6 +26,7 @@ function MaskedField({
   defaultValue: string;
 }) {
   const [visible, setVisible] = useState(false);
+  const { t } = useI18n();
 
   return (
     <div>
@@ -43,7 +45,7 @@ function MaskedField({
         <button
           type="button"
           onClick={() => setVisible((v) => !v)}
-          title={visible ? "Nascondi" : "Mostra"}
+          title={visible ? t("common.hide") : t("common.show")}
           className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600"
         >
           {visible ? <EyeOff size={15} /> : <Eye size={15} />}
@@ -56,25 +58,26 @@ function MaskedField({
 export default function ClientDetailsFields({
   client,
   defaultOpen = false,
-  summaryLabel = "Dati anagrafici e documenti (opzionali)",
+  summaryLabel,
 }: {
   client?: Client;
   defaultOpen?: boolean;
   summaryLabel?: string;
 }) {
+  const { t } = useI18n();
   return (
     <details open={defaultOpen} className="rounded-lg border border-[#e6d7bb] bg-slate-50 p-3">
-      <summary className="cursor-pointer select-none text-sm font-medium text-slate-700">{summaryLabel}</summary>
+      <summary className="cursor-pointer select-none text-sm font-medium text-slate-700">{summaryLabel ?? t("details.summaryOptional")}</summary>
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="date_of_birth" className={labelClass}>
-            Data di nascita
+            {t("details.birthDate")}
           </label>
           <DateField id="date_of_birth" name="date_of_birth" defaultValue={client?.date_of_birth ?? ""} className={inputClass} />
         </div>
         <div>
           <label htmlFor="place_of_birth" className={labelClass}>
-            Comune di nascita
+            {t("details.birthPlace")}
           </label>
           <input
             id="place_of_birth"
@@ -85,7 +88,7 @@ export default function ClientDetailsFields({
         </div>
         <div>
           <label htmlFor="nationality" className={labelClass}>
-            Cittadinanza
+            {t("details.nationality")}
           </label>
           <input
             id="nationality"
@@ -97,38 +100,38 @@ export default function ClientDetailsFields({
         <MaskedField
           id="fiscal_code"
           name="fiscal_code"
-          label="Codice fiscale"
+          label={t("details.fiscalCode")}
           defaultValue={client?.fiscal_code ?? ""}
         />
         <div className="sm:col-span-2">
           <MaskedField
             id="residence_address"
             name="residence_address"
-            label="Indirizzo di residenza"
+            label={t("details.address")}
             defaultValue={client?.residence_address ?? ""}
           />
         </div>
         <MaskedField
           id="id_card_number"
           name="id_card_number"
-          label="Numero carta d'identità"
+          label={t("details.idNumber")}
           defaultValue={client?.id_card_number ?? ""}
         />
         <div>
           <label htmlFor="id_card_expiry" className={labelClass}>
-            Scadenza carta d&apos;identità
+            {t("details.idExpiry")}
           </label>
           <DateField id="id_card_expiry" name="id_card_expiry" defaultValue={client?.id_card_expiry ?? ""} className={inputClass} />
         </div>
         <MaskedField
           id="passport_number"
           name="passport_number"
-          label="Numero passaporto"
+          label={t("details.passportNumber")}
           defaultValue={client?.passport_number ?? ""}
         />
         <div>
           <label htmlFor="passport_expiry" className={labelClass}>
-            Scadenza passaporto
+            {t("details.passportExpiry")}
           </label>
           <DateField id="passport_expiry" name="passport_expiry" defaultValue={client?.passport_expiry ?? ""} className={inputClass} />
         </div>

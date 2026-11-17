@@ -3,11 +3,20 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { sendPushToTargets } from "@/lib/webpush";
+import { getLang } from "@/lib/i18n/server";
+import { translate, type Lang } from "@/lib/i18n";
+import type { TKey } from "@/lib/i18n/dictionary";
 
 type Result = { ok: true } | { error: string };
 
 const MAX_BODY = 2000;
-const GENERIC_ERROR = "Non è stato possibile inviare. Riprova tra poco.";
+
+// Messaggi d'errore: nella lingua del cliente; l'agenzia (dashboard) resta in italiano.
+type UiT = (key: TKey, vars?: Record<string, string | number>) => string;
+async function uiT(role?: "agency" | "client"): Promise<UiT> {
+  const lang: Lang = role === "agency" ? "it" : await getLang();
+  return (key, vars) => translate(lang, key, vars);
+}
 
 type PushRow = { endpoint: string; p256dh: string; auth_key: string; recipient_role: "agency" | "client" };
 
@@ -54,12 +63,12 @@ async function withActivityName(supabase: Db, activityId: string, text: string) 
 }
 
 // Messaggi più chiari per gli errori più comuni
-function errorMessageFor(error: { code?: string; message?: string }) {
+function errorMessageFor(error: { code?: string; message?: string }, t: UiT) {
   if (error.code === "PGRST202" || /function .* schema cache/i.test(error.message ?? "")) {
-    return "Manca un aggiornamento del database (script 0036 o 0037). Avvisa la tua agenzia.";
+    return t("chat.err.dbMissing");
   }
-  if (/non autorizzato/i.test(error.message ?? "")) return "Non risulti collegato a questo viaggio.";
-  return GENERIC_ERROR;
+  if (/non autorizzato/i.test(error.message ?? "")) return t("chat.err.notLinked");
+  return t("chat.err.generic");
 }
 
 function refresh(tripId: string) {
@@ -84,12 +93,12 @@ export async function sendTripMessage(
   activityId?: string | null,
 ): Promise<Result> {
   const text = body.trim();
-  if (!text) return { error: "Scrivi un messaggio." };
-  if (text.length > MAX_BODY) return { error: `Il messaggio è troppo lungo (massimo ${MAX_BODY} caratteri).` };
-
   const supabase = await createClient();
   const who = await currentRole(supabase, tripId);
-  if (!who) return { error: "Sessione scaduta: accedi di nuovo." };
+  const t = await uiT(who?.role);
+  if (!text) return { error: t("chat.err.empty") };
+  if (text.length > MAX_BODY) return { error: t("chat.err.tooLong", { max: MAX_BODY }) };
+  if (!who) return { error: t("zefiro.err.session") };
 
   const row = {
     trip_id: tripId,
@@ -109,7 +118,7 @@ export async function sendTripMessage(
   }
   if (error) {
     console.error("[sendTripMessage]", error.code, error.message);
-    return { error: GENERIC_ERROR };
+    return { error: t("chat.err.generic") };
   }
 
   await notifyOtherParty(
@@ -126,12 +135,13 @@ export async function sendTripMessage(
 export async function approveTrip(tripId: string): Promise<Result> {
   const supabase = await createClient();
   const who = await currentRole(supabase, tripId);
-  if (!who) return { error: "Sessione scaduta: accedi di nuovo." };
+  const t = await uiT(who?.role);
+  if (!who) return { error: t("zefiro.err.session") };
 
   const { error } = await supabase.rpc("client_set_trip_approval", { p_trip_id: tripId, p_status: "approved" });
   if (error) {
     console.error("[approveTrip]", error.code, error.message);
-    return { error: errorMessageFor(error) };
+    return { error: errorMessageFor(error, t) };
   }
   await notifyOtherParty(supabase, tripId, "Itinerario approvato", `Il cliente ha approvato "${who.title}".`);
   refresh(tripId);
@@ -146,12 +156,12 @@ export async function requestTripChanges(
   activityId?: string | null,
 ): Promise<Result> {
   const text = note.trim();
-  if (!text) return { error: "Descrivi cosa vuoi cambiare." };
-  if (text.length > MAX_BODY) return { error: `Il testo è troppo lungo (massimo ${MAX_BODY} caratteri).` };
-
   const supabase = await createClient();
   const who = await currentRole(supabase, tripId);
-  if (!who) return { error: "Sessione scaduta: accedi di nuovo." };
+  const t = await uiT(who?.role);
+  if (!text) return { error: t("chat.err.describe") };
+  if (text.length > MAX_BODY) return { error: t("chat.err.textTooLong", { max: MAX_BODY }) };
+  if (!who) return { error: t("zefiro.err.session") };
 
   const args = {
     p_trip_id: tripId,
@@ -168,7 +178,7 @@ export async function requestTripChanges(
   }
   if (error) {
     console.error("[requestTripChanges]", error.code, error.message);
-    return { error: errorMessageFor(error) };
+    return { error: errorMessageFor(error, t) };
   }
   await notifyOtherParty(supabase, tripId, "Richiesta di modifiche", `${who.title}: ${text}`);
   refresh(tripId);
@@ -194,7 +204,7 @@ export async function sendTripForApproval(tripId: string): Promise<Result> {
     .eq("id", tripId);
   if (updateError) {
     console.error("[sendTripForApproval]", updateError.message);
-    return { error: GENERIC_ERROR };
+    return { error: translate("it", "chat.err.generic") };
   }
 
   await supabase.from("trip_messages").insert({

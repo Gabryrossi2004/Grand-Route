@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Fraunces, Lora, Work_Sans } from "next/font/google";
 import "./globals.css";
+import { getLang } from "@/lib/i18n/server";
 
 const uiSans = Work_Sans({
   variable: "--font-ui",
@@ -32,10 +33,11 @@ export const metadata: Metadata = {
   description: "Grand Route: crea itinerari di viaggio brandizzati da condividere con i tuoi clienti",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const lang = await getLang();
   return (
     <html
-      lang="it"
+      lang={lang}
       className={`${uiSans.variable} ${displaySerif.variable} ${readableFont.variable} ${classicFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

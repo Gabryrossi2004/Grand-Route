@@ -4,22 +4,24 @@ import { useActionState } from "react";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
 import AuthShell from "@/components/AuthShell";
+import { useI18n } from "@/components/I18nProvider";
 import { requestPasswordReset } from "./actions";
 
 export default function ForgotPasswordPage() {
   const [state, formAction, pending] = useActionState(requestPasswordReset, undefined);
+  const { t } = useI18n();
 
   if (state?.success) {
     return (
       <AuthShell>
         <div className="text-center">
           <AuthBrandHeader />
-          <h1 className="mb-2 text-xl font-semibold text-slate-900">Controlla la tua email</h1>
+          <h1 className="mb-2 text-xl font-semibold text-slate-900">{t("auth.checkEmail")}</h1>
           <p className="text-sm text-slate-500">
-            Se quell&apos;indirizzo è registrato, ti abbiamo mandato un link per scegliere una nuova password.
+            {t("auth.forgotSent")}
           </p>
           <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
-            Torna al login
+            {t("auth.backToLogin")}
           </Link>
         </div>
       </AuthShell>
@@ -29,15 +31,15 @@ export default function ForgotPasswordPage() {
   return (
     <AuthShell>
       <AuthBrandHeader />
-        <h1 className="mb-1 text-xl font-semibold text-slate-900">Password dimenticata</h1>
+        <h1 className="mb-1 text-xl font-semibold text-slate-900">{t("auth.forgotTitle")}</h1>
         <p className="mb-6 text-sm text-slate-500">
-          Inserisci la tua email: ti mandiamo un link per scegliere una nuova password.
+          {t("auth.forgotIntro")}
         </p>
 
         <form action={formAction} className="flex flex-col gap-4">
           <div>
             <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700">
-              Email
+              {t("auth.email")}
             </label>
             <input
               id="email"
@@ -55,13 +57,13 @@ export default function ForgotPasswordPage() {
             disabled={pending}
             className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
-            {pending ? "Invio in corso…" : "Invia il link"}
+            {pending ? t("auth.sending") : t("auth.sendLink")}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link href="/login" className="font-medium text-[#233c5e] hover:underline">
-            Torna al login
+            {t("auth.backToLogin")}
           </Link>
         </p>
     </AuthShell>

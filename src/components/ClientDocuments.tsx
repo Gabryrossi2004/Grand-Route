@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CheckCircle2, CloudOff, Download, FileText, Loader2, Trash2 } from "lucide-react";
+import { useI18n } from "@/components/I18nProvider";
 import {
   listOfflineDocs,
   offlineSupported,
@@ -15,6 +16,7 @@ export type ClientDoc = { id: string; name: string; url: string | null; where: s
 // Documenti del viaggio per il cliente. Ogni documento si può salvare sul
 // telefono per averlo anche senza rete (in viaggio, all'estero, in aereo).
 export default function ClientDocuments({ documents }: { documents: ClientDoc[] }) {
+  const { t } = useI18n();
   const [saved, setSaved] = useState<Record<string, true>>({});
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -33,7 +35,7 @@ export default function ClientDocuments({ documents }: { documents: ClientDoc[] 
       await saveOfflineDoc(doc.id, doc.name, doc.url);
       setSaved((s) => ({ ...s, [doc.id]: true }));
     } catch {
-      setMessage("Non è stato possibile salvare il documento. Controlla la connessione e riprova.");
+      setMessage(t("docs.saveError"));
     } finally {
       setBusy(null);
     }
@@ -52,7 +54,7 @@ export default function ClientDocuments({ documents }: { documents: ClientDoc[] 
     // Senza rete (o con il link scaduto) si apre la copia salvata
     if (saved[doc.id] && (!navigator.onLine || !doc.url)) {
       event.preventDefault();
-      if (!(await openOfflineDoc(doc.id))) setMessage("La copia salvata non è più disponibile.");
+      if (!(await openOfflineDoc(doc.id))) setMessage(t("docs.copyMissing"));
     }
   }
 
@@ -60,9 +62,9 @@ export default function ClientDocuments({ documents }: { documents: ClientDoc[] 
 
   return (
     <section className="theme-card mb-8 p-5">
-      <h2 className="theme-heading-font mb-1 text-lg font-semibold">I tuoi documenti</h2>
+      <h2 className="theme-heading-font mb-1 text-lg font-semibold">{t("docs.title")}</h2>
       <p className="theme-muted mb-3 text-sm">
-        Biglietti e voucher del viaggio. Salvali sul telefono per averli anche senza rete.
+        {t("docs.intro")}
       </p>
       <ul className="flex flex-col gap-2">
         {documents.map((doc) => (
@@ -85,13 +87,13 @@ export default function ClientDocuments({ documents }: { documents: ClientDoc[] 
                 {saved[doc.id] ? (
                   <>
                     <span className="flex items-center gap-1 text-xs font-medium text-green-700">
-                      <CheckCircle2 size={14} /> Salvato sul telefono
+                      <CheckCircle2 size={14} /> {t("docs.saved")}
                     </span>
                     <button
                       type="button"
                       onClick={() => remove(doc)}
-                      aria-label="Rimuovi dal telefono"
-                      title="Rimuovi dal telefono"
+                      aria-label={t("docs.remove")}
+                      title={t("docs.remove")}
                       className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-black/5"
                     >
                       <Trash2 size={15} />
@@ -105,7 +107,7 @@ export default function ClientDocuments({ documents }: { documents: ClientDoc[] 
                     className="flex min-h-9 items-center gap-1.5 rounded-full border border-current/25 bg-white/70 px-3 py-1 text-xs font-medium hover:bg-white disabled:opacity-60"
                   >
                     {busy === doc.id ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}
-                    Salva per l&apos;uso senza rete
+                    {t("docs.saveOffline")}
                   </button>
                 )}
               </div>

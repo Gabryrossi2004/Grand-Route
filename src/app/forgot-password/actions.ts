@@ -2,13 +2,15 @@
 
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
+import { getT } from "@/lib/i18n/server";
 
 export async function requestPasswordReset(
   _prevState: { error?: string; success?: boolean } | undefined,
   formData: FormData,
 ) {
   const email = String(formData.get("email") ?? "").trim();
-  if (!email) return { error: "Inserisci la tua email." };
+  const { t } = await getT();
+  if (!email) return { error: t("auth.enterEmail") };
 
   const host = (await headers()).get("host");
   const protocol = host?.includes("localhost") ? "http" : "https";

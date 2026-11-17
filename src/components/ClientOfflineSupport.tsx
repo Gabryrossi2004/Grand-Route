@@ -16,9 +16,11 @@ export function RegisterServiceWorker() {
 export function ClientSignOutForm({
   action,
   className,
+  label = "Esci",
 }: {
   action: () => Promise<void> | void;
   className?: string;
+  label?: string;
 }) {
   const cleared = useRef(false);
   return (
@@ -34,7 +36,7 @@ export function ClientSignOutForm({
       }}
     >
       <button type="submit" className={className}>
-        Esci
+        {label}
       </button>
     </form>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { BellRing, BellOff } from "lucide-react";
 import { removePushSubscription, savePushSubscription } from "@/lib/actions/push";
+import { useI18n } from "@/components/I18nProvider";
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -14,6 +15,7 @@ function urlBase64ToUint8Array(base64String: string) {
 type Status = "checking" | "unsupported" | "denied" | "off" | "on";
 
 export default function PushNotificationToggle() {
+  const { t } = useI18n();
   const [status, setStatus] = useState<Status>("checking");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -56,7 +58,7 @@ export default function PushNotificationToggle() {
       }
       setStatus("on");
     } catch {
-      setError("Non è stato possibile attivare le notifiche su questo dispositivo.");
+      setError(t("push.enableError"));
     } finally {
       setPending(false);
     }
@@ -81,14 +83,13 @@ export default function PushNotificationToggle() {
   if (status === "checking") return null;
 
   if (status === "unsupported") {
-    return <p className="text-xs text-slate-500">Il tuo browser non supporta le notifiche push.</p>;
+    return <p className="text-xs text-slate-500">{t("push.unsupported")}</p>;
   }
 
   if (status === "denied") {
     return (
       <p className="text-xs text-slate-500">
-        Hai bloccato le notifiche per questo sito dal browser: per riattivarle devi sbloccarle dalle impostazioni del
-        browser stesso.
+        {t("push.denied")}
       </p>
     );
   }
@@ -102,7 +103,7 @@ export default function PushNotificationToggle() {
         className="flex items-center gap-2 rounded-lg border border-[#e6d7bb] bg-white px-3 py-2 text-sm font-medium text-[#233c5e] transition hover:bg-[#faf3e6] disabled:opacity-60"
       >
         {status === "on" ? <BellOff size={16} /> : <BellRing size={16} />}
-        {pending ? "Attendi…" : status === "on" ? "Disattiva su questo dispositivo" : "Attiva notifiche su questo dispositivo"}
+        {pending ? t("common.wait") : status === "on" ? t("push.disable") : t("push.enable")}
       </button>
       {error && <p className="mt-1 text-xs text-red-600">{error}</p>}
     </div>

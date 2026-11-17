@@ -9,30 +9,32 @@ import { themeFontVariables } from "@/lib/themeFonts";
 import PhotoGallery from "@/components/PhotoGallery";
 import { darkenForWhiteText, sanitizeHex } from "@/lib/brandColor";
 import Image from "next/image";
+import { getT } from "@/lib/i18n/server";
+import { activityLabel, detailLabel, type Lang, type TKey, type Vars } from "@/lib/i18n";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
-function formatDate(value: string | null) {
+function formatDate(value: string | null, locale: string) {
   if (!value) return null;
-  return new Date(`${value}T00:00:00`).toLocaleDateString("it-IT");
+  return new Date(`${value}T00:00:00`).toLocaleDateString(locale);
 }
 
-function dayDateLabel(day: TripDay, index: number) {
+function dayDateLabel(day: TripDay, index: number, locale: string, t: (key: TKey, vars?: Vars) => string) {
   return day.day_date
-    ? new Date(day.day_date).toLocaleDateString("it-IT", {
+    ? new Date(day.day_date).toLocaleDateString(locale, {
         weekday: "long",
         day: "numeric",
         month: "long",
       })
-    : `Giorno ${index + 1}`;
+    : t("trip.day", { n: index + 1 });
 }
 
 // Presentazione dell'itinerario di un viaggio, brandizzata con il tema
 // scelto dall'agenzia: usata sia dalla pagina pubblica (/t/[slug], accesso
 // tramite link e viaggio pubblicato) sia dall'area clienti autenticata
 // (/client/trips/[id], accesso tramite login e proprietà del viaggio).
-export default function TripItineraryView({
+export default async function TripItineraryView({
   trip,
   days,
   agencyName,
@@ -60,12 +62,13 @@ export default function TripItineraryView({
   // Contenuto in cima alla pagina, sotto l'intestazione (conto alla rovescia, documenti...)
   contentTop?: React.ReactNode;
 }) {
+  const { t, lang, locale } = await getT();
   const theme = trip.theme || "elegante";
   const price = getDisplayPrice(trip);
 
   const dateRange =
     trip.start_date && trip.end_date
-      ? `${new Date(trip.start_date).toLocaleDateString("it-IT")} – ${new Date(trip.end_date).toLocaleDateString("it-IT")}`
+      ? `${new Date(trip.start_date).toLocaleDateString(locale)} – ${new Date(trip.end_date).toLocaleDateString(locale)}`
       : null;
 
   const brand = sanitizeHex(brandColor);
@@ -106,21 +109,20 @@ export default function TripItineraryView({
         {contentTop}
         {trip.itinerary_stage === "preliminare" && (
           <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-            <strong>Itinerario preliminare.</strong> Voli, alloggi e servizi sono ancora indicativi e potrebbero
-            cambiare prima della conferma definitiva.
+            <strong>{t("trip.preliminaryTitle")}</strong> {t("trip.preliminaryText")}
           </div>
         )}
 
-        {days.length === 0 && <p className="theme-muted">L&apos;itinerario sarà disponibile a breve.</p>}
+        {days.length === 0 && <p className="theme-muted">{t("trip.soon")}</p>}
 
         {days.length > 0 && (
           <section className="theme-card mb-10 p-5">
-            <h2 className="theme-heading-font mb-3 text-lg font-semibold">Riepilogo del viaggio</h2>
+            <h2 className="theme-heading-font mb-3 text-lg font-semibold">{t("trip.summary")}</h2>
             <div className="flex flex-col gap-3">
               {days.map((day, index) => (
                 <div key={day.id} className="theme-border border-t pt-3 first:border-t-0 first:pt-0">
                   <p className="theme-heading-font text-sm font-semibold">
-                    <span className="capitalize">{dayDateLabel(day, index)}</span>
+                    <span className="capitalize">{dayDateLabel(day, index, locale, t)}</span>
                     {day.title && <span className="font-normal"> — {day.title}</span>}
                   </p>
                   <ul className="mt-1 flex flex-col gap-0.5">
@@ -132,7 +134,7 @@ export default function TripItineraryView({
                         <span>{activity.title}</span>
                       </li>
                     ))}
-                    {day.activities.length === 0 && <li className="theme-muted text-sm">Giornata libera</li>}
+                    {day.activities.length === 0 && <li className="theme-muted text-sm">{t("trip.freeDay")}</li>}
                   </ul>
                 </div>
               ))}
@@ -142,7 +144,7 @@ export default function TripItineraryView({
 
         <div className="flex flex-col gap-8">
           {days.map((day, index) => {
-            const dateLabel = dayDateLabel(day, index);
+            const dateLabel = dayDateLabel(day, index, locale, t);
 
             return (
               <section key={day.id}>
@@ -189,14 +191,14 @@ export default function TripItineraryView({
                               style={{ color: meta.color, borderColor: meta.color }}
                               className="mt-1 inline-block rounded-full border px-1.5 py-0.5 text-xs font-medium sm:hidden"
                             >
-                              {meta.label}
+                              {activityLabel(lang, activity.activity_type, meta.label)}
                             </span>
                           </div>
                           <span
                             style={{ color: meta.color, borderColor: meta.color }}
                             className="mt-1 hidden shrink-0 rounded-full border px-1.5 py-0.5 text-xs font-medium sm:inline-block"
                           >
-                            {meta.label}
+                            {activityLabel(lang, activity.activity_type, meta.label)}
                           </span>
                         </div>
                         {hasBody && (
@@ -212,7 +214,7 @@ export default function TripItineraryView({
                               <dl className="theme-muted mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
                                 {detailEntries.map(([key, value]) => (
                                   <div key={key} className="flex gap-1">
-                                    <dt className="font-medium">{detailFieldLabel(activity.activity_type, key)}:</dt>
+                                    <dt className="font-medium">{detailLabel(lang, activity.activity_type, key, detailFieldLabel(activity.activity_type, key))}:</dt>
                                     <dd>{value}</dd>
                                   </div>
                                 ))}
@@ -227,7 +229,7 @@ export default function TripItineraryView({
                       </li>
                     );
                   })}
-                  {day.activities.length === 0 && <li className="theme-muted text-sm">Nessuna attività pianificata.</li>}
+                  {day.activities.length === 0 && <li className="theme-muted text-sm">{t("trip.noActivities")}</li>}
                 </ol>
               </section>
             );
@@ -236,37 +238,37 @@ export default function TripItineraryView({
 
         {price && (
           <section className="theme-card mt-10 p-5">
-            <h2 className="theme-muted mb-2 text-sm font-semibold uppercase tracking-wide">Quota di partecipazione</h2>
+            <h2 className="theme-muted mb-2 text-sm font-semibold uppercase tracking-wide">{t("trip.price")}</h2>
             {price.breakdown ? (
               <div className="theme-muted flex flex-col gap-1 text-sm">
                 <div className="flex justify-between">
-                  <span>Costo del viaggio</span>
-                  <span>{formatEuro(price.breakdown.net)}</span>
+                  <span>{t("trip.priceNet")}</span>
+                  <span>{formatEuro(price.breakdown.net, locale)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Servizio di organizzazione</span>
-                  <span>{formatEuro(price.breakdown.commission)}</span>
+                  <span>{t("trip.priceService")}</span>
+                  <span>{formatEuro(price.breakdown.commission, locale)}</span>
                 </div>
                 <div className="theme-border theme-accent mt-1 flex justify-between border-t pt-1 text-base font-semibold">
-                  <span>Totale</span>
-                  <span>{formatEuro(price.total)}</span>
+                  <span>{t("trip.total")}</span>
+                  <span>{formatEuro(price.total, locale)}</span>
                 </div>
               </div>
             ) : (
-              <div className="theme-accent text-2xl font-bold">{formatEuro(price.total)}</div>
+              <div className="theme-accent text-2xl font-bold">{formatEuro(price.total, locale)}</div>
             )}
           </section>
         )}
 
         {trip.show_rate_block && (trip.rate_includes || trip.rate_excludes || agencyTerms) && (
           <section className="theme-card mt-10 p-5">
-            <h2 className="theme-heading-font mb-3 text-lg font-semibold">Tariffa &amp; Termini</h2>
+            <h2 className="theme-heading-font mb-3 text-lg font-semibold">{t("trip.rateTitle")}</h2>
             {(trip.rate_includes || trip.rate_excludes) && (
               <div className="grid gap-4 sm:grid-cols-2">
                 {trip.rate_includes && (
                   <div>
                     <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
-                      La quota include
+                      {t("trip.rateIncludes")}
                     </h3>
                     <ul className="list-inside list-disc text-sm">
                       {trip.rate_includes.split("\n").filter(Boolean).map((line, i) => (
@@ -278,7 +280,7 @@ export default function TripItineraryView({
                 {trip.rate_excludes && (
                   <div>
                     <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
-                      La quota non include
+                      {t("trip.rateExcludes")}
                     </h3>
                     <ul className="list-inside list-disc text-sm">
                       {trip.rate_excludes.split("\n").filter(Boolean).map((line, i) => (
@@ -292,7 +294,7 @@ export default function TripItineraryView({
             {agencyTerms && (
               <div className="theme-border mt-4 border-t pt-4">
                 <h3 className="theme-muted mb-1 text-xs font-semibold uppercase tracking-wide">
-                  Termini e Condizioni
+                  {t("trip.terms")}
                 </h3>
                 <p className="theme-muted whitespace-pre-line text-sm">{agencyTerms}</p>
               </div>
@@ -302,7 +304,7 @@ export default function TripItineraryView({
 
         {payments && payments.length > 0 && (
           <section className="theme-card mt-10 p-5">
-            <h2 className="theme-heading-font mb-3 text-lg font-semibold">Pagamenti</h2>
+            <h2 className="theme-heading-font mb-3 text-lg font-semibold">{t("trip.payments")}</h2>
             <ul className="flex flex-col gap-2">
               {payments.map((payment) => (
                 <li
@@ -310,17 +312,17 @@ export default function TripItineraryView({
                   className="theme-border flex flex-wrap items-center justify-between gap-2 border-b pb-2 text-sm last:border-0 last:pb-0"
                 >
                   <div>
-                    <p className="font-medium">{payment.notes || "Quota viaggio"}</p>
-                    {payment.due_date && <p className="theme-muted text-xs">Scadenza: {formatDate(payment.due_date)}</p>}
+                    <p className="font-medium">{payment.notes || t("trip.paymentDefault")}</p>
+                    {payment.due_date && <p className="theme-muted text-xs">{t("trip.dueDate", { date: formatDate(payment.due_date, locale) })}</p>}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold">{formatEuro(payment.amount)}</span>
+                    <span className="font-semibold">{formatEuro(payment.amount, locale)}</span>
                     <span
                       className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                         payment.paid_date ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"
                       }`}
                     >
-                      {payment.paid_date ? "Pagato" : "Da pagare"}
+                      {payment.paid_date ? t("trip.paid") : t("trip.toPay")}
                     </span>
                   </div>
                 </li>

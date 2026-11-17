@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PhoneCall } from "lucide-react";
 import { notifyEmergencyPush } from "@/app/client/(portal)/actions";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function EmergencyButton({
   tripId,
@@ -16,6 +17,7 @@ export default function EmergencyButton({
   agencyPhone: string;
 }) {
   const [sent, setSent] = useState(false);
+  const { t } = useI18n();
 
   function handleClick() {
     const digits = agencyPhone.replace(/[^\d]/g, "");
@@ -33,7 +35,7 @@ export default function EmergencyButton({
       className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-red-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-red-900/30 transition hover:bg-red-700"
     >
       <PhoneCall size={18} />
-      {sent ? "Messaggio aperto" : "Emergenza"}
+      {sent ? t("sos.opened") : t("sos.button")}
     </button>
   );
 }

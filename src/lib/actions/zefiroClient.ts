@@ -4,6 +4,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
+import { getT } from "@/lib/i18n/server";
 import { costInEuro, parseAiPlan, planById, type PricedModel } from "@/lib/aiPricing";
 import { buildClientSystemPrompt, buildClientTripDigest, toneInstructions } from "@/lib/clientTripDigest";
 import { loadTripStops, romeToday, type DayInput } from "@/lib/destinationInfo";
@@ -98,44 +99,45 @@ export async function askZefiroAboutTrip(
   history?: ZefiroTurn[],
   location?: ZefiroLocation,
 ): Promise<ZefiroReply> {
+  const { t, lang } = await getT();
   const text = String(question ?? "").trim();
-  if (!text) return { error: "Scrivi la tua domanda." };
-  if (text.length > MAX_QUESTION) return { error: `La domanda è troppo lunga (massimo ${MAX_QUESTION} caratteri).` };
+  if (!text) return { error: t("zefiro.err.empty") };
+  if (text.length > MAX_QUESTION) return { error: t("zefiro.err.tooLong", { max: MAX_QUESTION }) };
 
   const supabase: Db = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  if (!user) return { error: t("zefiro.err.session") };
 
   // 1. Zefiro è acceso per questo viaggio? C'è ancora budget oggi?
   const { data: statusRows, error: statusError } = await supabase.rpc("client_zefiro_status", { p_trip_id: tripId });
   const status = (statusRows as { enabled: boolean; plan: string; spent_today: number }[] | null)?.[0];
   if (statusError || !status) {
     if (statusError) console.error("[askZefiro] stato", statusError.code, statusError.message);
-    return { error: "Zefiro non è disponibile per questo viaggio.", suggestAgency: true };
+    return { error: t("zefiro.err.unavailable"), suggestAgency: true };
   }
-  if (!status.enabled) return { error: "Zefiro non è attivo per questo viaggio.", suggestAgency: true };
+  if (!status.enabled) return { error: t("zefiro.err.off"), suggestAgency: true };
 
   const budget = planById(parseAiPlan(status.plan)).dailyBudgetEur;
   if (Number(status.spent_today) >= budget * CLIENT_SHARE_OF_BUDGET) {
-    return { error: "Per oggi Zefiro ha finito le risposte. Scrivi all'agenzia: ti risponde appena possibile.", suggestAgency: true };
+    return { error: t("zefiro.err.budget"), suggestAgency: true };
   }
 
   // 2. Prenota la domanda (qui il database applica i limiti per cliente)
   const { data: callId, error: reserveError } = await supabase.rpc("client_zefiro_reserve", { p_trip_id: tripId });
   if (reserveError || !callId) {
     if (/limite_zefiro/.test(reserveError?.message ?? "")) {
-      return { error: "Hai fatto molte domande a Zefiro. Riprova tra un po', oppure scrivi all'agenzia.", suggestAgency: true };
+      return { error: t("zefiro.err.limit"), suggestAgency: true };
     }
     console.error("[askZefiro] prenotazione", reserveError?.code, reserveError?.message);
-    return { error: "Non è stato possibile contattare Zefiro. Riprova tra poco." };
+    return { error: t("zefiro.err.contact") };
   }
 
   try {
     // 3. I dati che il cliente può già vedere (le regole del database valgono anche qui)
     const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).maybeSingle();
-    if (!trip) return { error: "Viaggio non trovato." };
+    if (!trip) return { error: t("zefiro.err.noTrip") };
     const [{ data: days }, { data: payments }, { data: owner }] = await Promise.all([
       supabase
         .from("trip_days")
@@ -201,6 +203,7 @@ export async function askZefiroAboutTrip(
       topics,
       guide,
       nearby,
+      language: lang,
     });
 
     const messages: ZefiroTurn[] = [...cleanHistory(history), { role: "user", content: text }];
@@ -225,11 +228,11 @@ export async function askZefiroAboutTrip(
     if (costError) console.error("[askZefiro] costo non registrato:", costError.message);
 
     if (result.response.stop_reason === "refusal" || !result.response.parsed_output) {
-      return { answer: "Su questo non posso aiutarti: scrivi all'agenzia, ti risponderà direttamente.", needsAgency: true };
+      return { answer: t("zefiro.err.refusal"), needsAgency: true };
     }
     return { answer: result.response.parsed_output.answer, needsAgency: result.response.parsed_output.needs_agency };
   } catch (error) {
     console.error("[askZefiro]", (error as Error).message);
-    return { error: "Zefiro non riesce a rispondere in questo momento. Riprova tra poco, oppure scrivi all'agenzia.", suggestAgency: true };
+    return { error: t("zefiro.err.fail"), suggestAgency: true };
   }
 }

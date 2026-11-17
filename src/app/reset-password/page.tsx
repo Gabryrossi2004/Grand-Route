@@ -5,6 +5,7 @@ import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
 import AuthShell from "@/components/AuthShell";
 import { createClient } from "@/lib/supabase/client";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
@@ -12,17 +13,18 @@ export default function ResetPasswordPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [error, setError] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
+  const { t } = useI18n();
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
 
     if (password.length < 6) {
-      setError("La password deve avere almeno 6 caratteri.");
+      setError(t("auth.passwordShort"));
       return;
     }
     if (password !== confirmPassword) {
-      setError("Le due password non coincidono.");
+      setError(t("auth.mismatch"));
       return;
     }
 
@@ -32,9 +34,7 @@ export default function ResetPasswordPage() {
 
     if (updateError) {
       setStatus("idle");
-      setError(
-        "Non è stato possibile aggiornare la password. Il link potrebbe essere scaduto: richiedine uno nuovo.",
-      );
+      setError(t("auth.updateFailed"));
       return;
     }
 
@@ -54,27 +54,27 @@ export default function ResetPasswordPage() {
       <AuthShell>
         <div className="text-center">
           <AuthBrandHeader />
-          <h1 className="mb-2 text-xl font-semibold text-slate-900">Password aggiornata</h1>
-          <p className="mb-6 text-sm text-slate-500">Ora puoi accedere con la nuova password.</p>
+          <h1 className="mb-2 text-xl font-semibold text-slate-900">{t("auth.passwordUpdated")}</h1>
+          <p className="mb-6 text-sm text-slate-500">{t("auth.passwordUpdatedText")}</p>
           <Link
             href={isClient ? "/client/login" : "/login"}
             className="inline-block rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f]"
           >
-            Vai al login
+            {t("auth.goLogin")}
           </Link>
           <p className="mt-4 text-xs text-slate-500">
             {isClient ? (
               <>
-                Sei un&apos;agenzia?{" "}
+                {t("auth.isAgency")}{" "}
                 <Link href="/login" className="font-medium hover:underline">
-                  Accedi qui
+                  {t("auth.agencyLogin")}
                 </Link>
               </>
             ) : (
               <>
-                Accedi all&apos;area clienti?{" "}
+                {t("auth.clientAreaQ")}{" "}
                 <Link href="/client/login" className="font-medium hover:underline">
-                  Accedi qui
+                  {t("auth.agencyLogin")}
                 </Link>
               </>
             )}
@@ -87,13 +87,13 @@ export default function ResetPasswordPage() {
   return (
     <AuthShell>
       <AuthBrandHeader />
-        <h1 className="mb-1 text-xl font-semibold text-slate-900">Scegli una nuova password</h1>
-        <p className="mb-6 text-sm text-slate-500">Deve avere almeno 6 caratteri.</p>
+        <h1 className="mb-1 text-xl font-semibold text-slate-900">{t("auth.newPasswordTitle")}</h1>
+        <p className="mb-6 text-sm text-slate-500">{t("auth.newPasswordHint")}</p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <label htmlFor="password" className="mb-1 block text-sm font-medium text-slate-700">
-              Nuova password
+              {t("auth.newPassword")}
             </label>
             <input
               id="password"
@@ -107,7 +107,7 @@ export default function ResetPasswordPage() {
           </div>
           <div>
             <label htmlFor="confirmPassword" className="mb-1 block text-sm font-medium text-slate-700">
-              Ripeti la password
+              {t("auth.repeatPassword")}
             </label>
             <input
               id="confirmPassword"
@@ -127,13 +127,13 @@ export default function ResetPasswordPage() {
             disabled={status === "loading"}
             className="mt-2 rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#e6d7bb] transition hover:bg-[#17283f] disabled:opacity-60"
           >
-            {status === "loading" ? "Salvataggio…" : "Salva la nuova password"}
+            {status === "loading" ? t("common.saving") : t("auth.saveNewPassword")}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link href="/login" className="font-medium text-[#233c5e] hover:underline">
-            Torna al login
+            {t("auth.backToLogin")}
           </Link>
         </p>
     </AuthShell>

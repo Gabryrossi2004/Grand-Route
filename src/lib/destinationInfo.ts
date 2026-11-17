@@ -1,3 +1,5 @@
+import { translate, type TKey, type Vars } from "@/lib/i18n";
+
 // Informazioni sulla meta del viaggio per l'area clienti: conto alla
 // rovescia, meteo e fuso orario. Il meteo viene da Open-Meteo (servizio
 // gratuito, senza chiave): gli si invia SOLO il nome della località, mai
@@ -29,14 +31,17 @@ export function tripCountdown(start: string | null, end: string | null, now = ne
   return { kind: "after" };
 }
 
-export function countdownText(c: Countdown): { big: string; small: string } | null {
+type Translate = (key: TKey, vars?: Vars) => string;
+const italian: Translate = (key, vars) => translate("it", key, vars);
+
+export function countdownText(c: Countdown, t: Translate = italian): { big: string; small: string } | null {
   if (!c) return null;
   if (c.kind === "before") {
-    if (c.days === 1) return { big: "Domani", small: "si parte!" };
-    return { big: String(c.days), small: "giorni alla partenza" };
+    if (c.days === 1) return { big: t("glance.tomorrow"), small: t("glance.tomorrowSub") };
+    return { big: String(c.days), small: t("glance.daysLeft") };
   }
-  if (c.kind === "during") return { big: `Giorno ${c.day}`, small: `di ${c.total}: buon viaggio!` };
-  return { big: "Bentornato", small: "il viaggio è concluso" };
+  if (c.kind === "during") return { big: t("glance.dayOf", { day: c.day }), small: t("glance.dayOfSub", { total: c.total }) };
+  return { big: t("glance.back"), small: t("glance.backSub") };
 }
 
 // Differenza oraria tra la meta e l'Italia, in ore (es. +2, -6)
@@ -62,18 +67,18 @@ export function localTimeAt(timeZone: string, now = new Date(), utcOffsetSeconds
 }
 
 // Descrizione e simbolo dei codici meteo (standard WMO)
-export function describeWeather(code: number): { label: string; icon: string } {
-  if (code === 0) return { label: "Sereno", icon: "☀️" };
-  if (code <= 2) return { label: "Poco nuvoloso", icon: "🌤️" };
-  if (code === 3) return { label: "Coperto", icon: "☁️" };
-  if (code === 45 || code === 48) return { label: "Nebbia", icon: "🌫️" };
-  if (code >= 51 && code <= 57) return { label: "Pioggerella", icon: "🌦️" };
-  if (code >= 61 && code <= 67) return { label: "Pioggia", icon: "🌧️" };
-  if (code >= 71 && code <= 77) return { label: "Neve", icon: "❄️" };
-  if (code >= 80 && code <= 82) return { label: "Rovesci", icon: "🌦️" };
-  if (code === 85 || code === 86) return { label: "Neve", icon: "🌨️" };
-  if (code >= 95) return { label: "Temporale", icon: "⛈️" };
-  return { label: "Variabile", icon: "🌥️" };
+export function describeWeather(code: number, t: Translate = italian): { label: string; icon: string } {
+  if (code === 0) return { label: t("weather.clear"), icon: "☀️" };
+  if (code <= 2) return { label: t("weather.partly"), icon: "🌤️" };
+  if (code === 3) return { label: t("weather.overcast"), icon: "☁️" };
+  if (code === 45 || code === 48) return { label: t("weather.fog"), icon: "🌫️" };
+  if (code >= 51 && code <= 57) return { label: t("weather.drizzle"), icon: "🌦️" };
+  if (code >= 61 && code <= 67) return { label: t("weather.rain"), icon: "🌧️" };
+  if (code >= 71 && code <= 77) return { label: t("weather.snow"), icon: "❄️" };
+  if (code >= 80 && code <= 82) return { label: t("weather.showers"), icon: "🌦️" };
+  if (code === 85 || code === 86) return { label: t("weather.snow"), icon: "🌨️" };
+  if (code >= 95) return { label: t("weather.storm"), icon: "⛈️" };
+  return { label: t("weather.variable"), icon: "🌥️" };
 }
 
 export type Forecast = { date: string; min: number; max: number; code: number };

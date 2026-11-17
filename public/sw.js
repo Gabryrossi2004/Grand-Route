@@ -12,7 +12,7 @@ self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (event) => event.waitUntil(clients.claim()));
 
 const OFFLINE_HTML =
-  '<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Senza rete</title></head><body style="font-family:system-ui;background:#faf3e6;color:#233c5e;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;padding:24px;text-align:center"><div><h1 style="font-size:1.4rem">Sei senza rete</h1><p>Questa pagina non è stata ancora salvata. Riaprila quando sei online: da quel momento sarà disponibile anche offline.</p></div></body></html>';
+  '<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline</title></head><body style="font-family:system-ui;background:#faf3e6;color:#233c5e;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;padding:24px;text-align:center"><div><h1 id="t" style="font-size:1.4rem">Sei senza rete</h1><p id="p">Questa pagina non è stata ancora salvata. Riaprila quando sei online: da quel momento sarà disponibile anche offline.</p></div><script>if(!/^it/i.test(navigator.language||"it")){document.documentElement.lang="en";document.getElementById("t").textContent="You are offline";document.getElementById("p").textContent="This page has not been saved yet. Open it again when you are online: from then on it will be available offline too.";}</script></body></html>';
 
 async function networkFirst(request) {
   try {

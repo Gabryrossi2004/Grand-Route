@@ -1,8 +1,10 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import ClientTripsGrid, { type TripWithAgency } from "@/components/ClientTripsGrid";
 import { darkenForWhiteText, mixColors, sanitizeHex } from "@/lib/brandColor";
+import { getT } from "@/lib/i18n/server";
 
 export default async function ClientHomePage() {
+  const { t, locale } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
 
@@ -42,12 +44,12 @@ export default async function ClientHomePage() {
         className="relative mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-[#233c5e] to-[#34527c] px-7 py-9 text-white"
       >
         <div className="pointer-events-none absolute -right-14 -top-14 h-56 w-56 rounded-full bg-[#cda876]/25" />
-        <p className="eyebrow !text-white/70">{firstName ? `Ciao, ${firstName}` : "Benvenuto"}</p>
-        <h1 className="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">I tuoi viaggi</h1>
+        <p className="eyebrow !text-white/70">{firstName ? t("portal.hello", { name: firstName }) : t("portal.welcome")}</p>
+        <h1 className="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">{t("portal.homeTitle")}</h1>
         <p className="mt-2 max-w-md text-sm text-white/80">
           {singleAgency?.agency_name
-            ? `Itinerari, documenti e scadenze dei tuoi viaggi con ${singleAgency.agency_name}, sempre a portata di mano.`
-            : "Itinerari, documenti e scadenze del tuo viaggio, sempre a portata di mano."}
+            ? t("portal.homeIntroAgency", { agency: singleAgency.agency_name })
+            : t("portal.homeIntro")}
         </p>
         {singleAgency?.logo_url && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -61,8 +63,14 @@ export default async function ClientHomePage() {
       <ClientTripsGrid
         trips={typedTrips}
         tripHref={(tripId) => `/client/trips/${tripId}`}
-        emptyMessage="Non abbiamo ancora trovato nessun viaggio collegato alla tua email."
-        emptyHint="Appena la tua agenzia lo collegherà al tuo nominativo, lo vedrai comparire qui."
+        emptyMessage={t("portal.emptyTrips")}
+        emptyHint={t("portal.emptyHint")}
+        locale={locale}
+        labels={{
+          confirmed: t("portal.tripConfirmed"),
+          inPreparation: t("portal.tripInPreparation"),
+          organizedBy: (agency) => t("portal.organizedBy", { agency }),
+        }}
       />
     </div>
   );

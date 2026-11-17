@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { getT } from "@/lib/i18n/server";
 
 export async function clientSignup(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -10,12 +11,13 @@ export async function clientSignup(
   const password = String(formData.get("password") ?? "");
   const fullName = String(formData.get("fullName") ?? "");
 
+  const { t } = await getT();
   if (password.length < 6) {
-    return { error: "La password deve avere almeno 6 caratteri." };
+    return { error: t("auth.passwordShort") };
   }
 
   if (!formData.get("acceptTerms")) {
-    return { error: "Devi accettare i Termini di Servizio e l'Informativa sulla Privacy." };
+    return { error: t("auth.mustAccept") };
   }
 
   const supabase = await createClient();

@@ -1,11 +1,14 @@
 "use client";
 
+import { useI18n } from "@/components/I18nProvider";
+
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function PhotoGallery({ photos }: { photos: { id: string; url: string }[] }) {
+  const { t } = useI18n();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -66,7 +69,7 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
             <button
               type="button"
               onClick={() => setOpenIndex(null)}
-              aria-label="Chiudi"
+              aria-label={t("photos.close")}
               className="absolute right-4 top-4 rounded-full p-2 text-white hover:bg-white/10"
             >
               <X size={22} />
@@ -79,7 +82,7 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
                   e.stopPropagation();
                   setOpenIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
                 }}
-                aria-label="Foto precedente"
+                aria-label={t("photos.prev")}
                 className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white hover:bg-white/10 sm:left-4"
               >
                 <ChevronLeft size={28} />
@@ -97,7 +100,7 @@ export default function PhotoGallery({ photos }: { photos: { id: string; url: st
                   e.stopPropagation();
                   setOpenIndex((i) => (i === null ? i : (i + 1) % photos.length));
                 }}
-                aria-label="Foto successiva"
+                aria-label={t("photos.next")}
                 className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white hover:bg-white/10 sm:right-4"
               >
                 <ChevronRight size={28} />

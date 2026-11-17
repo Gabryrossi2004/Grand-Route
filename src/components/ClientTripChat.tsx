@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { MessageCircle, Pencil } from "lucide-react";
 import Modal from "@/components/Modal";
 import { useTripRealtime } from "@/lib/useTripRealtime";
+import { useI18n } from "@/components/I18nProvider";
 import TripDialoguePanel, { type DayOption, type PanelPreset } from "@/components/TripDialoguePanel";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 
@@ -29,6 +30,7 @@ export default function ClientTripChat({
   // Zefiro risponde alle domande sul viaggio (se l'agenzia lo ha acceso)
   zefiroEnabled?: boolean;
 }) {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   // Il numero dei messaggi nuovi si aggiorna anche a chat chiusa
   useTripRealtime(tripId, !open);
@@ -67,7 +69,7 @@ export default function ClientTripChat({
         className="fixed bottom-4 left-4 z-40 flex min-h-12 items-center gap-2 rounded-full bg-[#233c5e] px-4 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-[#17283f] print:hidden"
       >
         <MessageCircle size={18} />
-        Chat con l&apos;agenzia
+        {t("chat.button")}
         {unread > 0 && (
           <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#cda876] px-1 text-xs font-bold text-[#17283f]">
             {unread}
@@ -75,7 +77,7 @@ export default function ClientTripChat({
         )}
       </button>
       {open && (
-        <Modal title="Chat con l'agenzia" onClose={() => setOpen(false)}>
+        <Modal title={t("chat.title")} onClose={() => setOpen(false)}>
           <TripDialoguePanel
             key={`${preset?.activityId ?? ""}-${preset?.mode ?? ""}-${preset?.text ?? ""}`}
             preset={preset}
@@ -96,6 +98,7 @@ export default function ClientTripChat({
 
 // Pulsante su ogni attività: apre la richiesta di modifica già riferita a quella attività.
 export function ActivityChangeButton({ activityId }: { activityId: string }) {
+  const { t } = useI18n();
   return (
     <button
       type="button"
@@ -104,7 +107,7 @@ export function ActivityChangeButton({ activityId }: { activityId: string }) {
       }
       className="flex min-h-9 shrink-0 items-center gap-1 rounded-full border border-current/30 bg-white/70 px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:bg-white print:hidden"
     >
-      <Pencil size={12} /> Chiedi una modifica
+      <Pencil size={12} /> {t("chat.requestChange")}
     </button>
   );
 }
@@ -117,6 +120,7 @@ export function ApprovalBanner({
   approvalStatus: ApprovalStatus;
   stage: "preliminare" | "finale";
 }) {
+  const { t } = useI18n();
   if (approvalStatus !== "pending" || stage !== "preliminare") return null;
   return (
     <div className="bg-[#fdf1d6] px-4 py-2.5">
@@ -126,7 +130,7 @@ export function ApprovalBanner({
         className="mx-auto flex w-full max-w-3xl items-center gap-2 text-left text-sm font-medium text-[#6b4e12] hover:text-[#4a360c]"
       >
         <MessageCircle size={15} className="shrink-0" />
-        L&apos;agenzia ti ha inviato l&apos;itinerario: guardalo e approvalo, oppure chiedi modifiche. Tocca qui.
+        {t("chat.bannerApproval")}
       </button>
     </div>
   );

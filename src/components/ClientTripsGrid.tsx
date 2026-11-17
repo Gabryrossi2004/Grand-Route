@@ -13,11 +13,19 @@ export default function ClientTripsGrid({
   tripHref,
   emptyMessage,
   emptyHint,
+  locale = "it-IT",
+  labels = {
+    confirmed: "Confermato",
+    inPreparation: "In preparazione",
+    organizedBy: (agency: string) => `Organizzato da ${agency}`,
+  },
 }: {
   trips: TripWithAgency[];
   tripHref: (tripId: string) => string;
   emptyMessage: string;
   emptyHint?: string;
+  locale?: string;
+  labels?: { confirmed: string; inPreparation: string; organizedBy: (agency: string) => string };
 }) {
   if (trips.length === 0) {
     return (
@@ -34,9 +42,9 @@ export default function ClientTripsGrid({
       {trips.map((trip) => {
         const dateRange =
           trip.start_date && trip.end_date
-            ? `${new Date(trip.start_date).toLocaleDateString("it-IT")} – ${new Date(trip.end_date).toLocaleDateString("it-IT")}`
+            ? `${new Date(trip.start_date).toLocaleDateString(locale)} – ${new Date(trip.end_date).toLocaleDateString(locale)}`
             : trip.start_date
-              ? new Date(trip.start_date).toLocaleDateString("it-IT")
+              ? new Date(trip.start_date).toLocaleDateString(locale)
               : null;
 
         return (
@@ -62,7 +70,7 @@ export default function ClientTripsGrid({
                     : "absolute right-2 top-2 rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur"
                 }
               >
-                {trip.is_published ? "Confermato" : "In preparazione"}
+                {trip.is_published ? labels.confirmed : labels.inPreparation}
               </span>
               <p className="absolute bottom-3 left-4 right-4 truncate font-[family-name:var(--font-display)] text-lg font-medium text-white">{trip.title}</p>
             </div>
@@ -83,7 +91,7 @@ export default function ClientTripsGrid({
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={trip.profiles.logo_url} alt="" className="h-4 w-4 rounded object-contain" />
                   )}
-                  Organizzato da {trip.profiles.agency_name}
+                  {labels.organizedBy(trip.profiles.agency_name)}
                 </p>
               )}
             </div>

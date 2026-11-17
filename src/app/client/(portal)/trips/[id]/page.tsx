@@ -1,5 +1,6 @@
 import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
+import { getT } from "@/lib/i18n/server";
 import ZefiroClientFloating from "@/components/ZefiroClientFloating";
 import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
 import { getAvatarStyle } from "@/lib/assistant";
@@ -31,6 +32,7 @@ export default async function ClientTripPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const { t } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
 
@@ -127,7 +129,7 @@ export default async function ClientTripPage({
                 href="/client"
                 className="mx-auto flex max-w-3xl items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900"
               >
-                <ArrowLeft size={14} /> I miei viaggi
+                <ArrowLeft size={14} /> {t("portal.backToTrips")}
               </Link>
             </div>
             <ApprovalBanner approvalStatus={approvalStatus} stage={stage} />
@@ -138,7 +140,7 @@ export default async function ClientTripPage({
                   className="mx-auto flex max-w-3xl items-center gap-2 text-sm font-medium text-amber-800 hover:text-amber-900"
                 >
                   <FileWarning size={15} className="shrink-0" />
-                  La partenza si avvicina: completa i tuoi dati del documento d&apos;identità
+                  {t("portal.docsReminder")}
                 </Link>
               </div>
             )}
@@ -150,11 +152,11 @@ export default async function ClientTripPage({
         messages={(tripMessages as TripMessage[] | null) ?? []}
         days={orderedDays.map((day, index) => ({
           id: day.id,
-          label: `Giorno ${index + 1}`,
+          label: t("trip.day", { n: index + 1 }),
           activities: day.activities.map((activity) => ({ id: activity.id, label: activity.title })),
         }))}
         approvalStatus={approvalStatus}
-        agencyLabel={ownerProfile?.agency_name || "Agenzia"}
+        agencyLabel={ownerProfile?.agency_name || t("common.agencyDefault")}
         stage={stage}
         zefiroEnabled={zefiroEnabled}
       />
