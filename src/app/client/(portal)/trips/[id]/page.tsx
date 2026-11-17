@@ -2,6 +2,7 @@ import { parseLogoShape } from "@/lib/logoShape";
 import { Suspense } from "react";
 import { getT } from "@/lib/i18n/server";
 import { translateItineraryView } from "@/lib/tripTranslation";
+import ItineraryTranslator from "@/components/ItineraryTranslator";
 import ZefiroClientFloating from "@/components/ZefiroClientFloating";
 import { ZefiroDestination, ZefiroStyleProvider } from "@/components/ZefiroStyle";
 import { getAvatarStyle } from "@/lib/assistant";
@@ -77,7 +78,7 @@ export default async function ClientTripPage({
   }));
 
   // Per chi legge in inglese, i testi dell'itinerario vengono tradotti (una volta sola, poi restano salvati)
-  const view = await translateItineraryView(supabase, trip, orderedDays, lang, true);
+  const view = await translateItineraryView(supabase, trip, orderedDays, lang);
 
   const activityTitles = new Map<string, string>();
   for (const day of view.days) for (const activity of day.activities) activityTitles.set(activity.id, activity.title);
@@ -121,6 +122,7 @@ export default async function ClientTripPage({
         payments={(incomingPayments as TripPayment[]) || []}
         contentTop={
           <>
+            {view.needed && <ItineraryTranslator tripId={trip.id} />}
             <Suspense fallback={null}>
               <TripGlance trip={trip} days={orderedDays} />
             </Suspense>

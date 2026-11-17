@@ -62,7 +62,7 @@ export default async function PublicTripPage({
   }));
 
   // Pagina pubblica: si mostra la traduzione già salvata (la crea un cliente collegato al viaggio)
-  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang(), false);
+  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang());
 
   return (
     <>

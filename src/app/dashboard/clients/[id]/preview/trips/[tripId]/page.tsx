@@ -46,7 +46,7 @@ export default async function ClientPreviewTripPage({
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
 
-  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang(), true);
+  const view = await translateItineraryView(supabase, trip, orderedDays, await getLang());
 
   return (
     <TripItineraryView

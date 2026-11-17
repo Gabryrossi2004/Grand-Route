@@ -58,44 +58,65 @@ async function loadItems(supabase: Db, tripId: string, hash: string): Promise<Tr
   return row && row.source_hash === hash && Array.isArray(row.items) ? row.items : null;
 }
 
-// Restituisce viaggio e giorni con i testi tradotti (o gli originali).
-// generate = true: se manca la traduzione la crea (solo utenti collegati al viaggio).
+type Pair<D> = { trip: Trip; days: D[] };
+
+function withinLimits(items: TranslationItem[]) {
+  const chars = items.reduce((sum, i) => sum + i.text.length, 0);
+  return items.length > 0 && items.length <= MAX_ITEMS && chars <= MAX_CHARS;
+}
+
+// Crea (e salva) la traduzione inglese dell'itinerario. Restituisce il motivo se non riesce.
+export async function generateTranslation<D extends WithActivities<TripDay, Activity>>(
+  supabase: Db,
+  trip: Trip,
+  days: D[],
+): Promise<{ ok: true } | { error: string }> {
+  const items = collectItems(trip, days);
+  if (!withinLimits(items)) return { error: "limits" };
+  const errors: string[] = [];
+  const { translated } = await runTranslation(items, (chunk) =>
+    translateChunk(chunk).catch((error) => {
+      errors.push((error as Error).message);
+      throw error;
+    }),
+  );
+  if (translated.size === 0) return { error: `ai: ${errors[0] ?? "nessuna risposta"}`.slice(0, 300) };
+  const result = items.map((item) => ({ id: item.id, text: translated.get(item.id) ?? item.text }));
+  const { error } = await supabase.rpc("save_trip_translation", {
+    p_trip_id: trip.id,
+    p_lang: "en",
+    p_hash: hashOf(items),
+    p_items: result,
+  });
+  if (error) {
+    console.error("[tripTranslation] salvataggio", error.message);
+    return { error: `db: ${error.message}`.slice(0, 300) };
+  }
+  return { ok: true };
+}
+
+// Applica la traduzione già salvata (se c'è e se i testi non sono cambiati).
+// `translated` dice se è stata applicata; per chi legge in inglese e non c'è ancora,
+// la pagina mostra l'avviso e avvia la traduzione in background.
 export async function translateItineraryView<D extends WithActivities<TripDay, Activity>>(
   supabase: Db,
   trip: Trip,
   days: D[],
   lang: Lang,
-  generate: boolean,
-): Promise<{ trip: Trip; days: D[] }> {
-  if (lang !== "en") return { trip, days };
+): Promise<Pair<D> & { translated: boolean; needed: boolean }> {
+  const original = { trip, days, translated: false, needed: false };
+  if (lang !== "en") return original;
   try {
     const items = collectItems(trip, days);
-    const chars = items.reduce((sum, i) => sum + i.text.length, 0);
-    if (items.length === 0 || items.length > MAX_ITEMS || chars > MAX_CHARS) return { trip, days };
-
-    const hash = hashOf(items);
-    let result = await loadItems(supabase, trip.id, hash);
-    if (!result && !generate) return { trip, days };
-
-    if (!result && generate) {
-      const { translated } = await runTranslation(items, translateChunk);
-      if (translated.size === 0) console.error("[tripTranslation] nessun testo tradotto per il viaggio", trip.id);
-      if (translated.size > 0) {
-        result = items.map((item) => ({ id: item.id, text: translated.get(item.id) ?? item.text }));
-        const { error } = await supabase.rpc("save_trip_translation", {
-          p_trip_id: trip.id,
-          p_lang: "en",
-          p_hash: hash,
-          p_items: result,
-        });
-        if (error) console.error("[tripTranslation] salvataggio", error.message);
-      }
-    }
-    if (!result) return { trip, days };
+    if (!withinLimits(items)) return original;
+    const result = await loadItems(supabase, trip.id, hashOf(items));
+    if (!result) return { ...original, needed: true };
 
     const map = new Map(result.map((i) => [i.id, i.text]));
     const get = (id: string, fallback: string | null) => map.get(id) ?? fallback;
     return {
+      translated: true,
+      needed: false,
       trip: {
         ...trip,
         title: get("t.title", trip.title) ?? trip.title,
@@ -123,6 +144,6 @@ export async function translateItineraryView<D extends WithActivities<TripDay, A
     };
   } catch (error) {
     console.error("[tripTranslation]", (error as Error).message);
-    return { trip, days };
+    return original;
   }
 }

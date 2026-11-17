@@ -285,6 +285,14 @@ export const entries = {
   },
   "zefiro.err.contact": { it: "Non è stato possibile contattare Zefiro. Riprova tra poco.", en: "Zefiro could not be reached. Please try again shortly." },
   "zefiro.err.session": { it: "Sessione scaduta: accedi di nuovo.", en: "Your session has expired: please log in again." },
+  "trip.translating": {
+    it: "Sto traducendo l'itinerario in inglese… ci vuole qualche secondo.",
+    en: "Translating the itinerary into English… this takes a few seconds.",
+  },
+  "trip.translateFailed": {
+    it: "Non è stato possibile tradurre l'itinerario: lo vedi nella lingua originale.",
+    en: "We couldn't translate the itinerary: you're seeing it in its original language.",
+  },
   "chat.err.generic": { it: "Non è stato possibile inviare. Riprova tra poco.", en: "We couldn't send this. Please try again shortly." },
   "chat.err.dbMissing": {
     it: "Manca un aggiornamento del database (script 0036 o 0037). Avvisa la tua agenzia.",
