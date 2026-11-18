@@ -88,12 +88,17 @@ export default async function TripDetailPage({
   const supabase = await createClient();
   const user = await getCachedUser();
 
-  const { data: trip } = await supabase
+  const { data: trip, error: tripError } = await supabase
     .from("trips")
     .select("*")
     .eq("id", id)
     .eq("owner_id", user?.id ?? "")
-    .single();
+    .maybeSingle();
+  // Un errore temporaneo NON deve sembrare «viaggio inesistente»: mostriamo «Riprova»
+  if (tripError) {
+    console.error("[trip page] viaggio non caricato:", tripError.code, tripError.message);
+    throw new Error("Viaggio non caricato");
+  }
   if (!trip) notFound();
 
   const [
