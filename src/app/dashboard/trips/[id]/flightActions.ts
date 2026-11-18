@@ -4,6 +4,7 @@ export type FlightLookupResult = {
   airline: string;
   flightNumber: string;
   departureAirport: string;
+  departureDate: string;
   departureTime: string;
   arrivalAirport: string;
   arrivalCity: string;
@@ -97,6 +98,7 @@ export async function searchFlight(
       airline: flight.airline?.name ?? "",
       flightNumber: flight.number ?? cleanNumber,
       departureAirport: formatAirport(flight.departure?.airport),
+      departureDate: formatDate(flight.departure?.scheduledTime?.local),
       departureTime: formatTime(flight.departure?.scheduledTime?.local),
       arrivalAirport: formatAirport(flight.arrival?.airport),
       arrivalCity: flight.arrival?.airport?.municipalityName ?? flight.arrival?.airport?.name ?? "",

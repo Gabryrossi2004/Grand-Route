@@ -53,6 +53,7 @@ export const detailFields: Record<ActivityType, DetailField[]> = {
     { key: "aeroporto_partenza", label: "Aeroporto di partenza", type: "text" },
     { key: "aeroporto_arrivo", label: "Aeroporto di arrivo", type: "text" },
     { key: "orario_arrivo", label: "Orario di arrivo", type: "time" },
+    { key: "scalo", label: "Scalo / coincidenza", type: "text" },
   ],
   alloggio: [
     { key: "tipo_camera", label: "Tipologia camera", type: "text" },
