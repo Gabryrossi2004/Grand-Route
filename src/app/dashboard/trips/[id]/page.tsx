@@ -25,7 +25,9 @@ import {
   MapPin,
   Rocket,
 } from "lucide-react";
-import AiItineraryGenerator from "@/components/AiItineraryGenerator";
+import ZefiroTripMenu from "@/components/ZefiroTripMenu";
+import TripEditWithZefiro from "@/components/TripEditWithZefiro";
+import GenerateWithZefiro from "@/app/dashboard/trips/new/GenerateWithZefiro";
 import TripReview from "@/components/TripReview";
 import AiNotes from "@/components/AiNotes";
 import { ZefiroDestination } from "@/components/ZefiroStyle";
@@ -61,7 +63,6 @@ import {
   uploadDocument,
 } from "./actions";
 import DateField from "@/components/DateField";
-import { isAvatarVisible } from "@/lib/assistant";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -276,15 +277,19 @@ export default async function TripDetailPage({
             <h2 className="text-lg font-semibold text-white">Itinerario</h2>
             <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
           </div>
-          {orderedDays.every((day) => (day.activities?.length ?? 0) === 0) ? (
-            <AiItineraryGenerator
-              tripId={id}
-              promptStyles={(promptStyles as PromptStyle[]) || []}
-              showButton={!isAvatarVisible((ownerProfile as Profile | null)?.ai_preferences)}
-            />
-          ) : (
-            <TripReview tripId={id} showButton={!isAvatarVisible((ownerProfile as Profile | null)?.ai_preferences)} />
-          )}
+          <ZefiroTripMenu hasContent={!orderedDays.every((day) => (day.activities?.length ?? 0) === 0)} />
+          <GenerateWithZefiro
+            clients={[]}
+            promptStyles={(promptStyles as PromptStyle[]) || []}
+            showButton={false}
+            trip={{
+              id,
+              hasContent: !orderedDays.every((day) => (day.activities?.length ?? 0) === 0),
+              startDate: trip.start_date ?? null,
+            }}
+          />
+          <TripEditWithZefiro tripId={id} />
+          <TripReview tripId={id} showButton={false} />
         </div>
         {trip.ai_notes && <AiNotes tripId={id} notes={trip.ai_notes} />}
         <div className="flex flex-col items-stretch gap-3 bg-gradient-to-b from-white to-[#fbf7ec] p-2 sm:flex-row sm:items-start sm:p-5">

@@ -6,6 +6,7 @@ import { Copy, FileCheck2, FileDown, Languages, MoreHorizontal } from "lucide-re
 import SubmitButton from "@/components/SubmitButton";
 import { TranslateTripDialog } from "@/components/TranslateTripButton";
 import { ASSISTANT_NAME } from "@/lib/assistant";
+import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 
 // Menu "Altro" della scheda viaggio: le azioni usate di rado, raccolte in un
 // solo pulsante per tenere pulita la barra principale.
@@ -23,6 +24,15 @@ export default function TripMoreMenu({
   const [open, setOpen] = useState(false);
   const [translateOpen, setTranslateOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+
+  // Zefiro (il personaggio) può aprire la traduzione
+  useEffect(() => {
+    const onAction = (event: Event) => {
+      if ((event as CustomEvent).detail === "trip-translate") setTranslateOpen(true);
+    };
+    window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
+    return () => window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
+  }, []);
 
   useEffect(() => {
     if (!open) return;

@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
@@ -142,6 +143,8 @@ export async function generateProposal(input: {
   concept: PlanConcept;
   durationDays: number;
   styleId?: string | null;
+  // Richiesta già dettagliata: si ricostruisce com'è, senza inventare (stesso lavoro della bozza)
+  faithful?: boolean;
 }): Promise<{ itinerary: GeneratedItinerary } | { error: string }> {
   const parsed = z
     .object({
@@ -149,6 +152,7 @@ export async function generateProposal(input: {
       concept: ConceptInput,
       durationDays: z.number().int().min(1).max(30),
       styleId: z.string().uuid().nullish(),
+      faithful: z.boolean().optional(),
     })
     .safeParse(input);
   if (!parsed.success) return { error: "Richiesta non valida." };
@@ -157,6 +161,18 @@ export async function generateProposal(input: {
   if (!quota.ok) return { error: quota.error };
   const rules = await loadAiRules();
   try {
+    if (parsed.data.faithful) {
+      const generated = await generateItineraryFromDraft({
+        draftText: parsed.data.brief,
+        styleExamples: [],
+        styleInstructions: await loadStyle(parsed.data.styleId ?? null),
+        tripDays: null,
+        rulesBlock: rules.text,
+        allowQuestions: false,
+      });
+      if (generated.days.length === 0) return { error: "Non sono riuscito a ricavare dei giorni. Prova con più dettagli." };
+      return { itinerary: generated };
+    }
     const itinerary = await generateProposalItinerary({
       brief: parsed.data.brief,
       concept: parsed.data.concept,
@@ -240,4 +256,123 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
   }
 
   redirect(`/dashboard/trips/${createdTripIds[0]}`);
+}
+
+
+const ApplyInput = z.object({
+  tripId: z.string().uuid(),
+  startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(),
+  proposals: z.array(z.object({ name: z.string().trim().max(120), itinerary: GeneratedItinerarySchema })).min(1).max(3),
+});
+
+// Dentro un viaggio già creato: se è vuoto la prima proposta lo riempie e le altre diventano
+// varianti; se ha già un itinerario NIENTE viene sovrascritto e tutte le proposte diventano varianti.
+export async function applyProposalsToTrip(
+  input: z.input<typeof ApplyInput>,
+): Promise<{ ok: true; filled: boolean; variants: number } | { error: string }> {
+  const parsed = ApplyInput.safeParse(input);
+  if (!parsed.success) return { error: "I dati non sono validi. Rigenera le proposte." };
+  const { tripId, proposals } = parsed.data;
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  if (!trip) return { error: "Viaggio non trovato." };
+
+  const { data: dayRows } = await supabase.from("trip_days").select("id").eq("trip_id", tripId);
+  const dayIds = (dayRows ?? []).map((d) => d.id as string);
+  let hasContent = false;
+  if (dayIds.length > 0) {
+    const { count } = await supabase.from("activities").select("id", { count: "exact", head: true }).in("trip_day_id", dayIds);
+    hasContent = (count ?? 0) > 0;
+  }
+
+  const startDate = parsed.data.startDate ?? (trip.start_date as string | null);
+  const fillFirst = !hasContent;
+  const variantProposals = fillFirst ? proposals.slice(1) : proposals;
+
+  // Gruppo di varianti (si crea se serve e il viaggio non ne ha già uno)
+  let groupId = (trip.group_id as string | null) ?? null;
+  if (variantProposals.length > 0 && !groupId) {
+    const { data: group } = await supabase
+      .from("trip_groups")
+      .insert({ owner_id: user.id, client_id: trip.client_id, title: trip.title })
+      .select("id")
+      .single();
+    groupId = group?.id ?? null;
+    if (!groupId) return { error: "Non è stato possibile creare il gruppo di varianti. Riprova." };
+    await supabase.from("trips").update({ group_id: groupId }).eq("id", tripId);
+  }
+
+  const createdIds: string[] = [];
+  const notesOf = (p: (typeof proposals)[number]) =>
+    p.itinerary.agent_notes
+      .map((n) => n.trim())
+      .filter(Boolean)
+      .map((n) => `• ${n}`)
+      .join("\n");
+
+  for (const proposal of variantProposals) {
+    const days = proposal.itinerary.days.length;
+    const base = {
+      owner_id: user.id,
+      title: proposal.name ? `${trip.title} · ${proposal.name}` : `${trip.title} (variante)`,
+      destination: trip.destination,
+      client_id: trip.client_id,
+      group_id: groupId,
+      start_date: startDate,
+      end_date: startDate ? addDaysIso(startDate, days - 1) : null,
+      cover_image_url: trip.cover_image_url,
+      title_color: trip.title_color,
+      theme: trip.theme,
+      public_slug: generatePublicSlug(),
+    };
+    const notes = notesOf(proposal);
+    let result = await supabase.from("trips").insert({ ...base, ai_notes: notes || null }).select("id").single();
+    if (result.error) result = await supabase.from("trips").insert(base).select("id").single();
+    if (result.error || !result.data) {
+      if (createdIds.length > 0) await supabase.from("trips").delete().in("id", createdIds);
+      return { error: "Non è stato possibile creare le varianti. Riprova." };
+    }
+    createdIds.push(result.data.id as string);
+    const inserted = await insertGeneratedItinerary(supabase, result.data.id as string, proposal.itinerary, startDate);
+    if ("error" in inserted) {
+      await supabase.from("trips").delete().in("id", createdIds);
+      return { error: inserted.error };
+    }
+  }
+
+  if (fillFirst) {
+    const first = proposals[0];
+    // I giorni vuoti già presenti si sostituiscono solo ora, a generazione riuscita
+    if (dayIds.length > 0) await supabase.from("trip_days").delete().in("id", dayIds);
+    const inserted = await insertGeneratedItinerary(supabase, tripId, first.itinerary, startDate);
+    if ("error" in inserted) {
+      if (createdIds.length > 0) await supabase.from("trips").delete().in("id", createdIds);
+      return { error: inserted.error };
+    }
+    const days = first.itinerary.days.length;
+    const patch: Record<string, unknown> = {};
+    if (startDate) {
+      patch.start_date = startDate;
+      patch.end_date = addDaysIso(startDate, days - 1);
+    }
+    const notes = notesOf(first);
+    if (notes) patch.ai_notes = notes;
+    if (Object.keys(patch).length > 0) {
+      const { error } = await supabase.from("trips").update(patch).eq("id", tripId);
+      if (error && patch.ai_notes) {
+        delete patch.ai_notes;
+        if (Object.keys(patch).length > 0) await supabase.from("trips").update(patch).eq("id", tripId);
+      }
+    }
+  }
+
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard/trips");
+  return { ok: true, filled: fillFirst, variants: variantProposals.length };
 }

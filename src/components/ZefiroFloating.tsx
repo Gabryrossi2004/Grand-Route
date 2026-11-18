@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { EyeOff, Route, Settings, Wand2 } from "lucide-react";
+import { ClipboardCheck, EyeOff, Languages, PencilLine, Route, Settings, Wand2 } from "lucide-react";
 import Zefiro from "@/components/Zefiro";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { setAvatarVisible } from "@/app/dashboard/settings/actions";
@@ -15,7 +15,7 @@ const DRAG_THRESHOLD = 6;
 // Eventi con cui il personaggio chiede alle pagine di aprire le loro finestre.
 export const ZEFIRO_ACTION_EVENT = "zefiro:action";
 export const ZEFIRO_RESET_EVENT = "zefiro:reset-position";
-export type ZefiroAction = "new-trip" | "trip-assist";
+export type ZefiroAction = "new-trip" | "trip-generate" | "trip-edit" | "trip-review" | "trip-translate";
 
 export function triggerZefiroAction(action: ZefiroAction) {
   window.dispatchEvent(new CustomEvent<ZefiroAction>(ZEFIRO_ACTION_EVENT, { detail: action }));
@@ -201,9 +201,9 @@ export default function ZefiroFloating() {
     else router.push("/dashboard/trips/new?zefiro=1");
   }
 
-  function helpWithTrip() {
+  function tripAction(action: ZefiroAction) {
     setMenuOpen(false);
-    triggerZefiroAction("trip-assist");
+    triggerZefiroAction(action);
   }
 
   if (!pos) return null;
@@ -266,10 +266,25 @@ export default function ZefiroFloating() {
             Creami un viaggio
           </button>
           {onTripPage && (
-            <button type="button" role="menuitem" onClick={helpWithTrip} className={itemClass}>
-              <Wand2 size={16} className="shrink-0 text-[#233c5e]" />
-              Aiutami con questo viaggio
-            </button>
+            <>
+              <p className="px-3 pb-0.5 pt-2 text-xs font-medium text-slate-500">Per questo viaggio</p>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-generate")} className={itemClass}>
+                <Wand2 size={16} className="shrink-0 text-[#233c5e]" />
+                Genera un itinerario
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-edit")} className={itemClass}>
+                <PencilLine size={16} className="shrink-0 text-[#233c5e]" />
+                Modifica a parole
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-review")} className={itemClass}>
+                <ClipboardCheck size={16} className="shrink-0 text-[#233c5e]" />
+                Controlla il viaggio
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-translate")} className={itemClass}>
+                <Languages size={16} className="shrink-0 text-[#233c5e]" />
+                Traduci il viaggio
+              </button>
+            </>
           )}
           <div className="my-1 border-t border-[#f2e2c4]" />
           <button

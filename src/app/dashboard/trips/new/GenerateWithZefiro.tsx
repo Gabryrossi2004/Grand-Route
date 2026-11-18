@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { AlertCircle, CheckCircle2, Loader2, RotateCcw, Sparkles } from "lucide-react";
 import type { Client, PromptStyle } from "@/lib/types";
 import type { GeneratedItinerary } from "@/lib/itineraryAi";
@@ -12,7 +13,7 @@ import AssistantIcon from "@/components/AssistantIcon";
 import { ZefiroThinking } from "@/components/Zefiro";
 import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 import { ASSISTANT_NAME } from "@/lib/assistant";
-import { createTripFromProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
+import { applyProposalsToTrip, createTripFromProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
 
 const inputClass = "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
@@ -37,9 +38,22 @@ function isRedirect(error: unknown) {
 // "Genera con Zefiro": si descrive il viaggio a grandi linee (o nel dettaglio) e Zefiro prepara
 // una proposta, oppure tre se la richiesta è generica. Si scelgono quelle da tenere (le altre
 // diventano varianti dello stesso viaggio) e si crea tutto in un colpo.
-export default function GenerateWithZefiro({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
+export default function GenerateWithZefiro({
+  clients,
+  promptStyles,
+  trip,
+  showButton = true,
+}: {
+  clients: Client[];
+  promptStyles: PromptStyle[];
+  // Dentro un viaggio già creato: le proposte vanno qui (se vuoto) o diventano varianti
+  trip?: { id: string; hasContent: boolean; startDate: string | null };
+  showButton?: boolean;
+}) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [phase, setPhase] = useState<"brief" | "questions" | "review">("brief");
+  const [phase, setPhase] = useState<"brief" | "questions" | "review" | "done">("brief");
+  const [doneMessage, setDoneMessage] = useState("");
   const [planning, setPlanning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [questions, setQuestions] = useState<string[]>([]);
@@ -49,27 +63,33 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
   const [title, setTitle] = useState("");
   const [destination, setDestination] = useState("");
   const [clientId, setClientId] = useState("");
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(trip?.startDate ?? "");
   const [saving, setSaving] = useState(false);
   const briefRef = useRef<HTMLTextAreaElement>(null);
   const lastForm = useRef<FormData | null>(null);
 
   // Si apre dal pulsante, dal personaggio fluttuante o arrivando da "Creami un viaggio".
   useEffect(() => {
+    const wanted = trip ? "trip-generate" : "new-trip";
     const onAction = (event: Event) => {
-      if ((event as CustomEvent).detail === "new-trip") setOpen(true);
+      if ((event as CustomEvent).detail === wanted) {
+        setPhase("brief");
+        setError(null);
+        setOpen(true);
+      }
     };
     window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
-    const timer = new URLSearchParams(window.location.search).get("zefiro") ? window.setTimeout(() => setOpen(true), 0) : null;
+    const timer = !trip && new URLSearchParams(window.location.search).get("zefiro") ? window.setTimeout(() => setOpen(true), 0) : null;
     return () => {
       window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
       if (timer) window.clearTimeout(timer);
     };
-  }, []);
+  }, [trip]);
 
   function close() {
     if (planning || saving) return;
     setOpen(false);
+    if (phase === "done") router.refresh();
   }
 
   function reset() {
@@ -83,7 +103,7 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
 
   function runProposal(index: number, base: PlanOk, concept: { name: string; route: string; summary: string }) {
     setProposals((prev) => prev.map((p, i) => (i === index ? { ...p, status: "loading", error: undefined } : p)));
-    generateProposal({ brief: base.brief, concept, durationDays: base.durationDays, styleId: base.styleId })
+    generateProposal({ brief: base.brief, concept, durationDays: base.durationDays, styleId: base.styleId, faithful: base.mode === "single" })
       .then((result) => {
         setProposals((prev) =>
           prev.map((p, i) =>
@@ -157,13 +177,34 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
   const selected = proposals.filter((p) => p.keep);
   const waiting = selected.some((p) => p.status === "loading");
   const unusable = selected.some((p) => p.status === "error");
-  const canSave = selected.length > 0 && !waiting && !unusable && title.trim().length > 0 && !saving;
+  const canSave = selected.length > 0 && !waiting && !unusable && (trip ? true : title.trim().length > 0) && !saving;
 
   async function save() {
     if (!canSave) return;
     setSaving(true);
     setError(null);
     try {
+      if (trip) {
+        const applied = await applyProposalsToTrip({
+          tripId: trip.id,
+          startDate: startDate || null,
+          proposals: selected.map((p) => ({ name: p.name || title, itinerary: p.itinerary as GeneratedItinerary })),
+        });
+        if ("error" in applied) {
+          setError(applied.error);
+          return;
+        }
+        setDoneMessage(
+          applied.filled
+            ? applied.variants > 0
+              ? `Ho riempito questo viaggio con la prima proposta e creato ${applied.variants === 1 ? "1 variante" : `${applied.variants} varianti`} (le trovi in «Varianti di questo viaggio»).`
+              : "Ho riempito questo viaggio con la proposta."
+            : `Questo viaggio aveva già un itinerario, quindi non l'ho toccato: ho creato ${applied.variants === 1 ? "1 variante" : `${applied.variants} varianti`} (le trovi in «Varianti di questo viaggio»).`,
+        );
+        setPhase("done");
+        router.refresh();
+        return;
+      }
       const result = await createTripFromProposals({
         title: title.trim(),
         destination: destination.trim() || null,
@@ -182,13 +223,15 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="flex items-center gap-1.5 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-[#17283f]"
-      >
-        <Sparkles size={14} /> Genera con {ASSISTANT_NAME}
-      </button>
+      {showButton && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="flex items-center gap-1.5 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-[#17283f]"
+        >
+          <Sparkles size={14} /> Genera con {ASSISTANT_NAME}
+        </button>
+      )}
 
       {open && (
         <Modal
@@ -285,28 +328,47 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
             </div>
           )}
 
+          {phase === "done" && (
+            <div className="flex flex-col gap-4">
+              <p className="text-sm text-slate-700">{doneMessage}</p>
+              <div className="flex justify-end">
+                <button type="button" onClick={close} className="rounded-md bg-[#233c5e] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#17283f]">
+                  Chiudi
+                </button>
+              </div>
+            </div>
+          )}
+
           {phase === "review" && (
             <div className="flex flex-col gap-4">
               <p className="-mt-2 text-sm text-slate-500">
-                {proposals.length > 1
-                  ? "Ecco le proposte. Tieni quelle che ti servono: se ne tieni più di una diventano le varianti dello stesso viaggio."
-                  : "Ecco la proposta. Potrai modificarla a mano o con Zefiro."}
+                {trip
+                  ? trip.hasContent
+                    ? "Questo viaggio ha già un itinerario: non lo tocco. Le proposte che tieni diventano varianti di questo viaggio."
+                    : "Questo viaggio è vuoto: la prima proposta che tieni lo riempie, le altre diventano varianti."
+                  : proposals.length > 1
+                    ? "Ecco le proposte. Tieni quelle che ti servono: se ne tieni più di una diventano le varianti dello stesso viaggio."
+                    : "Ecco la proposta. Potrai modificarla a mano o con Zefiro."}
               </p>
 
               <div className="grid gap-3 md:grid-cols-2">
-                <div>
-                  <label htmlFor="gen_title" className={labelClass}>
-                    Titolo del viaggio *
-                  </label>
-                  <input id="gen_title" value={title} onChange={(e) => setTitle(e.target.value)} className={inputClass} />
-                </div>
-                <div>
-                  <label htmlFor="gen_destination" className={labelClass}>
-                    Destinazione
-                  </label>
-                  <input id="gen_destination" value={destination} onChange={(e) => setDestination(e.target.value)} className={inputClass} />
-                </div>
-                {clients.length > 0 && (
+                {!trip && (
+                  <div>
+                    <label htmlFor="gen_title" className={labelClass}>
+                      Titolo del viaggio *
+                    </label>
+                    <input id="gen_title" value={title} onChange={(e) => setTitle(e.target.value)} className={inputClass} />
+                  </div>
+                )}
+                {!trip && (
+                  <div>
+                    <label htmlFor="gen_destination" className={labelClass}>
+                      Destinazione
+                    </label>
+                    <input id="gen_destination" value={destination} onChange={(e) => setDestination(e.target.value)} className={inputClass} />
+                  </div>
+                )}
+                {!trip && clients.length > 0 && (
                   <div>
                     <label htmlFor="gen_client" className={labelClass}>
                       Cliente (opzionale)
@@ -354,7 +416,15 @@ export default function GenerateWithZefiro({ clients, promptStyles }: { clients:
                 <div className="flex items-center gap-2">
                   {waiting && <span className="text-xs text-slate-500">Zefiro sta ancora scrivendo…</span>}
                   <button type="button" onClick={save} disabled={!canSave} className="rounded-md bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white hover:bg-[#17283f] disabled:opacity-50">
-                    {saving ? "Creo il viaggio…" : selected.length > 1 ? `Crea il viaggio con ${selected.length} varianti` : "Crea il viaggio"}
+                    {saving
+                      ? "Salvo…"
+                      : trip
+                        ? selected.length > 1
+                          ? `Usa ${selected.length} proposte`
+                          : "Usa questa proposta"
+                        : selected.length > 1
+                          ? `Crea il viaggio con ${selected.length} varianti`
+                          : "Crea il viaggio"}
                   </button>
                 </div>
               </div>

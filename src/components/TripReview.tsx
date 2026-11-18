@@ -47,7 +47,7 @@ export default function TripReview({ tripId, showButton = true }: { tripId: stri
 
   useEffect(() => {
     const onAction = (event: Event) => {
-      if ((event as CustomEvent).detail === "trip-assist") open();
+      if ((event as CustomEvent).detail === "trip-review") open();
     };
     window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
     return () => window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
