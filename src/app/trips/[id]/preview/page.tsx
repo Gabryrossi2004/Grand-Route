@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import PrintButton from "@/components/PrintButton";
+import AutoPrint from "@/components/AutoPrint";
 import TripItineraryView from "@/components/TripItineraryView";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
@@ -10,10 +11,13 @@ type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 
 export default async function TripPreviewPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ pdf?: string }>;
 }) {
   const { id } = await params;
+  const { pdf } = await searchParams;
   const supabase = await createClient();
 
   const { data: trip } = await supabase.from("trips").select("*").eq("id", id).single();
@@ -49,6 +53,7 @@ export default async function TripPreviewPage({
       headerExtra={
         <div className="flex justify-center bg-[#faf3e6] px-4 py-3 print:hidden">
           <PrintButton />
+          {pdf === "1" && <AutoPrint />}
         </div>
       }
     />

@@ -28,7 +28,7 @@ import {
   FileText,
   MapPin,
   Rocket,
-} from "lucide-react";
+FileDown, } from "lucide-react";
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import TripReview from "@/components/TripReview";
 import AiNotes from "@/components/AiNotes";
@@ -43,6 +43,7 @@ import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel"
 import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
 import TranslateTripButton from "@/components/TranslateTripButton";
 import { checkTripBeforeSend } from "@/lib/tripPreflight";
+import SendTripToClient from "@/components/SendTripToClient";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -152,6 +153,11 @@ export default async function TripDetailPage({
     })),
   );
 
+  // Cliente collegato al viaggio (per il pulsante "Invia al cliente")
+  const { data: tripClient } = trip.client_id
+    ? await supabase.from("clients").select("full_name, email").eq("id", trip.client_id).maybeSingle()
+    : { data: null };
+
   const host = (await headers()).get("host");
   const protocol = host?.includes("localhost") ? "http" : "https";
   const publicUrl = `${protocol}://${host}/t/${trip.public_slug}`;
@@ -182,6 +188,8 @@ export default async function TripDetailPage({
       <CoverHero
         trip={trip}
         publicUrl={publicUrl}
+        clientName={tripClient?.full_name ?? null}
+        clientEmail={tripClient?.email?.trim() || null}
         services={(tripServices as TripService[]) || []}
         suppliers={(suppliers as Supplier[]) || []}
         payments={(tripPayments as TripPayment[]) || []}
@@ -330,6 +338,8 @@ export default async function TripDetailPage({
 function CoverHero({
   trip,
   publicUrl,
+  clientName,
+  clientEmail,
   services,
   suppliers,
   payments,
@@ -338,6 +348,8 @@ function CoverHero({
 }: {
   trip: Trip;
   publicUrl: string;
+  clientName: string | null;
+  clientEmail: string | null;
   services: TripService[];
   suppliers: Supplier[];
   payments: TripPayment[];
@@ -412,6 +424,15 @@ function CoverHero({
           </button>
         </form>
 
+        {trip.is_published && (
+          <SendTripToClient
+            tripId={trip.id}
+            clientName={clientName}
+            clientEmail={clientEmail}
+            notifiedAt={(trip as Trip & { client_notified_at?: string | null }).client_notified_at ?? null}
+          />
+        )}
+
         <Link
           href={`/trips/${trip.id}/preview`}
           target="_blank"
@@ -419,6 +440,16 @@ function CoverHero({
         >
           <Eye size={15} />
           Preview
+        </Link>
+
+        <Link
+          href={`/trips/${trip.id}/preview?pdf=1`}
+          target="_blank"
+          title="Si apre l'itinerario pronto da salvare: scegli «Salva come PDF» nella finestra di stampa"
+          className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+        >
+          <FileDown size={15} />
+          Salva in PDF
         </Link>
 
         <form action={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}>

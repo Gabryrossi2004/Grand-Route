@@ -293,6 +293,7 @@ export const entries = {
     it: "Non è stato possibile tradurre l'itinerario: lo vedi nella lingua originale.",
     en: "We couldn't translate the itinerary: you're seeing it in its original language.",
   },
+  "trip.savePdf": { it: "Salva in PDF", en: "Save as PDF" },
   "chat.err.generic": { it: "Non è stato possibile inviare. Riprova tra poco.", en: "We couldn't send this. Please try again shortly." },
   "chat.err.dbMissing": {
     it: "Manca un aggiornamento del database (script 0036 o 0037). Avvisa la tua agenzia.",

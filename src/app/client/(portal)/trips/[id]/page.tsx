@@ -114,6 +114,7 @@ export default async function ClientTripPage({
       <TripItineraryView
         trip={view.trip}
         days={view.days}
+        showPdfButton
         agencyName={ownerProfile?.agency_name}
         logoUrl={ownerProfile?.logo_url}
         logoShape={parseLogoShape(ownerProfile?.logo_shape)}

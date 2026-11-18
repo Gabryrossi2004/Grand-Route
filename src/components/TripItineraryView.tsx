@@ -9,6 +9,7 @@ import { themeFontVariables } from "@/lib/themeFonts";
 import PhotoGallery from "@/components/PhotoGallery";
 import { darkenForWhiteText, sanitizeHex } from "@/lib/brandColor";
 import Image from "next/image";
+import PrintButton from "@/components/PrintButton";
 import { getT } from "@/lib/i18n/server";
 import { activityLabel, detailLabel, type Lang, type TKey, type Vars } from "@/lib/i18n";
 
@@ -46,6 +47,7 @@ export default async function TripItineraryView({
   payments,
   activityAction,
   contentTop,
+  showPdfButton,
 }: {
   trip: Trip;
   days: DayWithActivities[];
@@ -61,6 +63,8 @@ export default async function TripItineraryView({
   activityAction?: (activityId: string) => React.ReactNode;
   // Contenuto in cima alla pagina, sotto l'intestazione (conto alla rovescia, documenti...)
   contentTop?: React.ReactNode;
+  // Pulsante "Salva in PDF" per chi guarda l'itinerario (cliente o visitatore)
+  showPdfButton?: boolean;
 }) {
   const { t, lang, locale } = await getT();
   const theme = trip.theme || "elegante";
@@ -106,6 +110,11 @@ export default async function TripItineraryView({
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-10">
+        {showPdfButton && (
+          <div className="mb-4 flex justify-end print:hidden">
+            <PrintButton label={t("trip.savePdf")} />
+          </div>
+        )}
         {contentTop}
         {trip.itinerary_stage === "preliminare" && (
           <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">

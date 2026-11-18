@@ -72,6 +72,7 @@ export default async function PublicTripPage({
       <TripItineraryView
         trip={view.trip}
         days={view.days}
+        showPdfButton
         agencyName={(owner as Profile | null)?.agency_name}
         logoUrl={(owner as Profile | null)?.logo_url}
         logoShape={logoShape}

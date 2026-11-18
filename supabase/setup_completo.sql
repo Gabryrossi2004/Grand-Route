@@ -2504,3 +2504,13 @@ revoke all on function public.get_trip_translation(uuid, text) from public;
 revoke all on function public.save_trip_translation(uuid, text, text, jsonb) from public, anon;
 grant execute on function public.get_trip_translation(uuid, text) to anon, authenticated;
 grant execute on function public.save_trip_translation(uuid, text, text, jsonb) to authenticated;
+
+-- ===== 0042_trip_sent_to_client.sql =====
+-- Migrazione: ricorda quando il viaggio è stato inviato per mail al cliente.
+-- Esegui questo file nell'SQL Editor di Supabase DOPO aver eseguito 0041_...
+--
+-- Il sito funziona anche prima di questo passaggio: la mail parte lo stesso,
+-- ma non compare la scritta "Inviato il ...".
+
+alter table public.trips
+  add column if not exists client_notified_at timestamptz;
