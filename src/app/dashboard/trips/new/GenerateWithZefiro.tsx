@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, Loader2, RotateCcw, Sparkles } from "lucide-react";
-import type { Client } from "@/lib/types";
+import type { Client, PromptStyle } from "@/lib/types";
 import type { GeneratedItinerary } from "@/lib/itineraryAi";
 import Modal from "@/components/Modal";
 import DateField from "@/components/DateField";
@@ -37,7 +37,7 @@ function isRedirect(error: unknown) {
 // "Genera con Zefiro": si descrive il viaggio a grandi linee (o nel dettaglio) e Zefiro prepara
 // una proposta, oppure tre se la richiesta è generica. Si scelgono quelle da tenere (le altre
 // diventano varianti dello stesso viaggio) e si crea tutto in un colpo.
-export default function GenerateWithZefiro({ clients }: { clients: Client[] }) {
+export default function GenerateWithZefiro({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"brief" | "questions" | "review">("brief");
   const [planning, setPlanning] = useState(false);
@@ -83,7 +83,7 @@ export default function GenerateWithZefiro({ clients }: { clients: Client[] }) {
 
   function runProposal(index: number, base: PlanOk, concept: { name: string; route: string; summary: string }) {
     setProposals((prev) => prev.map((p, i) => (i === index ? { ...p, status: "loading", error: undefined } : p)));
-    generateProposal({ brief: base.brief, concept, durationDays: base.durationDays })
+    generateProposal({ brief: base.brief, concept, durationDays: base.durationDays, styleId: base.styleId })
       .then((result) => {
         setProposals((prev) =>
           prev.map((p, i) =>
@@ -221,6 +221,21 @@ export default function GenerateWithZefiro({ clients }: { clients: Client[] }) {
               >
                 Inserisci un esempio
               </button>
+              {promptStyles.length > 0 && (
+                <div>
+                  <label htmlFor="gen_style" className={labelClass}>
+                    Stile di scrittura (opzionale)
+                  </label>
+                  <select id="gen_style" name="prompt_style_id" defaultValue="" className={`${inputClass} bg-white`}>
+                    <option value="">Nessuno in particolare</option>
+                    {promptStyles.map((style) => (
+                      <option key={style.id} value={style.id}>
+                        {style.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
               <DropzoneUpload
                 name="file"
                 accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv,.txt,.md"

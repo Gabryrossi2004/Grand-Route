@@ -18,6 +18,7 @@ export type PlanOk = {
   title: string;
   destination: string | null;
   durationDays: number;
+  styleId: string | null;
   mode: "single" | "variants";
   concepts: PlanConcept[];
 };
@@ -28,6 +29,14 @@ export type PlanResult =
   | { direct: { title: string; itinerary: GeneratedItinerary } };
 
 const MAX_BRIEF_CHARS = 12_000;
+
+// Istruzioni dello "Stile" scelto dall'agenzia (Libreria → Stili). Il database lo restituisce solo se è suo.
+async function loadStyle(styleId: string | null): Promise<string | null> {
+  if (!styleId) return null;
+  const supabase = await createClient();
+  const { data } = await supabase.from("prompt_styles").select("prompt_text").eq("id", styleId).maybeSingle();
+  return (data?.prompt_text as string | undefined) ?? null;
+}
 
 // Legge la descrizione del viaggio (testo) e l'eventuale file allegato:
 // foto della bozza oppure Excel/CSV/testo, che diventa testo.
@@ -81,6 +90,7 @@ export async function planTripWithZefiro(formData: FormData): Promise<PlanResult
   const quota = await reserveAiCall("itinerary");
   if (!quota.ok) return { error: quota.error };
   const rules = await loadAiRules();
+  const styleId = String(formData.get("prompt_style_id") ?? "") || null;
 
   // Foto della bozza: è già un itinerario, si legge direttamente (una sola proposta).
   if (read.image) {
@@ -89,6 +99,7 @@ export async function planTripWithZefiro(formData: FormData): Promise<PlanResult
         draftText: brief,
         styleExamples: [],
         image: read.image,
+        styleInstructions: await loadStyle(styleId),
         tripDays: null,
         rulesBlock: rules.text,
         allowQuestions: !clarifications,
@@ -111,6 +122,7 @@ export async function planTripWithZefiro(formData: FormData): Promise<PlanResult
         title: plan.title.trim() || "Nuovo viaggio",
         destination: plan.destination?.trim() || null,
         durationDays: plan.duration_days ?? 7,
+        styleId,
         mode: plan.concepts.length > 1 ? "variants" : "single",
         concepts: plan.concepts.slice(0, 3),
       },
@@ -129,9 +141,15 @@ export async function generateProposal(input: {
   brief: string;
   concept: PlanConcept;
   durationDays: number;
+  styleId?: string | null;
 }): Promise<{ itinerary: GeneratedItinerary } | { error: string }> {
   const parsed = z
-    .object({ brief: z.string().min(1).max(MAX_BRIEF_CHARS + 6000), concept: ConceptInput, durationDays: z.number().int().min(1).max(30) })
+    .object({
+      brief: z.string().min(1).max(MAX_BRIEF_CHARS + 6000),
+      concept: ConceptInput,
+      durationDays: z.number().int().min(1).max(30),
+      styleId: z.string().uuid().nullish(),
+    })
     .safeParse(input);
   if (!parsed.success) return { error: "Richiesta non valida." };
 
@@ -139,7 +157,13 @@ export async function generateProposal(input: {
   if (!quota.ok) return { error: quota.error };
   const rules = await loadAiRules();
   try {
-    const itinerary = await generateProposalItinerary({ ...parsed.data, rulesBlock: rules.text });
+    const itinerary = await generateProposalItinerary({
+      brief: parsed.data.brief,
+      concept: parsed.data.concept,
+      durationDays: parsed.data.durationDays,
+      rulesBlock: rules.text,
+      styleInstructions: await loadStyle(parsed.data.styleId ?? null),
+    });
     return { itinerary };
   } catch (error) {
     console.error("[generateProposal]", (error as Error).message);
