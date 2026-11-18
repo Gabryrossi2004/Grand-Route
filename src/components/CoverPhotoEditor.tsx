@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Camera, ImagePlus, Loader2 } from "lucide-react";
 import { compressImageFile } from "@/lib/compressImage";
@@ -13,16 +14,26 @@ const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
 // Il titolo, i badge e i pulsanti dentro la copertina non fanno scattare il cambio foto.
 export default function CoverPhotoEditor({
   tripId,
+  coverUrl,
   className,
   children,
 }: {
   tripId: string;
+  coverUrl: string | null;
   className?: string;
   children: React.ReactNode;
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
+  // Anteprima immediata della foto appena scelta, finché la pagina non porta quella salvata
+  const [local, setLocal] = useState<{
+    url: string;
+    base: string | null;
+  } | null>(null);
+  // L'anteprima vale finché il server non porta una copertina diversa da quella di partenza
+  const localUrl = local && local.base === coverUrl ? local.url : null;
+
   const [error, setError] = useState<string | null>(null);
 
   function onDoubleClick(e: React.MouseEvent) {
@@ -83,19 +94,36 @@ export default function CoverPhotoEditor({
   async function upload(picked: File) {
     setError(null);
     setBusy(true);
+    // La nuova foto si vede subito; il salvataggio avviene in background
+    const preview = URL.createObjectURL(picked);
+    setLocal((current) => {
+      if (current) URL.revokeObjectURL(current.url);
+      return { url: preview, base: coverUrl };
+    });
+    const undo = () =>
+      setLocal((current) => {
+        if (current) URL.revokeObjectURL(current.url);
+        return null;
+      });
     try {
       let file = await normalizeImageFile(picked);
       file = await compressImageFile(file);
       if (file.size > MAX_UPLOAD_BYTES) {
+        undo();
         setError("La foto è troppo grande (massimo 10 MB).");
         return;
       }
       const formData = new FormData();
       formData.set("cover", file);
       const result = await uploadCover(tripId, formData);
-      if (result && "error" in result) setError(result.error);
-      else router.refresh();
+      if (result && "error" in result) {
+        undo();
+        setError(result.error);
+      } else {
+        router.refresh();
+      }
     } catch {
+      undo();
       setError("Caricamento non riuscito. Controlla la connessione e riprova.");
     } finally {
       setBusy(false);
@@ -111,6 +139,29 @@ export default function CoverPhotoEditor({
       onDragLeave={onDragLeave}
       onDrop={onDrop}
     >
+      {localUrl ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={localUrl}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : (
+        coverUrl && (
+          <Image
+            src={coverUrl}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        )
+      )}
+      {(localUrl || coverUrl) && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+      )}
+
       {children}
 
       <input
@@ -142,8 +193,8 @@ export default function CoverPhotoEditor({
       )}
 
       {busy && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center gap-2 bg-black/50 text-sm font-medium text-white">
-          <Loader2 size={18} className="animate-spin" /> Carico la foto…
+        <div className="absolute bottom-3 left-3 z-20 flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur">
+          <Loader2 size={14} className="animate-spin" /> Salvo la foto…
         </div>
       )}
       {error && (

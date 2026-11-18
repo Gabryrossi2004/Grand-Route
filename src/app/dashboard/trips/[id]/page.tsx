@@ -18,7 +18,6 @@ import type {
   TripService,
 } from "@/lib/types";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Calendar,
   Eye,
@@ -360,14 +359,7 @@ function CoverHero({
 
   return (
     <section className="rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
-      <CoverPhotoEditor tripId={trip.id} className="relative flex h-64 cursor-default flex-col justify-between overflow-hidden rounded-t-2xl bg-[#233c5e] p-6">
-        {trip.cover_image_url && (
-          <>
-            <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-          </>
-        )}
-
+      <CoverPhotoEditor tripId={trip.id} coverUrl={trip.cover_image_url} className="relative flex h-64 cursor-default flex-col justify-between overflow-hidden rounded-t-2xl bg-[#233c5e] p-6">
         <div className="relative flex items-start justify-between gap-2">
           <span
             className={
