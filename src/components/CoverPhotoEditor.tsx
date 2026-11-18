@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Camera, Loader2 } from "lucide-react";
+import { Camera, ImagePlus, Loader2 } from "lucide-react";
 import { compressImageFile } from "@/lib/compressImage";
 import { normalizeImageFile } from "@/lib/normalizeImage";
 import { uploadCover } from "@/app/dashboard/trips/[id]/actions";
@@ -27,14 +27,60 @@ export default function CoverPhotoEditor({
 
   function onDoubleClick(e: React.MouseEvent) {
     const target = e.target as HTMLElement;
-    if (busy || target.closest("button, a, input, textarea, [data-no-cover-edit]")) return;
+    if (
+      busy ||
+      target.closest("button, a, input, textarea, [data-no-cover-edit]")
+    )
+      return;
     inputRef.current?.click();
+  }
+
+  const [dragging, setDragging] = useState(false);
+  const dragDepth = useRef(0);
+  const hasFiles = (e: React.DragEvent) =>
+    Array.from(e.dataTransfer?.types ?? []).includes("Files");
+
+  function onDragEnter(e: React.DragEvent) {
+    if (busy || !hasFiles(e)) return;
+    e.preventDefault();
+    dragDepth.current += 1;
+    setDragging(true);
+  }
+  function onDragOver(e: React.DragEvent) {
+    if (busy || !hasFiles(e)) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "copy";
+  }
+  function onDragLeave(e: React.DragEvent) {
+    if (!hasFiles(e)) return;
+    dragDepth.current = Math.max(0, dragDepth.current - 1);
+    if (dragDepth.current === 0) setDragging(false);
+  }
+  function onDrop(e: React.DragEvent) {
+    if (!hasFiles(e)) return;
+    e.preventDefault();
+    dragDepth.current = 0;
+    setDragging(false);
+    if (busy) return;
+    const file = Array.from(e.dataTransfer.files).find(
+      (f) =>
+        f.type.startsWith("image/") ||
+        /\.(jpe?g|png|webp|gif|heic|heif|avif)$/i.test(f.name),
+    );
+    if (!file) {
+      setError("Trascina un'immagine (JPG, PNG o WebP).");
+      return;
+    }
+    void upload(file);
   }
 
   async function onPick(e: React.ChangeEvent<HTMLInputElement>) {
     const picked = e.target.files?.[0];
     e.target.value = "";
-    if (!picked) return;
+    if (picked) await upload(picked);
+  }
+
+  async function upload(picked: File) {
     setError(null);
     setBusy(true);
     try {
@@ -57,20 +103,43 @@ export default function CoverPhotoEditor({
   }
 
   return (
-    <div className={`group/cover ${className ?? ""}`} onDoubleClick={onDoubleClick}>
+    <div
+      className={`group/cover ${className ?? ""}`}
+      onDoubleClick={onDoubleClick}
+      onDragEnter={onDragEnter}
+      onDragOver={onDragOver}
+      onDragLeave={onDragLeave}
+      onDrop={onDrop}
+    >
       {children}
 
-      <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={onPick} aria-label="Scegli la foto di copertina" />
+      <input
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={onPick}
+        aria-label="Scegli la foto di copertina"
+      />
 
       <button
         type="button"
         onClick={() => !busy && inputRef.current?.click()}
-        title="Cambia la foto di copertina (anche con doppio clic sulla foto)"
+        title="Cambia la foto di copertina (doppio clic o trascina una foto qui)"
         aria-label="Cambia la foto di copertina"
         className="absolute bottom-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur transition hover:bg-black/65 focus-visible:opacity-100 md:opacity-0 md:group-hover/cover:opacity-100"
       >
         <Camera size={16} />
       </button>
+
+      {dragging && (
+        <div className="pointer-events-none absolute inset-2 z-20 flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-dashed border-white bg-[#17283f]/70 text-white backdrop-blur-sm">
+          <ImagePlus size={26} />
+          <p className="text-sm font-semibold">
+            Rilascia per usare questa foto come copertina
+          </p>
+        </div>
+      )}
 
       {busy && (
         <div className="absolute inset-0 z-20 flex items-center justify-center gap-2 bg-black/50 text-sm font-medium text-white">
@@ -78,9 +147,16 @@ export default function CoverPhotoEditor({
         </div>
       )}
       {error && (
-        <p role="alert" className="absolute inset-x-3 bottom-3 z-20 rounded-lg bg-red-600 px-3 py-2 text-sm font-medium text-white">
+        <p
+          role="alert"
+          className="absolute inset-x-3 bottom-3 z-20 rounded-lg bg-red-600 px-3 py-2 text-sm font-medium text-white"
+        >
           {error}{" "}
-          <button type="button" className="underline" onClick={() => setError(null)}>
+          <button
+            type="button"
+            className="underline"
+            onClick={() => setError(null)}
+          >
             Chiudi
           </button>
         </p>
