@@ -57,11 +57,13 @@ import {
   swapDayContent,
   updateActivity,
   updateDayTitle,
+  saveDayBlock,
   uploadActivityPhoto,
   uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
 import DateField from "@/components/DateField";
 import SubmitButton from "@/components/SubmitButton";
+import RichTextEditor from "@/components/RichTextEditor";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -81,11 +83,13 @@ export default function ItineraryEditor({
   days,
   templates,
   documentsByActivity,
+  mode = "activities",
 }: {
   tripId: string;
   days: DayWithActivities[];
   templates: ActivityTemplate[];
   documentsByActivity: Record<string, ActivityDocument[]>;
+  mode?: "activities" | "days";
 }) {
   const [selectedDayId, setSelectedDayId] = useState<string | null>(days[0]?.id ?? null);
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -212,6 +216,7 @@ export default function ItineraryEditor({
             tripId={tripId}
             templates={templates}
             documentsByActivity={documentsByActivity}
+            mode={mode}
             onActivityDragStart={(activityId) => setDraggedActivity({ id: activityId, sourceDayId: selectedDay.id })}
             onActivityDragEnd={() => setDraggedActivity(null)}
             onDeleteDay={() => requestDeleteDay(selectedDay.id)}
@@ -375,6 +380,7 @@ function DayPanel({
   tripId,
   templates,
   documentsByActivity,
+  mode,
   onActivityDragStart,
   onActivityDragEnd,
   onDeleteDay,
@@ -383,6 +389,7 @@ function DayPanel({
   tripId: string;
   templates: ActivityTemplate[];
   documentsByActivity: Record<string, ActivityDocument[]>;
+  mode: "activities" | "days";
   onActivityDragStart: (activityId: string) => void;
   onActivityDragEnd: () => void;
   onDeleteDay: () => void;
@@ -584,7 +591,7 @@ function DayPanel({
           )}
         </h3>
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          {sortedActivities.length > 1 && (
+          {mode === "activities" && sortedActivities.length > 1 && (
             <button
               type="button"
               onClick={toggleAllExpanded}
@@ -608,16 +615,21 @@ function DayPanel({
           >
             <Trash2 size={12} /> Elimina giorno
           </button>
-          <button
-            type="button"
-            onClick={() => setIsAddingActivity(true)}
-            className="order-first flex min-h-11 w-full items-center justify-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] sm:order-none sm:min-h-0 sm:w-auto"
-          >
-            <Plus size={15} /> Attività
-          </button>
+          {mode === "activities" && (
+            <button
+              type="button"
+              onClick={() => setIsAddingActivity(true)}
+              className="order-first flex min-h-11 w-full items-center justify-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] sm:order-none sm:min-h-0 sm:w-auto"
+            >
+              <Plus size={15} /> Attività
+            </button>
+          )}
         </div>
       </div>
 
+      {mode === "days" ? (
+        <DayBlockEditor tripId={tripId} dayId={day.id} initialHtml={sortedActivities[0]?.description ?? ""} />
+      ) : (
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={orderIds} strategy={verticalListSortingStrategy}>
           <ul className="mb-2 flex flex-col gap-3">
@@ -646,7 +658,8 @@ function DayPanel({
           </ul>
         </SortableContext>
       </DndContext>
-      {orderedActivities.length === 0 && <p className="mb-2 text-sm text-slate-500">Nessuna attività ancora.</p>}
+      )}
+      {mode === "activities" && orderedActivities.length === 0 && <p className="mb-2 text-sm text-slate-500">Nessuna attività ancora.</p>}
 
       {isAddingActivity && (
         <Modal title="Nuova attività" onClose={() => setIsAddingActivity(false)}>
@@ -1003,6 +1016,45 @@ function StartDateControl({ tripId, firstDate, hasDays }: { tripId: string; firs
       />
       <p className="text-[11px] leading-snug text-slate-500">
         {pending ? "Aggiorno le date…" : "Le date degli altri giorni si calcolano da sole."}
+      </p>
+    </div>
+  );
+}
+
+
+// Itinerario "per giornata intera": un solo blocco di testo per il giorno, con tutte le attività
+// elencate. Si salva da solo poco dopo l'ultima modifica.
+function DayBlockEditor({ tripId, dayId, initialHtml }: { tripId: string; dayId: string; initialHtml: string }) {
+  const [html, setHtml] = useState(initialHtml);
+  const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latest = useRef(initialHtml);
+
+  useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+    },
+    [],
+  );
+
+  function onChange(next: string) {
+    setHtml(next);
+    latest.current = next;
+    setStatus("saving");
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(async () => {
+      const result = await saveDayBlock(tripId, dayId, latest.current).catch(() => ({ error: "x" }));
+      setStatus("error" in result ? "error" : "saved");
+    }, 900);
+  }
+
+  return (
+    <div className="mb-2">
+      <RichTextEditor value={html} onChange={onChange} placeholder="Scrivi il programma della giornata: elenca le attività, magari con gli orari…" />
+      <p className="mt-1 h-4 text-xs text-slate-500" aria-live="polite">
+        {status === "saving" && "Salvo…"}
+        {status === "saved" && "Salvato"}
+        {status === "error" && <span className="text-red-600">Non è stato possibile salvare: riprova.</span>}
       </p>
     </div>
   );

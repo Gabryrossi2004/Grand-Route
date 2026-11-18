@@ -68,6 +68,8 @@ export default async function TripItineraryView({
 }) {
   const { t, lang, locale } = await getT();
   const theme = trip.theme || "elegante";
+  // Itinerario "per giornata intera": ogni giorno è un solo blocco di testo
+  const daysMode = trip.itinerary_mode === "days";
   const price = getDisplayPrice(trip);
 
   const dateRange =
@@ -135,7 +137,7 @@ export default async function TripItineraryView({
                     {day.title && <span className="font-normal"> — {day.title}</span>}
                   </p>
                   <ul className="mt-1 flex flex-col gap-0.5">
-                    {day.activities.map((activity) => (
+                    {!daysMode && day.activities.map((activity) => (
                       <li key={activity.id} className="flex items-baseline gap-2 text-sm">
                         {activity.start_time && (
                           <span className="theme-muted shrink-0 text-xs">{activity.start_time.slice(0, 5)}</span>
@@ -143,7 +145,7 @@ export default async function TripItineraryView({
                         <span>{activity.title}</span>
                       </li>
                     ))}
-                    {day.activities.length === 0 && <li className="theme-muted text-sm">{t("trip.freeDay")}</li>}
+                    {!daysMode && day.activities.length === 0 && <li className="theme-muted text-sm">{t("trip.freeDay")}</li>}
                   </ul>
                 </div>
               ))}
@@ -161,6 +163,25 @@ export default async function TripItineraryView({
                   <span className="capitalize">{dateLabel}</span>
                   {day.title && <span className="font-normal"> — {day.title}</span>}
                 </h2>
+                {daysMode ? (
+                  <div className="theme-card p-5">
+                    {day.activities.filter((activity) => activity.description).length === 0 ? (
+                      <p className="theme-muted text-sm">{t("trip.noActivities")}</p>
+                    ) : (
+                      day.activities
+                        .filter((activity) => activity.description)
+                        .map((activity) => (
+                          <div key={activity.id}>
+                            <div
+                              className={richTextClassName}
+                              dangerouslySetInnerHTML={{ __html: sanitizeHtml(toSafeHtml(activity.description ?? "")) }}
+                            />
+                            {activityAction && <div className="pt-2">{activityAction(activity.id)}</div>}
+                          </div>
+                        ))
+                    )}
+                  </div>
+                ) : (
                 <ol className="flex flex-col gap-3">
                   {day.activities.map((activity) => {
                     const meta = activityTypes[activity.activity_type];
@@ -240,6 +261,7 @@ export default async function TripItineraryView({
                   })}
                   {day.activities.length === 0 && <li className="theme-muted text-sm">{t("trip.noActivities")}</li>}
                 </ol>
+                )}
               </section>
             );
           })}

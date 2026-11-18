@@ -2,6 +2,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { detailFields } from "@/lib/activityTypes";
 import type { GeneratedItinerary } from "@/lib/itineraryAi";
 import type { ActivityType } from "@/lib/types";
+import { DAY_BLOCK_TITLE, activitiesToBlockHtml, type ItineraryMode } from "@/lib/itineraryMode";
 
 export function addDaysIso(dateStr: string, days: number): string {
   const d = new Date(`${dateStr}T00:00:00Z`);
@@ -16,6 +17,7 @@ export async function insertGeneratedItinerary(
   tripId: string,
   generated: GeneratedItinerary,
   startDate: string | null,
+  mode: ItineraryMode = "activities",
 ): Promise<{ ok: true; days: number } | { error: string }> {
   const sortedDays = [...generated.days].sort((a, b) => a.day_index - b.day_index);
   if (sortedDays.length === 0) return { error: "Itinerario vuoto." };
@@ -38,6 +40,23 @@ export async function insertGeneratedItinerary(
   sortedDays.forEach((day, dayOrder) => {
     const dayId = dayIdByOrder.get(dayOrder);
     if (!dayId) return;
+    // Giornata intera: un solo blocco con tutte le attività elencate
+    if (mode === "days") {
+      const html = activitiesToBlockHtml(day.activities);
+      if (html) {
+        rows.push({
+          trip_day_id: dayId,
+          title: DAY_BLOCK_TITLE,
+          start_time: null,
+          description: html,
+          location: null,
+          activity_type: "attivita",
+          details: {},
+          activity_order: 0,
+        });
+      }
+      return;
+    }
     day.activities.forEach((activity, activityOrder) => {
       const type = activity.activity_type as ActivityType;
       const allowed = new Set(detailFields[type].map((field) => field.key));

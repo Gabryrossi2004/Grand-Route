@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ClipboardCheck, Languages, PencilLine, Wand2 } from "lucide-react";
+import { ChevronDown, ClipboardCheck, Languages, ListPlus, ListTodo, PencilLine, TextCursorInput, Wand2 } from "lucide-react";
 import AssistantIcon from "@/components/AssistantIcon";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { triggerZefiroAction, type ZefiroAction } from "@/components/ZefiroFloating";
@@ -51,7 +51,16 @@ export default function ZefiroTripMenu({ hasContent }: { hasContent: boolean }) 
             <Wand2 size={16} /> {hasContent ? "Genera altre proposte" : "Genera un itinerario"}
           </button>
           <button type="button" role="menuitem" className={item} onClick={() => run("trip-edit")}>
-            <PencilLine size={16} /> Modifica a parole
+            <PencilLine size={16} /> Modifica
+          </button>
+          <button type="button" role="menuitem" className={item} onClick={() => run("trip-suggest")}>
+            <ListPlus size={16} /> Suggerisci attività
+          </button>
+          <button type="button" role="menuitem" className={item} onClick={() => run("trip-describe")}>
+            <TextCursorInput size={16} /> Completa le descrizioni
+          </button>
+          <button type="button" role="menuitem" className={item} onClick={() => run("trip-checklist")}>
+            <ListTodo size={16} /> Checklist del viaggio
           </button>
           <button type="button" role="menuitem" className={item} onClick={() => run("trip-review")}>
             <ClipboardCheck size={16} /> Controlla il viaggio

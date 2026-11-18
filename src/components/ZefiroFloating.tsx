@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { ClipboardCheck, EyeOff, Languages, PencilLine, Route, Settings, Wand2 } from "lucide-react";
+import { ClipboardCheck, EyeOff, Languages, ListPlus, ListTodo, PencilLine, Route, Settings, TextCursorInput, Wand2 } from "lucide-react";
 import Zefiro from "@/components/Zefiro";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { setAvatarVisible } from "@/app/dashboard/settings/actions";
@@ -15,7 +15,15 @@ const DRAG_THRESHOLD = 6;
 // Eventi con cui il personaggio chiede alle pagine di aprire le loro finestre.
 export const ZEFIRO_ACTION_EVENT = "zefiro:action";
 export const ZEFIRO_RESET_EVENT = "zefiro:reset-position";
-export type ZefiroAction = "new-trip" | "trip-generate" | "trip-edit" | "trip-review" | "trip-translate";
+export type ZefiroAction =
+  | "new-trip"
+  | "trip-generate"
+  | "trip-edit"
+  | "trip-review"
+  | "trip-translate"
+  | "trip-describe"
+  | "trip-checklist"
+  | "trip-suggest";
 
 export function triggerZefiroAction(action: ZefiroAction) {
   window.dispatchEvent(new CustomEvent<ZefiroAction>(ZEFIRO_ACTION_EVENT, { detail: action }));
@@ -274,7 +282,19 @@ export default function ZefiroFloating() {
               </button>
               <button type="button" role="menuitem" onClick={() => tripAction("trip-edit")} className={itemClass}>
                 <PencilLine size={16} className="shrink-0 text-[#233c5e]" />
-                Modifica a parole
+                Modifica
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-suggest")} className={itemClass}>
+                <ListPlus size={16} className="shrink-0 text-[#233c5e]" />
+                Suggerisci attività
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-describe")} className={itemClass}>
+                <TextCursorInput size={16} className="shrink-0 text-[#233c5e]" />
+                Completa le descrizioni
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-checklist")} className={itemClass}>
+                <ListTodo size={16} className="shrink-0 text-[#233c5e]" />
+                Checklist del viaggio
               </button>
               <button type="button" role="menuitem" onClick={() => tripAction("trip-review")} className={itemClass}>
                 <ClipboardCheck size={16} className="shrink-0 text-[#233c5e]" />

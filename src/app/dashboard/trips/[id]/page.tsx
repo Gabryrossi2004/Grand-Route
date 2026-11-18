@@ -26,6 +26,7 @@ import {
   Rocket,
 } from "lucide-react";
 import ZefiroTripMenu from "@/components/ZefiroTripMenu";
+import ZefiroTripTools from "@/components/ZefiroTripTools";
 import TripEditWithZefiro from "@/components/TripEditWithZefiro";
 import GenerateWithZefiro from "@/app/dashboard/trips/new/GenerateWithZefiro";
 import TripReview from "@/components/TripReview";
@@ -57,6 +58,7 @@ import VariantLink from "@/components/VariantLink";
 import {
   deleteDocument,
   duplicateTripAsVariant,
+  setItineraryMode,
   togglePublish,
   updateItineraryStage,
   updateTripInfo,
@@ -143,6 +145,16 @@ export default async function TripDetailPage({
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
   }));
 
+  const hasContent = !orderedDays.every((day) => (day.activities?.length ?? 0) === 0);
+  const missingDescriptions = orderedDays.reduce(
+    (sum, day) => sum + (day.activities ?? []).filter((a) => (a.description ?? "").replace(/<[^>]+>/g, "").trim().length < 3).length,
+    0,
+  );
+  const dayOptions = orderedDays.map((day, index) => ({
+    id: day.id,
+    label: `Giorno ${index + 1}${day.day_date ? ` · ${new Date(`${day.day_date}T00:00:00`).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}` : ""}${day.title ? ` — ${day.title}` : ""}`,
+  }));
+
   const activityOptions = orderedDays.flatMap((day, dayIndex) =>
     day.activities.map((activity) => ({
       id: activity.id,
@@ -183,6 +195,7 @@ export default async function TripDetailPage({
   return (
     <div className="flex flex-col gap-8">
       <CoverHero
+        hasContent={hasContent}
         trip={trip}
         publicUrl={publicUrl}
         clientName={tripClient?.full_name ?? null}
@@ -277,18 +290,26 @@ export default async function TripDetailPage({
             <h2 className="text-lg font-semibold text-white">Itinerario</h2>
             <p className="text-xs text-[#cbd1d8]">Il cuore del viaggio: giorni, attività e dettagli per il cliente.</p>
           </div>
-          <ZefiroTripMenu hasContent={!orderedDays.every((day) => (day.activities?.length ?? 0) === 0)} />
+          <ZefiroTripMenu hasContent={hasContent} />
           <GenerateWithZefiro
             clients={[]}
             promptStyles={(promptStyles as PromptStyle[]) || []}
             showButton={false}
             trip={{
               id,
-              hasContent: !orderedDays.every((day) => (day.activities?.length ?? 0) === 0),
+              hasContent,
               startDate: trip.start_date ?? null,
+              mode: trip.itinerary_mode === "days" ? "days" : "activities",
             }}
           />
           <TripEditWithZefiro tripId={id} />
+          <ZefiroTripTools
+            tripId={id}
+            mode={trip.itinerary_mode === "days" ? "days" : "activities"}
+            days={dayOptions}
+            promptStyles={(promptStyles as PromptStyle[]) || []}
+            missingDescriptions={missingDescriptions}
+          />
           <TripReview tripId={id} showButton={false} />
         </div>
         {trip.ai_notes && <AiNotes tripId={id} notes={trip.ai_notes} />}
@@ -299,6 +320,7 @@ export default async function TripDetailPage({
               days={orderedDays}
               templates={(templates as ActivityTemplate[]) || []}
               documentsByActivity={documentsByActivity}
+              mode={trip.itinerary_mode === "days" ? "days" : "activities"}
             />
           </div>
           <LibraryPanel templates={(templates as ActivityTemplate[]) || []} />
@@ -337,6 +359,7 @@ export default async function TripDetailPage({
 }
 
 function CoverHero({
+  hasContent,
   trip,
   publicUrl,
   clientName,
@@ -347,6 +370,7 @@ function CoverHero({
   activityOptions,
   variantTrips,
 }: {
+  hasContent: boolean;
   trip: Trip;
   publicUrl: string;
   clientName: string | null;
@@ -455,6 +479,9 @@ function CoverHero({
           isFinal={trip.itinerary_stage === "finale"}
           stageAction={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}
           duplicateAction={duplicateTripAsVariant.bind(null, trip.id)}
+          mode={trip.itinerary_mode === "days" ? "days" : "activities"}
+          modeAction={setItineraryMode.bind(null, trip.id, trip.itinerary_mode === "days" ? "activities" : "days")}
+          hasContent={hasContent}
         />
       </div>
 

@@ -11,6 +11,8 @@ import DropzoneUpload from "@/components/DropzoneUpload";
 import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import AssistantIcon from "@/components/AssistantIcon";
 import { ZefiroThinking } from "@/components/Zefiro";
+import ItineraryModePicker from "@/components/ItineraryModePicker";
+import type { ItineraryMode } from "@/lib/itineraryMode";
 import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { applyProposalsToTrip, createTripFromProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
@@ -47,7 +49,7 @@ export default function GenerateWithZefiro({
   clients: Client[];
   promptStyles: PromptStyle[];
   // Dentro un viaggio già creato: le proposte vanno qui (se vuoto) o diventano varianti
-  trip?: { id: string; hasContent: boolean; startDate: string | null };
+  trip?: { id: string; hasContent: boolean; startDate: string | null; mode?: ItineraryMode };
   showButton?: boolean;
 }) {
   const router = useRouter();
@@ -64,6 +66,7 @@ export default function GenerateWithZefiro({
   const [destination, setDestination] = useState("");
   const [clientId, setClientId] = useState("");
   const [startDate, setStartDate] = useState(trip?.startDate ?? "");
+  const [itineraryMode, setItineraryMode] = useState<ItineraryMode>(trip?.mode ?? "activities");
   const [saving, setSaving] = useState(false);
   const briefRef = useRef<HTMLTextAreaElement>(null);
   const lastForm = useRef<FormData | null>(null);
@@ -188,6 +191,7 @@ export default function GenerateWithZefiro({
         const applied = await applyProposalsToTrip({
           tripId: trip.id,
           startDate: startDate || null,
+          itineraryMode,
           proposals: selected.map((p) => ({ name: p.name || title, itinerary: p.itinerary as GeneratedItinerary })),
         });
         if ("error" in applied) {
@@ -210,6 +214,7 @@ export default function GenerateWithZefiro({
         destination: destination.trim() || null,
         clientId: clientId || null,
         startDate: startDate || null,
+        itineraryMode,
         proposals: selected.map((p) => ({ name: p.name || title, itinerary: p.itinerary as GeneratedItinerary })),
       });
       if (result?.error) setError(result.error);
@@ -264,6 +269,7 @@ export default function GenerateWithZefiro({
               >
                 Inserisci un esempio
               </button>
+              {!(trip && trip.hasContent) && <ItineraryModePicker value={itineraryMode} onChange={setItineraryMode} />}
               {promptStyles.length > 0 && (
                 <div>
                   <label htmlFor="gen_style" className={labelClass}>

@@ -28,14 +28,14 @@ async function loadTrip(tripId: string) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." } as const;
-  const { data: trip } = await supabase.from("trips").select("id").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("id, itinerary_mode").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." } as const;
   const { data: days } = await supabase
     .from("trip_days")
     .select("id, day_date, day_order, title, activities(id, trip_day_id, start_time, activity_type, title, description, location, activity_order)")
     .eq("trip_id", tripId)
     .order("day_order", { ascending: true });
-  return { supabase, days: (days ?? []) as unknown as { id: string; day_date: string | null; title: string | null; activities: ActivityRow[] }[] };
+  return { supabase, daysMode: (trip as { itinerary_mode?: string }).itinerary_mode === "days", days: (days ?? []) as unknown as { id: string; day_date: string | null; title: string | null; activities: ActivityRow[] }[] };
 }
 
 const typeLabel = (t: string | null) => (t && t in activityTypes ? activityTypes[t as keyof typeof activityTypes].label.toLowerCase() : "attività");
@@ -106,11 +106,11 @@ export async function proposeTripEdits(tripId: string, instruction: string): Pro
   const quota = await reserveAiCall("itinerary");
   if (!quota.ok) return { error: quota.error };
 
-  const snapshot = buildSnapshot(loaded.days);
+  const snapshot = buildSnapshot(loaded.days, { raw: loaded.daysMode });
   if (JSON.stringify(snapshot).length > MAX_DRAFT_CHARS) return { error: "L'itinerario è troppo lungo per questa funzione." };
   const rules = await loadAiRules();
   try {
-    const result = await proposeEdits({ snapshot, instruction: text, rulesBlock: rules.text });
+    const result = await proposeEdits({ snapshot, instruction: text, rulesBlock: rules.text, daysMode: loaded.daysMode });
     if (result.questions.length > 0 && result.operations.length === 0) return { questions: result.questions, summary: result.summary };
     const changes = describe(snapshot, result.operations);
     if (changes.length === 0) return { error: result.summary ? `Nessuna modifica possibile: ${result.summary}` : "Non ho trovato modifiche da proporre. Prova a descriverle meglio." };
@@ -145,7 +145,7 @@ export async function applyTripEdits(input: { tripId: string; ops: EditOp[] }): 
         const patch: Record<string, unknown> = {};
         if (op.title) patch.title = op.title.slice(0, 200);
         if (op.start_time !== null) patch.start_time = op.start_time === "" ? null : time(op.start_time);
-        if (op.description) patch.description = op.description.slice(0, 3000);
+        if (op.description) patch.description = op.description.slice(0, 20000);
         if (op.location) patch.location = op.location.slice(0, 200);
         if (op.activity_type && op.activity_type in activityTypes) patch.activity_type = op.activity_type;
         if (Object.keys(patch).length === 0) continue;

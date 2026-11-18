@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Copy, FileCheck2, FileDown, Languages, MoreHorizontal } from "lucide-react";
+import { CalendarDays, Copy, FileCheck2, FileDown, Languages, ListChecks, MoreHorizontal } from "lucide-react";
 import SubmitButton from "@/components/SubmitButton";
 import { TranslateTripDialog } from "@/components/TranslateTripButton";
 import { ASSISTANT_NAME } from "@/lib/assistant";
@@ -15,11 +15,17 @@ export default function TripMoreMenu({
   isFinal,
   stageAction,
   duplicateAction,
+  modeAction,
+  mode,
+  hasContent,
 }: {
   tripId: string;
   isFinal: boolean;
   stageAction: () => void | Promise<void>;
   duplicateAction: () => void | Promise<void>;
+  modeAction: () => void | Promise<void>;
+  mode: "activities" | "days";
+  hasContent: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [translateOpen, setTranslateOpen] = useState(false);
@@ -80,6 +86,22 @@ export default function TripMoreMenu({
             </button>
           </form>
           <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario.</p>
+
+          {!hasContent && (
+            <>
+              <form action={modeAction}>
+                <button type="submit" role="menuitem" className={item}>
+                  {mode === "days" ? <ListChecks size={16} /> : <CalendarDays size={16} />}
+                  {mode === "days" ? "Organizza per attività" : "Organizza per giornata intera"}
+                </button>
+              </form>
+              <p className={hint}>
+                {mode === "days"
+                  ? "Ora ogni giorno è un unico blocco di testo. Possibile solo finché l'itinerario è vuoto."
+                  : "Ora ogni attività ha la sua scheda. Possibile solo finché l'itinerario è vuoto."}
+              </p>
+            </>
+          )}
 
           <form action={duplicateAction}>
             <SubmitButton pendingLabel="Creazione variante…" className={item}>

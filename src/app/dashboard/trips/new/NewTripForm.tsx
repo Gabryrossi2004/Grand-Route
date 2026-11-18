@@ -9,11 +9,14 @@ import Modal from "@/components/Modal";
 import ClientRequestExtractor from "./ClientRequestExtractor";
 import GenerateWithZefiro from "./GenerateWithZefiro";
 import DateField from "@/components/DateField";
+import ItineraryModePicker from "@/components/ItineraryModePicker";
+import type { ItineraryMode } from "@/lib/itineraryMode";
 
 export default function NewTripForm({ clients, promptStyles }: { clients: Client[]; promptStyles: PromptStyle[] }) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
   const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
   const [showExtractor, setShowExtractor] = useState(false);
+  const [itineraryMode, setItineraryMode] = useState<ItineraryMode>("activities");
 
   const titleRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
@@ -100,6 +103,8 @@ export default function NewTripForm({ clients, promptStyles }: { clients: Client
             <DateField id="end_date" name="end_date" value={endDate} onChange={setEndDate} openAt={startDate} highlightFrom={startDate} highlightTo={endDate} className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
           </div>
         </div>
+
+        <ItineraryModePicker value={itineraryMode} onChange={setItineraryMode} name="itinerary_mode" />
 
         {clients.length > 0 && (
           <div>

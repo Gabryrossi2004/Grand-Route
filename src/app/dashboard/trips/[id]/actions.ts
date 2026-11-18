@@ -404,6 +404,52 @@ export async function deleteDay(tripId: string, dayId: string) {
   revalidatePath("/dashboard/trips");
 }
 
+// Itinerario "per giornata intera": salva il blocco di testo del giorno (l'unica attività del giorno).
+export async function saveDayBlock(tripId: string, dayId: string, html: string): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const clean = String(html ?? "").slice(0, 60000);
+  const empty = clean.replace(/<[^>]+>/g, "").trim() === "";
+
+  const { data: existing } = await supabase
+    .from("activities")
+    .select("id")
+    .eq("trip_day_id", dayId)
+    .order("activity_order", { ascending: true })
+    .limit(1);
+  const first = existing?.[0];
+
+  if (first) {
+    const { error } = await supabase.from("activities").update({ description: empty ? null : clean }).eq("id", first.id);
+    if (error) return { error: "Non è stato possibile salvare." };
+  } else if (!empty) {
+    const { error } = await supabase.from("activities").insert({
+      trip_day_id: dayId,
+      title: "Programma della giornata",
+      activity_type: "attivita",
+      description: clean,
+      details: {},
+      activity_order: 0,
+    });
+    if (error) return { error: "Non è stato possibile salvare." };
+  }
+  revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
+}
+
+// Passa tra "per attività" e "giornata intera": possibile solo finché l'itinerario è vuoto
+// (cambiare con del contenuto già scritto lo rovinerebbe).
+export async function setItineraryMode(tripId: string, mode: "activities" | "days") {
+  const supabase = await createClient();
+  const { data: dayRows } = await supabase.from("trip_days").select("id").eq("trip_id", tripId);
+  const ids = (dayRows ?? []).map((d) => d.id as string);
+  if (ids.length > 0) {
+    const { count } = await supabase.from("activities").select("id", { count: "exact", head: true }).in("trip_day_id", ids);
+    if ((count ?? 0) > 0) return;
+  }
+  await supabase.from("trips").update({ itinerary_mode: mode === "days" ? "days" : "activities" }).eq("id", tripId);
+  revalidatePath(`/dashboard/trips/${tripId}`);
+}
+
 export async function updateDayTitle(tripId: string, dayId: string, title: string) {
   const supabase = await createClient();
   const clean = title.trim();

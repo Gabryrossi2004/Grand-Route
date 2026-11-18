@@ -12,6 +12,7 @@ import { parseExcelToText } from "@/lib/itineraryFileParsing";
 import { GeneratedItinerarySchema, generateItineraryFromDraft, type DraftImage, type GeneratedItinerary } from "@/lib/itineraryAi";
 import { generateProposalItinerary, planTripFromBrief } from "@/lib/tripBriefAi";
 import { addDaysIso, insertGeneratedItinerary } from "@/lib/itineraryInsert";
+import { parseMode, type ItineraryMode } from "@/lib/itineraryMode";
 
 export type PlanConcept = { name: string; route: string; summary: string };
 export type PlanOk = {
@@ -192,6 +193,7 @@ const SaveInput = z.object({
   destination: z.string().trim().max(200).nullable(),
   clientId: z.string().uuid().nullable(),
   startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(),
+  itineraryMode: z.enum(["activities", "days"]).optional(),
   proposals: z.array(z.object({ name: z.string().trim().max(120), itinerary: GeneratedItinerarySchema })).min(1).max(3),
 });
 
@@ -201,6 +203,7 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
   const parsed = SaveInput.safeParse(input);
   if (!parsed.success) return { error: "I dati del viaggio non sono validi. Rigenera le proposte." };
   const { title, destination, clientId, startDate, proposals } = parsed.data;
+  const mode: ItineraryMode = parseMode(parsed.data.itineraryMode);
 
   const supabase = await createClient();
   const {
@@ -239,16 +242,24 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
       end_date: startDate ? addDaysIso(startDate, days - 1) : null,
       public_slug: generatePublicSlug(),
     };
-    let result = await supabase.from("trips").insert({ ...base, ai_notes: notes || null }).select("id").single();
-    // Se la colonna delle note non c'è ancora (migrazione 0033) si salva senza
-    if (result.error) result = await supabase.from("trips").insert(base).select("id").single();
+    // Se le colonne nuove non ci sono ancora (migrazioni 0033 e 0043) si riprova senza
+    const attempts: Record<string, unknown>[] = [
+      { ...base, itinerary_mode: mode, ai_notes: notes || null },
+      { ...base, itinerary_mode: mode },
+      { ...base, ai_notes: notes || null },
+      base,
+    ];
+    let result = await supabase.from("trips").insert(attempts[0]).select("id").single();
+    for (let i = 1; i < attempts.length && result.error; i++) {
+      result = await supabase.from("trips").insert(attempts[i]).select("id").single();
+    }
     if (result.error || !result.data) {
       await cleanup();
       return { error: "Non è stato possibile creare il viaggio. Riprova." };
     }
     createdTripIds.push(result.data.id as string);
 
-    const inserted = await insertGeneratedItinerary(supabase, result.data.id as string, proposal.itinerary, startDate);
+    const inserted = await insertGeneratedItinerary(supabase, result.data.id as string, proposal.itinerary, startDate, mode);
     if ("error" in inserted) {
       await cleanup();
       return { error: inserted.error };
@@ -262,6 +273,7 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
 const ApplyInput = z.object({
   tripId: z.string().uuid(),
   startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(),
+  itineraryMode: z.enum(["activities", "days"]).optional(),
   proposals: z.array(z.object({ name: z.string().trim().max(120), itinerary: GeneratedItinerarySchema })).min(1).max(3),
 });
 
@@ -293,6 +305,8 @@ export async function applyProposalsToTrip(
 
   const startDate = parsed.data.startDate ?? (trip.start_date as string | null);
   const fillFirst = !hasContent;
+  // Viaggio vuoto: si può scegliere la modalità; con un itinerario già scritto resta quella attuale
+  const mode: ItineraryMode = fillFirst ? parseMode(parsed.data.itineraryMode ?? trip.itinerary_mode) : parseMode(trip.itinerary_mode);
   const variantProposals = fillFirst ? proposals.slice(1) : proposals;
 
   // Gruppo di varianti (si crea se serve e il viaggio non ne ha già uno)
@@ -332,14 +346,22 @@ export async function applyProposalsToTrip(
       public_slug: generatePublicSlug(),
     };
     const notes = notesOf(proposal);
-    let result = await supabase.from("trips").insert({ ...base, ai_notes: notes || null }).select("id").single();
-    if (result.error) result = await supabase.from("trips").insert(base).select("id").single();
+    const attempts: Record<string, unknown>[] = [
+      { ...base, itinerary_mode: mode, ai_notes: notes || null },
+      { ...base, itinerary_mode: mode },
+      { ...base, ai_notes: notes || null },
+      base,
+    ];
+    let result = await supabase.from("trips").insert(attempts[0]).select("id").single();
+    for (let i = 1; i < attempts.length && result.error; i++) {
+      result = await supabase.from("trips").insert(attempts[i]).select("id").single();
+    }
     if (result.error || !result.data) {
       if (createdIds.length > 0) await supabase.from("trips").delete().in("id", createdIds);
       return { error: "Non è stato possibile creare le varianti. Riprova." };
     }
     createdIds.push(result.data.id as string);
-    const inserted = await insertGeneratedItinerary(supabase, result.data.id as string, proposal.itinerary, startDate);
+    const inserted = await insertGeneratedItinerary(supabase, result.data.id as string, proposal.itinerary, startDate, mode);
     if ("error" in inserted) {
       await supabase.from("trips").delete().in("id", createdIds);
       return { error: inserted.error };
@@ -350,7 +372,7 @@ export async function applyProposalsToTrip(
     const first = proposals[0];
     // I giorni vuoti già presenti si sostituiscono solo ora, a generazione riuscita
     if (dayIds.length > 0) await supabase.from("trip_days").delete().in("id", dayIds);
-    const inserted = await insertGeneratedItinerary(supabase, tripId, first.itinerary, startDate);
+    const inserted = await insertGeneratedItinerary(supabase, tripId, first.itinerary, startDate, mode);
     if ("error" in inserted) {
       if (createdIds.length > 0) await supabase.from("trips").delete().in("id", createdIds);
       return { error: inserted.error };
@@ -363,6 +385,10 @@ export async function applyProposalsToTrip(
     }
     const notes = notesOf(first);
     if (notes) patch.ai_notes = notes;
+    if (mode !== parseMode(trip.itinerary_mode)) {
+      // Se la migrazione 0043 non c'è ancora, questa modifica viene ignorata
+      await supabase.from("trips").update({ itinerary_mode: mode }).eq("id", tripId);
+    }
     if (Object.keys(patch).length > 0) {
       const { error } = await supabase.from("trips").update(patch).eq("id", tripId);
       if (error && patch.ai_notes) {
