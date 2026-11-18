@@ -97,7 +97,7 @@ export default async function TripDetailPage({
   // Un errore temporaneo NON deve sembrare «viaggio inesistente»: mostriamo «Riprova»
   if (tripError) {
     console.error("[trip page] viaggio non caricato:", tripError.code, tripError.message);
-    throw new Error("Viaggio non caricato");
+    return <LoadErrorCard what="il viaggio" code={tripError.code} message={tripError.message} />;
   }
   if (!trip) notFound();
 
@@ -152,7 +152,7 @@ export default async function TripDetailPage({
   // facciamo comparire la schermata d'errore con «Riprova».
   if (daysError) {
     console.error("[trip page] itinerario non caricato:", daysError.code, daysError.message);
-    throw new Error("Itinerario non caricato");
+    return <LoadErrorCard what="l'itinerario" code={daysError.code} message={daysError.message} />;
   }
 
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
@@ -577,5 +577,26 @@ function TripInfoForm({ trip }: { trip: Trip }) {
         <ThemePicker tripId={trip.id} current={trip.theme} />
       </details>
     </ExpandableSection>
+  );
+}
+
+
+// Errore del database mostrato con i dettagli tecnici (codice e messaggio), così si può capire
+// subito la causa. Non contiene dati personali: solo il tipo di errore.
+function LoadErrorCard({ what, code, message }: { what: string; code?: string; message?: string }) {
+  return (
+    <div className="mx-auto flex max-w-lg flex-col items-center gap-3 rounded-2xl border border-[#e6d7bb] bg-white p-8 text-center shadow-sm">
+      <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-slate-900">Non riesco a caricare {what}</h2>
+      <p className="text-sm text-slate-500">
+        I dati già salvati non sono stati persi. Ricarica la pagina tra qualche secondo. Se il problema resta, manda all&apos;assistenza
+        il dettaglio qui sotto.
+      </p>
+      <a href="" className="rounded-lg bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white hover:bg-[#17283f]">
+        Ricarica la pagina
+      </a>
+      <p className="break-all text-[11px] text-slate-400">
+        Dettaglio: {code ?? "?"} · {message ?? "errore sconosciuto"}
+      </p>
+    </div>
   );
 }
