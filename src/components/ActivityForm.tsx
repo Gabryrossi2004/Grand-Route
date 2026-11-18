@@ -286,6 +286,11 @@ export default function ActivityForm({
                     onClick={() => applyFlightResult(result)}
                     className="w-full rounded-md border border-[#e6d7bb] bg-white px-2 py-1.5 text-left text-xs text-slate-700 hover:border-[#ddc8a0] hover:bg-[#faf3e6]"
                   >
+                    {result.stops && (
+                      <span className="mr-1.5 rounded-full bg-[#233c5e] px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                        Percorso completo · scalo {result.stops.join(", ")}
+                      </span>
+                    )}
                     {result.airline} {result.flightNumber}: {result.departureAirport} ({result.departureTime}) →{" "}
                     {result.arrivalAirport} ({result.arrivalTime})
                   </button>

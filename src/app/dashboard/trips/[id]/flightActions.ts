@@ -11,6 +11,9 @@ export type FlightLookupResult = {
   arrivalDate: string;
   arrivalTime: string;
   aircraft: string | null;
+  // Volo con scalo e un solo numero: scali intermedi e numero di tratte (percorso completo)
+  stops?: string[];
+  legs?: number;
 };
 
 type AeroDataBoxAirport = {
@@ -89,17 +92,8 @@ export async function searchFlight(
       return { error: "Nessun volo trovato con questo numero per questa data." };
     }
 
-    // Per i voli con lo stesso numero tutti i giorni (es. un volo giornaliero),
-    // l'API può restituire anche l'istanza del giorno precedente (ancora in
-    // atterraggio) insieme a quella di oggi: a video sembrerebbero due voli
-    // identici perché mostriamo solo l'orario, non la data. Teniamo solo
-    // l'istanza che parte esattamente nel giorno cercato.
-    const sameDayFlights = rawFlights.filter(
-      (flight) => formatDate(flight.departure?.scheduledTime?.local) === date,
-    );
-    const flights = sameDayFlights.length > 0 ? sameDayFlights : rawFlights;
-
-    const allResults: FlightLookupResult[] = flights.map((flight) => ({
+    type Leg = FlightLookupResult & { depLocal: string; arrLocal: string; depIata: string };
+    const toLeg = (flight: AeroDataBoxFlight): Leg => ({
       airline: flight.airline?.name ?? "",
       flightNumber: flight.number ?? cleanNumber,
       departureAirport: formatAirport(flight.departure?.airport),
@@ -110,14 +104,50 @@ export async function searchFlight(
       arrivalDate: formatDate(flight.arrival?.scheduledTime?.local),
       arrivalTime: formatTime(flight.arrival?.scheduledTime?.local),
       aircraft: flight.aircraft?.model ?? null,
-    }));
+      depLocal: flight.departure?.scheduledTime?.local ?? "",
+      arrLocal: flight.arrival?.scheduledTime?.local ?? "",
+      depIata: flight.departure?.airport?.iata ?? "",
+    });
+    const byDeparture = (a: Leg, b: Leg) => a.depLocal.localeCompare(b.depLocal);
+    const everyLeg = rawFlights.map(toLeg).sort(byDeparture);
+
+    // Per i voli con lo stesso numero tutti i giorni (es. un volo giornaliero),
+    // l'API può restituire anche l'istanza del giorno precedente (ancora in
+    // atterraggio) insieme a quella di oggi: teniamo le tratte che partono
+    // esattamente nel giorno cercato...
+    const sameDay = everyLeg.filter((leg) => formatDate(leg.depLocal) === date);
+    const kept = sameDay.length > 0 ? [...sameDay] : [...everyLeg];
+
+    // ...più le tratte successive dello stesso volo con scalo, anche se ripartono
+    // il giorno dopo (si agganciano all'aeroporto in cui è atterrata la tratta precedente,
+    // entro 36 ore).
+    if (sameDay.length > 0) {
+      let extended = true;
+      while (extended) {
+        extended = false;
+        for (const leg of everyLeg) {
+          if (kept.includes(leg) || !leg.depIata) continue;
+          const previous = kept.find(
+            (k) =>
+              k.arrivalIata === leg.depIata &&
+              leg.depLocal >= k.arrLocal &&
+              new Date(leg.depLocal).getTime() - new Date(k.arrLocal).getTime() < 36 * 3600 * 1000,
+          );
+          if (previous) {
+            kept.push(leg);
+            extended = true;
+          }
+        }
+      }
+      kept.sort(byDeparture);
+    }
 
     // Per i voli già in corso, l'API a volte restituisce due righe per lo
     // stesso volo: una "live" senza l'orario di partenza (perché è già
     // decollato) e una con tutti gli orari completi. Teniamo solo quelle
     // complete, così non si vedono doppioni confusi con l'orario mancante.
-    const complete = allResults.filter((r) => r.departureTime && r.arrivalTime);
-    const candidates = complete.length > 0 ? complete : allResults;
+    const complete = kept.filter((r) => r.departureTime && r.arrivalTime);
+    const candidates = complete.length > 0 ? complete : kept;
 
     // A volte anche tra i risultati "completi" l'API restituisce due righe
     // praticamente identiche per lo stesso volo (gli orari esatti possono
@@ -125,12 +155,34 @@ export async function searchFlight(
     // una sola riga per ogni combinazione aeroporto-partenza/aeroporto-arrivo/
     // giorno di arrivo, così non si vede più un doppione da scegliere.
     const seen = new Set<string>();
-    const data = candidates.filter((r) => {
+    const legs = candidates.filter((r) => {
       const key = `${r.departureAirport}|${r.arrivalAirport}|${r.arrivalDate}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     });
+
+    // Volo con scalo e un solo numero: oltre alle singole tratte, proponiamo il
+    // percorso completo (partenza della prima tratta, arrivo dell'ultima).
+    const chain: Leg[] = legs.length > 0 ? [legs[0]] : [];
+    for (const leg of legs.slice(1)) {
+      if (leg.depIata && leg.depIata === chain[chain.length - 1].arrivalIata) chain.push(leg);
+    }
+    const strip = ({ depLocal: _d, arrLocal: _a, depIata: _i, ...rest }: Leg): FlightLookupResult => rest;
+    const data: FlightLookupResult[] = legs.map(strip);
+    if (chain.length >= 2) {
+      const first = chain[0];
+      const last = chain[chain.length - 1];
+      const stops = chain.slice(0, -1).map((leg) => leg.arrivalAirport.split(" – ")[0] || leg.arrivalCity);
+      data.unshift({
+        ...strip(last),
+        departureAirport: first.departureAirport,
+        departureTime: first.departureTime,
+        aircraft: first.aircraft,
+        stops,
+        legs: chain.length,
+      });
+    }
 
     return { data };
   } catch {
