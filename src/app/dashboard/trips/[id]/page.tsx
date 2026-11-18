@@ -73,6 +73,9 @@ const inputClass =
   "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
 
+// Le funzioni di Zefiro chiamate da questa pagina possono richiedere qualche decina di secondi
+export const maxDuration = 60;
+
 export default async function TripDetailPage({
   params,
   searchParams,
@@ -94,7 +97,7 @@ export default async function TripDetailPage({
   if (!trip) notFound();
 
   const [
-    { data: days },
+    { data: days, error: daysError },
     { data: templates },
     { data: checklistItems },
     { data: tripServices },
@@ -140,6 +143,13 @@ export default async function TripDetailPage({
       : Promise.resolve({ data: [] as TripMessage[] }),
   ]);
 
+  // Se l'itinerario non si carica NON mostriamo un itinerario vuoto (sembrerebbe cancellato):
+  // facciamo comparire la schermata d'errore con «Riprova».
+  if (daysError) {
+    console.error("[trip page] itinerario non caricato:", daysError.code, daysError.message);
+    throw new Error("Itinerario non caricato");
+  }
+
   const orderedDays = ((days as DayWithActivities[]) || []).map((day) => ({
     ...day,
     activities: (day.activities || []).sort((a, b) => a.activity_order - b.activity_order),
@@ -171,18 +181,20 @@ export default async function TripDetailPage({
   const protocol = host?.includes("localhost") ? "http" : "https";
   const publicUrl = `${protocol}://${host}/t/${trip.public_slug}`;
 
-  const allDocumentsWithUrl = await Promise.all(
-    ((documents as TripDocument[]) || []).map(async (document) => {
-      const { data } = await supabase.storage
-        .from("trip-documents")
-        .createSignedUrl(document.file_path, 60 * 10);
-      const coverUrl = document.cover_image_path
-        ? (await supabase.storage.from("trip-documents").createSignedUrl(document.cover_image_path, 60 * 10)).data
-            ?.signedUrl ?? null
-        : null;
-      return { ...document, signedUrl: data?.signedUrl ?? null, coverUrl };
-    }),
-  );
+  // Link firmati per tutti i documenti (e le loro copertine) in UNA sola richiesta
+  const docs = (documents as TripDocument[]) || [];
+  const paths = [...new Set(docs.flatMap((d) => [d.file_path, d.cover_image_path].filter((p): p is string => Boolean(p))))];
+  const signed = new Map<string, string>();
+  if (paths.length > 0) {
+    const { data: urls, error: urlError } = await supabase.storage.from("trip-documents").createSignedUrls(paths, 60 * 10);
+    if (urlError) console.error("[trip page] link documenti:", urlError.message);
+    for (const u of urls ?? []) if (u.path && u.signedUrl) signed.set(u.path, u.signedUrl);
+  }
+  const allDocumentsWithUrl = docs.map((document) => ({
+    ...document,
+    signedUrl: signed.get(document.file_path) ?? null,
+    coverUrl: document.cover_image_path ? (signed.get(document.cover_image_path) ?? null) : null,
+  }));
 
   const documentsWithUrl = allDocumentsWithUrl.filter((document) => !document.activity_id);
 

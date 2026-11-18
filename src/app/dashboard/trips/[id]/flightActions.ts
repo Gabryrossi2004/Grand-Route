@@ -1,5 +1,7 @@
 "use server";
 
+import { getCachedUser } from "@/lib/supabase/server";
+
 export type FlightLookupResult = {
   airline: string;
   flightNumber: string;
@@ -55,6 +57,10 @@ export async function searchFlight(
   flightNumber: string,
   date: string,
 ): Promise<{ data?: FlightLookupResult[]; error?: string }> {
+  // Solo per utenti collegati: ogni ricerca consuma il piano a pagamento della ricerca voli
+  const user = await getCachedUser();
+  if (!user) return { error: "Sessione scaduta: ricarica la pagina e accedi di nuovo." };
+
   const apiKey = process.env.AERODATABOX_API_KEY;
   if (!apiKey) {
     return { error: "La ricerca voli non è configurata (manca la chiave API)." };

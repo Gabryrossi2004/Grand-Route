@@ -62,7 +62,7 @@ export default function ActivityForm({
   documents,
   dayDate,
 }: {
-  action: (formData: FormData) => void | Promise<void>;
+  action: (formData: FormData) => void | Promise<void | { ok?: true; error?: string }>;
   templates: ActivityTemplate[];
   initialActivity?: Activity;
   onCancel?: () => void;
@@ -290,9 +290,16 @@ export default function ActivityForm({
   // router.refresh() forza l'aggiornamento immediato dei dati della pagina:
   // avvolgendo l'azione in questa funzione client, Next.js non la riconosce
   // più come invio diretto di una Server Action e non la rinfresca da solo.
-  const [, dispatch, pending] = useActionState(
-    async (_prevState: null, formData: FormData) => {
-      await action(formData);
+  // Se il salvataggio non riesce, il modulo resta aperto con i dati inseriti e un messaggio chiaro
+  // (prima un errore di rete faceva "crollare" tutta la pagina).
+  const [saveError, dispatch, pending] = useActionState(
+    async (_prevState: string | null, formData: FormData): Promise<string | null> => {
+      try {
+        const result = await action(formData);
+        if (result && typeof result === "object" && result.error) return result.error;
+      } catch {
+        return "Salvataggio non riuscito: controlla la connessione e riprova. Se continua, ricarica la pagina.";
+      }
       router.refresh();
       if (isEdit) {
         onCancel?.();
@@ -563,6 +570,11 @@ export default function ActivityForm({
           </div>
         )}
 
+        {saveError && (
+          <p role="alert" className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+            {saveError}
+          </p>
+        )}
         <div className="flex justify-end gap-2">
           {isEdit && (
             <button

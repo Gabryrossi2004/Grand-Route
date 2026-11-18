@@ -49,13 +49,17 @@ async function ensureDayForDate(
   tripId: string,
   dateStr: string,
 ): Promise<string | null> {
-  const { data: existing } = await supabase
+  // limit(1) e non maybeSingle(): se per errore ci sono due giorni con la stessa data,
+  // maybeSingle() fallirebbe e si creerebbe un ALTRO doppione.
+  const { data: existingRows } = await supabase
     .from("trip_days")
     .select("id")
     .eq("trip_id", tripId)
     .eq("day_date", dateStr)
-    .maybeSingle();
-  if (existing) return existing.id;
+    .order("day_order", { ascending: true })
+    .limit(1);
+  const existing = existingRows?.[0];
+  if (existing) return existing.id as string;
 
   const { data: created } = await supabase
     .from("trip_days")
@@ -81,9 +85,13 @@ async function resyncDayOrder(supabase: SupabaseServerClient, tripId: string) {
     return a.day_order - b.day_order;
   });
 
-  await Promise.all(
-    sorted.map((day, index) => supabase.from("trip_days").update({ day_order: index }).eq("id", day.id)),
-  );
+  // Solo i giorni che cambiano davvero posizione, e con poche richieste in parallelo
+  const changed = sorted.map((day, index) => ({ id: day.id, index, old: day.day_order })).filter((d) => d.index !== d.old);
+  for (let i = 0; i < changed.length; i += 10) {
+    await Promise.all(
+      changed.slice(i, i + 10).map((d) => supabase.from("trip_days").update({ day_order: d.index }).eq("id", d.id)),
+    );
+  }
 }
 
 // Quando un alloggio ha una data di check-out, crea automaticamente i giorni
@@ -382,28 +390,6 @@ export async function addDay(tripId: string) {
   revalidatePath("/dashboard/trips");
 }
 
-export async function deleteDay(tripId: string, dayId: string) {
-  const supabase = await createClient();
-  await supabase.from("trip_days").delete().eq("id", dayId);
-
-  // La durata del viaggio segue i giorni che restano
-  const { data: dated } = await supabase
-    .from("trip_days")
-    .select("day_date")
-    .eq("trip_id", tripId)
-    .not("day_date", "is", null)
-    .order("day_date", { ascending: true });
-  if (dated && dated.length > 0) {
-    await supabase
-      .from("trips")
-      .update({ start_date: dated[0].day_date, end_date: dated[dated.length - 1].day_date })
-      .eq("id", tripId);
-  }
-
-  revalidatePath(`/dashboard/trips/${tripId}`);
-  revalidatePath("/dashboard/trips");
-}
-
 // Itinerario "per giornata intera": salva il blocco di testo del giorno (l'unica attività del giorno).
 export async function saveDayBlock(tripId: string, dayId: string, html: string): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
@@ -477,15 +463,21 @@ export async function rebaseTripDates(tripId: string, formData: FormData) {
     .order("day_order", { ascending: true });
   if (!days || days.length === 0) return;
 
-  const updatedRows = days.map((day) => ({
+  // Le date seguono la POSIZIONE dei giorni (0, 1, 2…), non il vecchio day_order: dopo
+  // un'eliminazione il day_order può avere dei buchi e le date salterebbero un giorno.
+  const updatedRows = days.map((day, index) => ({
     id: day.id,
     trip_id: tripId,
-    day_order: day.day_order,
-    day_date: addDaysToDate(newFirstDate, day.day_order),
+    day_order: index,
+    day_date: addDaysToDate(newFirstDate, index),
   }));
-  await supabase.from("trip_days").upsert(updatedRows, { onConflict: "id" });
+  const { error: rebaseError } = await supabase.from("trip_days").upsert(updatedRows, { onConflict: "id" });
+  if (rebaseError) {
+    console.error("[rebaseTripDates]", rebaseError.message);
+    return;
+  }
 
-  const lastDate = addDaysToDate(newFirstDate, days[days.length - 1].day_order);
+  const lastDate = addDaysToDate(newFirstDate, days.length - 1);
   await supabase.from("trips").update({ start_date: newFirstDate, end_date: lastDate }).eq("id", tripId);
 
   revalidatePath(`/dashboard/trips/${tripId}`);
@@ -554,11 +546,11 @@ function parseDetails(formData: FormData): Record<string, string> {
   }
 }
 
-export async function addActivity(tripId: string, dayId: string, formData: FormData) {
+export async function addActivity(tripId: string, dayId: string, formData: FormData): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
 
   const title = String(formData.get("title") ?? "").trim();
-  if (!title) return;
+  if (!title) return { error: "Scrivi il titolo dell'attività." };
 
   const startTime = String(formData.get("start_time") ?? "") || null;
   const description = String(formData.get("description") ?? "").trim() || null;
@@ -566,12 +558,16 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
   const activityType = String(formData.get("activity_type") ?? "altro");
   const details = parseDetails(formData);
 
-  const { count } = await supabase
+  // In fondo al giorno: dopo l'ultima (non "quante sono", che dopo un'eliminazione darebbe doppioni)
+  const { data: lastRows } = await supabase
     .from("activities")
-    .select("id", { count: "exact", head: true })
-    .eq("trip_day_id", dayId);
+    .select("activity_order")
+    .eq("trip_day_id", dayId)
+    .order("activity_order", { ascending: false })
+    .limit(1);
+  const nextOrder = lastRows && lastRows.length > 0 ? Number(lastRows[0].activity_order) + 1 : 0;
 
-  await supabase.from("activities").insert({
+  const { error: insertError } = await supabase.from("activities").insert({
     trip_day_id: dayId,
     title,
     start_time: startTime,
@@ -579,8 +575,12 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
     location,
     activity_type: activityType,
     details,
-    activity_order: count ?? 0,
+    activity_order: nextOrder,
   });
+  if (insertError) {
+    console.error("[addActivity]", insertError.message);
+    return { error: "Non è stato possibile salvare l'attività. Riprova; se continua, ricarica la pagina." };
+  }
 
   if (activityType === "alloggio") {
     await handleLodgingCheckout(supabase, tripId, dayId, title, details);
@@ -589,18 +589,13 @@ export async function addActivity(tripId: string, dayId: string, formData: FormD
   }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
 }
 
-export async function deleteActivity(tripId: string, activityId: string) {
-  const supabase = await createClient();
-  await supabase.from("activities").delete().eq("id", activityId);
-  revalidatePath(`/dashboard/trips/${tripId}`);
-}
-
-export async function updateActivity(tripId: string, activityId: string, formData: FormData) {
+export async function updateActivity(tripId: string, activityId: string, formData: FormData): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const title = String(formData.get("title") ?? "").trim();
-  if (!title) return;
+  if (!title) return { error: "Scrivi il titolo dell'attività." };
 
   const startTime = String(formData.get("start_time") ?? "") || null;
   const description = String(formData.get("description") ?? "").trim() || null;
@@ -608,7 +603,7 @@ export async function updateActivity(tripId: string, activityId: string, formDat
   const activityType = String(formData.get("activity_type") ?? "altro");
   const details = parseDetails(formData);
 
-  await supabase
+  const { data: updated, error: updateError } = await supabase
     .from("activities")
     .update({
       title,
@@ -618,9 +613,18 @@ export async function updateActivity(tripId: string, activityId: string, formDat
       activity_type: activityType,
       details,
     })
-    .eq("id", activityId);
+    .eq("id", activityId)
+    .select("id");
+  if (updateError) {
+    console.error("[updateActivity]", updateError.message);
+    return { error: "Non è stato possibile salvare le modifiche. Riprova; se continua, ricarica la pagina." };
+  }
+  if (!updated || updated.length === 0) {
+    return { error: "Questa attività non esiste più (forse è stata eliminata). Ricarica la pagina." };
+  }
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  return { ok: true };
 }
 
 export async function saveActivityToLibrary(tripId: string, activityId: string) {
@@ -780,15 +784,17 @@ export async function uploadDocument(
   return { ok: true };
 }
 
-export async function deleteDocument(tripId: string, documentId: string, filePath: string) {
+export async function deleteDocument(tripId: string, documentId: string, _filePath?: string) {
   const supabase = await createClient();
+  // Percorsi dei file letti dal database (mai da quello che arriva dal browser)
   const { data: existing } = await supabase
     .from("documents")
-    .select("cover_image_path")
+    .select("file_path, cover_image_path")
     .eq("id", documentId)
     .maybeSingle();
+  if (!existing) return;
 
-  const pathsToRemove = [filePath, ...(existing?.cover_image_path ? [existing.cover_image_path] : [])];
+  const pathsToRemove = [existing.file_path as string, ...(existing.cover_image_path ? [existing.cover_image_path as string] : [])];
   await supabase.storage.from("trip-documents").remove(pathsToRemove);
   await supabase.from("documents").delete().eq("id", documentId);
   revalidatePath(`/dashboard/trips/${tripId}`);
@@ -891,9 +897,11 @@ export async function uploadDocumentCover(
   return { ok: true };
 }
 
-export async function deleteDocumentCover(tripId: string, documentId: string, coverPath: string) {
+export async function deleteDocumentCover(tripId: string, documentId: string, _coverPath?: string) {
   const supabase = await createClient();
-  await supabase.storage.from("trip-documents").remove([coverPath]);
+  const { data: existing } = await supabase.from("documents").select("cover_image_path").eq("id", documentId).maybeSingle();
+  if (!existing?.cover_image_path) return;
+  await supabase.storage.from("trip-documents").remove([existing.cover_image_path as string]);
   await supabase.from("documents").update({ cover_image_path: null }).eq("id", documentId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }
@@ -940,9 +948,12 @@ export async function uploadActivityPhoto(
   return { ok: true };
 }
 
-export async function deleteActivityPhoto(tripId: string, photoId: string, filePath: string) {
+export async function deleteActivityPhoto(tripId: string, photoId: string, _filePath?: string) {
   const supabase = await createClient();
-  await supabase.storage.from("public-assets").remove([filePath]);
+  // Il percorso del file si legge dal database (mai da quello che arriva dal browser)
+  const { data: photo } = await supabase.from("activity_photos").select("file_path").eq("id", photoId).maybeSingle();
+  if (!photo) return;
+  await supabase.storage.from("public-assets").remove([photo.file_path as string]);
   await supabase.from("activity_photos").delete().eq("id", photoId);
   revalidatePath(`/dashboard/trips/${tripId}`);
 }

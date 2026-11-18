@@ -44,9 +44,7 @@ import Modal from "@/components/Modal";
 import {
   addActivity,
   addDay,
-  deleteActivity,
   deleteActivityPhoto,
-  deleteDay,
   deleteDocument,
   duplicateActivity,
   moveActivity,
@@ -63,11 +61,29 @@ import {
 } from "@/app/dashboard/trips/[id]/actions";
 import DateField from "@/components/DateField";
 import SubmitButton from "@/components/SubmitButton";
+import {
+  deleteActivityNow,
+  deleteDayNow,
+  restoreActivity,
+  restoreDay,
+  type ActivitySnapshot,
+  type DaySnapshot,
+} from "@/lib/actions/itineraryDelete";
 import RichTextEditor from "@/components/RichTextEditor";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
 type ActivityDocument = TripDocument & { signedUrl: string | null };
+type UndoToast = {
+  key: string;
+  kind: "day" | "activity";
+  id: string;
+  label: string;
+  state: "deleting" | "ready" | "undoing" | "error";
+  snapshot?: ActivitySnapshot | DaySnapshot;
+  undoRequested?: boolean;
+  message?: string;
+};
 
 function dayLabel(day: DayWithActivities, index: number, long = false) {
   if (!day.day_date) return `Giorno ${index + 1}`;
@@ -97,57 +113,98 @@ export default function ItineraryEditor({
   const [dragOverDayId, setDragOverDayId] = useState<string | null>(null);
   const [draggedActivity, setDraggedActivity] = useState<{ id: string; sourceDayId: string } | null>(null);
 
-  // Eliminazione giorno con "Annulla", stessa logica già usata per le
-  // attività: sparisce subito dalla vista (nessuna attesa del server, nessun
-  // popup di conferma) e viene davvero cancellato solo dopo qualche secondo,
-  // a meno che l'agenzia non prema "Annulla" nel frattempo.
-  const [pendingDeleteDayIds, setPendingDeleteDayIds] = useState<Set<string>>(new Set());
-  const dayDeleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
-
+  // Eliminazioni (giorni e attività): avvengono SUBITO sul server e il «Annulla» le ripristina.
+  // Lo stato vive qui, a livello di itinerario, così non si perde cambiando giorno.
+  const [hiddenDayIds, setHiddenDayIds] = useState<Set<string>>(new Set());
+  const [hiddenActivityIds, setHiddenActivityIds] = useState<Set<string>>(new Set());
+  const [toasts, setToasts] = useState<UndoToast[]>([]);
+  const toastsRef = useRef<UndoToast[]>([]);
   useEffect(() => {
-    setPendingDeleteDayIds((prev) => {
-      if (prev.size === 0) return prev;
-      const stillPresent = new Set(days.map((day) => day.id));
-      const next = new Set([...prev].filter((id) => stillPresent.has(id)));
-      return next.size === prev.size ? prev : next;
-    });
-  }, [days]);
+    toastsRef.current = toasts;
+  }, [toasts]);
+  const undoWanted = useRef<Set<string>>(new Set());
+  const toastSeq = useRef(0);
 
-  const visibleDays = days.filter((day) => !pendingDeleteDayIds.has(day.id));
-  const selectedDay = visibleDays.find((day) => day.id === selectedDayId) ?? visibleDays[0] ?? null;
-
-  function requestDeleteDay(dayId: string) {
-    setPendingDeleteDayIds((prev) => new Set(prev).add(dayId));
-
-    // Il giorno resta nascosto anche dopo la scadenza dei 5 secondi: lo
-    // "sblocchiamo" solo quando il server l'ha davvero tolto dai dati
-    // (vedi l'effetto sotto). Se lo sbloccassimo subito, per il tempo che il
-    // server impiega a cancellarlo (il database è in un'altra regione) il
-    // giorno ricomparirebbe per un attimo, uno alla volta se se ne
-    // eliminano molti di fila.
-    const timer = setTimeout(() => {
-      dayDeleteTimers.current.delete(dayId);
-      deleteDay(tripId, dayId).catch(() => {
-        setPendingDeleteDayIds((prev) => {
-          const next = new Set(prev);
-          next.delete(dayId);
-          return next;
-        });
-      });
-    }, 5000);
-    dayDeleteTimers.current.set(dayId, timer);
-  }
-
-  function undoDeleteDay(dayId: string) {
-    const timer = dayDeleteTimers.current.get(dayId);
-    if (timer) clearTimeout(timer);
-    dayDeleteTimers.current.delete(dayId);
-    setPendingDeleteDayIds((prev) => {
+  const unhide = (kind: "day" | "activity", id: string) =>
+    (kind === "day" ? setHiddenDayIds : setHiddenActivityIds)((prev) => {
+      if (!prev.has(id)) return prev;
       const next = new Set(prev);
-      next.delete(dayId);
+      next.delete(id);
       return next;
     });
+  const patchToast = (key: string, patch: Partial<UndoToast>) =>
+    setToasts((prev) => prev.map((t) => (t.key === key ? { ...t, ...patch } : t)));
+  const dropToast = (key: string) => setToasts((prev) => prev.filter((t) => t.key !== key));
+
+  // Il messaggio sparisce da solo dopo qualche secondo (se nel frattempo non si sta annullando)
+  function scheduleDismiss(key: string, ms = 8000) {
+    setTimeout(() => {
+      const t = toastsRef.current.find((x) => x.key === key);
+      if (t && t.state !== "undoing") dropToast(key);
+    }, ms);
   }
+
+  async function runUndo(toast: UndoToast) {
+    if (!toast.snapshot) return;
+    patchToast(toast.key, { state: "undoing" });
+    try {
+      const result =
+        toast.kind === "day"
+          ? await restoreDay(tripId, toast.snapshot as DaySnapshot)
+          : await restoreActivity(tripId, toast.snapshot as ActivitySnapshot);
+      if ("error" in result) {
+        patchToast(toast.key, { state: "error", message: result.error });
+        scheduleDismiss(toast.key, 6000);
+        return;
+      }
+      unhide(toast.kind, toast.id);
+      dropToast(toast.key);
+    } catch {
+      patchToast(toast.key, { state: "error", message: "Connessione interrotta: ricarica la pagina." });
+      scheduleDismiss(toast.key, 6000);
+    }
+  }
+
+  async function removeItem(kind: "day" | "activity", id: string, label: string) {
+    toastSeq.current += 1;
+    const key = `${kind}:${id}:${toastSeq.current}`;
+    (kind === "day" ? setHiddenDayIds : setHiddenActivityIds)((prev) => new Set(prev).add(id));
+    setToasts((prev) => [...prev, { key, kind, id, label, state: "deleting" }]);
+    try {
+      const result = kind === "day" ? await deleteDayNow(tripId, id) : await deleteActivityNow(tripId, id);
+      if ("error" in result) {
+        unhide(kind, id);
+        patchToast(key, { state: "error", message: result.error });
+        scheduleDismiss(key, 6000);
+        return;
+      }
+      const ready: UndoToast = { key, kind, id, label, state: "ready", snapshot: result.snapshot };
+      if (undoWanted.current.has(key)) {
+        undoWanted.current.delete(key);
+        await runUndo(ready);
+        return;
+      }
+      patchToast(key, { state: "ready", snapshot: result.snapshot });
+      scheduleDismiss(key);
+    } catch {
+      unhide(kind, id);
+      patchToast(key, { state: "error", message: "Connessione interrotta: non ho eliminato nulla. Riprova." });
+      scheduleDismiss(key, 6000);
+    }
+  }
+
+  function requestUndo(key: string) {
+    const toast = toastsRef.current.find((t) => t.key === key);
+    if (!toast) return;
+    if (toast.state === "ready") void runUndo(toast);
+    else if (toast.state === "deleting") {
+      undoWanted.current.add(key);
+      patchToast(key, { undoRequested: true });
+    }
+  }
+
+  const visibleDays = days.filter((day) => !hiddenDayIds.has(day.id));
+  const selectedDay = visibleDays.find((day) => day.id === selectedDayId) ?? visibleDays[0] ?? null;
 
   function handleDropDay(targetDayId: string) {
     if (draggedActivity) {
@@ -219,34 +276,36 @@ export default function ItineraryEditor({
             mode={mode}
             onActivityDragStart={(activityId) => setDraggedActivity({ id: activityId, sourceDayId: selectedDay.id })}
             onActivityDragEnd={() => setDraggedActivity(null)}
-            onDeleteDay={() => requestDeleteDay(selectedDay.id)}
+            hiddenActivityIds={hiddenActivityIds}
+            onDeleteActivity={(activity) => removeItem("activity", activity.id, activity.title)}
+            onDeleteDay={() => {
+              const index = visibleDays.findIndex((d) => d.id === selectedDay.id);
+              void removeItem("day", selectedDay.id, dayLabel(selectedDay, index, true));
+            }}
           />
         ) : (
           <p className="text-sm text-slate-500">Aggiungi il primo giorno per iniziare l&apos;itinerario.</p>
         )}
       </div>
 
-      {pendingDeleteDayIds.size > 0 && (
-        <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-col gap-2">
-          {Array.from(pendingDeleteDayIds).map((id) => {
-            const removedDay = days.find((day) => day.id === id);
-            const index = days.findIndex((day) => day.id === id);
-            return (
-              <div
-                key={id}
-                className="flex items-center gap-3 rounded-lg bg-slate-900 px-4 py-2.5 text-sm text-white shadow-lg"
-              >
-                <span>{removedDay ? dayLabel(removedDay, index, true) : "Giorno"} eliminato</span>
-                <button
-                  type="button"
-                  onClick={() => undoDeleteDay(id)}
-                  className="font-semibold text-[#ddc8a0] hover:text-[#e6d7bb]"
-                >
+      {toasts.length > 0 && (
+        <div className="fixed bottom-4 left-1/2 z-50 flex w-[min(92vw,26rem)] -translate-x-1/2 flex-col gap-2" aria-live="polite">
+          {toasts.map((toast) => (
+            <div key={toast.key} className="flex items-center gap-3 rounded-lg bg-slate-900 px-4 py-2.5 text-sm text-white shadow-lg">
+              <span className="min-w-0 flex-1 truncate">
+                {toast.state === "error"
+                  ? toast.message
+                  : toast.state === "undoing" || toast.undoRequested
+                    ? `Ripristino «${toast.label}»…`
+                    : `«${toast.label}» ${toast.kind === "day" ? "eliminato" : "eliminata"}`}
+              </span>
+              {(toast.state === "deleting" || toast.state === "ready") && !toast.undoRequested && (
+                <button type="button" onClick={() => requestUndo(toast.key)} className="shrink-0 font-semibold text-[#ddc8a0] hover:text-[#e6d7bb]">
                   Annulla
                 </button>
-              </div>
-            );
-          })}
+              )}
+            </div>
+          ))}
         </div>
       )}
     </div>
@@ -381,6 +440,8 @@ function DayPanel({
   templates,
   documentsByActivity,
   mode,
+  hiddenActivityIds,
+  onDeleteActivity,
   onActivityDragStart,
   onActivityDragEnd,
   onDeleteDay,
@@ -390,6 +451,8 @@ function DayPanel({
   templates: ActivityTemplate[];
   documentsByActivity: Record<string, ActivityDocument[]>;
   mode: "activities" | "days";
+  hiddenActivityIds: Set<string>;
+  onDeleteActivity: (activity: ActivityWithPhotos) => void;
   onActivityDragStart: (activityId: string) => void;
   onActivityDragEnd: () => void;
   onDeleteDay: () => void;
@@ -401,9 +464,6 @@ function DayPanel({
   const [isEditingDayTitle, setIsEditingDayTitle] = useState(false);
   const [dayTitleInput, setDayTitleInput] = useState(day.title ?? "");
   const dayTitleInputRef = useRef<HTMLInputElement>(null);
-  const [pendingDeleteIds, setPendingDeleteIds] = useState<Set<string>>(new Set());
-  const deleteTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
-  const deleteRemovedAt = useRef<Map<string, number>>(new Map());
 
   useEffect(() => {
     if (isEditingDayTitle) dayTitleInputRef.current?.focus();
@@ -447,6 +507,7 @@ function DayPanel({
 
   const activityById = new Map(sortedActivities.map((activity) => [activity.id, activity]));
   const orderedActivities = orderIds
+    .filter((id) => !hiddenActivityIds.has(id))
     .map((id) => activityById.get(id))
     .filter((activity): activity is ActivityWithPhotos => Boolean(activity));
 
@@ -457,45 +518,6 @@ function DayPanel({
     if (!activity.start_time) continue;
     const key = activity.start_time.slice(0, 5);
     startTimeCounts.set(key, (startTimeCounts.get(key) ?? 0) + 1);
-  }
-
-  function requestDeleteActivity(activityId: string) {
-    const index = orderIds.indexOf(activityId);
-    if (index === -1) return;
-    deleteRemovedAt.current.set(activityId, index);
-    setOrderIds((prev) => prev.filter((id) => id !== activityId));
-    setPendingDeleteIds((prev) => new Set(prev).add(activityId));
-
-    const timer = setTimeout(() => {
-      deleteTimers.current.delete(activityId);
-      deleteRemovedAt.current.delete(activityId);
-      setPendingDeleteIds((prev) => {
-        const next = new Set(prev);
-        next.delete(activityId);
-        return next;
-      });
-      deleteActivity(tripId, activityId);
-    }, 5000);
-    deleteTimers.current.set(activityId, timer);
-  }
-
-  function undoDeleteActivity(activityId: string) {
-    const timer = deleteTimers.current.get(activityId);
-    if (timer) clearTimeout(timer);
-    deleteTimers.current.delete(activityId);
-
-    const index = deleteRemovedAt.current.get(activityId) ?? 0;
-    deleteRemovedAt.current.delete(activityId);
-    setOrderIds((prev) => {
-      const next = [...prev];
-      next.splice(index, 0, activityId);
-      return next;
-    });
-    setPendingDeleteIds((prev) => {
-      const next = new Set(prev);
-      next.delete(activityId);
-      return next;
-    });
   }
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
@@ -650,7 +672,7 @@ function DayPanel({
                 onToggleExpand={() => toggleCollapsed(activity.id)}
                 onEdit={() => setEditingActivityId(activity.id)}
                 onCancelEdit={() => setEditingActivityId(null)}
-                onDelete={() => requestDeleteActivity(activity.id)}
+                onDelete={() => onDeleteActivity(activity)}
                 onDragStart={() => onActivityDragStart(activity.id)}
                 onDragEnd={onActivityDragEnd}
               />
@@ -672,27 +694,6 @@ function DayPanel({
         </Modal>
       )}
 
-      {pendingDeleteIds.size > 0 && (
-        <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-col gap-2">
-          {Array.from(pendingDeleteIds).map((id) => (
-            <div
-              key={id}
-              className="flex items-center gap-3 rounded-lg bg-slate-900 px-4 py-2.5 text-sm text-white shadow-lg"
-            >
-              <span>
-                &quot;{activityById.get(id)?.title ?? "Attività"}&quot; eliminata
-              </span>
-              <button
-                type="button"
-                onClick={() => undoDeleteActivity(id)}
-                className="font-semibold text-[#ddc8a0] hover:text-[#e6d7bb]"
-              >
-                Annulla
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
