@@ -359,8 +359,8 @@ function CoverHero({
       : null;
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
-      <CoverPhotoEditor tripId={trip.id} className="relative flex h-64 cursor-default flex-col justify-between bg-[#233c5e] p-6">
+    <section className="rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
+      <CoverPhotoEditor tripId={trip.id} className="relative flex h-64 cursor-default flex-col justify-between overflow-hidden rounded-t-2xl bg-[#233c5e] p-6">
         {trip.cover_image_url && (
           <>
             <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
