@@ -106,7 +106,7 @@ export type DayInput = {
   places: { location: string | null; type?: string | null }[];
 };
 
-type GeoResult = {
+export type GeoResult = {
   name: string;
   latitude: number;
   longitude: number;
@@ -183,7 +183,7 @@ function countryMatches(hint: string, country: string | undefined) {
 
 const PLACE_CODES = /^(PPL|ADM|PCL)/;
 
-async function geocode(name: string, countryHint: string): Promise<GeoResult | null> {
+export async function geocode(name: string, countryHint: string): Promise<GeoResult | null> {
   const data = (await getJson(
     `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=10&language=it`,
     60 * 60 * 24 * 30,
@@ -329,4 +329,57 @@ export async function loadTripStops(
     }),
   );
   return stops.filter((s): s is StopInfo => s !== null);
+}
+
+
+// Solo le località visitate (senza meteo): servono al mappamondo. Stessa logica delle tappe,
+// ma leggera: una ricerca per località, in cache per 30 giorni.
+export type TripPlace = { place: string; country: string | null; latitude: number; longitude: number };
+
+export async function loadTripPlaces(destination: string | null | undefined, days: DayInput[]): Promise<TripPlace[]> {
+  const countryHint = normalize(destination ?? "");
+  const cache = new Map<string, Promise<GeoResult | null>>();
+  const once = (name: string, hint: string) => {
+    const key = `${hint}|${name}`;
+    if (!cache.has(key)) cache.set(key, geocode(name, hint));
+    return cache.get(key)!;
+  };
+
+  const perDay = await Promise.all(
+    days.map(async (day) => {
+      for (const name of dayCandidates(day)) {
+        const geo = await once(name, countryHint);
+        if (geo) return geo;
+      }
+      return null;
+    }),
+  );
+
+  const seen = new Set<string>();
+  const places: TripPlace[] = [];
+  const add = (geo: GeoResult) => {
+    const key = `${geo.latitude.toFixed(2)},${geo.longitude.toFixed(2)}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    places.push({ place: geo.name, country: geo.country ?? null, latitude: geo.latitude, longitude: geo.longitude });
+  };
+  for (const geo of perDay) if (geo) add(geo);
+
+  // Senza località nell'itinerario: la destinazione del viaggio
+  if (places.length === 0) {
+    const names = (destination ?? "")
+      .trim()
+      .split(/[,;/\-–]| e | - /i)
+      .map((n) => n.trim())
+      .filter((n) => n.length >= 2);
+    for (const name of [(destination ?? "").trim(), ...names]) {
+      if (!name) continue;
+      const geo = await once(name, "");
+      if (geo) {
+        add(geo);
+        break;
+      }
+    }
+  }
+  return places.slice(0, 10);
 }
