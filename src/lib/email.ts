@@ -14,7 +14,7 @@ export async function sendMail(params: {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return { ok: false, error: "not_configured" };
 
-  const base = process.env.MAIL_FROM || "Grand Route <noreply@grandroute.it>";
+  const base = process.env.MAIL_FROM || "Grand Route <noreply@mail.grandroute.it>";
   const address = /<([^>]+)>/.exec(base)?.[1] ?? base;
   const name = (params.fromName || /^([^<]+)</.exec(base)?.[1] || "Grand Route").replace(/["<>\r\n]/g, "").trim();
 
