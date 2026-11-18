@@ -11,6 +11,7 @@ import { parseAiPlan } from "@/lib/aiPricing";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, FileWarning } from "lucide-react";
+import { loadTripDays } from "@/lib/tripDays";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, ApprovalStatus, Profile, TripDay, TripDocument, TripMessage, TripPayment } from "@/lib/types";
 import TripGlance from "@/components/TripGlance";
@@ -56,11 +57,7 @@ export default async function ClientTripPage({
   const hasIdentityDocument = Boolean(myClient?.id_card_number || myClient?.passport_number);
 
   const [{ data: days }, { data: owner }, { data: incomingPayments }, { data: tripMessages }, { data: sharedDocuments }, { data: zefiroStatus }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", trip.id)
-      .order("day_order", { ascending: true }),
+    loadTripDays(supabase, trip.id),
     supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
     supabase.from("trip_payments").select("*").eq("trip_id", trip.id).eq("direction", "incasso"),
     supabase.from("trip_messages").select("*").eq("trip_id", trip.id).order("created_at", { ascending: true }),

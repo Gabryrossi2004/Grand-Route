@@ -1,5 +1,6 @@
 import { fetchLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
+import { loadTripDays } from "@/lib/tripDays";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
@@ -28,11 +29,7 @@ export default async function PublicTripPage({
   if (!trip) notFound();
 
   const [{ data: days }, { data: owner }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", trip.id)
-      .order("day_order", { ascending: true }),
+    loadTripDays(supabase, trip.id),
     // Solo le colonne che un visitatore non registrato può leggere
     // (vedi migrazione 0029): non "*", che includerebbe email e
     // recapiti dell'agenzia e verrebbe rifiutato dal database.

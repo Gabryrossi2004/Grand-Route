@@ -2,6 +2,7 @@ import { parseLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
+import { loadTripDays } from "@/lib/tripDays";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
@@ -33,11 +34,7 @@ export default async function ClientPreviewTripPage({
   if (!trip) notFound();
 
   const [{ data: days }, { data: owner }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", trip.id)
-      .order("day_order", { ascending: true }),
+    loadTripDays(supabase, trip.id),
     supabase.from("profiles").select("*").eq("id", trip.owner_id).single(),
   ]);
 

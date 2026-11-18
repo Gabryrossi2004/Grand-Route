@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
+import { loadTripDays } from "@/lib/tripDays";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type {
   ApprovalStatus,
@@ -114,11 +115,7 @@ export default async function TripDetailPage({
     { data: variantTrips },
     { data: tripMessages },
   ] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", id)
-      .order("day_order", { ascending: true }),
+    loadTripDays(supabase, id),
     supabase.from("activity_templates").select("*").order("title", { ascending: true }),
     supabase
       .from("trip_checklist_items")

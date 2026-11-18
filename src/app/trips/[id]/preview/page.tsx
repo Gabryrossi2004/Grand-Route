@@ -1,5 +1,6 @@
 import { fetchLogoShape } from "@/lib/logoShape";
 import { notFound } from "next/navigation";
+import { loadTripDays } from "@/lib/tripDays";
 import { createClient } from "@/lib/supabase/server";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import PrintButton from "@/components/PrintButton";
@@ -24,11 +25,7 @@ export default async function TripPreviewPage({
   if (!trip) notFound();
 
   const [{ data: days }, { data: owner }] = await Promise.all([
-    supabase
-      .from("trip_days")
-      .select("*, activities(*, activity_photos(*))")
-      .eq("trip_id", id)
-      .order("day_order", { ascending: true }),
+    loadTripDays(supabase, id),
     // Come in /t/[slug]: solo le colonne leggibili senza login
     // (vedi migrazione 0029).
     supabase.from("profiles").select("agency_name, logo_url, terms_and_conditions, brand_color").eq("id", trip.owner_id).single(),
