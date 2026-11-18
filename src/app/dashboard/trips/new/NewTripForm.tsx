@@ -3,22 +3,14 @@
 import { useActionState, useRef, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { createTrip } from "./actions";
-import type { Client, PriceMode, PromptStyle } from "@/lib/types";
+import type { Client, PriceMode } from "@/lib/types";
 import type { ClientRequest } from "@/lib/clientRequestAi";
 import Modal from "@/components/Modal";
 import ClientRequestExtractor from "./ClientRequestExtractor";
-import AiNewTrip from "./AiNewTrip";
+import GenerateWithZefiro from "./GenerateWithZefiro";
 import DateField from "@/components/DateField";
 
-export default function NewTripForm({
-  clients,
-  promptStyles,
-  showAiButton = true,
-}: {
-  clients: Client[];
-  promptStyles: PromptStyle[];
-  showAiButton?: boolean;
-}) {
+export default function NewTripForm({ clients }: { clients: Client[] }) {
   const [state, formAction, pending] = useActionState(createTrip, undefined);
   const [priceMode, setPriceMode] = useState<PriceMode>("nessuno");
   const [showExtractor, setShowExtractor] = useState(false);
@@ -61,7 +53,7 @@ export default function NewTripForm({
         >
           <Sparkles size={14} /> Parti da una richiesta
         </button>
-        <AiNewTrip clients={clients} promptStyles={promptStyles} showButton={showAiButton} />
+        <GenerateWithZefiro clients={clients} />
       </div>
 
       <form action={formAction} className="flex flex-col gap-4 rounded-xl border border-[#e6d7bb] bg-white p-6">

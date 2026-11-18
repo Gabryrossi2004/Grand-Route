@@ -122,7 +122,12 @@ export async function getAiUsageSummary(): Promise<AiUsageSummary | null> {
 // Se la tabella dei contatori non esiste ancora (migrazione 0030 non
 // eseguita) o il database non risponde, la funzione AI resta disponibile:
 // meglio un servizio attivo che bloccato per un problema del contatore.
-export async function reserveAiCall(kind: AiKind): Promise<{ ok: true } | { ok: false; error: string }> {
+// record = false: controlla limiti e budget senza contare una nuova richiesta (per i passaggi
+// successivi di una stessa generazione, che conta come una sola).
+export async function reserveAiCall(
+  kind: AiKind,
+  options: { record?: boolean } = {},
+): Promise<{ ok: true } | { ok: false; error: string }> {
   const user = await getCachedUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
 
@@ -176,6 +181,7 @@ export async function reserveAiCall(kind: AiKind): Promise<{ ok: true } | { ok: 
       };
     }
 
+    if (options.record === false) return { ok: true };
     const { error: insertError } = await supabase.from("ai_usage").insert({ user_id: user.id, kind });
     if (insertError) console.error("[aiQuota] registrazione non riuscita:", insertError.message);
     return { ok: true };

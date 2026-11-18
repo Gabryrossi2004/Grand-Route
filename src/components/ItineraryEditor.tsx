@@ -1,7 +1,7 @@
 "use client";
 
 import DocumentVisibilityToggle from "@/components/DocumentVisibilityToggle";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import Image from "next/image";
 import {
   DndContext,
@@ -61,6 +61,7 @@ import {
   uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
 import DateField from "@/components/DateField";
+import SubmitButton from "@/components/SubmitButton";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };
@@ -163,15 +164,17 @@ export default function ItineraryEditor({
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
       <aside className="grid shrink-0 grid-cols-2 gap-2 sm:sticky sm:top-20 sm:max-h-[calc(100vh-6rem)] sm:w-56 sm:self-start sm:flex sm:flex-col sm:overflow-y-auto">
-        <form action={addDay.bind(null, tripId)} className="col-span-2 flex flex-col gap-2 rounded-lg border border-dashed border-slate-300 bg-white p-3">
-          <label htmlFor="day_date" className="text-xs font-medium text-slate-600">
-            Aggiungi un giorno
-          </label>
-          <DateField id="day_date" name="day_date" className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]" />
-          <button type="submit" className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
-            + Aggiungi
-          </button>
-        </form>
+        <div className="col-span-2 flex flex-col gap-3 rounded-lg border border-dashed border-slate-300 bg-white p-3">
+          <StartDateControl tripId={tripId} firstDate={visibleDays[0]?.day_date ?? null} hasDays={visibleDays.length > 0} />
+          <form action={addDay.bind(null, tripId)}>
+            <SubmitButton
+              pendingLabel="Aggiungo…"
+              className="w-full rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-800 disabled:opacity-60"
+            >
+              + Aggiungi giorno
+            </SubmitButton>
+          </form>
+        </div>
 
         {visibleDays.map((day, index) => (
           <DaySidebarItem
@@ -960,5 +963,47 @@ function SortableActivityRow({
       )}
       </li>
     </>
+  );
+}
+
+
+// Data di partenza dell'itinerario: scegliendola, tutte le altre date si calcolano da sole.
+function StartDateControl({ tripId, firstDate, hasDays }: { tripId: string; firstDate: string | null; hasDays: boolean }) {
+  const [value, setValue] = useState(firstDate ?? "");
+  const [shownFor, setShownFor] = useState(firstDate);
+  const [pending, startTransition] = useTransition();
+
+  // Se le date cambiano dal server (per esempio dopo il salvataggio) il campo le segue
+  if (shownFor !== firstDate) {
+    setShownFor(firstDate);
+    setValue(firstDate ?? "");
+  }
+
+  if (!hasDays) return null;
+
+  return (
+    <div className="flex flex-col gap-1">
+      <label htmlFor="start_day_date" className="text-xs font-medium text-slate-600">
+        Data di partenza
+      </label>
+      <DateField
+        id="start_day_date"
+        name="start_day_date"
+        value={value}
+        onChange={(next) => {
+          setValue(next);
+          if (!next) return;
+          const fd = new FormData();
+          fd.set("new_first_date", next);
+          startTransition(async () => {
+            await rebaseTripDates(tripId, fd);
+          });
+        }}
+        className="rounded-md border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-[#cda876]"
+      />
+      <p className="text-[11px] leading-snug text-slate-500">
+        {pending ? "Aggiorno le date…" : "Le date degli altri giorni si calcolano da sole."}
+      </p>
+    </div>
   );
 }

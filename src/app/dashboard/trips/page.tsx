@@ -10,7 +10,7 @@ export default async function TripsPage() {
   const [{ data: trips }, { data: groups }] = await Promise.all([
     supabase
       .from("trips")
-      .select("*")
+      .select("*, trip_days(count)")
       .eq("owner_id", user?.id ?? "")
       .order("created_at", { ascending: false }),
     supabase
@@ -19,6 +19,11 @@ export default async function TripsPage() {
       .eq("owner_id", user?.id ?? "")
       .order("created_at", { ascending: false }),
   ]);
+
+  const tripsWithDayCount = ((trips as (Trip & { trip_days?: { count: number }[] })[]) || []).map(({ trip_days, ...trip }) => ({
+    ...trip,
+    day_count: trip_days?.[0]?.count ?? undefined,
+  })) as Trip[];
 
   return (
     <div>
@@ -32,7 +37,7 @@ export default async function TripsPage() {
         </Link>
       </div>
 
-      <TripsList trips={(trips as Trip[]) || []} groups={(groups as TripGroup[]) || []} />
+      <TripsList trips={tripsWithDayCount} groups={(groups as TripGroup[]) || []} />
     </div>
   );
 }

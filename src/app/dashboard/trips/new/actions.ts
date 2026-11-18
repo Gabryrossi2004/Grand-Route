@@ -8,7 +8,6 @@ import { detectFileMime, validateImageFile, validateTextFile, verifyFileSignatur
 import { reserveAiCall, MAX_DRAFT_CHARS, tooLongMessage } from "@/lib/aiQuota";
 import { extractClientRequest as extractClientRequestAi, type ClientRequest } from "@/lib/clientRequestAi";
 import type { DraftImage } from "@/lib/itineraryAi";
-import { applyAiItineraryDraft } from "@/app/dashboard/trips/[id]/actions";
 
 const MAX_AUTO_DAYS = 90;
 
@@ -116,63 +115,6 @@ export async function createTrip(
     priceCommission: formData.get("price_commission") ? Number(formData.get("price_commission")) : null,
   });
   if ("error" in created) return created;
-
-  redirect(`/dashboard/trips/${created.id}`);
-}
-
-const MAX_AI_DAYS = 30;
-
-// Crea un viaggio nuovo e ne genera subito l'itinerario con l'AI da una
-// bozza. Le date di inizio e fine sono obbligatorie: servono per sapere su
-// quanti giorni distribuire la bozza. Se la generazione non riesce, il
-// viaggio appena creato viene rimosso, per non lasciare viaggi vuoti.
-export async function createTripWithAi(
-  _prevState: { error?: string } | undefined,
-  formData: FormData,
-): Promise<{ error?: string; questions?: string[] }> {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { error: "Devi essere loggato." };
-
-  const title = String(formData.get("title") ?? "").trim();
-  const startDate = String(formData.get("start_date") ?? "") || null;
-  const endDate = String(formData.get("end_date") ?? "") || null;
-
-  if (!title) return { error: "Il titolo del viaggio è obbligatorio." };
-  if (!startDate || !endDate) {
-    return { error: "Per generare servono la data di inizio e la data di fine del viaggio." };
-  }
-  const days = dateRange(startDate, endDate);
-  if (days.length === 0) return { error: "La data di fine deve essere uguale o successiva a quella di inizio." };
-  if (days.length > MAX_AI_DAYS) {
-    return { error: `Per la generazione il viaggio può durare al massimo ${MAX_AI_DAYS} giorni.` };
-  }
-
-  const draftText = String(formData.get("draft_text") ?? "").trim();
-  const draftFile = formData.get("draft_file");
-  if (!draftText && !(draftFile instanceof File && draftFile.size > 0)) {
-    return { error: "Incolla un testo, oppure carica un file Excel o una foto della bozza." };
-  }
-
-  const created = await insertTripWithDays(supabase, user.id, {
-    title,
-    destination: String(formData.get("destination") ?? "").trim() || null,
-    startDate,
-    endDate,
-    clientId: String(formData.get("client_id") ?? "") || null,
-  });
-  if ("error" in created) return { error: created.error };
-
-  const result = await applyAiItineraryDraft(created.id, formData);
-  if (result.error || result.questions) {
-    // L'AI ha un errore o delle domande: il viaggio appena creato non serve
-    // ancora, lo si rifà quando l'agente avrà risposto.
-    await supabase.from("trips").delete().eq("id", created.id);
-    if (result.questions) return { questions: result.questions };
-    return { error: result.error ?? undefined };
-  }
 
   redirect(`/dashboard/trips/${created.id}`);
 }

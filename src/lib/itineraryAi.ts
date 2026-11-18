@@ -56,7 +56,7 @@ export type GeneratedItinerary = z.infer<typeof GeneratedItinerarySchema>;
 // direttamente dalla configurazione reale (src/lib/activityTypes.ts) invece
 // che scritta a mano: così il prompt non va mai fuori sincrono con lo schema
 // effettivo del gestionale.
-function describeActivityTypes(): string {
+export function describeActivityTypes(): string {
   return (Object.entries(detailFields) as [ActivityType, (typeof detailFields)[ActivityType]][])
     .map(([type, fields]) => {
       if (fields.length === 0) return `- ${type}: nessun campo dettaglio.`;

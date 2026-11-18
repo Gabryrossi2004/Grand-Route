@@ -9,6 +9,8 @@ import Modal from "@/components/Modal";
 import { deleteTrip } from "@/app/dashboard/trips/[id]/actions";
 
 function dayCount(trip: Trip) {
+  // I giorni veri dell'itinerario contano più delle date: valgono anche senza date
+  if (trip.day_count && trip.day_count > 0) return trip.day_count;
   if (!trip.start_date || !trip.end_date) return null;
   const diff = Math.round((new Date(trip.end_date).getTime() - new Date(trip.start_date).getTime()) / 86400000) + 1;
   return diff > 0 ? diff : null;

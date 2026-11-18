@@ -97,6 +97,8 @@ export type Trip = {
   client_zefiro?: "default" | "on" | "off";
   client_id: string | null;
   group_id: string | null;
+  // Numero di giorni dell'itinerario (solo nelle liste, calcolato dai giorni veri)
+  day_count?: number;
   title: string;
   destination: string | null;
   start_date: string | null;

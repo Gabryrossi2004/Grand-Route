@@ -1,27 +1,18 @@
-import { createClient, getCachedUser } from "@/lib/supabase/server";
-import type { Client, PromptStyle } from "@/lib/types";
+import { createClient } from "@/lib/supabase/server";
+import type { Client } from "@/lib/types";
 import NewTripForm from "./NewTripForm";
-import { isAvatarVisible } from "@/lib/assistant";
+
+// La generazione con Zefiro può richiedere qualche decina di secondi (tre proposte in parallelo)
+export const maxDuration = 60;
 
 export default async function NewTripPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
-  const [{ data: clients }, { data: promptStyles }, { data: me }] = await Promise.all([
-    supabase.from("clients").select("*").order("full_name", { ascending: true }),
-    supabase
-      .from("prompt_styles")
-      .select("*")
-      .eq("owner_id", user?.id ?? "")
-      .order("created_at", { ascending: true }),
-    supabase.from("profiles").select("ai_preferences").eq("id", user?.id ?? "").maybeSingle(),
-  ]);
+  const { data: clients } = await supabase.from("clients").select("*").order("full_name", { ascending: true });
 
   return (
     <div className="mx-auto max-w-lg">
       <h1 className="mb-6 text-3xl font-medium tracking-tight text-[#233c5e]">Nuovo viaggio</h1>
-      <NewTripForm clients={(clients as Client[]) || []} promptStyles={(promptStyles as PromptStyle[]) || []}
-        showAiButton={!isAvatarVisible(me?.ai_preferences as Record<string, string> | null)}
-      />
+      <NewTripForm clients={(clients as Client[]) || []} />
     </div>
   );
 }

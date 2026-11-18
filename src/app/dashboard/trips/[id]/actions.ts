@@ -358,28 +358,50 @@ export async function deleteTripVariant(
   revalidatePath("/dashboard/trips");
 }
 
-export async function addDay(tripId: string, formData: FormData) {
+// Aggiunge un giorno in fondo all'itinerario. La data continua da sola dall'ultimo giorno
+// (se le date ci sono) e la fine del viaggio si allunga di conseguenza.
+export async function addDay(tripId: string) {
   const supabase = await createClient();
-  const dayDate = String(formData.get("day_date") ?? "") || null;
 
-  const { count } = await supabase
-    .from("trip_days")
-    .select("id", { count: "exact", head: true })
-    .eq("trip_id", tripId);
+  const [{ data: lastRows }, { data: trip }] = await Promise.all([
+    supabase.from("trip_days").select("day_date, day_order").eq("trip_id", tripId).order("day_order", { ascending: false }).limit(1),
+    supabase.from("trips").select("start_date").eq("id", tripId).maybeSingle(),
+  ]);
+  const last = lastRows?.[0];
+  const nextOrder = last ? (last.day_order as number) + 1 : 0;
+  const nextDate = last
+    ? last.day_date
+      ? addDaysToDate(last.day_date as string, 1)
+      : null
+    : ((trip?.start_date as string | null) ?? null);
 
-  await supabase.from("trip_days").insert({
-    trip_id: tripId,
-    day_date: dayDate,
-    day_order: count ?? 0,
-  });
+  await supabase.from("trip_days").insert({ trip_id: tripId, day_date: nextDate, day_order: nextOrder });
+  if (nextDate) await supabase.from("trips").update({ end_date: nextDate }).eq("id", tripId);
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard/trips");
 }
 
 export async function deleteDay(tripId: string, dayId: string) {
   const supabase = await createClient();
   await supabase.from("trip_days").delete().eq("id", dayId);
+
+  // La durata del viaggio segue i giorni che restano
+  const { data: dated } = await supabase
+    .from("trip_days")
+    .select("day_date")
+    .eq("trip_id", tripId)
+    .not("day_date", "is", null)
+    .order("day_date", { ascending: true });
+  if (dated && dated.length > 0) {
+    await supabase
+      .from("trips")
+      .update({ start_date: dated[0].day_date, end_date: dated[dated.length - 1].day_date })
+      .eq("id", tripId);
+  }
+
   revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard/trips");
 }
 
 export async function updateDayTitle(tripId: string, dayId: string, title: string) {
@@ -421,6 +443,7 @@ export async function rebaseTripDates(tripId: string, formData: FormData) {
   await supabase.from("trips").update({ start_date: newFirstDate, end_date: lastDate }).eq("id", tripId);
 
   revalidatePath(`/dashboard/trips/${tripId}`);
+  revalidatePath("/dashboard/trips");
 }
 
 // Scambia il contenuto (attività, titolo, note) tra due giorni trascinati
