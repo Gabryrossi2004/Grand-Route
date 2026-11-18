@@ -20,7 +20,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 ## Da fare, in ordine
 **0. Prossimi passi richiesti (da fare prima del resto)**
 - **Pubblicazione del viaggio migliorata** — FATTO (migrazione 0042): dopo la pubblicazione compare «Invia al cliente» con conferma («Sì, invia»), mail al cliente con il link (serve RESEND_API_KEY e MAIL_FROM su Vercel); «Salva in PDF» per agenzia, cliente e pagina pubblica (finestra di stampa del browser). Da valutare: PDF allegato alla mail
-- **Scheda viaggio più pulita** — FATTO: barra con 5 elementi (Pubblica, Invia al cliente, Preview, Servizi e fornitori, Altro); in «Altro»: PDF, preliminare/finale, variante, traduzione; «Copia link» al posto dell'indirizzo lungo
+- **Scheda viaggio più pulita** — FATTO: barra con 5 elementi (Pubblica, Invia al cliente, Preview, Servizi e fornitori, Altro); in «Altro»: PDF, preliminare/finale, variante, traduzione; il link per il cliente è una barra in fondo alla copertina (copia / apri); «Metti in bozza» nascosto quando il viaggio è pubblicato; la foto di copertina si cambia con doppio clic sulla copertina (o icona fotocamera)
 - **Creazione con AI più semplice** — oggi ha troppi passaggi ed è macchinosa: ridurre i passaggi (da un solo testo/richiesta all'itinerario pronto)
 
 **1. Mappamondo dei viaggi, fase A** — globo 3D nell'area clienti con i viaggi fatti (tappe ricavate dagli itinerari); il cliente può vedere dove si trova adesso, solo sul proprio telefono

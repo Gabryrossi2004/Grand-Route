@@ -41,7 +41,8 @@ import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
 import { checkTripBeforeSend } from "@/lib/tripPreflight";
 import SendTripToClient from "@/components/SendTripToClient";
 import TripMoreMenu from "@/components/TripMoreMenu";
-import CopyLinkButton from "@/components/CopyLinkButton";
+import CoverPhotoEditor from "@/components/CoverPhotoEditor";
+import PublicLinkBar from "@/components/PublicLinkBar";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
@@ -58,7 +59,6 @@ import {
   togglePublish,
   updateItineraryStage,
   updateTripInfo,
-  uploadCover,
   uploadDocument,
 } from "./actions";
 import DateField from "@/components/DateField";
@@ -360,7 +360,7 @@ function CoverHero({
 
   return (
     <section className="overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
-      <div className="relative flex h-64 flex-col justify-between bg-[#233c5e] p-6">
+      <CoverPhotoEditor tripId={trip.id} className="relative flex h-64 cursor-default flex-col justify-between bg-[#233c5e] p-6">
         {trip.cover_image_url && (
           <>
             <Image src={trip.cover_image_url} alt="" fill priority sizes="100vw" className="object-cover" />
@@ -390,7 +390,9 @@ function CoverHero({
         </div>
 
         <div className="relative text-white">
-          <TripTitleEditor tripId={trip.id} title={trip.title} destination={trip.destination} color={trip.title_color} />
+          <div data-no-cover-edit className="w-fit max-w-full">
+            <TripTitleEditor tripId={trip.id} title={trip.title} destination={trip.destination} color={trip.title_color} />
+          </div>
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-white/90">
             {trip.destination && (
               <span className="flex items-center gap-1">
@@ -404,22 +406,24 @@ function CoverHero({
             )}
           </div>
         </div>
-      </div>
+      </CoverPhotoEditor>
 
       <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 p-4">
-        <form action={togglePublish.bind(null, trip.id, trip.is_published)}>
-          <button
-            type="submit"
-            className={
-              trip.is_published
-                ? "flex items-center gap-1.5 rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-200"
-                : "flex items-center gap-1.5 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-green-200 transition hover:bg-green-700"
-            }
-          >
-            <Rocket size={15} />
-            {trip.is_published ? "Metti in bozza" : "Pubblica"}
-          </button>
-        </form>
+        {!trip.is_published && (
+          <form action={togglePublish.bind(null, trip.id, trip.is_published)}>
+            <button
+              type="submit"
+              className={
+                trip.is_published
+                  ? "flex items-center gap-1.5 rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-200"
+                  : "flex items-center gap-1.5 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-green-200 transition hover:bg-green-700"
+              }
+            >
+              <Rocket size={15} />
+              {trip.is_published ? "Metti in bozza" : "Pubblica"}
+            </button>
+          </form>
+        )}
 
         {trip.is_published && (
           <SendTripToClient
@@ -455,14 +459,6 @@ function CoverHero({
           stageAction={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}
           duplicateAction={duplicateTripAsVariant.bind(null, trip.id)}
         />
-
-        <div className="ml-auto">
-          {trip.is_published ? (
-            <CopyLinkButton url={publicUrl} />
-          ) : (
-            <span className="text-sm text-slate-500">Pubblica per ottenere il link da condividere.</span>
-          )}
-        </div>
       </div>
 
       {variantTrips.length > 0 && (
@@ -474,9 +470,7 @@ function CoverHero({
         </div>
       )}
 
-      <UploadForm action={uploadCover.bind(null, trip.id)} className="p-4">
-        <DropzoneUpload name="cover" accept="image/*" label="Carica immagine di copertina" compressImages />
-      </UploadForm>
+      <PublicLinkBar url={publicUrl} published={trip.is_published} />
     </section>
   );
 }
