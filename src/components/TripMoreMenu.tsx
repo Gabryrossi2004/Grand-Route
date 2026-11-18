@@ -1,0 +1,97 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { Copy, FileCheck2, FileDown, Languages, MoreHorizontal } from "lucide-react";
+import SubmitButton from "@/components/SubmitButton";
+import { TranslateTripDialog } from "@/components/TranslateTripButton";
+import { ASSISTANT_NAME } from "@/lib/assistant";
+
+// Menu "Altro" della scheda viaggio: le azioni usate di rado, raccolte in un
+// solo pulsante per tenere pulita la barra principale.
+export default function TripMoreMenu({
+  tripId,
+  isFinal,
+  stageAction,
+  duplicateAction,
+}: {
+  tripId: string;
+  isFinal: boolean;
+  stageAction: () => void | Promise<void>;
+  duplicateAction: () => void | Promise<void>;
+}) {
+  const [open, setOpen] = useState(false);
+  const [translateOpen, setTranslateOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onDown = (e: PointerEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onDown);
+    };
+  }, [open]);
+
+  const item =
+    "flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-slate-700 transition hover:bg-[#f1e6cf] disabled:opacity-60";
+  const hint = "px-3 pb-1 text-xs text-slate-500";
+
+  return (
+    <div ref={wrapRef} className="relative">
+      <button
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+      >
+        <MoreHorizontal size={16} />
+        Altro
+      </button>
+
+      {open && (
+        <div
+          role="menu"
+          className="absolute left-0 top-full z-30 mt-2 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg"
+        >
+          <Link href={`/trips/${tripId}/preview?pdf=1`} target="_blank" role="menuitem" className={item}>
+            <FileDown size={16} /> Salva in PDF
+          </Link>
+
+          <form action={stageAction}>
+            <button type="submit" role="menuitem" className={item}>
+              <FileCheck2 size={16} /> {isFinal ? "Segna come preliminare" : "Segna come finale"}
+            </button>
+          </form>
+          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario.</p>
+
+          <form action={duplicateAction}>
+            <SubmitButton pendingLabel="Creazione variante…" className={item}>
+              <Copy size={16} /> Crea variante
+            </SubmitButton>
+          </form>
+
+          <button
+            type="button"
+            role="menuitem"
+            className={item}
+            onClick={() => {
+              setOpen(false);
+              setTranslateOpen(true);
+            }}
+          >
+            <Languages size={16} /> Traduci con {ASSISTANT_NAME}
+          </button>
+        </div>
+      )}
+
+      {translateOpen && <TranslateTripDialog tripId={tripId} onClose={() => setTranslateOpen(false)} />}
+    </div>
+  );
+}

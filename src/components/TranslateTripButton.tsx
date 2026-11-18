@@ -9,10 +9,9 @@ import { TRANSLATION_LANGUAGES } from "@/lib/translation";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { translateTrip } from "@/lib/actions/zefiroAgency";
 
-// "Traduci con Zefiro": crea una copia del viaggio in un'altra lingua.
-export default function TranslateTripButton({ tripId }: { tripId: string }) {
+// Finestra "Traduci con Zefiro": crea una copia del viaggio in un'altra lingua.
+export function TranslateTripDialog({ tripId, onClose }: { tripId: string; onClose: () => void }) {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
   const [language, setLanguage] = useState("en");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -41,17 +40,7 @@ export default function TranslateTripButton({ tripId }: { tripId: string }) {
   }
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-      >
-        <Languages size={15} />
-        Traduci con {ASSISTANT_NAME}
-      </button>
-      {open && (
-        <Modal title="Traduci il viaggio" onClose={() => !busy && setOpen(false)}>
+        <Modal title="Traduci il viaggio" onClose={() => !busy && onClose()}>
           {busy ? (
             <ZefiroThinking
               title="Sto traducendo il viaggio…"
@@ -101,7 +90,23 @@ export default function TranslateTripButton({ tripId }: { tripId: string }) {
             </div>
           )}
         </Modal>
-      )}
+  );
+}
+
+// Pulsante "Traduci con Zefiro" (usato dove serve un pulsante a sé).
+export default function TranslateTripButton({ tripId }: { tripId: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+      >
+        <Languages size={15} />
+        Traduci con {ASSISTANT_NAME}
+      </button>
+      {open && <TranslateTripDialog tripId={tripId} onClose={() => setOpen(false)} />}
     </>
   );
 }

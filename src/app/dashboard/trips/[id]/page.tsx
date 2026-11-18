@@ -21,14 +21,11 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Calendar,
-  Copy,
-  ExternalLink,
   Eye,
-  FileCheck2,
   FileText,
   MapPin,
   Rocket,
-FileDown, } from "lucide-react";
+} from "lucide-react";
 import AiItineraryGenerator from "@/components/AiItineraryGenerator";
 import TripReview from "@/components/TripReview";
 import AiNotes from "@/components/AiNotes";
@@ -41,13 +38,13 @@ import EmergencyButtonForm from "@/components/EmergencyButtonForm";
 import ExpandableSection from "@/components/ExpandableSection";
 import TripDialoguePanel, { ApprovalChip } from "@/components/TripDialoguePanel";
 import ClientZefiroTripSetting from "@/components/ClientZefiroTripSetting";
-import TranslateTripButton from "@/components/TranslateTripButton";
 import { checkTripBeforeSend } from "@/lib/tripPreflight";
 import SendTripToClient from "@/components/SendTripToClient";
+import TripMoreMenu from "@/components/TripMoreMenu";
+import CopyLinkButton from "@/components/CopyLinkButton";
 import ItineraryEditor from "@/components/ItineraryEditor";
 import LibraryPanel from "@/components/LibraryPanel";
 import RateBlockForm from "@/components/RateBlockForm";
-import SubmitButton from "@/components/SubmitButton";
 import TripPriceFields from "@/components/TripPriceFields";
 import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
@@ -442,38 +439,7 @@ function CoverHero({
           Preview
         </Link>
 
-        <Link
-          href={`/trips/${trip.id}/preview?pdf=1`}
-          target="_blank"
-          title="Si apre l'itinerario pronto da salvare: scegli «Salva come PDF» nella finestra di stampa"
-          className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-        >
-          <FileDown size={15} />
-          Salva in PDF
-        </Link>
 
-        <form action={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}>
-          <button
-            type="submit"
-            title="Il cliente vede l'etichetta corrispondente in cima all'itinerario"
-            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-          >
-            <FileCheck2 size={15} />
-            {trip.itinerary_stage === "finale" ? "Segna come preliminare" : "Segna come finale"}
-          </button>
-        </form>
-
-        <form action={duplicateTripAsVariant.bind(null, trip.id)}>
-          <SubmitButton
-            pendingLabel="Creazione variante…"
-            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
-          >
-            <Copy size={15} />
-            Crea variante
-          </SubmitButton>
-        </form>
-
-        <TranslateTripButton tripId={trip.id} />
 
         <TripServicesPanel
           tripId={trip.id}
@@ -483,21 +449,20 @@ function CoverHero({
           activityOptions={activityOptions}
         />
 
-        {trip.is_published ? (
-          <a
-            href={publicUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="ml-auto flex items-center gap-1.5 text-sm font-medium text-[#233c5e] hover:underline"
-          >
-            {publicUrl}
-            <ExternalLink size={13} />
-          </a>
-        ) : (
-          <span className="ml-auto text-sm text-slate-500">
-            Pubblica per ottenere un link da condividere col cliente.
-          </span>
-        )}
+        <TripMoreMenu
+          tripId={trip.id}
+          isFinal={trip.itinerary_stage === "finale"}
+          stageAction={updateItineraryStage.bind(null, trip.id, trip.itinerary_stage)}
+          duplicateAction={duplicateTripAsVariant.bind(null, trip.id)}
+        />
+
+        <div className="ml-auto">
+          {trip.is_published ? (
+            <CopyLinkButton url={publicUrl} />
+          ) : (
+            <span className="text-sm text-slate-500">Pubblica per ottenere il link da condividere.</span>
+          )}
+        </div>
       </div>
 
       {variantTrips.length > 0 && (
