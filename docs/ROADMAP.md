@@ -36,4 +36,4 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 18/11/2026.
 **4. Lingua del sito: inglese** — prima far funzionare la traduzione automatica dell'itinerario (i testi dell'interfaccia sono già pronti ma nascosti); poi gestionale agenzia in inglese; — stessa struttura già pronta per i clienti; impostazione di lingua nelle Impostazioni dell'agenzia; poi eventuali altre lingue
 
 ## Prima del lancio commerciale
-Supabase Pro e Vercel Pro, revisione legale (compresa l'informativa privacy: ora cita Anthropic e Open-Meteo) (privacy, termini, contratto con le agenzie), partita IVA e fatturazione, rinnovo del dominio.
+AeroDataBox (ricerca voli): il piano gratuito NON consente l'uso commerciale né la rivendita B2B dei dati (condizioni viste sul piano Basic): prima del lancio serve un piano a pagamento che le includa; Supabase Pro e Vercel Pro, revisione legale (compresa l'informativa privacy: ora cita Anthropic e Open-Meteo) (privacy, termini, contratto con le agenzie), partita IVA e fatturazione, rinnovo del dominio.
