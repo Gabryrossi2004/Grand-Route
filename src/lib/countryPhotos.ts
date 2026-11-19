@@ -49,9 +49,13 @@ export async function findCountryPhotos(queries: { query: string; title: string 
 
   // 2. autore, licenza e versione ridotta (1280 px) in una sola richiesta a Commons
   const titles = found.map((f) => `File:${f.file}`).join("|");
-  const data = (await getJson(
-    `https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=1280&titles=${encodeURIComponent(titles)}`,
-  )) as {
+  // Commons prima; se non risponde (limiti di traffico) la stessa richiesta passa da Wikipedia, che espone i file di Commons
+  let raw: unknown = null;
+  for (const host of ["commons.wikimedia.org", "it.wikipedia.org", "en.wikipedia.org"]) {
+    raw = await getJson(`https://${host}/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=1280&titles=${encodeURIComponent(titles)}`);
+    if ((raw as { query?: { pages?: object } } | null)?.query?.pages) break;
+  }
+  const data = raw as {
     query?: {
       normalized?: { from: string; to: string }[];
       pages?: Record<string, { title: string; imageinfo?: { thumburl?: string; descriptionurl?: string; extmetadata?: Record<string, { value?: string }> }[] }>;

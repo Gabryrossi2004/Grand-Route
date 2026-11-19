@@ -1,0 +1,784 @@
+{
+  "ES": {
+    "tagline": "Città d'arte, tapas e spiagge: la Spagna unisce cultura e vita all'aperto a due ore di volo.",
+    "description": [
+      "La Spagna è una delle mete più amate dagli italiani: vicina, accogliente e varia. Madrid e Barcellona offrono musei di livello mondiale, architettura modernista e una vita notturna che inizia tardi e finisce all'alba.",
+      "L'Andalusia è il cuore romantico del paese: Siviglia, Granada e Cordova raccontano otto secoli di presenza araba tra palazzi, patii fioriti e flamenco. Più a nord, i Paesi Baschi e la Galizia sorprendono con paesaggi verdi e una cucina tra le migliori d'Europa.",
+      "Baleari e Canarie completano l'offerta con mare limpido tutto l'anno: le Canarie, in pieno Atlantico, hanno un clima primaverile anche in inverno."
+    ],
+    "facts": {
+      "capital": "Madrid",
+      "languages": "Spagnolo (castigliano); catalano, basco e galiziano nelle rispettive regioni",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia (Canarie: un'ora in meno)",
+      "flight": "Circa 2 ore diretto per Madrid o Barcellona; 4 ore per le Canarie",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre: clima mite e meno caldo nel sud",
+      "climate": "Mediterraneo sulle coste, continentale all'interno (estati molto calde a Madrid e in Andalusia), atlantico e piovoso al nord",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; autostrade ottime, molte gratuite",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Sagrada Família", "description": "Il capolavoro incompiuto di Gaudí, simbolo di Barcellona.", "search": "Sagrada Família Barcellona" },
+      { "name": "Alhambra di Granada", "description": "Palazzi e giardini nasridi affacciati sulla Sierra Nevada.", "search": "Alhambra Granada" },
+      { "name": "Siviglia", "description": "Cattedrale, Real Alcázar e la Plaza de España.", "search": "Plaza de España Siviglia" },
+      { "name": "Museo del Prado", "description": "Velázquez, Goya ed El Greco nel museo più importante di Madrid.", "search": "Museo del Prado" },
+      { "name": "Mezquita di Cordova", "description": "La grande moschea con la selva di archi bianchi e rossi.", "search": "Mezquita di Cordova" },
+      { "name": "Tenerife e il Teide", "description": "Il vulcano più alto di Spagna in un parco lunare.", "search": "Teide" }
+    ],
+    "gettingAround": [
+      "Treni ad alta velocità (AVE) tra Madrid, Barcellona, Siviglia, Malaga e Valencia",
+      "Voli interni economici per Baleari e Canarie",
+      "Auto a noleggio ideale per Andalusia e nord del paese",
+      "Metropolitane efficienti a Madrid e Barcellona"
+    ],
+    "food": [
+      "Tapas e pintxos da gustare al banco con un bicchiere di vino",
+      "Paella valenciana, nata con carne e verdure",
+      "Jamón ibérico e formaggi manchego",
+      "Churros con cioccolata calda"
+    ],
+    "tips": [
+      "Si pranza dopo le 14 e si cena dopo le 21",
+      "Prenotare in anticipo Alhambra e Sagrada Família",
+      "In estate l'interno dell'Andalusia supera spesso i 40 gradi",
+      "Mancia facoltativa, di solito si arrotonda il conto"
+    ]
+  },
+  "PT": {
+    "tagline": "Oceano, azulejos e luce dorata: il Portogallo è l'Europa più autentica e rilassata.",
+    "description": [
+      "Il Portogallo conquista con la sua atmosfera malinconica e gentile. Lisbona si scopre a piedi e in tram tra colline, belvedere e quartieri storici come l'Alfama, dove si ascolta il fado.",
+      "Porto, affacciata sul Douro, è la città delle cantine del vino liquoroso e dei ponti di ferro; risalendo il fiume si attraversa una valle di vigneti terrazzati patrimonio UNESCO.",
+      "A sud l'Algarve offre scogliere dorate e calette, mentre le isole di Madeira e Azzorre sono paradisi verdi per chi ama camminare nella natura."
+    ],
+    "facts": {
+      "capital": "Lisbona",
+      "languages": "Portoghese; inglese diffuso nelle zone turistiche",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in meno rispetto all'Italia (Azzorre: due ore in meno)",
+      "flight": "Circa 3 ore diretto per Lisbona o Porto",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre; l'estate è ideale per l'Algarve",
+      "climate": "Mediterraneo con influenza atlantica: estati calde e ventilate, inverni miti e piovosi al nord",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; alcune autostrade hanno pedaggio elettronico da attivare con l'auto a noleggio",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Lisbona", "description": "Alfama, Baixa e il tram 28 tra le colline della capitale.", "search": "Alfama Lisbona" },
+      { "name": "Torre di Belém", "description": "Simbolo delle grandi scoperte sul Tago.", "search": "Torre di Belém" },
+      { "name": "Porto", "description": "La Ribeira, il ponte Dom Luís I e le cantine del vino Porto.", "search": "Ribeira Porto" },
+      { "name": "Sintra", "description": "Palazzi romantici e castelli immersi nei boschi.", "search": "Palazzo Nazionale di Pena" },
+      { "name": "Valle del Douro", "description": "Vigneti a terrazze e quintas lungo il fiume.", "search": "Valle del Douro" },
+      { "name": "Algarve", "description": "Scogliere, grotte marine e spiagge come Ponta da Piedade.", "search": "Ponta da Piedade" }
+    ],
+    "gettingAround": [
+      "Treni Alfa Pendular tra Lisbona, Coimbra e Porto",
+      "Auto a noleggio per Douro, Alentejo e Algarve",
+      "Tram, funicolari e metro a Lisbona",
+      "Voli interni per Madeira e Azzorre"
+    ],
+    "food": [
+      "Bacalhau, il merluzzo preparato in centinaia di modi",
+      "Pastéis de nata, i pasticcini alla crema di Belém",
+      "Sardine alla griglia nelle feste di giugno",
+      "Francesinha, il sandwich sostanzioso di Porto"
+    ],
+    "tips": [
+      "Scarpe comode: Lisbona e Porto sono in salita e lastricate",
+      "Il couvert (pane, olive) portato al tavolo si paga se consumato",
+      "L'oceano è freddo anche d'estate",
+      "Per Sintra meglio partire presto per evitare la folla"
+    ]
+  },
+  "FR": {
+    "tagline": "Parigi, castelli, Provenza e Alpi: la Francia è un mosaico di eleganza e sapori.",
+    "description": [
+      "La Francia è il paese più visitato al mondo e non a caso: Parigi da sola vale il viaggio, tra musei come il Louvre e l'Orsay, boulevard, bistrot e la Torre Eiffel illuminata la sera.",
+      "Fuori dalla capitale si aprono mondi diversi: i castelli della Loira, le spiagge dello sbarco in Normandia, Mont-Saint-Michel, i villaggi di pietra della Provenza tra lavanda e mercati.",
+      "La Costa Azzurra unisce mare e glamour, l'Alsazia ha borghi da fiaba e le regioni vinicole come Borgogna e Bordeaux sono un invito alla buona tavola."
+    ],
+    "facts": {
+      "capital": "Parigi",
+      "languages": "Francese",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 45 minuti diretto per Parigi; molte destinazioni raggiungibili anche in treno o in auto",
+      "bestPeriod": "Maggio–giugno e settembre; luglio per la lavanda in Provenza",
+      "climate": "Oceanico a ovest, continentale all'interno, mediterraneo sulla costa sud",
+      "plugs": "Tipo C ed E, 230 V: le spine italiane piccole funzionano, per le altre serve un adattatore",
+      "driving": "Si guida a destra; autostrade a pagamento, in città zone a traffico limitato con bollino Crit'Air",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Torre Eiffel", "description": "Il simbolo di Parigi, con vista su tutta la città.", "search": "Torre Eiffel" },
+      { "name": "Museo del Louvre", "description": "La Gioconda e migliaia di capolavori sotto la piramide di vetro.", "search": "Museo del Louvre" },
+      { "name": "Mont-Saint-Michel", "description": "L'abbazia sull'isolotto circondato dalle maree.", "search": "Mont-Saint-Michel" },
+      { "name": "Castelli della Loira", "description": "Chambord, Chenonceau e le residenze del Rinascimento francese.", "search": "Castello di Chenonceau" },
+      { "name": "Provenza", "description": "Campi di lavanda, Gordes e i mercati di Avignone.", "search": "Gordes" },
+      { "name": "Reggia di Versailles", "description": "La Galleria degli Specchi e i giardini del Re Sole.", "search": "Reggia di Versailles" }
+    ],
+    "gettingAround": [
+      "Treni TGV veloci da Parigi verso tutto il paese",
+      "Metro e RER a Parigi, comodi anche per Versailles",
+      "Auto a noleggio per Provenza, Loira e Normandia",
+      "Treni diretti dall'Italia per Parigi, Nizza e Lione"
+    ],
+    "food": [
+      "Croissant e baguette appena sfornati",
+      "Formaggi e vini regionali, dalla Borgogna al Bordeaux",
+      "Bouillabaisse di Marsiglia e ratatouille provenzale",
+      "Crêpes bretoni e macarons"
+    ],
+    "tips": [
+      "Prenotare online Louvre, Torre Eiffel e Versailles",
+      "Salutare con «bonjour» entrando nei negozi è una regola di cortesia",
+      "Il servizio è incluso nel conto: la mancia è facoltativa",
+      "Attenzione ai borseggiatori nella metro di Parigi"
+    ]
+  },
+  "GR": {
+    "tagline": "Isole bianche e blu, rovine leggendarie e una cucina semplice e solare.",
+    "description": [
+      "La Grecia è sinonimo di estate: oltre 200 isole abitate, ognuna con il suo carattere. Le Cicladi regalano villaggi bianchi e mare cristallino, da Santorini a Milos; le Ionie sono verdi e vicine all'Italia.",
+      "Atene custodisce l'Acropoli e un centro vivace di taverne e terrazze. Sul continente si visitano Delfi, Olimpia, Micene e i monasteri sospesi delle Meteore.",
+      "Creta, la più grande delle isole, unisce siti minoici come Cnosso, gole da percorrere a piedi e spiagge famose come Balos ed Elafonissi."
+    ],
+    "facts": {
+      "capital": "Atene",
+      "languages": "Greco; inglese molto diffuso nel turismo",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore diretto per Atene; voli estivi diretti per molte isole",
+      "bestPeriod": "Fine maggio–giugno e settembre: mare caldo e meno folla",
+      "climate": "Mediterraneo: estati calde e secche con vento meltemi nelle Cicladi, inverni miti",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; sulle isole strade strette, comodi scooter e quad",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Acropoli di Atene", "description": "Il Partenone e il museo dell'Acropoli.", "search": "Acropoli di Atene" },
+      { "name": "Santorini", "description": "Oia e i tramonti sulla caldera vulcanica.", "search": "Oia Santorini" },
+      { "name": "Meteore", "description": "Monasteri costruiti in cima a pinnacoli di roccia.", "search": "Meteore" },
+      { "name": "Mykonos", "description": "Mulini a vento, la Piccola Venezia e spiagge animate.", "search": "Mykonos" },
+      { "name": "Cnosso", "description": "Il palazzo minoico del mito del Minotauro a Creta.", "search": "Cnosso" },
+      { "name": "Delfi", "description": "Il santuario di Apollo sulle pendici del Parnaso.", "search": "Delfi" }
+    ],
+    "gettingAround": [
+      "Traghetti e aliscafi tra le isole: prenotare in anticipo in agosto",
+      "Voli interni da Atene per Creta, Rodi, Santorini e altre isole",
+      "Auto a noleggio per il continente e le isole grandi",
+      "Traghetti dall'Italia (Ancona, Bari, Brindisi) per Patrasso e Igoumenitsa"
+    ],
+    "food": [
+      "Insalata greca con feta e olio d'oliva",
+      "Souvlaki e gyros",
+      "Moussakà e pesce alla griglia in taverna",
+      "Yogurt greco con miele"
+    ],
+    "tips": [
+      "In agosto traghetti e alloggi vanno prenotati con largo anticipo",
+      "Il vento meltemi può cancellare le corse veloci",
+      "Visitare i siti archeologici al mattino presto",
+      "Nei monasteri serve abbigliamento coprente"
+    ]
+  },
+  "HR": {
+    "tagline": "Mille isole, città romane e veneziane e un mare tra i più limpidi del Mediterraneo.",
+    "description": [
+      "La Croazia è la vicina di casa che sorprende: la costa dalmata alterna città storiche e un arcipelago di oltre mille isole dall'acqua trasparentissima.",
+      "Dubrovnik, chiusa nelle sue mura, è la perla dell'Adriatico; Spalato è nata dentro il palazzo dell'imperatore Diocleziano e Zara ha l'organo marino che suona con le onde.",
+      "All'interno i laghi di Plitvice formano cascate color smeraldo, mentre l'Istria ricorda l'Italia con borghi collinari, tartufi e olio."
+    ],
+    "facts": {
+      "capital": "Zagabria",
+      "languages": "Croato; italiano parlato in Istria e diffuso sulla costa",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora diretto per Spalato o Dubrovnik; traghetti da Ancona, Bari e Pescara",
+      "bestPeriod": "Giugno e settembre: mare caldo e meno folla",
+      "climate": "Mediterraneo sulla costa, continentale all'interno",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; autostrade a pedaggio ben tenute",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Dubrovnik", "description": "Le mura e lo Stradun della città vecchia.", "search": "Dubrovnik" },
+      { "name": "Laghi di Plitvice", "description": "Sedici laghi collegati da cascate nel bosco.", "search": "Laghi di Plitvice" },
+      { "name": "Spalato", "description": "Il Palazzo di Diocleziano, città nella città.", "search": "Palazzo di Diocleziano" },
+      { "name": "Isola di Hvar", "description": "Lavanda, porticcioli e vita serale.", "search": "Hvar" },
+      { "name": "Rovigno", "description": "Il borgo istriano dalle case colorate sul mare.", "search": "Rovigno" },
+      { "name": "Parco nazionale di Krka", "description": "Cascate e passerelle vicino a Sebenico.", "search": "Parco nazionale del Cherca" }
+    ],
+    "gettingAround": [
+      "Traghetti Jadrolinija e catamarani tra le isole",
+      "Auto a noleggio per la costa e l'interno",
+      "Autobus frequenti tra le città costiere",
+      "Barche a noleggio e caicchi per il giro delle isole"
+    ],
+    "food": [
+      "Pesce alla griglia e frutti di mare",
+      "Peka: carne o polpo cotti sotto la campana di ferro",
+      "Tartufi e prosciutto istriani",
+      "Vini locali come il Plavac Mali"
+    ],
+    "tips": [
+      "Molte spiagge sono di ciottoli: utili le scarpette da scoglio",
+      "In alta stagione Dubrovnik e Plitvice sono molto affollate",
+      "Le carte sono accettate quasi ovunque",
+      "Prenotare i traghetti con l'auto in luglio e agosto"
+    ]
+  },
+  "GB": {
+    "tagline": "Londra, castelli e campagne verdi: il Regno Unito tra tradizione e modernità.",
+    "description": [
+      "Londra è una capitale mondiale: musei gratuiti come il British Museum e la National Gallery, mercati, teatri del West End e quartieri dal carattere unico.",
+      "Fuori città si scoprono la campagna inglese dei Cotswolds, Oxford e Cambridge, Bath con le terme romane e il misterioso cerchio di Stonehenge.",
+      "La Scozia offre Edimburgo con il suo castello, le Highlands, i laghi e le isole; il Galles e l'Irlanda del Nord completano un viaggio ricco di paesaggi."
+    ],
+    "facts": {
+      "capital": "Londra",
+      "languages": "Inglese; gallese in Galles",
+      "currency": "Sterlina britannica (GBP)",
+      "timezone": "Un'ora in meno rispetto all'Italia",
+      "flight": "Circa 2 ore e 15 minuti diretto per Londra",
+      "bestPeriod": "Maggio–settembre: giornate lunghe e clima più mite",
+      "climate": "Oceanico: temperature moderate e pioggia frequente in ogni stagione",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto (la carta d'identità non è accettata) e autorizzazione elettronica ETA da richiedere online prima della partenza. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Londra", "description": "Westminster, Big Ben e il Tamigi.", "search": "Palazzo di Westminster" },
+      { "name": "British Museum", "description": "Tesori di tutte le civiltà, con ingresso gratuito.", "search": "British Museum" },
+      { "name": "Edimburgo", "description": "Il castello e il Royal Mile della capitale scozzese.", "search": "Castello di Edimburgo" },
+      { "name": "Stonehenge", "description": "Il cerchio di pietre preistorico nella piana di Salisbury.", "search": "Stonehenge" },
+      { "name": "Cotswolds", "description": "Villaggi di pietra color miele nella campagna inglese.", "search": "Cotswolds" },
+      { "name": "Highlands scozzesi", "description": "Montagne, laghi e castelli come Eilean Donan.", "search": "Eilean Donan" }
+    ],
+    "gettingAround": [
+      "Metropolitana (Tube) e autobus a Londra, si paga con carta contactless",
+      "Treni frequenti tra le città principali, meglio prenotare in anticipo",
+      "Auto a noleggio per Scozia e campagne (guida a sinistra)",
+      "Voli interni per le isole scozzesi"
+    ],
+    "food": [
+      "Fish and chips",
+      "Colazione inglese completa",
+      "Afternoon tea con scones",
+      "Sunday roast nei pub"
+    ],
+    "tips": [
+      "Portare sempre un ombrello o una giacca impermeabile",
+      "Molti musei nazionali sono gratuiti",
+      "Nei pub si ordina e si paga al bancone",
+      "Ricordarsi l'ETA: senza autorizzazione non si parte"
+    ]
+  },
+  "IE": {
+    "tagline": "Scogliere sull'oceano, pub con musica dal vivo e un verde che non ha uguali.",
+    "description": [
+      "L'Irlanda è un'isola di paesaggi drammatici e gente accogliente. Dublino unisce storia e vita sociale tra il Trinity College, la Guinness Storehouse e i pub di Temple Bar.",
+      "La costa occidentale è la più spettacolare: le Cliffs of Moher, il Burren, il Connemara e la Wild Atlantic Way, una strada panoramica di oltre 2.500 chilometri.",
+      "Il sud regala il Ring of Kerry e villaggi colorati come Kinsale; ovunque castelli, abbazie e una tradizione musicale vivissima."
+    ],
+    "facts": {
+      "capital": "Dublino",
+      "languages": "Inglese e irlandese (gaelico)",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in meno rispetto all'Italia",
+      "flight": "Circa 2 ore e 45 minuti diretto per Dublino",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Oceanico: fresco e variabile, pioggia frequente ma raramente intensa",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; strade di campagna strette",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Cliffs of Moher", "description": "Scogliere a picco sull'Atlantico alte oltre 200 metri.", "search": "Scogliere di Moher" },
+      { "name": "Dublino", "description": "Trinity College e il Libro di Kells.", "search": "Trinity College Dublino" },
+      { "name": "Ring of Kerry", "description": "Anello panoramico tra laghi, montagne e mare.", "search": "Ring of Kerry" },
+      { "name": "Connemara", "description": "Brughiere, laghi e l'abbazia di Kylemore.", "search": "Kylemore Abbey" },
+      { "name": "Rocca di Cashel", "description": "Rovine medievali su un colle del Tipperary.", "search": "Rocca di Cashel" },
+      { "name": "Giant's Causeway", "description": "Le colonne di basalto in Irlanda del Nord.", "search": "Giant's Causeway" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio il modo migliore per la costa ovest",
+      "Treni e autobus tra Dublino, Cork, Galway e Belfast",
+      "Escursioni organizzate in giornata da Dublino",
+      "Traghetti per le isole Aran"
+    ],
+    "food": [
+      "Irish stew di agnello",
+      "Salmone affumicato e frutti di mare",
+      "Soda bread",
+      "Guinness e whiskey irlandese"
+    ],
+    "tips": [
+      "Vestirsi a strati: il tempo cambia più volte al giorno",
+      "La musica tradizionale nei pub inizia di solito la sera",
+      "Prenotare l'auto con cambio automatico se non si è abituati a guidare a sinistra",
+      "Per l'Irlanda del Nord vale il regime del Regno Unito"
+    ]
+  },
+  "IS": {
+    "tagline": "Ghiacciai, vulcani, geyser e aurore boreali: l'Islanda è la natura allo stato puro.",
+    "description": [
+      "L'Islanda è un'isola giovane e in continua trasformazione, dove fuoco e ghiaccio convivono. Il Circolo d'Oro riunisce in un giorno il parco di Þingvellir, il geyser Strokkur e la cascata di Gullfoss.",
+      "La costa sud regala spiagge nere, cascate come Seljalandsfoss e Skógafoss e la laguna glaciale di Jökulsárlón con gli iceberg che scivolano verso il mare.",
+      "D'estate il sole non tramonta quasi mai e si possono avvistare balene e pulcinelle di mare; d'inverno le lunghe notti sono perfette per le aurore boreali."
+    ],
+    "facts": {
+      "capital": "Reykjavík",
+      "languages": "Islandese; inglese parlato da quasi tutti",
+      "currency": "Corona islandese (ISK); le carte sono accettate ovunque",
+      "timezone": "Un'ora in meno rispetto all'Italia (due ore in meno con l'ora legale italiana)",
+      "flight": "Circa 4 ore diretto per Keflavík",
+      "bestPeriod": "Giugno–agosto per la natura e le strade aperte; ottobre–marzo per le aurore",
+      "climate": "Subartico oceanico: estati fresche (10–15 °C), inverni ventosi ma meno rigidi del previsto",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade F di montagna solo con 4x4 e in estate",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Gullfoss", "description": "La cascata d'oro del Circolo d'Oro.", "search": "Gullfoss" },
+      { "name": "Jökulsárlón", "description": "Laguna glaciale con iceberg e foche.", "search": "Jökulsárlón" },
+      { "name": "Seljalandsfoss", "description": "Cascata che si può percorrere da dietro.", "search": "Seljalandsfoss" },
+      { "name": "Spiaggia di Reynisfjara", "description": "Sabbia nera e colonne di basalto vicino a Vík.", "search": "Reynisfjara" },
+      { "name": "Laguna Blu", "description": "Bagni geotermali tra campi di lava.", "search": "Laguna Blu Islanda" },
+      { "name": "Kirkjufell", "description": "La montagna più fotografata della penisola di Snæfellsnes.", "search": "Kirkjufell" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio per la Ring Road (strada 1) attorno all'isola",
+      "Escursioni guidate da Reykjavík per Circolo d'Oro e costa sud",
+      "Voli interni per Akureyri e i fiordi occidentali",
+      "In inverno solo con esperienza di guida su neve o con tour organizzati"
+    ],
+    "food": [
+      "Agnello islandese",
+      "Pesce freschissimo e zuppa di aragostine",
+      "Skyr, il latticino cremoso",
+      "Pane di segale cotto nel terreno geotermale"
+    ],
+    "tips": [
+      "Controllare sempre meteo e strade su vedur.is e umferdin.is",
+      "Il costo della vita è molto alto: prevedere un buon budget",
+      "Non uscire mai dai sentieri segnalati e non avvicinarsi alle onde sulle spiagge nere",
+      "L'acqua del rubinetto è ottima"
+    ]
+  },
+  "NO": {
+    "tagline": "Fiordi, montagne e sole di mezzanotte: la Norvegia è la natura del grande nord.",
+    "description": [
+      "La Norvegia è famosa per i suoi fiordi, profonde lingue di mare tra pareti di roccia e cascate. Geirangerfjord e Nærøyfjord sono patrimonio UNESCO e si navigano in battello o in crociera.",
+      "Bergen, con le case colorate del Bryggen, è la porta dei fiordi; Oslo unisce musei d'arte e architettura moderna. Il treno di Flåm è uno dei percorsi ferroviari più spettacolari al mondo.",
+      "Oltre il circolo polare, le isole Lofoten e Tromsø offrono il sole di mezzanotte d'estate e le aurore boreali d'inverno."
+    ],
+    "facts": {
+      "capital": "Oslo",
+      "languages": "Norvegese; inglese parlato da quasi tutti",
+      "currency": "Corona norvegese (NOK); pagamenti con carta ovunque",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 2 ore e 45 minuti diretto per Oslo; 3 ore per Bergen",
+      "bestPeriod": "Giugno–agosto per i fiordi; dicembre–marzo per le aurore",
+      "climate": "Temperato sulla costa grazie alla Corrente del Golfo, freddo all'interno e al nord",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; molti pedaggi automatici e traghetti che fanno parte della rete stradale",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Geirangerfjord", "description": "Il fiordo delle cascate delle Sette Sorelle.", "search": "Geirangerfjord" },
+      { "name": "Bergen", "description": "Il quartiere anseatico di Bryggen.", "search": "Bryggen" },
+      { "name": "Isole Lofoten", "description": "Villaggi di pescatori sotto montagne a picco.", "search": "Reine Lofoten" },
+      { "name": "Ferrovia di Flåm", "description": "Il treno panoramico tra montagne e cascate.", "search": "Ferrovia di Flåm" },
+      { "name": "Preikestolen", "description": "Il Pulpito sospeso 600 metri sopra il Lysefjord.", "search": "Preikestolen" },
+      { "name": "Tromsø", "description": "La capitale artica delle aurore boreali.", "search": "Tromsø" }
+    ],
+    "gettingAround": [
+      "Treni panoramici Oslo–Bergen e Flåmsbana",
+      "Battelli e la nave postale Hurtigruten lungo la costa",
+      "Auto a noleggio per i fiordi, con molti traghetti brevi",
+      "Voli interni per il nord e le Lofoten"
+    ],
+    "food": [
+      "Salmone e merluzzo artico",
+      "Brunost, il formaggio marrone dolce",
+      "Gamberetti freschi a Bergen",
+      "Waffle norvegesi"
+    ],
+    "tips": [
+      "Il costo della vita è molto alto",
+      "Vestirsi a strati anche in estate",
+      "L'alcol si vende solo nei negozi Vinmonopolet",
+      "Nei mesi estivi prenotare con anticipo traghetti e alloggi nei fiordi"
+    ]
+  },
+  "FI": {
+    "tagline": "Laghi infiniti, saune e la Lapponia di Babbo Natale e delle aurore boreali.",
+    "description": [
+      "La Finlandia è il paese dei mille laghi e delle foreste, con un rapporto speciale con la natura e la sauna, presente quasi in ogni casa.",
+      "Helsinki è una capitale a misura d'uomo affacciata sul Baltico, con il design nordico, la fortezza di Suomenlinna e i mercati del porto.",
+      "La Lapponia finlandese è una meta d'inverno classica: Rovaniemi e il villaggio di Babbo Natale, safari con husky e renne, notti nei glass igloo sotto le aurore boreali."
+    ],
+    "facts": {
+      "capital": "Helsinki",
+      "languages": "Finlandese e svedese; inglese molto diffuso",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 3 ore diretto per Helsinki; voli diretti invernali per Rovaniemi",
+      "bestPeriod": "Dicembre–marzo per la Lapponia innevata; giugno–agosto per laghi e notti bianche",
+      "climate": "Continentale freddo: inverni lunghi e nevosi (anche −25 °C in Lapponia), estati miti",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; in inverno gomme da neve obbligatorie e attenzione alle renne",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Rovaniemi", "description": "Il villaggio di Babbo Natale sul Circolo Polare Artico.", "search": "Santa Claus Village" },
+      { "name": "Helsinki", "description": "La cattedrale bianca e la piazza del Senato.", "search": "Cattedrale di Helsinki" },
+      { "name": "Suomenlinna", "description": "Fortezza sul mare patrimonio UNESCO.", "search": "Suomenlinna" },
+      { "name": "Saariselkä", "description": "Aurore boreali e igloo di vetro nella Lapponia del nord.", "search": "Saariselkä" },
+      { "name": "Regione dei laghi", "description": "Savonlinna e il castello di Olavinlinna.", "search": "Olavinlinna" },
+      { "name": "Parco nazionale di Nuuksio", "description": "Boschi e laghi a mezz'ora da Helsinki.", "search": "Parco nazionale di Nuuksio" }
+    ],
+    "gettingAround": [
+      "Voli interni e treni notturni tra Helsinki e la Lapponia",
+      "Treni puntuali e comodi tra le città del sud",
+      "Escursioni organizzate in Lapponia con motoslitte, husky e renne",
+      "Traghetti per Tallinn e Stoccolma"
+    ],
+    "food": [
+      "Salmone e pesce di lago",
+      "Carne di renna con purè e mirtilli rossi",
+      "Torte careliane di segale e riso",
+      "Bacche selvatiche e liquori ai frutti di bosco"
+    ],
+    "tips": [
+      "In Lapponia d'inverno servono abbigliamento tecnico (spesso noleggiato dai tour) e scarpe da neve",
+      "Le aurore non sono garantite: meglio soggiornare almeno 3–4 notti",
+      "La sauna si fa senza costume e in silenzio",
+      "Pagamenti con carta ovunque"
+    ]
+  },
+  "NL": {
+    "tagline": "Canali, biciclette, tulipani e grandi maestri della pittura.",
+    "description": [
+      "I Paesi Bassi sono piccoli ma ricchissimi: Amsterdam con i suoi canali del Seicento, le case strette e i musei di Van Gogh e del Rijksmuseum è una delle città più affascinanti d'Europa.",
+      "In primavera i campi di tulipani e il parco di Keukenhof colorano la campagna; Kinderdijk e Zaanse Schans mostrano i mulini a vento simbolo del paese.",
+      "Rotterdam sorprende per l'architettura contemporanea, mentre L'Aia, Delft, Utrecht e Haarlem offrono centri storici raccolti, perfetti da girare in bicicletta."
+    ],
+    "facts": {
+      "capital": "Amsterdam (sede del governo: L'Aia)",
+      "languages": "Olandese; inglese parlato da quasi tutti",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 2 ore diretto per Amsterdam",
+      "bestPeriod": "Metà aprile–maggio per i tulipani; giugno–settembre per il clima",
+      "climate": "Oceanico: mite, ventoso e spesso piovoso",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; in città meglio i mezzi pubblici e la bici",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Canali di Amsterdam", "description": "La cintura dei canali del Seicento, patrimonio UNESCO.", "search": "Canali di Amsterdam" },
+      { "name": "Rijksmuseum", "description": "La Ronda di notte di Rembrandt e Vermeer.", "search": "Rijksmuseum" },
+      { "name": "Keukenhof", "description": "Il parco di milioni di tulipani in primavera.", "search": "Keukenhof" },
+      { "name": "Kinderdijk", "description": "Diciannove mulini a vento lungo i canali.", "search": "Kinderdijk" },
+      { "name": "Casa di Anna Frank", "description": "Il nascondiglio del diario più famoso al mondo.", "search": "Casa di Anna Frank" },
+      { "name": "Rotterdam", "description": "Case cubo e il Markthal, architettura d'avanguardia.", "search": "Markthal Rotterdam" }
+    ],
+    "gettingAround": [
+      "Treni frequenti tra tutte le città (si paga con carta contactless)",
+      "Bicicletta a noleggio: piste ciclabili ovunque",
+      "Tram e battelli ad Amsterdam",
+      "Auto utile solo per la campagna; parcheggi cari in città"
+    ],
+    "food": [
+      "Aringa cruda con cipolla",
+      "Formaggi Gouda ed Edam",
+      "Stroopwafel, cialde al caramello",
+      "Patatine fritte con salse"
+    ],
+    "tips": [
+      "Prenotare online i musei e la Casa di Anna Frank",
+      "Attenzione alle piste ciclabili: le bici hanno la precedenza",
+      "Molti locali non accettano contanti",
+      "Il tempo cambia in fretta: portare una giacca antivento"
+    ]
+  },
+  "DE": {
+    "tagline": "Città vivaci, castelli fiabeschi e mercatini di Natale nel cuore d'Europa.",
+    "description": [
+      "La Germania è un paese di città diverse tra loro: Berlino creativa e piena di storia recente, Monaco elegante e bavarese, Amburgo affacciata sul porto, Colonia con la sua cattedrale gotica.",
+      "La Strada Romantica attraversa borghi medievali come Rothenburg ob der Tauber fino al castello di Neuschwanstein, mentre la valle del Reno è un susseguirsi di vigneti e manieri.",
+      "Le Alpi bavaresi, la Foresta Nera e i laghi offrono natura a ogni stagione; a dicembre i mercatini di Natale sono un classico dei viaggi di gruppo."
+    ],
+    "facts": {
+      "capital": "Berlino",
+      "languages": "Tedesco",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 45 minuti diretto per Berlino o Monaco; raggiungibile anche in treno o in auto",
+      "bestPeriod": "Maggio–settembre; fine novembre–dicembre per i mercatini",
+      "climate": "Temperato continentale: estati gradevoli, inverni freddi",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; autostrade gratuite, in città zone ambientali con bollino",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Porta di Brandeburgo", "description": "Il simbolo della Berlino riunificata.", "search": "Porta di Brandeburgo" },
+      { "name": "Castello di Neuschwanstein", "description": "Il castello da fiaba di Ludovico II di Baviera.", "search": "Castello di Neuschwanstein" },
+      { "name": "Duomo di Colonia", "description": "La grande cattedrale gotica sul Reno.", "search": "Duomo di Colonia" },
+      { "name": "Rothenburg ob der Tauber", "description": "Borgo medievale intatto sulla Strada Romantica.", "search": "Rothenburg ob der Tauber" },
+      { "name": "Monaco di Baviera", "description": "Marienplatz, birrerie e musei d'arte.", "search": "Marienplatz" },
+      { "name": "Valle del Reno", "description": "Vigneti, castelli e la rupe di Lorelei.", "search": "Valle del Reno" }
+    ],
+    "gettingAround": [
+      "Treni ICE ad alta velocità tra le città principali",
+      "Auto a noleggio per Strada Romantica e Foresta Nera",
+      "Mezzi pubblici eccellenti in città",
+      "Crociere fluviali sul Reno e sul Danubio"
+    ],
+    "food": [
+      "Wurstel e crauti, bretzel e birra",
+      "Stinco di maiale bavarese",
+      "Currywurst berlinese",
+      "Torta Foresta Nera e strudel"
+    ],
+    "tips": [
+      "Domenica molti negozi sono chiusi",
+      "Ai mercatini di Natale si paga un deposito sulla tazza del vin brulé",
+      "Alcuni locali accettano solo contanti",
+      "Biglietti dei treni più economici se acquistati in anticipo"
+    ]
+  },
+  "AT": {
+    "tagline": "Vienna imperiale, Salisburgo di Mozart e laghi alpini tra le montagne.",
+    "description": [
+      "L'Austria unisce eleganza imperiale e natura alpina. Vienna, con la reggia di Schönbrunn, l'Hofburg, i caffè storici e la musica classica, è una delle capitali più raffinate d'Europa.",
+      "Salisburgo, città natale di Mozart, è un gioiello barocco ai piedi delle Alpi; nei dintorni il Salzkammergut offre laghi e villaggi come Hallstatt.",
+      "Innsbruck e il Tirolo sono il paradiso dello sci d'inverno e del trekking d'estate, mentre la Wachau lungo il Danubio è terra di vigneti e abbazie."
+    ],
+    "facts": {
+      "capital": "Vienna",
+      "languages": "Tedesco",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti diretto per Vienna; facilmente raggiungibile in auto o in treno",
+      "bestPeriod": "Maggio–settembre; dicembre per i mercatini e gennaio–marzo per lo sci",
+      "climate": "Continentale e alpino: estati gradevoli, inverni freddi e nevosi in montagna",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; per le autostrade serve la vignetta (anche digitale)",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Reggia di Schönbrunn", "description": "La residenza estiva degli Asburgo e i suoi giardini.", "search": "Castello di Schönbrunn" },
+      { "name": "Hallstatt", "description": "Il villaggio sul lago tra le montagne del Salzkammergut.", "search": "Hallstatt" },
+      { "name": "Salisburgo", "description": "La fortezza, il centro barocco e la casa di Mozart.", "search": "Fortezza di Hohensalzburg" },
+      { "name": "Duomo di Santo Stefano", "description": "La cattedrale gotica nel cuore di Vienna.", "search": "Duomo di Santo Stefano Vienna" },
+      { "name": "Innsbruck", "description": "Il Tettuccio d'oro e le Alpi a portata di funivia.", "search": "Tettuccio d'Oro" },
+      { "name": "Wachau", "description": "Vigneti e l'abbazia di Melk lungo il Danubio.", "search": "Abbazia di Melk" }
+    ],
+    "gettingAround": [
+      "Treni ÖBB comodi e puntuali tra Vienna, Salisburgo e Innsbruck",
+      "Auto a noleggio per laghi e valli alpine",
+      "Tram e metro a Vienna",
+      "Battelli sul Danubio nella Wachau"
+    ],
+    "food": [
+      "Wiener Schnitzel",
+      "Sachertorte e strudel di mele",
+      "Canederli e formaggi tirolesi",
+      "Caffè viennese nei caffè storici"
+    ],
+    "tips": [
+      "Comprare la vignetta autostradale prima di entrare in Austria",
+      "Prenotare i concerti e la Scuola di equitazione spagnola",
+      "Hallstatt è molto affollata: meglio la sera o al mattino presto",
+      "Mancia del 5–10% al ristorante"
+    ]
+  },
+  "CZ": {
+    "tagline": "Praga delle cento torri, castelli boemi e birra tra le migliori al mondo.",
+    "description": [
+      "La Repubblica Ceca è la meta ideale per un weekend o un tour dell'Europa centrale. Praga incanta con il Ponte Carlo, il Castello, la Piazza della Città Vecchia e l'orologio astronomico.",
+      "Fuori dalla capitale si trovano Český Krumlov, borgo medievale su un'ansa della Moldava, e le città termali di Karlovy Vary e Mariánské Lázně.",
+      "La Moravia, con i vigneti e la città di Brno, e i castelli sparsi nella campagna completano un viaggio ricco di storia a prezzi ancora accessibili."
+    ],
+    "facts": {
+      "capital": "Praga",
+      "languages": "Ceco; inglese e tedesco diffusi",
+      "currency": "Corona ceca (CZK)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 40 minuti diretto per Praga",
+      "bestPeriod": "Maggio–settembre; dicembre per i mercatini di Natale",
+      "climate": "Continentale: estati calde, inverni freddi",
+      "plugs": "Tipo C ed E, 230 V: le spine italiane piccole funzionano",
+      "driving": "Si guida a destra; per le autostrade serve la vignetta elettronica",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Ponte Carlo", "description": "Il ponte gotico con le statue sulla Moldava.", "search": "Ponte Carlo" },
+      { "name": "Castello di Praga", "description": "Il complesso con la cattedrale di San Vito.", "search": "Castello di Praga" },
+      { "name": "Piazza della Città Vecchia", "description": "L'orologio astronomico e la chiesa di Týn.", "search": "Orologio astronomico di Praga" },
+      { "name": "Český Krumlov", "description": "Borgo medievale e castello sulla Moldava.", "search": "Český Krumlov" },
+      { "name": "Karlovy Vary", "description": "La città termale delle colonnate.", "search": "Karlovy Vary" },
+      { "name": "Kutná Hora", "description": "La cattedrale di Santa Barbara e l'ossario di Sedlec.", "search": "Ossario di Sedlec" }
+    ],
+    "gettingAround": [
+      "Tram e metro efficienti a Praga",
+      "Treni e autobus per Český Krumlov e Karlovy Vary",
+      "Auto a noleggio per la campagna boema",
+      "Escursioni giornaliere organizzate da Praga"
+    ],
+    "food": [
+      "Gulasch con knedlíky (gnocchi di pane)",
+      "Anatra arrosto con cavolo rosso",
+      "Trdelník, il dolce arrotolato",
+      "Birra Pilsner"
+    ],
+    "tips": [
+      "Cambiare solo in banca o prelevare: evitare i cambiavalute del centro",
+      "Il centro di Praga si gira bene a piedi",
+      "Mancia del 10% al ristorante",
+      "Visitare il Ponte Carlo all'alba per evitare la folla"
+    ]
+  },
+  "MT": {
+    "tagline": "Mare cristallino, templi preistorici e città dei Cavalieri a un'ora dalla Sicilia.",
+    "description": [
+      "Malta è un piccolo arcipelago con una storia immensa: templi megalitici più antichi delle piramidi, fortezze dei Cavalieri di San Giovanni e una capitale barocca, La Valletta, patrimonio UNESCO.",
+      "Mdina, la città silenziosa, e le Tre Città raccontano secoli di assedi e commerci; le baie come la Laguna Blu di Comino offrono un mare turchese.",
+      "Gozo, l'isola sorella, è più rurale e tranquilla. Malta è anche una meta molto amata per studiare l'inglese."
+    ],
+    "facts": {
+      "capital": "La Valletta",
+      "languages": "Maltese e inglese; l'italiano è compreso da molti",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti diretto da molte città italiane; traghetto da Pozzallo",
+      "bestPeriod": "Maggio–ottobre per il mare; tutto l'anno per le visite",
+      "climate": "Mediterraneo: estati calde, inverni molto miti",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "La Valletta", "description": "La concattedrale di San Giovanni con i Caravaggio.", "search": "Concattedrale di San Giovanni La Valletta" },
+      { "name": "Mdina", "description": "La città fortificata dalle strade silenziose.", "search": "Mdina" },
+      { "name": "Laguna Blu di Comino", "description": "Acque turchesi tra Malta e Gozo.", "search": "Laguna Blu Comino" },
+      { "name": "Ħaġar Qim", "description": "Templi megalitici sul mare.", "search": "Ħaġar Qim" },
+      { "name": "Gozo", "description": "La Cittadella di Victoria e la baia di Ramla.", "search": "Cittadella Gozo" },
+      { "name": "Marsaxlokk", "description": "Villaggio di pescatori con le barche colorate luzzu.", "search": "Marsaxlokk" }
+    ],
+    "gettingAround": [
+      "Autobus pubblici che coprono tutta l'isola",
+      "Traghetti e battelli per Gozo e Comino",
+      "Taxi e app di trasporto",
+      "Auto a noleggio (guida a sinistra) per maggiore libertà"
+    ],
+    "food": [
+      "Pastizzi di ricotta o piselli",
+      "Coniglio in umido (fenkata)",
+      "Ftira, il pane farcito di Gozo",
+      "Pesce fresco come il lampuki"
+    ],
+    "tips": [
+      "In estate fa molto caldo: visite al mattino e mare nel pomeriggio",
+      "La Laguna Blu è affollatissima in agosto",
+      "Le distanze sono brevi ma il traffico può essere intenso",
+      "Portare l'adattatore per prese inglesi"
+    ]
+  },
+  "TR": {
+    "tagline": "Tra Europa e Asia: bazar, moschee, mongolfiere sulla Cappadocia e coste turchesi.",
+    "description": [
+      "La Turchia è un ponte tra continenti e civiltà. Istanbul, sul Bosforo, unisce Santa Sofia, la Moschea Blu, il palazzo di Topkapı e il Gran Bazar in un'atmosfera unica.",
+      "La Cappadocia è un paesaggio lunare di camini delle fate, città sotterranee e chiese rupestri, da sorvolare all'alba in mongolfiera. Pamukkale stupisce con le sue vasche bianche di calcare.",
+      "La costa egea e mediterranea custodisce Efeso, una delle città romane meglio conservate, e baie turchesi da scoprire in caicco."
+    ],
+    "facts": {
+      "capital": "Ankara",
+      "languages": "Turco; inglese diffuso nelle zone turistiche",
+      "currency": "Lira turca (TRY)",
+      "timezone": "Due ore in più rispetto all'Italia (un'ora in più con l'ora legale italiana)",
+      "flight": "Circa 2 ore e 30 minuti diretto per Istanbul",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre",
+      "climate": "Mediterraneo sulle coste, continentale in Anatolia: inverni freddi in Cappadocia",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; per Istanbul meglio i mezzi pubblici",
+      "documents": "Di solito basta la carta d'identità valida per l'espatrio o il passaporto per soggiorni turistici brevi. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Santa Sofia", "description": "Basilica, moschea e simbolo di Istanbul.", "search": "Santa Sofia Istanbul" },
+      { "name": "Cappadocia", "description": "Camini delle fate e voli in mongolfiera all'alba.", "search": "Cappadocia" },
+      { "name": "Pamukkale", "description": "Le terrazze bianche di travertino e Hierapolis.", "search": "Pamukkale" },
+      { "name": "Efeso", "description": "La biblioteca di Celso e la città romana.", "search": "Biblioteca di Celso" },
+      { "name": "Moschea Blu", "description": "La moschea del sultano Ahmed con le maioliche blu.", "search": "Moschea Blu" },
+      { "name": "Gran Bazar", "description": "Uno dei mercati coperti più grandi del mondo.", "search": "Gran Bazar di Istanbul" }
+    ],
+    "gettingAround": [
+      "Voli interni economici da Istanbul per Cappadocia, Izmir e Antalya",
+      "Autobus di linea confortevoli per lunghe distanze",
+      "Tram, metro e battelli sul Bosforo a Istanbul",
+      "Auto a noleggio per la costa"
+    ],
+    "food": [
+      "Kebab e meze (antipasti)",
+      "Baklava e lokum",
+      "Tè e caffè turco",
+      "Pide e lahmacun"
+    ],
+    "tips": [
+      "Nelle moschee spalle e gambe coperte; per le donne un foulard",
+      "Contrattare al bazar fa parte dell'esperienza",
+      "Prenotare la mongolfiera in anticipo (dipende dal meteo)",
+      "Mancia del 5–10% al ristorante"
+    ]
+  },
+  "IT": {
+    "tagline": "Arte, paesaggi e cucina senza eguali: l'Italia da proporre a chi la sogna.",
+    "description": [
+      "L'Italia ha il maggior numero di siti UNESCO al mondo: Roma, Firenze e Venezia sono tra le città d'arte più visitate, ma ogni regione ha borghi, chiese e musei di grande valore.",
+      "I paesaggi cambiano a ogni ora di strada: le Dolomiti, i laghi del nord, le colline toscane, la Costiera Amalfitana, le Cinque Terre, le isole come Sicilia e Sardegna.",
+      "La cucina e il vino sono parte del viaggio: dalle trattorie ai mercati, dalle cantine alle masserie, ogni territorio ha le sue specialità."
+    ],
+    "facts": {
+      "capital": "Roma",
+      "languages": "Italiano",
+      "currency": "Euro (EUR)",
+      "timezone": "Ora italiana (UTC+1, UTC+2 con l'ora legale)",
+      "flight": "Viaggio interno: treni veloci e voli collegano tutto il paese",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre; agosto per il mare, inverno per lo sci",
+      "climate": "Mediterraneo sulle coste e al sud, continentale nella pianura padana, alpino in montagna",
+      "plugs": "Tipo C, F e L, 230 V",
+      "driving": "Si guida a destra; ZTL nei centri storici da rispettare",
+      "documents": "Per i cittadini italiani nessun documento particolare; per i clienti stranieri verificare i requisiti di ingresso"
+    },
+    "places": [
+      { "name": "Colosseo", "description": "L'anfiteatro simbolo di Roma antica.", "search": "Colosseo" },
+      { "name": "Firenze", "description": "Il Duomo di Brunelleschi e gli Uffizi.", "search": "Cattedrale di Santa Maria del Fiore" },
+      { "name": "Venezia", "description": "Piazza San Marco e i canali.", "search": "Piazza San Marco" },
+      { "name": "Costiera Amalfitana", "description": "Positano, Amalfi e Ravello a picco sul mare.", "search": "Positano" },
+      { "name": "Dolomiti", "description": "Le Tre Cime di Lavaredo e i passi alpini.", "search": "Tre Cime di Lavaredo" },
+      { "name": "Cinque Terre", "description": "Borghi colorati e sentieri tra i vigneti.", "search": "Cinque Terre" }
+    ],
+    "gettingAround": [
+      "Treni ad alta velocità tra le grandi città",
+      "Auto a noleggio per campagne, laghi e borghi",
+      "Traghetti per isole, laghi e costiere",
+      "Voli interni per Sicilia e Sardegna"
+    ],
+    "food": [
+      "Pizza napoletana e pasta fresca",
+      "Formaggi e salumi DOP",
+      "Gelato artigianale",
+      "Vini delle diverse regioni"
+    ],
+    "tips": [
+      "Prenotare online Colosseo, Uffizi e Cenacolo",
+      "Attenzione alle ZTL nei centri storici",
+      "Molti musei statali sono gratuiti la prima domenica del mese",
+      "In agosto alcune attività nelle città chiudono per ferie"
+    ]
+  }
+}

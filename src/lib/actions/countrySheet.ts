@@ -6,8 +6,9 @@ import { loadAiRules } from "@/lib/aiRulesServer";
 import { generateCountrySheetContent, CountrySheetSchema, type CountrySheetContent } from "@/lib/countrySheetAi";
 import { findCountryPhotos, type SheetPhoto } from "@/lib/countryPhotos";
 import { nameItOfCode } from "@/lib/geo/countryCodes";
+import { LIBRARY_UPDATED_AT, librarySheet } from "@/lib/countrySheetLibrary";
 
-export type CountrySheet = { code: string; content: CountrySheetContent; photos: SheetPhoto[]; updatedAt: string };
+export type CountrySheet = { code: string; content: CountrySheetContent; photos: SheetPhoto[]; updatedAt: string; fromLibrary?: boolean };
 type Result = { ok: true; sheet: CountrySheet | null } | { ok: false; error: string };
 
 const NOT_READY = "Le schede paese non sono ancora attive: serve l'aggiornamento del database (SQL 0045).";
@@ -40,10 +41,30 @@ export async function getCountrySheet(code: string): Promise<Result> {
     .eq("owner_id", ctx.user.id)
     .eq("country_code", code)
     .maybeSingle();
-  if (error) return { ok: false, error: NOT_READY };
-  if (!data) return { ok: true, sheet: null };
+  // senza una scheda personalizzata dell'agenzia: quella della libreria Grand Route, se c'è
+  const fromLibrary = async (): Promise<Result> => {
+    const lib = librarySheet(code);
+    if (!lib) return { ok: true, sheet: null };
+    let photos = lib.photos;
+    // foto mancanti nella libreria: si cercano ora (le risposte di Wikipedia restano in cache per una settimana)
+    if (photos.length < 4) {
+      try {
+        const found = await Promise.race([
+          findCountryPhotos(lib.content.places.map((p) => ({ query: p.search || p.name, title: p.name }))),
+          new Promise<SheetPhoto[]>((resolve) => setTimeout(() => resolve([]), 12_000)),
+        ]);
+        if (found.length > photos.length) photos = found;
+      } catch {}
+    }
+    return { ok: true, sheet: { code, content: lib.content, photos, updatedAt: LIBRARY_UPDATED_AT, fromLibrary: true } };
+  };
+  if (error) {
+    const lib = await fromLibrary();
+    return lib.ok && lib.sheet ? lib : { ok: false, error: NOT_READY };
+  }
+  if (!data) return await fromLibrary();
   const parsed = CountrySheetSchema.safeParse(data.content);
-  if (!parsed.success) return { ok: true, sheet: null };
+  if (!parsed.success) return await fromLibrary();
   return { ok: true, sheet: { code, content: parsed.data, photos: (data.photos as SheetPhoto[]) ?? [], updatedAt: data.updated_at as string } };
 }
 

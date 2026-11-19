@@ -1,0 +1,646 @@
+{
+  "US": {
+    "tagline": "Metropoli iconiche, parchi nazionali grandiosi e la libertà del viaggio on the road.",
+    "description": [
+      "Gli Stati Uniti sono un paese-continente con viaggi per ogni gusto. New York è la città simbolo: Manhattan, Central Park, la Statua della Libertà, i musei e i quartieri di Brooklyn.",
+      "L'Ovest è la terra dei grandi parchi: Grand Canyon, Monument Valley, Yosemite, Bryce e Zion, da percorrere in auto tra Los Angeles, Las Vegas e San Francisco.",
+      "Florida e Hawaii offrono mare e parchi a tema, il Sud racconta la storia della musica tra New Orleans, Memphis e Nashville, e il Nord-Ovest sorprende con foreste e vulcani."
+    ],
+    "facts": {
+      "capital": "Washington D.C.",
+      "languages": "Inglese; spagnolo molto diffuso",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "New York: sei ore in meno rispetto all'Italia; Los Angeles: nove ore in meno",
+      "flight": "Circa 9 ore diretto per New York; 12 ore per Los Angeles",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre; l'estate per i parchi del nord",
+      "climate": "Molto vario: continentale al nord-est, desertico nel sud-ovest, subtropicale in Florida",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra; patente italiana e internazionale consigliata",
+      "documents": "Passaporto elettronico valido e autorizzazione ESTA da richiedere online almeno 72 ore prima. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "New York", "description": "Times Square, Central Park e lo skyline di Manhattan.", "search": "Manhattan" },
+      { "name": "Grand Canyon", "description": "Il canyon scavato dal fiume Colorado.", "search": "Grand Canyon" },
+      { "name": "Monument Valley", "description": "Le guglie rosse del West.", "search": "Monument Valley" },
+      { "name": "San Francisco", "description": "Il Golden Gate e le colline della città.", "search": "Golden Gate Bridge" },
+      { "name": "Yosemite", "description": "Pareti di granito e cascate in California.", "search": "Yosemite" },
+      { "name": "Parco nazionale di Yellowstone", "description": "Geyser, sorgenti colorate e bisonti.", "search": "Yellowstone" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio per i viaggi on the road",
+      "Voli interni tra le grandi città",
+      "Metropolitana a New York",
+      "Treni Amtrak su alcune tratte panoramiche"
+    ],
+    "food": [
+      "Hamburger e barbecue",
+      "Pizza newyorkese e bagel",
+      "Cucina cajun di New Orleans",
+      "Clam chowder e frutti di mare sulle coste"
+    ],
+    "tips": [
+      "Le mance sono parte del costo: 18–22% al ristorante",
+      "I prezzi esposti non includono le tasse",
+      "Assicurazione sanitaria con massimale alto indispensabile",
+      "Distanze enormi: non sovraccaricare l'itinerario"
+    ]
+  },
+  "CA": {
+    "tagline": "Montagne Rocciose, laghi turchesi e città cosmopolite in un paese immenso.",
+    "description": [
+      "Il Canada è natura grandiosa e città accoglienti. Le Montagne Rocciose, con i parchi di Banff e Jasper, offrono laghi color turchese come il Moraine e il Louise, ghiacciai e fauna selvatica.",
+      "Vancouver unisce oceano e montagne, mentre l'isola di Vancouver è ideale per l'avvistamento delle balene. A est, Toronto e le cascate del Niagara sono una tappa classica.",
+      "Il Québec francofono, con Montréal e la storica Québec City, porta un tocco europeo; l'autunno colora le foreste di rosso con l'estate indiana."
+    ],
+    "facts": {
+      "capital": "Ottawa",
+      "languages": "Inglese e francese",
+      "currency": "Dollaro canadese (CAD)",
+      "timezone": "Toronto: sei ore in meno rispetto all'Italia; Vancouver: nove ore in meno",
+      "flight": "Circa 9 ore diretto per Toronto o Montréal; 10–11 ore per Vancouver",
+      "bestPeriod": "Giugno–settembre; fine settembre–ottobre per il foliage",
+      "climate": "Continentale: inverni molto freddi, estati calde all'interno, più miti sulla costa pacifica",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra; distanze enormi",
+      "documents": "Passaporto valido e autorizzazione elettronica eTA da richiedere online prima del volo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Moraine Lake", "description": "Il lago turchese nel parco di Banff.", "search": "Moraine Lake" },
+      { "name": "Cascate del Niagara", "description": "Le cascate al confine con gli Stati Uniti.", "search": "Cascate del Niagara" },
+      { "name": "Québec City", "description": "La città fortificata francofona.", "search": "Château Frontenac" },
+      { "name": "Vancouver", "description": "Stanley Park e la città tra mare e montagne.", "search": "Stanley Park" },
+      { "name": "Icefields Parkway", "description": "La strada panoramica tra Banff e Jasper.", "search": "Icefields Parkway" },
+      { "name": "Montréal", "description": "La città vecchia e la cultura francofona.", "search": "Vieux-Montréal" }
+    ],
+    "gettingAround": [
+      "Auto o camper a noleggio per le Rocciose",
+      "Voli interni tra est e ovest",
+      "Treni panoramici come il Rocky Mountaineer",
+      "Traghetti per l'isola di Vancouver"
+    ],
+    "food": [
+      "Poutine, patatine con formaggio e salsa",
+      "Sciroppo d'acero",
+      "Salmone del Pacifico",
+      "Bagel di Montréal"
+    ],
+    "tips": [
+      "Prenotare con largo anticipo alloggi e parcheggi nelle Rocciose in estate",
+      "Attenzione agli orsi: seguire le regole dei parchi",
+      "Mance del 15–20%",
+      "Le tasse si aggiungono al prezzo esposto"
+    ]
+  },
+  "MX": {
+    "tagline": "Piramidi maya, città coloniali e il mare caraibico dello Yucatán.",
+    "description": [
+      "Il Messico è un paese ricchissimo di storia e colori. Città del Messico, una delle metropoli più grandi del mondo, unisce il centro storico, il Museo di Antropologia e le piramidi di Teotihuacán.",
+      "Lo Yucatán è il cuore della civiltà maya: Chichén Itzá, Tulum affacciata sul mare, Uxmal e i cenote, pozzi di acqua cristallina dove fare il bagno.",
+      "Città coloniali come Oaxaca, San Miguel de Allende e Guanajuato, il Chiapas con Palenque e la Bassa California con le balene completano un viaggio dalle mille sfumature."
+    ],
+    "facts": {
+      "capital": "Città del Messico",
+      "languages": "Spagnolo; inglese diffuso nelle zone turistiche",
+      "currency": "Peso messicano (MXN)",
+      "timezone": "Città del Messico: sette ore in meno rispetto all'Italia (otto con l'ora legale italiana); Cancún: sei ore in meno (sette con l'ora legale)",
+      "flight": "Circa 11–12 ore con voli diretti stagionali per Cancún o uno scalo",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale sulle coste, temperato sugli altipiani; stagione delle piogge e degli uragani da giugno a ottobre",
+      "plugs": "Tipo A e B, 127 V: serve un adattatore",
+      "driving": "Si guida a destra; nello Yucatán l'auto è comoda, evitare la guida notturna",
+      "documents": "Passaporto valido per tutta la durata del soggiorno; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Chichén Itzá", "description": "La piramide di Kukulcán, meraviglia del mondo.", "search": "Chichén Itzá" },
+      { "name": "Tulum", "description": "Rovine maya sul mare dei Caraibi.", "search": "Tulum" },
+      { "name": "Teotihuacán", "description": "Le piramidi del Sole e della Luna.", "search": "Teotihuacán" },
+      { "name": "Cenote Ik Kil", "description": "Pozzo naturale dove fare il bagno.", "search": "Cenote Ik Kil" },
+      { "name": "Oaxaca", "description": "Città coloniale, mercati e cucina.", "search": "Oaxaca de Juárez" },
+      { "name": "Palenque", "description": "Templi maya nella giungla del Chiapas.", "search": "Palenque" }
+    ],
+    "gettingAround": [
+      "Voli interni tra Città del Messico, Oaxaca e Cancún",
+      "Auto a noleggio nello Yucatán",
+      "Autobus di prima classe (ADO) comodi e sicuri",
+      "Treno Maya nella penisola dello Yucatán"
+    ],
+    "food": [
+      "Tacos al pastor e guacamole",
+      "Mole poblano",
+      "Cochinita pibil dello Yucatán",
+      "Tequila e mezcal"
+    ],
+    "tips": [
+      "Bere acqua in bottiglia",
+      "Sulla costa caraibica può arrivare l'alga sargasso in estate",
+      "Mance del 10–15%",
+      "Repellente per zanzare utile tutto l'anno"
+    ]
+  },
+  "CU": {
+    "tagline": "Musica, auto d'epoca, città coloniali e spiagge di sabbia bianca.",
+    "description": [
+      "Cuba è un viaggio nel tempo: L'Avana affascina con la città vecchia, il Malecón al tramonto, le auto americane degli anni Cinquanta e la musica che esce da ogni locale.",
+      "Trinidad, con le sue case colorate e le strade lastricate, e la valle di Viñales, con le piantagioni di tabacco e i mogotes, mostrano l'anima più autentica dell'isola.",
+      "Varadero, Cayo Santa María e Cayo Largo offrono spiagge bianchissime e mare caldo, ideali per concludere il viaggio."
+    ],
+    "facts": {
+      "capital": "L'Avana",
+      "languages": "Spagnolo",
+      "currency": "Peso cubano (CUP); euro e dollari spesso richiesti dal turismo",
+      "timezone": "Sei ore in meno rispetto all'Italia",
+      "flight": "Circa 10–11 ore con voli diretti stagionali o uno scalo",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale: secco e ventilato in inverno, caldo e piovoso da maggio a ottobre con rischio uragani",
+      "plugs": "Tipo A, B e C, 110/220 V: utile un adattatore",
+      "driving": "Si guida a destra; auto a noleggio scarse e care",
+      "documents": "Passaporto valido, visto turistico e modulo di ingresso online; obbligatoria l'assicurazione sanitaria. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "L'Avana Vecchia", "description": "Piazze coloniali, musica e caffè.", "search": "L'Avana Vecchia" },
+      { "name": "Malecón", "description": "Il lungomare dell'Avana al tramonto.", "search": "Malecón L'Avana" },
+      { "name": "Trinidad", "description": "La città coloniale dalle case colorate.", "search": "Trinidad Cuba" },
+      { "name": "Valle di Viñales", "description": "Tabacco e colline calcaree.", "search": "Valle di Viñales" },
+      { "name": "Varadero", "description": "La lunga spiaggia bianca.", "search": "Varadero" },
+      { "name": "Cienfuegos", "description": "La perla del sud, città coloniale francese.", "search": "Cienfuegos" }
+    ],
+    "gettingAround": [
+      "Auto con autista o taxi collettivi tra le città",
+      "Pullman turistici Víazul",
+      "Voli interni per i cayos",
+      "Auto d'epoca per giri in città"
+    ],
+    "food": [
+      "Ropa vieja, carne sfilacciata",
+      "Riso e fagioli neri (moros y cristianos)",
+      "Aragosta sulle isole",
+      "Rum e cocktail come mojito e daiquiri"
+    ],
+    "tips": [
+      "Portare contanti in euro: le carte funzionano poco",
+      "Internet limitato: scaricare mappe offline",
+      "Le case particulares sono un ottimo modo di alloggiare",
+      "Farmaci personali: portarne a sufficienza"
+    ]
+  },
+  "DO": {
+    "tagline": "Spiagge di palme, mare turchese e ritmo caraibico.",
+    "description": [
+      "La Repubblica Dominicana è una delle mete caraibiche più amate dagli italiani. Punta Cana e Bayahibe offrono spiagge bianche e resort, con escursioni alle isole di Saona e Catalina.",
+      "Santo Domingo, la prima città fondata dagli europei nelle Americhe, conserva la Zona Colonial patrimonio UNESCO.",
+      "La penisola di Samaná regala natura verde, la cascata El Limón e, tra gennaio e marzo, l'avvistamento delle megattere."
+    ],
+    "facts": {
+      "capital": "Santo Domingo",
+      "languages": "Spagnolo; italiano e inglese diffusi nelle zone turistiche",
+      "currency": "Peso dominicano (DOP); dollari accettati",
+      "timezone": "Cinque ore in meno rispetto all'Italia (sei ore in meno con l'ora legale italiana)",
+      "flight": "Circa 9–10 ore con voli diretti per Punta Cana o La Romana",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale: caldo tutto l'anno, piogge e uragani possibili da giugno a novembre",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a destra; traffico caotico, meglio transfer ed escursioni organizzate",
+      "documents": "Passaporto valido per tutta la durata del soggiorno; formulario elettronico di ingresso e uscita (e-ticket) da compilare online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Isola Saona", "description": "Spiagge di palme e piscine naturali.", "search": "Isola Saona" },
+      { "name": "Zona Colonial", "description": "La città coloniale di Santo Domingo.", "search": "Città coloniale di Santo Domingo" },
+      { "name": "Punta Cana", "description": "Resort e spiagge sull'Atlantico.", "search": "Punta Cana" },
+      { "name": "Samaná", "description": "Natura verde e balene in inverno.", "search": "Penisola di Samaná" },
+      { "name": "Cascata El Limón", "description": "Cascata nella foresta di Samaná.", "search": "Salto El Limón" },
+      { "name": "Altos de Chavón", "description": "Villaggio in stile mediterraneo sul fiume.", "search": "Altos de Chavón" }
+    ],
+    "gettingAround": [
+      "Transfer organizzati dagli aeroporti",
+      "Escursioni in catamarano verso Saona",
+      "Taxi da concordare in anticipo",
+      "Voli interni o auto con autista per Samaná"
+    ],
+    "food": [
+      "La bandera: riso, fagioli e carne",
+      "Mangú, purè di platano",
+      "Pesce e aragosta",
+      "Rum e caffè dominicani"
+    ],
+    "tips": [
+      "Bere acqua in bottiglia",
+      "Repellente per zanzare",
+      "Compilare l'e-ticket prima di andata e ritorno",
+      "Muoversi con escursioni autorizzate"
+    ]
+  },
+  "CR": {
+    "tagline": "Vulcani, foreste pluviali e due oceani: la «pura vida» della natura.",
+    "description": [
+      "Il Costa Rica è il paradiso dell'ecoturismo: oltre un quarto del territorio è protetto e ospita una biodiversità straordinaria, tra bradipi, scimmie, rane colorate e tucani.",
+      "Il vulcano Arenal con le sue terme, la foresta nebulosa di Monteverde con i ponti sospesi e Tortuguero, dove nidificano le tartarughe marine, sono tappe imprescindibili.",
+      "Sulla costa pacifica il parco Manuel Antonio unisce foresta e spiagge, mentre il Guanacaste e la costa caraibica completano il viaggio con mare e relax."
+    ],
+    "facts": {
+      "capital": "San José",
+      "languages": "Spagnolo; inglese diffuso nel turismo",
+      "currency": "Colón costaricano (CRC); dollari accettati quasi ovunque",
+      "timezone": "Sette ore in meno rispetto all'Italia (otto ore in meno con l'ora legale italiana)",
+      "flight": "Circa 12–14 ore con uno scalo",
+      "bestPeriod": "Dicembre–aprile (stagione secca)",
+      "climate": "Tropicale: stagione verde e piovosa da maggio a novembre, più fresco in altitudine",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra; 4x4 consigliato per alcune strade sterrate",
+      "documents": "Passaporto valido per tutta la durata del soggiorno e biglietto di uscita; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Vulcano Arenal", "description": "Il vulcano conico e le terme calde.", "search": "Vulcano Arenal" },
+      { "name": "Monteverde", "description": "La foresta nebulosa e i ponti sospesi.", "search": "Riserva della foresta nebulosa di Monteverde" },
+      { "name": "Manuel Antonio", "description": "Scimmie e bradipi sulla spiaggia.", "search": "Parco nazionale Manuel Antonio" },
+      { "name": "Tortuguero", "description": "Canali e spiagge delle tartarughe.", "search": "Parco nazionale di Tortuguero" },
+      { "name": "Rio Celeste", "description": "Il fiume color turchese del parco Tenorio.", "search": "Parco nazionale del Vulcano Tenorio" },
+      { "name": "Penisola di Osa", "description": "Il Corcovado, natura selvaggia.", "search": "Parco nazionale del Corcovado" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio (4x4) con navigatore",
+      "Shuttle turistici tra le località",
+      "Voli interni su piccoli aerei",
+      "Barche nei canali di Tortuguero"
+    ],
+    "food": [
+      "Gallo pinto, riso e fagioli",
+      "Casado, piatto unico tipico",
+      "Frutta tropicale e frullati",
+      "Caffè del Costa Rica"
+    ],
+    "tips": [
+      "Abbigliamento leggero ma anche giacca impermeabile e felpa per le zone di montagna",
+      "Guida naturalistica consigliata nei parchi per vedere gli animali",
+      "Repellente per zanzare",
+      "Le distanze sono brevi ma i tempi lunghi"
+    ]
+  },
+  "PE": {
+    "tagline": "Machu Picchu, le Ande e l'eredità inca in un paese di contrasti.",
+    "description": [
+      "Il Perù è la terra degli Inca. Machu Picchu, la città sospesa tra le montagne, è una delle meraviglie del mondo; Cusco, l'antica capitale, e la Valle Sacra sono il punto di partenza ideale.",
+      "Il lago Titicaca con le isole galleggianti degli Uros, il canyon del Colca con il volo dei condor e Arequipa, la città bianca, completano l'itinerario andino.",
+      "Lima è la capitale gastronomica del Sud America; le linee di Nazca e l'Amazzonia peruviana offrono esperienze uniche."
+    ],
+    "facts": {
+      "capital": "Lima",
+      "languages": "Spagnolo e quechua",
+      "currency": "Sol peruviano (PEN)",
+      "timezone": "Sei ore in meno rispetto all'Italia (sette ore in meno con l'ora legale italiana)",
+      "flight": "Circa 14–15 ore con uno scalo",
+      "bestPeriod": "Maggio–settembre (stagione secca sulle Ande)",
+      "climate": "Desertico sulla costa, freddo e secco sulle Ande in inverno australe, tropicale in Amazzonia",
+      "plugs": "Tipo A e C, 220 V: utile un adattatore",
+      "driving": "Si guida a destra; meglio voli interni, treni e autisti",
+      "documents": "Passaporto con validità di almeno 6 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Machu Picchu", "description": "La città inca tra le montagne.", "search": "Machu Picchu" },
+      { "name": "Cusco", "description": "L'antica capitale inca e coloniale.", "search": "Cusco" },
+      { "name": "Valle Sacra", "description": "Pisac, Ollantaytambo e Moray.", "search": "Valle Sacra degli Inca" },
+      { "name": "Lago Titicaca", "description": "Le isole galleggianti degli Uros.", "search": "Lago Titicaca" },
+      { "name": "Canyon del Colca", "description": "Il volo dei condor andini.", "search": "Canyon del Colca" },
+      { "name": "Montagna Arcobaleno", "description": "Le pendici colorate di Vinicunca.", "search": "Vinicunca" }
+    ],
+    "gettingAround": [
+      "Voli interni tra Lima, Cusco, Arequipa e Juliaca",
+      "Treni per Machu Picchu da Cusco o Ollantaytambo",
+      "Pullman turistici panoramici",
+      "Trekking guidati sul Cammino Inca (permessi limitati)"
+    ],
+    "food": [
+      "Ceviche di pesce",
+      "Lomo saltado",
+      "Pisco sour",
+      "Patate e mais andini in centinaia di varietà"
+    ],
+    "tips": [
+      "Acclimatarsi all'altitudine di Cusco con calma",
+      "Prenotare con grande anticipo ingressi a Machu Picchu e Cammino Inca",
+      "Vestirsi a strati: forti escursioni termiche",
+      "Bere acqua in bottiglia"
+    ]
+  },
+  "AR": {
+    "tagline": "Tango a Buenos Aires, ghiacciai della Patagonia e le cascate di Iguazú.",
+    "description": [
+      "L'Argentina è un paese immenso dai paesaggi estremi. Buenos Aires, elegante e passionale, è la capitale del tango, dei caffè storici e dei quartieri come San Telmo e La Boca.",
+      "La Patagonia regala il ghiacciaio Perito Moreno, il Fitz Roy di El Chaltén e la Terra del Fuoco con Ushuaia, mentre la penisola Valdés ospita balene, pinguini e leoni marini.",
+      "Le cascate di Iguazú al confine con il Brasile, i vigneti di Mendoza e il nord con le montagne colorate di Salta e Jujuy completano il viaggio."
+    ],
+    "facts": {
+      "capital": "Buenos Aires",
+      "languages": "Spagnolo",
+      "currency": "Peso argentino (ARS)",
+      "timezone": "Quattro ore in meno rispetto all'Italia (cinque ore in meno con l'ora legale italiana)",
+      "flight": "Circa 13–14 ore diretto per Buenos Aires",
+      "bestPeriod": "Ottobre–aprile per la Patagonia; tutto l'anno per Buenos Aires",
+      "climate": "Molto vario: subtropicale al nord, temperato a Buenos Aires, freddo e ventoso in Patagonia",
+      "plugs": "Tipo C e I, 220 V: utile un adattatore",
+      "driving": "Si guida a destra; distanze enormi, meglio voli interni",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Perito Moreno", "description": "Il ghiacciaio che avanza nel lago Argentino.", "search": "Ghiacciaio Perito Moreno" },
+      { "name": "Cascate di Iguazú", "description": "La Garganta del Diablo tra foresta e nebbia.", "search": "Cascate dell'Iguazú" },
+      { "name": "Buenos Aires", "description": "La Boca, San Telmo e il tango.", "search": "Caminito Buenos Aires" },
+      { "name": "Fitz Roy", "description": "Le guglie granitiche di El Chaltén.", "search": "Monte Fitz Roy" },
+      { "name": "Ushuaia", "description": "La città alla fine del mondo.", "search": "Ushuaia" },
+      { "name": "Quebrada de Humahuaca", "description": "Montagne colorate nel nord.", "search": "Quebrada de Humahuaca" }
+    ],
+    "gettingAround": [
+      "Voli interni per Patagonia, Iguazú e Salta",
+      "Auto a noleggio nel nord e nella regione dei laghi",
+      "Pullman a lunga percorrenza comodi (cama)",
+      "Escursioni organizzate sui ghiacciai"
+    ],
+    "food": [
+      "Asado, carne alla griglia",
+      "Empanadas",
+      "Dulce de leche",
+      "Vino Malbec di Mendoza"
+    ],
+    "tips": [
+      "Tassi di cambio variabili: informarsi sul modo più conveniente di pagare",
+      "In Patagonia il vento è fortissimo: abbigliamento tecnico",
+      "Si cena molto tardi, dopo le 21",
+      "Prenotare voli interni in anticipo nell'alta stagione"
+    ]
+  },
+  "CL": {
+    "tagline": "Dal deserto di Atacama ai ghiacci della Patagonia, lungo la cordigliera delle Ande.",
+    "description": [
+      "Il Cile è un paese lunghissimo e stretto che attraversa tutti i climi. A nord il deserto di Atacama offre lagune altiplaniche, geyser, saline e i cieli più limpidi del mondo per osservare le stelle.",
+      "Santiago e Valparaíso, con le sue case colorate sulle colline, sono il centro del paese, circondato da valli vinicole famose nel mondo.",
+      "A sud la regione dei laghi e dei vulcani precede la Patagonia, con il parco Torres del Paine, una delle mete di trekking più spettacolari; l'isola di Pasqua custodisce i misteriosi moai."
+    ],
+    "facts": {
+      "capital": "Santiago del Cile",
+      "languages": "Spagnolo",
+      "currency": "Peso cileno (CLP)",
+      "timezone": "Quattro ore in meno rispetto all'Italia in inverno (cinque–sei ore in meno nei mesi dell'ora legale italiana)",
+      "flight": "Circa 14–15 ore con uno scalo",
+      "bestPeriod": "Ottobre–aprile; Atacama tutto l'anno",
+      "climate": "Desertico al nord, mediterraneo al centro, freddo e piovoso al sud",
+      "plugs": "Tipo C e L, 220 V: le spine italiane di solito funzionano",
+      "driving": "Si guida a destra; strade buone, 4x4 utile ad Atacama",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Torres del Paine", "description": "Le torri di granito della Patagonia.", "search": "Parco nazionale Torres del Paine" },
+      { "name": "Deserto di Atacama", "description": "La Valle della Luna e le lagune.", "search": "Valle de la Luna Cile" },
+      { "name": "Isola di Pasqua", "description": "I moai di Rapa Nui.", "search": "Moai" },
+      { "name": "Valparaíso", "description": "Case colorate e funicolari sul Pacifico.", "search": "Valparaíso" },
+      { "name": "Geyser del Tatio", "description": "Fumarole all'alba a 4.300 metri.", "search": "El Tatio" },
+      { "name": "Vulcano Osorno", "description": "Il cono perfetto della regione dei laghi.", "search": "Vulcano Osorno" }
+    ],
+    "gettingAround": [
+      "Voli interni tra Santiago, Calama, Puerto Montt e Punta Arenas",
+      "Auto a noleggio nella regione dei laghi e ad Atacama",
+      "Escursioni organizzate in Patagonia",
+      "Pullman a lunga percorrenza"
+    ],
+    "food": [
+      "Empanadas e pastel de choclo",
+      "Pesce e frutti di mare del Pacifico",
+      "Curanto, cottura in buca di Chiloé",
+      "Vini cileni e pisco sour"
+    ],
+    "tips": [
+      "Ad Atacama acclimatarsi all'altitudine",
+      "Prenotare i rifugi di Torres del Paine con largo anticipo",
+      "Protezione solare alta: raggi UV molto forti",
+      "Vestirsi a strati"
+    ]
+  },
+  "BR": {
+    "tagline": "Spiagge infinite, la foresta amazzonica e il ritmo contagioso della samba.",
+    "description": [
+      "Il Brasile è un paese-continente pieno di energia. Rio de Janeiro, tra il Cristo Redentore, il Pan di Zucchero e le spiagge di Copacabana e Ipanema, è una delle città più spettacolari del mondo.",
+      "Le cascate di Iguaçu, il Pantanal con la sua fauna e l'Amazzonia, esplorabile partendo da Manaus, offrono una natura senza confronti.",
+      "Il Nord-Est, con Salvador de Bahia e le spiagge di Fernando de Noronha, Jericoacoara e i Lençóis Maranhenses, unisce cultura afro-brasiliana e mare tropicale."
+    ],
+    "facts": {
+      "capital": "Brasília",
+      "languages": "Portoghese",
+      "currency": "Real brasiliano (BRL)",
+      "timezone": "Rio e San Paolo: quattro ore in meno rispetto all'Italia (cinque ore in meno con l'ora legale italiana)",
+      "flight": "Circa 11–12 ore diretto per Rio de Janeiro o San Paolo",
+      "bestPeriod": "Varia per regione: settembre–marzo per Rio e il sud, agosto–gennaio per il Nord-Est",
+      "climate": "Tropicale nella maggior parte del paese; equatoriale in Amazzonia, più fresco al sud",
+      "plugs": "Tipo N (spesso compatibile con tipo C), 127 o 220 V a seconda della città: utile un adattatore",
+      "driving": "Si guida a destra; meglio voli interni e transfer",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
+    },
+    "places": [
+      { "name": "Cristo Redentore", "description": "La statua sul Corcovado sopra Rio.", "search": "Cristo Redentore" },
+      { "name": "Pan di Zucchero", "description": "La funivia sulla baia di Guanabara.", "search": "Pan di Zucchero" },
+      { "name": "Cascate di Iguaçu", "description": "Centinaia di salti nella foresta.", "search": "Cascate dell'Iguazú" },
+      { "name": "Salvador de Bahia", "description": "Il Pelourinho e la cultura afro-brasiliana.", "search": "Pelourinho" },
+      { "name": "Lençóis Maranhenses", "description": "Dune bianche e lagune di acqua piovana.", "search": "Parco nazionale dei Lençóis Maranhenses" },
+      { "name": "Amazzonia", "description": "Il fiume e la foresta da Manaus.", "search": "Incontro delle acque Manaus" }
+    ],
+    "gettingAround": [
+      "Voli interni indispensabili per le grandi distanze",
+      "Taxi e app di trasporto in città",
+      "Barche e lodge per l'Amazzonia",
+      "Transfer organizzati per le località di mare"
+    ],
+    "food": [
+      "Feijoada, stufato di fagioli neri",
+      "Churrasco, carne alla griglia",
+      "Moqueca di pesce di Bahia",
+      "Caipirinha"
+    ],
+    "tips": [
+      "Nelle città non mostrare oggetti di valore",
+      "Per l'Amazzonia valutare con il medico vaccinazioni e profilassi",
+      "Protezione solare alta",
+      "Il Carnevale va prenotato con molto anticipo"
+    ]
+  },
+  "CO": {
+    "tagline": "Caraibi, città coloniali, piantagioni di caffè e la gente più accogliente.",
+    "description": [
+      "La Colombia è una delle mete in maggiore crescita del Sud America. Cartagena, con la città murata coloniale affacciata sui Caraibi, è il suo gioiello più famoso.",
+      "Medellín, rinata come città innovativa, e Bogotá, con il Museo dell'Oro e la Candelaria, mostrano il volto moderno del paese.",
+      "La zona del caffè con la valle di Cocora e le palme di cera, il parco Tayrona sulla costa e il fiume dei sette colori Caño Cristales completano un viaggio sorprendente."
+    ],
+    "facts": {
+      "capital": "Bogotá",
+      "languages": "Spagnolo",
+      "currency": "Peso colombiano (COP)",
+      "timezone": "Sei ore in meno rispetto all'Italia (sette ore in meno con l'ora legale italiana)",
+      "flight": "Circa 11–13 ore con voli diretti o uno scalo",
+      "bestPeriod": "Dicembre–marzo e luglio–agosto",
+      "climate": "Tropicale sulle coste, primaverile sugli altipiani (Medellín), fresco a Bogotá",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a destra; meglio voli interni e autisti",
+      "documents": "Passaporto valido e modulo di registrazione online prima del volo; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Cartagena de Indias", "description": "La città murata sui Caraibi.", "search": "Cartagena de Indias" },
+      { "name": "Valle di Cocora", "description": "Le palme di cera più alte del mondo.", "search": "Valle del Cocora" },
+      { "name": "Parco Tayrona", "description": "Spiagge e foresta sui Caraibi.", "search": "Parco nazionale naturale Tayrona" },
+      { "name": "Medellín", "description": "La città dell'eterna primavera e la Comuna 13.", "search": "Medellín" },
+      { "name": "Guatapé", "description": "Il paese colorato e la roccia di El Peñol.", "search": "Piedra del Peñol" },
+      { "name": "Museo dell'Oro", "description": "I tesori precolombiani di Bogotá.", "search": "Museo dell'Oro Bogotá" }
+    ],
+    "gettingAround": [
+      "Voli interni economici tra le città",
+      "Auto con autista nella zona del caffè",
+      "Taxi e app di trasporto in città",
+      "Barche per le isole del Rosario"
+    ],
+    "food": [
+      "Bandeja paisa",
+      "Arepas",
+      "Ajiaco, zuppa di Bogotá",
+      "Caffè colombiano"
+    ],
+    "tips": [
+      "Informarsi sulle zone da evitare e muoversi con prudenza la sera",
+      "Bogotá è a 2.600 metri: un po' di acclimatamento",
+      "Vestirsi a strati",
+      "Compilare il modulo di ingresso prima della partenza"
+    ]
+  },
+  "AU": {
+    "tagline": "Grande Barriera Corallina, outback rosso e città sul mare: l'Australia è un continente da esplorare.",
+    "description": [
+      "L'Australia è un viaggio da sogno da dedicare almeno a tre settimane. Sydney, con l'Opera House e l'Harbour Bridge, e Melbourne, capitale culturale, sono città vivaci e accoglienti.",
+      "Nel cuore rosso del continente Uluru, la roccia sacra degli aborigeni, cambia colore al tramonto; a nord-est la Grande Barriera Corallina è il sistema corallino più grande del mondo.",
+      "La Great Ocean Road, la foresta pluviale di Daintree, Kangaroo Island e la Tasmania offrono natura e fauna uniche: canguri, koala e wombat."
+    ],
+    "facts": {
+      "capital": "Canberra",
+      "languages": "Inglese",
+      "currency": "Dollaro australiano (AUD)",
+      "timezone": "Sydney: nove–dieci ore in più rispetto all'Italia a seconda delle stagioni (ora legale opposta nei due emisferi)",
+      "flight": "Circa 22–24 ore con uno scalo",
+      "bestPeriod": "Settembre–novembre e marzo–maggio; il nord tropicale da maggio a ottobre",
+      "climate": "Molto vario: tropicale al nord, desertico all'interno, temperato al sud con stagioni opposte all'Italia",
+      "plugs": "Tipo I, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; distanze enormi",
+      "documents": "Passaporto valido e autorizzazione elettronica di viaggio (eVisitor) da richiedere online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Sydney Opera House", "description": "Il teatro simbolo affacciato sul porto.", "search": "Sydney Opera House" },
+      { "name": "Uluru", "description": "La grande roccia rossa sacra agli aborigeni.", "search": "Uluru" },
+      { "name": "Grande Barriera Corallina", "description": "Snorkeling e immersioni da Cairns.", "search": "Grande barriera corallina" },
+      { "name": "Great Ocean Road", "description": "La costa dei Dodici Apostoli.", "search": "Dodici Apostoli" },
+      { "name": "Foresta di Daintree", "description": "La foresta pluviale più antica del mondo.", "search": "Foresta pluviale di Daintree" },
+      { "name": "Whitsunday", "description": "Whitehaven Beach e le isole tropicali.", "search": "Whitehaven Beach" }
+    ],
+    "gettingAround": [
+      "Voli interni tra le città e l'outback",
+      "Auto o camper a noleggio (guida a sinistra)",
+      "Treni panoramici come il Ghan",
+      "Escursioni in barca sulla barriera"
+    ],
+    "food": [
+      "Barbecue australiano",
+      "Pesce e frutti di mare",
+      "Pavlova e lamington",
+      "Vini della Barossa Valley"
+    ],
+    "tips": [
+      "Protezione solare alta: sole fortissimo",
+      "Nei mari del nord attenzione alle meduse da novembre a maggio",
+      "Ricordarsi l'autorizzazione elettronica prima del volo",
+      "Controlli severi su cibo e prodotti naturali all'ingresso"
+    ]
+  },
+  "NZ": {
+    "tagline": "Fiordi, ghiacciai, vulcani e la terra della Terra di Mezzo.",
+    "description": [
+      "La Nuova Zelanda è la meta ideale per gli amanti della natura e dei viaggi on the road. L'Isola del Nord unisce Auckland, la zona geotermale di Rotorua con geyser e cultura maori e il set di Hobbiton.",
+      "L'Isola del Sud è ancora più spettacolare: Milford Sound con le sue pareti a picco, i ghiacciai Fox e Franz Josef, il Monte Cook e i laghi turchesi come il Tekapo.",
+      "Queenstown è la capitale dell'avventura, mentre il parco Abel Tasman offre spiagge dorate e sentieri costieri."
+    ],
+    "facts": {
+      "capital": "Wellington",
+      "languages": "Inglese e maori",
+      "currency": "Dollaro neozelandese (NZD)",
+      "timezone": "Dieci–dodici ore in più rispetto all'Italia a seconda delle stagioni",
+      "flight": "Circa 24–26 ore con uno o due scali",
+      "bestPeriod": "Dicembre–marzo (estate australe); marzo–aprile per l'autunno",
+      "climate": "Temperato oceanico con stagioni opposte all'Italia; più freddo nell'Isola del Sud",
+      "plugs": "Tipo I, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; strade panoramiche e tortuose",
+      "documents": "Passaporto valido e autorizzazione elettronica NZeTA (con tassa turistica) da richiedere online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Milford Sound", "description": "Il fiordo tra cascate e pareti di roccia.", "search": "Milford Sound" },
+      { "name": "Hobbiton", "description": "Il villaggio degli hobbit a Matamata.", "search": "Hobbiton" },
+      { "name": "Rotorua", "description": "Geyser, fanghi e cultura maori.", "search": "Rotorua" },
+      { "name": "Lago Tekapo", "description": "Il lago turchese e la chiesa del Buon Pastore.", "search": "Lago Tekapo" },
+      { "name": "Aoraki / Monte Cook", "description": "La vetta più alta del paese.", "search": "Aoraki / Mount Cook" },
+      { "name": "Queenstown", "description": "Avventura e panorami sul lago Wakatipu.", "search": "Queenstown Nuova Zelanda" }
+    ],
+    "gettingAround": [
+      "Auto o camper a noleggio (guida a sinistra)",
+      "Voli interni tra le due isole",
+      "Traghetto tra Wellington e Picton",
+      "Treni panoramici come il TranzAlpine"
+    ],
+    "food": [
+      "Agnello neozelandese",
+      "Hangi, cottura maori sotterranea",
+      "Cozze verdi e frutti di mare",
+      "Pavlova e vini Sauvignon Blanc"
+    ],
+    "tips": [
+      "Controlli molto severi su cibo e attrezzatura all'ingresso",
+      "Il tempo cambia rapidamente: abbigliamento a strati",
+      "Prenotare in anticipo crociere e alloggi in estate",
+      "Distanze brevi ma strade lente"
+    ]
+  },
+  "PF": {
+    "tagline": "Lagune dai mille azzurri e bungalow sull'acqua: la Polinesia è il sogno del Pacifico.",
+    "description": [
+      "La Polinesia Francese è un insieme di arcipelaghi nel cuore del Pacifico. Tahiti è la porta d'ingresso, con la capitale Papeete, il mercato e le spiagge di sabbia nera.",
+      "Bora Bora, con la laguna turchese dominata dal monte Otemanu, e Moorea, con le baie di Cook e Opunohu, sono le isole più famose per i viaggi di nozze.",
+      "Gli atolli delle Tuamotu, come Rangiroa e Fakarava, sono un paradiso per le immersioni con squali e delfini; le Marchesi offrono paesaggi selvaggi e cultura antica."
+    ],
+    "facts": {
+      "capital": "Papeete",
+      "languages": "Francese e tahitiano",
+      "currency": "Franco CFP (XPF)",
+      "timezone": "Undici ore in meno rispetto all'Italia (dodici ore in meno con l'ora legale italiana)",
+      "flight": "Circa 22–24 ore con uno o due scali (Parigi, Los Angeles o altre città)",
+      "bestPeriod": "Maggio–ottobre (stagione secca)",
+      "climate": "Tropicale: caldo tutto l'anno, più piovoso e umido da novembre ad aprile",
+      "plugs": "Tipo E (anche A e B), 220 V: utile un adattatore",
+      "driving": "Si guida a destra; auto utile solo a Tahiti e Moorea",
+      "documents": "Carta d'identità valida o passaporto (territorio francese); verificare i documenti necessari per i paesi di scalo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Bora Bora", "description": "La laguna e il monte Otemanu.", "search": "Bora Bora" },
+      { "name": "Moorea", "description": "Baie, montagne verdi e lagune.", "search": "Moorea" },
+      { "name": "Rangiroa", "description": "Uno degli atolli più grandi del mondo.", "search": "Rangiroa" },
+      { "name": "Fakarava", "description": "Riserva della biosfera e immersioni.", "search": "Fakarava" },
+      { "name": "Tahiti", "description": "Papeete, il mercato e le cascate.", "search": "Tahiti" },
+      { "name": "Huahine", "description": "L'isola autentica e i siti archeologici.", "search": "Huahine" }
+    ],
+    "gettingAround": [
+      "Voli interni Air Tahiti tra le isole (pass multi-isola)",
+      "Traghetti tra Tahiti e Moorea",
+      "Barche e transfer dei resort",
+      "Crociere tra le isole della Società"
+    ],
+    "food": [
+      "Poisson cru, pesce crudo al latte di cocco",
+      "Pesce e frutti di mare",
+      "Frutta tropicale",
+      "Cucina francese nei resort"
+    ],
+    "tips": [
+      "Costi molto elevati: valutare la mezza pensione",
+      "Bagaglio limitato sui voli interni",
+      "Protezione solare compatibile con la barriera",
+      "La mancia non è abituale"
+    ]
+  }
+}

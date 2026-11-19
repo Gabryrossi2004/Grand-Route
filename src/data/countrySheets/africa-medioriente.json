@@ -1,0 +1,692 @@
+{
+  "MA": {
+    "tagline": "Medine labirintiche, dune dorate e montagne berbere a tre ore di volo dall'Italia.",
+    "description": [
+      "Il Marocco è un paese di contrasti a portata di viaggio breve: le città imperiali di Marrakech, Fès, Meknès e Rabat custodiscono medine patrimonio UNESCO, palazzi e giardini.",
+      "Verso sud l'Atlante apre la strada alle valli delle kasbah e al Sahara di Merzouga, dove si dorme in campi tendati tra le dune dopo un'escursione in dromedario.",
+      "Sulla costa atlantica Essaouira offre vento, pesce fresco e un ritmo più lento; a nord Chefchaouen sorprende con le sue case azzurre tra i monti del Rif."
+    ],
+    "facts": {
+      "capital": "Rabat",
+      "languages": "Arabo e berbero (amazigh); francese molto diffuso",
+      "currency": "Dirham marocchino (MAD)",
+      "timezone": "Un'ora in meno rispetto all'Italia (due ore in meno con l'ora legale italiana; varia durante il Ramadan)",
+      "flight": "Circa 3 ore diretto per Marrakech, Fès o Casablanca",
+      "bestPeriod": "Marzo–maggio e settembre–novembre: clima mite in città e nel deserto",
+      "climate": "Mediterraneo al nord, arido verso il Sahara (notti fredde nel deserto), freddo e neve sull'Atlante in inverno",
+      "plugs": "Tipo C ed E, 220 V: di solito non serve l'adattatore",
+      "driving": "Si guida a destra; strade principali buone, attenzione alla guida notturna",
+      "documents": "Passaporto con validità residua di almeno 6 mesi; per soggiorni turistici brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Piazza Jemaa el-Fna", "description": "Il cuore di Marrakech tra cantastorie, banchi e souk.", "search": "Piazza Jemaa el-Fna Marrakech" },
+      { "name": "Medina di Fès", "description": "La medina medievale più grande del mondo e le concerie.", "search": "Fès el Bali" },
+      { "name": "Chefchaouen", "description": "Il villaggio azzurro tra i monti del Rif.", "search": "Chefchaouen" },
+      { "name": "Merzouga", "description": "Le dune dell'Erg Chebbi e la notte nel deserto.", "search": "Erg Chebbi" },
+      { "name": "Aït Ben Haddou", "description": "Lo ksar di terra cruda set di tanti film.", "search": "Aït Ben Haddou" },
+      { "name": "Moschea Hassan II", "description": "La grande moschea sull'oceano a Casablanca.", "search": "Moschea Hassan II" }
+    ],
+    "gettingAround": [
+      "Treno veloce Al Boraq tra Tangeri, Rabat e Casablanca",
+      "Autobus CTM e Supratours per le lunghe distanze",
+      "Auto con autista per il deserto e l'Atlante",
+      "Petit taxi in città: concordare il prezzo o chiedere il tassametro"
+    ],
+    "food": [
+      "Tajine di carne o verdure cotto lentamente",
+      "Cous cous del venerdì",
+      "Tè alla menta, simbolo di ospitalità",
+      "Pastilla dolce-salata"
+    ],
+    "tips": [
+      "Contrattare nei souk fa parte dell'esperienza",
+      "Abbigliamento che copra spalle e ginocchia nei luoghi religiosi",
+      "Durante il Ramadan orari e servizi cambiano",
+      "Le moschee in genere non sono visitabili dai non musulmani (eccetto Hassan II)"
+    ]
+  },
+  "EG": {
+    "tagline": "Piramidi, templi sul Nilo e barriere coralline: l'Egitto è un viaggio nel tempo.",
+    "description": [
+      "L'Egitto custodisce alcune delle meraviglie più famose dell'umanità. Al Cairo e a Giza si visitano le piramidi, la Sfinge e il Grand Egyptian Museum con i tesori di Tutankhamon.",
+      "La crociera sul Nilo tra Luxor e Assuan è il modo classico per scoprire Karnak, la Valle dei Re, Edfu e Kom Ombo; più a sud Abu Simbel lascia senza parole.",
+      "Sul Mar Rosso, Sharm el-Sheikh, Hurghada e Marsa Alam offrono barriere coralline tra le più belle al mondo, perfette per snorkeling e immersioni."
+    ],
+    "facts": {
+      "capital": "Il Cairo",
+      "languages": "Arabo; inglese diffuso nel turismo",
+      "currency": "Lira egiziana (EGP)",
+      "timezone": "Un'ora in più rispetto all'Italia per gran parte dell'anno",
+      "flight": "Circa 3 ore e 30 minuti diretto per Il Cairo; voli diretti per Sharm el-Sheikh, Hurghada e Marsa Alam",
+      "bestPeriod": "Ottobre–aprile per le visite; il Mar Rosso è piacevole quasi tutto l'anno",
+      "climate": "Desertico: estati molto calde (oltre 40 °C ad Assuan), inverni miti di giorno e freschi di notte",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; traffico caotico, meglio autista o tour organizzati",
+      "documents": "Passaporto (o carta d'identità con foto tessera in alcuni casi) con visto turistico ottenibile all'arrivo o online; per Sharm el-Sheikh può bastare il timbro Sinai. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Piramidi di Giza", "description": "Cheope, Chefren, Micerino e la Sfinge.", "search": "Piramidi di Giza" },
+      { "name": "Tempio di Karnak", "description": "Il grande complesso templare di Luxor.", "search": "Tempio di Karnak" },
+      { "name": "Valle dei Re", "description": "Le tombe dei faraoni del Nuovo Regno.", "search": "Valle dei Re" },
+      { "name": "Abu Simbel", "description": "I templi di Ramses II scolpiti nella roccia.", "search": "Abu Simbel" },
+      { "name": "Grand Egyptian Museum", "description": "Il nuovo museo con i tesori di Tutankhamon.", "search": "Grand Egyptian Museum" },
+      { "name": "Ras Mohammed", "description": "Parco marino con coralli e pesci tropicali vicino a Sharm.", "search": "Parco nazionale di Ras Mohammed" }
+    ],
+    "gettingAround": [
+      "Crociere sul Nilo tra Luxor e Assuan (3–4 notti)",
+      "Voli interni tra Il Cairo, Luxor, Assuan e Abu Simbel",
+      "Treni notturni tra Il Cairo e Luxor/Assuan",
+      "Trasferimenti privati con autista e guida"
+    ],
+    "food": [
+      "Koshari, piatto popolare di riso, pasta e lenticchie",
+      "Ful medames e falafel (ta'meya)",
+      "Mezze con hummus e baba ganoush",
+      "Tè alla menta e karkadè"
+    ],
+    "tips": [
+      "Bere solo acqua in bottiglia",
+      "La mancia (bakshish) è un'abitudine diffusa per molti servizi",
+      "Abbigliamento coprente nelle moschee e nei luoghi religiosi",
+      "In estate visitare i siti all'alba"
+    ]
+  },
+  "TN": {
+    "tagline": "Medine bianche e blu, siti romani e il Sahara a un'ora di volo dall'Italia.",
+    "description": [
+      "La Tunisia è il Nord Africa più vicino all'Italia: a pochi minuti da Tunisi si trovano le rovine di Cartagine e il villaggio bianco e blu di Sidi Bou Saïd.",
+      "Il paese conserva alcuni dei siti romani più belli fuori dall'Italia, come l'anfiteatro di El Jem e Dougga, e il museo del Bardo con una straordinaria collezione di mosaici.",
+      "A sud il Sahara offre oasi, laghi salati e i set di Guerre Stellari, mentre Djerba e Hammamet sono mete balneari con hotel e spiagge sabbiose."
+    ],
+    "facts": {
+      "capital": "Tunisi",
+      "languages": "Arabo; francese molto diffuso, italiano compreso da molti",
+      "currency": "Dinaro tunisino (TND); non esportabile",
+      "timezone": "Stessa ora dell'Italia in inverno, un'ora in meno quando in Italia c'è l'ora legale",
+      "flight": "Circa 1 ora e 15 minuti diretto per Tunisi; traghetti da Genova, Civitavecchia, Napoli, Palermo",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre; ottobre–marzo per il deserto",
+      "climate": "Mediterraneo al nord, desertico al sud",
+      "plugs": "Tipo C ed E, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto; per viaggi organizzati in alcuni casi è accettata la carta d'identità. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Sidi Bou Saïd", "description": "Il villaggio bianco e blu affacciato sul golfo di Tunisi.", "search": "Sidi Bou Saïd" },
+      { "name": "Anfiteatro di El Jem", "description": "Uno dei più grandi anfiteatri romani al mondo.", "search": "Anfiteatro di El Jem" },
+      { "name": "Cartagine", "description": "Le rovine della città punica e romana.", "search": "Cartagine" },
+      { "name": "Museo del Bardo", "description": "La più grande collezione di mosaici romani.", "search": "Museo nazionale del Bardo" },
+      { "name": "Djerba", "description": "Isola di spiagge, villaggi e la sinagoga della Ghriba.", "search": "Djerba" },
+      { "name": "Chott el-Jerid", "description": "Il grande lago salato verso le oasi del deserto.", "search": "Chott el-Jerid" }
+    ],
+    "gettingAround": [
+      "Auto con autista o tour organizzati per il sud",
+      "Louage (taxi collettivi) tra le città",
+      "Treni tra Tunisi, Sousse e Sfax",
+      "Voli interni per Djerba e Tozeur"
+    ],
+    "food": [
+      "Cous cous di pesce o agnello",
+      "Brik con uovo e tonno",
+      "Harissa e insalata méchouia",
+      "Dolci al miele e tè ai pinoli"
+    ],
+    "tips": [
+      "Il dinaro non si può portare fuori dal paese: cambiare il necessario",
+      "Contrattare nei souk",
+      "Abbigliamento sobrio fuori dalle zone balneari",
+      "Nel deserto le notti sono fredde anche in primavera"
+    ]
+  },
+  "JO": {
+    "tagline": "Petra, il Wadi Rum e il Mar Morto: la Giordania è archeologia e deserto.",
+    "description": [
+      "La Giordania è un paese piccolo ma straordinario. Petra, la città dei Nabatei scolpita nella roccia rosa, è una delle sette meraviglie del mondo moderno e merita almeno un giorno intero.",
+      "Il deserto del Wadi Rum, con le sue montagne di arenaria, si esplora in jeep e si vive di notte nei campi beduini sotto un cielo stellato.",
+      "Il Mar Morto, il punto più basso della Terra, permette di galleggiare senza sforzo; a nord Jerash conserva una città romana tra le più complete del Medio Oriente."
+    ],
+    "facts": {
+      "capital": "Amman",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Dinaro giordano (JOD)",
+      "timezone": "Due ore in più rispetto all'Italia (un'ora in più con l'ora legale italiana)",
+      "flight": "Circa 3 ore e 30 minuti diretto per Amman; voli per Aqaba in alcuni periodi",
+      "bestPeriod": "Marzo–maggio e settembre–novembre",
+      "climate": "Mediterraneo sugli altipiani, desertico a sud: estati molto calde, inverni freddi ad Amman e Petra",
+      "plugs": "Prese miste (C, D, F, G), 230 V: utile un adattatore universale",
+      "driving": "Si guida a destra; strade buone, l'auto è un'opzione valida",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto; il Jordan Pass include visto e ingressi ai siti principali. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Petra", "description": "Il Siq e il Tesoro scolpito nella roccia.", "search": "Petra Al-Khazneh" },
+      { "name": "Wadi Rum", "description": "Il deserto rosso di Lawrence d'Arabia.", "search": "Wadi Rum" },
+      { "name": "Mar Morto", "description": "Galleggiare nelle acque più salate del mondo.", "search": "Mar Morto" },
+      { "name": "Jerash", "description": "Una città romana con colonnati e teatri.", "search": "Jerash" },
+      { "name": "Monte Nebo", "description": "Il punto da cui Mosè vide la Terra promessa.", "search": "Monte Nebo" },
+      { "name": "Il Monastero di Petra", "description": "Ad Deir, raggiungibile con 800 gradini.", "search": "Ad Deir Petra" }
+    ],
+    "gettingAround": [
+      "Auto con autista o noleggio lungo la Strada dei Re e la Desert Highway",
+      "Autobus JETT tra Amman, Petra e Aqaba",
+      "Jeep 4x4 con guida beduina nel Wadi Rum",
+      "Taxi e app di trasporto ad Amman"
+    ],
+    "food": [
+      "Mansaf, agnello con yogurt e riso",
+      "Mezze con hummus, falafel e moutabal",
+      "Zarb, carne cotta sotto la sabbia nel Wadi Rum",
+      "Knafeh, dolce al formaggio"
+    ],
+    "tips": [
+      "Acquistare il Jordan Pass prima della partenza",
+      "A Petra servono scarpe comode e molta acqua",
+      "Abbigliamento coprente fuori dai resort",
+      "Nel deserto le notti sono fredde"
+    ]
+  },
+  "AE": {
+    "tagline": "Grattacieli da record, deserto e mare caldo: gli Emirati sono il lusso a portata di volo.",
+    "description": [
+      "Gli Emirati Arabi Uniti sono una destinazione moderna e sicura. Dubai stupisce con il Burj Khalifa, il grattacielo più alto del mondo, centri commerciali, spiagge e il quartiere storico di Al Fahidi.",
+      "Abu Dhabi, la capitale, ospita la grande moschea Sheikh Zayed in marmo bianco e il Louvre Abu Dhabi, mentre l'isola di Yas è il regno dei parchi a tema.",
+      "Il deserto è a mezz'ora dalle città: safari in jeep sulle dune, cena nei campi beduini e notti sotto le stelle completano il viaggio."
+    ],
+    "facts": {
+      "capital": "Abu Dhabi",
+      "languages": "Arabo; inglese parlato ovunque",
+      "currency": "Dirham degli Emirati (AED)",
+      "timezone": "Tre ore in più rispetto all'Italia (due ore in più con l'ora legale italiana)",
+      "flight": "Circa 6 ore diretto per Dubai o Abu Dhabi",
+      "bestPeriod": "Novembre–marzo; da giugno a settembre il caldo è estremo",
+      "climate": "Desertico: inverni piacevoli (25 °C), estati molto calde e umide (oltre 40 °C)",
+      "plugs": "Tipo G (anche C e D), 230 V: serve un adattatore",
+      "driving": "Si guida a destra; strade ottime, taxi economici",
+      "documents": "Passaporto con validità di almeno 6 mesi; per i cittadini italiani il visto turistico viene di solito rilasciato gratuitamente all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Burj Khalifa", "description": "Il grattacielo più alto del mondo, con osservatorio.", "search": "Burj Khalifa" },
+      { "name": "Moschea Sheikh Zayed", "description": "La grande moschea bianca di Abu Dhabi.", "search": "Moschea dello sceicco Zayed" },
+      { "name": "Louvre Abu Dhabi", "description": "Il museo sotto la cupola di luce di Jean Nouvel.", "search": "Louvre Abu Dhabi" },
+      { "name": "Al Fahidi", "description": "Il quartiere storico di Dubai e il Creek.", "search": "Al Fahidi" },
+      { "name": "Palm Jumeirah", "description": "L'isola artificiale a forma di palma.", "search": "Palm Jumeirah" },
+      { "name": "Deserto di Dubai", "description": "Safari sulle dune e campi beduini.", "search": "Riserva del deserto di Dubai" }
+    ],
+    "gettingAround": [
+      "Metro moderna e taxi economici a Dubai",
+      "Transfer o auto tra Dubai e Abu Dhabi (circa 1 ora e mezza)",
+      "Escursioni organizzate per il deserto",
+      "Abra, le barchette tradizionali sul Creek"
+    ],
+    "food": [
+      "Cucina libanese e mediorientale: mezze, shawarma, hummus",
+      "Datteri e caffè arabo",
+      "Luqaimat, frittelle al miele",
+      "Ristoranti internazionali di ogni livello"
+    ],
+    "tips": [
+      "Abbigliamento coprente nei luoghi pubblici tradizionali e nelle moschee",
+      "Effusioni in pubblico e alcol in strada sono vietati",
+      "Durante il Ramadan non si mangia in pubblico di giorno",
+      "Gli spazi interni sono molto climatizzati: portare un golfino"
+    ]
+  },
+  "OM": {
+    "tagline": "Fiordi arabi, deserti di sabbia rossa e forti antichi: l'Oman è l'Arabia autentica.",
+    "description": [
+      "L'Oman è la destinazione più autentica della penisola arabica: tradizioni rispettate, paesaggi grandiosi e un'accoglienza calorosa.",
+      "Mascate, la capitale, unisce la Grande Moschea del Sultano Qaboos, il souk di Mutrah e una corniche affacciata sul mare. All'interno Nizwa e i suoi forti raccontano secoli di storia.",
+      "Il deserto delle Wahiba Sands, i wadi con piscine naturali come Wadi Shab, la penisola di Musandam con i suoi fiordi e il verde Dhofar durante il monsone completano un viaggio vario."
+    ],
+    "facts": {
+      "capital": "Mascate",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Rial dell'Oman (OMR)",
+      "timezone": "Tre ore in più rispetto all'Italia (due ore in più con l'ora legale italiana)",
+      "flight": "Circa 6 ore e 30 minuti con voli diretti stagionali o uno scalo nel Golfo",
+      "bestPeriod": "Ottobre–aprile; luglio–agosto per il monsone verde del Dhofar",
+      "climate": "Desertico: inverni miti, estati molto calde; più fresco sulle montagne",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a destra; strade eccellenti, 4x4 per deserto e piste di montagna",
+      "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Grande Moschea del Sultano Qaboos", "description": "Marmi, tappeti e lampadari monumentali a Mascate.", "search": "Grande moschea del sultano Qabus" },
+      { "name": "Wadi Shab", "description": "Canyon con piscine color smeraldo e una grotta.", "search": "Wadi Shab" },
+      { "name": "Wahiba Sands", "description": "Dune rosse e notte in campo tendato.", "search": "Wahiba Sands" },
+      { "name": "Forte di Nizwa", "description": "Il grande torrione e il mercato del venerdì.", "search": "Forte di Nizwa" },
+      { "name": "Jebel Shams", "description": "Il Grand Canyon d'Arabia.", "search": "Jebel Shams" },
+      { "name": "Musandam", "description": "Fiordi e delfini in dhow tradizionale.", "search": "Penisola di Musandam" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o 4x4 con autista: le distanze sono ampie",
+      "Voli interni per Salalah e Khasab",
+      "Escursioni in dhow lungo la costa",
+      "Taxi a Mascate (concordare il prezzo)"
+    ],
+    "food": [
+      "Shuwa, agnello marinato cotto sottoterra",
+      "Majboos e riso speziato con pesce o carne",
+      "Halwa omanita e datteri",
+      "Caffè arabo con cardamomo (kahwa)"
+    ],
+    "tips": [
+      "Abbigliamento coprente anche per gli uomini fuori dai resort",
+      "Nella Grande Moschea l'ingresso ai visitatori è solo al mattino",
+      "Portare costume e scarpe da acqua per i wadi",
+      "Chiedere sempre il permesso prima di fotografare le persone"
+    ]
+  },
+  "KE": {
+    "tagline": "Safari tra leoni ed elefanti e spiagge bianche sull'Oceano Indiano.",
+    "description": [
+      "Il Kenya è la culla del safari. Il Masai Mara, prolungamento del Serengeti, ospita la grande migrazione di gnu e zebre tra luglio e ottobre e tutti i Big Five.",
+      "Amboseli offre la vista degli elefanti con il Kilimangiaro sullo sfondo, mentre Tsavo, Samburu e il lago Nakuru completano un itinerario ricco di fauna e paesaggi diversi.",
+      "Dopo il safari, la costa di Malindi, Watamu e Diani regala spiagge bianche, barriera corallina e un'atmosfera rilassata con forte presenza italiana."
+    ],
+    "facts": {
+      "capital": "Nairobi",
+      "languages": "Swahili e inglese",
+      "currency": "Scellino keniota (KES)",
+      "timezone": "Due ore in più rispetto all'Italia (un'ora in più con l'ora legale italiana)",
+      "flight": "Circa 8 ore con voli diretti stagionali per Mombasa/Malindi, altrimenti uno scalo per Nairobi",
+      "bestPeriod": "Luglio–ottobre per la migrazione; gennaio–febbraio caldo e secco",
+      "climate": "Tropicale sulla costa, temperato sugli altipiani; piogge lunghe ad aprile–maggio",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; nei parchi solo con guida e 4x4",
+      "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica di viaggio (eTA) da richiedere online. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
+    },
+    "places": [
+      { "name": "Masai Mara", "description": "La riserva della grande migrazione e dei Big Five.", "search": "Riserva nazionale Masai Mara" },
+      { "name": "Amboseli", "description": "Elefanti con il Kilimangiaro sullo sfondo.", "search": "Parco nazionale di Amboseli" },
+      { "name": "Tsavo", "description": "Il parco più grande del Kenya e i suoi elefanti rossi.", "search": "Parco nazionale dello Tsavo Est" },
+      { "name": "Lago Nakuru", "description": "Rinoceronti e uccelli nella Rift Valley.", "search": "Lago Nakuru" },
+      { "name": "Watamu", "description": "Spiagge bianche e parco marino.", "search": "Watamu" },
+      { "name": "Lamu", "description": "Isola swahili patrimonio UNESCO.", "search": "Lamu" }
+    ],
+    "gettingAround": [
+      "Safari in fuoristrada con autista-guida",
+      "Voli interni su piccoli aerei verso le piste dei parchi",
+      "Trasferimenti organizzati sulla costa",
+      "Treno Madaraka Express tra Nairobi e Mombasa"
+    ],
+    "food": [
+      "Nyama choma, carne alla griglia",
+      "Ugali e sukuma wiki",
+      "Pesce e cucina swahili sulla costa",
+      "Tè e caffè kenioti"
+    ],
+    "tips": [
+      "Profilassi antimalarica e vaccinazioni da valutare con il medico",
+      "Abiti dai colori neutri per il safari, evitare il blu scuro (attira le mosche tse-tse)",
+      "Nei voli interni bagaglio morbido e leggero (spesso 15 kg)",
+      "Mance per guide e personale dei lodge sono consuete"
+    ]
+  },
+  "TZ": {
+    "tagline": "Serengeti, Ngorongoro, Kilimangiaro e le spiagge di Zanzibar.",
+    "description": [
+      "La Tanzania offre alcuni dei safari più spettacolari dell'Africa. Il Serengeti è teatro della grande migrazione, il cratere di Ngorongoro concentra una fauna incredibile in una caldera vulcanica.",
+      "Tarangire, con i suoi baobab ed elefanti, e il lago Manyara completano il circuito del nord, mentre il Kilimangiaro, il tetto d'Africa, attira gli appassionati di trekking.",
+      "Zanzibar unisce spiagge di sabbia bianca, mare turchese e Stone Town, la città vecchia dalle porte intagliate patrimonio UNESCO."
+    ],
+    "facts": {
+      "capital": "Dodoma (centro economico: Dar es Salaam)",
+      "languages": "Swahili e inglese",
+      "currency": "Scellino tanzaniano (TZS); dollari USA molto usati",
+      "timezone": "Due ore in più rispetto all'Italia (un'ora in più con l'ora legale italiana)",
+      "flight": "Circa 9–11 ore con uno scalo; voli diretti stagionali per Zanzibar",
+      "bestPeriod": "Giugno–ottobre per i safari; gennaio–febbraio per le nascite nel Serengeti",
+      "climate": "Tropicale: caldo sulla costa, fresco di notte sugli altipiani; piogge lunghe ad aprile–maggio",
+      "plugs": "Tipo D e G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; nei parchi solo con guida e 4x4",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto (online o all'arrivo); per Zanzibar è richiesta un'assicurazione sanitaria. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
+    },
+    "places": [
+      { "name": "Serengeti", "description": "Pianure infinite e la grande migrazione.", "search": "Parco nazionale del Serengeti" },
+      { "name": "Cratere di Ngorongoro", "description": "Una caldera con migliaia di animali.", "search": "Cratere di Ngorongoro" },
+      { "name": "Tarangire", "description": "Baobab giganti e grandi branchi di elefanti.", "search": "Parco nazionale di Tarangire" },
+      { "name": "Kilimangiaro", "description": "La montagna più alta d'Africa.", "search": "Kilimangiaro" },
+      { "name": "Stone Town", "description": "La città vecchia di Zanzibar.", "search": "Stone Town" },
+      { "name": "Nungwi", "description": "Spiagge e tramonti nel nord di Zanzibar.", "search": "Nungwi" }
+    ],
+    "gettingAround": [
+      "Safari in 4x4 con guida partendo da Arusha",
+      "Voli interni su piccoli aerei tra parchi e Zanzibar",
+      "Traghetti veloci tra Dar es Salaam e Zanzibar",
+      "Trasferimenti organizzati sull'isola"
+    ],
+    "food": [
+      "Pilau speziato e biryani",
+      "Mishkaki, spiedini di carne",
+      "Pesce e frutti di mare a Zanzibar",
+      "Spezie di Zanzibar: chiodi di garofano, cannella, vaniglia"
+    ],
+    "tips": [
+      "Profilassi antimalarica e vaccinazioni da valutare con il medico",
+      "A Zanzibar abbigliamento coprente fuori dalle spiagge",
+      "Bagaglio morbido per i voli interni",
+      "Mance per guide e personale sono consuete"
+    ]
+  },
+  "ZA": {
+    "tagline": "Safari, vigneti, oceani e città vivaci: il Sudafrica è un mondo in un paese.",
+    "description": [
+      "Il Sudafrica offre una varietà sorprendente. Città del Capo, ai piedi della Table Mountain, è una delle città più belle al mondo, con il Capo di Buona Speranza e le colonie di pinguini a Boulders Beach.",
+      "Le Winelands di Stellenbosch e Franschhoek producono vini eccellenti, mentre la Garden Route segue la costa tra lagune, foreste e spiagge.",
+      "Il Kruger e le riserve private confinanti sono tra i luoghi migliori per avvistare i Big Five, con lodge di grande livello."
+    ],
+    "facts": {
+      "capital": "Pretoria (amministrativa); Città del Capo (legislativa)",
+      "languages": "11 lingue ufficiali; l'inglese è parlato ovunque",
+      "currency": "Rand sudafricano (ZAR)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Circa 11–13 ore con uno scalo per Johannesburg o Città del Capo",
+      "bestPeriod": "Maggio–settembre per i safari; ottobre–aprile per Città del Capo e la costa",
+      "climate": "Temperato: estate australe (dicembre–febbraio) calda, inverno mite sulla costa e fresco all'interno",
+      "plugs": "Tipo M e N (anche C), 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; strade buone, evitare la guida notturna",
+      "documents": "Passaporto con validità di almeno 30 giorni oltre il ritorno e almeno 2 pagine libere; per soggiorni brevi di solito non serve il visto. Per i minori documenti aggiuntivi. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Table Mountain", "description": "La montagna piatta che domina Città del Capo.", "search": "Table Mountain" },
+      { "name": "Capo di Buona Speranza", "description": "Il promontorio sulla punta della penisola del Capo.", "search": "Capo di Buona Speranza" },
+      { "name": "Parco Kruger", "description": "Safari tra i Big Five.", "search": "Parco nazionale Kruger" },
+      { "name": "Boulders Beach", "description": "La spiaggia dei pinguini africani.", "search": "Boulders Beach" },
+      { "name": "Stellenbosch", "description": "Cantine storiche nelle Winelands.", "search": "Stellenbosch" },
+      { "name": "Blyde River Canyon", "description": "Uno dei canyon più grandi del mondo.", "search": "Blyde River Canyon" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio (guida a sinistra) per la Garden Route",
+      "Voli interni tra Johannesburg, Città del Capo e il Kruger",
+      "Safari in riserve private con ranger",
+      "Treni di lusso come il Blue Train"
+    ],
+    "food": [
+      "Braai, il barbecue sudafricano",
+      "Bobotie, sformato speziato di carne",
+      "Biltong, carne essiccata",
+      "Vini delle Winelands"
+    ],
+    "tips": [
+      "Nelle città evitare zone isolate e non mostrare oggetti di valore",
+      "Il Kruger è zona malarica: consultare il medico",
+      "Prenotare la funivia della Table Mountain e controllare il vento",
+      "Mancia del 10–15% al ristorante"
+    ]
+  },
+  "NA": {
+    "tagline": "Dune rosse, deserti infiniti e fauna libera: la Namibia è il viaggio on the road per eccellenza.",
+    "description": [
+      "La Namibia è uno dei paesi meno popolati al mondo, perfetto per un viaggio in libertà. Sossusvlei e Deadvlei, con le dune rosse più alte del mondo e gli alberi pietrificati, sono il simbolo del paese.",
+      "Il parco di Etosha, con le sue pozze d'acqua, permette safari spettacolari anche in autonomia; Swakopmund e la Skeleton Coast mostrano l'incontro tra deserto e oceano.",
+      "Il Damaraland con le incisioni rupestri e gli elefanti del deserto, e il Fish River Canyon a sud, completano un itinerario indimenticabile."
+    ],
+    "facts": {
+      "capital": "Windhoek",
+      "languages": "Inglese; afrikaans e tedesco diffusi",
+      "currency": "Dollaro namibiano (NAD), alla pari con il rand sudafricano",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Circa 12–14 ore con uno scalo per Windhoek",
+      "bestPeriod": "Maggio–ottobre: stagione secca, ideale per gli animali",
+      "climate": "Desertico: giornate calde e notti fredde, soprattutto in inverno",
+      "plugs": "Tipo D e M, 220 V: serve un adattatore",
+      "driving": "Si guida a sinistra; molte strade sterrate, consigliato 4x4",
+      "documents": "Passaporto con validità di almeno 6 mesi e pagine libere; dal 2025 per i cittadini italiani è richiesto il visto (online o all'arrivo). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Sossusvlei", "description": "Le dune rosse più alte del mondo.", "search": "Sossusvlei" },
+      { "name": "Deadvlei", "description": "Alberi pietrificati su una pianura bianca.", "search": "Deadvlei" },
+      { "name": "Parco nazionale di Etosha", "description": "Safari attorno alle pozze d'acqua.", "search": "Parco nazionale d'Etosha" },
+      { "name": "Swakopmund", "description": "Città coloniale tra deserto e oceano.", "search": "Swakopmund" },
+      { "name": "Fish River Canyon", "description": "Il canyon più grande d'Africa.", "search": "Fish River Canyon" },
+      { "name": "Twyfelfontein", "description": "Incisioni rupestri nel Damaraland.", "search": "Twyfelfontein" }
+    ],
+    "gettingAround": [
+      "Auto 4x4 a noleggio (self drive) con lodge prenotati",
+      "Tour di gruppo o con guida privata",
+      "Voli charter tra Windhoek e le zone remote",
+      "Distanze lunghe: pianificare tappe di massimo 400 km"
+    ],
+    "food": [
+      "Carne alla griglia (braai), anche di selvaggina",
+      "Biltong",
+      "Ostriche di Walvis Bay",
+      "Strudel e birre di tradizione tedesca"
+    ],
+    "tips": [
+      "Fare benzina appena possibile: le stazioni sono rare",
+      "Non guidare di notte per gli animali sulla strada",
+      "Vestirsi a strati: forte escursione termica",
+      "Il nord (Etosha) può essere zona malarica in alcuni mesi"
+    ]
+  },
+  "MG": {
+    "tagline": "Baobab, lemuri e spiagge tropicali: il Madagascar è un continente a parte.",
+    "description": [
+      "Il Madagascar è un'isola unica al mondo: l'ottanta per cento delle sue specie animali e vegetali non esiste altrove. I lemuri, i camaleonti e le foreste pluviali sono il cuore di ogni viaggio.",
+      "Il celebre Viale dei Baobab vicino a Morondava, i pinnacoli calcarei degli Tsingy e i parchi come Isalo e Ranomafana offrono paesaggi sorprendenti.",
+      "Nosy Be e le isole del nord-ovest sono una meta balneare amata dagli italiani, con mare caldo, spiagge bianche e incontri con squali balena e tartarughe."
+    ],
+    "facts": {
+      "capital": "Antananarivo",
+      "languages": "Malgascio e francese",
+      "currency": "Ariary malgascio (MGA)",
+      "timezone": "Due ore in più rispetto all'Italia (un'ora in più con l'ora legale italiana)",
+      "flight": "Circa 9–11 ore con voli diretti stagionali per Nosy Be o uno scalo per Antananarivo",
+      "bestPeriod": "Aprile–novembre (stagione secca); settembre–novembre per i lemuri",
+      "climate": "Tropicale: piogge e cicloni tra gennaio e marzo, fresco sugli altipiani",
+      "plugs": "Tipo C ed E, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade difficili, meglio autista locale",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto (online o all'arrivo). Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
+    },
+    "places": [
+      { "name": "Viale dei Baobab", "description": "I baobab giganti al tramonto vicino a Morondava.", "search": "Viale dei Baobab" },
+      { "name": "Tsingy di Bemaraha", "description": "Una foresta di pinnacoli di pietra.", "search": "Tsingy di Bemaraha" },
+      { "name": "Nosy Be", "description": "L'isola dei profumi e delle spiagge.", "search": "Nosy Be" },
+      { "name": "Parco nazionale dell'Isalo", "description": "Canyon e piscine naturali.", "search": "Parco nazionale dell'Isalo" },
+      { "name": "Andasibe", "description": "La foresta dell'indri, il lemure più grande.", "search": "Parco nazionale di Andasibe-Mantadia" },
+      { "name": "Ranomafana", "description": "Foresta pluviale e sorgenti calde.", "search": "Parco nazionale di Ranomafana" }
+    ],
+    "gettingAround": [
+      "Auto 4x4 con autista lungo la Route Nationale 7",
+      "Voli interni (con possibili cambi di orario)",
+      "Barche e trasferimenti tra le isole di Nosy Be",
+      "Tempi di percorrenza lunghi per le condizioni delle strade"
+    ],
+    "food": [
+      "Romazava, stufato di carne e verdure",
+      "Riso, base di ogni pasto",
+      "Zebù alla griglia",
+      "Vaniglia e cacao locali"
+    ],
+    "tips": [
+      "Profilassi antimalarica da valutare con il medico",
+      "Portare contanti in euro: il bancomat non è ovunque",
+      "Prevedere margini negli itinerari per i ritardi dei voli",
+      "Repellente per insetti indispensabile"
+    ]
+  },
+  "MU": {
+    "tagline": "Lagune turchesi, montagne verdi e resort di charme nell'Oceano Indiano.",
+    "description": [
+      "Mauritius è un'isola tropicale protetta dalla barriera corallina, con lagune calme e spiagge bianche come Belle Mare, Le Morne e Trou aux Biches.",
+      "L'interno sorprende con montagne vulcaniche, cascate, piantagioni di tè e canna da zucchero e la Terra dei Sette Colori di Chamarel.",
+      "La popolazione multiculturale, tra influenze indiane, africane, cinesi ed europee, si riflette nella cucina e nei templi; ottima per viaggi di nozze e famiglie."
+    ],
+    "facts": {
+      "capital": "Port Louis",
+      "languages": "Inglese e francese; creolo mauriziano parlato da tutti",
+      "currency": "Rupia mauriziana (MUR)",
+      "timezone": "Tre ore in più rispetto all'Italia (due ore in più con l'ora legale italiana)",
+      "flight": "Circa 11–12 ore con voli diretti o uno scalo",
+      "bestPeriod": "Maggio–dicembre: clima secco e piacevole",
+      "climate": "Tropicale: estate calda e umida da gennaio a marzo con rischio cicloni, inverno mite da giugno a settembre",
+      "plugs": "Tipo C e G, 230 V: utile un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni turistici di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Le Morne Brabant", "description": "La montagna sulla laguna, patrimonio UNESCO.", "search": "Le Morne Brabant" },
+      { "name": "Chamarel", "description": "La Terra dei Sette Colori e la cascata.", "search": "Terra dei sette colori Chamarel" },
+      { "name": "Île aux Cerfs", "description": "Isolotto di spiagge e laguna turchese.", "search": "Île aux Cerfs" },
+      { "name": "Gole del Black River", "description": "Il parco nazionale delle foreste endemiche.", "search": "Parco nazionale delle Gole del Black River" },
+      { "name": "Grand Bassin", "description": "Il lago sacro hindu con la grande statua di Shiva.", "search": "Grand Bassin" },
+      { "name": "Port Louis", "description": "Il mercato centrale e il Caudan Waterfront.", "search": "Port Louis" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio (guida a sinistra) o autista per le escursioni",
+      "Taxi da concordare in anticipo",
+      "Escursioni in catamarano",
+      "Autobus pubblici economici ma lenti"
+    ],
+    "food": [
+      "Dholl puri, piadina con lenticchie",
+      "Curry e rougaille creolo",
+      "Pesce e frutti di mare",
+      "Rum agricolo locale"
+    ],
+    "tips": [
+      "Protezione solare alta e rispetto dei coralli",
+      "Il lato est è più ventoso in inverno, l'ovest più riparato",
+      "Il mare può avere ricci e coralli: scarpette utili",
+      "Mancia apprezzata ma non obbligatoria"
+    ]
+  },
+  "SC": {
+    "tagline": "Graniti rosa, palme da cocco e spiagge tra le più belle del mondo.",
+    "description": [
+      "Le Seychelles sono un arcipelago di 115 isole nell'Oceano Indiano, famose per le spiagge incorniciate da massi di granito modellati dal vento e dall'acqua.",
+      "Mahé ospita la capitale Victoria e il parco del Morne Seychellois; Praslin custodisce la Vallée de Mai con il coco de mer, il seme più grande del mondo.",
+      "La Digue, dove ci si muove in bicicletta, ha la celebre Anse Source d'Argent; isole private e resort di lusso rendono le Seychelles una meta ideale per i viaggi di nozze."
+    ],
+    "facts": {
+      "capital": "Victoria",
+      "languages": "Creolo seychellese, inglese e francese",
+      "currency": "Rupia delle Seychelles (SCR); euro accettati in molti hotel",
+      "timezone": "Tre ore in più rispetto all'Italia (due ore in più con l'ora legale italiana)",
+      "flight": "Circa 10–12 ore con uno scalo nel Golfo",
+      "bestPeriod": "Aprile–maggio e ottobre–novembre, tra un monsone e l'altro",
+      "climate": "Tropicale caldo tutto l'anno; più piovoso da dicembre a marzo, più ventoso da giugno a settembre",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; strade strette e tortuose",
+      "documents": "Passaporto valido per tutta la durata del soggiorno; prima della partenza va richiesta online l'autorizzazione di viaggio. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Anse Source d'Argent", "description": "La spiaggia dei massi di granito a La Digue.", "search": "Anse Source d'Argent" },
+      { "name": "Vallée de Mai", "description": "La foresta del coco de mer a Praslin.", "search": "Vallée de Mai" },
+      { "name": "Anse Lazio", "description": "Una delle spiagge più belle di Praslin.", "search": "Anse Lazio" },
+      { "name": "Morne Seychellois", "description": "Montagne e sentieri nella foresta di Mahé.", "search": "Parco nazionale del Morne Seychellois" },
+      { "name": "Victoria", "description": "La piccola capitale e il mercato.", "search": "Victoria Seychelles" },
+      { "name": "Curieuse", "description": "L'isola delle tartarughe giganti.", "search": "Curieuse" }
+    ],
+    "gettingAround": [
+      "Traghetti veloci tra Mahé, Praslin e La Digue",
+      "Voli interni in piccoli aerei",
+      "Biciclette a La Digue",
+      "Auto a noleggio o taxi a Mahé e Praslin"
+    ],
+    "food": [
+      "Curry di pesce e polpo al latte di cocco",
+      "Pesce alla griglia",
+      "Frutta tropicale e frutto dell'albero del pane",
+      "Cucina creola"
+    ],
+    "tips": [
+      "Prezzi elevati: valutare la mezza pensione",
+      "Le correnti possono essere forti fuori stagione",
+      "Protezione solare e rispetto della barriera",
+      "Prenotare i traghetti interisola in anticipo"
+    ]
+  },
+  "CV": {
+    "tagline": "Isole atlantiche di sabbia, vento e morna, a sole sei ore dall'Italia.",
+    "description": [
+      "Capo Verde è un arcipelago vulcanico al largo dell'Africa occidentale, con un clima caldo e secco tutto l'anno e un'atmosfera rilassata.",
+      "Sal e Boa Vista sono le isole delle grandi spiagge bianche e dei resort, ideali per il mare, il kitesurf e l'avvistamento delle tartarughe in estate.",
+      "Santo Antão e São Vicente offrono montagne verdi, trekking spettacolari e la vita culturale di Mindelo, patria della cantante Cesária Évora e della morna."
+    ],
+    "facts": {
+      "capital": "Praia",
+      "languages": "Portoghese e creolo capoverdiano; italiano compreso nelle zone turistiche",
+      "currency": "Escudo capoverdiano (CVE); euro accettati in molti luoghi",
+      "timezone": "Due ore in meno rispetto all'Italia (tre ore in meno con l'ora legale italiana)",
+      "flight": "Circa 5–6 ore con voli diretti per Sal o Boa Vista",
+      "bestPeriod": "Tutto l'anno; ottobre–giugno è il periodo più secco e ventilato",
+      "climate": "Tropicale secco: caldo costante, brevi piogge tra agosto e ottobre",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per soggiorni brevi non serve il visto ma va effettuata la preregistrazione online e pagata la tassa di sicurezza aeroportuale. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Santa Maria (Sal)", "description": "La lunga spiaggia bianca e il pontile.", "search": "Santa Maria Capo Verde" },
+      { "name": "Boa Vista", "description": "Dune e spiagge come Santa Monica.", "search": "Boa Vista Capo Verde" },
+      { "name": "Pedra de Lume", "description": "Le saline in un antico cratere.", "search": "Pedra de Lume" },
+      { "name": "Santo Antão", "description": "Valli verdi e sentieri di montagna.", "search": "Santo Antão" },
+      { "name": "Mindelo", "description": "La città della musica sull'isola di São Vicente.", "search": "Mindelo" },
+      { "name": "Fogo", "description": "L'isola del vulcano attivo.", "search": "Pico do Fogo" }
+    ],
+    "gettingAround": [
+      "Voli interni tra le isole",
+      "Traghetti tra São Vicente e Santo Antão",
+      "Aluguer (pick-up collettivi) e taxi",
+      "Quad e jeep per le escursioni a Boa Vista"
+    ],
+    "food": [
+      "Cachupa, stufato di mais e fagioli",
+      "Pesce e aragosta alla griglia",
+      "Grogue, distillato di canna",
+      "Formaggio di capra con marmellata di papaya"
+    ],
+    "tips": [
+      "Il vento è costante: ottimo per kitesurf, meno per chi cerca mare piatto",
+      "Le tartarughe nidificano tra luglio e ottobre: visite solo guidate",
+      "Avere con sé euro in contanti",
+      "Fare la preregistrazione online prima della partenza"
+    ]
+  },
+  "IL": {
+    "tagline": "Gerusalemme, il Mar Morto e il deserto del Negev: luoghi sacri e storia millenaria.",
+    "description": [
+      "Israele custodisce luoghi sacri per tre religioni: Gerusalemme con il Muro Occidentale, la Basilica del Santo Sepolcro e la Spianata delle Moschee è un'esperienza unica.",
+      "Tel Aviv è una città moderna e vivace sul Mediterraneo, con architettura Bauhaus e spiagge; a nord la Galilea e Nazareth, a sud la fortezza di Masada e il Mar Morto.",
+      "La situazione di sicurezza può cambiare rapidamente: prima di proporre il viaggio è indispensabile verificare le indicazioni aggiornate della Farnesina."
+    ],
+    "facts": {
+      "capital": "Gerusalemme (riconoscimento internazionale controverso; molte ambasciate sono a Tel Aviv)",
+      "languages": "Ebraico e arabo; inglese diffuso",
+      "currency": "Nuovo shekel israeliano (ILS)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 3 ore e 30 minuti diretto per Tel Aviv",
+      "bestPeriod": "Marzo–maggio e settembre–novembre",
+      "climate": "Mediterraneo sulla costa, desertico a sud: estati calde, inverni miti con piogge",
+      "plugs": "Tipo H e C, 230 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica (ETA-IL) da richiedere online. Verificare sempre su viaggiaresicuri.it la situazione di sicurezza"
+    },
+    "places": [
+      { "name": "Città Vecchia di Gerusalemme", "description": "I quattro quartieri e i luoghi sacri.", "search": "Città Vecchia di Gerusalemme" },
+      { "name": "Basilica del Santo Sepolcro", "description": "Il luogo della crocifissione e della sepoltura di Gesù.", "search": "Basilica del Santo Sepolcro" },
+      { "name": "Masada", "description": "La fortezza di Erode sul Mar Morto.", "search": "Masada" },
+      { "name": "Mar Morto", "description": "Galleggiare nel punto più basso della Terra.", "search": "Mar Morto" },
+      { "name": "Tel Aviv", "description": "La Città Bianca e le spiagge.", "search": "Città Bianca di Tel Aviv" },
+      { "name": "Lago di Tiberiade", "description": "I luoghi della vita di Gesù in Galilea.", "search": "Lago di Tiberiade" }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o tour con guida",
+      "Treni tra Tel Aviv, Gerusalemme e Haifa",
+      "Autobus frequenti (ridotti durante lo Shabbat)",
+      "Voli interni per Eilat"
+    ],
+    "food": [
+      "Hummus, falafel e shakshuka",
+      "Insalata israeliana e mezze",
+      "Pane challah e dolci al sesamo",
+      "Vini delle alture"
+    ],
+    "tips": [
+      "Dal venerdì sera al sabato sera (Shabbat) molti servizi sono sospesi",
+      "Abbigliamento coprente nei luoghi sacri",
+      "Controlli di sicurezza accurati in aeroporto",
+      "Verificare la situazione aggiornata prima di ogni prenotazione"
+    ]
+  }
+}

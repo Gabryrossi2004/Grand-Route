@@ -1,0 +1,692 @@
+{
+  "JP": {
+    "tagline": "Templi millenari, metropoli futuristiche e un senso dell'ospitalità unico al mondo.",
+    "description": [
+      "Il Giappone unisce tradizione e modernità come nessun altro paese. Tokyo è una metropoli infinita di quartieri diversi, dai grattacieli di Shinjuku ai vicoli di Asakusa e al fermento di Shibuya.",
+      "Kyoto conserva oltre mille templi, giardini zen e il quartiere delle geishe di Gion; Nara, con i cervi liberi e il grande Buddha, e Osaka, capitale del cibo di strada, sono vicinissime.",
+      "Il monte Fuji, Hiroshima e l'isola di Miyajima, le Alpi giapponesi con Takayama e Shirakawa-go completano un viaggio che emoziona in ogni stagione, soprattutto con la fioritura dei ciliegi."
+    ],
+    "facts": {
+      "capital": "Tokyo",
+      "languages": "Giapponese; inglese poco diffuso fuori dalle grandi città",
+      "currency": "Yen giapponese (JPY)",
+      "timezone": "Otto ore in più rispetto all'Italia (sette ore in più con l'ora legale italiana)",
+      "flight": "Circa 13–14 ore diretto per Tokyo, oppure con uno scalo",
+      "bestPeriod": "Fine marzo–maggio (ciliegi) e ottobre–novembre (foliage)",
+      "climate": "Temperato: estate calda e umida con la stagione delle piogge a giugno, inverni freddi al nord",
+      "plugs": "Tipo A e B, 100 V: serve un adattatore e verificare che i dispositivi supportino 100 V",
+      "driving": "Si guida a sinistra; serve la patente internazionale",
+      "documents": "Passaporto valido per tutta la durata del soggiorno; per soggiorni turistici fino a 90 giorni di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Fushimi Inari", "description": "Migliaia di torii rossi sul monte sacro di Kyoto.", "search": "Fushimi Inari-taisha" },
+      { "name": "Monte Fuji", "description": "Il vulcano simbolo del Giappone.", "search": "Monte Fuji" },
+      { "name": "Shibuya", "description": "L'incrocio più famoso di Tokyo.", "search": "Shibuya" },
+      { "name": "Kinkaku-ji", "description": "Il Padiglione d'Oro di Kyoto.", "search": "Kinkaku-ji" },
+      { "name": "Miyajima", "description": "Il torii nell'acqua del santuario di Itsukushima.", "search": "Itsukushima" },
+      { "name": "Shirakawa-go", "description": "Villaggio di case dai tetti di paglia.", "search": "Shirakawa-go" }
+    ],
+    "gettingAround": [
+      "Treni ad alta velocità Shinkansen tra le città",
+      "Japan Rail Pass da valutare in base all'itinerario",
+      "Metro capillare a Tokyo e Osaka con carte ricaricabili (Suica, Pasmo)",
+      "Servizio di spedizione bagagli (takkyubin) tra un hotel e l'altro"
+    ],
+    "food": [
+      "Sushi e sashimi",
+      "Ramen e udon",
+      "Okonomiyaki e takoyaki di Osaka",
+      "Cucina kaiseki nei ryokan"
+    ],
+    "tips": [
+      "Non si lascia la mancia",
+      "Togliere le scarpe in templi, ryokan e alcune case",
+      "Portare contanti: alcuni locali non accettano carte",
+      "Prenotare in anticipo per la fioritura dei ciliegi"
+    ]
+  },
+  "TH": {
+    "tagline": "Templi dorati, isole tropicali e la cucina più amata d'Asia.",
+    "description": [
+      "La Thailandia è la porta d'ingresso classica dell'Asia. Bangkok è una capitale vibrante di templi dorati come il Wat Pho e il Wat Arun, mercati galleggianti e vita notturna.",
+      "Il nord, con Chiang Mai e Chiang Rai, offre templi di montagna, mercati notturni e villaggi; Ayutthaya e Sukhothai raccontano gli antichi regni siamesi.",
+      "Al sud mare e isole: Phuket, Krabi e Phi Phi sul mare delle Andamane, Koh Samui, Koh Phangan e Koh Tao nel golfo, ideali da abbinare a seconda della stagione."
+    ],
+    "facts": {
+      "capital": "Bangkok",
+      "languages": "Thailandese; inglese diffuso nelle zone turistiche",
+      "currency": "Baht thailandese (THB)",
+      "timezone": "Sei ore in più rispetto all'Italia (cinque ore in più con l'ora legale italiana)",
+      "flight": "Circa 11 ore con voli diretti o uno scalo per Bangkok",
+      "bestPeriod": "Novembre–marzo; il golfo (Koh Samui) è migliore anche in estate",
+      "climate": "Tropicale: stagione secca da novembre a febbraio, molto caldo ad aprile, monsone da giugno a ottobre",
+      "plugs": "Tipi A, B, C e O, 220 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; meglio autista o mezzi locali",
+      "documents": "Passaporto con validità di almeno 6 mesi; esenzione dal visto per soggiorni turistici brevi e compilazione online della carta d'arrivo digitale prima del volo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Grande Palazzo Reale", "description": "Il palazzo e il tempio del Buddha di Smeraldo a Bangkok.", "search": "Grande Palazzo Reale Bangkok" },
+      { "name": "Wat Arun", "description": "Il Tempio dell'Alba sul fiume Chao Phraya.", "search": "Wat Arun" },
+      { "name": "Chiang Mai", "description": "Templi, mercati notturni e montagne del nord.", "search": "Doi Suthep" },
+      { "name": "Ayutthaya", "description": "Le rovine dell'antica capitale del Siam.", "search": "Ayutthaya" },
+      { "name": "Isole Phi Phi", "description": "Baie turchesi e Maya Bay.", "search": "Ko Phi Phi" },
+      { "name": "Tempio Bianco", "description": "Il Wat Rong Khun di Chiang Rai.", "search": "Wat Rong Khun" }
+    ],
+    "gettingAround": [
+      "Voli interni economici tra Bangkok, il nord e le isole",
+      "Treni notturni e autobus per le lunghe distanze",
+      "Skytrain, metro e battelli a Bangkok",
+      "Traghetti e longtail boat tra le isole"
+    ],
+    "food": [
+      "Pad thai e curry verde o rosso",
+      "Tom yum, zuppa piccante di gamberi",
+      "Mango sticky rice",
+      "Street food dei mercati"
+    ],
+    "tips": [
+      "Nei templi spalle e ginocchia coperte e scarpe tolte",
+      "Massimo rispetto per la monarchia, anche nelle conversazioni",
+      "Bere acqua in bottiglia",
+      "Concordare il prezzo dei tuk tuk prima di salire"
+    ]
+  },
+  "VN": {
+    "tagline": "Risaie a terrazze, baie di pietra e città vivaci lungo una costa di 3.000 km.",
+    "description": [
+      "Il Vietnam si sviluppa da nord a sud con paesaggi e atmosfere diverse. Hanoi, con il quartiere vecchio e il lago Hoan Kiem, è il punto di partenza per la baia di Halong, da navigare tra i faraglioni di pietra.",
+      "Il centro custodisce Hue, la città imperiale, e Hoi An, antico porto illuminato dalle lanterne; le montagne di Sapa e Ha Giang regalano risaie a terrazze e villaggi delle minoranze.",
+      "A sud Ho Chi Minh City è dinamica e moderna, e il delta del Mekong offre mercati galleggianti e una vita lenta lungo i canali."
+    ],
+    "facts": {
+      "capital": "Hanoi",
+      "languages": "Vietnamita; inglese diffuso tra i giovani e nel turismo",
+      "currency": "Dong vietnamita (VND)",
+      "timezone": "Sei ore in più rispetto all'Italia (cinque ore in più con l'ora legale italiana)",
+      "flight": "Circa 13–15 ore con uno scalo",
+      "bestPeriod": "Marzo–aprile e settembre–novembre per tutto il paese; il sud è secco da dicembre ad aprile",
+      "climate": "Tropicale al sud, subtropicale al nord con inverni freschi; tifoni possibili al centro in autunno",
+      "plugs": "Tipo A e C, 220 V: utile un adattatore",
+      "driving": "Si guida a destra; traffico intenso di motorini, meglio autista",
+      "documents": "Passaporto con validità di almeno 6 mesi; esenzione dal visto per soggiorni turistici brevi, oltre serve il visto elettronico. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Baia di Halong", "description": "Migliaia di isole di calcare sul mare.", "search": "Baia di Ha Long" },
+      { "name": "Hoi An", "description": "L'antico porto delle lanterne.", "search": "Hội An" },
+      { "name": "Hue", "description": "La cittadella imperiale dei Nguyen.", "search": "Cittadella di Huế" },
+      { "name": "Sapa", "description": "Risaie a terrazze e villaggi di montagna.", "search": "Sa Pa" },
+      { "name": "Delta del Mekong", "description": "Mercati galleggianti e canali.", "search": "Delta del Mekong" },
+      { "name": "Grotte di Phong Nha", "description": "Alcune delle grotte più grandi del mondo.", "search": "Parco nazionale di Phong Nha-Kẻ Bàng" }
+    ],
+    "gettingAround": [
+      "Voli interni tra Hanoi, Da Nang e Ho Chi Minh City",
+      "Treni notturni lungo la costa",
+      "Crociere di una o due notti nella baia di Halong",
+      "Auto con autista e app di trasporto in città"
+    ],
+    "food": [
+      "Pho, zuppa di noodle",
+      "Banh mi",
+      "Involtini primavera freschi",
+      "Caffè vietnamita con latte condensato"
+    ],
+    "tips": [
+      "Attraversare la strada con passo costante tra i motorini",
+      "Contrattare nei mercati",
+      "Vestirsi a strati per il nord in inverno",
+      "Bere acqua in bottiglia"
+    ]
+  },
+  "KH": {
+    "tagline": "I templi di Angkor e la gentilezza khmer nel cuore del Sud-est asiatico.",
+    "description": [
+      "La Cambogia è la terra dei templi di Angkor, una delle meraviglie archeologiche del mondo: Angkor Wat all'alba, i volti di pietra del Bayon e le radici che avvolgono il Ta Prohm.",
+      "Phnom Penh, la capitale, unisce il Palazzo Reale e la Pagoda d'Argento ai luoghi della memoria della storia recente.",
+      "Il lago Tonle Sap con i villaggi galleggianti, la costa di Kep e Kampot con il pepe famoso nel mondo e le isole del sud completano il viaggio."
+    ],
+    "facts": {
+      "capital": "Phnom Penh",
+      "languages": "Khmer; inglese diffuso nel turismo",
+      "currency": "Riel cambogiano (KHR); il dollaro USA è usato ovunque",
+      "timezone": "Sei ore in più rispetto all'Italia (cinque ore in più con l'ora legale italiana)",
+      "flight": "Circa 14–16 ore con uno o due scali",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale: secco e piacevole da novembre a febbraio, molto caldo ad aprile, monsone da maggio a ottobre",
+      "plugs": "Tipi A, C e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a destra; meglio autista o tuk tuk",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto (elettronico o all'arrivo). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Angkor Wat", "description": "Il tempio più grande del mondo, all'alba.", "search": "Angkor Wat" },
+      { "name": "Bayon", "description": "Le torri con i volti sorridenti di pietra.", "search": "Bayon" },
+      { "name": "Ta Prohm", "description": "Il tempio avvolto dalle radici della giungla.", "search": "Ta Prohm" },
+      { "name": "Palazzo Reale di Phnom Penh", "description": "Il palazzo e la Pagoda d'Argento.", "search": "Palazzo Reale di Phnom Penh" },
+      { "name": "Tonle Sap", "description": "Il grande lago e i villaggi galleggianti.", "search": "Tonlé Sap" },
+      { "name": "Banteay Srei", "description": "Il piccolo tempio di arenaria rosa finemente scolpito.", "search": "Banteay Srei" }
+    ],
+    "gettingAround": [
+      "Tuk tuk con autista per i templi di Angkor",
+      "Voli interni o autobus tra Phnom Penh e Siem Reap",
+      "Barche sul Tonle Sap",
+      "Auto con autista per la costa"
+    ],
+    "food": [
+      "Amok, pesce al curry cotto in foglia di banano",
+      "Lok lak di manzo",
+      "Granchio al pepe di Kampot",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Biglietto di più giorni per Angkor: almeno 2–3 giorni",
+      "Spalle e ginocchia coperte nei templi",
+      "Portare dollari in piccolo taglio e in buono stato",
+      "Non camminare fuori dai sentieri nelle zone rurali"
+    ]
+  },
+  "ID": {
+    "tagline": "Bali, vulcani e isole infinite: l'Indonesia è il tropico in tutte le sue forme.",
+    "description": [
+      "L'Indonesia è il più grande arcipelago del mondo, con oltre 17.000 isole. Bali è la più famosa: templi induisti, risaie a terrazze di Ubud, spiagge e una spiritualità che si respira ovunque.",
+      "Giava custodisce Borobudur, il più grande tempio buddhista del mondo, Prambanan e il vulcano Bromo all'alba; Lombok e le isole Gili offrono spiagge e mare limpido.",
+      "Per i più avventurosi il parco di Komodo con i suoi draghi, il Borneo con gli oranghi e Raja Ampat, paradiso delle immersioni."
+    ],
+    "facts": {
+      "capital": "Giacarta",
+      "languages": "Indonesiano; inglese diffuso nelle zone turistiche",
+      "currency": "Rupia indonesiana (IDR)",
+      "timezone": "Bali: sette ore in più rispetto all'Italia (sei ore in più con l'ora legale italiana); Giava un'ora in meno di Bali",
+      "flight": "Circa 16–18 ore con uno scalo per Bali o Giacarta",
+      "bestPeriod": "Aprile–ottobre (stagione secca)",
+      "climate": "Tropicale: caldo tutto l'anno, piogge da novembre a marzo",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a sinistra; meglio autista privato",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto all'arrivo (anche elettronico); a Bali si paga anche una tassa turistica. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Risaie di Tegallalang", "description": "Le terrazze di riso vicino a Ubud.", "search": "Tegallalang" },
+      { "name": "Tempio di Tanah Lot", "description": "Il tempio sul mare al tramonto a Bali.", "search": "Tanah Lot" },
+      { "name": "Borobudur", "description": "Il grande tempio buddhista di Giava.", "search": "Borobudur" },
+      { "name": "Vulcano Bromo", "description": "Il cratere fumante all'alba.", "search": "Bromo" },
+      { "name": "Parco nazionale di Komodo", "description": "Draghi di Komodo e spiagge rosa.", "search": "Parco nazionale di Komodo" },
+      { "name": "Isole Gili", "description": "Isole senza auto, tartarughe e snorkeling.", "search": "Isole Gili" }
+    ],
+    "gettingAround": [
+      "Autista privato a Bali (soluzione più comoda)",
+      "Voli interni tra Bali, Giava, Lombok e Flores",
+      "Barche veloci per Gili e Nusa Penida",
+      "App di trasporto nelle città"
+    ],
+    "food": [
+      "Nasi goreng e mie goreng",
+      "Satay di pollo con salsa di arachidi",
+      "Babi guling a Bali",
+      "Rendang, manzo al cocco"
+    ],
+    "tips": [
+      "Nei templi serve il sarong (spesso fornito all'ingresso)",
+      "Bere acqua in bottiglia",
+      "Il traffico a Bali è intenso: calcolare tempi lunghi",
+      "Rispettare le cerimonie religiose che si incontrano per strada"
+    ]
+  },
+  "MV": {
+    "tagline": "Atolli di sabbia bianca, lagune turchesi e ville sull'acqua.",
+    "description": [
+      "Le Maldive sono un arcipelago di quasi 1.200 isole coralline raggruppate in atolli, nell'Oceano Indiano. Ogni resort occupa un'isola, con spiagge bianchissime e una laguna color turchese.",
+      "Il mare è il protagonista: snorkeling sulla barriera corallina, mante, squali balena, tartarughe e immersioni tra le più belle al mondo.",
+      "Oltre ai resort di lusso esistono guest house sulle isole abitate, più economiche e a contatto con la vita locale."
+    ],
+    "facts": {
+      "capital": "Malé",
+      "languages": "Dhivehi; inglese parlato in tutti i resort",
+      "currency": "Rufiyaa maldiviana (MVR); dollari USA usati ovunque nei resort",
+      "timezone": "Quattro ore in più rispetto all'Italia (tre ore in più con l'ora legale italiana)",
+      "flight": "Circa 9–11 ore con voli diretti stagionali o uno scalo",
+      "bestPeriod": "Dicembre–aprile (stagione secca)",
+      "climate": "Tropicale: caldo tutto l'anno, monsone di sud-ovest da maggio a ottobre con più pioggia",
+      "plugs": "Tipo D e G, 230 V: utile un adattatore universale",
+      "driving": "Non si guida: spostamenti in idrovolante o barca",
+      "documents": "Passaporto con validità di almeno 6 mesi; visto turistico gratuito all'arrivo e dichiarazione online da compilare prima del volo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Atollo di Ari", "description": "Mante e squali balena.", "search": "Atollo di Ari" },
+      { "name": "Atollo di Baa", "description": "Riserva della biosfera UNESCO e Hanifaru Bay.", "search": "Atollo di Baa" },
+      { "name": "Malé", "description": "La piccola capitale e il mercato del pesce.", "search": "Malé" },
+      { "name": "Atollo di Malé Nord", "description": "Resort vicini all'aeroporto.", "search": "Atollo di Malé Nord" },
+      { "name": "Atollo di Lhaviyani", "description": "Barriere e lagune ampie.", "search": "Atollo di Lhaviyani" },
+      { "name": "Barriera corallina maldiviana", "description": "Snorkeling direttamente dalla spiaggia.", "search": "Barriera corallina Maldive" }
+    ],
+    "gettingAround": [
+      "Idrovolante dall'aeroporto ai resort più lontani (solo di giorno)",
+      "Barche veloci per i resort vicini a Malé",
+      "Voli interni verso gli atolli del sud",
+      "Escursioni in barca organizzate dai resort"
+    ],
+    "food": [
+      "Mas huni, colazione con tonno e cocco",
+      "Curry di pesce",
+      "Pesce alla griglia",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Nelle isole abitate abbigliamento coprente; alcol solo nei resort",
+      "Con volo d'arrivo serale si può dover pernottare a Malé",
+      "Scegliere il resort anche in base alla barriera (house reef)",
+      "Protezione solare compatibile con la barriera"
+    ]
+  },
+  "LK": {
+    "tagline": "Templi, piantagioni di tè, safari e spiagge in un'isola a forma di lacrima.",
+    "description": [
+      "Lo Sri Lanka concentra in poco spazio una varietà straordinaria. Il Triangolo Culturale custodisce la rocca di Sigiriya, le antiche capitali di Anuradhapura e Polonnaruwa e i templi nelle grotte di Dambulla.",
+      "Kandy, con il Tempio del Dente di Buddha, è la porta delle montagne del tè: il treno panoramico verso Ella attraversa piantagioni e cascate.",
+      "I parchi di Yala e Udawalawe offrono safari con leopardi ed elefanti; la costa sud, con Galle e le spiagge di Mirissa, è perfetta per il relax e le balene."
+    ],
+    "facts": {
+      "capital": "Sri Jayawardenepura Kotte (sede del governo); Colombo principale città",
+      "languages": "Singalese e tamil; inglese diffuso",
+      "currency": "Rupia singalese (LKR)",
+      "timezone": "Quattro ore e mezza in più rispetto all'Italia (tre ore e mezza in più con l'ora legale italiana)",
+      "flight": "Circa 10–12 ore con uno scalo per Colombo",
+      "bestPeriod": "Dicembre–aprile per sud-ovest e montagne; maggio–settembre per la costa est",
+      "climate": "Tropicale con due monsoni che interessano coste diverse; fresco sulle montagne",
+      "plugs": "Tipo D e G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; quasi sempre con autista",
+      "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica di viaggio (ETA) online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Sigiriya", "description": "La fortezza sulla Roccia del Leone.", "search": "Sigiriya" },
+      { "name": "Tempio del Dente di Buddha", "description": "Il tempio più sacro di Kandy.", "search": "Tempio del Dente" },
+      { "name": "Treno per Ella", "description": "Uno dei percorsi ferroviari più belli del mondo.", "search": "Nine Arch Bridge" },
+      { "name": "Forte di Galle", "description": "La città fortificata coloniale sull'oceano.", "search": "Forte di Galle" },
+      { "name": "Parco nazionale di Yala", "description": "Leopardi, elefanti e coccodrilli.", "search": "Parco nazionale di Yala" },
+      { "name": "Templi di Dambulla", "description": "Grotte con statue e affreschi buddhisti.", "search": "Tempio d'oro di Dambulla" }
+    ],
+    "gettingAround": [
+      "Auto con autista-guida (formula più diffusa)",
+      "Treni panoramici tra Kandy ed Ella",
+      "Tuk tuk per brevi tragitti",
+      "Jeep per i safari nei parchi"
+    ],
+    "food": [
+      "Rice and curry con tanti piccoli piatti",
+      "Hoppers, crêpe di riso a scodella",
+      "Kottu roti",
+      "Tè di Ceylon"
+    ],
+    "tips": [
+      "Spalle e ginocchia coperte e scarpe tolte nei templi",
+      "Non posare per foto voltando le spalle alle statue di Buddha",
+      "Prenotare in anticipo i posti sul treno panoramico",
+      "Bere acqua in bottiglia"
+    ]
+  },
+  "IN": {
+    "tagline": "Palazzi dei maharaja, il Taj Mahal e una spiritualità che travolge.",
+    "description": [
+      "L'India è un continente di colori, profumi e contrasti. Il Triangolo d'Oro unisce Delhi, Agra con il Taj Mahal e Jaipur, la città rosa, ed è il primo viaggio ideale.",
+      "Il Rajasthan prosegue con Udaipur sui laghi, Jodhpur la città blu, Jaisalmer nel deserto del Thar e palazzi trasformati in hotel di charme.",
+      "Varanasi sul Gange è il cuore spirituale del paese; a sud il Kerala offre le backwaters in houseboat, piantagioni di tè e ayurveda, mentre Goa unisce spiagge ed eredità portoghese."
+    ],
+    "facts": {
+      "capital": "Nuova Delhi",
+      "languages": "Hindi e inglese, oltre a molte lingue regionali",
+      "currency": "Rupia indiana (INR)",
+      "timezone": "Quattro ore e mezza in più rispetto all'Italia (tre ore e mezza in più con l'ora legale italiana)",
+      "flight": "Circa 8 ore diretto per Delhi o con uno scalo",
+      "bestPeriod": "Ottobre–marzo per gran parte del paese",
+      "climate": "Molto vario: caldo torrido da aprile a giugno, monsone da giugno a settembre, inverno mite al nord",
+      "plugs": "Tipi C, D e M, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; sempre con autista",
+      "documents": "Passaporto con validità di almeno 6 mesi e due pagine libere, visto elettronico (e-Visa) da richiedere online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Taj Mahal", "description": "Il mausoleo di marmo bianco ad Agra.", "search": "Taj Mahal" },
+      { "name": "Forte Amber", "description": "La fortezza dei maharaja vicino a Jaipur.", "search": "Forte Amber" },
+      { "name": "Varanasi", "description": "I ghat sul Gange e le cerimonie serali.", "search": "Ghat di Varanasi" },
+      { "name": "Udaipur", "description": "La città dei laghi e dei palazzi.", "search": "City Palace Udaipur" },
+      { "name": "Backwaters del Kerala", "description": "Canali e lagune in houseboat.", "search": "Backwaters del Kerala" },
+      { "name": "Hawa Mahal", "description": "Il Palazzo dei Venti di Jaipur.", "search": "Hawa Mahal" }
+    ],
+    "gettingAround": [
+      "Auto con autista per il Rajasthan",
+      "Voli interni per le lunghe distanze",
+      "Treni, anche di lusso come il Palace on Wheels",
+      "Houseboat nel Kerala"
+    ],
+    "food": [
+      "Curry, dal e riso basmati",
+      "Pane naan e chapati",
+      "Pollo tandoori",
+      "Chai, tè speziato con latte"
+    ],
+    "tips": [
+      "Bere solo acqua in bottiglia ed evitare il ghiaccio",
+      "Abbigliamento coprente, soprattutto per le donne",
+      "Togliere le scarpe nei templi",
+      "Calcolare tempi lunghi per gli spostamenti in auto"
+    ]
+  },
+  "NP": {
+    "tagline": "Le vette più alte del mondo, templi e una spiritualità tra Himalaya e valli.",
+    "description": [
+      "Il Nepal è la terra dell'Himalaya: otto delle quattordici montagne oltre gli 8.000 metri, tra cui l'Everest, si trovano qui. I trekking dell'Annapurna e del campo base dell'Everest sono mete leggendarie.",
+      "La valle di Kathmandu custodisce città reali come Bhaktapur e Patan, lo stupa di Boudhanath e il tempio di Pashupatinath, tutti patrimonio UNESCO.",
+      "Pokhara, sul lago Phewa, è il punto di partenza per i trekking; il parco di Chitwan offre safari con rinoceronti ed elefanti nella giungla."
+    ],
+    "facts": {
+      "capital": "Kathmandu",
+      "languages": "Nepalese; inglese diffuso nel turismo",
+      "currency": "Rupia nepalese (NPR)",
+      "timezone": "Quattro ore e 45 minuti in più rispetto all'Italia (tre ore e 45 con l'ora legale italiana)",
+      "flight": "Circa 12–15 ore con uno scalo",
+      "bestPeriod": "Ottobre–novembre e marzo–aprile",
+      "climate": "Dal subtropicale della pianura al freddo dell'alta montagna; monsone da giugno a settembre",
+      "plugs": "Tipi C, D e M, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; strade di montagna difficili, sempre con autista",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto (all'arrivo o online); per i trekking servono permessi. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Stupa di Boudhanath", "description": "Uno dei più grandi stupa buddhisti al mondo.", "search": "Boudhanath" },
+      { "name": "Bhaktapur", "description": "La città reale dei templi in legno.", "search": "Bhaktapur" },
+      { "name": "Pokhara", "description": "Il lago Phewa con l'Annapurna sullo sfondo.", "search": "Lago Phewa" },
+      { "name": "Everest", "description": "Il tetto del mondo e il trekking al campo base.", "search": "Monte Everest" },
+      { "name": "Parco nazionale di Chitwan", "description": "Rinoceronti e giungla.", "search": "Parco nazionale di Chitwan" },
+      { "name": "Pashupatinath", "description": "Il grande tempio hindu sul fiume Bagmati.", "search": "Pashupatinath" }
+    ],
+    "gettingAround": [
+      "Voli interni su piccoli aerei (soggetti al meteo)",
+      "Auto con autista o pullman turistici",
+      "Trekking con guida e portatori",
+      "Taxi a Kathmandu"
+    ],
+    "food": [
+      "Dal bhat, riso e lenticchie",
+      "Momo, ravioli al vapore",
+      "Thukpa, zuppa di noodle",
+      "Tè masala"
+    ],
+    "tips": [
+      "Per i trekking ad alta quota considerare l'acclimatamento",
+      "Girare attorno agli stupa in senso orario",
+      "Prevedere giorni di margine per i voli di montagna",
+      "Assicurazione con copertura per il soccorso in quota"
+    ]
+  },
+  "CN": {
+    "tagline": "Grande Muraglia, città imperiali e paesaggi da dipinto in un paese immenso.",
+    "description": [
+      "La Cina è una civiltà millenaria che si scopre in viaggi di grande respiro. Pechino custodisce la Città Proibita, il Tempio del Cielo e la vicina Grande Muraglia.",
+      "Xi'an è la città dell'Esercito di Terracotta, mentre Shanghai mostra il volto moderno del paese tra il Bund e i grattacieli di Pudong.",
+      "Il fiume Li tra Guilin e Yangshuo, le montagne di Zhangjiajie, i giardini di Suzhou e i panda di Chengdu completano itinerari spettacolari."
+    ],
+    "facts": {
+      "capital": "Pechino",
+      "languages": "Cinese mandarino; inglese poco diffuso fuori dai grandi hotel",
+      "currency": "Renminbi, yuan (CNY)",
+      "timezone": "Sette ore in più rispetto all'Italia (sei ore in più con l'ora legale italiana)",
+      "flight": "Circa 10–11 ore diretto per Pechino o Shanghai",
+      "bestPeriod": "Aprile–maggio e settembre–ottobre",
+      "climate": "Molto vario: inverni freddi e secchi al nord, estati calde e umide al sud",
+      "plugs": "Tipi A, C e I, 220 V: utile un adattatore universale",
+      "driving": "Non è possibile guidare con patente italiana: spostamenti con autista o mezzi",
+      "documents": "Passaporto con validità di almeno 6 mesi; per i cittadini italiani è in vigore un'esenzione dal visto per soggiorni brevi (verificarne la validità). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Grande Muraglia", "description": "Tratti restaurati come Mutianyu vicino a Pechino.", "search": "Grande Muraglia cinese Mutianyu" },
+      { "name": "Città Proibita", "description": "Il palazzo imperiale nel cuore di Pechino.", "search": "Città Proibita" },
+      { "name": "Esercito di Terracotta", "description": "Migliaia di guerrieri a grandezza naturale a Xi'an.", "search": "Esercito di terracotta" },
+      { "name": "Il Bund", "description": "Il lungofiume di Shanghai con lo skyline di Pudong.", "search": "Bund Shanghai" },
+      { "name": "Fiume Li", "description": "Picchi carsici tra Guilin e Yangshuo.", "search": "Fiume Li" },
+      { "name": "Zhangjiajie", "description": "Le montagne colonna del film Avatar.", "search": "Parco forestale nazionale di Zhangjiajie" }
+    ],
+    "gettingAround": [
+      "Treni ad alta velocità tra quasi tutte le città",
+      "Voli interni per le grandi distanze",
+      "Metro efficienti nelle città",
+      "Guida locale consigliata per la barriera linguistica"
+    ],
+    "food": [
+      "Anatra laccata alla pechinese",
+      "Ravioli (jiaozi) e xiaolongbao",
+      "Hot pot del Sichuan",
+      "Dim sum cantonese"
+    ],
+    "tips": [
+      "Installare prima della partenza app di pagamento e di traduzione",
+      "Molti servizi occidentali (Google, WhatsApp) non funzionano senza VPN",
+      "Portare con sé il nome dell'hotel scritto in cinese",
+      "Evitare i periodi delle festività nazionali (inizio ottobre, Capodanno cinese)"
+    ]
+  },
+  "KR": {
+    "tagline": "Palazzi reali, tecnologia, K-pop e una cucina che conquista.",
+    "description": [
+      "La Corea del Sud è una destinazione moderna e sicura, in grande crescita. Seul unisce i palazzi della dinastia Joseon, come Gyeongbokgung, a quartieri vivaci come Myeongdong, Hongdae e Gangnam.",
+      "Gyeongju, antica capitale del regno di Silla, è un museo a cielo aperto di tombe reali e templi; Busan offre spiagge, il mercato del pesce e villaggi colorati sulle colline.",
+      "L'isola vulcanica di Jeju, con crateri, cascate e le pescatrici haenyeo, completa il viaggio con la natura."
+    ],
+    "facts": {
+      "capital": "Seul",
+      "languages": "Coreano; inglese diffuso tra i giovani",
+      "currency": "Won sudcoreano (KRW)",
+      "timezone": "Otto ore in più rispetto all'Italia (sette ore in più con l'ora legale italiana)",
+      "flight": "Circa 12–13 ore diretto per Seul o con uno scalo",
+      "bestPeriod": "Aprile–giugno e settembre–novembre",
+      "climate": "Continentale: estati calde e umide con monsone a luglio, inverni freddi e secchi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; serve la patente internazionale",
+      "documents": "Passaporto valido; per soggiorni turistici brevi non serve il visto, ma potrebbe essere richiesta l'autorizzazione elettronica K-ETA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Gyeongbokgung", "description": "Il grande palazzo reale di Seul.", "search": "Gyeongbokgung" },
+      { "name": "Bukchon Hanok Village", "description": "Case tradizionali tra i palazzi.", "search": "Bukchon Hanok Village" },
+      { "name": "Gyeongju", "description": "Il tempio di Bulguksa e le tombe reali.", "search": "Bulguksa" },
+      { "name": "Busan", "description": "Il villaggio colorato di Gamcheon e la spiaggia di Haeundae.", "search": "Gamcheon Culture Village" },
+      { "name": "Isola di Jeju", "description": "Il cratere di Seongsan Ilchulbong.", "search": "Seongsan Ilchulbong" },
+      { "name": "Zona demilitarizzata", "description": "La DMZ al confine con il nord.", "search": "Zona demilitarizzata coreana" }
+    ],
+    "gettingAround": [
+      "Treni ad alta velocità KTX tra Seul, Gyeongju e Busan",
+      "Metro capillare a Seul con la carta T-money",
+      "Voli interni per Jeju",
+      "Taxi economici e app locali"
+    ],
+    "food": [
+      "Barbecue coreano",
+      "Kimchi e bibimbap",
+      "Tteokbokki e street food",
+      "Fried chicken con birra"
+    ],
+    "tips": [
+      "Scaricare app locali per mappe e trasporti (Google Maps funziona poco)",
+      "La mancia non si usa",
+      "Molti alloggi tradizionali hanno futon a terra",
+      "In primavera la fioritura dei ciliegi è molto richiesta"
+    ]
+  },
+  "PH": {
+    "tagline": "Oltre 7.000 isole di spiagge bianche, lagune e risaie a terrazze.",
+    "description": [
+      "Le Filippine sono un arcipelago tropicale con alcune delle spiagge e dei fondali più belli dell'Asia. Palawan, con El Nido e Coron, offre lagune tra pareti di roccia e mare cristallino.",
+      "Bohol stupisce con le Chocolate Hills e i piccoli tarsi, mentre Siargao è la capitale del surf e Boracay ha la celebre White Beach.",
+      "Nel nord di Luzon le risaie a terrazze di Banaue e Batad sono patrimonio UNESCO; la cordialità dei filippini e l'uso diffuso dell'inglese rendono il viaggio semplice."
+    ],
+    "facts": {
+      "capital": "Manila",
+      "languages": "Filippino e inglese",
+      "currency": "Peso filippino (PHP)",
+      "timezone": "Sette ore in più rispetto all'Italia (sei ore in più con l'ora legale italiana)",
+      "flight": "Circa 15–17 ore con uno scalo per Manila o Cebu",
+      "bestPeriod": "Dicembre–maggio (stagione secca)",
+      "climate": "Tropicale: stagione delle piogge e tifoni da giugno a novembre",
+      "plugs": "Tipi A, B e C, 220 V: utile un adattatore",
+      "driving": "Si guida a destra; meglio autista e trasferimenti organizzati",
+      "documents": "Passaporto con validità di almeno 6 mesi e biglietto di ritorno; per soggiorni turistici brevi di solito non serve il visto; registrazione online di arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "El Nido", "description": "Lagune e isole di Palawan.", "search": "El Nido" },
+      { "name": "Coron", "description": "Laghi, relitti e il Kayangan Lake.", "search": "Kayangan Lake" },
+      { "name": "Chocolate Hills", "description": "Le colline coniche di Bohol.", "search": "Chocolate Hills" },
+      { "name": "Risaie di Banaue", "description": "Terrazze di riso millenarie.", "search": "Terrazze di riso di Banaue" },
+      { "name": "Boracay", "description": "La White Beach e i tramonti.", "search": "Boracay" },
+      { "name": "Fiume sotterraneo di Puerto Princesa", "description": "Navigazione in una grotta patrimonio UNESCO.", "search": "Fiume sotterraneo di Puerto Princesa" }
+    ],
+    "gettingAround": [
+      "Voli interni tra Manila, Cebu e le isole",
+      "Traghetti e bangka (barche locali) tra le isole",
+      "Tricycle e jeepney per brevi tratti",
+      "Island hopping organizzato a El Nido e Coron"
+    ],
+    "food": [
+      "Adobo di pollo o maiale",
+      "Lechon, maialino arrosto",
+      "Sinigang, zuppa acidula",
+      "Halo-halo, dessert di ghiaccio e frutta"
+    ],
+    "tips": [
+      "Prevedere margini per voli e traghetti in caso di maltempo",
+      "Portare contanti nelle isole minori",
+      "Protezione solare e scarpette da scoglio",
+      "Tasse ambientali da pagare in loco per alcune zone"
+    ]
+  },
+  "SG": {
+    "tagline": "Città-giardino futuristica, crocevia di culture e paradiso del cibo.",
+    "description": [
+      "Singapore è una città-stato moderna, pulita e sicura, perfetta come tappa di scalo o mini viaggio. Marina Bay con il Marina Bay Sands e i Gardens by the Bay sono il suo volto più spettacolare.",
+      "Quartieri come Chinatown, Little India e Kampong Glam raccontano le diverse anime della città, mentre Sentosa offre spiagge, parchi a tema e resort.",
+      "Il cibo è un'esperienza in sé: negli hawker centre si mangiano piatti eccellenti a prezzi contenuti, alcuni premiati con la stella Michelin."
+    ],
+    "facts": {
+      "capital": "Singapore",
+      "languages": "Inglese, mandarino, malese e tamil",
+      "currency": "Dollaro di Singapore (SGD)",
+      "timezone": "Sette ore in più rispetto all'Italia (sei ore in più con l'ora legale italiana)",
+      "flight": "Circa 12 ore diretto da Milano o Roma",
+      "bestPeriod": "Tutto l'anno; febbraio–aprile un po' più secco",
+      "climate": "Equatoriale: caldo e umido tutto l'anno con frequenti acquazzoni",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra; mezzi pubblici eccellenti",
+      "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi non serve il visto, ma va compilata online la SG Arrival Card. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Gardens by the Bay", "description": "I Supertree e le serre giganti.", "search": "Gardens by the Bay" },
+      { "name": "Marina Bay Sands", "description": "L'hotel con la piscina panoramica.", "search": "Marina Bay Sands" },
+      { "name": "Chinatown", "description": "Templi e mercati nel cuore della città.", "search": "Chinatown Singapore" },
+      { "name": "Little India", "description": "Colori, spezie e templi hindu.", "search": "Little India Singapore" },
+      { "name": "Sentosa", "description": "L'isola dei divertimenti e delle spiagge.", "search": "Sentosa" },
+      { "name": "Giardino botanico", "description": "Patrimonio UNESCO con il giardino delle orchidee.", "search": "Giardino botanico di Singapore" }
+    ],
+    "gettingAround": [
+      "Metro MRT (si paga con carta contactless)",
+      "Taxi e app di trasporto",
+      "Autobus capillari",
+      "Tutto è raggiungibile in meno di un'ora"
+    ],
+    "food": [
+      "Chili crab",
+      "Hainanese chicken rice",
+      "Laksa, zuppa di noodle al cocco",
+      "Satay negli hawker centre"
+    ],
+    "tips": [
+      "Regole severe: vietato masticare chewing gum in pubblico, multe per i rifiuti",
+      "Gli interni sono molto climatizzati",
+      "Ottima come tappa prima di Bali, Thailandia o Australia",
+      "La mancia non è necessaria"
+    ]
+  },
+  "MY": {
+    "tagline": "Torri futuristiche, foreste pluviali antichissime e isole tropicali.",
+    "description": [
+      "La Malesia unisce modernità e natura. Kuala Lumpur è dominata dalle Torri Petronas e conserva quartieri coloniali, mercati e le grotte sacre di Batu Caves.",
+      "Penang, con George Town patrimonio UNESCO, e Malacca raccontano secoli di commerci tra Cina, India ed Europa, con una cucina tra le migliori dell'Asia.",
+      "Il Borneo malese, con Sabah e Sarawak, offre oranghi, il monte Kinabalu e foreste pluviali; isole come Langkawi, Perhentian e Tioman sono perfette per il mare."
+    ],
+    "facts": {
+      "capital": "Kuala Lumpur",
+      "languages": "Malese; inglese molto diffuso",
+      "currency": "Ringgit malese (MYR)",
+      "timezone": "Sette ore in più rispetto all'Italia (sei ore in più con l'ora legale italiana)",
+      "flight": "Circa 13–14 ore con uno scalo",
+      "bestPeriod": "Marzo–ottobre per la costa ovest e il Borneo; la costa est è chiusa dal monsone da novembre a febbraio",
+      "climate": "Equatoriale: caldo e umido tutto l'anno, monsoni alternati sulle due coste",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; strade buone",
+      "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi non serve il visto, ma va compilata online la carta d'arrivo digitale. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Torri Petronas", "description": "Le torri gemelle di Kuala Lumpur.", "search": "Petronas Towers" },
+      { "name": "Batu Caves", "description": "Il santuario hindu nelle grotte.", "search": "Batu Caves" },
+      { "name": "George Town", "description": "Murales, case di clan e street food a Penang.", "search": "George Town Penang" },
+      { "name": "Malacca", "description": "La città storica dei commerci.", "search": "Malacca" },
+      { "name": "Monte Kinabalu", "description": "La vetta del Borneo.", "search": "Monte Kinabalu" },
+      { "name": "Langkawi", "description": "Spiagge e il ponte sospeso nella foresta.", "search": "Langkawi Sky Bridge" }
+    ],
+    "gettingAround": [
+      "Voli interni economici, anche per il Borneo",
+      "Treni veloci sulla penisola",
+      "App di trasporto nelle città",
+      "Barche per le isole"
+    ],
+    "food": [
+      "Nasi lemak",
+      "Laksa di Penang",
+      "Satay e roti canai",
+      "Cucina nyonya di Malacca"
+    ],
+    "tips": [
+      "Abbigliamento coprente nelle moschee",
+      "Alcol caro e non ovunque disponibile",
+      "Il clima umido rende utili abiti leggeri e traspiranti",
+      "Scegliere la costa in base al monsone"
+    ]
+  },
+  "UZ": {
+    "tagline": "Le città della Via della Seta: cupole turchesi, madrase e caravanserragli.",
+    "description": [
+      "L'Uzbekistan è il cuore della Via della Seta e una delle destinazioni culturali più affascinanti dell'Asia centrale.",
+      "Samarcanda, con il Registan e le sue madrase dalle cupole turchesi, Bukhara, città santa dai mille monumenti, e Khiva, chiusa nelle mura di terra cruda, sembrano uscite dalle Mille e una notte.",
+      "Tashkent, la capitale moderna, unisce metropolitana decorata come un palazzo e grandi mercati; l'ospitalità uzbeka rende il viaggio ancora più piacevole."
+    ],
+    "facts": {
+      "capital": "Tashkent",
+      "languages": "Uzbeko; russo diffuso, inglese in crescita nel turismo",
+      "currency": "Som uzbeko (UZS)",
+      "timezone": "Quattro ore in più rispetto all'Italia (tre ore in più con l'ora legale italiana)",
+      "flight": "Circa 6 ore con voli diretti stagionali o uno scalo",
+      "bestPeriod": "Aprile–maggio e settembre–ottobre",
+      "climate": "Continentale desertico: estati molto calde, inverni freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; meglio autista o treni",
+      "documents": "Passaporto con validità di almeno 3 mesi oltre la partenza; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      { "name": "Registan", "description": "La piazza delle tre madrase di Samarcanda.", "search": "Registan" },
+      { "name": "Bukhara", "description": "Il complesso Poi Kalon e il minareto.", "search": "Poi Kalon" },
+      { "name": "Khiva", "description": "La città-fortezza di Itchan Kala.", "search": "Itchan Kala" },
+      { "name": "Shah-i-Zinda", "description": "La necropoli dalle maioliche blu.", "search": "Shah-i-Zinda" },
+      { "name": "Metro di Tashkent", "description": "Stazioni decorate come palazzi.", "search": "Metropolitana di Tashkent" },
+      { "name": "Mausoleo di Gur-e-Amir", "description": "La tomba di Tamerlano.", "search": "Gur-e Amir" }
+    ],
+    "gettingAround": [
+      "Treni veloci Afrosiyob tra Tashkent, Samarcanda e Bukhara",
+      "Voli interni per Urgench (Khiva)",
+      "Auto con autista per i tratti nel deserto",
+      "Taxi e app nelle città"
+    ],
+    "food": [
+      "Plov, riso con carne e carote",
+      "Samsa e shashlik",
+      "Pane «non» cotto nel forno tandir",
+      "Tè verde servito ovunque"
+    ],
+    "tips": [
+      "Portare contanti in euro o dollari: cambio facile in banca",
+      "Abbigliamento coprente nei luoghi religiosi",
+      "Prenotare i treni veloci in anticipo",
+      "In estate le temperature superano i 40 gradi"
+    ]
+  }
+}

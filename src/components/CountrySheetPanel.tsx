@@ -116,7 +116,9 @@ export default function CountrySheetPanel({
                   title="Prepara di nuovo la scheda con Zefiro"
                 >
                   <RefreshCw size={14} className={busy ? "animate-spin" : ""} />{" "}
-                  <span className="hidden sm:inline">Rigenera</span>
+                  <span className="hidden sm:inline">
+                    {sheet.fromLibrary ? "Personalizza con Zefiro" : "Rigenera"}
+                  </span>
                 </button>
               </>
             )}
@@ -261,9 +263,12 @@ export default function CountrySheetPanel({
                   </p>
                 )}
                 <p className="text-xs text-slate-500">
-                  Testi preparati da Zefiro il{" "}
-                  {new Date(sheet.updatedAt).toLocaleDateString("it-IT")}:
-                  controlla sempre documenti e requisiti di ingresso prima della
+                  {sheet.fromLibrary
+                    ? "Scheda della libreria Grand Route"
+                    : "Testi preparati da Zefiro"}{" "}
+                  (aggiornata il{" "}
+                  {new Date(sheet.updatedAt).toLocaleDateString("it-IT")}).
+                  Controlla sempre documenti e requisiti di ingresso prima della
                   partenza.
                 </p>
               </section>
