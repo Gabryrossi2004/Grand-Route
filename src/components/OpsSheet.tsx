@@ -55,6 +55,7 @@ type Props = {
   importEnabled: boolean;
   suppliers: { name: string; phone: string; email: string }[];
   agencyName: string;
+  openRiconferme: boolean;
   clientNames: string[];
   suggestions: { client: string[]; agent: string[]; supplier: string[]; responsible: string[] };
 };
@@ -106,7 +107,7 @@ function sortRows(a: OpsRow, b: OpsRow, mode: "cliente" | "orario", fresh: Set<s
 const STICKY_TD: Record<number, string> = { 0: "sticky left-[30px] z-10", 1: "relative lg:sticky lg:left-[94px] lg:z-10", 2: "relative lg:sticky lg:left-[180px] lg:z-10" };
 const STICKY_TH: Record<number, string> = { 0: "left-[30px] z-30", 1: "z-20 lg:left-[94px] lg:z-30", 2: "z-20 lg:left-[180px] lg:z-30" };
 
-export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, suppliers, agencyName, clientNames, suggestions }: Props) {
+export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, openRiconferme, suppliers, agencyName, clientNames, suggestions }: Props) {
   const router = useRouter();
   const [rows, setRows] = useState<OpsRow[]>(initialRows);
   const [fresh, setFresh] = useState<Set<string>>(() => new Set());
@@ -123,7 +124,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const [importing, setImporting] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
-  const [riconfermeOpen, setRiconfermeOpen] = useState(false);
+  const [riconfermeOpen, setRiconfermeOpen] = useState(openRiconferme);
   const [changesFor, setChangesFor] = useState<{ id: string; x: number; y: number } | null>(null);
   const editToken = useRef(0);
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -905,6 +906,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
           suppliers={suppliers}
           onClose={() => setRiconfermeOpen(false)}
           onStatusChange={(ids, st) => setRows((prev) => prev.map((r) => (ids.includes(r.id) ? { ...r, status: st } : r)))}
+          onLocalPatch={(id, patch) => setRows((prev) => prev.map((r) => (r.id === id ? { ...r, ...patch } : r)))}
         />
       )}
 

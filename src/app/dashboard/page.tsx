@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ZefiroBriefing from "@/components/ZefiroBriefing";
 import { buildBriefing } from "@/lib/agencyBriefing";
+import { riconfermaDays } from "@/lib/opsSheet";
 import { romeToday } from "@/lib/destinationInfo";
 import { Plane } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
@@ -72,7 +73,30 @@ export default async function DashboardHomePage() {
       : Promise.resolve({ data: [] }),
   ]);
 
+  // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora)
+  const reconfirmDays = riconfermaDays(romeToday());
+  const { data: openReconfirm } = await supabase
+    .from("ops_rows")
+    .select("supplier, status")
+    .eq("owner_id", user?.id ?? "")
+    .in("service_date", reconfirmDays)
+    .neq("supplier", "")
+    .not("status", "in", "(riconfermato,cancellato)")
+    .limit(2000);
+  const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
+
   const briefing = buildBriefing({
+    reconfirm: {
+      services: reconfirmRows.length,
+      suppliers: new Set(reconfirmRows.map((r) => r.supplier.trim().toLowerCase())).size,
+      label:
+        reconfirmDays.length > 1
+          ? reconfirmDays
+              .map((d) => new Date(`${d}T12:00:00`).toLocaleDateString("it-IT", { weekday: "long" }))
+              .join(", ")
+              .replace(/, (?=[^,]*$)/, " e ")
+          : "domani",
+    },
     today: romeToday(),
     trips: allTrips,
     payments: (dueIncome as { trip_id: string; amount: number; due_date: string | null; paid_date: string | null }[] | null) ?? [],

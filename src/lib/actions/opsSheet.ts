@@ -213,3 +213,67 @@ export async function importOpsFromTrips(
   return { ok: true, rows, skipped: already.size };
 }
 
+
+// ── Zefiro controlla le risposte alle riconferme ────────────────────────────
+
+export type ReconfirmResult = { id: string; outcome: "riconfermato" | "problema" | "non_citato"; note: string };
+
+const replyImage = z.object({
+  mediaType: z.enum(["image/jpeg", "image/png", "image/webp"]),
+  base64: z.string().max(4_000_000),
+});
+
+/** Zefiro legge le risposte dei fornitori (testo o screenshot) e propone lo stato di ogni servizio. */
+export async function checkReconfirmReplies(
+  rowIds: string[],
+  text: string,
+  images: { mediaType: string; base64: string }[],
+): Promise<{ ok: true; results: ReconfirmResult[]; summary: string } | Fail> {
+  const c = await ctx();
+  const ids = z.array(z.string().uuid()).min(1).max(200).safeParse(rowIds);
+  const imgs = z.array(replyImage).max(6).safeParse(images);
+  if (!c || !ids.success || !imgs.success || typeof text !== "string") return { ok: false, error: "Dati non validi." };
+  if (!text.trim() && imgs.data.length === 0) return { ok: false, error: "Incolla le risposte dei fornitori o allega gli screenshot." };
+  if (text.length > 30_000) return { ok: false, error: "Il testo è troppo lungo: incolla solo le risposte di oggi." };
+
+  const { data, error } = await c.supabase
+    .from("ops_rows")
+    .select("id, service_date, trip_code, client, supplier, pax, service, meeting_time, meeting_point")
+    .eq("owner_id", c.user.id)
+    .in("id", ids.data);
+  if (error || !data?.length) return { ok: false, error: "Non trovo i servizi da controllare. Ricarica la pagina." };
+
+  const { reserveAiCall } = await import("@/lib/aiQuota");
+  const quota = await reserveAiCall("reconfirm");
+  if (!quota.ok) return { ok: false, error: quota.error };
+
+  const refs = new Map<string, string>();
+  const services = data.map((r, i) => {
+    const ref = `S${i + 1}`;
+    refs.set(ref, r.id as string);
+    return {
+      ref,
+      supplier: r.supplier as string,
+      date: new Date(`${r.service_date}T12:00:00`).toLocaleDateString("it-IT", { weekday: "long", day: "numeric", month: "long" }),
+      time: r.meeting_time as string,
+      client: r.client as string,
+      pax: r.pax as string,
+      service: r.service as string,
+      meetingPoint: r.meeting_point as string,
+      code: r.trip_code as string,
+    };
+  });
+
+  try {
+    const { checkReconfirmReplies: runCheck } = await import("@/lib/reconfirmAi");
+    const out = await runCheck({ services, text, images: imgs.data });
+    if (!out) return { ok: false, error: "Zefiro non è riuscito a leggere le risposte. Riprova." };
+    const results: ReconfirmResult[] = out.results
+      .filter((r) => refs.has(r.ref))
+      .map((r) => ({ id: refs.get(r.ref)!, outcome: r.outcome, note: r.note.slice(0, 300) }));
+    return { ok: true, results, summary: out.summary };
+  } catch (e) {
+    console.error("[operativo] zefiro riconferme", e);
+    return { ok: false, error: "Zefiro non è disponibile in questo momento. Riprova tra poco." };
+  }
+}

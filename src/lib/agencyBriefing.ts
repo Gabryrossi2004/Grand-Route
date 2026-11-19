@@ -35,6 +35,8 @@ export function buildBriefing(input: {
   trips: BriefingTrip[];
   payments: BriefingPayment[];
   clients: BriefingClient[];
+  // riconferme ai fornitori ancora aperte per i prossimi giorni (scheda operativa)
+  reconfirm?: { services: number; suppliers: number; label: string } | null;
 }): BriefingItem[] {
   const { today, trips, payments, clients } = input;
   const t0 = dayNumber(today);
@@ -122,6 +124,17 @@ export function buildBriefing(input: {
         score: 60 - delta,
       });
     }
+  }
+
+  if (input.reconfirm && input.reconfirm.services > 0) {
+    const r = input.reconfirm;
+    items.push({
+      id: "riconferme",
+      tone: "warn",
+      text: `Riconferme di ${r.label}: ${r.services} ${r.services === 1 ? "servizio" : "servizi"} di ${r.suppliers} ${r.suppliers === 1 ? "fornitore" : "fornitori"} ancora da riconfermare.`,
+      href: "/dashboard/operativo?riconferme=1",
+      score: 95,
+    });
   }
 
   return items.sort((a, b) => b.score - a.score).slice(0, 8);

@@ -15,7 +15,7 @@ const ROW_FIELDS =
 
 type TripRow = { id: string; code: string | null; title: string; start_date: string | null; end_date: string | null; clients: { full_name: string | null } | null };
 
-export default async function OperativoPage({ searchParams }: { searchParams: Promise<{ v?: string; d?: string; codice?: string }> }) {
+export default async function OperativoPage({ searchParams }: { searchParams: Promise<{ v?: string; d?: string; codice?: string; riconferme?: string }> }) {
   const user = await getCachedUser();
   if (!user) redirect("/login");
   const sp = await searchParams;
@@ -87,6 +87,7 @@ export default async function OperativoPage({ searchParams }: { searchParams: Pr
     <OpsSheet
       key={`${view}-${from}-${trip?.id ?? ""}`}
       initialRows={rows}
+      openRiconferme={sp.riconferme === "1"}
       agencyName={(profile?.agency_name as string | null) ?? ""}
       view={view}
       anchor={anchor}

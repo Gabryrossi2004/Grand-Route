@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Check, Copy, Mail, MessageCircle, Send, X } from "lucide-react";
-import { getRiconferme, setOpsStatus } from "@/lib/actions/opsSheet";
+import { Check, Copy, ImagePlus, Mail, MessageCircle, Send, Sparkles, X } from "lucide-react";
+import { checkReconfirmReplies, getRiconferme, setOpsStatus, updateOpsRow, type ReconfirmResult } from "@/lib/actions/opsSheet";
+import { shrinkImage } from "@/lib/shrinkImage";
 import { opsStatusInfo, opsTimeMinutes, parseIsoDate, riconfermaDays, whatsappNumber, type OpsRow, type OpsStatus } from "@/lib/opsSheet";
 
 type Supplier = { name: string; phone: string; email: string };
@@ -34,12 +35,14 @@ export default function OpsRiconferme({
   suppliers,
   onClose,
   onStatusChange,
+  onLocalPatch,
 }: {
   today: string;
   agencyName: string;
   suppliers: Supplier[];
   onClose: () => void;
   onStatusChange: (ids: string[], status: OpsStatus) => void;
+  onLocalPatch: (id: string, patch: Partial<OpsRow>) => void;
 }) {
   const defaultDays = useMemo(() => riconfermaDays(today), [today]);
   const [days, setDays] = useState<string[]>(defaultDays);
@@ -119,6 +122,10 @@ export default function OpsRiconferme({
           {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
           {rows === null && !error && <p className="text-sm text-slate-500">Cerco i servizi…</p>}
           {rows !== null && groups.length === 0 && <p className="text-sm text-slate-500">Nessun servizio da riconfermare in questi giorni.</p>}
+          {rows !== null && rows.length > 0 && <ZefiroCheck rows={rows} onApplied={(patches) => {
+            setRows((prev) => prev?.map((r) => (patches[r.id] ? { ...r, ...patches[r.id] } : r)) ?? prev);
+            for (const [id, patch] of Object.entries(patches)) onLocalPatch(id, patch);
+          }} />}
           {toDo > 0 && (
             <p className="text-sm text-[#233c5e]">
               Fornitori riconfermati: <strong>{done}</strong> su {toDo}
@@ -256,6 +263,179 @@ function SupplierCard({
           <Check className="h-4 w-4" /> {allDone ? "Riconfermato" : "Ha riconfermato"}
         </button>
       </div>
+    </section>
+  );
+}
+
+type Img = { mediaType: "image/jpeg" | "image/png" | "image/webp"; base64: string; url: string };
+
+// Zefiro legge le risposte dei fornitori (incollate o in screenshot) e propone gli stati da aggiornare
+function ZefiroCheck({ rows, onApplied }: { rows: OpsRow[]; onApplied: (patches: Record<string, Partial<OpsRow>>) => void }) {
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
+  const [images, setImages] = useState<Img[]>([]);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<{ results: ReconfirmResult[]; summary: string } | null>(null);
+  const [applied, setApplied] = useState(false);
+  const byId = new Map(rows.map((r) => [r.id, r]));
+
+  async function addImages(files: FileList | null) {
+    if (!files) return;
+    const next: Img[] = [];
+    for (const f of Array.from(files).slice(0, 6 - images.length)) {
+      try {
+        const blob = await shrinkImage(f, 1600);
+        const base64 = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result).split(",")[1] ?? "");
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        });
+        next.push({ mediaType: "image/jpeg", base64, url: URL.createObjectURL(blob) });
+      } catch {
+        setError("Non riesco a leggere una delle immagini.");
+      }
+    }
+    setImages((prev) => [...prev, ...next]);
+  }
+
+  async function run() {
+    setBusy(true);
+    setError(null);
+    setResult(null);
+    setApplied(false);
+    const res = await checkReconfirmReplies(
+      rows.map((r) => r.id),
+      text,
+      images.map(({ mediaType, base64 }) => ({ mediaType, base64 })),
+    );
+    setBusy(false);
+    if (!res.ok) setError(res.error);
+    else setResult({ results: res.results, summary: res.summary });
+  }
+
+  async function apply() {
+    if (!result) return;
+    const patches: Record<string, Partial<OpsRow>> = {};
+    const ok = result.results.filter((r) => r.outcome === "riconfermato").map((r) => r.id);
+    if (ok.length) {
+      const res = await setOpsStatus(ok, "riconfermato");
+      if (!res.ok) return setError(res.error);
+      for (const id of ok) patches[id] = { status: "riconfermato" };
+    }
+    for (const r of result.results.filter((x) => x.outcome === "problema")) {
+      const row = byId.get(r.id);
+      if (!row) continue;
+      const patch: Partial<OpsRow> = { status: "da_confermare", notes: `⚠ Riconferma: ${r.note}${row.notes ? `\n${row.notes}` : ""}`.slice(0, 4000) };
+      const res = await updateOpsRow(r.id, patch);
+      if (!res.ok) return setError(res.error);
+      patches[r.id] = patch;
+    }
+    onApplied(patches);
+    setApplied(true);
+  }
+
+  const counts = result
+    ? {
+        ok: result.results.filter((r) => r.outcome === "riconfermato").length,
+        ko: result.results.filter((r) => r.outcome === "problema").length,
+      }
+    : null;
+
+  if (!open)
+    return (
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="flex items-center gap-2 rounded-xl border border-dashed border-[#cda876] bg-white px-4 py-3 text-left text-sm text-[#233c5e] hover:bg-[#faf3e6]"
+      >
+        <Sparkles className="h-4 w-4 shrink-0 text-[#cda876]" />
+        <span>
+          <strong>Controlla le risposte con Zefiro</strong>: incolla i messaggi dei fornitori o carica gli screenshot di WhatsApp, e Zefiro segna da solo
+          i servizi riconfermati.
+        </span>
+      </button>
+    );
+
+  return (
+    <section className="rounded-xl border border-[#cda876] bg-white p-4">
+      <h3 className="flex items-center gap-2 font-medium text-[#233c5e]">
+        <Sparkles className="h-4 w-4 text-[#cda876]" /> Controlla le risposte con Zefiro
+      </h3>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        rows={5}
+        placeholder={"Incolla qui le risposte dei fornitori, anche più di una insieme.\nEs. «DRIVER4U: ok confermiamo tutto» · «Vale Ianni: per domenica la guida arriva alle 9:30»"}
+        className="mt-2 w-full rounded-lg border border-[#e6d7bb] p-2.5 text-sm"
+      />
+      <div className="mt-2 flex flex-wrap items-center gap-2">
+        {images.map((img, i) => (
+          <span key={img.url} className="relative">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={img.url} alt={`Screenshot ${i + 1}`} className="h-14 w-14 rounded-lg border border-[#e6d7bb] object-cover" />
+            <button
+              type="button"
+              aria-label="Togli l'immagine"
+              onClick={() => setImages((prev) => prev.filter((x) => x.url !== img.url))}
+              className="absolute -right-1.5 -top-1.5 rounded-full bg-white p-0.5 text-slate-500 shadow"
+            >
+              <X className="h-3 w-3" />
+            </button>
+          </span>
+        ))}
+        {images.length < 6 && (
+          <label className="inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-lg border border-[#e6d7bb] px-3 text-sm text-[#233c5e] hover:bg-[#faf3e6]">
+            <ImagePlus className="h-4 w-4" /> Screenshot
+            <input type="file" accept="image/*" multiple className="hidden" onChange={(e) => void addImages(e.target.files)} />
+          </label>
+        )}
+        <button
+          type="button"
+          onClick={run}
+          disabled={busy || (!text.trim() && images.length === 0)}
+          className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-[#233c5e] px-4 text-sm font-medium text-white hover:bg-[#1b3050] disabled:opacity-50"
+        >
+          {busy ? "Zefiro sta leggendo…" : "Controlla"}
+        </button>
+      </div>
+      {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
+      {result && counts && (
+        <div className="mt-3 rounded-lg bg-[#faf6ec] p-3 text-sm">
+          <p className="text-[#233c5e]">{result.summary}</p>
+          <ul className="mt-2 flex flex-col gap-1">
+            {result.results
+              .filter((r) => r.outcome !== "non_citato")
+              .map((r) => {
+                const row = byId.get(r.id);
+                return (
+                  <li key={r.id} className="flex gap-2">
+                    <span className={r.outcome === "riconfermato" ? "text-green-700" : "text-amber-700"}>{r.outcome === "riconfermato" ? "✓" : "⚠"}</span>
+                    <span>
+                      <strong>{row?.supplier}</strong> · {row ? cap(dayShort(row.service_date)) : ""} {row?.meeting_time} · {row?.client}
+                      {r.note && <span className="text-slate-500"> — {r.note}</span>}
+                    </span>
+                  </li>
+                );
+              })}
+          </ul>
+          {result.results.filter((r) => r.outcome === "non_citato").length > 0 && (
+            <p className="mt-2 text-xs text-slate-500">
+              {result.results.filter((r) => r.outcome === "non_citato").length} servizi non compaiono nelle risposte: restano come sono.
+            </p>
+          )}
+          {applied ? (
+            <p className="mt-3 font-medium text-green-700">Fatto: stati aggiornati.</p>
+          ) : (
+            (counts.ok > 0 || counts.ko > 0) && (
+              <button type="button" onClick={apply} className="mt-3 rounded-lg bg-[#1f9d55] px-4 py-1.5 font-medium text-white hover:bg-[#178246]">
+                Applica: {counts.ok} riconfermati{counts.ko ? `, ${counts.ko} da ricontrollare` : ""}
+              </button>
+            )
+          )}
+        </div>
+      )}
     </section>
   );
 }
