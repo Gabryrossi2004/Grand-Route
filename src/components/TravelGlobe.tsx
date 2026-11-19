@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Camera, Crosshair, Loader2 } from "lucide-react";
 import CountryBoard from "@/components/CountryBoard";
+import GlobeSearch, { type GlobeSearchItem } from "@/components/GlobeSearch";
+import { namesOf } from "@/lib/geo/countryCodes";
 import { countryNameIt } from "@/lib/geo/countryNames";
 import { buildOceanLabels } from "@/lib/geo/oceanLabels";
 import { Q, areaAt, countryAt, decode, inRing, type Country, type Rings } from "@/lib/geo/countryData";
@@ -253,6 +255,7 @@ export default function TravelGlobe({
     setZones: (list: { id: string; name: string; lat: number; lon: number }[]) => void;
   } | null>(null);
   const [regionInfo, setRegionInfo] = useState<{ code: string; name: string } | null>(null);
+  const [regionNames, setRegionNames] = useState<{ code: string; name: string }[]>([]);
   const onZoneRef = useRef(onZone);
   const onRegionRef = useRef(onRegionChange);
   useEffect(() => {
@@ -319,6 +322,7 @@ export default function TravelGlobe({
         type RegionGeo = { c: string; n: string; q: number; center: [number, number]; p: number[][][] };
         const regionList = (italyMod ? ((italyMod as { default?: unknown }).default ?? italyMod) : []) as RegionGeo[];
         const regionRings = regionList.length ? decode(regionList.map((r) => ({ n: r.c, p: r.p })), regionList[0].q).rings : [];
+        setRegionNames(regionList.map((r) => ({ code: r.c, name: r.n })));
 
         // Paesi per stato
         const gold = new Set<string>();
@@ -978,10 +982,18 @@ export default function TravelGlobe({
             st.distT = regionDist(info.c); // l'inquadratura si adatta alla regione, anche allontanandosi
           } else api.current?.focus(42.5, 12.5, 2.1);
         };
+        // un paese cercato o scelto dalla classifica: inquadratura adatta alla sua grandezza
         const selectCountry = (name: string) => {
           const c = centroidOf(name);
           choose(name, null, false);
-          if (c) api.current?.focus(c.lat, c.lon, 3);
+          const ring = rings.find((r) => r.name === name);
+          const big = ring ? [...ring.polys].sort((a, b) => (b.box[2] - b.box[0]) * (b.box[3] - b.box[1]) - (a.box[2] - a.box[0]) * (a.box[3] - a.box[1]))[0] : null;
+          const extent = big ? Math.max((big.box[2] - big.box[0]) * Math.cos((((big.box[1] + big.box[3]) / 2) * Math.PI) / 180), big.box[3] - big.box[1]) * D2R : 0.5;
+          const dist = 1 + Math.max(minAltFor(styleRef.current), Math.min(2.2, extent * 2.7));
+          if (c) {
+            api.current?.focus(c.lat, c.lon, dist);
+            st.distT = dist;
+          }
         };
 
         api.current = {
@@ -1027,7 +1039,6 @@ export default function TravelGlobe({
           last = performance.now();
         };
         document.addEventListener("visibilitychange", onVis);
-        const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
         const v = new T.Vector3();
         const toCam = new T.Vector3();
         let lastTiles = 0;
@@ -1048,7 +1059,6 @@ export default function TravelGlobe({
             st.yawV *= Math.pow(0.9, dt * 60);
             st.pitchV *= Math.pow(0.85, dt * 60);
             st.idle += dt;
-            if (!reduce && !selectedRef.current && !countryRef.current && st.idle > 3) st.yaw += dt * 0.08;
           }
           st.dist += (st.distT - st.dist) * (1 - Math.exp(-dt * 8));
           camera.position.set(0, 0, st.dist);
@@ -1352,6 +1362,20 @@ export default function TravelGlobe({
             <button type="button" aria-label="Riduci" onClick={() => api.current?.zoom(1.6)} className="h-9 w-9 border-t border-white/20 text-lg font-medium leading-none text-white hover:bg-black/60">
               −
             </button>
+          </div>
+        )}
+        {ready && (
+          <div className="absolute right-3 top-[88px] z-20 flex justify-end">
+            <GlobeSearch
+              regions={regionNames}
+              onPick={(item: GlobeSearchItem) => {
+                if (item.kind === "region") api.current?.selectRegion(item.code);
+                else {
+                  const name = namesOf(item.code)[0];
+                  if (name) api.current?.selectCountry(name);
+                }
+              }}
+            />
           </div>
         )}
         {country && mode === "agency" && (
