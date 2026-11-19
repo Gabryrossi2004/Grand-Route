@@ -1,0 +1,886 @@
+{
+  "EC": {
+    "tagline": "Le Galápagos, le Ande dei vulcani e l'Amazzonia in un solo paese.",
+    "description": [
+      "L'Ecuador concentra in un territorio compatto quattro mondi diversi: le isole Galápagos, le Ande, l'Amazzonia e la costa del Pacifico.",
+      "Le Galápagos, patrimonio dell'umanità, sono il laboratorio naturale di Darwin: tartarughe giganti, iguane marine, leoni marini e uccelli che non temono l'uomo, da scoprire in crociera o da isola a isola.",
+      "Sulle Ande, Quito ha uno dei centri coloniali meglio conservati delle Americhe; il Viale dei Vulcani con il Cotopaxi, i mercati indigeni di Otavalo e Cuenca completano il viaggio, mentre l'Amazzonia si esplora da lodge nella foresta.",
+      "Ideale per 10–14 giorni tra natura e cultura, per famiglie, coppie e appassionati di fauna."
+    ],
+    "facts": {
+      "capital": "Quito",
+      "languages": "Spagnolo; quechua diffuso",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "6 ore in meno rispetto all'Italia (7 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 13–15 ore con uno scalo per Quito o Guayaquil",
+      "bestPeriod": "Giugno–settembre sulle Ande; Galápagos tutto l'anno",
+      "climate": "Primaverile sulle Ande, tropicale in Amazzonia e sulla costa",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Per le Galápagos si pagano tassa d'ingresso e carta di transito. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Isole Galápagos",
+        "description": "Tartarughe giganti e fauna unica.",
+        "search": "Isole Galápagos"
+      },
+      {
+        "name": "Centro storico di Quito",
+        "description": "Chiese barocche e piazze coloniali.",
+        "search": "Centro storico di Quito"
+      },
+      {
+        "name": "Cotopaxi",
+        "description": "Uno dei vulcani attivi più alti del mondo.",
+        "search": "Cotopaxi"
+      },
+      {
+        "name": "Otavalo",
+        "description": "Il grande mercato indigeno.",
+        "search": "Otavalo"
+      },
+      {
+        "name": "Cuenca",
+        "description": "La città coloniale del sud.",
+        "search": "Cuenca (Ecuador)"
+      },
+      {
+        "name": "Laguna Quilotoa",
+        "description": "Il lago in un cratere.",
+        "search": "Quilotoa"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per le Galápagos e l'Amazzonia",
+      "Auto con autista sulle Ande",
+      "Crociere o barche tra le isole"
+    ],
+    "food": [
+      "Ceviche ecuadoriano",
+      "Locro de papa",
+      "Cioccolato e banane"
+    ],
+    "tips": [
+      "Quito è a 2.800 metri",
+      "Regole severe nelle Galápagos per proteggere la fauna",
+      "Prenotare le crociere con anticipo"
+    ]
+  },
+  "BO": {
+    "tagline": "Il Salar de Uyuni, il lago Titicaca e le città coloniali delle Ande.",
+    "description": [
+      "La Bolivia è uno dei paesi più autentici del Sud America, con paesaggi d'alta quota senza paragoni.",
+      "Il Salar de Uyuni, il più grande deserto di sale del mondo, diventa uno specchio infinito nella stagione delle piogge; le lagune colorate e i geyser del sud-ovest sembrano un altro pianeta.",
+      "La Paz è la capitale più alta del mondo, con funivie urbane e mercati; il lago Titicaca con l'Isla del Sol, e le città coloniali di Sucre e Potosí completano il viaggio.",
+      "Ideale per viaggiatori avventurosi, 10–14 giorni, spesso abbinata al Perù o al Cile."
+    ],
+    "facts": {
+      "capital": "Sucre (sede del governo: La Paz)",
+      "languages": "Spagnolo; quechua e aymara",
+      "currency": "Boliviano (BOB)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 15–17 ore con uno o due scali",
+      "bestPeriod": "Maggio–ottobre; gennaio–marzo per l'effetto specchio del Salar",
+      "climate": "Freddo e secco sugli altipiani, tropicale nelle pianure",
+      "plugs": "Tipo A e C, 230 V: utile un adattatore",
+      "driving": "Si guida a destra; solo con autista in altitudine",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Salar de Uyuni",
+        "description": "Il deserto di sale più grande del mondo.",
+        "search": "Salar de Uyuni"
+      },
+      {
+        "name": "Laguna Colorada",
+        "description": "La laguna rossa dei fenicotteri.",
+        "search": "Laguna Colorada"
+      },
+      {
+        "name": "Isla del Sol",
+        "description": "L'isola sacra del Titicaca.",
+        "search": "Isla del Sol"
+      },
+      {
+        "name": "La Paz",
+        "description": "Funivie e mercati della capitale più alta.",
+        "search": "La Paz"
+      },
+      {
+        "name": "Sucre",
+        "description": "La città bianca coloniale.",
+        "search": "Sucre"
+      },
+      {
+        "name": "Potosí",
+        "description": "Il Cerro Rico delle miniere d'argento.",
+        "search": "Potosí"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista per il Salar",
+      "Voli interni",
+      "Pullman tra le città"
+    ],
+    "food": [
+      "Salteñas",
+      "Sopa de maní",
+      "Quinoa e mate di coca"
+    ],
+    "tips": [
+      "Acclimatarsi all'altitudine",
+      "Abbigliamento caldo per le notti nel Salar",
+      "Contanti necessari nelle zone remote"
+    ]
+  },
+  "PA": {
+    "tagline": "Il Canale, isole caraibiche e foreste tropicali tra due oceani.",
+    "description": [
+      "Panama collega due oceani e due continenti. Il Canale di Panama, una delle grandi opere dell'ingegneria, si osserva dalle chiuse di Miraflores o navigandolo.",
+      "Panama City unisce lo skyline moderno al Casco Viejo coloniale, patrimonio UNESCO, con piazze, chiese e locali.",
+      "L'arcipelago di San Blas, gestito dal popolo guna, offre isolette di sabbia bianca; Bocas del Toro e le montagne di Boquete con il caffè geisha completano il viaggio.",
+      "Ideale per 8–10 giorni o in abbinamento al Costa Rica."
+    ],
+    "facts": {
+      "capital": "Panama",
+      "languages": "Spagnolo; inglese diffuso",
+      "currency": "Balboa (PAB), alla pari con il dollaro USA che circola liberamente",
+      "timezone": "6 ore in meno rispetto all'Italia (7 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 12–13 ore, diretto o con uno scalo",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale: stagione delle piogge da maggio a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 3 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Canale di Panama",
+        "description": "Le chiuse di Miraflores.",
+        "search": "Canale di Panama"
+      },
+      {
+        "name": "Casco Viejo",
+        "description": "Il centro storico coloniale.",
+        "search": "Casco Viejo"
+      },
+      {
+        "name": "San Blas",
+        "description": "Isole caraibiche del popolo guna.",
+        "search": "Arcipelago di San Blas"
+      },
+      {
+        "name": "Bocas del Toro",
+        "description": "Isole, mare e foresta.",
+        "search": "Bocas del Toro"
+      },
+      {
+        "name": "Boquete",
+        "description": "Montagne e caffè.",
+        "search": "Boquete"
+      },
+      {
+        "name": "Portobelo",
+        "description": "Forti spagnoli sui Caraibi.",
+        "search": "Portobelo"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per Bocas e il Pacifico",
+      "Auto o transfer",
+      "Barche per San Blas"
+    ],
+    "food": [
+      "Sancocho, zuppa di pollo",
+      "Ceviche",
+      "Caffè geisha"
+    ],
+    "tips": [
+      "Uso del dollaro USA",
+      "San Blas con servizi semplici",
+      "Repellente per zanzare"
+    ]
+  },
+  "GT": {
+    "tagline": "Templi maya nella giungla, vulcani e mercati indigeni coloratissimi.",
+    "description": [
+      "Il Guatemala è il cuore del mondo maya. Tikal, con le sue piramidi che emergono dalla foresta del Petén, è uno dei siti archeologici più spettacolari delle Americhe.",
+      "Antigua, città coloniale patrimonio UNESCO circondata da vulcani, incanta con chiese, case colorate e strade acciottolate.",
+      "Il lago Atitlán, tra i più belli del mondo, e i mercati di Chichicastenango con le popolazioni maya nei loro abiti tradizionali sono esperienze indimenticabili.",
+      "Ideale per 8–12 giorni, spesso abbinato al Messico, al Belize o all'Honduras con Copán."
+    ],
+    "facts": {
+      "capital": "Città del Guatemala",
+      "languages": "Spagnolo; molte lingue maya",
+      "currency": "Quetzal (GTQ)",
+      "timezone": "7 ore in meno rispetto all'Italia (8 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 13–15 ore con uno scalo",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Temperato sugli altipiani, tropicale nel Petén e sulla costa",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto con validità di almeno 6 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tikal",
+        "description": "Le piramidi maya nella giungla.",
+        "search": "Tikal"
+      },
+      {
+        "name": "Antigua Guatemala",
+        "description": "La città coloniale tra i vulcani.",
+        "search": "Antigua Guatemala"
+      },
+      {
+        "name": "Lago Atitlán",
+        "description": "Il lago tra tre vulcani.",
+        "search": "Lago Atitlán"
+      },
+      {
+        "name": "Chichicastenango",
+        "description": "Il grande mercato indigeno.",
+        "search": "Chichicastenango"
+      },
+      {
+        "name": "Semuc Champey",
+        "description": "Piscine naturali turchesi.",
+        "search": "Semuc Champey"
+      },
+      {
+        "name": "Vulcano Pacaya",
+        "description": "Escursione su un vulcano attivo.",
+        "search": "Pacaya"
+      }
+    ],
+    "gettingAround": [
+      "Shuttle turistici e auto con autista",
+      "Voli interni per Flores (Tikal)",
+      "Barche sul lago Atitlán"
+    ],
+    "food": [
+      "Pepián, stufato speziato",
+      "Tortillas e frijoles",
+      "Caffè di Antigua"
+    ],
+    "tips": [
+      "Evitare spostamenti notturni",
+      "Muoversi con trasporti turistici",
+      "Antigua è a 1.500 metri: serate fresche"
+    ]
+  },
+  "BZ": {
+    "tagline": "Barriera corallina, il Great Blue Hole e templi maya nella foresta.",
+    "description": [
+      "Il Belize è un piccolo paese caraibico anglofono con la seconda barriera corallina più grande del mondo, paradiso per snorkeling e immersioni.",
+      "Il Great Blue Hole, una dolina marina perfettamente circolare, è una delle immersioni più celebri; Caye Caulker e Ambergris Caye offrono isole rilassate.",
+      "All'interno le rovine maya di Caracol, Xunantunich e Lamanai e le grotte di Actun Tunichil Muknal uniscono archeologia e avventura nella giungla.",
+      "Ideale per 7–10 giorni tra mare e foresta, spesso abbinato a Guatemala e Messico."
+    ],
+    "facts": {
+      "capital": "Belmopan",
+      "languages": "Inglese; spagnolo e creolo diffusi",
+      "currency": "Dollaro del Belize (BZD); dollari USA accettati",
+      "timezone": "7 ore in meno rispetto all'Italia (8 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno o due scali via Stati Uniti o Messico",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale con stagione delle piogge e degli uragani da giugno a novembre",
+      "plugs": "Tipi A, B e G, 110/220 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Great Blue Hole",
+        "description": "La dolina marina circolare.",
+        "search": "Great Blue Hole"
+      },
+      {
+        "name": "Caye Caulker",
+        "description": "L'isola del «go slow».",
+        "search": "Caye Caulker"
+      },
+      {
+        "name": "Barriera corallina del Belize",
+        "description": "Snorkeling a Hol Chan.",
+        "search": "Barriera corallina del Belize"
+      },
+      {
+        "name": "Xunantunich",
+        "description": "Templi maya sul fiume.",
+        "search": "Xunantunich"
+      },
+      {
+        "name": "Caracol",
+        "description": "La grande città maya nella foresta.",
+        "search": "Caracol (Belize)"
+      },
+      {
+        "name": "Actun Tunichil Muknal",
+        "description": "La grotta degli scheletri maya.",
+        "search": "Actun Tunichil Muknal"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni su piccoli aerei",
+      "Traghetti veloci per le isole",
+      "Auto a noleggio"
+    ],
+    "food": [
+      "Rice and beans con pollo",
+      "Aragosta in stagione",
+      "Fry jacks"
+    ],
+    "tips": [
+      "Stagione degli uragani da considerare",
+      "Prezzi più alti dei vicini",
+      "Repellente per zanzare"
+    ]
+  },
+  "HN": {
+    "tagline": "Copán maya e le isole della Bahía sulla barriera corallina.",
+    "description": [
+      "L'Honduras custodisce Copán, una delle città maya più raffinate, celebre per le sue stele scolpite e la scalinata dei geroglifici.",
+      "Le isole della Bahía, Roatán, Utila e Guanaja, si trovano sulla barriera corallina mesoamericana e sono tra i luoghi più economici al mondo per imparare a fare immersioni; a Utila si incontrano gli squali balena.",
+      "La foresta della Mosquitia e il parco di Pico Bonito offrono natura selvaggia per i più avventurosi.",
+      "Ideale per estensioni mare o archeologiche di 4–7 giorni, spesso con il Guatemala; la sicurezza nelle città va verificata."
+    ],
+    "facts": {
+      "capital": "Tegucigalpa",
+      "languages": "Spagnolo; inglese nelle isole della Bahía",
+      "currency": "Lempira (HNL)",
+      "timezone": "7 ore in meno rispetto all'Italia (8 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno o due scali; voli per Roatán via Stati Uniti",
+      "bestPeriod": "Febbraio–agosto",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Copán",
+        "description": "La città maya delle stele.",
+        "search": "Copán"
+      },
+      {
+        "name": "Roatán",
+        "description": "Spiagge e barriera corallina.",
+        "search": "Roatán"
+      },
+      {
+        "name": "Utila",
+        "description": "Immersioni e squali balena.",
+        "search": "Utila"
+      },
+      {
+        "name": "Pico Bonito",
+        "description": "Foresta pluviale e cascate.",
+        "search": "Parco nazionale Pico Bonito"
+      },
+      {
+        "name": "Lago de Yojoa",
+        "description": "Lago e birdwatching.",
+        "search": "Lago de Yojoa"
+      },
+      {
+        "name": "Gracias",
+        "description": "Cittadina coloniale.",
+        "search": "Gracias (Honduras)"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni e traghetti per le isole",
+      "Shuttle turistici",
+      "Evitare spostamenti notturni"
+    ],
+    "food": [
+      "Baleada",
+      "Pesce fritto con platano",
+      "Sopa de caracol"
+    ],
+    "tips": [
+      "Verificare le zone sconsigliate nelle città",
+      "Le isole sono le zone più tranquille",
+      "Repellente per zanzare"
+    ]
+  },
+  "SV": {
+    "tagline": "Vulcani, surf sul Pacifico e la Ruta de las Flores.",
+    "description": [
+      "El Salvador è il paese più piccolo dell'America centrale, con decine di vulcani, laghi craterici e una costa pacifica famosa per il surf a El Tunco ed El Zonte.",
+      "La Ruta de las Flores attraversa villaggi coloniali, piantagioni di caffè e mercati gastronomici; Suchitoto è una cittadina coloniale affacciata sul lago.",
+      "Joya de Cerén, la «Pompei delle Americhe», conserva un villaggio maya sepolto dalla cenere vulcanica.",
+      "Ideale per surfisti e viaggiatori curiosi, 5–7 giorni, in abbinamento a Guatemala e Honduras."
+    ],
+    "facts": {
+      "capital": "San Salvador",
+      "languages": "Spagnolo",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "7 ore in meno rispetto all'Italia (8 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per San Salvador",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale con stagione delle piogge da maggio a ottobre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto, con tassa turistica all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Ruta de las Flores",
+        "description": "Villaggi e piantagioni di caffè.",
+        "search": "Ruta de las Flores"
+      },
+      {
+        "name": "El Tunco",
+        "description": "Surf sul Pacifico.",
+        "search": "El Tunco"
+      },
+      {
+        "name": "Joya de Cerén",
+        "description": "Il villaggio maya sotto la cenere.",
+        "search": "Joya de Cerén"
+      },
+      {
+        "name": "Suchitoto",
+        "description": "Città coloniale sul lago.",
+        "search": "Suchitoto"
+      },
+      {
+        "name": "Vulcano Santa Ana",
+        "description": "Il cratere con la laguna verde.",
+        "search": "Vulcano di Santa Ana"
+      },
+      {
+        "name": "Lago de Coatepeque",
+        "description": "Il lago in una caldera.",
+        "search": "Lago de Coatepeque"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Shuttle turistici",
+      "Distanze brevi"
+    ],
+    "food": [
+      "Pupusas",
+      "Yuca frita",
+      "Caffè salvadoregno"
+    ],
+    "tips": [
+      "Verificare la situazione aggiornata",
+      "Ottime onde da marzo a ottobre",
+      "Dollaro come valuta"
+    ]
+  },
+  "NI": {
+    "tagline": "Laghi, vulcani e città coloniali nel paese dei laghi e dei vulcani.",
+    "description": [
+      "Il Nicaragua offre vulcani attivi, grandi laghi e città coloniali come Granada e León, con chiese e piazze colorate.",
+      "L'isola di Ometepe, formata da due vulcani nel lago Nicaragua, è uno dei luoghi più suggestivi dell'America centrale.",
+      "Sulla costa pacifica San Juan del Sur è meta di surf, mentre le Corn Islands nei Caraibi offrono mare cristallino.",
+      "La situazione politica va verificata con attenzione prima di proporre il viaggio."
+    ],
+    "facts": {
+      "capital": "Managua",
+      "languages": "Spagnolo",
+      "currency": "Córdoba (NIO); dollari accettati",
+      "timezone": "7 ore in meno rispetto all'Italia (8 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno o due scali per Managua",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale con stagione delle piogge da maggio a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 6 mesi e registrazione anticipata; situazione da verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Granada",
+        "description": "La città coloniale sul lago.",
+        "search": "Granada (Nicaragua)"
+      },
+      {
+        "name": "Isola di Ometepe",
+        "description": "Due vulcani nel lago.",
+        "search": "Ometepe"
+      },
+      {
+        "name": "León",
+        "description": "La cattedrale e i murales.",
+        "search": "León (Nicaragua)"
+      },
+      {
+        "name": "Vulcano Masaya",
+        "description": "Il cratere con la lava visibile.",
+        "search": "Vulcano Masaya"
+      },
+      {
+        "name": "Corn Islands",
+        "description": "Isole caraibiche.",
+        "search": "Corn Islands"
+      },
+      {
+        "name": "Laguna de Apoyo",
+        "description": "Il lago nel cratere.",
+        "search": "Laguna de Apoyo"
+      }
+    ],
+    "gettingAround": [
+      "Shuttle e auto con autista",
+      "Traghetti per Ometepe",
+      "Voli interni per le Corn Islands"
+    ],
+    "food": [
+      "Gallo pinto",
+      "Vigorón",
+      "Rum Flor de Caña"
+    ],
+    "tips": [
+      "Verificare la situazione politica",
+      "Registrazione prima dell'arrivo",
+      "Repellente per zanzare"
+    ]
+  },
+  "UY": {
+    "tagline": "Spiagge atlantiche, vigneti e la tranquillità del Río de la Plata.",
+    "description": [
+      "L'Uruguay è uno dei paesi più tranquilli e sicuri del Sud America. Montevideo ha un centro storico con edifici art déco e una lunga rambla sul Río de la Plata.",
+      "Colonia del Sacramento, città coloniale portoghese patrimonio UNESCO, si raggiunge in traghetto da Buenos Aires.",
+      "Punta del Este è la località balneare più glamour del continente, mentre José Ignacio e Cabo Polonio offrono spiagge più selvagge; le estancias e i vigneti di Tannat invitano a rallentare.",
+      "Ideale come estensione di un viaggio in Argentina, 4–7 giorni."
+    ],
+    "facts": {
+      "capital": "Montevideo",
+      "languages": "Spagnolo",
+      "currency": "Peso uruguaiano (UYU)",
+      "timezone": "4 ore in meno rispetto all'Italia (5 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 14–15 ore con uno scalo; traghetti da Buenos Aires",
+      "bestPeriod": "Dicembre–marzo per il mare; primavera e autunno per le città",
+      "climate": "Temperato con estate da dicembre a marzo",
+      "plugs": "Tipi C, F e I, 220 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Colonia del Sacramento",
+        "description": "La città coloniale portoghese.",
+        "search": "Colonia del Sacramento"
+      },
+      {
+        "name": "Montevideo",
+        "description": "La Ciudad Vieja e la rambla.",
+        "search": "Montevideo"
+      },
+      {
+        "name": "Punta del Este",
+        "description": "La mano nella sabbia.",
+        "search": "Punta del Este"
+      },
+      {
+        "name": "Cabo Polonio",
+        "description": "Villaggio senza strade e leoni marini.",
+        "search": "Cabo Polonio"
+      },
+      {
+        "name": "Casapueblo",
+        "description": "La casa-scultura sul mare.",
+        "search": "Casapueblo"
+      },
+      {
+        "name": "José Ignacio",
+        "description": "Il villaggio chic sull'oceano.",
+        "search": "José Ignacio"
+      }
+    ],
+    "gettingAround": [
+      "Pullman comodi tra le città",
+      "Auto a noleggio per la costa",
+      "Traghetti per Buenos Aires"
+    ],
+    "food": [
+      "Asado",
+      "Chivito, panino uruguaiano",
+      "Vino Tannat e mate"
+    ],
+    "tips": [
+      "Molto sicuro",
+      "Il mate si beve ovunque",
+      "Prezzi più alti dei paesi vicini"
+    ]
+  },
+  "PY": {
+    "tagline": "Missioni gesuitiche, il Chaco e la natura tranquilla del cuore del Sud America.",
+    "description": [
+      "Il Paraguay è uno dei paesi meno conosciuti del Sud America. Le missioni gesuitiche di Trinidad e Jesús de Tavarangüe, patrimonio UNESCO, raccontano l'incontro tra gesuiti e popolo guaraní.",
+      "Asunción, la capitale, ha un centro storico affacciato sul fiume Paraguay; il Chaco è una vasta regione selvaggia ricca di fauna.",
+      "Le cascate di Iguazú sono a breve distanza da Ciudad del Este, porta d'ingresso orientale del paese.",
+      "Ideale come estensione di un viaggio a Iguazú o in Argentina e Brasile."
+    ],
+    "facts": {
+      "capital": "Asunción",
+      "languages": "Spagnolo e guaraní",
+      "currency": "Guaraní (PYG)",
+      "timezone": "4 ore in meno rispetto all'Italia (5 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Asunción",
+      "bestPeriod": "Aprile–ottobre",
+      "climate": "Subtropicale: estati molto calde",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Missione di Trinidad",
+        "description": "Rovine gesuitiche UNESCO.",
+        "search": "Missione di Santísima Trinidad de Paraná"
+      },
+      {
+        "name": "Asunción",
+        "description": "Il Palacio de los López.",
+        "search": "Asunción"
+      },
+      {
+        "name": "Chaco",
+        "description": "Natura selvaggia.",
+        "search": "Gran Chaco"
+      },
+      {
+        "name": "Diga di Itaipú",
+        "description": "Una delle centrali idroelettriche più grandi.",
+        "search": "Diga di Itaipú"
+      },
+      {
+        "name": "Jesús de Tavarangüe",
+        "description": "La missione incompiuta.",
+        "search": "Jesús de Tavarangüe"
+      },
+      {
+        "name": "San Bernardino",
+        "description": "Il lago Ypacaraí.",
+        "search": "Lago Ypacaraí"
+      }
+    ],
+    "gettingAround": [
+      "Pullman tra le città",
+      "Auto con autista",
+      "Voli interni limitati"
+    ],
+    "food": [
+      "Chipá, pane al formaggio",
+      "Sopa paraguaya",
+      "Tereré, mate freddo"
+    ],
+    "tips": [
+      "Caldo intenso in estate",
+      "Contanti utili",
+      "Abbinare a Iguazú"
+    ]
+  },
+  "VE": {
+    "tagline": "Il Salto Angel, i tepui e i Caraibi di Los Roques, in un paese in crisi.",
+    "description": [
+      "Il Venezuela custodisce alcune meraviglie naturali uniche: il Salto Angel, la cascata più alta del mondo, nel parco di Canaima tra le montagne piatte dei tepui.",
+      "L'arcipelago di Los Roques è un paradiso caraibico di sabbia bianca e acque turchesi; Mérida sulle Ande e i Llanos offrono natura e fauna.",
+      "La grave crisi politica, economica e di sicurezza rende oggi il viaggio molto complesso e la Farnesina segnala rischi elevati.",
+      "Scheda utile come riferimento; verificare sempre le indicazioni ufficiali."
+    ],
+    "facts": {
+      "capital": "Caracas",
+      "languages": "Spagnolo",
+      "currency": "Bolívar (VES); dollari molto usati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti limitati: verificare",
+      "bestPeriod": "Dicembre–aprile; giugno–novembre per il Salto Angel in piena",
+      "climate": "Tropicale, fresco in montagna",
+      "plugs": "Tipo A e B, 120 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto; situazione da verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Salto Angel",
+        "description": "La cascata più alta del mondo.",
+        "search": "Salto Angel"
+      },
+      {
+        "name": "Los Roques",
+        "description": "Arcipelago caraibico.",
+        "search": "Los Roques"
+      },
+      {
+        "name": "Monte Roraima",
+        "description": "Il tepui leggendario.",
+        "search": "Monte Roraima"
+      },
+      {
+        "name": "Parco di Canaima",
+        "description": "Lagune e cascate.",
+        "search": "Parco nazionale Canaima"
+      },
+      {
+        "name": "Mérida",
+        "description": "Le Ande venezuelane.",
+        "search": "Mérida (Venezuela)"
+      },
+      {
+        "name": "Llanos",
+        "description": "Pianure ricche di fauna.",
+        "search": "Llanos"
+      }
+    ],
+    "gettingAround": [
+      "Solo con operatori specializzati",
+      "Voli interni",
+      "Barche e piccoli aerei"
+    ],
+    "food": [
+      "Arepas",
+      "Pabellón criollo",
+      "Cachapas"
+    ],
+    "tips": [
+      "Verificare la situazione prima di ogni proposta",
+      "Dollari in contanti",
+      "Assicurazione con copertura adeguata"
+    ]
+  },
+  "GY": {
+    "tagline": "Le cascate Kaieteur e foreste incontaminate nel nord dell'Amazzonia.",
+    "description": [
+      "La Guyana è l'unico paese anglofono del Sud America, coperto per la maggior parte da foreste pluviali intatte.",
+      "Le cascate Kaieteur, con un salto unico di oltre 200 metri, sono tra le più potenti del mondo e si raggiungono con piccoli aerei.",
+      "Le savane del Rupununi, gli eco-lodge gestiti dalle comunità indigene e l'avvistamento di lontre giganti, caimani neri e giaguari attirano i naturalisti.",
+      "Per viaggiatori amanti della natura e dell'avventura, 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Georgetown",
+      "languages": "Inglese; creolo guyanese",
+      "currency": "Dollaro guyanese (GYD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scali (via Stati Uniti o Caraibi)",
+      "bestPeriod": "Settembre–novembre e febbraio–aprile",
+      "climate": "Equatoriale umido",
+      "plugs": "Tipi A, B, D e G, 120/240 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cascate Kaieteur",
+        "description": "Una delle cascate più potenti al mondo.",
+        "search": "Cascate Kaieteur"
+      },
+      {
+        "name": "Rupununi",
+        "description": "Savane e fauna.",
+        "search": "Rupununi"
+      },
+      {
+        "name": "Iwokrama",
+        "description": "Foresta pluviale e passerelle sospese.",
+        "search": "Riserva della foresta di Iwokrama"
+      },
+      {
+        "name": "Georgetown",
+        "description": "La cattedrale di legno.",
+        "search": "Cattedrale di San Giorgio (Georgetown)"
+      },
+      {
+        "name": "Shell Beach",
+        "description": "Nidificazione delle tartarughe.",
+        "search": "Shell Beach (Guyana)"
+      },
+      {
+        "name": "Fiume Essequibo",
+        "description": "Il grande fiume della Guyana.",
+        "search": "Essequibo"
+      }
+    ],
+    "gettingAround": [
+      "Piccoli aerei verso l'interno",
+      "Barche sui fiumi",
+      "Fuoristrada nelle savane"
+    ],
+    "food": [
+      "Pepperpot",
+      "Curry di influenza indiana",
+      "Rum Demerara"
+    ],
+    "tips": [
+      "Profilassi antimalarica nell'interno",
+      "Prezzi elevati per i voli interni",
+      "Lodge da prenotare in anticipo"
+    ]
+  },
+  "SR": {
+    "tagline": "Paramaribo coloniale, foreste vergini e culture del mondo intero.",
+    "description": [
+      "Il Suriname è l'unico paese di lingua olandese del Sud America, con una popolazione che mescola origini indiane, giavanesi, africane, cinesi ed europee.",
+      "Il centro storico di Paramaribo, patrimonio UNESCO, è fatto di case coloniali in legno bianco; la moschea e la sinagoga sorgono una accanto all'altra.",
+      "L'interno è coperto da foreste vergini, con la riserva naturale del Suriname centrale, villaggi maroon lungo i fiumi e lodge nella giungla.",
+      "Per viaggiatori curiosi e naturalisti, spesso abbinato alla Guyana o alla Guyana francese."
+    ],
+    "facts": {
+      "capital": "Paramaribo",
+      "languages": "Olandese; sranan tongo diffuso",
+      "currency": "Dollaro del Suriname (SRD)",
+      "timezone": "4 ore in meno rispetto all'Italia (5 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scalo ad Amsterdam",
+      "bestPeriod": "Febbraio–aprile e agosto–novembre",
+      "climate": "Equatoriale umido",
+      "plugs": "Tipi C e F, 127/220 V",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto e carta turistica elettronica (e-tourist card). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Centro storico di Paramaribo",
+        "description": "Case coloniali in legno.",
+        "search": "Paramaribo"
+      },
+      {
+        "name": "Riserva del Suriname centrale",
+        "description": "Foresta pluviale vergine.",
+        "search": "Riserva naturale del Suriname centrale"
+      },
+      {
+        "name": "Brownsberg",
+        "description": "Parco naturale e lago.",
+        "search": "Brownsberg Nature Park"
+      },
+      {
+        "name": "Galibi",
+        "description": "Nidificazione delle tartarughe.",
+        "search": "Galibi"
+      },
+      {
+        "name": "Fort Zeelandia",
+        "description": "Il forte coloniale.",
+        "search": "Fort Zeelandia (Paramaribo)"
+      },
+      {
+        "name": "Fiume Suriname",
+        "description": "Villaggi maroon e lodge.",
+        "search": "Suriname (fiume)"
+      }
+    ],
+    "gettingAround": [
+      "Piccoli aerei e barche per l'interno",
+      "Auto e taxi a Paramaribo",
+      "Escursioni organizzate"
+    ],
+    "food": [
+      "Roti",
+      "Nasi goreng di influenza giavanese",
+      "Pom, sformato creolo"
+    ],
+    "tips": [
+      "Profilassi antimalarica per l'interno",
+      "Lodge semplici",
+      "Repellente per zanzare"
+    ]
+  }
+}

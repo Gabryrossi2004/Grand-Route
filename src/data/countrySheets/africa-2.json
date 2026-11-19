@@ -1,0 +1,1010 @@
+{
+  "DZ": {
+    "tagline": "Il Sahara più spettacolare, città romane e la Casbah di Algeri.",
+    "description": [
+      "L'Algeria è il paese più grande dell'Africa e uno dei meno turistici del Mediterraneo. Algeri, la «bianca», si affaccia sul mare con la Casbah patrimonio UNESCO e palazzi coloniali.",
+      "Il paese custodisce rovine romane eccezionali come Timgad e Djemila, tra le meglio conservate del Nord Africa.",
+      "Il Sahara algerino è il più spettacolare: il Tassili n'Ajjer con le pitture rupestri, le dune dell'Erg e le oasi della valle del M'zab offrono paesaggi irreali.",
+      "Per viaggiatori curiosi, 8–12 giorni con operatori locali; la sicurezza varia per regione e va verificata."
+    ],
+    "facts": {
+      "capital": "Algeri",
+      "languages": "Arabo e berbero; francese molto diffuso",
+      "currency": "Dinaro algerino (DZD)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 2 ore diretto per Algeri",
+      "bestPeriod": "Ottobre–aprile, soprattutto per il deserto",
+      "climate": "Mediterraneo sulla costa, desertico a sud",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; nel sud solo con guida",
+      "documents": "Passaporto e visto da richiedere in anticipo. Verificare su viaggiaresicuri.it le aree sconsigliate"
+    },
+    "places": [
+      {
+        "name": "Casbah di Algeri",
+        "description": "La città vecchia sul mare.",
+        "search": "Casbah di Algeri"
+      },
+      {
+        "name": "Timgad",
+        "description": "La città romana a pianta perfetta.",
+        "search": "Timgad"
+      },
+      {
+        "name": "Djemila",
+        "description": "Rovine romane tra le montagne.",
+        "search": "Djemila"
+      },
+      {
+        "name": "Tassili n'Ajjer",
+        "description": "Pitture rupestri nel deserto.",
+        "search": "Tassili n'Ajjer"
+      },
+      {
+        "name": "Valle del M'zab",
+        "description": "Città fortificate nel deserto.",
+        "search": "Valle del M'zab"
+      },
+      {
+        "name": "Notre-Dame d'Afrique",
+        "description": "La basilica sopra Algeri.",
+        "search": "Notre-Dame d'Afrique"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per il sud",
+      "Auto con autista",
+      "Tour organizzati nel deserto"
+    ],
+    "food": [
+      "Cous cous",
+      "Chakhchoukha",
+      "Dolci al miele e mandorle"
+    ],
+    "tips": [
+      "Visto da richiedere con largo anticipo",
+      "Nel sud spostamenti solo con guide autorizzate",
+      "Abbigliamento sobrio"
+    ]
+  },
+  "LY": {
+    "tagline": "Leptis Magna e Sabratha: tesori romani in un paese oggi instabile.",
+    "description": [
+      "La Libia custodisce alcune delle rovine romane più spettacolari al mondo: Leptis Magna, città natale dell'imperatore Settimio Severo, e Sabratha con il suo teatro sul mare.",
+      "Cirene, nella Cirenaica, e il deserto del Fezzan con il massiccio dell'Akakus e le sue pitture rupestri completano un patrimonio straordinario.",
+      "La situazione politica e di sicurezza resta molto instabile e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Tripoli",
+      "languages": "Arabo",
+      "currency": "Dinaro libico (LYD)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti limitati",
+      "bestPeriod": "Ottobre–aprile",
+      "climate": "Mediterraneo sulla costa, desertico all'interno",
+      "plugs": "Tipo C, D e L, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Leptis Magna",
+        "description": "La grande città romana.",
+        "search": "Leptis Magna"
+      },
+      {
+        "name": "Sabratha",
+        "description": "Il teatro sul mare.",
+        "search": "Sabratha"
+      },
+      {
+        "name": "Cirene",
+        "description": "La colonia greca della Cirenaica.",
+        "search": "Cirene"
+      },
+      {
+        "name": "Akakus",
+        "description": "Pitture rupestri nel Sahara.",
+        "search": "Tadrart Acacus"
+      },
+      {
+        "name": "Ghadames",
+        "description": "La perla del deserto.",
+        "search": "Ghadames"
+      },
+      {
+        "name": "Tripoli",
+        "description": "La medina e l'arco di Marco Aurelio.",
+        "search": "Arco di Marco Aurelio (Tripoli)"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Bazeen",
+      "Cous cous",
+      "Shorba libica"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Seguire le indicazioni ufficiali",
+      "Nessuna proposta turistica"
+    ]
+  },
+  "ET": {
+    "tagline": "Chiese nella roccia, altopiani e tradizioni antichissime: la culla dell'umanità.",
+    "description": [
+      "L'Etiopia è un paese con una storia e una cultura uniche, con un proprio calendario e un cristianesimo ortodosso millenario.",
+      "Lalibela, con le chiese monolitiche scavate nella roccia, è uno dei luoghi più spirituali dell'Africa; Gondar con i suoi castelli e Axum con le stele giganti raccontano antichi regni.",
+      "I monti Simien, la depressione della Dancalia con i colori del Dallol e la valle dell'Omo con le sue popolazioni tradizionali offrono esperienze straordinarie.",
+      "Per viaggiatori curiosi, 10–14 giorni; la sicurezza varia per regione ed è fondamentale verificarla."
+    ],
+    "facts": {
+      "capital": "Addis Abeba",
+      "languages": "Amarico; inglese diffuso nel turismo",
+      "currency": "Birr etiope (ETB)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore e 30 minuti diretto per Addis Abeba",
+      "bestPeriod": "Ottobre–marzo",
+      "climate": "Temperato sugli altipiani, caldissimo in Dancalia",
+      "plugs": "Tipi C, E, F e L, 220 V: utile un adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto e visto elettronico. Molte regioni sono sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lalibela",
+        "description": "Le chiese scavate nella roccia.",
+        "search": "Chiese monolitiche di Lalibela"
+      },
+      {
+        "name": "Monti Simien",
+        "description": "Altopiani e babbuini gelada.",
+        "search": "Parco nazionale del Simien"
+      },
+      {
+        "name": "Gondar",
+        "description": "I castelli dell'impero.",
+        "search": "Fasil Ghebbi"
+      },
+      {
+        "name": "Axum",
+        "description": "Le grandi stele.",
+        "search": "Stele di Axum"
+      },
+      {
+        "name": "Dallol",
+        "description": "Colori surreali nella Dancalia.",
+        "search": "Dallol"
+      },
+      {
+        "name": "Valle dell'Omo",
+        "description": "Popolazioni e tradizioni antiche.",
+        "search": "Valle dell'Omo"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni Ethiopian Airlines",
+      "Fuoristrada con autista",
+      "Tour organizzati"
+    ],
+    "food": [
+      "Injera con wat",
+      "Caffè etiope e la cerimonia del caffè",
+      "Tibs, carne saltata"
+    ],
+    "tips": [
+      "Verificare le regioni sconsigliate",
+      "Altitudine elevata ad Addis Abeba",
+      "Calendario etiope diverso dal nostro"
+    ]
+  },
+  "UG": {
+    "tagline": "Gorilla di montagna, sorgenti del Nilo e la perla d'Africa.",
+    "description": [
+      "L'Uganda è una delle mete migliori per incontrare i gorilla di montagna nella foresta impenetrabile di Bwindi, un'esperienza tra le più emozionanti dell'Africa.",
+      "Il parco Queen Elizabeth con i leoni che salgono sugli alberi, il Murchison Falls dove il Nilo si getta in una gola stretta e il Kibale con gli scimpanzé completano il safari.",
+      "Le sorgenti del Nilo a Jinja, il lago Bunyonyi e le montagne del Rwenzori offrono avventura e paesaggi verdissimi.",
+      "Ideale per viaggiatori appassionati di natura, 8–12 giorni, spesso abbinato al Ruanda."
+    ],
+    "facts": {
+      "capital": "Kampala",
+      "languages": "Inglese e swahili; molte lingue locali",
+      "currency": "Scellino ugandese (UGX); dollari accettati",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Entebbe",
+      "bestPeriod": "Giugno–settembre e dicembre–febbraio",
+      "climate": "Equatoriale temperato dall'altitudine",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; meglio autista",
+      "documents": "Passaporto, visto elettronico e certificato di vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Foresta impenetrabile di Bwindi",
+        "description": "Il trekking dei gorilla.",
+        "search": "Parco nazionale della foresta impenetrabile di Bwindi"
+      },
+      {
+        "name": "Cascate Murchison",
+        "description": "Il Nilo in una gola stretta.",
+        "search": "Cascate Murchison"
+      },
+      {
+        "name": "Queen Elizabeth",
+        "description": "Leoni sugli alberi e canale di Kazinga.",
+        "search": "Parco nazionale Queen Elizabeth"
+      },
+      {
+        "name": "Kibale",
+        "description": "Trekking con gli scimpanzé.",
+        "search": "Parco nazionale di Kibale"
+      },
+      {
+        "name": "Lago Bunyonyi",
+        "description": "Lago di isole e colline.",
+        "search": "Lago Bunyonyi"
+      },
+      {
+        "name": "Jinja",
+        "description": "Le sorgenti del Nilo.",
+        "search": "Jinja"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista-guida",
+      "Voli interni su piccoli aerei",
+      "Barche sui laghi e sul Nilo"
+    ],
+    "food": [
+      "Matoke, banane verdi",
+      "Rolex, frittata arrotolata in chapati",
+      "Pesce di lago"
+    ],
+    "tips": [
+      "Permessi per i gorilla da prenotare con molti mesi di anticipo",
+      "Profilassi antimalarica",
+      "Abbigliamento da trekking"
+    ]
+  },
+  "RW": {
+    "tagline": "Il paese delle mille colline e dei gorilla di montagna.",
+    "description": [
+      "Il Ruanda è un paese ordinato, sicuro e verdissimo, rinato dopo la tragedia del 1994. È famoso per i gorilla di montagna del parco dei Vulcani, una delle esperienze naturalistiche più forti al mondo.",
+      "Il parco di Nyungwe con gli scimpanzé e una passerella sospesa sulla foresta, e l'Akagera con i Big Five offrono safari diversi.",
+      "Kigali è una capitale pulita e moderna, dove il memoriale del genocidio aiuta a comprendere la storia recente; il lago Kivu è perfetto per qualche giorno di relax.",
+      "Ideale per viaggi di 6–10 giorni di alta qualità, spesso abbinato all'Uganda o alla Tanzania."
+    ],
+    "facts": {
+      "capital": "Kigali",
+      "languages": "Kinyarwanda, inglese e francese",
+      "currency": "Franco ruandese (RWF)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Kigali",
+      "bestPeriod": "Giugno–settembre e dicembre–febbraio",
+      "climate": "Temperato tropicale di altitudine",
+      "plugs": "Tipo C e J, 230 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto e visto (all'arrivo o elettronico); verificare la vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Parco nazionale dei Vulcani",
+        "description": "I gorilla di montagna.",
+        "search": "Parco nazionale dei Vulcani"
+      },
+      {
+        "name": "Nyungwe",
+        "description": "Foresta pluviale e scimpanzé.",
+        "search": "Parco nazionale della foresta di Nyungwe"
+      },
+      {
+        "name": "Akagera",
+        "description": "Safari tra savana e laghi.",
+        "search": "Parco nazionale dell'Akagera"
+      },
+      {
+        "name": "Lago Kivu",
+        "description": "Spiagge e relax.",
+        "search": "Lago Kivu"
+      },
+      {
+        "name": "Memoriale di Kigali",
+        "description": "La memoria del genocidio.",
+        "search": "Kigali Genocide Memorial"
+      },
+      {
+        "name": "Kigali",
+        "description": "La capitale verde e ordinata.",
+        "search": "Kigali"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Voli interni brevi",
+      "Distanze contenute"
+    ],
+    "food": [
+      "Brochettes di capra",
+      "Isombe, foglie di manioca",
+      "Tè e caffè ruandesi"
+    ],
+    "tips": [
+      "Sacchetti di plastica vietati",
+      "Permessi gorilla costosi e da prenotare presto",
+      "Paese molto sicuro"
+    ]
+  },
+  "BI": {
+    "tagline": "Il lago Tanganica e colline verdi nel cuore dell'Africa.",
+    "description": [
+      "Il Burundi è un piccolo paese dell'Africa centrale affacciato sul lago Tanganica, tra i laghi più profondi del mondo, con spiagge e acque limpide.",
+      "Le colline coltivate a tè e caffè, il parco della Kibira e le tradizioni dei tamburi reali, patrimonio UNESCO, sono il suo fascino.",
+      "Il paese è poco attrezzato per il turismo e la situazione di sicurezza va sempre verificata.",
+      "Per viaggiatori esperti, di solito in combinazione con il Ruanda o la Tanzania."
+    ],
+    "facts": {
+      "capital": "Gitega (sede economica: Bujumbura)",
+      "languages": "Kirundi, francese e inglese",
+      "currency": "Franco del Burundi (BIF)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Bujumbura",
+      "bestPeriod": "Giugno–agosto",
+      "climate": "Equatoriale di altitudine",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago Tanganica",
+        "description": "Spiagge e acque limpide.",
+        "search": "Lago Tanganica"
+      },
+      {
+        "name": "Tamburi reali di Gishora",
+        "description": "La danza dei tamburi.",
+        "search": "Danza rituale del tamburo reale"
+      },
+      {
+        "name": "Parco della Kibira",
+        "description": "Foresta montana.",
+        "search": "Parco nazionale della Kibira"
+      },
+      {
+        "name": "Bujumbura",
+        "description": "La città sul lago.",
+        "search": "Bujumbura"
+      },
+      {
+        "name": "Cascate di Karera",
+        "description": "Cascate tra la vegetazione.",
+        "search": "Cascate di Karera"
+      },
+      {
+        "name": "Sorgente più meridionale del Nilo",
+        "description": "La piramide di Rutovu.",
+        "search": "Rutovu"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Taxi in città",
+      "Infrastrutture limitate"
+    ],
+    "food": [
+      "Pesce del lago (mukeke)",
+      "Fagioli e banane",
+      "Brochettes"
+    ],
+    "tips": [
+      "Verificare la situazione di sicurezza",
+      "Contanti in dollari o euro",
+      "Profilassi antimalarica"
+    ]
+  },
+  "ER": {
+    "tagline": "Asmara modernista, isole Dahlak e un paese molto chiuso.",
+    "description": [
+      "L'Eritrea ha uno dei patrimoni architettonici più sorprendenti d'Africa: Asmara, patrimonio UNESCO, è un museo a cielo aperto del modernismo italiano degli anni Trenta.",
+      "Il treno a vapore tra Asmara e Massaua, la città portuale ottomana e le isole Dahlak con barriere coralline intatte sono le mete principali.",
+      "Il paese è molto chiuso e i movimenti dei turisti richiedono permessi.",
+      "Interessante soprattutto per chi cerca le tracce della storia italiana; verificare sempre la situazione prima di partire."
+    ],
+    "facts": {
+      "capital": "Asmara",
+      "languages": "Tigrino e arabo; italiano compreso dagli anziani",
+      "currency": "Nakfa eritreo (ERN)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Asmara",
+      "bestPeriod": "Ottobre–marzo",
+      "climate": "Temperato sull'altopiano, molto caldo sulla costa",
+      "plugs": "Tipo C e L, 230 V",
+      "driving": "Si guida a destra; permessi per uscire da Asmara",
+      "documents": "Passaporto e visto da richiedere in anticipo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Asmara",
+        "description": "L'architettura modernista italiana.",
+        "search": "Asmara"
+      },
+      {
+        "name": "Fiat Tagliero",
+        "description": "La stazione di servizio a forma di aereo.",
+        "search": "Fiat Tagliero"
+      },
+      {
+        "name": "Massaua",
+        "description": "Il porto dal passato ottomano.",
+        "search": "Massaua"
+      },
+      {
+        "name": "Isole Dahlak",
+        "description": "Barriere coralline intatte.",
+        "search": "Arcipelago delle Dahlak"
+      },
+      {
+        "name": "Ferrovia Asmara–Massaua",
+        "description": "Il treno a vapore sui tornanti.",
+        "search": "Ferrovia Massaua-Asmara"
+      },
+      {
+        "name": "Cattedrale di Asmara",
+        "description": "La chiesa del 1923.",
+        "search": "Cattedrale di Nostra Signora del Rosario (Asmara)"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista e permessi",
+      "Treno storico su prenotazione",
+      "Barche per le Dahlak"
+    ],
+    "food": [
+      "Zighinì con injera",
+      "Pasta e cappuccino in stile italiano",
+      "Pesce a Massaua"
+    ],
+    "tips": [
+      "Permessi necessari per viaggiare fuori da Asmara",
+      "Contanti indispensabili",
+      "Verificare la situazione"
+    ]
+  },
+  "DJ": {
+    "tagline": "Laghi salati, vulcani e squali balena all'imbocco del Mar Rosso.",
+    "description": [
+      "Gibuti è un piccolo paese del Corno d'Africa con paesaggi estremi. Il lago Assal, 155 metri sotto il livello del mare, è uno dei laghi più salati del pianeta.",
+      "Il lago Abbe, con i camini calcarei che fumano all'alba, sembra un paesaggio di un altro mondo.",
+      "Il golfo di Tadjoura ospita gli squali balena da novembre a febbraio, e le isole Moucha e Maskali offrono snorkeling e immersioni.",
+      "Per viaggiatori in cerca di paesaggi insoliti, 5–7 giorni, magari abbinato all'Etiopia."
+    ],
+    "facts": {
+      "capital": "Gibuti",
+      "languages": "Francese e arabo; somalo e afar diffusi",
+      "currency": "Franco di Gibuti (DJF)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Gibuti",
+      "bestPeriod": "Novembre–febbraio",
+      "climate": "Desertico e molto caldo",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra; fuoristrada con autista",
+      "documents": "Passaporto e visto elettronico. Verificare su viaggiaresicuri.it le zone di confine"
+    },
+    "places": [
+      {
+        "name": "Lago Assal",
+        "description": "Il lago salato sotto il livello del mare.",
+        "search": "Lago Assal"
+      },
+      {
+        "name": "Lago Abbe",
+        "description": "Camini calcarei fumanti.",
+        "search": "Lago Abbe"
+      },
+      {
+        "name": "Golfo di Tadjoura",
+        "description": "Squali balena in inverno.",
+        "search": "Golfo di Tagiura"
+      },
+      {
+        "name": "Isole Moucha",
+        "description": "Spiagge e snorkeling.",
+        "search": "Isola Moucha"
+      },
+      {
+        "name": "Foresta del Day",
+        "description": "Foresta sulle montagne.",
+        "search": "Parco nazionale della foresta del Day"
+      },
+      {
+        "name": "Gibuti città",
+        "description": "Il quartiere europeo e il mercato.",
+        "search": "Gibuti (città)"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Barche per le isole",
+      "Tour organizzati"
+    ],
+    "food": [
+      "Skoudehkaris, riso speziato",
+      "Pesce grigliato",
+      "Laxoox, pane spugnoso"
+    ],
+    "tips": [
+      "Caldo estremo da maggio a settembre",
+      "Prezzi alti",
+      "Evitare le zone di confine"
+    ]
+  },
+  "MR": {
+    "tagline": "Il Sahara, città carovaniere e il treno del ferro.",
+    "description": [
+      "La Mauritania è un paese quasi interamente desertico, dove il Sahara incontra l'Atlantico. Le antiche città carovaniere di Chinguetti e Ouadane, patrimonio UNESCO, custodiscono biblioteche di manoscritti.",
+      "La struttura di Richat, l'Occhio del Sahara visibile dallo spazio, e le dune dell'Adrar sono paesaggi grandiosi.",
+      "Il Banc d'Arguin è un paradiso per il birdwatching, e il treno del ferro, tra i più lunghi del mondo, è un'avventura estrema.",
+      "Per viaggiatori esperti con operatori specializzati; molte aree sono sconsigliate."
+    ],
+    "facts": {
+      "capital": "Nouakchott",
+      "languages": "Arabo; francese diffuso",
+      "currency": "Ouguiya mauritana (MRU)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Nouakchott; voli charter per Atar in stagione",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Desertico: caldo di giorno, fresco di notte in inverno",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra; nel deserto solo con guida",
+      "documents": "Passaporto e visto (elettronico). Molte aree sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Chinguetti",
+        "description": "Biblioteche di manoscritti nel deserto.",
+        "search": "Chinguetti"
+      },
+      {
+        "name": "Struttura di Richat",
+        "description": "L'Occhio del Sahara.",
+        "search": "Struttura di Richat"
+      },
+      {
+        "name": "Ouadane",
+        "description": "La città carovaniera di pietra.",
+        "search": "Ouadane"
+      },
+      {
+        "name": "Banc d'Arguin",
+        "description": "Il paradiso degli uccelli migratori.",
+        "search": "Parco nazionale del Banc d'Arguin"
+      },
+      {
+        "name": "Terjit",
+        "description": "L'oasi con sorgenti calde.",
+        "search": "Terjit"
+      },
+      {
+        "name": "Treno del ferro",
+        "description": "Uno dei treni più lunghi del mondo.",
+        "search": "Ferrovia della Mauritania"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con guida",
+      "Tour organizzati nell'Adrar",
+      "Voli charter stagionali"
+    ],
+    "food": [
+      "Thieboudienne, riso e pesce",
+      "Méchoui, agnello arrosto",
+      "Tè alla menta"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Abbigliamento coprente",
+      "Contanti indispensabili"
+    ]
+  },
+  "ML": {
+    "tagline": "Timbuctù e le moschee di fango del Sahel: un patrimonio unico, oggi inaccessibile.",
+    "description": [
+      "Il Mali custodisce alcuni dei luoghi più leggendari dell'Africa: Timbuctù con le sue moschee e manoscritti, la grande moschea di fango di Djenné e la falesia di Bandiagara del popolo dogon.",
+      "Il fiume Niger è stato per secoli la via dei commerci tra Sahara e Africa occidentale, e la musica maliana è conosciuta in tutto il mondo.",
+      "La situazione di sicurezza è gravissima e la Farnesina sconsiglia qualsiasi viaggio.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Bamako",
+      "languages": "Francese e bambara",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Bamako",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Saheliano e desertico",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Timbuctù",
+        "description": "La città dei 333 santi.",
+        "search": "Timbuctù"
+      },
+      {
+        "name": "Grande moschea di Djenné",
+        "description": "Il più grande edificio di fango del mondo.",
+        "search": "Grande moschea di Djenné"
+      },
+      {
+        "name": "Falesia di Bandiagara",
+        "description": "Villaggi dogon sulla scarpata.",
+        "search": "Falesia di Bandiagara"
+      },
+      {
+        "name": "Fiume Niger",
+        "description": "La via dei commerci.",
+        "search": "Niger (fiume)"
+      },
+      {
+        "name": "Tomba degli Askia",
+        "description": "La piramide di fango di Gao.",
+        "search": "Tomba degli Askia"
+      },
+      {
+        "name": "Bamako",
+        "description": "La capitale sul Niger.",
+        "search": "Bamako"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Tô, polenta di miglio",
+      "Riz gras",
+      "Tè alla menta"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "NE": {
+    "tagline": "Il deserto del Ténéré e Agadez: Sahara leggendario, oggi sconsigliato.",
+    "description": [
+      "Il Niger custodisce il Sahara più puro: il deserto del Ténéré, le montagne dell'Aïr e la città di Agadez con il suo minareto di fango, patrimonio UNESCO.",
+      "Le giraffe dell'Africa occidentale vivono a Kouré, vicino alla capitale Niamey sul fiume Niger.",
+      "La situazione di sicurezza è molto grave e la Farnesina sconsiglia i viaggi in tutto il paese.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Niamey",
+      "languages": "Francese; hausa e zarma diffusi",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Niamey",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Desertico e saheliano",
+      "plugs": "Tipi A, B, C, D, E e F, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Agadez",
+        "description": "La grande moschea di fango.",
+        "search": "Agadez"
+      },
+      {
+        "name": "Deserto del Ténéré",
+        "description": "Il deserto dei deserti.",
+        "search": "Ténéré"
+      },
+      {
+        "name": "Monti dell'Aïr",
+        "description": "Massicci vulcanici nel Sahara.",
+        "search": "Aïr"
+      },
+      {
+        "name": "Giraffe di Kouré",
+        "description": "Le ultime giraffe dell'Africa occidentale.",
+        "search": "Kouré"
+      },
+      {
+        "name": "Fiume Niger a Niamey",
+        "description": "La vita lungo il fiume.",
+        "search": "Niamey"
+      },
+      {
+        "name": "Parco W",
+        "description": "Parco transfrontaliero di savana.",
+        "search": "Parco nazionale W"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Riso e salse di arachidi",
+      "Miglio",
+      "Tè"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "TD": {
+    "tagline": "L'Ennedi, il lago Ciad e il parco di Zakouma: natura estrema nel cuore del Sahara.",
+    "description": [
+      "Il Ciad è uno dei paesi meno visitati al mondo, con paesaggi straordinari: il massiccio dell'Ennedi con archi di roccia e pitture rupestri, e i laghi di Ounianga nel deserto, patrimonio UNESCO.",
+      "Il parco di Zakouma, rinato grazie alla conservazione, ospita grandi mandrie di elefanti e bufali.",
+      "Gran parte del paese è sconsigliata per motivi di sicurezza; i viaggi si svolgono solo con operatori specializzati.",
+      "Per viaggiatori molto esperti; verificare sempre le indicazioni della Farnesina."
+    ],
+    "facts": {
+      "capital": "N'Djamena",
+      "languages": "Francese e arabo",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per N'Djamena",
+      "bestPeriod": "Novembre–febbraio",
+      "climate": "Desertico al nord, tropicale al sud",
+      "plugs": "Tipi C, D, E e F, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Molte aree sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Massiccio dell'Ennedi",
+        "description": "Archi di roccia e pitture rupestri.",
+        "search": "Ennedi"
+      },
+      {
+        "name": "Laghi di Ounianga",
+        "description": "Laghi colorati nel Sahara.",
+        "search": "Laghi di Ounianga"
+      },
+      {
+        "name": "Parco di Zakouma",
+        "description": "Elefanti e savana.",
+        "search": "Parco nazionale di Zakouma"
+      },
+      {
+        "name": "Lago Ciad",
+        "description": "Il grande lago del Sahel.",
+        "search": "Lago Ciad"
+      },
+      {
+        "name": "Tibesti",
+        "description": "Vulcani nel deserto.",
+        "search": "Tibesti"
+      },
+      {
+        "name": "Arco di Aloba",
+        "description": "Uno degli archi naturali più alti.",
+        "search": "Arco di Aloba"
+      }
+    ],
+    "gettingAround": [
+      "Solo con operatori specializzati",
+      "Voli charter",
+      "Fuoristrada con scorta dove necessario"
+    ],
+    "food": [
+      "Boule di miglio",
+      "Salse di arachidi",
+      "Carne alla griglia"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Permessi necessari",
+      "Assicurazione con evacuazione"
+    ]
+  },
+  "SD": {
+    "tagline": "Le piramidi di Meroe e il Nilo nubiano, in un paese oggi in guerra.",
+    "description": [
+      "Il Sudan custodisce più piramidi dell'Egitto: quelle di Meroe, nel deserto nubiano, sono tra i siti archeologici più suggestivi dell'Africa.",
+      "Il Jebel Barkal, la montagna sacra dei faraoni neri, e la confluenza del Nilo Bianco e Azzurro a Khartoum raccontano una storia millenaria.",
+      "Il conflitto in corso rende il paese estremamente pericoloso e la Farnesina sconsiglia qualsiasi viaggio.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Khartoum",
+      "languages": "Arabo e inglese",
+      "currency": "Sterlina sudanese (SDG)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti sospesi o molto limitati",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Desertico",
+      "plugs": "Tipo C e D, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Piramidi di Meroe",
+        "description": "Necropoli reale nel deserto.",
+        "search": "Piramidi di Meroe"
+      },
+      {
+        "name": "Jebel Barkal",
+        "description": "La montagna sacra.",
+        "search": "Jebel Barkal"
+      },
+      {
+        "name": "Confluenza del Nilo",
+        "description": "Nilo Bianco e Nilo Azzurro.",
+        "search": "Al-Mogran"
+      },
+      {
+        "name": "Naqa",
+        "description": "Il tempio del leone.",
+        "search": "Naqa"
+      },
+      {
+        "name": "Suakin",
+        "description": "La città di corallo sul Mar Rosso.",
+        "search": "Suakin"
+      },
+      {
+        "name": "Old Dongola",
+        "description": "La capitale medievale nubiana.",
+        "search": "Dongola Vecchia"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Ful medames",
+      "Kisra, pane sottile",
+      "Karkadè"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "SS": {
+    "tagline": "Grandi migrazioni e popoli pastori nel paese più giovane del mondo, oggi sconsigliato.",
+    "description": [
+      "Il Sud Sudan, indipendente dal 2011, custodisce una delle più grandi migrazioni di antilopi al mondo e paludi immense come il Sudd lungo il Nilo Bianco.",
+      "Le popolazioni pastorali come i Mundari, che vivono a stretto contatto con le loro mandrie, hanno attirato fotografi da tutto il mondo.",
+      "La situazione di sicurezza è molto grave e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento."
+    ],
+    "facts": {
+      "capital": "Giuba",
+      "languages": "Inglese; arabo di Giuba diffuso",
+      "currency": "Sterlina sud-sudanese (SSP)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Giuba",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Tropicale",
+      "plugs": "Tipo C e D, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Sudd",
+        "description": "Una delle paludi più grandi del mondo.",
+        "search": "Sudd"
+      },
+      {
+        "name": "Boma",
+        "description": "Parco della grande migrazione.",
+        "search": "Parco nazionale di Boma"
+      },
+      {
+        "name": "Giuba",
+        "description": "La capitale sul Nilo Bianco.",
+        "search": "Giuba"
+      },
+      {
+        "name": "Nilo Bianco",
+        "description": "Il grande fiume.",
+        "search": "Nilo Bianco"
+      },
+      {
+        "name": "Parco di Nimule",
+        "description": "Elefanti lungo il Nilo.",
+        "search": "Parco nazionale di Nimule"
+      },
+      {
+        "name": "Popolo Mundari",
+        "description": "Pastori e grandi mandrie.",
+        "search": "Mundari"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Kisra",
+      "Stufati di carne",
+      "Pesce di fiume"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "SO": {
+    "tagline": "Coste infinite sull'Oceano Indiano, in un paese da decenni sconsigliato ai viaggiatori.",
+    "description": [
+      "La Somalia ha la costa più lunga dell'Africa continentale, con spiagge sull'Oceano Indiano e città storiche come Mogadiscio, un tempo legata all'Italia.",
+      "Nel nord, nella regione del Somaliland, si trovano le pitture rupestri di Laas Geel, tra le meglio conservate del continente.",
+      "La situazione di sicurezza è estremamente grave e la Farnesina sconsiglia qualsiasi viaggio.",
+      "Scheda utile come riferimento."
+    ],
+    "facts": {
+      "capital": "Mogadiscio",
+      "languages": "Somalo e arabo; italiano e inglese compresi da alcuni",
+      "currency": "Scellino somalo (SOS); dollari molto usati",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti limitati",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Arido e caldo",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Laas Geel",
+        "description": "Pitture rupestri neolitiche.",
+        "search": "Laas Geel"
+      },
+      {
+        "name": "Mogadiscio",
+        "description": "La capitale sull'oceano.",
+        "search": "Mogadiscio"
+      },
+      {
+        "name": "Berbera",
+        "description": "Il porto storico del nord.",
+        "search": "Berbera"
+      },
+      {
+        "name": "Hargeisa",
+        "description": "Il mercato del cambio.",
+        "search": "Hargeisa"
+      },
+      {
+        "name": "Spiaggia di Lido",
+        "description": "La spiaggia di Mogadiscio.",
+        "search": "Spiaggia del Lido (Mogadiscio)"
+      },
+      {
+        "name": "Kismayo",
+        "description": "Città costiera del sud.",
+        "search": "Chisimaio"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Canjeero, pane spugnoso",
+      "Bariis iskukaris, riso speziato",
+      "Pasta somala"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  }
+}

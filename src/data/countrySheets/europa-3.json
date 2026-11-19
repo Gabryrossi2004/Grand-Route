@@ -1,0 +1,1022 @@
+{
+  "AD": {
+    "tagline": "Montagne pirenaiche, sci e shopping in un piccolo principato tra Francia e Spagna.",
+    "description": [
+      "Andorra è un piccolo stato sui Pirenei, interamente montuoso, tra Francia e Spagna. È famosa per le stazioni sciistiche di Grandvalira e Vallnord e per lo shopping in esenzione da molte tasse.",
+      "D'estate le valli si prestano a trekking, mountain bike e laghi alpini, mentre le chiesette romaniche in pietra raccontano un passato rurale.",
+      "Il centro termale Caldea, ad Andorra la Vella, è uno dei più grandi d'Europa ed è perfetto dopo una giornata sulla neve.",
+      "Ideale per settimane bianche, weekend in montagna o come tappa di un viaggio tra Barcellona e il sud della Francia."
+    ],
+    "facts": {
+      "capital": "Andorra la Vella",
+      "languages": "Catalano; spagnolo e francese diffusi",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Nessun aeroporto: si arriva in auto o bus da Barcellona (circa 3 ore) o Tolosa",
+      "bestPeriod": "Dicembre–marzo per lo sci; giugno–settembre per il trekking",
+      "climate": "Alpino: inverni nevosi, estati fresche",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; catene o gomme da neve in inverno",
+      "documents": "Passaporto o carta d'identità valida per l'espatrio; Andorra non fa parte di Schengen, quindi si attraversa una frontiera. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Grandvalira",
+        "description": "Il comprensorio sciistico più grande dei Pirenei.",
+        "search": "Grandvalira"
+      },
+      {
+        "name": "Caldea",
+        "description": "Il grande centro termale.",
+        "search": "Caldea"
+      },
+      {
+        "name": "Valle del Madriu",
+        "description": "Valle glaciale patrimonio UNESCO.",
+        "search": "Valle del Madriu-Perafita-Claror"
+      },
+      {
+        "name": "Andorra la Vella",
+        "description": "Il centro storico e lo shopping.",
+        "search": "Andorra la Vella"
+      },
+      {
+        "name": "Chiesa di Sant Joan de Caselles",
+        "description": "Chiesetta romanica tra i monti.",
+        "search": "Sant Joan de Caselles"
+      },
+      {
+        "name": "Lago di Engolasters",
+        "description": "Lago alpino tra i boschi.",
+        "search": "Lago di Engolasters"
+      }
+    ],
+    "gettingAround": [
+      "Auto o bus da Barcellona e Tolosa",
+      "Autobus interni tra le parrocchie",
+      "Impianti di risalita"
+    ],
+    "food": [
+      "Trinxat, cavolo e patate",
+      "Escudella, stufato di montagna",
+      "Formaggi e salumi pirenaici"
+    ],
+    "tips": [
+      "Limiti agli acquisti in esenzione al rientro nell'UE",
+      "Strade innevate in inverno",
+      "Traffico intenso nei weekend"
+    ]
+  },
+  "LI": {
+    "tagline": "Un principato alpino tra Svizzera e Austria, con castelli e arte.",
+    "description": [
+      "Il Liechtenstein è uno dei paesi più piccoli del mondo, incastonato tra Svizzera e Austria nella valle del Reno, con montagne, vigneti e villaggi ordinati.",
+      "Vaduz, la capitale, è dominata dal castello della famiglia principesca e ospita il Kunstmuseum e la collezione di arte dei principi.",
+      "I sentieri delle Alpi e la stazione invernale di Malbun offrono attività all'aperto in ogni stagione.",
+      "Si visita in una giornata durante un viaggio in Svizzera o in Austria, oppure con un weekend tranquillo in montagna."
+    ],
+    "facts": {
+      "capital": "Vaduz",
+      "languages": "Tedesco",
+      "currency": "Franco svizzero (CHF)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Aeroporto più vicino: Zurigo (circa 1 ora e mezza in auto)",
+      "bestPeriod": "Maggio–ottobre; inverno per lo sci a Malbun",
+      "climate": "Alpino e continentale",
+      "plugs": "Tipo J e C, 230 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Vaduz",
+        "description": "La residenza dei principi sulla collina.",
+        "search": "Castello di Vaduz"
+      },
+      {
+        "name": "Kunstmuseum",
+        "description": "Il museo d'arte moderna di Vaduz.",
+        "search": "Kunstmuseum Liechtenstein"
+      },
+      {
+        "name": "Malbun",
+        "description": "Villaggio alpino e piste da sci.",
+        "search": "Malbun"
+      },
+      {
+        "name": "Castello di Gutenberg",
+        "description": "Il castello medievale di Balzers.",
+        "search": "Castello di Gutenberg"
+      },
+      {
+        "name": "Vigneti di Vaduz",
+        "description": "Le cantine del principe.",
+        "search": "Vaduz"
+      },
+      {
+        "name": "Sentiero dei Tre Sorelle",
+        "description": "Cresta panoramica sulle Alpi.",
+        "search": "Drei Schwestern"
+      }
+    ],
+    "gettingAround": [
+      "Autobus efficienti",
+      "Auto dalla Svizzera o dall'Austria",
+      "Sentieri ben segnalati"
+    ],
+    "food": [
+      "Käsknöpfle, gnocchetti al formaggio",
+      "Vini locali",
+      "Torta di mele alpina"
+    ],
+    "tips": [
+      "Si visita in poche ore",
+      "Prezzi svizzeri",
+      "Timbro sul passaporto all'ufficio turistico come ricordo"
+    ]
+  },
+  "SM": {
+    "tagline": "La repubblica più antica del mondo, con tre torri sul Titano.",
+    "description": [
+      "San Marino è un piccolo stato immerso nell'Emilia-Romagna e nelle Marche, arroccato sul monte Titano. Le sue tre torri medievali dominano un panorama che arriva fino al mare.",
+      "Il centro storico, patrimonio UNESCO, è fatto di vicoli, mura, il Palazzo Pubblico con il cambio della guardia e piccoli musei.",
+      "È meta di gite in giornata da Rimini e dalla Riviera, apprezzata anche per lo shopping.",
+      "Ideale per una giornata, per gruppi e scolaresche o come tappa culturale durante una vacanza al mare in Romagna."
+    ],
+    "facts": {
+      "capital": "Città di San Marino",
+      "languages": "Italiano",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Aeroporto di Rimini a circa 25 km",
+      "bestPeriod": "Aprile–ottobre",
+      "climate": "Temperato, fresco in quota",
+      "plugs": "Tipo C, F e L, 230 V",
+      "driving": "Si guida a destra; centro storico pedonale",
+      "documents": "Nessun controllo di frontiera per chi arriva dall'Italia; portare comunque un documento d'identità"
+    },
+    "places": [
+      {
+        "name": "Torre Guaita",
+        "description": "La prima delle tre torri.",
+        "search": "Guaita"
+      },
+      {
+        "name": "Torre Cesta",
+        "description": "Sulla vetta più alta del Titano.",
+        "search": "Cesta (San Marino)"
+      },
+      {
+        "name": "Palazzo Pubblico",
+        "description": "Il cambio della guardia.",
+        "search": "Palazzo Pubblico (San Marino)"
+      },
+      {
+        "name": "Basilica di San Marino",
+        "description": "Le reliquie del santo fondatore.",
+        "search": "Basilica di San Marino"
+      },
+      {
+        "name": "Funivia del Titano",
+        "description": "Dal Borgo Maggiore al centro storico.",
+        "search": "Funivia di San Marino"
+      },
+      {
+        "name": "Museo di Stato",
+        "description": "Storia e arte della repubblica.",
+        "search": "Museo di Stato di San Marino"
+      }
+    ],
+    "gettingAround": [
+      "Bus da Rimini",
+      "Funivia da Borgo Maggiore",
+      "A piedi nel centro storico"
+    ],
+    "food": [
+      "Torta Tre Monti",
+      "Piadina romagnola",
+      "Vini locali come il Sangiovese"
+    ],
+    "tips": [
+      "Scarpe comode: salite ripide",
+      "Affollata nei weekend estivi",
+      "Timbro turistico sul passaporto all'ufficio informazioni"
+    ]
+  },
+  "ME": {
+    "tagline": "Fiordi adriatici, montagne selvagge e borghi veneziani in un piccolo paese.",
+    "description": [
+      "Il Montenegro concentra in pochi chilometri mare e montagne spettacolari. Le Bocche di Cattaro, un fiordo nel Mediterraneo, custodiscono Kotor e Perast, cittadine di impronta veneziana.",
+      "La costa offre Budva con la sua città vecchia, l'isolotto di Sveti Stefan e spiagge riparate; il lago di Scutari è un paradiso naturale.",
+      "All'interno il parco del Durmitor con il canyon del Tara e il monastero di Ostrog, incastonato nella roccia, sono luoghi di grande impatto.",
+      "Ideale per un tour di 5–7 giorni, crociere adriatiche e combinazioni con Dubrovnik e l'Albania."
+    ],
+    "facts": {
+      "capital": "Podgorica",
+      "languages": "Montenegrino; inglese e italiano compresi nel turismo",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti per Podgorica o Tivat; traghetti da Bari per Bar",
+      "bestPeriod": "Maggio–giugno e settembre",
+      "climate": "Mediterraneo sulla costa, alpino all'interno",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade di montagna strette",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Kotor",
+        "description": "La città murata nelle Bocche.",
+        "search": "Cattaro"
+      },
+      {
+        "name": "Perast",
+        "description": "Borgo veneziano e l'isolotto della Madonna dello Scalpello.",
+        "search": "Perasto"
+      },
+      {
+        "name": "Sveti Stefan",
+        "description": "L'isolotto-hotel collegato alla costa.",
+        "search": "Sveti Stefan"
+      },
+      {
+        "name": "Budva",
+        "description": "La città vecchia e le spiagge.",
+        "search": "Budua"
+      },
+      {
+        "name": "Monastero di Ostrog",
+        "description": "Il monastero scavato nella roccia.",
+        "search": "Monastero di Ostrog"
+      },
+      {
+        "name": "Parco del Durmitor",
+        "description": "Il canyon del Tara e i laghi glaciali.",
+        "search": "Parco nazionale del Durmitor"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio per costa e montagne",
+      "Autobus tra le città costiere",
+      "Barche nelle Bocche di Cattaro"
+    ],
+    "food": [
+      "Pesce e frutti di mare",
+      "Njeguški pršut, prosciutto di montagna",
+      "Vini come il Vranac"
+    ],
+    "tips": [
+      "In agosto la costa è molto affollata",
+      "Kotor è porto di crociere: visitarla presto",
+      "Assicurazione auto: verificare la carta verde"
+    ]
+  },
+  "AL": {
+    "tagline": "Riviera ionica, città ottomane e montagne selvagge a un'ora dall'Italia.",
+    "description": [
+      "L'Albania è una delle mete emergenti del Mediterraneo. La Riviera ionica, da Valona a Saranda, offre spiagge e acque trasparenti come Ksamil, con prezzi ancora contenuti.",
+      "Le città-museo di Berat e Argirocastro, patrimonio UNESCO, conservano case ottomane in pietra, mentre Butrinto è un sito archeologico immerso nella natura.",
+      "Tirana è vivace e colorata, e le Alpi albanesi con Theth e Valbona sono tra le zone di trekking più spettacolari dei Balcani.",
+      "Ideale per vacanze al mare, tour culturali di 7 giorni o viaggi in auto con il traghetto dalla Puglia."
+    ],
+    "facts": {
+      "capital": "Tirana",
+      "languages": "Albanese; italiano molto diffuso",
+      "currency": "Lek albanese (ALL); euro spesso accettati",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 20 minuti per Tirana; traghetti da Bari e Brindisi per Durazzo e Valona",
+      "bestPeriod": "Maggio–giugno e settembre–ottobre",
+      "climate": "Mediterraneo sulla costa, continentale e montano all'interno",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade migliorate ma guida locale vivace",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Ksamil",
+        "description": "Spiagge e isolotti di fronte a Corfù.",
+        "search": "Ksamil"
+      },
+      {
+        "name": "Berat",
+        "description": "La città dalle mille finestre.",
+        "search": "Berat"
+      },
+      {
+        "name": "Argirocastro",
+        "description": "Case in pietra e castello.",
+        "search": "Argirocastro"
+      },
+      {
+        "name": "Butrinto",
+        "description": "Rovine greche e romane nella laguna.",
+        "search": "Butrinto"
+      },
+      {
+        "name": "Theth",
+        "description": "Villaggio nelle Alpi albanesi.",
+        "search": "Theth"
+      },
+      {
+        "name": "Occhio Blu",
+        "description": "La sorgente color turchese.",
+        "search": "Syri i Kaltër"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o con autista",
+      "Furgoni e autobus tra le città",
+      "Traghetti dall'Italia"
+    ],
+    "food": [
+      "Byrek, sfoglia ripiena",
+      "Tavë kosi, agnello allo yogurt",
+      "Pesce sulla costa"
+    ],
+    "tips": [
+      "Molti parlano italiano",
+      "In agosto Ksamil è affollatissima",
+      "Contanti utili nelle zone rurali"
+    ]
+  },
+  "BA": {
+    "tagline": "Sarajevo e Mostar: crocevia di culture tra Oriente e Occidente.",
+    "description": [
+      "La Bosnia ed Erzegovina è un paese dove moschee, chiese ortodosse, cattedrali e sinagoghe convivono a pochi passi. Sarajevo, con il bazar di Baščaršija, racconta secoli di storia europea.",
+      "Mostar, con lo Stari Most ricostruito dopo la guerra, è uno dei luoghi più fotografati dei Balcani; i tuffatori dal ponte sono una tradizione antica.",
+      "Le cascate di Kravica, il villaggio ottomano di Počitelj, le cascate di Jajce e il santuario di Medjugorje completano il viaggio.",
+      "Ideale per tour culturali e pellegrinaggi, anche in combinazione con la Croazia, 4–6 giorni."
+    ],
+    "facts": {
+      "capital": "Sarajevo",
+      "languages": "Bosniaco, croato e serbo",
+      "currency": "Marco convertibile (BAM); euro spesso accettati",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti per Sarajevo; in auto da Spalato o Dubrovnik",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale all'interno, mediterraneo in Erzegovina",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade di montagna lente",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Stari Most",
+        "description": "Il ponte vecchio di Mostar.",
+        "search": "Stari Most"
+      },
+      {
+        "name": "Baščaršija",
+        "description": "Il bazar di Sarajevo.",
+        "search": "Baščaršija"
+      },
+      {
+        "name": "Cascate di Kravica",
+        "description": "Cascate a semicerchio e laghetti.",
+        "search": "Cascate di Kravica"
+      },
+      {
+        "name": "Počitelj",
+        "description": "Villaggio ottomano fortificato.",
+        "search": "Počitelj"
+      },
+      {
+        "name": "Jajce",
+        "description": "La cascata nel centro della città.",
+        "search": "Jajce"
+      },
+      {
+        "name": "Medjugorje",
+        "description": "Meta di pellegrinaggio mariano.",
+        "search": "Medjugorje"
+      }
+    ],
+    "gettingAround": [
+      "Auto o pullman organizzati",
+      "Treno panoramico Sarajevo–Mostar",
+      "Autobus tra le città"
+    ],
+    "food": [
+      "Ćevapi, polpettine alla griglia",
+      "Burek",
+      "Caffè bosniaco"
+    ],
+    "tips": [
+      "Non uscire dai sentieri segnalati in zone rurali (residuati bellici)",
+      "Contanti utili",
+      "Abbigliamento coprente nelle moschee"
+    ]
+  },
+  "RS": {
+    "tagline": "Belgrado vivace, monasteri ortodossi e il Danubio delle Porte di Ferro.",
+    "description": [
+      "La Serbia sorprende per vitalità e ospitalità. Belgrado, alla confluenza di Sava e Danubio, unisce la fortezza di Kalemegdan, la grande chiesa di San Sava e una vita notturna famosa.",
+      "Novi Sad, con la fortezza di Petrovaradin, è elegante e giovane; il nord della Vojvodina offre campagne, vigneti e monasteri della Fruška Gora.",
+      "Il sud custodisce monasteri medievali come Studenica, mentre il Danubio attraversa le spettacolari gole delle Porte di Ferro.",
+      "Ideale per city break a Belgrado o tour dei Balcani di 6–8 giorni a prezzi contenuti."
+    ],
+    "facts": {
+      "capital": "Belgrado",
+      "languages": "Serbo (cirillico e latino)",
+      "currency": "Dinaro serbo (RSD)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 40 minuti per Belgrado",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale: estati calde, inverni freddi",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; autostrade a pedaggio",
+      "documents": "Passaporto o carta d'identità valida per l'espatrio; il paese non è nell'UE. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Fortezza di Kalemegdan",
+        "description": "La fortezza sulla confluenza dei fiumi.",
+        "search": "Fortezza di Belgrado"
+      },
+      {
+        "name": "Tempio di San Sava",
+        "description": "Una delle chiese ortodosse più grandi.",
+        "search": "Tempio di San Sava"
+      },
+      {
+        "name": "Novi Sad",
+        "description": "La fortezza di Petrovaradin.",
+        "search": "Fortezza di Petrovaradin"
+      },
+      {
+        "name": "Monastero di Studenica",
+        "description": "Affreschi medievali UNESCO.",
+        "search": "Monastero di Studenica"
+      },
+      {
+        "name": "Porte di Ferro",
+        "description": "Le gole del Danubio.",
+        "search": "Porte di Ferro"
+      },
+      {
+        "name": "Skadarlija",
+        "description": "La via bohémien di Belgrado.",
+        "search": "Skadarlija"
+      }
+    ],
+    "gettingAround": [
+      "Treno veloce Belgrado–Novi Sad",
+      "Pullman tra le città",
+      "Auto per monasteri e Danubio"
+    ],
+    "food": [
+      "Pljeskavica, hamburger balcanico",
+      "Ajvar, crema di peperoni",
+      "Rakija"
+    ],
+    "tips": [
+      "Ingresso dal Kosovo: verificare le regole di frontiera",
+      "Prezzi convenienti",
+      "Cambiare in uffici autorizzati"
+    ]
+  },
+  "MK": {
+    "tagline": "Il lago di Ocrida, monasteri bizantini e montagne verdi nel cuore dei Balcani.",
+    "description": [
+      "La Macedonia del Nord è una piccola nazione balcanica con un patrimonio sorprendente. Il lago di Ocrida, tra i più antichi d'Europa, è circondato da chiese e monasteri affrescati.",
+      "La città di Ocrida, patrimonio UNESCO, con la chiesa di San Giovanni a Kaneo affacciata sull'acqua, è il gioiello del paese.",
+      "Skopje unisce il vecchio bazar ottomano a statue e palazzi recenti; il canyon di Matka, il monastero di San Naum e i villaggi di montagna completano il viaggio.",
+      "Ideale in un tour con Albania e Grecia del nord, 4–6 giorni, a prezzi molto contenuti."
+    ],
+    "facts": {
+      "capital": "Skopje",
+      "languages": "Macedone e albanese",
+      "currency": "Denar macedone (MKD)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 45 minuti per Skopje o Ocrida",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale con influenze mediterranee",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago di Ocrida",
+        "description": "Il lago antico e cristallino.",
+        "search": "Lago di Ocrida"
+      },
+      {
+        "name": "San Giovanni a Kaneo",
+        "description": "La chiesa sul promontorio del lago.",
+        "search": "Chiesa di San Giovanni a Kaneo"
+      },
+      {
+        "name": "Canyon di Matka",
+        "description": "Lago e grotte vicino a Skopje.",
+        "search": "Canyon di Matka"
+      },
+      {
+        "name": "Vecchio bazar di Skopje",
+        "description": "Il quartiere ottomano.",
+        "search": "Vecchio bazar di Skopje"
+      },
+      {
+        "name": "Monastero di San Naum",
+        "description": "Il monastero alle sorgenti del lago.",
+        "search": "Monastero di San Naum"
+      },
+      {
+        "name": "Fortezza di Samuele",
+        "description": "Le mura che dominano Ocrida.",
+        "search": "Fortezza di Samuele"
+      }
+    ],
+    "gettingAround": [
+      "Autobus tra Skopje e Ocrida",
+      "Auto a noleggio",
+      "Barche sul lago"
+    ],
+    "food": [
+      "Tavče gravče, fagioli al forno",
+      "Trota di Ocrida",
+      "Ajvar e vini Vranec"
+    ],
+    "tips": [
+      "Prezzi molto bassi",
+      "Contanti utili",
+      "D'estate Ocrida è vivace e animata"
+    ]
+  },
+  "XK": {
+    "tagline": "Monasteri medievali e città ottomane in uno degli stati più giovani d'Europa.",
+    "description": [
+      "Il Kosovo è un paese giovane con una storia antica. Prizren, con il ponte di pietra, la fortezza e le moschee, è la città più affascinante.",
+      "I monasteri ortodossi serbi di Visoki Dečani e del Patriarcato di Peć, patrimonio UNESCO, conservano affreschi straordinari.",
+      "Pristina, la capitale, è vivace e giovane; le montagne di Rugova offrono escursioni e una via ferrata spettacolare.",
+      "Adatto a viaggiatori curiosi, in un tour balcanico con Albania, Macedonia del Nord e Montenegro."
+    ],
+    "facts": {
+      "capital": "Pristina",
+      "languages": "Albanese e serbo",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 45 minuti per Pristina",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; verificare la validità dell'assicurazione auto",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto; attenzione al successivo ingresso in Serbia. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Prizren",
+        "description": "Il ponte di pietra e la moschea di Sinan Pascià.",
+        "search": "Prizren"
+      },
+      {
+        "name": "Monastero di Visoki Dečani",
+        "description": "Affreschi del Trecento.",
+        "search": "Monastero di Visoki Dečani"
+      },
+      {
+        "name": "Patriarcato di Peć",
+        "description": "Complesso di chiese medievali.",
+        "search": "Patriarcato di Peć"
+      },
+      {
+        "name": "Gola di Rugova",
+        "description": "Montagne e via ferrata.",
+        "search": "Gola di Rugova"
+      },
+      {
+        "name": "Pristina",
+        "description": "La biblioteca nazionale e il monumento Newborn.",
+        "search": "Biblioteca nazionale del Kosovo"
+      },
+      {
+        "name": "Cascate di Mirusha",
+        "description": "Laghetti e cascate in sequenza.",
+        "search": "Cascate di Mirusha"
+      }
+    ],
+    "gettingAround": [
+      "Autobus tra le città",
+      "Auto con autista",
+      "Taxi economici"
+    ],
+    "food": [
+      "Flija, sfoglia a strati",
+      "Tavë Prizreni",
+      "Caffè macchiato, molto popolare"
+    ],
+    "tips": [
+      "Verificare le indicazioni di viaggiaresicuri.it per le zone del nord",
+      "Prezzi bassi",
+      "Ospitalità calorosa"
+    ]
+  },
+  "MD": {
+    "tagline": "Cantine sotterranee infinite, monasteri rupestri e campagne autentiche.",
+    "description": [
+      "La Moldavia è uno dei paesi meno visitati d'Europa ma è una meta perfetta per gli amanti del vino: le cantine di Mileștii Mici e Cricova hanno chilometri di gallerie sotterranee.",
+      "Il complesso di Orheiul Vechi, con un monastero scavato nella roccia sopra un'ansa del fiume, è il luogo più suggestivo del paese.",
+      "Chișinău, la capitale, è verde e tranquilla, con parchi, mercati e architettura sovietica; la campagna conserva tradizioni rurali.",
+      "Adatta a viaggi enogastronomici e culturali di 3–5 giorni, magari abbinata alla Romania."
+    ],
+    "facts": {
+      "capital": "Chișinău",
+      "languages": "Rumeno; russo diffuso",
+      "currency": "Leu moldavo (MDL)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore e 30 minuti per Chișinău",
+      "bestPeriod": "Maggio–ottobre; ottobre per la festa del vino",
+      "climate": "Continentale",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto o carta d'identità valida; evitare la regione separatista della Transnistria salvo verifiche aggiornate. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Orheiul Vechi",
+        "description": "Il monastero nella roccia.",
+        "search": "Orheiul Vechi"
+      },
+      {
+        "name": "Cantine di Cricova",
+        "description": "Una città sotterranea del vino.",
+        "search": "Cricova"
+      },
+      {
+        "name": "Mileștii Mici",
+        "description": "La collezione di vini più grande del mondo.",
+        "search": "Mileștii Mici"
+      },
+      {
+        "name": "Chișinău",
+        "description": "Parchi e la cattedrale della Natività.",
+        "search": "Chișinău"
+      },
+      {
+        "name": "Monastero di Căpriana",
+        "description": "Uno dei più antichi del paese.",
+        "search": "Monastero di Căpriana"
+      },
+      {
+        "name": "Soroca",
+        "description": "La fortezza sul Dnestr.",
+        "search": "Fortezza di Soroca"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista per le cantine",
+      "Minibus tra le città",
+      "Taxi economici"
+    ],
+    "food": [
+      "Mămăligă con formaggio e panna",
+      "Plăcinte, focacce ripiene",
+      "Vini locali"
+    ],
+    "tips": [
+      "Prenotare le visite alle cantine",
+      "Prezzi molto bassi",
+      "Controllare le indicazioni sulla Transnistria"
+    ]
+  },
+  "UA": {
+    "tagline": "Paese di grande cultura e storia, oggi segnato dal conflitto: viaggi turistici sconsigliati.",
+    "description": [
+      "L'Ucraina è un paese vasto, con città di grande bellezza come Kiev, con le cupole dorate della Lavra delle Grotte e di Santa Sofia, e Leopoli, gioiello asburgico.",
+      "Odessa sul Mar Nero, i Carpazi con villaggi in legno e il castello di Kam'janec'-Podil's'kyj raccontano un patrimonio ricchissimo.",
+      "A causa del conflitto in corso la Farnesina sconsiglia i viaggi nel paese: la scheda è utile come riferimento culturale e per il futuro.",
+      "Prima di qualsiasi proposta verificare sempre le indicazioni aggiornate su viaggiaresicuri.it."
+    ],
+    "facts": {
+      "capital": "Kiev",
+      "languages": "Ucraino; russo diffuso",
+      "currency": "Grivnia ucraina (UAH)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Spazio aereo chiuso ai voli civili: verificare la situazione",
+      "bestPeriod": "Da valutare in base alla situazione di sicurezza",
+      "climate": "Continentale: estati calde, inverni freddi",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati per la situazione di sicurezza. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lavra delle Grotte di Kiev",
+        "description": "Il grande complesso monastico.",
+        "search": "Lavra delle Grotte di Kiev"
+      },
+      {
+        "name": "Cattedrale di Santa Sofia",
+        "description": "Mosaici dell'XI secolo a Kiev.",
+        "search": "Cattedrale di Santa Sofia (Kiev)"
+      },
+      {
+        "name": "Leopoli",
+        "description": "Il centro storico asburgico.",
+        "search": "Leopoli"
+      },
+      {
+        "name": "Odessa",
+        "description": "La scalinata Potëmkin sul Mar Nero.",
+        "search": "Scalinata Potëmkin"
+      },
+      {
+        "name": "Kam'janec'-Podil's'kyj",
+        "description": "La fortezza sull'ansa del fiume.",
+        "search": "Fortezza di Kam'janec'-Podil's'kyj"
+      },
+      {
+        "name": "Tunnel dell'amore",
+        "description": "La galleria verde di Klevan.",
+        "search": "Tunnel dell'amore"
+      }
+    ],
+    "gettingAround": [
+      "Treni (servizi soggetti alla situazione)",
+      "Nessun volo civile al momento",
+      "Valutare solo con indicazioni ufficiali"
+    ],
+    "food": [
+      "Borsch",
+      "Varenyky, ravioli",
+      "Salo e pane nero"
+    ],
+    "tips": [
+      "Non proporre viaggi turistici finché sconsigliati",
+      "Registrarsi su Dove Siamo nel Mondo per viaggi essenziali",
+      "Seguire le indicazioni della Farnesina"
+    ]
+  },
+  "BY": {
+    "tagline": "Foreste primordiali e città ricostruite, in un paese oggi poco accessibile.",
+    "description": [
+      "La Bielorussia custodisce la foresta di Białowieża, una delle ultime foreste primarie d'Europa con i bisonti europei, e castelli come quelli di Mir e Njasviž, patrimonio UNESCO.",
+      "Minsk, la capitale, mostra un'architettura monumentale sovietica, larghi viali e parchi; Brest conserva la fortezza memoriale della Seconda guerra mondiale.",
+      "La situazione politica e le limitazioni ai voli rendono oggi i viaggi complessi: verificare sempre le indicazioni aggiornate della Farnesina.",
+      "Scheda utile come riferimento; proposte turistiche solo dopo attenta verifica."
+    ],
+    "facts": {
+      "capital": "Minsk",
+      "languages": "Bielorusso e russo",
+      "currency": "Rublo bielorusso (BYN)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti aerei con l'UE sospesi: verificare",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale: inverni freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto; regole di ingresso e situazione da verificare con attenzione su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Mir",
+        "description": "Il castello gotico-rinascimentale.",
+        "search": "Castello di Mir"
+      },
+      {
+        "name": "Castello di Njasviž",
+        "description": "La residenza dei Radziwiłł.",
+        "search": "Castello di Njasviž"
+      },
+      {
+        "name": "Foresta di Białowieża",
+        "description": "La foresta dei bisonti europei.",
+        "search": "Foresta di Białowieża"
+      },
+      {
+        "name": "Minsk",
+        "description": "Architettura sovietica e parchi.",
+        "search": "Minsk"
+      },
+      {
+        "name": "Fortezza di Brest",
+        "description": "Il memoriale della guerra.",
+        "search": "Fortezza di Brest"
+      },
+      {
+        "name": "Polack",
+        "description": "La cattedrale di Santa Sofia.",
+        "search": "Polack"
+      }
+    ],
+    "gettingAround": [
+      "Treni tra le città",
+      "Auto con autista",
+      "Valutare le restrizioni di frontiera"
+    ],
+    "food": [
+      "Draniki, frittelle di patate",
+      "Machanka, stufato con frittelle",
+      "Zuppe di funghi"
+    ],
+    "tips": [
+      "Verificare la situazione prima di proporre il viaggio",
+      "Carte di credito occidentali spesso non funzionano",
+      "Contanti necessari"
+    ]
+  },
+  "RU": {
+    "tagline": "San Pietroburgo, Mosca e la Transiberiana: un paese immenso, oggi sconsigliato.",
+    "description": [
+      "La Russia è il paese più esteso del mondo e custodisce capolavori come il Cremlino e la Piazza Rossa di Mosca, l'Ermitage e i palazzi imperiali di San Pietroburgo.",
+      "L'Anello d'Oro con città di chiese dalle cupole colorate, il lago Bajkal in Siberia e la leggendaria Transiberiana hanno fatto sognare generazioni di viaggiatori.",
+      "Per la situazione internazionale la Farnesina sconsiglia i viaggi; sanzioni, voli diretti sospesi e pagamenti con carte occidentali non disponibili rendono il viaggio molto complesso.",
+      "Scheda utile come riferimento culturale; non proporre viaggi senza aver verificato le indicazioni ufficiali."
+    ],
+    "facts": {
+      "capital": "Mosca",
+      "languages": "Russo",
+      "currency": "Rublo russo (RUB)",
+      "timezone": "A Mosca: 2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Voli diretti dall'UE sospesi: solo con scalo in paesi terzi",
+      "bestPeriod": "Maggio–settembre; giugno per le notti bianche di San Pietroburgo",
+      "climate": "Continentale con inverni molto freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto e visto; viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Piazza Rossa",
+        "description": "La cattedrale di San Basilio e il Cremlino.",
+        "search": "Piazza Rossa"
+      },
+      {
+        "name": "Museo dell'Ermitage",
+        "description": "Il Palazzo d'Inverno a San Pietroburgo.",
+        "search": "Ermitage"
+      },
+      {
+        "name": "Peterhof",
+        "description": "Le fontane della reggia sul Baltico.",
+        "search": "Peterhof"
+      },
+      {
+        "name": "Lago Bajkal",
+        "description": "Il lago più profondo del mondo.",
+        "search": "Bajkal"
+      },
+      {
+        "name": "Suzdal'",
+        "description": "Una delle città dell'Anello d'Oro.",
+        "search": "Suzdal'"
+      },
+      {
+        "name": "Chiesa del Salvatore sul Sangue Versato",
+        "description": "Mosaici e cupole a San Pietroburgo.",
+        "search": "Chiesa del Salvatore sul sangue versato"
+      }
+    ],
+    "gettingAround": [
+      "Treni veloci Mosca–San Pietroburgo",
+      "Transiberiana per la Siberia",
+      "Metro monumentale a Mosca"
+    ],
+    "food": [
+      "Blini con caviale",
+      "Pelmeni",
+      "Boršč e stroganoff"
+    ],
+    "tips": [
+      "Viaggi sconsigliati: verificare prima di ogni proposta",
+      "Carte occidentali non funzionanti",
+      "Servono visto e registrazione"
+    ]
+  },
+  "GL": {
+    "tagline": "Iceberg giganti, villaggi colorati e la calotta glaciale: l'Artico più autentico.",
+    "description": [
+      "La Groenlandia è l'isola più grande del mondo, coperta per gran parte da una calotta di ghiaccio. Lungo le coste sorgono piccoli villaggi di case colorate.",
+      "Ilulissat, con il fiordo ghiacciato patrimonio UNESCO, è il luogo più spettacolare: iceberg enormi galleggiano nella baia, da ammirare in barca o dall'alto.",
+      "D'estate si avvistano balene e si fanno escursioni sulla tundra; d'inverno slitte trainate da cani e aurore boreali. La cultura inuit è viva e affascinante.",
+      "Una meta da esploratori, per viaggiatori esperti e fotografi, di solito abbinata all'Islanda o alla Danimarca."
+    ],
+    "facts": {
+      "capital": "Nuuk",
+      "languages": "Groenlandese e danese; inglese nel turismo",
+      "currency": "Corona danese (DKK)",
+      "timezone": "A Nuuk: 3 ore in meno rispetto all'Italia",
+      "flight": "Via Copenaghen o Reykjavík, con voli interni verso le località",
+      "bestPeriod": "Giugno–settembre per iceberg e balene; febbraio–aprile per slitte e aurore",
+      "climate": "Artico: estati fresche, inverni molto freddi e bui",
+      "plugs": "Tipo C e K, 230 V",
+      "driving": "Non esistono strade tra le città: solo aerei e barche",
+      "documents": "Passaporto o carta d'identità; la Groenlandia non è in Schengen né nell'UE. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Fiordo ghiacciato di Ilulissat",
+        "description": "Iceberg giganti patrimonio UNESCO.",
+        "search": "Fiordo ghiacciato di Ilulissat"
+      },
+      {
+        "name": "Nuuk",
+        "description": "La piccola capitale sul fiordo.",
+        "search": "Nuuk"
+      },
+      {
+        "name": "Kangerlussuaq",
+        "description": "La porta per la calotta glaciale.",
+        "search": "Kangerlussuaq"
+      },
+      {
+        "name": "Disko Bay",
+        "description": "Balene e iceberg.",
+        "search": "Baia di Disko"
+      },
+      {
+        "name": "Tasiilaq",
+        "description": "Villaggio della costa est.",
+        "search": "Tasiilaq"
+      },
+      {
+        "name": "Calotta glaciale",
+        "description": "Escursioni sul ghiaccio perenne.",
+        "search": "Calotta glaciale della Groenlandia"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni Air Greenland",
+      "Navi lungo la costa ovest",
+      "Escursioni in barca e slitta"
+    ],
+    "food": [
+      "Pesce e frutti di mare artici",
+      "Carne di bue muschiato e renna",
+      "Suaasat, zuppa tradizionale"
+    ],
+    "tips": [
+      "Prezzi molto alti",
+      "Prevedere giorni di margine per il meteo",
+      "Abbigliamento tecnico indispensabile"
+    ]
+  },
+  "FO": {
+    "tagline": "Scogliere a picco, villaggi dai tetti d'erba e cascate sull'oceano.",
+    "description": [
+      "Le Isole Fær Øer sono un arcipelago dell'Atlantico del Nord tra Scozia, Norvegia e Islanda, con paesaggi verdissimi, scogliere vertiginose e pecore ovunque.",
+      "Il lago Sørvágsvatn che sembra sospeso sull'oceano, la cascata di Múlafossur a Gásadalur e il villaggio di Saksun sono immagini indimenticabili.",
+      "Tórshavn, una delle capitali più piccole del mondo, ha un centro di case dai tetti d'erba; le scogliere di Mykines ospitano colonie di pulcinelle di mare.",
+      "Ideale per viaggiatori amanti della natura e della fotografia, 4–6 giorni, anche in abbinamento all'Islanda."
+    ],
+    "facts": {
+      "capital": "Tórshavn",
+      "languages": "Faroese e danese; inglese diffuso",
+      "currency": "Corona faroese e corona danese (DKK)",
+      "timezone": "Un'ora in meno rispetto all'Italia",
+      "flight": "Via Copenaghen, Edimburgo o Reykjavík",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Oceanico subpolare: fresco, ventoso e umido tutto l'anno",
+      "plugs": "Tipo C e K, 230 V",
+      "driving": "Si guida a destra; tunnel sottomarini a pedaggio",
+      "documents": "Passaporto o carta d'identità; le isole non sono nell'UE. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago Sørvágsvatn",
+        "description": "Il lago sospeso sull'oceano.",
+        "search": "Sørvágsvatn"
+      },
+      {
+        "name": "Gásadalur",
+        "description": "La cascata che cade in mare.",
+        "search": "Gásadalur"
+      },
+      {
+        "name": "Saksun",
+        "description": "Villaggio con chiesa dal tetto d'erba.",
+        "search": "Saksun"
+      },
+      {
+        "name": "Mykines",
+        "description": "L'isola delle pulcinelle di mare.",
+        "search": "Mykines"
+      },
+      {
+        "name": "Tórshavn",
+        "description": "Il quartiere di Tinganes.",
+        "search": "Tórshavn"
+      },
+      {
+        "name": "Kallur",
+        "description": "Il faro sulla scogliera di Kalsoy.",
+        "search": "Kalsoy"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio con tunnel e ponti",
+      "Traghetti ed elicotteri tra le isole",
+      "Autobus di linea"
+    ],
+    "food": [
+      "Agnello essiccato (ræst)",
+      "Pesce e salmone",
+      "Birra locale"
+    ],
+    "tips": [
+      "Molti sentieri sono a pagamento su terreni privati",
+      "Meteo variabilissimo",
+      "Prenotare in anticipo i traghetti per Mykines"
+    ]
+  }
+}

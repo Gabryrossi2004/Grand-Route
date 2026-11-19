@@ -1,0 +1,814 @@
+{
+  "LA": {
+    "tagline": "Templi dorati sul Mekong, cascate turchesi e il ritmo lento del Sud-est asiatico.",
+    "description": [
+      "Il Laos è il paese più tranquillo dell'Indocina, attraversato dal Mekong e ricoperto di montagne e foreste. Luang Prabang, patrimonio UNESCO, incanta con templi, case coloniali e la processione dei monaci all'alba.",
+      "Le cascate di Kuang Si, con le loro piscine turchesi, la Piana delle Giare e le grotte di Pak Ou con migliaia di statue di Buddha sono tappe imperdibili.",
+      "Vang Vieng è circondata da montagne carsiche e lagune, mentre nel sud le 4.000 isole del Mekong offrono una vita lentissima tra amache e delfini d'acqua dolce.",
+      "Ideale da abbinare a Thailandia, Vietnam e Cambogia in un grande tour dell'Indocina; 5–8 giorni nel paese."
+    ],
+    "facts": {
+      "capital": "Vientiane",
+      "languages": "Lao; francese e inglese nel turismo",
+      "currency": "Kip laotiano (LAK); dollari e baht accettati in alcuni luoghi",
+      "timezone": "6 ore in più rispetto all'Italia (5 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 14–16 ore con uno o due scali",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale monsonico: secco da novembre ad aprile, piovoso da maggio a ottobre",
+      "plugs": "Tipi A, B, C, E e F, 230 V: utile un adattatore universale",
+      "driving": "Si guida a destra; meglio autista e treni",
+      "documents": "Passaporto con validità di almeno 6 mesi e visto (elettronico o all'arrivo). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Luang Prabang",
+        "description": "Templi e processione dei monaci all'alba.",
+        "search": "Luang Prabang"
+      },
+      {
+        "name": "Cascate di Kuang Si",
+        "description": "Piscine naturali turchesi.",
+        "search": "Cascate di Kuang Si"
+      },
+      {
+        "name": "Vang Vieng",
+        "description": "Montagne carsiche e lagune.",
+        "search": "Vang Vieng"
+      },
+      {
+        "name": "Piana delle Giare",
+        "description": "Giare di pietra millenarie.",
+        "search": "Piana delle Giare"
+      },
+      {
+        "name": "Grotte di Pak Ou",
+        "description": "Migliaia di statue di Buddha.",
+        "search": "Grotte di Pak Ou"
+      },
+      {
+        "name": "4.000 isole",
+        "description": "Isole del Mekong nel sud.",
+        "search": "Si Phan Don"
+      }
+    ],
+    "gettingAround": [
+      "Treno veloce Vientiane–Vang Vieng–Luang Prabang",
+      "Battelli lenti sul Mekong",
+      "Voli interni e auto con autista"
+    ],
+    "food": [
+      "Laap, insalata di carne",
+      "Riso glutinoso",
+      "Khao piak sen, zuppa di noodle"
+    ],
+    "tips": [
+      "Abbigliamento coprente nei templi",
+      "Non toccare la testa delle persone",
+      "Ordigni inesplosi in zone rurali: restare sui sentieri"
+    ]
+  },
+  "MM": {
+    "tagline": "Pagode d'oro e templi di Bagan: un paese meraviglioso, oggi in una situazione difficile.",
+    "description": [
+      "Il Myanmar custodisce alcuni dei paesaggi più suggestivi dell'Asia: la piana di Bagan con migliaia di templi e pagode, la Shwedagon dorata di Yangon e il lago Inle con i pescatori che remano con una gamba.",
+      "Mandalay, ultima capitale reale, e la Roccia d'Oro in bilico su un precipizio sono luoghi sacri per il buddhismo birmano.",
+      "Dal 2021 il paese vive una grave crisi politica e di sicurezza, e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento culturale: verificare sempre le indicazioni ufficiali prima di proporre il viaggio."
+    ],
+    "facts": {
+      "capital": "Naypyidaw",
+      "languages": "Birmano",
+      "currency": "Kyat birmano (MMK)",
+      "timezone": "5 ore e mezza in più rispetto all'Italia (4 ore e mezza in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Yangon (collegamenti ridotti)",
+      "bestPeriod": "Novembre–febbraio",
+      "climate": "Tropicale monsonico",
+      "plugs": "Tipi C, D, F e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati per la situazione di sicurezza. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Bagan",
+        "description": "Migliaia di templi nella piana.",
+        "search": "Bagan"
+      },
+      {
+        "name": "Pagoda Shwedagon",
+        "description": "La grande pagoda d'oro di Yangon.",
+        "search": "Pagoda Shwedagon"
+      },
+      {
+        "name": "Lago Inle",
+        "description": "Villaggi su palafitte e orti galleggianti.",
+        "search": "Lago Inle"
+      },
+      {
+        "name": "Roccia d'Oro",
+        "description": "La pagoda di Kyaiktiyo.",
+        "search": "Pagoda Kyaiktiyo"
+      },
+      {
+        "name": "Mandalay",
+        "description": "Il palazzo reale e la collina.",
+        "search": "Mandalay"
+      },
+      {
+        "name": "Ponte U Bein",
+        "description": "Il ponte in teak più lungo del mondo.",
+        "search": "Ponte U Bein"
+      }
+    ],
+    "gettingAround": [
+      "Viaggi sconsigliati al momento"
+    ],
+    "food": [
+      "Mohinga, zuppa di pesce",
+      "Insalata di foglie di tè",
+      "Curry birmani"
+    ],
+    "tips": [
+      "Seguire le indicazioni della Farnesina",
+      "Nessuna proposta turistica finché sconsigliato",
+      "Verificare le coperture assicurative"
+    ]
+  },
+  "BT": {
+    "tagline": "Il regno della felicità: monasteri sospesi, valli himalayane e un turismo sostenibile.",
+    "description": [
+      "Il Bhutan è un piccolo regno himalayano che misura il proprio sviluppo con la «felicità interna lorda». Il turismo è volutamente limitato e di alta qualità.",
+      "Il monastero della Tana della Tigre, aggrappato a una parete di roccia sopra la valle di Paro, è l'immagine simbolo del paese.",
+      "Gli dzong, grandi fortezze-monastero, i festival religiosi con le danze in maschera, le valli di Punakha e Bumthang e i passi con le bandiere di preghiera rendono il viaggio unico.",
+      "Ideale per viaggiatori in cerca di spiritualità e natura incontaminata, 6–10 giorni con guida obbligatoria, spesso abbinato al Nepal."
+    ],
+    "facts": {
+      "capital": "Thimphu",
+      "languages": "Dzongkha; inglese molto diffuso",
+      "currency": "Ngultrum (BTN), alla pari con la rupia indiana",
+      "timezone": "5 ore in più rispetto all'Italia (4 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Delhi, Kathmandu o Bangkok per Paro",
+      "bestPeriod": "Marzo–maggio e settembre–novembre",
+      "climate": "Subtropicale nelle valli basse, alpino in alta quota",
+      "plugs": "Tipi C, D e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; spostamenti con autista e guida",
+      "documents": "Passaporto e visto ottenibile tramite operatore autorizzato; si paga una tassa giornaliera per lo sviluppo sostenibile. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tana della Tigre",
+        "description": "Il monastero di Taktsang sulla roccia.",
+        "search": "Taktsang"
+      },
+      {
+        "name": "Punakha Dzong",
+        "description": "La fortezza alla confluenza di due fiumi.",
+        "search": "Punakha Dzong"
+      },
+      {
+        "name": "Thimphu",
+        "description": "La capitale e il grande Buddha Dordenma.",
+        "search": "Buddha Dordenma"
+      },
+      {
+        "name": "Passo Dochula",
+        "description": "108 stupa con vista sull'Himalaya.",
+        "search": "Passo Dochula"
+      },
+      {
+        "name": "Valle di Bumthang",
+        "description": "Il cuore spirituale del paese.",
+        "search": "Bumthang"
+      },
+      {
+        "name": "Valle di Phobjikha",
+        "description": "Le gru dal collo nero.",
+        "search": "Valle di Phobjikha"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista e guida obbligatoria",
+      "Voli Druk Air e Bhutan Airlines",
+      "Trekking organizzati"
+    ],
+    "food": [
+      "Ema datshi, peperoncini al formaggio",
+      "Riso rosso",
+      "Momo e tè al burro"
+    ],
+    "tips": [
+      "Prenotare tramite operatore autorizzato",
+      "Rispettare i luoghi sacri",
+      "Voli spettacolari ma soggetti al meteo"
+    ]
+  },
+  "MN": {
+    "tagline": "Steppe senza confini, deserto del Gobi e la vita nomade nelle gher.",
+    "description": [
+      "La Mongolia è uno dei paesi meno popolati al mondo: praterie sconfinate, montagne, laghi e il deserto del Gobi, dove la vita nomade continua quasi immutata.",
+      "Dormire nelle gher, le tende tradizionali, condividere il tè al latte con le famiglie di pastori e cavalcare nella steppa sono esperienze uniche.",
+      "Il Gobi offre dune cantanti e le Flaming Cliffs dei dinosauri, mentre il lago Khövsgöl e la valle dell'Orkhon con l'antica capitale Karakorum mostrano un'altra Mongolia.",
+      "Ideale per viaggiatori avventurosi, 10–14 giorni in estate, soprattutto durante il festival del Naadam a luglio."
+    ],
+    "facts": {
+      "capital": "Ulan Bator",
+      "languages": "Mongolo; russo e inglese poco diffusi",
+      "currency": "Tögrög mongolo (MNT)",
+      "timezone": "A Ulan Bator: 7 ore in più rispetto all'Italia (6 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Istanbul, Seul o Pechino) per Ulan Bator",
+      "bestPeriod": "Giugno–settembre; luglio per il Naadam",
+      "climate": "Continentale estremo: inverni gelidi, estati miti",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra; piste sterrate, solo con autista",
+      "documents": "Passaporto valido; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Deserto del Gobi",
+        "description": "Dune di Khongoryn Els.",
+        "search": "Khongoryn Els"
+      },
+      {
+        "name": "Lago Khövsgöl",
+        "description": "Il lago blu del nord.",
+        "search": "Lago Khövsgöl"
+      },
+      {
+        "name": "Karakorum",
+        "description": "L'antica capitale e il monastero di Erdene Zuu.",
+        "search": "Erdene Zuu"
+      },
+      {
+        "name": "Parco del Gorkhi-Terelj",
+        "description": "La roccia della Tartaruga.",
+        "search": "Parco nazionale di Gorkhi-Terelj"
+      },
+      {
+        "name": "Flaming Cliffs",
+        "description": "Le rupi rosse dei dinosauri.",
+        "search": "Bayanzag"
+      },
+      {
+        "name": "Statua di Gengis Khan",
+        "description": "La statua equestre gigante.",
+        "search": "Statua equestre di Gengis Khan"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista e guida",
+      "Voli interni",
+      "Cavalli e cammelli"
+    ],
+    "food": [
+      "Buuz, ravioli al vapore",
+      "Khorkhog, carne cotta con pietre calde",
+      "Tè al latte salato"
+    ],
+    "tips": [
+      "Servizi essenziali fuori dalla capitale",
+      "Lunghi tragitti su piste",
+      "Prenotare con largo anticipo per il Naadam"
+    ]
+  },
+  "TW": {
+    "tagline": "Templi, mercati notturni e montagne verdi in un'isola efficiente e accogliente.",
+    "description": [
+      "Taiwan è un'isola moderna e sicura con una forte identità culturale. Taipei unisce il grattacielo Taipei 101, il Museo del Palazzo Nazionale con tesori imperiali cinesi e templi animati.",
+      "I mercati notturni sono un'istituzione: street food, bubble tea e atmosfera vivace ogni sera.",
+      "La gola di Taroko con le sue pareti di marmo, il lago del Sole e della Luna, le montagne di Alishan e i villaggi di Jiufen e Shifen completano un viaggio vario.",
+      "Ideale per 7–10 giorni, anche come tappa di un viaggio in Giappone o Hong Kong."
+    ],
+    "facts": {
+      "capital": "Taipei",
+      "languages": "Cinese mandarino; taiwanese diffuso",
+      "currency": "Nuovo dollaro taiwanese (TWD)",
+      "timezone": "7 ore in più rispetto all'Italia (6 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 13–15 ore con uno scalo",
+      "bestPeriod": "Ottobre–aprile",
+      "climate": "Subtropicale: estati calde e umide con tifoni, inverni miti",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a destra; serve la patente internazionale",
+      "documents": "Passaporto valido; per soggiorni turistici fino a 90 giorni di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Taipei 101",
+        "description": "Il grattacielo simbolo dell'isola.",
+        "search": "Taipei 101"
+      },
+      {
+        "name": "Gola di Taroko",
+        "description": "Pareti di marmo e sentieri.",
+        "search": "Parco nazionale di Taroko"
+      },
+      {
+        "name": "Lago del Sole e della Luna",
+        "description": "Il lago tra le montagne.",
+        "search": "Lago del Sole e della Luna"
+      },
+      {
+        "name": "Jiufen",
+        "description": "Il villaggio delle lanterne in collina.",
+        "search": "Jiufen"
+      },
+      {
+        "name": "Museo del Palazzo Nazionale",
+        "description": "Tesori imperiali cinesi.",
+        "search": "Museo del Palazzo Nazionale"
+      },
+      {
+        "name": "Alishan",
+        "description": "Foreste e alba sul mare di nuvole.",
+        "search": "Alishan"
+      }
+    ],
+    "gettingAround": [
+      "Treno ad alta velocità sulla costa ovest",
+      "Metro efficiente a Taipei",
+      "Treni e autobus per le montagne"
+    ],
+    "food": [
+      "Beef noodle soup",
+      "Xiaolongbao",
+      "Bubble tea"
+    ],
+    "tips": [
+      "Carta EasyCard per i trasporti",
+      "Stagione dei tifoni da luglio a settembre",
+      "Molto sicuro"
+    ]
+  },
+  "HK": {
+    "tagline": "Grattacieli sul porto, templi e dim sum: l'energia di Hong Kong.",
+    "description": [
+      "Hong Kong è una metropoli verticale affacciata su uno dei porti più spettacolari del mondo, dove Oriente e Occidente si mescolano.",
+      "Il Victoria Peak offre la vista sullo skyline, lo Star Ferry attraversa il porto come da oltre un secolo e i mercati di Kowloon sono un'esplosione di colori.",
+      "Il grande Buddha di Lantau, le spiagge e i sentieri delle isole e i quartieri come Central e Sheung Wan mostrano una città più verde e varia di quanto si immagini.",
+      "Ideale per uno stopover di 3–4 giorni verso l'Asia o l'Oceania, o abbinata a Macao."
+    ],
+    "facts": {
+      "capital": "Hong Kong (regione amministrativa speciale della Cina)",
+      "languages": "Cantonese e inglese; mandarino diffuso",
+      "currency": "Dollaro di Hong Kong (HKD)",
+      "timezone": "7 ore in più rispetto all'Italia (6 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 12 ore diretto",
+      "bestPeriod": "Ottobre–dicembre",
+      "climate": "Subtropicale: estati calde e umide con tifoni, inverni miti",
+      "plugs": "Tipo G, 220 V: serve un adattatore",
+      "driving": "Si guida a sinistra; trasporti pubblici eccellenti",
+      "documents": "Passaporto con validità di almeno 1 mese oltre il soggiorno; per soggiorni brevi non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Victoria Peak",
+        "description": "La vista sullo skyline.",
+        "search": "Victoria Peak"
+      },
+      {
+        "name": "Star Ferry",
+        "description": "Il traghetto storico sul porto.",
+        "search": "Star Ferry"
+      },
+      {
+        "name": "Tian Tan Buddha",
+        "description": "Il grande Buddha di Lantau.",
+        "search": "Tian Tan Buddha"
+      },
+      {
+        "name": "Tempio di Man Mo",
+        "description": "Spirali di incenso nel cuore della città.",
+        "search": "Tempio di Man Mo"
+      },
+      {
+        "name": "Mercati di Mong Kok",
+        "description": "Il Ladies' Market e il mercato dei fiori.",
+        "search": "Mong Kok"
+      },
+      {
+        "name": "Avenue of Stars",
+        "description": "Il lungomare di Tsim Sha Tsui.",
+        "search": "Avenue of Stars (Hong Kong)"
+      }
+    ],
+    "gettingAround": [
+      "Metro MTR con la carta Octopus",
+      "Tram e traghetti",
+      "Funicolare per il Peak"
+    ],
+    "food": [
+      "Dim sum",
+      "Anatra e maiale arrosto",
+      "Egg tart"
+    ],
+    "tips": [
+      "Carta Octopus per tutto",
+      "Umidità altissima in estate",
+      "Prenotare i ristoranti più noti"
+    ]
+  },
+  "MO": {
+    "tagline": "Facciate portoghesi, templi cinesi e casinò sfavillanti.",
+    "description": [
+      "Macao, ex colonia portoghese, è una sorprendente fusione di Europa e Cina. Il centro storico, patrimonio UNESCO, conserva la facciata della chiesa di San Paolo, piazze lastricate e templi.",
+      "Il Cotai Strip con i grandi casinò-resort ricorda Las Vegas, mentre i villaggi di Coloane e Taipa mantengono un'atmosfera tranquilla.",
+      "La cucina macanese, nata dall'incontro di sapori portoghesi e cinesi, è uno dei motivi della visita.",
+      "Ideale per una o due notti abbinate a Hong Kong, collegata dal lungo ponte sul mare."
+    ],
+    "facts": {
+      "capital": "Macao (regione amministrativa speciale della Cina)",
+      "languages": "Cantonese e portoghese; inglese nel turismo",
+      "currency": "Pataca di Macao (MOP); dollari di Hong Kong accettati",
+      "timezone": "7 ore in più rispetto all'Italia (6 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Via Hong Kong (ponte o traghetto) o voli diretti con scalo",
+      "bestPeriod": "Ottobre–dicembre",
+      "climate": "Subtropicale umido",
+      "plugs": "Tipo G (anche D), 220 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto; per soggiorni brevi non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Rovine di San Paolo",
+        "description": "La facciata simbolo di Macao.",
+        "search": "Rovine della chiesa di San Paolo (Macao)"
+      },
+      {
+        "name": "Largo do Senado",
+        "description": "La piazza in stile portoghese.",
+        "search": "Largo do Senado"
+      },
+      {
+        "name": "Tempio di A-Ma",
+        "description": "Il tempio dedicato alla dea del mare.",
+        "search": "Tempio di A-Ma"
+      },
+      {
+        "name": "Cotai Strip",
+        "description": "Casinò e resort.",
+        "search": "Cotai"
+      },
+      {
+        "name": "Macau Tower",
+        "description": "Belvedere e bungee jumping.",
+        "search": "Macau Tower"
+      },
+      {
+        "name": "Villaggio di Coloane",
+        "description": "Atmosfera tranquilla e chiesetta.",
+        "search": "Coloane"
+      }
+    ],
+    "gettingAround": [
+      "Navette gratuite dei casinò",
+      "Autobus e taxi",
+      "Ponte e traghetti per Hong Kong"
+    ],
+    "food": [
+      "Pastéis de nata macanesi",
+      "Pollo africano",
+      "Minchi"
+    ],
+    "tips": [
+      "Abbinare a Hong Kong",
+      "Navette gratuite tra hotel e frontiera",
+      "Nei weekend molto affollata"
+    ]
+  },
+  "BN": {
+    "tagline": "Moschee dorate e foresta pluviale nel piccolo sultanato del Borneo.",
+    "description": [
+      "Il Brunei è un piccolo e ricco sultanato sull'isola del Borneo, tranquillo e ordinato. La capitale Bandar Seri Begawan è famosa per la moschea Omar Ali Saifuddien e per quella di Jame' Asr Hassanil Bolkiah con le cupole d'oro.",
+      "Il villaggio su palafitte di Kampong Ayer, tra i più grandi al mondo, si visita in barca.",
+      "Il parco nazionale di Ulu Temburong offre foresta pluviale primaria, passerelle sospese tra gli alberi e proboscidati.",
+      "Ideale come estensione di un viaggio in Malesia o nel Borneo, 2–3 giorni."
+    ],
+    "facts": {
+      "capital": "Bandar Seri Begawan",
+      "languages": "Malese; inglese diffuso",
+      "currency": "Dollaro del Brunei (BND), alla pari con quello di Singapore",
+      "timezone": "7 ore in più rispetto all'Italia (6 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Singapore, Kuala Lumpur o Dubai)",
+      "bestPeriod": "Febbraio–aprile",
+      "climate": "Equatoriale: caldo e umido tutto l'anno",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Moschea Omar Ali Saifuddien",
+        "description": "La moschea sulla laguna.",
+        "search": "Moschea Omar Ali Saifuddien"
+      },
+      {
+        "name": "Kampong Ayer",
+        "description": "Il villaggio sull'acqua.",
+        "search": "Kampong Ayer"
+      },
+      {
+        "name": "Ulu Temburong",
+        "description": "Foresta pluviale primaria.",
+        "search": "Parco nazionale Ulu Temburong"
+      },
+      {
+        "name": "Moschea Jame' Asr Hassanil Bolkiah",
+        "description": "29 cupole dorate.",
+        "search": "Moschea Jame' Asr Hassanil Bolkiah"
+      },
+      {
+        "name": "Istana Nurul Iman",
+        "description": "Il palazzo del sultano.",
+        "search": "Istana Nurul Iman"
+      },
+      {
+        "name": "Royal Regalia Museum",
+        "description": "I tesori della monarchia.",
+        "search": "Royal Regalia Museum"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto",
+      "Barche-taxi nel villaggio d'acqua",
+      "Escursioni organizzate a Temburong"
+    ],
+    "food": [
+      "Ambuyat, piatto di sago",
+      "Nasi katok",
+      "Satay"
+    ],
+    "tips": [
+      "Alcol non in vendita",
+      "Abbigliamento coprente",
+      "Durante il Ramadan orari ridotti"
+    ]
+  },
+  "TL": {
+    "tagline": "Barriere coralline intatte e montagne remote nel giovane stato di Timor Est.",
+    "description": [
+      "Timor Est è uno degli stati più giovani del mondo, indipendente dal 2002, poco toccato dal turismo. Le acque attorno all'isola di Atauro sono tra le più ricche di biodiversità marina del pianeta.",
+      "Dili, la capitale, ha un lungomare con la statua del Cristo Rei; all'interno montagne e villaggi tradizionali offrono trekking e incontri autentici.",
+      "Avvistamenti di balene e delfini durante le migrazioni attirano sub e appassionati di natura.",
+      "Per viaggiatori esperti e subacquei, spesso in combinazione con l'Indonesia."
+    ],
+    "facts": {
+      "capital": "Dili",
+      "languages": "Tetum e portoghese; indonesiano diffuso",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "8 ore in più rispetto all'Italia (7 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Bali o Darwin",
+      "bestPeriod": "Maggio–novembre",
+      "climate": "Tropicale con stagione secca da maggio a novembre",
+      "plugs": "Tipi C, E, F e I, 220 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; strade difficili",
+      "documents": "Passaporto e visto all'arrivo in alcuni punti d'ingresso. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Isola di Atauro",
+        "description": "Snorkeling e immersioni.",
+        "search": "Atauro"
+      },
+      {
+        "name": "Cristo Rei di Dili",
+        "description": "La statua sul promontorio.",
+        "search": "Cristo Rei di Dili"
+      },
+      {
+        "name": "Monte Ramelau",
+        "description": "La vetta più alta dell'isola.",
+        "search": "Monte Ramelau"
+      },
+      {
+        "name": "Jaco",
+        "description": "Isola sacra dalle spiagge bianche.",
+        "search": "Jaco (isola)"
+      },
+      {
+        "name": "Maubisse",
+        "description": "Villaggio di montagna e caffè.",
+        "search": "Maubisse"
+      },
+      {
+        "name": "Baucau",
+        "description": "Città coloniale e piscine naturali.",
+        "search": "Baucau"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Traghetti per Atauro",
+      "Microlet (minibus) a Dili"
+    ],
+    "food": [
+      "Ikan sabuko, pesce alla griglia",
+      "Batar daan, mais e fagioli",
+      "Caffè di Timor"
+    ],
+    "tips": [
+      "Infrastrutture essenziali",
+      "Contanti in dollari",
+      "Assicurazione sanitaria con evacuazione"
+    ]
+  },
+  "PK": {
+    "tagline": "Le montagne più alte del mondo, la Karakorum Highway e città moghul.",
+    "description": [
+      "Il Pakistan custodisce alcune delle montagne più spettacolari del pianeta: il K2, il Nanga Parbat e le valli di Hunza e Skardu sono paradisi per trekking e alpinismo.",
+      "La Karakorum Highway, una delle strade più alte del mondo, attraversa villaggi, ghiacciai e laghi turchesi come Attabad.",
+      "Lahore, con il forte e la moschea Badshahi, è la città dei Moghul; le rovine di Mohenjo-daro e Taxila raccontano civiltà millenarie.",
+      "Per viaggiatori esperti e appassionati di montagna; la sicurezza varia molto per regione e va sempre verificata."
+    ],
+    "facts": {
+      "capital": "Islamabad",
+      "languages": "Urdu e inglese",
+      "currency": "Rupia pakistana (PKR)",
+      "timezone": "4 ore in più rispetto all'Italia (3 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 7 ore, diretto o con uno scalo",
+      "bestPeriod": "Aprile–ottobre per il nord; ottobre–marzo per le pianure",
+      "climate": "Molto vario: caldo torrido in pianura d'estate, alpino al nord",
+      "plugs": "Tipo C e D, 230 V: utile un adattatore",
+      "driving": "Si guida a sinistra; solo con autista",
+      "documents": "Passaporto con visto elettronico. Molte aree sono sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Valle di Hunza",
+        "description": "Villaggi tra vette di 7.000 metri.",
+        "search": "Valle di Hunza"
+      },
+      {
+        "name": "Moschea Badshahi",
+        "description": "La grande moschea moghul di Lahore.",
+        "search": "Moschea Badshahi"
+      },
+      {
+        "name": "Forte di Lahore",
+        "description": "Il palazzo degli specchi.",
+        "search": "Forte di Lahore"
+      },
+      {
+        "name": "Lago Attabad",
+        "description": "Il lago turchese sulla Karakorum Highway.",
+        "search": "Lago Attabad"
+      },
+      {
+        "name": "K2",
+        "description": "La seconda montagna più alta del mondo.",
+        "search": "K2"
+      },
+      {
+        "name": "Mohenjo-daro",
+        "description": "La città della civiltà dell'Indo.",
+        "search": "Mohenjo-daro"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per Gilgit e Skardu (soggetti al meteo)",
+      "Fuoristrada con autista",
+      "Tour organizzati"
+    ],
+    "food": [
+      "Biryani",
+      "Karahi",
+      "Chai e dolci"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Abbigliamento coprente",
+      "Viaggiare con operatori locali affidabili"
+    ]
+  },
+  "BD": {
+    "tagline": "Fiumi infiniti, la foresta delle Sundarbans e templi di terracotta.",
+    "description": [
+      "Il Bangladesh è un paese di fiumi e delta, densamente popolato e poco turistico, dove l'accoglienza della gente è la prima sorpresa.",
+      "Le Sundarbans, la più grande foresta di mangrovie del mondo, sono la casa della tigre del Bengala e si esplorano in barca.",
+      "Dhaka è caotica e vivace, con il vecchio porto sul Buriganga; i siti buddhisti di Paharpur, i templi di terracotta e le piantagioni di tè di Sreemangal completano il viaggio.",
+      "Per viaggiatori curiosi in cerca di autenticità; la sicurezza va verificata prima della partenza."
+    ],
+    "facts": {
+      "capital": "Dhaka",
+      "languages": "Bengalese; inglese diffuso",
+      "currency": "Taka bengalese (BDT)",
+      "timezone": "5 ore in più rispetto all'Italia (4 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Dhaka",
+      "bestPeriod": "Novembre–febbraio",
+      "climate": "Tropicale monsonico con piogge intense da giugno a settembre",
+      "plugs": "Tipi C, D e G, 220 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; traffico caotico",
+      "documents": "Passaporto e visto (all'arrivo o elettronico). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Sundarbans",
+        "description": "Mangrovie e tigri del Bengala.",
+        "search": "Sundarbans"
+      },
+      {
+        "name": "Forte di Lalbagh",
+        "description": "Il forte moghul di Dhaka.",
+        "search": "Forte di Lalbagh"
+      },
+      {
+        "name": "Paharpur",
+        "description": "Il monastero buddhista UNESCO.",
+        "search": "Paharpur"
+      },
+      {
+        "name": "Sreemangal",
+        "description": "La capitale del tè.",
+        "search": "Sreemangal"
+      },
+      {
+        "name": "Cox's Bazar",
+        "description": "Una delle spiagge più lunghe del mondo.",
+        "search": "Cox's Bazar"
+      },
+      {
+        "name": "Città moschea di Bagerhat",
+        "description": "Moschee del XV secolo.",
+        "search": "Bagerhat"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Barche e traghetti fluviali",
+      "Auto con autista"
+    ],
+    "food": [
+      "Curry di pesce",
+      "Biryani",
+      "Dolci al latte come il rasgulla"
+    ],
+    "tips": [
+      "Verificare la situazione di sicurezza",
+      "Abbigliamento coprente",
+      "Traffico lentissimo a Dhaka"
+    ]
+  },
+  "KP": {
+    "tagline": "Il paese più chiuso al mondo: viaggi solo organizzati e fortemente sconsigliati.",
+    "description": [
+      "La Corea del Nord è uno degli stati più isolati del pianeta. I rari viaggi turistici si svolgono esclusivamente in gruppi organizzati con guide governative.",
+      "Pyongyang mostra monumenti monumentali, il mausoleo di Kumsusan e una metropolitana profondissima; la zona demilitarizzata di Panmunjom è visibile dal lato nord.",
+      "La Farnesina sconsiglia i viaggi e le condizioni possono cambiare senza preavviso.",
+      "Scheda utile solo come riferimento."
+    ],
+    "facts": {
+      "capital": "Pyongyang",
+      "languages": "Coreano",
+      "currency": "Won nordcoreano (KPW); i turisti pagano in valuta estera",
+      "timezone": "8 ore in più rispetto all'Italia (7 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Solo via Pechino o Vladivostok, quando consentito",
+      "bestPeriod": "Non applicabile",
+      "climate": "Continentale: inverni molto freddi",
+      "plugs": "Tipi A, C e F, 220 V",
+      "driving": "Non consentito ai turisti",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Piazza Kim Il-sung",
+        "description": "La piazza delle parate.",
+        "search": "Piazza Kim Il-sung"
+      },
+      {
+        "name": "Torre Juche",
+        "description": "Il monumento sul fiume Taedong.",
+        "search": "Torre Juche"
+      },
+      {
+        "name": "Metropolitana di Pyongyang",
+        "description": "Stazioni monumentali.",
+        "search": "Metropolitana di Pyongyang"
+      },
+      {
+        "name": "Panmunjom",
+        "description": "La zona demilitarizzata.",
+        "search": "Panmunjeom"
+      },
+      {
+        "name": "Monte Paektu",
+        "description": "Il vulcano sacro.",
+        "search": "Paektu"
+      },
+      {
+        "name": "Kaesong",
+        "description": "L'antica capitale.",
+        "search": "Kaesong"
+      }
+    ],
+    "gettingAround": [
+      "Solo tour organizzati con guide"
+    ],
+    "food": [
+      "Naengmyeon, noodle freddi",
+      "Kimchi",
+      "Bulgogi"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Regole severe su foto e comportamento",
+      "Nessuna rappresentanza italiana in loco"
+    ]
+  }
+}

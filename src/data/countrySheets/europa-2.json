@@ -1,0 +1,1090 @@
+{
+  "CH": {
+    "tagline": "Vette alpine, laghi cristallini e treni panoramici in un paese di precisione e bellezza.",
+    "description": [
+      "La Svizzera è la quintessenza delle Alpi: montagne iconiche come il Cervino, l'Eiger e la Jungfrau, ghiacciai e villaggi di legno affacciati su valli verdissime.",
+      "Le città sono eleganti e a misura d'uomo: Lucerna con il ponte di legno sul lago, Zurigo e Ginevra internazionali, Berna con il centro medievale patrimonio UNESCO, Lugano e Locarno dal sapore mediterraneo.",
+      "Il viaggio stesso è un'esperienza: il Glacier Express, il Bernina Express e il GoldenPass attraversano paesaggi spettacolari, mentre funivie e cremagliere portano in quota anche senza fatica.",
+      "Ideale per famiglie, coppie e amanti della natura, d'estate per il trekking e d'inverno per lo sci; 5–7 giorni bastano per un primo giro e si abbina facilmente al nord Italia."
+    ],
+    "facts": {
+      "capital": "Berna",
+      "languages": "Tedesco, francese, italiano e romancio",
+      "currency": "Franco svizzero (CHF); l'euro è accettato in molti luoghi con resto in franchi",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora di volo per Zurigo o Ginevra; ottimi collegamenti in treno dall'Italia",
+      "bestPeriod": "Giugno–settembre per montagna e laghi; dicembre–marzo per lo sci",
+      "climate": "Alpino e continentale: estati miti, inverni freddi e nevosi in quota",
+      "plugs": "Tipo J (e C), 230 V: le spine italiane piccole entrano, per le altre serve un adattatore",
+      "driving": "Si guida a destra; per le autostrade serve la vignetta annuale",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cervino e Zermatt",
+        "description": "La montagna simbolo e il villaggio senza auto.",
+        "search": "Cervino"
+      },
+      {
+        "name": "Lucerna",
+        "description": "Il ponte della Cappella sul lago dei Quattro Cantoni.",
+        "search": "Kapellbrücke"
+      },
+      {
+        "name": "Jungfraujoch",
+        "description": "La stazione ferroviaria più alta d'Europa.",
+        "search": "Jungfraujoch"
+      },
+      {
+        "name": "Lauterbrunnen",
+        "description": "La valle delle 72 cascate.",
+        "search": "Lauterbrunnen"
+      },
+      {
+        "name": "Ginevra",
+        "description": "Il Jet d'Eau e il lago Lemano.",
+        "search": "Jet d'eau Ginevra"
+      },
+      {
+        "name": "Castello di Chillon",
+        "description": "Il castello sull'acqua vicino a Montreux.",
+        "search": "Castello di Chillon"
+      }
+    ],
+    "gettingAround": [
+      "Treni puntualissimi; lo Swiss Travel Pass include treni, battelli e musei",
+      "Treni panoramici come Glacier Express e Bernina Express",
+      "Battelli sui laghi e funivie in montagna"
+    ],
+    "food": [
+      "Fonduta e raclette",
+      "Rösti di patate",
+      "Cioccolato e formaggi come Gruyère ed Emmental"
+    ],
+    "tips": [
+      "Costi elevati: valutare i pass per i trasporti",
+      "Prenotare i posti sui treni panoramici",
+      "In montagna il tempo cambia rapidamente"
+    ]
+  },
+  "BE": {
+    "tagline": "Città d'arte fiamminghe, cioccolato, birre d'abbazia e il cuore dell'Europa.",
+    "description": [
+      "Il Belgio è piccolo ma denso di bellezza: Bruxelles unisce la Grand-Place, una delle piazze più belle del mondo, le istituzioni europee e i murales dei fumetti.",
+      "Bruges, con i canali e le case medievali, è una cartolina vivente; Gand e Anversa offrono capolavori dei fiamminghi, da Van Eyck a Rubens, e una vita culturale vivace.",
+      "La gastronomia è parte del viaggio: cioccolatieri artigiani, waffle, patatine e centinaia di birre, alcune prodotte ancora dai monaci trappisti.",
+      "Perfetto per un weekend lungo o un tour di 4–5 giorni, si abbina bene a Paesi Bassi e Lussemburgo ed è facile da raggiungere in volo o in treno."
+    ],
+    "facts": {
+      "capital": "Bruxelles",
+      "languages": "Olandese (fiammingo), francese e tedesco",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 50 minuti per Bruxelles o Charleroi",
+      "bestPeriod": "Aprile–settembre; dicembre per i mercatini",
+      "climate": "Oceanico: mite e piovoso tutto l'anno",
+      "plugs": "Tipo C ed E, 230 V: le spine italiane piccole funzionano",
+      "driving": "Si guida a destra; in città meglio treni e tram",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Grand-Place di Bruxelles",
+        "description": "La piazza dorata delle corporazioni.",
+        "search": "Grand-Place"
+      },
+      {
+        "name": "Bruges",
+        "description": "Canali, beghinaggio e il campanile.",
+        "search": "Bruges"
+      },
+      {
+        "name": "Gand",
+        "description": "La pala dell'Agnello Mistico e il castello dei Conti.",
+        "search": "Gand"
+      },
+      {
+        "name": "Anversa",
+        "description": "La cattedrale e la casa di Rubens.",
+        "search": "Cattedrale di Nostra Signora Anversa"
+      },
+      {
+        "name": "Atomium",
+        "description": "Il simbolo dell'Expo 1958.",
+        "search": "Atomium"
+      },
+      {
+        "name": "Dinant",
+        "description": "La cittadina sulla Mosa nelle Ardenne.",
+        "search": "Dinant"
+      }
+    ],
+    "gettingAround": [
+      "Treni frequenti tra tutte le città in meno di un'ora",
+      "Tram e metro a Bruxelles e Anversa",
+      "Auto utile solo per le Ardenne"
+    ],
+    "food": [
+      "Moules-frites (cozze e patatine)",
+      "Waffle di Bruxelles e di Liegi",
+      "Cioccolato e birre trappiste"
+    ],
+    "tips": [
+      "Il servizio è incluso nel conto",
+      "Molti musei chiudono il lunedì",
+      "Portare un ombrello"
+    ]
+  },
+  "DK": {
+    "tagline": "Design, castelli da fiaba e la felicità dell'hygge scandinavo.",
+    "description": [
+      "La Danimarca è la porta della Scandinavia: Copenaghen è una capitale moderna e vivibile, con il porto colorato di Nyhavn, i giardini di Tivoli e un'offerta gastronomica di livello mondiale.",
+      "Nei dintorni si visitano castelli come Kronborg, quello di Amleto, e Frederiksborg, oltre al museo di arte moderna Louisiana affacciato sul mare.",
+      "Lo Jutland offre dune, fari e la punta di Skagen dove si incontrano due mari, mentre Aarhus e Odense, città di Andersen, completano il viaggio.",
+      "Ideale per un city break di 3–4 giorni o un tour scandinavo con Svezia e Norvegia; la bicicletta è il modo più danese di scoprirla."
+    ],
+    "facts": {
+      "capital": "Copenaghen",
+      "languages": "Danese; inglese parlato da quasi tutti",
+      "currency": "Corona danese (DKK); carte accettate ovunque",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 2 ore e 15 minuti per Copenaghen",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Temperato oceanico: estati fresche, inverni grigi e ventosi",
+      "plugs": "Tipo C, E e K, 230 V: le spine italiane piccole funzionano",
+      "driving": "Si guida a destra; ponti a pedaggio verso la Svezia",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Nyhavn",
+        "description": "Il porto delle case colorate di Copenaghen.",
+        "search": "Nyhavn"
+      },
+      {
+        "name": "Giardini di Tivoli",
+        "description": "Il parco storico nel cuore della città.",
+        "search": "Giardini di Tivoli"
+      },
+      {
+        "name": "Castello di Kronborg",
+        "description": "Il castello di Amleto a Helsingør.",
+        "search": "Castello di Kronborg"
+      },
+      {
+        "name": "Castello di Frederiksborg",
+        "description": "Il palazzo rinascimentale sul lago.",
+        "search": "Castello di Frederiksborg"
+      },
+      {
+        "name": "Skagen",
+        "description": "La punta dove si incontrano due mari.",
+        "search": "Skagen"
+      },
+      {
+        "name": "La Sirenetta",
+        "description": "La statua più famosa di Copenaghen.",
+        "search": "La Sirenetta Copenaghen"
+      }
+    ],
+    "gettingAround": [
+      "Bicicletta ovunque in città",
+      "Treni e metro senza conducente a Copenaghen",
+      "Treno o auto sul ponte dell'Øresund per Malmö"
+    ],
+    "food": [
+      "Smørrebrød, tartine aperte",
+      "Aringhe marinate",
+      "Dolci danesi e cucina new nordic"
+    ],
+    "tips": [
+      "Costi elevati",
+      "Attenzione alle piste ciclabili",
+      "Prenotare con anticipo i ristoranti più noti"
+    ]
+  },
+  "SE": {
+    "tagline": "Isole, foreste e città di design: la Svezia tra eleganza nordica e natura selvaggia.",
+    "description": [
+      "La Svezia unisce città raffinate e natura sterminata. Stoccolma, costruita su 14 isole, incanta con il centro storico di Gamla Stan, il museo della nave Vasa e l'arcipelago di migliaia di isolotti.",
+      "Göteborg sulla costa ovest e la Svezia meridionale con castelli e spiagge sono perfette per l'estate; i laghi e le foreste del centro invitano a canoa e vita in baita.",
+      "La Lapponia svedese, con Abisko e Kiruna, è una delle zone migliori per le aurore boreali e ospita il celebre Icehotel di Jukkasjärvi.",
+      "Adatta a coppie e famiglie, 5–7 giorni per città e dintorni; si combina con Danimarca, Norvegia o Finlandia in un tour scandinavo."
+    ],
+    "facts": {
+      "capital": "Stoccolma",
+      "languages": "Svedese; inglese parlato da quasi tutti",
+      "currency": "Corona svedese (SEK); si paga quasi solo con carta",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 2 ore e 45 minuti per Stoccolma",
+      "bestPeriod": "Giugno–agosto; dicembre–marzo per la Lapponia",
+      "climate": "Temperato al sud, subartico al nord con inverni lunghi e bui",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; attenzione agli animali selvatici",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Gamla Stan",
+        "description": "Il centro storico di Stoccolma.",
+        "search": "Gamla stan"
+      },
+      {
+        "name": "Museo Vasa",
+        "description": "Il galeone del Seicento recuperato dal mare.",
+        "search": "Vasa (nave)"
+      },
+      {
+        "name": "Arcipelago di Stoccolma",
+        "description": "Migliaia di isole da esplorare in battello.",
+        "search": "Arcipelago di Stoccolma"
+      },
+      {
+        "name": "Icehotel",
+        "description": "L'albergo di ghiaccio di Jukkasjärvi.",
+        "search": "Icehotel"
+      },
+      {
+        "name": "Abisko",
+        "description": "Il parco delle aurore boreali.",
+        "search": "Parco nazionale di Abisko"
+      },
+      {
+        "name": "Visby",
+        "description": "La città anseatica murata sull'isola di Gotland.",
+        "search": "Visby"
+      }
+    ],
+    "gettingAround": [
+      "Treni comodi tra le città e treno notturno per la Lapponia",
+      "Battelli nell'arcipelago",
+      "Voli interni per il nord"
+    ],
+    "food": [
+      "Polpette con salsa di mirtilli rossi",
+      "Salmone e aringhe",
+      "Fika: caffè e kanelbulle alla cannella"
+    ],
+    "tips": [
+      "Contanti quasi inutili: tenere una carta",
+      "Alcol venduto nei negozi Systembolaget",
+      "D'inverno poche ore di luce al nord"
+    ]
+  },
+  "PL": {
+    "tagline": "Città rinate, storia europea e montagne: la Polonia sorprende per bellezza e accoglienza.",
+    "description": [
+      "La Polonia è una delle mete più apprezzate dell'Europa centrale. Cracovia, con la piazza del Mercato, il castello del Wawel e il quartiere ebraico di Kazimierz, è una città che conquista.",
+      "Varsavia, ricostruita dopo la guerra, mostra un centro storico patrimonio UNESCO accanto a quartieri moderni; Danzica sul Baltico ha un fascino anseatico.",
+      "I luoghi della memoria come Auschwitz-Birkenau, le miniere di sale di Wieliczka e i monti Tatra a Zakopane completano un viaggio intenso e vario.",
+      "Ottima per viaggi di gruppo e scolastici, city break e tour culturali di 5–7 giorni a prezzi ancora accessibili."
+    ],
+    "facts": {
+      "capital": "Varsavia",
+      "languages": "Polacco; inglese diffuso tra i giovani",
+      "currency": "Złoty polacco (PLN)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 2 ore per Cracovia o Varsavia",
+      "bestPeriod": "Maggio–settembre; dicembre per i mercatini",
+      "climate": "Continentale: estati calde, inverni freddi e nevosi",
+      "plugs": "Tipo C ed E, 230 V: le spine italiane piccole funzionano",
+      "driving": "Si guida a destra; autostrade in parte a pedaggio",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cracovia",
+        "description": "La piazza del Mercato e il Wawel.",
+        "search": "Piazza del Mercato Cracovia"
+      },
+      {
+        "name": "Auschwitz-Birkenau",
+        "description": "Il memoriale del campo di sterminio.",
+        "search": "Campo di concentramento di Auschwitz"
+      },
+      {
+        "name": "Miniera di sale di Wieliczka",
+        "description": "Cappelle scolpite nel sale.",
+        "search": "Miniera di sale di Wieliczka"
+      },
+      {
+        "name": "Danzica",
+        "description": "La città anseatica sul Baltico.",
+        "search": "Danzica"
+      },
+      {
+        "name": "Centro storico di Varsavia",
+        "description": "La città vecchia ricostruita.",
+        "search": "Città vecchia di Varsavia"
+      },
+      {
+        "name": "Zakopane",
+        "description": "I monti Tatra e l'architettura in legno.",
+        "search": "Zakopane"
+      }
+    ],
+    "gettingAround": [
+      "Treni veloci tra Varsavia, Cracovia e Danzica",
+      "Tram nelle città",
+      "Auto o pullman per montagne e campagna"
+    ],
+    "food": [
+      "Pierogi, ravioli ripieni",
+      "Zuppa żurek",
+      "Kiełbasa e vodka"
+    ],
+    "tips": [
+      "Prenotare in anticipo le visite ad Auschwitz",
+      "Prezzi ancora convenienti",
+      "Molti locali accettano carte"
+    ]
+  },
+  "HU": {
+    "tagline": "Budapest sul Danubio, terme storiche e la grande pianura magiara.",
+    "description": [
+      "L'Ungheria è soprattutto Budapest, una delle capitali più scenografiche d'Europa: Buda con il castello e il Bastione dei Pescatori, Pest con il Parlamento neogotico e i viali eleganti.",
+      "La città è famosa per le sue terme, come Széchenyi e Gellért, per i ruin bar nei cortili del quartiere ebraico e per le crociere serali sul Danubio illuminato.",
+      "Fuori città l'ansa del Danubio con Szentendre ed Esztergom, il lago Balaton e le zone vinicole di Tokaj ed Eger offrono gite piacevoli.",
+      "Perfetta per un weekend di 3–4 giorni o un tour con Vienna e Praga; adatta a coppie, gruppi di amici e viaggi scolastici."
+    ],
+    "facts": {
+      "capital": "Budapest",
+      "languages": "Ungherese; inglese e tedesco diffusi",
+      "currency": "Fiorino ungherese (HUF)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti per Budapest",
+      "bestPeriod": "Aprile–ottobre; dicembre per i mercatini",
+      "climate": "Continentale: estati calde, inverni freddi",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; vignetta elettronica per le autostrade",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Parlamento di Budapest",
+        "description": "L'edificio neogotico sul Danubio.",
+        "search": "Palazzo del Parlamento Budapest"
+      },
+      {
+        "name": "Bastione dei Pescatori",
+        "description": "Il belvedere sulla collina del castello.",
+        "search": "Bastione dei Pescatori"
+      },
+      {
+        "name": "Terme Széchenyi",
+        "description": "Le grandi piscine all'aperto nel parco.",
+        "search": "Bagno termale Széchenyi"
+      },
+      {
+        "name": "Ponte delle Catene",
+        "description": "Il primo ponte tra Buda e Pest.",
+        "search": "Ponte delle Catene"
+      },
+      {
+        "name": "Lago Balaton",
+        "description": "Il lago più grande dell'Europa centrale.",
+        "search": "Lago Balaton"
+      },
+      {
+        "name": "Szentendre",
+        "description": "Il borgo degli artisti sull'ansa del Danubio.",
+        "search": "Szentendre"
+      }
+    ],
+    "gettingAround": [
+      "Metro, tram e battelli a Budapest",
+      "Treni per Vienna e il Balaton",
+      "Escursioni organizzate sull'ansa del Danubio"
+    ],
+    "food": [
+      "Gulasch",
+      "Lángos, pane fritto",
+      "Dolci come la torta Dobos e vini Tokaji"
+    ],
+    "tips": [
+      "Portare il costume per le terme",
+      "Mancia del 10% se non inclusa",
+      "Pagare in fiorini per avere cambi migliori"
+    ]
+  },
+  "RO": {
+    "tagline": "Castelli della Transilvania, monasteri dipinti e borghi medievali.",
+    "description": [
+      "La Romania è una meta sottovalutata ricca di storia e natura. La Transilvania è il suo cuore: borghi sassoni come Sighișoara e Brașov, chiese fortificate e il castello di Bran legato alla leggenda di Dracula.",
+      "Il castello di Peleș sui Carpazi è una delle residenze reali più sontuose d'Europa, mentre la Bucovina custodisce monasteri con affreschi esterni patrimonio UNESCO.",
+      "Il delta del Danubio è un paradiso per il birdwatching e il Maramureș conserva chiese di legno e tradizioni rurali; Bucarest offre architettura e vita notturna.",
+      "Ideale per tour culturali di 7–8 giorni, anche per gruppi; si abbina bene alla Bulgaria e ha prezzi molto convenienti."
+    ],
+    "facts": {
+      "capital": "Bucarest",
+      "languages": "Rumeno; italiano compreso da molti",
+      "currency": "Leu romeno (RON)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore per Bucarest; voli anche per Cluj, Sibiu e Iași",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale: estati calde, inverni freddi e nevosi in montagna",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; serve la vignetta stradale",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Bran",
+        "description": "Il castello della leggenda di Dracula.",
+        "search": "Castello di Bran"
+      },
+      {
+        "name": "Castello di Peleș",
+        "description": "La residenza reale nei Carpazi.",
+        "search": "Castello di Peleș"
+      },
+      {
+        "name": "Sighișoara",
+        "description": "La cittadella medievale abitata.",
+        "search": "Sighișoara"
+      },
+      {
+        "name": "Brașov",
+        "description": "La Chiesa Nera e la piazza del Consiglio.",
+        "search": "Brașov"
+      },
+      {
+        "name": "Monasteri della Bucovina",
+        "description": "Affreschi esterni come a Voroneț.",
+        "search": "Monastero di Voroneț"
+      },
+      {
+        "name": "Delta del Danubio",
+        "description": "Canali e uccelli migratori.",
+        "search": "Delta del Danubio"
+      }
+    ],
+    "gettingAround": [
+      "Auto o pullman con autista per la Transilvania",
+      "Treni lenti ma economici",
+      "Barche nel delta del Danubio"
+    ],
+    "food": [
+      "Sarmale, involtini di cavolo",
+      "Mici, polpettine alla griglia",
+      "Mămăligă (polenta) e papanași"
+    ],
+    "tips": [
+      "Strade di montagna lente",
+      "Prezzi convenienti",
+      "Attenzione ai taxi non autorizzati a Bucarest"
+    ]
+  },
+  "BG": {
+    "tagline": "Monasteri tra le montagne, rose, Mar Nero e una storia millenaria.",
+    "description": [
+      "La Bulgaria è un paese antico, crocevia di Traci, Romani, Bizantini e Ottomani. Sofia unisce la cattedrale Aleksandr Nevskij, rovine romane e una vivace vita culturale.",
+      "Il monastero di Rila, nascosto tra le montagne, è uno dei luoghi più suggestivi dei Balcani; Plovdiv, tra le città più antiche d'Europa, ha un teatro romano e un quartiere ottocentesco.",
+      "La Valle delle Rose, le tombe traciche di Kazanlak e Veliko Tărnovo raccontano la storia del paese, mentre il Mar Nero offre spiagge e la città antica di Nesebăr.",
+      "Ottima per tour culturali e soggiorni mare a prezzi contenuti, 6–8 giorni; si abbina alla Romania o alla Grecia del nord."
+    ],
+    "facts": {
+      "capital": "Sofia",
+      "languages": "Bulgaro (alfabeto cirillico); inglese tra i giovani",
+      "currency": "Lev bulgaro (BGN); il passaggio all'euro è previsto, verificare",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore per Sofia o Varna",
+      "bestPeriod": "Maggio–settembre; fine maggio–inizio giugno per la raccolta delle rose",
+      "climate": "Continentale all'interno, più mite sul Mar Nero",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; serve la vignetta elettronica",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Monastero di Rila",
+        "description": "Il monastero più importante del paese.",
+        "search": "Monastero di Rila"
+      },
+      {
+        "name": "Cattedrale Aleksandr Nevskij",
+        "description": "Le cupole dorate di Sofia.",
+        "search": "Cattedrale di Aleksandr Nevskij (Sofia)"
+      },
+      {
+        "name": "Plovdiv",
+        "description": "Il teatro romano e la città vecchia.",
+        "search": "Plovdiv"
+      },
+      {
+        "name": "Veliko Tărnovo",
+        "description": "La fortezza di Tsarevets.",
+        "search": "Veliko Tărnovo"
+      },
+      {
+        "name": "Nesebăr",
+        "description": "La città antica sul Mar Nero.",
+        "search": "Nesebăr"
+      },
+      {
+        "name": "Tomba trace di Kazanlak",
+        "description": "Affreschi del IV secolo a.C.",
+        "search": "Tomba trace di Kazanlak"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista o pullman",
+      "Autobus tra le città",
+      "Voli e pullman per il Mar Nero"
+    ],
+    "food": [
+      "Insalata shopska",
+      "Banitsa, sfoglia al formaggio",
+      "Yogurt bulgaro e rakija"
+    ],
+    "tips": [
+      "Annuire significa «no» e scuotere la testa «sì»",
+      "Alfabeto cirillico: utili le app di traduzione",
+      "Prezzi bassi"
+    ]
+  },
+  "SI": {
+    "tagline": "Il lago di Bled, grotte spettacolari e Lubiana verde a due passi dall'Italia.",
+    "description": [
+      "La Slovenia è piccola, verde e vicinissima: in poche ore si passa dalle Alpi Giulie al mare Adriatico attraversando boschi, fiumi turchesi e paesi curati.",
+      "Il lago di Bled con l'isolotto e la chiesa è una delle immagini più famose d'Europa; il vicino lago di Bohinj e la valle dell'Isonzo sono il paradiso degli sport all'aperto.",
+      "Le grotte di Postumia e di San Canziano stupiscono per dimensioni, mentre Lubiana è una capitale romantica e vivibile, con il fiume e il castello.",
+      "Ideale per weekend e tour di 3–5 giorni anche in auto, per famiglie e amanti della natura; si abbina all'Istria croata o al Friuli."
+    ],
+    "facts": {
+      "capital": "Lubiana",
+      "languages": "Sloveno; italiano parlato sulla costa, inglese diffuso",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Raggiungibile in auto da Trieste in meno di un'ora; voli per Lubiana",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Alpino e continentale all'interno, mediterraneo sulla costa",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; vignetta elettronica obbligatoria in autostrada",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago di Bled",
+        "description": "L'isolotto con la chiesa e il castello sulla rupe.",
+        "search": "Lago di Bled"
+      },
+      {
+        "name": "Grotte di Postumia",
+        "description": "Chilometri di grotte con il trenino.",
+        "search": "Grotte di Postumia"
+      },
+      {
+        "name": "Lubiana",
+        "description": "Il triplo ponte e il castello.",
+        "search": "Lubiana"
+      },
+      {
+        "name": "Lago di Bohinj",
+        "description": "Il lago alpino nel parco del Tricorno.",
+        "search": "Lago di Bohinj"
+      },
+      {
+        "name": "Valle dell'Isonzo",
+        "description": "Fiume smeraldo e sport all'aperto.",
+        "search": "Soča"
+      },
+      {
+        "name": "Pirano",
+        "description": "Cittadina veneziana sul mare.",
+        "search": "Pirano"
+      }
+    ],
+    "gettingAround": [
+      "Auto, il modo più comodo",
+      "Treni e autobus tra le città",
+      "Biciclette a Lubiana e sui laghi"
+    ],
+    "food": [
+      "Kranjska klobasa (salsiccia)",
+      "Potica, dolce arrotolato",
+      "Torta a strati di Bled"
+    ],
+    "tips": [
+      "Comprare la vignetta online prima di entrare",
+      "Bled affollato d'estate: andare presto",
+      "Molte attività all'aperto da prenotare"
+    ]
+  },
+  "SK": {
+    "tagline": "Castelli, monti Tatra e Bratislava sul Danubio, nel cuore d'Europa.",
+    "description": [
+      "La Slovacchia è una meta poco conosciuta ma ricca di fascino. Bratislava, sul Danubio, ha un centro storico raccolto, il castello sulla collina e la vicinanza con Vienna.",
+      "Il paese conta centinaia di castelli e rovine: il castello di Spiš, tra i più grandi d'Europa, e quello di Bojnice sembrano usciti da una fiaba.",
+      "Gli Alti Tatra offrono laghi glaciali e sentieri, il Paradiso Slovacco gole e scale nella roccia; villaggi come Vlkolínec conservano l'architettura tradizionale.",
+      "Ideale come tappa di un tour Vienna–Bratislava–Budapest o per vacanze attive di 5–6 giorni in montagna."
+    ],
+    "facts": {
+      "capital": "Bratislava",
+      "languages": "Slovacco",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti per Bratislava o Vienna (a 60 km)",
+      "bestPeriod": "Maggio–settembre; inverno per lo sci",
+      "climate": "Continentale: estati calde, inverni freddi",
+      "plugs": "Tipo C ed E, 230 V: le spine italiane piccole funzionano",
+      "driving": "Si guida a destra; vignetta elettronica in autostrada",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Spiš",
+        "description": "Una delle fortezze più grandi d'Europa.",
+        "search": "Castello di Spiš"
+      },
+      {
+        "name": "Bratislava",
+        "description": "Il castello e la città vecchia.",
+        "search": "Castello di Bratislava"
+      },
+      {
+        "name": "Alti Tatra",
+        "description": "Laghi glaciali come lo Štrbské pleso.",
+        "search": "Štrbské pleso"
+      },
+      {
+        "name": "Castello di Bojnice",
+        "description": "Il castello romantico da fiaba.",
+        "search": "Castello di Bojnice"
+      },
+      {
+        "name": "Paradiso Slovacco",
+        "description": "Gole, cascate e scale nella roccia.",
+        "search": "Parco nazionale Slovenský raj"
+      },
+      {
+        "name": "Vlkolínec",
+        "description": "Il villaggio di case in legno UNESCO.",
+        "search": "Vlkolínec"
+      }
+    ],
+    "gettingAround": [
+      "Treni tra Bratislava, Žilina e Poprad",
+      "Auto per castelli e montagne",
+      "Battelli sul Danubio verso Vienna"
+    ],
+    "food": [
+      "Bryndzové halušky, gnocchetti al formaggio di pecora",
+      "Kapustnica, zuppa di crauti",
+      "Vini del sud del paese"
+    ],
+    "tips": [
+      "Prezzi più bassi dell'Europa occidentale",
+      "Nei Tatra il meteo cambia in fretta",
+      "Vienna-Bratislava in un'ora di treno o battello"
+    ]
+  },
+  "CY": {
+    "tagline": "L'isola di Afrodite: spiagge, mosaici antichi e villaggi di montagna.",
+    "description": [
+      "Cipro è un'isola mediterranea con sole quasi tutto l'anno. La costa offre spiagge come Nissi Beach e la laguna di Capo Greco, e località vivaci come Ayia Napa e Limassol.",
+      "La storia è ovunque: i mosaici di Paphos, il sito di Kourion affacciato sul mare, la roccia di Afrodite dove la dea sarebbe nata e castelli dei crociati.",
+      "I monti Troodos custodiscono chiese bizantine affrescate patrimonio UNESCO e villaggi di vino; Nicosia è l'ultima capitale divisa d'Europa.",
+      "Ideale per mare anche in primavera e autunno, famiglie e coppie, 5–7 giorni; inverni miti adatti a viaggi culturali."
+    ],
+    "facts": {
+      "capital": "Nicosia",
+      "languages": "Greco e turco; inglese parlato ovunque",
+      "currency": "Euro (EUR) nella Repubblica di Cipro",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 3 ore per Larnaca o Paphos",
+      "bestPeriod": "Aprile–giugno e settembre–novembre",
+      "climate": "Mediterraneo: estati molto calde, inverni miti",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto; per il passaggio nel nord dell'isola verificare le regole. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Mosaici di Paphos",
+        "description": "Ville romane con pavimenti decorati.",
+        "search": "Paphos"
+      },
+      {
+        "name": "Kourion",
+        "description": "Il teatro antico sul mare.",
+        "search": "Kourion"
+      },
+      {
+        "name": "Roccia di Afrodite",
+        "description": "Il luogo della nascita della dea.",
+        "search": "Petra tou Romiou"
+      },
+      {
+        "name": "Chiese dei Troodos",
+        "description": "Affreschi bizantini in chiese di montagna.",
+        "search": "Chiese dipinte della regione di Troodos"
+      },
+      {
+        "name": "Capo Greco",
+        "description": "Grotte marine e acque turchesi.",
+        "search": "Capo Greco"
+      },
+      {
+        "name": "Nicosia",
+        "description": "Le mura veneziane e la città divisa.",
+        "search": "Nicosia"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio (guida a sinistra)",
+      "Autobus tra le città costiere",
+      "Escursioni organizzate nei Troodos"
+    ],
+    "food": [
+      "Halloumi alla griglia",
+      "Meze, tanti piccoli piatti",
+      "Commandaria, vino dolce"
+    ],
+    "tips": [
+      "Sole forte d'estate",
+      "Distanze brevi",
+      "Portare l'adattatore per prese inglesi"
+    ]
+  },
+  "EE": {
+    "tagline": "Tallinn medievale, isole selvagge e la digitalissima porta del Baltico.",
+    "description": [
+      "L'Estonia è il più nordico dei paesi baltici. Tallinn ha uno dei centri medievali meglio conservati d'Europa, con mura, torri e la piazza del Municipio.",
+      "Fuori città prevalgono boschi, paludi e coste: il parco di Lahemaa con i maneggi nobiliari e le isole di Saaremaa e Hiiumaa offrono natura incontaminata.",
+      "Tartu è la città universitaria e Pärnu la località estiva sul mare; l'Estonia è anche nota per l'innovazione digitale e l'atmosfera rilassata.",
+      "Ideale per un city break di 3 giorni o un tour delle capitali baltiche con Lettonia e Lituania, magari abbinato a Helsinki in traghetto."
+    ],
+    "facts": {
+      "capital": "Tallinn",
+      "languages": "Estone; inglese e russo diffusi",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 3 ore per Tallinn, spesso con scalo",
+      "bestPeriod": "Maggio–settembre; dicembre per il mercatino di Natale",
+      "climate": "Temperato freddo: estati fresche, inverni rigidi",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Città vecchia di Tallinn",
+        "description": "Mura e torri medievali.",
+        "search": "Città vecchia di Tallinn"
+      },
+      {
+        "name": "Parco nazionale di Lahemaa",
+        "description": "Foreste, coste e maneggi.",
+        "search": "Parco nazionale di Lahemaa"
+      },
+      {
+        "name": "Saaremaa",
+        "description": "L'isola dei mulini e del castello vescovile.",
+        "search": "Saaremaa"
+      },
+      {
+        "name": "Tartu",
+        "description": "La città universitaria.",
+        "search": "Tartu"
+      },
+      {
+        "name": "Kadriorg",
+        "description": "Il palazzo barocco di Pietro il Grande.",
+        "search": "Palazzo di Kadriorg"
+      },
+      {
+        "name": "Pärnu",
+        "description": "La capitale estiva sul Baltico.",
+        "search": "Pärnu"
+      }
+    ],
+    "gettingAround": [
+      "Autobus comodi tra le città baltiche",
+      "Traghetti per Helsinki e le isole",
+      "Auto per i parchi"
+    ],
+    "food": [
+      "Pane nero di segale",
+      "Pesce affumicato",
+      "Kama, dessert di cereali"
+    ],
+    "tips": [
+      "Wi-Fi gratuito quasi ovunque",
+      "Prezzi più bassi della Finlandia",
+      "Inverni bui: meglio in estate"
+    ]
+  },
+  "LV": {
+    "tagline": "Riga Art Nouveau, spiagge baltiche e foreste infinite.",
+    "description": [
+      "La Lettonia ruota attorno a Riga, capitale con il più grande insieme di edifici Art Nouveau d'Europa, un centro storico medievale e il grande mercato centrale negli hangar degli zeppelin.",
+      "Jūrmala è la località balneare con lunghe spiagge e case di legno, mentre il parco del Gauja offre castelli, grotte e sentieri nella foresta.",
+      "Il palazzo barocco di Rundāle, la Versailles del Baltico, e la costa selvaggia di Kurzeme completano un viaggio tranquillo e sorprendente.",
+      "Ideale in un tour delle tre capitali baltiche di 7–8 giorni o per un weekend a Riga."
+    ],
+    "facts": {
+      "capital": "Riga",
+      "languages": "Lettone; russo e inglese diffusi",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore e 45 minuti per Riga",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Temperato freddo",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Città vecchia di Riga",
+        "description": "La Casa delle Teste Nere e la cattedrale.",
+        "search": "Casa delle Teste Nere"
+      },
+      {
+        "name": "Art Nouveau di Riga",
+        "description": "Le facciate di Alberta iela.",
+        "search": "Art Nouveau a Riga"
+      },
+      {
+        "name": "Palazzo di Rundāle",
+        "description": "Il palazzo barocco di Rastrelli.",
+        "search": "Palazzo di Rundāle"
+      },
+      {
+        "name": "Jūrmala",
+        "description": "Spiagge e ville di legno.",
+        "search": "Jūrmala"
+      },
+      {
+        "name": "Sigulda",
+        "description": "Il castello di Turaida nella valle del Gauja.",
+        "search": "Castello di Turaida"
+      },
+      {
+        "name": "Mercato centrale di Riga",
+        "description": "Negli hangar degli zeppelin.",
+        "search": "Mercato centrale di Riga"
+      }
+    ],
+    "gettingAround": [
+      "Autobus e treni regionali",
+      "Auto per parchi e costa",
+      "Tram a Riga"
+    ],
+    "food": [
+      "Pane di segale",
+      "Pelēkie zirņi, piselli con speck",
+      "Balsamo nero di Riga"
+    ],
+    "tips": [
+      "Riga si gira a piedi",
+      "Prezzi moderati",
+      "Giugno per la festa di mezza estate"
+    ]
+  },
+  "LT": {
+    "tagline": "Vilnius barocca, castelli sull'acqua e le dune dell'istmo dei Curi.",
+    "description": [
+      "La Lituania è il più meridionale dei paesi baltici. Vilnius ha un grande centro storico barocco patrimonio UNESCO, chiese e il quartiere artistico di Užupis.",
+      "Il castello di Trakai, su un'isola del lago, è il simbolo del paese; la Collina delle Croci, con migliaia di croci, è un luogo di grande suggestione.",
+      "L'istmo dei Curi, una sottile lingua di sabbia con dune altissime tra laguna e mare, è una delle meraviglie naturali del Baltico.",
+      "Ideale in un tour baltico o per un weekend a Vilnius, con prezzi accessibili e tanta storia."
+    ],
+    "facts": {
+      "capital": "Vilnius",
+      "languages": "Lituano; inglese e russo diffusi",
+      "currency": "Euro (EUR)",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 2 ore e 30 minuti per Vilnius",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale freddo",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Trakai",
+        "description": "Il castello sull'isola del lago.",
+        "search": "Castello dell'isola di Trakai"
+      },
+      {
+        "name": "Vilnius",
+        "description": "Il centro barocco e la Porta dell'Aurora.",
+        "search": "Centro storico di Vilnius"
+      },
+      {
+        "name": "Collina delle Croci",
+        "description": "Migliaia di croci vicino a Šiauliai.",
+        "search": "Collina delle Croci"
+      },
+      {
+        "name": "Istmo dei Curi",
+        "description": "Dune di sabbia tra laguna e mare.",
+        "search": "Istmo dei Curi"
+      },
+      {
+        "name": "Užupis",
+        "description": "La repubblica degli artisti di Vilnius.",
+        "search": "Užupis"
+      },
+      {
+        "name": "Kaunas",
+        "description": "Architettura modernista e castello.",
+        "search": "Kaunas"
+      }
+    ],
+    "gettingAround": [
+      "Autobus e treni tra le città",
+      "Auto per Trakai e la costa",
+      "Traghetto per l'istmo dei Curi"
+    ],
+    "food": [
+      "Cepelinai, gnocchi di patate ripieni",
+      "Zuppa fredda di barbabietola",
+      "Šakotis, dolce ad albero"
+    ],
+    "tips": [
+      "Prezzi accessibili",
+      "Molti parlano inglese",
+      "L'istmo dei Curi è parco nazionale: ingresso a pagamento"
+    ]
+  },
+  "LU": {
+    "tagline": "Fortezze sulla roccia, valli verdi e la piccola grande capitale d'Europa.",
+    "description": [
+      "Il Lussemburgo è uno dei paesi più piccoli d'Europa ma ha molto da offrire. La capitale è costruita su un altopiano con fortificazioni e casematte scavate nella roccia, patrimonio UNESCO.",
+      "Il quartiere del Grund, nella valle dell'Alzette, è uno scorcio da cartolina, mentre il Kirchberg ospita istituzioni europee e architettura contemporanea.",
+      "Il nord con le Ardenne, il castello di Vianden e la regione della Mullerthal con i sentieri tra le rocce, e la valle della Mosella con i vigneti, completano il viaggio.",
+      "Ideale per 2–3 giorni o come tappa di un tour Benelux; trasporti pubblici gratuiti in tutto il paese."
+    ],
+    "facts": {
+      "capital": "Lussemburgo",
+      "languages": "Lussemburghese, francese e tedesco",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Circa 1 ora e 30 minuti per Lussemburgo",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Temperato oceanico",
+      "plugs": "Tipo C e F, 230 V: non serve l'adattatore",
+      "driving": "Si guida a destra; carburante tra i più economici d'Europa",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Casematte del Bock",
+        "description": "Gallerie scavate nella roccia.",
+        "search": "Casematte del Bock"
+      },
+      {
+        "name": "Grund",
+        "description": "Il quartiere sul fiume Alzette.",
+        "search": "Grund (Lussemburgo)"
+      },
+      {
+        "name": "Castello di Vianden",
+        "description": "Il castello medievale sulle colline.",
+        "search": "Castello di Vianden"
+      },
+      {
+        "name": "Mullerthal",
+        "description": "La piccola Svizzera lussemburghese.",
+        "search": "Mullerthal"
+      },
+      {
+        "name": "Valle della Mosella",
+        "description": "Vigneti e cantine.",
+        "search": "Mosella"
+      },
+      {
+        "name": "Palazzo Granducale",
+        "description": "La residenza del Granduca.",
+        "search": "Palazzo Granducale (Lussemburgo)"
+      }
+    ],
+    "gettingAround": [
+      "Trasporti pubblici gratuiti",
+      "Treni per Bruxelles e Metz",
+      "Auto per il nord"
+    ],
+    "food": [
+      "Judd mat Gaardebounen, collo di maiale con fave",
+      "Vini della Mosella",
+      "Quetschentaart, torta di prugne"
+    ],
+    "tips": [
+      "Hotel costosi in settimana per il turismo d'affari",
+      "Paese compatto: si gira in pochi giorni",
+      "Trasporti gratuiti anche per i turisti"
+    ]
+  },
+  "MC": {
+    "tagline": "Glamour, Formula 1 e panorami sulla Costa Azzurra.",
+    "description": [
+      "Il Principato di Monaco è un piccolo stato affacciato sul mare tra Nizza e Sanremo, famoso per il lusso, il casinò di Monte-Carlo e il Gran Premio di Formula 1.",
+      "Sulla Rocca si trovano il Palazzo del Principe con il cambio della guardia, la cattedrale dove riposa Grace Kelly e il celebre Museo Oceanografico.",
+      "Il porto con gli yacht, i giardini esotici e le boutique completano una visita che si unisce perfettamente a Nizza, Èze e Mentone.",
+      "Ideale per una giornata o un weekend in Costa Azzurra, anche in auto dall'Italia."
+    ],
+    "facts": {
+      "capital": "Monaco",
+      "languages": "Francese; italiano molto diffuso",
+      "currency": "Euro (EUR)",
+      "timezone": "Stessa ora dell'Italia",
+      "flight": "Aeroporto di Nizza a 30 minuti; in auto o treno dalla Liguria",
+      "bestPeriod": "Aprile–ottobre; maggio per il Gran Premio",
+      "climate": "Mediterraneo mite",
+      "plugs": "Tipo C ed E, 230 V",
+      "driving": "Si guida a destra; parcheggi pubblici sotterranei",
+      "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Casinò di Monte-Carlo",
+        "description": "Il casinò della Belle Époque.",
+        "search": "Casinò di Monte Carlo"
+      },
+      {
+        "name": "Palazzo del Principe",
+        "description": "Il cambio della guardia sulla Rocca.",
+        "search": "Palazzo dei Principi di Monaco"
+      },
+      {
+        "name": "Museo Oceanografico",
+        "description": "L'acquario a picco sul mare.",
+        "search": "Museo oceanografico di Monaco"
+      },
+      {
+        "name": "Port Hercule",
+        "description": "Il porto degli yacht.",
+        "search": "Port Hercule"
+      },
+      {
+        "name": "Giardino Esotico",
+        "description": "Piante grasse e vista sul principato.",
+        "search": "Giardino esotico di Monaco"
+      },
+      {
+        "name": "Cattedrale di Monaco",
+        "description": "Le tombe dei principi Ranieri e Grace.",
+        "search": "Cattedrale di Monaco"
+      }
+    ],
+    "gettingAround": [
+      "A piedi con ascensori pubblici",
+      "Treni regionali da Nizza e Ventimiglia",
+      "Autobus urbani"
+    ],
+    "food": [
+      "Barbagiuan, ravioli fritti",
+      "Socca",
+      "Cucina gourmet francese e italiana"
+    ],
+    "tips": [
+      "Abbigliamento elegante per il casinò",
+      "Hotel carissimi durante il Gran Premio",
+      "Facile come gita in giornata"
+    ]
+  }
+}

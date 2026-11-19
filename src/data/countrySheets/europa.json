@@ -4,7 +4,8 @@
     "description": [
       "La Spagna è una delle mete più amate dagli italiani: vicina, accogliente e varia. Madrid e Barcellona offrono musei di livello mondiale, architettura modernista e una vita notturna che inizia tardi e finisce all'alba.",
       "L'Andalusia è il cuore romantico del paese: Siviglia, Granada e Cordova raccontano otto secoli di presenza araba tra palazzi, patii fioriti e flamenco. Più a nord, i Paesi Baschi e la Galizia sorprendono con paesaggi verdi e una cucina tra le migliori d'Europa.",
-      "Baleari e Canarie completano l'offerta con mare limpido tutto l'anno: le Canarie, in pieno Atlantico, hanno un clima primaverile anche in inverno."
+      "Baleari e Canarie completano l'offerta con mare limpido tutto l'anno: le Canarie, in pieno Atlantico, hanno un clima primaverile anche in inverno.",
+      "Perfetta per weekend lunghi in città, tour dell'Andalusia di 7–8 giorni o vacanze mare alle Baleari e alle Canarie; si abbina facilmente al Portogallo e piace a coppie, famiglie e gruppi di amici."
     ],
     "facts": {
       "capital": "Madrid",
@@ -19,12 +20,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Sagrada Família", "description": "Il capolavoro incompiuto di Gaudí, simbolo di Barcellona.", "search": "Sagrada Família Barcellona" },
-      { "name": "Alhambra di Granada", "description": "Palazzi e giardini nasridi affacciati sulla Sierra Nevada.", "search": "Alhambra Granada" },
-      { "name": "Siviglia", "description": "Cattedrale, Real Alcázar e la Plaza de España.", "search": "Plaza de España Siviglia" },
-      { "name": "Museo del Prado", "description": "Velázquez, Goya ed El Greco nel museo più importante di Madrid.", "search": "Museo del Prado" },
-      { "name": "Mezquita di Cordova", "description": "La grande moschea con la selva di archi bianchi e rossi.", "search": "Mezquita di Cordova" },
-      { "name": "Tenerife e il Teide", "description": "Il vulcano più alto di Spagna in un parco lunare.", "search": "Teide" }
+      {
+        "name": "Sagrada Família",
+        "description": "Il capolavoro incompiuto di Gaudí, simbolo di Barcellona.",
+        "search": "Sagrada Família Barcellona"
+      },
+      {
+        "name": "Alhambra di Granada",
+        "description": "Palazzi e giardini nasridi affacciati sulla Sierra Nevada.",
+        "search": "Alhambra Granada"
+      },
+      {
+        "name": "Siviglia",
+        "description": "Cattedrale, Real Alcázar e la Plaza de España.",
+        "search": "Plaza de España Siviglia"
+      },
+      {
+        "name": "Museo del Prado",
+        "description": "Velázquez, Goya ed El Greco nel museo più importante di Madrid.",
+        "search": "Museo del Prado"
+      },
+      {
+        "name": "Mezquita di Cordova",
+        "description": "La grande moschea con la selva di archi bianchi e rossi.",
+        "search": "Mezquita di Cordova"
+      },
+      {
+        "name": "Tenerife e il Teide",
+        "description": "Il vulcano più alto di Spagna in un parco lunare.",
+        "search": "Teide"
+      }
     ],
     "gettingAround": [
       "Treni ad alta velocità (AVE) tra Madrid, Barcellona, Siviglia, Malaga e Valencia",
@@ -50,7 +75,8 @@
     "description": [
       "Il Portogallo conquista con la sua atmosfera malinconica e gentile. Lisbona si scopre a piedi e in tram tra colline, belvedere e quartieri storici come l'Alfama, dove si ascolta il fado.",
       "Porto, affacciata sul Douro, è la città delle cantine del vino liquoroso e dei ponti di ferro; risalendo il fiume si attraversa una valle di vigneti terrazzati patrimonio UNESCO.",
-      "A sud l'Algarve offre scogliere dorate e calette, mentre le isole di Madeira e Azzorre sono paradisi verdi per chi ama camminare nella natura."
+      "A sud l'Algarve offre scogliere dorate e calette, mentre le isole di Madeira e Azzorre sono paradisi verdi per chi ama camminare nella natura.",
+      "Ideale per city break di 3–4 giorni a Lisbona o Porto, tour in auto di 8–10 giorni da nord a sud o soggiorni nella natura a Madeira e alle Azzorre; ottimo rapporto qualità prezzo."
     ],
     "facts": {
       "capital": "Lisbona",
@@ -65,12 +91,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Lisbona", "description": "Alfama, Baixa e il tram 28 tra le colline della capitale.", "search": "Alfama Lisbona" },
-      { "name": "Torre di Belém", "description": "Simbolo delle grandi scoperte sul Tago.", "search": "Torre di Belém" },
-      { "name": "Porto", "description": "La Ribeira, il ponte Dom Luís I e le cantine del vino Porto.", "search": "Ribeira Porto" },
-      { "name": "Sintra", "description": "Palazzi romantici e castelli immersi nei boschi.", "search": "Palazzo Nazionale di Pena" },
-      { "name": "Valle del Douro", "description": "Vigneti a terrazze e quintas lungo il fiume.", "search": "Valle del Douro" },
-      { "name": "Algarve", "description": "Scogliere, grotte marine e spiagge come Ponta da Piedade.", "search": "Ponta da Piedade" }
+      {
+        "name": "Lisbona",
+        "description": "Alfama, Baixa e il tram 28 tra le colline della capitale.",
+        "search": "Alfama Lisbona"
+      },
+      {
+        "name": "Torre di Belém",
+        "description": "Simbolo delle grandi scoperte sul Tago.",
+        "search": "Torre di Belém"
+      },
+      {
+        "name": "Porto",
+        "description": "La Ribeira, il ponte Dom Luís I e le cantine del vino Porto.",
+        "search": "Ribeira Porto"
+      },
+      {
+        "name": "Sintra",
+        "description": "Palazzi romantici e castelli immersi nei boschi.",
+        "search": "Palazzo Nazionale di Pena"
+      },
+      {
+        "name": "Valle del Douro",
+        "description": "Vigneti a terrazze e quintas lungo il fiume.",
+        "search": "Valle del Douro"
+      },
+      {
+        "name": "Algarve",
+        "description": "Scogliere, grotte marine e spiagge come Ponta da Piedade.",
+        "search": "Ponta da Piedade"
+      }
     ],
     "gettingAround": [
       "Treni Alfa Pendular tra Lisbona, Coimbra e Porto",
@@ -96,7 +146,8 @@
     "description": [
       "La Francia è il paese più visitato al mondo e non a caso: Parigi da sola vale il viaggio, tra musei come il Louvre e l'Orsay, boulevard, bistrot e la Torre Eiffel illuminata la sera.",
       "Fuori dalla capitale si aprono mondi diversi: i castelli della Loira, le spiagge dello sbarco in Normandia, Mont-Saint-Michel, i villaggi di pietra della Provenza tra lavanda e mercati.",
-      "La Costa Azzurra unisce mare e glamour, l'Alsazia ha borghi da fiaba e le regioni vinicole come Borgogna e Bordeaux sono un invito alla buona tavola."
+      "La Costa Azzurra unisce mare e glamour, l'Alsazia ha borghi da fiaba e le regioni vinicole come Borgogna e Bordeaux sono un invito alla buona tavola.",
+      "Si presta a ogni formula: weekend a Parigi, tour dei castelli della Loira e della Normandia, estate in Provenza e Costa Azzurra; dall'Italia si raggiunge anche in treno o in auto."
     ],
     "facts": {
       "capital": "Parigi",
@@ -111,12 +162,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Torre Eiffel", "description": "Il simbolo di Parigi, con vista su tutta la città.", "search": "Torre Eiffel" },
-      { "name": "Museo del Louvre", "description": "La Gioconda e migliaia di capolavori sotto la piramide di vetro.", "search": "Museo del Louvre" },
-      { "name": "Mont-Saint-Michel", "description": "L'abbazia sull'isolotto circondato dalle maree.", "search": "Mont-Saint-Michel" },
-      { "name": "Castelli della Loira", "description": "Chambord, Chenonceau e le residenze del Rinascimento francese.", "search": "Castello di Chenonceau" },
-      { "name": "Provenza", "description": "Campi di lavanda, Gordes e i mercati di Avignone.", "search": "Gordes" },
-      { "name": "Reggia di Versailles", "description": "La Galleria degli Specchi e i giardini del Re Sole.", "search": "Reggia di Versailles" }
+      {
+        "name": "Torre Eiffel",
+        "description": "Il simbolo di Parigi, con vista su tutta la città.",
+        "search": "Torre Eiffel"
+      },
+      {
+        "name": "Museo del Louvre",
+        "description": "La Gioconda e migliaia di capolavori sotto la piramide di vetro.",
+        "search": "Museo del Louvre"
+      },
+      {
+        "name": "Mont-Saint-Michel",
+        "description": "L'abbazia sull'isolotto circondato dalle maree.",
+        "search": "Mont-Saint-Michel"
+      },
+      {
+        "name": "Castelli della Loira",
+        "description": "Chambord, Chenonceau e le residenze del Rinascimento francese.",
+        "search": "Castello di Chenonceau"
+      },
+      {
+        "name": "Provenza",
+        "description": "Campi di lavanda, Gordes e i mercati di Avignone.",
+        "search": "Gordes"
+      },
+      {
+        "name": "Reggia di Versailles",
+        "description": "La Galleria degli Specchi e i giardini del Re Sole.",
+        "search": "Reggia di Versailles"
+      }
     ],
     "gettingAround": [
       "Treni TGV veloci da Parigi verso tutto il paese",
@@ -142,7 +217,8 @@
     "description": [
       "La Grecia è sinonimo di estate: oltre 200 isole abitate, ognuna con il suo carattere. Le Cicladi regalano villaggi bianchi e mare cristallino, da Santorini a Milos; le Ionie sono verdi e vicine all'Italia.",
       "Atene custodisce l'Acropoli e un centro vivace di taverne e terrazze. Sul continente si visitano Delfi, Olimpia, Micene e i monasteri sospesi delle Meteore.",
-      "Creta, la più grande delle isole, unisce siti minoici come Cnosso, gole da percorrere a piedi e spiagge famose come Balos ed Elafonissi."
+      "Creta, la più grande delle isole, unisce siti minoici come Cnosso, gole da percorrere a piedi e spiagge famose come Balos ed Elafonissi.",
+      "Ideale per vacanze mare di una o due settimane con combinazioni di isole, viaggi di nozze a Santorini e tour culturali ad Atene, Delfi e Meteore; perfetta per famiglie e gruppi di amici."
     ],
     "facts": {
       "capital": "Atene",
@@ -157,12 +233,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Acropoli di Atene", "description": "Il Partenone e il museo dell'Acropoli.", "search": "Acropoli di Atene" },
-      { "name": "Santorini", "description": "Oia e i tramonti sulla caldera vulcanica.", "search": "Oia Santorini" },
-      { "name": "Meteore", "description": "Monasteri costruiti in cima a pinnacoli di roccia.", "search": "Meteore" },
-      { "name": "Mykonos", "description": "Mulini a vento, la Piccola Venezia e spiagge animate.", "search": "Mykonos" },
-      { "name": "Cnosso", "description": "Il palazzo minoico del mito del Minotauro a Creta.", "search": "Cnosso" },
-      { "name": "Delfi", "description": "Il santuario di Apollo sulle pendici del Parnaso.", "search": "Delfi" }
+      {
+        "name": "Acropoli di Atene",
+        "description": "Il Partenone e il museo dell'Acropoli.",
+        "search": "Acropoli di Atene"
+      },
+      {
+        "name": "Santorini",
+        "description": "Oia e i tramonti sulla caldera vulcanica.",
+        "search": "Oia Santorini"
+      },
+      {
+        "name": "Meteore",
+        "description": "Monasteri costruiti in cima a pinnacoli di roccia.",
+        "search": "Meteore"
+      },
+      {
+        "name": "Mykonos",
+        "description": "Mulini a vento, la Piccola Venezia e spiagge animate.",
+        "search": "Mykonos"
+      },
+      {
+        "name": "Cnosso",
+        "description": "Il palazzo minoico del mito del Minotauro a Creta.",
+        "search": "Cnosso"
+      },
+      {
+        "name": "Delfi",
+        "description": "Il santuario di Apollo sulle pendici del Parnaso.",
+        "search": "Delfi"
+      }
     ],
     "gettingAround": [
       "Traghetti e aliscafi tra le isole: prenotare in anticipo in agosto",
@@ -188,7 +288,8 @@
     "description": [
       "La Croazia è la vicina di casa che sorprende: la costa dalmata alterna città storiche e un arcipelago di oltre mille isole dall'acqua trasparentissima.",
       "Dubrovnik, chiusa nelle sue mura, è la perla dell'Adriatico; Spalato è nata dentro il palazzo dell'imperatore Diocleziano e Zara ha l'organo marino che suona con le onde.",
-      "All'interno i laghi di Plitvice formano cascate color smeraldo, mentre l'Istria ricorda l'Italia con borghi collinari, tartufi e olio."
+      "All'interno i laghi di Plitvice formano cascate color smeraldo, mentre l'Istria ricorda l'Italia con borghi collinari, tartufi e olio.",
+      "Perfetta per vacanze mare, crociere in caicco tra le isole e tour di 7–8 giorni lungo la costa dalmata; vicinissima, si raggiunge anche in traghetto o in auto."
     ],
     "facts": {
       "capital": "Zagabria",
@@ -203,12 +304,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Dubrovnik", "description": "Le mura e lo Stradun della città vecchia.", "search": "Dubrovnik" },
-      { "name": "Laghi di Plitvice", "description": "Sedici laghi collegati da cascate nel bosco.", "search": "Laghi di Plitvice" },
-      { "name": "Spalato", "description": "Il Palazzo di Diocleziano, città nella città.", "search": "Palazzo di Diocleziano" },
-      { "name": "Isola di Hvar", "description": "Lavanda, porticcioli e vita serale.", "search": "Hvar" },
-      { "name": "Rovigno", "description": "Il borgo istriano dalle case colorate sul mare.", "search": "Rovigno" },
-      { "name": "Parco nazionale di Krka", "description": "Cascate e passerelle vicino a Sebenico.", "search": "Parco nazionale del Cherca" }
+      {
+        "name": "Dubrovnik",
+        "description": "Le mura e lo Stradun della città vecchia.",
+        "search": "Dubrovnik"
+      },
+      {
+        "name": "Laghi di Plitvice",
+        "description": "Sedici laghi collegati da cascate nel bosco.",
+        "search": "Laghi di Plitvice"
+      },
+      {
+        "name": "Spalato",
+        "description": "Il Palazzo di Diocleziano, città nella città.",
+        "search": "Palazzo di Diocleziano"
+      },
+      {
+        "name": "Isola di Hvar",
+        "description": "Lavanda, porticcioli e vita serale.",
+        "search": "Hvar"
+      },
+      {
+        "name": "Rovigno",
+        "description": "Il borgo istriano dalle case colorate sul mare.",
+        "search": "Rovigno"
+      },
+      {
+        "name": "Parco nazionale di Krka",
+        "description": "Cascate e passerelle vicino a Sebenico.",
+        "search": "Parco nazionale del Cherca"
+      }
     ],
     "gettingAround": [
       "Traghetti Jadrolinija e catamarani tra le isole",
@@ -234,7 +359,8 @@
     "description": [
       "Londra è una capitale mondiale: musei gratuiti come il British Museum e la National Gallery, mercati, teatri del West End e quartieri dal carattere unico.",
       "Fuori città si scoprono la campagna inglese dei Cotswolds, Oxford e Cambridge, Bath con le terme romane e il misterioso cerchio di Stonehenge.",
-      "La Scozia offre Edimburgo con il suo castello, le Highlands, i laghi e le isole; il Galles e l'Irlanda del Nord completano un viaggio ricco di paesaggi."
+      "La Scozia offre Edimburgo con il suo castello, le Highlands, i laghi e le isole; il Galles e l'Irlanda del Nord completano un viaggio ricco di paesaggi.",
+      "Ideale per city break a Londra, viaggi studio, tour della Scozia e della campagna inglese di 7–10 giorni; ricordarsi passaporto e autorizzazione elettronica ETA."
     ],
     "facts": {
       "capital": "Londra",
@@ -249,12 +375,36 @@
       "documents": "Passaporto (la carta d'identità non è accettata) e autorizzazione elettronica ETA da richiedere online prima della partenza. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Londra", "description": "Westminster, Big Ben e il Tamigi.", "search": "Palazzo di Westminster" },
-      { "name": "British Museum", "description": "Tesori di tutte le civiltà, con ingresso gratuito.", "search": "British Museum" },
-      { "name": "Edimburgo", "description": "Il castello e il Royal Mile della capitale scozzese.", "search": "Castello di Edimburgo" },
-      { "name": "Stonehenge", "description": "Il cerchio di pietre preistorico nella piana di Salisbury.", "search": "Stonehenge" },
-      { "name": "Cotswolds", "description": "Villaggi di pietra color miele nella campagna inglese.", "search": "Cotswolds" },
-      { "name": "Highlands scozzesi", "description": "Montagne, laghi e castelli come Eilean Donan.", "search": "Eilean Donan" }
+      {
+        "name": "Londra",
+        "description": "Westminster, Big Ben e il Tamigi.",
+        "search": "Palazzo di Westminster"
+      },
+      {
+        "name": "British Museum",
+        "description": "Tesori di tutte le civiltà, con ingresso gratuito.",
+        "search": "British Museum"
+      },
+      {
+        "name": "Edimburgo",
+        "description": "Il castello e il Royal Mile della capitale scozzese.",
+        "search": "Castello di Edimburgo"
+      },
+      {
+        "name": "Stonehenge",
+        "description": "Il cerchio di pietre preistorico nella piana di Salisbury.",
+        "search": "Stonehenge"
+      },
+      {
+        "name": "Cotswolds",
+        "description": "Villaggi di pietra color miele nella campagna inglese.",
+        "search": "Cotswolds"
+      },
+      {
+        "name": "Highlands scozzesi",
+        "description": "Montagne, laghi e castelli come Eilean Donan.",
+        "search": "Eilean Donan"
+      }
     ],
     "gettingAround": [
       "Metropolitana (Tube) e autobus a Londra, si paga con carta contactless",
@@ -280,7 +430,8 @@
     "description": [
       "L'Irlanda è un'isola di paesaggi drammatici e gente accogliente. Dublino unisce storia e vita sociale tra il Trinity College, la Guinness Storehouse e i pub di Temple Bar.",
       "La costa occidentale è la più spettacolare: le Cliffs of Moher, il Burren, il Connemara e la Wild Atlantic Way, una strada panoramica di oltre 2.500 chilometri.",
-      "Il sud regala il Ring of Kerry e villaggi colorati come Kinsale; ovunque castelli, abbazie e una tradizione musicale vivissima."
+      "Il sud regala il Ring of Kerry e villaggi colorati come Kinsale; ovunque castelli, abbazie e una tradizione musicale vivissima.",
+      "Perfetta per tour in auto di 7–10 giorni lungo la Wild Atlantic Way, weekend a Dublino e viaggi studio; adatta a chi ama natura, musica e atmosfere autentiche."
     ],
     "facts": {
       "capital": "Dublino",
@@ -295,12 +446,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Cliffs of Moher", "description": "Scogliere a picco sull'Atlantico alte oltre 200 metri.", "search": "Scogliere di Moher" },
-      { "name": "Dublino", "description": "Trinity College e il Libro di Kells.", "search": "Trinity College Dublino" },
-      { "name": "Ring of Kerry", "description": "Anello panoramico tra laghi, montagne e mare.", "search": "Ring of Kerry" },
-      { "name": "Connemara", "description": "Brughiere, laghi e l'abbazia di Kylemore.", "search": "Kylemore Abbey" },
-      { "name": "Rocca di Cashel", "description": "Rovine medievali su un colle del Tipperary.", "search": "Rocca di Cashel" },
-      { "name": "Giant's Causeway", "description": "Le colonne di basalto in Irlanda del Nord.", "search": "Giant's Causeway" }
+      {
+        "name": "Cliffs of Moher",
+        "description": "Scogliere a picco sull'Atlantico alte oltre 200 metri.",
+        "search": "Scogliere di Moher"
+      },
+      {
+        "name": "Dublino",
+        "description": "Trinity College e il Libro di Kells.",
+        "search": "Trinity College Dublino"
+      },
+      {
+        "name": "Ring of Kerry",
+        "description": "Anello panoramico tra laghi, montagne e mare.",
+        "search": "Ring of Kerry"
+      },
+      {
+        "name": "Connemara",
+        "description": "Brughiere, laghi e l'abbazia di Kylemore.",
+        "search": "Kylemore Abbey"
+      },
+      {
+        "name": "Rocca di Cashel",
+        "description": "Rovine medievali su un colle del Tipperary.",
+        "search": "Rocca di Cashel"
+      },
+      {
+        "name": "Giant's Causeway",
+        "description": "Le colonne di basalto in Irlanda del Nord.",
+        "search": "Giant's Causeway"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio il modo migliore per la costa ovest",
@@ -326,7 +501,8 @@
     "description": [
       "L'Islanda è un'isola giovane e in continua trasformazione, dove fuoco e ghiaccio convivono. Il Circolo d'Oro riunisce in un giorno il parco di Þingvellir, il geyser Strokkur e la cascata di Gullfoss.",
       "La costa sud regala spiagge nere, cascate come Seljalandsfoss e Skógafoss e la laguna glaciale di Jökulsárlón con gli iceberg che scivolano verso il mare.",
-      "D'estate il sole non tramonta quasi mai e si possono avvistare balene e pulcinelle di mare; d'inverno le lunghe notti sono perfette per le aurore boreali."
+      "D'estate il sole non tramonta quasi mai e si possono avvistare balene e pulcinelle di mare; d'inverno le lunghe notti sono perfette per le aurore boreali.",
+      "Ideale per tour on the road di 8–10 giorni attorno all'isola d'estate o per brevi viaggi invernali a caccia di aurore; meta per amanti della natura e della fotografia."
     ],
     "facts": {
       "capital": "Reykjavík",
@@ -341,12 +517,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Gullfoss", "description": "La cascata d'oro del Circolo d'Oro.", "search": "Gullfoss" },
-      { "name": "Jökulsárlón", "description": "Laguna glaciale con iceberg e foche.", "search": "Jökulsárlón" },
-      { "name": "Seljalandsfoss", "description": "Cascata che si può percorrere da dietro.", "search": "Seljalandsfoss" },
-      { "name": "Spiaggia di Reynisfjara", "description": "Sabbia nera e colonne di basalto vicino a Vík.", "search": "Reynisfjara" },
-      { "name": "Laguna Blu", "description": "Bagni geotermali tra campi di lava.", "search": "Laguna Blu Islanda" },
-      { "name": "Kirkjufell", "description": "La montagna più fotografata della penisola di Snæfellsnes.", "search": "Kirkjufell" }
+      {
+        "name": "Gullfoss",
+        "description": "La cascata d'oro del Circolo d'Oro.",
+        "search": "Gullfoss"
+      },
+      {
+        "name": "Jökulsárlón",
+        "description": "Laguna glaciale con iceberg e foche.",
+        "search": "Jökulsárlón"
+      },
+      {
+        "name": "Seljalandsfoss",
+        "description": "Cascata che si può percorrere da dietro.",
+        "search": "Seljalandsfoss"
+      },
+      {
+        "name": "Spiaggia di Reynisfjara",
+        "description": "Sabbia nera e colonne di basalto vicino a Vík.",
+        "search": "Reynisfjara"
+      },
+      {
+        "name": "Laguna Blu",
+        "description": "Bagni geotermali tra campi di lava.",
+        "search": "Laguna Blu Islanda"
+      },
+      {
+        "name": "Kirkjufell",
+        "description": "La montagna più fotografata della penisola di Snæfellsnes.",
+        "search": "Kirkjufell"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio per la Ring Road (strada 1) attorno all'isola",
@@ -372,7 +572,8 @@
     "description": [
       "La Norvegia è famosa per i suoi fiordi, profonde lingue di mare tra pareti di roccia e cascate. Geirangerfjord e Nærøyfjord sono patrimonio UNESCO e si navigano in battello o in crociera.",
       "Bergen, con le case colorate del Bryggen, è la porta dei fiordi; Oslo unisce musei d'arte e architettura moderna. Il treno di Flåm è uno dei percorsi ferroviari più spettacolari al mondo.",
-      "Oltre il circolo polare, le isole Lofoten e Tromsø offrono il sole di mezzanotte d'estate e le aurore boreali d'inverno."
+      "Oltre il circolo polare, le isole Lofoten e Tromsø offrono il sole di mezzanotte d'estate e le aurore boreali d'inverno.",
+      "Perfetta per crociere nei fiordi, tour in treno e battello di una settimana o viaggi invernali alle Lofoten e a Tromsø; adatta a coppie, famiglie e viaggiatori attivi."
     ],
     "facts": {
       "capital": "Oslo",
@@ -387,12 +588,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Geirangerfjord", "description": "Il fiordo delle cascate delle Sette Sorelle.", "search": "Geirangerfjord" },
-      { "name": "Bergen", "description": "Il quartiere anseatico di Bryggen.", "search": "Bryggen" },
-      { "name": "Isole Lofoten", "description": "Villaggi di pescatori sotto montagne a picco.", "search": "Reine Lofoten" },
-      { "name": "Ferrovia di Flåm", "description": "Il treno panoramico tra montagne e cascate.", "search": "Ferrovia di Flåm" },
-      { "name": "Preikestolen", "description": "Il Pulpito sospeso 600 metri sopra il Lysefjord.", "search": "Preikestolen" },
-      { "name": "Tromsø", "description": "La capitale artica delle aurore boreali.", "search": "Tromsø" }
+      {
+        "name": "Geirangerfjord",
+        "description": "Il fiordo delle cascate delle Sette Sorelle.",
+        "search": "Geirangerfjord"
+      },
+      {
+        "name": "Bergen",
+        "description": "Il quartiere anseatico di Bryggen.",
+        "search": "Bryggen"
+      },
+      {
+        "name": "Isole Lofoten",
+        "description": "Villaggi di pescatori sotto montagne a picco.",
+        "search": "Reine Lofoten"
+      },
+      {
+        "name": "Ferrovia di Flåm",
+        "description": "Il treno panoramico tra montagne e cascate.",
+        "search": "Ferrovia di Flåm"
+      },
+      {
+        "name": "Preikestolen",
+        "description": "Il Pulpito sospeso 600 metri sopra il Lysefjord.",
+        "search": "Preikestolen"
+      },
+      {
+        "name": "Tromsø",
+        "description": "La capitale artica delle aurore boreali.",
+        "search": "Tromsø"
+      }
     ],
     "gettingAround": [
       "Treni panoramici Oslo–Bergen e Flåmsbana",
@@ -418,7 +643,8 @@
     "description": [
       "La Finlandia è il paese dei mille laghi e delle foreste, con un rapporto speciale con la natura e la sauna, presente quasi in ogni casa.",
       "Helsinki è una capitale a misura d'uomo affacciata sul Baltico, con il design nordico, la fortezza di Suomenlinna e i mercati del porto.",
-      "La Lapponia finlandese è una meta d'inverno classica: Rovaniemi e il villaggio di Babbo Natale, safari con husky e renne, notti nei glass igloo sotto le aurore boreali."
+      "La Lapponia finlandese è una meta d'inverno classica: Rovaniemi e il villaggio di Babbo Natale, safari con husky e renne, notti nei glass igloo sotto le aurore boreali.",
+      "Ideale per viaggi in Lapponia di 4–5 giorni con famiglie e bambini nel periodo natalizio, o per estati tra laghi e Helsinki; si abbina a Estonia e Svezia."
     ],
     "facts": {
       "capital": "Helsinki",
@@ -433,12 +659,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto (paese Schengen). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Rovaniemi", "description": "Il villaggio di Babbo Natale sul Circolo Polare Artico.", "search": "Santa Claus Village" },
-      { "name": "Helsinki", "description": "La cattedrale bianca e la piazza del Senato.", "search": "Cattedrale di Helsinki" },
-      { "name": "Suomenlinna", "description": "Fortezza sul mare patrimonio UNESCO.", "search": "Suomenlinna" },
-      { "name": "Saariselkä", "description": "Aurore boreali e igloo di vetro nella Lapponia del nord.", "search": "Saariselkä" },
-      { "name": "Regione dei laghi", "description": "Savonlinna e il castello di Olavinlinna.", "search": "Olavinlinna" },
-      { "name": "Parco nazionale di Nuuksio", "description": "Boschi e laghi a mezz'ora da Helsinki.", "search": "Parco nazionale di Nuuksio" }
+      {
+        "name": "Rovaniemi",
+        "description": "Il villaggio di Babbo Natale sul Circolo Polare Artico.",
+        "search": "Santa Claus Village"
+      },
+      {
+        "name": "Helsinki",
+        "description": "La cattedrale bianca e la piazza del Senato.",
+        "search": "Cattedrale di Helsinki"
+      },
+      {
+        "name": "Suomenlinna",
+        "description": "Fortezza sul mare patrimonio UNESCO.",
+        "search": "Suomenlinna"
+      },
+      {
+        "name": "Saariselkä",
+        "description": "Aurore boreali e igloo di vetro nella Lapponia del nord.",
+        "search": "Saariselkä"
+      },
+      {
+        "name": "Regione dei laghi",
+        "description": "Savonlinna e il castello di Olavinlinna.",
+        "search": "Olavinlinna"
+      },
+      {
+        "name": "Parco nazionale di Nuuksio",
+        "description": "Boschi e laghi a mezz'ora da Helsinki.",
+        "search": "Parco nazionale di Nuuksio"
+      }
     ],
     "gettingAround": [
       "Voli interni e treni notturni tra Helsinki e la Lapponia",
@@ -464,7 +714,8 @@
     "description": [
       "I Paesi Bassi sono piccoli ma ricchissimi: Amsterdam con i suoi canali del Seicento, le case strette e i musei di Van Gogh e del Rijksmuseum è una delle città più affascinanti d'Europa.",
       "In primavera i campi di tulipani e il parco di Keukenhof colorano la campagna; Kinderdijk e Zaanse Schans mostrano i mulini a vento simbolo del paese.",
-      "Rotterdam sorprende per l'architettura contemporanea, mentre L'Aia, Delft, Utrecht e Haarlem offrono centri storici raccolti, perfetti da girare in bicicletta."
+      "Rotterdam sorprende per l'architettura contemporanea, mentre L'Aia, Delft, Utrecht e Haarlem offrono centri storici raccolti, perfetti da girare in bicicletta.",
+      "Perfetta per city break ad Amsterdam, primavere tra i tulipani e tour di 5–6 giorni tra le città d'arte; si abbina facilmente al Belgio."
     ],
     "facts": {
       "capital": "Amsterdam (sede del governo: L'Aia)",
@@ -479,12 +730,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Canali di Amsterdam", "description": "La cintura dei canali del Seicento, patrimonio UNESCO.", "search": "Canali di Amsterdam" },
-      { "name": "Rijksmuseum", "description": "La Ronda di notte di Rembrandt e Vermeer.", "search": "Rijksmuseum" },
-      { "name": "Keukenhof", "description": "Il parco di milioni di tulipani in primavera.", "search": "Keukenhof" },
-      { "name": "Kinderdijk", "description": "Diciannove mulini a vento lungo i canali.", "search": "Kinderdijk" },
-      { "name": "Casa di Anna Frank", "description": "Il nascondiglio del diario più famoso al mondo.", "search": "Casa di Anna Frank" },
-      { "name": "Rotterdam", "description": "Case cubo e il Markthal, architettura d'avanguardia.", "search": "Markthal Rotterdam" }
+      {
+        "name": "Canali di Amsterdam",
+        "description": "La cintura dei canali del Seicento, patrimonio UNESCO.",
+        "search": "Canali di Amsterdam"
+      },
+      {
+        "name": "Rijksmuseum",
+        "description": "La Ronda di notte di Rembrandt e Vermeer.",
+        "search": "Rijksmuseum"
+      },
+      {
+        "name": "Keukenhof",
+        "description": "Il parco di milioni di tulipani in primavera.",
+        "search": "Keukenhof"
+      },
+      {
+        "name": "Kinderdijk",
+        "description": "Diciannove mulini a vento lungo i canali.",
+        "search": "Kinderdijk"
+      },
+      {
+        "name": "Casa di Anna Frank",
+        "description": "Il nascondiglio del diario più famoso al mondo.",
+        "search": "Casa di Anna Frank"
+      },
+      {
+        "name": "Rotterdam",
+        "description": "Case cubo e il Markthal, architettura d'avanguardia.",
+        "search": "Markthal Rotterdam"
+      }
     ],
     "gettingAround": [
       "Treni frequenti tra tutte le città (si paga con carta contactless)",
@@ -510,7 +785,8 @@
     "description": [
       "La Germania è un paese di città diverse tra loro: Berlino creativa e piena di storia recente, Monaco elegante e bavarese, Amburgo affacciata sul porto, Colonia con la sua cattedrale gotica.",
       "La Strada Romantica attraversa borghi medievali come Rothenburg ob der Tauber fino al castello di Neuschwanstein, mentre la valle del Reno è un susseguirsi di vigneti e manieri.",
-      "Le Alpi bavaresi, la Foresta Nera e i laghi offrono natura a ogni stagione; a dicembre i mercatini di Natale sono un classico dei viaggi di gruppo."
+      "Le Alpi bavaresi, la Foresta Nera e i laghi offrono natura a ogni stagione; a dicembre i mercatini di Natale sono un classico dei viaggi di gruppo.",
+      "Ideale per city break a Berlino e Monaco, tour della Strada Romantica, crociere sul Reno e mercatini di Natale in dicembre; molto apprezzata da gruppi e famiglie."
     ],
     "facts": {
       "capital": "Berlino",
@@ -525,12 +801,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Porta di Brandeburgo", "description": "Il simbolo della Berlino riunificata.", "search": "Porta di Brandeburgo" },
-      { "name": "Castello di Neuschwanstein", "description": "Il castello da fiaba di Ludovico II di Baviera.", "search": "Castello di Neuschwanstein" },
-      { "name": "Duomo di Colonia", "description": "La grande cattedrale gotica sul Reno.", "search": "Duomo di Colonia" },
-      { "name": "Rothenburg ob der Tauber", "description": "Borgo medievale intatto sulla Strada Romantica.", "search": "Rothenburg ob der Tauber" },
-      { "name": "Monaco di Baviera", "description": "Marienplatz, birrerie e musei d'arte.", "search": "Marienplatz" },
-      { "name": "Valle del Reno", "description": "Vigneti, castelli e la rupe di Lorelei.", "search": "Valle del Reno" }
+      {
+        "name": "Porta di Brandeburgo",
+        "description": "Il simbolo della Berlino riunificata.",
+        "search": "Porta di Brandeburgo"
+      },
+      {
+        "name": "Castello di Neuschwanstein",
+        "description": "Il castello da fiaba di Ludovico II di Baviera.",
+        "search": "Castello di Neuschwanstein"
+      },
+      {
+        "name": "Duomo di Colonia",
+        "description": "La grande cattedrale gotica sul Reno.",
+        "search": "Duomo di Colonia"
+      },
+      {
+        "name": "Rothenburg ob der Tauber",
+        "description": "Borgo medievale intatto sulla Strada Romantica.",
+        "search": "Rothenburg ob der Tauber"
+      },
+      {
+        "name": "Monaco di Baviera",
+        "description": "Marienplatz, birrerie e musei d'arte.",
+        "search": "Marienplatz"
+      },
+      {
+        "name": "Valle del Reno",
+        "description": "Vigneti, castelli e la rupe di Lorelei.",
+        "search": "Valle del Reno"
+      }
     ],
     "gettingAround": [
       "Treni ICE ad alta velocità tra le città principali",
@@ -556,7 +856,8 @@
     "description": [
       "L'Austria unisce eleganza imperiale e natura alpina. Vienna, con la reggia di Schönbrunn, l'Hofburg, i caffè storici e la musica classica, è una delle capitali più raffinate d'Europa.",
       "Salisburgo, città natale di Mozart, è un gioiello barocco ai piedi delle Alpi; nei dintorni il Salzkammergut offre laghi e villaggi come Hallstatt.",
-      "Innsbruck e il Tirolo sono il paradiso dello sci d'inverno e del trekking d'estate, mentre la Wachau lungo il Danubio è terra di vigneti e abbazie."
+      "Innsbruck e il Tirolo sono il paradiso dello sci d'inverno e del trekking d'estate, mentre la Wachau lungo il Danubio è terra di vigneti e abbazie.",
+      "Perfetta per weekend a Vienna, tour Vienna–Salisburgo–Hallstatt, settimane bianche in Tirolo ed estati in montagna; vicina e facile da raggiungere anche in auto."
     ],
     "facts": {
       "capital": "Vienna",
@@ -571,12 +872,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Reggia di Schönbrunn", "description": "La residenza estiva degli Asburgo e i suoi giardini.", "search": "Castello di Schönbrunn" },
-      { "name": "Hallstatt", "description": "Il villaggio sul lago tra le montagne del Salzkammergut.", "search": "Hallstatt" },
-      { "name": "Salisburgo", "description": "La fortezza, il centro barocco e la casa di Mozart.", "search": "Fortezza di Hohensalzburg" },
-      { "name": "Duomo di Santo Stefano", "description": "La cattedrale gotica nel cuore di Vienna.", "search": "Duomo di Santo Stefano Vienna" },
-      { "name": "Innsbruck", "description": "Il Tettuccio d'oro e le Alpi a portata di funivia.", "search": "Tettuccio d'Oro" },
-      { "name": "Wachau", "description": "Vigneti e l'abbazia di Melk lungo il Danubio.", "search": "Abbazia di Melk" }
+      {
+        "name": "Reggia di Schönbrunn",
+        "description": "La residenza estiva degli Asburgo e i suoi giardini.",
+        "search": "Castello di Schönbrunn"
+      },
+      {
+        "name": "Hallstatt",
+        "description": "Il villaggio sul lago tra le montagne del Salzkammergut.",
+        "search": "Hallstatt"
+      },
+      {
+        "name": "Salisburgo",
+        "description": "La fortezza, il centro barocco e la casa di Mozart.",
+        "search": "Fortezza di Hohensalzburg"
+      },
+      {
+        "name": "Duomo di Santo Stefano",
+        "description": "La cattedrale gotica nel cuore di Vienna.",
+        "search": "Duomo di Santo Stefano Vienna"
+      },
+      {
+        "name": "Innsbruck",
+        "description": "Il Tettuccio d'oro e le Alpi a portata di funivia.",
+        "search": "Tettuccio d'Oro"
+      },
+      {
+        "name": "Wachau",
+        "description": "Vigneti e l'abbazia di Melk lungo il Danubio.",
+        "search": "Abbazia di Melk"
+      }
     ],
     "gettingAround": [
       "Treni ÖBB comodi e puntuali tra Vienna, Salisburgo e Innsbruck",
@@ -602,7 +927,8 @@
     "description": [
       "La Repubblica Ceca è la meta ideale per un weekend o un tour dell'Europa centrale. Praga incanta con il Ponte Carlo, il Castello, la Piazza della Città Vecchia e l'orologio astronomico.",
       "Fuori dalla capitale si trovano Český Krumlov, borgo medievale su un'ansa della Moldava, e le città termali di Karlovy Vary e Mariánské Lázně.",
-      "La Moravia, con i vigneti e la città di Brno, e i castelli sparsi nella campagna completano un viaggio ricco di storia a prezzi ancora accessibili."
+      "La Moravia, con i vigneti e la città di Brno, e i castelli sparsi nella campagna completano un viaggio ricco di storia a prezzi ancora accessibili.",
+      "Ideale per weekend lunghi e viaggi di gruppo o scolastici a Praga, anche in combinazione con Vienna e Budapest; prezzi ancora convenienti."
     ],
     "facts": {
       "capital": "Praga",
@@ -617,12 +943,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Ponte Carlo", "description": "Il ponte gotico con le statue sulla Moldava.", "search": "Ponte Carlo" },
-      { "name": "Castello di Praga", "description": "Il complesso con la cattedrale di San Vito.", "search": "Castello di Praga" },
-      { "name": "Piazza della Città Vecchia", "description": "L'orologio astronomico e la chiesa di Týn.", "search": "Orologio astronomico di Praga" },
-      { "name": "Český Krumlov", "description": "Borgo medievale e castello sulla Moldava.", "search": "Český Krumlov" },
-      { "name": "Karlovy Vary", "description": "La città termale delle colonnate.", "search": "Karlovy Vary" },
-      { "name": "Kutná Hora", "description": "La cattedrale di Santa Barbara e l'ossario di Sedlec.", "search": "Ossario di Sedlec" }
+      {
+        "name": "Ponte Carlo",
+        "description": "Il ponte gotico con le statue sulla Moldava.",
+        "search": "Ponte Carlo"
+      },
+      {
+        "name": "Castello di Praga",
+        "description": "Il complesso con la cattedrale di San Vito.",
+        "search": "Castello di Praga"
+      },
+      {
+        "name": "Piazza della Città Vecchia",
+        "description": "L'orologio astronomico e la chiesa di Týn.",
+        "search": "Orologio astronomico di Praga"
+      },
+      {
+        "name": "Český Krumlov",
+        "description": "Borgo medievale e castello sulla Moldava.",
+        "search": "Český Krumlov"
+      },
+      {
+        "name": "Karlovy Vary",
+        "description": "La città termale delle colonnate.",
+        "search": "Karlovy Vary"
+      },
+      {
+        "name": "Kutná Hora",
+        "description": "La cattedrale di Santa Barbara e l'ossario di Sedlec.",
+        "search": "Ossario di Sedlec"
+      }
     ],
     "gettingAround": [
       "Tram e metro efficienti a Praga",
@@ -648,7 +998,8 @@
     "description": [
       "Malta è un piccolo arcipelago con una storia immensa: templi megalitici più antichi delle piramidi, fortezze dei Cavalieri di San Giovanni e una capitale barocca, La Valletta, patrimonio UNESCO.",
       "Mdina, la città silenziosa, e le Tre Città raccontano secoli di assedi e commerci; le baie come la Laguna Blu di Comino offrono un mare turchese.",
-      "Gozo, l'isola sorella, è più rurale e tranquilla. Malta è anche una meta molto amata per studiare l'inglese."
+      "Gozo, l'isola sorella, è più rurale e tranquilla. Malta è anche una meta molto amata per studiare l'inglese.",
+      "Perfetta per weekend al sole anche in inverno, vacanze studio per imparare l'inglese e soggiorni mare in estate; vicinissima all'Italia."
     ],
     "facts": {
       "capital": "La Valletta",
@@ -663,12 +1014,36 @@
       "documents": "Carta d'identità valida per l'espatrio o passaporto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "La Valletta", "description": "La concattedrale di San Giovanni con i Caravaggio.", "search": "Concattedrale di San Giovanni La Valletta" },
-      { "name": "Mdina", "description": "La città fortificata dalle strade silenziose.", "search": "Mdina" },
-      { "name": "Laguna Blu di Comino", "description": "Acque turchesi tra Malta e Gozo.", "search": "Laguna Blu Comino" },
-      { "name": "Ħaġar Qim", "description": "Templi megalitici sul mare.", "search": "Ħaġar Qim" },
-      { "name": "Gozo", "description": "La Cittadella di Victoria e la baia di Ramla.", "search": "Cittadella Gozo" },
-      { "name": "Marsaxlokk", "description": "Villaggio di pescatori con le barche colorate luzzu.", "search": "Marsaxlokk" }
+      {
+        "name": "La Valletta",
+        "description": "La concattedrale di San Giovanni con i Caravaggio.",
+        "search": "Concattedrale di San Giovanni La Valletta"
+      },
+      {
+        "name": "Mdina",
+        "description": "La città fortificata dalle strade silenziose.",
+        "search": "Mdina"
+      },
+      {
+        "name": "Laguna Blu di Comino",
+        "description": "Acque turchesi tra Malta e Gozo.",
+        "search": "Laguna Blu Comino"
+      },
+      {
+        "name": "Ħaġar Qim",
+        "description": "Templi megalitici sul mare.",
+        "search": "Ħaġar Qim"
+      },
+      {
+        "name": "Gozo",
+        "description": "La Cittadella di Victoria e la baia di Ramla.",
+        "search": "Cittadella Gozo"
+      },
+      {
+        "name": "Marsaxlokk",
+        "description": "Villaggio di pescatori con le barche colorate luzzu.",
+        "search": "Marsaxlokk"
+      }
     ],
     "gettingAround": [
       "Autobus pubblici che coprono tutta l'isola",
@@ -694,7 +1069,8 @@
     "description": [
       "La Turchia è un ponte tra continenti e civiltà. Istanbul, sul Bosforo, unisce Santa Sofia, la Moschea Blu, il palazzo di Topkapı e il Gran Bazar in un'atmosfera unica.",
       "La Cappadocia è un paesaggio lunare di camini delle fate, città sotterranee e chiese rupestri, da sorvolare all'alba in mongolfiera. Pamukkale stupisce con le sue vasche bianche di calcare.",
-      "La costa egea e mediterranea custodisce Efeso, una delle città romane meglio conservate, e baie turchesi da scoprire in caicco."
+      "La costa egea e mediterranea custodisce Efeso, una delle città romane meglio conservate, e baie turchesi da scoprire in caicco.",
+      "Ideale per tour classici di 8–10 giorni Istanbul–Cappadocia–Pamukkale–Efeso, city break a Istanbul o crociere in caicco sulla costa; ottimo rapporto qualità prezzo."
     ],
     "facts": {
       "capital": "Ankara",
@@ -709,12 +1085,36 @@
       "documents": "Di solito basta la carta d'identità valida per l'espatrio o il passaporto per soggiorni turistici brevi. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Santa Sofia", "description": "Basilica, moschea e simbolo di Istanbul.", "search": "Santa Sofia Istanbul" },
-      { "name": "Cappadocia", "description": "Camini delle fate e voli in mongolfiera all'alba.", "search": "Cappadocia" },
-      { "name": "Pamukkale", "description": "Le terrazze bianche di travertino e Hierapolis.", "search": "Pamukkale" },
-      { "name": "Efeso", "description": "La biblioteca di Celso e la città romana.", "search": "Biblioteca di Celso" },
-      { "name": "Moschea Blu", "description": "La moschea del sultano Ahmed con le maioliche blu.", "search": "Moschea Blu" },
-      { "name": "Gran Bazar", "description": "Uno dei mercati coperti più grandi del mondo.", "search": "Gran Bazar di Istanbul" }
+      {
+        "name": "Santa Sofia",
+        "description": "Basilica, moschea e simbolo di Istanbul.",
+        "search": "Santa Sofia Istanbul"
+      },
+      {
+        "name": "Cappadocia",
+        "description": "Camini delle fate e voli in mongolfiera all'alba.",
+        "search": "Cappadocia"
+      },
+      {
+        "name": "Pamukkale",
+        "description": "Le terrazze bianche di travertino e Hierapolis.",
+        "search": "Pamukkale"
+      },
+      {
+        "name": "Efeso",
+        "description": "La biblioteca di Celso e la città romana.",
+        "search": "Biblioteca di Celso"
+      },
+      {
+        "name": "Moschea Blu",
+        "description": "La moschea del sultano Ahmed con le maioliche blu.",
+        "search": "Moschea Blu"
+      },
+      {
+        "name": "Gran Bazar",
+        "description": "Uno dei mercati coperti più grandi del mondo.",
+        "search": "Gran Bazar di Istanbul"
+      }
     ],
     "gettingAround": [
       "Voli interni economici da Istanbul per Cappadocia, Izmir e Antalya",
@@ -740,7 +1140,8 @@
     "description": [
       "L'Italia ha il maggior numero di siti UNESCO al mondo: Roma, Firenze e Venezia sono tra le città d'arte più visitate, ma ogni regione ha borghi, chiese e musei di grande valore.",
       "I paesaggi cambiano a ogni ora di strada: le Dolomiti, i laghi del nord, le colline toscane, la Costiera Amalfitana, le Cinque Terre, le isole come Sicilia e Sardegna.",
-      "La cucina e il vino sono parte del viaggio: dalle trattorie ai mercati, dalle cantine alle masserie, ogni territorio ha le sue specialità."
+      "La cucina e il vino sono parte del viaggio: dalle trattorie ai mercati, dalle cantine alle masserie, ogni territorio ha le sue specialità.",
+      "Ideale da proporre a clienti stranieri o italiani in cerca di tour regionali, enogastronomia, città d'arte e vacanze al mare o in montagna, in ogni stagione."
     ],
     "facts": {
       "capital": "Roma",
@@ -755,12 +1156,36 @@
       "documents": "Per i cittadini italiani nessun documento particolare; per i clienti stranieri verificare i requisiti di ingresso"
     },
     "places": [
-      { "name": "Colosseo", "description": "L'anfiteatro simbolo di Roma antica.", "search": "Colosseo" },
-      { "name": "Firenze", "description": "Il Duomo di Brunelleschi e gli Uffizi.", "search": "Cattedrale di Santa Maria del Fiore" },
-      { "name": "Venezia", "description": "Piazza San Marco e i canali.", "search": "Piazza San Marco" },
-      { "name": "Costiera Amalfitana", "description": "Positano, Amalfi e Ravello a picco sul mare.", "search": "Positano" },
-      { "name": "Dolomiti", "description": "Le Tre Cime di Lavaredo e i passi alpini.", "search": "Tre Cime di Lavaredo" },
-      { "name": "Cinque Terre", "description": "Borghi colorati e sentieri tra i vigneti.", "search": "Cinque Terre" }
+      {
+        "name": "Colosseo",
+        "description": "L'anfiteatro simbolo di Roma antica.",
+        "search": "Colosseo"
+      },
+      {
+        "name": "Firenze",
+        "description": "Il Duomo di Brunelleschi e gli Uffizi.",
+        "search": "Cattedrale di Santa Maria del Fiore"
+      },
+      {
+        "name": "Venezia",
+        "description": "Piazza San Marco e i canali.",
+        "search": "Piazza San Marco"
+      },
+      {
+        "name": "Costiera Amalfitana",
+        "description": "Positano, Amalfi e Ravello a picco sul mare.",
+        "search": "Positano"
+      },
+      {
+        "name": "Dolomiti",
+        "description": "Le Tre Cime di Lavaredo e i passi alpini.",
+        "search": "Tre Cime di Lavaredo"
+      },
+      {
+        "name": "Cinque Terre",
+        "description": "Borghi colorati e sentieri tra i vigneti.",
+        "search": "Cinque Terre"
+      }
     ],
     "gettingAround": [
       "Treni ad alta velocità tra le grandi città",

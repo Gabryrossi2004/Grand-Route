@@ -1,0 +1,1496 @@
+{
+  "BS": {
+    "tagline": "Settecento isole, acque turchesi e i maialini che nuotano a Exuma.",
+    "description": [
+      "Le Bahamas sono un arcipelago di oltre 700 isole e cayes nell'Atlantico, con alcune delle acque più trasparenti del pianeta.",
+      "Nassau e Paradise Island offrono resort, spiagge e vita notturna, mentre le Exuma sono famose per i maialini che nuotano a Big Major Cay e per banchi di sabbia che emergono con la bassa marea.",
+      "Eleuthera con la spiaggia rosa di Harbour Island, Andros con la barriera corallina e i blue holes, e le Abacos per la vela completano un viaggio da sogno.",
+      "Ideale per viaggi di nozze e vacanze mare di 7–10 giorni, spesso abbinate a Miami."
+    ],
+    "facts": {
+      "capital": "Nassau",
+      "languages": "Inglese",
+      "currency": "Dollaro delle Bahamas (BSD), alla pari con il dollaro USA accettato ovunque",
+      "timezone": "6 ore in meno rispetto all'Italia",
+      "flight": "Con uno scalo (Stati Uniti o Londra)",
+      "bestPeriod": "Dicembre–maggio",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. In caso di scalo negli Stati Uniti serve l'ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Exuma",
+        "description": "Banchi di sabbia e maialini nuotatori.",
+        "search": "Exuma"
+      },
+      {
+        "name": "Harbour Island",
+        "description": "La spiaggia di sabbia rosa.",
+        "search": "Harbour Island"
+      },
+      {
+        "name": "Nassau",
+        "description": "La capitale coloniale.",
+        "search": "Nassau"
+      },
+      {
+        "name": "Paradise Island",
+        "description": "Resort e spiagge.",
+        "search": "Paradise Island"
+      },
+      {
+        "name": "Andros",
+        "description": "Barriera corallina e blue holes.",
+        "search": "Andros"
+      },
+      {
+        "name": "Pig Beach",
+        "description": "I maialini di Big Major Cay.",
+        "search": "Big Major Cay"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni tra le isole",
+      "Traghetti veloci",
+      "Barche e taxi d'acqua"
+    ],
+    "food": [
+      "Conch fritters",
+      "Pesce alla griglia",
+      "Rum punch"
+    ],
+    "tips": [
+      "Prezzi elevati",
+      "Stagione degli uragani da considerare",
+      "Protezione solare alta"
+    ]
+  },
+  "JM": {
+    "tagline": "Reggae, montagne blu e spiagge infinite: l'anima dei Caraibi.",
+    "description": [
+      "La Giamaica è energia pura: la patria del reggae e di Bob Marley, con una cultura musicale e culinaria inconfondibile.",
+      "Negril con la sua lunga spiaggia e le scogliere al tramonto, Montego Bay e Ocho Rios offrono resort per ogni stile, dagli all-inclusive alle ville di charme.",
+      "Le cascate del Dunn's River, la laguna luminescente, le Blue Mountains con il caffè più pregiato e la tranquilla costa sud di Treasure Beach completano il viaggio.",
+      "Ideale per vacanze mare di 7–10 giorni, viaggi di nozze e famiglie."
+    ],
+    "facts": {
+      "capital": "Kingston",
+      "languages": "Inglese; patois giamaicano",
+      "currency": "Dollaro giamaicano (JMD); dollari USA accettati",
+      "timezone": "6 ore in meno rispetto all'Italia (7 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con voli charter stagionali o uno scalo",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Negril",
+        "description": "Seven Mile Beach e le scogliere.",
+        "search": "Negril"
+      },
+      {
+        "name": "Dunn's River Falls",
+        "description": "Cascate da risalire a piedi.",
+        "search": "Dunn's River Falls"
+      },
+      {
+        "name": "Blue Mountains",
+        "description": "Il caffè più famoso dei Caraibi.",
+        "search": "Blue Mountains (Giamaica)"
+      },
+      {
+        "name": "Museo di Bob Marley",
+        "description": "La casa del re del reggae a Kingston.",
+        "search": "Bob Marley Museum"
+      },
+      {
+        "name": "Montego Bay",
+        "description": "Resort e spiagge.",
+        "search": "Montego Bay"
+      },
+      {
+        "name": "Treasure Beach",
+        "description": "La costa sud autentica.",
+        "search": "Treasure Beach"
+      }
+    ],
+    "gettingAround": [
+      "Transfer e auto con autista",
+      "Escursioni organizzate",
+      "Auto a noleggio per esperti"
+    ],
+    "food": [
+      "Jerk chicken",
+      "Ackee and saltfish",
+      "Caffè Blue Mountain e rum"
+    ],
+    "tips": [
+      "Muoversi con trasporti autorizzati",
+      "Evitare alcune zone di Kingston",
+      "Mancia del 10–15%"
+    ]
+  },
+  "PR": {
+    "tagline": "San Juan coloniale, foresta pluviale e baie bioluminescenti.",
+    "description": [
+      "Portorico è un territorio degli Stati Uniti con un'anima latina e caraibica. Il Viejo San Juan, con fortezze spagnole e case colorate, è un gioiello coloniale.",
+      "La foresta pluviale di El Yunque, unica del sistema forestale statunitense, offre cascate e sentieri.",
+      "Le baie bioluminescenti di Vieques e Fajardo si illuminano di notte; le isole di Culebra e Vieques hanno spiagge tra le più belle dei Caraibi.",
+      "Ideale per 7 giorni tra cultura e mare, o abbinato a una crociera."
+    ],
+    "facts": {
+      "capital": "San Juan",
+      "languages": "Spagnolo e inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo negli Stati Uniti",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Come per gli Stati Uniti: passaporto elettronico ed ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Viejo San Juan",
+        "description": "Il centro coloniale e El Morro.",
+        "search": "Castillo San Felipe del Morro"
+      },
+      {
+        "name": "El Yunque",
+        "description": "La foresta pluviale.",
+        "search": "Foresta nazionale El Yunque"
+      },
+      {
+        "name": "Baia bioluminescente di Vieques",
+        "description": "L'acqua che si illumina.",
+        "search": "Mosquito Bay"
+      },
+      {
+        "name": "Flamenco Beach",
+        "description": "La spiaggia di Culebra.",
+        "search": "Flamenco Beach"
+      },
+      {
+        "name": "Cueva Ventana",
+        "description": "La grotta con vista sulla valle.",
+        "search": "Cueva Ventana"
+      },
+      {
+        "name": "Ponce",
+        "description": "La perla del sud.",
+        "search": "Ponce"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Traghetti e voli per Vieques e Culebra",
+      "Taxi e app a San Juan"
+    ],
+    "food": [
+      "Mofongo",
+      "Lechón asado",
+      "Piña colada, nata qui"
+    ],
+    "tips": [
+      "Servono le stesse autorizzazioni degli Stati Uniti",
+      "Prenotare i tour notturni delle baie",
+      "Traffico intenso a San Juan"
+    ]
+  },
+  "BB": {
+    "tagline": "Spiagge di sabbia rosata, rum e atmosfera britannica ai Caraibi.",
+    "description": [
+      "Barbados è un'isola caraibica elegante e accogliente, con la costa ovest dalle acque calme e la costa est selvaggia battuta dall'Atlantico.",
+      "Le spiagge della Platinum Coast, il sito di Harrison's Cave, i giardini botanici e Bridgetown, patrimonio UNESCO, sono le attrazioni principali.",
+      "La tradizione del rum, con le distillerie più antiche dei Caraibi, e il cricket raccontano il legame con la Gran Bretagna.",
+      "Ideale per viaggi di nozze e soggiorni mare di 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Bridgetown",
+      "languages": "Inglese",
+      "currency": "Dollaro di Barbados (BBD); dollari USA accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo a Londra",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale",
+      "plugs": "Tipo A e B, 115 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Harrison's Cave",
+        "description": "Grotte di cristallo.",
+        "search": "Harrison's Cave"
+      },
+      {
+        "name": "Bridgetown",
+        "description": "La capitale UNESCO.",
+        "search": "Bridgetown"
+      },
+      {
+        "name": "Bathsheba",
+        "description": "La costa atlantica selvaggia.",
+        "search": "Bathsheba"
+      },
+      {
+        "name": "Carlisle Bay",
+        "description": "Snorkeling e relitti.",
+        "search": "Carlisle Bay"
+      },
+      {
+        "name": "Mount Gay Rum",
+        "description": "Distilleria storica.",
+        "search": "Mount Gay Rum"
+      },
+      {
+        "name": "Crane Beach",
+        "description": "La spiaggia rosata.",
+        "search": "Crane Beach"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o taxi",
+      "Autobus economici",
+      "Escursioni in catamarano"
+    ],
+    "food": [
+      "Flying fish e cou-cou",
+      "Macaroni pie",
+      "Rum"
+    ],
+    "tips": [
+      "Prezzi alti",
+      "Costa ovest più calma per famiglie",
+      "Mancia del 10%"
+    ]
+  },
+  "TT": {
+    "tagline": "Il Carnevale più famoso dei Caraibi, foreste tropicali e le spiagge di Tobago.",
+    "description": [
+      "Trinidad e Tobago è un paese di due isole molto diverse. Trinidad è famosa per il Carnevale, il calypso, lo steelpan e una cucina che mescola influenze indiane, africane e creole.",
+      "La riserva di Caroni con gli ibis scarlatti e le foreste del nord, dove nidificano le tartarughe liuto, attirano i naturalisti.",
+      "Tobago è più tranquilla, con spiagge come Pigeon Point, barriere coralline e una foresta tra le più antiche protette dell'emisfero occidentale.",
+      "Ideale per il Carnevale o per soggiorni mare a Tobago, 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Port of Spain",
+      "languages": "Inglese",
+      "currency": "Dollaro di Trinidad e Tobago (TTD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Londra o Stati Uniti)",
+      "bestPeriod": "Gennaio–maggio; febbraio per il Carnevale",
+      "climate": "Tropicale, fuori dalla fascia principale degli uragani",
+      "plugs": "Tipo A e B, 115 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Pigeon Point",
+        "description": "La spiaggia simbolo di Tobago.",
+        "search": "Pigeon Point"
+      },
+      {
+        "name": "Caroni Swamp",
+        "description": "Gli ibis scarlatti al tramonto.",
+        "search": "Caroni Swamp"
+      },
+      {
+        "name": "Maracas Bay",
+        "description": "La spiaggia più famosa di Trinidad.",
+        "search": "Maracas Bay"
+      },
+      {
+        "name": "Pitch Lake",
+        "description": "Il lago d'asfalto naturale.",
+        "search": "Pitch Lake"
+      },
+      {
+        "name": "Foresta di Tobago",
+        "description": "Riserva forestale storica.",
+        "search": "Riserva forestale di Main Ridge"
+      },
+      {
+        "name": "Port of Spain",
+        "description": "Il Carnevale e la Savannah.",
+        "search": "Port of Spain"
+      }
+    ],
+    "gettingAround": [
+      "Voli e traghetti tra le due isole",
+      "Auto a noleggio",
+      "Taxi"
+    ],
+    "food": [
+      "Doubles",
+      "Roti",
+      "Bake and shark"
+    ],
+    "tips": [
+      "Prenotare con largo anticipo per il Carnevale",
+      "Prudenza a Port of Spain di notte",
+      "Tobago più rilassata"
+    ]
+  },
+  "HT": {
+    "tagline": "La Citadelle, cultura vudù e arte vivace, in un paese oggi molto pericoloso.",
+    "description": [
+      "Haiti è stata la prima repubblica nera indipendente al mondo e custodisce la Citadelle Laferrière, imponente fortezza sulle montagne patrimonio UNESCO.",
+      "L'arte naïf, la musica e le tradizioni vudù sono parte di una cultura ricchissima; la costa nord ha spiagge e baie.",
+      "La situazione di sicurezza è estremamente grave e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Port-au-Prince",
+      "languages": "Creolo haitiano e francese",
+      "currency": "Gourde haitiano (HTG)",
+      "timezone": "6 ore in meno rispetto all'Italia",
+      "flight": "Collegamenti limitati",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Tropicale",
+      "plugs": "Tipo A e B, 110 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Citadelle Laferrière",
+        "description": "La fortezza sulle montagne.",
+        "search": "Cittadella Laferrière"
+      },
+      {
+        "name": "Palazzo Sans-Souci",
+        "description": "Le rovine del palazzo reale.",
+        "search": "Palazzo di Sans-Souci"
+      },
+      {
+        "name": "Labadee",
+        "description": "Penisola sulla costa nord.",
+        "search": "Labadee"
+      },
+      {
+        "name": "Jacmel",
+        "description": "Città coloniale e carnevale.",
+        "search": "Jacmel"
+      },
+      {
+        "name": "Bassin Bleu",
+        "description": "Piscine naturali turchesi.",
+        "search": "Bassin Bleu"
+      },
+      {
+        "name": "Île-à-Vache",
+        "description": "Isola tranquilla al sud.",
+        "search": "Île-à-Vache"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Griot, maiale fritto",
+      "Riso e fagioli",
+      "Rum Barbancourt"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "AW": {
+    "tagline": "Spiagge bianche, sole tutto l'anno e vento costante fuori dagli uragani.",
+    "description": [
+      "Aruba è un'isola olandese dei Caraibi meridionali con clima secco e soleggiato tutto l'anno, fuori dalla fascia degli uragani.",
+      "Eagle Beach e Palm Beach sono tra le spiagge più belle dei Caraibi, ideali per famiglie e coppie.",
+      "Il parco nazionale di Arikok con grotte e piscine naturali, Oranjestad con le case color pastello e i fenicotteri di Renaissance Island completano il soggiorno.",
+      "Ideale per vacanze mare di 7–10 giorni in ogni stagione."
+    ],
+    "facts": {
+      "capital": "Oranjestad",
+      "languages": "Olandese e papiamento; inglese e spagnolo diffusi",
+      "currency": "Fiorino di Aruba (AWG); dollari USA accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scalo ad Amsterdam o negli Stati Uniti",
+      "bestPeriod": "Tutto l'anno",
+      "climate": "Tropicale secco e ventilato",
+      "plugs": "Tipo A, B e F, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto e modulo di ingresso online (ED card). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Eagle Beach",
+        "description": "Spiaggia bianca e alberi fofoti.",
+        "search": "Eagle Beach"
+      },
+      {
+        "name": "Palm Beach",
+        "description": "Resort e mare calmo.",
+        "search": "Palm Beach (Aruba)"
+      },
+      {
+        "name": "Parco di Arikok",
+        "description": "Grotte e piscine naturali.",
+        "search": "Parco nazionale di Arikok"
+      },
+      {
+        "name": "Oranjestad",
+        "description": "Case color pastello.",
+        "search": "Oranjestad"
+      },
+      {
+        "name": "Renaissance Island",
+        "description": "La spiaggia dei fenicotteri.",
+        "search": "Renaissance Island"
+      },
+      {
+        "name": "California Lighthouse",
+        "description": "Il faro sulla punta nord.",
+        "search": "California Lighthouse"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o jeep",
+      "Autobus",
+      "Taxi"
+    ],
+    "food": [
+      "Keshi yena, formaggio ripieno",
+      "Pesce fresco",
+      "Pastechi"
+    ],
+    "tips": [
+      "Vento costante",
+      "Prezzi alti",
+      "Sole fortissimo"
+    ]
+  },
+  "CW": {
+    "tagline": "Willemstad colorata, calette e immersioni nei Caraibi olandesi.",
+    "description": [
+      "Curaçao è un'isola dei Caraibi olandesi con un mix di culture e un capitale coloratissimo: Willemstad, patrimonio UNESCO, con le case di Handelskade affacciate sul porto.",
+      "La costa ovest è punteggiata di piccole baie come Grote Knip e Cas Abao, perfette per snorkeling e immersioni.",
+      "Il parco Christoffel, le tartarughe di Playa Piskado e il famoso liquore blu completano l'esperienza.",
+      "Ideale per soggiorni mare e immersioni di 7–10 giorni, fuori dalla fascia degli uragani."
+    ],
+    "facts": {
+      "capital": "Willemstad",
+      "languages": "Papiamento, olandese e inglese",
+      "currency": "Fiorino caraibico (XCG); dollari accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scalo ad Amsterdam",
+      "bestPeriod": "Tutto l'anno",
+      "climate": "Tropicale secco",
+      "plugs": "Tipo A, B e F, 110/220 V: utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto e modulo digitale di immigrazione online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Handelskade",
+        "description": "Le case colorate di Willemstad.",
+        "search": "Handelskade"
+      },
+      {
+        "name": "Grote Knip",
+        "description": "La baia più fotografata.",
+        "search": "Grote Knip"
+      },
+      {
+        "name": "Parco Christoffel",
+        "description": "La montagna più alta dell'isola.",
+        "search": "Parco nazionale Christoffel"
+      },
+      {
+        "name": "Playa Piskado",
+        "description": "Snorkeling con le tartarughe.",
+        "search": "Playa Piskado"
+      },
+      {
+        "name": "Ponte della regina Emma",
+        "description": "Il ponte galleggiante.",
+        "search": "Ponte della regina Emma"
+      },
+      {
+        "name": "Klein Curaçao",
+        "description": "Isolotto disabitato.",
+        "search": "Klein Curaçao"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Taxi",
+      "Barche per Klein Curaçao"
+    ],
+    "food": [
+      "Keshi yena",
+      "Stoba, stufato",
+      "Liquore Blue Curaçao"
+    ],
+    "tips": [
+      "Ottimo per immersioni da riva",
+      "Fuori dalla fascia degli uragani",
+      "Prezzi medio-alti"
+    ]
+  },
+  "BM": {
+    "tagline": "Spiagge rosa, case pastello e atmosfera britannica nell'Atlantico.",
+    "description": [
+      "Le Bermuda sono un arcipelago britannico nell'Atlantico, famoso per le spiagge di sabbia rosata come Horseshoe Bay e per le case dai tetti bianchi.",
+      "St. George's, patrimonio UNESCO, è una delle più antiche città inglesi del Nuovo Mondo; le Crystal Caves mostrano laghi sotterranei.",
+      "Il mare è perfetto per immersioni sui relitti e il golf è un'istituzione.",
+      "Ideale per soggiorni di lusso di 5–7 giorni, spesso combinati con New York."
+    ],
+    "facts": {
+      "capital": "Hamilton",
+      "languages": "Inglese",
+      "currency": "Dollaro delle Bermuda (BMD), alla pari con il dollaro USA",
+      "timezone": "5 ore in meno rispetto all'Italia",
+      "flight": "Con uno scalo a Londra o negli Stati Uniti",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Subtropicale, mite d'inverno",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a sinistra; i turisti non possono noleggiare auto",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Horseshoe Bay",
+        "description": "La spiaggia rosa.",
+        "search": "Horseshoe Bay Beach"
+      },
+      {
+        "name": "St. George's",
+        "description": "La città storica UNESCO.",
+        "search": "St. George's (Bermuda)"
+      },
+      {
+        "name": "Crystal Caves",
+        "description": "Grotte con laghi sotterranei.",
+        "search": "Crystal Caves"
+      },
+      {
+        "name": "Hamilton",
+        "description": "La capitale e il porto.",
+        "search": "Hamilton (Bermuda)"
+      },
+      {
+        "name": "Royal Naval Dockyard",
+        "description": "Il forte e il museo.",
+        "search": "Royal Naval Dockyard"
+      },
+      {
+        "name": "Gibbs Hill Lighthouse",
+        "description": "Il faro in ghisa.",
+        "search": "Gibbs Hill Lighthouse"
+      }
+    ],
+    "gettingAround": [
+      "Scooter e mini-auto elettriche a noleggio",
+      "Autobus e traghetti",
+      "Taxi"
+    ],
+    "food": [
+      "Fish chowder",
+      "Fish sandwich",
+      "Dark 'n' Stormy"
+    ],
+    "tips": [
+      "Prezzi molto alti",
+      "Le auto non si noleggiano",
+      "Inverno mite ma non da spiaggia"
+    ]
+  },
+  "KY": {
+    "tagline": "Seven Mile Beach, le razze di Stingray City e immersioni di classe mondiale.",
+    "description": [
+      "Le Isole Cayman sono un territorio britannico dei Caraibi, tra le mete più eleganti e sicure dell'area.",
+      "Seven Mile Beach su Grand Cayman è una delle spiagge più celebri dei Caraibi; a Stingray City si nuota tra le razze in acque basse.",
+      "Le pareti coralline di Little Cayman e Cayman Brac sono tra le immersioni più belle al mondo.",
+      "Ideale per vacanze mare e subacquee di alto livello, 7 giorni."
+    ],
+    "facts": {
+      "capital": "George Town",
+      "languages": "Inglese",
+      "currency": "Dollaro delle Cayman (KYD); dollari USA accettati",
+      "timezone": "6 ore in meno rispetto all'Italia (7 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo negli Stati Uniti o a Londra",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; in caso di scalo negli Stati Uniti serve l'ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Seven Mile Beach",
+        "description": "La spiaggia simbolo.",
+        "search": "Seven Mile Beach (Grand Cayman)"
+      },
+      {
+        "name": "Stingray City",
+        "description": "Nuotare con le razze.",
+        "search": "Stingray City"
+      },
+      {
+        "name": "Little Cayman",
+        "description": "Bloody Bay Wall.",
+        "search": "Little Cayman"
+      },
+      {
+        "name": "Rum Point",
+        "description": "Spiaggia tranquilla.",
+        "search": "Rum Point"
+      },
+      {
+        "name": "Cayman Brac",
+        "description": "Scogliere e relitti.",
+        "search": "Cayman Brac"
+      },
+      {
+        "name": "Starfish Point",
+        "description": "Stelle marine in acque basse.",
+        "search": "Starfish Point"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Voli interni tra le isole",
+      "Escursioni in barca"
+    ],
+    "food": [
+      "Conch e pesce",
+      "Turtle stew tradizionale",
+      "Rum cake"
+    ],
+    "tips": [
+      "Prezzi molto alti",
+      "Mare calmo e trasparente",
+      "Paese molto sicuro"
+    ]
+  },
+  "TC": {
+    "tagline": "Grace Bay e lagune turchesi: tra le spiagge più belle al mondo.",
+    "description": [
+      "Le Isole Turks e Caicos sono un territorio britannico con acque di un turchese irreale e spiagge di sabbia finissima.",
+      "Grace Bay, su Providenciales, è regolarmente indicata tra le spiagge più belle del pianeta, con resort di lusso e mare calmo.",
+      "La barriera corallina, le isole disabitate raggiungibili in barca e l'avvistamento delle megattere in inverno completano il soggiorno.",
+      "Ideale per viaggi di nozze e soggiorni mare di lusso, 7 giorni."
+    ],
+    "facts": {
+      "capital": "Cockburn Town",
+      "languages": "Inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "6 ore in meno rispetto all'Italia",
+      "flight": "Con uno scalo negli Stati Uniti o a Londra",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; in caso di scalo negli Stati Uniti serve l'ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Grace Bay",
+        "description": "Una delle spiagge più belle del mondo.",
+        "search": "Grace Bay"
+      },
+      {
+        "name": "Chalk Sound",
+        "description": "La laguna turchese.",
+        "search": "Chalk Sound National Park"
+      },
+      {
+        "name": "Grand Turk",
+        "description": "La capitale coloniale.",
+        "search": "Grand Turk"
+      },
+      {
+        "name": "Iguana Island",
+        "description": "Le iguane di Little Water Cay.",
+        "search": "Little Water Cay"
+      },
+      {
+        "name": "Long Bay",
+        "description": "Kitesurf e mare basso.",
+        "search": "Long Bay Beach"
+      },
+      {
+        "name": "Barriera di Providenciales",
+        "description": "Snorkeling a Coral Gardens.",
+        "search": "Providenciales"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Barche ed escursioni",
+      "Voli interni tra le isole"
+    ],
+    "food": [
+      "Conch fritters",
+      "Aragosta",
+      "Pesce alla griglia"
+    ],
+    "tips": [
+      "Prezzi molto alti",
+      "Mare calmo e sicuro",
+      "Protezione solare compatibile con la barriera"
+    ]
+  },
+  "VG": {
+    "tagline": "Vela, baie riparate e i massi giganti di The Baths.",
+    "description": [
+      "Le Isole Vergini Britanniche sono una delle mete più amate al mondo per la vela, con decine di isole vicine e baie riparate.",
+      "The Baths, su Virgin Gorda, è un labirinto di massi di granito e piscine naturali; Jost Van Dyke è famosa per i beach bar.",
+      "Tortola, Anegada con le spiagge piatte e le aragoste, e le isole private offrono atmosfere diverse.",
+      "Ideale per crociere in barca a vela o catamarano di 7 giorni."
+    ],
+    "facts": {
+      "capital": "Road Town",
+      "languages": "Inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scali (Stati Uniti, Antigua o Porto Rico)",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; in caso di scalo negli Stati Uniti serve l'ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "The Baths",
+        "description": "Massi di granito e piscine naturali.",
+        "search": "The Baths"
+      },
+      {
+        "name": "Jost Van Dyke",
+        "description": "White Bay e i beach bar.",
+        "search": "Jost Van Dyke"
+      },
+      {
+        "name": "Anegada",
+        "description": "L'isola corallina piatta.",
+        "search": "Anegada"
+      },
+      {
+        "name": "Cane Garden Bay",
+        "description": "Spiaggia di Tortola.",
+        "search": "Cane Garden Bay"
+      },
+      {
+        "name": "The Indians",
+        "description": "Snorkeling tra i faraglioni.",
+        "search": "The Indians (Isole Vergini Britanniche)"
+      },
+      {
+        "name": "Virgin Gorda",
+        "description": "Spiagge e resort.",
+        "search": "Virgin Gorda"
+      }
+    ],
+    "gettingAround": [
+      "Barca a vela o catamarano a noleggio",
+      "Traghetti tra le isole",
+      "Taxi"
+    ],
+    "food": [
+      "Aragosta di Anegada",
+      "Roti",
+      "Painkiller, cocktail locale"
+    ],
+    "tips": [
+      "Ideale con skipper",
+      "Prezzi alti",
+      "Stagione degli uragani da considerare"
+    ]
+  },
+  "VI": {
+    "tagline": "Spiagge caraibiche e parchi marini sulle isole americane.",
+    "description": [
+      "Le Isole Vergini Americane, territorio degli Stati Uniti, comprendono St. Thomas, St. John e St. Croix.",
+      "St. John è per due terzi parco nazionale, con spiagge come Trunk Bay e il suo percorso di snorkeling sottomarino.",
+      "St. Thomas offre Magens Bay e lo shopping in esenzione di Charlotte Amalie, mentre St. Croix ha un'atmosfera più tranquilla e immersioni a Buck Island.",
+      "Ideale per vacanze mare di 7 giorni o come tappa di crociera."
+    ],
+    "facts": {
+      "capital": "Charlotte Amalie",
+      "languages": "Inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo negli Stati Uniti",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Come per gli Stati Uniti: passaporto elettronico ed ESTA. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Trunk Bay",
+        "description": "Il sentiero sottomarino.",
+        "search": "Trunk Bay"
+      },
+      {
+        "name": "Magens Bay",
+        "description": "La spiaggia di St. Thomas.",
+        "search": "Magens Bay"
+      },
+      {
+        "name": "Parco nazionale delle Isole Vergini",
+        "description": "Natura protetta su St. John.",
+        "search": "Parco nazionale delle Isole Vergini"
+      },
+      {
+        "name": "Buck Island",
+        "description": "Riserva marina di St. Croix.",
+        "search": "Buck Island Reef National Monument"
+      },
+      {
+        "name": "Charlotte Amalie",
+        "description": "Il porto e lo shopping.",
+        "search": "Charlotte Amalie"
+      },
+      {
+        "name": "Christiansted",
+        "description": "Il centro danese di St. Croix.",
+        "search": "Christiansted"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio (guida a sinistra)",
+      "Traghetti tra le isole",
+      "Taxi collettivi"
+    ],
+    "food": [
+      "Johnny cake",
+      "Pesce e conch",
+      "Rum Cruzan"
+    ],
+    "tips": [
+      "Servono ESTA e passaporto come per gli USA",
+      "Prezzi alti",
+      "St. John molto naturale"
+    ]
+  },
+  "AG": {
+    "tagline": "Una spiaggia per ogni giorno dell'anno e la storia navale di Nelson.",
+    "description": [
+      "Antigua e Barbuda dice di avere 365 spiagge, una per ogni giorno dell'anno, con acque calme e resort di ogni tipo.",
+      "Il Nelson's Dockyard, cantiere navale georgiano patrimonio UNESCO, e Shirley Heights con la vista e la festa della domenica sono le attrazioni più famose.",
+      "Barbuda, l'isola sorella, offre spiagge rosate quasi deserte e una colonia di fregate.",
+      "Ideale per viaggi di nozze e vacanze mare di 7–10 giorni, e per gli appassionati di vela."
+    ],
+    "facts": {
+      "capital": "St. John's",
+      "languages": "Inglese",
+      "currency": "Dollaro dei Caraibi orientali (XCD); dollari USA accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo a Londra o voli stagionali",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale secco; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipo A e B, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Nelson's Dockyard",
+        "description": "Il cantiere navale georgiano.",
+        "search": "Nelson's Dockyard"
+      },
+      {
+        "name": "Shirley Heights",
+        "description": "Vista sul porto inglese.",
+        "search": "Shirley Heights"
+      },
+      {
+        "name": "Barbuda",
+        "description": "Spiagge rosate e fregate.",
+        "search": "Barbuda"
+      },
+      {
+        "name": "Half Moon Bay",
+        "description": "Spiaggia a mezzaluna.",
+        "search": "Half Moon Bay (Antigua)"
+      },
+      {
+        "name": "Dickenson Bay",
+        "description": "Spiaggia e resort.",
+        "search": "Dickenson Bay"
+      },
+      {
+        "name": "Devil's Bridge",
+        "description": "L'arco naturale sull'oceano.",
+        "search": "Devil's Bridge (Antigua)"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto a noleggio",
+      "Traghetti o voli per Barbuda",
+      "Barche ed escursioni"
+    ],
+    "food": [
+      "Fungie e pepperpot",
+      "Aragosta",
+      "Ananas nero di Antigua"
+    ],
+    "tips": [
+      "Settimana della vela ad aprile",
+      "Prezzi alti",
+      "Mancia spesso inclusa"
+    ]
+  },
+  "LC": {
+    "tagline": "I Pitons, foreste tropicali e resort affacciati sul mare.",
+    "description": [
+      "Saint Lucia è un'isola vulcanica verdissima, simbolo dei Caraibi romantici. I Pitons, due picchi gemelli che si gettano in mare, sono patrimonio UNESCO.",
+      "Il vulcano drive-in di Sulphur Springs con i bagni di fango, la foresta pluviale e le cascate di Toraille offrono natura e benessere.",
+      "Marigot Bay, Rodney Bay e i resort di Soufrière completano un soggiorno ideale per coppie.",
+      "Perfetta per viaggi di nozze di 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Castries",
+      "languages": "Inglese; creolo francese",
+      "currency": "Dollaro dei Caraibi orientali (XCD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo a Londra",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale",
+      "plugs": "Tipo G, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Pitons",
+        "description": "I picchi gemelli sul mare.",
+        "search": "Pitons"
+      },
+      {
+        "name": "Sulphur Springs",
+        "description": "Il vulcano e i bagni di fango.",
+        "search": "Sulphur Springs (Saint Lucia)"
+      },
+      {
+        "name": "Marigot Bay",
+        "description": "La baia più bella dell'isola.",
+        "search": "Marigot Bay"
+      },
+      {
+        "name": "Pigeon Island",
+        "description": "Il parco con il forte.",
+        "search": "Pigeon Island"
+      },
+      {
+        "name": "Soufrière",
+        "description": "La vecchia capitale francese.",
+        "search": "Soufrière (Saint Lucia)"
+      },
+      {
+        "name": "Anse Chastanet",
+        "description": "Snorkeling sotto i Pitons.",
+        "search": "Anse Chastanet"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto con autista",
+      "Barche-taxi lungo la costa",
+      "Strade tortuose"
+    ],
+    "food": [
+      "Green fig and saltfish",
+      "Callaloo",
+      "Rum locale"
+    ],
+    "tips": [
+      "L'aeroporto internazionale è lontano dal nord",
+      "Ideale per coppie",
+      "Strade lente"
+    ]
+  },
+  "GD": {
+    "tagline": "L'isola delle spezie, Grand Anse e il parco di sculture sommerse.",
+    "description": [
+      "Grenada è chiamata l'isola delle spezie per la noce moscata, la cannella e il cacao coltivati nelle sue colline.",
+      "Grand Anse è una delle spiagge più belle dei Caraibi, mentre il parco di sculture subacquee di Moliniere Bay è un'esperienza unica per snorkeling e immersioni.",
+      "St. George's, con il porto a ferro di cavallo, le cascate nella foresta e le isole di Carriacou e Petite Martinique completano il viaggio.",
+      "Ideale per soggiorni mare autentici di 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "St. George's",
+      "languages": "Inglese",
+      "currency": "Dollaro dei Caraibi orientali (XCD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo a Londra",
+      "bestPeriod": "Gennaio–maggio",
+      "climate": "Tropicale, ai margini della fascia degli uragani",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Grand Anse",
+        "description": "Due miglia di sabbia bianca.",
+        "search": "Grand Anse Beach"
+      },
+      {
+        "name": "Parco di sculture sommerse",
+        "description": "Arte sott'acqua.",
+        "search": "Grenada Underwater Sculpture Park"
+      },
+      {
+        "name": "St. George's",
+        "description": "Il porto a ferro di cavallo.",
+        "search": "St. George's (Grenada)"
+      },
+      {
+        "name": "Carriacou",
+        "description": "L'isola tranquilla.",
+        "search": "Carriacou"
+      },
+      {
+        "name": "Cascate di Annandale",
+        "description": "Cascate nella foresta.",
+        "search": "Annandale Falls"
+      },
+      {
+        "name": "Belmont Estate",
+        "description": "Piantagione di cacao e spezie.",
+        "search": "Belmont Estate"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e minibus",
+      "Traghetti per Carriacou",
+      "Auto a noleggio"
+    ],
+    "food": [
+      "Oil down, piatto nazionale",
+      "Cioccolato di Grenada",
+      "Spezie locali"
+    ],
+    "tips": [
+      "Ottimo rapporto qualità prezzo per i Caraibi",
+      "Atmosfera autentica",
+      "Strade strette"
+    ]
+  },
+  "DM": {
+    "tagline": "L'isola natura dei Caraibi: foreste, sorgenti calde e balene.",
+    "description": [
+      "Dominica non è un'isola da spiagge bianche ma un paradiso naturale: foreste pluviali, cascate, sorgenti calde e un lago che bolle.",
+      "Il parco del Morne Trois Pitons, patrimonio UNESCO, ospita il Boiling Lake e la Emerald Pool; il Waitukubuli è il primo sentiero a lunga percorrenza dei Caraibi.",
+      "È uno dei pochi luoghi al mondo dove i capodogli vivono tutto l'anno vicino alla costa.",
+      "Ideale per viaggiatori attivi e amanti della natura, 7 giorni."
+    ],
+    "facts": {
+      "capital": "Roseau",
+      "languages": "Inglese; creolo francese",
+      "currency": "Dollaro dei Caraibi orientali (XCD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Antigua, Guadalupa o Barbados",
+      "bestPeriod": "Gennaio–maggio",
+      "climate": "Tropicale piovoso",
+      "plugs": "Tipo D e G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Boiling Lake",
+        "description": "Il lago che bolle.",
+        "search": "Boiling Lake"
+      },
+      {
+        "name": "Morne Trois Pitons",
+        "description": "Parco nazionale UNESCO.",
+        "search": "Parco nazionale di Morne Trois Pitons"
+      },
+      {
+        "name": "Emerald Pool",
+        "description": "Cascata e piscina naturale.",
+        "search": "Emerald Pool"
+      },
+      {
+        "name": "Champagne Reef",
+        "description": "Snorkeling tra le bollicine vulcaniche.",
+        "search": "Champagne Reef"
+      },
+      {
+        "name": "Cascate di Trafalgar",
+        "description": "Due cascate gemelle.",
+        "search": "Trafalgar Falls"
+      },
+      {
+        "name": "Scotts Head",
+        "description": "Dove Atlantico e Caraibi si incontrano.",
+        "search": "Scotts Head"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio o con autista",
+      "Escursioni guidate",
+      "Strade di montagna"
+    ],
+    "food": [
+      "Callaloo",
+      "Pesce e frutta tropicale",
+      "Rum Bush"
+    ],
+    "tips": [
+      "Scarpe da trekking indispensabili",
+      "Poche spiagge sabbiose",
+      "Avvistamento capodogli tutto l'anno"
+    ]
+  },
+  "KN": {
+    "tagline": "Fortezze coloniali, piantagioni e due isole tranquille.",
+    "description": [
+      "Saint Kitts e Nevis è uno stato di due isole vulcaniche con un'atmosfera rilassata e una lunga storia coloniale.",
+      "La fortezza di Brimstone Hill, patrimonio UNESCO, domina la costa; il treno panoramico che percorre l'antica ferrovia dello zucchero offre viste sull'isola.",
+      "Nevis, raggiungibile in traghetto, è ancora più tranquilla, con hotel ricavati da antiche piantagioni e la spiaggia di Pinney's.",
+      "Ideale per soggiorni di relax di 7 giorni."
+    ],
+    "facts": {
+      "capital": "Basseterre",
+      "languages": "Inglese",
+      "currency": "Dollaro dei Caraibi orientali (XCD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo negli Stati Uniti o via Antigua",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale",
+      "plugs": "Tipi A, B, D e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Brimstone Hill",
+        "description": "La fortezza UNESCO.",
+        "search": "Fortezza di Brimstone Hill"
+      },
+      {
+        "name": "Nevis",
+        "description": "L'isola sorella.",
+        "search": "Nevis"
+      },
+      {
+        "name": "St. Kitts Scenic Railway",
+        "description": "Il treno dello zucchero.",
+        "search": "St. Kitts Scenic Railway"
+      },
+      {
+        "name": "Basseterre",
+        "description": "Il Circus e la piazza dell'Indipendenza.",
+        "search": "Basseterre"
+      },
+      {
+        "name": "Pinney's Beach",
+        "description": "La spiaggia di Nevis.",
+        "search": "Pinney's Beach"
+      },
+      {
+        "name": "Cockleshell Bay",
+        "description": "Vista su Nevis.",
+        "search": "Cockleshell Bay"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto a noleggio",
+      "Traghetto tra le isole",
+      "Treno panoramico"
+    ],
+    "food": [
+      "Stewed saltfish",
+      "Goat water",
+      "Rum locale"
+    ],
+    "tips": [
+      "Atmosfera tranquilla",
+      "Prezzi medio-alti",
+      "Scimmie verdi frequenti"
+    ]
+  },
+  "VC": {
+    "tagline": "Le Grenadine: isole da sogno, vela e la laguna dei Tobago Cays.",
+    "description": [
+      "Saint Vincent e Grenadine comprende una grande isola vulcanica e una catena di piccole isole considerate tra le più belle dei Caraibi.",
+      "I Tobago Cays, un parco marino di isolotti e laguna, sono perfetti per nuotare con le tartarughe; Bequia, Mustique e Union Island sono mete chic e tranquille.",
+      "Saint Vincent offre il vulcano La Soufrière, giardini botanici storici e cascate nella foresta.",
+      "Ideale per crociere in catamarano e soggiorni esclusivi di 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Kingstown",
+      "languages": "Inglese",
+      "currency": "Dollaro dei Caraibi orientali (XCD)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Barbados o Saint Lucia",
+      "bestPeriod": "Dicembre–maggio",
+      "climate": "Tropicale",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tobago Cays",
+        "description": "Laguna e tartarughe.",
+        "search": "Tobago Cays"
+      },
+      {
+        "name": "Bequia",
+        "description": "L'isola dei velisti.",
+        "search": "Bequia"
+      },
+      {
+        "name": "Mustique",
+        "description": "L'isola esclusiva.",
+        "search": "Mustique"
+      },
+      {
+        "name": "La Soufrière",
+        "description": "Il vulcano di Saint Vincent.",
+        "search": "La Soufrière (Saint Vincent)"
+      },
+      {
+        "name": "Union Island",
+        "description": "Kitesurf e porto delle Grenadine.",
+        "search": "Union Island"
+      },
+      {
+        "name": "Giardino botanico di Kingstown",
+        "description": "Uno dei più antichi delle Americhe.",
+        "search": "Giardino botanico di Saint Vincent"
+      }
+    ],
+    "gettingAround": [
+      "Barca a vela o catamarano",
+      "Traghetti e voli interni",
+      "Taxi d'acqua"
+    ],
+    "food": [
+      "Pesce e aragosta",
+      "Frutto dell'albero del pane",
+      "Rum locale"
+    ],
+    "tips": [
+      "Ideale in barca",
+      "Collegamenti con scali",
+      "Prezzi alti a Mustique"
+    ]
+  },
+  "BL": {
+    "tagline": "L'isola più chic dei Caraibi francesi.",
+    "description": [
+      "Saint-Barthélemy, detta St. Barth, è una piccola isola francese dei Caraibi, sinonimo di lusso discreto, ville esclusive e yacht.",
+      "Le spiagge di Saline, Gouverneur e Colombier sono tra le più belle e tranquille, mentre Gustavia ha boutique e ristoranti raffinati.",
+      "L'atmosfera è francese, elegante e sicura, con una cucina di altissimo livello.",
+      "Ideale per viaggi di nozze e soggiorni di lusso, spesso abbinati a Saint-Martin."
+    ],
+    "facts": {
+      "capital": "Gustavia",
+      "languages": "Francese",
+      "currency": "Euro (EUR)",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Via Saint-Martin o Guadalupa con piccoli aerei",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità valida o passaporto (territorio francese); verificare i documenti per i paesi di scalo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Gustavia",
+        "description": "Il porto e le boutique.",
+        "search": "Gustavia"
+      },
+      {
+        "name": "Saline Beach",
+        "description": "Spiaggia selvaggia.",
+        "search": "Saint-Barthélemy"
+      },
+      {
+        "name": "Anse de Colombier",
+        "description": "Raggiungibile a piedi o in barca.",
+        "search": "Anse de Colombier"
+      },
+      {
+        "name": "Gouverneur",
+        "description": "Spiaggia tra le colline.",
+        "search": "Anse du Gouverneur"
+      },
+      {
+        "name": "Saint-Jean",
+        "description": "La spiaggia vicino all'aeroporto.",
+        "search": "Saint-Jean (Saint-Barthélemy)"
+      },
+      {
+        "name": "Aeroporto di St. Barth",
+        "description": "Atterraggio spettacolare.",
+        "search": "Aeroporto di Saint-Barthélemy"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Barche",
+      "Taxi"
+    ],
+    "food": [
+      "Cucina francese e creola",
+      "Pesce e aragosta",
+      "Vini francesi"
+    ],
+    "tips": [
+      "Prezzi tra i più alti dei Caraibi",
+      "Prenotare con largo anticipo per Natale e Capodanno",
+      "Atterraggio adrenalinico"
+    ]
+  },
+  "SX": {
+    "tagline": "Un'isola, due nazioni: spiagge, shopping e aerei sulla spiaggia.",
+    "description": [
+      "Saint-Martin/Sint Maarten è un'isola divisa tra Francia e Paesi Bassi, con due anime diverse e confine aperto.",
+      "Maho Beach è famosa in tutto il mondo per gli aerei che atterrano a pochi metri dai bagnanti; Orient Bay e la costa francese offrono spiagge e gastronomia.",
+      "Philipsburg è un porto di crociere con negozi in esenzione, mentre Grand Case è la capitale gastronomica dei Caraibi.",
+      "Ideale per vacanze mare di 7 giorni o come base per St. Barth e Anguilla."
+    ],
+    "facts": {
+      "capital": "Philipsburg (lato olandese); Marigot (lato francese)",
+      "languages": "Olandese, francese e inglese",
+      "currency": "Fiorino caraibico sul lato olandese, euro sul lato francese; dollari accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo o voli via Parigi",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale; stagione degli uragani da giugno a novembre",
+      "plugs": "Tipi A, B, C e F (110/220 V): utile un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto; verificare i documenti per i paesi di scalo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Maho Beach",
+        "description": "Gli aerei sopra la spiaggia.",
+        "search": "Maho Beach"
+      },
+      {
+        "name": "Orient Bay",
+        "description": "La spiaggia francese.",
+        "search": "Orient Bay"
+      },
+      {
+        "name": "Grand Case",
+        "description": "La capitale gastronomica.",
+        "search": "Grand Case"
+      },
+      {
+        "name": "Philipsburg",
+        "description": "Il porto e Front Street.",
+        "search": "Philipsburg"
+      },
+      {
+        "name": "Pinel Island",
+        "description": "Isolotto e snorkeling.",
+        "search": "Île Pinel"
+      },
+      {
+        "name": "Marigot",
+        "description": "Il mercato e il forte.",
+        "search": "Marigot (Saint-Martin)"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Taxi",
+      "Traghetti per Anguilla e St. Barth"
+    ],
+    "food": [
+      "Lolos di Grand Case (grigliate)",
+      "Cucina francese",
+      "Guavaberry liqueur"
+    ],
+    "tips": [
+      "Due valute e due prese diverse",
+      "Affollata nei giorni delle crociere",
+      "Ottima base per le isole vicine"
+    ]
+  },
+  "AI": {
+    "tagline": "Spiagge di sabbia bianchissima e lusso tranquillo.",
+    "description": [
+      "Anguilla è una piccola isola britannica dei Caraibi, piatta e corallina, circondata da oltre trenta spiagge di sabbia bianchissima.",
+      "Shoal Bay e Meads Bay sono tra le spiagge più belle dei Caraibi; l'isola è nota per resort esclusivi e un'ottima gastronomia.",
+      "L'atmosfera è tranquilla e riservata, lontana dalle crociere.",
+      "Ideale per viaggi di nozze e soggiorni di lusso, spesso via Saint-Martin."
+    ],
+    "facts": {
+      "capital": "The Valley",
+      "languages": "Inglese",
+      "currency": "Dollaro dei Caraibi orientali (XCD); dollari USA accettati",
+      "timezone": "5 ore in meno rispetto all'Italia (6 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Via Saint-Martin con traghetto o piccoli aerei",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale secco",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Shoal Bay",
+        "description": "Una delle spiagge più belle dei Caraibi.",
+        "search": "Shoal Bay East"
+      },
+      {
+        "name": "Meads Bay",
+        "description": "Resort e tramonti.",
+        "search": "Meads Bay"
+      },
+      {
+        "name": "Rendezvous Bay",
+        "description": "Vista su Saint-Martin.",
+        "search": "Rendezvous Bay (Anguilla)"
+      },
+      {
+        "name": "Sandy Island",
+        "description": "Isolotto di sabbia.",
+        "search": "Sandy Island (Anguilla)"
+      },
+      {
+        "name": "Little Bay",
+        "description": "Caletta tra le scogliere.",
+        "search": "Anguilla"
+      },
+      {
+        "name": "Prickly Pear Cays",
+        "description": "Snorkeling e picnic.",
+        "search": "Prickly Pear Cays"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Taxi",
+      "Barche per gli isolotti"
+    ],
+    "food": [
+      "Aragosta e pesce",
+      "Cucina gourmet",
+      "Rum punch"
+    ],
+    "tips": [
+      "Prezzi molto alti",
+      "Atmosfera riservata",
+      "Traghetto da Saint-Martin"
+    ]
+  }
+}

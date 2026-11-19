@@ -1,0 +1,1358 @@
+{
+  "SN": {
+    "tagline": "Musica, isole storiche e il lago Rosa: il Senegal è l'Africa occidentale accogliente.",
+    "description": [
+      "Il Senegal è famoso per la teranga, l'ospitalità senegalese. Dakar è vivace e creativa, con mercati, musica mbalax e il monumento della Rinascita Africana.",
+      "L'isola di Gorée, patrimonio UNESCO, è un luogo della memoria della tratta degli schiavi; Saint-Louis conserva un'elegante architettura coloniale sul fiume Senegal.",
+      "Il lago Rosa, le isole del delta del Sine-Saloum con mangrovie e uccelli e le spiagge della Petite Côte e della Casamance offrono natura e relax.",
+      "Ideale per 7–10 giorni tra cultura e mare, adatto anche a chi visita l'Africa occidentale per la prima volta."
+    ],
+    "facts": {
+      "capital": "Dakar",
+      "languages": "Francese e wolof",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 5 ore e 30 minuti, diretto o con uno scalo",
+      "bestPeriod": "Novembre–maggio",
+      "climate": "Tropicale secco: stagione delle piogge da luglio a ottobre",
+      "plugs": "Tipi C, D, E e K, 230 V: utile un adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
+    },
+    "places": [
+      {
+        "name": "Isola di Gorée",
+        "description": "La Casa degli Schiavi e le case colorate.",
+        "search": "Isola di Gorée"
+      },
+      {
+        "name": "Saint-Louis",
+        "description": "La città coloniale sul fiume.",
+        "search": "Saint-Louis (Senegal)"
+      },
+      {
+        "name": "Lago Rosa",
+        "description": "Il lago salato dalle acque rosa.",
+        "search": "Lago Retba"
+      },
+      {
+        "name": "Delta del Sine-Saloum",
+        "description": "Mangrovie e isole di conchiglie.",
+        "search": "Sine-Saloum"
+      },
+      {
+        "name": "Monumento della Rinascita Africana",
+        "description": "La grande statua di Dakar.",
+        "search": "Monumento della Rinascita africana"
+      },
+      {
+        "name": "Casamance",
+        "description": "Spiagge e villaggi del sud.",
+        "search": "Casamance"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Taxi brousse tra le città",
+      "Piroghe nel delta"
+    ],
+    "food": [
+      "Thieboudienne, riso e pesce",
+      "Yassa di pollo",
+      "Bissap, infuso di ibisco"
+    ],
+    "tips": [
+      "Profilassi antimalarica da valutare",
+      "Contrattare nei mercati",
+      "Rispettare le usanze religiose"
+    ]
+  },
+  "GM": {
+    "tagline": "Fiume, spiagge atlantiche e birdwatching nel paese più piccolo dell'Africa continentale.",
+    "description": [
+      "Il Gambia è una sottile striscia di terra lungo l'omonimo fiume, circondata dal Senegal. Le spiagge atlantiche attorno a Banjul sono una meta invernale apprezzata.",
+      "Il fiume Gambia si risale in barca tra mangrovie, villaggi e isole come Kunta Kinteh, legata alla storia della tratta degli schiavi.",
+      "È un paradiso per il birdwatching, con centinaia di specie, e un paese tranquillo e accogliente.",
+      "Ideale per soggiorni mare invernali di una settimana, eventualmente con escursioni sul fiume."
+    ],
+    "facts": {
+      "capital": "Banjul",
+      "languages": "Inglese; mandinka e wolof",
+      "currency": "Dalasi gambiano (GMD)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore con voli charter o uno scalo",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale con stagione delle piogge da giugno a ottobre",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Isola di Kunta Kinteh",
+        "description": "Luogo della memoria sul fiume.",
+        "search": "Isola di Kunta Kinteh"
+      },
+      {
+        "name": "Fiume Gambia",
+        "description": "Crociere tra le mangrovie.",
+        "search": "Gambia (fiume)"
+      },
+      {
+        "name": "Spiagge di Kololi",
+        "description": "Il mare atlantico.",
+        "search": "Kololi"
+      },
+      {
+        "name": "Abuko",
+        "description": "Riserva naturale vicina alla costa.",
+        "search": "Riserva naturale di Abuko"
+      },
+      {
+        "name": "Banjul",
+        "description": "La capitale e l'Arch 22.",
+        "search": "Banjul"
+      },
+      {
+        "name": "Cerchi di pietre di Wassu",
+        "description": "Monoliti preistorici.",
+        "search": "Cerchi di pietre della Senegambia"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto con autista",
+      "Battelli sul fiume",
+      "Escursioni organizzate"
+    ],
+    "food": [
+      "Domoda, stufato di arachidi",
+      "Benachin, riso speziato",
+      "Pesce alla griglia"
+    ],
+    "tips": [
+      "Profilassi antimalarica da valutare",
+      "Attenzione ai venditori insistenti in spiaggia",
+      "Rispetto per le usanze locali"
+    ]
+  },
+  "GW": {
+    "tagline": "L'arcipelago delle Bijagós: isole selvagge, ippopotami di mare e tartarughe.",
+    "description": [
+      "La Guinea-Bissau è un piccolo paese dell'Africa occidentale con un tesoro naturale: l'arcipelago delle Bijagós, riserva della biosfera con isole remote, tartarughe marine e ippopotami che nuotano in mare.",
+      "La cultura matriarcale di alcune isole e le tradizioni animiste rendono il viaggio unico.",
+      "Il paese ha infrastrutture limitate e una situazione politica instabile, da verificare prima della partenza.",
+      "Per viaggiatori avventurosi e pescatori sportivi, di solito in lodge sulle isole."
+    ],
+    "facts": {
+      "capital": "Bissau",
+      "languages": "Portoghese e crioulo",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Lisbona o Dakar)",
+      "bestPeriod": "Novembre–maggio",
+      "climate": "Tropicale con stagione delle piogge da giugno a ottobre",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Arcipelago delle Bijagós",
+        "description": "Isole selvagge e riserva della biosfera.",
+        "search": "Arcipelago delle Bijagós"
+      },
+      {
+        "name": "Orango",
+        "description": "Gli ippopotami di mare.",
+        "search": "Orango"
+      },
+      {
+        "name": "Isola di Bubaque",
+        "description": "La porta delle Bijagós.",
+        "search": "Bubaque"
+      },
+      {
+        "name": "Poilão",
+        "description": "Nidificazione delle tartarughe verdi.",
+        "search": "Poilão"
+      },
+      {
+        "name": "Bissau Velho",
+        "description": "Il centro coloniale.",
+        "search": "Bissau"
+      },
+      {
+        "name": "Cacheu",
+        "description": "Mangrovie e forte storico.",
+        "search": "Cacheu"
+      }
+    ],
+    "gettingAround": [
+      "Barche tra le isole",
+      "Lodge con trasferimenti organizzati",
+      "Infrastrutture limitate"
+    ],
+    "food": [
+      "Pesce e frutti di mare",
+      "Riso con salse",
+      "Anacardi locali"
+    ],
+    "tips": [
+      "Verificare la situazione politica",
+      "Profilassi antimalarica",
+      "Contanti indispensabili"
+    ]
+  },
+  "GN": {
+    "tagline": "Il Fouta Djalon e le sorgenti dei grandi fiumi d'Africa occidentale.",
+    "description": [
+      "La Guinea è un paese verde e poco turistico, dove nascono il Niger, il Senegal e il Gambia. L'altopiano del Fouta Djalon offre cascate, canyon e villaggi peul.",
+      "Le isole di Loos al largo di Conakry e il monte Nimba, patrimonio UNESCO, completano una natura generosa.",
+      "Il paese ha infrastrutture limitate e la situazione va verificata prima della partenza.",
+      "Per viaggiatori esperti in cerca di autenticità."
+    ],
+    "facts": {
+      "capital": "Conakry",
+      "languages": "Francese; pular, malinké e susu",
+      "currency": "Franco guineano (GNF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Conakry",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale con forti piogge estive",
+      "plugs": "Tipi C, F e K, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Fouta Djalon",
+        "description": "Altopiano di cascate e villaggi.",
+        "search": "Futa Jallon"
+      },
+      {
+        "name": "Cascate di Kambadaga",
+        "description": "Cascate nel Fouta Djalon.",
+        "search": "Kambadaga"
+      },
+      {
+        "name": "Isole di Loos",
+        "description": "Spiagge davanti a Conakry.",
+        "search": "Isole di Los"
+      },
+      {
+        "name": "Monte Nimba",
+        "description": "Riserva naturale UNESCO.",
+        "search": "Monte Nimba"
+      },
+      {
+        "name": "Conakry",
+        "description": "La capitale sulla penisola.",
+        "search": "Conakry"
+      },
+      {
+        "name": "Dalaba",
+        "description": "La città d'altura.",
+        "search": "Dalaba"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Taxi collettivi",
+      "Strade spesso difficili"
+    ],
+    "food": [
+      "Riso con salsa di arachidi",
+      "Fouti",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Verificare la situazione",
+      "Profilassi antimalarica",
+      "Contanti indispensabili"
+    ]
+  },
+  "SL": {
+    "tagline": "Spiagge di sabbia bianca, isole e scimpanzé sulla costa atlantica.",
+    "description": [
+      "La Sierra Leone ha alcune delle spiagge più belle dell'Africa occidentale, come River Number Two e le Banana Islands, a breve distanza da Freetown.",
+      "Il santuario degli scimpanzé di Tacugama e l'isola di Tiwai, con una straordinaria biodiversità, attirano gli amanti della natura.",
+      "L'isola di Bunce ricorda la storia della tratta atlantica; Freetown è vivace e colorata.",
+      "Per viaggiatori curiosi, 7–10 giorni, con infrastrutture ancora in sviluppo."
+    ],
+    "facts": {
+      "capital": "Freetown",
+      "languages": "Inglese e krio",
+      "currency": "Leone sierraleonese (SLE)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Freetown",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale con piogge molto abbondanti da maggio a ottobre",
+      "plugs": "Tipi D e G, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "River Number Two",
+        "description": "Spiaggia bianca alla foce del fiume.",
+        "search": "River Number Two"
+      },
+      {
+        "name": "Banana Islands",
+        "description": "Isole tropicali.",
+        "search": "Isole Banana"
+      },
+      {
+        "name": "Tacugama",
+        "description": "Il santuario degli scimpanzé.",
+        "search": "Tacugama Chimpanzee Sanctuary"
+      },
+      {
+        "name": "Isola di Tiwai",
+        "description": "Primati e foresta.",
+        "search": "Isola di Tiwai"
+      },
+      {
+        "name": "Isola di Bunce",
+        "description": "Il forte della tratta.",
+        "search": "Isola di Bunce"
+      },
+      {
+        "name": "Freetown",
+        "description": "Il Cotton Tree e il centro.",
+        "search": "Freetown"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Barche per le isole",
+      "Traghetto dall'aeroporto"
+    ],
+    "food": [
+      "Cassava leaves",
+      "Pesce e riso",
+      "Jollof rice"
+    ],
+    "tips": [
+      "L'aeroporto è separato dalla capitale da un braccio di mare",
+      "Profilassi antimalarica",
+      "Verificare la situazione"
+    ]
+  },
+  "LR": {
+    "tagline": "Foreste pluviali, surf e una storia unica sulla costa del Pepe.",
+    "description": [
+      "La Liberia, fondata da ex schiavi americani, è la più antica repubblica dell'Africa. Le foreste pluviali del parco di Sapo ospitano ippopotami pigmei ed elefanti di foresta.",
+      "La costa offre spiagge e onde per il surf, come a Robertsport.",
+      "Il paese è poco attrezzato per il turismo e va visitato con operatori locali.",
+      "Per viaggiatori avventurosi e amanti della natura selvaggia."
+    ],
+    "facts": {
+      "capital": "Monrovia",
+      "languages": "Inglese",
+      "currency": "Dollaro liberiano (LRD); dollari USA molto usati",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Monrovia",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale molto piovoso",
+      "plugs": "Tipi A e B, 120 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Parco nazionale di Sapo",
+        "description": "Foresta pluviale primaria.",
+        "search": "Parco nazionale di Sapo"
+      },
+      {
+        "name": "Robertsport",
+        "description": "Spiagge e surf.",
+        "search": "Robertsport"
+      },
+      {
+        "name": "Monrovia",
+        "description": "La capitale sull'oceano.",
+        "search": "Monrovia"
+      },
+      {
+        "name": "Lago Piso",
+        "description": "Laguna costiera.",
+        "search": "Lago Piso"
+      },
+      {
+        "name": "Providence Island",
+        "description": "Il luogo dello sbarco dei fondatori.",
+        "search": "Providence Island (Liberia)"
+      },
+      {
+        "name": "Foresta di Gola",
+        "description": "Biodiversità al confine.",
+        "search": "Parco nazionale della foresta di Gola"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Taxi in città",
+      "Infrastrutture limitate"
+    ],
+    "food": [
+      "Jollof rice",
+      "Palm butter soup",
+      "Pesce e cassava"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Dollari in contanti",
+      "Viaggiare con operatori locali"
+    ]
+  },
+  "CI": {
+    "tagline": "La basilica di Yamoussoukro, lagune e spiagge sull'Atlantico.",
+    "description": [
+      "La Costa d'Avorio è uno dei paesi più dinamici dell'Africa occidentale. Abidjan, con lo skyline del Plateau sulle lagune, è una metropoli vivace.",
+      "Yamoussoukro ospita la basilica di Notre-Dame de la Paix, una delle chiese più grandi del mondo, ispirata a San Pietro.",
+      "Grand-Bassam, antica capitale coloniale patrimonio UNESCO, Assinie con le spiagge e il parco di Taï con gli scimpanzé completano il viaggio.",
+      "Ideale per viaggi d'affari estesi e scoperte culturali, 6–8 giorni."
+    ],
+    "facts": {
+      "capital": "Yamoussoukro (centro economico: Abidjan)",
+      "languages": "Francese",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore e 30 minuti, diretto o con uno scalo",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale umido",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto elettronico e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Basilica di Yamoussoukro",
+        "description": "Notre-Dame de la Paix.",
+        "search": "Basilica di Nostra Signora della Pace"
+      },
+      {
+        "name": "Grand-Bassam",
+        "description": "La città coloniale UNESCO.",
+        "search": "Grand-Bassam"
+      },
+      {
+        "name": "Abidjan",
+        "description": "Il Plateau e la laguna Ebrié.",
+        "search": "Abidjan"
+      },
+      {
+        "name": "Assinie",
+        "description": "Spiagge tra laguna e oceano.",
+        "search": "Assinie-Mafia"
+      },
+      {
+        "name": "Parco di Taï",
+        "description": "Foresta e scimpanzé.",
+        "search": "Parco nazionale di Taï"
+      },
+      {
+        "name": "Man",
+        "description": "Montagne e cascate dell'ovest.",
+        "search": "Man (Costa d'Avorio)"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Voli interni limitati",
+      "Taxi e battelli lagunari ad Abidjan"
+    ],
+    "food": [
+      "Attiéké con pesce",
+      "Alloco, banana fritta",
+      "Kedjenou, pollo in umido"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Evitare le zone di confine a nord",
+      "Verificare la situazione"
+    ]
+  },
+  "GH": {
+    "tagline": "Castelli sulla costa, foreste pluviali e l'Africa occidentale più accogliente.",
+    "description": [
+      "Il Ghana è uno dei paesi più stabili e accoglienti dell'Africa occidentale. Accra è una capitale vivace, con mercati, spiagge e una scena culturale in crescita.",
+      "La costa custodisce i castelli di Cape Coast ed Elmina, luoghi della memoria della tratta degli schiavi patrimonio UNESCO.",
+      "Il parco di Kakum, con le passerelle sospese sulla foresta, e il parco di Mole con gli elefanti offrono natura; Kumasi è il cuore della cultura ashanti.",
+      "Ideale per un primo viaggio in Africa occidentale, 8–10 giorni, anche per viaggi delle radici."
+    ],
+    "facts": {
+      "capital": "Accra",
+      "languages": "Inglese; twi e altre lingue locali",
+      "currency": "Cedi ghanese (GHS)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore e 30 minuti con uno scalo",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale con due stagioni delle piogge",
+      "plugs": "Tipi D e G, 230 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Castello di Cape Coast",
+        "description": "Luogo della memoria della tratta.",
+        "search": "Castello di Cape Coast"
+      },
+      {
+        "name": "Castello di Elmina",
+        "description": "Il più antico forte europeo dell'Africa subsahariana.",
+        "search": "Castello di Elmina"
+      },
+      {
+        "name": "Parco di Kakum",
+        "description": "Passerelle sospese sulla foresta.",
+        "search": "Parco nazionale di Kakum"
+      },
+      {
+        "name": "Parco di Mole",
+        "description": "Safari con gli elefanti.",
+        "search": "Parco nazionale di Mole"
+      },
+      {
+        "name": "Kumasi",
+        "description": "Il regno ashanti e il grande mercato.",
+        "search": "Kumasi"
+      },
+      {
+        "name": "Cascate di Wli",
+        "description": "Le cascate più alte del paese.",
+        "search": "Cascate di Wli"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per Kumasi e Tamale",
+      "Auto con autista",
+      "Pullman tra le città"
+    ],
+    "food": [
+      "Jollof rice",
+      "Fufu con zuppe",
+      "Kelewele, platano speziato"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Traffico intenso ad Accra",
+      "Gente cordiale e anglofona"
+    ]
+  },
+  "TG": {
+    "tagline": "Mercati colorati, le case-fortezza dei Tamberma e colline verdi.",
+    "description": [
+      "Il Togo è una sottile striscia di terra tra Ghana e Benin, con spiagge sull'Atlantico, colline verdi e una grande varietà di culture.",
+      "Lomé, la capitale, è vivace con il grande mercato e il mercato dei feticci; il lago Togo e Togoville ricordano il passato coloniale.",
+      "Nel nord la regione dei Tamberma, patrimonio UNESCO, conserva le case-fortezza di argilla chiamate takienta.",
+      "Ideale in un tour combinato con Benin e Ghana."
+    ],
+    "facts": {
+      "capital": "Lomé",
+      "languages": "Francese; ewe e kabiyé",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Lomé",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it le zone del nord"
+    },
+    "places": [
+      {
+        "name": "Koutammakou",
+        "description": "Le case-fortezza dei Tamberma.",
+        "search": "Koutammakou"
+      },
+      {
+        "name": "Lomé",
+        "description": "Il grande mercato.",
+        "search": "Lomé"
+      },
+      {
+        "name": "Lago Togo",
+        "description": "Villaggi in piroga.",
+        "search": "Lago Togo"
+      },
+      {
+        "name": "Kpalimé",
+        "description": "Colline, cascate e caffè.",
+        "search": "Kpalimé"
+      },
+      {
+        "name": "Mercato dei feticci di Akodessewa",
+        "description": "Il mercato vudù.",
+        "search": "Akodessewa"
+      },
+      {
+        "name": "Togoville",
+        "description": "La storia coloniale sul lago.",
+        "search": "Togoville"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Taxi moto (zémidjan)",
+      "Pullman tra le città"
+    ],
+    "food": [
+      "Fufu",
+      "Pâte con salse",
+      "Pesce alla griglia"
+    ],
+    "tips": [
+      "Verificare le zone sconsigliate del nord",
+      "Profilassi antimalarica",
+      "Abbinare a Benin e Ghana"
+    ]
+  },
+  "BJ": {
+    "tagline": "La culla del vudù, villaggi su palafitte e i palazzi reali di Abomey.",
+    "description": [
+      "Il Benin è la culla del vudù, religione ancora vivissima: a Ouidah, porto della tratta degli schiavi, ogni gennaio si celebra la grande festa nazionale del vudù.",
+      "Ganvié, la Venezia d'Africa, è un villaggio costruito su palafitte nel lago Nokoué; i palazzi reali di Abomey raccontano il regno del Dahomey.",
+      "Nel nord il parco della Pendjari è uno dei migliori dell'Africa occidentale per elefanti e leoni, mentre la regione dei Tata Somba conserva case-fortezza.",
+      "Ideale per viaggi culturali di 8–10 giorni, spesso abbinati al Togo."
+    ],
+    "facts": {
+      "capital": "Porto-Novo (centro economico: Cotonou)",
+      "languages": "Francese; fon e yoruba",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Cotonou",
+      "bestPeriod": "Novembre–marzo; 10 gennaio per la festa del vudù",
+      "climate": "Tropicale",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto elettronico e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it le zone del nord"
+    },
+    "places": [
+      {
+        "name": "Ganvié",
+        "description": "Il villaggio su palafitte.",
+        "search": "Ganvié"
+      },
+      {
+        "name": "Ouidah",
+        "description": "La Porta del Non Ritorno e il tempio dei pitoni.",
+        "search": "Ouidah"
+      },
+      {
+        "name": "Palazzi reali di Abomey",
+        "description": "Il regno del Dahomey.",
+        "search": "Palazzi reali di Abomey"
+      },
+      {
+        "name": "Parco della Pendjari",
+        "description": "Safari nell'Africa occidentale.",
+        "search": "Parco nazionale della Pendjari"
+      },
+      {
+        "name": "Tata Somba",
+        "description": "Case-fortezza del nord.",
+        "search": "Tata somba"
+      },
+      {
+        "name": "Porto-Novo",
+        "description": "La capitale e i suoi musei.",
+        "search": "Porto-Novo"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Piroghe per Ganvié",
+      "Taxi moto in città"
+    ],
+    "food": [
+      "Pâte di mais con salse",
+      "Pesce grigliato",
+      "Akassa"
+    ],
+    "tips": [
+      "Alcune zone del nord sconsigliate",
+      "Profilassi antimalarica",
+      "Chiedere il permesso prima di fotografare i rituali"
+    ]
+  },
+  "BF": {
+    "tagline": "Il Paese degli uomini integri, oggi sconsigliato per motivi di sicurezza.",
+    "description": [
+      "Il Burkina Faso è noto per la creatività culturale: il festival del cinema africano FESPACO di Ouagadougou, l'artigianato del bronzo e le maschere tradizionali.",
+      "I villaggi dipinti di Tiébélé, le rovine di Loropéni e i picchi di Sindou sono i suoi luoghi più belli.",
+      "La situazione di sicurezza è molto grave e la Farnesina sconsiglia i viaggi in tutto il paese.",
+      "Scheda utile come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Ouagadougou",
+      "languages": "Francese; mooré e dioula",
+      "currency": "Franco CFA dell'Africa occidentale (XOF)",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Saheliano",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tiébélé",
+        "description": "Case dipinte dei Kassena.",
+        "search": "Tiébélé"
+      },
+      {
+        "name": "Rovine di Loropéni",
+        "description": "Mura di pietra UNESCO.",
+        "search": "Rovine di Loropéni"
+      },
+      {
+        "name": "Picchi di Sindou",
+        "description": "Formazioni di arenaria.",
+        "search": "Picchi di Sindou"
+      },
+      {
+        "name": "Ouagadougou",
+        "description": "Il festival del cinema.",
+        "search": "Ouagadougou"
+      },
+      {
+        "name": "Bobo-Dioulasso",
+        "description": "La grande moschea di fango.",
+        "search": "Grande moschea di Bobo-Dioulasso"
+      },
+      {
+        "name": "Cascate di Karfiguéla",
+        "description": "Cascate nel sud-ovest.",
+        "search": "Cascate di Karfiguéla"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Tô con salsa",
+      "Riz gras",
+      "Dolo, birra di miglio"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "NG": {
+    "tagline": "Lagos, musica afrobeat e regni tradizionali nel gigante d'Africa.",
+    "description": [
+      "La Nigeria è il paese più popoloso dell'Africa e un gigante culturale: Lagos è la capitale della musica afrobeat, di Nollywood e dell'arte contemporanea.",
+      "Il bosco sacro di Osun-Osogbo, patrimonio UNESCO, i palazzi dei regni tradizionali e i mercati colorati raccontano una cultura ricchissima.",
+      "La sicurezza varia molto da regione a regione e molte aree sono sconsigliate.",
+      "Adatto soprattutto a viaggi d'affari e culturali mirati, con operatori locali esperti."
+    ],
+    "facts": {
+      "capital": "Abuja",
+      "languages": "Inglese; hausa, yoruba e igbo",
+      "currency": "Naira nigeriana (NGN)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore e 30 minuti, diretto o con uno scalo",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Tropicale: umido al sud, secco al nord",
+      "plugs": "Tipi D e G, 230 V",
+      "driving": "Si guida a destra; traffico caotico",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Molte aree sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Bosco sacro di Osun-Osogbo",
+        "description": "Foresta sacra yoruba.",
+        "search": "Bosco sacro di Osun-Osogbo"
+      },
+      {
+        "name": "Lagos",
+        "description": "La metropoli e Lekki.",
+        "search": "Lagos"
+      },
+      {
+        "name": "Roccia di Olumo",
+        "description": "La roccia di Abeokuta.",
+        "search": "Roccia di Olumo"
+      },
+      {
+        "name": "Cascate di Erin-Ijesha",
+        "description": "Cascate a gradoni.",
+        "search": "Cascate di Erin-Ijesha"
+      },
+      {
+        "name": "Zuma Rock",
+        "description": "Il monolite vicino ad Abuja.",
+        "search": "Zuma Rock"
+      },
+      {
+        "name": "Parco di Yankari",
+        "description": "Elefanti e sorgenti calde.",
+        "search": "Parco nazionale di Yankari"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Auto con autista",
+      "Evitare spostamenti notturni"
+    ],
+    "food": [
+      "Jollof rice",
+      "Suya, spiedini piccanti",
+      "Egusi soup"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Profilassi antimalarica",
+      "Viaggiare con operatori locali"
+    ]
+  },
+  "CM": {
+    "tagline": "L'Africa in miniatura: vulcani, foreste, savane e spiagge.",
+    "description": [
+      "Il Camerun è chiamato l'Africa in miniatura per la varietà dei paesaggi: il monte Camerun, vulcano attivo, foreste pluviali, savane e spiagge di sabbia nera.",
+      "Kribi offre spiagge e la cascata della Lobé che si getta in mare; i regni tradizionali del nord-ovest, come Foumban, conservano palazzi e artigianato.",
+      "Alcune regioni sono sconsigliate per motivi di sicurezza e il viaggio va pianificato con attenzione.",
+      "Per viaggiatori esperti, con operatori locali."
+    ],
+    "facts": {
+      "capital": "Yaoundé",
+      "languages": "Francese e inglese",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Douala o Yaoundé",
+      "bestPeriod": "Novembre–febbraio",
+      "climate": "Equatoriale al sud, tropicale secco al nord",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it le aree sconsigliate"
+    },
+    "places": [
+      {
+        "name": "Monte Camerun",
+        "description": "Il vulcano più alto dell'Africa occidentale.",
+        "search": "Monte Camerun"
+      },
+      {
+        "name": "Cascate della Lobé",
+        "description": "La cascata che finisce in mare.",
+        "search": "Cascate della Lobé"
+      },
+      {
+        "name": "Kribi",
+        "description": "Spiagge sull'Atlantico.",
+        "search": "Kribi"
+      },
+      {
+        "name": "Foumban",
+        "description": "Il palazzo del sultano bamoun.",
+        "search": "Foumban"
+      },
+      {
+        "name": "Riserva del Dja",
+        "description": "Foresta pluviale UNESCO.",
+        "search": "Riserva faunistica del Dja"
+      },
+      {
+        "name": "Limbe",
+        "description": "Spiagge nere e giardino botanico.",
+        "search": "Limbe"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Voli interni",
+      "Pullman tra le città"
+    ],
+    "food": [
+      "Ndolé, foglie con arachidi",
+      "Poulet DG",
+      "Pesce alla brace"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Profilassi antimalarica",
+      "Viaggiare con operatori locali"
+    ]
+  },
+  "CF": {
+    "tagline": "Foreste pluviali e gorilla di pianura, in un paese oggi sconsigliato.",
+    "description": [
+      "La Repubblica Centrafricana custodisce la riserva di Dzanga-Sangha, una delle foreste più ricche dell'Africa, con gorilla di pianura, elefanti di foresta e la comunità dei pigmei BaAka.",
+      "Le cascate di Boali e il fiume Ubangi completano un patrimonio naturale straordinario.",
+      "La situazione di sicurezza è molto grave e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento."
+    ],
+    "facts": {
+      "capital": "Bangui",
+      "languages": "Francese e sango",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Bangui",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Tropicale",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Dzanga-Sangha",
+        "description": "Gorilla e elefanti di foresta.",
+        "search": "Riserva speciale di Dzanga-Sangha"
+      },
+      {
+        "name": "Cascate di Boali",
+        "description": "Cascate vicino alla capitale.",
+        "search": "Cascate di Boali"
+      },
+      {
+        "name": "Bangui",
+        "description": "La capitale sull'Ubangi.",
+        "search": "Bangui"
+      },
+      {
+        "name": "Dzanga Bai",
+        "description": "La radura degli elefanti.",
+        "search": "Dzanga Bai"
+      },
+      {
+        "name": "Fiume Ubangi",
+        "description": "Il grande fiume.",
+        "search": "Ubangi"
+      },
+      {
+        "name": "Manovo-Gounda St Floris",
+        "description": "Parco UNESCO.",
+        "search": "Parco nazionale di Manovo-Gounda St. Floris"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Manioca",
+      "Stufati",
+      "Pesce di fiume"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "GQ": {
+    "tagline": "Isole vulcaniche e foreste nel piccolo paese ispanofono d'Africa.",
+    "description": [
+      "La Guinea Equatoriale è l'unico paese africano di lingua spagnola. L'isola di Bioko, con la capitale Malabo e foreste vulcaniche, ospita primati rari e spiagge dove nidificano le tartarughe.",
+      "La parte continentale offre foreste pluviali e il parco del Monte Alén.",
+      "Il turismo è poco sviluppato e i visti richiedono pratiche lunghe.",
+      "Per viaggiatori esperti o d'affari."
+    ],
+    "facts": {
+      "capital": "Malabo",
+      "languages": "Spagnolo e francese",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Madrid o altre capitali)",
+      "bestPeriod": "Dicembre–febbraio",
+      "climate": "Equatoriale umido",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Malabo",
+        "description": "La capitale coloniale sull'isola.",
+        "search": "Malabo"
+      },
+      {
+        "name": "Pico Basilé",
+        "description": "Il vulcano di Bioko.",
+        "search": "Pico Basilé"
+      },
+      {
+        "name": "Ureka",
+        "description": "Spiagge delle tartarughe.",
+        "search": "Ureka"
+      },
+      {
+        "name": "Monte Alén",
+        "description": "Foresta pluviale.",
+        "search": "Parco nazionale del Monte Alén"
+      },
+      {
+        "name": "Bata",
+        "description": "La città sul continente.",
+        "search": "Bata (Guinea Equatoriale)"
+      },
+      {
+        "name": "Annobón",
+        "description": "L'isola remota nell'Atlantico.",
+        "search": "Annobón"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni tra Malabo e Bata",
+      "Auto con autista",
+      "Permessi per alcune zone"
+    ],
+    "food": [
+      "Pesce e frutti di mare",
+      "Succotash",
+      "Banane plantain"
+    ],
+    "tips": [
+      "Visto complesso",
+      "Prezzi elevati",
+      "Restrizioni sulle fotografie"
+    ]
+  },
+  "GA": {
+    "tagline": "Foreste pluviali che arrivano al mare: elefanti sulle spiagge e gorilla.",
+    "description": [
+      "Il Gabon è coperto per gran parte da foreste pluviali protette in una rete di parchi nazionali. È uno dei pochi luoghi dove elefanti e bufali passeggiano sulle spiagge dell'Atlantico.",
+      "Il parco di Loango, chiamato «l'ultimo Eden», offre safari tra foresta, lagune e oceano, con balene e ippopotami che fanno il bagno in mare.",
+      "Il parco della Lopé, patrimonio UNESCO, ospita mandrilli e gorilla; Libreville è la porta d'ingresso.",
+      "Per viaggiatori amanti della natura con budget medio-alto, 8–10 giorni."
+    ],
+    "facts": {
+      "capital": "Libreville",
+      "languages": "Francese",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Libreville",
+      "bestPeriod": "Giugno–settembre; luglio–settembre per le balene",
+      "climate": "Equatoriale umido",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra; strade difficili",
+      "documents": "Passaporto, visto elettronico e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Parco di Loango",
+        "description": "Elefanti sulle spiagge.",
+        "search": "Parco nazionale di Loango"
+      },
+      {
+        "name": "Parco della Lopé",
+        "description": "Mandrilli e savana.",
+        "search": "Parco nazionale della Lopé"
+      },
+      {
+        "name": "Libreville",
+        "description": "La capitale sull'estuario.",
+        "search": "Libreville"
+      },
+      {
+        "name": "Pointe Denis",
+        "description": "Spiagge vicino alla capitale.",
+        "search": "Pointe Denis"
+      },
+      {
+        "name": "Ivindo",
+        "description": "Cascate nella foresta.",
+        "search": "Parco nazionale dell'Ivindo"
+      },
+      {
+        "name": "Lambaréné",
+        "description": "L'ospedale di Albert Schweitzer.",
+        "search": "Lambaréné"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni e charter",
+      "Treno Transgabonais",
+      "Barche nelle lagune"
+    ],
+    "food": [
+      "Poulet nyembwe",
+      "Pesce affumicato",
+      "Manioca"
+    ],
+    "tips": [
+      "Prezzi elevati",
+      "Profilassi antimalarica",
+      "Lodge da prenotare con anticipo"
+    ]
+  },
+  "CG": {
+    "tagline": "Foreste del bacino del Congo e gorilla di pianura nel parco di Odzala.",
+    "description": [
+      "La Repubblica del Congo custodisce alcune delle foreste più intatte del bacino del Congo. Il parco di Odzala-Kokoua è famoso per i gorilla di pianura occidentali e le radure frequentate da elefanti di foresta.",
+      "Brazzaville, affacciata sul fiume Congo di fronte a Kinshasa, ha un'atmosfera tranquilla e un'interessante architettura.",
+      "Il turismo è limitato e si concentra su lodge di alto livello nella foresta.",
+      "Per viaggiatori naturalisti con budget elevato."
+    ],
+    "facts": {
+      "capital": "Brazzaville",
+      "languages": "Francese; lingala e kituba",
+      "currency": "Franco CFA dell'Africa centrale (XAF)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Brazzaville",
+      "bestPeriod": "Giugno–settembre",
+      "climate": "Equatoriale",
+      "plugs": "Tipo C ed E, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Odzala-Kokoua",
+        "description": "Gorilla di pianura.",
+        "search": "Parco nazionale di Odzala-Kokoua"
+      },
+      {
+        "name": "Brazzaville",
+        "description": "La basilica di Sant'Anna.",
+        "search": "Basilica di Sant'Anna (Brazzaville)"
+      },
+      {
+        "name": "Fiume Congo",
+        "description": "Rapide e panorami.",
+        "search": "Congo (fiume)"
+      },
+      {
+        "name": "Pointe-Noire",
+        "description": "La città sull'oceano.",
+        "search": "Pointe-Noire"
+      },
+      {
+        "name": "Conkouati-Douli",
+        "description": "Parco tra foresta e mare.",
+        "search": "Parco nazionale di Conkouati-Douli"
+      },
+      {
+        "name": "Nouabalé-Ndoki",
+        "description": "Foresta vergine.",
+        "search": "Parco nazionale di Nouabalé-Ndoki"
+      }
+    ],
+    "gettingAround": [
+      "Voli charter verso i parchi",
+      "Auto con autista",
+      "Barche sui fiumi"
+    ],
+    "food": [
+      "Saka-saka, foglie di manioca",
+      "Pesce di fiume",
+      "Moambe"
+    ],
+    "tips": [
+      "Lodge costosi e da prenotare con anticipo",
+      "Profilassi antimalarica",
+      "Verificare la situazione"
+    ]
+  },
+  "CD": {
+    "tagline": "Gorilla di montagna, vulcani e il grande fiume Congo, in un paese con aree molto pericolose.",
+    "description": [
+      "La Repubblica Democratica del Congo è il secondo paese più grande d'Africa, con una natura immensa: il parco dei Virunga con i gorilla di montagna e il vulcano Nyiragongo, il fiume Congo e foreste sterminate.",
+      "Il parco di Kahuzi-Biega ospita i gorilla di pianura orientali, e il bonobo vive solo qui.",
+      "Molte regioni, soprattutto l'est, sono interessate da conflitti e la Farnesina sconsiglia i viaggi in ampie aree del paese.",
+      "Scheda utile come riferimento; verificare sempre le indicazioni ufficiali."
+    ],
+    "facts": {
+      "capital": "Kinshasa",
+      "languages": "Francese; lingala, swahili e altre lingue",
+      "currency": "Franco congolese (CDF); dollari molto usati",
+      "timezone": "A Kinshasa: stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Kinshasa",
+      "bestPeriod": "Giugno–settembre",
+      "climate": "Equatoriale",
+      "plugs": "Tipi C, D ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto, visto e vaccinazione contro la febbre gialla. Ampie aree sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Parco dei Virunga",
+        "description": "Gorilla di montagna e vulcani.",
+        "search": "Parco nazionale dei Virunga"
+      },
+      {
+        "name": "Nyiragongo",
+        "description": "Il lago di lava.",
+        "search": "Nyiragongo"
+      },
+      {
+        "name": "Kahuzi-Biega",
+        "description": "Gorilla di pianura orientali.",
+        "search": "Parco nazionale di Kahuzi-Biega"
+      },
+      {
+        "name": "Fiume Congo",
+        "description": "Il fiume più profondo del mondo.",
+        "search": "Congo (fiume)"
+      },
+      {
+        "name": "Lola ya Bonobo",
+        "description": "Il santuario dei bonobo.",
+        "search": "Lola ya Bonobo"
+      },
+      {
+        "name": "Kinshasa",
+        "description": "La metropoli sul fiume.",
+        "search": "Kinshasa"
+      }
+    ],
+    "gettingAround": [
+      "Solo con operatori specializzati",
+      "Voli interni",
+      "Infrastrutture molto limitate"
+    ],
+    "food": [
+      "Moambe",
+      "Fufu",
+      "Pesce del fiume"
+    ],
+    "tips": [
+      "Verificare le aree sconsigliate",
+      "Profilassi antimalarica",
+      "Assicurazione con evacuazione"
+    ]
+  },
+  "ST": {
+    "tagline": "Isole equatoriali, piantagioni di cacao e spiagge deserte.",
+    "description": [
+      "São Tomé e Príncipe è un piccolo arcipelago nel golfo di Guinea, tra i paesi più tranquilli e meno visitati dell'Africa. Le isole sono coperte da foreste pluviali e piantagioni storiche di cacao e caffè.",
+      "Le roças, antiche piantagioni coloniali, si visitano o ospitano piccoli hotel; il Pico Cão Grande è un picco vulcanico spettacolare.",
+      "Príncipe, riserva della biosfera, offre spiagge deserte e natura incontaminata; le tartarughe nidificano sulle spiagge.",
+      "Ideale per viaggiatori in cerca di quiete e natura, 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "São Tomé",
+      "languages": "Portoghese",
+      "currency": "Dobra (STN); euro accettati",
+      "timezone": "Un'ora in meno rispetto all'Italia (2 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con scalo a Lisbona",
+      "bestPeriod": "Giugno–settembre e dicembre–febbraio",
+      "climate": "Equatoriale umido",
+      "plugs": "Tipo C e F, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Pico Cão Grande",
+        "description": "Il picco vulcanico nella foresta.",
+        "search": "Pico Cão Grande"
+      },
+      {
+        "name": "Isola di Príncipe",
+        "description": "Riserva della biosfera.",
+        "search": "Isola di Príncipe"
+      },
+      {
+        "name": "Roça Agostinho Neto",
+        "description": "Piantagione coloniale.",
+        "search": "Roça Agostinho Neto"
+      },
+      {
+        "name": "Ilhéu das Rolas",
+        "description": "L'isolotto sull'equatore.",
+        "search": "Ilhéu das Rolas"
+      },
+      {
+        "name": "Praia Banana",
+        "description": "La spiaggia simbolo di Príncipe.",
+        "search": "Praia Banana"
+      },
+      {
+        "name": "São Tomé città",
+        "description": "La cattedrale e il forte.",
+        "search": "São Tomé (città)"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Voli interni tra le due isole",
+      "Barche"
+    ],
+    "food": [
+      "Calulu, stufato di pesce",
+      "Cioccolato di São Tomé",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Profilassi antimalarica da valutare",
+      "Ritmo lento: «leve leve»",
+      "Euro in contanti utili"
+    ]
+  },
+  "AO": {
+    "tagline": "Cascate imponenti, deserto del Namib e la costa atlantica.",
+    "description": [
+      "L'Angola è un grande paese dell'Africa australe che si sta aprendo al turismo. Le cascate di Kalandula sono tra le più grandi d'Africa.",
+      "La costa offre il deserto del Namib che arriva fino all'oceano, la penisola di Mussulo e paesaggi lunari come il Miradouro da Lua.",
+      "Luanda è una capitale cara e vivace, mentre il sud con la Serra da Leba mostra strade panoramiche spettacolari.",
+      "Per viaggiatori esperti, spesso in viaggi d'affari estesi o itinerari overland."
+    ],
+    "facts": {
+      "capital": "Luanda",
+      "languages": "Portoghese",
+      "currency": "Kwanza angolano (AOA)",
+      "timezone": "Stessa ora dell'Italia (un'ora in meno quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Luanda",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale al nord, arido al sud",
+      "plugs": "Tipo C, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto; per soggiorni turistici brevi i cittadini italiani di solito non necessitano di visto; vaccinazione contro la febbre gialla. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cascate di Kalandula",
+        "description": "Tra le cascate più grandi d'Africa.",
+        "search": "Cascate di Kalandula"
+      },
+      {
+        "name": "Miradouro da Lua",
+        "description": "Paesaggio lunare sulla costa.",
+        "search": "Miradouro da Lua"
+      },
+      {
+        "name": "Serra da Leba",
+        "description": "La strada a tornanti.",
+        "search": "Serra da Leba"
+      },
+      {
+        "name": "Isola di Mussulo",
+        "description": "Spiagge davanti a Luanda.",
+        "search": "Mussulo"
+      },
+      {
+        "name": "Parco di Iona",
+        "description": "Il deserto del Namib angolano.",
+        "search": "Parco nazionale di Iona"
+      },
+      {
+        "name": "Fortezza di São Miguel",
+        "description": "Il forte di Luanda.",
+        "search": "Fortezza di São Miguel"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Fuoristrada con autista",
+      "Distanze enormi"
+    ],
+    "food": [
+      "Muamba de galinha",
+      "Funge",
+      "Pesce alla griglia"
+    ],
+    "tips": [
+      "Luanda è tra le città più care al mondo",
+      "Profilassi antimalarica",
+      "Strade difficili all'interno"
+    ]
+  }
+}

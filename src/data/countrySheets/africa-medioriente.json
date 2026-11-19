@@ -4,7 +4,8 @@
     "description": [
       "Il Marocco è un paese di contrasti a portata di viaggio breve: le città imperiali di Marrakech, Fès, Meknès e Rabat custodiscono medine patrimonio UNESCO, palazzi e giardini.",
       "Verso sud l'Atlante apre la strada alle valli delle kasbah e al Sahara di Merzouga, dove si dorme in campi tendati tra le dune dopo un'escursione in dromedario.",
-      "Sulla costa atlantica Essaouira offre vento, pesce fresco e un ritmo più lento; a nord Chefchaouen sorprende con le sue case azzurre tra i monti del Rif."
+      "Sulla costa atlantica Essaouira offre vento, pesce fresco e un ritmo più lento; a nord Chefchaouen sorprende con le sue case azzurre tra i monti del Rif.",
+      "Perfetto per weekend a Marrakech, tour delle città imperiali e del deserto di 7–8 giorni, viaggi di gruppo e fotografici; vicino e adatto anche a chi va in Africa per la prima volta."
     ],
     "facts": {
       "capital": "Rabat",
@@ -19,12 +20,36 @@
       "documents": "Passaporto con validità residua di almeno 6 mesi; per soggiorni turistici brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Piazza Jemaa el-Fna", "description": "Il cuore di Marrakech tra cantastorie, banchi e souk.", "search": "Piazza Jemaa el-Fna Marrakech" },
-      { "name": "Medina di Fès", "description": "La medina medievale più grande del mondo e le concerie.", "search": "Fès el Bali" },
-      { "name": "Chefchaouen", "description": "Il villaggio azzurro tra i monti del Rif.", "search": "Chefchaouen" },
-      { "name": "Merzouga", "description": "Le dune dell'Erg Chebbi e la notte nel deserto.", "search": "Erg Chebbi" },
-      { "name": "Aït Ben Haddou", "description": "Lo ksar di terra cruda set di tanti film.", "search": "Aït Ben Haddou" },
-      { "name": "Moschea Hassan II", "description": "La grande moschea sull'oceano a Casablanca.", "search": "Moschea Hassan II" }
+      {
+        "name": "Piazza Jemaa el-Fna",
+        "description": "Il cuore di Marrakech tra cantastorie, banchi e souk.",
+        "search": "Piazza Jemaa el-Fna Marrakech"
+      },
+      {
+        "name": "Medina di Fès",
+        "description": "La medina medievale più grande del mondo e le concerie.",
+        "search": "Fès el Bali"
+      },
+      {
+        "name": "Chefchaouen",
+        "description": "Il villaggio azzurro tra i monti del Rif.",
+        "search": "Chefchaouen"
+      },
+      {
+        "name": "Merzouga",
+        "description": "Le dune dell'Erg Chebbi e la notte nel deserto.",
+        "search": "Erg Chebbi"
+      },
+      {
+        "name": "Aït Ben Haddou",
+        "description": "Lo ksar di terra cruda set di tanti film.",
+        "search": "Aït Ben Haddou"
+      },
+      {
+        "name": "Moschea Hassan II",
+        "description": "La grande moschea sull'oceano a Casablanca.",
+        "search": "Moschea Hassan II"
+      }
     ],
     "gettingAround": [
       "Treno veloce Al Boraq tra Tangeri, Rabat e Casablanca",
@@ -50,7 +75,8 @@
     "description": [
       "L'Egitto custodisce alcune delle meraviglie più famose dell'umanità. Al Cairo e a Giza si visitano le piramidi, la Sfinge e il Grand Egyptian Museum con i tesori di Tutankhamon.",
       "La crociera sul Nilo tra Luxor e Assuan è il modo classico per scoprire Karnak, la Valle dei Re, Edfu e Kom Ombo; più a sud Abu Simbel lascia senza parole.",
-      "Sul Mar Rosso, Sharm el-Sheikh, Hurghada e Marsa Alam offrono barriere coralline tra le più belle al mondo, perfette per snorkeling e immersioni."
+      "Sul Mar Rosso, Sharm el-Sheikh, Hurghada e Marsa Alam offrono barriere coralline tra le più belle al mondo, perfette per snorkeling e immersioni.",
+      "Ideale per tour culturali di 7–8 giorni con crociera sul Nilo, soggiorni mare sul Mar Rosso tutto l'anno e combinazioni dei due; adatto a famiglie, coppie e gruppi."
     ],
     "facts": {
       "capital": "Il Cairo",
@@ -65,12 +91,36 @@
       "documents": "Passaporto (o carta d'identità con foto tessera in alcuni casi) con visto turistico ottenibile all'arrivo o online; per Sharm el-Sheikh può bastare il timbro Sinai. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Piramidi di Giza", "description": "Cheope, Chefren, Micerino e la Sfinge.", "search": "Piramidi di Giza" },
-      { "name": "Tempio di Karnak", "description": "Il grande complesso templare di Luxor.", "search": "Tempio di Karnak" },
-      { "name": "Valle dei Re", "description": "Le tombe dei faraoni del Nuovo Regno.", "search": "Valle dei Re" },
-      { "name": "Abu Simbel", "description": "I templi di Ramses II scolpiti nella roccia.", "search": "Abu Simbel" },
-      { "name": "Grand Egyptian Museum", "description": "Il nuovo museo con i tesori di Tutankhamon.", "search": "Grand Egyptian Museum" },
-      { "name": "Ras Mohammed", "description": "Parco marino con coralli e pesci tropicali vicino a Sharm.", "search": "Parco nazionale di Ras Mohammed" }
+      {
+        "name": "Piramidi di Giza",
+        "description": "Cheope, Chefren, Micerino e la Sfinge.",
+        "search": "Piramidi di Giza"
+      },
+      {
+        "name": "Tempio di Karnak",
+        "description": "Il grande complesso templare di Luxor.",
+        "search": "Tempio di Karnak"
+      },
+      {
+        "name": "Valle dei Re",
+        "description": "Le tombe dei faraoni del Nuovo Regno.",
+        "search": "Valle dei Re"
+      },
+      {
+        "name": "Abu Simbel",
+        "description": "I templi di Ramses II scolpiti nella roccia.",
+        "search": "Abu Simbel"
+      },
+      {
+        "name": "Grand Egyptian Museum",
+        "description": "Il nuovo museo con i tesori di Tutankhamon.",
+        "search": "Grand Egyptian Museum"
+      },
+      {
+        "name": "Ras Mohammed",
+        "description": "Parco marino con coralli e pesci tropicali vicino a Sharm.",
+        "search": "Parco nazionale di Ras Mohammed"
+      }
     ],
     "gettingAround": [
       "Crociere sul Nilo tra Luxor e Assuan (3–4 notti)",
@@ -96,7 +146,8 @@
     "description": [
       "La Tunisia è il Nord Africa più vicino all'Italia: a pochi minuti da Tunisi si trovano le rovine di Cartagine e il villaggio bianco e blu di Sidi Bou Saïd.",
       "Il paese conserva alcuni dei siti romani più belli fuori dall'Italia, come l'anfiteatro di El Jem e Dougga, e il museo del Bardo con una straordinaria collezione di mosaici.",
-      "A sud il Sahara offre oasi, laghi salati e i set di Guerre Stellari, mentre Djerba e Hammamet sono mete balneari con hotel e spiagge sabbiose."
+      "A sud il Sahara offre oasi, laghi salati e i set di Guerre Stellari, mentre Djerba e Hammamet sono mete balneari con hotel e spiagge sabbiose.",
+      "Perfetta per vacanze mare economiche a Djerba e Hammamet, weekend culturali a Tunisi e Cartagine o tour del deserto; vicinissima all'Italia anche in traghetto."
     ],
     "facts": {
       "capital": "Tunisi",
@@ -111,12 +162,36 @@
       "documents": "Passaporto; per viaggi organizzati in alcuni casi è accettata la carta d'identità. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Sidi Bou Saïd", "description": "Il villaggio bianco e blu affacciato sul golfo di Tunisi.", "search": "Sidi Bou Saïd" },
-      { "name": "Anfiteatro di El Jem", "description": "Uno dei più grandi anfiteatri romani al mondo.", "search": "Anfiteatro di El Jem" },
-      { "name": "Cartagine", "description": "Le rovine della città punica e romana.", "search": "Cartagine" },
-      { "name": "Museo del Bardo", "description": "La più grande collezione di mosaici romani.", "search": "Museo nazionale del Bardo" },
-      { "name": "Djerba", "description": "Isola di spiagge, villaggi e la sinagoga della Ghriba.", "search": "Djerba" },
-      { "name": "Chott el-Jerid", "description": "Il grande lago salato verso le oasi del deserto.", "search": "Chott el-Jerid" }
+      {
+        "name": "Sidi Bou Saïd",
+        "description": "Il villaggio bianco e blu affacciato sul golfo di Tunisi.",
+        "search": "Sidi Bou Saïd"
+      },
+      {
+        "name": "Anfiteatro di El Jem",
+        "description": "Uno dei più grandi anfiteatri romani al mondo.",
+        "search": "Anfiteatro di El Jem"
+      },
+      {
+        "name": "Cartagine",
+        "description": "Le rovine della città punica e romana.",
+        "search": "Cartagine"
+      },
+      {
+        "name": "Museo del Bardo",
+        "description": "La più grande collezione di mosaici romani.",
+        "search": "Museo nazionale del Bardo"
+      },
+      {
+        "name": "Djerba",
+        "description": "Isola di spiagge, villaggi e la sinagoga della Ghriba.",
+        "search": "Djerba"
+      },
+      {
+        "name": "Chott el-Jerid",
+        "description": "Il grande lago salato verso le oasi del deserto.",
+        "search": "Chott el-Jerid"
+      }
     ],
     "gettingAround": [
       "Auto con autista o tour organizzati per il sud",
@@ -142,7 +217,8 @@
     "description": [
       "La Giordania è un paese piccolo ma straordinario. Petra, la città dei Nabatei scolpita nella roccia rosa, è una delle sette meraviglie del mondo moderno e merita almeno un giorno intero.",
       "Il deserto del Wadi Rum, con le sue montagne di arenaria, si esplora in jeep e si vive di notte nei campi beduini sotto un cielo stellato.",
-      "Il Mar Morto, il punto più basso della Terra, permette di galleggiare senza sforzo; a nord Jerash conserva una città romana tra le più complete del Medio Oriente."
+      "Il Mar Morto, il punto più basso della Terra, permette di galleggiare senza sforzo; a nord Jerash conserva una città romana tra le più complete del Medio Oriente.",
+      "Ideale per tour di 6–8 giorni con Petra, Wadi Rum e Mar Morto, anche in combinazione con il Mar Rosso di Aqaba; adatta a gruppi, coppie e viaggiatori culturali."
     ],
     "facts": {
       "capital": "Amman",
@@ -157,12 +233,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto; il Jordan Pass include visto e ingressi ai siti principali. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Petra", "description": "Il Siq e il Tesoro scolpito nella roccia.", "search": "Petra Al-Khazneh" },
-      { "name": "Wadi Rum", "description": "Il deserto rosso di Lawrence d'Arabia.", "search": "Wadi Rum" },
-      { "name": "Mar Morto", "description": "Galleggiare nelle acque più salate del mondo.", "search": "Mar Morto" },
-      { "name": "Jerash", "description": "Una città romana con colonnati e teatri.", "search": "Jerash" },
-      { "name": "Monte Nebo", "description": "Il punto da cui Mosè vide la Terra promessa.", "search": "Monte Nebo" },
-      { "name": "Il Monastero di Petra", "description": "Ad Deir, raggiungibile con 800 gradini.", "search": "Ad Deir Petra" }
+      {
+        "name": "Petra",
+        "description": "Il Siq e il Tesoro scolpito nella roccia.",
+        "search": "Petra Al-Khazneh"
+      },
+      {
+        "name": "Wadi Rum",
+        "description": "Il deserto rosso di Lawrence d'Arabia.",
+        "search": "Wadi Rum"
+      },
+      {
+        "name": "Mar Morto",
+        "description": "Galleggiare nelle acque più salate del mondo.",
+        "search": "Mar Morto"
+      },
+      {
+        "name": "Jerash",
+        "description": "Una città romana con colonnati e teatri.",
+        "search": "Jerash"
+      },
+      {
+        "name": "Monte Nebo",
+        "description": "Il punto da cui Mosè vide la Terra promessa.",
+        "search": "Monte Nebo"
+      },
+      {
+        "name": "Il Monastero di Petra",
+        "description": "Ad Deir, raggiungibile con 800 gradini.",
+        "search": "Ad Deir Petra"
+      }
     ],
     "gettingAround": [
       "Auto con autista o noleggio lungo la Strada dei Re e la Desert Highway",
@@ -188,7 +288,8 @@
     "description": [
       "Gli Emirati Arabi Uniti sono una destinazione moderna e sicura. Dubai stupisce con il Burj Khalifa, il grattacielo più alto del mondo, centri commerciali, spiagge e il quartiere storico di Al Fahidi.",
       "Abu Dhabi, la capitale, ospita la grande moschea Sheikh Zayed in marmo bianco e il Louvre Abu Dhabi, mentre l'isola di Yas è il regno dei parchi a tema.",
-      "Il deserto è a mezz'ora dalle città: safari in jeep sulle dune, cena nei campi beduini e notti sotto le stelle completano il viaggio."
+      "Il deserto è a mezz'ora dalle città: safari in jeep sulle dune, cena nei campi beduini e notti sotto le stelle completano il viaggio.",
+      "Perfetti per soggiorni invernali al sole, shopping, famiglie con bambini e stopover verso l'Asia e l'Oceania; 4–6 giorni tra Dubai e Abu Dhabi."
     ],
     "facts": {
       "capital": "Abu Dhabi",
@@ -203,12 +304,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per i cittadini italiani il visto turistico viene di solito rilasciato gratuitamente all'arrivo. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Burj Khalifa", "description": "Il grattacielo più alto del mondo, con osservatorio.", "search": "Burj Khalifa" },
-      { "name": "Moschea Sheikh Zayed", "description": "La grande moschea bianca di Abu Dhabi.", "search": "Moschea dello sceicco Zayed" },
-      { "name": "Louvre Abu Dhabi", "description": "Il museo sotto la cupola di luce di Jean Nouvel.", "search": "Louvre Abu Dhabi" },
-      { "name": "Al Fahidi", "description": "Il quartiere storico di Dubai e il Creek.", "search": "Al Fahidi" },
-      { "name": "Palm Jumeirah", "description": "L'isola artificiale a forma di palma.", "search": "Palm Jumeirah" },
-      { "name": "Deserto di Dubai", "description": "Safari sulle dune e campi beduini.", "search": "Riserva del deserto di Dubai" }
+      {
+        "name": "Burj Khalifa",
+        "description": "Il grattacielo più alto del mondo, con osservatorio.",
+        "search": "Burj Khalifa"
+      },
+      {
+        "name": "Moschea Sheikh Zayed",
+        "description": "La grande moschea bianca di Abu Dhabi.",
+        "search": "Moschea dello sceicco Zayed"
+      },
+      {
+        "name": "Louvre Abu Dhabi",
+        "description": "Il museo sotto la cupola di luce di Jean Nouvel.",
+        "search": "Louvre Abu Dhabi"
+      },
+      {
+        "name": "Al Fahidi",
+        "description": "Il quartiere storico di Dubai e il Creek.",
+        "search": "Al Fahidi"
+      },
+      {
+        "name": "Palm Jumeirah",
+        "description": "L'isola artificiale a forma di palma.",
+        "search": "Palm Jumeirah"
+      },
+      {
+        "name": "Deserto di Dubai",
+        "description": "Safari sulle dune e campi beduini.",
+        "search": "Riserva del deserto di Dubai"
+      }
     ],
     "gettingAround": [
       "Metro moderna e taxi economici a Dubai",
@@ -234,7 +359,8 @@
     "description": [
       "L'Oman è la destinazione più autentica della penisola arabica: tradizioni rispettate, paesaggi grandiosi e un'accoglienza calorosa.",
       "Mascate, la capitale, unisce la Grande Moschea del Sultano Qaboos, il souk di Mutrah e una corniche affacciata sul mare. All'interno Nizwa e i suoi forti raccontano secoli di storia.",
-      "Il deserto delle Wahiba Sands, i wadi con piscine naturali come Wadi Shab, la penisola di Musandam con i suoi fiordi e il verde Dhofar durante il monsone completano un viaggio vario."
+      "Il deserto delle Wahiba Sands, i wadi con piscine naturali come Wadi Shab, la penisola di Musandam con i suoi fiordi e il verde Dhofar durante il monsone completano un viaggio vario.",
+      "Ideale per tour in fuoristrada di 7–10 giorni tra deserto, montagne e wadi, o per soggiorni mare d'inverno; per viaggiatori che cercano l'Arabia autentica e tranquilla."
     ],
     "facts": {
       "capital": "Mascate",
@@ -249,12 +375,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Grande Moschea del Sultano Qaboos", "description": "Marmi, tappeti e lampadari monumentali a Mascate.", "search": "Grande moschea del sultano Qabus" },
-      { "name": "Wadi Shab", "description": "Canyon con piscine color smeraldo e una grotta.", "search": "Wadi Shab" },
-      { "name": "Wahiba Sands", "description": "Dune rosse e notte in campo tendato.", "search": "Wahiba Sands" },
-      { "name": "Forte di Nizwa", "description": "Il grande torrione e il mercato del venerdì.", "search": "Forte di Nizwa" },
-      { "name": "Jebel Shams", "description": "Il Grand Canyon d'Arabia.", "search": "Jebel Shams" },
-      { "name": "Musandam", "description": "Fiordi e delfini in dhow tradizionale.", "search": "Penisola di Musandam" }
+      {
+        "name": "Grande Moschea del Sultano Qaboos",
+        "description": "Marmi, tappeti e lampadari monumentali a Mascate.",
+        "search": "Grande moschea del sultano Qabus"
+      },
+      {
+        "name": "Wadi Shab",
+        "description": "Canyon con piscine color smeraldo e una grotta.",
+        "search": "Wadi Shab"
+      },
+      {
+        "name": "Wahiba Sands",
+        "description": "Dune rosse e notte in campo tendato.",
+        "search": "Wahiba Sands"
+      },
+      {
+        "name": "Forte di Nizwa",
+        "description": "Il grande torrione e il mercato del venerdì.",
+        "search": "Forte di Nizwa"
+      },
+      {
+        "name": "Jebel Shams",
+        "description": "Il Grand Canyon d'Arabia.",
+        "search": "Jebel Shams"
+      },
+      {
+        "name": "Musandam",
+        "description": "Fiordi e delfini in dhow tradizionale.",
+        "search": "Penisola di Musandam"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio o 4x4 con autista: le distanze sono ampie",
@@ -280,7 +430,8 @@
     "description": [
       "Il Kenya è la culla del safari. Il Masai Mara, prolungamento del Serengeti, ospita la grande migrazione di gnu e zebre tra luglio e ottobre e tutti i Big Five.",
       "Amboseli offre la vista degli elefanti con il Kilimangiaro sullo sfondo, mentre Tsavo, Samburu e il lago Nakuru completano un itinerario ricco di fauna e paesaggi diversi.",
-      "Dopo il safari, la costa di Malindi, Watamu e Diani regala spiagge bianche, barriera corallina e un'atmosfera rilassata con forte presenza italiana."
+      "Dopo il safari, la costa di Malindi, Watamu e Diani regala spiagge bianche, barriera corallina e un'atmosfera rilassata con forte presenza italiana.",
+      "Perfetto per un primo safari in Africa di 5–7 giorni abbinato a una settimana di mare a Malindi o Watamu; adatto a famiglie, coppie e viaggi di nozze."
     ],
     "facts": {
       "capital": "Nairobi",
@@ -295,12 +446,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica di viaggio (eTA) da richiedere online. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
     },
     "places": [
-      { "name": "Masai Mara", "description": "La riserva della grande migrazione e dei Big Five.", "search": "Riserva nazionale Masai Mara" },
-      { "name": "Amboseli", "description": "Elefanti con il Kilimangiaro sullo sfondo.", "search": "Parco nazionale di Amboseli" },
-      { "name": "Tsavo", "description": "Il parco più grande del Kenya e i suoi elefanti rossi.", "search": "Parco nazionale dello Tsavo Est" },
-      { "name": "Lago Nakuru", "description": "Rinoceronti e uccelli nella Rift Valley.", "search": "Lago Nakuru" },
-      { "name": "Watamu", "description": "Spiagge bianche e parco marino.", "search": "Watamu" },
-      { "name": "Lamu", "description": "Isola swahili patrimonio UNESCO.", "search": "Lamu" }
+      {
+        "name": "Masai Mara",
+        "description": "La riserva della grande migrazione e dei Big Five.",
+        "search": "Riserva nazionale Masai Mara"
+      },
+      {
+        "name": "Amboseli",
+        "description": "Elefanti con il Kilimangiaro sullo sfondo.",
+        "search": "Parco nazionale di Amboseli"
+      },
+      {
+        "name": "Tsavo",
+        "description": "Il parco più grande del Kenya e i suoi elefanti rossi.",
+        "search": "Parco nazionale dello Tsavo Est"
+      },
+      {
+        "name": "Lago Nakuru",
+        "description": "Rinoceronti e uccelli nella Rift Valley.",
+        "search": "Lago Nakuru"
+      },
+      {
+        "name": "Watamu",
+        "description": "Spiagge bianche e parco marino.",
+        "search": "Watamu"
+      },
+      {
+        "name": "Lamu",
+        "description": "Isola swahili patrimonio UNESCO.",
+        "search": "Lamu"
+      }
     ],
     "gettingAround": [
       "Safari in fuoristrada con autista-guida",
@@ -326,7 +501,8 @@
     "description": [
       "La Tanzania offre alcuni dei safari più spettacolari dell'Africa. Il Serengeti è teatro della grande migrazione, il cratere di Ngorongoro concentra una fauna incredibile in una caldera vulcanica.",
       "Tarangire, con i suoi baobab ed elefanti, e il lago Manyara completano il circuito del nord, mentre il Kilimangiaro, il tetto d'Africa, attira gli appassionati di trekking.",
-      "Zanzibar unisce spiagge di sabbia bianca, mare turchese e Stone Town, la città vecchia dalle porte intagliate patrimonio UNESCO."
+      "Zanzibar unisce spiagge di sabbia bianca, mare turchese e Stone Town, la città vecchia dalle porte intagliate patrimonio UNESCO.",
+      "Ideale per safari di 6–8 giorni nel nord abbinati al mare di Zanzibar, viaggi di nozze e spedizioni sul Kilimangiaro; uno dei grandi classici dell'Africa."
     ],
     "facts": {
       "capital": "Dodoma (centro economico: Dar es Salaam)",
@@ -341,12 +517,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto (online o all'arrivo); per Zanzibar è richiesta un'assicurazione sanitaria. Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
     },
     "places": [
-      { "name": "Serengeti", "description": "Pianure infinite e la grande migrazione.", "search": "Parco nazionale del Serengeti" },
-      { "name": "Cratere di Ngorongoro", "description": "Una caldera con migliaia di animali.", "search": "Cratere di Ngorongoro" },
-      { "name": "Tarangire", "description": "Baobab giganti e grandi branchi di elefanti.", "search": "Parco nazionale di Tarangire" },
-      { "name": "Kilimangiaro", "description": "La montagna più alta d'Africa.", "search": "Kilimangiaro" },
-      { "name": "Stone Town", "description": "La città vecchia di Zanzibar.", "search": "Stone Town" },
-      { "name": "Nungwi", "description": "Spiagge e tramonti nel nord di Zanzibar.", "search": "Nungwi" }
+      {
+        "name": "Serengeti",
+        "description": "Pianure infinite e la grande migrazione.",
+        "search": "Parco nazionale del Serengeti"
+      },
+      {
+        "name": "Cratere di Ngorongoro",
+        "description": "Una caldera con migliaia di animali.",
+        "search": "Cratere di Ngorongoro"
+      },
+      {
+        "name": "Tarangire",
+        "description": "Baobab giganti e grandi branchi di elefanti.",
+        "search": "Parco nazionale di Tarangire"
+      },
+      {
+        "name": "Kilimangiaro",
+        "description": "La montagna più alta d'Africa.",
+        "search": "Kilimangiaro"
+      },
+      {
+        "name": "Stone Town",
+        "description": "La città vecchia di Zanzibar.",
+        "search": "Stone Town"
+      },
+      {
+        "name": "Nungwi",
+        "description": "Spiagge e tramonti nel nord di Zanzibar.",
+        "search": "Nungwi"
+      }
     ],
     "gettingAround": [
       "Safari in 4x4 con guida partendo da Arusha",
@@ -372,7 +572,8 @@
     "description": [
       "Il Sudafrica offre una varietà sorprendente. Città del Capo, ai piedi della Table Mountain, è una delle città più belle al mondo, con il Capo di Buona Speranza e le colonie di pinguini a Boulders Beach.",
       "Le Winelands di Stellenbosch e Franschhoek producono vini eccellenti, mentre la Garden Route segue la costa tra lagune, foreste e spiagge.",
-      "Il Kruger e le riserve private confinanti sono tra i luoghi migliori per avvistare i Big Five, con lodge di grande livello."
+      "Il Kruger e le riserve private confinanti sono tra i luoghi migliori per avvistare i Big Five, con lodge di grande livello.",
+      "Perfetto per viaggi di 12–16 giorni tra Città del Capo, Garden Route e safari, anche in self drive; adatto a coppie, famiglie e viaggi di nozze, spesso con estensione alle cascate Vittoria."
     ],
     "facts": {
       "capital": "Pretoria (amministrativa); Città del Capo (legislativa)",
@@ -387,12 +588,36 @@
       "documents": "Passaporto con validità di almeno 30 giorni oltre il ritorno e almeno 2 pagine libere; per soggiorni brevi di solito non serve il visto. Per i minori documenti aggiuntivi. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Table Mountain", "description": "La montagna piatta che domina Città del Capo.", "search": "Table Mountain" },
-      { "name": "Capo di Buona Speranza", "description": "Il promontorio sulla punta della penisola del Capo.", "search": "Capo di Buona Speranza" },
-      { "name": "Parco Kruger", "description": "Safari tra i Big Five.", "search": "Parco nazionale Kruger" },
-      { "name": "Boulders Beach", "description": "La spiaggia dei pinguini africani.", "search": "Boulders Beach" },
-      { "name": "Stellenbosch", "description": "Cantine storiche nelle Winelands.", "search": "Stellenbosch" },
-      { "name": "Blyde River Canyon", "description": "Uno dei canyon più grandi del mondo.", "search": "Blyde River Canyon" }
+      {
+        "name": "Table Mountain",
+        "description": "La montagna piatta che domina Città del Capo.",
+        "search": "Table Mountain"
+      },
+      {
+        "name": "Capo di Buona Speranza",
+        "description": "Il promontorio sulla punta della penisola del Capo.",
+        "search": "Capo di Buona Speranza"
+      },
+      {
+        "name": "Parco Kruger",
+        "description": "Safari tra i Big Five.",
+        "search": "Parco nazionale Kruger"
+      },
+      {
+        "name": "Boulders Beach",
+        "description": "La spiaggia dei pinguini africani.",
+        "search": "Boulders Beach"
+      },
+      {
+        "name": "Stellenbosch",
+        "description": "Cantine storiche nelle Winelands.",
+        "search": "Stellenbosch"
+      },
+      {
+        "name": "Blyde River Canyon",
+        "description": "Uno dei canyon più grandi del mondo.",
+        "search": "Blyde River Canyon"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio (guida a sinistra) per la Garden Route",
@@ -418,7 +643,8 @@
     "description": [
       "La Namibia è uno dei paesi meno popolati al mondo, perfetto per un viaggio in libertà. Sossusvlei e Deadvlei, con le dune rosse più alte del mondo e gli alberi pietrificati, sono il simbolo del paese.",
       "Il parco di Etosha, con le sue pozze d'acqua, permette safari spettacolari anche in autonomia; Swakopmund e la Skeleton Coast mostrano l'incontro tra deserto e oceano.",
-      "Il Damaraland con le incisioni rupestri e gli elefanti del deserto, e il Fish River Canyon a sud, completano un itinerario indimenticabile."
+      "Il Damaraland con le incisioni rupestri e gli elefanti del deserto, e il Fish River Canyon a sud, completano un itinerario indimenticabile.",
+      "Ideale per viaggi on the road in self drive o con guida di 12–15 giorni, per viaggiatori indipendenti e appassionati di fotografia e grandi spazi."
     ],
     "facts": {
       "capital": "Windhoek",
@@ -433,12 +659,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e pagine libere; dal 2025 per i cittadini italiani è richiesto il visto (online o all'arrivo). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Sossusvlei", "description": "Le dune rosse più alte del mondo.", "search": "Sossusvlei" },
-      { "name": "Deadvlei", "description": "Alberi pietrificati su una pianura bianca.", "search": "Deadvlei" },
-      { "name": "Parco nazionale di Etosha", "description": "Safari attorno alle pozze d'acqua.", "search": "Parco nazionale d'Etosha" },
-      { "name": "Swakopmund", "description": "Città coloniale tra deserto e oceano.", "search": "Swakopmund" },
-      { "name": "Fish River Canyon", "description": "Il canyon più grande d'Africa.", "search": "Fish River Canyon" },
-      { "name": "Twyfelfontein", "description": "Incisioni rupestri nel Damaraland.", "search": "Twyfelfontein" }
+      {
+        "name": "Sossusvlei",
+        "description": "Le dune rosse più alte del mondo.",
+        "search": "Sossusvlei"
+      },
+      {
+        "name": "Deadvlei",
+        "description": "Alberi pietrificati su una pianura bianca.",
+        "search": "Deadvlei"
+      },
+      {
+        "name": "Parco nazionale di Etosha",
+        "description": "Safari attorno alle pozze d'acqua.",
+        "search": "Parco nazionale d'Etosha"
+      },
+      {
+        "name": "Swakopmund",
+        "description": "Città coloniale tra deserto e oceano.",
+        "search": "Swakopmund"
+      },
+      {
+        "name": "Fish River Canyon",
+        "description": "Il canyon più grande d'Africa.",
+        "search": "Fish River Canyon"
+      },
+      {
+        "name": "Twyfelfontein",
+        "description": "Incisioni rupestri nel Damaraland.",
+        "search": "Twyfelfontein"
+      }
     ],
     "gettingAround": [
       "Auto 4x4 a noleggio (self drive) con lodge prenotati",
@@ -464,7 +714,8 @@
     "description": [
       "Il Madagascar è un'isola unica al mondo: l'ottanta per cento delle sue specie animali e vegetali non esiste altrove. I lemuri, i camaleonti e le foreste pluviali sono il cuore di ogni viaggio.",
       "Il celebre Viale dei Baobab vicino a Morondava, i pinnacoli calcarei degli Tsingy e i parchi come Isalo e Ranomafana offrono paesaggi sorprendenti.",
-      "Nosy Be e le isole del nord-ovest sono una meta balneare amata dagli italiani, con mare caldo, spiagge bianche e incontri con squali balena e tartarughe."
+      "Nosy Be e le isole del nord-ovest sono una meta balneare amata dagli italiani, con mare caldo, spiagge bianche e incontri con squali balena e tartarughe.",
+      "Perfetto per tour naturalistici di 12–15 giorni lungo la RN7 o soggiorni mare a Nosy Be, per viaggiatori curiosi e famiglie amanti della natura."
     ],
     "facts": {
       "capital": "Antananarivo",
@@ -479,12 +730,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto (online o all'arrivo). Verificare su viaggiaresicuri.it e le vaccinazioni consigliate"
     },
     "places": [
-      { "name": "Viale dei Baobab", "description": "I baobab giganti al tramonto vicino a Morondava.", "search": "Viale dei Baobab" },
-      { "name": "Tsingy di Bemaraha", "description": "Una foresta di pinnacoli di pietra.", "search": "Tsingy di Bemaraha" },
-      { "name": "Nosy Be", "description": "L'isola dei profumi e delle spiagge.", "search": "Nosy Be" },
-      { "name": "Parco nazionale dell'Isalo", "description": "Canyon e piscine naturali.", "search": "Parco nazionale dell'Isalo" },
-      { "name": "Andasibe", "description": "La foresta dell'indri, il lemure più grande.", "search": "Parco nazionale di Andasibe-Mantadia" },
-      { "name": "Ranomafana", "description": "Foresta pluviale e sorgenti calde.", "search": "Parco nazionale di Ranomafana" }
+      {
+        "name": "Viale dei Baobab",
+        "description": "I baobab giganti al tramonto vicino a Morondava.",
+        "search": "Viale dei Baobab"
+      },
+      {
+        "name": "Tsingy di Bemaraha",
+        "description": "Una foresta di pinnacoli di pietra.",
+        "search": "Tsingy di Bemaraha"
+      },
+      {
+        "name": "Nosy Be",
+        "description": "L'isola dei profumi e delle spiagge.",
+        "search": "Nosy Be"
+      },
+      {
+        "name": "Parco nazionale dell'Isalo",
+        "description": "Canyon e piscine naturali.",
+        "search": "Parco nazionale dell'Isalo"
+      },
+      {
+        "name": "Andasibe",
+        "description": "La foresta dell'indri, il lemure più grande.",
+        "search": "Parco nazionale di Andasibe-Mantadia"
+      },
+      {
+        "name": "Ranomafana",
+        "description": "Foresta pluviale e sorgenti calde.",
+        "search": "Parco nazionale di Ranomafana"
+      }
     ],
     "gettingAround": [
       "Auto 4x4 con autista lungo la Route Nationale 7",
@@ -510,7 +785,8 @@
     "description": [
       "Mauritius è un'isola tropicale protetta dalla barriera corallina, con lagune calme e spiagge bianche come Belle Mare, Le Morne e Trou aux Biches.",
       "L'interno sorprende con montagne vulcaniche, cascate, piantagioni di tè e canna da zucchero e la Terra dei Sette Colori di Chamarel.",
-      "La popolazione multiculturale, tra influenze indiane, africane, cinesi ed europee, si riflette nella cucina e nei templi; ottima per viaggi di nozze e famiglie."
+      "La popolazione multiculturale, tra influenze indiane, africane, cinesi ed europee, si riflette nella cucina e nei templi; ottima per viaggi di nozze e famiglie.",
+      "Ideale per viaggi di nozze, famiglie e soggiorni mare di 7–10 giorni, spesso abbinati a un safari in Sudafrica o all'isola della Riunione."
     ],
     "facts": {
       "capital": "Port Louis",
@@ -525,12 +801,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni turistici di solito non serve il visto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Le Morne Brabant", "description": "La montagna sulla laguna, patrimonio UNESCO.", "search": "Le Morne Brabant" },
-      { "name": "Chamarel", "description": "La Terra dei Sette Colori e la cascata.", "search": "Terra dei sette colori Chamarel" },
-      { "name": "Île aux Cerfs", "description": "Isolotto di spiagge e laguna turchese.", "search": "Île aux Cerfs" },
-      { "name": "Gole del Black River", "description": "Il parco nazionale delle foreste endemiche.", "search": "Parco nazionale delle Gole del Black River" },
-      { "name": "Grand Bassin", "description": "Il lago sacro hindu con la grande statua di Shiva.", "search": "Grand Bassin" },
-      { "name": "Port Louis", "description": "Il mercato centrale e il Caudan Waterfront.", "search": "Port Louis" }
+      {
+        "name": "Le Morne Brabant",
+        "description": "La montagna sulla laguna, patrimonio UNESCO.",
+        "search": "Le Morne Brabant"
+      },
+      {
+        "name": "Chamarel",
+        "description": "La Terra dei Sette Colori e la cascata.",
+        "search": "Terra dei sette colori Chamarel"
+      },
+      {
+        "name": "Île aux Cerfs",
+        "description": "Isolotto di spiagge e laguna turchese.",
+        "search": "Île aux Cerfs"
+      },
+      {
+        "name": "Gole del Black River",
+        "description": "Il parco nazionale delle foreste endemiche.",
+        "search": "Parco nazionale delle Gole del Black River"
+      },
+      {
+        "name": "Grand Bassin",
+        "description": "Il lago sacro hindu con la grande statua di Shiva.",
+        "search": "Grand Bassin"
+      },
+      {
+        "name": "Port Louis",
+        "description": "Il mercato centrale e il Caudan Waterfront.",
+        "search": "Port Louis"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio (guida a sinistra) o autista per le escursioni",
@@ -556,7 +856,8 @@
     "description": [
       "Le Seychelles sono un arcipelago di 115 isole nell'Oceano Indiano, famose per le spiagge incorniciate da massi di granito modellati dal vento e dall'acqua.",
       "Mahé ospita la capitale Victoria e il parco del Morne Seychellois; Praslin custodisce la Vallée de Mai con il coco de mer, il seme più grande del mondo.",
-      "La Digue, dove ci si muove in bicicletta, ha la celebre Anse Source d'Argent; isole private e resort di lusso rendono le Seychelles una meta ideale per i viaggi di nozze."
+      "La Digue, dove ci si muove in bicicletta, ha la celebre Anse Source d'Argent; isole private e resort di lusso rendono le Seychelles una meta ideale per i viaggi di nozze.",
+      "Perfette per viaggi di nozze di lusso e combinazioni di 2–3 isole in 10–12 giorni; abbinabili a un safari in Kenya o Tanzania."
     ],
     "facts": {
       "capital": "Victoria",
@@ -571,12 +872,36 @@
       "documents": "Passaporto valido per tutta la durata del soggiorno; prima della partenza va richiesta online l'autorizzazione di viaggio. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Anse Source d'Argent", "description": "La spiaggia dei massi di granito a La Digue.", "search": "Anse Source d'Argent" },
-      { "name": "Vallée de Mai", "description": "La foresta del coco de mer a Praslin.", "search": "Vallée de Mai" },
-      { "name": "Anse Lazio", "description": "Una delle spiagge più belle di Praslin.", "search": "Anse Lazio" },
-      { "name": "Morne Seychellois", "description": "Montagne e sentieri nella foresta di Mahé.", "search": "Parco nazionale del Morne Seychellois" },
-      { "name": "Victoria", "description": "La piccola capitale e il mercato.", "search": "Victoria Seychelles" },
-      { "name": "Curieuse", "description": "L'isola delle tartarughe giganti.", "search": "Curieuse" }
+      {
+        "name": "Anse Source d'Argent",
+        "description": "La spiaggia dei massi di granito a La Digue.",
+        "search": "Anse Source d'Argent"
+      },
+      {
+        "name": "Vallée de Mai",
+        "description": "La foresta del coco de mer a Praslin.",
+        "search": "Vallée de Mai"
+      },
+      {
+        "name": "Anse Lazio",
+        "description": "Una delle spiagge più belle di Praslin.",
+        "search": "Anse Lazio"
+      },
+      {
+        "name": "Morne Seychellois",
+        "description": "Montagne e sentieri nella foresta di Mahé.",
+        "search": "Parco nazionale del Morne Seychellois"
+      },
+      {
+        "name": "Victoria",
+        "description": "La piccola capitale e il mercato.",
+        "search": "Victoria Seychelles"
+      },
+      {
+        "name": "Curieuse",
+        "description": "L'isola delle tartarughe giganti.",
+        "search": "Curieuse"
+      }
     ],
     "gettingAround": [
       "Traghetti veloci tra Mahé, Praslin e La Digue",
@@ -602,7 +927,8 @@
     "description": [
       "Capo Verde è un arcipelago vulcanico al largo dell'Africa occidentale, con un clima caldo e secco tutto l'anno e un'atmosfera rilassata.",
       "Sal e Boa Vista sono le isole delle grandi spiagge bianche e dei resort, ideali per il mare, il kitesurf e l'avvistamento delle tartarughe in estate.",
-      "Santo Antão e São Vicente offrono montagne verdi, trekking spettacolari e la vita culturale di Mindelo, patria della cantante Cesária Évora e della morna."
+      "Santo Antão e São Vicente offrono montagne verdi, trekking spettacolari e la vita culturale di Mindelo, patria della cantante Cesária Évora e della morna.",
+      "Ideale per una settimana di mare e sole in inverno, kitesurf e famiglie, oppure per trekking a Santo Antão; volo breve e nessun fuso orario importante."
     ],
     "facts": {
       "capital": "Praia",
@@ -617,12 +943,36 @@
       "documents": "Passaporto valido; per soggiorni brevi non serve il visto ma va effettuata la preregistrazione online e pagata la tassa di sicurezza aeroportuale. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Santa Maria (Sal)", "description": "La lunga spiaggia bianca e il pontile.", "search": "Santa Maria Capo Verde" },
-      { "name": "Boa Vista", "description": "Dune e spiagge come Santa Monica.", "search": "Boa Vista Capo Verde" },
-      { "name": "Pedra de Lume", "description": "Le saline in un antico cratere.", "search": "Pedra de Lume" },
-      { "name": "Santo Antão", "description": "Valli verdi e sentieri di montagna.", "search": "Santo Antão" },
-      { "name": "Mindelo", "description": "La città della musica sull'isola di São Vicente.", "search": "Mindelo" },
-      { "name": "Fogo", "description": "L'isola del vulcano attivo.", "search": "Pico do Fogo" }
+      {
+        "name": "Santa Maria (Sal)",
+        "description": "La lunga spiaggia bianca e il pontile.",
+        "search": "Santa Maria Capo Verde"
+      },
+      {
+        "name": "Boa Vista",
+        "description": "Dune e spiagge come Santa Monica.",
+        "search": "Boa Vista Capo Verde"
+      },
+      {
+        "name": "Pedra de Lume",
+        "description": "Le saline in un antico cratere.",
+        "search": "Pedra de Lume"
+      },
+      {
+        "name": "Santo Antão",
+        "description": "Valli verdi e sentieri di montagna.",
+        "search": "Santo Antão"
+      },
+      {
+        "name": "Mindelo",
+        "description": "La città della musica sull'isola di São Vicente.",
+        "search": "Mindelo"
+      },
+      {
+        "name": "Fogo",
+        "description": "L'isola del vulcano attivo.",
+        "search": "Pico do Fogo"
+      }
     ],
     "gettingAround": [
       "Voli interni tra le isole",
@@ -648,7 +998,8 @@
     "description": [
       "Israele custodisce luoghi sacri per tre religioni: Gerusalemme con il Muro Occidentale, la Basilica del Santo Sepolcro e la Spianata delle Moschee è un'esperienza unica.",
       "Tel Aviv è una città moderna e vivace sul Mediterraneo, con architettura Bauhaus e spiagge; a nord la Galilea e Nazareth, a sud la fortezza di Masada e il Mar Morto.",
-      "La situazione di sicurezza può cambiare rapidamente: prima di proporre il viaggio è indispensabile verificare le indicazioni aggiornate della Farnesina."
+      "La situazione di sicurezza può cambiare rapidamente: prima di proporre il viaggio è indispensabile verificare le indicazioni aggiornate della Farnesina.",
+      "Adatto a pellegrinaggi in Terra Santa e viaggi culturali di 7–8 giorni, spesso abbinati alla Giordania, solo dopo aver verificato la situazione di sicurezza."
     ],
     "facts": {
       "capital": "Gerusalemme (riconoscimento internazionale controverso; molte ambasciate sono a Tel Aviv)",
@@ -663,12 +1014,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica (ETA-IL) da richiedere online. Verificare sempre su viaggiaresicuri.it la situazione di sicurezza"
     },
     "places": [
-      { "name": "Città Vecchia di Gerusalemme", "description": "I quattro quartieri e i luoghi sacri.", "search": "Città Vecchia di Gerusalemme" },
-      { "name": "Basilica del Santo Sepolcro", "description": "Il luogo della crocifissione e della sepoltura di Gesù.", "search": "Basilica del Santo Sepolcro" },
-      { "name": "Masada", "description": "La fortezza di Erode sul Mar Morto.", "search": "Masada" },
-      { "name": "Mar Morto", "description": "Galleggiare nel punto più basso della Terra.", "search": "Mar Morto" },
-      { "name": "Tel Aviv", "description": "La Città Bianca e le spiagge.", "search": "Città Bianca di Tel Aviv" },
-      { "name": "Lago di Tiberiade", "description": "I luoghi della vita di Gesù in Galilea.", "search": "Lago di Tiberiade" }
+      {
+        "name": "Città Vecchia di Gerusalemme",
+        "description": "I quattro quartieri e i luoghi sacri.",
+        "search": "Città Vecchia di Gerusalemme"
+      },
+      {
+        "name": "Basilica del Santo Sepolcro",
+        "description": "Il luogo della crocifissione e della sepoltura di Gesù.",
+        "search": "Basilica del Santo Sepolcro"
+      },
+      {
+        "name": "Masada",
+        "description": "La fortezza di Erode sul Mar Morto.",
+        "search": "Masada"
+      },
+      {
+        "name": "Mar Morto",
+        "description": "Galleggiare nel punto più basso della Terra.",
+        "search": "Mar Morto"
+      },
+      {
+        "name": "Tel Aviv",
+        "description": "La Città Bianca e le spiagge.",
+        "search": "Città Bianca di Tel Aviv"
+      },
+      {
+        "name": "Lago di Tiberiade",
+        "description": "I luoghi della vita di Gesù in Galilea.",
+        "search": "Lago di Tiberiade"
+      }
     ],
     "gettingAround": [
       "Auto a noleggio o tour con guida",

@@ -4,7 +4,8 @@
     "description": [
       "Il Giappone unisce tradizione e modernità come nessun altro paese. Tokyo è una metropoli infinita di quartieri diversi, dai grattacieli di Shinjuku ai vicoli di Asakusa e al fermento di Shibuya.",
       "Kyoto conserva oltre mille templi, giardini zen e il quartiere delle geishe di Gion; Nara, con i cervi liberi e il grande Buddha, e Osaka, capitale del cibo di strada, sono vicinissime.",
-      "Il monte Fuji, Hiroshima e l'isola di Miyajima, le Alpi giapponesi con Takayama e Shirakawa-go completano un viaggio che emoziona in ogni stagione, soprattutto con la fioritura dei ciliegi."
+      "Il monte Fuji, Hiroshima e l'isola di Miyajima, le Alpi giapponesi con Takayama e Shirakawa-go completano un viaggio che emoziona in ogni stagione, soprattutto con la fioritura dei ciliegi.",
+      "Perfetto per un primo viaggio di 12–15 giorni tra Tokyo, Kyoto, Nara, Osaka e Hiroshima, per coppie, famiglie con ragazzi e appassionati di cultura e cucina."
     ],
     "facts": {
       "capital": "Tokyo",
@@ -19,12 +20,36 @@
       "documents": "Passaporto valido per tutta la durata del soggiorno; per soggiorni turistici fino a 90 giorni di solito non serve il visto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Fushimi Inari", "description": "Migliaia di torii rossi sul monte sacro di Kyoto.", "search": "Fushimi Inari-taisha" },
-      { "name": "Monte Fuji", "description": "Il vulcano simbolo del Giappone.", "search": "Monte Fuji" },
-      { "name": "Shibuya", "description": "L'incrocio più famoso di Tokyo.", "search": "Shibuya" },
-      { "name": "Kinkaku-ji", "description": "Il Padiglione d'Oro di Kyoto.", "search": "Kinkaku-ji" },
-      { "name": "Miyajima", "description": "Il torii nell'acqua del santuario di Itsukushima.", "search": "Itsukushima" },
-      { "name": "Shirakawa-go", "description": "Villaggio di case dai tetti di paglia.", "search": "Shirakawa-go" }
+      {
+        "name": "Fushimi Inari",
+        "description": "Migliaia di torii rossi sul monte sacro di Kyoto.",
+        "search": "Fushimi Inari-taisha"
+      },
+      {
+        "name": "Monte Fuji",
+        "description": "Il vulcano simbolo del Giappone.",
+        "search": "Monte Fuji"
+      },
+      {
+        "name": "Shibuya",
+        "description": "L'incrocio più famoso di Tokyo.",
+        "search": "Shibuya"
+      },
+      {
+        "name": "Kinkaku-ji",
+        "description": "Il Padiglione d'Oro di Kyoto.",
+        "search": "Kinkaku-ji"
+      },
+      {
+        "name": "Miyajima",
+        "description": "Il torii nell'acqua del santuario di Itsukushima.",
+        "search": "Itsukushima"
+      },
+      {
+        "name": "Shirakawa-go",
+        "description": "Villaggio di case dai tetti di paglia.",
+        "search": "Shirakawa-go"
+      }
     ],
     "gettingAround": [
       "Treni ad alta velocità Shinkansen tra le città",
@@ -50,7 +75,8 @@
     "description": [
       "La Thailandia è la porta d'ingresso classica dell'Asia. Bangkok è una capitale vibrante di templi dorati come il Wat Pho e il Wat Arun, mercati galleggianti e vita notturna.",
       "Il nord, con Chiang Mai e Chiang Rai, offre templi di montagna, mercati notturni e villaggi; Ayutthaya e Sukhothai raccontano gli antichi regni siamesi.",
-      "Al sud mare e isole: Phuket, Krabi e Phi Phi sul mare delle Andamane, Koh Samui, Koh Phangan e Koh Tao nel golfo, ideali da abbinare a seconda della stagione."
+      "Al sud mare e isole: Phuket, Krabi e Phi Phi sul mare delle Andamane, Koh Samui, Koh Phangan e Koh Tao nel golfo, ideali da abbinare a seconda della stagione.",
+      "Ideale per tour di 7–8 giorni tra Bangkok e il nord abbinati a una settimana di mare al sud, viaggi di nozze e famiglie; uno dei paesi più facili dell'Asia."
     ],
     "facts": {
       "capital": "Bangkok",
@@ -65,12 +91,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; esenzione dal visto per soggiorni turistici brevi e compilazione online della carta d'arrivo digitale prima del volo. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Grande Palazzo Reale", "description": "Il palazzo e il tempio del Buddha di Smeraldo a Bangkok.", "search": "Grande Palazzo Reale Bangkok" },
-      { "name": "Wat Arun", "description": "Il Tempio dell'Alba sul fiume Chao Phraya.", "search": "Wat Arun" },
-      { "name": "Chiang Mai", "description": "Templi, mercati notturni e montagne del nord.", "search": "Doi Suthep" },
-      { "name": "Ayutthaya", "description": "Le rovine dell'antica capitale del Siam.", "search": "Ayutthaya" },
-      { "name": "Isole Phi Phi", "description": "Baie turchesi e Maya Bay.", "search": "Ko Phi Phi" },
-      { "name": "Tempio Bianco", "description": "Il Wat Rong Khun di Chiang Rai.", "search": "Wat Rong Khun" }
+      {
+        "name": "Grande Palazzo Reale",
+        "description": "Il palazzo e il tempio del Buddha di Smeraldo a Bangkok.",
+        "search": "Grande Palazzo Reale Bangkok"
+      },
+      {
+        "name": "Wat Arun",
+        "description": "Il Tempio dell'Alba sul fiume Chao Phraya.",
+        "search": "Wat Arun"
+      },
+      {
+        "name": "Chiang Mai",
+        "description": "Templi, mercati notturni e montagne del nord.",
+        "search": "Doi Suthep"
+      },
+      {
+        "name": "Ayutthaya",
+        "description": "Le rovine dell'antica capitale del Siam.",
+        "search": "Ayutthaya"
+      },
+      {
+        "name": "Isole Phi Phi",
+        "description": "Baie turchesi e Maya Bay.",
+        "search": "Ko Phi Phi"
+      },
+      {
+        "name": "Tempio Bianco",
+        "description": "Il Wat Rong Khun di Chiang Rai.",
+        "search": "Wat Rong Khun"
+      }
     ],
     "gettingAround": [
       "Voli interni economici tra Bangkok, il nord e le isole",
@@ -96,7 +146,8 @@
     "description": [
       "Il Vietnam si sviluppa da nord a sud con paesaggi e atmosfere diverse. Hanoi, con il quartiere vecchio e il lago Hoan Kiem, è il punto di partenza per la baia di Halong, da navigare tra i faraglioni di pietra.",
       "Il centro custodisce Hue, la città imperiale, e Hoi An, antico porto illuminato dalle lanterne; le montagne di Sapa e Ha Giang regalano risaie a terrazze e villaggi delle minoranze.",
-      "A sud Ho Chi Minh City è dinamica e moderna, e il delta del Mekong offre mercati galleggianti e una vita lenta lungo i canali."
+      "A sud Ho Chi Minh City è dinamica e moderna, e il delta del Mekong offre mercati galleggianti e una vita lenta lungo i canali.",
+      "Perfetto per tour di 12–15 giorni da Hanoi a Ho Chi Minh City con la baia di Halong, spesso abbinato alla Cambogia o a qualche giorno di mare."
     ],
     "facts": {
       "capital": "Hanoi",
@@ -111,12 +162,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; esenzione dal visto per soggiorni turistici brevi, oltre serve il visto elettronico. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Baia di Halong", "description": "Migliaia di isole di calcare sul mare.", "search": "Baia di Ha Long" },
-      { "name": "Hoi An", "description": "L'antico porto delle lanterne.", "search": "Hội An" },
-      { "name": "Hue", "description": "La cittadella imperiale dei Nguyen.", "search": "Cittadella di Huế" },
-      { "name": "Sapa", "description": "Risaie a terrazze e villaggi di montagna.", "search": "Sa Pa" },
-      { "name": "Delta del Mekong", "description": "Mercati galleggianti e canali.", "search": "Delta del Mekong" },
-      { "name": "Grotte di Phong Nha", "description": "Alcune delle grotte più grandi del mondo.", "search": "Parco nazionale di Phong Nha-Kẻ Bàng" }
+      {
+        "name": "Baia di Halong",
+        "description": "Migliaia di isole di calcare sul mare.",
+        "search": "Baia di Ha Long"
+      },
+      {
+        "name": "Hoi An",
+        "description": "L'antico porto delle lanterne.",
+        "search": "Hội An"
+      },
+      {
+        "name": "Hue",
+        "description": "La cittadella imperiale dei Nguyen.",
+        "search": "Cittadella di Huế"
+      },
+      {
+        "name": "Sapa",
+        "description": "Risaie a terrazze e villaggi di montagna.",
+        "search": "Sa Pa"
+      },
+      {
+        "name": "Delta del Mekong",
+        "description": "Mercati galleggianti e canali.",
+        "search": "Delta del Mekong"
+      },
+      {
+        "name": "Grotte di Phong Nha",
+        "description": "Alcune delle grotte più grandi del mondo.",
+        "search": "Parco nazionale di Phong Nha-Kẻ Bàng"
+      }
     ],
     "gettingAround": [
       "Voli interni tra Hanoi, Da Nang e Ho Chi Minh City",
@@ -142,7 +217,8 @@
     "description": [
       "La Cambogia è la terra dei templi di Angkor, una delle meraviglie archeologiche del mondo: Angkor Wat all'alba, i volti di pietra del Bayon e le radici che avvolgono il Ta Prohm.",
       "Phnom Penh, la capitale, unisce il Palazzo Reale e la Pagoda d'Argento ai luoghi della memoria della storia recente.",
-      "Il lago Tonle Sap con i villaggi galleggianti, la costa di Kep e Kampot con il pepe famoso nel mondo e le isole del sud completano il viaggio."
+      "Il lago Tonle Sap con i villaggi galleggianti, la costa di Kep e Kampot con il pepe famoso nel mondo e le isole del sud completano il viaggio.",
+      "Ideale come estensione di 3–5 giorni di un viaggio in Vietnam o Thailandia, centrata sui templi di Angkor e su Phnom Penh."
     ],
     "facts": {
       "capital": "Phnom Penh",
@@ -157,12 +233,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto (elettronico o all'arrivo). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Angkor Wat", "description": "Il tempio più grande del mondo, all'alba.", "search": "Angkor Wat" },
-      { "name": "Bayon", "description": "Le torri con i volti sorridenti di pietra.", "search": "Bayon" },
-      { "name": "Ta Prohm", "description": "Il tempio avvolto dalle radici della giungla.", "search": "Ta Prohm" },
-      { "name": "Palazzo Reale di Phnom Penh", "description": "Il palazzo e la Pagoda d'Argento.", "search": "Palazzo Reale di Phnom Penh" },
-      { "name": "Tonle Sap", "description": "Il grande lago e i villaggi galleggianti.", "search": "Tonlé Sap" },
-      { "name": "Banteay Srei", "description": "Il piccolo tempio di arenaria rosa finemente scolpito.", "search": "Banteay Srei" }
+      {
+        "name": "Angkor Wat",
+        "description": "Il tempio più grande del mondo, all'alba.",
+        "search": "Angkor Wat"
+      },
+      {
+        "name": "Bayon",
+        "description": "Le torri con i volti sorridenti di pietra.",
+        "search": "Bayon"
+      },
+      {
+        "name": "Ta Prohm",
+        "description": "Il tempio avvolto dalle radici della giungla.",
+        "search": "Ta Prohm"
+      },
+      {
+        "name": "Palazzo Reale di Phnom Penh",
+        "description": "Il palazzo e la Pagoda d'Argento.",
+        "search": "Palazzo Reale di Phnom Penh"
+      },
+      {
+        "name": "Tonle Sap",
+        "description": "Il grande lago e i villaggi galleggianti.",
+        "search": "Tonlé Sap"
+      },
+      {
+        "name": "Banteay Srei",
+        "description": "Il piccolo tempio di arenaria rosa finemente scolpito.",
+        "search": "Banteay Srei"
+      }
     ],
     "gettingAround": [
       "Tuk tuk con autista per i templi di Angkor",
@@ -188,7 +288,8 @@
     "description": [
       "L'Indonesia è il più grande arcipelago del mondo, con oltre 17.000 isole. Bali è la più famosa: templi induisti, risaie a terrazze di Ubud, spiagge e una spiritualità che si respira ovunque.",
       "Giava custodisce Borobudur, il più grande tempio buddhista del mondo, Prambanan e il vulcano Bromo all'alba; Lombok e le isole Gili offrono spiagge e mare limpido.",
-      "Per i più avventurosi il parco di Komodo con i suoi draghi, il Borneo con gli oranghi e Raja Ampat, paradiso delle immersioni."
+      "Per i più avventurosi il parco di Komodo con i suoi draghi, il Borneo con gli oranghi e Raja Ampat, paradiso delle immersioni.",
+      "Perfetta per viaggi di nozze e soggiorni di 10–14 giorni tra Bali e Giava, anche con estensione a Lombok, Gili o Komodo."
     ],
     "facts": {
       "capital": "Giacarta",
@@ -203,12 +304,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto all'arrivo (anche elettronico); a Bali si paga anche una tassa turistica. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Risaie di Tegallalang", "description": "Le terrazze di riso vicino a Ubud.", "search": "Tegallalang" },
-      { "name": "Tempio di Tanah Lot", "description": "Il tempio sul mare al tramonto a Bali.", "search": "Tanah Lot" },
-      { "name": "Borobudur", "description": "Il grande tempio buddhista di Giava.", "search": "Borobudur" },
-      { "name": "Vulcano Bromo", "description": "Il cratere fumante all'alba.", "search": "Bromo" },
-      { "name": "Parco nazionale di Komodo", "description": "Draghi di Komodo e spiagge rosa.", "search": "Parco nazionale di Komodo" },
-      { "name": "Isole Gili", "description": "Isole senza auto, tartarughe e snorkeling.", "search": "Isole Gili" }
+      {
+        "name": "Risaie di Tegallalang",
+        "description": "Le terrazze di riso vicino a Ubud.",
+        "search": "Tegallalang"
+      },
+      {
+        "name": "Tempio di Tanah Lot",
+        "description": "Il tempio sul mare al tramonto a Bali.",
+        "search": "Tanah Lot"
+      },
+      {
+        "name": "Borobudur",
+        "description": "Il grande tempio buddhista di Giava.",
+        "search": "Borobudur"
+      },
+      {
+        "name": "Vulcano Bromo",
+        "description": "Il cratere fumante all'alba.",
+        "search": "Bromo"
+      },
+      {
+        "name": "Parco nazionale di Komodo",
+        "description": "Draghi di Komodo e spiagge rosa.",
+        "search": "Parco nazionale di Komodo"
+      },
+      {
+        "name": "Isole Gili",
+        "description": "Isole senza auto, tartarughe e snorkeling.",
+        "search": "Isole Gili"
+      }
     ],
     "gettingAround": [
       "Autista privato a Bali (soluzione più comoda)",
@@ -234,7 +359,8 @@
     "description": [
       "Le Maldive sono un arcipelago di quasi 1.200 isole coralline raggruppate in atolli, nell'Oceano Indiano. Ogni resort occupa un'isola, con spiagge bianchissime e una laguna color turchese.",
       "Il mare è il protagonista: snorkeling sulla barriera corallina, mante, squali balena, tartarughe e immersioni tra le più belle al mondo.",
-      "Oltre ai resort di lusso esistono guest house sulle isole abitate, più economiche e a contatto con la vita locale."
+      "Oltre ai resort di lusso esistono guest house sulle isole abitate, più economiche e a contatto con la vita locale.",
+      "Ideali per viaggi di nozze e soggiorni di relax di 7–10 giorni, anche come estensione mare dopo un tour in Sri Lanka, India o Dubai."
     ],
     "facts": {
       "capital": "Malé",
@@ -249,12 +375,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; visto turistico gratuito all'arrivo e dichiarazione online da compilare prima del volo. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Atollo di Ari", "description": "Mante e squali balena.", "search": "Atollo di Ari" },
-      { "name": "Atollo di Baa", "description": "Riserva della biosfera UNESCO e Hanifaru Bay.", "search": "Atollo di Baa" },
-      { "name": "Malé", "description": "La piccola capitale e il mercato del pesce.", "search": "Malé" },
-      { "name": "Atollo di Malé Nord", "description": "Resort vicini all'aeroporto.", "search": "Atollo di Malé Nord" },
-      { "name": "Atollo di Lhaviyani", "description": "Barriere e lagune ampie.", "search": "Atollo di Lhaviyani" },
-      { "name": "Barriera corallina maldiviana", "description": "Snorkeling direttamente dalla spiaggia.", "search": "Barriera corallina Maldive" }
+      {
+        "name": "Atollo di Ari",
+        "description": "Mante e squali balena.",
+        "search": "Atollo di Ari"
+      },
+      {
+        "name": "Atollo di Baa",
+        "description": "Riserva della biosfera UNESCO e Hanifaru Bay.",
+        "search": "Atollo di Baa"
+      },
+      {
+        "name": "Malé",
+        "description": "La piccola capitale e il mercato del pesce.",
+        "search": "Malé"
+      },
+      {
+        "name": "Atollo di Malé Nord",
+        "description": "Resort vicini all'aeroporto.",
+        "search": "Atollo di Malé Nord"
+      },
+      {
+        "name": "Atollo di Lhaviyani",
+        "description": "Barriere e lagune ampie.",
+        "search": "Atollo di Lhaviyani"
+      },
+      {
+        "name": "Barriera corallina maldiviana",
+        "description": "Snorkeling direttamente dalla spiaggia.",
+        "search": "Barriera corallina Maldive"
+      }
     ],
     "gettingAround": [
       "Idrovolante dall'aeroporto ai resort più lontani (solo di giorno)",
@@ -280,7 +430,8 @@
     "description": [
       "Lo Sri Lanka concentra in poco spazio una varietà straordinaria. Il Triangolo Culturale custodisce la rocca di Sigiriya, le antiche capitali di Anuradhapura e Polonnaruwa e i templi nelle grotte di Dambulla.",
       "Kandy, con il Tempio del Dente di Buddha, è la porta delle montagne del tè: il treno panoramico verso Ella attraversa piantagioni e cascate.",
-      "I parchi di Yala e Udawalawe offrono safari con leopardi ed elefanti; la costa sud, con Galle e le spiagge di Mirissa, è perfetta per il relax e le balene."
+      "I parchi di Yala e Udawalawe offrono safari con leopardi ed elefanti; la costa sud, con Galle e le spiagge di Mirissa, è perfetta per il relax e le balene.",
+      "Perfetto per tour di 8–10 giorni tra Triangolo Culturale, montagne del tè e safari, abbinati al mare della costa sud o alle Maldive."
     ],
     "facts": {
       "capital": "Sri Jayawardenepura Kotte (sede del governo); Colombo principale città",
@@ -295,12 +446,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e autorizzazione elettronica di viaggio (ETA) online. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Sigiriya", "description": "La fortezza sulla Roccia del Leone.", "search": "Sigiriya" },
-      { "name": "Tempio del Dente di Buddha", "description": "Il tempio più sacro di Kandy.", "search": "Tempio del Dente" },
-      { "name": "Treno per Ella", "description": "Uno dei percorsi ferroviari più belli del mondo.", "search": "Nine Arch Bridge" },
-      { "name": "Forte di Galle", "description": "La città fortificata coloniale sull'oceano.", "search": "Forte di Galle" },
-      { "name": "Parco nazionale di Yala", "description": "Leopardi, elefanti e coccodrilli.", "search": "Parco nazionale di Yala" },
-      { "name": "Templi di Dambulla", "description": "Grotte con statue e affreschi buddhisti.", "search": "Tempio d'oro di Dambulla" }
+      {
+        "name": "Sigiriya",
+        "description": "La fortezza sulla Roccia del Leone.",
+        "search": "Sigiriya"
+      },
+      {
+        "name": "Tempio del Dente di Buddha",
+        "description": "Il tempio più sacro di Kandy.",
+        "search": "Tempio del Dente"
+      },
+      {
+        "name": "Treno per Ella",
+        "description": "Uno dei percorsi ferroviari più belli del mondo.",
+        "search": "Nine Arch Bridge"
+      },
+      {
+        "name": "Forte di Galle",
+        "description": "La città fortificata coloniale sull'oceano.",
+        "search": "Forte di Galle"
+      },
+      {
+        "name": "Parco nazionale di Yala",
+        "description": "Leopardi, elefanti e coccodrilli.",
+        "search": "Parco nazionale di Yala"
+      },
+      {
+        "name": "Templi di Dambulla",
+        "description": "Grotte con statue e affreschi buddhisti.",
+        "search": "Tempio d'oro di Dambulla"
+      }
     ],
     "gettingAround": [
       "Auto con autista-guida (formula più diffusa)",
@@ -326,7 +501,8 @@
     "description": [
       "L'India è un continente di colori, profumi e contrasti. Il Triangolo d'Oro unisce Delhi, Agra con il Taj Mahal e Jaipur, la città rosa, ed è il primo viaggio ideale.",
       "Il Rajasthan prosegue con Udaipur sui laghi, Jodhpur la città blu, Jaisalmer nel deserto del Thar e palazzi trasformati in hotel di charme.",
-      "Varanasi sul Gange è il cuore spirituale del paese; a sud il Kerala offre le backwaters in houseboat, piantagioni di tè e ayurveda, mentre Goa unisce spiagge ed eredità portoghese."
+      "Varanasi sul Gange è il cuore spirituale del paese; a sud il Kerala offre le backwaters in houseboat, piantagioni di tè e ayurveda, mentre Goa unisce spiagge ed eredità portoghese.",
+      "Ideale per un primo viaggio di 10–12 giorni nel Triangolo d'Oro e in Rajasthan, o per itinerari al sud nel Kerala; per viaggiatori curiosi e appassionati di cultura."
     ],
     "facts": {
       "capital": "Nuova Delhi",
@@ -341,12 +517,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e due pagine libere, visto elettronico (e-Visa) da richiedere online. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Taj Mahal", "description": "Il mausoleo di marmo bianco ad Agra.", "search": "Taj Mahal" },
-      { "name": "Forte Amber", "description": "La fortezza dei maharaja vicino a Jaipur.", "search": "Forte Amber" },
-      { "name": "Varanasi", "description": "I ghat sul Gange e le cerimonie serali.", "search": "Ghat di Varanasi" },
-      { "name": "Udaipur", "description": "La città dei laghi e dei palazzi.", "search": "City Palace Udaipur" },
-      { "name": "Backwaters del Kerala", "description": "Canali e lagune in houseboat.", "search": "Backwaters del Kerala" },
-      { "name": "Hawa Mahal", "description": "Il Palazzo dei Venti di Jaipur.", "search": "Hawa Mahal" }
+      {
+        "name": "Taj Mahal",
+        "description": "Il mausoleo di marmo bianco ad Agra.",
+        "search": "Taj Mahal"
+      },
+      {
+        "name": "Forte Amber",
+        "description": "La fortezza dei maharaja vicino a Jaipur.",
+        "search": "Forte Amber"
+      },
+      {
+        "name": "Varanasi",
+        "description": "I ghat sul Gange e le cerimonie serali.",
+        "search": "Ghat di Varanasi"
+      },
+      {
+        "name": "Udaipur",
+        "description": "La città dei laghi e dei palazzi.",
+        "search": "City Palace Udaipur"
+      },
+      {
+        "name": "Backwaters del Kerala",
+        "description": "Canali e lagune in houseboat.",
+        "search": "Backwaters del Kerala"
+      },
+      {
+        "name": "Hawa Mahal",
+        "description": "Il Palazzo dei Venti di Jaipur.",
+        "search": "Hawa Mahal"
+      }
     ],
     "gettingAround": [
       "Auto con autista per il Rajasthan",
@@ -372,7 +572,8 @@
     "description": [
       "Il Nepal è la terra dell'Himalaya: otto delle quattordici montagne oltre gli 8.000 metri, tra cui l'Everest, si trovano qui. I trekking dell'Annapurna e del campo base dell'Everest sono mete leggendarie.",
       "La valle di Kathmandu custodisce città reali come Bhaktapur e Patan, lo stupa di Boudhanath e il tempio di Pashupatinath, tutti patrimonio UNESCO.",
-      "Pokhara, sul lago Phewa, è il punto di partenza per i trekking; il parco di Chitwan offre safari con rinoceronti ed elefanti nella giungla."
+      "Pokhara, sul lago Phewa, è il punto di partenza per i trekking; il parco di Chitwan offre safari con rinoceronti ed elefanti nella giungla.",
+      "Perfetto per tour culturali di 7–10 giorni nella valle di Kathmandu e a Pokhara o per trekking himalayani, spesso abbinato al Bhutan o all'India."
     ],
     "facts": {
       "capital": "Kathmandu",
@@ -387,12 +588,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e visto (all'arrivo o online); per i trekking servono permessi. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Stupa di Boudhanath", "description": "Uno dei più grandi stupa buddhisti al mondo.", "search": "Boudhanath" },
-      { "name": "Bhaktapur", "description": "La città reale dei templi in legno.", "search": "Bhaktapur" },
-      { "name": "Pokhara", "description": "Il lago Phewa con l'Annapurna sullo sfondo.", "search": "Lago Phewa" },
-      { "name": "Everest", "description": "Il tetto del mondo e il trekking al campo base.", "search": "Monte Everest" },
-      { "name": "Parco nazionale di Chitwan", "description": "Rinoceronti e giungla.", "search": "Parco nazionale di Chitwan" },
-      { "name": "Pashupatinath", "description": "Il grande tempio hindu sul fiume Bagmati.", "search": "Pashupatinath" }
+      {
+        "name": "Stupa di Boudhanath",
+        "description": "Uno dei più grandi stupa buddhisti al mondo.",
+        "search": "Boudhanath"
+      },
+      {
+        "name": "Bhaktapur",
+        "description": "La città reale dei templi in legno.",
+        "search": "Bhaktapur"
+      },
+      {
+        "name": "Pokhara",
+        "description": "Il lago Phewa con l'Annapurna sullo sfondo.",
+        "search": "Lago Phewa"
+      },
+      {
+        "name": "Everest",
+        "description": "Il tetto del mondo e il trekking al campo base.",
+        "search": "Monte Everest"
+      },
+      {
+        "name": "Parco nazionale di Chitwan",
+        "description": "Rinoceronti e giungla.",
+        "search": "Parco nazionale di Chitwan"
+      },
+      {
+        "name": "Pashupatinath",
+        "description": "Il grande tempio hindu sul fiume Bagmati.",
+        "search": "Pashupatinath"
+      }
     ],
     "gettingAround": [
       "Voli interni su piccoli aerei (soggetti al meteo)",
@@ -418,7 +643,8 @@
     "description": [
       "La Cina è una civiltà millenaria che si scopre in viaggi di grande respiro. Pechino custodisce la Città Proibita, il Tempio del Cielo e la vicina Grande Muraglia.",
       "Xi'an è la città dell'Esercito di Terracotta, mentre Shanghai mostra il volto moderno del paese tra il Bund e i grattacieli di Pudong.",
-      "Il fiume Li tra Guilin e Yangshuo, le montagne di Zhangjiajie, i giardini di Suzhou e i panda di Chengdu completano itinerari spettacolari."
+      "Il fiume Li tra Guilin e Yangshuo, le montagne di Zhangjiajie, i giardini di Suzhou e i panda di Chengdu completano itinerari spettacolari.",
+      "Ideale per un primo viaggio di 12–15 giorni tra Pechino, Xi'an, Guilin e Shanghai, per viaggiatori curiosi e gruppi culturali."
     ],
     "facts": {
       "capital": "Pechino",
@@ -433,12 +659,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per i cittadini italiani è in vigore un'esenzione dal visto per soggiorni brevi (verificarne la validità). Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Grande Muraglia", "description": "Tratti restaurati come Mutianyu vicino a Pechino.", "search": "Grande Muraglia cinese Mutianyu" },
-      { "name": "Città Proibita", "description": "Il palazzo imperiale nel cuore di Pechino.", "search": "Città Proibita" },
-      { "name": "Esercito di Terracotta", "description": "Migliaia di guerrieri a grandezza naturale a Xi'an.", "search": "Esercito di terracotta" },
-      { "name": "Il Bund", "description": "Il lungofiume di Shanghai con lo skyline di Pudong.", "search": "Bund Shanghai" },
-      { "name": "Fiume Li", "description": "Picchi carsici tra Guilin e Yangshuo.", "search": "Fiume Li" },
-      { "name": "Zhangjiajie", "description": "Le montagne colonna del film Avatar.", "search": "Parco forestale nazionale di Zhangjiajie" }
+      {
+        "name": "Grande Muraglia",
+        "description": "Tratti restaurati come Mutianyu vicino a Pechino.",
+        "search": "Grande Muraglia cinese Mutianyu"
+      },
+      {
+        "name": "Città Proibita",
+        "description": "Il palazzo imperiale nel cuore di Pechino.",
+        "search": "Città Proibita"
+      },
+      {
+        "name": "Esercito di Terracotta",
+        "description": "Migliaia di guerrieri a grandezza naturale a Xi'an.",
+        "search": "Esercito di terracotta"
+      },
+      {
+        "name": "Il Bund",
+        "description": "Il lungofiume di Shanghai con lo skyline di Pudong.",
+        "search": "Bund Shanghai"
+      },
+      {
+        "name": "Fiume Li",
+        "description": "Picchi carsici tra Guilin e Yangshuo.",
+        "search": "Fiume Li"
+      },
+      {
+        "name": "Zhangjiajie",
+        "description": "Le montagne colonna del film Avatar.",
+        "search": "Parco forestale nazionale di Zhangjiajie"
+      }
     ],
     "gettingAround": [
       "Treni ad alta velocità tra quasi tutte le città",
@@ -464,7 +714,8 @@
     "description": [
       "La Corea del Sud è una destinazione moderna e sicura, in grande crescita. Seul unisce i palazzi della dinastia Joseon, come Gyeongbokgung, a quartieri vivaci come Myeongdong, Hongdae e Gangnam.",
       "Gyeongju, antica capitale del regno di Silla, è un museo a cielo aperto di tombe reali e templi; Busan offre spiagge, il mercato del pesce e villaggi colorati sulle colline.",
-      "L'isola vulcanica di Jeju, con crateri, cascate e le pescatrici haenyeo, completa il viaggio con la natura."
+      "L'isola vulcanica di Jeju, con crateri, cascate e le pescatrici haenyeo, completa il viaggio con la natura.",
+      "Perfetta per viaggi di 10–12 giorni tra Seul, Gyeongju, Busan e Jeju, molto apprezzata dai giovani e dagli appassionati di cultura pop e cucina."
     ],
     "facts": {
       "capital": "Seul",
@@ -479,12 +730,36 @@
       "documents": "Passaporto valido; per soggiorni turistici brevi non serve il visto, ma potrebbe essere richiesta l'autorizzazione elettronica K-ETA. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Gyeongbokgung", "description": "Il grande palazzo reale di Seul.", "search": "Gyeongbokgung" },
-      { "name": "Bukchon Hanok Village", "description": "Case tradizionali tra i palazzi.", "search": "Bukchon Hanok Village" },
-      { "name": "Gyeongju", "description": "Il tempio di Bulguksa e le tombe reali.", "search": "Bulguksa" },
-      { "name": "Busan", "description": "Il villaggio colorato di Gamcheon e la spiaggia di Haeundae.", "search": "Gamcheon Culture Village" },
-      { "name": "Isola di Jeju", "description": "Il cratere di Seongsan Ilchulbong.", "search": "Seongsan Ilchulbong" },
-      { "name": "Zona demilitarizzata", "description": "La DMZ al confine con il nord.", "search": "Zona demilitarizzata coreana" }
+      {
+        "name": "Gyeongbokgung",
+        "description": "Il grande palazzo reale di Seul.",
+        "search": "Gyeongbokgung"
+      },
+      {
+        "name": "Bukchon Hanok Village",
+        "description": "Case tradizionali tra i palazzi.",
+        "search": "Bukchon Hanok Village"
+      },
+      {
+        "name": "Gyeongju",
+        "description": "Il tempio di Bulguksa e le tombe reali.",
+        "search": "Bulguksa"
+      },
+      {
+        "name": "Busan",
+        "description": "Il villaggio colorato di Gamcheon e la spiaggia di Haeundae.",
+        "search": "Gamcheon Culture Village"
+      },
+      {
+        "name": "Isola di Jeju",
+        "description": "Il cratere di Seongsan Ilchulbong.",
+        "search": "Seongsan Ilchulbong"
+      },
+      {
+        "name": "Zona demilitarizzata",
+        "description": "La DMZ al confine con il nord.",
+        "search": "Zona demilitarizzata coreana"
+      }
     ],
     "gettingAround": [
       "Treni ad alta velocità KTX tra Seul, Gyeongju e Busan",
@@ -510,7 +785,8 @@
     "description": [
       "Le Filippine sono un arcipelago tropicale con alcune delle spiagge e dei fondali più belli dell'Asia. Palawan, con El Nido e Coron, offre lagune tra pareti di roccia e mare cristallino.",
       "Bohol stupisce con le Chocolate Hills e i piccoli tarsi, mentre Siargao è la capitale del surf e Boracay ha la celebre White Beach.",
-      "Nel nord di Luzon le risaie a terrazze di Banaue e Batad sono patrimonio UNESCO; la cordialità dei filippini e l'uso diffuso dell'inglese rendono il viaggio semplice."
+      "Nel nord di Luzon le risaie a terrazze di Banaue e Batad sono patrimonio UNESCO; la cordialità dei filippini e l'uso diffuso dell'inglese rendono il viaggio semplice.",
+      "Ideali per viaggi di 12–15 giorni di island hopping tra Palawan, Bohol e Boracay, per amanti del mare e viaggiatori giovani."
     ],
     "facts": {
       "capital": "Manila",
@@ -525,12 +801,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi e biglietto di ritorno; per soggiorni turistici brevi di solito non serve il visto; registrazione online di arrivo. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "El Nido", "description": "Lagune e isole di Palawan.", "search": "El Nido" },
-      { "name": "Coron", "description": "Laghi, relitti e il Kayangan Lake.", "search": "Kayangan Lake" },
-      { "name": "Chocolate Hills", "description": "Le colline coniche di Bohol.", "search": "Chocolate Hills" },
-      { "name": "Risaie di Banaue", "description": "Terrazze di riso millenarie.", "search": "Terrazze di riso di Banaue" },
-      { "name": "Boracay", "description": "La White Beach e i tramonti.", "search": "Boracay" },
-      { "name": "Fiume sotterraneo di Puerto Princesa", "description": "Navigazione in una grotta patrimonio UNESCO.", "search": "Fiume sotterraneo di Puerto Princesa" }
+      {
+        "name": "El Nido",
+        "description": "Lagune e isole di Palawan.",
+        "search": "El Nido"
+      },
+      {
+        "name": "Coron",
+        "description": "Laghi, relitti e il Kayangan Lake.",
+        "search": "Kayangan Lake"
+      },
+      {
+        "name": "Chocolate Hills",
+        "description": "Le colline coniche di Bohol.",
+        "search": "Chocolate Hills"
+      },
+      {
+        "name": "Risaie di Banaue",
+        "description": "Terrazze di riso millenarie.",
+        "search": "Terrazze di riso di Banaue"
+      },
+      {
+        "name": "Boracay",
+        "description": "La White Beach e i tramonti.",
+        "search": "Boracay"
+      },
+      {
+        "name": "Fiume sotterraneo di Puerto Princesa",
+        "description": "Navigazione in una grotta patrimonio UNESCO.",
+        "search": "Fiume sotterraneo di Puerto Princesa"
+      }
     ],
     "gettingAround": [
       "Voli interni tra Manila, Cebu e le isole",
@@ -556,7 +856,8 @@
     "description": [
       "Singapore è una città-stato moderna, pulita e sicura, perfetta come tappa di scalo o mini viaggio. Marina Bay con il Marina Bay Sands e i Gardens by the Bay sono il suo volto più spettacolare.",
       "Quartieri come Chinatown, Little India e Kampong Glam raccontano le diverse anime della città, mentre Sentosa offre spiagge, parchi a tema e resort.",
-      "Il cibo è un'esperienza in sé: negli hawker centre si mangiano piatti eccellenti a prezzi contenuti, alcuni premiati con la stella Michelin."
+      "Il cibo è un'esperienza in sé: negli hawker centre si mangiano piatti eccellenti a prezzi contenuti, alcuni premiati con la stella Michelin.",
+      "Perfetta per stopover di 2–3 giorni verso Bali, l'Australia o la Thailandia, per famiglie e appassionati di cucina e architettura."
     ],
     "facts": {
       "capital": "Singapore",
@@ -571,12 +872,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi non serve il visto, ma va compilata online la SG Arrival Card. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Gardens by the Bay", "description": "I Supertree e le serre giganti.", "search": "Gardens by the Bay" },
-      { "name": "Marina Bay Sands", "description": "L'hotel con la piscina panoramica.", "search": "Marina Bay Sands" },
-      { "name": "Chinatown", "description": "Templi e mercati nel cuore della città.", "search": "Chinatown Singapore" },
-      { "name": "Little India", "description": "Colori, spezie e templi hindu.", "search": "Little India Singapore" },
-      { "name": "Sentosa", "description": "L'isola dei divertimenti e delle spiagge.", "search": "Sentosa" },
-      { "name": "Giardino botanico", "description": "Patrimonio UNESCO con il giardino delle orchidee.", "search": "Giardino botanico di Singapore" }
+      {
+        "name": "Gardens by the Bay",
+        "description": "I Supertree e le serre giganti.",
+        "search": "Gardens by the Bay"
+      },
+      {
+        "name": "Marina Bay Sands",
+        "description": "L'hotel con la piscina panoramica.",
+        "search": "Marina Bay Sands"
+      },
+      {
+        "name": "Chinatown",
+        "description": "Templi e mercati nel cuore della città.",
+        "search": "Chinatown Singapore"
+      },
+      {
+        "name": "Little India",
+        "description": "Colori, spezie e templi hindu.",
+        "search": "Little India Singapore"
+      },
+      {
+        "name": "Sentosa",
+        "description": "L'isola dei divertimenti e delle spiagge.",
+        "search": "Sentosa"
+      },
+      {
+        "name": "Giardino botanico",
+        "description": "Patrimonio UNESCO con il giardino delle orchidee.",
+        "search": "Giardino botanico di Singapore"
+      }
     ],
     "gettingAround": [
       "Metro MRT (si paga con carta contactless)",
@@ -602,7 +927,8 @@
     "description": [
       "La Malesia unisce modernità e natura. Kuala Lumpur è dominata dalle Torri Petronas e conserva quartieri coloniali, mercati e le grotte sacre di Batu Caves.",
       "Penang, con George Town patrimonio UNESCO, e Malacca raccontano secoli di commerci tra Cina, India ed Europa, con una cucina tra le migliori dell'Asia.",
-      "Il Borneo malese, con Sabah e Sarawak, offre oranghi, il monte Kinabalu e foreste pluviali; isole come Langkawi, Perhentian e Tioman sono perfette per il mare."
+      "Il Borneo malese, con Sabah e Sarawak, offre oranghi, il monte Kinabalu e foreste pluviali; isole come Langkawi, Perhentian e Tioman sono perfette per il mare.",
+      "Ideale per combinazioni di 10–14 giorni tra Kuala Lumpur, Penang e il Borneo con estensione mare, o come stopover con Singapore."
     ],
     "facts": {
       "capital": "Kuala Lumpur",
@@ -617,12 +943,36 @@
       "documents": "Passaporto con validità di almeno 6 mesi; per soggiorni brevi non serve il visto, ma va compilata online la carta d'arrivo digitale. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Torri Petronas", "description": "Le torri gemelle di Kuala Lumpur.", "search": "Petronas Towers" },
-      { "name": "Batu Caves", "description": "Il santuario hindu nelle grotte.", "search": "Batu Caves" },
-      { "name": "George Town", "description": "Murales, case di clan e street food a Penang.", "search": "George Town Penang" },
-      { "name": "Malacca", "description": "La città storica dei commerci.", "search": "Malacca" },
-      { "name": "Monte Kinabalu", "description": "La vetta del Borneo.", "search": "Monte Kinabalu" },
-      { "name": "Langkawi", "description": "Spiagge e il ponte sospeso nella foresta.", "search": "Langkawi Sky Bridge" }
+      {
+        "name": "Torri Petronas",
+        "description": "Le torri gemelle di Kuala Lumpur.",
+        "search": "Petronas Towers"
+      },
+      {
+        "name": "Batu Caves",
+        "description": "Il santuario hindu nelle grotte.",
+        "search": "Batu Caves"
+      },
+      {
+        "name": "George Town",
+        "description": "Murales, case di clan e street food a Penang.",
+        "search": "George Town Penang"
+      },
+      {
+        "name": "Malacca",
+        "description": "La città storica dei commerci.",
+        "search": "Malacca"
+      },
+      {
+        "name": "Monte Kinabalu",
+        "description": "La vetta del Borneo.",
+        "search": "Monte Kinabalu"
+      },
+      {
+        "name": "Langkawi",
+        "description": "Spiagge e il ponte sospeso nella foresta.",
+        "search": "Langkawi Sky Bridge"
+      }
     ],
     "gettingAround": [
       "Voli interni economici, anche per il Borneo",
@@ -648,7 +998,8 @@
     "description": [
       "L'Uzbekistan è il cuore della Via della Seta e una delle destinazioni culturali più affascinanti dell'Asia centrale.",
       "Samarcanda, con il Registan e le sue madrase dalle cupole turchesi, Bukhara, città santa dai mille monumenti, e Khiva, chiusa nelle mura di terra cruda, sembrano uscite dalle Mille e una notte.",
-      "Tashkent, la capitale moderna, unisce metropolitana decorata come un palazzo e grandi mercati; l'ospitalità uzbeka rende il viaggio ancora più piacevole."
+      "Tashkent, la capitale moderna, unisce metropolitana decorata come un palazzo e grandi mercati; l'ospitalità uzbeka rende il viaggio ancora più piacevole.",
+      "Perfetto per tour culturali di 7–9 giorni tra Tashkent, Samarcanda, Bukhara e Khiva, per gruppi e viaggiatori appassionati di storia e architettura."
     ],
     "facts": {
       "capital": "Tashkent",
@@ -663,12 +1014,36 @@
       "documents": "Passaporto con validità di almeno 3 mesi oltre la partenza; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
     },
     "places": [
-      { "name": "Registan", "description": "La piazza delle tre madrase di Samarcanda.", "search": "Registan" },
-      { "name": "Bukhara", "description": "Il complesso Poi Kalon e il minareto.", "search": "Poi Kalon" },
-      { "name": "Khiva", "description": "La città-fortezza di Itchan Kala.", "search": "Itchan Kala" },
-      { "name": "Shah-i-Zinda", "description": "La necropoli dalle maioliche blu.", "search": "Shah-i-Zinda" },
-      { "name": "Metro di Tashkent", "description": "Stazioni decorate come palazzi.", "search": "Metropolitana di Tashkent" },
-      { "name": "Mausoleo di Gur-e-Amir", "description": "La tomba di Tamerlano.", "search": "Gur-e Amir" }
+      {
+        "name": "Registan",
+        "description": "La piazza delle tre madrase di Samarcanda.",
+        "search": "Registan"
+      },
+      {
+        "name": "Bukhara",
+        "description": "Il complesso Poi Kalon e il minareto.",
+        "search": "Poi Kalon"
+      },
+      {
+        "name": "Khiva",
+        "description": "La città-fortezza di Itchan Kala.",
+        "search": "Itchan Kala"
+      },
+      {
+        "name": "Shah-i-Zinda",
+        "description": "La necropoli dalle maioliche blu.",
+        "search": "Shah-i-Zinda"
+      },
+      {
+        "name": "Metro di Tashkent",
+        "description": "Stazioni decorate come palazzi.",
+        "search": "Metropolitana di Tashkent"
+      },
+      {
+        "name": "Mausoleo di Gur-e-Amir",
+        "description": "La tomba di Tamerlano.",
+        "search": "Gur-e Amir"
+      }
     ],
     "gettingAround": [
       "Treni veloci Afrosiyob tra Tashkent, Samarcanda e Bukhara",

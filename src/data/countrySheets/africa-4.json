@@ -1,0 +1,546 @@
+{
+  "BW": {
+    "tagline": "Il delta dell'Okavango, elefanti a migliaia e safari esclusivi.",
+    "description": [
+      "Il Botswana è una delle destinazioni di safari più esclusive d'Africa, con una politica di turismo a basso impatto e lodge di grande qualità.",
+      "Il delta dell'Okavango, patrimonio UNESCO, si esplora in mokoro (canoa tradizionale), a piedi e in fuoristrada tra leoni, leopardi e licaoni.",
+      "Il parco del Chobe ospita una delle più grandi popolazioni di elefanti al mondo, mentre le saline del Makgadikgadi e il Kalahari offrono paesaggi lunari e incontri con i suricati.",
+      "Ideale per safari di alto livello di 7–10 giorni, spesso abbinati alle cascate Vittoria."
+    ],
+    "facts": {
+      "capital": "Gaborone",
+      "languages": "Inglese e setswana",
+      "currency": "Pula del Botswana (BWP)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo a Johannesburg per Maun o Kasane",
+      "bestPeriod": "Maggio–ottobre (stagione secca)",
+      "climate": "Semiarido: giornate calde, notti fredde in inverno australe",
+      "plugs": "Tipi D, G e M, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra; molte piste sabbiose",
+      "documents": "Passaporto con almeno 2 pagine libere; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Delta dell'Okavango",
+        "description": "Safari in mokoro tra canali e isole.",
+        "search": "Delta dell'Okavango"
+      },
+      {
+        "name": "Parco del Chobe",
+        "description": "Elefanti sul fiume.",
+        "search": "Parco nazionale del Chobe"
+      },
+      {
+        "name": "Saline del Makgadikgadi",
+        "description": "Distese di sale e suricati.",
+        "search": "Makgadikgadi"
+      },
+      {
+        "name": "Riserva di Moremi",
+        "description": "Fauna nel cuore del delta.",
+        "search": "Riserva di Moremi"
+      },
+      {
+        "name": "Kalahari centrale",
+        "description": "Il deserto dei leoni dalla criniera nera.",
+        "search": "Riserva del Kalahari Centrale"
+      },
+      {
+        "name": "Colline di Tsodilo",
+        "description": "Arte rupestre dei San.",
+        "search": "Tsodilo"
+      }
+    ],
+    "gettingAround": [
+      "Voli charter tra i campi",
+      "Safari in fuoristrada e mokoro",
+      "Self drive solo per esperti"
+    ],
+    "food": [
+      "Seswaa, carne sfilacciata",
+      "Pap, polenta di mais",
+      "Carne alla griglia"
+    ],
+    "tips": [
+      "Bagaglio morbido di massimo 20 kg sui voli charter",
+      "Profilassi antimalarica nel nord",
+      "Campi da prenotare con molti mesi di anticipo"
+    ]
+  },
+  "ZM": {
+    "tagline": "Le cascate Vittoria, safari a piedi e il fiume Zambesi.",
+    "description": [
+      "Lo Zambia condivide con lo Zimbabwe le cascate Vittoria, uno spettacolo naturale tra i più impressionanti al mondo, da ammirare anche dalla Devil's Pool in stagione secca.",
+      "Il parco di South Luangwa è la patria del safari a piedi, con leopardi e grandi branchi di elefanti; il Lower Zambezi offre canoa tra ippopotami e coccodrilli.",
+      "Il Kafue, uno dei parchi più grandi d'Africa, e le pianure di Liuwa con la seconda migrazione di gnu completano il viaggio.",
+      "Ideale per safari autentici e meno affollati, 8–12 giorni."
+    ],
+    "facts": {
+      "capital": "Lusaka",
+      "languages": "Inglese; bemba e nyanja",
+      "currency": "Kwacha zambiano (ZMW)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Lusaka o Livingstone",
+      "bestPeriod": "Giugno–ottobre",
+      "climate": "Tropicale di altitudine: stagione secca da maggio a ottobre",
+      "plugs": "Tipi C, D e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto con pagine libere; visto (all'arrivo o elettronico), con possibile visto combinato KAZA per lo Zimbabwe. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cascate Vittoria",
+        "description": "Il fumo che tuona.",
+        "search": "Cascate Vittoria"
+      },
+      {
+        "name": "South Luangwa",
+        "description": "Il parco dei safari a piedi.",
+        "search": "Parco nazionale di South Luangwa"
+      },
+      {
+        "name": "Lower Zambezi",
+        "description": "Canoa tra ippopotami.",
+        "search": "Parco nazionale del Basso Zambesi"
+      },
+      {
+        "name": "Kafue",
+        "description": "Uno dei parchi più grandi d'Africa.",
+        "search": "Parco nazionale del Kafue"
+      },
+      {
+        "name": "Devil's Pool",
+        "description": "La piscina sull'orlo delle cascate.",
+        "search": "Devil's Pool"
+      },
+      {
+        "name": "Liuwa Plain",
+        "description": "La seconda migrazione di gnu.",
+        "search": "Parco nazionale di Liuwa Plain"
+      }
+    ],
+    "gettingAround": [
+      "Voli charter tra i parchi",
+      "Fuoristrada con guida",
+      "Canoa sullo Zambesi"
+    ],
+    "food": [
+      "Nshima, polenta di mais",
+      "Pesce del lago (bream)",
+      "Carne alla griglia"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Le cascate sono più piene tra febbraio e maggio",
+      "Visto KAZA comodo per lo Zimbabwe"
+    ]
+  },
+  "ZW": {
+    "tagline": "Le cascate Vittoria, l'Hwange e le rovine del Grande Zimbabwe.",
+    "description": [
+      "Lo Zimbabwe offre la vista più ampia delle cascate Vittoria, con sentieri nella foresta pluviale creata dagli spruzzi.",
+      "Il parco di Hwange ospita grandi branchi di elefanti, il lago Kariba e il parco di Mana Pools sono perfetti per safari in barca e a piedi.",
+      "Le rovine del Grande Zimbabwe, città di pietra medievale patrimonio UNESCO, e le colline del Matobo con l'arte rupestre raccontano una storia antica.",
+      "Ideale per safari e cascate, 7–10 giorni, spesso abbinato a Botswana e Zambia."
+    ],
+    "facts": {
+      "capital": "Harare",
+      "languages": "Inglese, shona e ndebele",
+      "currency": "ZiG e dollaro statunitense, molto usato",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Victoria Falls o Harare",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale di altitudine",
+      "plugs": "Tipi D e G, 220 V: utile un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto con pagine libere; visto all'arrivo o elettronico (anche KAZA). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cascate Vittoria",
+        "description": "La vista dal lato dello Zimbabwe.",
+        "search": "Cascate Vittoria"
+      },
+      {
+        "name": "Parco di Hwange",
+        "description": "Elefanti a migliaia.",
+        "search": "Parco nazionale di Hwange"
+      },
+      {
+        "name": "Grande Zimbabwe",
+        "description": "La città di pietra medievale.",
+        "search": "Grande Zimbabwe"
+      },
+      {
+        "name": "Mana Pools",
+        "description": "Safari a piedi sullo Zambesi.",
+        "search": "Parco nazionale di Mana Pools"
+      },
+      {
+        "name": "Lago Kariba",
+        "description": "Tramonti e houseboat.",
+        "search": "Lago Kariba"
+      },
+      {
+        "name": "Matobo",
+        "description": "Colline di granito e arte rupestre.",
+        "search": "Parco nazionale Matobo"
+      }
+    ],
+    "gettingAround": [
+      "Voli charter e interni",
+      "Fuoristrada con guida",
+      "Houseboat sul Kariba"
+    ],
+    "food": [
+      "Sadza, polenta di mais",
+      "Carne alla griglia",
+      "Pesce kapenta"
+    ],
+    "tips": [
+      "Dollari in contanti in piccolo taglio",
+      "Profilassi antimalarica",
+      "Impermeabile per le cascate"
+    ]
+  },
+  "MW": {
+    "tagline": "Il lago Malawi, il cuore caldo dell'Africa.",
+    "description": [
+      "Il Malawi è chiamato il cuore caldo dell'Africa per la gentilezza dei suoi abitanti. Il lago Malawi, con acque limpide e centinaia di specie di pesci colorati, occupa gran parte del paese.",
+      "Cape Maclear e l'isola di Likoma sono perfette per snorkeling, kayak e relax sulle spiagge del lago.",
+      "Il parco di Liwonde offre safari in barca tra ippopotami ed elefanti, mentre l'altopiano di Zomba e il massiccio del Mulanje sono ideali per il trekking.",
+      "Ideale come estensione rilassante di un safari in Zambia o Tanzania."
+    ],
+    "facts": {
+      "capital": "Lilongwe",
+      "languages": "Inglese e chichewa",
+      "currency": "Kwacha malawiano (MWK)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo per Lilongwe o Blantyre",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale con stagione delle piogge da novembre ad aprile",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per soggiorni turistici i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago Malawi",
+        "description": "Il lago dei ciclidi colorati.",
+        "search": "Lago Malawi"
+      },
+      {
+        "name": "Cape Maclear",
+        "description": "Spiagge e snorkeling.",
+        "search": "Cape Maclear"
+      },
+      {
+        "name": "Parco di Liwonde",
+        "description": "Safari in barca.",
+        "search": "Parco nazionale di Liwonde"
+      },
+      {
+        "name": "Monte Mulanje",
+        "description": "Trekking sul massiccio.",
+        "search": "Monte Mulanje"
+      },
+      {
+        "name": "Isola di Likoma",
+        "description": "La cattedrale sul lago.",
+        "search": "Likoma"
+      },
+      {
+        "name": "Altopiano di Zomba",
+        "description": "Panorami e foreste.",
+        "search": "Zomba"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Battello Ilala sul lago",
+      "Voli interni limitati"
+    ],
+    "food": [
+      "Chambo, pesce del lago",
+      "Nsima",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Attenzione alla bilharzia in alcune zone del lago",
+      "Contanti utili"
+    ]
+  },
+  "MZ": {
+    "tagline": "Arcipelaghi tropicali, dhow a vela e spiagge infinite sull'Oceano Indiano.",
+    "description": [
+      "Il Mozambico ha una delle coste più belle d'Africa, con oltre 2.500 chilometri di spiagge sull'Oceano Indiano.",
+      "L'arcipelago di Bazaruto e quello delle Quirimbas offrono isole di sabbia bianca, dugonghi, mante e resort di charme raggiungibili in volo o in dhow.",
+      "L'isola di Mozambico, antica capitale coloniale patrimonio UNESCO, e Maputo con l'architettura portoghese raccontano la storia del paese; Tofo è famosa per gli squali balena.",
+      "Ideale come estensione mare dopo un safari in Sudafrica, 5–8 giorni; alcune zone del nord sono sconsigliate."
+    ],
+    "facts": {
+      "capital": "Maputo",
+      "languages": "Portoghese",
+      "currency": "Metical mozambicano (MZN)",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Johannesburg o Lisbona)",
+      "bestPeriod": "Maggio–novembre",
+      "climate": "Tropicale con stagione umida e cicloni da dicembre a marzo",
+      "plugs": "Tipi C, F e M, 220 V: utile un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Alcune province del nord sono sconsigliate: verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Arcipelago di Bazaruto",
+        "description": "Dune, lagune e dugonghi.",
+        "search": "Arcipelago di Bazaruto"
+      },
+      {
+        "name": "Isola di Mozambico",
+        "description": "L'antica capitale coloniale.",
+        "search": "Isola di Mozambico"
+      },
+      {
+        "name": "Quirimbas",
+        "description": "Isole remote del nord.",
+        "search": "Arcipelago delle Quirimbas"
+      },
+      {
+        "name": "Tofo",
+        "description": "Squali balena e mante.",
+        "search": "Tofo"
+      },
+      {
+        "name": "Maputo",
+        "description": "La stazione e il mercato.",
+        "search": "Maputo"
+      },
+      {
+        "name": "Vilanculos",
+        "description": "Porta per il Bazaruto.",
+        "search": "Vilanculos"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni e charter",
+      "Dhow e barche tra le isole",
+      "Transfer organizzati"
+    ],
+    "food": [
+      "Gamberoni al piri piri",
+      "Matapa",
+      "Pesce e aragosta"
+    ],
+    "tips": [
+      "Verificare le zone sconsigliate del nord",
+      "Profilassi antimalarica",
+      "Contanti in metical o rand"
+    ]
+  },
+  "LS": {
+    "tagline": "Il regno nel cielo: montagne, villaggi basotho e passi spettacolari.",
+    "description": [
+      "Il Lesotho è un piccolo regno montuoso interamente circondato dal Sudafrica, con il punto più basso a oltre 1.400 metri.",
+      "Il passo di Sani, una delle strade più spettacolari d'Africa, sale dal Sudafrica tra tornanti vertiginosi; la cascata di Maletsunyane è tra le più alte del continente.",
+      "Le escursioni a cavallo con i pony basotho, i villaggi tradizionali e le piste da sci di Afriski offrono esperienze uniche.",
+      "Ideale come estensione avventurosa di un viaggio in Sudafrica, 2–4 giorni."
+    ],
+    "facts": {
+      "capital": "Maseru",
+      "languages": "Sesotho e inglese",
+      "currency": "Loti (LSL), alla pari con il rand sudafricano",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Via Johannesburg, poi in auto",
+      "bestPeriod": "Settembre–aprile; inverno per la neve",
+      "climate": "Montano: estati miti, inverni freddi e nevosi",
+      "plugs": "Tipo M, 220 V: serve un adattatore",
+      "driving": "Si guida a sinistra; 4x4 per il passo di Sani",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Passo di Sani",
+        "description": "Tornanti vertiginosi tra le montagne.",
+        "search": "Passo di Sani"
+      },
+      {
+        "name": "Cascata di Maletsunyane",
+        "description": "Un salto di quasi 200 metri.",
+        "search": "Cascata di Maletsunyane"
+      },
+      {
+        "name": "Thaba Bosiu",
+        "description": "La montagna sacra dei basotho.",
+        "search": "Thaba Bosiu"
+      },
+      {
+        "name": "Parco di Sehlabathebe",
+        "description": "Paesaggi d'alta quota.",
+        "search": "Parco nazionale di Sehlabathebe"
+      },
+      {
+        "name": "Diga di Katse",
+        "description": "Il grande lago artificiale.",
+        "search": "Diga di Katse"
+      },
+      {
+        "name": "Afriski",
+        "description": "Sci in Africa.",
+        "search": "Afriski"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada",
+      "Pony basotho per le escursioni",
+      "Tour dal Sudafrica"
+    ],
+    "food": [
+      "Papa, polenta di mais",
+      "Moroho, verdure",
+      "Carne di montone"
+    ],
+    "tips": [
+      "Strade di montagna impegnative",
+      "Freddo in inverno",
+      "Coperte basotho, tipico souvenir"
+    ]
+  },
+  "SZ": {
+    "tagline": "Riserve naturali, cerimonie reali e artigianato nel piccolo regno di Eswatini.",
+    "description": [
+      "Eswatini, l'ex Swaziland, è uno degli ultimi regni assoluti d'Africa, piccolo e accogliente, tra Sudafrica e Mozambico.",
+      "Le riserve di Hlane, Mlilwane e Mkhaya offrono safari a piedi, in bicicletta e in fuoristrada con rinoceronti ed elefanti.",
+      "Le cerimonie tradizionali come l'Umhlanga, la danza delle canne, e l'artigianato di candele e vetro sono parte del fascino del paese.",
+      "Ideale come tappa di 1–3 giorni tra il Kruger e il Mozambico o il KwaZulu-Natal."
+    ],
+    "facts": {
+      "capital": "Mbabane (capitale reale e legislativa: Lobamba)",
+      "languages": "Swati e inglese",
+      "currency": "Lilangeni (SZL), alla pari con il rand",
+      "timezone": "Un'ora in più rispetto all'Italia (stessa ora quando in Italia c'è l'ora legale)",
+      "flight": "Via Johannesburg, poi in auto o volo interno",
+      "bestPeriod": "Maggio–settembre per i safari",
+      "climate": "Subtropicale con estati piovose",
+      "plugs": "Tipo M, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; per soggiorni brevi di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Hlane Royal National Park",
+        "description": "Leoni, elefanti e rinoceronti.",
+        "search": "Parco nazionale reale di Hlane"
+      },
+      {
+        "name": "Mlilwane",
+        "description": "Safari in bicicletta e a cavallo.",
+        "search": "Mlilwane"
+      },
+      {
+        "name": "Mkhaya",
+        "description": "La riserva dei rinoceronti neri.",
+        "search": "Riserva di Mkhaya"
+      },
+      {
+        "name": "Valle di Ezulwini",
+        "description": "Artigianato e cultura.",
+        "search": "Ezulwini"
+      },
+      {
+        "name": "Sibebe Rock",
+        "description": "Uno dei monoliti di granito più grandi.",
+        "search": "Sibebe"
+      },
+      {
+        "name": "Ngwenya Glass",
+        "description": "Il laboratorio di vetro riciclato.",
+        "search": "Ngwenya"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio dal Sudafrica",
+      "Tour organizzati",
+      "Distanze brevi"
+    ],
+    "food": [
+      "Sishwala, porridge",
+      "Carne alla griglia",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Ottimo abbinamento al Kruger",
+      "Rispettare le cerimonie reali",
+      "Profilassi antimalarica in alcune zone"
+    ]
+  },
+  "KM": {
+    "tagline": "Isole vulcaniche, profumi di ylang-ylang e mare quasi inesplorato.",
+    "description": [
+      "Le Comore sono un arcipelago vulcanico nell'Oceano Indiano tra Madagascar e Mozambico, chiamate le isole dei profumi per le coltivazioni di ylang-ylang, vaniglia e chiodi di garofano.",
+      "Grande Comore ospita il vulcano Karthala, uno dei più attivi al mondo; Mohéli è un parco marino dove nidificano le tartarughe e nuotano le balene.",
+      "Il turismo è poco sviluppato e la vita scorre lenta tra villaggi, medine e spiagge deserte.",
+      "Per viaggiatori avventurosi che cercano isole fuori dai circuiti classici."
+    ],
+    "facts": {
+      "capital": "Moroni",
+      "languages": "Comoriano, francese e arabo",
+      "currency": "Franco delle Comore (KMF)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno o due scali per Moroni",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale con stagione umida da novembre ad aprile",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto e visto all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Vulcano Karthala",
+        "description": "Il grande vulcano attivo.",
+        "search": "Karthala"
+      },
+      {
+        "name": "Parco marino di Mohéli",
+        "description": "Tartarughe e balene.",
+        "search": "Parco nazionale di Mohéli"
+      },
+      {
+        "name": "Moroni",
+        "description": "La medina e il vecchio porto.",
+        "search": "Moroni"
+      },
+      {
+        "name": "Anjouan",
+        "description": "Montagne e cascate.",
+        "search": "Anjouan"
+      },
+      {
+        "name": "Lago Salé",
+        "description": "Il lago in un cratere sul mare.",
+        "search": "Lac Salé"
+      },
+      {
+        "name": "Spiaggia di Itsandra",
+        "description": "Spiaggia vicino a Moroni.",
+        "search": "Itsandra"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni tra le isole",
+      "Taxi collettivi",
+      "Barche"
+    ],
+    "food": [
+      "Pesce al cocco",
+      "Riso e manioca",
+      "Spezie locali"
+    ],
+    "tips": [
+      "Infrastrutture limitate",
+      "Abbigliamento sobrio",
+      "Contanti indispensabili"
+    ]
+  }
+}

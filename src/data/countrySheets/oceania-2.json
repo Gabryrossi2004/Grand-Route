@@ -1,0 +1,1022 @@
+{
+  "FJ": {
+    "tagline": "Isole coralline, accoglienza «bula» e lagune per ogni sogno.",
+    "description": [
+      "Le Figi sono un arcipelago di oltre 300 isole nel Pacifico meridionale, famose per l'accoglienza calorosa riassunta nel saluto «bula».",
+      "Le Mamanuca e le Yasawa offrono isole di sabbia bianca, barriere coralline e resort per ogni budget; la costa dei coralli di Viti Levu è comoda e varia.",
+      "Taveuni, l'isola giardino, e la barriera di Rainbow Reef sono tra i migliori luoghi al mondo per le immersioni sui coralli molli; i villaggi tradizionali accolgono i visitatori con la cerimonia della kava.",
+      "Ideale per viaggi di nozze e famiglie, 7–10 giorni, spesso abbinato ad Australia o Nuova Zelanda."
+    ],
+    "facts": {
+      "capital": "Suva",
+      "languages": "Inglese, figiano e hindi figiano",
+      "currency": "Dollaro figiano (FJD)",
+      "timezone": "11 ore in più rispetto all'Italia (10 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 24–26 ore con due scali per Nadi",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale; stagione umida e cicloni da novembre ad aprile",
+      "plugs": "Tipo I, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Isole Mamanuca",
+        "description": "Isole e resort vicino a Nadi.",
+        "search": "Isole Mamanuca"
+      },
+      {
+        "name": "Isole Yasawa",
+        "description": "Spiagge remote e grotte.",
+        "search": "Isole Yasawa"
+      },
+      {
+        "name": "Taveuni",
+        "description": "L'isola giardino.",
+        "search": "Taveuni"
+      },
+      {
+        "name": "Rainbow Reef",
+        "description": "Coralli molli colorati.",
+        "search": "Rainbow Reef"
+      },
+      {
+        "name": "Suva",
+        "description": "La capitale e il museo delle Figi.",
+        "search": "Suva"
+      },
+      {
+        "name": "Garden of the Sleeping Giant",
+        "description": "Giardino di orchidee.",
+        "search": "Garden of the Sleeping Giant"
+      }
+    ],
+    "gettingAround": [
+      "Traghetti e catamarani tra le isole",
+      "Idrovolanti e voli interni",
+      "Transfer organizzati"
+    ],
+    "food": [
+      "Kokoda, pesce marinato al cocco",
+      "Lovo, cottura sotterranea",
+      "Curry di influenza indiana"
+    ],
+    "tips": [
+      "Abbigliamento coprente nei villaggi",
+      "Portare un pacchetto di kava come dono",
+      "Protezione solare compatibile con la barriera"
+    ]
+  },
+  "NC": {
+    "tagline": "La laguna più grande del mondo e un angolo di Francia nel Pacifico.",
+    "description": [
+      "La Nuova Caledonia è una collettività francese nel Pacifico, circondata da una delle lagune più grandi del mondo, patrimonio UNESCO.",
+      "Nouméa unisce atmosfera francese, spiagge urbane e il centro culturale Tjibaou di Renzo Piano, dedicato alla cultura kanak.",
+      "L'Île des Pins con le sue piscine naturali e gli araucarie, le isole della Lealtà e la costa selvaggia di Grande Terre completano il viaggio.",
+      "Ideale per 7–10 giorni, spesso abbinata all'Australia o alla Nuova Zelanda."
+    ],
+    "facts": {
+      "capital": "Nouméa",
+      "languages": "Francese; lingue kanak",
+      "currency": "Franco CFP (XPF)",
+      "timezone": "10 ore in più rispetto all'Italia (9 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 24 ore con scali (Parigi, Tokyo o Sydney)",
+      "bestPeriod": "Settembre–dicembre",
+      "climate": "Tropicale temperato; cicloni possibili da gennaio a marzo",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Carta d'identità o passaporto (territorio francese); verificare i documenti per i paesi di scalo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Île des Pins",
+        "description": "Piscine naturali e araucarie.",
+        "search": "Isola dei Pini (Nuova Caledonia)"
+      },
+      {
+        "name": "Centro culturale Tjibaou",
+        "description": "L'architettura di Renzo Piano.",
+        "search": "Centro culturale Tjibaou"
+      },
+      {
+        "name": "Laguna della Nuova Caledonia",
+        "description": "Patrimonio UNESCO.",
+        "search": "Lagune della Nuova Caledonia"
+      },
+      {
+        "name": "Ouvéa",
+        "description": "Isola della Lealtà dalle spiagge infinite.",
+        "search": "Ouvéa"
+      },
+      {
+        "name": "Cuore di Voh",
+        "description": "Mangrovie a forma di cuore.",
+        "search": "Cuore di Voh"
+      },
+      {
+        "name": "Nouméa",
+        "description": "Anse Vata e il centro.",
+        "search": "Nouméa"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni per le isole",
+      "Auto a noleggio a Grande Terre",
+      "Traghetti"
+    ],
+    "food": [
+      "Bougna, cottura kanak",
+      "Pesce e frutti di mare",
+      "Cucina francese"
+    ],
+    "tips": [
+      "Prezzi alti",
+      "Cultura kanak da rispettare",
+      "Ottimo per immersioni"
+    ]
+  },
+  "PG": {
+    "tagline": "Festival tribali, foreste e immersioni straordinarie in un mondo a parte.",
+    "description": [
+      "La Papua Nuova Guinea è uno dei paesi più culturalmente vari del mondo, con oltre 800 lingue e tradizioni tribali ancora vive.",
+      "I festival degli altipiani, come il Goroka Show e il Mount Hagen Show, riuniscono gruppi tribali con trucchi e costumi spettacolari.",
+      "Il fiume Sepik con i villaggi e le case degli spiriti, il percorso storico di Kokoda e i fondali della baia di Milne e della Nuova Britannia attirano viaggiatori esperti e subacquei.",
+      "Per viaggiatori avventurosi, con operatori specializzati; la sicurezza nelle città va considerata."
+    ],
+    "facts": {
+      "capital": "Port Moresby",
+      "languages": "Inglese, tok pisin e hiri motu",
+      "currency": "Kina (PGK)",
+      "timezone": "9 ore in più rispetto all'Italia (8 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 24–28 ore con scali (Singapore, Manila o Brisbane)",
+      "bestPeriod": "Maggio–ottobre; settembre per i festival",
+      "climate": "Tropicale umido",
+      "plugs": "Tipo I, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; solo con autista",
+      "documents": "Passaporto e visto elettronico. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Goroka Show",
+        "description": "Il festival tribale degli altipiani.",
+        "search": "Goroka"
+      },
+      {
+        "name": "Fiume Sepik",
+        "description": "Villaggi e case degli spiriti.",
+        "search": "Sepik"
+      },
+      {
+        "name": "Kokoda Track",
+        "description": "Il sentiero storico.",
+        "search": "Kokoda Track"
+      },
+      {
+        "name": "Tufi",
+        "description": "Fiordi tropicali e immersioni.",
+        "search": "Tufi"
+      },
+      {
+        "name": "Rabaul",
+        "description": "Vulcani e relitti.",
+        "search": "Rabaul"
+      },
+      {
+        "name": "Mount Hagen",
+        "description": "Lo show culturale.",
+        "search": "Mount Hagen"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni indispensabili",
+      "Barche lungo i fiumi",
+      "Tour organizzati"
+    ],
+    "food": [
+      "Mumu, cottura in forno di terra",
+      "Patate dolci",
+      "Pesce e cocco"
+    ],
+    "tips": [
+      "Viaggiare con operatori esperti",
+      "Prudenza a Port Moresby",
+      "Profilassi antimalarica"
+    ]
+  },
+  "SB": {
+    "tagline": "Relitti della seconda guerra mondiale, lagune e villaggi del Pacifico.",
+    "description": [
+      "Le Isole Salomone sono un arcipelago poco turistico, con lagune incontaminate, villaggi tradizionali e alcuni dei migliori siti di immersione sui relitti al mondo.",
+      "La laguna di Marovo, una delle più grandi lagune a doppia barriera, e i villaggi su palafitte di Langa Langa offrono esperienze autentiche.",
+      "Guadalcanal custodisce i luoghi delle battaglie della seconda guerra mondiale.",
+      "Per subacquei e viaggiatori in cerca di isole autentiche."
+    ],
+    "facts": {
+      "capital": "Honiara",
+      "languages": "Inglese; pijin delle Salomone",
+      "currency": "Dollaro delle Isole Salomone (SBD)",
+      "timezone": "10 ore in più rispetto all'Italia (9 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Brisbane o Port Moresby",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale umido",
+      "plugs": "Tipo I e G, 220 V",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto; permesso di visita all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Laguna di Marovo",
+        "description": "La grande laguna a doppia barriera.",
+        "search": "Laguna di Marovo"
+      },
+      {
+        "name": "Guadalcanal",
+        "description": "I luoghi della battaglia.",
+        "search": "Guadalcanal"
+      },
+      {
+        "name": "Gizo",
+        "description": "Immersioni sui relitti.",
+        "search": "Gizo"
+      },
+      {
+        "name": "Langa Langa",
+        "description": "Villaggi su isole artificiali.",
+        "search": "Laguna di Langa Langa"
+      },
+      {
+        "name": "Rennell",
+        "description": "Il lago Tegano.",
+        "search": "Rennell"
+      },
+      {
+        "name": "Honiara",
+        "description": "La capitale e il mercato.",
+        "search": "Honiara"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Barche tra le isole",
+      "Servizi essenziali"
+    ],
+    "food": [
+      "Pesce e cocco",
+      "Taro e patate dolci",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "Profilassi antimalarica",
+      "Infrastrutture limitate",
+      "Rispettare le proprietà dei villaggi"
+    ]
+  },
+  "VU": {
+    "tagline": "Vulcani attivi, salti dalle torri di liane e spiagge di sabbia nera e bianca.",
+    "description": [
+      "Vanuatu è un arcipelago di 83 isole del Pacifico con natura e cultura sorprendenti.",
+      "Sull'isola di Tanna si può guardare da vicino il cratere del vulcano Yasur, uno dei vulcani attivi più accessibili al mondo.",
+      "Pentecoste è famosa per il «naghol», il salto rituale da torri di legno con liane alle caviglie, antenato del bungee jumping; Espiritu Santo offre i blue holes e Champagne Beach.",
+      "Ideale per viaggiatori curiosi e subacquei, spesso abbinato all'Australia o alla Nuova Caledonia."
+    ],
+    "facts": {
+      "capital": "Port Vila",
+      "languages": "Bislama, inglese e francese",
+      "currency": "Vatu (VUV)",
+      "timezone": "10 ore in più rispetto all'Italia (9 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Australia o Figi",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale; cicloni da novembre ad aprile",
+      "plugs": "Tipo I, 220 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per turismo di solito non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Vulcano Yasur",
+        "description": "Il cratere attivo di Tanna.",
+        "search": "Yasur"
+      },
+      {
+        "name": "Champagne Beach",
+        "description": "La spiaggia bianca di Santo.",
+        "search": "Champagne Beach (Vanuatu)"
+      },
+      {
+        "name": "Blue holes di Espiritu Santo",
+        "description": "Piscine d'acqua dolce turchesi.",
+        "search": "Espiritu Santo"
+      },
+      {
+        "name": "Pentecoste",
+        "description": "Il salto dalle torri di liane.",
+        "search": "Pentecoste (Vanuatu)"
+      },
+      {
+        "name": "Relitto SS President Coolidge",
+        "description": "Uno dei relitti più famosi.",
+        "search": "SS President Coolidge"
+      },
+      {
+        "name": "Port Vila",
+        "description": "La capitale e la laguna.",
+        "search": "Port Vila"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni tra le isole",
+      "Taxi e minibus",
+      "Barche"
+    ],
+    "food": [
+      "Lap lap, piatto nazionale",
+      "Pesce e cocco",
+      "Kava"
+    ],
+    "tips": [
+      "Il naghol si svolge tra aprile e giugno",
+      "Profilassi antimalarica",
+      "Servizi essenziali sulle isole minori"
+    ]
+  },
+  "WS": {
+    "tagline": "Lagune, piscine naturali e il cuore della cultura polinesiana.",
+    "description": [
+      "Samoa è il cuore della cultura polinesiana, dove la «fa'a Samoa», la via samoana, guida ancora la vita quotidiana.",
+      "La To Sua Ocean Trench, una piscina naturale in un cratere, le spiagge di Lalomanu e le fale, capanne aperte sulla spiaggia, sono immagini simbolo.",
+      "Savai'i, la grande isola, offre campi di lava, blowholes e villaggi tradizionali.",
+      "Ideale per un soggiorno autentico e rilassato, spesso abbinato a Nuova Zelanda o Figi."
+    ],
+    "facts": {
+      "capital": "Apia",
+      "languages": "Samoano e inglese",
+      "currency": "Tala samoano (WST)",
+      "timezone": "12 ore in più rispetto all'Italia (11 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Nuova Zelanda, Australia o Figi",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale; stagione umida da novembre ad aprile",
+      "plugs": "Tipo I, 230 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; permesso di ingresso all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "To Sua Ocean Trench",
+        "description": "La piscina nel cratere.",
+        "search": "To Sua Ocean Trench"
+      },
+      {
+        "name": "Spiaggia di Lalomanu",
+        "description": "Fale sulla spiaggia.",
+        "search": "Lalomanu"
+      },
+      {
+        "name": "Savai'i",
+        "description": "Campi di lava e blowholes.",
+        "search": "Savai'i"
+      },
+      {
+        "name": "Alofaaga Blowholes",
+        "description": "Getti d'acqua dalla lava.",
+        "search": "Alofaaga Blowholes"
+      },
+      {
+        "name": "Museo di Robert Louis Stevenson",
+        "description": "La casa dello scrittore.",
+        "search": "Vailima"
+      },
+      {
+        "name": "Papase'ea Sliding Rocks",
+        "description": "Scivoli naturali.",
+        "search": "Papaseea Sliding Rocks"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Autobus colorati",
+      "Traghetto tra Upolu e Savai'i"
+    ],
+    "food": [
+      "Oka, pesce crudo al cocco",
+      "Umu, forno di pietre",
+      "Palusami"
+    ],
+    "tips": [
+      "La domenica è dedicata alla chiesa e al riposo",
+      "Rispettare le regole dei villaggi",
+      "Abbigliamento coprente"
+    ]
+  },
+  "TO": {
+    "tagline": "Nuotare con le megattere nell'ultimo regno della Polinesia.",
+    "description": [
+      "Tonga è l'unico regno della Polinesia e uno dei luoghi migliori al mondo per nuotare con le megattere, tra luglio e ottobre.",
+      "L'arcipelago di Vava'u offre baie protette ideali per la vela, grotte marine e isole disabitate.",
+      "Tongatapu, l'isola principale, ha blowholes spettacolari e il trilite Ha'amonga 'a Maui.",
+      "Per amanti del mare e della natura, 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Nuku'alofa",
+      "languages": "Tongano e inglese",
+      "currency": "Pa'anga (TOP)",
+      "timezone": "12 ore in più rispetto all'Italia (11 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Nuova Zelanda, Australia o Figi",
+      "bestPeriod": "Luglio–ottobre per le balene",
+      "climate": "Tropicale",
+      "plugs": "Tipo I, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto valido; permesso all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Vava'u",
+        "description": "Megattere e vela.",
+        "search": "Vava'u"
+      },
+      {
+        "name": "Mapu'a 'a Vaea",
+        "description": "I blowholes di Tongatapu.",
+        "search": "Mapu'a 'a Vaea"
+      },
+      {
+        "name": "Ha'amonga 'a Maui",
+        "description": "Il trilite di pietra.",
+        "search": "Ha'amonga 'a Maui"
+      },
+      {
+        "name": "Grotta di Swallows",
+        "description": "Grotta marina a Vava'u.",
+        "search": "Swallows Cave"
+      },
+      {
+        "name": "Ha'apai",
+        "description": "Isole remote e tranquille.",
+        "search": "Ha'apai"
+      },
+      {
+        "name": "Nuku'alofa",
+        "description": "Il palazzo reale.",
+        "search": "Nuku'alofa"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Barche e traghetti",
+      "Taxi"
+    ],
+    "food": [
+      "'Ota 'ika, pesce crudo",
+      "Lu pulu",
+      "Frutta tropicale"
+    ],
+    "tips": [
+      "La domenica quasi tutto è chiuso",
+      "Escursioni con le balene da operatori autorizzati",
+      "Abbigliamento sobrio"
+    ]
+  },
+  "CK": {
+    "tagline": "Aitutaki e Rarotonga: lagune turchesi in miniatura nel Pacifico.",
+    "description": [
+      "Le Isole Cook sono un piccolo arcipelago associato alla Nuova Zelanda, con lagune spettacolari e un'atmosfera polinesiana rilassata.",
+      "Rarotonga, l'isola principale, è circondata da una laguna e da montagne verdi da esplorare con sentieri come la Cross Island Track.",
+      "Aitutaki, con la sua laguna considerata tra le più belle del mondo e l'isolotto One Foot Island, è perfetta per i viaggi di nozze.",
+      "Ideale per 7–10 giorni, spesso abbinato alla Nuova Zelanda."
+    ],
+    "facts": {
+      "capital": "Avarua",
+      "languages": "Inglese e maori delle Isole Cook",
+      "currency": "Dollaro neozelandese (NZD)",
+      "timezone": "11 ore in meno rispetto all'Italia (12 ore in meno quando in Italia c'è l'ora legale)",
+      "flight": "Via Auckland",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale",
+      "plugs": "Tipo I, 240 V: serve un adattatore",
+      "driving": "Si guida a sinistra; patente locale per lo scooter",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Laguna di Aitutaki",
+        "description": "Una delle lagune più belle del mondo.",
+        "search": "Aitutaki"
+      },
+      {
+        "name": "One Foot Island",
+        "description": "L'isolotto con l'ufficio postale.",
+        "search": "One Foot Island"
+      },
+      {
+        "name": "Rarotonga",
+        "description": "Laguna e montagne.",
+        "search": "Rarotonga"
+      },
+      {
+        "name": "Muri Beach",
+        "description": "Laguna e isolotti.",
+        "search": "Muri (Rarotonga)"
+      },
+      {
+        "name": "Cross Island Track",
+        "description": "Il sentiero tra le montagne.",
+        "search": "Te Rua Manga"
+      },
+      {
+        "name": "Avarua",
+        "description": "Il mercato del sabato.",
+        "search": "Avarua"
+      }
+    ],
+    "gettingAround": [
+      "Scooter e autobus circolare a Rarotonga",
+      "Voli interni per Aitutaki",
+      "Crociere in laguna"
+    ],
+    "food": [
+      "Ika mata, pesce crudo",
+      "Frutta tropicale",
+      "Pesce alla griglia"
+    ],
+    "tips": [
+      "Prezzi alti",
+      "Nessun grattacielo: atmosfera autentica",
+      "Ottimo per viaggi di nozze"
+    ]
+  },
+  "GU": {
+    "tagline": "Spiagge del Pacifico, cultura chamorro e storia della guerra nel Pacifico.",
+    "description": [
+      "Guam è un territorio statunitense nelle isole Marianne, meta molto popolare per i turisti giapponesi e coreani.",
+      "Tumon Bay offre spiagge e resort, mentre la cultura chamorro si scopre nei villaggi e nelle feste.",
+      "I siti della seconda guerra mondiale, i punti panoramici come Two Lovers Point e le immersioni completano il soggiorno.",
+      "Utile come tappa di un viaggio nel Pacifico occidentale o in Micronesia."
+    ],
+    "facts": {
+      "capital": "Hagåtña",
+      "languages": "Inglese e chamorro",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "9 ore in più rispetto all'Italia (8 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali in Asia (Tokyo, Seul o Manila)",
+      "bestPeriod": "Dicembre–maggio",
+      "climate": "Tropicale; tifoni da luglio a novembre",
+      "plugs": "Tipo A e B, 110 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Regole di ingresso statunitensi (programma Guam-CNMI o ESTA). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tumon Bay",
+        "description": "Spiagge e resort.",
+        "search": "Tumon"
+      },
+      {
+        "name": "Two Lovers Point",
+        "description": "Il belvedere sulla scogliera.",
+        "search": "Two Lovers Point"
+      },
+      {
+        "name": "War in the Pacific National Historical Park",
+        "description": "La storia della guerra.",
+        "search": "War in the Pacific National Historical Park"
+      },
+      {
+        "name": "Isola di Cocos",
+        "description": "Isolotto e laguna.",
+        "search": "Isola di Cocos (Guam)"
+      },
+      {
+        "name": "Hagåtña",
+        "description": "La capitale e la piazza di Spagna.",
+        "search": "Hagåtña"
+      },
+      {
+        "name": "Fort Soledad",
+        "description": "Il forte spagnolo.",
+        "search": "Umatac"
+      }
+    ],
+    "gettingAround": [
+      "Auto a noleggio",
+      "Autobus turistici",
+      "Taxi"
+    ],
+    "food": [
+      "Kelaguen",
+      "Riso rosso chamorro",
+      "Barbecue"
+    ],
+    "tips": [
+      "Verificare le regole di ingresso statunitensi",
+      "Stagione dei tifoni da considerare",
+      "Prezzi americani"
+    ]
+  },
+  "PW": {
+    "tagline": "Le Rock Islands e il lago delle meduse: uno dei paradisi subacquei del pianeta.",
+    "description": [
+      "Palau è un arcipelago della Micronesia famoso per le Rock Islands, centinaia di isolotti calcarei a forma di fungo coperti di vegetazione, patrimonio UNESCO.",
+      "Il lago delle meduse, dove nuotare tra meduse innocue, e i siti di immersione come Blue Corner sono celebri nel mondo.",
+      "Palau è pioniera nella protezione dell'oceano: ai visitatori si chiede di firmare un impegno ambientale.",
+      "Ideale per subacquei e amanti del mare, 7–10 giorni."
+    ],
+    "facts": {
+      "capital": "Ngerulmud",
+      "languages": "Palauano e inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "8 ore in più rispetto all'Italia (7 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali in Asia (Taipei, Seul o Manila)",
+      "bestPeriod": "Novembre–aprile",
+      "climate": "Tropicale umido",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido; permesso all'arrivo e impegno ambientale. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Rock Islands",
+        "description": "Isolotti a fungo e lagune.",
+        "search": "Rock Islands"
+      },
+      {
+        "name": "Jellyfish Lake",
+        "description": "Nuotare tra le meduse.",
+        "search": "Jellyfish Lake"
+      },
+      {
+        "name": "Blue Corner",
+        "description": "Uno dei siti di immersione più famosi.",
+        "search": "Palau"
+      },
+      {
+        "name": "Milky Way",
+        "description": "Laguna dal fango bianco.",
+        "search": "Rock Islands Southern Lagoon"
+      },
+      {
+        "name": "Cascate di Ngardmau",
+        "description": "Le cascate più alte della Micronesia.",
+        "search": "Cascate di Ngardmau"
+      },
+      {
+        "name": "Koror",
+        "description": "La città principale.",
+        "search": "Koror"
+      }
+    ],
+    "gettingAround": [
+      "Barche per le Rock Islands",
+      "Auto a noleggio a Babeldaob",
+      "Taxi"
+    ],
+    "food": [
+      "Pesce e frutti di mare",
+      "Taro",
+      "Influenze giapponesi e americane"
+    ],
+    "tips": [
+      "Permesso per le Rock Islands da acquistare",
+      "Protezione solare compatibile con la barriera",
+      "Ottimo per immersioni tutto l'anno"
+    ]
+  },
+  "FM": {
+    "tagline": "Le rovine di Nan Madol e i relitti di Chuuk nella remota Micronesia.",
+    "description": [
+      "Gli Stati Federati di Micronesia comprendono centinaia di isole sparse nel Pacifico, divise in quattro stati con culture diverse.",
+      "Pohnpei custodisce Nan Madol, una città di pietra costruita su isolotti artificiali; Chuuk è famosa per la laguna con decine di relitti della seconda guerra mondiale.",
+      "Yap conserva le monete di pietra giganti e Kosrae offre natura incontaminata.",
+      "Per subacquei e viaggiatori in cerca di luoghi remoti."
+    ],
+    "facts": {
+      "capital": "Palikir",
+      "languages": "Inglese e lingue locali",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "A Pohnpei: 10 ore in più rispetto all'Italia (9 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Guam o Hawaii",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale umido",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Nan Madol",
+        "description": "La città di pietra sull'acqua.",
+        "search": "Nan Madol"
+      },
+      {
+        "name": "Laguna di Chuuk",
+        "description": "Relitti sottomarini.",
+        "search": "Laguna di Chuuk"
+      },
+      {
+        "name": "Yap",
+        "description": "Le monete di pietra.",
+        "search": "Yap"
+      },
+      {
+        "name": "Kosrae",
+        "description": "Natura incontaminata.",
+        "search": "Kosrae"
+      },
+      {
+        "name": "Pohnpei",
+        "description": "Cascate e montagne.",
+        "search": "Pohnpei"
+      },
+      {
+        "name": "Rai di Yap",
+        "description": "Monete di pietra giganti.",
+        "search": "Rai (moneta)"
+      }
+    ],
+    "gettingAround": [
+      "Voli Island Hopper",
+      "Barche",
+      "Servizi limitati"
+    ],
+    "food": [
+      "Pesce",
+      "Taro e frutto dell'albero del pane",
+      "Cocco"
+    ],
+    "tips": [
+      "Collegamenti rari",
+      "Rispettare le usanze locali",
+      "Ideale per subacquei esperti"
+    ]
+  },
+  "MH": {
+    "tagline": "Atolli corallini sperduti nel Pacifico e il mito di Bikini.",
+    "description": [
+      "Le Isole Marshall sono una catena di atolli corallini nel Pacifico centrale, tra i luoghi più remoti del pianeta.",
+      "L'atollo di Bikini, sede di esperimenti nucleari, oggi è noto ai subacquei per la flotta di navi affondate; Majuro è la capitale su un atollo sottile.",
+      "Le lagune turchesi e la cultura marittima, con le antiche carte di navigazione a bastoncini, sono il fascino del paese.",
+      "Per viaggiatori collezionisti di luoghi remoti e subacquei."
+    ],
+    "facts": {
+      "capital": "Majuro",
+      "languages": "Marshallese e inglese",
+      "currency": "Dollaro statunitense (USD)",
+      "timezone": "11 ore in più rispetto all'Italia (10 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Hawaii o Guam",
+      "bestPeriod": "Dicembre–aprile",
+      "climate": "Tropicale",
+      "plugs": "Tipo A e B, 120 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto valido. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Atollo di Bikini",
+        "description": "Relitti e storia nucleare.",
+        "search": "Atollo di Bikini"
+      },
+      {
+        "name": "Majuro",
+        "description": "La capitale sull'atollo.",
+        "search": "Majuro"
+      },
+      {
+        "name": "Arno",
+        "description": "Atollo tranquillo vicino a Majuro.",
+        "search": "Arno (atollo)"
+      },
+      {
+        "name": "Laguna di Majuro",
+        "description": "Snorkeling e barche.",
+        "search": "Atollo di Majuro"
+      },
+      {
+        "name": "Kwajalein",
+        "description": "Una delle lagune più grandi.",
+        "search": "Kwajalein"
+      },
+      {
+        "name": "Museo Alele",
+        "description": "Cultura e navigazione marshallese.",
+        "search": "Isole Marshall"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni rari",
+      "Barche",
+      "Taxi condivisi a Majuro"
+    ],
+    "food": [
+      "Pesce",
+      "Frutto dell'albero del pane",
+      "Cocco"
+    ],
+    "tips": [
+      "Collegamenti molto limitati",
+      "Servizi essenziali",
+      "Bikini accessibile solo con spedizioni speciali"
+    ]
+  },
+  "KI": {
+    "tagline": "Atolli a cavallo dell'equatore e il primo alba del mondo.",
+    "description": [
+      "Kiribati è un insieme di atolli sparsi su un'area oceanica immensa, a cavallo dell'equatore e della linea del cambio di data.",
+      "L'atollo di Kiritimati (Christmas Island) è una meta di pesca sportiva al bonefish e di birdwatching; Tarawa conserva testimonianze della seconda guerra mondiale.",
+      "La vita scorre lenta, legata al mare e alle tradizioni.",
+      "Per pescatori sportivi e viaggiatori in cerca di luoghi estremi."
+    ],
+    "facts": {
+      "capital": "Tarawa Sud",
+      "languages": "Gilbertese e inglese",
+      "currency": "Dollaro australiano (AUD)",
+      "timezone": "A Tarawa: 11 ore in più rispetto all'Italia (10 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scali via Figi o Hawaii",
+      "bestPeriod": "Aprile–ottobre",
+      "climate": "Tropicale equatoriale",
+      "plugs": "Tipo I, 240 V",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto; verificare la necessità del visto su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Kiritimati",
+        "description": "Pesca sportiva e uccelli marini.",
+        "search": "Kiritimati"
+      },
+      {
+        "name": "Tarawa",
+        "description": "La capitale e la storia della guerra.",
+        "search": "Tarawa"
+      },
+      {
+        "name": "Isole Phoenix",
+        "description": "Area marina protetta.",
+        "search": "Area protetta delle Isole Phoenix"
+      },
+      {
+        "name": "Abemama",
+        "description": "L'atollo di Stevenson.",
+        "search": "Abemama"
+      },
+      {
+        "name": "Laguna di Tarawa",
+        "description": "Barche e villaggi.",
+        "search": "Atollo di Tarawa"
+      },
+      {
+        "name": "Butaritari",
+        "description": "Atollo verde del nord.",
+        "search": "Butaritari"
+      }
+    ],
+    "gettingAround": [
+      "Voli rari",
+      "Barche",
+      "Servizi molto limitati"
+    ],
+    "food": [
+      "Pesce",
+      "Taro",
+      "Cocco"
+    ],
+    "tips": [
+      "Collegamenti rarissimi",
+      "Servizi essenziali",
+      "Pesca sportiva da prenotare con operatori specializzati"
+    ]
+  },
+  "TV": {
+    "tagline": "Uno dei paesi più piccoli e remoti del mondo, minacciato dall'oceano.",
+    "description": [
+      "Tuvalu è un piccolo arcipelago di atolli nel Pacifico, tra gli stati meno visitati al mondo.",
+      "La laguna di Funafuti, con l'area di conservazione marina, offre acque turchesi e isolotti disabitati.",
+      "Il paese è simbolo della lotta ai cambiamenti climatici, perché il punto più alto è a pochi metri sul livello del mare.",
+      "Per viaggiatori che collezionano paesi o cercano luoghi fuori dal mondo."
+    ],
+    "facts": {
+      "capital": "Funafuti",
+      "languages": "Tuvaluano e inglese",
+      "currency": "Dollaro australiano (AUD)",
+      "timezone": "11 ore in più rispetto all'Italia (10 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Via Figi, con pochi voli a settimana",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale",
+      "plugs": "Tipo I, 220 V",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto; visto all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Laguna di Funafuti",
+        "description": "Acque turchesi e isolotti.",
+        "search": "Funafuti"
+      },
+      {
+        "name": "Area di conservazione di Funafuti",
+        "description": "Riserva marina.",
+        "search": "Funafuti Conservation Area"
+      },
+      {
+        "name": "Fongafale",
+        "description": "L'isola principale.",
+        "search": "Fongafale"
+      },
+      {
+        "name": "Nanumea",
+        "description": "Atollo remoto.",
+        "search": "Nanumea"
+      },
+      {
+        "name": "Nukufetau",
+        "description": "Laguna e storia della guerra.",
+        "search": "Nukufetau"
+      },
+      {
+        "name": "Pista di Funafuti",
+        "description": "La pista che diventa piazza.",
+        "search": "Aeroporto Internazionale di Funafuti"
+      }
+    ],
+    "gettingAround": [
+      "Scooter e bicicletta",
+      "Barche nella laguna",
+      "Servizi minimi"
+    ],
+    "food": [
+      "Pesce",
+      "Pulaka (taro)",
+      "Cocco"
+    ],
+    "tips": [
+      "Pochissimi voli",
+      "Prenotare tutto con largo anticipo",
+      "Servizi essenziali"
+    ]
+  },
+  "NR": {
+    "tagline": "La repubblica-isola più piccola del mondo.",
+    "description": [
+      "Nauru è uno dei paesi più piccoli del mondo: un'isola di appena 21 chilometri quadrati nel Pacifico centrale.",
+      "La costa offre spiagge e la laguna di Buada; l'interno porta i segni dell'estrazione dei fosfati.",
+      "È una meta per collezionisti di paesi più che per vacanze tradizionali.",
+      "Visto e collegamenti vanno organizzati con largo anticipo."
+    ],
+    "facts": {
+      "capital": "Yaren (distretto)",
+      "languages": "Nauruano e inglese",
+      "currency": "Dollaro australiano (AUD)",
+      "timezone": "11 ore in più rispetto all'Italia (10 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Via Brisbane o Figi, con pochi voli",
+      "bestPeriod": "Maggio–ottobre",
+      "climate": "Tropicale",
+      "plugs": "Tipo I, 240 V",
+      "driving": "Si guida a sinistra",
+      "documents": "Passaporto e visto da richiedere in anticipo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Laguna di Buada",
+        "description": "Il lago interno.",
+        "search": "Laguna di Buada"
+      },
+      {
+        "name": "Anibare Bay",
+        "description": "La spiaggia più bella.",
+        "search": "Anibare"
+      },
+      {
+        "name": "Command Ridge",
+        "description": "Il punto più alto e i cannoni.",
+        "search": "Command Ridge"
+      },
+      {
+        "name": "Altopiano dei fosfati",
+        "description": "Il paesaggio delle miniere.",
+        "search": "Nauru"
+      },
+      {
+        "name": "Yaren",
+        "description": "Il distretto del parlamento.",
+        "search": "Yaren"
+      },
+      {
+        "name": "Moqua Well",
+        "description": "Il lago sotterraneo.",
+        "search": "Moqua Well"
+      }
+    ],
+    "gettingAround": [
+      "Strada circolare dell'isola",
+      "Auto o scooter",
+      "Servizi minimi"
+    ],
+    "food": [
+      "Pesce",
+      "Cocco",
+      "Cucina d'importazione"
+    ],
+    "tips": [
+      "Visto da chiedere in anticipo",
+      "Pochissimi voli",
+      "Servizi molto limitati"
+    ]
+  }
+}

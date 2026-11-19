@@ -1,0 +1,1220 @@
+{
+  "GE": {
+    "tagline": "Montagne del Caucaso, monasteri antichi e la culla del vino.",
+    "description": [
+      "La Georgia è una delle destinazioni più apprezzate degli ultimi anni: un piccolo paese tra Europa e Asia con montagne imponenti, chiese medievali e un'ospitalità leggendaria.",
+      "Tbilisi unisce bagni sulfurei, balconi in legno e locali creativi; Mtskheta custodisce chiese patrimonio UNESCO e la Grande Strada Militare porta alla chiesa della Trinità di Gergeti sotto il Kazbek.",
+      "La regione di Kakheti è considerata la culla del vino, con la vinificazione in anfore di terracotta; lo Svaneti offre villaggi con torri difensive tra vette innevate.",
+      "Ideale per tour di 7–10 giorni tra cultura, natura e cibo, anche combinati con l'Armenia."
+    ],
+    "facts": {
+      "capital": "Tbilisi",
+      "languages": "Georgiano; russo e inglese diffusi",
+      "currency": "Lari georgiano (GEL)",
+      "timezone": "3 ore in più rispetto all'Italia (2 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 4 ore diretto per Tbilisi o Kutaisi",
+      "bestPeriod": "Maggio–ottobre; settembre–ottobre per la vendemmia",
+      "climate": "Subtropicale sulla costa, continentale all'interno, alpino in montagna",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; guida locale vivace, meglio autista",
+      "documents": "Passaporto valido; per soggiorni turistici non serve il visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Tbilisi",
+        "description": "La città vecchia e la fortezza di Narikala.",
+        "search": "Narikala"
+      },
+      {
+        "name": "Chiesa della Trinità di Gergeti",
+        "description": "La chiesa ai piedi del Kazbek.",
+        "search": "Chiesa della Trinità di Gergeti"
+      },
+      {
+        "name": "Mtskheta",
+        "description": "La cattedrale di Svetitskhoveli e il monastero di Jvari.",
+        "search": "Monastero di Jvari"
+      },
+      {
+        "name": "Svaneti",
+        "description": "Le torri di Mestia e Ushguli.",
+        "search": "Ushguli"
+      },
+      {
+        "name": "Sighnaghi",
+        "description": "La città dell'amore nella regione del vino.",
+        "search": "Sighnaghi"
+      },
+      {
+        "name": "Vardzia",
+        "description": "Il monastero rupestre scavato nella montagna.",
+        "search": "Vardzia"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista per le zone di montagna",
+      "Marshrutke (minibus) tra le città",
+      "Treni tra Tbilisi e Batumi"
+    ],
+    "food": [
+      "Khachapuri, pane al formaggio",
+      "Khinkali, ravioli ripieni",
+      "Vino in anfora e la tradizione della supra"
+    ],
+    "tips": [
+      "I brindisi a tavola sono un rituale",
+      "Strade di montagna chiuse in inverno",
+      "Prezzi convenienti"
+    ]
+  },
+  "AM": {
+    "tagline": "Monasteri tra le montagne, il monte Ararat e una delle culture cristiane più antiche.",
+    "description": [
+      "L'Armenia è stato il primo paese ad adottare il cristianesimo come religione di stato, e il suo paesaggio è punteggiato da monasteri di pietra in luoghi spettacolari.",
+      "Erevan, la capitale rosa, è dominata dal monte Ararat e offre musei come il Matenadaran dei manoscritti antichi e la Cascade.",
+      "Geghard, scavato nella roccia, il tempio ellenistico di Garni, il monastero di Khor Virap davanti all'Ararat e il lago Sevan sono tappe classiche.",
+      "Perfetta per tour culturali di 6–8 giorni, spesso abbinata alla Georgia."
+    ],
+    "facts": {
+      "capital": "Erevan",
+      "languages": "Armeno; russo diffuso",
+      "currency": "Dram armeno (AMD)",
+      "timezone": "3 ore in più rispetto all'Italia (2 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 4 ore e 30 minuti, diretto o con uno scalo",
+      "bestPeriod": "Maggio–giugno e settembre–ottobre",
+      "climate": "Continentale di altitudine: estati calde e secche, inverni freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto valido; per soggiorni turistici di solito non serve il visto. Verificare su viaggiaresicuri.it per le zone di confine"
+    },
+    "places": [
+      {
+        "name": "Khor Virap",
+        "description": "Il monastero davanti all'Ararat.",
+        "search": "Khor Virap"
+      },
+      {
+        "name": "Monastero di Geghard",
+        "description": "Chiese scavate nella roccia.",
+        "search": "Monastero di Geghard"
+      },
+      {
+        "name": "Tempio di Garni",
+        "description": "Il tempio greco-romano sulle gole.",
+        "search": "Tempio di Garni"
+      },
+      {
+        "name": "Lago Sevan",
+        "description": "Il grande lago di montagna.",
+        "search": "Lago Sevan"
+      },
+      {
+        "name": "Tatev",
+        "description": "Il monastero e la funivia più lunga.",
+        "search": "Monastero di Tatev"
+      },
+      {
+        "name": "Erevan",
+        "description": "La Cascade e la piazza della Repubblica.",
+        "search": "Cascade (Erevan)"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista o tour",
+      "Minibus tra le città",
+      "Taxi economici a Erevan"
+    ],
+    "food": [
+      "Khorovats, carne alla griglia",
+      "Lavash, pane UNESCO",
+      "Brandy armeno"
+    ],
+    "tips": [
+      "Evitare le zone di confine con l'Azerbaigian",
+      "Grande ospitalità",
+      "Prezzi convenienti"
+    ]
+  },
+  "AZ": {
+    "tagline": "Baku tra petrolio e futurismo, fuoco eterno e la Via della Seta caucasica.",
+    "description": [
+      "L'Azerbaigian si affaccia sul Mar Caspio e unisce antico e modernissimo. Baku ha una città vecchia murata patrimonio UNESCO accanto ai grattacieli delle Flame Towers e al centro Heydar Aliyev di Zaha Hadid.",
+      "Nei dintorni le incisioni rupestri di Gobustan, i vulcani di fango e la collina che brucia di Yanar Dag raccontano una terra di fuoco.",
+      "Sheki, ai piedi del Caucaso, con il palazzo dei khan e un caravanserraglio, ricorda il passaggio della Via della Seta.",
+      "Ideale per city break di 4–5 giorni o tour caucasici con Georgia."
+    ],
+    "facts": {
+      "capital": "Baku",
+      "languages": "Azero; russo diffuso",
+      "currency": "Manat azero (AZN)",
+      "timezone": "3 ore in più rispetto all'Italia (2 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 4 ore e 30 minuti, diretto o con uno scalo",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre",
+      "climate": "Semiarido a Baku, ventoso; più fresco in montagna",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con visto elettronico da richiedere online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Città vecchia di Baku",
+        "description": "Mura, palazzo degli Shirvanshah e Torre della Vergine.",
+        "search": "Torre della Vergine (Baku)"
+      },
+      {
+        "name": "Flame Towers",
+        "description": "I grattacieli a forma di fiamma.",
+        "search": "Flame Towers"
+      },
+      {
+        "name": "Centro Heydar Aliyev",
+        "description": "L'opera sinuosa di Zaha Hadid.",
+        "search": "Centro Heydar Aliyev"
+      },
+      {
+        "name": "Gobustan",
+        "description": "Incisioni rupestri e vulcani di fango.",
+        "search": "Gobustan"
+      },
+      {
+        "name": "Sheki",
+        "description": "Il palazzo dei khan.",
+        "search": "Palazzo dei khan di Shaki"
+      },
+      {
+        "name": "Yanar Dag",
+        "description": "La collina che brucia da secoli.",
+        "search": "Yanar Dag"
+      }
+    ],
+    "gettingAround": [
+      "Metro e taxi a Baku",
+      "Auto con autista per le escursioni",
+      "Treni notturni verso Tbilisi"
+    ],
+    "food": [
+      "Plov azero",
+      "Dolma",
+      "Tè con marmellate"
+    ],
+    "tips": [
+      "Non è possibile entrare con timbri o visti legati al Nagorno-Karabakh senza verifiche",
+      "Vento forte a Baku",
+      "Abbigliamento sobrio nelle moschee"
+    ]
+  },
+  "QA": {
+    "tagline": "Musei d'autore, deserto e lusso affacciato sul Golfo.",
+    "description": [
+      "Il Qatar è una piccola penisola del Golfo Persico che ha investito molto in cultura e turismo. Doha unisce il Museo d'Arte Islamica di I. M. Pei, il Museo Nazionale a forma di rosa del deserto e la Corniche.",
+      "Il Souq Waqif ricrea l'atmosfera di un mercato tradizionale tra spezie, falchi e caffè, mentre The Pearl e Lusail mostrano il volto moderno del paese.",
+      "Nel deserto il mare interno di Khor Al Adaid, dove le dune incontrano il mare, si raggiunge con escursioni in fuoristrada.",
+      "Ideale per uno stopover di 2–3 giorni durante un volo verso l'Asia o l'Oceania, o per un breve soggiorno di relax d'inverno."
+    ],
+    "facts": {
+      "capital": "Doha",
+      "languages": "Arabo; inglese parlato ovunque",
+      "currency": "Riyal del Qatar (QAR)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 5 ore e 30 minuti diretto per Doha",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Desertico: estati torride e umide, inverni miti",
+      "plugs": "Tipo G (anche D), 240 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con validità di almeno 6 mesi; per i cittadini italiani di solito ingresso senza visto per soggiorni brevi. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Museo d'Arte Islamica",
+        "description": "Il museo di I. M. Pei sul mare.",
+        "search": "Museo d'Arte Islamica (Doha)"
+      },
+      {
+        "name": "Museo Nazionale del Qatar",
+        "description": "La rosa del deserto di Jean Nouvel.",
+        "search": "Museo nazionale del Qatar"
+      },
+      {
+        "name": "Souq Waqif",
+        "description": "Il mercato tradizionale di Doha.",
+        "search": "Souq Waqif"
+      },
+      {
+        "name": "Khor Al Adaid",
+        "description": "Il mare interno tra le dune.",
+        "search": "Khor Al Adaid"
+      },
+      {
+        "name": "The Pearl",
+        "description": "L'isola artificiale con marina.",
+        "search": "The Pearl-Qatar"
+      },
+      {
+        "name": "Corniche di Doha",
+        "description": "Il lungomare con vista sullo skyline.",
+        "search": "Corniche di Doha"
+      }
+    ],
+    "gettingAround": [
+      "Metro moderna e taxi",
+      "Escursioni organizzate nel deserto",
+      "Auto a noleggio"
+    ],
+    "food": [
+      "Machboos, riso speziato con carne",
+      "Mezze arabi",
+      "Karak, tè speziato con latte"
+    ],
+    "tips": [
+      "Abbigliamento coprente nei luoghi pubblici",
+      "Alcol solo negli hotel autorizzati",
+      "Durante il Ramadan non mangiare in pubblico di giorno"
+    ]
+  },
+  "SA": {
+    "tagline": "Deserti rossi, città nabatee e il Mar Rosso: un paese che si apre al turismo.",
+    "description": [
+      "L'Arabia Saudita ha aperto al turismo internazionale solo di recente e offre luoghi finora quasi sconosciuti. AlUla, con le tombe nabatee di Hegra e le formazioni rocciose del deserto, è la meta più spettacolare.",
+      "Riad unisce il quartiere storico di Diriyah, culla della dinastia saudita, a grattacieli e grandi musei; Gedda, sul Mar Rosso, conserva il centro storico di Al-Balad con case dai balconi in legno.",
+      "Il Mar Rosso saudita, con barriere coralline intatte, e le montagne di Asir sono in rapido sviluppo con resort di lusso.",
+      "Adatta a viaggiatori curiosi e alla fascia alta del mercato, 6–8 giorni; La Mecca e Medina sono accessibili solo ai musulmani."
+    ],
+    "facts": {
+      "capital": "Riad",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Riyal saudita (SAR)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 5–6 ore diretto per Riad o Gedda",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Desertico: estati torride, inverni miti, notti fredde nel deserto",
+      "plugs": "Tipo G (anche A e B), 230 V: serve un adattatore",
+      "driving": "Si guida a destra; grandi distanze",
+      "documents": "Passaporto con visto turistico elettronico da richiedere online. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Hegra (AlUla)",
+        "description": "Le tombe nabatee scolpite nella roccia.",
+        "search": "Mada'in Salih"
+      },
+      {
+        "name": "Elephant Rock",
+        "description": "La roccia a forma di elefante di AlUla.",
+        "search": "Jabal AlFil"
+      },
+      {
+        "name": "Diriyah",
+        "description": "Il quartiere di At-Turaif a Riad.",
+        "search": "Diriyah"
+      },
+      {
+        "name": "Al-Balad",
+        "description": "Il centro storico di Gedda.",
+        "search": "Al-Balad (Gedda)"
+      },
+      {
+        "name": "Edge of the World",
+        "description": "Le scogliere nel deserto vicino a Riad.",
+        "search": "Jebel Fihrayn"
+      },
+      {
+        "name": "Kingdom Centre",
+        "description": "Il grattacielo simbolo di Riad.",
+        "search": "Kingdom Centre"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni tra Riad, Gedda e AlUla",
+      "Treni veloci tra Gedda e Medina",
+      "Auto con autista"
+    ],
+    "food": [
+      "Kabsa, riso speziato con carne",
+      "Datteri e caffè arabo",
+      "Mutabbaq, crêpe ripiena"
+    ],
+    "tips": [
+      "Abbigliamento coprente e sobrio",
+      "Alcol vietato",
+      "Ingresso alla Mecca e a Medina riservato ai musulmani"
+    ]
+  },
+  "BH": {
+    "tagline": "Perle, forti antichi e la Formula 1 in un piccolo regno del Golfo.",
+    "description": [
+      "Il Bahrein è un arcipelago del Golfo Persico collegato all'Arabia Saudita da un lungo ponte. Manama unisce grattacieli moderni e il vecchio souk.",
+      "Il forte del Bahrein, Qal'at al-Bahrain, patrimonio UNESCO, racconta la civiltà di Dilmun; il percorso delle perle di Muharraq ricorda l'antica attività dei pescatori.",
+      "Il circuito di Formula 1 di Sakhir, la grande moschea Al Fateh e le spiagge dei resort completano il soggiorno.",
+      "Ideale per un breve soggiorno o un evento sportivo, anche come estensione di un viaggio nel Golfo."
+    ],
+    "facts": {
+      "capital": "Manama",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Dinaro del Bahrein (BHD)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore con uno scalo nel Golfo",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Desertico: estati molto calde e umide",
+      "plugs": "Tipo G, 230 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con visto (all'arrivo o elettronico). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Qal'at al-Bahrain",
+        "description": "Il forte e il sito di Dilmun.",
+        "search": "Qal'at al-Bahrain"
+      },
+      {
+        "name": "Moschea Al Fateh",
+        "description": "Una delle moschee più grandi del mondo.",
+        "search": "Moschea Al Fateh"
+      },
+      {
+        "name": "Muharraq",
+        "description": "Il percorso delle perle.",
+        "search": "Muharraq"
+      },
+      {
+        "name": "Circuito di Sakhir",
+        "description": "Il Gran Premio del Bahrein.",
+        "search": "Circuito internazionale del Bahrein"
+      },
+      {
+        "name": "Bab al-Bahrain",
+        "description": "La porta del souk di Manama.",
+        "search": "Bab al-Bahrain"
+      },
+      {
+        "name": "Albero della Vita",
+        "description": "L'albero solitario nel deserto.",
+        "search": "Albero della vita (Bahrein)"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto a noleggio",
+      "Escursioni organizzate",
+      "Distanze brevi"
+    ],
+    "food": [
+      "Machboos",
+      "Halwa bahreinita",
+      "Pesce del Golfo"
+    ],
+    "tips": [
+      "Abbigliamento sobrio fuori dai resort",
+      "Weekend venerdì–sabato",
+      "Caldo estremo in estate"
+    ]
+  },
+  "KW": {
+    "tagline": "Torri iconiche, musei e la cultura del Golfo lontano dal turismo di massa.",
+    "description": [
+      "Il Kuwait è un piccolo paese del Golfo poco turistico ma interessante per chi viaggia per lavoro o vuole conoscere la cultura locale.",
+      "Le Kuwait Towers sono il simbolo della capitale, mentre la Grande Moschea, il Souq Al-Mubarakiya e il centro culturale Sheikh Jaber raccontano la città.",
+      "L'isola di Failaka conserva rovine ellenistiche, e il lungomare offre spiagge e passeggiate.",
+      "Adatto a soggiorni brevi o estensioni di viaggi d'affari."
+    ],
+    "facts": {
+      "capital": "Kuwait City",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Dinaro kuwaitiano (KWD)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 5 ore e 30 minuti, diretto o con scalo",
+      "bestPeriod": "Novembre–marzo",
+      "climate": "Desertico con estati estremamente calde",
+      "plugs": "Tipo G (anche C), 240 V: serve un adattatore",
+      "driving": "Si guida a destra",
+      "documents": "Passaporto con visto elettronico o all'arrivo. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Kuwait Towers",
+        "description": "Le torri sferiche sul mare.",
+        "search": "Kuwait Towers"
+      },
+      {
+        "name": "Grande Moschea del Kuwait",
+        "description": "La moschea principale del paese.",
+        "search": "Grande moschea del Kuwait"
+      },
+      {
+        "name": "Souq Al-Mubarakiya",
+        "description": "Il mercato tradizionale.",
+        "search": "Souq Al-Mubarakiya"
+      },
+      {
+        "name": "Isola di Failaka",
+        "description": "Rovine greche e storia recente.",
+        "search": "Failaka"
+      },
+      {
+        "name": "Centro culturale Sheikh Jaber",
+        "description": "Teatri e architettura moderna.",
+        "search": "Sheikh Jaber Al-Ahmad Cultural Centre"
+      },
+      {
+        "name": "Liberation Tower",
+        "description": "La torre delle telecomunicazioni.",
+        "search": "Liberation Tower"
+      }
+    ],
+    "gettingAround": [
+      "Taxi e auto",
+      "Traghetti per Failaka",
+      "Distanze brevi in città"
+    ],
+    "food": [
+      "Machboos",
+      "Pesce come lo zubaidi",
+      "Dolci al dattero"
+    ],
+    "tips": [
+      "Alcol vietato",
+      "Abbigliamento sobrio",
+      "Caldo estremo da maggio a settembre"
+    ]
+  },
+  "LB": {
+    "tagline": "Rovine romane, cedri millenari e una cucina tra le migliori del Mediterraneo.",
+    "description": [
+      "Il Libano concentra in un piccolo territorio storia, mare e montagne. Baalbek conserva alcuni dei templi romani più imponenti al mondo, Byblos è tra le città abitate più antiche.",
+      "Beirut è vivace e cosmopolita, con musei, quartieri come Gemmayzeh e una vita notturna famosa; la grotta di Jeita e la valle sacra di Qadisha con i cedri sono spettacolari.",
+      "La cucina libanese, con mezze, grigliate e vini della valle della Bekaa, è un motivo di viaggio in sé.",
+      "La situazione di sicurezza va sempre verificata prima di proporre il viaggio: la Farnesina segnala rischi in diverse aree."
+    ],
+    "facts": {
+      "capital": "Beirut",
+      "languages": "Arabo; francese e inglese molto diffusi",
+      "currency": "Lira libanese (LBP); il dollaro USA è molto usato",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Circa 3 ore e 30 minuti per Beirut",
+      "bestPeriod": "Aprile–giugno e settembre–ottobre",
+      "climate": "Mediterraneo sulla costa, neve in montagna d'inverno",
+      "plugs": "Tipo C, D e G, 220 V: utile un adattatore universale",
+      "driving": "Si guida a destra; traffico caotico",
+      "documents": "Passaporto; visto di solito all'arrivo. Situazione di sicurezza da verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Baalbek",
+        "description": "I templi di Giove e Bacco.",
+        "search": "Baalbek"
+      },
+      {
+        "name": "Byblos",
+        "description": "Una delle città più antiche del mondo.",
+        "search": "Biblo"
+      },
+      {
+        "name": "Grotta di Jeita",
+        "description": "Grotte con un fiume sotterraneo.",
+        "search": "Grotta di Jeita"
+      },
+      {
+        "name": "Valle di Qadisha",
+        "description": "Monasteri e cedri del Libano.",
+        "search": "Valle di Qadisha"
+      },
+      {
+        "name": "Beirut",
+        "description": "La Corniche e la roccia dei Piccioni.",
+        "search": "Roccia dei Piccioni"
+      },
+      {
+        "name": "Anjar",
+        "description": "Città omayyade nella valle della Bekaa.",
+        "search": "Anjar"
+      }
+    ],
+    "gettingAround": [
+      "Auto con autista",
+      "Taxi collettivi (service)",
+      "Escursioni organizzate"
+    ],
+    "food": [
+      "Mezze: hummus, tabbouleh, fattoush",
+      "Kibbeh",
+      "Vini della Bekaa e arak"
+    ],
+    "tips": [
+      "Verificare sempre la situazione aggiornata",
+      "Dollari in contanti utili",
+      "Evitare le zone di confine"
+    ]
+  },
+  "PS": {
+    "tagline": "Betlemme, Gerico e la Cisgiordania dei luoghi santi, in una regione complessa.",
+    "description": [
+      "I Territori Palestinesi custodiscono luoghi fondamentali per la storia religiosa: Betlemme con la Basilica della Natività, Gerico tra le città più antiche del mondo, Hebron con la Tomba dei Patriarchi.",
+      "Il deserto di Giudea e il monastero di San Giorgio di Koziba, aggrappato al Wadi Qelt, sono tra i paesaggi più suggestivi.",
+      "Le visite si svolgono spesso nell'ambito di pellegrinaggi in Terra Santa abbinati a Israele e Giordania.",
+      "La situazione di sicurezza è molto delicata: verificare sempre le indicazioni aggiornate della Farnesina prima di qualsiasi proposta."
+    ],
+    "facts": {
+      "capital": "Ramallah (sede amministrativa)",
+      "languages": "Arabo; inglese diffuso",
+      "currency": "Nuovo shekel israeliano (ILS); dinaro giordano usato",
+      "timezone": "Un'ora in più rispetto all'Italia",
+      "flight": "Accesso tramite Israele o Giordania",
+      "bestPeriod": "Marzo–maggio e settembre–novembre",
+      "climate": "Mediterraneo e semiarido",
+      "plugs": "Tipo H e C, 230 V",
+      "driving": "Si guida a destra; posti di blocco",
+      "documents": "Passaporto; ingresso tramite Israele o Giordania con le regole di quei paesi. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Basilica della Natività",
+        "description": "Il luogo di nascita di Gesù a Betlemme.",
+        "search": "Basilica della Natività"
+      },
+      {
+        "name": "Gerico",
+        "description": "Il monte delle Tentazioni.",
+        "search": "Gerico"
+      },
+      {
+        "name": "Monastero di San Giorgio di Koziba",
+        "description": "Monastero nel Wadi Qelt.",
+        "search": "Monastero di San Giorgio di Koziba"
+      },
+      {
+        "name": "Hebron",
+        "description": "La Tomba dei Patriarchi.",
+        "search": "Tomba dei Patriarchi"
+      },
+      {
+        "name": "Herodion",
+        "description": "La fortezza di Erode.",
+        "search": "Herodion"
+      },
+      {
+        "name": "Campo dei Pastori",
+        "description": "Il luogo dell'annuncio ai pastori.",
+        "search": "Campo dei Pastori"
+      }
+    ],
+    "gettingAround": [
+      "Con guida e autista autorizzati",
+      "Pellegrinaggi organizzati",
+      "Taxi locali"
+    ],
+    "food": [
+      "Maqluba, riso capovolto",
+      "Musakhan, pollo al sommacco",
+      "Knafeh di Nablus"
+    ],
+    "tips": [
+      "Verificare la situazione prima di partire",
+      "Abbigliamento coprente nei luoghi sacri",
+      "Viaggiare con operatori esperti"
+    ]
+  },
+  "IQ": {
+    "tagline": "La Mesopotamia: culla della civiltà tra Tigri ed Eufrate, da visitare con grande cautela.",
+    "description": [
+      "L'Iraq custodisce i resti delle prime civiltà urbane: Babilonia, Ur con la sua ziggurat, Ninive, e le paludi mesopotamiche patrimonio UNESCO.",
+      "Il Kurdistan iracheno, con Erbil e la sua cittadella abitata da millenni, è la zona più frequentata dai visitatori stranieri.",
+      "Le città sante sciite di Najaf e Karbala attirano milioni di pellegrini.",
+      "La Farnesina segnala rischi elevati in gran parte del paese: verificare sempre le indicazioni aggiornate e affidarsi solo a operatori specializzati."
+    ],
+    "facts": {
+      "capital": "Baghdad",
+      "languages": "Arabo e curdo",
+      "currency": "Dinaro iracheno (IQD)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Con scalo, per Baghdad o Erbil",
+      "bestPeriod": "Ottobre–aprile",
+      "climate": "Desertico: estati torride, inverni miti",
+      "plugs": "Tipi C, D e G, 230 V: utile un adattatore universale",
+      "driving": "Si guida a destra; solo con autista locale",
+      "documents": "Passaporto e visto; situazione di sicurezza da verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cittadella di Erbil",
+        "description": "Città abitata da oltre 6.000 anni.",
+        "search": "Cittadella di Erbil"
+      },
+      {
+        "name": "Babilonia",
+        "description": "Le rovine della città di Nabucodonosor.",
+        "search": "Babilonia"
+      },
+      {
+        "name": "Ziggurat di Ur",
+        "description": "Il tempio a gradoni sumerico.",
+        "search": "Ziggurat di Ur"
+      },
+      {
+        "name": "Paludi mesopotamiche",
+        "description": "Il mondo degli arabi delle paludi.",
+        "search": "Paludi mesopotamiche"
+      },
+      {
+        "name": "Samarra",
+        "description": "Il minareto a spirale.",
+        "search": "Grande moschea di Samarra"
+      },
+      {
+        "name": "Ninive",
+        "description": "L'antica capitale assira.",
+        "search": "Ninive"
+      }
+    ],
+    "gettingAround": [
+      "Solo con operatori specializzati e autista",
+      "Voli interni",
+      "Itinerari da concordare con le autorità"
+    ],
+    "food": [
+      "Masgouf, pesce alla brace",
+      "Dolma",
+      "Kleicha, biscotti ai datteri"
+    ],
+    "tips": [
+      "Verificare rischi e aree sconsigliate",
+      "Assicurazione specifica",
+      "Abbigliamento coprente"
+    ]
+  },
+  "IR": {
+    "tagline": "Persepoli, moschee di maiolica e giardini persiani: un'antica civiltà da scoprire con cautela.",
+    "description": [
+      "L'Iran custodisce uno dei patrimoni artistici più ricchi del mondo. Isfahan, con la grande piazza Naqsh-e Jahan e le moschee dalle cupole turchesi, è tra le città più belle dell'Asia.",
+      "Shiraz è la città dei poeti e dei giardini, vicina alle rovine di Persepoli, capitale degli Achemenidi; Yazd, nel deserto, ha torri del vento e templi zoroastriani.",
+      "Kashan con le sue case storiche e Teheran con musei e palazzi completano un itinerario che sorprende per l'ospitalità della gente.",
+      "La situazione internazionale e di sicurezza va sempre verificata con attenzione prima di proporre il viaggio."
+    ],
+    "facts": {
+      "capital": "Teheran",
+      "languages": "Persiano (farsi)",
+      "currency": "Rial iraniano (IRR); carte internazionali non utilizzabili",
+      "timezone": "2 ore e mezza in più rispetto all'Italia (un'ora e mezza in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 5 ore, con voli diretti o uno scalo",
+      "bestPeriod": "Marzo–maggio e ottobre–novembre",
+      "climate": "Arido e semiarido: estati calde, inverni freddi al nord",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; meglio autista",
+      "documents": "Passaporto e visto; situazione da verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Piazza Naqsh-e Jahan",
+        "description": "La grande piazza di Isfahan.",
+        "search": "Piazza Naqsh-e Jahan"
+      },
+      {
+        "name": "Persepoli",
+        "description": "La capitale cerimoniale achemenide.",
+        "search": "Persepoli"
+      },
+      {
+        "name": "Moschea Nasir al-Mulk",
+        "description": "La moschea rosa di Shiraz.",
+        "search": "Moschea di Nasir al-Mulk"
+      },
+      {
+        "name": "Yazd",
+        "description": "Città di argilla e torri del vento.",
+        "search": "Yazd"
+      },
+      {
+        "name": "Giardino di Fin",
+        "description": "Il giardino persiano di Kashan.",
+        "search": "Giardino di Fin"
+      },
+      {
+        "name": "Palazzo del Golestan",
+        "description": "La reggia dei Qajar a Teheran.",
+        "search": "Palazzo del Golestan"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni economici",
+      "Pullman VIP tra le città",
+      "Auto con autista"
+    ],
+    "food": [
+      "Chelo kebab",
+      "Fesenjan, pollo con noci e melograno",
+      "Tè e dolci allo zafferano"
+    ],
+    "tips": [
+      "Le donne devono coprire il capo in pubblico",
+      "Portare contanti: le carte non funzionano",
+      "Verificare la situazione prima della partenza"
+    ]
+  },
+  "SY": {
+    "tagline": "Palmira, Damasco e Aleppo: tesori dell'umanità in un paese segnato dalla guerra.",
+    "description": [
+      "La Siria custodisce alcune delle città più antiche del mondo: Damasco con la moschea degli Omayyadi, Aleppo con la sua cittadella, e il sito di Palmira nel deserto.",
+      "Il Krak dei Cavalieri, castello crociato tra i meglio conservati, e le città morte del nord raccontano secoli di storia.",
+      "Dopo anni di conflitto la situazione resta molto instabile e la Farnesina sconsiglia i viaggi.",
+      "Scheda utile come riferimento culturale: non proporre viaggi senza aver verificato le indicazioni ufficiali."
+    ],
+    "facts": {
+      "capital": "Damasco",
+      "languages": "Arabo",
+      "currency": "Lira siriana (SYP)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti limitati: verificare",
+      "bestPeriod": "Primavera e autunno",
+      "climate": "Mediterraneo sulla costa, arido all'interno",
+      "plugs": "Tipo C ed E, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Moschea degli Omayyadi",
+        "description": "La grande moschea di Damasco.",
+        "search": "Moschea degli Omayyadi"
+      },
+      {
+        "name": "Palmira",
+        "description": "Le rovine della città carovaniera.",
+        "search": "Palmira"
+      },
+      {
+        "name": "Krak dei Cavalieri",
+        "description": "Il castello dei crociati.",
+        "search": "Krak dei Cavalieri"
+      },
+      {
+        "name": "Cittadella di Aleppo",
+        "description": "La fortezza sulla collina.",
+        "search": "Cittadella di Aleppo"
+      },
+      {
+        "name": "Bosra",
+        "description": "Il teatro romano di basalto.",
+        "search": "Bosra"
+      },
+      {
+        "name": "Città morte",
+        "description": "Villaggi bizantini abbandonati.",
+        "search": "Città morte"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Kibbeh",
+      "Fattoush",
+      "Dolci al pistacchio di Aleppo"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Seguire esclusivamente le indicazioni ufficiali",
+      "Assicurazioni generalmente non coprono la destinazione"
+    ]
+  },
+  "YE": {
+    "tagline": "Sana'a, Socotra e Shibam: luoghi unici al mondo, oggi inaccessibili per la guerra.",
+    "description": [
+      "Lo Yemen custodisce luoghi straordinari: la città vecchia di Sana'a con le case-torre decorate, Shibam, la Manhattan del deserto con grattacieli di fango, e l'isola di Socotra con i suoi alberi del sangue di drago.",
+      "La storia del paese è legata all'antico regno di Saba e alle vie dell'incenso.",
+      "Il conflitto in corso rende il paese estremamente pericoloso e la Farnesina sconsiglia qualsiasi viaggio.",
+      "Scheda utile come riferimento culturale e per il futuro."
+    ],
+    "facts": {
+      "capital": "Sana'a",
+      "languages": "Arabo",
+      "currency": "Rial yemenita (YER)",
+      "timezone": "2 ore in più rispetto all'Italia (un'ora in più quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti molto limitati",
+      "bestPeriod": "Ottobre–marzo",
+      "climate": "Desertico e montano",
+      "plugs": "Tipi A, D e G, 230 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Città vecchia di Sana'a",
+        "description": "Case-torre decorate.",
+        "search": "Città vecchia di Sana'a"
+      },
+      {
+        "name": "Shibam",
+        "description": "I grattacieli di fango.",
+        "search": "Shibam"
+      },
+      {
+        "name": "Socotra",
+        "description": "Alberi del sangue di drago.",
+        "search": "Socotra"
+      },
+      {
+        "name": "Dar al-Hajar",
+        "description": "Il palazzo sulla roccia.",
+        "search": "Dar al-Hajar"
+      },
+      {
+        "name": "Marib",
+        "description": "La diga del regno di Saba.",
+        "search": "Marib"
+      },
+      {
+        "name": "Wadi Hadramawt",
+        "description": "La valle delle città di fango.",
+        "search": "Hadramawt"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici al momento"
+    ],
+    "food": [
+      "Saltah, stufato nazionale",
+      "Miele di Hadramawt",
+      "Bint al-sahn, dolce a strati"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "AF": {
+    "tagline": "Montagne, valli e una storia millenaria in un paese oggi sconsigliato ai viaggiatori.",
+    "description": [
+      "L'Afghanistan è stato per secoli crocevia della Via della Seta, con siti come la valle di Bamiyan, il minareto di Jam e i laghi turchesi di Band-e Amir.",
+      "Herat conserva la grande moschea del Venerdì e una cittadella storica; il corridoio del Wakhan è una delle zone più remote dell'Asia.",
+      "La situazione politica e di sicurezza è estremamente critica e la Farnesina sconsiglia qualsiasi viaggio.",
+      "Scheda utile solo come riferimento culturale."
+    ],
+    "facts": {
+      "capital": "Kabul",
+      "languages": "Dari e pashto",
+      "currency": "Afghani (AFN)",
+      "timezone": "3 ore e mezza in più rispetto all'Italia (2 ore e mezza in più quando in Italia c'è l'ora legale)",
+      "flight": "Collegamenti molto limitati",
+      "bestPeriod": "Non applicabile al momento",
+      "climate": "Continentale arido, freddo in montagna",
+      "plugs": "Tipo C e F, 220 V",
+      "driving": "Si guida a destra",
+      "documents": "Viaggi sconsigliati. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Band-e Amir",
+        "description": "Laghi turchesi tra le montagne.",
+        "search": "Band-e Amir"
+      },
+      {
+        "name": "Valle di Bamiyan",
+        "description": "Le nicchie dei Buddha.",
+        "search": "Buddha di Bamiyan"
+      },
+      {
+        "name": "Minareto di Jam",
+        "description": "Minareto del XII secolo.",
+        "search": "Minareto di Jam"
+      },
+      {
+        "name": "Herat",
+        "description": "La moschea del Venerdì.",
+        "search": "Grande moschea di Herat"
+      },
+      {
+        "name": "Corridoio del Wakhan",
+        "description": "Valli remote del Pamir.",
+        "search": "Corridoio del Wakhan"
+      },
+      {
+        "name": "Moschea Blu di Mazar-i Sharif",
+        "description": "Il santuario dalle maioliche blu.",
+        "search": "Moschea Blu (Mazar-i Sharif)"
+      }
+    ],
+    "gettingAround": [
+      "Non proporre viaggi turistici"
+    ],
+    "food": [
+      "Kabuli pulao",
+      "Mantu, ravioli",
+      "Bolani, pane ripieno"
+    ],
+    "tips": [
+      "Viaggi sconsigliati dalla Farnesina",
+      "Nessuna proposta turistica",
+      "Seguire le indicazioni ufficiali"
+    ]
+  },
+  "KZ": {
+    "tagline": "Steppe infinite, montagne del Tian Shan e città futuristiche nel cuore dell'Asia.",
+    "description": [
+      "Il Kazakistan è il nono paese più grande del mondo, con paesaggi di steppa, canyon e montagne innevate. Almaty, ai piedi del Tian Shan, è la città più vivace, con parchi e mercati.",
+      "Nei dintorni il canyon di Charyn, i laghi di Kolsai e Kaindy con gli alberi sommersi e la stazione di Shymbulak offrono natura spettacolare.",
+      "Astana, la capitale, è una vetrina di architettura futuristica, mentre Turkistan conserva il mausoleo di Khoja Ahmed Yasawi lungo la Via della Seta.",
+      "Ideale per viaggiatori curiosi e amanti della natura, anche in combinazione con il Kirghizistan e l'Uzbekistan."
+    ],
+    "facts": {
+      "capital": "Astana",
+      "languages": "Kazako e russo",
+      "currency": "Tenge kazako (KZT)",
+      "timezone": "Ad Astana: 4 ore in più rispetto all'Italia (3 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 6 ore con uno scalo per Almaty o Astana",
+      "bestPeriod": "Maggio–settembre",
+      "climate": "Continentale estremo: estati calde, inverni molto freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; grandi distanze",
+      "documents": "Passaporto valido; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Canyon di Charyn",
+        "description": "La valle dei castelli di roccia rossa.",
+        "search": "Canyon di Charyn"
+      },
+      {
+        "name": "Lago Kaindy",
+        "description": "Alberi sommersi in un lago di montagna.",
+        "search": "Lago Kaindy"
+      },
+      {
+        "name": "Almaty",
+        "description": "La città ai piedi delle montagne.",
+        "search": "Almaty"
+      },
+      {
+        "name": "Astana",
+        "description": "La torre Bayterek e l'architettura moderna.",
+        "search": "Bayterek"
+      },
+      {
+        "name": "Mausoleo di Khoja Ahmed Yasawi",
+        "description": "Il capolavoro timuride di Turkistan.",
+        "search": "Mausoleo di Khoja Ahmed Yasawi"
+      },
+      {
+        "name": "Big Almaty Lake",
+        "description": "Il lago turchese sopra Almaty.",
+        "search": "Lago Grande di Almaty"
+      }
+    ],
+    "gettingAround": [
+      "Voli interni",
+      "Treni notturni e veloci",
+      "Fuoristrada con autista per i parchi"
+    ],
+    "food": [
+      "Beshbarmak, carne con pasta",
+      "Plov",
+      "Kumis, latte di cavalla fermentato"
+    ],
+    "tips": [
+      "Distanze enormi: pianificare con voli interni",
+      "Russo utile per comunicare",
+      "Inverni molto rigidi"
+    ]
+  },
+  "KG": {
+    "tagline": "Montagne del Tian Shan, laghi alpini e yurte: il paese dei nomadi.",
+    "description": [
+      "Il Kirghizistan è un paese quasi interamente montuoso, con pascoli d'alta quota, laghi cristallini e una cultura nomade ancora viva.",
+      "Il lago Issyk-Kul, tra i più grandi laghi alpini del mondo, e il lago Song-Kul, dove si dorme nelle yurte dei pastori, sono le mete principali.",
+      "Le valli di Karakol e Jeti-Oguz, il canyon delle fiabe Skazka e il caravanserraglio di Tash Rabat lungo la Via della Seta completano il viaggio.",
+      "Ideale per trekking, viaggi a cavallo e avventure di 8–12 giorni, spesso abbinato al Kazakistan o all'Uzbekistan."
+    ],
+    "facts": {
+      "capital": "Biškek",
+      "languages": "Kirghiso e russo",
+      "currency": "Som kirghiso (KGS)",
+      "timezone": "5 ore in più rispetto all'Italia (4 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Circa 7–9 ore con uno scalo per Biškek",
+      "bestPeriod": "Giugno–settembre",
+      "climate": "Continentale montano: estati miti in quota, inverni rigidi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; strade di montagna impegnative",
+      "documents": "Passaporto valido; per soggiorni brevi i cittadini italiani di solito non necessitano di visto. Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Lago Issyk-Kul",
+        "description": "Il grande lago tra le montagne.",
+        "search": "Issyk-Kul"
+      },
+      {
+        "name": "Lago Song-Kul",
+        "description": "Notti in yurta tra i pascoli.",
+        "search": "Song-Kul"
+      },
+      {
+        "name": "Jeti-Oguz",
+        "description": "Le rocce rosse dei Sette Tori.",
+        "search": "Jeti-Ögüz"
+      },
+      {
+        "name": "Canyon Skazka",
+        "description": "Il canyon delle fiabe.",
+        "search": "Canyon Skazka"
+      },
+      {
+        "name": "Tash Rabat",
+        "description": "Il caravanserraglio di pietra.",
+        "search": "Tash Rabat"
+      },
+      {
+        "name": "Ala Archa",
+        "description": "Parco montano vicino a Biškek.",
+        "search": "Parco nazionale di Ala Archa"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista",
+      "Marshrutke tra i paesi",
+      "Cavallo e trekking in montagna"
+    ],
+    "food": [
+      "Beshbarmak",
+      "Plov",
+      "Kumis e pane borsok"
+    ],
+    "tips": [
+      "Servizi essenziali in montagna",
+      "Contanti indispensabili",
+      "Abbigliamento caldo anche d'estate in quota"
+    ]
+  },
+  "TJ": {
+    "tagline": "La Pamir Highway e le montagne più alte dell'Asia centrale.",
+    "description": [
+      "Il Tagikistan è il paese delle montagne: oltre il 90 per cento del territorio è montuoso, con le vette del Pamir che superano i 7.000 metri.",
+      "La Pamir Highway, una delle strade più alte del mondo, attraversa paesaggi lunari, villaggi isolati e la valle del Wakhan affacciata sull'Afghanistan.",
+      "I monti Fann con i laghi di Iskanderkul e dei Sette Laghi sono perfetti per il trekking; Dušanbe è una capitale tranquilla con parchi e mercati.",
+      "Per viaggiatori avventurosi e amanti della montagna, 10–14 giorni, con operatori esperti."
+    ],
+    "facts": {
+      "capital": "Dušanbe",
+      "languages": "Tagico; russo diffuso",
+      "currency": "Somoni tagico (TJS)",
+      "timezone": "4 ore in più rispetto all'Italia (3 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Istanbul, Dubai o Mosca) per Dušanbe",
+      "bestPeriod": "Giugno–settembre",
+      "climate": "Continentale montano estremo",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; solo fuoristrada con autista",
+      "documents": "Passaporto con visto elettronico; per il Pamir serve un permesso speciale (GBAO). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Pamir Highway",
+        "description": "La strada sul tetto del mondo.",
+        "search": "Strada del Pamir"
+      },
+      {
+        "name": "Lago Iskanderkul",
+        "description": "Il lago di Alessandro Magno.",
+        "search": "Iskanderkul"
+      },
+      {
+        "name": "Sette Laghi",
+        "description": "Laghi turchesi nei monti Fann.",
+        "search": "Sette laghi di Marguzor"
+      },
+      {
+        "name": "Valle del Wakhan",
+        "description": "Fortezze e villaggi di confine.",
+        "search": "Valle del Wakhan"
+      },
+      {
+        "name": "Dušanbe",
+        "description": "La capitale e la grande bandiera.",
+        "search": "Dušanbe"
+      },
+      {
+        "name": "Lago Karakul",
+        "description": "Lago d'alta quota nel Pamir.",
+        "search": "Lago Karakul (Tagikistan)"
+      }
+    ],
+    "gettingAround": [
+      "Fuoristrada con autista esperto",
+      "Voli interni limitati",
+      "Trekking organizzati"
+    ],
+    "food": [
+      "Plov tagico",
+      "Qurutob, piatto nazionale",
+      "Tè verde"
+    ],
+    "tips": [
+      "Mal di montagna possibile oltre i 3.500 metri",
+      "Servizi molto essenziali",
+      "Permesso GBAO da richiedere insieme al visto"
+    ]
+  },
+  "TM": {
+    "tagline": "La Porta dell'Inferno, Merv e una capitale di marmo bianco: il paese più misterioso dell'Asia centrale.",
+    "description": [
+      "Il Turkmenistan è uno dei paesi meno visitati al mondo. Il cratere di gas di Darvaza, chiamato Porta dell'Inferno, brucia ininterrottamente nel deserto del Karakum.",
+      "Le antiche città di Merv e Nisa, patrimonio UNESCO, raccontano la Via della Seta e l'impero dei Parti.",
+      "Ashgabat, la capitale, è costruita quasi interamente in marmo bianco, con monumenti grandiosi e viali deserti.",
+      "Per viaggiatori curiosi e collezionisti di paesi, di solito con tour organizzati e guida obbligatoria."
+    ],
+    "facts": {
+      "capital": "Ashgabat",
+      "languages": "Turkmeno; russo diffuso",
+      "currency": "Manat turkmeno (TMT)",
+      "timezone": "4 ore in più rispetto all'Italia (3 ore in più quando in Italia c'è l'ora legale)",
+      "flight": "Con uno scalo (Istanbul o Dubai) per Ashgabat",
+      "bestPeriod": "Aprile–maggio e settembre–ottobre",
+      "climate": "Desertico continentale: estati torride, inverni freddi",
+      "plugs": "Tipo C e F, 220 V: non serve l'adattatore",
+      "driving": "Si guida a destra; solo con autista",
+      "documents": "Passaporto con visto (lettera d'invito tramite agenzia locale). Verificare su viaggiaresicuri.it"
+    },
+    "places": [
+      {
+        "name": "Cratere di Darvaza",
+        "description": "La Porta dell'Inferno.",
+        "search": "Cratere di Darvaza"
+      },
+      {
+        "name": "Merv",
+        "description": "Antica oasi della Via della Seta.",
+        "search": "Merv"
+      },
+      {
+        "name": "Ashgabat",
+        "description": "La città di marmo bianco.",
+        "search": "Ashgabat"
+      },
+      {
+        "name": "Nisa",
+        "description": "Fortezza dei Parti.",
+        "search": "Nisa (Turkmenistan)"
+      },
+      {
+        "name": "Kunya-Urgench",
+        "description": "Minareti e mausolei nel deserto.",
+        "search": "Kunya-Urgench"
+      },
+      {
+        "name": "Grotta di Kov-Ata",
+        "description": "Lago sotterraneo termale.",
+        "search": "Kow Ata"
+      }
+    ],
+    "gettingAround": [
+      "Tour organizzati con guida",
+      "Fuoristrada nel deserto",
+      "Voli interni"
+    ],
+    "food": [
+      "Plov",
+      "Dograma, zuppa di pane e carne",
+      "Melone turkmeno"
+    ],
+    "tips": [
+      "Visto complesso: affidarsi a operatori specializzati",
+      "Foto vietate in molte aree governative",
+      "Internet molto limitato"
+    ]
+  }
+}
