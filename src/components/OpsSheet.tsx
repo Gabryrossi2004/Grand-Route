@@ -22,12 +22,14 @@ import {
   OPS_COLORS,
   OPS_COLUMNS,
   isoDate,
+  normalizeTripCode,
   opsTimeMinutes,
   parseIsoDate,
   type OpsColor,
   type OpsColumn,
   type OpsRow,
   type OpsTextKey,
+  type OpsTripRef,
   type OpsView,
 } from "@/lib/opsSheet";
 
@@ -38,6 +40,10 @@ type Props = {
   from: string;
   to: string;
   today: string;
+  trip: OpsTripRef | null;
+  missingCode: string | null;
+  trips: OpsTripRef[];
+  importEnabled: boolean;
   suppliers: { name: string; phone: string }[];
   clientNames: string[];
   suggestions: { client: string[]; agent: string[]; supplier: string[]; responsible: string[] };
@@ -85,7 +91,11 @@ function sortRows(a: OpsRow, b: OpsRow, mode: "cliente" | "orario", fresh: Set<s
   return ta - tb || byClient || a.created_at.localeCompare(b.created_at);
 }
 
-export default function OpsSheet({ initialRows, view, anchor, from, to, today, suppliers, clientNames, suggestions }: Props) {
+// colonne che restano ferme scorrendo di lato: la data sempre, codice e cliente sugli schermi larghi
+const STICKY_TD: Record<number, string> = { 0: "sticky left-[30px] z-10", 1: "relative lg:sticky lg:left-[94px] lg:z-10", 2: "relative lg:sticky lg:left-[180px] lg:z-10" };
+const STICKY_TH: Record<number, string> = { 0: "left-[30px] z-30", 1: "z-20 lg:left-[94px] lg:z-30", 2: "z-20 lg:left-[180px] lg:z-30" };
+
+export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, suppliers, clientNames, suggestions }: Props) {
   const router = useRouter();
   const [rows, setRows] = useState<OpsRow[]>(initialRows);
   const [fresh, setFresh] = useState<Set<string>>(() => new Set());
@@ -106,6 +116,9 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const go = (v: OpsView, d: string) => router.push(`/dashboard/operativo?v=${v}&d=${d}`);
+  const openTrip = (code: string) => router.push(`/dashboard/operativo?codice=${code}`);
+  const searchCode = normalizeTripCode(search);
+  const codeMatch = searchCode.length === 6 && searchCode !== trip?.code ? trips.find((t) => t.code === searchCode) : undefined;
   const step = (dir: 1 | -1) => go(view, view === "mese" ? shiftMonths(anchor, dir) : shiftDays(anchor, dir * (view === "settimana" ? 7 : 1)));
   const anchorYear = parseIsoDate(anchor).getFullYear();
   const anchorMonth = parseIsoDate(anchor).getMonth();
@@ -139,7 +152,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
     return rows.filter((r) => {
       if (q) {
         const hay = norm(
-          [shortDate(r.service_date), r.client, r.agent, r.supplier, r.supplier_contact, r.pax, r.service, r.meeting_time, r.meeting_point, r.notes, r.responsible].join(" "),
+          [shortDate(r.service_date), r.trip_code, r.client, r.agent, r.supplier, r.supplier_contact, r.pax, r.service, r.meeting_time, r.meeting_point, r.notes, r.responsible].join(" "),
         );
         if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
       }
@@ -193,7 +206,15 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
     const row = rows.find((r) => r.id === editing.id);
     const value = editing.key === "service_date" ? draft : draft.replace(/\s+$/, "");
     if (row && value !== row[editing.key] && !(editing.key === "service_date" && !/^\d{4}-\d{2}-\d{2}$/.test(value))) {
-      const patch: Partial<OpsRow> = { [editing.key]: value };
+      const patch: Partial<OpsRow> = { [editing.key]: editing.key === "trip_code" ? normalizeTripCode(value) : value };
+      // codice di un viaggio: la riga si collega al viaggio e prende il cliente se manca
+      if (editing.key === "trip_code") {
+        const t = trips.find((x) => x.code === patch.trip_code);
+        if (t) {
+          patch.trip_id = t.id;
+          if (!row.client.trim()) patch.client = t.client || t.title;
+        }
+      }
       // fornitore dalla rubrica: il contatto si compila da solo se vuoto
       if (editing.key === "supplier" && !row.supplier_contact.trim()) {
         const s = suppliers.find((x) => norm(x.name) === norm(value));
@@ -237,6 +258,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
 
   function defaultDate() {
     if (filters.day) return filters.day;
+    if (view === "viaggio") return groups[groups.length - 1]?.day ?? from;
     return today >= from && today <= to ? today : from;
   }
 
@@ -247,7 +269,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
       : {
           id,
           service_date: date,
-          client: filters.client,
+          trip_code: trip?.code ?? "",
+          client: filters.client || trip?.client || "",
           agent: filters.agent,
           supplier: filters.supplier,
           supplier_contact: "",
@@ -259,7 +282,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
           responsible: filters.responsible,
           row_color: null,
           cell_colors: {},
-          trip_id: null,
+          trip_id: trip?.id ?? null,
           activity_id: null,
           created_at: new Date().toISOString(),
         };
@@ -312,7 +335,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
   async function runImport() {
     setImporting(true);
     setImportMsg(null);
-    const res = await importOpsFromTrips(from, to, importAll);
+    const res = await importOpsFromTrips(from, to, importAll, trip?.id);
     setImporting(false);
     if (!res.ok) {
       setImportMsg(res.error);
@@ -418,16 +441,18 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
           <p className="text-sm text-slate-500">Tutti i servizi giorno per giorno: clicca una cella per scrivere, Tab per passare alla successiva.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setImportOpen((v) => !v);
-              setImportMsg(null);
-            }}
-            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[#e6d7bb] bg-white px-3 text-sm text-[#233c5e] hover:bg-[#faf3e6]"
-          >
-            <Download className="h-4 w-4" /> Importa dai viaggi
-          </button>
+          {importEnabled && (view !== "viaggio" || trip?.start) && (
+            <button
+              type="button"
+              onClick={() => {
+                setImportOpen((v) => !v);
+                setImportMsg(null);
+              }}
+              className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[#e6d7bb] bg-white px-3 text-sm text-[#233c5e] hover:bg-[#faf3e6]"
+            >
+              <Download className="h-4 w-4" /> Importa dai viaggi
+            </button>
+          )}
           <button
             type="button"
             onClick={exportExcel}
@@ -454,12 +479,14 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
         </div>
       </div>
 
-      {importOpen && (
+      {importOpen && importEnabled && (
         <div className="rounded-2xl border border-[#e6d7bb] bg-white p-4 text-sm text-slate-700 shadow-sm">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="font-medium text-[#233c5e]">
-                Importa i servizi degli itinerari {from === to ? `del ${shortDate(from)}` : `dal ${shortDate(from)} al ${shortDate(to)}`}
+                {trip
+                  ? `Importa i servizi dell'itinerario del viaggio ${trip.code}`
+                  : `Importa i servizi degli itinerari ${from === to ? `del ${shortDate(from)}` : `dal ${shortDate(from)} al ${shortDate(to)}`}`}
               </p>
               <p className="mt-1 text-slate-500">
                 Ogni attività dell&apos;itinerario diventa una riga, con cliente, fornitore e contatto (dai «Servizi e fornitori» del viaggio), orario, punto di
@@ -472,10 +499,12 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
             </button>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-4">
-            <label className="inline-flex items-center gap-2">
-              <input type="checkbox" checked={importAll} onChange={(e) => setImportAll(e.target.checked)} />
-              Includi anche i viaggi non confermati (preliminari e varianti)
-            </label>
+            {!trip && (
+              <label className="inline-flex items-center gap-2">
+                <input type="checkbox" checked={importAll} onChange={(e) => setImportAll(e.target.checked)} />
+                Includi anche i viaggi non confermati (preliminari e varianti)
+              </label>
+            )}
             <button
               type="button"
               onClick={runImport}
@@ -513,6 +542,19 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
             );
           })}
         </div>
+        {view === "viaggio" && trip ? (
+          <div className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-[#cda876] bg-[#faf3e6] px-3 py-1.5 text-sm text-[#233c5e]">
+            <span className="rounded bg-[#233c5e] px-1.5 py-0.5 font-mono text-xs tracking-wider text-white">{trip.code}</span>
+            <span className="font-medium">{trip.client ? `${trip.client} · ` : ""}{trip.title}</span>
+            {trip.start && <span className="text-slate-500">{trip.end && trip.end !== trip.start ? `dal ${shortDate(trip.start)} al ${shortDate(trip.end)}` : shortDate(trip.start)}</span>}
+            <a href={`/dashboard/trips/${trip.id}`} className="inline-flex items-center gap-1 text-[#a08a5e] hover:text-[#233c5e]">
+              <ExternalLink className="h-3.5 w-3.5" /> viaggio
+            </a>
+            <button type="button" onClick={() => go("mese", trip.start ?? today)} className="inline-flex items-center gap-1 text-slate-500 hover:text-[#233c5e]" aria-label="Chiudi il viaggio">
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        ) : (
         <div className="inline-flex items-center gap-1">
           <button type="button" onClick={() => step(-1)} className="rounded-lg p-2 text-[#233c5e] hover:bg-white" aria-label="Periodo precedente">
             <ChevronLeft className="h-4 w-4" />
@@ -522,6 +564,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
+        )}
         {view === "mese" && (
           <div className="flex flex-wrap items-center gap-0.5 text-sm">
             {MONTHS.map((m, i) => (
@@ -545,7 +588,10 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Cerca cliente, fornitore, servizio, note…"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && codeMatch) openTrip(codeMatch.code);
+            }}
+            placeholder="Cerca codice viaggio, cliente, fornitore, servizio…"
             className="h-9 w-[calc(100vw-32px)] rounded-lg border sm:w-72 border-[#e6d7bb] bg-white pl-8 pr-2 text-sm"
           />
         </label>
@@ -607,6 +653,22 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
         </span>
       </div>
 
+      {codeMatch && (
+        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-[#cda876] bg-[#faf3e6] px-4 py-2.5 text-sm text-[#233c5e]">
+          <span>
+            Codice <strong className="font-mono tracking-wider">{codeMatch.code}</strong>: {codeMatch.client ? `${codeMatch.client} · ` : ""}
+            {codeMatch.title}
+          </span>
+          <button type="button" onClick={() => openTrip(codeMatch.code)} className="rounded-lg bg-[#233c5e] px-3 py-1.5 font-medium text-white hover:bg-[#1b3050]">
+            Mostra tutte le righe del viaggio
+          </button>
+        </div>
+      )}
+      {missingCode && (
+        <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+          Non ho trovato nessun viaggio con il codice <strong className="font-mono">{missingCode}</strong>: controlla di averlo scritto giusto.
+        </div>
+      )}
       {error && (
         <div className="flex items-start justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm text-red-800">
           {error}
@@ -618,7 +680,10 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
 
       {/* ── Foglio ── */}
       <div id="ops-print">
-        <p className="mb-2 hidden text-lg font-semibold text-[#233c5e] print:block">Operativo · {periodLabel(view, from, to)}</p>
+        <p className="mb-2 hidden text-lg font-semibold text-[#233c5e] print:block">
+          Operativo · {trip ? `Viaggio ${trip.code} · ` : ""}
+          {periodLabel(view, from, to)}
+        </p>
         <div className="ops-scroll max-h-[calc(100vh-150px)] min-h-[320px] overflow-auto rounded-2xl border border-[#e6d7bb] bg-white shadow-sm">
           <table className="table-fixed border-separate border-spacing-0 text-[13px] text-slate-800" style={{ width: tableWidth }}>
             <colgroup>
@@ -633,7 +698,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
                 {OPS_COLUMNS.map((c, i) => (
                   <th
                     key={c.key}
-                    className={`sticky top-0 border-b-2 border-r border-[#cdbb97] border-r-[#e6d7bb] bg-[#f3ead8] px-2 py-2 text-center text-[11px] font-semibold uppercase leading-tight tracking-wide text-[#233c5e] ${i < 2 ? (i === 0 ? "left-[30px] z-30" : "z-20 sm:left-[94px] sm:z-30") : "z-20"}`}
+                    className={`sticky top-0 border-b-2 border-r border-[#cdbb97] border-r-[#e6d7bb] bg-[#f3ead8] px-2 py-2.5 text-center text-[12.5px] font-semibold uppercase leading-tight tracking-wide text-[#233c5e] ${STICKY_TH[i] ?? "z-20"}`}
                   >
                     {c.label}
                   </th>
@@ -641,32 +706,12 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
               </tr>
             </thead>
             <tbody>
-              {groups.length === 0 && (
-                <tr>
-                  <td colSpan={OPS_COLUMNS.length + 1} className="px-4 py-16 text-center text-slate-500">
-                    {rows.length === 0 ? (
-                      <div className="sticky left-0 mx-auto flex max-w-[calc(100vw-64px)] flex-col items-center gap-3">
-                        <p>Nessun servizio in questo periodo.</p>
-                        <div className="flex flex-wrap justify-center gap-2">
-                          <button type="button" onClick={() => setImportOpen(true)} className="rounded-lg border border-[#e6d7bb] px-3 py-1.5 text-[#233c5e] hover:bg-[#faf3e6]">
-                            Importa dai viaggi
-                          </button>
-                          <button type="button" onClick={() => addRow(defaultDate())} className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-white">
-                            Aggiungi una riga
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <span className="sticky left-4">Nessuna riga corrisponde alla ricerca o ai filtri.</span>
-                    )}
-                  </td>
-                </tr>
-              )}
               {groups.map((g) => (
                 <DayGroup
                   key={g.day}
                   day={g.day}
                   isToday={g.day === today}
+                  showHeader={view !== "giorno"}
                   rows={g.rows}
                   editing={editing}
                   draft={draft}
@@ -682,11 +727,53 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, s
                   onAdd={() => addRow(g.day)}
                 />
               ))}
+              {groups.length > 0 && (
+                <tr className="ops-noprint">
+                  <td colSpan={OPS_COLUMNS.length + 1} className="p-0">
+                    <div className="sticky left-0 w-max px-3 py-2.5">
+                      <button
+                        type="button"
+                        onClick={() => addRow(defaultDate())}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-[#cda876] px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#faf3e6]"
+                      >
+                        <Plus className="h-4 w-4" /> Aggiungi riga
+                        {view !== "giorno" && <span className="font-normal text-slate-500">({dayLabel(defaultDate()).toLowerCase()})</span>}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
+          {groups.length === 0 && (
+            <div className="sticky left-0 flex w-[min(100%,calc(100vw-34px))] flex-col items-center gap-3 px-4 py-14 text-center text-sm text-slate-500">
+              {rows.length === 0 ? (
+                <>
+                  <p>{view === "viaggio" ? "Nessuna riga per questo viaggio." : "Nessun servizio in questo periodo."}</p>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {importEnabled && (view !== "viaggio" || trip?.start) && (
+                      <button type="button" onClick={() => setImportOpen(true)} className="rounded-lg border border-[#e6d7bb] px-3 py-2 text-[#233c5e] hover:bg-[#faf3e6]">
+                        Importa dai viaggi
+                      </button>
+                    )}
+                    <button type="button" onClick={() => addRow(defaultDate())} className="inline-flex items-center gap-1.5 rounded-lg bg-[#233c5e] px-4 py-2 font-medium text-white">
+                      <Plus className="h-4 w-4" /> Aggiungi una riga
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <p>Nessuna riga corrisponde alla ricerca o ai filtri.</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
+      <datalist id="ops-dl-trip_code">
+        {trips.map((t) => (
+          <option key={t.id} value={t.code} label={[t.client, t.title].filter(Boolean).join(" · ")} />
+        ))}
+      </datalist>
       <datalist id="ops-dl-client">{options.client.map((v) => <option key={v} value={v} />)}</datalist>
       <datalist id="ops-dl-agent">{options.agent.map((v) => <option key={v} value={v} />)}</datalist>
       <datalist id="ops-dl-supplier">{options.supplier.map((v) => <option key={v} value={v} />)}</datalist>
@@ -784,12 +871,15 @@ type GroupProps = {
   onCellColor: (id: string, key: OpsTextKey, color: OpsColor | null) => void;
   onMenu: (id: string, el: HTMLElement) => void;
   onAdd: () => void;
+  showHeader: boolean;
 };
 
-function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onCellColor, onMenu, onAdd }: GroupProps) {
+function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onCellColor, onMenu, onAdd, showHeader }: GroupProps) {
   const d = parseIsoDate(day);
   return (
     <>
+      {/* nella vista di un solo giorno la fascia non serve: le righe stanno subito sotto i titoli */}
+      {showHeader && (
       <tr>
         <td colSpan={OPS_COLUMNS.length + 1} className={`border-b border-[#e6d7bb] px-0 py-0 ${isToday ? "bg-[#f6e7c4]" : "bg-[#faf6ec]"}`}>
           <div className="sticky left-0 flex w-max items-center gap-3 px-3 py-1.5">
@@ -800,12 +890,17 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
             <span className="text-xs text-slate-500">
               {rows.length} {rows.length === 1 ? "servizio" : "servizi"}
             </span>
-            <button type="button" onClick={onAdd} className="ops-noprint inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-xs text-[#a08a5e] hover:bg-white hover:text-[#233c5e]">
-              <Plus className="h-3.5 w-3.5" /> riga
+            <button
+              type="button"
+              onClick={onAdd}
+              className="ops-noprint inline-flex items-center gap-1 rounded-md border border-[#cda876] bg-white px-2 py-0.5 text-xs font-medium text-[#233c5e] hover:bg-[#233c5e] hover:text-white"
+            >
+              <Plus className="h-3.5 w-3.5" /> Aggiungi riga
             </button>
           </div>
         </td>
       </tr>
+      )}
       {rows.map((r) => {
         const rowBg = r.row_color ? OPS_COLOR_STYLE[r.row_color].row : "#ffffff";
         return (
@@ -824,13 +919,13 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
               const isEditing = editing?.id === r.id && editing.key === c.key;
               const cellColor = c.key !== "service_date" ? r.cell_colors?.[c.key] : undefined;
               const bg = cellColor ? OPS_COLOR_STYLE[cellColor].cell : rowBg;
-              const sticky = i === 0 ? "sticky left-[30px] z-10" : i === 1 ? "relative sm:sticky sm:left-[94px] sm:z-10" : "";
+              const sticky = STICKY_TD[i] ?? "";
               const align = c.key === "pax" || c.key === "service_date" ? "text-center" : c.key === "meeting_time" ? "text-right" : "";
               return (
                 <td
                   key={c.key}
                   onClick={() => !isEditing && onStartEdit(r.id, c.key)}
-                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${i === 1 && !isEditing ? "font-medium" : ""}`}
+                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""}`}
                   style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined }}
                 >
                   {isEditing ? (

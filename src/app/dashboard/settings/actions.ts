@@ -285,3 +285,23 @@ export async function saveClientZefiroConfig(
   revalidatePath("/dashboard/settings");
   return { ok: true };
 }
+
+// Scheda operativa: pulsante «Importa dai viaggi» (utile ai tour operator, spento per le agenzie)
+export async function setOpsImport(enabled: boolean): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), ops_import: enabled ? "on" : "off" };
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  if (error) {
+    console.error("[setOpsImport]", error.message);
+    return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
+  }
+  revalidatePath("/dashboard/settings");
+  revalidatePath("/dashboard/operativo");
+  return { ok: true };
+}

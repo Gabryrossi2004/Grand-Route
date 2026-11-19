@@ -1,6 +1,7 @@
 // Scheda operativa «day by day»: tipi e costanti condivisi tra pagina, azioni ed esportazione.
 
 export const OPS_TEXT_KEYS = [
+  "trip_code",
   "client",
   "agent",
   "supplier",
@@ -20,6 +21,7 @@ export type OpsColor = (typeof OPS_COLORS)[number];
 export type OpsRow = {
   id: string;
   service_date: string;
+  trip_code: string;
   client: string;
   agent: string;
   supplier: string;
@@ -41,6 +43,7 @@ export type OpsColumn = { key: "service_date" | OpsTextKey; label: string; width
 
 export const OPS_COLUMNS: OpsColumn[] = [
   { key: "service_date", label: "Data", width: 64 },
+  { key: "trip_code", label: "Codice", width: 86, suggest: true },
   { key: "client", label: "Cliente", width: 150, suggest: true },
   { key: "agent", label: "Agente", width: 150, suggest: true },
   { key: "supplier", label: "Fornitore", width: 150, suggest: true },
@@ -82,7 +85,13 @@ export function parseIsoDate(s: string) {
   return new Date(y, m - 1, d);
 }
 
-export type OpsView = "giorno" | "settimana" | "mese";
+export type OpsView = "giorno" | "settimana" | "mese" | "viaggio";
+
+/** Codice viaggio: 6 caratteri tra lettere e numeri (senza 0/O e 1/I). */
+export const TRIP_CODE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
+export const normalizeTripCode = (v: string) => v.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+
+export type OpsTripRef = { id: string; code: string; title: string; client: string; start: string | null; end: string | null };
 
 /** Oggi in Italia (AAAA-MM-GG), più eventuali giorni. */
 export function opsToday(addDays = 0) {
@@ -96,7 +105,7 @@ export function opsToday(addDays = 0) {
 /** Periodo mostrato: un giorno, la settimana (lunedì-domenica) o il mese che contiene la data. */
 export function opsRange(view: OpsView, anchor: string): { from: string; to: string } {
   const d = parseIsoDate(anchor);
-  if (view === "giorno") return { from: anchor, to: anchor };
+  if (view === "giorno" || view === "viaggio") return { from: anchor, to: anchor };
   if (view === "settimana") {
     const monday = new Date(d);
     monday.setDate(d.getDate() - ((d.getDay() + 6) % 7));

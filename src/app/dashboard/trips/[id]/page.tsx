@@ -439,6 +439,16 @@ function CoverHero({
                 <Calendar size={14} /> {dateRange}
               </span>
             )}
+            {trip.code && (
+              <Link
+                data-no-cover-edit
+                href={`/dashboard/operativo?codice=${trip.code}`}
+                title="Codice del viaggio: aprilo nella scheda operativa"
+                className="rounded-md bg-black/25 px-2 py-0.5 font-mono text-xs tracking-wider text-white hover:bg-black/40"
+              >
+                {trip.code}
+              </Link>
+            )}
           </div>
         </div>
       </CoverPhotoEditor>

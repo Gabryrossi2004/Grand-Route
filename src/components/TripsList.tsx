@@ -37,7 +37,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
       if (status === "pubblicati" && !trip.is_published) return false;
       if (status === "bozze" && trip.is_published) return false;
       if (!q) return true;
-      const haystack = `${trip.title} ${trip.destination ?? ""}`.toLowerCase();
+      const haystack = `${trip.title} ${trip.destination ?? ""} ${trip.code ?? ""}`.toLowerCase();
       return haystack.includes(q);
     });
   }, [displayTrips, query, status]);
@@ -57,7 +57,7 @@ export default function TripsList({ trips, groups }: { trips: Trip[]; groups: Tr
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Cerca per titolo o destinazione…"
+            placeholder="Cerca per titolo, destinazione o codice…"
             className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
           />
         </div>

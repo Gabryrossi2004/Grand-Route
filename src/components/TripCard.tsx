@@ -102,7 +102,10 @@ export default function TripCard({ trip, variantCount }: { trip: Trip; variantCo
           </div>
           {trip.destination && <p className="text-sm text-slate-500">{trip.destination}</p>}
           <div className="mt-2 flex items-center justify-between gap-2">
-            <p className="text-xs text-slate-500">{formatDateRange(trip)}</p>
+            <p className="text-xs text-slate-500">
+              {formatDateRange(trip)}
+              {trip.code && <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[11px] tracking-wider text-slate-600">{trip.code}</span>}
+            </p>
             {variantCount != null && variantCount > 1 && (
               <span className="shrink-0 rounded-full bg-[#f2e2c4] px-2 py-0.5 text-[10px] font-semibold text-[#756548]">
                 {variantCount} varianti

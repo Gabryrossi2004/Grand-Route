@@ -121,6 +121,8 @@ export type Trip = {
   show_emergency_button: boolean;
   itinerary_stage: ItineraryStage;
   client_request_notes: string | null;
+  // codice breve per ritrovare il viaggio (migrazione 0047; null prima dell'aggiornamento)
+  code?: string | null;
   created_at: string;
 };
 

@@ -18,7 +18,7 @@ const textFields = Object.fromEntries(OPS_TEXT_KEYS.map((k) => [k, z.string().ma
 const cellColors = z.partialRecord(z.enum(OPS_TEXT_KEYS), z.enum(OPS_COLORS));
 
 const patchSchema = z
-  .object({ service_date: date, row_color: color, cell_colors: cellColors, ...textFields })
+  .object({ service_date: date, row_color: color, cell_colors: cellColors, trip_id: z.string().uuid().nullable(), ...textFields })
   .partial()
   .strict();
 
@@ -34,7 +34,7 @@ const rowSchema = z
   })
   .strict();
 
-const SELECT = "id, service_date, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, row_color, cell_colors, trip_id, activity_id, created_at";
+const SELECT = "id, service_date, trip_code, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, row_color, cell_colors, trip_id, activity_id, created_at";
 
 async function ctx() {
   const user = await getCachedUser();
@@ -91,7 +91,7 @@ type DayRow = {
   id: string;
   trip_id: string;
   day_date: string;
-  trips: { id: string; title: string; owner_id: string; itinerary_stage: string | null; approval_status: string | null; clients: { full_name: string | null } | null } | null;
+  trips: { id: string; code: string | null; title: string; owner_id: string; itinerary_stage: string | null; approval_status: string | null; clients: { full_name: string | null } | null } | null;
 };
 type ActRow = {
   id: string;
@@ -118,25 +118,33 @@ export async function importOpsFromTrips(
   from: string,
   to: string,
   includeUnconfirmed: boolean,
+  tripId?: string,
 ): Promise<{ ok: true; rows: OpsRow[]; skipped: number } | Fail> {
   const c = await ctx();
   if (!c || !date.safeParse(from).success || !date.safeParse(to).success || from > to) return { ok: false, error: "Periodo non valido." };
-  if (nightsBetween(from, to) > 62) return { ok: false, error: "Importa al massimo due mesi alla volta." };
+  if (tripId !== undefined && !z.string().uuid().safeParse(tripId).success) return { ok: false, error: "Viaggio non valido." };
+  if (nightsBetween(from, to) > (tripId ? 400 : 62)) return { ok: false, error: "Importa al massimo due mesi alla volta." };
   const { supabase, user } = c;
 
-  const { data: dayData, error: dayErr } = await supabase
+  // l'importazione si attiva nelle Impostazioni (serve ai tour operator, non alle agenzie)
+  const { data: profile } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  if ((profile?.ai_preferences as Record<string, string> | null)?.ops_import !== "on")
+    return { ok: false, error: "L'importazione dai viaggi è spenta: puoi attivarla in Impostazioni → Operativo day by day." };
+
+  let dayQuery = supabase
     .from("trip_days")
-    .select("id, trip_id, day_date, trips!inner(id, title, owner_id, itinerary_stage, approval_status, clients(full_name))")
+    .select("id, trip_id, day_date, trips!inner(id, code, title, owner_id, itinerary_stage, approval_status, clients(full_name))")
     .eq("trips.owner_id", user.id)
     .gte("day_date", from)
-    .lte("day_date", to)
-    .limit(5000);
+    .lte("day_date", to);
+  if (tripId) dayQuery = dayQuery.eq("trip_id", tripId);
+  const { data: dayData, error: dayErr } = await dayQuery.limit(5000);
   if (dayErr) {
     console.error("[operativo] import days", dayErr.message);
     return { ok: false, error: "Non sono riuscito a leggere i viaggi. Riprova." };
   }
   const days = ((dayData ?? []) as unknown as DayRow[]).filter(
-    (d) => d.trips && (includeUnconfirmed || d.trips.itinerary_stage === "finale" || d.trips.approval_status === "approved"),
+    (d) => d.trips && (includeUnconfirmed || tripId || d.trips.itinerary_stage === "finale" || d.trips.approval_status === "approved"),
   );
   if (days.length === 0) return { ok: true, rows: [], skipped: 0 };
   const dayById = new Map(days.map((d) => [d.id, d]));
@@ -191,6 +199,7 @@ export async function importOpsFromTrips(
       return {
         owner_id: user.id,
         service_date: day.day_date,
+        trip_code: trip.code ?? "",
         client: (clean(trip.clients?.full_name) || clean(trip.title)).slice(0, 500),
         agent: "",
         supplier: (clean(s?.suppliers?.full_name) || clean(d.fornitore) || clean(d.compagnia)).slice(0, 500),
@@ -219,4 +228,5 @@ export async function importOpsFromTrips(
   }
   return { ok: true, rows, skipped: already.size };
 }
+
 
