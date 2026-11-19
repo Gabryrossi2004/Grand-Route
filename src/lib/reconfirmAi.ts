@@ -3,8 +3,10 @@ import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import { recordAiCost } from "@/lib/aiQuota";
 
-// Zefiro legge le risposte dei fornitori alle riconferme (testo incollato o screenshot di WhatsApp/email)
-// e dice, servizio per servizio, se è stato riconfermato, se c'è un problema o se la risposta non ne parla.
+// Zefiro legge le risposte dei fornitori alle riconferme e dice, servizio per servizio, se è stato
+// riconfermato, se c'è un problema o se la risposta non ne parla.
+// Pronto per la casella email Grand Route delle riconferme (in roadmap): quando arriverà una risposta
+// email, verrà letta da qui e lo stato si aggiornerà da solo. Per ora non è collegato all'interfaccia.
 
 export const ReconfirmCheckSchema = z.object({
   results: z.array(

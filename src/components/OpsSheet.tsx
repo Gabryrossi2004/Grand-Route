@@ -906,7 +906,6 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
           suppliers={suppliers}
           onClose={() => setRiconfermeOpen(false)}
           onStatusChange={(ids, st) => setRows((prev) => prev.map((r) => (ids.includes(r.id) ? { ...r, status: st } : r)))}
-          onLocalPatch={(id, patch) => setRows((prev) => prev.map((r) => (r.id === id ? { ...r, ...patch } : r)))}
         />
       )}
 

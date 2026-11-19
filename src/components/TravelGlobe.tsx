@@ -23,7 +23,8 @@ export type GlobeTrip = {
 const D2R = Math.PI / 180;
 // Zoom espresso come altezza sopra la superficie (1 = raggio della Terra, circa 6.371 km)
 const MAX_ALT = 6;
-const minAltFor = (style: "antique" | "physical") => (style === "physical" ? 0.006 : 0.45); // fisico: fino a ~40 km di quota
+// quota minima: fisico fino a ~40 km; carta d'epoca fino a ~450 km (abbastanza per leggere le zone di una regione)
+const minAltFor = (style: "antique" | "physical") => (style === "physical" ? 0.006 : 0.07);
 export type GlobeStyle = "antique" | "physical";
 // Colori delle linee e del velo di selezione per ciascuno stile
 const STYLE_CFG = {
@@ -479,7 +480,7 @@ export default function TravelGlobe({
           regionCode = code;
           const r = code ? regionRings.find((x) => x.name === code) : null;
           if (r) {
-            regionSel = makeLines([r], 3, styleRef.current === "physical" ? 0xffd75e : 0xc58f2d, 1, false);
+            regionSel = makeLines([r], 3.5, styleRef.current === "physical" ? 0xffd75e : 0xc58f2d, 1, false);
             lineSets.push(regionSel);
           }
           const info = code ? regionList.find((x) => x.c === code) : null;
@@ -585,9 +586,10 @@ export default function TravelGlobe({
           return a;
         };
         // Soluzione numerica (robusta): trova lo yaw che porta il punto più vicino al centro
-        const solve = (lat: number, lon: number) => {
+        // exact: da vicino il punto va proprio al centro (da lontano si lascia vedere un po' più di nord)
+        const solve = (lat: number, lon: number, exact = false) => {
           const v = ll2v(lat, lon, 1);
-          const pitch = Math.max(-1.2, Math.min(1.2, lat * D2R * 0.9));
+          const pitch = Math.max(-1.2, Math.min(1.2, lat * D2R * (exact ? 1 : 0.9)));
           let best = 0,
             bz = -9;
           const m = new T.Matrix4();
@@ -716,7 +718,7 @@ export default function TravelGlobe({
                   const rc = areaAt(hit.lat, hit.lon, regionRings);
                   choose("Italy", null, false);
                   setRegion(rc);
-                  api.current?.focus(hit.lat, hit.lon, rc ? 1.55 : 2.2);
+                  api.current?.focus(hit.lat, hit.lon, rc ? regionDist(rc) : 2.2);
                 } else if (hit.name) {
                   choose(hit.name, null, true);
                   api.current?.focus(hit.lat, hit.lon, 3);
@@ -925,26 +927,56 @@ export default function TravelGlobe({
           buildBadges();
         };
         // zone della regione scelta: etichette cliccabili sul globo
-        type ZoneMark = { id: string; el: HTMLButtonElement; pos: THREE_NS.Vector3 };
+        // ogni zona: un pallino numerato sul punto esatto e il nome accanto, spostato dove c'è spazio
+        // (con una linea sottile che lo collega al pallino); se non c'è posto resta solo il numero
+        type ZoneMark = { id: string; dot: HTMLButtonElement; label: HTMLButtonElement; line: HTMLDivElement; pos: THREE_NS.Vector3; w: number; h: number };
         let zones: ZoneMark[] = [];
         const setZones = (list: { id: string; name: string; lat: number; lon: number }[]) => {
-          for (const z of zones) z.el.remove();
-          zones = list.map((z) => {
-            const el = document.createElement("button");
-            el.type = "button";
-            el.className = "tg-zone";
-            el.textContent = z.name;
-            el.addEventListener("click", () => onZoneRef.current?.(z.id));
-            labels.appendChild(el);
-            return { id: z.id, el, pos: ll2v(z.lat, z.lon, 1.0006) };
+          for (const z of zones) {
+            z.dot.remove();
+            z.label.remove();
+            z.line.remove();
+          }
+          zones = list.map((z, i) => {
+            const line = document.createElement("div");
+            line.className = "tg-zone-line";
+            const label = document.createElement("button");
+            label.type = "button";
+            label.className = "tg-zone";
+            label.textContent = z.name;
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "tg-zone-dot";
+            dot.textContent = String(i + 1);
+            dot.title = z.name;
+            dot.setAttribute("aria-label", z.name);
+            for (const el of [label, dot]) el.addEventListener("click", () => onZoneRef.current?.(z.id));
+            labels.append(line, label, dot);
+            return { id: z.id, dot, label, line, pos: ll2v(z.lat, z.lon, 1.0006), w: label.offsetWidth || z.name.length * 7 + 18, h: label.offsetHeight || 22 };
           });
+        };
+        // inquadratura adatta alla grandezza della regione
+        const regionDist = (code: string) => {
+          const r = regionRings.find((x) => x.name === code);
+          if (!r) return 1.5;
+          let x0 = 180, y0 = 90, x1 = -180, y1 = -90;
+          for (const p of r.polys) {
+            x0 = Math.min(x0, p.box[0]);
+            y0 = Math.min(y0, p.box[1]);
+            x1 = Math.max(x1, p.box[2]);
+            y1 = Math.max(y1, p.box[3]);
+          }
+          const extent = Math.max((x1 - x0) * Math.cos((((y0 + y1) / 2) * Math.PI) / 180), y1 - y0) * D2R;
+          return 1 + Math.max(minAltFor(styleRef.current), Math.min(0.9, extent * 2.1));
         };
         const selectRegion = (code: string | null) => {
           choose("Italy", null, false);
           setRegion(code);
           const info = code ? regionList.find((x) => x.c === code) : null;
-          if (info) api.current?.focus(info.center[1], info.center[0], 1.5);
-          else api.current?.focus(42.5, 12.5, 2.1);
+          if (info) {
+            api.current?.focus(info.center[1], info.center[0], regionDist(info.c));
+            st.distT = regionDist(info.c); // l'inquadratura si adatta alla regione, anche allontanandosi
+          } else api.current?.focus(42.5, 12.5, 2.1);
         };
         const selectCountry = (name: string) => {
           const c = centroidOf(name);
@@ -955,7 +987,7 @@ export default function TravelGlobe({
         api.current = {
           zoom: (factor) => zoomBy(factor),
           focus: (lat, lon, maxDist = 2.2) => {
-            st.goal = solve(lat, lon);
+            st.goal = solve(lat, lon, maxDist < 2);
             st.yawV = 0;
             st.pitchV = 0;
             st.distT = Math.min(st.distT, maxDist);
@@ -1095,19 +1127,79 @@ export default function TravelGlobe({
             toCam.copy(camera.position).sub(v).normalize();
             const facing = v.clone().normalize().dot(toCam);
             v.project(camera);
-            b.el.style.opacity = facing > 0.2 ? "1" : "0";
+            // con una regione italiana scelta i numeri dei viaggi lasciano spazio a quelli delle zone
+            b.el.style.opacity = facing > 0.2 && !regionCode ? "1" : "0";
             b.el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-50%)`;
           }
           if (me) place(me.label, me.head, true);
-          for (const z of zones) {
-            v.copy(z.pos).applyMatrix4(yawG.matrixWorld);
-            toCam.copy(camera.position).sub(v).normalize();
-            const facing = v.clone().normalize().dot(toCam);
-            v.project(camera);
-            const on = facing > 0.3 && st.dist - 1 < 1.2;
-            z.el.style.opacity = on ? "1" : "0";
-            z.el.style.pointerEvents = on ? "auto" : "none";
-            z.el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-50%)`;
+          if (zones.length) {
+            // 1. posizione sullo schermo di ogni pallino
+            const shown: { z: ZoneMark; x: number; y: number }[] = [];
+            for (const z of zones) {
+              v.copy(z.pos).applyMatrix4(yawG.matrixWorld);
+              toCam.copy(camera.position).sub(v).normalize();
+              const facing = v.clone().normalize().dot(toCam);
+              v.project(camera);
+              const on = facing > 0.3 && st.dist - 1 < 1.2;
+              z.dot.style.opacity = on ? "1" : "0";
+              z.dot.style.pointerEvents = on ? "auto" : "none";
+              if (on) {
+                const x = (v.x * 0.5 + 0.5) * w,
+                  y = (-v.y * 0.5 + 0.5) * h;
+                z.dot.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-50%)`;
+                shown.push({ z, x, y });
+              } else {
+                z.label.style.opacity = "0";
+                z.label.style.pointerEvents = "none";
+                z.line.style.opacity = "0";
+              }
+            }
+            // 2. i nomi si sistemano uno alla volta dove non coprono pallini né altri nomi
+            const taken = shown.map((s) => [s.x - 12, s.y - 12, s.x + 12, s.y + 12]);
+            // i nomi non finiscono sotto la scheda del paese
+            const card = stage.querySelector<HTMLElement>("[data-globe-card]");
+            if (card) {
+              const sr = stage.getBoundingClientRect(),
+                cr = card.getBoundingClientRect();
+              taken.push([cr.left - sr.left - 4, cr.top - sr.top - 4, cr.right - sr.left + 4, cr.bottom - sr.top + 4]);
+            }
+            const free = (b: number[]) => b[0] >= 2 && b[1] >= 2 && b[2] <= w - 2 && b[3] <= h - 2 && taken.every((t) => b[2] <= t[0] || b[0] >= t[2] || b[3] <= t[1] || b[1] >= t[3]);
+            for (const s of shown) {
+              const { z } = s;
+              let best: number[] | null = null;
+              for (const d of [16, 34, 56]) {
+                const cands = [
+                  [0, -(z.h / 2 + d)], [z.w / 2 + d, 0], [-(z.w / 2 + d), 0], [0, z.h / 2 + d],
+                  [z.w / 2 + d * 0.7, -(z.h / 2 + d * 0.7)], [-(z.w / 2 + d * 0.7), -(z.h / 2 + d * 0.7)],
+                  [z.w / 2 + d * 0.7, z.h / 2 + d * 0.7], [-(z.w / 2 + d * 0.7), z.h / 2 + d * 0.7],
+                ];
+                for (const [dx, dy] of cands) {
+                  const cx = s.x + dx,
+                    cy = s.y + dy;
+                  const b = [cx - z.w / 2 - 2, cy - z.h / 2 - 2, cx + z.w / 2 + 2, cy + z.h / 2 + 2];
+                  if (free(b)) {
+                    best = [cx, cy, ...b];
+                    break;
+                  }
+                }
+                if (best) break;
+              }
+              if (best) {
+                taken.push(best.slice(2));
+                const [cx, cy] = best;
+                z.label.style.opacity = "1";
+                z.label.style.pointerEvents = "auto";
+                z.label.style.transform = `translate(${cx.toFixed(1)}px,${cy.toFixed(1)}px) translate(-50%,-50%)`;
+                const len = Math.hypot(cx - s.x, cy - s.y);
+                z.line.style.opacity = "1";
+                z.line.style.width = `${len.toFixed(1)}px`;
+                z.line.style.transform = `translate(${s.x.toFixed(1)}px,${s.y.toFixed(1)}px) rotate(${Math.atan2(cy - s.y, cx - s.x).toFixed(3)}rad)`;
+              } else {
+                z.label.style.opacity = "0";
+                z.label.style.pointerEvents = "none";
+                z.line.style.opacity = "0";
+              }
+            }
           }
         };
         raf = requestAnimationFrame(frame);
@@ -1263,7 +1355,7 @@ export default function TravelGlobe({
           </div>
         )}
         {country && mode === "agency" && (
-          <div className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 pr-10 text-[#1d2b40] shadow-xl">
+          <div data-globe-card className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 pr-10 text-[#1d2b40] shadow-xl">
             <button
               type="button"
               onClick={() => api.current?.clear()}
@@ -1327,6 +1419,25 @@ export default function TravelGlobe({
                       Scheda paese
                     </button>
                   </div>
+                  {country === "Italy" && regionInfo && zoneMarks && zoneMarks.length > 0 && (
+                    <div className="mt-2 border-t border-[#e6d7bb] pt-2">
+                      <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-[#a87a1e]">Zone di {regionInfo.name}</p>
+                      <ol className="flex max-h-[4.5rem] flex-wrap gap-1 overflow-y-auto">
+                        {zoneMarks.map((z, i) => (
+                          <li key={z.id}>
+                            <button
+                              type="button"
+                              onClick={() => onZone?.(z.id)}
+                              className="flex items-center gap-1 rounded-full border border-[#e6d7bb] bg-white py-0.5 pl-0.5 pr-2 text-xs font-medium text-[#233c5e] hover:border-[#c58f2d]"
+                            >
+                              <span className="grid h-[18px] w-[18px] place-items-center rounded-full bg-[#233c5e] text-[10px] font-bold text-white">{i + 1}</span>
+                              {z.name}
+                            </button>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
                   {country === "Italy" && onOpenItaly && !regionInfo && <p className="mt-1.5 text-xs text-slate-500">Tocca una regione sul globo per aprirne la scheda.</p>}
                 </>
               );
@@ -1418,8 +1529,10 @@ export default function TravelGlobe({
       <style>{`
         .tg-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -135%); white-space: nowrap; font-size: 11.5px; font-weight: 600; line-height: 1; padding: 5px 8px; border-radius: 99px; background: rgba(10,18,32,.72); color: #fff; border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(4px); transition: opacity .2s; will-change: transform; }
         .tg-me { background: #e24a3b; border-color: rgba(255,255,255,.5); }
-        .tg-zone { position: absolute; left: 0; top: 0; white-space: nowrap; font-size: 11px; font-weight: 700; line-height: 1; padding: 5px 8px; border-radius: 99px; background: #faf3e6; color: #233c5e; border: 1.5px solid #c58f2d; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: pointer; transition: opacity .2s; will-change: transform; }
-        .tg-zone:hover { background: #c58f2d; color: #fff; }
+        .tg-zone { position: absolute; left: 0; top: 0; white-space: nowrap; font-size: 11px; font-weight: 700; line-height: 1; padding: 5px 8px; border-radius: 99px; background: #faf3e6; color: #233c5e; border: 1.5px solid #c58f2d; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: pointer; transition: opacity .15s; will-change: transform; opacity: 0; }
+        .tg-zone:hover, .tg-zone-dot:hover { background: #c58f2d; color: #fff; }
+        .tg-zone-dot { position: absolute; left: 0; top: 0; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 99px; background: #233c5e; color: #fff; font-size: 11px; font-weight: 800; border: 2px solid #e3c27a; box-shadow: 0 2px 6px rgba(0,0,0,.35); cursor: pointer; transition: opacity .15s; will-change: transform; opacity: 0; }
+        .tg-zone-line { position: absolute; left: 0; top: 0; height: 1.5px; background: #c58f2d; transform-origin: 0 50%; opacity: 0; pointer-events: none; will-change: transform; }
         .tg-badge { position: absolute; left: 0; top: 0; min-width: 26px; height: 26px; padding: 0 7px; display: grid; place-items: center; border-radius: 99px; background: #233c5e; color: #fff; font-size: 12.5px; font-weight: 700; border: 2px solid #e3c27a; box-shadow: 0 2px 6px rgba(0,0,0,.35); transition: opacity .2s; will-change: transform; pointer-events: none; }
       `}</style>
     </div>
