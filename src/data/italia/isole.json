@@ -1,0 +1,320 @@
+{
+  "sicilia": {
+    "name": "Sicilia",
+    "tagline": "Templi greci, barocco, l'Etna e isole vulcaniche: un continente in miniatura.",
+    "description": [
+      "La Sicilia è l'isola più grande del Mediterraneo e una sintesi di civiltà: greci, romani, arabi, normanni e spagnoli hanno lasciato templi, cattedrali dorate e città barocche. L'Etna, il vulcano attivo più alto d'Europa, domina la costa orientale, mentre le isole minori offrono un mare straordinario.",
+      "Da vedere: Palermo arabo-normanna con Monreale e Cefalù, la Valle dei Templi di Agrigento, Siracusa e Ortigia, Taormina con il Teatro Antico, il barocco del Val di Noto (Noto, Modica, Ragusa Ibla), la Villa Romana del Casale, l'Etna, le Isole Eolie, Egadi, la Scala dei Turchi, Erice e le saline di Trapani.",
+      "Le esperienze più richieste: escursione sull'Etna fino ai crateri sommitali con guida, street food a Palermo, gita in barca alle Eolie con Stromboli di notte, degustazioni di Nero d'Avola, Etna Rosso e Marsala, granita e brioche a colazione, cannoli a Piana degli Albanesi.",
+      "Ideale per tutti: coppie, famiglie, gruppi culturali, enogastronomia e mare. Durata consigliata: 7-12 giorni con un tour ad anello o due basi (Sicilia orientale e occidentale); si abbina con la Calabria o con Malta."
+    ],
+    "facts": {
+      "capoluogo": "Palermo",
+      "aeroporti": "Catania Fontanarossa (CTA), Palermo Falcone Borsellino (PMO), Trapani Birgi (TPS), Comiso (CIY)",
+      "comeArrivare": "Voli da tutta Italia; traghetti da Napoli, Civitavecchia, Genova e Salerno; Stretto di Messina da Villa San Giovanni",
+      "periodo": "Aprile-giugno e settembre-ottobre; estate per le isole; l'inverno è mite per le città d'arte",
+      "clima": "Mediterraneo: estati calde e secche, inverni miti sulla costa, neve sull'Etna",
+      "unesco": "Valle dei Templi, Villa Romana del Casale, Isole Eolie, città barocche del Val di Noto, Siracusa e Pantalica, Etna, Palermo arabo-normanna e cattedrali di Cefalù e Monreale",
+      "prodotti": "Arancine, cannoli, cassata, granita; pistacchio di Bronte, arance rosse, capperi di Pantelleria, Nero d'Avola, Etna DOC, Marsala, Passito di Pantelleria"
+    },
+    "places": [
+      { "name": "Valle dei Templi", "description": "Templi greci tra i meglio conservati al mondo, ad Agrigento.", "search": "Valle dei Templi" },
+      { "name": "Teatro Antico di Taormina", "description": "Teatro greco-romano con vista sull'Etna e sul mare.", "search": "Teatro antico di Taormina" },
+      { "name": "Ortigia", "description": "Il cuore antico di Siracusa su un'isola.", "search": "Ortigia" },
+      { "name": "Duomo di Monreale", "description": "Mosaici dorati arabo-normanni sopra Palermo.", "search": "Duomo di Monreale" },
+      { "name": "Etna", "description": "Il vulcano attivo più alto d'Europa.", "search": "Etna" },
+      { "name": "Noto", "description": "La capitale del barocco siciliano.", "search": "Noto" }
+    ],
+    "experiences": [
+      "Escursione sull'Etna con guida vulcanologica e degustazione in cantina",
+      "Street food tour nei mercati di Palermo",
+      "Barca alle Eolie con Stromboli di notte",
+      "Tramonto alla Valle dei Templi",
+      "Corso di cucina siciliana con pranzo in masseria"
+    ],
+    "food": [
+      "Arancine, panelle e sfincione",
+      "Pasta alla Norma e pasta con le sarde",
+      "Caponata, involtini di pesce spada e cous cous trapanese",
+      "Cannoli, cassata, granita con brioche"
+    ],
+    "gettingAround": [
+      "L'auto a noleggio è il modo più flessibile per un tour",
+      "Treni e bus collegano le città principali, ma con tempi lunghi",
+      "Aliscafi da Milazzo per le Eolie e da Trapani per le Egadi"
+    ],
+    "tips": [
+      "In agosto caldo intenso nell'interno: visitare siti archeologici al mattino",
+      "Sull'Etna oltre i 2.900 metri si sale solo con guida autorizzata",
+      "A Palermo e Catania guidare con prudenza; meglio muoversi a piedi nei centri"
+    ],
+    "zones": [
+      {
+        "id": "palermo-cefalu",
+        "name": "Palermo, Monreale e Cefalù",
+        "lat": 38.1, "lon": 13.6,
+        "tagline": "La capitale arabo-normanna, i mercati e il borgo sul mare.",
+        "description": [
+          "Palermo è una città stratificata: la Cappella Palatina e la Cattedrale arabo-normanne UNESCO, i Quattro Canti, i mercati di Ballarò, Vucciria e Capo, Palazzo dei Normanni, il Teatro Massimo. Sopra la città, il Duomo di Monreale con i suoi mosaici dorati.",
+          "A un'ora, Cefalù è un borgo di pescatori con una cattedrale normanna e una lunga spiaggia; vicino la riserva dello Zingaro, Mondello e Bagheria con le ville barocche."
+        ],
+        "highlights": [
+          { "name": "Cappella Palatina", "description": "Mosaici e soffitto arabo.", "search": "Cappella Palatina" },
+          { "name": "Mercato di Ballarò", "description": "Il mercato storico più vivace.", "search": "Ballarò" },
+          { "name": "Duomo di Monreale", "description": "Mosaici dorati e chiostro.", "search": "Duomo di Monreale" },
+          { "name": "Cefalù", "description": "Duomo normanno e spiaggia.", "search": "Cefalù" },
+          { "name": "Riserva dello Zingaro", "description": "Calette e sentieri costieri.", "search": "Riserva naturale orientata dello Zingaro" }
+        ],
+        "experiences": ["Street food tour", "Opera al Teatro Massimo", "Trekking allo Zingaro"],
+        "idealFor": "Culturali, foodies, coppie; 3-4 giorni",
+        "bestPeriod": "Tutto l'anno"
+      },
+      {
+        "id": "taormina-etna",
+        "name": "Taormina ed Etna",
+        "lat": 37.85, "lon": 15.15,
+        "tagline": "La terrazza sul mare più famosa di Sicilia e il vulcano.",
+        "description": [
+          "Taormina è la località più elegante dell'isola: il Teatro Antico con l'Etna sullo sfondo, Corso Umberto, Isola Bella sotto il borgo. Castelmola, sopra, offre una vista ancora più ampia.",
+          "L'Etna si visita in jeep, a piedi o in funivia fino a 2.500 metri, con guide per i crateri sommitali. Le sue pendici sono una delle zone vinicole più interessanti d'Italia."
+        ],
+        "highlights": [
+          { "name": "Teatro Antico di Taormina", "description": "Teatro con vista sull'Etna.", "search": "Teatro antico di Taormina" },
+          { "name": "Isola Bella", "description": "Riserva naturale e spiaggia.", "search": "Isola Bella (Taormina)" },
+          { "name": "Crateri Silvestri", "description": "Crateri spenti facili da visitare.", "search": "Crateri Silvestri" },
+          { "name": "Gole dell'Alcantara", "description": "Canyon di basalto.", "search": "Gole dell'Alcantara" }
+        ],
+        "experiences": ["Jeep tour sull'Etna", "Degustazione di Etna Rosso", "Trekking nelle Gole dell'Alcantara"],
+        "idealFor": "Coppie, viaggi di nozze, famiglie; 3-4 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "siracusa-val-di-noto",
+        "name": "Siracusa e Val di Noto",
+        "lat": 36.9, "lon": 14.9,
+        "tagline": "Ortigia e le città del barocco siciliano.",
+        "description": [
+          "Siracusa fu la città più potente della Magna Grecia: il Parco della Neapolis con il Teatro Greco e l'Orecchio di Dionisio, e Ortigia, isola-centro storico con il Duomo costruito su un tempio greco e la Fonte Aretusa.",
+          "Il Val di Noto, ricostruito in stile barocco dopo il terremoto del 1693, comprende Noto, Modica con il cioccolato, Ragusa Ibla e Scicli, tutti UNESCO. Vicini la riserva di Vendicari e Marzamemi."
+        ],
+        "highlights": [
+          { "name": "Ortigia", "description": "Duomo e Fonte Aretusa.", "search": "Ortigia" },
+          { "name": "Teatro Greco di Siracusa", "description": "Rappresentazioni classiche in estate.", "search": "Teatro greco di Siracusa" },
+          { "name": "Noto", "description": "Cattedrale e Palazzo Nicolaci.", "search": "Noto" },
+          { "name": "Ragusa Ibla", "description": "Barocco e scalinate.", "search": "Ragusa Ibla" },
+          { "name": "Riserva di Vendicari", "description": "Spiagge e fenicotteri.", "search": "Riserva naturale orientata Oasi Faunistica di Vendicari" }
+        ],
+        "experiences": ["Cioccolato di Modica in laboratorio", "Barca intorno a Ortigia", "Tragedie greche al Teatro di Siracusa"],
+        "idealFor": "Culturali, coppie, mare; 3-5 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "agrigento-sud",
+        "name": "Agrigento e Sicilia centrale",
+        "lat": 37.3, "lon": 13.6,
+        "tagline": "La Valle dei Templi, la Scala dei Turchi e i mosaici di Piazza Armerina.",
+        "description": [
+          "La Valle dei Templi di Agrigento è uno dei siti archeologici più importanti del Mediterraneo, con il Tempio della Concordia quasi intatto. A pochi chilometri la Scala dei Turchi, scogliera di marna bianca sul mare.",
+          "Nell'entroterra la Villa Romana del Casale di Piazza Armerina conserva mosaici straordinari, tra cui le 'ragazze in bikini'. Caltagirone è la città della ceramica con la sua scalinata decorata."
+        ],
+        "highlights": [
+          { "name": "Tempio della Concordia", "description": "Tempio dorico intatto.", "search": "Tempio della Concordia" },
+          { "name": "Scala dei Turchi", "description": "Scogliera bianca.", "search": "Scala dei Turchi" },
+          { "name": "Villa Romana del Casale", "description": "Mosaici romani UNESCO.", "search": "Villa romana del Casale" },
+          { "name": "Scalinata di Caltagirone", "description": "142 gradini di ceramica.", "search": "Scalinata di Santa Maria del Monte" }
+        ],
+        "experiences": ["Valle dei Templi al tramonto", "Laboratorio di ceramica a Caltagirone", "Degustazione in una tenuta del centro Sicilia"],
+        "idealFor": "Culturali, gruppi, famiglie; 2-3 giorni",
+        "bestPeriod": "Marzo-giugno, settembre-novembre"
+      },
+      {
+        "id": "trapani-egadi",
+        "name": "Trapani, Erice e Isole Egadi",
+        "lat": 37.95, "lon": 12.5,
+        "tagline": "Saline, borghi medievali e il mare di Favignana.",
+        "description": [
+          "La Sicilia occidentale offre le saline di Trapani e Marsala con i mulini a vento, Erice, borgo medievale sul monte con le sue pasticcerie, il tempio di Segesta e San Vito Lo Capo con la spiaggia caraibica e il Cous Cous Fest.",
+          "Le Isole Egadi — Favignana, Levanzo e Marettimo — hanno acque trasparenti, cave di tufo e calette come Cala Rossa, perfette in bici o in barca."
+        ],
+        "highlights": [
+          { "name": "Erice", "description": "Borgo medievale sul monte.", "search": "Erice" },
+          { "name": "Saline di Trapani", "description": "Mulini a vento e tramonti.", "search": "Saline di Trapani e Paceco" },
+          { "name": "Cala Rossa", "description": "La baia più famosa di Favignana.", "search": "Favignana" },
+          { "name": "Tempio di Segesta", "description": "Tempio dorico nella campagna.", "search": "Segesta" },
+          { "name": "San Vito Lo Capo", "description": "Spiaggia bianca e monte Monaco.", "search": "San Vito Lo Capo" }
+        ],
+        "experiences": ["Bici a Favignana", "Degustazione di Marsala in cantina storica", "Tramonto alle saline"],
+        "idealFor": "Mare, coppie, gruppi di amici; 3-5 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "eolie",
+        "name": "Isole Eolie",
+        "lat": 38.55, "lon": 14.9,
+        "tagline": "Sette isole vulcaniche patrimonio UNESCO.",
+        "description": [
+          "Lipari, Vulcano, Salina, Panarea, Stromboli, Filicudi e Alicudi sono sette isole diverse tra loro: i fanghi termali di Vulcano, i capperi e la malvasia di Salina, la mondanità di Panarea, le eruzioni di Stromboli visibili di notte.",
+          "Le isole si raggiungono in aliscafo da Milazzo e si girano in barca, con soste in baie di sabbia nera e acque limpide."
+        ],
+        "highlights": [
+          { "name": "Stromboli", "description": "Vulcano attivo e Sciara del Fuoco.", "search": "Stromboli" },
+          { "name": "Salina", "description": "L'isola verde dei capperi e della malvasia.", "search": "Salina (isola)" },
+          { "name": "Panarea", "description": "L'isola più mondana.", "search": "Panarea" },
+          { "name": "Vulcano", "description": "Fanghi termali e cratere.", "search": "Vulcano (isola)" }
+        ],
+        "experiences": ["Barca di notte davanti alla Sciara del Fuoco", "Degustazione di malvasia a Salina", "Trekking al cratere di Vulcano"],
+        "idealFor": "Coppie, viaggi di nozze, gruppi di amici; 4-7 giorni",
+        "bestPeriod": "Giugno-settembre"
+      }
+    ]
+  },
+  "sardegna": {
+    "name": "Sardegna",
+    "tagline": "Il mare più bello d'Italia, nuraghi e un entroterra antico e selvaggio.",
+    "description": [
+      "La Sardegna è famosa nel mondo per le sue spiagge: acque turchesi, sabbie bianche e calette tra il granito. Ma l'isola è anche un mondo a sé, con oltre 7.000 nuraghi, tradizioni pastorali, una lingua propria e paesaggi interni selvaggi come il Supramonte.",
+      "Da vedere: la Costa Smeralda e l'Arcipelago della Maddalena, il Golfo di Orosei con Cala Goloritzé e Cala Luna, Alghero catalana con Capo Caccia e la Grotta di Nettuno, Cagliari e la spiaggia del Poetto, Villasimius, il nuraghe Su Nuraxi di Barumini (UNESCO), Bosa, Stintino con La Pelosa, Chia e Tuerredda.",
+      "Le esperienze più richieste: giro in barca tra le isole della Maddalena e nel Golfo di Orosei, trekking alla Gola di Gorropu, pranzo con i pastori in Barbagia, degustazioni di Cannonau e Vermentino, snorkeling e immersioni, sagre e feste tradizionali come la Cavalcata Sarda.",
+      "Ideale per famiglie, coppie, clientela alto-spendente in Costa Smeralda, sportivi outdoor. Durata consigliata: 7-14 giorni, con una o due basi; si raggiunge facilmente in aereo o in traghetto con l'auto."
+    ],
+    "facts": {
+      "capoluogo": "Cagliari",
+      "aeroporti": "Cagliari Elmas (CAG), Olbia Costa Smeralda (OLB), Alghero Fertilia (AHO)",
+      "comeArrivare": "Voli da tutta Italia ed Europa; traghetti da Genova, Livorno, Civitavecchia, Piombino e Napoli per Olbia, Golfo Aranci, Porto Torres e Cagliari",
+      "periodo": "Giugno e settembre ideali; luglio-agosto alta stagione; primavera e autunno per trekking",
+      "clima": "Mediterraneo con molte giornate di sole; vento di maestrale frequente al nord",
+      "unesco": "Su Nuraxi di Barumini",
+      "prodotti": "Pecorino sardo e fiore sardo, pane carasau, bottarga di Cabras, Cannonau, Vermentino di Gallura, mirto, seadas"
+    },
+    "places": [
+      { "name": "Arcipelago di La Maddalena", "description": "Isole di granito rosa e acque caraibiche.", "search": "Arcipelago di La Maddalena" },
+      { "name": "Cala Goloritzé", "description": "Baia con guglia calcarea, raggiungibile a piedi o in barca.", "search": "Cala Goloritzé" },
+      { "name": "Su Nuraxi di Barumini", "description": "Il complesso nuragico più importante, UNESCO.", "search": "Su Nuraxi" },
+      { "name": "Grotta di Nettuno", "description": "Grotta marina a Capo Caccia vicino ad Alghero.", "search": "Grotta di Nettuno" },
+      { "name": "Spiaggia della Pelosa", "description": "Spiaggia a numero chiuso a Stintino.", "search": "Spiaggia della Pelosa" },
+      { "name": "Bosa", "description": "Borgo colorato sul fiume Temo.", "search": "Bosa" }
+    ],
+    "experiences": [
+      "Gommone o barca a vela nell'Arcipelago della Maddalena",
+      "Trekking alla Gola di Gorropu o a Cala Goloritzé",
+      "Pranzo con i pastori in Barbagia",
+      "Grotta di Nettuno con la scala del Cabirol",
+      "Degustazione di Cannonau e Vermentino"
+    ],
+    "food": [
+      "Culurgiones, malloreddus e fregola con arselle",
+      "Porceddu arrosto e pecorino",
+      "Bottarga di Cabras e pane carasau",
+      "Seadas con miele e mirto"
+    ],
+    "gettingAround": [
+      "L'auto (propria o a noleggio) è indispensabile: distanze lunghe e pochi mezzi pubblici",
+      "Barche e gommoni per le spiagge raggiungibili solo dal mare",
+      "Traghetti per La Maddalena da Palau, per Carloforte da Portovesme"
+    ],
+    "tips": [
+      "Alcune spiagge (La Pelosa, Cala Goloritzé, Spiaggia Rosa) sono a numero chiuso o con regole: prenotare",
+      "È vietato portare via sabbia e conchiglie: multe salate",
+      "Il maestrale può rendere il mare mosso: scegliere la costa riparata del giorno"
+    ],
+    "zones": [
+      {
+        "id": "costa-smeralda-maddalena",
+        "name": "Costa Smeralda e La Maddalena",
+        "lat": 41.15, "lon": 9.5,
+        "tagline": "Il lusso di Porto Cervo e le isole più belle del Mediterraneo.",
+        "description": [
+          "La Costa Smeralda, nata negli anni '60, è sinonimo di lusso: Porto Cervo, Porto Rotondo, spiagge come Capriccioli, Liscia Ruja e il Principe. Yacht, hotel iconici e vita notturna attirano clientela internazionale.",
+          "Di fronte, l'Arcipelago di La Maddalena è un parco nazionale di isole di granito rosa: Budelli con la Spiaggia Rosa (visibile solo da lontano), Spargi, Caprera con la casa di Garibaldi. San Teodoro e Palau completano la zona."
+        ],
+        "highlights": [
+          { "name": "Porto Cervo", "description": "Porto e piazzetta della Costa Smeralda.", "search": "Porto Cervo" },
+          { "name": "Spiaggia del Principe", "description": "Baia di sabbia bianca.", "search": "Spiaggia del Principe" },
+          { "name": "Isola di Spargi", "description": "Cala Corsara e acque cristalline.", "search": "Spargi" },
+          { "name": "Caprera", "description": "Isola di Garibaldi.", "search": "Caprera" }
+        ],
+        "experiences": ["Barca privata nell'arcipelago", "Aperitivo a Porto Cervo", "Snorkeling a Cala Corsara"],
+        "idealFor": "Clientela alto-spendente, coppie, famiglie; 5-7 giorni",
+        "bestPeriod": "Giugno-settembre"
+      },
+      {
+        "id": "golfo-di-orosei",
+        "name": "Golfo di Orosei e Barbagia",
+        "lat": 40.15, "lon": 9.6,
+        "tagline": "Calette tra le falesie, gole selvagge e la Sardegna dei pastori.",
+        "description": [
+          "Il Golfo di Orosei ha alcune delle spiagge più spettacolari d'Italia: Cala Luna, Cala Mariolu, Cala Goloritzé, raggiungibili in barca da Cala Gonone o a piedi con trekking impegnativi.",
+          "Nell'entroterra, il Supramonte con la Gola di Gorropu, il villaggio nuragico di Tiscali e i paesi della Barbagia — Orgosolo con i murales, Mamoiada con le maschere — raccontano la Sardegna più antica."
+        ],
+        "highlights": [
+          { "name": "Cala Luna", "description": "Spiaggia tra grotte e oleandri.", "search": "Cala Luna" },
+          { "name": "Cala Mariolu", "description": "Ciottoli bianchi e mare turchese.", "search": "Cala Mariolu" },
+          { "name": "Gola di Gorropu", "description": "Uno dei canyon più profondi d'Europa.", "search": "Gola di Gorropu" },
+          { "name": "Orgosolo", "description": "Il paese dei murales.", "search": "Orgosolo" }
+        ],
+        "experiences": ["Barca da Cala Gonone alle calette", "Trekking a Gorropu con guida", "Pranzo con i pastori"],
+        "idealFor": "Sportivi, coppie, famiglie avventurose; 4-6 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "alghero-nord-ovest",
+        "name": "Alghero e Nord-Ovest",
+        "lat": 40.6, "lon": 8.3,
+        "tagline": "La città catalana, Capo Caccia e La Pelosa.",
+        "description": [
+          "Alghero conserva un'anima catalana, con bastioni sul mare, vicoli e ottimi ristoranti di aragosta. Capo Caccia ospita la Grotta di Nettuno, raggiungibile in barca o con i 654 gradini della Escala del Cabirol.",
+          "Più a nord Stintino e la spiaggia della Pelosa, l'Asinara con gli asinelli bianchi; a sud Bosa con le case colorate sul fiume e la costa selvaggia verso Oristano."
+        ],
+        "highlights": [
+          { "name": "Bastioni di Alghero", "description": "Passeggiata sul mare.", "search": "Alghero" },
+          { "name": "Grotta di Nettuno", "description": "Grotta marina di Capo Caccia.", "search": "Grotta di Nettuno" },
+          { "name": "Spiaggia della Pelosa", "description": "Acqua caraibica a numero chiuso.", "search": "Spiaggia della Pelosa" },
+          { "name": "Isola dell'Asinara", "description": "Parco nazionale con asini bianchi.", "search": "Asinara" },
+          { "name": "Bosa", "description": "Borgo colorato sul fiume Temo.", "search": "Bosa" }
+        ],
+        "experiences": ["Tramonto sui bastioni", "Escursione all'Asinara", "Aragosta alla catalana"],
+        "idealFor": "Famiglie, coppie, gruppi; 4-6 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "cagliari-sud",
+        "name": "Cagliari e Sud Sardegna",
+        "lat": 39.1, "lon": 9.1,
+        "tagline": "Il capoluogo sul mare, Villasimius e le dune di Chia.",
+        "description": [
+          "Cagliari è una città vivace con il quartiere Castello sulla collina, i bastioni di Saint Remy, il Poetto e lo stagno di Molentargius con i fenicotteri. Il Museo Archeologico custodisce i Giganti di Mont'e Prama.",
+          "A est Villasimius e Costa Rei, a sud-ovest Chia e Tuerredda con dune e acque turchesi. Nell'entroterra il nuraghe Su Nuraxi di Barumini, a ovest l'isola di San Pietro con Carloforte."
+        ],
+        "highlights": [
+          { "name": "Quartiere Castello", "description": "Cuore storico di Cagliari.", "search": "Castello (Cagliari)" },
+          { "name": "Spiaggia di Tuerredda", "description": "Baia turchese vicino a Chia.", "search": "Tuerredda" },
+          { "name": "Villasimius", "description": "Spiagge e area marina protetta.", "search": "Villasimius" },
+          { "name": "Su Nuraxi di Barumini", "description": "Villaggio nuragico UNESCO.", "search": "Su Nuraxi" },
+          { "name": "Carloforte", "description": "Borgo ligure sull'isola di San Pietro.", "search": "Carloforte" }
+        ],
+        "experiences": ["Fenicotteri al Molentargius", "Visita guidata a Barumini", "Tonno di Carloforte"],
+        "idealFor": "Famiglie, coppie, city break; 4-7 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "oristano-sinis",
+        "name": "Oristano e Penisola del Sinis",
+        "lat": 39.95, "lon": 8.45,
+        "tagline": "Spiagge di quarzo, fenicotteri e i Giganti di Mont'e Prama.",
+        "description": [
+          "La costa occidentale intorno a Oristano è meno nota ma bellissima: la Penisola del Sinis con le spiagge di granelli di quarzo di Is Arutas e Mari Ermi, l'area archeologica di Tharros affacciata sul mare.",
+          "Cabras è la patria della bottarga e del museo con i Giganti di Mont'e Prama; gli stagni ospitano fenicotteri. A febbraio Oristano celebra la Sartiglia, giostra equestre spettacolare."
+        ],
+        "highlights": [
+          { "name": "Is Arutas", "description": "Spiaggia di chicchi di quarzo.", "search": "Is Arutas" },
+          { "name": "Tharros", "description": "Città fenicio-punica sul mare.", "search": "Tharros" },
+          { "name": "Museo di Cabras", "description": "I Giganti di Mont'e Prama.", "search": "Giganti di Mont'e Prama" },
+          { "name": "Sartiglia", "description": "Giostra equestre di Oristano.", "search": "Sartiglia" }
+        ],
+        "experiences": ["Bottarga di Cabras", "Tramonto a Tharros", "Kitesurf e windsurf"],
+        "idealFor": "Coppie, sportivi, culturali; 2-4 giorni",
+        "bestPeriod": "Maggio-ottobre; febbraio per la Sartiglia"
+      }
+    ]
+  }
+}

@@ -1,7 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import GlobeLoader from "@/components/GlobeLoader";
+import type { ItalyView } from "@/components/ItalyPanel";
 import CountrySheetPanel from "@/components/CountrySheetPanel";
 import type { AgencyCountryStat, AgencyGlobeData } from "@/components/TravelGlobe";
 import { codeOf, flagOf, nameItOfCode, namesOf } from "@/lib/geo/countryCodes";
@@ -26,6 +28,9 @@ const MODES: { id: Mode; label: string; hint: string }[] = [
 // pezzi minori che condividono il codice di un paese più grande: niente numero sopra
 const MINOR = new Set(["Baikonur", "Ashmore and Cartier Is."]);
 const NO_TRIPS: [] = [];
+const NO_ZONES: { id: string; name: string; lat: number; lon: number }[] = [];
+// pannello Italia (regioni e zone): si scarica solo quando si apre
+const ItalyPanel = dynamic(() => import("@/components/ItalyPanel"), { ssr: false });
 const euro = (n: number) => n.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
 
 export default function AgencyGlobeView({ trips, pending }: { trips: AgencyTrip[]; pending: number }) {
@@ -34,6 +39,21 @@ export default function AgencyGlobeView({ trips, pending }: { trips: AgencyTrip[
   const [year, setYear] = useState<string>("all");
   const [focus, setFocus] = useState<{ name: string; nonce: number } | null>(null);
   const [sheet, setSheet] = useState<{ code: string; name: string } | null>(null);
+  const [italy, setItaly] = useState<ItalyView | null>(null);
+  const [regionReq, setRegionReq] = useState<{ code: string | null; nonce: number } | null>(null);
+  const [region, setRegion] = useState<string | null>(null);
+  const [zoneMarks, setZoneMarks] = useState(NO_ZONES);
+
+  // regione scelta sul globo o nel pannello: compaiono le sue zone come etichette cliccabili
+  const regionChanged = useCallback((code: string | null) => {
+    setRegion(code);
+    if (!code) return setZoneMarks(NO_ZONES);
+    import("@/lib/italyLibrary").then((m) => {
+      const r = m.ITALY_REGIONS[code];
+      setZoneMarks(r ? r.zones.map((z) => ({ id: z.id, name: z.name, lat: z.lat, lon: z.lon })) : NO_ZONES);
+    });
+  }, []);
+  const openZone = useCallback((id: string) => setItaly((cur) => ({ region: cur?.region ?? region, zone: id })), [region]);
 
   const filtered = useMemo(
     () =>
@@ -131,9 +151,34 @@ export default function AgencyGlobeView({ trips, pending }: { trips: AgencyTrip[
       )}
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <GlobeLoader trips={NO_TRIPS} mode="agency" agency={data} onOpenSheet={openSheet} focusRequest={focus} />
+        <GlobeLoader
+          trips={NO_TRIPS}
+          mode="agency"
+          agency={data}
+          onOpenSheet={openSheet}
+          focusRequest={focus}
+          onOpenItaly={(r) => setItaly({ region: r, zone: null })}
+          regionRequest={regionReq}
+          zoneMarks={zoneMarks}
+          onZone={openZone}
+          onRegionChange={regionChanged}
+        />
 
         <aside className="flex flex-col gap-2 rounded-2xl border border-[#e6d7bb] bg-white/80 p-4">
+          <button
+            type="button"
+            onClick={() => {
+              setItaly({ region: null, zone: null });
+              setRegionReq({ code: null, nonce: Date.now() });
+            }}
+            className="mb-2 flex items-center gap-3 rounded-xl border border-[#c58f2d] bg-[#faf3e6] px-3 py-2.5 text-left text-sm hover:bg-[#f6eedc]"
+          >
+            <span className="text-2xl leading-none">🇮🇹</span>
+            <span>
+              <span className="block font-semibold text-[#233c5e]">Italia, regione per regione</span>
+              <span className="block text-xs text-slate-500">20 regioni e le loro zone, con schede pronte per l&apos;incoming</span>
+            </span>
+          </button>
           <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[#233c5e]">Classifica dei paesi</h2>
           {ranking.length === 0 ? (
             <p className="text-sm text-slate-600">
@@ -170,6 +215,17 @@ export default function AgencyGlobeView({ trips, pending }: { trips: AgencyTrip[
         </aside>
       </div>
 
+      {italy && (
+        <ItalyPanel
+          start={italy}
+          onClose={() => setItaly(null)}
+          onNavigate={(v) => setRegionReq({ code: v.region, nonce: Date.now() })}
+          onOpenCountrySheet={() => {
+            setItaly(null);
+            setSheet({ code: "IT", name: "Italia" });
+          }}
+        />
+      )}
       {sheet && <CountrySheetPanel key={sheet.code} code={sheet.code} name={sheet.name} onClose={() => setSheet(null)} />}
     </div>
   );

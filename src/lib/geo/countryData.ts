@@ -5,7 +5,7 @@ export type Rings = { name: string; polys: { ring: [number, number][]; holes: [n
 export const Q = 100; // i confini sono salvati in centesimi di grado (circa 1 km)
 
 // Decodifica i confini (numeri interi in centesimi di grado, con differenze da punto a punto)
-export function decode(countries: Country[]): { raw: Country[]; rings: Rings[] } {
+export function decode(countries: Country[], q = Q): { raw: Country[]; rings: Rings[] } {
   const rings: Rings[] = countries.map((c) => ({
     name: c.n,
     polys: c.p.map((poly) => {
@@ -16,7 +16,7 @@ export function decode(countries: Country[]): { raw: Country[]; rings: Rings[] }
         for (let i = 0; i < flat.length; i += 2) {
           x += flat[i];
           y += flat[i + 1];
-          pts.push([x / Q, y / Q]); // [lon, lat]
+          pts.push([x / q, y / q]); // [lon, lat]
         }
         return pts;
       });
@@ -76,3 +76,8 @@ export function countryAt(lat: number, lon: number, rings: Rings[], tol = 4): st
   return best;
 }
 
+
+// Regione (o altra area) che contiene il punto, con una piccola tolleranza per le coste
+export function areaAt(lat: number, lon: number, rings: Rings[]): string | null {
+  return countryAt(lat, lon, rings, 0.04);
+}

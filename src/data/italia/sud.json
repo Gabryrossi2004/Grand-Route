@@ -1,0 +1,691 @@
+{
+  "abruzzo": {
+    "name": "Abruzzo",
+    "tagline": "Parchi nazionali, borghi d'altura e la Costa dei Trabocchi.",
+    "description": [
+      "L'Abruzzo è la regione verde d'Europa: un terzo del territorio è protetto da parchi nazionali e regionali, dove vivono orsi marsicani, lupi e camosci. Tra montagne che superano i 2.900 metri e un mare a meno di un'ora, offre una varietà sorprendente.",
+      "Da vedere: Campo Imperatore e il Gran Sasso, il Parco Nazionale d'Abruzzo con Pescasseroli, i borghi di Santo Stefano di Sessanio, Scanno e Rocca Calascio, L'Aquila, Sulmona dei confetti, la Costa dei Trabocchi con le macchine da pesca su palafitte.",
+      "Le esperienze più autentiche: pranzo su un trabocco, trekking con avvistamento di fauna, arrosticini in un ristoro di montagna, soggiorni in alberghi diffusi nei borghi, sci a Roccaraso, ciclovia sulla vecchia ferrovia costiera.",
+      "Ideale per amanti della natura, famiglie, escursionisti e viaggiatori curiosi. Durata consigliata: 4-6 giorni; si abbina con Roma (L'Aquila è a 1h15), Marche o Puglia."
+    ],
+    "facts": {
+      "capoluogo": "L'Aquila",
+      "aeroporti": "Pescara Abruzzo (PSR); Roma Fiumicino a circa 2 ore",
+      "comeArrivare": "Autostrade A24 e A25 da Roma, A14 lungo l'Adriatico; treni sulla linea adriatica",
+      "periodo": "Maggio-ottobre per natura e mare; dicembre-marzo per lo sci",
+      "clima": "Mediterraneo sulla costa, rigido e nevoso in montagna",
+      "unesco": "Faggete vetuste del Parco Nazionale d'Abruzzo (parte del sito europeo delle foreste di faggio)",
+      "prodotti": "Montepulciano d'Abruzzo, Trebbiano, arrosticini, zafferano dell'Aquila, confetti di Sulmona, pecorino di Farindola"
+    },
+    "places": [
+      { "name": "Campo Imperatore", "description": "Altopiano chiamato il 'piccolo Tibet' sotto il Gran Sasso.", "search": "Campo Imperatore" },
+      { "name": "Rocca Calascio", "description": "Rocca medievale a 1.460 metri, set cinematografico.", "search": "Rocca Calascio" },
+      { "name": "Santo Stefano di Sessanio", "description": "Borgo medievale divenuto albergo diffuso.", "search": "Santo Stefano di Sessanio" },
+      { "name": "Costa dei Trabocchi", "description": "Antiche macchine da pesca su palafitte.", "search": "Costa dei Trabocchi" },
+      { "name": "Scanno", "description": "Borgo con il lago a forma di cuore.", "search": "Scanno" },
+      { "name": "Parco Nazionale d'Abruzzo", "description": "Faggete UNESCO, orsi e lupi.", "search": "Parco nazionale d'Abruzzo, Lazio e Molise" }
+    ],
+    "experiences": [
+      "Pranzo di pesce su un trabocco",
+      "Safari fotografico all'alba nel Parco Nazionale",
+      "Arrosticini a Campo Imperatore",
+      "Ciclovia dei Trabocchi in bici",
+      "Notte in albergo diffuso a Santo Stefano di Sessanio"
+    ],
+    "food": ["Arrosticini di pecora", "Spaghetti alla chitarra e timballo", "Brodetto alla vastese", "Confetti di Sulmona e parrozzo"],
+    "gettingAround": ["Auto indispensabile per montagne e borghi", "Treni lungo la costa adriatica", "Ciclovia costiera sull'ex ferrovia"],
+    "tips": ["In inverno strade di montagna con neve: catene a bordo", "I trabocchi-ristorante si prenotano in anticipo d'estate", "Molti borghi hanno pochi servizi: pianificare i pasti"],
+    "zones": [
+      {
+        "id": "gran-sasso",
+        "name": "Gran Sasso e L'Aquila",
+        "lat": 42.4, "lon": 13.6,
+        "tagline": "Il piccolo Tibet d'Italia, rocche e borghi d'altura.",
+        "description": [
+          "Il Gran Sasso è la vetta più alta degli Appennini, con il ghiacciaio del Calderone. Campo Imperatore, vasto altopiano, regala paesaggi da steppa asiatica. Intorno, borghi come Santo Stefano di Sessanio, Castel del Monte e Rocca Calascio.",
+          "L'Aquila, rinata dopo il sisma, ha la basilica di Collemaggio e la Fontana delle 99 Cannelle. È un'ottima base per esplorare la montagna."
+        ],
+        "highlights": [
+          { "name": "Campo Imperatore", "description": "Altopiano e funivia.", "search": "Campo Imperatore" },
+          { "name": "Rocca Calascio", "description": "Rocca a picco sulla valle.", "search": "Rocca Calascio" },
+          { "name": "Basilica di Collemaggio", "description": "Facciata bianca e rosa all'Aquila.", "search": "Basilica di Santa Maria di Collemaggio" },
+          { "name": "Santo Stefano di Sessanio", "description": "Albergo diffuso nel borgo.", "search": "Santo Stefano di Sessanio" }
+        ],
+        "experiences": ["Arrosticini all'aperto", "Trekking al Corno Grande", "Tramonto a Rocca Calascio"],
+        "idealFor": "Natura, fotografia, coppie; 2-3 giorni",
+        "bestPeriod": "Giugno-ottobre"
+      },
+      {
+        "id": "parco-abruzzo",
+        "name": "Parco Nazionale d'Abruzzo e Sulmona",
+        "lat": 41.85, "lon": 13.8,
+        "tagline": "Orsi, faggete UNESCO e il borgo di Scanno.",
+        "description": [
+          "Il Parco Nazionale d'Abruzzo, Lazio e Molise è uno dei più antichi d'Italia: Pescasseroli, Civitella Alfedena e Opi sono porte d'accesso a faggete secolari dove vive l'orso marsicano.",
+          "Sulmona, città di Ovidio e dei confetti, e Scanno con il suo lago a cuore completano un territorio autentico, ideale per escursioni e soggiorni slow."
+        ],
+        "highlights": [
+          { "name": "Pescasseroli", "description": "Centro del parco.", "search": "Pescasseroli" },
+          { "name": "Lago di Scanno", "description": "Lago a forma di cuore.", "search": "Lago di Scanno" },
+          { "name": "Sulmona", "description": "Città dei confetti.", "search": "Sulmona" },
+          { "name": "Val Fondillo", "description": "Valle di faggete e sentieri.", "search": "Val Fondillo" }
+        ],
+        "experiences": ["Escursione con guida per avvistare l'orso", "Laboratorio dei confetti", "Fotografia sul sentiero del cuore di Scanno"],
+        "idealFor": "Famiglie, escursionisti; 2-3 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "costa-trabocchi",
+        "name": "Costa dei Trabocchi",
+        "lat": 42.25, "lon": 14.5,
+        "tagline": "Macchine da pesca sul mare, calette e una ciclovia costiera.",
+        "description": [
+          "Tra Ortona e Vasto la costa è punteggiata di trabocchi, antiche piattaforme da pesca su palafitte oggi trasformate in ristoranti. Calette di ciottoli, riserve naturali come Punta Aderci e la ciclovia sulla vecchia ferrovia la rendono unica.",
+          "Borghi come San Vito Chietino, Fossacesia con l'abbazia di San Giovanni in Venere e Vasto, con il belvedere sul golfo, completano la zona."
+        ],
+        "highlights": [
+          { "name": "Trabocco Turchino", "description": "Il trabocco cantato da D'Annunzio.", "search": "Trabocco" },
+          { "name": "Punta Aderci", "description": "Riserva naturale e spiagge.", "search": "Riserva naturale di Punta Aderci" },
+          { "name": "Abbazia di San Giovanni in Venere", "description": "Abbazia sul mare a Fossacesia.", "search": "Abbazia di San Giovanni in Venere" },
+          { "name": "Vasto", "description": "Borgo con belvedere sull'Adriatico.", "search": "Vasto" }
+        ],
+        "experiences": ["Cena su un trabocco", "Bici sulla Via Verde", "Brodetto alla vastese"],
+        "idealFor": "Coppie, famiglie, cicloturisti; 2-4 giorni",
+        "bestPeriod": "Maggio-settembre"
+      }
+    ]
+  },
+  "molise": {
+    "name": "Molise",
+    "tagline": "La regione più segreta d'Italia: tratturi, borghi e tradizioni intatte.",
+    "description": [
+      "Il Molise è una delle regioni meno conosciute e proprio per questo una scoperta: un territorio di colline, montagne e un breve tratto di costa, attraversato dai tratturi della transumanza, oggi riconosciuta dall'UNESCO come patrimonio immateriale.",
+      "Da vedere: l'area archeologica sannitica di Pietrabbondante, la città romana di Saepinum, Agnone con la Pontificia Fonderia di campane più antica del mondo, Termoli con il borgo antico sul mare, Campobasso e Isernia, il borgo di Frosolone e le Mainarde.",
+      "Le esperienze sono genuine: visita a una fonderia di campane, caseifici di caciocavallo e stracciata, tratti di trekking lungo i tratturi, riti come la Ndocciata di Agnone a dicembre, il mare e la cucina di pesce a Termoli.",
+      "Ideale per viaggiatori curiosi, appassionati di storia e tradizioni, chi cerca luoghi fuori dalle rotte. Durata consigliata: 2-3 giorni; si abbina con Abruzzo, Puglia (Gargano) o Campania."
+    ],
+    "facts": {
+      "capoluogo": "Campobasso",
+      "aeroporti": "Nessun aeroporto: Pescara (circa 1h30 da Termoli), Napoli e Bari",
+      "comeArrivare": "A14 lungo la costa (Termoli); statali dall'entroterra; treni regionali limitati",
+      "periodo": "Maggio-ottobre; dicembre per la Ndocciata di Agnone",
+      "clima": "Mediterraneo sulla costa, continentale e freddo nell'interno",
+      "unesco": "Transumanza (patrimonio immateriale)",
+      "prodotti": "Caciocavallo di Agnone, stracciata, Tintilia del Molise, olio extravergine, salsiccia di fegato"
+    },
+    "places": [
+      { "name": "Saepinum", "description": "Città romana con mura e porte nella campagna.", "search": "Saepinum" },
+      { "name": "Pietrabbondante", "description": "Santuario sannita con teatro sulla montagna.", "search": "Pietrabbondante" },
+      { "name": "Agnone", "description": "Fonderia di campane e caciocavallo.", "search": "Agnone" },
+      { "name": "Termoli", "description": "Borgo antico affacciato sull'Adriatico con il castello svevo.", "search": "Termoli" }
+    ],
+    "experiences": ["Visita alla Fonderia Marinelli di Agnone", "Trekking sui tratturi", "Ndocciata di Agnone (8 e 24 dicembre)", "Brodetto a Termoli"],
+    "food": ["Cavatelli e fusilli al ragù", "Caciocavallo e stracciata", "Brodetto alla termolese", "Tintilia, il vino autoctono"],
+    "gettingAround": ["Auto indispensabile", "Collegamenti pubblici limitati nell'entroterra"],
+    "tips": ["Servizi turistici essenziali: prenotare con anticipo", "Ottimo punto di partenza per le Isole Tremiti da Termoli"],
+    "zones": [
+      {
+        "id": "molise-interno",
+        "name": "Alto Molise e siti sannitici",
+        "lat": 41.7, "lon": 14.35,
+        "tagline": "Campane, caciocavallo e teatri sanniti sulle montagne.",
+        "description": [
+          "L'Alto Molise è terra di montagna e tradizioni: Agnone con la Pontificia Fonderia Marinelli, che fonde campane da mille anni, e i caseifici di caciocavallo. A pochi chilometri il santuario sannita di Pietrabbondante.",
+          "Più a sud, Saepinum conserva una città romana intatta nella campagna, attraversata da un tratturo. Frosolone è famosa per l'artigianato dei coltelli."
+        ],
+        "highlights": [
+          { "name": "Pietrabbondante", "description": "Teatro sannita.", "search": "Pietrabbondante" },
+          { "name": "Saepinum", "description": "Città romana.", "search": "Saepinum" },
+          { "name": "Agnone", "description": "Fonderia di campane.", "search": "Agnone" },
+          { "name": "Frosolone", "description": "Borgo dei coltelli.", "search": "Frosolone" }
+        ],
+        "experiences": ["Fonderia di campane", "Caseificio di caciocavallo", "Trekking sul tratturo"],
+        "idealFor": "Cultura, viaggiatori curiosi; 2 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "termoli-costa",
+        "name": "Termoli e costa molisana",
+        "lat": 42.0, "lon": 14.99,
+        "tagline": "Borgo sul mare e porta per le Isole Tremiti.",
+        "description": [
+          "Termoli ha un piccolo borgo antico su un promontorio, con il castello svevo, la cattedrale romanica e il vicolo più stretto d'Italia. I trabucchi e le spiagge sabbiose ne fanno una meta estiva tranquilla.",
+          "Dal porto partono i traghetti per le Isole Tremiti, arcipelago di acque limpide nel Parco del Gargano."
+        ],
+        "highlights": [
+          { "name": "Castello Svevo di Termoli", "description": "Simbolo della città.", "search": "Castello Svevo (Termoli)" },
+          { "name": "Borgo antico di Termoli", "description": "Vicoli sul mare.", "search": "Termoli" },
+          { "name": "Isole Tremiti", "description": "Arcipelago raggiungibile da Termoli.", "search": "Isole Tremiti" }
+        ],
+        "experiences": ["Gita alle Tremiti", "Brodetto termolese", "Tramonto sul borgo"],
+        "idealFor": "Mare, famiglie; 2-3 giorni",
+        "bestPeriod": "Giugno-settembre"
+      }
+    ]
+  },
+  "campania": {
+    "name": "Campania",
+    "tagline": "Napoli, Pompei, la Costiera Amalfitana e Capri: il Sud più spettacolare.",
+    "description": [
+      "La Campania concentra alcune delle mete più celebri al mondo: Napoli con il suo centro storico UNESCO e la pizza, gli scavi di Pompei ed Ercolano, il Vesuvio, la Costiera Amalfitana, la Penisola Sorrentina, Capri, Ischia e Procida, la Reggia di Caserta e il Cilento con Paestum.",
+      "Da vedere: il Museo Archeologico e il Cristo Velato a Napoli, Spaccanapoli e Napoli sotterranea, Pompei ed Ercolano, Positano, Amalfi e Ravello, i Faraglioni e la Grotta Azzurra a Capri, i templi di Paestum, la Reggia di Caserta, le terme di Ischia.",
+      "Le esperienze più richieste: gita in barca lungo la Costiera e intorno a Capri, salita al cratere del Vesuvio, corso di pizza a Napoli, limoncello e ceramica a Vietri, concerti a Villa Rufolo, mozzarella di bufala in caseificio, trekking sul Sentiero degli Dei.",
+      "Ideale per viaggi di nozze, coppie, famiglie, gruppi culturali e crocieristi. Durata consigliata: 6-9 giorni tra Napoli, Costiera e isole; si abbina con Roma (1h10 di treno) o Puglia e Basilicata."
+    ],
+    "facts": {
+      "capoluogo": "Napoli",
+      "aeroporti": "Napoli Capodichino (NAP), Salerno Costa d'Amalfi (QSR)",
+      "comeArrivare": "Alta velocità Roma–Napoli in 1h10, Milano–Napoli circa 4h30; A1, A3; porti di Napoli e Salerno",
+      "periodo": "Aprile-giugno e settembre-ottobre; luglio-agosto affollati in Costiera e sulle isole",
+      "clima": "Mediterraneo: estati calde e soleggiate, inverni miti",
+      "unesco": "Centro storico di Napoli, aree archeologiche di Pompei, Ercolano e Torre Annunziata, Costiera Amalfitana, Reggia di Caserta, Cilento con Paestum, Velia e Certosa di Padula, Santa Sofia di Benevento",
+      "prodotti": "Pizza napoletana, mozzarella di bufala campana DOP, limoni di Amalfi e Sorrento, pomodoro San Marzano, Taurasi, Fiano, Greco di Tufo"
+    },
+    "places": [
+      { "name": "Pompei", "description": "La città romana sepolta dall'eruzione del 79 d.C.", "search": "Pompei (sito archeologico)" },
+      { "name": "Positano", "description": "Case a cascata sulla Costiera Amalfitana.", "search": "Positano" },
+      { "name": "Faraglioni di Capri", "description": "Tre torri di roccia nel mare di Capri.", "search": "Faraglioni di Capri" },
+      { "name": "Cristo Velato", "description": "Capolavoro di Sammartino nella Cappella Sansevero.", "search": "Cristo velato" },
+      { "name": "Reggia di Caserta", "description": "La Versailles italiana con il parco delle cascate.", "search": "Reggia di Caserta" },
+      { "name": "Templi di Paestum", "description": "Templi dorici tra i meglio conservati al mondo.", "search": "Paestum" }
+    ],
+    "experiences": [
+      "Barca privata lungo la Costiera Amalfitana",
+      "Salita al cratere del Vesuvio",
+      "Corso di pizza con un pizzaiolo napoletano",
+      "Sentiero degli Dei da Agerola a Positano",
+      "Visita a un caseificio di bufala nella piana di Paestum"
+    ],
+    "food": [
+      "Pizza margherita e fritta, genovese e ragù napoletano",
+      "Spaghetti alle vongole e scialatielli ai frutti di mare",
+      "Mozzarella di bufala e caprese",
+      "Sfogliatella, babà, pastiera e limoncello"
+    ],
+    "gettingAround": [
+      "Napoli: metro (stazione Toledo tra le più belle d'Europa), funicolari e taxi",
+      "Circumvesuviana per Pompei, Ercolano e Sorrento; traghetti e aliscafi per le isole",
+      "In Costiera in estate meglio barche e autisti privati: traffico intenso sulla SS163"
+    ],
+    "tips": [
+      "In Costiera Amalfitana in alta stagione sono previste targhe alterne: usare mezzi pubblici o NCC",
+      "Pompei richiede almeno mezza giornata: scarpe comode, acqua e cappello",
+      "La Grotta Azzurra apre solo con mare calmo: verificare il giorno stesso"
+    ],
+    "zones": [
+      {
+        "id": "napoli",
+        "name": "Napoli e Campi Flegrei",
+        "lat": 40.85, "lon": 14.25,
+        "tagline": "La città più viva d'Italia, tra tesori barocchi e pizza.",
+        "description": [
+          "Napoli è energia pura: Spaccanapoli e il centro storico UNESCO, la Cappella Sansevero con il Cristo Velato, il Museo Archeologico con i reperti di Pompei, Napoli sotterranea, il Lungomare e Castel dell'Ovo, il quartiere Chiaia e il Vomero con Castel Sant'Elmo.",
+          "A ovest i Campi Flegrei sono una zona vulcanica affascinante: la Solfatara, l'Anfiteatro Flavio di Pozzuoli, il parco sommerso di Baia, Cuma con l'antro della Sibilla."
+        ],
+        "highlights": [
+          { "name": "Spaccanapoli", "description": "La strada che taglia il centro antico.", "search": "Spaccanapoli" },
+          { "name": "Museo Archeologico Nazionale", "description": "Mosaici e statue da Pompei.", "search": "Museo archeologico nazionale di Napoli" },
+          { "name": "Napoli sotterranea", "description": "Cunicoli greco-romani sotto la città.", "search": "Napoli sotterranea" },
+          { "name": "Parco sommerso di Baia", "description": "Ville romane sott'acqua.", "search": "Parco sommerso di Baia" }
+        ],
+        "experiences": ["Pizza tour nel centro storico", "Snorkeling o barca dal fondo trasparente a Baia", "Caffè e sfogliatella al Gambrinus"],
+        "idealFor": "Culturali, foodies, city break; 2-3 giorni",
+        "bestPeriod": "Tutto l'anno"
+      },
+      {
+        "id": "costiera-amalfitana",
+        "name": "Costiera Amalfitana",
+        "lat": 40.63, "lon": 14.6,
+        "tagline": "Positano, Amalfi, Ravello: la costa più bella del mondo.",
+        "description": [
+          "La Costiera Amalfitana è un susseguirsi di borghi aggrappati alla roccia sopra il mare: Positano con le case colorate, Amalfi con il Duomo arabo-normanno, Ravello con i giardini di Villa Rufolo e Villa Cimbrone, Atrani, Praiano, Furore con il fiordo.",
+          "Limonaie a terrazze, ceramiche di Vietri, hotel leggendari e il Sentiero degli Dei fanno della Costiera la meta preferita per viaggi di nozze e clientela internazionale."
+        ],
+        "highlights": [
+          { "name": "Positano", "description": "Case a cascata e spiaggia grande.", "search": "Positano" },
+          { "name": "Duomo di Amalfi", "description": "Cattedrale con la scalinata e il chiostro del Paradiso.", "search": "Duomo di Amalfi" },
+          { "name": "Villa Cimbrone", "description": "La Terrazza dell'Infinito a Ravello.", "search": "Villa Cimbrone" },
+          { "name": "Fiordo di Furore", "description": "Insenatura con il ponte sul mare.", "search": "Fiordo di Furore" },
+          { "name": "Sentiero degli Dei", "description": "Trekking panoramico sopra Positano.", "search": "Sentiero degli Dei" }
+        ],
+        "experiences": ["Barca privata con soste per il bagno", "Concerto al Ravello Festival", "Limonaia e limoncello a Minori"],
+        "idealFor": "Viaggi di nozze, coppie, clientela alto-spendente; 3-5 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "capri-sorrento",
+        "name": "Capri e Penisola Sorrentina",
+        "lat": 40.6, "lon": 14.3,
+        "tagline": "L'isola più glamour del Mediterraneo e la terrazza di Sorrento.",
+        "description": [
+          "Capri è mito: la Piazzetta, i Faraglioni, la Grotta Azzurra, i Giardini di Augusto e Via Krupp, Anacapri con Villa San Michele e la seggiovia del Monte Solaro.",
+          "Sorrento, affacciata sul golfo dal suo terrazzo di tufo, è una base comoda per Capri, Pompei e la Costiera. La penisola nasconde calette come la Baia di Ieranto e borghi come Massa Lubrense."
+        ],
+        "highlights": [
+          { "name": "Grotta Azzurra", "description": "Grotta marina dalla luce blu.", "search": "Grotta Azzurra" },
+          { "name": "Faraglioni", "description": "Le tre rocce simbolo di Capri.", "search": "Faraglioni di Capri" },
+          { "name": "Monte Solaro", "description": "Seggiovia sul punto più alto dell'isola.", "search": "Monte Solaro" },
+          { "name": "Sorrento", "description": "Centro storico e Marina Grande.", "search": "Sorrento" }
+        ],
+        "experiences": ["Giro dell'isola in gozzo", "Shopping di sandali su misura a Capri", "Corso di cucina in una limonaia sorrentina"],
+        "idealFor": "Coppie, viaggi di nozze, famiglie a Sorrento; 2-4 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "pompei-vesuvio",
+        "name": "Pompei, Ercolano e Vesuvio",
+        "lat": 40.78, "lon": 14.45,
+        "tagline": "Le città sepolte e il vulcano che le ha distrutte.",
+        "description": [
+          "Pompei è il più grande sito archeologico del mondo romano: strade, case affrescate, terme e il foro, congelati dall'eruzione del 79 d.C. Ercolano, più piccola, conserva edifici a due piani e persino il legno carbonizzato.",
+          "Il Vesuvio si sale a piedi in circa 30-40 minuti dal parcheggio fino al cratere, con vista sul golfo. Oplontis, con la villa di Poppea, completa la visita."
+        ],
+        "highlights": [
+          { "name": "Scavi di Pompei", "description": "La città romana più famosa.", "search": "Pompei (sito archeologico)" },
+          { "name": "Scavi di Ercolano", "description": "Città sepolta dal fango vulcanico.", "search": "Ercolano (sito archeologico)" },
+          { "name": "Cratere del Vesuvio", "description": "Sentiero fino all'orlo del vulcano.", "search": "Vesuvio" },
+          { "name": "Villa di Poppea", "description": "Villa romana di Oplontis.", "search": "Villa di Poppea" }
+        ],
+        "experiences": ["Visita guidata a Pompei con archeologo", "Pranzo in cantina sul Vesuvio con Lacryma Christi", "Ercolano al mattino presto"],
+        "idealFor": "Culturali, famiglie, gruppi; 1-2 giorni",
+        "bestPeriod": "Tutto l'anno (estate molto calda)"
+      },
+      {
+        "id": "ischia-procida",
+        "name": "Ischia e Procida",
+        "lat": 40.73, "lon": 13.9,
+        "tagline": "L'isola verde delle terme e l'isola colorata dei pescatori.",
+        "description": [
+          "Ischia è l'isola del benessere: parchi termali come Poseidon e Negombo, il Castello Aragonese su un isolotto, i giardini La Mortella, Sant'Angelo con le sue fumarole sulla spiaggia.",
+          "Procida, piccola e autentica, ha il borgo di Marina Corricella con case pastello ed è stata Capitale italiana della cultura 2022."
+        ],
+        "highlights": [
+          { "name": "Castello Aragonese", "description": "Fortezza sul mare a Ischia Ponte.", "search": "Castello Aragonese (Ischia)" },
+          { "name": "Giardini La Mortella", "description": "Giardini subtropicali di William Walton.", "search": "Giardini La Mortella" },
+          { "name": "Sant'Angelo", "description": "Borgo pedonale e spiaggia dei Maronti.", "search": "Sant'Angelo (Ischia)" },
+          { "name": "Marina Corricella", "description": "Il borgo dei pescatori di Procida.", "search": "Marina di Corricella" }
+        ],
+        "experiences": ["Giornata in un parco termale", "Giro dell'isola in barca", "Coniglio all'ischitana"],
+        "idealFor": "Benessere, coppie, famiglie, clientela tedesca; 4-7 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "cilento",
+        "name": "Cilento e Paestum",
+        "lat": 40.3, "lon": 15.1,
+        "tagline": "Templi greci, bufale e un mare tra i più puliti d'Italia.",
+        "description": [
+          "Paestum conserva tre templi dorici straordinari e un museo con la Tomba del Tuffatore. Nella piana intorno si producono le migliori mozzarelle di bufala.",
+          "Il Cilento è un parco nazionale UNESCO con borghi sul mare come Castellabate, Acciaroli, Palinuro e Marina di Camerota, grotte marine, la Certosa di Padula e un ritmo di vita lento, culla della dieta mediterranea."
+        ],
+        "highlights": [
+          { "name": "Templi di Paestum", "description": "Templi di Nettuno, Hera e Atena.", "search": "Paestum" },
+          { "name": "Castellabate", "description": "Borgo di 'Benvenuti al Sud'.", "search": "Castellabate" },
+          { "name": "Capo Palinuro", "description": "Grotte marine e spiagge.", "search": "Capo Palinuro" },
+          { "name": "Certosa di Padula", "description": "Una delle certose più grandi d'Europa.", "search": "Certosa di Padula" }
+        ],
+        "experiences": ["Caseificio di bufala con degustazione", "Barca alle grotte di Palinuro", "Visita ai templi al tramonto"],
+        "idealFor": "Famiglie, mare, cultura; 3-6 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      }
+    ]
+  },
+  "puglia": {
+    "name": "Puglia",
+    "tagline": "Trulli, masserie, barocco e due mari: il tacco d'Italia è la meta del momento.",
+    "description": [
+      "La Puglia offre oltre 800 chilometri di costa tra Adriatico e Ionio, campagne di ulivi secolari, masserie fortificate trasformate in resort, città barocche e borghi bianchi. È diventata una delle mete preferite dalla clientela internazionale e dai matrimoni.",
+      "Da vedere: i trulli di Alberobello, la Valle d'Itria con Locorotondo, Cisternino e Ostuni, Polignano a Mare, Bari vecchia e la Basilica di San Nicola, Lecce barocca, Otranto e il Salento, Castel del Monte, il Gargano con Vieste e le Isole Tremiti, Matera a un passo.",
+      "Le esperienze più richieste: soggiorni in masseria con cucina contadina, lezioni di orecchiette con le signore di Bari vecchia, degustazioni di Primitivo e Negroamaro, giri in barca alle grotte di Polignano e del Gargano, tour in bici tra gli ulivi, la Notte della Taranta in agosto.",
+      "Ideale per coppie, famiglie, gruppi di amici, matrimoni, clientela internazionale. Durata consigliata: 7-10 giorni con due basi (Valle d'Itria e Salento); si abbina con Basilicata (Matera) o Campania."
+    ],
+    "facts": {
+      "capoluogo": "Bari",
+      "aeroporti": "Bari Karol Wojtyła (BRI), Brindisi Salento (BDS)",
+      "comeArrivare": "Treni da Roma (circa 4 ore per Bari) e da Milano lungo l'Adriatico; A14; porti di Bari e Brindisi",
+      "periodo": "Maggio-giugno e settembre-ottobre; luglio-agosto caldi e affollati",
+      "clima": "Mediterraneo: estati calde e ventilate, inverni miti",
+      "unesco": "Trulli di Alberobello, Castel del Monte, Monte Sant'Angelo (Longobardi), Foresta Umbra (faggete vetuste)",
+      "prodotti": "Olio extravergine, burrata di Andria, orecchiette, pane di Altamura, Primitivo di Manduria, Negroamaro, pasticciotto leccese"
+    },
+    "places": [
+      { "name": "Alberobello", "description": "Il paese dei trulli, patrimonio UNESCO.", "search": "Alberobello" },
+      { "name": "Polignano a Mare", "description": "Borgo a picco sulla scogliera con la spiaggia di Lama Monachile.", "search": "Polignano a Mare" },
+      { "name": "Lecce", "description": "La Firenze del barocco, in pietra leccese dorata.", "search": "Lecce" },
+      { "name": "Ostuni", "description": "La città bianca tra gli ulivi.", "search": "Ostuni" },
+      { "name": "Castel del Monte", "description": "Il castello ottagonale di Federico II.", "search": "Castel del Monte" },
+      { "name": "Otranto", "description": "Borgo sul mare con il mosaico della cattedrale.", "search": "Otranto" }
+    ],
+    "experiences": [
+      "Soggiorno in masseria con cooking class",
+      "Orecchiette a mano in Bari vecchia",
+      "Barca alle grotte di Polignano o del Gargano",
+      "Degustazione di Primitivo a Manduria",
+      "Tour in bici tra gli ulivi secolari della Piana"
+    ],
+    "food": [
+      "Orecchiette con le cime di rapa e tiella barese",
+      "Burrata, stracciatella e focaccia barese",
+      "Crudi di mare e polpo",
+      "Pasticciotto leccese e caffè in ghiaccio con latte di mandorla"
+    ],
+    "gettingAround": [
+      "L'auto è quasi indispensabile per masserie e spiagge",
+      "Treni regionali e Ferrovie Sud Est collegano Bari, Valle d'Itria e Salento",
+      "Barche e traghetti per le Tremiti da Vieste, Termoli e Manfredonia"
+    ],
+    "tips": [
+      "In agosto i prezzi salgono molto e le spiagge sono affollate: preferire giugno e settembre",
+      "Le masserie migliori si prenotano con largo anticipo per matrimoni ed eventi",
+      "Sul Salento il vento decide il mare: Adriatico o Ionio a seconda di tramontana o scirocco"
+    ],
+    "zones": [
+      {
+        "id": "valle-d-itria",
+        "name": "Valle d'Itria",
+        "lat": 40.75, "lon": 17.35,
+        "tagline": "Trulli, masserie e borghi bianchi tra gli ulivi.",
+        "description": [
+          "La Valle d'Itria è il cuore della Puglia dei trulli: Alberobello con i quartieri UNESCO, Locorotondo con il centro circolare bianco, Cisternino con le macellerie-fornello, Martina Franca barocca.",
+          "Ostuni, la città bianca, domina la piana degli ulivi millenari verso il mare. Masserie e trulli trasformati in resort rendono la zona perfetta come base."
+        ],
+        "highlights": [
+          { "name": "Alberobello", "description": "Rioni Monti e Aia Piccola.", "search": "Alberobello" },
+          { "name": "Locorotondo", "description": "Borgo bianco a pianta circolare.", "search": "Locorotondo" },
+          { "name": "Ostuni", "description": "La città bianca.", "search": "Ostuni" },
+          { "name": "Martina Franca", "description": "Barocco e Festival della Valle d'Itria.", "search": "Martina Franca" }
+        ],
+        "experiences": ["Notte in trullo", "Cena in fornello a Cisternino", "Bici tra gli ulivi secolari"],
+        "idealFor": "Coppie, famiglie, matrimoni; 3-5 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "bari-polignano",
+        "name": "Bari, Polignano e Monopoli",
+        "lat": 41.0, "lon": 17.1,
+        "tagline": "La città di San Nicola e i borghi sulla scogliera.",
+        "description": [
+          "Bari vecchia è un labirinto di vicoli con la Basilica di San Nicola, il castello svevo e le signore che preparano le orecchiette davanti a casa. Il lungomare è tra i più lunghi d'Italia.",
+          "A sud, Polignano a Mare sorge su una falesia sopra grotte marine, con la celebre Lama Monachile; Monopoli ha un porto antico e calette di sabbia."
+        ],
+        "highlights": [
+          { "name": "Basilica di San Nicola", "description": "Romanico pugliese e meta di pellegrini ortodossi.", "search": "Basilica di San Nicola" },
+          { "name": "Lama Monachile", "description": "Spiaggia tra le scogliere di Polignano.", "search": "Lama Monachile" },
+          { "name": "Monopoli", "description": "Porto antico e mura sul mare.", "search": "Monopoli" },
+          { "name": "Castello Svevo di Bari", "description": "Fortezza normanno-sveva.", "search": "Castello Svevo (Bari)" }
+        ],
+        "experiences": ["Orecchiette in Bari vecchia", "Barca nelle grotte di Polignano", "Street food: panzerotti e sgagliozze"],
+        "idealFor": "City break, coppie, gruppi; 2-3 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "salento",
+        "name": "Salento",
+        "lat": 40.15, "lon": 18.2,
+        "tagline": "Lecce barocca, mare caraibico e la pizzica.",
+        "description": [
+          "Il Salento è la punta del tacco: Lecce con le chiese barocche in pietra dorata, Otranto con la cattedrale e il mosaico, Gallipoli con il centro su un'isola, Santa Maria di Leuca dove si incontrano i due mari.",
+          "Le coste alternano scogliere e grotte sull'Adriatico (Grotta della Poesia, Porto Badisco) e spiagge di sabbia bianca sullo Ionio (Punta Prosciutto, Pescoluse, le 'Maldive del Salento')."
+        ],
+        "highlights": [
+          { "name": "Basilica di Santa Croce", "description": "Capolavoro del barocco leccese.", "search": "Basilica di Santa Croce (Lecce)" },
+          { "name": "Grotta della Poesia", "description": "Piscina naturale a Roca Vecchia.", "search": "Grotta della Poesia" },
+          { "name": "Gallipoli", "description": "Città vecchia su un'isola.", "search": "Gallipoli" },
+          { "name": "Santa Maria di Leuca", "description": "Il finis terrae d'Italia.", "search": "Santa Maria di Leuca" },
+          { "name": "Otranto", "description": "Borgo e cattedrale col mosaico.", "search": "Otranto" }
+        ],
+        "experiences": ["Barca alle grotte di Leuca", "Notte della Taranta (agosto)", "Tour barocco di Lecce"],
+        "idealFor": "Mare, gruppi di amici, famiglie; 4-7 giorni",
+        "bestPeriod": "Giugno-settembre"
+      },
+      {
+        "id": "gargano",
+        "name": "Gargano e Isole Tremiti",
+        "lat": 41.85, "lon": 16.0,
+        "tagline": "Lo sperone d'Italia: foresta, falesie bianche e santuari.",
+        "description": [
+          "Il Gargano è un promontorio montuoso coperto dalla Foresta Umbra, con borghi sul mare come Vieste, Peschici e Rodi Garganico, falesie di calcare bianco e grotte marine come la Grotta Campana. Monte Sant'Angelo e San Giovanni Rotondo sono mete di pellegrinaggio.",
+          "Al largo, le Isole Tremiti offrono acque tra le più limpide dell'Adriatico, perfette per snorkeling e gite in barca."
+        ],
+        "highlights": [
+          { "name": "Vieste", "description": "Borgo e faraglione di Pizzomunno.", "search": "Vieste" },
+          { "name": "Isole Tremiti", "description": "Arcipelago di San Domino e San Nicola.", "search": "Isole Tremiti" },
+          { "name": "Santuario di San Michele", "description": "Grotta santuario UNESCO a Monte Sant'Angelo.", "search": "Santuario di San Michele Arcangelo (Monte Sant'Angelo)" },
+          { "name": "Foresta Umbra", "description": "Faggeta secolare nel cuore del parco.", "search": "Foresta Umbra" }
+        ],
+        "experiences": ["Grotte marine in barca da Vieste", "Snorkeling alle Tremiti", "Pellegrinaggio a San Giovanni Rotondo"],
+        "idealFor": "Famiglie, mare, pellegrini; 3-6 giorni",
+        "bestPeriod": "Giugno-settembre"
+      },
+      {
+        "id": "murgia-castel-del-monte",
+        "name": "Murgia e Castel del Monte",
+        "lat": 41.08, "lon": 16.27,
+        "tagline": "Il castello di Federico II, cattedrali sul mare e burrata.",
+        "description": [
+          "Castel del Monte, il misterioso castello ottagonale di Federico II, domina l'altopiano della Murgia. Ad Andria nasce la burrata, ad Altamura il pane DOP e si trova l'Uomo di Altamura.",
+          "Sulla costa, Trani ha la cattedrale romanica affacciata sul porto, tra le più belle d'Italia; Barletta e Molfetta completano un itinerario poco battuto."
+        ],
+        "highlights": [
+          { "name": "Castel del Monte", "description": "Castello ottagonale UNESCO.", "search": "Castel del Monte" },
+          { "name": "Cattedrale di Trani", "description": "Romanico sul mare.", "search": "Cattedrale di Trani" },
+          { "name": "Altamura", "description": "Città del pane.", "search": "Altamura" },
+          { "name": "Parco dell'Alta Murgia", "description": "Altopiano carsico e masserie.", "search": "Parco nazionale dell'Alta Murgia" }
+        ],
+        "experiences": ["Caseificio di burrata ad Andria", "Forno storico di Altamura", "Tramonto a Trani"],
+        "idealFor": "Culturali, gastronomia; 1-2 giorni",
+        "bestPeriod": "Tutto l'anno"
+      }
+    ]
+  },
+  "basilicata": {
+    "name": "Basilicata",
+    "tagline": "Matera e i Sassi, Dolomiti Lucane e due mari.",
+    "description": [
+      "La Basilicata è una regione selvaggia e sorprendente: Matera, con i Sassi UNESCO scavati nella roccia, è una delle città più antiche e suggestive del mondo. Intorno, montagne, calanchi, borghi arroccati e due coste: lo Ionio sabbioso e il Tirreno di Maratea.",
+      "Da vedere: i Sassi e le chiese rupestri di Matera, la Murgia materana, le Dolomiti Lucane con Castelmezzano e Pietrapertosa, il Volo dell'Angelo, Craco città fantasma, Maratea con il Cristo Redentore, il Parco del Pollino, Metaponto con le Tavole Palatine.",
+      "Le esperienze più forti: dormire in una grotta-hotel nei Sassi, il Volo dell'Angelo appesi a un cavo tra due borghi, trekking sul Pollino tra i pini loricati, degustazioni di Aglianico del Vulture, pane e peperoni cruschi.",
+      "Ideale per coppie, viaggiatori curiosi, appassionati di fotografia e avventura. Durata consigliata: 3-5 giorni; si abbina naturalmente con la Puglia (Matera è a un'ora da Bari) e con la Calabria o il Cilento."
+    ],
+    "facts": {
+      "capoluogo": "Potenza",
+      "aeroporti": "Nessun aeroporto con voli di linea: Bari (Matera a circa 1 ora), Napoli per la zona tirrenica",
+      "comeArrivare": "Auto da Bari e Napoli; Ferrovie Appulo Lucane Bari–Matera; A2 per Maratea e il Pollino",
+      "periodo": "Aprile-giugno e settembre-ottobre; estate per il mare",
+      "clima": "Mediterraneo sulle coste, continentale nell'interno con inverni freddi",
+      "unesco": "I Sassi e il Parco delle Chiese Rupestri di Matera; faggete vetuste del Pollino",
+      "prodotti": "Aglianico del Vulture, pane di Matera IGP, peperoni cruschi, canestrato di Moliterno, lucanica"
+    },
+    "places": [
+      { "name": "Sassi di Matera", "description": "Città scavata nella roccia, abitata da millenni.", "search": "Sassi di Matera" },
+      { "name": "Castelmezzano", "description": "Borgo incastonato tra le guglie delle Dolomiti Lucane.", "search": "Castelmezzano" },
+      { "name": "Craco", "description": "Paese fantasma su un colle d'argilla.", "search": "Craco" },
+      { "name": "Maratea", "description": "La perla del Tirreno con il Cristo Redentore.", "search": "Maratea" },
+      { "name": "Parco Nazionale del Pollino", "description": "Il parco più grande d'Italia, con i pini loricati.", "search": "Parco nazionale del Pollino" }
+    ],
+    "experiences": [
+      "Notte in grotta-hotel nei Sassi",
+      "Volo dell'Angelo tra Pietrapertosa e Castelmezzano",
+      "Visita alle chiese rupestri della Murgia",
+      "Rafting sul Lao al confine con la Calabria",
+      "Degustazione di Aglianico sul Vulture"
+    ],
+    "food": ["Peperoni cruschi e baccalà", "Orecchiette e strascinati con mollica", "Pane di Matera e crapiata", "Aglianico del Vulture"],
+    "gettingAround": ["Auto indispensabile", "Matera si visita a piedi (molti scalini)", "Trasporti pubblici rari nell'interno"],
+    "tips": ["Nei Sassi scarpe comode e attenzione agli scalini lisci", "Il Volo dell'Angelo è attivo in primavera-estate, va prenotato", "Matera è molto richiesta: prenotare grotte-hotel con anticipo"],
+    "zones": [
+      {
+        "id": "matera",
+        "name": "Matera e Murgia",
+        "lat": 40.67, "lon": 16.6,
+        "tagline": "La città dei Sassi, set di film e capitale della cultura.",
+        "description": [
+          "Matera è un luogo unico: i Sassi Caveoso e Barisano, case e chiese scavate nella roccia, si illuminano la sera come un presepe. Palombaro Lungo, Casa Grotta e le chiese rupestri raccontano una storia millenaria.",
+          "Di fronte alla città, il Parco della Murgia materana offre sentieri tra chiese rupestri e un belvedere sui Sassi. È stata Capitale europea della cultura 2019."
+        ],
+        "highlights": [
+          { "name": "Sasso Caveoso", "description": "Il quartiere rupestre più suggestivo.", "search": "Sasso Caveoso" },
+          { "name": "Palombaro Lungo", "description": "Cisterna sotterranea gigante.", "search": "Palombaro Lungo" },
+          { "name": "Belvedere di Murgia Timone", "description": "Vista sui Sassi dal parco.", "search": "Murgia Timone" },
+          { "name": "Chiesa di Santa Maria de Idris", "description": "Chiesa rupestre sulla rupe.", "search": "Santa Maria de Idris" }
+        ],
+        "experiences": ["Notte in grotta-hotel", "Visita notturna dei Sassi", "Laboratorio del pane di Matera"],
+        "idealFor": "Coppie, fotografi, culturali; 2 giorni",
+        "bestPeriod": "Tutto l'anno"
+      },
+      {
+        "id": "dolomiti-lucane",
+        "name": "Dolomiti Lucane e Craco",
+        "lat": 40.55, "lon": 16.05,
+        "tagline": "Borghi tra le guglie e un paese fantasma.",
+        "description": [
+          "Castelmezzano e Pietrapertosa sono borghi incastonati tra guglie di arenaria: il Volo dell'Angelo li collega con un cavo d'acciaio a 400 metri d'altezza. Un'avventura indimenticabile.",
+          "Verso lo Ionio, Craco è un paese abbandonato su un colle d'argilla, visitabile con guida, set di molti film. I calanchi di Aliano raccontano la terra di Carlo Levi."
+        ],
+        "highlights": [
+          { "name": "Volo dell'Angelo", "description": "Zipline tra due borghi.", "search": "Volo dell'Angelo" },
+          { "name": "Pietrapertosa", "description": "Il borgo più alto della Basilicata.", "search": "Pietrapertosa" },
+          { "name": "Craco", "description": "Paese fantasma.", "search": "Craco" },
+          { "name": "Calanchi di Aliano", "description": "Paesaggio lunare di argilla.", "search": "Aliano" }
+        ],
+        "experiences": ["Volo dell'Angelo", "Percorso delle Sette Pietre", "Visita guidata a Craco"],
+        "idealFor": "Avventura, gruppi di amici, famiglie con ragazzi; 1-2 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "maratea-pollino",
+        "name": "Maratea e Pollino",
+        "lat": 39.99, "lon": 15.9,
+        "tagline": "Il Tirreno lucano e il parco più grande d'Italia.",
+        "description": [
+          "Maratea è l'unico tratto tirrenico della Basilicata: scogliere, calette, un borgo elegante e il Cristo Redentore che domina il golfo di Policastro.",
+          "Il Parco del Pollino, a cavallo con la Calabria, offre vette, pini loricati, gole come il Raganello e borghi arbëreshë di origine albanese."
+        ],
+        "highlights": [
+          { "name": "Cristo Redentore di Maratea", "description": "Statua sul Monte San Biagio.", "search": "Cristo Redentore (Maratea)" },
+          { "name": "Spiaggia Nera di Maratea", "description": "Spiaggia di sabbia scura.", "search": "Maratea" },
+          { "name": "Serra di Crispo", "description": "Il giardino degli dei dei pini loricati.", "search": "Serra di Crispo" },
+          { "name": "Gole del Raganello", "description": "Canyon per escursioni e torrentismo.", "search": "Gole del Raganello" }
+        ],
+        "experiences": ["Barca lungo la costa di Maratea", "Trekking tra i pini loricati", "Rafting nelle gole del Lao"],
+        "idealFor": "Natura, mare, avventura; 3-4 giorni",
+        "bestPeriod": "Maggio-settembre"
+      }
+    ]
+  },
+  "calabria": {
+    "name": "Calabria",
+    "tagline": "Mare cristallino, Tropea e montagne selvagge: il Sud più autentico.",
+    "description": [
+      "La Calabria è una penisola tra Tirreno e Ionio, con 800 chilometri di costa e montagne che arrivano quasi al mare: Sila, Aspromonte e Pollino. Le spiagge della Costa degli Dei, il centro di Tropea a picco sul mare e Scilla sono tra le immagini più amate del Sud.",
+      "Da vedere: Tropea e Capo Vaticano, Pizzo con la chiesetta di Piedigrotta, Scilla e Chianalea, i Bronzi di Riace al Museo di Reggio Calabria, Gerace, la Sila con i suoi laghi, Le Castella, Stilo con la Cattolica bizantina, la Riviera dei Cedri.",
+      "Le esperienze più belle: barca lungo la Costa degli Dei, tartufo di Pizzo al bar sul belvedere, pesca del pesce spada a Scilla, trekking in Sila e Aspromonte, degustazioni di 'nduja e cipolla rossa di Tropea, il Lungomare di Reggio con vista sull'Etna.",
+      "Ideale per famiglie, coppie, chi cerca mare e prezzi accessibili. Durata consigliata: 5-8 giorni; si abbina con la Sicilia (traghetto da Villa San Giovanni) o con la Basilicata."
+    ],
+    "facts": {
+      "capoluogo": "Catanzaro",
+      "aeroporti": "Lamezia Terme (SUF), Reggio Calabria (REG), Crotone (CRV)",
+      "comeArrivare": "Treni da Roma e Napoli lungo il Tirreno (Roma–Lamezia circa 4 ore); autostrada A2",
+      "periodo": "Giugno-settembre per il mare; maggio e ottobre più tranquilli",
+      "clima": "Mediterraneo caldo sulle coste, fresco e nevoso in Sila e Aspromonte",
+      "unesco": "Faggete vetuste del Pollino; nessun sito culturale ma molti candidati",
+      "prodotti": "'Nduja di Spilinga, cipolla rossa di Tropea, bergamotto, liquirizia, peperoncino, Cirò, tartufo di Pizzo"
+    },
+    "places": [
+      { "name": "Tropea", "description": "Centro storico a picco sul mare e Santa Maria dell'Isola.", "search": "Tropea" },
+      { "name": "Scilla", "description": "Borgo dei pescatori di Chianalea e Castello Ruffo.", "search": "Scilla" },
+      { "name": "Bronzi di Riace", "description": "Statue greche al Museo Archeologico di Reggio Calabria.", "search": "Bronzi di Riace" },
+      { "name": "Pizzo", "description": "Chiesa di Piedigrotta scavata nel tufo e tartufo gelato.", "search": "Pizzo" },
+      { "name": "Le Castella", "description": "Castello aragonese sul mare Ionio.", "search": "Le Castella" },
+      { "name": "Gerace", "description": "Borgo medievale con la cattedrale normanna.", "search": "Gerace" }
+    ],
+    "experiences": [
+      "Gita in barca da Tropea a Capo Vaticano",
+      "Tartufo di Pizzo al belvedere",
+      "Uscita sulle passerelle del pesce spada a Scilla",
+      "Trekking sulla Sila tra i giganti della Sila",
+      "Laboratorio della 'nduja a Spilinga"
+    ],
+    "food": ["'Nduja, soppressata e cipolla di Tropea", "Pesce spada alla ghiotta e alici", "Fileja e maccheroni al ferretto", "Tartufo di Pizzo e liquirizia di Rossano"],
+    "gettingAround": ["Auto consigliata; strade costiere panoramiche ma lente", "Treni regionali lungo il Tirreno", "Traghetti per la Sicilia e le Eolie da Tropea in estate"],
+    "tips": ["Ad agosto spiagge affollate: preferire giugno e settembre", "Le Eolie sono raggiungibili in giornata da Tropea", "Ristoranti di pesce ottimi e a prezzi contenuti"],
+    "zones": [
+      {
+        "id": "costa-degli-dei",
+        "name": "Costa degli Dei",
+        "lat": 38.68, "lon": 15.9,
+        "tagline": "Tropea, Capo Vaticano e il mare più bello della Calabria.",
+        "description": [
+          "Tra Pizzo e Nicotera, la Costa degli Dei alterna scogliere e spiagge di sabbia bianca su acque turchesi. Tropea, con il centro storico a picco sul mare e il santuario di Santa Maria dell'Isola, è la regina.",
+          "Capo Vaticano ha baie come Grotticelle, tra le più belle d'Italia; Pizzo è famosa per la chiesa di Piedigrotta e il tartufo gelato."
+        ],
+        "highlights": [
+          { "name": "Tropea", "description": "Il belvedere e Santa Maria dell'Isola.", "search": "Tropea" },
+          { "name": "Spiaggia di Grotticelle", "description": "Baia di Capo Vaticano.", "search": "Capo Vaticano" },
+          { "name": "Chiesa di Piedigrotta", "description": "Chiesa scavata nel tufo a Pizzo.", "search": "Chiesa di Piedigrotta" },
+          { "name": "Briatico", "description": "Calette e torre sul mare.", "search": "Briatico" }
+        ],
+        "experiences": ["Barca al tramonto", "Gita alle Eolie da Tropea", "Cena con cipolla rossa e 'nduja"],
+        "idealFor": "Famiglie, coppie, mare; 4-7 giorni",
+        "bestPeriod": "Giugno-settembre"
+      },
+      {
+        "id": "reggio-scilla",
+        "name": "Reggio Calabria e Costa Viola",
+        "lat": 38.2, "lon": 15.7,
+        "tagline": "I Bronzi di Riace, Scilla e lo Stretto di Messina.",
+        "description": [
+          "Reggio Calabria ha il Lungomare Falcomatà, definito 'il chilometro più bello d'Italia', con vista sulla Sicilia e l'Etna. Il Museo Archeologico Nazionale custodisce i Bronzi di Riace.",
+          "La Costa Viola, verso nord, prende il nome dai colori del mare al tramonto: Scilla con il quartiere di pescatori di Chianalea, Bagnara e Palmi."
+        ],
+        "highlights": [
+          { "name": "Museo Archeologico di Reggio", "description": "I Bronzi di Riace.", "search": "Museo archeologico nazionale di Reggio Calabria" },
+          { "name": "Chianalea", "description": "Il borgo dei pescatori di Scilla.", "search": "Chianalea" },
+          { "name": "Lungomare Falcomatà", "description": "Passeggiata sullo Stretto.", "search": "Lungomare Falcomatà" },
+          { "name": "Castello Ruffo", "description": "Castello sullo scoglio di Scilla.", "search": "Castello Ruffo di Scilla" }
+        ],
+        "experiences": ["Pesce spada a Scilla", "Tramonto sullo Stretto", "Escursione in Aspromonte"],
+        "idealFor": "Cultura e mare, tappa verso la Sicilia; 2-3 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "sila",
+        "name": "Sila e Cosenza",
+        "lat": 39.3, "lon": 16.5,
+        "tagline": "Il gran bosco d'Italia, laghi e un centro storico in fermento.",
+        "description": [
+          "La Sila è un altopiano di boschi di pino laricio, laghi come Arvo e Cecita, borghi come Camigliatello e la Riserva dei Giganti della Sila con alberi secolari. D'inverno si scia, d'estate si cammina e si va in canoa.",
+          "Cosenza ha un centro storico con il Duomo e il castello svevo e un museo all'aperto lungo Corso Mazzini. Più a nord, Rossano con il Codex Purpureus e la liquirizia."
+        ],
+        "highlights": [
+          { "name": "Giganti della Sila", "description": "Pini secolari alti oltre 40 metri.", "search": "Giganti della Sila" },
+          { "name": "Lago Arvo", "description": "Lago di montagna a Lorica.", "search": "Lago Arvo" },
+          { "name": "Camigliatello Silano", "description": "Località di montagna.", "search": "Camigliatello Silano" },
+          { "name": "Rossano", "description": "Codex Purpureus e museo della liquirizia.", "search": "Rossano" }
+        ],
+        "experiences": ["Trekking nel bosco", "Museo della liquirizia Amarelli", "Funghi e formaggi silani"],
+        "idealFor": "Natura, famiglie, gruppi; 2-3 giorni",
+        "bestPeriod": "Maggio-ottobre; inverno per lo sci"
+      },
+      {
+        "id": "ionio-calabrese",
+        "name": "Costa ionica: Le Castella, Gerace e Stilo",
+        "lat": 38.9, "lon": 16.9,
+        "tagline": "Castelli sul mare, borghi bizantini e la Magna Grecia.",
+        "description": [
+          "Sulla costa ionica si trovano Le Castella, con la fortezza aragonese sull'acqua, Capo Colonna con l'unica colonna superstite del tempio di Hera, e Crotone, antica colonia greca.",
+          "Nell'entroterra Gerace è un borgo medievale con una grande cattedrale normanna, Stilo custodisce la Cattolica bizantina; lungo la costa, Soverato e spiagge ampie."
+        ],
+        "highlights": [
+          { "name": "Le Castella", "description": "Castello sul mare.", "search": "Le Castella" },
+          { "name": "Gerace", "description": "Borgo e cattedrale.", "search": "Gerace" },
+          { "name": "Cattolica di Stilo", "description": "Chiesetta bizantina.", "search": "Cattolica di Stilo" },
+          { "name": "Capo Colonna", "description": "Parco archeologico.", "search": "Capo Colonna" }
+        ],
+        "experiences": ["Visita ai borghi bizantini", "Snorkeling nell'area marina di Capo Rizzuto", "Degustazione di Cirò"],
+        "idealFor": "Cultura e mare tranquillo; 2-4 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      }
+    ]
+  }
+}

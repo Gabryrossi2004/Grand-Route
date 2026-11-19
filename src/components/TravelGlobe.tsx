@@ -5,7 +5,7 @@ import { Camera, Crosshair, Loader2 } from "lucide-react";
 import CountryBoard from "@/components/CountryBoard";
 import { countryNameIt } from "@/lib/geo/countryNames";
 import { buildOceanLabels } from "@/lib/geo/oceanLabels";
-import { Q, countryAt, decode, inRing, type Country, type Rings } from "@/lib/geo/countryData";
+import { Q, areaAt, countryAt, decode, inRing, type Country, type Rings } from "@/lib/geo/countryData";
 import { SatelliteTiles } from "@/lib/geo/satelliteTiles";
 import type * as THREE_NS from "three";
 
@@ -215,6 +215,11 @@ export default function TravelGlobe({
   agency,
   onOpenSheet,
   focusRequest,
+  onOpenItaly,
+  regionRequest,
+  zoneMarks,
+  onZone,
+  onRegionChange,
 }: {
   trips: GlobeTrip[];
   userId?: string;
@@ -223,6 +228,12 @@ export default function TravelGlobe({
   agency?: AgencyGlobeData;
   onOpenSheet?: (name: string) => void;
   focusRequest?: { name: string; nonce: number } | null;
+  // Italia regione per regione (solo agenzia)
+  onOpenItaly?: (region: string | null) => void;
+  regionRequest?: { code: string | null; nonce: number } | null;
+  zoneMarks?: { id: string; name: string; lat: number; lon: number }[];
+  onZone?: (id: string) => void;
+  onRegionChange?: (code: string | null) => void;
 }) {
   const agencyRef = useRef(agency);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -237,7 +248,16 @@ export default function TravelGlobe({
     clear: () => void;
     selectCountry: (name: string) => void;
     setHighlight: (data: AgencyGlobeData) => void;
+    selectRegion: (code: string | null) => void;
+    setZones: (list: { id: string; name: string; lat: number; lon: number }[]) => void;
   } | null>(null);
+  const [regionInfo, setRegionInfo] = useState<{ code: string; name: string } | null>(null);
+  const onZoneRef = useRef(onZone);
+  const onRegionRef = useRef(onRegionChange);
+  useEffect(() => {
+    onZoneRef.current = onZone;
+    onRegionRef.current = onRegionChange;
+  }, [onZone, onRegionChange]);
 
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -282,17 +302,22 @@ export default function TravelGlobe({
 
     (async () => {
       try {
-        const [THREE, geo, lineMod, lineMatMod, lineGeoMod] = await Promise.all([
+        const [THREE, geo, lineMod, lineMatMod, lineGeoMod, italyMod] = await Promise.all([
           import("three"),
           import("@/lib/geo/countries.json"),
           import("three/examples/jsm/lines/LineSegments2.js"),
           import("three/examples/jsm/lines/LineMaterial.js"),
           import("three/examples/jsm/lines/LineSegmentsGeometry.js"),
+          mode === "agency" ? import("@/lib/geo/italyRegions.json") : Promise.resolve(null),
         ]);
         if (disposed || !stageRef.current || !canvasRef.current) return;
         const T = THREE as typeof THREE_NS;
         const countries = (geo.default ?? geo) as unknown as Country[];
         const { raw, rings } = decode(countries);
+        // regioni italiane (confini ISTAT, dettaglio di circa 400 m)
+        type RegionGeo = { c: string; n: string; q: number; center: [number, number]; p: number[][][] };
+        const regionList = (italyMod ? ((italyMod as { default?: unknown }).default ?? italyMod) : []) as RegionGeo[];
+        const regionRings = regionList.length ? decode(regionList.map((r) => ({ n: r.c, p: r.p })), regionList[0].q).rings : [];
 
         // Paesi per stato
         const gold = new Set<string>();
@@ -441,6 +466,26 @@ export default function TravelGlobe({
         let markedSet = makeLines(marked, 2.2, 0x1b2f4d, 1);
         lineSets.push(plainSet, markedSet);
         let selLine: LineSet | null = null;
+        // confini delle regioni italiane: compaiono avvicinandosi all'Italia o scegliendola
+        const regionSet = regionRings.length ? makeLines(regionRings, 1, 0x233c5e, 0.5) : null;
+        if (regionSet) lineSets.push(regionSet);
+        let regionSel: LineSet | null = null;
+        let regionCode: string | null = null;
+        const setRegion = (code: string | null) => {
+          if (regionSel) {
+            removeLines(regionSel);
+            regionSel = null;
+          }
+          regionCode = code;
+          const r = code ? regionRings.find((x) => x.name === code) : null;
+          if (r) {
+            regionSel = makeLines([r], 3, styleRef.current === "physical" ? 0xffd75e : 0xc58f2d, 1, false);
+            lineSets.push(regionSel);
+          }
+          const info = code ? regionList.find((x) => x.c === code) : null;
+          setRegionInfo(info ? { code: info.c, name: info.n } : null);
+          onRegionRef.current?.(code);
+        };
 
         const drawOverlay = (name: string | null) => {
           overlayCtx.clearRect(0, 0, OW, OH);
@@ -612,6 +657,7 @@ export default function TravelGlobe({
         // Sceglie un paese (o nessuno): evidenzia, aggiorna la scheda e, se è visitato, può aprire la bacheca
         const choose = (name: string | null, tripId: string | null, openBoard: boolean) => {
           drawOverlay(name);
+          if (name !== "Italy" && regionCode) setRegion(null);
           selectedRef.current = tripId;
           countryRef.current = name;
           setSelected(tripId);
@@ -666,7 +712,12 @@ export default function TravelGlobe({
                 choose(marker.country, marker.tripId, true);
               } else if (ground) {
                 const hit = countryFromHit(ground.point);
-                if (hit.name) {
+                if (hit.name === "Italy" && regionRings.length) {
+                  const rc = areaAt(hit.lat, hit.lon, regionRings);
+                  choose("Italy", null, false);
+                  setRegion(rc);
+                  api.current?.focus(hit.lat, hit.lon, rc ? 1.55 : 2.2);
+                } else if (hit.name) {
                   choose(hit.name, null, true);
                   api.current?.focus(hit.lat, hit.lon, 3);
                 } else choose(null, null, false);
@@ -781,6 +832,17 @@ export default function TravelGlobe({
             set.mat.linewidth = c[2];
             set.mat.needsUpdate = true;
           }
+          if (regionSet) {
+            regionSet.mat.color.setHex(cfg.plain[0]);
+            regionSet.mat.opacity = cfg.plain[1] * 0.6;
+            regionSet.mat.transparent = true;
+            regionSet.mat.linewidth = 1;
+            regionSet.mat.needsUpdate = true;
+          }
+          if (regionSel) {
+            regionSel.mat.color.setHex(styleRef.current === "physical" ? 0xffd75e : 0xc58f2d);
+            regionSel.mat.needsUpdate = true;
+          }
         }
 
         // ---- agenzia: numeri sui paesi e aggiornamento dei paesi evidenziati quando cambiano i filtri ----
@@ -862,6 +924,28 @@ export default function TravelGlobe({
           styleLines();
           buildBadges();
         };
+        // zone della regione scelta: etichette cliccabili sul globo
+        type ZoneMark = { id: string; el: HTMLButtonElement; pos: THREE_NS.Vector3 };
+        let zones: ZoneMark[] = [];
+        const setZones = (list: { id: string; name: string; lat: number; lon: number }[]) => {
+          for (const z of zones) z.el.remove();
+          zones = list.map((z) => {
+            const el = document.createElement("button");
+            el.type = "button";
+            el.className = "tg-zone";
+            el.textContent = z.name;
+            el.addEventListener("click", () => onZoneRef.current?.(z.id));
+            labels.appendChild(el);
+            return { id: z.id, el, pos: ll2v(z.lat, z.lon, 1.0006) };
+          });
+        };
+        const selectRegion = (code: string | null) => {
+          choose("Italy", null, false);
+          setRegion(code);
+          const info = code ? regionList.find((x) => x.c === code) : null;
+          if (info) api.current?.focus(info.center[1], info.center[0], 1.5);
+          else api.current?.focus(42.5, 12.5, 2.1);
+        };
         const selectCountry = (name: string) => {
           const c = centroidOf(name);
           choose(name, null, false);
@@ -890,6 +974,8 @@ export default function TravelGlobe({
           setStyle: applyStyle,
           selectCountry,
           setHighlight,
+          selectRegion,
+          setZones,
         };
         if (styleRef.current !== "antique") {
           applyStyle(styleRef.current).then((ok) => {
@@ -965,6 +1051,10 @@ export default function TravelGlobe({
           for (const set of lineSets) {
             for (const c of set.cells) c.line.visible = c.x === 0 && c.y === 0 && c.z === 0 ? true : me_[2] * c.x + me_[6] * c.y + me_[10] * c.z > minZ;
           }
+          if (regionSet) {
+            const showRegions = st.dist - 1 < 1.1 || countryRef.current === "Italy";
+            if (!showRegions) for (const c of regionSet.cells) c.line.visible = false;
+          }
           // da vicino il velo dorato si attenua, per lasciare vedere l'immagine satellitare (restano i bordi)
           if (phys && styleRef.current === "physical") {
             (phys.marks.material as THREE_NS.MeshBasicMaterial).opacity = Math.max(0.12, Math.min(1, (st.dist - 1) * 1.6));
@@ -1009,6 +1099,16 @@ export default function TravelGlobe({
             b.el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-50%)`;
           }
           if (me) place(me.label, me.head, true);
+          for (const z of zones) {
+            v.copy(z.pos).applyMatrix4(yawG.matrixWorld);
+            toCam.copy(camera.position).sub(v).normalize();
+            const facing = v.clone().normalize().dot(toCam);
+            v.project(camera);
+            const on = facing > 0.3 && st.dist - 1 < 1.2;
+            z.el.style.opacity = on ? "1" : "0";
+            z.el.style.pointerEvents = on ? "auto" : "none";
+            z.el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-50%)`;
+          }
         };
         raf = requestAnimationFrame(frame);
         setReady(true);
@@ -1053,6 +1153,14 @@ export default function TravelGlobe({
     if (mode !== "agency" || !agency || !ready || agency === agencyRef.current) return;
     api.current?.setHighlight(agency);
   }, [agency, mode, ready]);
+
+  // Agenzia: una regione italiana scelta dal pannello Italia si evidenzia sul globo
+  useEffect(() => {
+    if (regionRequest && ready) api.current?.selectRegion(regionRequest.code);
+  }, [regionRequest, ready]);
+  useEffect(() => {
+    if (ready) api.current?.setZones(zoneMarks ?? []);
+  }, [zoneMarks, ready]);
 
   // Agenzia: un paese scelto dalla classifica si evidenzia e si centra sul globo
   useEffect(() => {
@@ -1173,7 +1281,10 @@ export default function TravelGlobe({
                       ? `${stat.count} ${agency?.countLabel ?? "viaggi"}${agency?.showValue && stat.value > 0 ? ` · ${stat.value.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 })}` : ""}`
                       : "Nessun viaggio nel periodo scelto"}
                   </p>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">{countryNameIt(country)}</p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">
+                    {countryNameIt(country)}
+                    {country === "Italy" && regionInfo && <span className="text-[#a87a1e]"> · {regionInfo.name}</span>}
+                  </p>
                   {stat && stat.trips.length > 0 && (
                     <ul className="mt-1 max-h-28 space-y-0.5 overflow-y-auto text-sm text-slate-600">
                       {stat.trips.map((t) => (
@@ -1189,13 +1300,34 @@ export default function TravelGlobe({
                       ))}
                     </ul>
                   )}
-                  <button
-                    type="button"
-                    onClick={() => onOpenSheet?.(country)}
-                    className="mt-2 flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
-                  >
-                    Scheda paese
-                  </button>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {country === "Italy" && onOpenItaly && regionInfo && (
+                      <button
+                        type="button"
+                        onClick={() => onOpenItaly(regionInfo.code)}
+                        className="flex items-center gap-2 rounded-full bg-[#c58f2d] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#a87a1e]"
+                      >
+                        Scheda {regionInfo.name}
+                      </button>
+                    )}
+                    {country === "Italy" && onOpenItaly && (
+                      <button
+                        type="button"
+                        onClick={() => onOpenItaly(null)}
+                        className="flex items-center gap-2 rounded-full border border-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-[#233c5e] hover:bg-white"
+                      >
+                        Regioni d&apos;Italia
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => onOpenSheet?.(country)}
+                      className="flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
+                    >
+                      Scheda paese
+                    </button>
+                  </div>
+                  {country === "Italy" && onOpenItaly && !regionInfo && <p className="mt-1.5 text-xs text-slate-500">Tocca una regione sul globo per aprirne la scheda.</p>}
                 </>
               );
             })()}
@@ -1286,6 +1418,8 @@ export default function TravelGlobe({
       <style>{`
         .tg-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -135%); white-space: nowrap; font-size: 11.5px; font-weight: 600; line-height: 1; padding: 5px 8px; border-radius: 99px; background: rgba(10,18,32,.72); color: #fff; border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(4px); transition: opacity .2s; will-change: transform; }
         .tg-me { background: #e24a3b; border-color: rgba(255,255,255,.5); }
+        .tg-zone { position: absolute; left: 0; top: 0; white-space: nowrap; font-size: 11px; font-weight: 700; line-height: 1; padding: 5px 8px; border-radius: 99px; background: #faf3e6; color: #233c5e; border: 1.5px solid #c58f2d; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: pointer; transition: opacity .2s; will-change: transform; }
+        .tg-zone:hover { background: #c58f2d; color: #fff; }
         .tg-badge { position: absolute; left: 0; top: 0; min-width: 26px; height: 26px; padding: 0 7px; display: grid; place-items: center; border-radius: 99px; background: #233c5e; color: #fff; font-size: 12.5px; font-weight: 700; border: 2px solid #e3c27a; box-shadow: 0 2px 6px rgba(0,0,0,.35); transition: opacity .2s; will-change: transform; pointer-events: none; }
       `}</style>
     </div>

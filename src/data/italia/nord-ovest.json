@@ -1,0 +1,535 @@
+{
+  "piemonte": {
+    "name": "Piemonte",
+    "tagline": "Residenze reali, colline del Barolo e vette alpine: l'Italia più elegante e meno affollata.",
+    "description": [
+      "Il Piemonte è la regione dei contrasti composti: Torino, prima capitale d'Italia, con i suoi portici e i caffè storici; le colline vitate di Langhe, Roero e Monferrato, patrimonio UNESCO; e una corona di Alpi che dal Monviso arriva al Monte Rosa. È una destinazione raffinata, discreta, che premia chi cerca qualità più che folla.",
+      "Da vedere: le Residenze Sabaude (la Reggia di Venaria, Stupinigi, il Castello di Racconigi), il Museo Egizio e la Mole Antonelliana a Torino, i borghi di Barolo, La Morra e Neive, Alba con il suo mercato del tartufo, il Lago Maggiore con le Isole Borromee e il Lago d'Orta, la Sacra di San Michele sospesa sulla Val di Susa.",
+      "Le esperienze più richieste sono enogastronomiche: degustazioni nelle cantine di Barolo e Barbaresco, la caccia al tartufo bianco d'autunno, le cene stellate tra le colline. D'inverno le valli olimpiche (Sestriere, Bardonecchia) offrono sci, d'estate trekking nei parchi del Gran Paradiso e dell'Alta Valsesia.",
+      "Ideale per coppie, appassionati di vino e cucina, viaggi culturali e incentive di livello. Durata consigliata: 4-7 giorni tra Torino e Langhe; si abbina bene con la Liguria (1h30 di strada) o con i laghi lombardi. Il periodo d'oro è l'autunno, tra vendemmia e Fiera del Tartufo di Alba."
+    ],
+    "facts": {
+      "capoluogo": "Torino",
+      "aeroporti": "Torino Caselle (TRN), Cuneo Levaldigi (CUF); Milano Malpensa è comodo per il Novarese e il Lago Maggiore",
+      "comeArrivare": "Alta velocità Milano–Torino in 50 minuti, Roma–Torino in circa 4h30; autostrade A4, A6, A21",
+      "periodo": "Settembre-novembre per vendemmia e tartufo; maggio-giugno per laghi e colline; dicembre-marzo per lo sci",
+      "clima": "Continentale: inverni freddi e nebbiosi in pianura, estati calde; in montagna fresco anche ad agosto",
+      "unesco": "Residenze Sabaude, Paesaggi vitivinicoli di Langhe-Roero e Monferrato, Sacri Monti, Ivrea città industriale, siti palafitticoli",
+      "prodotti": "Barolo, Barbaresco, Barbera, Moscato d'Asti; tartufo bianco d'Alba, nocciola IGP, Castelmagno, gianduiotti"
+    },
+    "places": [
+      { "name": "Museo Egizio di Torino", "description": "La più importante collezione egizia al mondo dopo quella del Cairo, in un allestimento moderno.", "search": "Museo Egizio Torino" },
+      { "name": "Reggia di Venaria", "description": "Reggia barocca dei Savoia con giardini monumentali, a pochi chilometri da Torino.", "search": "Reggia di Venaria Reale" },
+      { "name": "Barolo e La Morra", "description": "Borghi in cima alle colline del Nebbiolo, con castelli, enoteche e belvedere sulle vigne.", "search": "La Morra Langhe" },
+      { "name": "Isole Borromee", "description": "Isola Bella e Isola Madre sul Lago Maggiore, palazzi e giardini all'italiana sull'acqua.", "search": "Isole Borromee" },
+      { "name": "Sacra di San Michele", "description": "Abbazia millenaria arroccata su un picco all'imbocco della Val di Susa, simbolo del Piemonte.", "search": "Sacra di San Michele" },
+      { "name": "Lago d'Orta e Orta San Giulio", "description": "Lago raccolto e romantico con un borgo affacciato sull'isola di San Giulio.", "search": "Orta San Giulio" }
+    ],
+    "experiences": [
+      "Degustazione di Barolo e Barbaresco in cantine storiche e di giovani produttori",
+      "Caccia al tartufo bianco con trifolau e cane, da ottobre a dicembre",
+      "Tour dei caffè storici di Torino con bicerin e cioccolato",
+      "Crociera sul Lago Maggiore tra Stresa e le Isole Borromee",
+      "Trekking o e-bike tra i noccioleti dell'Alta Langa"
+    ],
+    "food": [
+      "Vitello tonnato, carne cruda all'albese e agnolotti del plin",
+      "Tajarin al tartufo bianco e brasato al Barolo",
+      "Bagna cauda, il rito invernale delle verdure intinte nella salsa d'aglio e acciughe",
+      "Bicerin, gianduiotti e torta di nocciole"
+    ],
+    "gettingAround": [
+      "Torino si visita a piedi e con metro e tram; le residenze reali si raggiungono in auto o navetta",
+      "Per Langhe e Monferrato serve l'auto o un autista: i treni locali non servono i borghi",
+      "Laghi raggiungibili in treno da Milano e Torino, poi battelli di linea"
+    ],
+    "tips": [
+      "Le cantine migliori vanno prenotate in anticipo, soprattutto in ottobre",
+      "In autunno prevedere nebbia mattutina sulle colline: guidare con calma",
+      "La Fiera del Tartufo di Alba si tiene nei fine settimana da ottobre a inizio dicembre"
+    ],
+    "zones": [
+      {
+        "id": "torino",
+        "name": "Torino e le Residenze Sabaude",
+        "lat": 45.07, "lon": 7.68,
+        "tagline": "Capitale barocca, musei di livello mondiale e i palazzi dei Savoia.",
+        "description": [
+          "Torino è una città elegante e sorprendente: 18 chilometri di portici, piazze barocche come Piazza San Carlo e Piazza Castello, caffè storici e una scena gastronomica vivace. Il Museo Egizio, il Museo del Cinema nella Mole Antonelliana e i Musei Reali bastano da soli a giustificare due giorni.",
+          "Intorno alla città si dispone la 'corona di delizie' dei Savoia: la Reggia di Venaria con i suoi giardini, la Palazzina di Caccia di Stupinigi, i castelli di Racconigi e Rivoli. Sulle colline, la Basilica di Superga regala la vista migliore sulla città e sulle Alpi."
+        ],
+        "highlights": [
+          { "name": "Mole Antonelliana", "description": "Simbolo della città, ospita il Museo Nazionale del Cinema e un ascensore panoramico.", "search": "Mole Antonelliana" },
+          { "name": "Musei Reali", "description": "Palazzo Reale, Armeria e Galleria Sabauda in un unico percorso.", "search": "Musei Reali Torino" },
+          { "name": "Palazzina di Caccia di Stupinigi", "description": "Capolavoro di Juvarra, residenza di caccia e feste dei Savoia.", "search": "Palazzina di caccia di Stupinigi" },
+          { "name": "Basilica di Superga", "description": "Basilica juvarriana sulla collina, con panorama su Torino e l'arco alpino.", "search": "Basilica di Superga" }
+        ],
+        "experiences": ["Aperitivo torinese in un caffè storico di via Po", "Visita privata al Museo Egizio con egittologo", "Tour del Quadrilatero Romano e del mercato di Porta Palazzo"],
+        "idealFor": "Weekend culturali, viaggi di gruppo e incentive; 2-3 giorni, da abbinare alle Langhe",
+        "bestPeriod": "Tutto l'anno; dicembre con le Luci d'Artista"
+      },
+      {
+        "id": "langhe-roero",
+        "name": "Langhe e Roero",
+        "lat": 44.62, "lon": 8.0,
+        "tagline": "Le colline del Barolo e del tartufo, patrimonio UNESCO.",
+        "description": [
+          "Un mare di colline vitate punteggiate da castelli e borghi: Barolo, La Morra, Serralunga, Monforte, Barbaresco e Neive. Qui nascono alcuni dei vini rossi più celebri al mondo e, d'autunno, il tartufo bianco d'Alba. Alba è la cittadina di riferimento, con torri medievali e botteghe gastronomiche.",
+          "Oltre il Tanaro, il Roero offre paesaggi più selvaggi, con le Rocche di sabbia e i vini bianchi da Arneis. Più a sud l'Alta Langa diventa terra di noccioleti e boschi. Ristoranti stellati, agriturismi e relais tra le vigne rendono la zona perfetta per soggiorni lenti."
+        ],
+        "highlights": [
+          { "name": "Barolo e il WiMu", "description": "Il borgo del 're dei vini' con il museo del vino nel castello Falletti.", "search": "Barolo (Italia)" },
+          { "name": "La Morra", "description": "Il belvedere più famoso delle Langhe, con vista su tutte le vigne.", "search": "La Morra" },
+          { "name": "Alba", "description": "Città delle cento torri e capitale del tartufo bianco.", "search": "Alba (Italia)" },
+          { "name": "Neive e Barbaresco", "description": "Borghi tra i più belli d'Italia, nel cuore del Barbaresco.", "search": "Neive" },
+          { "name": "Grinzane Cavour", "description": "Castello con enoteca regionale, legato alla figura di Cavour.", "search": "Castello di Grinzane Cavour" }
+        ],
+        "experiences": ["Degustazione verticale di Barolo in cantina", "Ricerca del tartufo con il trifolau", "Pranzo in ristorante stellato tra le vigne", "Giro in e-bike sui crinali"],
+        "idealFor": "Coppie, appassionati di vino e cucina, piccoli gruppi esigenti; 3-4 giorni",
+        "bestPeriod": "Settembre-novembre (vendemmia e tartufo); maggio-giugno"
+      },
+      {
+        "id": "monferrato",
+        "name": "Monferrato",
+        "lat": 45.0, "lon": 8.35,
+        "tagline": "Colline morbide, castelli e 'infernot' scavati nel tufo.",
+        "description": [
+          "Meno noto delle Langhe e per questo più autentico, il Monferrato è un susseguirsi di colline con castelli, pievi romaniche e vigne di Barbera, Grignolino e Moscato. Casale Monferrato, Asti e Nizza Monferrato sono i centri principali, ciascuno con una forte tradizione enologica.",
+          "Particolarità della zona sono gli infernot, piccole cantine scavate a mano nella pietra da cantoni, oggi parte del sito UNESCO. Le cattedrali sotterranee di Canelli, dove riposa lo spumante, sono visitabili su prenotazione."
+        ],
+        "highlights": [
+          { "name": "Cattedrali sotterranee di Canelli", "description": "Cantine storiche scavate nella collina dove matura lo spumante.", "search": "Canelli cattedrali sotterranee" },
+          { "name": "Asti", "description": "Città di torri medievali, del Palio e dello spumante.", "search": "Asti" },
+          { "name": "Abbazia di Vezzolano", "description": "Gioiello del romanico piemontese immerso nella campagna.", "search": "Abbazia di Vezzolano" },
+          { "name": "Infernot di Cella Monte", "description": "Ecomuseo della pietra da cantoni e delle cantine scavate.", "search": "Infernot Monferrato" }
+        ],
+        "experiences": ["Visita agli infernot con degustazione", "Bike tour tra Barbera e Grignolino", "Cena in un castello del Monferrato"],
+        "idealFor": "Chi cerca tranquillità e prezzi più accessibili delle Langhe; 2-3 giorni",
+        "bestPeriod": "Aprile-giugno e settembre-ottobre"
+      },
+      {
+        "id": "lago-maggiore-orta",
+        "name": "Lago Maggiore e Lago d'Orta",
+        "lat": 45.88, "lon": 8.5,
+        "tagline": "Isole, ville e giardini sulla sponda piemontese dei laghi.",
+        "description": [
+          "La sponda piemontese del Lago Maggiore è la più scenografica: Stresa con il lungolago Belle Époque, le Isole Borromee con il palazzo e i giardini a terrazze di Isola Bella, i giardini botanici di Villa Taranto a Verbania. Battelli collegano le isole e le due sponde, fino alla Svizzera.",
+          "A pochi chilometri, il Lago d'Orta è più piccolo e intimo: Orta San Giulio, con la piazza affacciata sull'acqua e il Sacro Monte UNESCO, è uno dei borghi più romantici del Nord Italia, perfetto per matrimoni e soggiorni di coppia."
+        ],
+        "highlights": [
+          { "name": "Isola Bella", "description": "Palazzo Borromeo e giardini barocchi a terrazze sul lago.", "search": "Isola Bella" },
+          { "name": "Villa Taranto", "description": "Giardini botanici con migliaia di specie, a Verbania.", "search": "Villa Taranto" },
+          { "name": "Orta San Giulio", "description": "Borgo romantico con vista sull'isola di San Giulio.", "search": "Orta San Giulio" },
+          { "name": "Mottarone", "description": "Montagna panoramica tra i due laghi, raggiungibile da Stresa.", "search": "Mottarone" }
+        ],
+        "experiences": ["Battello privato tra le Isole Borromee", "Treno panoramico Centovalli verso Locarno", "Cena a lume di candela a Orta"],
+        "idealFor": "Coppie, viaggi di nozze, famiglie, gruppi in pullman; 2-3 giorni",
+        "bestPeriod": "Aprile-ottobre (giardini in fiore in primavera)"
+      }
+    ]
+  },
+  "valle-d-aosta": {
+    "name": "Valle d'Aosta",
+    "tagline": "La più piccola regione d'Italia, ai piedi dei giganti delle Alpi.",
+    "description": [
+      "Incastonata tra Monte Bianco, Cervino, Monte Rosa e Gran Paradiso, la Valle d'Aosta è un concentrato di alta montagna: ghiacciai, valli laterali selvagge, castelli medievali a ogni curva e una cultura bilingue franco-italiana. Aosta, la 'Roma delle Alpi', conserva un notevole centro romano.",
+      "Da vedere: la Skyway Monte Bianco che sale a 3.466 metri da Courmayeur, Cervinia ai piedi del Cervino, il Parco Nazionale del Gran Paradiso con stambecchi e camosci, i castelli di Fénis, Issogne e il Forte di Bard, le terme di Pré-Saint-Didier con piscine all'aperto davanti al Bianco.",
+      "D'inverno è una delle mete sciistiche più complete d'Europa (Monterosa Ski, Cervinia-Zermatt, Courmayeur, La Thuile); d'estate offre trekking, alta via, mountain bike e rifugi gastronomici. Fontina, lardo di Arnad e vini di montagna completano l'esperienza.",
+      "Ideale per sciatori, famiglie, appassionati di montagna e benessere. Durata consigliata: 3-7 giorni; si abbina con Torino o con un passaggio in Francia o Svizzera attraverso i trafori."
+    ],
+    "facts": {
+      "capoluogo": "Aosta",
+      "aeroporti": "Nessun aeroporto con voli di linea: Torino Caselle (circa 1h15), Milano Malpensa (circa 2h), Ginevra (circa 1h30 dal Monte Bianco)",
+      "comeArrivare": "Autostrada A5 Torino–Aosta–Courmayeur; trafori del Monte Bianco e del Gran San Bernardo",
+      "periodo": "Dicembre-aprile per lo sci; giugno-settembre per trekking e rifugi",
+      "clima": "Alpino: inverni nevosi, estati fresche e soleggiate; il fondovalle è tra i più asciutti delle Alpi",
+      "unesco": "Nessun sito in regione; il Parco del Gran Paradiso è il più antico parco nazionale italiano",
+      "prodotti": "Fontina DOP, lardo di Arnad, mocetta, vini Valle d'Aosta DOC (Petite Arvine, Fumin), génépy"
+    },
+    "places": [
+      { "name": "Skyway Monte Bianco", "description": "Funivia rotante fino a Punta Helbronner, a 3.466 metri.", "search": "Skyway Monte Bianco" },
+      { "name": "Cervinia e il Cervino", "description": "Stazione sciistica ai piedi della montagna più iconica delle Alpi.", "search": "Breuil-Cervinia" },
+      { "name": "Forte di Bard", "description": "Fortezza ottocentesca con il Museo delle Alpi, all'ingresso della valle.", "search": "Forte di Bard" },
+      { "name": "Castello di Fénis", "description": "Il castello medievale più scenografico della valle, con affreschi.", "search": "Castello di Fénis" },
+      { "name": "Aosta romana", "description": "Arco di Augusto, teatro romano e Porta Pretoria nel centro storico.", "search": "Aosta Teatro romano" },
+      { "name": "Valnontey e Cogne", "description": "Porta del Gran Paradiso, con prati fioriti e cascate di Lillaz.", "search": "Cogne" }
+    ],
+    "experiences": [
+      "Salita in Skyway con aperitivo sul ghiacciaio",
+      "Sci internazionale Cervinia–Zermatt con un solo skipass",
+      "Terme di Pré-Saint-Didier con vista sul Monte Bianco",
+      "Trekking tra i rifugi del Gran Paradiso con avvistamento stambecchi",
+      "Visita ai castelli con degustazione di Fontina"
+    ],
+    "food": [
+      "Fonduta valdostana con Fontina DOP",
+      "Polenta concia e carbonade di manzo",
+      "Lardo di Arnad e mocetta come antipasto",
+      "Caffè alla valdostana nella grolla dell'amicizia"
+    ],
+    "gettingAround": [
+      "L'auto è il mezzo più comodo; in inverno servono gomme da neve o catene",
+      "Autobus regionali collegano Aosta con le valli laterali",
+      "Impianti di risalita e navette gratuite nelle principali località"
+    ],
+    "tips": [
+      "In alta montagna il tempo cambia in fretta: abbigliamento a strati anche d'estate",
+      "Prenotare i rifugi con anticipo in luglio e agosto",
+      "La Skyway chiude per manutenzione in alcuni periodi di bassa stagione: verificare"
+    ],
+    "zones": [
+      {
+        "id": "monte-bianco",
+        "name": "Courmayeur e Monte Bianco",
+        "lat": 45.79, "lon": 6.97,
+        "tagline": "La montagna più alta d'Europa occidentale e la località alpina più chic d'Italia.",
+        "description": [
+          "Courmayeur è una località elegante con via Roma pedonale, boutique e ristoranti, ai piedi del massiccio del Monte Bianco. La Skyway porta in pochi minuti a Punta Helbronner, sopra i ghiacciai, con vista sul Cervino e sul Monte Rosa.",
+          "Le valli Ferret e Veny sono perfette per passeggiate facili d'estate e sci di fondo d'inverno. A Pré-Saint-Didier le terme storiche offrono piscine all'aperto con vista sul Bianco, anche sotto la neve."
+        ],
+        "highlights": [
+          { "name": "Skyway Monte Bianco", "description": "Funivia rotante fino a 3.466 metri.", "search": "Skyway Monte Bianco" },
+          { "name": "Val Ferret", "description": "Valle ampia e pianeggiante, ideale per passeggiate e fondo.", "search": "Val Ferret (Italia)" },
+          { "name": "Terme di Pré-Saint-Didier", "description": "Piscine termali all'aperto davanti al Monte Bianco.", "search": "Pré-Saint-Didier" },
+          { "name": "La Thuile", "description": "Comprensorio sciistico internazionale collegato con La Rosière in Francia.", "search": "La Thuile" }
+        ],
+        "experiences": ["Pranzo in quota dopo la Skyway", "Eliski o freeride con guida alpina", "Terme al tramonto"],
+        "idealFor": "Coppie, sciatori esperti, clienti di alto livello; 3-5 giorni",
+        "bestPeriod": "Dicembre-aprile e luglio-settembre"
+      },
+      {
+        "id": "cervino-monte-rosa",
+        "name": "Cervinia e Monte Rosa",
+        "lat": 45.85, "lon": 7.7,
+        "tagline": "Sci internazionale e valli walser ai piedi dei 4000.",
+        "description": [
+          "Breuil-Cervinia offre una delle stagioni sciistiche più lunghe d'Europa e il collegamento con Zermatt in Svizzera, sotto la piramide del Cervino. Più a est, le valli di Ayas e Gressoney (Champoluc, Gressoney-La-Trinité) formano con Alagna il comprensorio Monterosa Ski.",
+          "Le valli di Gressoney conservano la cultura walser, con case in legno e pietra e una lingua di origine tedesca. D'estate funivie e rifugi permettono di avvicinarsi ai ghiacciai del Monte Rosa anche senza essere alpinisti."
+        ],
+        "highlights": [
+          { "name": "Breuil-Cervinia", "description": "Sci fino a 3.480 metri con collegamento con Zermatt.", "search": "Breuil-Cervinia" },
+          { "name": "Champoluc", "description": "Località elegante della Val d'Ayas, porta del Monterosa Ski.", "search": "Champoluc" },
+          { "name": "Gressoney-Saint-Jean", "description": "Borgo walser con il Castel Savoia della regina Margherita.", "search": "Castel Savoia" },
+          { "name": "Lago Blu", "description": "Piccolo lago con il Cervino riflesso nell'acqua.", "search": "Lago Blu Cervinia" }
+        ],
+        "experiences": ["Sciata Cervinia–Zermatt in giornata", "Escursione ai laghi d'alta quota", "Cena in baita con piatti walser"],
+        "idealFor": "Sciatori, famiglie, gruppi di amici; 4-7 giorni",
+        "bestPeriod": "Novembre-aprile; luglio-agosto"
+      },
+      {
+        "id": "aosta-castelli",
+        "name": "Aosta e la valle dei castelli",
+        "lat": 45.74, "lon": 7.45,
+        "tagline": "Rovine romane e castelli medievali lungo la Dora.",
+        "description": [
+          "Aosta conserva una pianta romana quasi intatta: Arco di Augusto, Porta Pretoria, teatro e criptoportico. Il centro è piacevole e ben servito, ottima base per esplorare la valle centrale.",
+          "Lungo la Dora Baltea si incontrano i castelli più belli della regione: Fénis con il cortile affrescato, Issogne con la fontana del melograno, Sarre e il Forte di Bard, oggi sede del Museo delle Alpi. Tra un castello e l'altro, cantine di vini di montagna."
+        ],
+        "highlights": [
+          { "name": "Teatro romano di Aosta", "description": "La facciata alta 22 metri domina il centro.", "search": "Teatro romano Aosta" },
+          { "name": "Castello di Fénis", "description": "Castello turrito con affreschi gotici.", "search": "Castello di Fénis" },
+          { "name": "Castello di Issogne", "description": "Dimora rinascimentale dei Challant.", "search": "Castello di Issogne" },
+          { "name": "Forte di Bard", "description": "Fortezza sul fiume, con musei e mostre.", "search": "Forte di Bard" }
+        ],
+        "experiences": ["Itinerario dei castelli in giornata", "Degustazione di vini eroici di montagna", "Fiera di Sant'Orso a fine gennaio"],
+        "idealFor": "Viaggi culturali e famiglie; 1-2 giorni, da unire alla montagna",
+        "bestPeriod": "Tutto l'anno"
+      },
+      {
+        "id": "gran-paradiso",
+        "name": "Gran Paradiso e Cogne",
+        "lat": 45.6, "lon": 7.36,
+        "tagline": "Il primo parco nazionale d'Italia, regno dello stambecco.",
+        "description": [
+          "Il Parco Nazionale del Gran Paradiso protegge valli glaciali, foreste di larici e prati d'alta quota. Cogne e la Valnontey sono il punto di partenza per passeggiate facili verso alpeggi e cascate, con buone probabilità di vedere stambecchi e camosci.",
+          "Le valli di Valsavarenche e Rhêmes sono ancora più selvagge e silenziose. D'inverno Cogne è una meta di sci di fondo e cascate di ghiaccio, d'estate di trekking per tutti i livelli."
+        ],
+        "highlights": [
+          { "name": "Cogne", "description": "Borgo di montagna sui prati di Sant'Orso.", "search": "Cogne" },
+          { "name": "Cascate di Lillaz", "description": "Cascate a gradoni raggiungibili con una facile passeggiata.", "search": "Cascate di Lillaz" },
+          { "name": "Valnontey", "description": "Valle con il giardino botanico alpino Paradisia.", "search": "Valnontey" },
+          { "name": "Valsavarenche", "description": "Valle selvaggia che porta verso la vetta del Gran Paradiso.", "search": "Valsavarenche" }
+        ],
+        "experiences": ["Safari fotografico all'alba per stambecchi", "Sci di fondo sui prati di Cogne", "Trekking al rifugio Vittorio Sella"],
+        "idealFor": "Famiglie, amanti della natura e del trekking; 2-4 giorni",
+        "bestPeriod": "Giugno-settembre; gennaio-marzo per il fondo"
+      }
+    ]
+  },
+  "lombardia": {
+    "name": "Lombardia",
+    "tagline": "Milano, i grandi laghi e città d'arte poco conosciute: la regione più dinamica d'Italia.",
+    "description": [
+      "La Lombardia unisce la Milano della moda, del design e del Cenacolo di Leonardo ai grandi laghi prealpini — Como, Garda, Iseo, Maggiore — e a città d'arte spesso sottovalutate come Bergamo, Mantova, Cremona e Brescia. A nord le Alpi della Valtellina e di Livigno offrono sci e benessere.",
+      "Da vedere: il Duomo e il Cenacolo a Milano, Bellagio e Villa del Balbianello sul Lago di Como, la Città Alta di Bergamo con le mura veneziane UNESCO, Mantova con Palazzo Te e Palazzo Ducale, Sirmione sul Garda, la Franciacorta delle bollicine, il Trenino Rosso del Bernina.",
+      "Le esperienze vanno dallo shopping nel Quadrilatero della moda alla Scala, dalle ville sul lago in motoscafo d'epoca alle degustazioni in Franciacorta e in Valtellina. La regione è ricchissima di eventi: Salone del Mobile, Fashion Week, fiere internazionali.",
+      "Ideale per city break, viaggi di nozze sul lago, business e incentive, famiglie (Gardaland è a un passo). Durata consigliata: 2-3 giorni a Milano più 2-4 giorni sui laghi; si abbina con Verona e Venezia o con la Svizzera."
+    ],
+    "facts": {
+      "capoluogo": "Milano",
+      "aeroporti": "Milano Malpensa (MXP), Milano Linate (LIN), Bergamo Orio al Serio (BGY)",
+      "comeArrivare": "Hub dell'alta velocità: Roma–Milano in 3 ore, Venezia–Milano in 2h25; reti autostradali A1, A4, A7, A8",
+      "periodo": "Aprile-giugno e settembre-ottobre per città e laghi; dicembre-marzo per lo sci",
+      "clima": "Continentale in pianura (inverni freddi, estati afose); mite sui laghi grazie all'effetto dell'acqua",
+      "unesco": "Cenacolo Vinciano, Mantova e Sabbioneta, arte rupestre della Val Camonica, Crespi d'Adda, mura veneziane di Bergamo, Ferrovia Retica, Monte San Giorgio, Sacri Monti, Longobardi a Brescia",
+      "prodotti": "Franciacorta, Valtellina Superiore, Lugana; Grana Padano, Gorgonzola, Bitto, bresaola, panettone"
+    },
+    "places": [
+      { "name": "Duomo di Milano", "description": "Cattedrale gotica con le terrazze tra le guglie sopra la città.", "search": "Duomo di Milano" },
+      { "name": "Cenacolo Vinciano", "description": "L'Ultima Cena di Leonardo in Santa Maria delle Grazie: si prenota con largo anticipo.", "search": "Ultima Cena (Leonardo)" },
+      { "name": "Bellagio", "description": "La 'perla del Lario' all'incrocio dei tre rami del Lago di Como.", "search": "Bellagio" },
+      { "name": "Bergamo Alta", "description": "Città medievale chiusa da mura veneziane, raggiungibile in funicolare.", "search": "Città Alta Bergamo" },
+      { "name": "Mantova", "description": "Città dei Gonzaga con Palazzo Ducale, Camera degli Sposi e Palazzo Te.", "search": "Mantova" },
+      { "name": "Sirmione", "description": "Penisola sul Garda con il castello scaligero e le Grotte di Catullo.", "search": "Sirmione" }
+    ],
+    "experiences": [
+      "Serata alla Scala o visita ai laboratori dei costumi",
+      "Motoscafo in legno tra le ville del Lago di Como",
+      "Degustazione di Franciacorta in cantina",
+      "Trenino Rosso del Bernina da Tirano a St. Moritz",
+      "Shopping e design tra Brera e il Quadrilatero"
+    ],
+    "food": [
+      "Risotto alla milanese e cotoletta",
+      "Pizzoccheri della Valtellina e bresaola",
+      "Tortelli di zucca mantovani e casoncelli bergamaschi",
+      "Panettone e aperitivo milanese con Negroni sbagliato"
+    ],
+    "gettingAround": [
+      "Milano ha metro, tram e bike sharing efficienti; taxi e app di trasporto",
+      "Treni regionali frequenti per Como, Bergamo, Brescia, Mantova e i laghi",
+      "Sui laghi battelli e aliscafi di linea; auto utile per Franciacorta e Oltrepò"
+    ],
+    "tips": [
+      "Il Cenacolo va prenotato settimane prima, soprattutto in primavera",
+      "Durante Salone del Mobile e Fashion Week gli hotel di Milano costano molto di più",
+      "Sul Lago di Como d'estate muoversi in battello: strade strette e parcheggi scarsi"
+    ],
+    "zones": [
+      {
+        "id": "milano",
+        "name": "Milano",
+        "lat": 45.46, "lon": 9.19,
+        "tagline": "Moda, design, arte e la miglior scena gastronomica del Nord.",
+        "description": [
+          "Milano è la capitale economica e creativa d'Italia: il Duomo con le terrazze, la Galleria Vittorio Emanuele, la Scala, il Castello Sforzesco con la Pietà Rondanini e la Pinacoteca di Brera. Il Cenacolo di Leonardo è la visita più richiesta in assoluto.",
+          "Accanto alla Milano classica c'è quella contemporanea dei grattacieli di Porta Nuova e CityLife, della Fondazione Prada, dei Navigli con l'aperitivo al tramonto. È una città ideale anche per brevi soggiorni e come porta d'ingresso al Nord Italia."
+        ],
+        "highlights": [
+          { "name": "Terrazze del Duomo", "description": "Passeggiata tra guglie e statue sopra la città.", "search": "Duomo di Milano" },
+          { "name": "Pinacoteca di Brera", "description": "Capolavori di Mantegna, Raffaello, Caravaggio.", "search": "Pinacoteca di Brera" },
+          { "name": "Castello Sforzesco", "description": "Fortezza rinascimentale con musei e la Pietà Rondanini.", "search": "Castello Sforzesco" },
+          { "name": "Navigli", "description": "Canali con locali e mercatini, il quartiere dell'aperitivo.", "search": "Navigli" },
+          { "name": "Fondazione Prada", "description": "Arte contemporanea in un'ex distilleria ridisegnata da OMA.", "search": "Fondazione Prada" }
+        ],
+        "experiences": ["Visita privata al Cenacolo", "Personal shopper nel Quadrilatero", "Aperitivo panoramico sui grattacieli"],
+        "idealFor": "City break, business, shopping; 2-3 giorni",
+        "bestPeriod": "Tutto l'anno, evitando agosto (molti locali chiusi)"
+      },
+      {
+        "id": "lago-di-como",
+        "name": "Lago di Como",
+        "lat": 45.99, "lon": 9.26,
+        "tagline": "Ville storiche, giardini e borghi colorati tra i monti.",
+        "description": [
+          "Il Lario è il lago più celebre d'Italia: Bellagio, Varenna, Tremezzo e Menaggio formano il 'triangolo d'oro', collegato da battelli. Villa del Balbianello, Villa Carlotta e Villa Melzi sono tra i giardini più fotografati al mondo.",
+          "Como città merita una sosta per il Duomo e la funicolare per Brunate. Hotel storici, motoscafi Riva in legno e ristoranti sull'acqua fanno del lago una delle mete preferite per viaggi di nozze e clientela internazionale."
+        ],
+        "highlights": [
+          { "name": "Villa del Balbianello", "description": "Villa e giardini su un promontorio, set di molti film.", "search": "Villa del Balbianello" },
+          { "name": "Bellagio", "description": "Borgo a gradinate sulla punta tra i due rami.", "search": "Bellagio" },
+          { "name": "Varenna", "description": "Case colorate e Villa Monastero sulla sponda orientale.", "search": "Varenna" },
+          { "name": "Villa Carlotta", "description": "Museo e giardino botanico a Tremezzina.", "search": "Villa Carlotta" }
+        ],
+        "experiences": ["Tour in motoscafo d'epoca", "Pranzo in villa con vista lago", "Idrovolante sul lago da Como"],
+        "idealFor": "Viaggi di nozze, coppie, clientela internazionale; 3-4 giorni",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "lago-di-garda-lombardo",
+        "name": "Garda lombardo e Franciacorta",
+        "lat": 45.6, "lon": 10.4,
+        "tagline": "Sirmione, Salò, limonaie e le bollicine della Franciacorta.",
+        "description": [
+          "La sponda occidentale del Garda alterna borghi eleganti come Sirmione, Desenzano, Salò e Gardone Riviera — con il Vittoriale di D'Annunzio — a scorci fiordici verso Limone e Tremosine. Il clima mite permette olivi, limoni e una lunga stagione.",
+          "A mezz'ora, la Franciacorta è la terra dello spumante metodo classico italiano più famoso: colline morbide, cantine di design e il Lago d'Iseo con Monte Isola, l'isola lacustre abitata più grande d'Europa."
+        ],
+        "highlights": [
+          { "name": "Sirmione", "description": "Castello scaligero e Grotte di Catullo sulla penisola.", "search": "Sirmione" },
+          { "name": "Vittoriale degli Italiani", "description": "La dimora-museo di Gabriele D'Annunzio a Gardone.", "search": "Vittoriale degli Italiani" },
+          { "name": "Limone sul Garda", "description": "Borgo delle limonaie con pista ciclabile sospesa.", "search": "Limone sul Garda" },
+          { "name": "Monte Isola", "description": "Isola sul Lago d'Iseo, senza auto.", "search": "Monte Isola" }
+        ],
+        "experiences": ["Degustazione di Franciacorta", "Ciclabile a sbalzo sul lago a Limone", "Terme di Sirmione"],
+        "idealFor": "Coppie, famiglie, gruppi; 3-5 giorni (Gardaland vicina)",
+        "bestPeriod": "Aprile-ottobre"
+      },
+      {
+        "id": "bergamo-brescia",
+        "name": "Bergamo, Brescia e Mantova",
+        "lat": 45.5, "lon": 10.1,
+        "tagline": "Le città d'arte nascoste della Lombardia.",
+        "description": [
+          "Bergamo Alta, chiusa dalle mura veneziane UNESCO, è una delle città medievali più belle del Nord, con Piazza Vecchia e la Cappella Colleoni. Brescia sorprende con il Capitolium romano e il complesso longobardo di Santa Giulia, anch'essi patrimonio UNESCO.",
+          "Più a sud, Mantova è la città dei Gonzaga circondata da laghi: Palazzo Ducale con la Camera degli Sposi di Mantegna e Palazzo Te di Giulio Romano. A pochi chilometri Sabbioneta, la 'città ideale' rinascimentale."
+        ],
+        "highlights": [
+          { "name": "Città Alta di Bergamo", "description": "Centro medievale raggiungibile in funicolare.", "search": "Città Alta Bergamo" },
+          { "name": "Santa Giulia a Brescia", "description": "Monastero longobardo divenuto museo della città.", "search": "Santa Giulia Brescia" },
+          { "name": "Palazzo Ducale di Mantova", "description": "Reggia dei Gonzaga con la Camera degli Sposi.", "search": "Palazzo Ducale Mantova" },
+          { "name": "Sabbioneta", "description": "Città ideale rinascimentale, UNESCO.", "search": "Sabbioneta" }
+        ],
+        "experiences": ["Giornata a Bergamo Alta con polenta e casoncelli", "Navigazione sul Mincio tra i fiori di loto", "Tour di Mantova in bicicletta"],
+        "idealFor": "Viaggi culturali e gruppi; 2-3 giorni",
+        "bestPeriod": "Primavera e autunno"
+      },
+      {
+        "id": "valtellina",
+        "name": "Valtellina, Livigno e Bernina",
+        "lat": 46.3, "lon": 10.1,
+        "tagline": "Vigneti eroici, terme e il Trenino Rosso verso la Svizzera.",
+        "description": [
+          "La Valtellina è una valle alpina con vigneti terrazzati sui muretti a secco, dove nasce lo Sforzato. Bormio, con le terme storiche e lo sci, e Livigno, zona extradoganale per lo shopping e località sciistica d'alta quota, sono le mete principali.",
+          "Da Tirano parte il Trenino Rosso del Bernina, linea UNESCO che attraversa ghiacciai e viadotti fino a St. Moritz. La valle è anche terra di pizzoccheri, bresaola e formaggio Bitto."
+        ],
+        "highlights": [
+          { "name": "Trenino Rosso del Bernina", "description": "Linea ferroviaria UNESCO da Tirano a St. Moritz.", "search": "Ferrovia del Bernina" },
+          { "name": "Bagni di Bormio", "description": "Terme storiche con piscine all'aperto.", "search": "Bagni di Bormio" },
+          { "name": "Livigno", "description": "Sci, bike park e shopping duty free.", "search": "Livigno" },
+          { "name": "Terrazzamenti valtellinesi", "description": "Vigneti eroici sui muretti a secco.", "search": "Valtellina vigneti terrazzati" }
+        ],
+        "experiences": ["Trenino Rosso con rientro in bus", "Terme di Bormio dopo lo sci", "Degustazione di Sforzato in cantina"],
+        "idealFor": "Famiglie, sciatori, appassionati di treni panoramici; 3-5 giorni",
+        "bestPeriod": "Dicembre-aprile; giugno-settembre"
+      }
+    ]
+  },
+  "liguria": {
+    "name": "Liguria",
+    "tagline": "Borghi colorati a picco sul mare, sentieri tra i vigneti e la Genova dei Rolli.",
+    "description": [
+      "La Liguria è un arco di costa stretto tra monti e mare: a levante le Cinque Terre e Portofino, a ponente la Riviera dei Fiori con Sanremo. Genova, città di mare e di palazzi nobiliari, è una delle grandi città d'arte meno conosciute d'Italia.",
+      "Da vedere: i cinque borghi delle Cinque Terre e il Sentiero Azzurro, Portovenere, Portofino e San Fruttuoso, Camogli, il centro storico di Genova con l'Acquario e i Palazzi dei Rolli, Finalborgo e le grotte di Toirano, i giardini di Villa Hanbury vicino al confine francese.",
+      "Le esperienze più belle sono a piedi o in barca: trekking sui sentieri a mezza costa, giri in barca tra baie raggiungibili solo dal mare, lezioni di pesto al mortaio, degustazioni di Sciacchetrà. La regione si presta a soggiorni brevi e a tour on the road lungo la costa.",
+      "Ideale per coppie, escursionisti, famiglie e crocieristi (Genova e La Spezia sono porti crociera). Durata consigliata: 3-6 giorni; si abbina perfettamente con Toscana (Lucca, Pisa) o Piemonte e Costa Azzurra."
+    ],
+    "facts": {
+      "capoluogo": "Genova",
+      "aeroporti": "Genova Cristoforo Colombo (GOA); Pisa per le Cinque Terre e Nizza per la Riviera di Ponente",
+      "comeArrivare": "Treni frequenti lungo la costa (Milano–Genova 1h30, Pisa–La Spezia 1h); autostrade A10, A12",
+      "periodo": "Aprile-giugno e settembre-ottobre; luglio e agosto affollati",
+      "clima": "Mediterraneo mite, inverni dolci protetti dai monti; estati calde ma ventilate",
+      "unesco": "Portovenere, Cinque Terre e isole Palmaria, Tino e Tinetto; Genova, le Strade Nuove e i Palazzi dei Rolli",
+      "prodotti": "Pesto genovese DOP, olio Riviera Ligure DOP, focaccia, Vermentino, Sciacchetrà delle Cinque Terre"
+    },
+    "places": [
+      { "name": "Cinque Terre", "description": "Monterosso, Vernazza, Corniglia, Manarola e Riomaggiore tra vigne e mare.", "search": "Cinque Terre" },
+      { "name": "Portofino", "description": "Il porticciolo più glamour del Mediterraneo, con il Castello Brown.", "search": "Portofino" },
+      { "name": "Abbazia di San Fruttuoso", "description": "Abbazia raggiungibile solo a piedi o in barca, con il Cristo degli Abissi.", "search": "Abbazia di San Fruttuoso" },
+      { "name": "Portovenere", "description": "Borgo fortificato con la chiesa di San Pietro sugli scogli.", "search": "Porto Venere" },
+      { "name": "Genova e i Palazzi dei Rolli", "description": "Via Garibaldi e i palazzi nobiliari, il porto antico e l'Acquario.", "search": "Palazzi dei Rolli" },
+      { "name": "Camogli", "description": "Borgo di pescatori con le case alte e colorate.", "search": "Camogli" }
+    ],
+    "experiences": [
+      "Sentiero Azzurro tra i borghi delle Cinque Terre",
+      "Giro in barca da Portofino a San Fruttuoso",
+      "Corso di pesto al mortaio in una casa genovese",
+      "Degustazione di Sciacchetrà a Manarola",
+      "Tour dei carruggi di Genova con focaccia e farinata"
+    ],
+    "food": [
+      "Trofie al pesto e pansoti con salsa di noci",
+      "Focaccia genovese, focaccia di Recco al formaggio e farinata",
+      "Acciughe di Monterosso e frittura di pesce",
+      "Cappon magro e torta pasqualina"
+    ],
+    "gettingAround": [
+      "Il treno è il modo migliore per muoversi lungo la costa e tra le Cinque Terre (Cinque Terre Card)",
+      "Battelli turistici collegano Cinque Terre, Portovenere, Portofino e Camogli",
+      "Auto utile nell'entroterra; nei borghi parcheggi scarsi e cari"
+    ],
+    "tips": [
+      "Alle Cinque Terre alcuni sentieri sono a numero chiuso o a pagamento: verificare prima",
+      "In estate partire presto la mattina per evitare la folla delle crociere",
+      "Scarpe da trekking: i sentieri a mezza costa sono ripidi e sassosi"
+    ],
+    "zones": [
+      {
+        "id": "cinque-terre",
+        "name": "Cinque Terre e Golfo dei Poeti",
+        "lat": 44.12, "lon": 9.71,
+        "tagline": "Cinque borghi tra vigneti a terrazze e mare blu.",
+        "description": [
+          "Monterosso, Vernazza, Corniglia, Manarola e Riomaggiore sono aggrappati alla costa, collegati da treno, battelli e sentieri spettacolari. Il paesaggio terrazzato, costruito in secoli di lavoro, è patrimonio UNESCO e Parco Nazionale.",
+          "Il vicino Golfo dei Poeti comprende Portovenere, con la chiesa di San Pietro sugli scogli, l'isola Palmaria e Lerici. È la zona ideale per chi cerca mare e trekking nella stessa vacanza."
+        ],
+        "highlights": [
+          { "name": "Vernazza", "description": "Il borgo più fotografato, con la piazzetta sul porto.", "search": "Vernazza" },
+          { "name": "Manarola", "description": "Case colorate sulla roccia e vigne di Sciacchetrà.", "search": "Manarola" },
+          { "name": "Portovenere", "description": "Borgo fortificato con San Pietro sugli scogli.", "search": "Porto Venere" },
+          { "name": "Isola Palmaria", "description": "Isola selvaggia con la Grotta Azzurra.", "search": "Isola Palmaria" }
+        ],
+        "experiences": ["Trekking Monterosso–Vernazza", "Tramonto in barca davanti ai borghi", "Degustazione in vigna con vista mare"],
+        "idealFor": "Coppie, escursionisti, viaggiatori internazionali; 2-3 giorni",
+        "bestPeriod": "Aprile-giugno, settembre-ottobre"
+      },
+      {
+        "id": "tigullio",
+        "name": "Portofino e Golfo del Tigullio",
+        "lat": 44.32, "lon": 9.2,
+        "tagline": "Glamour, ville e baie nascoste nel Parco di Portofino.",
+        "description": [
+          "Il promontorio di Portofino è un parco naturale con sentieri tra lecci e pini che scendono su baie come San Fruttuoso. Portofino, Santa Margherita Ligure e Camogli sono i borghi simbolo, tra yacht, hotel storici e case color pastello.",
+          "Più a est Rapallo, Zoagli, Sestri Levante con la Baia del Silenzio e la Riviera fino a Moneglia offrono spiagge e un'atmosfera più familiare."
+        ],
+        "highlights": [
+          { "name": "Portofino", "description": "La piazzetta sul porto e il faro.", "search": "Portofino" },
+          { "name": "San Fruttuoso", "description": "Abbazia in una baia raggiungibile via mare.", "search": "Abbazia di San Fruttuoso" },
+          { "name": "Camogli", "description": "Borgo di pescatori con la Sagra del Pesce.", "search": "Camogli" },
+          { "name": "Baia del Silenzio", "description": "Spiaggia raccolta di Sestri Levante.", "search": "Baia del Silenzio" }
+        ],
+        "experiences": ["Escursione in barca privata intorno al promontorio", "Trekking Camogli–San Fruttuoso", "Cena di pesce a Santa Margherita"],
+        "idealFor": "Coppie, clientela alto-spendente, famiglie a Sestri; 3-4 giorni",
+        "bestPeriod": "Maggio-ottobre"
+      },
+      {
+        "id": "genova",
+        "name": "Genova",
+        "lat": 44.41, "lon": 8.93,
+        "tagline": "Città di mare, carruggi e palazzi nobiliari UNESCO.",
+        "description": [
+          "Genova ha uno dei centri storici medievali più grandi d'Europa, un labirinto di vicoli (carruggi) che sbocca su Via Garibaldi, la strada dei Palazzi dei Rolli con i Musei di Strada Nuova. Il Porto Antico ridisegnato da Renzo Piano ospita l'Acquario, tra i più grandi d'Europa.",
+          "La città è anche gastronomia di strada — focaccia, farinata, friscieu — e il punto di partenza per Boccadasse, piccolo borgo di pescatori in città, e per la passeggiata di Nervi con i suoi parchi."
+        ],
+        "highlights": [
+          { "name": "Acquario di Genova", "description": "Uno degli acquari più grandi d'Europa.", "search": "Acquario di Genova" },
+          { "name": "Via Garibaldi e Palazzo Rosso", "description": "Palazzi dei Rolli e Musei di Strada Nuova.", "search": "Via Garibaldi Genova" },
+          { "name": "Boccadasse", "description": "Borgo di pescatori colorato dentro la città.", "search": "Boccadasse" },
+          { "name": "Cattedrale di San Lorenzo", "description": "Duomo a fasce bianche e nere.", "search": "Cattedrale di San Lorenzo (Genova)" }
+        ],
+        "experiences": ["Street food tour nei carruggi", "Visita ai Rolli Days con palazzi aperti", "Tramonto a Boccadasse"],
+        "idealFor": "City break, crocieristi, famiglie (Acquario); 1-2 giorni",
+        "bestPeriod": "Tutto l'anno"
+      },
+      {
+        "id": "riviera-di-ponente",
+        "name": "Riviera di Ponente",
+        "lat": 43.95, "lon": 8.1,
+        "tagline": "Spiagge, borghi medievali e la Riviera dei Fiori fino alla Francia.",
+        "description": [
+          "Da Savona al confine francese la costa è più dolce e ricca di spiagge: Varigotti, Finale Ligure con il borgo murato di Finalborgo, Alassio con il Muretto, Cervo e Laigueglia. L'entroterra offre grotte, ulivi e paesi arroccati come Apricale e Dolceacqua.",
+          "Sanremo, città dei fiori e del Festival, e Bordighera con le sue palme sono mete storiche del turismo internazionale. A Ventimiglia, i giardini botanici di Villa Hanbury affacciano sul mare."
+        ],
+        "highlights": [
+          { "name": "Finalborgo", "description": "Borgo medievale murato, tra i più belli d'Italia.", "search": "Finalborgo" },
+          { "name": "Dolceacqua", "description": "Ponte medievale e castello dei Doria.", "search": "Dolceacqua" },
+          { "name": "Sanremo", "description": "Casinò, mercato dei fiori e città vecchia La Pigna.", "search": "Sanremo" },
+          { "name": "Giardini Botanici Hanbury", "description": "Giardino botanico a picco sul mare.", "search": "Giardini Botanici Hanbury" }
+        ],
+        "experiences": ["Arrampicata e mountain bike a Finale", "Ciclabile della Riviera dei Fiori", "Degustazione di Rossese di Dolceacqua"],
+        "idealFor": "Famiglie, sportivi outdoor, combinati con la Costa Azzurra; 3-5 giorni",
+        "bestPeriod": "Aprile-ottobre; mite anche d'inverno"
+      }
+    ]
+  }
+}
