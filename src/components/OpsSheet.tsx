@@ -3,6 +3,8 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useRouter } from "next/navigation";
 import {
+  AlertTriangle,
+  BellRing,
   ChevronLeft,
   ChevronRight,
   Copy,
@@ -17,17 +19,24 @@ import {
   X,
 } from "lucide-react";
 import { createOpsRow, deleteOpsRow, importOpsFromTrips, updateOpsRow } from "@/lib/actions/opsSheet";
+import OpsRiconferme from "@/components/OpsRiconferme";
 import {
   OPS_COLOR_STYLE,
   OPS_COLORS,
   OPS_COLUMNS,
+  OPS_FIELD_LABEL,
+  OPS_STATUSES,
   isoDate,
+  opsStatusInfo,
   normalizeTripCode,
   opsTimeMinutes,
   parseIsoDate,
   type OpsColor,
+  type OpsChanges,
   type OpsColumn,
   type OpsRow,
+  type OpsSourceKey,
+  type OpsStatus,
   type OpsTextKey,
   type OpsTripRef,
   type OpsView,
@@ -44,14 +53,16 @@ type Props = {
   missingCode: string | null;
   trips: OpsTripRef[];
   importEnabled: boolean;
-  suppliers: { name: string; phone: string }[];
+  suppliers: { name: string; phone: string; email: string }[];
+  agencyName: string;
   clientNames: string[];
   suggestions: { client: string[]; agent: string[]; supplier: string[]; responsible: string[] };
 };
 
 type ColKey = OpsColumn["key"];
-type Filters = { client: string; agent: string; supplier: string; responsible: string; day: string; color: string };
-const NO_FILTERS: Filters = { client: "", agent: "", supplier: "", responsible: "", day: "", color: "" };
+type Filters = { client: string; agent: string; supplier: string; responsible: string; day: string; color: string; status: string };
+const NO_FILTERS: Filters = { client: "", agent: "", supplier: "", responsible: "", day: "", color: "", status: "" };
+const hasChanges = (r: OpsRow) => Object.keys(r.changes ?? {}).length > 0;
 const MENU_W = 30;
 const MONTHS = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
 
@@ -95,7 +106,7 @@ function sortRows(a: OpsRow, b: OpsRow, mode: "cliente" | "orario", fresh: Set<s
 const STICKY_TD: Record<number, string> = { 0: "sticky left-[30px] z-10", 1: "relative lg:sticky lg:left-[94px] lg:z-10", 2: "relative lg:sticky lg:left-[180px] lg:z-10" };
 const STICKY_TH: Record<number, string> = { 0: "left-[30px] z-30", 1: "z-20 lg:left-[94px] lg:z-30", 2: "z-20 lg:left-[180px] lg:z-30" };
 
-export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, suppliers, clientNames, suggestions }: Props) {
+export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, suppliers, agencyName, clientNames, suggestions }: Props) {
   const router = useRouter();
   const [rows, setRows] = useState<OpsRow[]>(initialRows);
   const [fresh, setFresh] = useState<Set<string>>(() => new Set());
@@ -112,6 +123,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const [importing, setImporting] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
+  const [riconfermeOpen, setRiconfermeOpen] = useState(false);
+  const [changesFor, setChangesFor] = useState<{ id: string; x: number; y: number } | null>(null);
   const editToken = useRef(0);
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -152,12 +165,13 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     return rows.filter((r) => {
       if (q) {
         const hay = norm(
-          [shortDate(r.service_date), r.trip_code, r.client, r.agent, r.supplier, r.supplier_contact, r.pax, r.service, r.meeting_time, r.meeting_point, r.notes, r.responsible].join(" "),
+          [shortDate(r.service_date), r.trip_code, r.client, r.agent, r.supplier, r.supplier_contact, r.pax, r.service, r.meeting_time, r.meeting_point, r.notes, r.responsible, opsStatusInfo(r.status)?.label ?? ""].join(" "),
         );
         if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
       }
       for (const k of ["client", "agent", "supplier", "responsible"] as const) if (filters[k] && norm(r[k]) !== norm(filters[k])) return false;
       if (filters.day && r.service_date !== filters.day) return false;
+      if (filters.status === "cambiate" ? !hasChanges(r) : filters.status === "nessuno" ? r.status !== "" : filters.status && r.status !== filters.status) return false;
       if (filters.color) {
         const colors = [r.row_color, ...Object.values(r.cell_colors ?? {})].filter(Boolean);
         if (filters.color === "evidenziate" ? colors.length === 0 : !colors.includes(filters.color as OpsColor)) return false;
@@ -241,7 +255,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
       commit(null);
     } else if (e.key === "Tab") {
       e.preventDefault();
-      const idx = OPS_COLUMNS.findIndex((c) => c.key === editing.key) + (e.shiftKey ? -1 : 1);
+      let idx = OPS_COLUMNS.findIndex((c) => c.key === editing.key) + (e.shiftKey ? -1 : 1);
+      if (OPS_COLUMNS[idx]?.key === "status") idx += e.shiftKey ? -1 : 1; // lo stato si sceglie dal menù
       const col = OPS_COLUMNS[idx];
       commit(col ? { id: editing.id, key: col.key } : null);
     }
@@ -265,7 +280,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   async function addRow(date: string, copy?: OpsRow) {
     const id = crypto.randomUUID();
     const base: OpsRow = copy
-      ? { ...copy, id, trip_id: copy.trip_id, activity_id: null, created_at: new Date().toISOString() }
+      ? { ...copy, id, trip_id: copy.trip_id, activity_id: null, changes: {}, created_at: new Date().toISOString() }
       : {
           id,
           service_date: date,
@@ -280,6 +295,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
           meeting_point: "",
           notes: "",
           responsible: filters.responsible,
+          status: "",
+          changes: {},
           row_color: null,
           cell_colors: {},
           trip_id: trip?.id ?? null,
@@ -294,8 +311,9 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
       setEditing({ id, key: "client", token: editToken.current });
       setDraft(base.client);
     }
-    const { created_at: _c, ...payload } = base;
+    const { created_at: _c, changes: _ch, ...payload } = base;
     void _c;
+    void _ch;
     const res = await createOpsRow(payload);
     if (!res.ok) {
       setRows((prev) => prev.filter((r) => r.id !== id));
@@ -323,8 +341,9 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     if (!row) return;
     setUndo(null);
     setRows((prev) => [...prev, row]);
-    const { created_at: _c, ...payload } = row;
+    const { created_at: _c, changes: _ch, ...payload } = row;
     void _c;
+    void _ch;
     const res = await createOpsRow(payload);
     if (!res.ok) {
       setRows((prev) => prev.filter((r) => r.id !== row.id));
@@ -370,12 +389,13 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
       head.eachCell((cell) => (cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF233C5E" } }));
       for (const g of groups) {
         for (const r of g.rows) {
-          const line = ws.addRow({ ...r, service_date: shortDate(r.service_date) });
+          const line = ws.addRow({ ...r, service_date: shortDate(r.service_date), status: opsStatusInfo(r.status)?.label ?? "" });
           line.alignment = { vertical: "top", wrapText: true };
           OPS_COLUMNS.forEach((c, i) => {
             const cell = line.getCell(i + 1);
-            const cellColor = c.key !== "service_date" ? r.cell_colors?.[c.key] : undefined;
-            const argb = cellColor ? OPS_COLOR_STYLE[cellColor].excelCell : r.row_color ? OPS_COLOR_STYLE[r.row_color].excelRow : null;
+            const cellColor = c.key !== "service_date" && c.key !== "status" ? r.cell_colors?.[c.key] : undefined;
+            const st = c.key === "status" ? opsStatusInfo(r.status) : undefined;
+            const argb = st ? st.excel : cellColor ? OPS_COLOR_STYLE[cellColor].excelCell : r.row_color ? OPS_COLOR_STYLE[r.row_color].excelRow : null;
             if (argb) cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb } };
             cell.border = { bottom: { style: "thin", color: { argb: "FFD9D9D9" } }, right: { style: "thin", color: { argb: "FFD9D9D9" } } };
           });
@@ -415,6 +435,17 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     if (undoTimer.current) clearTimeout(undoTimer.current);
   }, []);
 
+  const changesRow = changesFor ? rows.find((r) => r.id === changesFor.id) : null;
+  const changedCount = rows.filter(hasChanges).length;
+
+  function applyChange(row: OpsRow, key: OpsSourceKey) {
+    const ch = row.changes[key];
+    if (!ch) return;
+    const rest = { ...row.changes };
+    delete rest[key];
+    void save(row.id, { [key]: ch.to, changes: rest } as Partial<OpsRow>);
+  }
+
   const tableWidth = MENU_W + OPS_COLUMNS.reduce((s, c) => s + c.width, 0);
   const menuRow = menu ? rows.find((r) => r.id === menu.id) : null;
   const selectCls = "h-9 w-[calc(50%-4px)] rounded-lg border border-[#e6d7bb] bg-white px-2 text-sm text-[#233c5e] sm:w-auto sm:max-w-[11rem]";
@@ -453,6 +484,13 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
               <Download className="h-4 w-4" /> Importa dai viaggi
             </button>
           )}
+          <button
+            type="button"
+            onClick={() => setRiconfermeOpen(true)}
+            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-[#1f9d55] bg-white px-3 text-sm font-medium text-[#1f7a45] hover:bg-green-50"
+          >
+            <BellRing className="h-4 w-4" /> Riconferme
+          </button>
           <button
             type="button"
             onClick={exportExcel}
@@ -622,6 +660,16 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
             ))}
           </select>
         )}
+        <select value={filters.status} onChange={(e) => setFilters((f) => ({ ...f, status: e.target.value }))} className={selectCls} aria-label="Stato">
+          <option value="">Stato: tutti</option>
+          {OPS_STATUSES.map((st) => (
+            <option key={st.id} value={st.id}>
+              {st.label}
+            </option>
+          ))}
+          <option value="nessuno">Senza stato</option>
+          <option value="cambiate">Cambiate nell&apos;itinerario</option>
+        </select>
         <select value={filters.color} onChange={(e) => setFilters((f) => ({ ...f, color: e.target.value }))} className={selectCls} aria-label="Evidenziate">
           <option value="">Evidenziate: tutte le righe</option>
           <option value="evidenziate">Solo evidenziate</option>
@@ -653,6 +701,18 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
         </span>
       </div>
 
+      {changedCount > 0 && filters.status !== "cambiate" && (
+        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+          <AlertTriangle className="h-4 w-4 shrink-0" />
+          <span>
+            {changedCount === 1 ? "Una riga è cambiata" : `${changedCount} righe sono cambiate`} nell&apos;itinerario dopo l&apos;importazione: i campi che non avevi
+            toccato si sono aggiornati da soli, gli altri te li segnalo (triangolo arancione a inizio riga).
+          </span>
+          <button type="button" onClick={() => setFilters((f) => ({ ...f, status: "cambiate" }))} className="rounded-lg bg-amber-600 px-3 py-1 font-medium text-white hover:bg-amber-700">
+            Mostra solo queste
+          </button>
+        </div>
+      )}
       {codeMatch && (
         <div className="flex flex-wrap items-center gap-3 rounded-xl border border-[#cda876] bg-[#faf3e6] px-4 py-2.5 text-sm text-[#233c5e]">
           <span>
@@ -720,6 +780,11 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                   onBlurCommit={(token) => token === editToken.current && commit(null)}
                   onKey={onEditorKey}
                   onCellColor={setCellColor}
+                  onChanges={(id, el) => {
+                    const r = el.getBoundingClientRect();
+                    setChangesFor({ id, x: Math.min(r.left, window.innerWidth - 360), y: Math.min(r.bottom + 4, window.innerHeight - 340) });
+                  }}
+                  onStatus={(id, st) => void save(id, { status: st })}
                   onMenu={(id, el) => {
                     const r = el.getBoundingClientRect();
                     setMenu((m) => (m?.id === id ? null : { id, x: Math.min(r.left, window.innerWidth - 230), y: Math.min(r.bottom + 4, window.innerHeight - 330) }));
@@ -833,6 +898,69 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
         </>
       )}
 
+      {riconfermeOpen && (
+        <OpsRiconferme
+          today={today}
+          agencyName={agencyName}
+          suppliers={suppliers}
+          onClose={() => setRiconfermeOpen(false)}
+          onStatusChange={(ids, st) => setRows((prev) => prev.map((r) => (ids.includes(r.id) ? { ...r, status: st } : r)))}
+        />
+      )}
+
+      {changesFor && changesRow && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setChangesFor(null)} />
+          <div
+            className="fixed z-50 w-[22rem] max-w-[calc(100vw-16px)] rounded-xl border border-amber-300 bg-white p-3 text-sm shadow-xl"
+            style={{ left: Math.max(8, changesFor.x), top: Math.max(8, changesFor.y) }}
+          >
+            <p className="mb-2 flex items-center gap-1.5 font-medium text-amber-800">
+              <AlertTriangle className="h-4 w-4" /> Cambiato nell&apos;itinerario
+            </p>
+            <ul className="flex flex-col gap-2">
+              {changesRow.changes._removed && (
+                <li className="rounded-lg bg-red-50 p-2 text-red-800">
+                  L&apos;attività è stata tolta dall&apos;itinerario.
+                  <button type="button" onClick={() => removeRow(changesRow)} className="ml-2 font-medium underline">
+                    Elimina la riga
+                  </button>
+                </li>
+              )}
+              {(Object.entries(changesRow.changes) as [string, { from: string; to: string; applied: boolean }][])
+                .filter(([k]) => k !== "_removed")
+                .map(([k, ch]) => (
+                  <li key={k} className="rounded-lg bg-amber-50 p-2 text-slate-700">
+                    <span className="font-medium text-[#233c5e]">{OPS_FIELD_LABEL[k as OpsSourceKey]}</span>
+                    {ch.applied ? (
+                      <span className="block">
+                        aggiornato: <s className="text-slate-400">{fmtValue(k, ch.from)}</s> → <strong>{fmtValue(k, ch.to)}</strong>
+                      </span>
+                    ) : (
+                      <span className="block">
+                        nell&apos;itinerario ora è <strong>{fmtValue(k, ch.to)}</strong>; qui c&apos;è «{fmtValue(k, ch.from)}», scritto a mano, e non l&apos;ho toccato.
+                        <button type="button" onClick={() => applyChange(changesRow, k as OpsSourceKey)} className="ml-1 font-medium text-[#233c5e] underline">
+                          Usa quello dell&apos;itinerario
+                        </button>
+                      </span>
+                    )}
+                  </li>
+                ))}
+            </ul>
+            <button
+              type="button"
+              onClick={() => {
+                void save(changesRow.id, { changes: {} });
+                setChangesFor(null);
+              }}
+              className="mt-3 w-full rounded-lg bg-[#233c5e] py-1.5 font-medium text-white hover:bg-[#1b3050]"
+            >
+              Ho visto
+            </button>
+          </div>
+        </>
+      )}
+
       {undo && (
         <div className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-4 rounded-xl bg-[#233c5e] px-4 py-3 text-sm text-white shadow-xl">
           Riga eliminata
@@ -843,6 +971,11 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
       )}
     </div>
   );
+}
+
+function fmtValue(key: string, v: string) {
+  if (!v) return "vuoto";
+  return key === "service_date" && /^\d{4}-\d{2}-\d{2}$/.test(v) ? shortDate(v) : v;
 }
 
 function MenuItem({ icon, label, onClick, danger }: { icon: React.ReactNode; label: string; onClick: () => void; danger?: boolean }) {
@@ -870,11 +1003,13 @@ type GroupProps = {
   onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   onCellColor: (id: string, key: OpsTextKey, color: OpsColor | null) => void;
   onMenu: (id: string, el: HTMLElement) => void;
+  onChanges: (id: string, el: HTMLElement) => void;
+  onStatus: (id: string, status: OpsStatus | "") => void;
   onAdd: () => void;
   showHeader: boolean;
 };
 
-function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onCellColor, onMenu, onAdd, showHeader }: GroupProps) {
+function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
   const d = parseIsoDate(day);
   return (
     <>
@@ -903,9 +1038,25 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
       )}
       {rows.map((r) => {
         const rowBg = r.row_color ? OPS_COLOR_STYLE[r.row_color].row : "#ffffff";
+        const changed = hasChanges(r);
+        const cancelled = r.status === "cancellato";
         return (
           <tr key={r.id} className="group">
-            <td className="ops-noprint sticky left-0 z-10 border-b border-r border-slate-200 px-0 py-1 text-center align-top" style={{ background: rowBg }}>
+            <td
+              className="ops-noprint sticky left-0 z-10 border-b border-r border-slate-200 px-0 py-1 text-center align-top"
+              style={{ background: rowBg, boxShadow: changed ? "inset 3px 0 0 #f59e0b" : undefined }}
+            >
+              {changed && (
+                <button
+                  type="button"
+                  onClick={(e) => onChanges(r.id, e.currentTarget)}
+                  className="mb-0.5 rounded p-0.5 text-amber-500 hover:bg-amber-50"
+                  aria-label="Cambiato nell'itinerario"
+                  title="Cambiato nell'itinerario: clicca per vedere cosa"
+                >
+                  <AlertTriangle className="h-4 w-4" />
+                </button>
+              )}
               <button
                 type="button"
                 onClick={(e) => onMenu(r.id, e.currentTarget)}
@@ -917,15 +1068,37 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
             </td>
             {OPS_COLUMNS.map((c, i) => {
               const isEditing = editing?.id === r.id && editing.key === c.key;
-              const cellColor = c.key !== "service_date" ? r.cell_colors?.[c.key] : undefined;
+              const cellColor = c.key !== "service_date" && c.key !== "status" ? r.cell_colors?.[c.key] : undefined;
               const bg = cellColor ? OPS_COLOR_STYLE[cellColor].cell : rowBg;
+              const fieldChanged = !!(r.changes as OpsChanges)?.[c.key as OpsSourceKey];
+              if (c.key === "status") {
+                const st = opsStatusInfo(r.status);
+                return (
+                  <td key={c.key} className="relative border-b border-r border-slate-200 px-1.5 py-1.5 align-top" style={{ background: rowBg }}>
+                    <select
+                      value={r.status}
+                      onChange={(e) => onStatus(r.id, e.target.value as OpsStatus | "")}
+                      aria-label="Stato del servizio"
+                      className="w-full cursor-pointer appearance-none rounded-full border-0 px-2 py-0.5 text-center text-[11.5px] font-semibold leading-5 focus:shadow-none"
+                      style={{ background: st?.bg ?? "#f1f5f9", color: st?.fg ?? "#94a3b8" }}
+                    >
+                      <option value="">— stato —</option>
+                      {OPS_STATUSES.map((o) => (
+                        <option key={o.id} value={o.id}>
+                          {o.label}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                );
+              }
               const sticky = STICKY_TD[i] ?? "";
               const align = c.key === "pax" || c.key === "service_date" ? "text-center" : c.key === "meeting_time" ? "text-right" : "";
               return (
                 <td
                   key={c.key}
                   onClick={() => !isEditing && onStartEdit(r.id, c.key)}
-                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""}`}
+                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""} ${fieldChanged && !isEditing ? "ring-2 ring-inset ring-amber-300" : ""} ${cancelled && c.key !== "service_date" ? "text-slate-400 line-through" : ""}`}
                   style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined }}
                 >
                   {isEditing ? (

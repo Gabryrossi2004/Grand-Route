@@ -2,8 +2,9 @@
 
 import { z } from "zod";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import { OPS_COLORS, OPS_TEXT_KEYS, type OpsRow } from "@/lib/opsSheet";
+import { OPS_COLORS, OPS_SOURCE_KEYS, OPS_STATUS_IDS, OPS_TEXT_KEYS, type OpsRow, type OpsStatus } from "@/lib/opsSheet";
 import { DAY_BLOCK_TITLE } from "@/lib/itineraryMode";
+import { chunks, loadServices, nightsBetween, sourceFromActivity, type ImportActivity, type ImportDay } from "@/lib/opsImport";
 
 type Fail = { ok: false; error: string };
 const NOT_READY = "La scheda operativa non è ancora attiva: serve l'aggiornamento del database (SQL 0046).";
@@ -17,8 +18,12 @@ const textFields = Object.fromEntries(OPS_TEXT_KEYS.map((k) => [k, z.string().ma
 >;
 const cellColors = z.partialRecord(z.enum(OPS_TEXT_KEYS), z.enum(OPS_COLORS));
 
+const status = z.enum(["", ...OPS_STATUS_IDS]);
+const change = z.object({ from: z.string().max(4000), to: z.string().max(4000), applied: z.boolean() });
+const changesSchema = z.partialRecord(z.enum([...OPS_SOURCE_KEYS, "_removed"]), change);
+
 const patchSchema = z
-  .object({ service_date: date, row_color: color, cell_colors: cellColors, trip_id: z.string().uuid().nullable(), ...textFields })
+  .object({ service_date: date, row_color: color, cell_colors: cellColors, trip_id: z.string().uuid().nullable(), status, changes: changesSchema, ...textFields })
   .partial()
   .strict();
 
@@ -28,13 +33,15 @@ const rowSchema = z
     service_date: date,
     row_color: color.optional(),
     cell_colors: cellColors.optional(),
+    status: status.optional(),
     trip_id: z.string().uuid().nullable().optional(),
     activity_id: z.string().uuid().nullable().optional(),
     ...Object.fromEntries(OPS_TEXT_KEYS.map((k) => [k, textFields[k].optional()])),
   })
   .strict();
 
-const SELECT = "id, service_date, trip_code, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, row_color, cell_colors, trip_id, activity_id, created_at";
+const SELECT =
+  "id, service_date, trip_code, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, status, changes, row_color, cell_colors, trip_id, activity_id, created_at";
 
 async function ctx() {
   const user = await getCachedUser();
@@ -85,33 +92,46 @@ export async function deleteOpsRow(id: string): Promise<{ ok: true } | Fail> {
   return { ok: true };
 }
 
+// ── Stato e riconferme ──────────────────────────────────────────────────────
+
+/** Cambia lo stato di più righe insieme (es. «Riconferma inviata» a tutti i servizi di un fornitore). */
+export async function setOpsStatus(ids: string[], next: OpsStatus | ""): Promise<{ ok: true } | Fail> {
+  const c = await ctx();
+  const parsedIds = z.array(z.string().uuid()).min(1).max(500).safeParse(ids);
+  if (!c || !parsedIds.success || !status.safeParse(next).success) return { ok: false, error: "Dati non validi." };
+  const { error } = await c.supabase
+    .from("ops_rows")
+    .update({ status: next, updated_at: new Date().toISOString() })
+    .in("id", parsedIds.data)
+    .eq("owner_id", c.user.id);
+  if (error) {
+    console.error("[operativo] stato", error.message);
+    return { ok: false, error: error.message.includes("status") ? "Serve l'aggiornamento del database (SQL 0048)." : SAVE_ERROR };
+  }
+  return { ok: true };
+}
+
+/** Righe dei giorni da riconfermare (i servizi cancellati no). */
+export async function getRiconferme(dates: string[]): Promise<{ ok: true; rows: OpsRow[] } | Fail> {
+  const c = await ctx();
+  const parsed = z.array(date).min(1).max(7).safeParse(dates);
+  if (!c || !parsed.success) return { ok: false, error: "Giorni non validi." };
+  const { data, error } = await c.supabase
+    .from("ops_rows")
+    .select(SELECT)
+    .eq("owner_id", c.user.id)
+    .in("service_date", parsed.data)
+    .neq("status", "cancellato")
+    .order("service_date")
+    .limit(2000);
+  if (error) {
+    console.error("[operativo] riconferme", error.message);
+    return { ok: false, error: error.message.includes("status") ? "Serve l'aggiornamento del database (SQL 0048)." : "Non sono riuscito a leggere i servizi. Riprova." };
+  }
+  return { ok: true, rows: (data ?? []) as OpsRow[] };
+}
+
 // ── Importazione dagli itinerari ────────────────────────────────────────────
-
-type DayRow = {
-  id: string;
-  trip_id: string;
-  day_date: string;
-  trips: { id: string; code: string | null; title: string; owner_id: string; itinerary_stage: string | null; approval_status: string | null; clients: { full_name: string | null } | null } | null;
-};
-type ActRow = {
-  id: string;
-  trip_day_id: string;
-  start_time: string | null;
-  title: string;
-  location: string | null;
-  activity_type: string;
-  details: Record<string, string> | null;
-};
-type ServiceRow = {
-  activity_id: string;
-  notes: string | null;
-  confirmation_number: string | null;
-  suppliers: { full_name: string | null; phone: string | null } | null;
-};
-
-const chunks = <T,>(arr: T[], n: number) => Array.from({ length: Math.ceil(arr.length / n) }, (_, i) => arr.slice(i * n, i * n + n));
-const clean = (v: unknown) => (typeof v === "string" ? v.trim() : "");
-const nightsBetween = (from: string, to: string) => Math.round((Date.parse(to) - Date.parse(from)) / 86_400_000);
 
 /** Crea una riga per ogni attività degli itinerari nel periodo (quelle già importate restano come sono). */
 export async function importOpsFromTrips(
@@ -143,13 +163,13 @@ export async function importOpsFromTrips(
     console.error("[operativo] import days", dayErr.message);
     return { ok: false, error: "Non sono riuscito a leggere i viaggi. Riprova." };
   }
-  const days = ((dayData ?? []) as unknown as DayRow[]).filter(
+  const days = ((dayData ?? []) as unknown as ImportDay[]).filter(
     (d) => d.trips && (includeUnconfirmed || tripId || d.trips.itinerary_stage === "finale" || d.trips.approval_status === "approved"),
   );
   if (days.length === 0) return { ok: true, rows: [], skipped: 0 };
   const dayById = new Map(days.map((d) => [d.id, d]));
 
-  const acts: ActRow[] = [];
+  const acts: ImportActivity[] = [];
   for (const ids of chunks([...dayById.keys()], 150)) {
     const { data, error } = await supabase
       .from("activities")
@@ -159,60 +179,24 @@ export async function importOpsFromTrips(
       .order("activity_order");
     if (error) return { ok: false, error: "Non sono riuscito a leggere gli itinerari. Riprova." };
     // il blocco «Programma della giornata» degli itinerari a giornata intera non è un servizio
-    acts.push(...((data ?? []) as ActRow[]).filter((a) => a.title !== DAY_BLOCK_TITLE));
+    acts.push(...((data ?? []) as ImportActivity[]).filter((a) => a.title !== DAY_BLOCK_TITLE));
   }
   if (acts.length === 0) return { ok: true, rows: [], skipped: 0 };
 
   const already = new Set<string>();
-  const services = new Map<string, ServiceRow>();
   for (const ids of chunks(acts.map((a) => a.id), 150)) {
-    const [{ data: existing, error: exErr }, { data: svc }] = await Promise.all([
-      supabase.from("ops_rows").select("activity_id").eq("owner_id", user.id).in("activity_id", ids),
-      supabase.from("trip_services").select("activity_id, notes, confirmation_number, suppliers(full_name, phone)").in("activity_id", ids).neq("status", "cancellato"),
-    ]);
+    const { data: existing, error: exErr } = await supabase.from("ops_rows").select("activity_id").eq("owner_id", user.id).in("activity_id", ids);
     if (exErr) return { ok: false, error: exErr.code === "42P01" ? NOT_READY : "Non sono riuscito a leggere la scheda. Riprova." };
     for (const r of existing ?? []) if (r.activity_id) already.add(r.activity_id);
-    for (const s of (svc ?? []) as unknown as ServiceRow[]) if (!services.has(s.activity_id)) services.set(s.activity_id, s);
   }
+  const services = await loadServices(supabase, acts.map((a) => a.id));
 
   const toInsert = acts
     .filter((a) => !already.has(a.id))
     .map((a) => {
       const day = dayById.get(a.trip_day_id)!;
-      const trip = day.trips!;
-      const d = a.details ?? {};
-      const s = services.get(a.id);
-      let meetingTime = a.start_time ? a.start_time.slice(0, 5) : "";
-      if (a.activity_type === "alloggio" && /^\d{4}-\d{2}-\d{2}$/.test(clean(d.data_check_out))) {
-        const n = nightsBetween(day.day_date, d.data_check_out);
-        if (n > 0) meetingTime = n === 1 ? "1 notte" : `${n} notti`;
-      }
-      const confirmation = clean(s?.confirmation_number) || clean(d.pnr) || clean(d.numero_conferma);
-      const extra = [
-        a.activity_type === "volo" && clean(d.numero_volo) ? `Volo ${clean(d.numero_volo)}${clean(d.orario_arrivo) ? `, arrivo ${clean(d.orario_arrivo)}` : ""}` : "",
-        a.activity_type === "treno" && clean(d.numero_treno) ? `Treno ${clean(d.numero_treno)}${clean(d.orario_arrivo) ? `, arrivo ${clean(d.orario_arrivo)}` : ""}` : "",
-        a.activity_type === "alloggio" ? [clean(d.tipo_camera), clean(d.trattamento)].filter(Boolean).join(" in ") : "",
-        confirmation ? `Conferma ${confirmation}` : "",
-        clean(d.note_prenotazione),
-        clean(s?.notes),
-      ].filter(Boolean);
-      return {
-        owner_id: user.id,
-        service_date: day.day_date,
-        trip_code: trip.code ?? "",
-        client: (clean(trip.clients?.full_name) || clean(trip.title)).slice(0, 500),
-        agent: "",
-        supplier: (clean(s?.suppliers?.full_name) || clean(d.fornitore) || clean(d.compagnia)).slice(0, 500),
-        supplier_contact: clean(s?.suppliers?.phone).slice(0, 500),
-        pax: clean(d.numero_persone).slice(0, 500),
-        service: clean(a.title).slice(0, 4000),
-        meeting_time: meetingTime,
-        meeting_point: (clean(d.punto_incontro) || clean(d.aeroporto_partenza) || clean(d.porto_partenza) || clean(a.location)).slice(0, 500),
-        notes: extra.join(" · ").slice(0, 4000),
-        responsible: "",
-        trip_id: trip.id,
-        activity_id: a.id,
-      };
+      const source = sourceFromActivity(a, day, services.get(a.id));
+      return { owner_id: user.id, ...source, agent: "", responsible: "", source, trip_id: day.trips!.id, activity_id: a.id };
     });
 
   const rows: OpsRow[] = [];
@@ -228,5 +212,4 @@ export async function importOpsFromTrips(
   }
   return { ok: true, rows, skipped: already.size };
 }
-
 
