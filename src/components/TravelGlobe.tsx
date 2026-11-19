@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Crosshair, Loader2 } from "lucide-react";
+import { Camera, Crosshair, Loader2 } from "lucide-react";
+import CountryBoard from "@/components/CountryBoard";
+import { countryNameIt } from "@/lib/geo/countryNames";
 import type * as THREE_NS from "three";
 
 export type GlobePlace = { name: string; lat: number; lon: number };
@@ -68,7 +70,7 @@ function inRing(lon: number, lat: number, ring: [number, number][]) {
 
 // Il paese che contiene il punto; per le località sulla costa (fuori dal contorno semplificato)
 // il paese più vicino entro circa 2 gradi.
-function countryAt(lat: number, lon: number, rings: Rings[]): string | null {
+function countryAt(lat: number, lon: number, rings: Rings[], tol = 4): string | null {
   for (const c of rings) {
     for (const p of c.polys) {
       const [x0, y0, x1, y1] = p.box;
@@ -77,11 +79,12 @@ function countryAt(lat: number, lon: number, rings: Rings[]): string | null {
     }
   }
   let best: string | null = null;
-  let bestD = 4; // gradi² (circa 2 gradi)
+  let bestD = tol; // gradi² (4 = circa 2 gradi)
+  const reach = Math.sqrt(tol);
   for (const c of rings) {
     for (const p of c.polys) {
       const [x0, y0, x1, y1] = p.box;
-      if (lon < x0 - 2 || lon > x1 + 2 || lat < y0 - 2 || lat > y1 + 2) continue;
+      if (lon < x0 - reach || lon > x1 + reach || lat < y0 - reach || lat > y1 + reach) continue;
       for (const [lo, la] of p.ring) {
         const d = (lo - lon) ** 2 + (la - lat) ** 2;
         if (d < bestD) {
@@ -103,6 +106,26 @@ const hashName = (name: string) => {
   for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
   return h;
 };
+
+// Disegna il contorno di un paese su un canvas equirettangolare di larghezza W e altezza H
+function tracePath(ctx: CanvasRenderingContext2D, c: Country, W: number, H: number) {
+  ctx.beginPath();
+  for (const poly of c.p) {
+    for (const flat of poly) {
+      let px = 0,
+        py = 0;
+      for (let i = 0; i < flat.length; i += 2) {
+        px += flat[i];
+        py += flat[i + 1];
+        const x = ((px / 20 + 180) / 360) * W;
+        const y = ((90 - py / 20) / 180) * H;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+    }
+  }
+}
 
 function drawTexture(raw: Country[], gold: Set<string>, soft: Set<string>, fontFamily: string): HTMLCanvasElement {
   const W = 4096,
@@ -179,24 +202,7 @@ function drawTexture(raw: Country[], gold: Set<string>, soft: Set<string>, fontF
     }
   }
 
-  const path = (c: Country) => {
-    ctx.beginPath();
-    for (const poly of c.p) {
-      for (const flat of poly) {
-        let px = 0,
-          py = 0;
-        for (let i = 0; i < flat.length; i += 2) {
-          px += flat[i];
-          py += flat[i + 1];
-          const x = X(px / 20);
-          const y = Y(py / 20);
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-      }
-    }
-  };
+  const path = (c: Country) => tracePath(ctx, c, W, H);
 
   // Ombra della costa nel mare
   ctx.lineJoin = "round";
@@ -296,27 +302,36 @@ const dateIt = (iso: string | null) => (iso ? new Date(`${iso}T00:00:00`).toLoca
 
 // Mappamondo 3D dei viaggi del cliente: i paesi visitati sono d'oro, i viaggi in programma più tenui.
 // La posizione attuale si legge solo dal telefono e non viene inviata né salvata.
-export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
+export default function TravelGlobe({ trips, userId, photoCounts }: { trips: GlobeTrip[]; userId: string; photoCounts: Record<string, number> }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const labelsRef = useRef<HTMLDivElement>(null);
-  const api = useRef<{ zoom: (factor: number) => void; focus: (lat: number, lon: number) => void; setMe: (p: { lat: number; lon: number } | null) => void } | null>(null);
+  const api = useRef<{
+    zoom: (factor: number) => void;
+    focus: (lat: number, lon: number, maxDist?: number) => void;
+    setMe: (p: { lat: number; lon: number } | null) => void;
+    chooseTrip: (tripId: string) => void;
+    clear: () => void;
+  } | null>(null);
 
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const selectedRef = useRef<string | null>(null);
+  const countryRef = useRef<string | null>(null);
   const [geoState, setGeoState] = useState<"idle" | "asking" | "denied" | "on" | "unsupported">("idle");
-  const [countriesDone, setCountriesDone] = useState<number | null>(null);
+  // Paesi visitati (oro), in programma (oro chiaro) e viaggi che toccano ciascun paese
+  const [info, setInfo] = useState<{ gold: string[]; soft: string[]; byCountry: Record<string, string[]> } | null>(null);
+  const [country, setCountry] = useState<string | null>(null);
+  const [boardOpen, setBoardOpen] = useState(false);
+  const [counts, setCounts] = useState<Record<string, number>>(photoCounts);
 
-  const focusTrip = useCallback(
-    (trip: GlobeTrip) => {
-      selectedRef.current = trip.id;
-      setSelected(trip.id);
-      const p = trip.places[0];
-      if (p) api.current?.focus(p.lat, p.lon);
+  const focusTrip = useCallback((trip: GlobeTrip) => api.current?.chooseTrip(trip.id), []);
+  const onBoardCount = useCallback(
+    (n: number) => {
+      if (country) setCounts((c) => (c[country] === n ? c : { ...c, [country]: n }));
     },
-    [],
+    [country],
   );
 
   // ---- costruzione della scena (una volta) ----
@@ -335,16 +350,20 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
         // Paesi per stato
         const gold = new Set<string>();
         const soft = new Set<string>();
-        const pinsData: { trip: GlobeTrip; place: GlobePlace }[] = [];
+        const pinsData: { trip: GlobeTrip; place: GlobePlace; country: string | null }[] = [];
+        const byCountry: Record<string, string[]> = {};
         for (const trip of trips) {
           for (const place of trip.places) {
             const c = countryAt(place.lat, place.lon, rings);
-            if (c) (trip.status === "upcoming" ? soft : gold).add(c);
-            pinsData.push({ trip, place });
+            if (c) {
+              (trip.status === "upcoming" ? soft : gold).add(c);
+              if (!(byCountry[c] ??= []).includes(trip.id)) byCountry[c].push(trip.id);
+            }
+            pinsData.push({ trip, place, country: c });
           }
         }
         gold.forEach((c) => soft.delete(c));
-        setCountriesDone(gold.size);
+        setInfo({ gold: [...gold], soft: [...soft], byCountry });
 
         const canvas = canvasRef.current;
         const stage = stageRef.current;
@@ -356,12 +375,8 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
         scene.add(camera);
         const pitchG = new T.Group();
         scene.add(pitchG);
-        // Come un globo vero: l'asse è inclinato di 23,4° rispetto al sostegno
-        const tiltG = new T.Group();
-        tiltG.rotation.z = 23.4 * D2R;
-        pitchG.add(tiltG);
         const yawG = new T.Group();
-        tiltG.add(yawG);
+        pitchG.add(yawG);
 
         const ll2v = (lat: number, lon: number, r = 1) =>
           new T.Vector3(r * Math.cos(lat * D2R) * Math.cos(lon * D2R), r * Math.sin(lat * D2R), -r * Math.cos(lat * D2R) * Math.sin(lon * D2R));
@@ -381,40 +396,38 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
         camera.add(key);
         scene.add(new T.AmbientLight(0xfff4e0, 2.1));
 
-        // Meridiano e sostegno in ottone dorato e blu
-        const brass = new T.MeshPhongMaterial({ color: 0xc79d52, specular: 0xffe7a6, shininess: 80 });
-        const navyWood = new T.MeshPhongMaterial({ color: 0x1b2f4d, specular: 0x33486b, shininess: 40 });
-        const hardware = new T.Group();
-        const ring = new T.Mesh(new T.TorusGeometry(1.085, 0.014, 14, 160), brass);
-        tiltG.add(ring);
-        for (const sgn of [1, -1]) {
-          const knob = new T.Mesh(new T.SphereGeometry(0.04, 16, 12), brass);
-          knob.position.y = sgn * 1.085;
-          tiltG.add(knob);
-        }
-        const axis = new T.Mesh(new T.CylinderGeometry(0.008, 0.008, 2.3, 8), brass);
-        tiltG.add(axis);
-        const bottom = new T.Vector3(0, -1.085, 0).applyAxisAngle(new T.Vector3(0, 0, 1), 23.4 * D2R);
-        const foot = new T.Vector3(0, -1.34, 0);
-        const arm = new T.Mesh(new T.CylinderGeometry(0.016, 0.016, bottom.distanceTo(foot), 12), brass);
-        arm.position.copy(bottom.clone().add(foot).multiplyScalar(0.5));
-        arm.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), foot.clone().sub(bottom).normalize());
-        hardware.add(arm);
-        const col = new T.Mesh(new T.CylinderGeometry(0.03, 0.04, 0.2, 16), brass);
-        col.position.set(0, -1.42, 0);
-        hardware.add(col);
-        const base = new T.Mesh(new T.CylinderGeometry(0.4, 0.46, 0.07, 48), navyWood);
-        base.position.set(0, -1.54, 0);
-        hardware.add(base);
-        const trim = new T.Mesh(new T.TorusGeometry(0.405, 0.012, 10, 64), brass);
-        trim.rotation.x = Math.PI / 2;
-        trim.position.set(0, -1.505, 0);
-        hardware.add(trim);
-        pitchG.add(hardware);
-        const fittings = [ring, axis, hardware, ...tiltG.children.filter((o) => o !== yawG && (o as THREE_NS.Mesh).geometry instanceof T.SphereGeometry)];
+        // Il paese scelto si evidenzia con un velo blu e un bordo marcato (un secondo strato trasparente sul globo)
+        const OW = 2048,
+          OH = 1024;
+        const overlayCanvas = document.createElement("canvas");
+        overlayCanvas.width = OW;
+        overlayCanvas.height = OH;
+        const overlayCtx = overlayCanvas.getContext("2d")!;
+        const overlayTex = new T.CanvasTexture(overlayCanvas);
+        overlayTex.colorSpace = T.SRGBColorSpace;
+        const overlay = new T.Mesh(
+          new T.SphereGeometry(1.002, 96, 72),
+          new T.MeshBasicMaterial({ map: overlayTex, transparent: true, depthWrite: false }),
+        );
+        overlay.visible = false;
+        yawG.add(overlay);
+        const drawOverlay = (name: string | null) => {
+          overlayCtx.clearRect(0, 0, OW, OH);
+          const c = name ? raw.find((r) => r.n === name) : null;
+          overlay.visible = !!c;
+          if (!c) return;
+          tracePath(overlayCtx, c, OW, OH);
+          overlayCtx.fillStyle = "rgba(35,60,94,.22)";
+          overlayCtx.fill("evenodd");
+          overlayCtx.lineJoin = "round";
+          overlayCtx.strokeStyle = "#16294a";
+          overlayCtx.lineWidth = 5;
+          overlayCtx.stroke();
+          overlayTex.needsUpdate = true;
+        };
 
         // Puntini
-        type Marker = { group: THREE_NS.Group; head: THREE_NS.Mesh; hit: THREE_NS.Mesh; tripId: string; label: HTMLDivElement };
+        type Marker = { group: THREE_NS.Group; head: THREE_NS.Mesh; hit: THREE_NS.Mesh; tripId: string; country: string | null; label: HTMLDivElement };
         const markers: Marker[] = [];
         const labels = labelsRef.current!;
         labels.innerHTML = "";
@@ -437,7 +450,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
           return { g, head, hit };
         };
         const seenTrip = new Set<string>();
-        for (const { trip, place } of pinsData) {
+        for (const { trip, place, country: pinCountry } of pinsData) {
           const color = trip.status === "upcoming" ? 0xffe9b8 : 0xfff3d4;
           const { g, head, hit } = makePin(place.lat, place.lon, color);
           const first = !seenTrip.has(trip.id);
@@ -447,7 +460,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
           label.textContent = first ? trip.destination || trip.title : place.name;
           label.dataset.main = first ? "1" : "0";
           labels.appendChild(label);
-          markers.push({ group: g, head, hit, tripId: trip.id, label });
+          markers.push({ group: g, head, hit, tripId: trip.id, country: pinCountry, label });
         }
 
         // "Sei qui" (solo sul telefono)
@@ -475,7 +488,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
         };
 
         // Controlli
-        const st = { yaw: 0, pitch: 0.4, yawV: 0, pitchV: 0, dist: 5.2, distT: 5.2, idle: 0, goal: null as null | { yaw: number; pitch: number } };
+        const st = { yaw: 0, pitch: 0.4, yawV: 0, pitchV: 0, dist: 4.2, distT: 4.2, idle: 0, goal: null as null | { yaw: number; pitch: number } };
         const wrap = (a: number) => {
           while (a > Math.PI) a -= 2 * Math.PI;
           while (a < -Math.PI) a += 2 * Math.PI;
@@ -491,7 +504,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
           const tmp = new T.Vector3();
           for (let a = 0; a < 720; a++) {
             const yaw = (a * Math.PI) / 360;
-            m.makeRotationX(pitch).multiply(new T.Matrix4().makeRotationZ(23.4 * D2R)).multiply(new T.Matrix4().makeRotationY(yaw));
+            m.makeRotationX(pitch).multiply(new T.Matrix4().makeRotationY(yaw));
             tmp.copy(v).applyMatrix4(m);
             if (tmp.z > bz) {
               bz = tmp.z;
@@ -539,7 +552,25 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
               best = m;
             }
           }
-          return best;
+          return { marker: best, ground: gh ?? null };
+        };
+
+        // Il paese sotto il dito (null se è mare)
+        const countryFromHit = (point: THREE_NS.Vector3) => {
+          const l = globe.worldToLocal(point.clone()).normalize();
+          const lat = Math.asin(Math.max(-1, Math.min(1, l.y))) / D2R;
+          const lon = Math.atan2(-l.z, l.x) / D2R;
+          return { name: countryAt(lat, lon, rings, 0.2), lat, lon };
+        };
+
+        // Sceglie un paese (o nessuno): evidenzia, aggiorna la scheda e, se è visitato, può aprire la bacheca
+        const choose = (name: string | null, tripId: string | null, openBoard: boolean) => {
+          drawOverlay(name);
+          selectedRef.current = tripId;
+          countryRef.current = name;
+          setSelected(tripId);
+          setCountry(name);
+          setBoardOpen(!!name && openBoard && gold.has(name));
         };
 
         const onDown = (e: PointerEvent) => {
@@ -584,16 +615,17 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
           if (pointers.size === 0) {
             dragging = false;
             if (down && had && down.moved < 8 && performance.now() - down.t < 450) {
-              const m = pick(e.clientX, e.clientY);
-              if (m) {
-                const trip = trips.find((t) => t.id === m.tripId);
-                if (trip) {
-                  selectedRef.current = trip.id;
-                  setSelected(trip.id);
-                }
+              const { marker, ground } = pick(e.clientX, e.clientY);
+              if (marker) {
+                choose(marker.country, marker.tripId, true);
+              } else if (ground) {
+                const hit = countryFromHit(ground.point);
+                if (hit.name) {
+                  choose(hit.name, null, true);
+                  api.current?.focus(hit.lat, hit.lon, 3);
+                } else choose(null, null, false);
               } else {
-                selectedRef.current = null;
-                setSelected(null);
+                choose(null, null, false);
               }
             }
             down = null;
@@ -616,16 +648,23 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
             st.distT = Math.max(MIN_DIST, Math.min(MAX_DIST, st.distT * factor));
             st.idle = 0;
           },
-          focus: (lat, lon) => {
+          focus: (lat, lon, maxDist = 2.2) => {
             st.goal = solve(lat, lon);
             st.yawV = 0;
             st.pitchV = 0;
-            st.distT = Math.min(st.distT, 2.2);
+            st.distT = Math.min(st.distT, maxDist);
           },
           setMe: (p) => {
             setMe(p);
             if (p) api.current?.focus(p.lat, p.lon);
           },
+          chooseTrip: (tripId) => {
+            const first = pinsData.find((d) => d.trip.id === tripId);
+            if (!first) return;
+            choose(first.country, tripId, false);
+            api.current?.focus(first.place.lat, first.place.lon);
+          },
+          clear: () => choose(null, null, false),
         };
 
         // Ciclo
@@ -657,7 +696,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
             st.yawV *= Math.pow(0.9, dt * 60);
             st.pitchV *= Math.pow(0.85, dt * 60);
             st.idle += dt;
-            if (!reduce && !selectedRef.current && st.idle > 3) st.yaw += dt * 0.08;
+            if (!reduce && !selectedRef.current && !countryRef.current && st.idle > 3) st.yaw += dt * 0.08;
           }
           st.dist += (st.distT - st.dist) * (1 - Math.exp(-dt * 8));
           camera.position.set(0, 0, st.dist);
@@ -670,15 +709,13 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
             me.pulse.scale.setScalar(1 + p * 5);
             (me.pulse.material as THREE_NS.MeshBasicMaterial).opacity = 0.85 * (1 - p);
           }
-          // I puntini restano piccoli anche da vicino, e il sostegno sparisce quando ci si avvicina
+          // I puntini restano piccoli anche da vicino
           const pinScale = Math.max(0.28, Math.min(1.1, (st.dist - 0.9) / 3.3));
           for (const m of markers) {
             m.group.scale.setScalar(pinScale);
             m.head.scale.setScalar(selectedRef.current === m.tripId ? 1.5 : 1);
           }
           if (me) me.group.scale.setScalar(pinScale);
-          const showFittings = st.dist > 2.6;
-          for (const f of fittings) f.visible = showFittings;
           renderer.render(scene, camera);
 
           // Etichette
@@ -714,6 +751,7 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
             (Array.isArray(mat) ? mat : mat ? [mat] : []).forEach((m) => m.dispose());
           });
           texture.dispose();
+          overlayTex.dispose();
           renderer.dispose();
           api.current = null;
         };
@@ -746,7 +784,11 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
     );
   }
 
-  const selectedTrip = trips.find((t) => t.id === selected) ?? null;
+  const countryTrips = country && info ? (info.byCountry[country] ?? []).map((id) => trips.find((t) => t.id === id)).filter((t): t is GlobeTrip => !!t) : [];
+  const isVisited = !!country && !!info?.gold.includes(country);
+  const isPlanned = !!country && !!info?.soft.includes(country);
+  const photoCount = country ? (counts[country] ?? 0) : 0;
+  const countriesDone = info?.gold.length ?? null;
 
   return (
     <div className="flex flex-col gap-4">
@@ -791,22 +833,59 @@ export default function TravelGlobe({ trips }: { trips: GlobeTrip[] }) {
             </button>
           </div>
         )}
-        {selectedTrip && (
-          <div className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 text-[#1d2b40] shadow-xl">
-            <p className="text-xs font-semibold text-[#756548]">{STATUS_LABEL[selectedTrip.status]}</p>
-            <p className="font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">{selectedTrip.title}</p>
-            <p className="text-sm text-slate-600">
-              {[selectedTrip.destination, selectedTrip.from ? `${dateIt(selectedTrip.from)}${selectedTrip.to && selectedTrip.to !== selectedTrip.from ? ` – ${dateIt(selectedTrip.to)}` : ""}` : ""]
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
-            {selectedTrip.places.length > 0 && <p className="mt-1 text-xs text-slate-500">Tappe: {selectedTrip.places.map((p) => p.name).join(" · ")}</p>}
-            <a href={`/client/trips/${selectedTrip.id}`} className="mt-2 inline-block text-sm font-semibold text-[#233c5e] underline">
-              Apri il viaggio
-            </a>
+        {country && (
+          <div className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 pr-10 text-[#1d2b40] shadow-xl">
+            <button
+              type="button"
+              onClick={() => api.current?.clear()}
+              aria-label="Chiudi la scheda del paese"
+              className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full text-slate-500 hover:bg-black/5"
+            >
+              ×
+            </button>
+            <p className="text-xs font-semibold text-[#756548]">{isVisited ? "Paese visitato" : isPlanned ? "In programma" : "Non ancora visitato"}</p>
+            <p className="font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">{countryNameIt(country)}</p>
+            {countryTrips.length > 0 && (
+              <ul className="mt-1 space-y-0.5 text-sm text-slate-600">
+                {countryTrips.map((t) => (
+                  <li key={t.id}>
+                    <a href={`/client/trips/${t.id}`} className="underline decoration-[#c58f2d] underline-offset-2">
+                      {t.title}
+                    </a>
+                    <span className="text-slate-500">
+                      {" "}
+                      · {STATUS_LABEL[t.status].toLowerCase()}
+                      {t.from ? `, ${dateIt(t.from)}` : ""}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {isVisited && (
+              <button
+                type="button"
+                onClick={() => setBoardOpen(true)}
+                className="mt-2 flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
+              >
+                <Camera size={15} />
+                Bacheca dei ricordi{photoCount > 0 ? ` · ${photoCount} foto` : ""}
+              </button>
+            )}
           </div>
         )}
       </div>
+
+      {boardOpen && country && (
+        <CountryBoard
+          key={country}
+          country={country}
+          nameIt={countryNameIt(country)}
+          userId={userId}
+          trips={countryTrips.map((t) => ({ id: t.id, title: t.title, from: t.from, status: t.status }))}
+          onClose={() => setBoardOpen(false)}
+          onCountChange={onBoardCount}
+        />
+      )}
 
       {geoState === "denied" && <p className="text-sm text-amber-700">Non ho potuto leggere la tua posizione: controlla di aver dato il permesso al sito nelle impostazioni del telefono.</p>}
       {geoState === "unsupported" && <p className="text-sm text-amber-700">Questo dispositivo non permette di leggere la posizione.</p>}

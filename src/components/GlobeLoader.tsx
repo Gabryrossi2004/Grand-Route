@@ -9,6 +9,6 @@ const TravelGlobe = dynamic(() => import("@/components/TravelGlobe"), {
   loading: () => <div className="grid aspect-square w-full place-items-center rounded-3xl bg-[#13233c] text-sm text-white/80">Carico il mondo…</div>,
 });
 
-export default function GlobeLoader({ trips }: { trips: GlobeTrip[] }) {
-  return <TravelGlobe trips={trips} />;
+export default function GlobeLoader({ trips, userId, photoCounts }: { trips: GlobeTrip[]; userId: string; photoCounts: Record<string, number> }) {
+  return <TravelGlobe trips={trips} userId={userId} photoCounts={photoCounts} />;
 }
