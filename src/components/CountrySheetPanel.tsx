@@ -1,12 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Printer, RefreshCw, Sparkles, X } from "lucide-react";
+import { Check, Loader2, Pencil, Printer, Sparkles, X } from "lucide-react";
 import {
   generateCountrySheet,
   getCountrySheet,
+  previewCustomCountrySheet,
+  resetCountrySheet,
+  saveCountrySheet,
   type CountrySheet,
 } from "@/lib/actions/countrySheet";
+import type { CountrySheetContent } from "@/lib/countrySheetAi";
+import type { CustomizeOptions } from "@/lib/countrySheetShared";
+import CountrySheetCustomize from "@/components/CountrySheetCustomize";
+import CountrySheetEditor from "@/components/CountrySheetEditor";
 import { flagOf } from "@/lib/geo/countryCodes";
 
 const FACTS: { key: keyof CountrySheet["content"]["facts"]; label: string }[] =
@@ -39,6 +46,11 @@ export default function CountrySheetPanel({
   const [loading, setLoading] = useState(!initial);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // personalizzazione: richieste a Zefiro, proposta da approvare, modifica a mano
+  const [mode, setMode] = useState<"view" | "customize" | "proposal" | "edit">("view");
+  const [proposal, setProposal] = useState<CountrySheetContent | null>(null);
+  const [draft, setDraft] = useState<CountrySheetContent | null>(null);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -62,11 +74,49 @@ export default function CountrySheetPanel({
     setError(null);
     const res = await generateCountrySheet(code);
     setBusy(false);
-    if (res.ok) setSheet(res.sheet);
-    else setError(res.error);
+    if (res.ok) {
+      setSheet(res.sheet);
+      setMode("view");
+    } else setError(res.error);
   }
 
-  const c = sheet?.content;
+  async function runCustomize(opts: CustomizeOptions) {
+    if (!sheet) return;
+    setBusy(true);
+    setError(null);
+    const res = await previewCustomCountrySheet(code, sheet.content, opts);
+    setBusy(false);
+    if (!res.ok) return setError(res.error);
+    setProposal(res.content);
+    setMode("proposal");
+    document.getElementById("country-sheet-body")?.scrollTo({ top: 0 });
+  }
+
+  async function saveContent(content: CountrySheetContent) {
+    if (!sheet) return;
+    setSaving(true);
+    setError(null);
+    const res = await saveCountrySheet(code, content, sheet.photos);
+    setSaving(false);
+    if (!res.ok) return setError(res.error);
+    setSheet(res.sheet);
+    setProposal(null);
+    setDraft(null);
+    setMode("view");
+  }
+
+  async function resetToLibrary() {
+    if (!window.confirm("Vuoi tornare alla scheda della libreria Grand Route? Le tue modifiche a questa scheda verranno cancellate.")) return;
+    setBusy(true);
+    setError(null);
+    const res = await resetCountrySheet(code);
+    setBusy(false);
+    if (!res.ok) return setError(res.error);
+    setSheet(res.sheet);
+    setMode("view");
+  }
+
+  const c = mode === "proposal" && proposal ? proposal : sheet?.content;
 
   return (
     <div
@@ -97,8 +147,27 @@ export default function CountrySheetPanel({
             )}
           </div>
           <div className="flex shrink-0 items-center gap-1 print:hidden">
-            {sheet && (
+            {sheet && mode === "view" && (
               <>
+                <button
+                  type="button"
+                  onClick={() => setMode("customize")}
+                  className="flex items-center gap-1.5 rounded-full bg-[#e3c27a] px-3 py-1.5 text-xs font-semibold text-[#1d2b40] hover:bg-[#f0d596]"
+                  title="Chiedi a Zefiro di adattare la scheda ai tuoi clienti"
+                >
+                  <Sparkles size={14} /> <span className="hidden sm:inline">Personalizza</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDraft(structuredClone(sheet.content));
+                    setMode("edit");
+                  }}
+                  className="flex items-center gap-1.5 rounded-full border border-white/30 px-3 py-1.5 text-xs font-medium hover:bg-white/10"
+                  title="Modifica i testi a mano"
+                >
+                  <Pencil size={14} /> <span className="hidden sm:inline">Modifica</span>
+                </button>
                 <button
                   type="button"
                   onClick={() => window.print()}
@@ -107,18 +176,6 @@ export default function CountrySheetPanel({
                 >
                   <Printer size={14} />{" "}
                   <span className="hidden sm:inline">Stampa / PDF</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={generate}
-                  disabled={busy}
-                  className="flex items-center gap-1.5 rounded-full border border-white/30 px-3 py-1.5 text-xs font-medium hover:bg-white/10 disabled:opacity-60"
-                  title="Prepara di nuovo la scheda con Zefiro"
-                >
-                  <RefreshCw size={14} className={busy ? "animate-spin" : ""} />{" "}
-                  <span className="hidden sm:inline">
-                    {sheet.fromLibrary ? "Personalizza con Zefiro" : "Rigenera"}
-                  </span>
                 </button>
               </>
             )}
@@ -133,7 +190,7 @@ export default function CountrySheetPanel({
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto">
+        <div id="country-sheet-body" className="flex-1 overflow-y-auto">
           {loading ? (
             <p className="flex items-center gap-2 p-8 text-sm text-slate-500">
               <Loader2 size={16} className="animate-spin" /> Apro la scheda…
@@ -168,7 +225,84 @@ export default function CountrySheetPanel({
                 </p>
               )}
             </div>
+          ) : mode === "edit" && draft ? (
+            <>
+              <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-2 border-b border-[#e6d7bb] bg-[#faf3e6]/95 px-5 py-3 backdrop-blur sm:px-6">
+                <p className="text-sm font-medium text-[#233c5e]">Stai modificando i testi della scheda</p>
+                <div className="flex items-center gap-2">
+                  {error && <span className="text-sm text-red-700">{error}</span>}
+                  <button type="button" onClick={() => setMode("view")} className="rounded-full px-3 py-1.5 text-sm text-slate-600 hover:bg-white">
+                    Annulla
+                  </button>
+                  <button
+                    type="button"
+                    disabled={saving}
+                    onClick={() => saveContent(draft)}
+                    className="flex items-center gap-1.5 rounded-full bg-[#233c5e] px-4 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050] disabled:opacity-60"
+                  >
+                    {saving ? <Loader2 size={14} className="animate-spin" /> : <Check size={14} />} Salva
+                  </button>
+                </div>
+              </div>
+              <CountrySheetEditor draft={draft} onChange={setDraft} />
+            </>
           ) : (
+            <>
+            {mode === "customize" && (
+              <CountrySheetCustomize
+                busy={busy}
+                error={error}
+                canReset={!!sheet.libraryAvailable && !sheet.fromLibrary}
+                onRun={runCustomize}
+                onRegenerate={generate}
+                onReset={resetToLibrary}
+                onClose={() => {
+                  setMode("view");
+                  setError(null);
+                }}
+              />
+            )}
+            {mode === "proposal" && (
+              <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-2 border-b border-[#c58f2d] bg-[#fff6dd] px-5 py-3 sm:px-6 print:hidden">
+                <p className="flex items-center gap-2 text-sm font-medium text-[#233c5e]">
+                  <Sparkles size={16} className="text-[#c58f2d]" /> Proposta di Zefiro: controllala qui sotto
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  {error && <span className="text-sm text-red-700">{error}</span>}
+                  <button type="button" onClick={() => setMode("customize")} className="rounded-full px-3 py-1.5 text-sm text-[#233c5e] hover:bg-white">
+                    Cambia le richieste
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setDraft(structuredClone(proposal!));
+                      setMode("edit");
+                    }}
+                    className="rounded-full px-3 py-1.5 text-sm text-[#233c5e] hover:bg-white"
+                  >
+                    Ritocca a mano
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setProposal(null);
+                      setMode("view");
+                    }}
+                    className="rounded-full px-3 py-1.5 text-sm text-slate-600 hover:bg-white"
+                  >
+                    Scarta
+                  </button>
+                  <button
+                    type="button"
+                    disabled={saving}
+                    onClick={() => saveContent(proposal!)}
+                    className="flex items-center gap-1.5 rounded-full bg-[#233c5e] px-4 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050] disabled:opacity-60"
+                  >
+                    {saving ? <Loader2 size={14} className="animate-spin" /> : <Check size={14} />} Salva questa versione
+                  </button>
+                </div>
+              </div>
+            )}
             <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[340px_minmax(0,1fr)]">
               {/* scheda tecnica */}
               <section className="flex flex-col gap-5">
@@ -263,9 +397,11 @@ export default function CountrySheetPanel({
                   </p>
                 )}
                 <p className="text-xs text-slate-500">
-                  {sheet.fromLibrary
-                    ? "Scheda della libreria Grand Route"
-                    : "Testi preparati da Zefiro"}{" "}
+                  {mode === "proposal"
+                    ? "Proposta non ancora salvata"
+                    : sheet.fromLibrary
+                      ? "Scheda della libreria Grand Route"
+                      : "Versione personalizzata dalla tua agenzia"}{" "}
                   (aggiornata il{" "}
                   {new Date(sheet.updatedAt).toLocaleDateString("it-IT")}).
                   Controlla sempre documenti e requisiti di ingresso prima della
@@ -273,6 +409,7 @@ export default function CountrySheetPanel({
                 </p>
               </section>
             </div>
+            </>
           )}
         </div>
       </div>
