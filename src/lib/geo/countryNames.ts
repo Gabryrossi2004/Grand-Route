@@ -239,6 +239,17 @@ const NAMES_IT: Record<string, string> = {
   "Antarctica": "Antartide",
   "Sint Maarten": "Sint Maarten",
   "Trinidad and Tobago": "Trinidad e Tobago",
+  "Dhekelia": "Dhekelia (base britannica)",
+  "USNB Guantanamo Bay": "Guantánamo (base USA)",
+  "Gibraltar": "Gibilterra",
+  "Cyprus U.N. Buffer Zone": "Zona cuscinetto di Cipro",
+  "Baikonur": "Baikonur",
+  "Akrotiri": "Akrotiri (base britannica)",
+  "U.S. Minor Outlying Is.": "Isole minori degli Stati Uniti",
+  "Tuvalu": "Tuvalu",
+  "Spratly Is.": "Isole Spratly",
+  "Clipperton I.": "Isola di Clipperton",
+  "Ashmore and Cartier Is.": "Isole Ashmore e Cartier",
 };
 
 export function countryNameIt(name: string): string {

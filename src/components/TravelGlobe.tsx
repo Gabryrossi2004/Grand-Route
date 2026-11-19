@@ -21,11 +21,12 @@ type Country = { n: string; p: number[][][] };
 type Rings = { name: string; polys: { ring: [number, number][]; holes: [number, number][][]; box: [number, number, number, number] }[] };
 
 const D2R = Math.PI / 180;
+const Q = 100; // i confini sono salvati in centesimi di grado (circa 1 km)
 const MIN_DIST = 1.45; // si arriva a vedere anche i paesi più piccoli
 const MAX_DIST = 7;
 const STATUS_LABEL = { done: "Fatto", current: "In corso", upcoming: "In programma" } as const;
 
-// Decodifica i confini (numeri interi in ventesimi di grado, con differenze da punto a punto)
+// Decodifica i confini (numeri interi in centesimi di grado, con differenze da punto a punto)
 function decode(countries: Country[]): { raw: Country[]; rings: Rings[] } {
   const rings: Rings[] = countries.map((c) => ({
     name: c.n,
@@ -37,7 +38,7 @@ function decode(countries: Country[]): { raw: Country[]; rings: Rings[] } {
         for (let i = 0; i < flat.length; i += 2) {
           x += flat[i];
           y += flat[i + 1];
-          pts.push([x / 20, y / 20]); // [lon, lat]
+          pts.push([x / Q, y / Q]); // [lon, lat]
         }
         return pts;
       });
@@ -117,8 +118,8 @@ function tracePath(ctx: CanvasRenderingContext2D, c: Country, W: number, H: numb
       for (let i = 0; i < flat.length; i += 2) {
         px += flat[i];
         py += flat[i + 1];
-        const x = ((px / 20 + 180) / 360) * W;
-        const y = ((90 - py / 20) / 180) * H;
+        const x = ((px / Q + 180) / 360) * W;
+        const y = ((90 - py / Q) / 180) * H;
         if (i === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
@@ -208,30 +209,15 @@ function drawTexture(raw: Country[], gold: Set<string>, soft: Set<string>, fontF
   ctx.lineJoin = "round";
   for (const c of raw) {
     path(c);
-    ctx.strokeStyle = "rgba(35,60,94,.13)";
-    ctx.lineWidth = 12;
+    ctx.strokeStyle = "rgba(35,60,94,.11)";
+    ctx.lineWidth = 6;
     ctx.stroke();
   }
-  // Paesi
+  // Paesi (solo il colore: i confini sono linee vettoriali nitide, disegnate sopra dal globo)
   for (const c of raw) {
     path(c);
-    if (gold.has(c.n)) {
-      ctx.fillStyle = "#c58f2d";
-      ctx.fill("evenodd");
-      ctx.strokeStyle = NAVY;
-      ctx.lineWidth = 3.2;
-    } else if (soft.has(c.n)) {
-      ctx.fillStyle = "#e3c27a";
-      ctx.fill("evenodd");
-      ctx.strokeStyle = NAVY;
-      ctx.lineWidth = 2.4;
-    } else {
-      ctx.fillStyle = PALETTE[hashName(c.n) % PALETTE.length];
-      ctx.fill("evenodd");
-      ctx.strokeStyle = "rgba(35,60,94,.78)";
-      ctx.lineWidth = 1.8;
-    }
-    ctx.stroke();
+    ctx.fillStyle = gold.has(c.n) ? "#c58f2d" : soft.has(c.n) ? "#e3c27a" : PALETTE[hashName(c.n) % PALETTE.length];
+    ctx.fill("evenodd");
   }
 
   // Nomi degli oceani, spaziati e in corsivo
@@ -341,7 +327,13 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
 
     (async () => {
       try {
-        const [THREE, geo] = await Promise.all([import("three"), import("@/lib/geo/countries.json")]);
+        const [THREE, geo, lineMod, lineMatMod, lineGeoMod] = await Promise.all([
+          import("three"),
+          import("@/lib/geo/countries.json"),
+          import("three/examples/jsm/lines/LineSegments2.js"),
+          import("three/examples/jsm/lines/LineMaterial.js"),
+          import("three/examples/jsm/lines/LineSegmentsGeometry.js"),
+        ]);
         if (disposed || !stageRef.current || !canvasRef.current) return;
         const T = THREE as typeof THREE_NS;
         const countries = (geo.default ?? geo) as unknown as Country[];
@@ -411,18 +403,87 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         );
         overlay.visible = false;
         yawG.add(overlay);
+        // Confini come linee vere (spessore costante in pixel): restano nitidi a qualsiasi ingrandimento
+        const { LineSegments2 } = lineMod;
+        const { LineMaterial } = lineMatMod;
+        const { LineSegmentsGeometry } = lineGeoMod;
+        const lineMats: InstanceType<typeof LineMaterial>[] = [];
+        type LineSet = { cells: { line: InstanceType<typeof LineSegments2>; x: number; y: number; z: number }[]; mat: InstanceType<typeof LineMaterial> };
+        const CELL = 15; // i confini sono divisi in caselle di 15°: si disegnano solo quelle rivolte verso di noi
+        const makeLines = (list: Rings[], width: number, color: number, opacity: number, split = true): LineSet => {
+          const R = 1.0025;
+          const buckets = new Map<number, number[]>();
+          for (const c of list) {
+            for (const p of c.polys) {
+              for (const r of [p.ring, ...p.holes]) {
+                for (let i = 0; i < r.length; i++) {
+                  const a = r[i],
+                    b = r[(i + 1) % r.length];
+                  const key = split ? Math.floor((a[1] + 90) / CELL) * 100 + Math.floor((a[0] + 180) / CELL) : 0;
+                  let arr = buckets.get(key);
+                  if (!arr) buckets.set(key, (arr = []));
+                  const lat1 = a[1] * D2R, lon1 = a[0] * D2R, lat2 = b[1] * D2R, lon2 = b[0] * D2R;
+                  arr.push(
+                    R * Math.cos(lat1) * Math.cos(lon1), R * Math.sin(lat1), -R * Math.cos(lat1) * Math.sin(lon1),
+                    R * Math.cos(lat2) * Math.cos(lon2), R * Math.sin(lat2), -R * Math.cos(lat2) * Math.sin(lon2),
+                  );
+                }
+              }
+            }
+          }
+          const mat = new LineMaterial({ color, linewidth: width, transparent: opacity < 1, opacity, worldUnits: false });
+          mat.resolution.set(stage.clientWidth || 1, stage.clientHeight || 1);
+          lineMats.push(mat);
+          const cells: LineSet["cells"] = [];
+          for (const [key, arr] of buckets) {
+            const geom = new LineSegmentsGeometry();
+            geom.setPositions(arr);
+            const line = new LineSegments2(geom, mat);
+            line.frustumCulled = false;
+            yawG.add(line);
+            const lat = split ? ((Math.floor(key / 100) + 0.5) * CELL - 90) * D2R : 0;
+            const lon = split ? (((key % 100) + 0.5) * CELL - 180) * D2R : 0;
+            cells.push(split ? { line, x: Math.cos(lat) * Math.cos(lon), y: Math.sin(lat), z: -Math.cos(lat) * Math.sin(lon) } : { line, x: 0, y: 0, z: 0 });
+          }
+          return { cells, mat };
+        };
+        const lineSets: LineSet[] = [];
+        const removeLines = (set: LineSet) => {
+          for (const c of set.cells) {
+            yawG.remove(c.line);
+            c.line.geometry.dispose();
+          }
+          set.mat.dispose();
+          const i = lineMats.indexOf(set.mat);
+          if (i >= 0) lineMats.splice(i, 1);
+          const j = lineSets.indexOf(set);
+          if (j >= 0) lineSets.splice(j, 1);
+        };
+        const plain = rings.filter((c) => !gold.has(c.name) && !soft.has(c.name));
+        const marked = rings.filter((c) => gold.has(c.name) || soft.has(c.name));
+        lineSets.push(makeLines(plain, 1.3, 0x233c5e, 0.85), makeLines(marked, 2.2, 0x1b2f4d, 1));
+        let selLine: LineSet | null = null;
+
         const drawOverlay = (name: string | null) => {
           overlayCtx.clearRect(0, 0, OW, OH);
+          if (selLine) {
+            removeLines(selLine);
+            selLine = null;
+          }
           const c = name ? raw.find((r) => r.n === name) : null;
           overlay.visible = !!c;
-          if (!c) return;
+          if (!c) {
+            overlayTex.needsUpdate = true;
+            return;
+          }
+          const sel = rings.find((r) => r.name === name);
+          if (sel) {
+            selLine = makeLines([sel], 3.4, 0x0d1d38, 1, false);
+            lineSets.push(selLine);
+          }
           tracePath(overlayCtx, c, OW, OH);
           overlayCtx.fillStyle = "rgba(35,60,94,.22)";
           overlayCtx.fill("evenodd");
-          overlayCtx.lineJoin = "round";
-          overlayCtx.strokeStyle = "#16294a";
-          overlayCtx.lineWidth = 5;
-          overlayCtx.stroke();
           overlayTex.needsUpdate = true;
         };
 
@@ -527,6 +588,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           renderer.setSize(w, h, false);
           camera.aspect = w / h;
           camera.updateProjectionMatrix();
+          for (const m of lineMats) m.resolution.set(w, h);
         };
         const ro = new ResizeObserver(resize);
         ro.observe(stage);
@@ -570,7 +632,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           countryRef.current = name;
           setSelected(tripId);
           setCountry(name);
-          setBoardOpen(!!name && openBoard && gold.has(name));
+          setBoardOpen(!!name && openBoard && (gold.has(name) || soft.has(name)));
         };
 
         const onDown = (e: PointerEvent) => {
@@ -716,6 +778,14 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             m.head.scale.setScalar(selectedRef.current === m.tripId ? 1.5 : 1);
           }
           if (me) me.group.scale.setScalar(pinScale);
+          // Si disegnano solo i confini rivolti verso la camera (il resto del globo è nascosto comunque)
+          yawG.updateWorldMatrix(true, false);
+          const me_ = yawG.matrixWorld.elements;
+          const limb = Math.acos(Math.min(1, 1 / st.dist)) + 0.2;
+          const minZ = Math.cos(Math.min(Math.PI, limb));
+          for (const set of lineSets) {
+            for (const c of set.cells) c.line.visible = c.x === 0 && c.y === 0 && c.z === 0 ? true : me_[2] * c.x + me_[6] * c.y + me_[10] * c.z > minZ;
+          }
           renderer.render(scene, camera);
 
           // Etichette
@@ -861,16 +931,14 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
                 ))}
               </ul>
             )}
-            {isVisited && (
-              <button
-                type="button"
-                onClick={() => setBoardOpen(true)}
-                className="mt-2 flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
-              >
-                <Camera size={15} />
-                Bacheca dei ricordi{photoCount > 0 ? ` · ${photoCount} foto` : ""}
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => setBoardOpen(true)}
+              className="mt-2 flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
+            >
+              <Camera size={15} />
+              {photoCount > 0 ? `Bacheca · ${photoCount} foto` : "Bacheca · aggiungi foto"}
+            </button>
           </div>
         )}
       </div>
