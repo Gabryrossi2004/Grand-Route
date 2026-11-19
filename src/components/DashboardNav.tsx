@@ -12,6 +12,7 @@ type NavItem = NavLink | NavGroup;
 const navItems: NavItem[] = [
   { href: "/dashboard", label: "Home" },
   { href: "/dashboard/trips", label: "Viaggi" },
+  { href: "/dashboard/operativo", label: "Operativo" },
   { href: "/dashboard/messages", label: "Messaggi" },
   {
     label: "Anagrafiche",
