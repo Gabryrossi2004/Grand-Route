@@ -61,7 +61,7 @@ export default async function ClientGlobePage() {
       <div>
         <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Il tuo mappamondo</h1>
         <p className="mt-1 max-w-xl text-sm text-slate-600">
-          I paesi dove sei stato diventano d&apos;oro. Trascina per girare il globo, pizzica per ingrandire, tocca un paese per sceglierlo: sui paesi d&apos;oro si apre la bacheca dei tuoi ricordi, dove puoi raccogliere le foto e condividerle.
+          I paesi dove sei stato diventano d&apos;oro. Trascina per girare il globo, pizzica per ingrandire, tocca un paese per sceglierlo: sui paesi d&apos;oro si apre la bacheca dei tuoi ricordi, dove puoi raccogliere le foto e condividerle. In alto a sinistra scegli l&apos;aspetto: carta d&apos;epoca oppure mappamondo fisico.
         </p>
       </div>
       {trips.length === 0 ? (

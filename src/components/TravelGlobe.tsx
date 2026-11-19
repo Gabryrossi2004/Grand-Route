@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Camera, Crosshair, Loader2 } from "lucide-react";
 import CountryBoard from "@/components/CountryBoard";
 import { countryNameIt } from "@/lib/geo/countryNames";
+import { buildOceanLabels } from "@/lib/geo/oceanLabels";
+import { Q, countryAt, decode, type Country, type Rings } from "@/lib/geo/countryData";
 import type * as THREE_NS from "three";
 
 export type GlobePlace = { name: string; lat: number; lon: number };
@@ -17,86 +19,24 @@ export type GlobeTrip = {
   places: GlobePlace[];
 };
 
-type Country = { n: string; p: number[][][] };
-type Rings = { name: string; polys: { ring: [number, number][]; holes: [number, number][][]; box: [number, number, number, number] }[] };
-
 const D2R = Math.PI / 180;
-const Q = 100; // i confini sono salvati in centesimi di grado (circa 1 km)
 const MIN_DIST = 1.45; // si arriva a vedere anche i paesi più piccoli
 const MAX_DIST = 7;
+export type GlobeStyle = "antique" | "physical";
+// Colori delle linee e del velo di selezione per ciascuno stile
+const STYLE_CFG = {
+  antique: { plain: [0x233c5e, 0.85, 1.3], marked: [0x1b2f4d, 1, 2.2], sel: [0x0d1d38, 1, 3.4], veil: "rgba(35,60,94,.22)" },
+  physical: { plain: [0xf3ead2, 0.8, 1.1], marked: [0xffd75e, 1, 2.2], sel: [0xffffff, 1, 3.2], veil: "rgba(255,255,255,.2)" },
+} as const;
+const STYLE_KEY = "gr-globe-style";
+function readStyle(): GlobeStyle {
+  try {
+    return localStorage.getItem(STYLE_KEY) === "physical" ? "physical" : "antique";
+  } catch {
+    return "antique";
+  }
+}
 const STATUS_LABEL = { done: "Fatto", current: "In corso", upcoming: "In programma" } as const;
-
-// Decodifica i confini (numeri interi in centesimi di grado, con differenze da punto a punto)
-function decode(countries: Country[]): { raw: Country[]; rings: Rings[] } {
-  const rings: Rings[] = countries.map((c) => ({
-    name: c.n,
-    polys: c.p.map((poly) => {
-      const decoded = poly.map((flat) => {
-        const pts: [number, number][] = [];
-        let x = 0,
-          y = 0;
-        for (let i = 0; i < flat.length; i += 2) {
-          x += flat[i];
-          y += flat[i + 1];
-          pts.push([x / Q, y / Q]); // [lon, lat]
-        }
-        return pts;
-      });
-      const outer = decoded[0] ?? [];
-      let minX = 181,
-        maxX = -181,
-        minY = 91,
-        maxY = -91;
-      for (const [lo, la] of outer) {
-        if (lo < minX) minX = lo;
-        if (lo > maxX) maxX = lo;
-        if (la < minY) minY = la;
-        if (la > maxY) maxY = la;
-      }
-      return { ring: outer, holes: decoded.slice(1), box: [minX, minY, maxX, maxY] as [number, number, number, number] };
-    }),
-  }));
-  return { raw: countries, rings };
-}
-
-function inRing(lon: number, lat: number, ring: [number, number][]) {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) inside = !inside;
-  }
-  return inside;
-}
-
-// Il paese che contiene il punto; per le località sulla costa (fuori dal contorno semplificato)
-// il paese più vicino entro circa 2 gradi.
-function countryAt(lat: number, lon: number, rings: Rings[], tol = 4): string | null {
-  for (const c of rings) {
-    for (const p of c.polys) {
-      const [x0, y0, x1, y1] = p.box;
-      if (lon < x0 || lon > x1 || lat < y0 || lat > y1) continue;
-      if (inRing(lon, lat, p.ring) && !p.holes.some((h) => inRing(lon, lat, h))) return c.name;
-    }
-  }
-  let best: string | null = null;
-  let bestD = tol; // gradi² (4 = circa 2 gradi)
-  const reach = Math.sqrt(tol);
-  for (const c of rings) {
-    for (const p of c.polys) {
-      const [x0, y0, x1, y1] = p.box;
-      if (lon < x0 - reach || lon > x1 + reach || lat < y0 - reach || lat > y1 + reach) continue;
-      for (const [lo, la] of p.ring) {
-        const d = (lo - lon) ** 2 + (la - lat) ** 2;
-        if (d < bestD) {
-          bestD = d;
-          best = c.name;
-        }
-      }
-    }
-  }
-  return best;
-}
 
 // Una piccola "carta antica" nei colori di Grand Route: pergamena color crema, inchiostro blu navy,
 // dettagli in oro. I paesi visitati si colorano d'oro, quelli dei viaggi in programma d'oro più chiaro.
@@ -220,32 +160,6 @@ function drawTexture(raw: Country[], gold: Set<string>, soft: Set<string>, fontF
     ctx.fill("evenodd");
   }
 
-  // Nomi degli oceani, spaziati e in corsivo
-  const spaced = (text: string, x: number, y: number, spacing: number, angle: number) => {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle);
-    let total = 0;
-    for (const ch of text) total += ctx.measureText(ch).width + spacing;
-    let cx = -total / 2;
-    ctx.textAlign = "left";
-    for (const ch of text) {
-      ctx.fillText(ch, cx, 0);
-      cx += ctx.measureText(ch).width + spacing;
-    }
-    ctx.restore();
-  };
-  ctx.fillStyle = "rgba(35,60,94,.72)";
-  ctx.font = `italic 64px ${fontFamily}`;
-  spaced("OCEANO ATLANTICO", X(-33), Y(22), 16, -0.55);
-  spaced("OCEANO ATLANTICO", X(-14), Y(-30), 14, 0.6);
-  spaced("OCEANO PACIFICO", X(-142), Y(8), 18, -0.12);
-  spaced("OCEANO PACIFICO", X(165), Y(-5), 16, -0.1);
-  spaced("OCEANO INDIANO", X(78), Y(-12), 16, 0.05);
-  spaced("OCEANO ARTICO", X(-20), Y(80), 14, 0);
-  ctx.font = `italic 40px ${fontFamily}`;
-  spaced("Mar Mediterraneo", X(18), Y(34.2), 6, 0);
-
   // Rose dei venti in blu e oro
   const compass = (cx: number, cy: number, R: number) => {
     ctx.save();
@@ -297,6 +211,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
     focus: (lat: number, lon: number, maxDist?: number) => void;
     setMe: (p: { lat: number; lon: number } | null) => void;
     chooseTrip: (tripId: string) => void;
+    setStyle: (style: GlobeStyle) => Promise<boolean>;
     clear: () => void;
   } | null>(null);
 
@@ -310,7 +225,23 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
   const [info, setInfo] = useState<{ gold: string[]; soft: string[]; byCountry: Record<string, string[]> } | null>(null);
   const [country, setCountry] = useState<string | null>(null);
   const [boardOpen, setBoardOpen] = useState(false);
+  const [style, setStyle] = useState<GlobeStyle>(readStyle);
+  const styleRef = useRef<GlobeStyle>(style);
   const [counts, setCounts] = useState<Record<string, number>>(photoCounts);
+
+  const [styleBusy, setStyleBusy] = useState(false);
+  const chooseStyle = useCallback(async (next: GlobeStyle) => {
+    if (next === styleRef.current || !api.current) return;
+    setStyleBusy(true);
+    const ok = await api.current.setStyle(next);
+    setStyleBusy(false);
+    if (ok) {
+      setStyle(next);
+      try {
+        localStorage.setItem(STYLE_KEY, next);
+      } catch {}
+    }
+  }, []);
 
   const focusTrip = useCallback((trip: GlobeTrip) => api.current?.chooseTrip(trip.id), []);
   const onBoardCount = useCallback(
@@ -386,7 +317,15 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         const key = new T.DirectionalLight(0xfff2da, 1.7);
         key.position.set(-2.5, 2.2, 3);
         camera.add(key);
-        scene.add(new T.AmbientLight(0xfff4e0, 2.1));
+        const ambient = new T.AmbientLight(0xfff4e0, 2.1);
+        scene.add(ambient);
+
+        // Scritte di oceani e mari (solo nello stile carta d'epoca)
+        try {
+          await document.fonts?.ready;
+        } catch {}
+        const oceanLabels = buildOceanLabels(T, `${fam}, Georgia, serif`, renderer.capabilities.getMaxAnisotropy());
+        yawG.add(oceanLabels);
 
         // Il paese scelto si evidenzia con un velo blu e un bordo marcato (un secondo strato trasparente sul globo)
         const OW = 2048,
@@ -419,6 +358,8 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
                 for (let i = 0; i < r.length; i++) {
                   const a = r[i],
                     b = r[(i + 1) % r.length];
+                  // niente linee lungo l'antimeridiano o il bordo del polo: sono tagli della carta, non confini
+                  if (Math.abs(a[0] - b[0]) > 180 || (Math.abs(a[0]) >= 179.99 && Math.abs(b[0]) >= 179.99 && a[0] * b[0] > 0) || (a[1] <= -89.99 && b[1] <= -89.99)) continue;
                   const key = split ? Math.floor((a[1] + 90) / CELL) * 100 + Math.floor((a[0] + 180) / CELL) : 0;
                   let arr = buckets.get(key);
                   if (!arr) buckets.set(key, (arr = []));
@@ -461,7 +402,9 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         };
         const plain = rings.filter((c) => !gold.has(c.name) && !soft.has(c.name));
         const marked = rings.filter((c) => gold.has(c.name) || soft.has(c.name));
-        lineSets.push(makeLines(plain, 1.3, 0x233c5e, 0.85), makeLines(marked, 2.2, 0x1b2f4d, 1));
+        const plainSet = makeLines(plain, 1.3, 0x233c5e, 0.85);
+        const markedSet = makeLines(marked, 2.2, 0x1b2f4d, 1);
+        lineSets.push(plainSet, markedSet);
         let selLine: LineSet | null = null;
 
         const drawOverlay = (name: string | null) => {
@@ -478,11 +421,12 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           }
           const sel = rings.find((r) => r.name === name);
           if (sel) {
-            selLine = makeLines([sel], 3.4, 0x0d1d38, 1, false);
+            const [sc, so, sw] = STYLE_CFG[styleRef.current].sel;
+            selLine = makeLines([sel], sw, sc, so, false);
             lineSets.push(selLine);
           }
           tracePath(overlayCtx, c, OW, OH);
-          overlayCtx.fillStyle = "rgba(35,60,94,.22)";
+          overlayCtx.fillStyle = STYLE_CFG[styleRef.current].veil;
           overlayCtx.fill("evenodd");
           overlayTex.needsUpdate = true;
         };
@@ -705,6 +649,85 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         canvas.addEventListener("pointercancel", onUp);
         canvas.addEventListener("wheel", onWheel, { passive: false });
 
+        // ---- stile "fisico": foto satellitare NASA con rilievo e oceani lucidi (si scarica solo se scelto) ----
+        const antiqueMat = globe.material as THREE_NS.MeshPhongMaterial;
+        let phys: { mat: THREE_NS.MeshPhongMaterial; marks: THREE_NS.Mesh; glow: THREE_NS.Mesh; textures: THREE_NS.Texture[] } | null = null;
+        const ensurePhysical = async () => {
+          if (phys) return true;
+          try {
+            const loader = new T.TextureLoader();
+            const aniso = renderer.capabilities.getMaxAnisotropy();
+            const [map, bump, water] = await Promise.all([loader.loadAsync("/globe/terra.jpg"), loader.loadAsync("/globe/rilievo.png"), loader.loadAsync("/globe/acque.png")]);
+            if (disposed) return false;
+            map.colorSpace = T.SRGBColorSpace;
+            map.anisotropy = aniso;
+            bump.anisotropy = aniso;
+            const mat = new T.MeshPhongMaterial({ map, bumpMap: bump, bumpScale: 4, specularMap: water, specular: new T.Color(0x3a5878), shininess: 34 });
+            // paesi visitati e in programma: velo dorato sopra la foto
+            const mc = document.createElement("canvas");
+            mc.width = 4096;
+            mc.height = 2048;
+            const mctx = mc.getContext("2d")!;
+            for (const c of raw) {
+              if (!gold.has(c.n) && !soft.has(c.n)) continue;
+              tracePath(mctx, c, 4096, 2048);
+              mctx.fillStyle = gold.has(c.n) ? "rgba(255,190,50,.5)" : "rgba(255,214,120,.3)";
+              mctx.fill("evenodd");
+            }
+            const marksTex = new T.CanvasTexture(mc);
+            marksTex.colorSpace = T.SRGBColorSpace;
+            marksTex.anisotropy = aniso;
+            const marks = new T.Mesh(new T.SphereGeometry(1.0012, 96, 72), new T.MeshBasicMaterial({ map: marksTex, transparent: true, depthWrite: false }));
+            marks.visible = false;
+            yawG.add(marks);
+            // alone azzurro dell'atmosfera
+            const glow = new T.Mesh(
+              new T.SphereGeometry(1.13, 64, 48),
+              new T.ShaderMaterial({
+                transparent: true,
+                side: T.BackSide,
+                depthWrite: false,
+                blending: T.AdditiveBlending,
+                vertexShader: "varying vec3 vN; void main(){ vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+                fragmentShader: "varying vec3 vN; void main(){ float i = pow(max(0.0, 0.74 - dot(vN, vec3(0.0,0.0,1.0))), 3.0); gl_FragColor = vec4(0.32,0.58,1.0,1.0) * i; }",
+              }),
+            );
+            glow.visible = false;
+            scene.add(glow);
+            phys = { mat, marks, glow, textures: [map, bump, water, marksTex] };
+            return true;
+          } catch (error) {
+            console.error("[TravelGlobe] stile fisico", error);
+            return false;
+          }
+        };
+        const applyStyle = async (next: GlobeStyle) => {
+          if (next === "physical" && !(await ensurePhysical())) return false;
+          if (disposed) return false;
+          styleRef.current = next;
+          const real = next === "physical" ? phys : null;
+          globe.material = real ? real.mat : antiqueMat;
+          oceanLabels.visible = !real;
+          if (phys) {
+            phys.marks.visible = !!real;
+            phys.glow.visible = !!real;
+          }
+          key.color.setHex(real ? 0xffffff : 0xfff2da);
+          key.intensity = real ? 2.4 : 1.7;
+          ambient.color.setHex(real ? 0xc9d6ee : 0xfff4e0);
+          ambient.intensity = real ? 0.85 : 2.1;
+          const cfg = STYLE_CFG[next];
+          for (const [set, c] of [[plainSet, cfg.plain], [markedSet, cfg.marked]] as const) {
+            set.mat.color.setHex(c[0]);
+            set.mat.opacity = c[1];
+            set.mat.transparent = c[1] < 1;
+            set.mat.linewidth = c[2];
+            set.mat.needsUpdate = true;
+          }
+          drawOverlay(countryRef.current);
+          return true;
+        };
+
         api.current = {
           zoom: (factor) => {
             st.distT = Math.max(MIN_DIST, Math.min(MAX_DIST, st.distT * factor));
@@ -727,7 +750,16 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             api.current?.focus(first.place.lat, first.place.lon);
           },
           clear: () => choose(null, null, false),
+          setStyle: applyStyle,
         };
+        if (styleRef.current !== "antique") {
+          applyStyle(styleRef.current).then((ok) => {
+            if (!ok && !disposed) {
+              styleRef.current = "antique";
+              setStyle("antique");
+            }
+          });
+        }
 
         // Ciclo
         let raf = 0;
@@ -822,6 +854,8 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           });
           texture.dispose();
           overlayTex.dispose();
+          (phys as { textures: THREE_NS.Texture[] } | null)?.textures.forEach((t) => t.dispose());
+          oceanLabels.traverse((o) => ((o as THREE_NS.Mesh).material as THREE_NS.MeshBasicMaterial | undefined)?.map?.dispose());
           renderer.dispose();
           api.current = null;
         };
@@ -865,7 +899,12 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
       <div
         ref={stageRef}
         className="relative aspect-square max-h-[78vh] w-full touch-none select-none overflow-hidden rounded-3xl"
-        style={{ background: "radial-gradient(ellipse at 50% 42%, #243f66 0%, #13233c 62%, #0b1626 100%)" }}
+        style={{
+          background:
+            style === "physical"
+              ? "radial-gradient(ellipse at 50% 42%, #14223a 0%, #0a1322 62%, #04080f 100%)"
+              : "radial-gradient(ellipse at 50% 42%, #243f66 0%, #13233c 62%, #0b1626 100%)",
+        }}
         aria-label="Mappamondo dei tuoi viaggi"
       >
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full cursor-grab touch-none" aria-label="Mappamondo 3D: trascina per girarlo" />
@@ -892,6 +931,27 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             <Crosshair size={13} />
             {geoState === "asking" ? "Cerco la tua posizione…" : geoState === "on" ? "Aggiorna la mia posizione" : "Dove sono adesso"}
           </button>
+        )}
+        {ready && (
+          <div className="absolute left-3 top-12 z-10 flex overflow-hidden rounded-full border border-white/25 bg-black/45 text-xs font-medium text-white backdrop-blur" role="group" aria-label="Aspetto del mappamondo">
+            {(
+              [
+                ["antique", "Carta d'epoca"],
+                ["physical", styleBusy ? "Carico…" : "Fisico"],
+              ] as const
+            ).map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => chooseStyle(id)}
+                aria-pressed={style === id}
+                disabled={styleBusy}
+                className={`px-3 py-1.5 transition ${style === id ? "bg-white/85 text-[#13233c]" : "hover:bg-black/60"}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         )}
         {ready && (
           <div className="absolute right-3 top-3 z-10 flex flex-col overflow-hidden rounded-full border border-white/25 bg-black/45 backdrop-blur">
