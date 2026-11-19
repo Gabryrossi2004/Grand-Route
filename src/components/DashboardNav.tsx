@@ -22,6 +22,7 @@ const navItems: NavItem[] = [
   },
   { href: "/dashboard/community", label: "Community" },
   { href: "/dashboard/calendar", label: "Calendario" },
+  { href: "/dashboard/mappamondo", label: "Mappamondo" },
   { href: "/dashboard/settings", label: "Impostazioni" },
 ];
 

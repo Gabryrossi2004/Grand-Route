@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { CalendarDays, Copy, FileCheck2, FileDown, Languages, ListChecks, MoreHorizontal } from "lucide-react";
+import { CalendarDays, Copy, FileCheck2, FileDown, Globe2, Languages, ListChecks, MoreHorizontal } from "lucide-react";
+import TripCountriesDialog from "@/components/TripCountriesDialog";
 import SubmitButton from "@/components/SubmitButton";
 import { TranslateTripDialog } from "@/components/TranslateTripButton";
 import { ASSISTANT_NAME } from "@/lib/assistant";
@@ -18,6 +19,8 @@ export default function TripMoreMenu({
   modeAction,
   mode,
   hasContent,
+  countries,
+  autoCountries,
 }: {
   tripId: string;
   isFinal: boolean;
@@ -26,9 +29,12 @@ export default function TripMoreMenu({
   modeAction: () => void | Promise<void>;
   mode: "activities" | "days";
   hasContent: boolean;
+  countries?: string[] | null; // undefined = funzione non ancora attiva (manca SQL 0045)
+  autoCountries?: string[] | null;
 }) {
   const [open, setOpen] = useState(false);
   const [translateOpen, setTranslateOpen] = useState(false);
+  const [countriesOpen, setCountriesOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   // Zefiro (il personaggio) può aprire la traduzione
@@ -120,10 +126,28 @@ export default function TripMoreMenu({
           >
             <Languages size={16} /> Traduci con {ASSISTANT_NAME}
           </button>
+
+          {countries !== undefined && (
+            <>
+              <button
+                type="button"
+                role="menuitem"
+                className={item}
+                onClick={() => {
+                  setOpen(false);
+                  setCountriesOpen(true);
+                }}
+              >
+                <Globe2 size={16} /> Paesi del viaggio
+              </button>
+              <p className={hint}>Per il mappamondo dell&apos;agenzia: si ricavano dall&apos;itinerario, qui puoi aggiungerne altri.</p>
+            </>
+          )}
         </div>
       )}
 
       {translateOpen && <TranslateTripDialog tripId={tripId} onClose={() => setTranslateOpen(false)} />}
+      {countriesOpen && <TripCountriesDialog tripId={tripId} manual={countries ?? []} auto={autoCountries ?? null} onClose={() => setCountriesOpen(false)} />}
     </div>
   );
 }

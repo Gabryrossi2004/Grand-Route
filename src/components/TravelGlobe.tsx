@@ -5,7 +5,8 @@ import { Camera, Crosshair, Loader2 } from "lucide-react";
 import CountryBoard from "@/components/CountryBoard";
 import { countryNameIt } from "@/lib/geo/countryNames";
 import { buildOceanLabels } from "@/lib/geo/oceanLabels";
-import { Q, countryAt, decode, type Country, type Rings } from "@/lib/geo/countryData";
+import { Q, countryAt, decode, inRing, type Country, type Rings } from "@/lib/geo/countryData";
+import { SatelliteTiles } from "@/lib/geo/satelliteTiles";
 import type * as THREE_NS from "three";
 
 export type GlobePlace = { name: string; lat: number; lon: number };
@@ -20,8 +21,9 @@ export type GlobeTrip = {
 };
 
 const D2R = Math.PI / 180;
-const MIN_DIST = 1.45; // si arriva a vedere anche i paesi più piccoli
-const MAX_DIST = 7;
+// Zoom espresso come altezza sopra la superficie (1 = raggio della Terra, circa 6.371 km)
+const MAX_ALT = 6;
+const minAltFor = (style: "antique" | "physical") => (style === "physical" ? 0.006 : 0.45); // fisico: fino a ~40 km di quota
 export type GlobeStyle = "antique" | "physical";
 // Colori delle linee e del velo di selezione per ciascuno stile
 const STYLE_CFG = {
@@ -202,7 +204,27 @@ const dateIt = (iso: string | null) => (iso ? new Date(`${iso}T00:00:00`).toLoca
 
 // Mappamondo 3D dei viaggi del cliente: i paesi visitati sono d'oro, i viaggi in programma più tenui.
 // La posizione attuale si legge solo dal telefono e non viene inviata né salvata.
-export default function TravelGlobe({ trips, userId, photoCounts }: { trips: GlobeTrip[]; userId: string; photoCounts: Record<string, number> }) {
+export type AgencyCountryStat = { count: number; value: number; trips: { id: string; title: string; from: string | null; client: string | null }[] };
+export type AgencyGlobeData = { stats: Record<string, AgencyCountryStat>; countLabel: string; showValue: boolean };
+
+export default function TravelGlobe({
+  trips,
+  userId = "",
+  photoCounts = {},
+  mode = "client",
+  agency,
+  onOpenSheet,
+  focusRequest,
+}: {
+  trips: GlobeTrip[];
+  userId?: string;
+  photoCounts?: Record<string, number>;
+  mode?: "client" | "agency";
+  agency?: AgencyGlobeData;
+  onOpenSheet?: (name: string) => void;
+  focusRequest?: { name: string; nonce: number } | null;
+}) {
+  const agencyRef = useRef(agency);
   const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const labelsRef = useRef<HTMLDivElement>(null);
@@ -213,6 +235,8 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
     chooseTrip: (tripId: string) => void;
     setStyle: (style: GlobeStyle) => Promise<boolean>;
     clear: () => void;
+    selectCountry: (name: string) => void;
+    setHighlight: (data: AgencyGlobeData) => void;
   } | null>(null);
 
   const [ready, setReady] = useState(false);
@@ -285,6 +309,9 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             pinsData.push({ trip, place, country: c });
           }
         }
+        if (mode === "agency") {
+          for (const [name, stat] of Object.entries(agencyRef.current?.stats ?? {})) if (stat.count > 0) gold.add(name);
+        }
         gold.forEach((c) => soft.delete(c));
         setInfo({ gold: [...gold], soft: [...soft], byCountry });
 
@@ -337,10 +364,11 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         const overlayTex = new T.CanvasTexture(overlayCanvas);
         overlayTex.colorSpace = T.SRGBColorSpace;
         const overlay = new T.Mesh(
-          new T.SphereGeometry(1.002, 96, 72),
+          new T.SphereGeometry(1.00045, 360, 180),
           new T.MeshBasicMaterial({ map: overlayTex, transparent: true, depthWrite: false }),
         );
         overlay.visible = false;
+        overlay.renderOrder = 4;
         yawG.add(overlay);
         // Confini come linee vere (spessore costante in pixel): restano nitidi a qualsiasi ingrandimento
         const { LineSegments2 } = lineMod;
@@ -350,7 +378,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         type LineSet = { cells: { line: InstanceType<typeof LineSegments2>; x: number; y: number; z: number }[]; mat: InstanceType<typeof LineMaterial> };
         const CELL = 15; // i confini sono divisi in caselle di 15°: si disegnano solo quelle rivolte verso di noi
         const makeLines = (list: Rings[], width: number, color: number, opacity: number, split = true): LineSet => {
-          const R = 1.0025;
+          const R = 1.0006;
           const buckets = new Map<number, number[]>();
           for (const c of list) {
             for (const p of c.polys) {
@@ -363,11 +391,17 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
                   const key = split ? Math.floor((a[1] + 90) / CELL) * 100 + Math.floor((a[0] + 180) / CELL) : 0;
                   let arr = buckets.get(key);
                   if (!arr) buckets.set(key, (arr = []));
-                  const lat1 = a[1] * D2R, lon1 = a[0] * D2R, lat2 = b[1] * D2R, lon2 = b[0] * D2R;
-                  arr.push(
-                    R * Math.cos(lat1) * Math.cos(lon1), R * Math.sin(lat1), -R * Math.cos(lat1) * Math.sin(lon1),
-                    R * Math.cos(lat2) * Math.cos(lon2), R * Math.sin(lat2), -R * Math.cos(lat2) * Math.sin(lon2),
-                  );
+                  // i tratti lunghi (es. confini dritti) si dividono, così seguono la curva della Terra
+                  const pieces = Math.max(1, Math.ceil(Math.max(Math.abs(b[0] - a[0]), Math.abs(b[1] - a[1])) / 0.5));
+                  for (let k = 0; k < pieces; k++) {
+                    const t0 = k / pieces, t1 = (k + 1) / pieces;
+                    const lat1 = (a[1] + (b[1] - a[1]) * t0) * D2R, lon1 = (a[0] + (b[0] - a[0]) * t0) * D2R;
+                    const lat2 = (a[1] + (b[1] - a[1]) * t1) * D2R, lon2 = (a[0] + (b[0] - a[0]) * t1) * D2R;
+                    arr.push(
+                      R * Math.cos(lat1) * Math.cos(lon1), R * Math.sin(lat1), -R * Math.cos(lat1) * Math.sin(lon1),
+                      R * Math.cos(lat2) * Math.cos(lon2), R * Math.sin(lat2), -R * Math.cos(lat2) * Math.sin(lon2),
+                    );
+                  }
                 }
               }
             }
@@ -381,6 +415,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             geom.setPositions(arr);
             const line = new LineSegments2(geom, mat);
             line.frustumCulled = false;
+            line.renderOrder = 5;
             yawG.add(line);
             const lat = split ? ((Math.floor(key / 100) + 0.5) * CELL - 90) * D2R : 0;
             const lon = split ? (((key % 100) + 0.5) * CELL - 180) * D2R : 0;
@@ -402,8 +437,8 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         };
         const plain = rings.filter((c) => !gold.has(c.name) && !soft.has(c.name));
         const marked = rings.filter((c) => gold.has(c.name) || soft.has(c.name));
-        const plainSet = makeLines(plain, 1.3, 0x233c5e, 0.85);
-        const markedSet = makeLines(marked, 2.2, 0x1b2f4d, 1);
+        let plainSet = makeLines(plain, 1.3, 0x233c5e, 0.85);
+        let markedSet = makeLines(marked, 2.2, 0x1b2f4d, 1);
         lineSets.push(plainSet, markedSet);
         let selLine: LineSet | null = null;
 
@@ -437,7 +472,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         const labels = labelsRef.current!;
         labels.innerHTML = "";
         const makePin = (lat: number, lon: number, color: number, scale = 1) => {
-          const n = ll2v(lat, lon, 1);
+          const n = ll2v(lat, lon, 1.0003);
           const g = new T.Group();
           g.position.copy(n);
           g.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), n);
@@ -494,6 +529,11 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
 
         // Controlli
         const st = { yaw: 0, pitch: 0.4, yawV: 0, pitchV: 0, dist: 4.2, distT: 4.2, idle: 0, goal: null as null | { yaw: number; pitch: number } };
+        const zoomBy = (factor: number) => {
+          const alt = Math.max(minAltFor(styleRef.current), Math.min(MAX_ALT, (st.distT - 1) * factor));
+          st.distT = 1 + alt;
+          st.idle = 0;
+        };
         const wrap = (a: number) => {
           while (a > Math.PI) a -= 2 * Math.PI;
           while (a < -Math.PI) a += 2 * Math.PI;
@@ -576,7 +616,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           countryRef.current = name;
           setSelected(tripId);
           setCountry(name);
-          setBoardOpen(!!name && openBoard && (gold.has(name) || soft.has(name)));
+          setBoardOpen(mode === "client" && !!name && openBoard && (gold.has(name) || soft.has(name)));
         };
 
         const onDown = (e: PointerEvent) => {
@@ -603,12 +643,12 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           if (pointers.size >= 2) {
             const [a, b] = [...pointers.values()];
             const d = Math.hypot(a.x - b.x, a.y - b.y);
-            if (pinch0 > 0) st.distT = Math.max(MIN_DIST, Math.min(MAX_DIST, (st.distT * pinch0) / d));
+            if (pinch0 > 0) zoomBy(pinch0 / d);
             pinch0 = d;
             return;
           }
           if (down) down.moved += Math.abs(dx) + Math.abs(dy);
-          const k = ((Math.max(st.dist - 0.9, 0.3) / 4.2) * Math.PI * 0.9) / Math.max(stage.clientWidth, 280);
+          const k = ((Math.max(st.dist - 1, 0.002) / 4.1) * Math.PI * 0.9) / Math.max(stage.clientWidth, 280);
           st.yaw += dx * k;
           st.pitch = Math.max(-1.3, Math.min(1.3, st.pitch + dy * k));
           st.yawV = dx * k * 0.9;
@@ -640,7 +680,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         };
         const onWheel = (e: WheelEvent) => {
           e.preventDefault();
-          st.distT = Math.max(MIN_DIST, Math.min(MAX_DIST, st.distT * Math.exp(e.deltaY * 0.0012)));
+          zoomBy(Math.exp(e.deltaY * 0.0015));
           st.idle = 0;
         };
         canvas.addEventListener("pointerdown", onDown);
@@ -651,7 +691,22 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
 
         // ---- stile "fisico": foto satellitare NASA con rilievo e oceani lucidi (si scarica solo se scelto) ----
         const antiqueMat = globe.material as THREE_NS.MeshPhongMaterial;
-        let phys: { mat: THREE_NS.MeshPhongMaterial; marks: THREE_NS.Mesh; glow: THREE_NS.Mesh; textures: THREE_NS.Texture[] } | null = null;
+        let phys: { mat: THREE_NS.MeshPhongMaterial; marks: THREE_NS.Mesh; marksCanvas: HTMLCanvasElement; marksTex: THREE_NS.CanvasTexture; glow: THREE_NS.Mesh; textures: THREE_NS.Texture[] } | null = null;
+        // Velo dorato sui paesi visitati / venduti (stile fisico)
+        const drawMarks = (mc: HTMLCanvasElement) => {
+          const mctx = mc.getContext("2d")!;
+          mctx.clearRect(0, 0, mc.width, mc.height);
+          for (const c of raw) {
+            if (!gold.has(c.n) && !soft.has(c.n)) continue;
+            tracePath(mctx, c, mc.width, mc.height);
+            mctx.fillStyle = gold.has(c.n) ? "rgba(255,190,50,.42)" : "rgba(255,214,120,.26)";
+            mctx.fill("evenodd");
+          }
+        };
+        // Immagini satellitari a tasselli, sempre più dettagliate avvicinandosi (solo stile fisico)
+        const tiles = new SatelliteTiles(T, renderer.capabilities.getMaxAnisotropy());
+        tiles.setVisible(false);
+        yawG.add(tiles.group);
         const ensurePhysical = async () => {
           if (phys) return true;
           try {
@@ -667,18 +722,13 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             const mc = document.createElement("canvas");
             mc.width = 4096;
             mc.height = 2048;
-            const mctx = mc.getContext("2d")!;
-            for (const c of raw) {
-              if (!gold.has(c.n) && !soft.has(c.n)) continue;
-              tracePath(mctx, c, 4096, 2048);
-              mctx.fillStyle = gold.has(c.n) ? "rgba(255,190,50,.5)" : "rgba(255,214,120,.3)";
-              mctx.fill("evenodd");
-            }
+            drawMarks(mc);
             const marksTex = new T.CanvasTexture(mc);
             marksTex.colorSpace = T.SRGBColorSpace;
             marksTex.anisotropy = aniso;
-            const marks = new T.Mesh(new T.SphereGeometry(1.0012, 96, 72), new T.MeshBasicMaterial({ map: marksTex, transparent: true, depthWrite: false }));
+            const marks = new T.Mesh(new T.SphereGeometry(1.0004, 360, 180), new T.MeshBasicMaterial({ map: marksTex, transparent: true, depthWrite: false }));
             marks.visible = false;
+            marks.renderOrder = 3;
             yawG.add(marks);
             // alone azzurro dell'atmosfera
             const glow = new T.Mesh(
@@ -694,7 +744,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             );
             glow.visible = false;
             scene.add(glow);
-            phys = { mat, marks, glow, textures: [map, bump, water, marksTex] };
+            phys = { mat, marks, marksCanvas: mc, marksTex, glow, textures: [map, bump, water, marksTex] };
             return true;
           } catch (error) {
             console.error("[TravelGlobe] stile fisico", error);
@@ -712,11 +762,18 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             phys.marks.visible = !!real;
             phys.glow.visible = !!real;
           }
+          tiles.setVisible(!!real);
+          if (!real) st.distT = Math.max(st.distT, 1 + minAltFor("antique"));
           key.color.setHex(real ? 0xffffff : 0xfff2da);
           key.intensity = real ? 2.4 : 1.7;
           ambient.color.setHex(real ? 0xc9d6ee : 0xfff4e0);
           ambient.intensity = real ? 0.85 : 2.1;
-          const cfg = STYLE_CFG[next];
+          styleLines();
+          drawOverlay(countryRef.current);
+          return true;
+        };
+        function styleLines() {
+          const cfg = STYLE_CFG[styleRef.current];
           for (const [set, c] of [[plainSet, cfg.plain], [markedSet, cfg.marked]] as const) {
             set.mat.color.setHex(c[0]);
             set.mat.opacity = c[1];
@@ -724,15 +781,95 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             set.mat.linewidth = c[2];
             set.mat.needsUpdate = true;
           }
-          drawOverlay(countryRef.current);
-          return true;
+        }
+
+        // ---- agenzia: numeri sui paesi e aggiornamento dei paesi evidenziati quando cambiano i filtri ----
+        const centroidCache = new Map<string, { lat: number; lon: number } | null>();
+        const centroidOf = (name: string) => {
+          if (centroidCache.has(name)) return centroidCache.get(name)!;
+          const c = rings.find((r) => r.name === name);
+          let best: { lat: number; lon: number } | null = null;
+          if (c && c.polys.length) {
+            const poly = [...c.polys].sort((a, b) => (b.box[2] - b.box[0]) * (b.box[3] - b.box[1]) - (a.box[2] - a.box[0]) * (a.box[3] - a.box[1]))[0];
+            let A = 0,
+              cx = 0,
+              cy = 0;
+            const r = poly.ring;
+            for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+              const f = r[j][0] * r[i][1] - r[i][0] * r[j][1];
+              A += f;
+              cx += (r[j][0] + r[i][0]) * f;
+              cy += (r[j][1] + r[i][1]) * f;
+            }
+            best = A !== 0 ? { lon: cx / (3 * A), lat: cy / (3 * A) } : { lon: (poly.box[0] + poly.box[2]) / 2, lat: (poly.box[1] + poly.box[3]) / 2 };
+            if (!inRing(best.lon, best.lat, r)) {
+              // forma "a mezzaluna": il punto interno più vicino al centro
+              let bd = Infinity;
+              let inside: { lat: number; lon: number } | null = null;
+              const [x0, y0, x1, y1] = poly.box;
+              for (let i = 0; i <= 24; i++)
+                for (let j = 0; j <= 24; j++) {
+                  const lon = x0 + ((x1 - x0) * i) / 24,
+                    lat = y0 + ((y1 - y0) * j) / 24;
+                  if (!inRing(lon, lat, r)) continue;
+                  const d = (lon - best.lon) ** 2 + (lat - best.lat) ** 2;
+                  if (d < bd) {
+                    bd = d;
+                    inside = { lat, lon };
+                  }
+                }
+              if (inside) best = inside;
+            }
+          }
+          centroidCache.set(name, best);
+          return best;
+        };
+        type Badge = { name: string; el: HTMLDivElement; pos: THREE_NS.Vector3 };
+        let badges: Badge[] = [];
+        const buildBadges = () => {
+          for (const b of badges) b.el.remove();
+          badges = [];
+          if (mode !== "agency") return;
+          for (const [name, stat] of Object.entries(agencyRef.current?.stats ?? {})) {
+            if (stat.count <= 0) continue;
+            const c = centroidOf(name);
+            if (!c) continue;
+            const el = document.createElement("div");
+            el.className = "tg-badge";
+            el.textContent = String(stat.count);
+            labels.appendChild(el);
+            badges.push({ name, el, pos: ll2v(c.lat, c.lon, 1.0006) });
+          }
+        };
+        buildBadges();
+        const setHighlight = (data: AgencyGlobeData) => {
+          agencyRef.current = data;
+          gold.clear();
+          soft.clear();
+          for (const [name, stat] of Object.entries(data.stats)) if (stat.count > 0) gold.add(name);
+          setInfo({ gold: [...gold], soft: [], byCountry: {} });
+          texture.image = drawTexture(raw, gold, soft, `${fam}, Georgia, serif`);
+          texture.needsUpdate = true;
+          if (phys) {
+            drawMarks(phys.marksCanvas);
+            phys.marksTex.needsUpdate = true;
+          }
+          removeLines(plainSet);
+          removeLines(markedSet);
+          plainSet = makeLines(rings.filter((c) => !gold.has(c.name)), 1.3, 0x233c5e, 0.85);
+          markedSet = makeLines(rings.filter((c) => gold.has(c.name)), 2.2, 0x1b2f4d, 1);
+          lineSets.unshift(plainSet, markedSet);
+          styleLines();
+          buildBadges();
+        };
+        const selectCountry = (name: string) => {
+          const c = centroidOf(name);
+          choose(name, null, false);
+          if (c) api.current?.focus(c.lat, c.lon, 3);
         };
 
         api.current = {
-          zoom: (factor) => {
-            st.distT = Math.max(MIN_DIST, Math.min(MAX_DIST, st.distT * factor));
-            st.idle = 0;
-          },
+          zoom: (factor) => zoomBy(factor),
           focus: (lat, lon, maxDist = 2.2) => {
             st.goal = solve(lat, lon);
             st.yawV = 0;
@@ -751,6 +888,8 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           },
           clear: () => choose(null, null, false),
           setStyle: applyStyle,
+          selectCountry,
+          setHighlight,
         };
         if (styleRef.current !== "antique") {
           applyStyle(styleRef.current).then((ok) => {
@@ -773,6 +912,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
         const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
         const v = new T.Vector3();
         const toCam = new T.Vector3();
+        let lastTiles = 0;
         const frame = (now: number) => {
           raf = requestAnimationFrame(frame);
           if (!visible) return;
@@ -795,6 +935,13 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           st.dist += (st.distT - st.dist) * (1 - Math.exp(-dt * 8));
           camera.position.set(0, 0, st.dist);
           camera.lookAt(0, 0, 0);
+          // piano di taglio vicino adatto alla quota (da vicino la superficie è a pochi km)
+          const near = Math.max(0.0004, (st.dist - 1) * 0.3);
+          if (Math.abs(camera.near - near) > near * 0.05) {
+            camera.near = near;
+            camera.far = st.dist + 2;
+            camera.updateProjectionMatrix();
+          }
           yawG.rotation.y = st.yaw;
           pitchG.rotation.x = st.pitch;
 
@@ -804,7 +951,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             (me.pulse.material as THREE_NS.MeshBasicMaterial).opacity = 0.85 * (1 - p);
           }
           // I puntini restano piccoli anche da vicino
-          const pinScale = Math.max(0.28, Math.min(1.1, (st.dist - 0.9) / 3.3));
+          const pinScale = Math.max(0.004, Math.min(1.1, (st.dist - 1) * 0.62));
           for (const m of markers) {
             m.group.scale.setScalar(pinScale);
             m.head.scale.setScalar(selectedRef.current === m.tripId ? 1.5 : 1);
@@ -817,6 +964,27 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           const minZ = Math.cos(Math.min(Math.PI, limb));
           for (const set of lineSets) {
             for (const c of set.cells) c.line.visible = c.x === 0 && c.y === 0 && c.z === 0 ? true : me_[2] * c.x + me_[6] * c.y + me_[10] * c.z > minZ;
+          }
+          // da vicino il velo dorato si attenua, per lasciare vedere l'immagine satellitare (restano i bordi)
+          if (phys && styleRef.current === "physical") {
+            (phys.marks.material as THREE_NS.MeshBasicMaterial).opacity = Math.max(0.12, Math.min(1, (st.dist - 1) * 1.6));
+          }
+          // tasselli satellitari della zona inquadrata (aggiornati 5 volte al secondo)
+          if (styleRef.current === "physical" && now - lastTiles > 200) {
+            lastTiles = now;
+            // punto del globo al centro della vista
+            const cxl = me_[2],
+              cyl = me_[6],
+              czl = me_[10];
+            const cLat = Math.asin(Math.max(-1, Math.min(1, cyl))) / D2R;
+            const cLon = Math.atan2(-czl, cxl) / D2R;
+            const fovHalf = (camera.fov / 2) * D2R;
+            const diag = Math.atan(Math.tan(fovHalf) * Math.hypot(1, camera.aspect));
+            const horizon = Math.acos(Math.min(1, 1 / st.dist));
+            const reach = st.dist * Math.sin(diag) < 1 ? Math.asin(st.dist * Math.sin(diag)) - diag : horizon;
+            const H = Math.max(200, stage.clientHeight);
+            const degPerPx = ((2 * (st.dist - 1) * Math.tan(fovHalf)) / H) * (180 / Math.PI) / Math.min(window.devicePixelRatio || 1, 2) * 1.25;
+            tiles.update({ lat: cLat, lon: cLon, radiusDeg: Math.min(horizon, reach) / D2R + 2, degPerPx });
           }
           renderer.render(scene, camera);
 
@@ -832,6 +1000,14 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-135%)`;
           };
           for (const m of markers) place(m.label, m.head, m.label.dataset.main === "1" || selectedRef.current === m.tripId);
+          for (const b of badges) {
+            v.copy(b.pos).applyMatrix4(yawG.matrixWorld);
+            toCam.copy(camera.position).sub(v).normalize();
+            const facing = v.clone().normalize().dot(toCam);
+            v.project(camera);
+            b.el.style.opacity = facing > 0.2 ? "1" : "0";
+            b.el.style.transform = `translate(${((v.x * 0.5 + 0.5) * w).toFixed(1)}px,${((-v.y * 0.5 + 0.5) * h).toFixed(1)}px) translate(-50%,-50%)`;
+          }
           if (me) place(me.label, me.head, true);
         };
         raf = requestAnimationFrame(frame);
@@ -854,6 +1030,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
           });
           texture.dispose();
           overlayTex.dispose();
+          tiles.dispose();
           (phys as { textures: THREE_NS.Texture[] } | null)?.textures.forEach((t) => t.dispose());
           oceanLabels.traverse((o) => ((o as THREE_NS.Mesh).material as THREE_NS.MeshBasicMaterial | undefined)?.map?.dispose());
           renderer.dispose();
@@ -869,7 +1046,18 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
       disposed = true;
       cleanup?.();
     };
-  }, [trips]);
+  }, [trips, mode]);
+
+  // Agenzia: cambiano i filtri → si aggiornano paesi evidenziati e numeri, senza ricostruire il globo
+  useEffect(() => {
+    if (mode !== "agency" || !agency || !ready || agency === agencyRef.current) return;
+    api.current?.setHighlight(agency);
+  }, [agency, mode, ready]);
+
+  // Agenzia: un paese scelto dalla classifica si evidenzia e si centra sul globo
+  useEffect(() => {
+    if (focusRequest && ready) api.current?.selectCountry(focusRequest.name);
+  }, [focusRequest, ready]);
 
   function locateMe() {
     if (!("geolocation" in navigator)) {
@@ -915,6 +1103,9 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
               <Loader2 size={16} className="animate-spin" /> Carico il mondo…
             </span>
           </div>
+        )}
+        {ready && style === "physical" && (
+          <p className="pointer-events-none absolute bottom-1 right-3 z-[5] text-[10px] text-white/60">Immagini: NASA Blue Marble, Landsat (GIBS)</p>
         )}
         {failed && (
           <div className="absolute inset-0 z-10 grid place-items-center p-6 text-center text-sm text-white/80">
@@ -963,7 +1154,54 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
             </button>
           </div>
         )}
-        {country && (
+        {country && mode === "agency" && (
+          <div className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 pr-10 text-[#1d2b40] shadow-xl">
+            <button
+              type="button"
+              onClick={() => api.current?.clear()}
+              aria-label="Chiudi la scheda del paese"
+              className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full text-slate-500 hover:bg-black/5"
+            >
+              ×
+            </button>
+            {(() => {
+              const stat = agency?.stats[country];
+              return (
+                <>
+                  <p className="text-xs font-semibold text-[#756548]">
+                    {stat && stat.count > 0
+                      ? `${stat.count} ${agency?.countLabel ?? "viaggi"}${agency?.showValue && stat.value > 0 ? ` · ${stat.value.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 })}` : ""}`
+                      : "Nessun viaggio nel periodo scelto"}
+                  </p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">{countryNameIt(country)}</p>
+                  {stat && stat.trips.length > 0 && (
+                    <ul className="mt-1 max-h-28 space-y-0.5 overflow-y-auto text-sm text-slate-600">
+                      {stat.trips.map((t) => (
+                        <li key={t.id} className="truncate">
+                          <a href={`/dashboard/trips/${t.id}`} className="underline decoration-[#c58f2d] underline-offset-2">
+                            {t.title}
+                          </a>
+                          <span className="text-slate-500">
+                            {t.client ? ` · ${t.client}` : ""}
+                            {t.from ? ` · ${dateIt(t.from)}` : ""}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => onOpenSheet?.(country)}
+                    className="mt-2 flex items-center gap-2 rounded-full bg-[#233c5e] px-3.5 py-1.5 text-sm font-semibold text-white hover:bg-[#1b3050]"
+                  >
+                    Scheda paese
+                  </button>
+                </>
+              );
+            })()}
+          </div>
+        )}
+        {country && mode === "client" && (
           <div className="absolute inset-x-3 bottom-3 z-10 max-w-sm rounded-2xl bg-[#faf3e6]/95 p-3.5 pr-10 text-[#1d2b40] shadow-xl">
             <button
               type="button"
@@ -1048,6 +1286,7 @@ export default function TravelGlobe({ trips, userId, photoCounts }: { trips: Glo
       <style>{`
         .tg-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -135%); white-space: nowrap; font-size: 11.5px; font-weight: 600; line-height: 1; padding: 5px 8px; border-radius: 99px; background: rgba(10,18,32,.72); color: #fff; border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(4px); transition: opacity .2s; will-change: transform; }
         .tg-me { background: #e24a3b; border-color: rgba(255,255,255,.5); }
+        .tg-badge { position: absolute; left: 0; top: 0; min-width: 26px; height: 26px; padding: 0 7px; display: grid; place-items: center; border-radius: 99px; background: #233c5e; color: #fff; font-size: 12.5px; font-weight: 700; border: 2px solid #e3c27a; box-shadow: 0 2px 6px rgba(0,0,0,.35); transition: opacity .2s; will-change: transform; pointer-events: none; }
       `}</style>
     </div>
   );

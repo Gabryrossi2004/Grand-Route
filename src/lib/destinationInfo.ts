@@ -112,6 +112,7 @@ export type GeoResult = {
   longitude: number;
   timezone?: string;
   country?: string;
+  country_code?: string;
   feature_code?: string;
 };
 
@@ -334,7 +335,7 @@ export async function loadTripStops(
 
 // Solo le località visitate (senza meteo): servono al mappamondo. Stessa logica delle tappe,
 // ma leggera: una ricerca per località, in cache per 30 giorni.
-export type TripPlace = { place: string; country: string | null; latitude: number; longitude: number };
+export type TripPlace = { place: string; country: string | null; countryCode: string | null; latitude: number; longitude: number };
 
 export async function loadTripPlaces(destination: string | null | undefined, days: DayInput[]): Promise<TripPlace[]> {
   const countryHint = normalize(destination ?? "");
@@ -361,7 +362,7 @@ export async function loadTripPlaces(destination: string | null | undefined, day
     const key = `${geo.latitude.toFixed(2)},${geo.longitude.toFixed(2)}`;
     if (seen.has(key)) return;
     seen.add(key);
-    places.push({ place: geo.name, country: geo.country ?? null, latitude: geo.latitude, longitude: geo.longitude });
+    places.push({ place: geo.name, country: geo.country ?? null, countryCode: geo.country_code?.toUpperCase() ?? null, latitude: geo.latitude, longitude: geo.longitude });
   };
   for (const geo of perDay) if (geo) add(geo);
 

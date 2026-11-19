@@ -496,6 +496,8 @@ function CoverHero({
           mode={trip.itinerary_mode === "days" ? "days" : "activities"}
           modeAction={setItineraryMode.bind(null, trip.id, trip.itinerary_mode === "days" ? "activities" : "days")}
           hasContent={hasContent}
+          countries={"countries" in trip ? ((trip.countries as string[] | null) ?? []) : undefined}
+          autoCountries={"auto_countries" in trip ? (trip.auto_countries as string[] | null) : null}
         />
       </div>
 

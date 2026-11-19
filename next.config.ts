@@ -13,7 +13,7 @@ const contentSecurityPolicy = [
   `default-src 'self'`,
   `script-src 'self' 'unsafe-inline'`,
   `style-src 'self' 'unsafe-inline'`,
-  `img-src 'self' data: blob: https://${supabaseHost}`,
+  `img-src 'self' data: blob: https://${supabaseHost} https://gibs.earthdata.nasa.gov https://upload.wikimedia.org https://thumb.wikimedia.org`,
   `font-src 'self' data:`,
   `connect-src 'self' https://${supabaseHost} wss://${supabaseHost} https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://*.ingest.de.sentry.io`,
   `frame-ancestors 'none'`,
