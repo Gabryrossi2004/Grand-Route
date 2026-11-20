@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Folder, FolderOpen, Loader2, MapPin, Printer, X } from "lucide-react";
 import { getItalyPhotos } from "@/lib/actions/italy";
 import type { SheetPhoto } from "@/lib/countryPhotos";
+import CountrySuppliers from "@/components/CountrySuppliers";
 import { ITALY_FACT_LABELS, ITALY_ORDER, ITALY_REGIONS, type ItalyPlace } from "@/lib/italyLibrary";
 
 export type ItalyView = { region: string | null; zone: string | null };
@@ -219,6 +220,8 @@ export default function ItalyPanel({
                 )}
 
                 <Places title={zone ? "Da non perdere" : "Luoghi simbolo"} items={zone ? zone.highlights : region.places} />
+
+                {view.region && <CountrySuppliers code="IT" region={view.region} />}
 
                 {zone && (
                   <div className="print:hidden">

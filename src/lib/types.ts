@@ -220,6 +220,8 @@ export type Supplier = {
   email: string | null;
   phone: string | null;
   notes: string | null;
+  countries?: string[] | null;
+  regions?: string[] | null;
   created_at: string;
 };
 

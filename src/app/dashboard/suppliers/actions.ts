@@ -18,6 +18,14 @@ function readSupplierFields(formData: FormData) {
   };
 }
 
+// Paesi e regioni del fornitore: se il database non ha ancora l'aggiornamento 0050 si salva il resto
+function readPlaces(formData: FormData) {
+  const countries = [...new Set(formData.getAll("countries").map((c) => String(c).toUpperCase()).filter((c) => /^[A-Z]{2}$/.test(c)))].slice(0, 80);
+  const regions = countries.includes("IT") ? [...new Set(formData.getAll("regions").map((r) => String(r)).filter((r) => /^[a-z-]{3,30}$/.test(r)))].slice(0, 20) : [];
+  return { countries, regions };
+}
+const MISSING_COLUMN = /column|schema cache/i;
+
 export async function createSupplier(formData: FormData) {
   const supabase = await createClient();
   const {
@@ -28,7 +36,9 @@ export async function createSupplier(formData: FormData) {
   const fields = readSupplierFields(formData);
   if (!fields.full_name) return;
 
-  await supabase.from("suppliers").insert({ owner_id: user.id, ...fields });
+  const places = readPlaces(formData);
+  const { error } = await supabase.from("suppliers").insert({ owner_id: user.id, ...fields, ...places });
+  if (error && MISSING_COLUMN.test(error.message)) await supabase.from("suppliers").insert({ owner_id: user.id, ...fields });
   revalidatePath("/dashboard/suppliers");
 }
 
@@ -37,7 +47,9 @@ export async function updateSupplier(supplierId: string, formData: FormData) {
   const fields = readSupplierFields(formData);
   if (!fields.full_name) return;
 
-  await supabase.from("suppliers").update(fields).eq("id", supplierId);
+  const places = readPlaces(formData);
+  const { error } = await supabase.from("suppliers").update({ ...fields, ...places }).eq("id", supplierId);
+  if (error && MISSING_COLUMN.test(error.message)) await supabase.from("suppliers").update(fields).eq("id", supplierId);
   revalidatePath("/dashboard/suppliers");
 }
 

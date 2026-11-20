@@ -1,0 +1,23 @@
+// Le 20 regioni italiane (id usati nei dati dell'Italia) in ordine da nord a sud: leggero, per i moduli.
+export const ITALY_REGION_NAMES: { id: string; name: string }[] = [
+  { id: "valle-d-aosta", name: "Valle d'Aosta" },
+  { id: "piemonte", name: "Piemonte" },
+  { id: "lombardia", name: "Lombardia" },
+  { id: "trentino-alto-adige", name: "Trentino-Alto Adige" },
+  { id: "veneto", name: "Veneto" },
+  { id: "friuli-venezia-giulia", name: "Friuli Venezia Giulia" },
+  { id: "liguria", name: "Liguria" },
+  { id: "emilia-romagna", name: "Emilia-Romagna" },
+  { id: "toscana", name: "Toscana" },
+  { id: "umbria", name: "Umbria" },
+  { id: "marche", name: "Marche" },
+  { id: "lazio", name: "Lazio" },
+  { id: "abruzzo", name: "Abruzzo" },
+  { id: "molise", name: "Molise" },
+  { id: "campania", name: "Campania" },
+  { id: "puglia", name: "Puglia" },
+  { id: "basilicata", name: "Basilicata" },
+  { id: "calabria", name: "Calabria" },
+  { id: "sicilia", name: "Sicilia" },
+  { id: "sardegna", name: "Sardegna" },
+];

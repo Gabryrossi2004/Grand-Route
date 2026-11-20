@@ -8,6 +8,8 @@ import { supplierCategories, supplierCategoryOptions } from "@/lib/serviceStatus
 import Modal from "@/components/Modal";
 import SubmitButton from "@/components/SubmitButton";
 import SupplierPriceList from "@/components/SupplierPriceList";
+import SupplierPlacesField from "@/components/SupplierPlacesField";
+import { flagOf, nameItOfCode } from "@/lib/geo/countryCodes";
 import { createSupplier, deleteSupplier, updateSupplier } from "@/app/dashboard/suppliers/actions";
 
 function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () => void }) {
@@ -91,6 +93,7 @@ function SupplierForm({ supplier, onDone }: { supplier?: Supplier; onDone: () =>
           className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
       </div>
+      <SupplierPlacesField initialCountries={supplier?.countries ?? []} initialRegions={supplier?.regions ?? []} />
       <div className="mt-1 flex justify-end gap-2">
         <button
           type="button"
@@ -125,7 +128,7 @@ export default function SuppliersList({
   const filtered = suppliers.filter((supplier) => {
     const q = query.trim().toLowerCase();
     if (!q) return true;
-    const haystack = `${supplier.full_name} ${supplier.email ?? ""} ${supplier.phone ?? ""}`.toLowerCase();
+    const haystack = `${supplier.full_name} ${supplier.email ?? ""} ${supplier.phone ?? ""} ${(supplier.countries ?? []).map(nameItOfCode).join(" ")}`.toLowerCase();
     return haystack.includes(q);
   });
 
@@ -176,6 +179,11 @@ export default function SuppliersList({
                 {(supplier.email || supplier.phone) && (
                   <p className="truncate text-sm text-slate-500">
                     {[supplier.email, supplier.phone].filter(Boolean).join(" · ")}
+                  </p>
+                )}
+                {(supplier.countries ?? []).length > 0 && (
+                  <p className="truncate text-xs text-slate-500">
+                    {(supplier.countries ?? []).map((c) => `${flagOf(c)} ${nameItOfCode(c)}`).join(" · ")}
                   </p>
                 )}
               </div>

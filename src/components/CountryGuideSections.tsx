@@ -4,11 +4,11 @@ import { MONTHS_LONG, MONTHS_SHORT, SEASON_LEVELS } from "@/lib/countrySheetShar
 
 // Parti "guida" della scheda paese: zone con il calendario mese per mese, cosa fare, itinerari,
 // consigli per l'agente (questi ultimi non compaiono nella stampa per il cliente).
-export default function CountryGuideSections({ content }: { content: CountrySheetContent }) {
+export default function CountryGuideSections({ content, hideAgentTips = false }: { content: CountrySheetContent; hideAgentTips?: boolean }) {
   const areas = content.areas ?? [];
   const experiences = content.experiences ?? [];
   const itineraries = content.itineraries ?? [];
-  const agentTips = content.agentTips ?? [];
+  const agentTips = hideAgentTips ? [] : (content.agentTips ?? []);
   if (!areas.length && !experiences.length && !itineraries.length && !agentTips.length) return null;
 
   return (
