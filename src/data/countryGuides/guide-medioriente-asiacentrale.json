@@ -1,0 +1,1157 @@
+{
+  "GE": {
+    "moreDescription": [
+      "La Georgia è una delle mete più apprezzate degli ultimi anni: ospitalità leggendaria, una cucina ricchissima, il vino più antico del mondo (in anfore qvevri), chiese medievali su montagne spettacolari e Tbilisi, capitale vivace e conveniente. Il tour classico unisce Tbilisi, Mtskheta, la strada militare georgiana fino a Kazbegi, la regione vinicola del Kakheti e, per chi ha più tempo, lo Svaneti e la città rupestre di Vardzia. Il periodo migliore va da maggio a ottobre; settembre–ottobre per la vendemmia."
+    ],
+    "morePlaces": [
+      {
+        "name": "Ushguli",
+        "description": "Villaggio di torri medievali tra i più alti d'Europa, nello Svaneti.",
+        "search": "Ushguli"
+      },
+      {
+        "name": "Batumi",
+        "description": "La città sul Mar Nero, moderna e balneare.",
+        "search": "Batumi"
+      },
+      {
+        "name": "Kutaisi e grotte",
+        "description": "Il monastero di Gelati e le grotte di Prometeo.",
+        "search": "Gelati Monastery"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Tbilisi e Mtskheta",
+        "description": "La città vecchia con i bagni sulfurei, la fortezza di Narikala, il ponte della Pace e i quartieri d'arte; Mtskheta, antica capitale UNESCO con il monastero di Jvari.",
+        "highlights": [
+          "Città vecchia",
+          "Bagni sulfurei",
+          "Narikala",
+          "Fabrika",
+          "Mtskheta",
+          "Jvari"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; luglio–agosto caldi."
+      },
+      {
+        "name": "Grande Caucaso (Kazbegi, Svaneti)",
+        "description": "La strada militare georgiana fino a Stepantsminda e la chiesa di Gergeti sotto il Kazbek; lo Svaneti con Mestia, Ushguli e le torri medievali.",
+        "highlights": [
+          "Gergeti",
+          "Kazbek",
+          "Ananuri",
+          "Mestia",
+          "Ushguli"
+        ],
+        "seasons": "XXDDBOOOODXX",
+        "seasonNote": "Da giugno a settembre; Ushguli e alcuni passi possono essere chiusi d'inverno."
+      },
+      {
+        "name": "Kakheti (Sighnaghi, Telavi)",
+        "description": "La terra del vino: cantine con anfore qvevri, Sighnaghi la 'città dell'amore', monasteri e la valle dell'Alazani.",
+        "highlights": [
+          "Sighnaghi",
+          "Telavi",
+          "Cantine",
+          "Monastero di Bodbe",
+          "Alaverdi"
+        ],
+        "seasons": "DDBOOOOOOOBD",
+        "seasonNote": "Vendemmia da metà settembre a ottobre (Rtveli)."
+      },
+      {
+        "name": "Ovest e costa (Kutaisi, Vardzia, Batumi)",
+        "description": "Kutaisi con Gelati e le grotte, la città rupestre di Vardzia, le terme di Borjomi e Batumi sul Mar Nero.",
+        "highlights": [
+          "Gelati",
+          "Grotte di Prometeo",
+          "Vardzia",
+          "Borjomi",
+          "Batumi"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Mare a Batumi da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Supra georgiana",
+        "description": "Cena con tamada (il brindisi), canti polifonici, khachapuri e khinkali."
+      },
+      {
+        "name": "Vendemmia nel Kakheti",
+        "description": "Pigiatura dell'uva e degustazione di vini in qvevri."
+      },
+      {
+        "name": "Trekking a Gergeti",
+        "description": "Salita alla chiesa della Trinità sotto il Kazbek."
+      },
+      {
+        "name": "Bagni sulfurei di Tbilisi",
+        "description": "Stanze private con acqua termale e massaggio."
+      },
+      {
+        "name": "Torri dello Svaneti",
+        "description": "Trekking da Mestia a Ushguli in 3–4 giorni."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Georgia classica",
+        "days": 9,
+        "route": "Tbilisi (3) → Mtskheta → Kazbegi (2) → Kakheti (2) → Tbilisi (1)",
+        "description": "Il tour più venduto, da maggio a ottobre."
+      },
+      {
+        "title": "Georgia completa",
+        "days": 14,
+        "route": "Tbilisi (3) → Kazbegi (2) → Kakheti (2) → Borjomi e Vardzia (2) → Kutaisi (1) → Svaneti (3)",
+        "description": "Con le montagne dello Svaneti, da giugno a settembre."
+      },
+      {
+        "title": "Georgia e Armenia",
+        "days": 12,
+        "route": "Tbilisi (3) → Kazbegi (1) → Kakheti (2) → Erevan (3) → Sevan e Dilijan (2)",
+        "description": "Il Caucaso cristiano in un unico viaggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per lunghi soggiorni turistici; serve il passaporto.",
+      "Le zone di Abcasia e Ossezia del Sud sono sconsigliate: verifica viaggiaresicuri.it.",
+      "Le strade di montagna sono lente: meglio autista privato.",
+      "Prezzi molto convenienti; i voli diretti per Tbilisi e Kutaisi sono frequenti."
+    ]
+  },
+  "AM": {
+    "moreDescription": [
+      "L'Armenia è la prima nazione cristiana della storia: monasteri medievali in paesaggi montani spettacolari, il monte Ararat sempre all'orizzonte, il lago Sevan, il brandy e una capitale, Erevan, accogliente e sicura. Si visita in 6–8 giorni con autista, spesso insieme alla Georgia. Il periodo migliore è primavera (maggio–giugno) e autunno (settembre–ottobre)."
+    ],
+    "morePlaces": [
+      {
+        "name": "Dilijan",
+        "description": "La 'Svizzera armena' con foreste e monasteri come Haghartsin.",
+        "search": "Haghartsin Monastery"
+      },
+      {
+        "name": "Noravank",
+        "description": "Monastero in un canyon di roccia rossa.",
+        "search": "Noravank"
+      },
+      {
+        "name": "Etchmiadzin",
+        "description": "La sede della Chiesa apostolica armena.",
+        "search": "Etchmiadzin Cathedral"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Erevan e dintorni",
+        "description": "La capitale rosa, la Cascade, il Matenadaran con i manoscritti, il memoriale del genocidio, il mercato del Vernissage; Etchmiadzin, Garni e Geghard e Khor Virap davanti all'Ararat.",
+        "highlights": [
+          "Cascade",
+          "Matenadaran",
+          "Tsitsernakaberd",
+          "Garni",
+          "Geghard",
+          "Khor Virap"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; estate calda e secca."
+      },
+      {
+        "name": "Nord (Sevan, Dilijan, Lori)",
+        "description": "Il lago Sevan con il monastero sulla penisola, le foreste di Dilijan e i monasteri UNESCO di Haghpat e Sanahin.",
+        "highlights": [
+          "Sevanavank",
+          "Dilijan",
+          "Haghartsin",
+          "Haghpat",
+          "Sanahin"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Sud (Noravank, Tatev)",
+        "description": "Il canyon di Noravank, le cantine di Areni e il monastero di Tatev raggiunto con la funivia più lunga del mondo.",
+        "highlights": [
+          "Noravank",
+          "Areni",
+          "Tatev",
+          "Wings of Tatev",
+          "Karahunj"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Funivia di Tatev",
+        "description": "5,7 km sopra la gola fino al monastero."
+      },
+      {
+        "name": "Canti nel monastero di Geghard",
+        "description": "Acustica straordinaria nelle sale scavate nella roccia."
+      },
+      {
+        "name": "Lavash e brandy",
+        "description": "Preparazione del pane tradizionale e visita alla distilleria Ararat."
+      },
+      {
+        "name": "Alba su Khor Virap",
+        "description": "Il monastero con l'Ararat sullo sfondo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Armenia classica",
+        "days": 7,
+        "route": "Erevan (3) → Garni e Geghard → Sevan e Dilijan (1) → Noravank → Tatev (1) → Erevan (1)",
+        "description": "Monasteri e montagne con autista."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni turistici brevi; serve il passaporto.",
+      "Il confine con l'Azerbaigian e con la Turchia è chiuso: si combina con la Georgia.",
+      "Verifica viaggiaresicuri.it per le zone di confine.",
+      "Ottimo rapporto qualità-prezzo."
+    ]
+  },
+  "AZ": {
+    "moreDescription": [
+      "L'Azerbaigian unisce la modernità di Baku, con le Flame Towers e il centro Heydar Aliyev di Zaha Hadid, alla città vecchia UNESCO, ai petroglifi di Gobustan, ai vulcani di fango, al 'monte che brucia' e ai villaggi del Caucaso come Sheki. Il periodo migliore è aprile–giugno e settembre–ottobre."
+    ],
+    "areas": [
+      {
+        "name": "Baku e Absheron",
+        "description": "La città vecchia murata con la Torre della Vergine e il palazzo degli Shirvanshah, il lungomare, le architetture moderne, il tempio del fuoco di Ateshgah e Yanar Dag.",
+        "highlights": [
+          "Icheri Sheher",
+          "Torre della Vergine",
+          "Flame Towers",
+          "Centro Heydar Aliyev",
+          "Ateshgah",
+          "Yanar Dag"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; Baku è ventosa tutto l'anno."
+      },
+      {
+        "name": "Gobustan",
+        "description": "Petroglifi preistorici UNESCO e vulcani di fango.",
+        "highlights": [
+          "Petroglifi",
+          "Vulcani di fango"
+        ],
+        "seasons": "DDBOOBDDOOBD",
+        "seasonNote": "Primavera e autunno."
+      },
+      {
+        "name": "Nord (Sheki, Lahij, Quba)",
+        "description": "Sheki con il palazzo del Khan e i caravanserragli, i villaggi di montagna di Lahij e Khinalug.",
+        "highlights": [
+          "Palazzo del Khan",
+          "Caravanserraglio",
+          "Lahij",
+          "Khinalug"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Flame Towers illuminate",
+        "description": "Dal parco sulle colline di Baku la sera."
+      },
+      {
+        "name": "Notte in un caravanserraglio",
+        "description": "A Sheki, nell'antica stazione della Via della Seta."
+      },
+      {
+        "name": "Vulcani di fango",
+        "description": "Escursione in fuoristrada vicino a Gobustan."
+      },
+      {
+        "name": "Tè e dolci di Sheki",
+        "description": "La halva di Sheki con il tè nel samovar."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Azerbaigian",
+        "days": 6,
+        "route": "Baku (3) → Gobustan → Shamakhi → Sheki (2)",
+        "description": "Città e Caucaso, primavera e autunno."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto elettronico (ASAN), da richiedere online.",
+      "Chi ha visitato il Nagorno-Karabakh senza autorizzazione azera può essere respinto: verifica.",
+      "Il confine con l'Armenia è chiuso.",
+      "Verifica sempre viaggiaresicuri.it."
+    ]
+  },
+  "QA": {
+    "moreDescription": [
+      "Il Qatar è una meta breve di lusso e cultura: Doha con il Museo d'Arte Islamica, il Museo Nazionale a forma di rosa del deserto, il Souq Waqif e le isole artificiali, più il deserto del sud con il mare interno di Khor Al Adaid. È spesso uno stopover sulle rotte di Qatar Airways verso Asia, Oceano Indiano e Africa. Periodo migliore da novembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Doha",
+        "description": "Corniche, musei, Souq Waqif, Katara, The Pearl e Msheireb.",
+        "highlights": [
+          "Museo d'Arte Islamica",
+          "Museo Nazionale",
+          "Souq Waqif",
+          "Katara",
+          "The Pearl"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo; estate torrida."
+      },
+      {
+        "name": "Deserto e nord",
+        "description": "Le dune e il mare interno di Khor Al Adaid, le mangrovie di Al Thakira, il forte di Al Zubarah UNESCO.",
+        "highlights": [
+          "Khor Al Adaid",
+          "Mangrovie",
+          "Al Zubarah"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Safari nel deserto a Khor Al Adaid",
+        "description": "Dune bashing fino al mare interno."
+      },
+      {
+        "name": "Souq Waqif la sera",
+        "description": "Spezie, falconi e ristoranti tradizionali."
+      },
+      {
+        "name": "Kayak nelle mangrovie",
+        "description": "Ad Al Thakira."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Stopover a Doha",
+        "days": 3,
+        "route": "Doha (2–3)",
+        "description": "Combinato con voli Qatar Airways verso Asia e Oceano Indiano."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani ricevono gratuitamente il permesso all'arrivo per soggiorni brevi.",
+      "Abbigliamento coperto in luoghi pubblici; alcol solo negli hotel autorizzati.",
+      "Il weekend è venerdì e sabato.",
+      "Qatar Airways offre spesso pacchetti stopover con hotel scontati."
+    ]
+  },
+  "SA": {
+    "moreDescription": [
+      "L'Arabia Saudita si è aperta al turismo da pochi anni: AlUla con le tombe nabatee di Hegra e i canyon di arenaria, la Diriyah storica a Riad, la Jeddah vecchia di Al-Balad, il Mar Rosso con nuovi resort di lusso e il deserto. È una destinazione per viaggiatori curiosi e alto spendenti. Il periodo migliore va da novembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "AlUla",
+        "description": "Hegra, la 'sorella di Petra', Elephant Rock, la città vecchia, Maraya (l'edificio a specchio) e resort nel canyon.",
+        "highlights": [
+          "Hegra",
+          "Elephant Rock",
+          "Città vecchia",
+          "Maraya",
+          "Jabal Ikmah"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da ottobre a marzo; festival culturali in inverno."
+      },
+      {
+        "name": "Riad",
+        "description": "La capitale con Diriyah UNESCO, il Kingdom Centre e l'Edge of the World nel deserto.",
+        "highlights": [
+          "Diriyah",
+          "Masmak",
+          "Kingdom Centre",
+          "Edge of the World"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo."
+      },
+      {
+        "name": "Jeddah e Mar Rosso",
+        "description": "Al-Balad con le case di corallo, il lungomare e le barriere coralline del Mar Rosso con i nuovi resort.",
+        "highlights": [
+          "Al-Balad",
+          "Corniche",
+          "Fontana di Re Fahd",
+          "Barriere coralline"
+        ],
+        "seasons": "OOOBDDDDDBOO",
+        "seasonNote": "Da novembre ad aprile; estate calda e umida."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tombe di Hegra",
+        "description": "Oltre 100 tombe nabatee scavate nella roccia."
+      },
+      {
+        "name": "Edge of the World",
+        "description": "Escursione al tramonto sulla scarpata di Tuwaiq."
+      },
+      {
+        "name": "Snorkeling nel Mar Rosso",
+        "description": "Barriere intatte e poco frequentate."
+      },
+      {
+        "name": "Notte nel deserto di AlUla",
+        "description": "Campi di lusso sotto le stelle."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Arabia Saudita",
+        "days": 8,
+        "route": "Riad (2) → AlUla (3) → Jeddah (2)",
+        "description": "Da novembre a marzo, con voli interni."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto turistico elettronico, da richiedere online.",
+      "La Mecca e Medina sono accessibili solo ai musulmani.",
+      "Abbigliamento modesto in pubblico; alcol vietato.",
+      "Verifica viaggiaresicuri.it per le zone di confine con lo Yemen."
+    ]
+  },
+  "BH": {
+    "moreDescription": [
+      "Il Bahrein è un piccolo arcipelago nel Golfo, con la storia della civiltà di Dilmun e della pesca delle perle, il forte UNESCO di Qal'at al-Bahrain, la moschea Al Fateh, la città di Muharraq e il circuito di Formula 1 di Sakhir. Si visita in 2–3 giorni o come stopover. Periodo migliore da novembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Manama e Muharraq",
+        "description": "Il forte del Bahrein, la moschea Al Fateh, il souk di Bab al-Bahrain, il percorso delle perle a Muharraq e il museo nazionale.",
+        "highlights": [
+          "Qal'at al-Bahrain",
+          "Al Fateh",
+          "Bab al-Bahrain",
+          "Percorso delle perle",
+          "Museo nazionale"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo; Gran Premio a fine inverno o primavera."
+      },
+      {
+        "name": "Sud e deserto",
+        "description": "Il circuito di Sakhir, l'Albero della Vita nel deserto e le spiagge.",
+        "highlights": [
+          "Circuito di Sakhir",
+          "Albero della Vita",
+          "Isole Hawar"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Gran Premio del Bahrein",
+        "description": "Biglietti e pacchetti hotel per la Formula 1."
+      },
+      {
+        "name": "Percorso delle perle",
+        "description": "Le case dei mercanti di perle UNESCO a Muharraq."
+      },
+      {
+        "name": "Immersione per perle",
+        "description": "Esperienze autorizzate di pesca delle ostriche."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bahrein breve",
+        "days": 3,
+        "route": "Manama (2)",
+        "description": "Stopover o abbinato a un evento sportivo."
+      }
+    ],
+    "agentTips": [
+      "Visto elettronico o all'arrivo: verifica la procedura in vigore.",
+      "Il weekend è venerdì e sabato.",
+      "Abbigliamento coperto nella moschea Al Fateh."
+    ]
+  },
+  "KW": {
+    "moreDescription": [
+      "Il Kuwait è poco turistico: si visita in un paio di giorni per le Kuwait Towers, la Grande Moschea, il souk Al-Mubarakiya, i musei e l'isola di Failaka. Interessa soprattutto viaggiatori d'affari o di passaggio. Periodo migliore da novembre a marzo; d'estate il caldo supera i 50 °C."
+    ],
+    "areas": [
+      {
+        "name": "Kuwait City",
+        "description": "Le Kuwait Towers, la Grande Moschea, il souk Al-Mubarakiya, il centro culturale Sheikh Jaber e il museo Tareq Rajab.",
+        "highlights": [
+          "Kuwait Towers",
+          "Grande Moschea",
+          "Souq Al-Mubarakiya",
+          "Centro culturale Sheikh Jaber"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo."
+      },
+      {
+        "name": "Failaka e costa",
+        "description": "L'isola con resti ellenistici e i segni dell'invasione del 1990.",
+        "highlights": [
+          "Isola di Failaka",
+          "Spiagge"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Souq Al-Mubarakiya",
+        "description": "Il mercato più antico del paese."
+      },
+      {
+        "name": "Gita a Failaka",
+        "description": "In traghetto per la storia antica e moderna."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Kuwait breve",
+        "days": 3,
+        "route": "Kuwait City (2)",
+        "description": "Per viaggi d'affari o di transito."
+      }
+    ],
+    "agentTips": [
+      "Serve un visto elettronico o all'arrivo: verifica la procedura.",
+      "Alcol vietato.",
+      "Il weekend è venerdì e sabato."
+    ]
+  },
+  "LB": {
+    "moreDescription": [
+      "Il Libano è piccolo ma densissimo: Beirut cosmopolita, Byblos tra le città abitate più antiche del mondo, i templi romani di Baalbek, la grotta di Jeita, la valle santa di Qadisha con i cedri e una delle migliori cucine del Mediterraneo. Il contesto di sicurezza è instabile: prima di proporre il viaggio verifica sempre viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Beirut e costa (Byblos, Jeita)",
+        "description": "Beirut con il museo nazionale, il quartiere di Gemmayze e la Corniche; Byblos con il porto antico; la grotta di Jeita.",
+        "highlights": [
+          "Museo nazionale",
+          "Gemmayze",
+          "Corniche",
+          "Byblos",
+          "Jeita"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; verificare la situazione di sicurezza."
+      },
+      {
+        "name": "Valle della Beqaa (Baalbek, Anjar)",
+        "description": "I templi romani di Baalbek, la città omayyade di Anjar e le cantine della Beqaa.",
+        "highlights": [
+          "Baalbek",
+          "Anjar",
+          "Cantine Ksara"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno; zona spesso sconsigliata: verificare."
+      },
+      {
+        "name": "Nord (Qadisha, Cedri)",
+        "description": "La valle santa con monasteri rupestri e la foresta dei Cedri di Dio.",
+        "highlights": [
+          "Valle di Qadisha",
+          "Cedri di Dio",
+          "Bsharri"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre; sci in inverno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Mezze libanesi",
+        "description": "Pranzo lungo con hummus, tabbouleh e vino della Beqaa."
+      },
+      {
+        "name": "Grotta di Jeita",
+        "description": "In barca nella grotta inferiore."
+      },
+      {
+        "name": "Trekking nella Qadisha",
+        "description": "Tra monasteri maroniti."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Libano classico",
+        "days": 6,
+        "route": "Beirut (3) → Byblos → Qadisha (1) → Baalbek (1)",
+        "description": "Solo se la situazione di sicurezza lo consente."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it: la situazione cambia rapidamente e alcune zone sono sconsigliate.",
+      "Chi ha timbri di Israele sul passaporto può essere respinto.",
+      "Il sistema bancario è in crisi: prevedi contanti in dollari o euro.",
+      "Valuta un'assicurazione che copra il paese."
+    ]
+  },
+  "PS": {
+    "moreDescription": [
+      "I Territori palestinesi comprendono luoghi fondamentali per i pellegrinaggi cristiani: Betlemme con la Basilica della Natività, Gerico, il monastero di San Giorgio nel deserto di Giuda, Hebron. Si visitano di solito in abbinamento a Gerusalemme e Israele. La situazione di sicurezza è molto delicata: prima di ogni proposta verifica viaggiaresicuri.it; la Striscia di Gaza è inaccessibile."
+    ],
+    "areas": [
+      {
+        "name": "Betlemme",
+        "description": "La Basilica della Natività, la Grotta del Latte, il Campo dei Pastori e il muro di separazione con i murales.",
+        "highlights": [
+          "Basilica della Natività",
+          "Grotta del Latte",
+          "Campo dei Pastori",
+          "Herodion"
+        ],
+        "seasons": "BBOOOBDDOOBO",
+        "seasonNote": "Primavera e autunno ideali; Natale molto richiesto; verificare la situazione."
+      },
+      {
+        "name": "Gerico e deserto di Giuda",
+        "description": "La città più bassa del mondo, il Monte delle Tentazioni e il monastero di San Giorgio di Koziba.",
+        "highlights": [
+          "Monte delle Tentazioni",
+          "San Giorgio di Koziba",
+          "Wadi Qelt",
+          "Palazzo di Hisham"
+        ],
+        "seasons": "OOOODXXXDOOO",
+        "seasonNote": "Da ottobre ad aprile; estate torrida."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Messa nella Basilica della Natività",
+        "description": "Tappa centrale dei pellegrinaggi."
+      },
+      {
+        "name": "Wadi Qelt",
+        "description": "Camminata nel deserto fino al monastero."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Pellegrinaggio in Terra Santa",
+        "days": 8,
+        "route": "Gerusalemme (3) → Betlemme (1) → Gerico e Mar Morto (1) → Galilea (2)",
+        "description": "Con guida autorizzata, solo se la situazione lo consente."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it: i check-point e la sicurezza cambiano spesso.",
+      "Gaza è inaccessibile ai turisti.",
+      "Le agenzie e guide palestinesi locali sono fondamentali per entrare a Betlemme e Gerico.",
+      "Si entra passando da Israele: valgono le regole d'ingresso israeliane."
+    ]
+  },
+  "IQ": {
+    "moreDescription": [
+      "L'Iraq è la culla della civiltà mesopotamica (Babilonia, Ur, Ninive) e ha luoghi sacri sciiti come Najaf e Karbala; il Kurdistan iracheno con Erbil è la parte più accessibile. La situazione di sicurezza resta complessa e gran parte del paese è sconsigliata: la scheda è informativa e va sempre verificata su viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Kurdistan iracheno (Erbil, Sulaymaniyah)",
+        "description": "La cittadella di Erbil, abitata da millenni, i bazar e le montagne curde.",
+        "highlights": [
+          "Cittadella di Erbil",
+          "Bazar",
+          "Montagne di Rawanduz"
+        ],
+        "seasons": "DDBOOBDDOOBD",
+        "seasonNote": "Primavera e autunno; verificare sempre la situazione."
+      },
+      {
+        "name": "Mesopotamia (Babilonia, Ur, paludi)",
+        "description": "Le rovine di Babilonia, la ziggurat di Ur e le paludi dei Ma'dan.",
+        "highlights": [
+          "Babilonia",
+          "Ziggurat di Ur",
+          "Paludi mesopotamiche"
+        ],
+        "seasons": "OOBDXXXXXDOO",
+        "seasonNote": "Da novembre a marzo; zone sconsigliate: verificare."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Cittadella di Erbil",
+        "description": "Patrimonio UNESCO nel Kurdistan."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it: gran parte del paese è sconsigliata.",
+      "Il visto per il Kurdistan e quello per l'Iraq federale hanno regole diverse.",
+      "Proponi solo con operatori locali specializzati e assicurazione adeguata."
+    ]
+  },
+  "IR": {
+    "moreDescription": [
+      "L'Iran custodisce l'eredità della Persia: Isfahan con la piazza Naqsh-e Jahan, Shiraz con la moschea rosa e i giardini, le rovine di Persepoli, la città del deserto di Yazd e Kashan con le sue case storiche. Il contesto politico e di sicurezza è delicato e la Farnesina sconsiglia i viaggi: verifica sempre viaggiaresicuri.it prima di qualsiasi proposta."
+    ],
+    "areas": [
+      {
+        "name": "Isfahan",
+        "description": "La piazza Naqsh-e Jahan con le moschee dell'Imam e di Lotfollah, i ponti sul fiume e il quartiere armeno.",
+        "highlights": [
+          "Naqsh-e Jahan",
+          "Moschea dell'Imam",
+          "Ponte Si-o-se Pol",
+          "Cattedrale di Vank"
+        ],
+        "seasons": "DDOOOBDDBOOD",
+        "seasonNote": "Primavera e autunno ideali; verificare la situazione."
+      },
+      {
+        "name": "Shiraz e Persepoli",
+        "description": "La moschea rosa Nasir al-Mulk, i giardini persiani, le tombe dei poeti, Persepoli e Naqsh-e Rostam.",
+        "highlights": [
+          "Nasir al-Mulk",
+          "Giardino di Eram",
+          "Persepoli",
+          "Naqsh-e Rostam"
+        ],
+        "seasons": "DDOOOBDDBOOD",
+        "seasonNote": "Primavera e autunno."
+      },
+      {
+        "name": "Yazd e Kashan",
+        "description": "Le torri del vento di Yazd, i templi zoroastriani, le case storiche e il giardino di Fin a Kashan.",
+        "highlights": [
+          "Yazd",
+          "Torri del vento",
+          "Tempio del fuoco",
+          "Kashan",
+          "Giardino di Fin"
+        ],
+        "seasons": "BBOOOBXXBOOB",
+        "seasonNote": "Primavera e autunno; estate torrida."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Luce della moschea rosa",
+        "description": "Al mattino presto a Shiraz."
+      },
+      {
+        "name": "Notte in una casa tradizionale",
+        "description": "Hotel nei cortili storici di Yazd o Kashan."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "La Farnesina sconsiglia attualmente i viaggi: verifica sempre viaggiaresicuri.it.",
+      "Carte di credito internazionali non funzionano.",
+      "Obbligo di velo per le donne in pubblico.",
+      "Molte assicurazioni escludono il paese."
+    ]
+  },
+  "SY": {
+    "areas": [
+      {
+        "name": "Damasco",
+        "description": "La città vecchia, la Moschea degli Omayyadi e il souk Hamidiyeh.",
+        "highlights": [
+          "Moschea degli Omayyadi",
+          "Souk Hamidiyeh",
+          "Città vecchia"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati."
+      },
+      {
+        "name": "Siti storici (Palmira, Krak, Aleppo, Bosra)",
+        "description": "Rovine e fortezze di epoche romana, crociata e islamica, in parte danneggiate dal conflitto.",
+        "highlights": [
+          "Palmira",
+          "Krak dei Cavalieri",
+          "Cittadella di Aleppo",
+          "Bosra"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Patrimonio da riscoprire",
+        "description": "Da proporre solo quando la situazione lo permetterà."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica sempre viaggiaresicuri.it.",
+      "Non ci sono coperture assicurative turistiche standard.",
+      "Indirizza eventuali viaggi di lavoro o umanitari a organizzazioni specializzate."
+    ]
+  },
+  "YE": {
+    "areas": [
+      {
+        "name": "Socotra",
+        "description": "Isola dall'ecosistema unico con alberi di sangue di drago, dune bianche e lagune.",
+        "highlights": [
+          "Alberi di sangue di drago",
+          "Altopiano di Diksam",
+          "Laguna di Detwah"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati; climaticamente il periodo migliore sarebbe ottobre–aprile."
+      },
+      {
+        "name": "Yemen continentale",
+        "description": "Sana'a, Shibam e il Wadi Hadramawt.",
+        "highlights": [
+          "Sana'a",
+          "Shibam",
+          "Wadi Hadramawt"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Natura di Socotra",
+        "description": "Solo con operatori specializzati e se la situazione lo permette."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica sempre viaggiaresicuri.it.",
+      "Le assicurazioni standard non coprono il paese.",
+      "Per Socotra i permessi e i voli cambiano spesso."
+    ]
+  },
+  "AF": {
+    "areas": [
+      {
+        "name": "Afghanistan centrale e ovest",
+        "description": "I laghi di Band-e Amir, la valle di Bamiyan, il minareto di Jam e Herat.",
+        "highlights": [
+          "Band-e Amir",
+          "Bamiyan",
+          "Minareto di Jam",
+          "Herat"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi fortemente sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi fortemente sconsigliati: verifica viaggiaresicuri.it.",
+      "Non proporre pacchetti turistici.",
+      "Per lavoro o cooperazione indirizza a organizzazioni specializzate."
+    ]
+  },
+  "KZ": {
+    "moreDescription": [
+      "Il Kazakistan è il paese più grande dell'Asia centrale, con montagne del Tien Shan, laghi alpini, canyon e steppe sconfinate. Almaty è la base per la natura (Charyn, Kolsai, Kaindy, Big Almaty Lake); Astana è la capitale futuristica; nel sud c'è la Via della Seta con Turkistan. Il periodo migliore va da maggio a settembre; d'inverno sci a Shymbulak vicino ad Almaty."
+    ],
+    "morePlaces": [
+      {
+        "name": "Laghi di Kolsai",
+        "description": "Tre laghi alpini tra foreste di abeti.",
+        "search": "Kolsai Lakes"
+      },
+      {
+        "name": "Shymbulak",
+        "description": "Stazione sciistica a 30 minuti da Almaty.",
+        "search": "Shymbulak"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Almaty e Tien Shan",
+        "description": "Almaty con il bazar verde e la funivia di Kok-Tobe; montagne con il Big Almaty Lake, i laghi Kolsai e Kaindy, il canyon di Charyn.",
+        "highlights": [
+          "Almaty",
+          "Big Almaty Lake",
+          "Charyn",
+          "Kolsai",
+          "Kaindy",
+          "Shymbulak"
+        ],
+        "seasons": "BBDBOOOOOBDB",
+        "seasonNote": "Da maggio a settembre per la natura; sci da dicembre a marzo."
+      },
+      {
+        "name": "Astana",
+        "description": "La capitale con architetture avveniristiche come la torre Baiterek e la piramide della Pace.",
+        "highlights": [
+          "Baiterek",
+          "Khan Shatyr",
+          "Palazzo della Pace"
+        ],
+        "seasons": "XXDBOOOOBDXX",
+        "seasonNote": "Da maggio a settembre; inverno tra i più freddi del mondo."
+      },
+      {
+        "name": "Sud e Via della Seta (Turkistan, Shymkent)",
+        "description": "Il mausoleo di Khoja Ahmed Yasawi UNESCO e le città carovaniere.",
+        "highlights": [
+          "Mausoleo di Yasawi",
+          "Otrar",
+          "Sauran"
+        ],
+        "seasons": "DDOOOBDDOOBD",
+        "seasonNote": "Primavera e autunno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Canyon di Charyn",
+        "description": "La 'Valle dei Castelli', escursione da Almaty."
+      },
+      {
+        "name": "Lago Kaindy",
+        "description": "Il lago con gli alberi sommersi."
+      },
+      {
+        "name": "Notte in yurta",
+        "description": "Nelle steppe o vicino ai laghi."
+      },
+      {
+        "name": "Sci a Shymbulak",
+        "description": "Neve e sole a un passo dalla città."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Natura del Kazakistan",
+        "days": 7,
+        "route": "Almaty (3) → Charyn → Kolsai e Kaindy (2) → Almaty (1)",
+        "description": "Da maggio a settembre."
+      },
+      {
+        "title": "Asia centrale",
+        "days": 12,
+        "route": "Almaty (3) → Kirghizistan, Issyk-Kul (3) → Bishkek (1) → Uzbekistan (4)",
+        "description": "Tra montagne e Via della Seta."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Distanze enormi: voli interni tra Almaty e Astana.",
+      "Verifica le regole di registrazione per soggiorni lunghi."
+    ]
+  },
+  "KG": {
+    "moreDescription": [
+      "Il Kirghizistan è il paese delle montagne e della cultura nomade: laghi alpini come Issyk-Kul e Song-Kul, pascoli estivi con le yurte, cavalli, aquile da caccia e trekking tra i più belli dell'Asia. È la meta ideale per viaggiatori avventurosi. La stagione va da giugno a settembre; d'inverno molte zone sono inaccessibili."
+    ],
+    "areas": [
+      {
+        "name": "Issyk-Kul",
+        "description": "Il grande lago salato tra le montagne, con Karakol, il canyon Skazka, le rocce rosse di Jeti-Oguz e i petroglifi di Cholpon-Ata.",
+        "highlights": [
+          "Karakol",
+          "Jeti-Oguz",
+          "Canyon Skazka",
+          "Cholpon-Ata",
+          "Altyn-Arashan"
+        ],
+        "seasons": "XXXDBOOOODXX",
+        "seasonNote": "Da giugno a settembre; luglio–agosto per il bagno nel lago."
+      },
+      {
+        "name": "Song-Kul e montagne centrali",
+        "description": "Il lago d'altura a 3.000 metri con i pastori nomadi e le yurte, il caravanserraglio di Tash Rabat.",
+        "highlights": [
+          "Song-Kul",
+          "Yurte",
+          "Tash Rabat",
+          "Kochkor"
+        ],
+        "seasons": "XXXXXOOODXXX",
+        "seasonNote": "Da fine giugno a inizio settembre."
+      },
+      {
+        "name": "Bishkek e Ala Archa",
+        "description": "La capitale con il bazar Osh e il parco nazionale di Ala Archa a un'ora.",
+        "highlights": [
+          "Bazar Osh",
+          "Ala Archa",
+          "Burana"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Notte in yurta a Song-Kul",
+        "description": "Con famiglie di pastori, a cavallo."
+      },
+      {
+        "name": "Festival dei giochi nomadi",
+        "description": "Spettacoli di cavalieri e aquile d'estate."
+      },
+      {
+        "name": "Trekking ad Ala-Kul",
+        "description": "Uno dei più bei laghi glaciali, da Karakol."
+      },
+      {
+        "name": "Caccia con l'aquila",
+        "description": "Dimostrazioni dei cacciatori tradizionali."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Kirghizistan nomade",
+        "days": 10,
+        "route": "Bishkek (1) → Issyk-Kul sud (2) → Karakol (2) → Kochkor → Song-Kul (2) → Bishkek (1)",
+        "description": "Laghi e yurte, da giugno a settembre."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Strade di montagna lente e sterrate: autista e 4x4 consigliati.",
+      "Alloggi spartani in yurta: informa il cliente.",
+      "Si abbina bene a Kazakistan e Uzbekistan."
+    ]
+  },
+  "TJ": {
+    "moreDescription": [
+      "Il Tagikistan è il paese del Pamir, il 'tetto del mondo': la Pamir Highway, una delle strade più alte e spettacolari del pianeta, la valle del Wakhan al confine con l'Afghanistan, i laghi Iskanderkul e i Sette Laghi. È una destinazione per viaggiatori avventurosi, da giugno a settembre."
+    ],
+    "areas": [
+      {
+        "name": "Dušanbe e monti Fann",
+        "description": "La capitale e i monti Fann con il lago Iskanderkul e i Sette Laghi di Marguzor.",
+        "highlights": [
+          "Dušanbe",
+          "Iskanderkul",
+          "Sette Laghi",
+          "Penjikent"
+        ],
+        "seasons": "XXDBOOOOOBDX",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Pamir (Pamir Highway, Wakhan)",
+        "description": "La strada M41 tra altipiani oltre i 4.000 metri, la valle del Wakhan con fortezze e terme, il lago Karakul.",
+        "highlights": [
+          "Pamir Highway",
+          "Khorog",
+          "Valle del Wakhan",
+          "Lago Karakul",
+          "Murghab"
+        ],
+        "seasons": "XXXXXOOOOXXX",
+        "seasonNote": "Da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Pamir Highway in 4x4",
+        "description": "Viaggio di più giorni con homestay."
+      },
+      {
+        "name": "Trekking ai Sette Laghi",
+        "description": "Laghi turchesi nei monti Fann."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Pamir Highway",
+        "days": 12,
+        "route": "Dušanbe (1) → Khorog (2) → Wakhan (3) → Murghab (1) → Karakul → Osh in Kirghizistan (1)",
+        "description": "Spedizione in 4x4, da giugno a settembre."
+      }
+    ],
+    "agentTips": [
+      "Serve un e-visa e, per il Pamir, il permesso speciale GBAO.",
+      "Alta quota e strutture semplici: valuta condizioni fisiche del cliente.",
+      "Verifica viaggiaresicuri.it per le zone di confine con l'Afghanistan."
+    ]
+  },
+  "TM": {
+    "moreDescription": [
+      "Il Turkmenistan è uno dei paesi più chiusi al mondo: Ashgabat con i palazzi di marmo bianco, il cratere di gas in fiamme di Darvaza, le città antiche di Merv, Nisa e Kunya-Urgench sulla Via della Seta. Il visto richiede una lettera d'invito e un tour con agenzia locale. Periodo migliore aprile–maggio e settembre–ottobre."
+    ],
+    "areas": [
+      {
+        "name": "Ashgabat e Nisa",
+        "description": "La capitale di marmo bianco e la fortezza partica di Nisa.",
+        "highlights": [
+          "Ashgabat",
+          "Nisa",
+          "Grotta di Kov-Ata"
+        ],
+        "seasons": "DDOOOBXXOOBD",
+        "seasonNote": "Primavera e autunno; estate torrida."
+      },
+      {
+        "name": "Deserto del Karakum (Darvaza)",
+        "description": "Il cratere di gas che brucia da decenni, da vedere di notte con campeggio.",
+        "highlights": [
+          "Cratere di Darvaza"
+        ],
+        "seasons": "DDOOOBXXOOBD",
+        "seasonNote": "Primavera e autunno."
+      },
+      {
+        "name": "Merv e Kunya-Urgench",
+        "description": "Città della Via della Seta patrimonio UNESCO.",
+        "highlights": [
+          "Merv",
+          "Kunya-Urgench"
+        ],
+        "seasons": "DDOOOBXXOOBD",
+        "seasonNote": "Primavera e autunno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Notte al cratere di Darvaza",
+        "description": "Campeggio vicino alla 'Porta dell'Inferno'."
+      },
+      {
+        "name": "Antica Merv",
+        "description": "Una delle grandi città della Via della Seta."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Turkmenistan e Uzbekistan",
+        "days": 10,
+        "route": "Ashgabat (2) → Darvaza (1) → Kunya-Urgench → Khiva (2) → Bukhara (2) → Samarcanda (2)",
+        "description": "La Via della Seta tra due paesi."
+      }
+    ],
+    "agentTips": [
+      "Il visto richiede una lettera d'invito tramite agenzia locale: tempi lunghi.",
+      "Libertà di movimento limitata e internet fortemente controllato.",
+      "Verifica viaggiaresicuri.it e le regole di registrazione."
+    ]
+  }
+}

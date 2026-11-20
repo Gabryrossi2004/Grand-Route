@@ -46,6 +46,7 @@ export default function CountrySheetEditor({ draft, onChange }: { draft: Country
         <ListField title="Come muoversi" value={draft.gettingAround} onChange={(v) => set({ gettingAround: v })} />
         <ListField title="Da assaggiare" value={draft.food} onChange={(v) => set({ food: v })} />
         <ListField title="Consigli pratici" value={draft.tips} onChange={(v) => set({ tips: v })} />
+        <ListField title="Consigli per l'agente" value={draft.agentTips ?? []} onChange={(v) => set({ agentTips: v })} />
       </section>
 
       <section className="flex flex-col gap-4">

@@ -1,0 +1,583 @@
+{
+  "JP": {
+    "moreDescription": [
+      "Per vendere bene il Giappone bisogna conoscerne il ritmo: tutto è puntuale, pulito e sicuro, ma le distanze si coprono quasi sempre in treno e gli hotel di città hanno camere piccole. L'esperienza che i clienti ricordano di più è spesso la notte in ryokan, la locanda tradizionale con tatami, futon, bagni termali (onsen) e cena kaiseki in più portate. Le regole di cortesia contano: niente mance, scarpe tolte negli ambienti tradizionali, silenzio sui mezzi pubblici, tatuaggi spesso non ammessi negli onsen pubblici."
+    ],
+    "morePlaces": [
+      { "name": "Arashiyama", "description": "Boschetto di bambù, templi zen e il ponte Togetsukyo alla periferia di Kyoto.", "search": "Arashiyama" },
+      { "name": "Nara", "description": "Il Grande Buddha del Todai-ji e il parco con i cervi liberi, a 45 minuti da Kyoto.", "search": "Tōdai-ji" },
+      { "name": "Hakone", "description": "Onsen, lago Ashi e, nelle giornate limpide, vista sul Fuji a un'ora e mezza da Tokyo.", "search": "Hakone" },
+      { "name": "Kanazawa", "description": "Il giardino Kenroku-en, il quartiere delle geishe e il mercato del pesce sul Mar del Giappone.", "search": "Kenroku-en" },
+      { "name": "Monte Koya", "description": "Monastero buddhista sulla montagna dove si dorme nei templi (shukubo) con cena vegetariana.", "search": "Kōyasan" }
+    ],
+    "bestPeriod": "Fine marzo–metà maggio (ciliegi e primavera) e metà ottobre–novembre (foliage) per Honshu; giugno è la stagione delle piogge, luglio–agosto caldo umido e tifoni possibili fino a settembre; Hokkaido è ideale d'inverno per la neve e a luglio per la lavanda",
+    "areas": [
+      { "name": "Tokyo e dintorni (Kamakura, Nikko, Hakone, Fuji)", "description": "La capitale è un insieme di quartieri molto diversi: Asakusa tradizionale, Shibuya e Shinjuku delle luci, Ginza elegante, Harajuku giovane. In giornata si raggiungono Kamakura con il Grande Buddha, Nikko con i santuari nel bosco e Hakone per onsen e vista sul Fuji.", "highlights": ["Asakusa e Senso-ji", "Shibuya Crossing", "Santuario Meiji", "teamLab", "Kamakura", "Nikko", "Hakone"], "seasons": "BBBOODDDDOOB", "seasonNote": "Primavera e autunno ideali; inverno freddo ma limpido; giugno piovoso, luglio–agosto caldi e umidi, settembre con rischio tifoni." },
+      { "name": "Kyoto, Nara e Osaka (Kansai)", "description": "Kyoto è il cuore del Giappone classico, con oltre mille templi, il quartiere di Gion e i giardini zen; Nara conserva i templi più antichi e i cervi; Osaka è la capitale del cibo di strada e della vita notturna, base comoda anche per Kobe e Himeji.", "highlights": ["Fushimi Inari", "Kinkaku-ji", "Gion", "Arashiyama", "Nara", "Dotonbori", "Castello di Himeji"], "seasons": "BBBOODDDDOOB", "seasonNote": "Clima come Tokyo; i periodi dei ciliegi (inizio aprile) e del foliage (seconda metà di novembre) sono i più belli e i più affollati." },
+      { "name": "Hiroshima, Miyajima e il Mare Interno", "description": "Hiroshima con il Memoriale della Pace è una tappa toccante; l'isola di Miyajima con il torii nell'acqua è tra le immagini più famose del paese. Nel Mare Interno, Naoshima è l'isola dell'arte contemporanea.", "highlights": ["Parco del Memoriale della Pace", "Itsukushima", "Naoshima", "Okayama e il giardino Korakuen"], "seasons": "BBBOODDDDOOB", "seasonNote": "Come il resto di Honshu; da Kyoto o Osaka si arriva in 1–2 ore di shinkansen." },
+      { "name": "Alpi giapponesi (Takayama, Shirakawa-go, Kanazawa, Matsumoto)", "description": "Il Giappone rurale: case con i tetti di paglia a Shirakawa-go, il centro storico in legno di Takayama, il castello nero di Matsumoto, i giardini di Kanazawa. In inverno la neve e le illuminazioni serali creano scenari da fiaba.", "highlights": ["Shirakawa-go", "Takayama", "Kanazawa", "Castello di Matsumoto", "Kamikochi"], "seasons": "BBDOODBBBOOB", "seasonNote": "Primavera e autunno splendidi; estate fresca e piacevole; inverno nevoso, bello ma con possibili disagi sulle strade." },
+      { "name": "Hokkaido", "description": "L'isola del nord: neve polverosa per lo sci a Niseko e Furano, il festival della neve di Sapporo a febbraio, campi di lavanda e fiori a luglio, natura e laghi vulcanici. Ideale per chi è già stato a Tokyo e Kyoto.", "highlights": ["Niseko", "Sapporo", "Furano e Biei", "Otaru", "Parco di Shiretoko"], "seasons": "OOODDBOOOBDO", "seasonNote": "Inverno ottimo per neve e sci; luglio–agosto fresco con i fiori; aprile–maggio poco attraente per il disgelo." },
+      { "name": "Okinawa", "description": "Le isole subtropicali del sud: spiagge bianche, coralli, cultura del regno di Ryukyu e una cucina tutta sua. Perfette come estensione mare di un tour culturale.", "highlights": ["Naha e il castello di Shuri", "Isole Kerama", "Ishigaki", "Miyako"], "seasons": "BBBODBBDDBBB", "seasonNote": "Mare da aprile a ottobre; stagione delle piogge a maggio–giugno, tifoni possibili tra agosto e settembre." }
+    ],
+    "experiences": [
+      { "name": "Notte in ryokan con onsen", "description": "Locanda tradizionale con cena kaiseki e bagni termali: a Hakone, Kyoto o nelle Alpi. Da inserire almeno una notte in ogni viaggio." },
+      { "name": "Cerimonia del tè e kimono a Kyoto", "description": "Esperienza privata in una casa da tè di Gion, anche con vestizione in kimono per una passeggiata fotografica." },
+      { "name": "Viaggio in shinkansen", "description": "Il treno proiettile collega Tokyo, Kyoto, Osaka e Hiroshima: puntuale e comodo, è parte dell'esperienza." },
+      { "name": "Hanami sotto i ciliegi", "description": "Pic-nic e passeggiate nei parchi fioriti tra fine marzo e inizio aprile; le date cambiano ogni anno e si seguono le previsioni di fioritura." },
+      { "name": "Notte in un tempio sul Monte Koya", "description": "Si dorme in un monastero, si cena con la cucina vegetariana dei monaci e si partecipa alla preghiera all'alba." },
+      { "name": "Food tour a Osaka o Tokyo", "description": "Ramen, sushi, takoyaki e izakaya con una guida locale: il modo migliore per capire la cucina giapponese." },
+      { "name": "Torneo di sumo", "description": "Sei tornei l'anno: Tokyo a gennaio, maggio e settembre, Osaka a marzo, Nagoya a luglio, Fukuoka a novembre; i biglietti vanno presi presto." },
+      { "name": "Arte a Naoshima", "description": "Isola-museo con opere di Tadao Ando, Yayoi Kusama e Monet: gita in giornata da Okayama o una notte sull'isola." },
+      { "name": "Sci a Niseko o Hakuba", "description": "Neve leggerissima da dicembre a marzo, con onsen e cucina giapponese dopo le piste." }
+    ],
+    "itineraries": [
+      { "title": "Il classico per la prima volta", "days": 13, "route": "Tokyo (4) → Hakone (1) → Kyoto (4) → Hiroshima e Miyajima (1) → Osaka (2)", "description": "L'itinerario più venduto: metropoli, ryokan con vista Fuji, il Giappone dei templi, la memoria di Hiroshima e il cibo di Osaka. Nara si fa in giornata da Kyoto." },
+      { "title": "Alpi e tradizioni", "days": 11, "route": "Tokyo (3) → Matsumoto (1) → Takayama (2) → Shirakawa-go → Kanazawa (2) → Kyoto (3)", "description": "Per chi vuole il Giappone rurale e meno affollato, con il trasferimento dei bagagli tra gli hotel e una notte in ryokan." },
+      { "title": "Giappone e mare", "days": 15, "route": "Tokyo (4) → Kyoto (4) → Osaka (2) → Okinawa (4)", "description": "Tour culturale con estensione mare a Okinawa, ideale da aprile a ottobre e per i viaggi di nozze." }
+    ],
+    "agentTips": [
+      "Le date dei ciliegi e del foliage cambiano ogni anno di una o due settimane: prenota con largo anticipo ma avvisa il cliente che la fioritura non è garantita.",
+      "Evita, se puoi, la Golden Week (29 aprile–5 maggio), l'Obon a metà agosto e il Capodanno: treni pieni e prezzi alti.",
+      "Il Japan Rail Pass dal 2023 costa molto di più: conviene solo per itinerari lunghi; spesso i biglietti singoli o i pass regionali costano meno.",
+      "Proponi il trasporto dei bagagli tra gli hotel (takkyubin): il cliente viaggia in treno con un bagaglio piccolo.",
+      "Le camere degli hotel di città sono piccole: per coppie e famiglie verifica i metri quadri o proponi camere superiori.",
+      "Ricorda al cliente la registrazione online Visit Japan Web prima della partenza e che il contante serve ancora in molti locali e templi."
+    ]
+  },
+  "TH": {
+    "moreDescription": [
+      "La chiave per vendere la Thailandia è il clima, che cambia molto tra le due coste. Il mare delle Andamane (Phuket, Krabi, Phi Phi, Khao Lak, Koh Lanta) è perfetto da novembre ad aprile e sconsigliato da giugno a ottobre per il monsone di sud-ovest, con mare mosso e alcune isole chiuse. Il Golfo del Siam (Koh Samui, Koh Phangan, Koh Tao) segue il calendario opposto: è la scelta giusta per luglio e agosto, mentre tra ottobre e dicembre piove molto. Bangkok e il nord si visitano tutto l'anno, ma il periodo più gradevole è da novembre a febbraio."
+    ],
+    "morePlaces": [
+      { "name": "Parco nazionale di Khao Sok", "description": "Foresta pluviale con il lago Cheow Lan e bungalow galleggianti, a metà strada tra Phuket e Koh Samui.", "search": "Parco nazionale di Khao Sok" },
+      { "name": "Baia di Phang Nga", "description": "Faraglioni calcarei nel mare, l'isola di James Bond e grotte da esplorare in kayak.", "search": "Baia di Phang Nga" },
+      { "name": "Sukhothai", "description": "La prima capitale del Siam, un parco storico di templi e Buddha tra laghetti di loto.", "search": "Sukhothai (parco storico)" },
+      { "name": "Koh Samui", "description": "L'isola più completa del Golfo, con resort di ogni livello, spiagge e il Big Buddha.", "search": "Ko Samui" }
+    ],
+    "bestPeriod": "Novembre–febbraio per Bangkok, il nord e il mare delle Andamane (Phuket, Krabi, Phi Phi: ottimi fino ad aprile); il Golfo del Siam (Koh Samui, Phangan, Tao) è la scelta per l'estate (febbraio–settembre), mentre da ottobre a dicembre lì piove molto",
+    "areas": [
+      { "name": "Bangkok e dintorni (Ayutthaya, mercati galleggianti, Kanchanaburi)", "description": "La capitale unisce i templi dorati del Grande Palazzo, di Wat Pho e Wat Arun ai grattacieli, ai rooftop bar e ai mercati notturni. In giornata si visitano l'antica capitale Ayutthaya, il mercato galleggiante di Damnoen Saduak e Kanchanaburi con il ponte sul fiume Kwai.", "highlights": ["Grande Palazzo Reale", "Wat Pho", "Wat Arun", "Chinatown", "Ayutthaya", "Mercato galleggiante", "Kanchanaburi"], "seasons": "OOBDDDDDDBOO", "seasonNote": "Novembre–febbraio fresco e secco; marzo–maggio molto caldo; da giugno a ottobre acquazzoni nel pomeriggio, la città resta visitabile." },
+      { "name": "Nord (Chiang Mai, Chiang Rai, Triangolo d'Oro, Pai)", "description": "Montagne verdi, templi in stile Lanna, villaggi delle etnie di collina, santuari degli elefanti e la cucina del nord. Chiang Rai ha il Tempio Bianco e il Tempio Blu; il Triangolo d'Oro è il punto d'incontro con Laos e Myanmar.", "highlights": ["Città vecchia di Chiang Mai", "Doi Suthep", "Tempio Bianco", "Triangolo d'Oro", "Pai", "Santuari etici degli elefanti"], "seasons": "OOXDDDDDDBOO", "seasonNote": "Novembre–febbraio ideale; tra marzo e aprile l'aria è spesso fumosa per gli incendi agricoli; la stagione delle piogge rende tutto verde ma bagnato." },
+      { "name": "Mare delle Andamane (Phuket, Krabi, Phi Phi, Khao Lak, Koh Lanta)", "description": "La costa ovest con le spiagge più famose: faraglioni di Krabi e Railay, le Phi Phi, la baia di Phang Nga, Khao Lak per famiglie e le isole Similan per lo snorkeling. Grande scelta di resort, dal villaggio per famiglie al lusso.", "highlights": ["Railay e Ao Nang", "Isole Phi Phi", "Baia di Phang Nga", "Khao Lak", "Koh Lanta", "Isole Similan"], "seasons": "OOOBDXXXXXBO", "seasonNote": "Perfetto da novembre ad aprile; da giugno a ottobre il monsone porta mare mosso e piogge, le Similan sono chiuse da metà maggio a metà ottobre." },
+      { "name": "Golfo del Siam (Koh Samui, Koh Phangan, Koh Tao)", "description": "Le isole della costa est: Samui con resort eleganti e spiagge comode, Phangan con baie tranquille e la Full Moon Party, Tao per immersioni e snorkeling. Si raggiungono in volo diretto a Samui o in traghetto.", "highlights": ["Chaweng e Lamai", "Big Buddha", "Ang Thong Marine Park", "Koh Phangan", "Koh Tao", "Koh Nang Yuan"], "seasons": "BOOOOOOOBDXD", "seasonNote": "La meta mare per l'estate: buono da febbraio a settembre; da ottobre a dicembre il monsone di nord-est porta piogge forti, specie a novembre." },
+      { "name": "Hua Hin e Koh Samet (vicino a Bangkok)", "description": "Mare a poche ore dalla capitale: Hua Hin è la località balneare della famiglia reale, con campi da golf e resort per famiglie; Koh Samet è un'isola piccola e asciutta, ideale per due o tre notti.", "highlights": ["Hua Hin", "Khao Sam Roi Yot", "Koh Samet"], "seasons": "OOOBBBBBDDBO", "seasonNote": "Zona tra le più asciutte del paese: si vende quasi tutto l'anno, con più pioggia tra settembre e novembre." }
+    ],
+    "experiences": [
+      { "name": "Corso di cucina thai", "description": "A Bangkok o Chiang Mai, con visita al mercato e preparazione di curry, pad thai e zuppe: piace a tutti, anche alle famiglie." },
+      { "name": "Santuario etico degli elefanti", "description": "Si nutrono e si accompagnano gli elefanti senza cavalcarli: scegliere solo strutture che non fanno spettacoli né passeggiate in groppa." },
+      { "name": "Kayak nella baia di Phang Nga", "description": "Tra faraglioni e grotte marine, con sosta all'isola di James Bond; meglio con partenza all'alba per evitare la folla." },
+      { "name": "Isole Phi Phi in barca privata", "description": "Giornata in long-tail o motoscafo con snorkeling e Maya Bay (chiusa ogni anno in genere tra agosto e settembre)." },
+      { "name": "Loy Krathong e Yi Peng", "description": "A novembre, con la luna piena, lanterne sul fiume e in cielo: Chiang Mai offre lo spettacolo più bello." },
+      { "name": "Songkran", "description": "Il Capodanno thailandese (13–15 aprile) è una festa dell'acqua in tutto il paese: divertente, ma da segnalare al cliente." },
+      { "name": "Notte nei bungalow galleggianti di Khao Sok", "description": "Sul lago Cheow Lan, tra foresta e faraglioni, con escursioni in canoa e nella giungla." },
+      { "name": "Immersioni a Koh Tao", "description": "Uno dei posti più convenienti al mondo per prendere il brevetto, con squali balena in alcuni periodi." },
+      { "name": "Massaggio thai a Wat Pho", "description": "La scuola di massaggio del tempio è la più antica del paese." },
+      { "name": "Mercati notturni e rooftop di Bangkok", "description": "Dal mercato di Chinatown ai bar sui grattacieli con vista sul fiume." }
+    ],
+    "itineraries": [
+      { "title": "Classico inverno (novembre–aprile)", "days": 14, "route": "Bangkok (3) → Chiang Mai (3) → Chiang Rai (1) → Krabi o Phuket (6)", "description": "Templi, nord e mare delle Andamane nel periodo migliore: il pacchetto più richiesto per viaggi di nozze e prime volte in Asia." },
+      { "title": "Estate al mare giusto (giugno–settembre)", "days": 13, "route": "Bangkok (3) → Ayutthaya (1) → Chiang Mai (2) → Koh Samui (7)", "description": "In estate il mare va venduto nel Golfo: Samui come base, con escursioni a Phangan, Tao e al parco marino di Ang Thong." },
+      { "title": "Natura e isole", "days": 12, "route": "Bangkok (2) → Khao Sok (2) → Koh Yao Noi o Railay (3) → Koh Lanta (4)", "description": "Per coppie e viaggiatori che vogliono meno folla: foresta pluviale, faraglioni e isole tranquille, da dicembre ad aprile." }
+    ],
+    "agentTips": [
+      "Non vendere il mare delle Andamane in luglio–agosto né Samui in novembre: è l'errore più frequente e il cliente lo ricorda.",
+      "Natale, Capodanno e Capodanno cinese sono il picco dei prezzi: molti resort chiedono soggiorni minimi e cene di gala obbligatorie.",
+      "Per l'ingresso verifica le regole aggiornate: esenzione dal visto per brevi soggiorni turistici e Thailand Digital Arrival Card da compilare online prima dell'arrivo.",
+      "Proponi solo santuari degli elefanti etici: è una domanda sempre più frequente dei clienti e un tema di reputazione per l'agenzia.",
+      "Nei templi servono spalle e ginocchia coperte; al Grande Palazzo il controllo è rigoroso.",
+      "Per le isole conta la logistica: Samui ha l'aeroporto, Phangan e Tao solo traghetti; Phi Phi e Lanta si raggiungono in barca da Phuket o Krabi."
+    ]
+  },
+  "VN": {
+    "moreDescription": [
+      "Il Vietnam è lungo oltre 1.600 chilometri e ha tre climi diversi: il nord ha un inverno fresco e grigio (dicembre–febbraio) e un'estate calda e piovosa; il centro (Hue, Hoi An) è bellissimo da febbraio ad agosto ma soffre piogge, tifoni e alluvioni tra ottobre e dicembre; il sud è caldo tutto l'anno, secco da dicembre ad aprile. Per questo i mesi migliori per un viaggio da nord a sud sono marzo–aprile e fine settembre–novembre per il nord, con attenzione al centro in autunno."
+    ],
+    "morePlaces": [
+      { "name": "Ninh Binh e Trang An", "description": "La 'baia di Halong di terra': risaie e pinnacoli calcarei da scoprire in barca a remi.", "search": "Tràng An" },
+      { "name": "Passo Hai Van", "description": "Strada panoramica tra Hue e Da Nang, sulle montagne a picco sul mare.", "search": "Hải Vân Pass" },
+      { "name": "Ho Chi Minh City", "description": "La città più dinamica del paese, con il Palazzo della Riunificazione e i tunnel di Cu Chi.", "search": "Ho Chi Minh City" },
+      { "name": "Phu Quoc", "description": "L'isola del sud-ovest con spiagge e resort, perfetta per chiudere il viaggio d'inverno.", "search": "Phú Quốc" }
+    ],
+    "bestPeriod": "Marzo–aprile e fine settembre–novembre per il nord; febbraio–agosto per il centro (evitare ottobre–dicembre per piogge e tifoni); dicembre–aprile per il sud e Phu Quoc",
+    "areas": [
+      { "name": "Nord (Hanoi, Halong, Ninh Binh)", "description": "Hanoi con il quartiere vecchio e il lago Hoan Kiem, la crociera notturna nella baia di Halong o nella più tranquilla Lan Ha, le risaie e i fiumi di Ninh Binh tra pareti calcaree.", "highlights": ["Quartiere vecchio di Hanoi", "Baia di Halong", "Baia di Lan Ha", "Trang An", "Tam Coc"], "seasons": "DBOOBDDDBOOB", "seasonNote": "Primavera e autunno ideali; inverno fresco e spesso nebbioso; estate calda e piovosa, con tifoni che possono annullare le crociere tra luglio e settembre." },
+      { "name": "Montagne del nord (Sapa, Ha Giang)", "description": "Risaie a terrazze, villaggi delle minoranze Hmong e Dao, trekking e homestay. Ha Giang offre il percorso in moto più spettacolare del paese.", "highlights": ["Sapa", "Valle di Muong Hoa", "Ha Giang Loop", "Bac Ha (mercato della domenica)"], "seasons": "DDOOOBDDOOBD", "seasonNote": "Settembre–ottobre per le risaie dorate, marzo–maggio per il verde; inverno freddo, a volte con neve." },
+      { "name": "Centro (Hue, Hoi An, Da Nang)", "description": "L'antica capitale imperiale di Hue, Hoi An con le lanterne e i sarti, Da Nang con spiagge e il Ponte d'Oro sulle colline di Ba Na. Ottima zona per abbinare cultura e mare.", "highlights": ["Città imperiale di Hue", "Hoi An", "Spiaggia di An Bang", "Montagne di Marmo", "My Son"], "seasons": "BOOOOOOODXXD", "seasonNote": "Da febbraio ad agosto è la zona migliore del paese; tra ottobre e dicembre piogge intense, tifoni e alluvioni a Hoi An." },
+      { "name": "Sud (Ho Chi Minh City, Delta del Mekong)", "description": "Saigon con l'atmosfera coloniale e i tunnel di Cu Chi, il Delta del Mekong con mercati galleggianti, frutteti e homestay sui canali.", "highlights": ["Palazzo della Riunificazione", "Tunnel di Cu Chi", "Can Tho e il mercato di Cai Rang", "Ben Tre"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Secco da dicembre ad aprile; nella stagione delle piogge gli acquazzoni sono brevi e pomeridiani." },
+      { "name": "Isole del sud (Phu Quoc, Con Dao)", "description": "Phu Quoc ha resort di ogni livello e tramonti sul mare; Con Dao è più selvaggio, con tartarughe e parco nazionale.", "highlights": ["Phu Quoc", "Spiaggia di Sao", "Con Dao"], "seasons": "OOOOBXXXXDBO", "seasonNote": "Da novembre ad aprile mare calmo; da giugno a settembre monsone di sud-ovest con mare mosso." }
+    ],
+    "experiences": [
+      { "name": "Crociera di una notte nella baia di Halong o Lan Ha", "description": "Kayak tra i faraglioni, grotte e tramonto sul ponte; Lan Ha è più tranquilla e meno affollata." },
+      { "name": "Street food tour ad Hanoi", "description": "Pho, bun cha, banh mi e caffè all'uovo con una guida, la sera tra i vicoli del quartiere vecchio." },
+      { "name": "Vestito su misura a Hoi An", "description": "I sarti confezionano abiti e scarpe in 24–48 ore: va previsto almeno un giorno di margine." },
+      { "name": "Barca a remi a Trang An", "description": "Tra grotte e templi nel paesaggio di Ninh Binh, con bicicletta tra le risaie." },
+      { "name": "Trekking e homestay a Sapa", "description": "Tra le risaie con guide delle etnie locali, dormendo in casa di una famiglia." },
+      { "name": "Passo Hai Van in jeep o moto d'epoca", "description": "Il trasferimento tra Hue e Hoi An diventa un'escursione panoramica." },
+      { "name": "Delta del Mekong in barca", "description": "Mercato galleggiante all'alba, laboratori di caramelle di cocco e pranzo in giardino." },
+      { "name": "Grotte di Phong Nha", "description": "Paradise Cave e Dark Cave si visitano in giornata; per Son Doong servono spedizioni prenotate mesi prima." },
+      { "name": "Corso di cucina vietnamita a Hoi An", "description": "Con visita all'orto biologico di Tra Que o in barca-cesto tra le palme d'acqua." }
+    ],
+    "itineraries": [
+      { "title": "Da nord a sud", "days": 15, "route": "Hanoi (2) → Ninh Binh (1) → Halong (1 in crociera) → Hue (2) → Hoi An (3) → Ho Chi Minh City (2) → Delta del Mekong (1) → Phu Quoc (3)", "description": "Il classico completo, ideale tra marzo e aprile; tra ottobre e dicembre conviene accorciare il centro." },
+      { "title": "Vietnam e Cambogia", "days": 14, "route": "Hanoi (2) → Halong (1) → Hoi An (3) → Ho Chi Minh City (2) → Siem Reap (3)", "description": "Il combinato più venduto, con Angkor come gran finale." },
+      { "title": "Estate tra centro e nord", "days": 12, "route": "Hanoi (2) → Ninh Binh (2) → Hoi An (5) → Hue (2)", "description": "In luglio e agosto il centro è nella stagione migliore: cultura e mare a Hoi An e Da Nang." }
+    ],
+    "agentTips": [
+      "Spiega al cliente che nello stesso viaggio troverà climi diversi: d'inverno al nord servono maglione e giacca leggera.",
+      "Le crociere ad Halong possono essere annullate per i tifoni (luglio–settembre): prevedi un'alternativa e la clausola di rimborso.",
+      "Il Tet (Capodanno lunare, tra fine gennaio e febbraio) porta chiusure, voli pieni e prezzi alti.",
+      "Per gli italiani c'è l'esenzione dal visto per soggiorni brevi; verifica sempre la durata in vigore e, oltre quella, l'e-visa.",
+      "Ottimo rapporto qualità-prezzo: gli hotel boutique di Hoi An e Hanoi permettono upgrade importanti a costi contenuti.",
+      "I voli interni sono frequenti ed economici: con le distanze del paese sono quasi sempre la scelta giusta."
+    ]
+  },
+  "KH": {
+    "moreDescription": [
+      "La Cambogia si vende soprattutto per Angkor, ma vale qualche giorno in più: Phnom Penh racconta la storia recente del paese, la costa di Kep e Kampot è tranquilla e autentica, le isole di Koh Rong offrono spiagge bianche. Il clima è tropicale: secco e piacevole da novembre a febbraio, molto caldo tra marzo e maggio, piovoso da giugno a ottobre, quando però i templi sono verdi e quasi deserti."
+    ],
+    "morePlaces": [
+      { "name": "Beng Mealea", "description": "Tempio della giungla avvolto dalle radici, a un'ora da Siem Reap.", "search": "Beng Mealea" },
+      { "name": "Kampot e Kep", "description": "Cittadina coloniale sul fiume, piantagioni di pepe e il mercato dei granchi sul mare.", "search": "Kampot" },
+      { "name": "Koh Rong", "description": "Isole con spiagge bianche e plancton luminoso di notte.", "search": "Koh Rong" },
+      { "name": "Battambang", "description": "Città coloniale con il treno di bambù e il circo Phare.", "search": "Battambang" }
+    ],
+    "bestPeriod": "Novembre–febbraio (secco e meno caldo); marzo–maggio molto caldo; giugno–ottobre piovoso ma con templi verdi e pochi turisti",
+    "areas": [
+      { "name": "Siem Reap e i templi di Angkor", "description": "Il più grande complesso religioso del mondo: Angkor Wat, Bayon con i volti di pietra, Ta Prohm avvolto dalle radici, Banteay Srei con i bassorilievi rosa. Siem Reap è una cittadina piacevole con ottimi hotel.", "highlights": ["Angkor Wat all'alba", "Bayon", "Ta Prohm", "Banteay Srei", "Beng Mealea", "Kbal Spean"], "seasons": "OOBDDDDDDBOO", "seasonNote": "Novembre–febbraio ideale; da marzo a maggio fa molto caldo, si visita all'alba e al tramonto; nella stagione delle piogge i templi sono verdi e tranquilli." },
+      { "name": "Phnom Penh", "description": "La capitale sul Mekong: Palazzo Reale, Pagoda d'Argento, Museo Nazionale, il mercato centrale e i luoghi della memoria del regime dei Khmer rossi.", "highlights": ["Palazzo Reale e Pagoda d'Argento", "Museo Nazionale", "Tuol Sleng (S-21)", "Killing Fields di Choeung Ek", "Crociera al tramonto"], "seasons": "OOBDDDDDDBOO", "seasonNote": "Come Siem Reap; due notti bastano." },
+      { "name": "Costa e isole (Kep, Kampot, Koh Rong)", "description": "Ritmi lenti, cucina di mare, piantagioni di pepe e isole con spiagge bianche, da proporre come estensione di 3–4 notti.", "highlights": ["Kampot", "Kep e il mercato dei granchi", "Koh Rong", "Koh Rong Samloem", "Parco di Bokor"], "seasons": "OOOOBXXXXDBO", "seasonNote": "Da novembre ad aprile mare calmo; da giugno a ottobre piogge e mare mosso, alcune strutture chiudono." },
+      { "name": "Tonle Sap e Battambang", "description": "Il grande lago con i villaggi su palafitte e galleggianti, e Battambang con l'atmosfera coloniale e la campagna intorno.", "highlights": ["Kompong Phluk", "Battambang", "Treno di bambù", "Phnom Sampeau"], "seasons": "BBDDDDBOOOOB", "seasonNote": "I villaggi sull'acqua sono più belli con il lago pieno, da agosto a dicembre; in secca (marzo–maggio) l'acqua è bassa." }
+    ],
+    "experiences": [
+      { "name": "Alba ad Angkor Wat", "description": "Il riflesso del tempio nello specchio d'acqua all'alba: momento più famoso del viaggio, va organizzato con guida e partenza alle 4:30." },
+      { "name": "Templi in bicicletta o tuk-tuk", "description": "Il circuito minore e quello grande con guida, fermandosi nei templi meno affollati." },
+      { "name": "Spettacolo del circo Phare", "description": "Acrobati e artisti formati da una scuola sociale: serata emozionante a Siem Reap." },
+      { "name": "Danze apsara con cena", "description": "Spettacolo di danza classica khmer in uno dei ristoranti di Siem Reap." },
+      { "name": "Villaggi galleggianti del Tonle Sap", "description": "Escursione in barca tra case su palafitte e foreste allagate." },
+      { "name": "Piantagione di pepe a Kampot", "description": "Visita con degustazione del famoso pepe di Kampot e granchi al pepe a Kep." },
+      { "name": "Snorkeling e plancton luminoso a Koh Rong", "description": "Giornate tra spiagge bianche e nuotate notturne tra il plancton." },
+      { "name": "Memoria a Phnom Penh", "description": "Tuol Sleng e Choeung Ek con una guida: visita intensa, da proporre con sensibilità." }
+    ],
+    "itineraries": [
+      { "title": "Angkor e Phnom Penh", "days": 6, "route": "Phnom Penh (2) → Siem Reap (4)", "description": "La Cambogia essenziale, perfetta in combinazione con Vietnam o Thailandia." },
+      { "title": "Cambogia completa", "days": 12, "route": "Phnom Penh (2) → Kampot e Kep (2) → Koh Rong (3) → Battambang (1) → Siem Reap (4)", "description": "Storia, costa, isole e Angkor, da novembre ad aprile." }
+    ],
+    "agentTips": [
+      "Il pass di Angkor è da 1, 3 o 7 giorni: per una visita completa servono almeno due giorni pieni.",
+      "Nei templi più sacri (come la parte alta di Angkor Wat) servono spalle e ginocchia coperte.",
+      "Il dollaro statunitense è usato ovunque: consiglia banconote nuove e di piccolo taglio.",
+      "Il visto si ottiene online (e-visa) o all'arrivo: verifica le regole e la validità del passaporto.",
+      "La Cambogia funziona benissimo come estensione di 3–4 notti di un viaggio in Vietnam, Thailandia o Laos."
+    ]
+  },
+  "ID": {
+    "moreDescription": [
+      "L'Indonesia è il più grande arcipelago del mondo e per il mercato italiano significa soprattutto Bali, spesso abbinata a Giava, alle isole Gili e a Lombok, e per i più esperti a Komodo, Flores, Sulawesi o Raja Ampat. La stagione secca va da aprile a ottobre nella maggior parte delle isole: è il periodo migliore, con luglio e agosto in alta stagione. Da novembre a marzo piove più spesso, in genere con temporali brevi: si può vendere con prezzi migliori, avvisando il cliente. Fa eccezione Raja Ampat, con il mare più calmo da ottobre ad aprile."
+    ],
+    "morePlaces": [
+      { "name": "Ubud", "description": "Il cuore culturale di Bali tra risaie, templi, yoga e artigianato.", "search": "Ubud" },
+      { "name": "Nusa Penida", "description": "Scogliere spettacolari, Kelingking Beach e mante da vedere in snorkeling.", "search": "Nusa Penida" },
+      { "name": "Vulcano Ijen", "description": "Il lago acido turchese e il 'fuoco blu' nel cratere prima dell'alba.", "search": "Ijen" },
+      { "name": "Raja Ampat", "description": "Il paradiso delle immersioni in Papua occidentale, con la più alta biodiversità marina del pianeta.", "search": "Raja Ampat" }
+    ],
+    "bestPeriod": "Aprile–ottobre (stagione secca) per Bali, Giava, Lombok, Gili e Komodo; da novembre a marzo piogge frequenti ma brevi; Raja Ampat è al meglio da ottobre ad aprile",
+    "areas": [
+      { "name": "Bali", "description": "L'isola degli dei offre tutto: Ubud con risaie e templi, il sud con spiagge e locali (Seminyak, Canggu, Uluwatu, Nusa Dua), il nord e l'est più autentici (Amed, Sidemen, Munduk). Resort, ville con piscina privata e spa per ogni budget.", "highlights": ["Ubud e Tegallalang", "Uluwatu", "Tanah Lot", "Sidemen", "Amed", "Nusa Penida"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Aprile–ottobre secco e soleggiato; luglio–agosto alta stagione; da novembre a marzo piogge, soprattutto nel pomeriggio." },
+      { "name": "Isole Gili e Lombok", "description": "Le tre Gili sono isole senza auto, con snorkeling tra le tartarughe; Lombok è più selvaggia, con spiagge al sud (Kuta Lombok), cascate e il vulcano Rinjani.", "highlights": ["Gili Trawangan", "Gili Air", "Gili Meno", "Kuta Lombok", "Cascate di Tiu Kelep"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Come Bali; il trekking del Rinjani è chiuso nella stagione delle piogge." },
+      { "name": "Giava (Yogyakarta, Borobudur, Bromo, Ijen)", "description": "L'isola dei grandi templi e dei vulcani: Borobudur e Prambanan vicino a Yogyakarta, l'alba sul Bromo, il fuoco blu dell'Ijen. Si combina con Bali entrando da est.", "highlights": ["Borobudur", "Prambanan", "Yogyakarta", "Vulcano Bromo", "Ijen"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Stagione secca aprile–ottobre; con le piogge i vulcani possono essere coperti." },
+      { "name": "Komodo e Flores", "description": "I draghi di Komodo, Padar Island con le tre baie, la spiaggia rosa, le mante di Manta Point: si visita in barca da Labuan Bajo, anche con crociere di 2–3 giorni.", "highlights": ["Isola di Padar", "Isola di Komodo", "Pink Beach", "Manta Point", "Labuan Bajo"], "seasons": "DDBOOOOOOOBD", "seasonNote": "Da aprile a novembre mare calmo e cielo limpido; gennaio–febbraio piovosi con possibili cancellazioni delle barche." },
+      { "name": "Raja Ampat (Papua)", "description": "Remota e straordinaria: isole carsiche, lagune e la barriera corallina più ricca del mondo. Per subacquei e viaggiatori esperti, in resort ecologici o crociere in barca.", "highlights": ["Wayag", "Piaynemo", "Misool", "Arborek"], "seasons": "OOOOBDDDDOOO", "seasonNote": "Da ottobre ad aprile il mare è più calmo; da giugno a settembre vento e onde nel sud." }
+    ],
+    "experiences": [
+      { "name": "Alba sul Monte Batur", "description": "Trekking notturno di circa due ore per vedere il sole sorgere sopra la caldera, con colazione cotta col vapore del vulcano." },
+      { "name": "Kecak al tramonto a Uluwatu", "description": "La danza del fuoco nel tempio sulla scogliera, al calar del sole." },
+      { "name": "Risaie e templi di Ubud", "description": "Passeggiata tra le terrazze di Tegallalang o Jatiluwih e visita a Tirta Empul con il rito dell'acqua sacra." },
+      { "name": "Snorkeling con le mante a Nusa Penida", "description": "Gita in barca da Bali con Manta Bay, Crystal Bay e le scogliere di Kelingking." },
+      { "name": "Crociera a Komodo", "description": "Due o tre giorni in barca tra i draghi, Padar e le spiagge rosa, dormendo a bordo." },
+      { "name": "Alba al Bromo e fuoco blu dell'Ijen", "description": "Due notti avventurose a Giava est, perfette nel trasferimento da Yogyakarta a Bali." },
+      { "name": "Borobudur all'alba", "description": "Il più grande tempio buddhista del mondo nella luce del mattino." },
+      { "name": "Tartarughe alle Gili", "description": "Snorkeling dalla spiaggia o in barca con le tartarughe marine." },
+      { "name": "Corso di cucina balinese e spa", "description": "Lezione al mercato e in cucina, e massaggio balinese: sempre apprezzati nei viaggi di nozze." }
+    ],
+    "itineraries": [
+      { "title": "Giava e Bali", "days": 15, "route": "Yogyakarta (3) → Bromo (1) → Ijen (1) → Ubud (4) → Bali mare (5)", "description": "Il grande classico: templi, vulcani, cultura balinese e mare, da aprile a ottobre." },
+      { "title": "Bali e Gili", "days": 12, "route": "Ubud (4) → Sidemen o Amed (2) → Gili Air (3) → Uluwatu o Seminyak (3)", "description": "Ideale per viaggi di nozze e coppie: risaie, ville con piscina, isole senza auto e tramonti sulla scogliera." },
+      { "title": "Bali e Komodo", "days": 14, "route": "Ubud (4) → Labuan Bajo e crociera Komodo (3) → Bali sud (6)", "description": "Per chi vuole aggiungere l'avventura dei draghi e del mare di Flores." }
+    ],
+    "agentTips": [
+      "Bali applica una tassa turistica d'ingresso per ogni visitatore, oltre al visto (e-VOA o visto all'arrivo): verifica importi e modalità aggiornate.",
+      "Il giorno di Nyepi (marzo, data variabile) l'aeroporto di Bali chiude per 24 ore e non si può uscire dall'hotel: controlla sempre il calendario.",
+      "Nel sud di Bali il traffico è intenso: calcola tempi di trasferimento generosi e scegli le zone in base al tipo di cliente.",
+      "Per le Gili il traghetto veloce da Bali dipende dal mare: in alta stagione meglio voli o barche di compagnie affidabili.",
+      "Luglio e agosto sono alta stagione con prezzi più alti; la stagione delle piogge offre ottime occasioni sulle ville.",
+      "Nei templi si entra con sarong e fascia in vita, di solito forniti all'ingresso."
+    ]
+  },
+  "MV": {
+    "moreDescription": [
+      "Vendere le Maldive significa scegliere il resort giusto: contano l'atollo, il tipo di trasferimento (idrovolante, motoscafo o volo interno più barca), il reef della casa (house reef) per lo snorkeling, il trattamento (mezza pensione, pensione completa, all inclusive) e lo stile del cliente. La stagione secca va da dicembre ad aprile, con mare calmo e cielo terso; da maggio a novembre il monsone di sud-ovest porta acquazzoni e vento, ma anche prezzi migliori e incontri con le mante in alcuni atolli."
+    ],
+    "morePlaces": [
+      { "name": "Hanifaru Bay", "description": "Riserva dell'atollo di Baa dove tra giugno e novembre si radunano centinaia di mante.", "search": "Hanifaru" },
+      { "name": "Atollo di Ari Sud", "description": "Avvistamenti di squali balena tutto l'anno nella zona marina protetta.", "search": "South Ari Atoll" },
+      { "name": "Addu", "description": "L'atollo più a sud, sull'equatore, con reef integri e il relitto della British Loyalty.", "search": "Addu Atoll" }
+    ],
+    "bestPeriod": "Dicembre–aprile (stagione secca, mare calmo); maggio–novembre più piovoso e ventoso ma con prezzi migliori e mante nell'atollo di Baa (giugno–novembre)",
+    "areas": [
+      { "name": "Atolli del nord (Baa, Raa, Lhaviyani, Noonu)", "description": "Resort raggiungibili in idrovolante o volo interno, spesso lussuosi e immersi nella natura. Baa è riserva della biosfera UNESCO con le mante di Hanifaru Bay.", "highlights": ["Hanifaru Bay", "Atollo di Baa", "Lhaviyani", "Noonu"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Secco da dicembre ad aprile; nella stagione umida piogge e vento, ma è il periodo delle mante a Baa." },
+      { "name": "Atolli centrali (Malé Nord e Sud, Ari, Vaavu)", "description": "I più vicini all'aeroporto: Malé Nord e Sud si raggiungono in motoscafo, Ari in idrovolante. Ari Sud è famoso per gli squali balena, Vaavu per le immersioni nei canali.", "highlights": ["Malé Nord", "Malé Sud", "Ari Nord e Sud", "Vaavu"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Dicembre–aprile ideale; gli squali balena di Ari Sud si vedono tutto l'anno." },
+      { "name": "Atolli del sud (Laamu, Thaa, Gaafu, Addu)", "description": "Lontani dalla folla, si raggiungono con volo interno più barca. Reef integri, surf a Laamu e Thaa, onde e natura nell'atollo di Gaafu, il più grande del mondo.", "highlights": ["Laamu", "Gaafu Alifu e Dhaalu", "Addu"], "seasons": "OOOOBBDDDBBO", "seasonNote": "Più vicini all'equatore, risentono meno del monsone; il periodo migliore resta dicembre–aprile." }
+    ],
+    "experiences": [
+      { "name": "Trasferimento in idrovolante", "description": "Il volo panoramico sugli atolli è già un'esperienza: va previsto di giorno." },
+      { "name": "Snorkeling sul house reef", "description": "Tartarughe, squaletti di barriera e pesci tropicali direttamente dalla spiaggia o dalla villa." },
+      { "name": "Nuotata con gli squali balena", "description": "Escursione nell'atollo di Ari Sud con guide specializzate." },
+      { "name": "Mante di Hanifaru Bay", "description": "Tra giugno e novembre, nell'atollo di Baa, uno degli spettacoli marini più belli del mondo." },
+      { "name": "Picnic su un banco di sabbia", "description": "Pranzo o cena privata su una lingua di sabbia in mezzo all'oceano." },
+      { "name": "Crociera al tramonto con i delfini", "description": "Uscita in dhoni tradizionale per vedere i delfini." },
+      { "name": "Immersioni nei canali", "description": "Squali grigi, mante e aquile di mare nei canali degli atolli centrali." },
+      { "name": "Giornata su un'isola locale", "description": "Visita a un'isola abitata per conoscere la vita dei maldiviani, oltre il resort." }
+    ],
+    "itineraries": [
+      { "title": "Viaggio di nozze", "days": 10, "route": "Malé → resort con villa sull'acqua (9 notti)", "description": "La formula più venduta: scegliere un resort con buon house reef e trasferimento in idrovolante, ideale tra dicembre e aprile." },
+      { "title": "Dubai e Maldive", "days": 11, "route": "Dubai (3) → Maldive (7)", "description": "Combinato classico con lo scalo a Dubai trasformato in vacanza in città." },
+      { "title": "Due resort", "days": 12, "route": "Resort nell'atollo di Malé (4) → resort in idrovolante nel nord (7)", "description": "Per chi vuole provare due stili diversi o spezzare un soggiorno lungo." }
+    ],
+    "agentTips": [
+      "I voli che arrivano a Malé nel pomeriggio tardi non permettono l'idrovolante (vola solo di giorno): serve una notte vicino all'aeroporto o un resort raggiungibile in motoscafo.",
+      "Il costo dei trasferimenti può pesare molto sul totale: confronta sempre il prezzo finale, non solo la camera.",
+      "Verifica la qualità del house reef: per i clienti che amano lo snorkeling è il fattore che conta di più.",
+      "Natale e Capodanno hanno soggiorni minimi e cene di gala obbligatorie; ad agosto molti italiani scelgono le Maldive nonostante la stagione umida.",
+      "Le isole locali (guesthouse) sono più economiche ma senza alcol e con abbigliamento più coperto fuori dalle spiagge dedicate.",
+      "In ogni resort si paga la green tax per persona a notte: verifica se è inclusa nel prezzo."
+    ]
+  },
+  "LK": {
+    "moreDescription": [
+      "Lo Sri Lanka ha due monsoni che colpiscono coste diverse in momenti diversi, ed è questo a renderlo vendibile tutto l'anno. La costa sud-ovest (Bentota, Galle, Mirissa) e le montagne sono al meglio da dicembre ad aprile; la costa est (Trincomalee, Pasikudah, Arugam Bay) da maggio a settembre. Il triangolo culturale nell'interno si visita bene quasi tutto l'anno. Un'isola piccola, con un tour tipico in auto con autista-guida, che unisce templi, tè, safari, Ayurveda e mare."
+    ],
+    "morePlaces": [
+      { "name": "Polonnaruwa", "description": "L'antica capitale medievale con il Gal Vihara, i Buddha scolpiti nella roccia.", "search": "Polonnaruwa" },
+      { "name": "Nuwara Eliya", "description": "La 'piccola Inghilterra' tra le piantagioni di tè, con ville coloniali e clima fresco.", "search": "Nuwara Eliya" },
+      { "name": "Trincomalee", "description": "Baie della costa est, snorkeling a Pigeon Island e balenottere azzurre in estate.", "search": "Trincomalee" }
+    ],
+    "bestPeriod": "Dicembre–aprile per la costa sud-ovest e le montagne; maggio–settembre per la costa est; il triangolo culturale si visita quasi tutto l'anno (più piogge tra ottobre e dicembre)",
+    "areas": [
+      { "name": "Triangolo culturale (Sigiriya, Dambulla, Polonnaruwa, Anuradhapura, Kandy)", "description": "Il cuore storico: la rocca di Sigiriya, i templi in grotta di Dambulla, le capitali antiche, Kandy con il Tempio del Dente. Qui si vedono anche gli elefanti nei parchi di Minneriya e Kaudulla.", "highlights": ["Sigiriya", "Dambulla", "Polonnaruwa", "Anuradhapura", "Kandy", "Minneriya"], "seasons": "OOOOBBBBBDDB", "seasonNote": "Buono quasi tutto l'anno; il monsone di nord-est porta piogge tra ottobre e dicembre." },
+      { "name": "Altopiano del tè (Nuwara Eliya, Ella, Haputale)", "description": "Colline coperte di piantagioni, cascate, ville coloniali e il celebre treno panoramico fino a Ella. Clima fresco, ideale per due o tre notti.", "highlights": ["Treno Kandy–Ella", "Nuwara Eliya", "Ella e Nine Arch Bridge", "Little Adam's Peak", "Horton Plains"], "seasons": "OOOBDDBBDDDB", "seasonNote": "Da gennaio ad aprile il clima è più asciutto; piogge frequenti tra maggio e novembre, soprattutto sui versanti occidentali." },
+      { "name": "Costa sud e sud-ovest (Bentota, Galle, Mirissa, Tangalle)", "description": "Spiagge di sabbia dorata, la fortezza olandese di Galle, il whale watching a Mirissa, resort Ayurveda e hotel di design.", "highlights": ["Forte di Galle", "Bentota", "Mirissa", "Unawatuna", "Tangalle"], "seasons": "OOOOBXXXDDBO", "seasonNote": "Da dicembre ad aprile mare calmo; da maggio a settembre monsone di sud-ovest con mare mosso e piogge." },
+      { "name": "Costa est (Trincomalee, Pasikudah, Arugam Bay)", "description": "La meta mare per l'estate: baie calme a Trincomalee e Pasikudah, surf ad Arugam Bay, snorkeling a Pigeon Island.", "highlights": ["Trincomalee", "Pigeon Island", "Pasikudah", "Arugam Bay"], "seasons": "DDBOOOOOOBXX", "seasonNote": "Da maggio a settembre è la costa giusta; tra novembre e gennaio il monsone di nord-est la rende sconsigliata." },
+      { "name": "Parchi del sud (Yala, Udawalawe)", "description": "Safari in jeep per leopardi, elefanti, bufali e uccelli: Yala ha la densità di leopardi più alta del mondo, Udawalawe è il parco degli elefanti.", "highlights": ["Parco di Yala", "Udawalawe", "Bundala"], "seasons": "OOOOOBBBXXBO", "seasonNote": "Yala chiude in genere tra settembre e metà ottobre; Udawalawe è aperto tutto l'anno." }
+    ],
+    "experiences": [
+      { "name": "Salita alla rocca di Sigiriya", "description": "Circa 1.200 gradini fino alla fortezza sulla cima, da fare all'apertura per evitare il caldo." },
+      { "name": "Treno da Kandy a Ella", "description": "Uno dei viaggi in treno più belli del mondo, tra piantagioni e cascate; i posti prenotati finiscono presto." },
+      { "name": "Safari a Yala", "description": "In jeep all'alba alla ricerca dei leopardi." },
+      { "name": "Il 'Gathering' degli elefanti a Minneriya", "description": "Tra luglio e settembre centinaia di elefanti si radunano attorno al lago." },
+      { "name": "Whale watching", "description": "Balenottere azzurre a Mirissa da dicembre ad aprile e a Trincomalee tra marzo e agosto." },
+      { "name": "Piantagione e fabbrica del tè", "description": "Visita con degustazione nell'altopiano, anche con notte in un bungalow coloniale." },
+      { "name": "Programma Ayurveda", "description": "Resort specializzati sulla costa con trattamenti, dieta e yoga, da una settimana in su." },
+      { "name": "Esala Perahera a Kandy", "description": "Tra luglio e agosto processioni notturne con elefanti decorati e danzatori." }
+    ],
+    "itineraries": [
+      { "title": "Classico inverno", "days": 13, "route": "Negombo (1) → Sigiriya/Dambulla (3) → Kandy (2) → Nuwara Eliya (1) → Ella (2) → Yala (1) → Galle o Mirissa (3)", "description": "Il giro dell'isola da dicembre ad aprile, chiudendo sul mare del sud." },
+      { "title": "Estate tra cultura e costa est", "days": 12, "route": "Negombo (1) → Sigiriya (3) → Kandy (2) → Trincomalee o Pasikudah (5)", "description": "Da maggio a settembre il mare va venduto sulla costa est; Minneriya è al massimo in questo periodo." }
+    ],
+    "agentTips": [
+      "Prima di partire serve l'autorizzazione elettronica d'ingresso (ETA o visto online): verifica la procedura in vigore.",
+      "Il tour si fa quasi sempre con auto e autista-guida: spiega al cliente che è la formula normale e conveniente.",
+      "Nei giorni di luna piena (Poya) gli alcolici non sono venduti e molti luoghi sono affollati di pellegrini.",
+      "Abbina la costa giusta alla stagione: è il dettaglio che fa la differenza nella soddisfazione del cliente.",
+      "Si abbina bene con Maldive (un'ora di volo) e India del sud."
+    ]
+  },
+  "IN": {
+    "moreDescription": [
+      "L'India è un continente: per un agente conviene ragionare per macro-regioni. Il nord (Delhi, Agra, Rajasthan, Varanasi) è la meta della prima volta, al meglio da ottobre a marzo; tra aprile e giugno il caldo supera spesso i 40 °C e da luglio a settembre arriva il monsone. Il sud (Kerala, Tamil Nadu, Goa) è più verde e rilassato, perfetto da novembre a febbraio. Il nord himalayano (Ladakh) si visita invece in estate, quando il resto del paese è sotto il monsone. Il turismo indiano lavora molto con hotel heritage (palazzi e fortezze trasformati in hotel) e auto con autista."
+    ],
+    "morePlaces": [
+      { "name": "Jaisalmer", "description": "La città d'oro nel deserto del Thar, con la fortezza abitata e le dune.", "search": "Jaisalmer" },
+      { "name": "Tempio d'Oro di Amritsar", "description": "Il luogo più sacro dei sikh, con la mensa comune che serve migliaia di pasti al giorno.", "search": "Harmandir Sahib" },
+      { "name": "Khajuraho", "description": "Templi medievali famosi per le sculture, patrimonio UNESCO.", "search": "Khajuraho" },
+      { "name": "Ladakh", "description": "Monasteri buddhisti e paesaggi lunari ad alta quota nell'Himalaya indiano.", "search": "Ladakh" }
+    ],
+    "bestPeriod": "Ottobre–marzo per Rajasthan, Delhi, Agra, Varanasi, Kerala e Goa; aprile–giugno molto caldo al nord; luglio–settembre monsone (ideale solo per il Ladakh, da giugno a settembre)",
+    "areas": [
+      { "name": "Triangolo d'oro e Rajasthan", "description": "Delhi, il Taj Mahal ad Agra e Jaipur, la città rosa; poi il Rajasthan delle fortezze e dei palazzi: Udaipur sul lago, Jodhpur la città blu, Jaisalmer nel deserto, Pushkar con il lago sacro.", "highlights": ["Taj Mahal", "Jaipur e Forte Amber", "Udaipur", "Jodhpur", "Jaisalmer", "Ranthambore"], "seasons": "OOBXXXDDDOOO", "seasonNote": "Da ottobre a marzo clima secco e piacevole; aprile–giugno caldo estremo; luglio–settembre monsone, più leggero nel deserto." },
+      { "name": "Varanasi e la valle del Gange", "description": "La città sacra sul Gange, con le cerimonie serali (aarti) e le cremazioni sui ghat; vicino Sarnath, dove Buddha tenne il primo sermone. Spesso abbinata a Khajuraho.", "highlights": ["Ghat di Varanasi", "Ganga aarti", "Sarnath", "Khajuraho"], "seasons": "OOBXXXDDDOOO", "seasonNote": "Come il Rajasthan; tra dicembre e gennaio mattine nebbiose e fresche." },
+      { "name": "Kerala e sud", "description": "Le backwaters in houseboat, le colline del tè di Munnar, la riserva di Periyar, Kochi coloniale e le spiagge di Marari e Kovalam; il Tamil Nadu aggiunge i grandi templi di Madurai e Mahabalipuram.", "highlights": ["Backwaters di Alleppey", "Kochi", "Munnar", "Periyar", "Madurai", "Mahabalipuram"], "seasons": "OOBBDXXDDBOO", "seasonNote": "Novembre–febbraio ideale; il monsone (giugno–agosto) è però la stagione preferita per i trattamenti Ayurveda." },
+      { "name": "Goa", "description": "Spiagge, chiese portoghesi e atmosfera rilassata: al nord locali e mercatini, al sud resort tranquilli. Perfetta per chiudere un tour con qualche giorno di mare.", "highlights": ["Vecchia Goa", "Palolem", "Anjuna", "Fontainhas"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da novembre a marzo mare calmo; da giugno a settembre monsone e molti locali sulla spiaggia chiusi." },
+      { "name": "Ladakh (Himalaya indiano)", "description": "Paesaggi d'alta quota, monasteri come Hemis, Thiksey e Diskit, i laghi di Pangong e Tso Moriri, la valle di Nubra. Si arriva in volo a Leh, a 3.500 metri.", "highlights": ["Leh", "Monastero di Thiksey", "Lago Pangong", "Valle di Nubra"], "seasons": "XXXDBOOOODXX", "seasonNote": "Da giugno a settembre, quando le strade sono aperte e il resto dell'India è sotto il monsone." }
+    ],
+    "experiences": [
+      { "name": "Taj Mahal all'alba", "description": "La luce del mattino sul marmo bianco, prima della folla; il Taj è chiuso il venerdì." },
+      { "name": "Barca all'alba sul Gange", "description": "A Varanasi, tra le abluzioni e le preghiere sui ghat, e la cerimonia aarti la sera." },
+      { "name": "Notte in un palazzo heritage", "description": "Dormire in palazzi e fortezze del Rajasthan trasformati in hotel, dal lusso a quelli familiari." },
+      { "name": "Safari della tigre a Ranthambore", "description": "In jeep nel parco più famoso per la tigre, da ottobre a giugno." },
+      { "name": "Houseboat nelle backwaters", "description": "Una notte su una barca tradizionale tra canali e palme in Kerala." },
+      { "name": "Notte nel deserto del Thar", "description": "Campo tendato e passeggiata sui cammelli al tramonto vicino a Jaisalmer." },
+      { "name": "Festa di Holi o di Diwali", "description": "Holi (marzo) è la festa dei colori; Diwali (ottobre o novembre) quella delle luci: date da controllare ogni anno." },
+      { "name": "Ayurveda in Kerala", "description": "Programmi di trattamenti in resort specializzati, da almeno una settimana." },
+      { "name": "Tempio d'Oro di Amritsar", "description": "Visita serale e mensa comunitaria, con la cerimonia di chiusura al confine di Wagah." }
+    ],
+    "itineraries": [
+      { "title": "Triangolo d'oro e Varanasi", "days": 9, "route": "Delhi (2) → Agra (1) → Jaipur (2) → Varanasi (2)", "description": "La prima volta in India: Taj Mahal, palazzi di Jaipur e la spiritualità di Varanasi." },
+      { "title": "Rajasthan completo", "days": 15, "route": "Delhi (2) → Mandawa (1) → Bikaner (1) → Jaisalmer (2) → Jodhpur (2) → Udaipur (3) → Jaipur (2) → Agra (1)", "description": "Fortezze, deserto e laghi, con hotel heritage lungo tutto il percorso." },
+      { "title": "Kerala e mare", "days": 12, "route": "Kochi (2) → Munnar (2) → Periyar (1) → Alleppey in houseboat (1) → Marari o Kovalam (5)", "description": "L'India più dolce e verde, con chiusura sulle spiagge del sud." }
+    ],
+    "agentTips": [
+      "Per gli italiani serve il visto: l'e-visa turistico si richiede online prima della partenza.",
+      "A Delhi tra novembre e gennaio l'inquinamento può essere molto alto: avvisa i clienti sensibili.",
+      "Il Taj Mahal è chiuso il venerdì: organizza l'itinerario di conseguenza.",
+      "Consiglia acqua in bottiglia, cibi cotti e un'assicurazione sanitaria completa; i primi giorni lo stomaco va abituato.",
+      "Auto con autista e guide locali sono la norma e costano poco: sono parte del valore del viaggio.",
+      "Ottimi abbinamenti: Nepal, Sri Lanka, Maldive, Bhutan."
+    ]
+  },
+  "NP": {
+    "morePlaces": [
+      { "name": "Annapurna Base Camp", "description": "Trekking di 7–10 giorni fino al santuario dell'Annapurna, tra villaggi gurung e foreste di rododendri.", "search": "Annapurna Sanctuary" },
+      { "name": "Lumbini", "description": "Il luogo di nascita di Buddha, con monasteri di tutto il mondo.", "search": "Lumbini" },
+      { "name": "Patan", "description": "La città d'arte della valle di Kathmandu, con la piazza Durbar e i laboratori di metallo.", "search": "Patan Durbar Square" }
+    ],
+    "bestPeriod": "Ottobre–novembre (cielo limpido, ideale per trekking e montagne) e marzo–aprile (rododendri in fiore); da giugno a settembre monsone con nuvole e piogge",
+    "areas": [
+      { "name": "Valle di Kathmandu (Kathmandu, Patan, Bhaktapur)", "description": "Sette siti UNESCO in pochi chilometri: le piazze Durbar, i grandi stupa di Boudhanath e Swayambhunath, il tempio induista di Pashupatinath. Bhaktapur è la città medievale meglio conservata.", "highlights": ["Boudhanath", "Swayambhunath", "Pashupatinath", "Bhaktapur", "Patan"], "seasons": "BBOOBDDDBOOB", "seasonNote": "Visitabile tutto l'anno, ma ottobre–novembre e marzo–aprile sono i mesi più belli; d'estate monsone." },
+      { "name": "Pokhara e Annapurna", "description": "Pokhara sul lago Phewa, con le montagne riflesse; qui partono i trekking dell'Annapurna, dal facile Poon Hill (4–5 giorni) al Campo base.", "highlights": ["Lago Phewa", "Sarangkot all'alba", "Poon Hill", "Annapurna Base Camp", "Parapendio"], "seasons": "BBOOBDXXBOOB", "seasonNote": "Ottobre–novembre per i cieli più limpidi; primavera con i rododendri; in estate le montagne sono nascoste dalle nuvole." },
+      { "name": "Regione dell'Everest (Khumbu)", "description": "Il trekking più famoso del mondo, dal volo a Lukla al Campo base dell'Everest (12–14 giorni), tra villaggi sherpa e monasteri. In alternativa il volo panoramico da Kathmandu.", "highlights": ["Lukla", "Namche Bazaar", "Monastero di Tengboche", "Kala Patthar", "Volo panoramico sull'Everest"], "seasons": "BBOOBXXXBOOB", "seasonNote": "Primavera e autunno; d'inverno freddo intenso in quota, d'estate monsone e voli per Lukla spesso cancellati." },
+      { "name": "Pianura del Terai (Chitwan, Bardia, Lumbini)", "description": "Giungla e praterie con rinoceronti, elefanti, coccodrilli e, con fortuna, la tigre. Lumbini è il luogo di nascita di Buddha.", "highlights": ["Parco di Chitwan", "Parco di Bardia", "Lumbini"], "seasons": "OOOBBDXXDOOO", "seasonNote": "Da ottobre a marzo clima piacevole; aprile–maggio caldo ma ottimo per vedere animali; in estate molti lodge chiudono." }
+    ],
+    "experiences": [
+      { "name": "Volo panoramico sull'Everest", "description": "Un'ora di volo all'alba da Kathmandu per vedere da vicino l'Everest e le grandi vette." },
+      { "name": "Trekking di Poon Hill", "description": "4–5 giorni accessibili a camminatori allenati, con alba sulle vette dell'Annapurna e del Dhaulagiri." },
+      { "name": "Campo base dell'Everest", "description": "Trekking di 12–14 giorni per escursionisti esperti, con giorni di acclimatamento." },
+      { "name": "Safari a Chitwan", "description": "Jeep, canoa e passeggiate nella giungla alla ricerca del rinoceronte indiano." },
+      { "name": "Parapendio a Pokhara", "description": "Volo in tandem sopra il lago Phewa con le montagne sullo sfondo." },
+      { "name": "Feste di Dashain e Tihar", "description": "In ottobre–novembre le feste più importanti, con lampade, aquiloni e riti nelle famiglie." },
+      { "name": "Rafting sul Trishuli", "description": "Discesa in gommone di mezza o una giornata sul percorso tra Kathmandu e Pokhara." }
+    ],
+    "itineraries": [
+      { "title": "Nepal classico", "days": 10, "route": "Kathmandu (3) → Chitwan (2) → Pokhara (3) → Kathmandu (2)", "description": "Templi della valle, giungla e montagne senza trekking impegnativi." },
+      { "title": "Trekking di Poon Hill", "days": 12, "route": "Kathmandu (2) → Pokhara (1) → trekking Poon Hill (5) → Pokhara (2) → Kathmandu (2)", "description": "Il trekking più adatto a chi cammina per la prima volta in Himalaya." },
+      { "title": "Campo base dell'Everest", "days": 17, "route": "Kathmandu (2) → Lukla → trekking EBC (12) → Kathmandu (2), con giorni di riserva", "description": "Per escursionisti esperti, con guide e portatori locali." }
+    ],
+    "agentTips": [
+      "Il visto si ottiene all'arrivo a Kathmandu o online; per i trekking servono permessi di parco e registrazione.",
+      "Per i trekking proponi sempre un'assicurazione che copra il soccorso in elicottero in alta quota.",
+      "I voli per Lukla sono spesso ritardati dal meteo: prevedi uno o due giorni di riserva prima del rientro.",
+      "Spiega il mal di montagna e l'importanza dei giorni di acclimatamento.",
+      "Abbinamenti consigliati: India, Bhutan e Tibet."
+    ]
+  },
+  "CN": {
+    "moreDescription": [
+      "La Cina è enorme e varia: per la prima volta si vende il 'triangolo' Pechino–Xi'an–Shanghai, spesso con Guilin, collegato da treni ad alta velocità moderni e veloci. Le stagioni migliori sono la primavera (aprile–maggio) e l'autunno (settembre–ottobre, evitando la prima settimana di ottobre); l'estate è calda e piovosa al centro-sud, l'inverno freddo e secco al nord. Per un agente è importante preparare il cliente alla vita digitale cinese: pagamenti con app, molti servizi occidentali bloccati, prenotazioni con passaporto."
+    ],
+    "morePlaces": [
+      { "name": "Yangshuo", "description": "Paesaggi di pinnacoli carsici sul fiume Li, da scoprire in zattera di bambù e in bicicletta.", "search": "Yangshuo" },
+      { "name": "Chengdu", "description": "La città dei panda giganti e della cucina piccante del Sichuan.", "search": "Chengdu Research Base of Giant Panda Breeding" },
+      { "name": "Lijiang", "description": "Città antica dei Naxi nello Yunnan, ai piedi della Montagna del Drago di Giada.", "search": "Lijiang" },
+      { "name": "Suzhou", "description": "Giardini classici e canali, a mezz'ora di treno da Shanghai.", "search": "Suzhou" }
+    ],
+    "bestPeriod": "Aprile–maggio e settembre–ottobre (evitando la Golden Week del 1–7 ottobre); estate calda e piovosa, inverno freddo al nord; Yunnan gradevole quasi tutto l'anno",
+    "areas": [
+      { "name": "Pechino e la Grande Muraglia", "description": "La Città Proibita, Piazza Tienanmen, il Tempio del Cielo, il Palazzo d'Estate, gli hutong e la Grande Muraglia nei tratti di Mutianyu o Jinshanling, meno affollati di Badaling.", "highlights": ["Città Proibita", "Tempio del Cielo", "Palazzo d'Estate", "Hutong", "Muraglia di Mutianyu"], "seasons": "DDBOOBDDOOBD", "seasonNote": "Primavera e autunno ideali; estate calda e umida; inverno freddo e secco, con possibili giornate di smog." },
+      { "name": "Xi'an", "description": "L'antica capitale all'inizio della Via della Seta: l'Esercito di Terracotta, le mura percorribili in bicicletta, il quartiere musulmano con il cibo di strada.", "highlights": ["Esercito di Terracotta", "Mura di Xi'an", "Quartiere musulmano", "Grande Pagoda dell'Oca Selvatica"], "seasons": "DDBOOBDDOOBD", "seasonNote": "Come Pechino; a 4–5 ore di treno veloce dalla capitale." },
+      { "name": "Shanghai e i dintorni (Suzhou, Hangzhou, paesi d'acqua)", "description": "Il Bund e Pudong, la Concessione francese e il giardino Yu; a breve distanza i giardini di Suzhou, il Lago dell'Ovest di Hangzhou e i paesi sull'acqua come Wuzhen e Zhujiajiao.", "highlights": ["Il Bund", "Pudong", "Giardino Yu", "Suzhou", "Hangzhou", "Wuzhen"], "seasons": "DDBOODDDOOOD", "seasonNote": "Primavera e autunno; giugno è la stagione delle piogge, luglio–agosto caldi e afosi." },
+      { "name": "Guilin e Yangshuo", "description": "Il paesaggio delle pitture cinesi: crociera sul fiume Li tra pinnacoli carsici, risaie a terrazze di Longji, biciclette tra i villaggi.", "highlights": ["Crociera sul fiume Li", "Yangshuo", "Risaie di Longji", "Fiume Yulong"], "seasons": "DDBBDDBBOOOD", "seasonNote": "Da settembre a novembre il clima è secco e limpido; maggio–giugno molto piovosi." },
+      { "name": "Sud-ovest (Sichuan e Yunnan)", "description": "Chengdu con i panda e la cucina piccante, Jiuzhaigou con i laghi colorati, lo Yunnan delle minoranze con Kunming, Dali, Lijiang e Shangri-La.", "highlights": ["Panda di Chengdu", "Leshan", "Jiuzhaigou", "Lijiang", "Dali", "Shangri-La"], "seasons": "OOOOBDDDBOOO", "seasonNote": "Lo Yunnan è mite tutto l'anno con piogge estive; Jiuzhaigou è splendida in ottobre." }
+    ],
+    "experiences": [
+      { "name": "Camminata sulla Grande Muraglia", "description": "A Mutianyu o Jinshanling, più tranquilli e panoramici, con la funivia o a piedi." },
+      { "name": "Anatra laccata a Pechino", "description": "Cena nel ristorante storico o in un locale contemporaneo dove la si taglia al tavolo." },
+      { "name": "Treno ad alta velocità", "description": "Fino a 350 km/h tra Pechino, Xi'an, Shanghai e Guilin: comodo e puntuale." },
+      { "name": "Crociera sul fiume Li", "description": "Da Guilin a Yangshuo tra pinnacoli e villaggi, con rientro in zattera di bambù." },
+      { "name": "Panda di Chengdu", "description": "Visita al centro di ricerca la mattina presto, quando i panda sono più attivi." },
+      { "name": "Il Bund di sera", "description": "Passeggiata o crociera sul fiume Huangpu con lo skyline illuminato." },
+      { "name": "Tai chi e tè in un parco", "description": "Lezione all'alba con i pensionati che si allenano nei parchi, poi degustazione di tè." },
+      { "name": "Crociera sullo Yangtze", "description": "Tre o quattro giorni tra le Tre Gole, da Chongqing a Yichang." }
+    ],
+    "itineraries": [
+      { "title": "Cina classica", "days": 12, "route": "Pechino (4) → Xi'an (2) → Guilin e Yangshuo (3) → Shanghai (3)", "description": "Il triangolo più venduto con il paesaggio del fiume Li, tutto in treno veloce." },
+      { "title": "Cina e Yunnan", "days": 15, "route": "Pechino (4) → Xi'an (2) → Kunming (1) → Dali (2) → Lijiang (3) → Shanghai (3)", "description": "Per chi vuole aggiungere le culture delle minoranze e le montagne del sud-ovest." }
+    ],
+    "agentTips": [
+      "Verifica le regole d'ingresso aggiornate per gli italiani (esenzione dal visto per brevi soggiorni o visto turistico): cambiano spesso.",
+      "Google, WhatsApp e molti siti occidentali non funzionano senza VPN o roaming internazionale: consiglia una eSIM con roaming.",
+      "Pagamenti: in Cina si paga con Alipay o WeChat Pay, che oggi accettano anche carte straniere; tenere anche un po' di contante.",
+      "Evita la Golden Week (1–7 ottobre) e il Capodanno cinese: spostamenti di massa, folle e prezzi alti.",
+      "Treni, musei e siti si prenotano con il numero di passaporto: servono i dati esatti dei clienti in anticipo.",
+      "La Città Proibita chiude il lunedì e ha ingressi contingentati: va prenotata."
+    ]
+  },
+  "KR": {
+    "morePlaces": [
+      { "name": "Changdeokgung", "description": "Palazzo reale con il Giardino Segreto, patrimonio UNESCO.", "search": "Changdeokgung" },
+      { "name": "Parco nazionale di Seoraksan", "description": "Montagne di granito, templi e foliage spettacolare in ottobre.", "search": "Seoraksan" },
+      { "name": "Villaggio di Gamcheon", "description": "Il villaggio colorato sulle colline di Busan.", "search": "Gamcheon Culture Village" }
+    ],
+    "bestPeriod": "Aprile–giugno (ciliegi a inizio aprile) e settembre–novembre (foliage a ottobre); luglio–agosto caldo umido con il monsone; inverno freddo e secco, ottimo per lo sci",
+    "areas": [
+      { "name": "Seoul e dintorni", "description": "Palazzi reali, il villaggio di Bukchon, mercati come Gwangjang e Namdaemun, quartieri alla moda come Gangnam e Hongdae, e in giornata la zona demilitarizzata al confine con la Corea del Nord.", "highlights": ["Gyeongbokgung", "Changdeokgung", "Bukchon", "Gwangjang", "N Seoul Tower", "DMZ"], "seasons": "BBBOOBDDOOOB", "seasonNote": "Primavera e autunno ideali; estate calda e piovosa; inverno molto freddo ma limpido." },
+      { "name": "Sud-est (Gyeongju, Andong, Busan)", "description": "Gyeongju è un museo all'aperto della dinastia Silla con tombe reali e il tempio Bulguksa; Andong conserva un villaggio tradizionale; Busan è la città di mare con mercati del pesce e templi sulla costa.", "highlights": ["Bulguksa", "Gyeongju", "Villaggio di Hahoe", "Mercato di Jagalchi", "Haedong Yonggungsa", "Gamcheon"], "seasons": "BBBOOBDDOOOB", "seasonNote": "Clima un po' più mite di Seoul; in estate rischio tifoni." },
+      { "name": "Isola di Jeju", "description": "Isola vulcanica con il monte Hallasan, tunnel di lava, cascate, le pescatrici in apnea haenyeo e spiagge. Meta amata dai coreani per il viaggio di nozze.", "highlights": ["Hallasan", "Seongsan Ilchulbong", "Manjanggul", "Cascate di Jeongbang"], "seasons": "BBBOOBDDBOBB", "seasonNote": "Primavera e autunno; tifoni possibili tra agosto e settembre." },
+      { "name": "Gangwon (montagne e sci)", "description": "Seoraksan con il foliage più bello del paese, le località sciistiche di PyeongChang e la costa est.", "highlights": ["Seoraksan", "PyeongChang", "Gangneung"], "seasons": "OOBBOBDDBOBO", "seasonNote": "Inverno per lo sci; metà ottobre per il foliage." }
+    ],
+    "experiences": [
+      { "name": "Palazzi in hanbok", "description": "Noleggiando l'abito tradizionale l'ingresso ai palazzi di Seoul è gratuito: foto sicure." },
+      { "name": "Temple stay", "description": "Una notte in un monastero buddhista con meditazione, pasto dei monaci e cerimonia all'alba." },
+      { "name": "Zona demilitarizzata (DMZ)", "description": "Escursione organizzata al confine con la Corea del Nord, con tunnel e punti di osservazione." },
+      { "name": "Barbecue coreano e mercati", "description": "Cena di barbecue e street food al mercato di Gwangjang." },
+      { "name": "Jjimjilbang", "description": "Le saune pubbliche coreane, con bagni caldi e sale relax: un'esperienza molto locale." },
+      { "name": "Tour K-pop e K-drama", "description": "Per i più giovani: quartieri delle agenzie musicali e luoghi delle serie tv." },
+      { "name": "Escursione a Seoraksan", "description": "Funivia e sentieri tra pareti di granito e templi, al meglio in ottobre." }
+    ],
+    "itineraries": [
+      { "title": "Corea classica", "days": 10, "route": "Seoul (4) → Gyeongju (2) → Busan (2) → Jeju (2)", "description": "Palazzi, storia antica, mare e isola vulcanica, con il treno veloce KTX e un volo interno." },
+      { "title": "Corea e Giappone", "days": 15, "route": "Seoul (4) → Busan (2) → Fukuoka o Osaka → Kyoto (4) → Tokyo (4)", "description": "Combinato in crescita, con traghetto o volo breve tra Busan e il Giappone." }
+    ],
+    "agentTips": [
+      "Verifica se per gli italiani è richiesta l'autorizzazione elettronica K-ETA nel periodo del viaggio: l'obbligo è stato sospeso e reintrodotto più volte.",
+      "Google Maps funziona poco in Corea: consiglia le app locali Naver Map o KakaoMap.",
+      "Le feste di Chuseok (settembre–ottobre) e Seollal (gennaio–febbraio) muovono milioni di persone: treni pieni e alcuni negozi chiusi.",
+      "La carta T-money serve per metro, bus e taxi: si compra in aeroporto o nei minimarket.",
+      "Destinazione in crescita tra i giovani grazie al K-pop: ottima da proporre anche a famiglie con ragazzi."
+    ]
+  },
+  "PH": {
+    "morePlaces": [
+      { "name": "Siargao", "description": "L'isola del surf con lagune, palme e un'atmosfera rilassata.", "search": "Siargao" },
+      { "name": "Moalboal", "description": "Banchi di sardine e tartarughe a pochi metri dalla riva a Cebu.", "search": "Moalboal" },
+      { "name": "Isole Kalanggaman o Malapascua", "description": "Isole di sabbia bianca; Malapascua è famosa per gli squali volpe.", "search": "Malapascua" }
+    ],
+    "bestPeriod": "Dicembre–maggio (stagione secca, mare migliore); giugno–novembre stagione delle piogge con tifoni possibili, soprattutto tra agosto e novembre",
+    "areas": [
+      { "name": "Palawan (El Nido, Coron, Puerto Princesa)", "description": "Le lagune e i faraglioni di El Nido, i laghi e i relitti di Coron, il fiume sotterraneo di Puerto Princesa: la regione più spettacolare del paese, ideale per island hopping e viaggi di nozze.", "highlights": ["Lagune di El Nido", "Kayangan Lake", "Relitti di Coron", "Fiume sotterraneo", "Port Barton"], "seasons": "OOOOBDDXXDBO", "seasonNote": "Da novembre a maggio mare calmo; tra luglio e ottobre piogge e tifoni possono fermare le barche." },
+      { "name": "Visayas (Cebu, Bohol, Siquijor)", "description": "Bohol con le Chocolate Hills e i tarsi, Cebu con le sardine di Moalboal, gli squali volpe di Malapascua e cascate, Siquijor con spiagge tranquille e leggende di magia.", "highlights": ["Chocolate Hills", "Tarsi di Bohol", "Moalboal", "Malapascua", "Cascate di Kawasan", "Siquijor"], "seasons": "OOOOOBDDDDDB", "seasonNote": "Da dicembre a giugno ideale; tifoni possibili tra settembre e novembre." },
+      { "name": "Boracay", "description": "L'isola della White Beach, con sabbia finissima, tramonti in barca a vela e vita serale; dal 2018 è più regolata e pulita.", "highlights": ["White Beach", "Puka Beach", "Paraw al tramonto"], "seasons": "OOOOOBDDDDBO", "seasonNote": "Da novembre a maggio il mare della White Beach è calmo; con il monsone estivo si sposta il bagno sul lato est." },
+      { "name": "Luzon nord (Banaue e Batad)", "description": "Le risaie a terrazze scolpite dagli Ifugao, tra le più impressionanti del mondo, con trekking tra i villaggi.", "highlights": ["Risaie di Banaue", "Batad", "Sagada"], "seasons": "BOOOBDDDDBBB", "seasonNote": "Da febbraio a maggio clima secco; aprile–maggio risaie verdi; piogge da giugno a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Island hopping a El Nido", "description": "Tour in barca tra lagune, spiagge e grotte, scegliendo tra i percorsi A, B, C o D o una barca privata." },
+      { "name": "Immersioni sui relitti di Coron", "description": "Navi giapponesi della seconda guerra mondiale, anche in snorkeling in alcuni punti." },
+      { "name": "Chocolate Hills e tarsi a Bohol", "description": "Giornata tra colline e scimmiette più piccole del mondo, con crociera sul fiume Loboc." },
+      { "name": "Banchi di sardine a Moalboal", "description": "Milioni di sardine e tartarughe a pochi metri dalla spiaggia." },
+      { "name": "Squali volpe a Malapascua", "description": "Immersione all'alba, unica al mondo." },
+      { "name": "Squali balena", "description": "Meglio a Donsol (febbraio–maggio) in modo naturale; quelli di Oslob sono nutriti dall'uomo e sempre più discussi." },
+      { "name": "Surf a Siargao", "description": "Onde famose come Cloud 9, al meglio tra settembre e novembre." }
+    ],
+    "itineraries": [
+      { "title": "Palawan e Bohol", "days": 14, "route": "Manila (1) → El Nido (4) → Coron (3) → Bohol (3) → Cebu e Moalboal (2)", "description": "Il giro più completo di isole e natura, da dicembre a maggio." },
+      { "title": "Viaggio di nozze a Palawan", "days": 11, "route": "Manila (1) → El Nido in resort su isola privata (6) → Coron (3)", "description": "Lagune, resort sull'acqua e barche private." }
+    ],
+    "agentTips": [
+      "Serve la registrazione online eTravel entro 72 ore dall'arrivo: ricordala sempre al cliente.",
+      "Gli spostamenti tra le isole sono quasi tutti voli interni o barche: prevedi margini e una notte a Manila se le coincidenze sono strette.",
+      "Tra agosto e novembre i tifoni possono cancellare voli e barche: proponi assicurazione e flessibilità.",
+      "La Settimana Santa e Natale sono periodi di grande movimento interno.",
+      "Ottimo per subacquei: verifica livello e brevetti per proporre i siti giusti."
+    ]
+  },
+  "SG": {
+    "morePlaces": [
+      { "name": "Jewel Changi", "description": "La cascata interna più alta del mondo dentro l'aeroporto, visitabile anche in transito.", "search": "Jewel Changi Airport" },
+      { "name": "Kampong Glam", "description": "Il quartiere malese e arabo con la Moschea del Sultano e la colorata Haji Lane.", "search": "Kampong Glam" },
+      { "name": "Mandai (zoo e Night Safari)", "description": "Uno degli zoo più belli del mondo e il safari notturno.", "search": "Night Safari Singapore" }
+    ],
+    "bestPeriod": "Tutto l'anno (caldo umido costante); febbraio–aprile un po' più secco, novembre–gennaio più piovoso con il monsone di nord-est",
+    "areas": [
+      { "name": "Marina Bay e centro", "description": "Lo skyline più famoso: Marina Bay Sands, Gardens by the Bay con i Supertree e le cupole, il Merlion, la zona coloniale con il Raffles Hotel e la National Gallery.", "highlights": ["Gardens by the Bay", "Marina Bay Sands", "Merlion", "Raffles Hotel", "National Gallery"], "seasons": "BOOOBBBBBBDD", "seasonNote": "Caldo tutto l'anno; piogge brevi e frequenti, un po' più intense da novembre a gennaio." },
+      { "name": "Quartieri storici (Chinatown, Little India, Kampong Glam)", "description": "Templi, moschee, botteghe e hawker centre: il volto multiculturale della città, da girare a piedi.", "highlights": ["Tempio del Dente di Buddha", "Little India", "Moschea del Sultano", "Haji Lane", "Maxwell Food Centre"], "seasons": "BOOOBBBBBBDD", "seasonNote": "Come il resto della città." },
+      { "name": "Sentosa e natura", "description": "Sentosa con Universal Studios, l'acquario e le spiagge; Mandai con zoo e Night Safari; il Giardino Botanico UNESCO.", "highlights": ["Universal Studios", "S.E.A. Aquarium", "Night Safari", "Giardino Botanico"], "seasons": "BOOOBBBBBBDD", "seasonNote": "Ideale per famiglie in qualsiasi stagione." }
+    ],
+    "experiences": [
+      { "name": "Spettacolo di luci ai Supertree", "description": "Ogni sera, gratuito, nel Gardens by the Bay." },
+      { "name": "Cena negli hawker centre", "description": "Chicken rice, laksa, satay a pochi euro: alcuni banchi hanno la stella Michelin." },
+      { "name": "Night Safari", "description": "Safari notturno in trenino tra gli animali in libertà." },
+      { "name": "Singapore Sling al Raffles", "description": "Il cocktail nato nel bar storico dell'hotel." },
+      { "name": "Universal Studios a Sentosa", "description": "Parco divertimenti perfetto per famiglie." },
+      { "name": "Crociera sul fiume", "description": "Barca tradizionale lungo il Singapore River, la sera." }
+    ],
+    "itineraries": [
+      { "title": "Stopover", "days": 3, "route": "Singapore (2–3 notti)", "description": "Perfetta pausa nei viaggi verso Australia, Bali o Oceania." },
+      { "title": "Singapore e Malesia", "days": 10, "route": "Singapore (3) → Malacca (1) → Kuala Lumpur (2) → Langkawi o Penang (4)", "description": "Città, storia e mare con trasferimenti brevi." },
+      { "title": "Singapore e Bali", "days": 11, "route": "Singapore (3) → Bali (8)", "description": "Combinato classico per viaggi di nozze." }
+    ],
+    "agentTips": [
+      "Prima dell'arrivo va compilata online la SG Arrival Card.",
+      "È una città costosa per gli hotel: per budget medi proponi 2–3 notti come stopover.",
+      "Regole severe: multe per gomme da masticare, fumo fuori dalle aree previste, rifiuti.",
+      "Il weekend del Gran Premio di Formula 1 (settembre–ottobre) i prezzi degli hotel salgono molto.",
+      "Il Jewel di Changi si visita anche senza passare i controlli: utile nei transiti lunghi."
+    ]
+  },
+  "MY": {
+    "morePlaces": [
+      { "name": "Cameron Highlands", "description": "Colline fresche con piantagioni di tè, fragole e sentieri nella foresta nebulosa.", "search": "Cameron Highlands" },
+      { "name": "Isole Perhentian", "description": "Acque trasparenti e snorkeling con tartarughe e squaletti sulla costa est.", "search": "Perhentian Islands" },
+      { "name": "Sepilok", "description": "Il centro di riabilitazione degli oranghi nel Sabah, nel Borneo.", "search": "Sepilok Orangutan Rehabilitation Centre" },
+      { "name": "Fiume Kinabatangan", "description": "Crociere per vedere nasiche, oranghi ed elefanti pigmei del Borneo.", "search": "Kinabatangan River" }
+    ],
+    "bestPeriod": "Dicembre–aprile per la costa ovest (Penang, Langkawi); marzo–ottobre per la costa est (Perhentian, Redang, Tioman, chiuse da novembre a febbraio) e il Borneo; Kuala Lumpur tutto l'anno",
+    "areas": [
+      { "name": "Kuala Lumpur e Malacca", "description": "La capitale con le Torri Petronas, le Batu Caves e i mercati; Malacca, città coloniale UNESCO con l'eredità portoghese, olandese e peranakan.", "highlights": ["Torri Petronas", "Batu Caves", "Chinatown di KL", "Malacca"], "seasons": "BBOOBBBBBDDB", "seasonNote": "Caldo tutto l'anno con acquazzoni; più piogge tra ottobre e novembre." },
+      { "name": "Costa ovest (Penang, Langkawi)", "description": "George Town a Penang, capitale del cibo di strada con murales e case coloniali; Langkawi con spiagge, mangrovie, funivia e resort nella foresta.", "highlights": ["George Town", "Penang Hill", "Langkawi Sky Bridge", "Mangrovie di Kilim", "Pantai Cenang"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile il mare è migliore; da maggio a ottobre più piogge." },
+      { "name": "Costa est e isole (Perhentian, Redang, Tioman)", "description": "Isole con sabbia bianca e acqua cristallina, snorkeling e immersioni: dalla semplicità delle Perhentian ai resort di Redang.", "highlights": ["Perhentian", "Redang", "Tioman", "Lang Tengah"], "seasons": "XXBOOOOOOBXX", "seasonNote": "Aperte da marzo a ottobre; da novembre a febbraio il monsone di nord-est chiude molte strutture." },
+      { "name": "Borneo malese (Sabah e Sarawak)", "description": "Natura pura: oranghi a Sepilok, crociere sul Kinabatangan, il monte Kinabalu, le immersioni di Sipadan, le grotte di Mulu e le longhouse del Sarawak.", "highlights": ["Sepilok", "Kinabatangan", "Monte Kinabalu", "Sipadan", "Mulu", "Kota Kinabalu"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da marzo a ottobre clima più secco; più piogge da novembre a febbraio." },
+      { "name": "Cameron Highlands", "description": "Colline del tè a 1.500 metri, clima fresco, sentieri e fattorie: una pausa piacevole sulla strada tra KL e Penang.", "highlights": ["Piantagioni BOH", "Mossy Forest", "Brinchang"], "seasons": "BBBBBBBBBDDB", "seasonNote": "Fresco tutto l'anno; più pioggia tra ottobre e novembre." }
+    ],
+    "experiences": [
+      { "name": "Skybridge delle Torri Petronas", "description": "Il ponte tra le torri gemelle e la vista dal piano più alto." },
+      { "name": "Street food a George Town", "description": "Char kway teow, laksa e cendol nei banchi storici di Penang." },
+      { "name": "Oranghi a Sepilok", "description": "Il pasto degli oranghi orfani e il vicino centro degli orsi del sole." },
+      { "name": "Crociera sul Kinabatangan", "description": "All'alba e al tramonto tra scimmie, uccelli e coccodrilli." },
+      { "name": "Snorkeling alle Perhentian", "description": "Tartarughe e squaletti di barriera direttamente dalla spiaggia." },
+      { "name": "Salita al Kinabalu", "description": "Due giorni di trekking fino a 4.095 metri, con permessi da prenotare." },
+      { "name": "Mangrovie di Langkawi", "description": "Barca tra le mangrovie del geoparco UNESCO con aquile e grotte." }
+    ],
+    "itineraries": [
+      { "title": "Malesia classica", "days": 14, "route": "Kuala Lumpur (3) → Malacca (1) → Cameron Highlands (2) → Penang (3) → Langkawi (5)", "description": "Città, colonie, colline del tè e mare della costa ovest, da dicembre ad aprile." },
+      { "title": "Estate tra Borneo e isole", "days": 14, "route": "Kuala Lumpur (2) → Sepilok (2) → Kinabatangan (2) → Kota Kinabalu (1) → Perhentian o Redang (5)", "description": "Natura e mare nella stagione giusta, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Prima dell'arrivo va compilata online la Malaysia Digital Arrival Card (MDAC).",
+      "Non vendere la costa est tra novembre e febbraio: molte isole sono chiuse.",
+      "A Sipadan i permessi giornalieri sono limitati: vanno prenotati con largo anticipo tramite i diving resort.",
+      "Durante il Ramadan alcuni ristoranti chiudono di giorno nelle zone più conservatrici.",
+      "Ottimo abbinamento con Singapore, Thailandia del sud e Indonesia."
+    ]
+  },
+  "UZ": {
+    "morePlaces": [
+      { "name": "Campo di yurte del lago Aydarkul", "description": "Notte in yurta nel deserto del Kyzylkum, con cammelli e cielo stellato.", "search": "Aydar Lake" },
+      { "name": "Valle di Fergana", "description": "Ceramiche di Rishtan, seta di Margilan e mercati tra i più autentici dell'Asia centrale.", "search": "Fergana Valley" },
+      { "name": "Shakhrisabz", "description": "La città natale di Tamerlano con le rovine del palazzo Ak-Saray.", "search": "Shahrisabz" }
+    ],
+    "bestPeriod": "Aprile–maggio e settembre–ottobre; luglio–agosto molto caldo (oltre 40 °C a Bukhara e Khiva); inverno freddo",
+    "areas": [
+      { "name": "Samarcanda", "description": "La perla della Via della Seta: il Registan con le tre madrase, il viale dei mausolei di Shah-i-Zinda, la tomba di Tamerlano, l'osservatorio di Ulugh Beg e la cartiera di Konigil.", "highlights": ["Registan", "Shah-i-Zinda", "Gur-e-Amir", "Bibi-Khanym", "Konigil"], "seasons": "DDBOOBXXOOBD", "seasonNote": "Primavera e autunno ideali; estate molto calda; inverno freddo ma visitabile." },
+      { "name": "Bukhara", "description": "Città santa con oltre cento monumenti: la piazza Lyab-i Hauz, il minareto Kalon, la fortezza Ark, i bazar a cupola e le madrase dove si lavora il ricamo suzani.", "highlights": ["Poi Kalon", "Lyab-i Hauz", "Fortezza Ark", "Chor Minor", "Bazar a cupola"], "seasons": "DDBOOBXXOOBD", "seasonNote": "Come Samarcanda, ancora più calda in luglio–agosto." },
+      { "name": "Khiva (Khorezm)", "description": "Una città-museo intatta dentro le mura di fango (Itchan Kala), al tramonto di una bellezza unica; vicino si visitano le fortezze del deserto di Karakalpakstan.", "highlights": ["Itchan Kala", "Kalta Minor", "Fortezze del Khorezm"], "seasons": "DDBOODXXOODD", "seasonNote": "Estate torrida e inverno rigido: meglio primavera e autunno." },
+      { "name": "Tashkent e valle di Fergana", "description": "La capitale moderna con le stazioni della metropolitana decorate e il bazar Chorsu; la valle di Fergana per l'artigianato tradizionale.", "highlights": ["Metro di Tashkent", "Bazar Chorsu", "Rishtan", "Margilan"], "seasons": "DDBOOBDDOOBD", "seasonNote": "Primavera e autunno ideali." }
+    ],
+    "experiences": [
+      { "name": "Registan illuminato", "description": "La piazza di Samarcanda la sera, con le luci sulle madrase." },
+      { "name": "Treno veloce Afrosiyob", "description": "Collega Tashkent, Samarcanda e Bukhara in poche ore; i posti vanno prenotati presto." },
+      { "name": "Notte in yurta nel deserto", "description": "Campo vicino al lago Aydarkul, con cena, musica e cammelli." },
+      { "name": "Plov in casa di una famiglia", "description": "Il piatto nazionale cucinato e mangiato insieme a una famiglia uzbeka." },
+      { "name": "Laboratori artigiani", "description": "Ceramica a Rishtan, seta a Margilan, carta di gelso a Konigil, ricami suzani a Bukhara." },
+      { "name": "Navruz", "description": "Il Capodanno persiano del 21 marzo, con feste e piatti tradizionali." }
+    ],
+    "itineraries": [
+      { "title": "Uzbekistan classico", "days": 8, "route": "Tashkent (1) → Khiva (2) → Bukhara (3) → Samarcanda (2)", "description": "Le tre città della Via della Seta, con volo interno per Urgench e treno veloce." },
+      { "title": "Via della Seta completa", "days": 12, "route": "Tashkent (2) → Fergana (2) → Samarcanda (3) → yurta Aydarkul (1) → Bukhara (2) → Khiva (2)", "description": "Per chi vuole artigianato, deserto e un ritmo più lento." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi: verifica sempre la durata in vigore.",
+      "Gli hotel registrano gli ospiti presso le autorità: conservare le ricevute di registrazione.",
+      "I posti sul treno Afrosiyob si esauriscono: prenota appena confermato il viaggio.",
+      "Nelle moschee e madrase attive è richiesto un abbigliamento coperto.",
+      "Si abbina bene con Kazakistan, Kirghizistan e Turkmenistan per un tour della Via della Seta."
+    ]
+  }
+}

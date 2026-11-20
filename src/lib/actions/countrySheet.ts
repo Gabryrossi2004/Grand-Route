@@ -7,7 +7,7 @@ import { z } from "zod";
 import {
   customizeCountrySheetContent,
   generateCountrySheetContent,
-  CountrySheetSchema,
+  CountrySheetStoredSchema,
   type CountrySheetContent,
 } from "@/lib/countrySheetAi";
 import { SHEET_SECTIONS } from "@/lib/countrySheetShared";
@@ -71,7 +71,7 @@ export async function getCountrySheet(code: string): Promise<Result> {
     return lib.ok && lib.sheet ? lib : { ok: false, error: NOT_READY };
   }
   if (!data) return await fromLibrary();
-  const parsed = CountrySheetSchema.safeParse(data.content);
+  const parsed = CountrySheetStoredSchema.safeParse(data.content);
   if (!parsed.success) return await fromLibrary();
   return {
     ok: true,
@@ -140,7 +140,7 @@ export async function previewCustomCountrySheet(
   if (!validCode(code)) return { ok: false, error: "Paese non valido." };
   const ctx = await agencyUser();
   if (!ctx) return { ok: false, error: "Accesso non valido." };
-  const cur = CountrySheetSchema.safeParse(current);
+  const cur = CountrySheetStoredSchema.safeParse(current);
   const opts = customizeSchema.safeParse(options);
   if (!cur.success || !opts.success) return { ok: false, error: "Scegli almeno una parte della scheda da modificare." };
 
@@ -162,7 +162,7 @@ export async function saveCountrySheet(code: string, content: unknown, photos: u
   if (!validCode(code)) return { ok: false, error: "Paese non valido." };
   const ctx = await agencyUser();
   if (!ctx) return { ok: false, error: "Accesso non valido." };
-  const parsed = CountrySheetSchema.safeParse(content);
+  const parsed = CountrySheetStoredSchema.safeParse(content);
   if (!parsed.success) return { ok: false, error: "Alcuni campi non sono validi: controlla i testi." };
   const photoList = z
     .array(z.object({ url: z.string().url().max(1000), title: z.string().max(300), credit: z.string().max(300), license: z.string().max(100), source: z.string().max(1000) }))

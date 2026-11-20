@@ -1,0 +1,766 @@
+{
+  "DZ": {
+    "moreDescription": [
+      "L'Algeria è il paese più grande d'Africa e uno dei meno conosciuti: Algeri con la Casbah e la baia, città romane straordinarie come Timgad e Djemila, la valle del M'zab con le città fortificate dei mozabiti e, soprattutto, il Sahara del Tassili n'Ajjer e dell'Hoggar con pitture rupestri e paesaggi lunari. Il nord si visita in primavera e autunno, il deserto da ottobre ad aprile. Alcune zone di confine sono sconsigliate: verifica viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Algeri e costa",
+        "description": "La Casbah UNESCO, Notre-Dame d'Afrique, il Jardin d'Essai e le rovine romane di Tipasa sul mare.",
+        "highlights": [
+          "Casbah",
+          "Notre-Dame d'Afrique",
+          "Jardin d'Essai",
+          "Tipasa"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali."
+      },
+      {
+        "name": "Est romano (Timgad, Djemila, Costantina)",
+        "description": "Le città romane meglio conservate del Nord Africa e Costantina, la città dei ponti sospesi.",
+        "highlights": [
+          "Timgad",
+          "Djemila",
+          "Costantina"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno."
+      },
+      {
+        "name": "Sahara (Tassili n'Ajjer, Hoggar, Ghardaïa)",
+        "description": "Le città del M'zab, le pitture rupestri del Tassili, le montagne dell'Hoggar con l'eremo di Assekrem.",
+        "highlights": [
+          "Valle del M'zab",
+          "Tassili n'Ajjer",
+          "Djanet",
+          "Assekrem",
+          "Tamanrasset"
+        ],
+        "seasons": "OOOBDXXXDOOO",
+        "seasonNote": "Da ottobre ad aprile; Capodanno e Natale molto richiesti a Djanet."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Trekking nel Tassili",
+        "description": "Più giorni tra canyon di arenaria e pitture rupestri, con tuareg."
+      },
+      {
+        "name": "Alba ad Assekrem",
+        "description": "Dall'eremo di Charles de Foucauld."
+      },
+      {
+        "name": "Casbah di Algeri",
+        "description": "Visita con guida locale."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Deserto di Djanet",
+        "days": 8,
+        "route": "Algeri (1) → Djanet (6, trekking nel Tassili)",
+        "description": "Da ottobre ad aprile, con agenzia locale."
+      },
+      {
+        "title": "Algeria del nord",
+        "days": 8,
+        "route": "Algeri (2) → Tipasa → Costantina (2) → Djemila → Timgad (1) → Ghardaïa (2)",
+        "description": "Città romane e M'zab, primavera e autunno."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; per il Sahara si viaggia con agenzia locale e lettera d'invito.",
+      "Alcune zone di confine sono sconsigliate: verifica viaggiaresicuri.it.",
+      "Il cambio ufficiale e quello informale differiscono molto: informa il cliente.",
+      "Collegamenti in traghetto dall'Italia (Genova)."
+    ]
+  },
+  "LY": {
+    "areas": [
+      {
+        "name": "Tripolitania (Tripoli, Leptis Magna, Sabratha)",
+        "description": "La medina di Tripoli e le grandi città romane sul mare.",
+        "highlights": [
+          "Leptis Magna",
+          "Sabratha",
+          "Medina di Tripoli"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      },
+      {
+        "name": "Cirenaica e Sahara",
+        "description": "Cirene greca, Ghadames e l'Akakus.",
+        "highlights": [
+          "Cirene",
+          "Ghadames",
+          "Akakus"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Siti romani",
+        "description": "Da proporre solo quando la situazione lo permetterà."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica sempre viaggiaresicuri.it.",
+      "Per l'archeologia romana del Nord Africa proponi la Tunisia (El Jem, Dougga) o l'Algeria."
+    ]
+  },
+  "ET": {
+    "moreDescription": [
+      "L'Etiopia è uno dei paesi più originali dell'Africa: un cristianesimo antichissimo con le chiese scavate nella roccia di Lalibela, i castelli di Gondar, le stele di Axum, gli altipiani dei monti Simien con i gelada, la depressione della Dancalia con il Dallol e i popoli della valle dell'Omo. Il periodo migliore è da ottobre a marzo; le feste di Timkat (gennaio) e Meskel (settembre) sono spettacolari. Alcune regioni sono instabili: verifica viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Rotta storica (Lalibela, Gondar, Axum, Bahir Dar)",
+        "description": "Le chiese monolitiche di Lalibela, i castelli di Gondar, le stele di Axum, il lago Tana con i monasteri e le cascate del Nilo Azzurro.",
+        "highlights": [
+          "Lalibela",
+          "Gondar",
+          "Axum",
+          "Lago Tana",
+          "Cascate del Nilo Azzurro"
+        ],
+        "seasons": "OOOBDDXXBOOO",
+        "seasonNote": "Da ottobre a marzo; luglio–agosto piogge; verificare la situazione di sicurezza nel nord."
+      },
+      {
+        "name": "Monti Simien",
+        "description": "Altipiani e precipizi con i babbuini gelada, lo stambecco walia e trekking spettacolari.",
+        "highlights": [
+          "Gelada",
+          "Chenek",
+          "Ras Dashen"
+        ],
+        "seasons": "OOOBDXXXBOOO",
+        "seasonNote": "Da ottobre a marzo."
+      },
+      {
+        "name": "Sud (valle dell'Omo, laghi della Rift Valley)",
+        "description": "I popoli Mursi, Hamer e Karo, i mercati tribali e i laghi della Rift Valley.",
+        "highlights": [
+          "Valle dell'Omo",
+          "Jinka",
+          "Turmi",
+          "Arba Minch"
+        ],
+        "seasons": "OOBDDBBBDBOO",
+        "seasonNote": "Da dicembre a febbraio e giugno–settembre."
+      },
+      {
+        "name": "Dancalia (Dallol, Erta Ale)",
+        "description": "Uno dei luoghi più caldi della Terra, con le sorgenti colorate del Dallol e il lago di lava dell'Erta Ale.",
+        "highlights": [
+          "Dallol",
+          "Erta Ale",
+          "Saline del lago Assale"
+        ],
+        "seasons": "OOBXXXXXXXBO",
+        "seasonNote": "Da novembre a febbraio; verificare la sicurezza."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Timkat a Gondar o Lalibela",
+        "description": "L'Epifania ortodossa a gennaio, con processioni."
+      },
+      {
+        "name": "Cerimonia del caffè",
+        "description": "Nella patria del caffè, con tostatura e incenso."
+      },
+      {
+        "name": "Gelada nei Simien",
+        "description": "Camminata tra branchi di centinaia di babbuini."
+      },
+      {
+        "name": "Mercati della valle dell'Omo",
+        "description": "Con guide locali e rispetto delle comunità."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Rotta storica",
+        "days": 10,
+        "route": "Addis Abeba (1) → Bahir Dar (2) → Gondar (1) → Simien (2) → Axum (1) → Lalibela (2)",
+        "description": "Con voli interni, da ottobre a marzo."
+      },
+      {
+        "title": "Valle dell'Omo",
+        "days": 9,
+        "route": "Addis Abeba (1) → Arba Minch (1) → Jinka (2) → Turmi (3) → Addis Abeba",
+        "description": "Popoli del sud con fuoristrada."
+      }
+    ],
+    "agentTips": [
+      "Serve l'e-visa da richiedere online.",
+      "Alcune regioni (Tigray, Amhara, Afar) possono essere instabili: verifica viaggiaresicuri.it prima di confermare.",
+      "Volando Ethiopian Airlines sui voli internazionali si hanno sconti sui voli interni.",
+      "L'Etiopia usa un calendario e un orario diversi: verifica sempre gli orari indicati."
+    ]
+  },
+  "UG": {
+    "moreDescription": [
+      "L'Uganda, la 'perla d'Africa', è la meta ideale per vedere i gorilla di montagna nella foresta di Bwindi e gli scimpanzé a Kibale, insieme ai safari classici nel Queen Elizabeth (leoni che salgono sugli alberi) e alle cascate Murchison sul Nilo. Le stagioni secche sono giugno–settembre e dicembre–febbraio; il trekking dei gorilla si fa tutto l'anno, ma nelle piogge è più faticoso."
+    ],
+    "areas": [
+      {
+        "name": "Bwindi e Mgahinga (gorilla)",
+        "description": "La foresta impenetrabile dove vive circa metà dei gorilla di montagna del mondo, con trekking a numero chiuso.",
+        "highlights": [
+          "Gorilla di montagna",
+          "Bwindi",
+          "Mgahinga",
+          "Batwa"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Possibile tutto l'anno; più agevole nelle stagioni secche."
+      },
+      {
+        "name": "Kibale e lago Bunyonyi",
+        "description": "La foresta con gli scimpanzé e il lago dalle 29 isole, ideale per riposare.",
+        "highlights": [
+          "Scimpanzé di Kibale",
+          "Palude di Bigodi",
+          "Lago Bunyonyi"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Come Bwindi."
+      },
+      {
+        "name": "Queen Elizabeth e Murchison",
+        "description": "Safari in savana e in barca sul canale di Kazinga e sotto le cascate Murchison.",
+        "highlights": [
+          "Canale di Kazinga",
+          "Ishasha",
+          "Cascate Murchison",
+          "Rinoceronti di Ziwa"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Stagioni secche ideali."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Trekking dei gorilla",
+        "description": "Un'ora con una famiglia di gorilla: esperienza indimenticabile, con permesso costoso."
+      },
+      {
+        "name": "Scimpanzé a Kibale",
+        "description": "Trekking o 'habituation experience' di mezza giornata."
+      },
+      {
+        "name": "Barca sul canale di Kazinga",
+        "description": "Ippopotami, elefanti e uccelli."
+      },
+      {
+        "name": "Rafting sul Nilo a Jinja",
+        "description": "Rapide alla sorgente del Nilo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Primati e safari",
+        "days": 10,
+        "route": "Entebbe (1) → Kibale (2) → Queen Elizabeth (2) → Bwindi (2) → Lago Bunyonyi (1) → Entebbe",
+        "description": "Gorilla, scimpanzé e savana."
+      },
+      {
+        "title": "Gorilla express",
+        "days": 5,
+        "route": "Kigali → Bwindi o Mgahinga (3) → Kigali",
+        "description": "Dal Ruanda, con trasferimento via terra."
+      }
+    ],
+    "agentTips": [
+      "Serve l'e-visa e il certificato di vaccinazione contro la febbre gialla.",
+      "I permessi per i gorilla sono a numero chiuso: prenota con molti mesi di anticipo.",
+      "Il trekking può durare da 1 a 6 ore in salita: serve buona forma fisica.",
+      "Consiglia la profilassi antimalarica."
+    ]
+  },
+  "RW": {
+    "moreDescription": [
+      "Il Ruanda è la terra delle mille colline: ordinato, sicuro e con un turismo di alta qualità. È famoso per il trekking dei gorilla di montagna nel Parco dei Vulcani, ma offre anche scimpanzé e passerella sospesa a Nyungwe, safari con i Big Five ad Akagera e il lago Kivu. A Kigali il Memoriale del genocidio è una visita fondamentale. Le stagioni secche sono giugno–settembre e dicembre–febbraio."
+    ],
+    "areas": [
+      {
+        "name": "Parco dei Vulcani",
+        "description": "Gorilla di montagna, scimmie dorate e il trekking alla tomba di Dian Fossey, con lodge di lusso.",
+        "highlights": [
+          "Gorilla",
+          "Scimmie dorate",
+          "Tomba di Dian Fossey"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Possibile tutto l'anno, meglio nelle stagioni secche."
+      },
+      {
+        "name": "Nyungwe",
+        "description": "Foresta pluviale con scimpanzé, colobi e la passerella tra le cime degli alberi.",
+        "highlights": [
+          "Canopy walk",
+          "Scimpanzé",
+          "Piantagioni di tè"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Come i Vulcani."
+      },
+      {
+        "name": "Akagera",
+        "description": "Savana con i Big Five reintrodotti, safari in barca sul lago Ihema.",
+        "highlights": [
+          "Big Five",
+          "Lago Ihema"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Stagioni secche ideali."
+      },
+      {
+        "name": "Kigali e lago Kivu",
+        "description": "La capitale pulita e moderna con il Memoriale, e il lago Kivu per il relax.",
+        "highlights": [
+          "Memoriale del genocidio",
+          "Mercato di Kimironko",
+          "Gisenyi",
+          "Kibuye"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Trekking dei gorilla",
+        "description": "Permesso tra i più cari d'Africa ma esperienza unica."
+      },
+      {
+        "name": "Canopy walk a Nyungwe",
+        "description": "Passerella sospesa sopra la foresta."
+      },
+      {
+        "name": "Memoriale di Kigali",
+        "description": "Per comprendere la storia del paese."
+      },
+      {
+        "name": "Safari ad Akagera",
+        "description": "Big Five in un'unica giornata da Kigali."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Ruanda completo",
+        "days": 8,
+        "route": "Kigali (1) → Akagera (2) → Nyungwe (2) → Lago Kivu (1) → Vulcani (2)",
+        "description": "Primati e savana."
+      },
+      {
+        "title": "Gorilla breve",
+        "days": 4,
+        "route": "Kigali (1) → Vulcani (2)",
+        "description": "Estensione di un safari in Kenya o Tanzania."
+      }
+    ],
+    "agentTips": [
+      "Visto all'arrivo o online per gli italiani: verifica la procedura.",
+      "Il permesso gorilla è molto caro e a numero chiuso: prenota presto.",
+      "Sacchetti di plastica vietati: avvisa il cliente.",
+      "Si abbina perfettamente a Kenya, Tanzania e Uganda."
+    ]
+  },
+  "BI": {
+    "moreDescription": [
+      "Il Burundi è un piccolo paese dei Grandi Laghi, poco turistico: il lago Tanganica con le spiagge di Bujumbura, i tamburi reali tradizionali, le foreste della Kibira e le colline di tè. La situazione di sicurezza richiede cautela: verifica viaggiaresicuri.it. La stagione secca va da giugno ad agosto."
+    ],
+    "areas": [
+      {
+        "name": "Bujumbura e lago Tanganica",
+        "description": "Spiagge sul lago, ippopotami e la capitale economica.",
+        "highlights": [
+          "Lago Tanganica",
+          "Spiaggia di Saga",
+          "Bujumbura"
+        ],
+        "seasons": "DBDDDOOOBDDD",
+        "seasonNote": "Da giugno ad agosto; verificare la sicurezza."
+      },
+      {
+        "name": "Interno (Gishora, Kibira, Karera)",
+        "description": "Il santuario dei tamburi reali di Gishora, la foresta della Kibira e le cascate di Karera.",
+        "highlights": [
+          "Tamburi di Gishora",
+          "Kibira",
+          "Cascate di Karera"
+        ],
+        "seasons": "DBDDDOOOBDDD",
+        "seasonNote": "Da giugno ad agosto."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tamburi reali",
+        "description": "La danza rituale patrimonio UNESCO."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Burundi",
+        "days": 5,
+        "route": "Bujumbura (2) → Gitega e Gishora (2)",
+        "description": "Solo per viaggiatori esperti, se la situazione lo consente."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it.",
+      "Serve il visto e la vaccinazione contro la febbre gialla.",
+      "Strutture turistiche limitate."
+    ]
+  },
+  "ER": {
+    "moreDescription": [
+      "L'Eritrea ha un legame storico forte con l'Italia: Asmara, patrimonio UNESCO, è una città modernista italiana degli anni '30 con cinema, bar e il celebre distributore Fiat Tagliero. La ferrovia di montagna fino a Massaua e le isole Dahlak completano il viaggio. Il paese è chiuso e richiede permessi per spostarsi fuori dalla capitale; verifica viaggiaresicuri.it. Il periodo migliore va da ottobre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Asmara",
+        "description": "Architetture razionaliste e art déco, il cinema Impero, la cattedrale e la vita dei caffè.",
+        "highlights": [
+          "Fiat Tagliero",
+          "Cinema Impero",
+          "Cattedrale",
+          "Bar Zilli"
+        ],
+        "seasons": "OOOOBDDDBOOO",
+        "seasonNote": "Clima fresco d'altura; luglio–agosto piovosi."
+      },
+      {
+        "name": "Massaua e Dahlak",
+        "description": "La città portuale ottomana e le isole coralline.",
+        "highlights": [
+          "Massaua",
+          "Isole Dahlak",
+          "Ferrovia Asmara–Massaua"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da ottobre ad aprile; estate torrida."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Asmara modernista",
+        "description": "Passeggiata tra gli edifici italiani con guida."
+      },
+      {
+        "name": "Treno a vapore",
+        "description": "La ferrovia storica di montagna (su richiesta)."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Eritrea",
+        "days": 6,
+        "route": "Asmara (3) → Massaua (2)",
+        "description": "Con permessi e agenzia locale."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto da richiedere in ambasciata; fuori da Asmara servono permessi di viaggio.",
+      "Verifica sempre viaggiaresicuri.it.",
+      "Internet quasi assente e niente carte di credito: contanti."
+    ]
+  },
+  "DJ": {
+    "moreDescription": [
+      "Gibuti è un piccolo paese del Corno d'Africa con paesaggi geologici estremi: il lago Assal, il punto più basso dell'Africa con le saline bianche, il lago Abbe con i camini fumanti e il golfo di Tadjoura dove da novembre a febbraio si nuota con gli squali balena. È una meta di nicchia; il periodo migliore va da novembre a febbraio."
+    ],
+    "areas": [
+      {
+        "name": "Laghi e deserto (Assal, Abbe)",
+        "description": "Le saline del lago Assal e i camini di calcare del lago Abbe all'alba.",
+        "highlights": [
+          "Lago Assal",
+          "Lago Abbe",
+          "Camini calcarei"
+        ],
+        "seasons": "OOBDXXXXXBOO",
+        "seasonNote": "Da novembre a febbraio; estate torrida."
+      },
+      {
+        "name": "Golfo di Tadjoura",
+        "description": "Squali balena, coralli e le isole Moucha.",
+        "highlights": [
+          "Squali balena",
+          "Isole Moucha",
+          "Tadjoura"
+        ],
+        "seasons": "OOBDDXXXXBOO",
+        "seasonNote": "Squali balena da novembre a febbraio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Squali balena",
+        "description": "Nuotata nella baia di Ghoubbet."
+      },
+      {
+        "name": "Alba al lago Abbe",
+        "description": "Notte in campo e alba tra i camini fumanti."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Gibuti",
+        "days": 6,
+        "route": "Gibuti (2) → Lago Assal (1) → Lago Abbe (1) → Tadjoura (1)",
+        "description": "Da novembre a febbraio."
+      }
+    ],
+    "agentTips": [
+      "Serve l'e-visa.",
+      "Prezzi alti per la presenza di basi militari straniere.",
+      "Verifica viaggiaresicuri.it per le zone di confine."
+    ]
+  },
+  "MR": {
+    "moreDescription": [
+      "La Mauritania è Sahara puro: le città carovaniere di Chinguetti e Ouadane con le antiche biblioteche, la struttura di Richat (l''occhio del Sahara') visibile dallo spazio, oasi e dune, il Banc d'Arguin con milioni di uccelli e il leggendario treno del ferro. Il periodo migliore va da novembre a marzo; alcune zone sono sconsigliate, verifica viaggiaresicuri.it."
+    ],
+    "experiences": [
+      {
+        "name": "Treno del ferro",
+        "description": "Uno dei treni più lunghi del mondo, per avventurieri."
+      },
+      {
+        "name": "Biblioteche di Chinguetti",
+        "description": "Manoscritti medievali custoditi dalle famiglie."
+      },
+      {
+        "name": "Notte tra le dune",
+        "description": "Campi tendati nell'Adrar."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Adrar",
+        "days": 8,
+        "route": "Atar (1) → Chinguetti (2) → Ouadane (2) → Terjit (1)",
+        "description": "Da novembre a marzo, con agenzia locale."
+      }
+    ],
+    "agentTips": [
+      "Visto all'arrivo o online: verifica.",
+      "Diverse zone sono sconsigliate: verifica sempre viaggiaresicuri.it.",
+      "Paese musulmano conservatore: alcol vietato."
+    ],
+    "areas": [
+      {
+        "name": "Adrar (Chinguetti, Ouadane, Richat)",
+        "description": "Città UNESCO con biblioteche di manoscritti, dune e l'occhio del Sahara.",
+        "highlights": [
+          "Chinguetti",
+          "Ouadane",
+          "Struttura di Richat",
+          "Oasi di Terjit"
+        ],
+        "seasons": "OOBDXXXXXDOO",
+        "seasonNote": "Da novembre a marzo; voli charter stagionali per Atar."
+      },
+      {
+        "name": "Costa (Nouakchott, Banc d'Arguin)",
+        "description": "Il porto dei pescatori di Nouakchott e il parco del Banc d'Arguin con fenicotteri e pellicani.",
+        "highlights": [
+          "Mercato del pesce",
+          "Banc d'Arguin"
+        ],
+        "seasons": "OOBBDDDDDBOO",
+        "seasonNote": "Da novembre a marzo."
+      }
+    ]
+  },
+  "ML": {
+    "areas": [
+      {
+        "name": "Mali storico",
+        "description": "Djenné, Timbuctù, il paese Dogon e il fiume Niger.",
+        "highlights": [
+          "Djenné",
+          "Timbuctù",
+          "Bandiagara"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Per l'architettura in fango del Sahel proponi in alternativa il Marocco del sud o la Mauritania (se consentito)."
+    ]
+  },
+  "NE": {
+    "areas": [
+      {
+        "name": "Niger",
+        "description": "Agadez, l'Aïr, il Ténéré e il fiume Niger.",
+        "highlights": [
+          "Agadez",
+          "Ténéré",
+          "Aïr"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it."
+    ]
+  },
+  "TD": {
+    "moreDescription": [
+      "Il Ciad ha paesaggi sahariani tra i più spettacolari al mondo, come il massiccio dell'Ennedi con archi di roccia e pitture rupestri e i laghi di Ounianga, oltre al parco di Zakouma, rinato e ricco di fauna. Si visita solo con spedizioni organizzate da operatori specializzati e verificando la situazione su viaggiaresicuri.it, perché molte zone sono sconsigliate. Periodo migliore da novembre a febbraio."
+    ],
+    "experiences": [
+      {
+        "name": "Spedizione nell'Ennedi",
+        "description": "Più giorni in fuoristrada con campi."
+      },
+      {
+        "name": "Safari a Zakouma",
+        "description": "Uno dei parchi più selvaggi d'Africa."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Ennedi",
+        "days": 12,
+        "route": "N'Djamena (1) → Ennedi e Ounianga (10)",
+        "description": "Spedizione con operatore specializzato."
+      }
+    ],
+    "agentTips": [
+      "Molte zone sconsigliate: verifica sempre viaggiaresicuri.it.",
+      "Solo con operatori specializzati e permessi.",
+      "Serve la vaccinazione contro la febbre gialla."
+    ],
+    "areas": [
+      {
+        "name": "Ennedi e Ounianga",
+        "description": "Archi di roccia, canyon, pitture rupestri e laghi nel deserto.",
+        "highlights": [
+          "Arco di Aloba",
+          "Guelta d'Archei",
+          "Laghi di Ounianga"
+        ],
+        "seasons": "OOBDXXXXXDOO",
+        "seasonNote": "Da novembre a febbraio; verificare la sicurezza."
+      },
+      {
+        "name": "Zakouma",
+        "description": "Parco nazionale con grandi branchi di bufali, elefanti e leoni, gestito da African Parks.",
+        "highlights": [
+          "Bufali",
+          "Elefanti",
+          "Camp Nomade"
+        ],
+        "seasons": "BBOOXXXXXXXB",
+        "seasonNote": "Aperto circa da dicembre a giugno."
+      }
+    ]
+  },
+  "SD": {
+    "areas": [
+      {
+        "name": "Nubia (Meroe, Jebel Barkal)",
+        "description": "Piramidi e templi dei faraoni neri lungo il Nilo.",
+        "highlights": [
+          "Meroe",
+          "Jebel Barkal",
+          "Naqa"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Per la Nubia proponi in alternativa Assuan e Abu Simbel in Egitto."
+    ]
+  },
+  "SS": {
+    "areas": [
+      {
+        "name": "Sud Sudan",
+        "description": "Il Nilo Bianco, il Sudd e i campi di bestiame dei Mundari.",
+        "highlights": [
+          "Nilo Bianco",
+          "Sudd",
+          "Mundari"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it."
+    ]
+  },
+  "SO": {
+    "areas": [
+      {
+        "name": "Somalia e Somaliland",
+        "description": "Laas Geel, Hargeisa, Berbera e Mogadiscio.",
+        "highlights": [
+          "Laas Geel",
+          "Hargeisa",
+          "Berbera"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Le assicurazioni standard non coprono il paese."
+    ]
+  }
+}

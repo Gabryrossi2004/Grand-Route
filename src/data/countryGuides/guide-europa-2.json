@@ -1,0 +1,492 @@
+{
+  "CH": {
+    "moreDescription": [
+      "La Svizzera è montagne, laghi e treni panoramici perfettamente organizzati. D'estate (giugno–settembre) si vendono i trenini panoramici (Glacier Express, Bernina Express), le escursioni in quota (Jungfraujoch, Gornergrat, Pilatus) e i laghi; d'inverno lo sci a Zermatt, St. Moritz, Verbier e Davos, e i mercatini. Lo Swiss Travel Pass include treni, battelli, bus e molti musei: per un tour è quasi sempre conveniente. È una destinazione cara."
+    ],
+    "morePlaces": [
+      { "name": "Bernina Express", "description": "Il treno rosso UNESCO da Tirano a St. Moritz.", "search": "Bernina Express" },
+      { "name": "St. Moritz e Engadina", "description": "Laghi alpini, sci e lusso nei Grigioni.", "search": "St. Moritz" },
+      { "name": "Lavaux", "description": "Vigneti terrazzati UNESCO sul lago di Ginevra.", "search": "Lavaux" },
+      { "name": "Berna", "description": "La capitale medievale con i portici e la torre dell'orologio.", "search": "Zytglogge" }
+    ],
+    "areas": [
+      { "name": "Oberland bernese (Interlaken, Grindelwald, Lauterbrunnen, Jungfrau)", "description": "Il cuore delle Alpi svizzere: il Jungfraujoch a 3.454 m, la valle delle 72 cascate di Lauterbrunnen, Grindelwald, Mürren, lo Schilthorn e i laghi di Thun e Brienz.", "highlights": ["Jungfraujoch", "Lauterbrunnen", "Grindelwald", "Mürren", "Schilthorn", "Lago di Brienz"], "seasons": "OOOBDOOOOBDO", "seasonNote": "Escursioni da giugno a settembre; sci da dicembre a marzo; maggio e novembre stagioni morte." },
+      { "name": "Vallese (Zermatt, Cervino, Saas-Fee)", "description": "Zermatt senza auto ai piedi del Cervino, il trenino del Gornergrat, il Matterhorn Glacier Paradise e i ghiacciai.", "highlights": ["Cervino", "Gornergrat", "Glacier Paradise", "Saas-Fee", "Ghiacciaio dell'Aletsch"], "seasons": "OOOBDOOOOBDO", "seasonNote": "Sci quasi tutto l'anno sui ghiacciai; trekking da giugno a settembre." },
+      { "name": "Svizzera centrale (Lucerna, Pilatus, Rigi)", "description": "Lucerna con il ponte di legno e il lago dei Quattro Cantoni, i monti Pilatus, Rigi e Titlis.", "highlights": ["Lucerna", "Kapellbrücke", "Pilatus", "Rigi", "Titlis"], "seasons": "BBBOOOOOOOBO", "seasonNote": "Bella tutto l'anno; alcune salite (Pilatus da Alpnachstad) aprono solo da maggio a novembre." },
+      { "name": "Grigioni (St. Moritz, Engadina, Davos)", "description": "Il treno Bernina, St. Moritz, i laghi dell'Engadina e i villaggi con le case dipinte.", "highlights": ["St. Moritz", "Bernina Express", "Guarda", "Davos", "Parco nazionale svizzero"], "seasons": "OOOBDOOOOBDO", "seasonNote": "Sci da dicembre ad aprile; estate da giugno a settembre." },
+      { "name": "Città e laghi (Zurigo, Ginevra, Losanna, Montreux, Lugano)", "description": "Zurigo, Ginevra con il Jet d'Eau, Montreux e il castello di Chillon, i vigneti di Lavaux e Lugano in Ticino.", "highlights": ["Zurigo", "Ginevra", "Chillon", "Lavaux", "Lugano"], "seasons": "BBBOOOOOOOBO", "seasonNote": "Visitabili tutto l'anno; Montreux Jazz Festival a luglio; mercatini a dicembre." }
+    ],
+    "experiences": [
+      { "name": "Glacier Express", "description": "8 ore in treno panoramico da Zermatt a St. Moritz." },
+      { "name": "Bernina Express", "description": "Da Tirano a St. Moritz, comodo per partire dall'Italia." },
+      { "name": "Jungfraujoch", "description": "Il 'Top of Europe' con il palazzo di ghiaccio e il ghiacciaio dell'Aletsch." },
+      { "name": "Battello sui laghi", "description": "Battelli a vapore sul lago di Lucerna, Ginevra o Thun." },
+      { "name": "Sci a Zermatt o St. Moritz", "description": "Comprensori enormi, anche collegati con l'Italia (Cervinia)." },
+      { "name": "Cioccolato e formaggio", "description": "Gruyères, fonduta e fabbriche di cioccolato." }
+    ],
+    "itineraries": [
+      { "title": "Svizzera in treno", "days": 8, "route": "Zurigo (1) → Lucerna (2) → Interlaken (2) → Zermatt (2) → Glacier Express → St. Moritz (1)", "description": "Il grande giro con Swiss Travel Pass, da giugno a settembre." },
+      { "title": "Bernina e Engadina", "days": 3, "route": "Tirano → Bernina Express → St. Moritz (2)", "description": "Weekend lungo dall'Italia, anche d'inverno." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la Svizzera è area Schengen ma non UE (franco svizzero, roaming spesso escluso).",
+      "Per le autostrade serve la vignetta annuale.",
+      "Lo Swiss Travel Pass conviene quasi sempre per i tour; le salite in quota hanno sconti ma non sono sempre incluse.",
+      "I posti sui treni panoramici vanno prenotati con anticipo, con supplemento.",
+      "Prezzi molto alti: avvisa il cliente su ristoranti e trasporti locali."
+    ]
+  },
+  "BE": {
+    "moreDescription": [
+      "Il Belgio è perfetto per un tour breve in treno tra città d'arte vicinissime: Bruxelles con la Grand-Place, Bruges con i canali, Gand, Anversa con Rubens e i diamanti. È il paese della cioccolata, della birra trappista e delle patatine fritte. La stagione migliore va da aprile a settembre; a dicembre i mercatini di Natale di Bruxelles e Bruges sono molto richiesti."
+    ],
+    "morePlaces": [
+      { "name": "Museo Magritte", "description": "La più grande collezione del pittore surrealista a Bruxelles.", "search": "Magritte Museum" },
+      { "name": "Lovanio", "description": "Città universitaria con il municipio gotico.", "search": "Leuven Town Hall" },
+      { "name": "Ypres", "description": "I campi di battaglia e i memoriali della Prima guerra mondiale.", "search": "Menin Gate" }
+    ],
+    "areas": [
+      { "name": "Bruxelles", "description": "La Grand-Place, il Manneken Pis, i musei reali, l'Atomium, il quartiere europeo e i fumetti.", "highlights": ["Grand-Place", "Manneken Pis", "Atomium", "Musei reali", "Gallerie Saint-Hubert"], "seasons": "DDBOOOOOBBDO", "seasonNote": "Da aprile a settembre; ad agosto degli anni pari il tappeto di fiori sulla Grand-Place; dicembre per i mercatini." },
+      { "name": "Fiandre (Bruges, Gand, Anversa)", "description": "Bruges medievale con i canali, Gand con l'Agnello Mistico, Anversa con la cattedrale, Rubens e la moda.", "highlights": ["Bruges", "Gand", "Agnello Mistico", "Anversa", "Casa di Rubens"], "seasons": "DDBOOOOOBBDO", "seasonNote": "Da aprile a settembre; dicembre per i mercatini." },
+      { "name": "Vallonia e Ardenne (Dinant, Namur, Durbuy)", "description": "Valli boscose, castelli, la cittadella di Namur, Dinant sulla Mosa e la piccola Durbuy.", "highlights": ["Dinant", "Namur", "Durbuy", "Grotte di Han"], "seasons": "DDDBOOOOBBDD", "seasonNote": "Da maggio a settembre." }
+    ],
+    "experiences": [
+      { "name": "Battello sui canali di Bruges", "description": "Il modo più bello per vedere la città." },
+      { "name": "Degustazione di birre trappiste", "description": "Nei bar di Bruxelles o nelle abbazie." },
+      { "name": "Laboratorio di cioccolato", "description": "Corso con un maître chocolatier." },
+      { "name": "Mercatini di Natale", "description": "Bruxelles e Bruges a dicembre." }
+    ],
+    "itineraries": [
+      { "title": "Belgio in treno", "days": 5, "route": "Bruxelles (2) → Bruges (1) → Gand (1) → Anversa (1)", "description": "Città d'arte vicine collegate da treni frequenti." },
+      { "title": "Belgio e Olanda", "days": 8, "route": "Bruxelles (2) → Bruges (1) → Gand (1) → Anversa (1) → Amsterdam (3)", "description": "Due paesi in treno." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità.",
+      "I treni tra le città sono frequenti e veloci: non serve l'auto.",
+      "Bruges è affollatissima nei weekend estivi: meglio dormire lì e visitarla la sera.",
+      "Bruxelles ha una zona a basse emissioni per le auto."
+    ]
+  },
+  "DK": {
+    "moreDescription": [
+      "La Danimarca è soprattutto Copenaghen, una capitale di design, biciclette e alta cucina, perfetta per un city break; con qualche giorno in più si visitano i castelli della Zelanda, Aarhus, Legoland per le famiglie e Skagen all'estremo nord. La stagione migliore va da maggio a settembre; a dicembre i Giardini di Tivoli si trasformano in mercatino di Natale."
+    ],
+    "morePlaces": [
+      { "name": "Legoland Billund", "description": "Il parco Lego originale e la Lego House.", "search": "Legoland Billund" },
+      { "name": "Aarhus", "description": "Città giovane con il museo ARoS e il suo arcobaleno.", "search": "ARoS Aarhus" },
+      { "name": "Louisiana Museum", "description": "Museo d'arte moderna sul mare a nord di Copenaghen.", "search": "Louisiana Museum of Modern Art" }
+    ],
+    "areas": [
+      { "name": "Copenaghen", "description": "Nyhavn, i Giardini di Tivoli, il castello di Rosenborg, Christiansborg, Christiania, la Sirenetta e i ristoranti stellati.", "highlights": ["Nyhavn", "Tivoli", "Rosenborg", "Christiania", "Sirenetta"], "seasons": "DDDBOOOOBDDO", "seasonNote": "Da maggio a settembre; dicembre per il Natale a Tivoli." },
+      { "name": "Zelanda del nord", "description": "Il castello di Kronborg (di Amleto), Frederiksborg, il museo Louisiana e la riviera danese.", "highlights": ["Kronborg", "Frederiksborg", "Louisiana", "Roskilde"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Jutland (Aarhus, Billund, Skagen)", "description": "Aarhus, Legoland, le dune e la luce di Skagen dove si incontrano due mari.", "highlights": ["Aarhus", "Legoland", "Skagen", "Ribe"], "seasons": "XXXBOOOOBDXX", "seasonNote": "Da maggio a settembre; Legoland chiuso in inverno." }
+    ],
+    "experiences": [
+      { "name": "Copenaghen in bicicletta", "description": "Il modo più locale di girare la città." },
+      { "name": "Canali in battello", "description": "Partenza da Nyhavn." },
+      { "name": "Cena di nuova cucina nordica", "description": "Nei ristoranti che hanno reso famosa Copenaghen." },
+      { "name": "Legoland", "description": "Per famiglie, da aprile a ottobre." }
+    ],
+    "itineraries": [
+      { "title": "Copenaghen", "days": 4, "route": "Copenaghen (3), con castelli della Zelanda", "description": "City break da maggio a settembre." },
+      { "title": "Capitali scandinave", "days": 9, "route": "Copenaghen (3) → Stoccolma (3) → Oslo (2)", "description": "In treno o con traghetti notturni." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è la corona danese.",
+      "Quasi ovunque si paga solo con carta.",
+      "Prezzi alti: prevedi budget per ristoranti.",
+      "Copenaghen si abbina bene a Malmö in Svezia, a 35 minuti di treno."
+    ]
+  },
+  "SE": {
+    "moreDescription": [
+      "La Svezia offre Stoccolma, una delle capitali più belle d'Europa costruita su 14 isole, l'arcipelago con migliaia di isolotti, Göteborg e la costa ovest, l'isola medievale di Gotland e, al nord, la Lapponia con l'Icehotel e l'aurora. L'estate (giugno–agosto) ha giornate lunghissime e la festa di Midsommar; l'inverno da dicembre a marzo è per la Lapponia."
+    ],
+    "morePlaces": [
+      { "name": "Skansen", "description": "Il museo all'aperto della vita svedese a Stoccolma.", "search": "Skansen" },
+      { "name": "Costa di Bohuslän", "description": "Villaggi di pescatori e scogli di granito a nord di Göteborg.", "search": "Bohuslän" },
+      { "name": "Kiruna", "description": "La città mineraria più a nord, base per la Lapponia.", "search": "Kiruna" }
+    ],
+    "areas": [
+      { "name": "Stoccolma e arcipelago", "description": "Gamla Stan, il museo Vasa, ABBA Museum, il municipio, Djurgården e le isole dell'arcipelago raggiungibili in battello.", "highlights": ["Gamla Stan", "Museo Vasa", "Djurgården", "Fotografiska", "Arcipelago"], "seasons": "DDDBOOOOBDDO", "seasonNote": "Da maggio a settembre; dicembre per i mercatini." },
+      { "name": "Sud e ovest (Göteborg, Malmö, Bohuslän)", "description": "Göteborg con i canali e il parco Liseberg, Malmö, la costa di Bohuslän e i castelli della Scania.", "highlights": ["Göteborg", "Liseberg", "Bohuslän", "Malmö"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Gotland", "description": "L'isola di Visby, città anseatica murata UNESCO, con spiagge e faraglioni.", "highlights": ["Visby", "Fårö", "Faraglioni"], "seasons": "XXXDBOOOBDXX", "seasonNote": "Da giugno ad agosto." },
+      { "name": "Lapponia svedese (Kiruna, Jukkasjärvi, Abisko)", "description": "L'Icehotel, l'osservatorio delle aurore di Abisko, husky, renne e la cultura sami; d'estate il sole di mezzanotte e il Kungsleden.", "highlights": ["Icehotel", "Abisko", "Husky", "Kungsleden"], "seasons": "OOOBXBOOBDBO", "seasonNote": "Da dicembre a marzo per aurore e neve; giugno–agosto per sole di mezzanotte e trekking." }
+    ],
+    "experiences": [
+      { "name": "Museo Vasa", "description": "Il galeone del Seicento recuperato quasi intatto." },
+      { "name": "Battello nell'arcipelago", "description": "Giornata tra le isole fino a Vaxholm o Sandhamn." },
+      { "name": "Notte all'Icehotel", "description": "Camere di ghiaccio scolpite ogni inverno." },
+      { "name": "Aurora ad Abisko", "description": "Seggiovia notturna fino all'Aurora Sky Station." },
+      { "name": "Midsommar", "description": "La festa di mezza estate a fine giugno." }
+    ],
+    "itineraries": [
+      { "title": "Stoccolma", "days": 4, "route": "Stoccolma (3), con arcipelago", "description": "City break da maggio a settembre." },
+      { "title": "Lapponia invernale", "days": 5, "route": "Kiruna (1) → Jukkasjärvi e Icehotel (2) → Abisko (2)", "description": "Da dicembre a marzo." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è la corona svedese.",
+      "Quasi tutto si paga con carta, anche piccole cifre.",
+      "Il Systembolaget è l'unico negozio che vende alcolici: orari limitati.",
+      "L'Icehotel ha disponibilità limitata: prenota con anticipo."
+    ]
+  },
+  "PL": {
+    "moreDescription": [
+      "La Polonia è conveniente e ricca di storia: Cracovia con il centro medievale e il quartiere ebraico, la visita ad Auschwitz-Birkenau, la miniera di sale di Wieliczka, Varsavia ricostruita, Danzica sul Baltico, Breslavia e i monti Tatra a Zakopane. La stagione migliore va da maggio a settembre; dicembre per i mercatini di Natale; d'inverno sci a Zakopane."
+    ],
+    "morePlaces": [
+      { "name": "Breslavia", "description": "Città sull'Oder con la piazza del mercato e centinaia di gnomi in bronzo.", "search": "Wrocław Market Square" },
+      { "name": "Castello di Malbork", "description": "Il castello in mattoni più grande del mondo, dei Cavalieri Teutonici.", "search": "Malbork Castle" },
+      { "name": "Kazimierz", "description": "Il quartiere ebraico di Cracovia, oggi vivace e pieno di locali.", "search": "Kazimierz" }
+    ],
+    "areas": [
+      { "name": "Cracovia e Piccola Polonia", "description": "La piazza del mercato, il castello del Wawel, Kazimierz, Auschwitz-Birkenau, Wieliczka e Zakopane nei Tatra.", "highlights": ["Rynek", "Wawel", "Kazimierz", "Auschwitz-Birkenau", "Wieliczka", "Zakopane"], "seasons": "BDBOOOOOOBDO", "seasonNote": "Da maggio a settembre; dicembre per i mercatini; sci a Zakopane da dicembre a marzo." },
+      { "name": "Varsavia e centro", "description": "La città vecchia ricostruita, il Palazzo della Cultura, il museo dell'Insurrezione, i parchi Łazienki e la casa di Chopin.", "highlights": ["Città vecchia", "Museo POLIN", "Museo dell'Insurrezione", "Łazienki", "Żelazowa Wola"], "seasons": "DDBOOOOOBBDB", "seasonNote": "Da maggio a settembre." },
+      { "name": "Nord e Baltico (Danzica, Sopot, Malbork)", "description": "Danzica anseatica, Sopot con il molo più lungo d'Europa, il castello di Malbork e le dune di Łeba.", "highlights": ["Danzica", "Sopot", "Malbork", "Dune di Łeba"], "seasons": "XXDBOOOOBDXX", "seasonNote": "Da maggio a settembre; mare da luglio ad agosto." },
+      { "name": "Ovest (Breslavia, Poznań)", "description": "Breslavia con le isole sull'Oder e Poznań con le capre del municipio.", "highlights": ["Breslavia", "Ostrów Tumski", "Poznań"], "seasons": "DDBOOOOOBBDO", "seasonNote": "Da aprile a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Auschwitz-Birkenau", "description": "Visita guidata obbligatoria con biglietto a orario." },
+      { "name": "Miniera di sale di Wieliczka", "description": "Cappelle e laghi sotterranei scavati nel sale." },
+      { "name": "Cucina polacca", "description": "Pierogi, zuppe e vodka nei locali di Kazimierz." },
+      { "name": "Concerto di Chopin", "description": "Concerti all'aperto nel parco Łazienki la domenica d'estate." },
+      { "name": "Funivia del Kasprowy Wierch", "description": "Sui monti Tatra da Zakopane." }
+    ],
+    "itineraries": [
+      { "title": "Cracovia", "days": 4, "route": "Cracovia (3), con Auschwitz e Wieliczka", "description": "Il weekend lungo più venduto." },
+      { "title": "Polonia classica", "days": 8, "route": "Varsavia (2) → Danzica (2) → Breslavia (1) → Cracovia (3)", "description": "In treno, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è lo złoty.",
+      "Auschwitz va prenotato con largo anticipo, soprattutto le visite in italiano.",
+      "Prezzi convenienti rispetto all'Europa occidentale.",
+      "Treni veloci tra le grandi città."
+    ]
+  },
+  "HU": {
+    "moreDescription": [
+      "L'Ungheria è soprattutto Budapest, con il Danubio, il Parlamento, il Castello di Buda e le terme storiche, perfetta per un weekend lungo. Fuori città ci sono l'ansa del Danubio (Szentendre, Visegrád, Esztergom), il lago Balaton, la regione vinicola di Tokaj e la puszta. La stagione migliore va da aprile a ottobre; dicembre per i mercatini; le terme si godono tutto l'anno."
+    ],
+    "morePlaces": [
+      { "name": "Terme Gellért", "description": "Terme in stile liberty con piscine coperte e mosaici.", "search": "Gellért Thermal Bath" },
+      { "name": "Ruin bar", "description": "I locali nei palazzi abbandonati del quartiere ebraico.", "search": "Szimpla Kert" },
+      { "name": "Tokaj", "description": "La regione del vino dolce più famoso d'Ungheria.", "search": "Tokaj wine region" },
+      { "name": "Eger", "description": "Città barocca con il castello e la Valle delle Belle Donne.", "search": "Eger" }
+    ],
+    "areas": [
+      { "name": "Budapest", "description": "Il Parlamento, il Castello e il Bastione dei Pescatori, la Basilica di Santo Stefano, il quartiere ebraico con i ruin bar, il Mercato Centrale e le terme Széchenyi e Gellért.", "highlights": ["Parlamento", "Bastione dei Pescatori", "Széchenyi", "Gellért", "Ruin bar", "Mercato Centrale"], "seasons": "BBBOOOOOOBBO", "seasonNote": "Bella tutto l'anno; dicembre per i mercatini; le terme anche d'inverno." },
+      { "name": "Ansa del Danubio", "description": "Szentendre degli artisti, la fortezza di Visegrád e la basilica di Esztergom.", "highlights": ["Szentendre", "Visegrád", "Esztergom"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a ottobre." },
+      { "name": "Lago Balaton", "description": "Il 'mare d'Ungheria' con spiagge, vigneti e la penisola di Tihany.", "highlights": ["Tihany", "Keszthely", "Hévíz", "Badacsony"], "seasons": "XXDBOOOOBDXX", "seasonNote": "Da giugno ad agosto per il lago; il lago termale di Hévíz tutto l'anno." },
+      { "name": "Est (Eger, Tokaj, Hortobágy)", "description": "Vini e tradizioni: Eger, Tokaj e la puszta di Hortobágy con i cavalieri.", "highlights": ["Eger", "Tokaj", "Hortobágy"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da maggio a ottobre; vendemmia a settembre–ottobre." }
+    ],
+    "experiences": [
+      { "name": "Terme Széchenyi", "description": "Piscine all'aperto anche d'inverno, con serate in musica." },
+      { "name": "Crociera serale sul Danubio", "description": "Con il Parlamento illuminato." },
+      { "name": "Ruin bar", "description": "Serata nei locali alternativi del settimo distretto." },
+      { "name": "Spettacolo di cavalieri nella puszta", "description": "A Bugac o Hortobágy." },
+      { "name": "Degustazione di Tokaji", "description": "Nelle cantine scavate nella roccia." }
+    ],
+    "itineraries": [
+      { "title": "Budapest", "days": 4, "route": "Budapest (3), con ansa del Danubio", "description": "Weekend lungo con terme." },
+      { "title": "Capitali danubiane", "days": 8, "route": "Vienna (3) → Bratislava (1) → Budapest (3)", "description": "In treno o crociera fluviale." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è il fiorino ungherese.",
+      "Per le autostrade serve la vignetta elettronica.",
+      "Molte terme richiedono cuffia o ciabatte: consiglia di portarle.",
+      "Attenzione ai taxi non ufficiali: meglio app o taxi prenotati."
+    ]
+  },
+  "RO": {
+    "moreDescription": [
+      "La Romania è una scoperta: la Transilvania con i borghi sassoni, le chiese fortificate e i castelli (Bran, legato alla leggenda di Dracula, e Peleș), i monasteri dipinti della Bucovina, il Maramureș con le chiese di legno, il delta del Danubio e Bucarest. Il periodo migliore va da maggio a settembre; d'inverno sci nei Carpazi e mercatini a Sibiu e Brașov."
+    ],
+    "morePlaces": [
+      { "name": "Sibiu", "description": "Città sassone con le case 'con gli occhi' sui tetti.", "search": "Sibiu" },
+      { "name": "Transfăgărășan", "description": "Una delle strade di montagna più spettacolari del mondo.", "search": "Transfăgărășan" },
+      { "name": "Cimitero allegro di Săpânța", "description": "Croci dipinte con scene di vita nel Maramureș.", "search": "Merry Cemetery" },
+      { "name": "Salina Turda", "description": "Miniera di sale trasformata in parco sotterraneo.", "search": "Salina Turda" }
+    ],
+    "areas": [
+      { "name": "Transilvania (Brașov, Sighișoara, Sibiu, Bran)", "description": "Brașov e la Chiesa Nera, Sighișoara cittadella medievale, Sibiu, i castelli di Bran e Peleș, le chiese fortificate sassoni come Biertan e la strada Transfăgărășan.", "highlights": ["Brașov", "Sighișoara", "Sibiu", "Castello di Bran", "Peleș", "Biertan", "Transfăgărășan"], "seasons": "DDBOOOOOOBDB", "seasonNote": "Da maggio a ottobre; la Transfăgărășan è aperta solo da luglio a ottobre; mercatini a dicembre." },
+      { "name": "Bucovina e Maramureș", "description": "I monasteri con gli affreschi esterni UNESCO (Voroneț, Sucevița, Moldovița), le chiese di legno e la vita rurale del Maramureș.", "highlights": ["Voroneț", "Sucevița", "Moldovița", "Chiese di legno", "Săpânța", "Mocănița"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Bucarest", "description": "La capitale con il Palazzo del Parlamento, il centro storico e il museo del villaggio.", "highlights": ["Palazzo del Parlamento", "Centro storico", "Museo del villaggio", "Ateneo"], "seasons": "DDBOOOBBOOBD", "seasonNote": "Primavera e autunno ideali; luglio–agosto caldi." },
+      { "name": "Delta del Danubio", "description": "La più grande zona umida d'Europa, con pellicani, villaggi di pescatori e navigazioni tra i canali.", "highlights": ["Tulcea", "Sulina", "Pellicani", "Canali in barca"], "seasons": "XXXBOOOOODXX", "seasonNote": "Da maggio a settembre; a maggio–giugno la migrazione degli uccelli." }
+    ],
+    "experiences": [
+      { "name": "Castello di Bran", "description": "Il 'castello di Dracula', meglio al mattino presto." },
+      { "name": "Monasteri dipinti", "description": "Tour in Bucovina con i colori del blu di Voroneț." },
+      { "name": "Trenino a vapore Mocănița", "description": "Nella valle del Vaser, nel Maramureș." },
+      { "name": "Barca nel Delta", "description": "Tra pellicani e ninfee." },
+      { "name": "Strada Transfăgărășan", "description": "In auto fino al lago Bâlea, da luglio a ottobre." }
+    ],
+    "itineraries": [
+      { "title": "Transilvania e Bucovina", "days": 9, "route": "Bucarest (1) → Sinaia (1) → Brașov (2) → Sighișoara (1) → Bucovina (2) → Cluj (1) → Bucarest", "description": "Il tour classico, da maggio a ottobre." },
+      { "title": "Transilvania breve", "days": 5, "route": "Bucarest (1) → Brașov (2) → Sighișoara (1) → Sibiu (1)", "description": "Borghi e castelli." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è il leu.",
+      "Le strade di montagna sono lente: calcola tempi larghi.",
+      "Per le strade nazionali serve la vignetta (rovinietă).",
+      "Grande comunità romena in Italia: possibili richieste di voli anche verso città minori."
+    ]
+  },
+  "BG": {
+    "moreDescription": [
+      "La Bulgaria è conveniente e poco conosciuta: monasteri ortodossi come Rila, città antiche come Plovdiv e Veliko Tărnovo, la valle delle rose, il mare del Mar Nero (Nesebăr, Sozopol) e lo sci a Bansko e Borovets. Il mare si vende da giugno a settembre; le visite da maggio a ottobre; lo sci da dicembre a marzo."
+    ],
+    "morePlaces": [
+      { "name": "Sette laghi di Rila", "description": "Laghi glaciali in quota con una bellissima camminata.", "search": "Seven Rila Lakes" },
+      { "name": "Sozopol", "description": "Città antica sul Mar Nero con case di legno.", "search": "Sozopol" },
+      { "name": "Bansko", "description": "Stazione sciistica ai piedi dei monti Pirin.", "search": "Bansko" }
+    ],
+    "areas": [
+      { "name": "Sofia e Rila", "description": "La capitale con la cattedrale Aleksandr Nevskij, la chiesa di Boyana, il monastero di Rila e i Sette laghi.", "highlights": ["Aleksandr Nevskij", "Boyana", "Monastero di Rila", "Sette laghi di Rila"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da maggio a ottobre; i laghi di Rila da luglio a settembre." },
+      { "name": "Centro (Plovdiv, Valle delle Rose, Veliko Tărnovo)", "description": "Plovdiv con il teatro romano e la città vecchia, la Valle delle Rose con le tombe trace di Kazanlak, Veliko Tărnovo con la fortezza di Tsarevets.", "highlights": ["Plovdiv", "Kazanlak", "Valle delle Rose", "Veliko Tărnovo", "Koprivshtitsa"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Raccolta delle rose fine maggio–inizio giugno." },
+      { "name": "Mar Nero (Nesebăr, Sozopol, Varna)", "description": "Città antiche e spiagge, con resort come Sunny Beach e Golden Sands.", "highlights": ["Nesebăr", "Sozopol", "Varna", "Balchik"], "seasons": "XXXXBOOOBXXX", "seasonNote": "Da giugno a settembre." },
+      { "name": "Montagne (Bansko, Borovets, Pamporovo)", "description": "Lo sci più economico d'Europa e il trekking d'estate.", "highlights": ["Bansko", "Borovets", "Pamporovo", "Pirin"], "seasons": "OOOBDBOOBDDO", "seasonNote": "Sci da dicembre a marzo; trekking da giugno a settembre." }
+    ],
+    "experiences": [
+      { "name": "Monastero di Rila", "description": "Il più importante monastero ortodosso del paese." },
+      { "name": "Festa delle Rose a Kazanlak", "description": "All'inizio di giugno, con la raccolta all'alba." },
+      { "name": "Sci a Bansko", "description": "Settimane bianche a prezzi contenuti." },
+      { "name": "Città vecchia di Plovdiv", "description": "Case colorate del Risorgimento bulgaro e rovine romane." }
+    ],
+    "itineraries": [
+      { "title": "Bulgaria classica", "days": 8, "route": "Sofia (2) → Rila (1) → Plovdiv (2) → Kazanlak (1) → Veliko Tărnovo (1) → Sofia", "description": "Monasteri e città antiche, da maggio a ottobre." },
+      { "title": "Mar Nero", "days": 8, "route": "Varna (1) → Nesebăr o Sozopol (6)", "description": "Mare e città antiche, luglio–agosto." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; verifica la moneta in uso (passaggio all'euro).",
+      "L'alfabeto è cirillico: consiglia mappe offline.",
+      "In Bulgaria scuotere la testa significa 'sì' e annuire 'no'.",
+      "Prezzi molto convenienti per sci e mare."
+    ]
+  },
+  "SI": {
+    "moreDescription": [
+      "La Slovenia è piccola, verde e vicinissima all'Italia: in pochi giorni si passa dalle Alpi Giulie con i laghi di Bled e Bohinj alle grotte di Postumia e Škocjan, da Lubiana alla costa veneziana di Pirano. È ideale per un weekend lungo o un tour in auto. La stagione migliore va da maggio a settembre; a dicembre Lubiana e Bled hanno mercatini; d'inverno sci a Kranjska Gora."
+    ],
+    "morePlaces": [
+      { "name": "Grotte di Škocjan", "description": "Canyon sotterraneo UNESCO con un ponte sospeso.", "search": "Škocjan Caves" },
+      { "name": "Castello di Predjama", "description": "Il castello costruito dentro una grotta.", "search": "Predjama Castle" },
+      { "name": "Passo del Vršič", "description": "Strada panoramica tra le Alpi Giulie.", "search": "Vršič Pass" }
+    ],
+    "areas": [
+      { "name": "Alpi Giulie (Bled, Bohinj, Triglav, Isonzo)", "description": "Il lago di Bled con l'isola e la chiesa, il lago di Bohinj, il parco del Triglav, il passo del Vršič e la valle dell'Isonzo con il fiume smeraldo.", "highlights": ["Lago di Bled", "Bohinj", "Vintgar", "Vršič", "Valle dell'Isonzo", "Kobarid"], "seasons": "BDDBOOOOOBDB", "seasonNote": "Da maggio a ottobre; Vršič aperto da maggio a novembre; sci a Kranjska Gora d'inverno." },
+      { "name": "Lubiana", "description": "Capitale verde con il castello, i ponti di Plečnik e il mercato.", "highlights": ["Castello", "Triplo ponte", "Mercato centrale", "Metelkova"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da aprile a ottobre; dicembre per i mercatini." },
+      { "name": "Carso e costa (Postumia, Škocjan, Pirano)", "description": "Le grotte di Postumia e Škocjan, il castello di Predjama, le scuderie dei Lipizzani di Lipica e la cittadina veneziana di Pirano.", "highlights": ["Grotte di Postumia", "Škocjan", "Predjama", "Lipica", "Pirano"], "seasons": "BBBOOOOOOBBB", "seasonNote": "Grotte visitabili tutto l'anno; mare da giugno a settembre." }
+    ],
+    "experiences": [
+      { "name": "Pletna sul lago di Bled", "description": "La barca tradizionale fino all'isola e la campana dei desideri." },
+      { "name": "Trenino nelle grotte di Postumia", "description": "Il percorso sotterraneo più famoso d'Europa." },
+      { "name": "Rafting sull'Isonzo", "description": "Nelle acque smeraldo di Bovec." },
+      { "name": "Torta di Bled", "description": "La kremšnita nella pasticceria storica sul lago." }
+    ],
+    "itineraries": [
+      { "title": "Slovenia in 5 giorni", "days": 5, "route": "Lubiana (2) → Bled e Bohinj (2) → Postumia → Pirano (1)", "description": "Tour in auto da maggio a ottobre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Per le autostrade serve la vignetta elettronica.",
+      "Comodissima in auto dal Friuli: ideale per weekend e ponti.",
+      "Bled è affollata in agosto: meglio giugno e settembre."
+    ]
+  },
+  "SK": {
+    "moreDescription": [
+      "La Slovacchia è una meta poco conosciuta e conveniente: Bratislava sul Danubio, a un'ora da Vienna, i castelli medievali (Spiš, Bojnice, Orava), i monti Alti Tatra per trekking e sci, il Paradiso Slovacco con canyon e passerelle, e villaggi tradizionali. La stagione migliore va da maggio a settembre; sci da dicembre a marzo."
+    ],
+    "morePlaces": [
+      { "name": "Castello di Orava", "description": "Il castello su uno sperone roccioso, set del film Nosferatu.", "search": "Orava Castle" },
+      { "name": "Banská Štiavnica", "description": "Città mineraria UNESCO tra le colline.", "search": "Banská Štiavnica" },
+      { "name": "Grotta di ghiaccio di Dobšiná", "description": "Grotta con ghiaccio permanente.", "search": "Dobšiná Ice Cave" }
+    ],
+    "areas": [
+      { "name": "Bratislava e ovest", "description": "La capitale con il castello, la città vecchia e il castello di Devín; le cantine dei Piccoli Carpazi.", "highlights": ["Castello di Bratislava", "Città vecchia", "Devín", "Piccoli Carpazi"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da aprile a ottobre; dicembre per i mercatini." },
+      { "name": "Alti Tatra e nord", "description": "Le montagne più alte dei Carpazi con laghi glaciali, trekking, sci e i castelli di Orava e Bojnice.", "highlights": ["Štrbské Pleso", "Lomnický štít", "Orava", "Bojnice", "Vlkolínec"], "seasons": "OOOBDOOOODBO", "seasonNote": "Trekking da giugno a settembre; sci da dicembre a marzo." },
+      { "name": "Est (Spiš, Paradiso Slovacco, Košice)", "description": "Il castello di Spiš, Levoča, il Paradiso Slovacco con scale e passerelle nei canyon, Košice.", "highlights": ["Castello di Spiš", "Levoča", "Paradiso Slovacco", "Košice"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Trekking nel Paradiso Slovacco", "description": "Scale e passerelle sospese tra le gole." },
+      { "name": "Funivia del Lomnický štít", "description": "A oltre 2.600 metri sugli Alti Tatra." },
+      { "name": "Castello di Spiš", "description": "Uno dei complessi fortificati più grandi d'Europa." },
+      { "name": "Terme di Piešťany", "description": "Cure termali tradizionali." }
+    ],
+    "itineraries": [
+      { "title": "Slovacchia in 7 giorni", "days": 7, "route": "Bratislava (2) → Bojnice (1) → Alti Tatra (2) → Spiš e Paradiso Slovacco (2)", "description": "Tour in auto da maggio a ottobre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Per le autostrade serve la vignetta elettronica.",
+      "Bratislava si abbina facilmente a Vienna e Budapest.",
+      "Prezzi convenienti, soprattutto per lo sci."
+    ]
+  },
+  "CY": {
+    "moreDescription": [
+      "Cipro è un'isola del Mediterraneo orientale con mare caldo per gran parte dell'anno, siti archeologici, villaggi di montagna e una cultura greca con influenze mediorientali. Il mare si vende da maggio a ottobre (l'acqua resta calda fino a novembre); le visite sono piacevoli tutto l'anno tranne luglio–agosto, molto caldi. L'isola è divisa: il nord è amministrato dalla Repubblica Turca di Cipro del Nord, riconosciuta solo dalla Turchia."
+    ],
+    "morePlaces": [
+      { "name": "Ayia Napa", "description": "Spiagge bianche e vita notturna nel sud-est.", "search": "Nissi Beach" },
+      { "name": "Penisola di Akamas", "description": "Natura selvaggia e la Laguna Blu nel nord-ovest.", "search": "Akamas Peninsula" },
+      { "name": "Famagosta", "description": "Città veneziana e gotica nella parte nord.", "search": "Famagusta" }
+    ],
+    "areas": [
+      { "name": "Paphos e Akamas", "description": "I mosaici romani e le Tombe dei Re, la roccia di Afrodite e la penisola di Akamas con la Laguna Blu.", "highlights": ["Mosaici di Paphos", "Tombe dei Re", "Roccia di Afrodite", "Laguna Blu", "Bagni di Afrodite"], "seasons": "BBOOOOBBOOOB", "seasonNote": "Mare da maggio a ottobre; visite tutto l'anno." },
+      { "name": "Limassol e sud", "description": "Lungomare moderno, castello medievale, Kourion con il teatro sul mare e i vigneti.", "highlights": ["Kourion", "Castello di Kolossi", "Limassol", "Lefkara"], "seasons": "BBOOOOBBOOOB", "seasonNote": "Come Paphos." },
+      { "name": "Ayia Napa e Protaras", "description": "Le spiagge più belle dell'isola, Capo Greco e la vita notturna.", "highlights": ["Nissi Beach", "Fig Tree Bay", "Capo Greco", "Grotte marine"], "seasons": "DDBBOOOOOOBD", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Troodos e Nicosia", "description": "I monti con le chiese affrescate UNESCO e i villaggi; Nicosia, l'ultima capitale divisa d'Europa.", "highlights": ["Chiese dei Troodos", "Monastero di Kykkos", "Omodos", "Nicosia"], "seasons": "BBOOOOOOOOBB", "seasonNote": "Montagna fresca in estate; d'inverno anche neve." }
+    ],
+    "experiences": [
+      { "name": "Mosaici di Paphos", "description": "Tra i più belli del Mediterraneo." },
+      { "name": "Laguna Blu in barca", "description": "Snorkeling nella penisola di Akamas." },
+      { "name": "Villaggi dei Troodos", "description": "Chiese bizantine, vino e merletti di Lefkara." },
+      { "name": "Halloumi e meze", "description": "Cene tradizionali nelle taverne." }
+    ],
+    "itineraries": [
+      { "title": "Cipro mare e cultura", "days": 8, "route": "Paphos (3) → Troodos (1) → Limassol (1) → Ayia Napa (2)", "description": "Fly & drive da aprile a ottobre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Si guida a sinistra e le prese sono di tipo G.",
+      "Per visitare il nord si attraversa un posto di frontiera: verifica assicurazione dell'auto e documenti.",
+      "Stagione del mare lunga: ottima anche a ottobre e novembre."
+    ]
+  },
+  "EE": {
+    "moreDescription": [
+      "L'Estonia è il più nordico dei paesi baltici: Tallinn ha una città vecchia medievale tra le meglio conservate d'Europa e un'anima digitale moderna; fuori città ci sono foreste, torbiere, isole come Saaremaa e la città universitaria di Tartu. La stagione migliore va da maggio a settembre; a dicembre il mercatino di Natale di Tallinn è molto bello. Si combina spesso con Lettonia e Lituania, o con Helsinki in traghetto."
+    ],
+    "morePlaces": [
+      { "name": "Torbiere di Soomaa", "description": "Parco nazionale con passerelle nelle paludi e la 'quinta stagione' delle inondazioni.", "search": "Soomaa National Park" },
+      { "name": "Telliskivi", "description": "Quartiere creativo di Tallinn in un'ex area industriale.", "search": "Telliskivi Creative City" }
+    ],
+    "areas": [
+      { "name": "Tallinn", "description": "La città vecchia murata con la piazza del municipio, la collina di Toompea e i belvederi; Kadriorg e il quartiere creativo di Telliskivi.", "highlights": ["Città vecchia", "Toompea", "Kadriorg", "Telliskivi", "Museo Lennusadam"], "seasons": "DDDBOOOOBDDO", "seasonNote": "Da maggio a settembre; dicembre per i mercatini." },
+      { "name": "Nord e parchi (Lahemaa)", "description": "Foreste, manieri e costa rocciosa nel parco nazionale di Lahemaa.", "highlights": ["Lahemaa", "Palmse", "Torbiera di Viru"], "seasons": "XXXDOOOOBDXX", "seasonNote": "Da maggio a settembre." },
+      { "name": "Isole e sud (Saaremaa, Tartu, Pärnu)", "description": "Saaremaa con i mulini a vento e il castello di Kuressaare, Tartu universitaria e Pärnu, capitale estiva sul mare.", "highlights": ["Saaremaa", "Kuressaare", "Tartu", "Pärnu"], "seasons": "XXXDBOOOBDXX", "seasonNote": "Da giugno ad agosto." }
+    ],
+    "experiences": [
+      { "name": "Città vecchia di Tallinn", "description": "Passeggiata tra torri, mura e chiese." },
+      { "name": "Passerelle nelle torbiere", "description": "Camminate all'alba nella torbiera di Viru." },
+      { "name": "Sauna estone", "description": "Anche la sauna di fumo, patrimonio UNESCO." },
+      { "name": "Gita a Helsinki", "description": "In traghetto in due ore." }
+    ],
+    "itineraries": [
+      { "title": "Capitali baltiche", "days": 8, "route": "Vilnius (2) → Collina delle Croci → Riga (3) → Tallinn (2)", "description": "Il tour classico dei tre paesi, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Ottima connessione e pagamenti digitali ovunque.",
+      "Le crociere sul Baltico fanno tappa a Tallinn: in estate il centro è affollato a metà giornata.",
+      "Si abbina con Helsinki (traghetto) e San Pietroburgo non è al momento consigliabile: verifica viaggiaresicuri.it."
+    ]
+  },
+  "LV": {
+    "moreDescription": [
+      "La Lettonia ha in Riga la capitale più grande dei paesi baltici, con la città vecchia anseatica e il più bel quartiere Art Nouveau d'Europa. Fuori città: la località balneare di Jūrmala, il palazzo barocco di Rundāle, il parco del Gauja con Sigulda e i castelli. La stagione migliore va da maggio a settembre; a giugno la festa di mezza estate (Jāņi)."
+    ],
+    "morePlaces": [
+      { "name": "Cēsis", "description": "Cittadina medievale con il castello dei Cavalieri di Livonia.", "search": "Cēsis Castle" },
+      { "name": "Kuldīga", "description": "La cascata più larga d'Europa e una città storica di legno.", "search": "Ventas Rumba" }
+    ],
+    "areas": [
+      { "name": "Riga e Jūrmala", "description": "La città vecchia, i palazzi Art Nouveau, il mercato centrale negli hangar degli zeppelin e la spiaggia di Jūrmala.", "highlights": ["Città vecchia", "Art Nouveau", "Mercato centrale", "Casa delle Teste Nere", "Jūrmala"], "seasons": "DDDBOOOOBDDO", "seasonNote": "Da maggio a settembre; dicembre per i mercatini." },
+      { "name": "Gauja e Vidzeme (Sigulda, Cēsis)", "description": "La 'Svizzera lettone' con castelli, grotte e foreste, ideale per canoa e trekking.", "highlights": ["Sigulda", "Castello di Turaida", "Cēsis", "Grotta di Gūtmaņa"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre; colori splendidi a fine settembre." },
+      { "name": "Kurzeme e Zemgale (Rundāle, Kuldīga)", "description": "Il palazzo di Rundāle, la cascata di Kuldīga e la costa selvaggia.", "highlights": ["Rundāle", "Kuldīga", "Capo Kolka"], "seasons": "XXDBOOOOBDXX", "seasonNote": "Da maggio a settembre." }
+    ],
+    "experiences": [
+      { "name": "Tour dell'Art Nouveau", "description": "Le facciate di Alberta iela a Riga." },
+      { "name": "Funivia di Sigulda", "description": "Sopra la valle del Gauja." },
+      { "name": "Festa di Jāņi", "description": "Mezza estate a fine giugno con falò e corone di fiori." }
+    ],
+    "itineraries": [
+      { "title": "Riga e dintorni", "days": 5, "route": "Riga (3) → Sigulda (1) → Rundāle (1)", "description": "City break esteso." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Riga è il centro del tour delle capitali baltiche: ottimi bus tra Vilnius, Riga e Tallinn.",
+      "Prezzi moderati."
+    ]
+  },
+  "LT": {
+    "moreDescription": [
+      "La Lituania offre Vilnius con il centro barocco UNESCO e il quartiere-repubblica di Užupis, il castello sull'acqua di Trakai, la misteriosa Collina delle Croci e l'Istmo dei Curi, una lingua di sabbia con dune altissime tra laguna e mare. La stagione migliore va da maggio a settembre."
+    ],
+    "morePlaces": [
+      { "name": "Nida", "description": "Villaggio sulle dune dell'Istmo dei Curi.", "search": "Nida, Lithuania" },
+      { "name": "Klaipėda", "description": "Porto sul Baltico e base per l'Istmo dei Curi.", "search": "Klaipėda" }
+    ],
+    "areas": [
+      { "name": "Vilnius e Trakai", "description": "Il centro barocco, la Porta dell'Aurora, Užupis e, a mezz'ora, il castello di Trakai sul lago.", "highlights": ["Città vecchia", "Porta dell'Aurora", "Užupis", "Trakai"], "seasons": "DDDBOOOOBDDO", "seasonNote": "Da maggio a settembre; dicembre per i mercatini." },
+      { "name": "Centro e nord (Kaunas, Collina delle Croci)", "description": "Kaunas con l'architettura modernista e la Collina delle Croci vicino a Šiauliai.", "highlights": ["Kaunas", "Collina delle Croci"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Costa (Istmo dei Curi, Palanga)", "description": "Le dune UNESCO dell'Istmo dei Curi, Nida e la località balneare di Palanga.", "highlights": ["Istmo dei Curi", "Duna di Parnidis", "Nida", "Palanga"], "seasons": "XXXDBOOOBDXX", "seasonNote": "Da giugno ad agosto." }
+    ],
+    "experiences": [
+      { "name": "Castello di Trakai", "description": "In barca sul lago intorno al castello." },
+      { "name": "Collina delle Croci", "description": "Migliaia di croci lasciate dai pellegrini." },
+      { "name": "Dune dell'Istmo dei Curi", "description": "In bicicletta tra pinete e dune." },
+      { "name": "Mongolfiera su Vilnius", "description": "Una delle poche capitali sorvolabili in pallone." }
+    ],
+    "itineraries": [
+      { "title": "Lituania", "days": 6, "route": "Vilnius (2) → Trakai → Kaunas (1) → Collina delle Croci → Istmo dei Curi (2)", "description": "Da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Per l'Istmo dei Curi serve un traghetto da Klaipėda e un ticket ambientale per le auto.",
+      "Vilnius è il punto di partenza ideale per il tour delle tre capitali."
+    ]
+  },
+  "LU": {
+    "moreDescription": [
+      "Il Lussemburgo è piccolissimo ma sorprendente: la capitale con le fortificazioni scavate nella roccia, i castelli delle Ardenne, la Piccola Svizzera di Mullerthal con sentieri tra le rocce e i vigneti della Mosella. Si visita in 2–3 giorni, spesso in abbinamento a Belgio, Francia o Germania. Il trasporto pubblico è gratuito in tutto il paese."
+    ],
+    "morePlaces": [
+      { "name": "Castello di Beaufort", "description": "Rovine medievali e castello rinascimentale.", "search": "Beaufort Castle Luxembourg" }
+    ],
+    "areas": [
+      { "name": "Città di Lussemburgo", "description": "Le casematte del Bock, il quartiere del Grund lungo il fiume, il Chemin de la Corniche e il palazzo granducale.", "highlights": ["Casematte del Bock", "Grund", "Chemin de la Corniche", "Palazzo granducale"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da aprile a ottobre; dicembre per i mercatini." },
+      { "name": "Ardenne e Mullerthal", "description": "Il castello di Vianden, Clervaux e i sentieri della Piccola Svizzera lussemburghese.", "highlights": ["Vianden", "Clervaux", "Mullerthal Trail", "Beaufort"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Valle della Mosella", "description": "Vigneti, cantine di crémant e paesi sul fiume.", "highlights": ["Remich", "Schengen", "Grevenmacher"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Vendemmia a settembre–ottobre." }
+    ],
+    "experiences": [
+      { "name": "Casematte del Bock", "description": "Gallerie sotterranee della fortezza." },
+      { "name": "Mullerthal Trail", "description": "Sentieri tra gole di arenaria e cascate." },
+      { "name": "Degustazione di crémant", "description": "Nelle cantine della Mosella." }
+    ],
+    "itineraries": [
+      { "title": "Lussemburgo", "days": 3, "route": "Città di Lussemburgo (2) → Vianden e Mullerthal (1)", "description": "Weekend lungo, anche abbinato a Belgio o Mosella tedesca." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Treni, bus e tram sono gratuiti in tutto il paese.",
+      "Hotel cari nei giorni feriali per il turismo d'affari: i weekend sono più convenienti."
+    ]
+  },
+  "MC": {
+    "moreDescription": [
+      "Il Principato di Monaco è un piccolo stato sulla Costa Azzurra, simbolo di lusso: il Casinò di Monte-Carlo, il Palazzo del Principe con il cambio della guardia, il Museo Oceanografico, il porto con gli yacht. Si visita in un giorno da Nizza o dalla Liguria, o con un soggiorno in un grande albergo. Eventi chiave: Gran Premio di Formula 1 a maggio, Monaco Yacht Show a settembre, Rally a gennaio."
+    ],
+    "areas": [
+      { "name": "Monaco-Ville (la Rocca)", "description": "Il Palazzo del Principe, la cattedrale con la tomba di Grace Kelly, il Museo Oceanografico e i vicoli della città vecchia.", "highlights": ["Palazzo del Principe", "Cambio della guardia", "Cattedrale", "Museo Oceanografico"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Visitabile tutto l'anno; il cambio della guardia ogni giorno alle 11:55." },
+      { "name": "Monte-Carlo e il porto", "description": "Il Casinò, l'Hôtel de Paris, i giardini e il porto Hercule con il circuito della Formula 1.", "highlights": ["Casinò", "Hôtel de Paris", "Port Hercule", "Larvotto"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Mare da giugno a settembre; prezzi altissimi durante il Gran Premio." }
+    ],
+    "experiences": [
+      { "name": "Gran Premio di Monaco", "description": "A maggio, con tribune o terrazze sul circuito." },
+      { "name": "Casinò di Monte-Carlo", "description": "Visita diurna o serata nelle sale da gioco (dress code)." },
+      { "name": "Museo Oceanografico", "description": "Acquari e la terrazza panoramica sul mare." },
+      { "name": "Giardino Esotico", "description": "Piante grasse e vista su tutto il Principato." }
+    ],
+    "itineraries": [
+      { "title": "Costa Azzurra e Monaco", "days": 4, "route": "Nizza (2) → Èze → Monaco (1)", "description": "Weekend lungo, anche in auto dall'Italia." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Non c'è aeroporto: si arriva da Nizza (elicottero in 7 minuti o navetta) o in treno/auto dall'Italia.",
+      "Durante il Gran Premio gli hotel richiedono soggiorni minimi e prezzi altissimi.",
+      "Parcheggi pubblici ben organizzati; in centro meglio a piedi e con gli ascensori pubblici."
+    ]
+  }
+}

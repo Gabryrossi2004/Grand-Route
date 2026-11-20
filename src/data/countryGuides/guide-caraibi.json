@@ -1,0 +1,1239 @@
+{
+  "BS": {
+    "moreDescription": [
+      "Le Bahamas sono oltre 700 isole e isolotti con alcune delle acque più trasparenti del mondo: Nassau e Paradise Island con i grandi resort, le Exuma con i maiali che nuotano e banchi di sabbia infiniti, Harbour Island con la spiaggia rosa, Andros con la barriera e i blue hole. La stagione migliore va da dicembre a maggio; da giugno a novembre caldo e rischio uragani."
+    ],
+    "areas": [
+      {
+        "name": "Nassau e Paradise Island",
+        "description": "La capitale coloniale, il resort Atlantis con il parco acquatico e le spiagge di Cable Beach.",
+        "highlights": [
+          "Atlantis",
+          "Cable Beach",
+          "Queen's Staircase",
+          "Junkanoo"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre a maggio; Junkanoo a Natale e Capodanno."
+      },
+      {
+        "name": "Exuma",
+        "description": "Catena di isole con Pig Beach, le iguane, il Thunderball Grotto e banchi di sabbia.",
+        "highlights": [
+          "Pig Beach",
+          "Thunderball Grotto",
+          "Exuma Cays Land and Sea Park",
+          "Sandbar"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre a maggio."
+      },
+      {
+        "name": "Out Islands (Harbour Island, Eleuthera, Andros)",
+        "description": "Isole tranquille con la spiaggia rosa, il Glass Window Bridge e i blue hole di Andros.",
+        "highlights": [
+          "Pink Sands Beach",
+          "Glass Window Bridge",
+          "Blue hole di Andros"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre a maggio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Gita in barca alle Exuma",
+        "description": "Maiali che nuotano, squali nutrice e banchi di sabbia."
+      },
+      {
+        "name": "Snorkeling al Thunderball Grotto",
+        "description": "La grotta del film di James Bond."
+      },
+      {
+        "name": "Spiaggia rosa di Harbour Island",
+        "description": "In golf cart tra case coloniali."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Nassau ed Exuma",
+        "days": 9,
+        "route": "Nassau (3) → Exuma (5)",
+        "description": "Da dicembre a maggio."
+      },
+      {
+        "title": "Miami e Bahamas",
+        "days": 10,
+        "route": "Miami (3) → Nassau o Exuma (6)",
+        "description": "Combinato con la Florida."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto; se si transita dagli USA serve l'ESTA.",
+      "Da giugno a novembre consiglia l'assicurazione contro gli uragani.",
+      "Destinazione cara: i pasti nei resort costano molto."
+    ]
+  },
+  "JM": {
+    "moreDescription": [
+      "La Giamaica è musica reggae, rum, cucina jerk e spiagge: Negril con la Seven Mile Beach e le scogliere al tramonto, Montego Bay e Ocho Rios con i resort all inclusive, le cascate di Dunn's River, le Blue Mountains del caffè e la costa sud più autentica. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Negril e ovest",
+        "description": "Spiaggia lunghissima e le scogliere di Rick's Café.",
+        "highlights": [
+          "Seven Mile Beach",
+          "Rick's Café",
+          "Scogliere"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile; uragani possibili da agosto a ottobre."
+      },
+      {
+        "name": "Costa nord (Montego Bay, Ocho Rios)",
+        "description": "Resort, cascate di Dunn's River, la Blue Hole e Nine Mile con la casa natale di Bob Marley.",
+        "highlights": [
+          "Dunn's River Falls",
+          "Blue Hole",
+          "Nine Mile",
+          "Rose Hall"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Kingston e Blue Mountains",
+        "description": "Il museo di Bob Marley e le piantagioni del caffè Blue Mountain.",
+        "highlights": [
+          "Museo di Bob Marley",
+          "Blue Mountains",
+          "Port Royal"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Costa sud (Treasure Beach)",
+        "description": "Villaggi di pescatori, il fiume Black River e la cascata YS.",
+        "highlights": [
+          "Treasure Beach",
+          "Black River",
+          "YS Falls"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Dunn's River Falls",
+        "description": "Salita della cascata a catena umana."
+      },
+      {
+        "name": "Tramonto da Rick's Café",
+        "description": "Con tuffi dalle scogliere."
+      },
+      {
+        "name": "Caffè Blue Mountain",
+        "description": "Tour delle piantagioni."
+      },
+      {
+        "name": "Jerk e rum",
+        "description": "Cucina speziata e distillerie."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Giamaica",
+        "days": 10,
+        "route": "Montego Bay (1) → Ocho Rios (3) → Negril (5)",
+        "description": "Mare e cultura, da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Fuori dai resort consiglia escursioni organizzate.",
+      "Verifica viaggiaresicuri.it per alcuni quartieri di Kingston."
+    ]
+  },
+  "PR": {
+    "moreDescription": [
+      "Porto Rico è un territorio degli Stati Uniti con anima latina: il Viejo San Juan coloniale con fortezze UNESCO, la foresta pluviale di El Yunque, le baie bioluminescenti, le isole di Vieques e Culebra con la Flamenco Beach. Ottimo per chi viaggia già negli USA. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "San Juan",
+        "description": "Il Viejo San Juan con El Morro, le case colorate e la vita notturna di La Placita.",
+        "highlights": [
+          "El Morro",
+          "Viejo San Juan",
+          "Condado"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile; uragani da agosto a ottobre."
+      },
+      {
+        "name": "Est (El Yunque, Fajardo)",
+        "description": "La foresta pluviale e la baia bioluminescente di Fajardo.",
+        "highlights": [
+          "El Yunque",
+          "Laguna Grande"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Vieques e Culebra",
+        "description": "Spiagge tra le più belle dei Caraibi e la baia bioluminescente più luminosa del mondo.",
+        "highlights": [
+          "Flamenco Beach",
+          "Mosquito Bay",
+          "Playa Negra"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile; la bioluminescenza è migliore senza luna."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Kayak nella baia bioluminescente",
+        "description": "Di notte, l'acqua si illumina a ogni movimento."
+      },
+      {
+        "name": "Trekking a El Yunque",
+        "description": "Cascate e foresta pluviale."
+      },
+      {
+        "name": "Salsa a San Juan",
+        "description": "Locali con musica dal vivo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Porto Rico",
+        "days": 8,
+        "route": "San Juan (3) → Fajardo ed El Yunque (1) → Vieques o Culebra (3)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Valgono le regole d'ingresso degli Stati Uniti: serve l'ESTA.",
+      "Si usa il dollaro USA.",
+      "Valuta l'assicurazione per gli uragani da giugno a novembre."
+    ]
+  },
+  "BB": {
+    "moreDescription": [
+      "Barbados è un'isola caraibica dall'impronta britannica, elegante e sicura: la costa ovest ('Platinum Coast') con mare calmo e resort di lusso, la costa sud vivace, la costa est atlantica selvaggia con Bathsheba, la Harrison's Cave, il rum Mount Gay e il cricket. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Costa ovest (Holetown, Speightstown)",
+        "description": "Mare calmo, resort di lusso e tartarughe.",
+        "highlights": [
+          "Holetown",
+          "Tartarughe",
+          "Speightstown"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Costa sud e Bridgetown",
+        "description": "La capitale UNESCO, Carlisle Bay con i relitti, Oistins con la festa del pesce del venerdì.",
+        "highlights": [
+          "Bridgetown",
+          "Carlisle Bay",
+          "Oistins",
+          "Crane Beach"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Costa est e interno",
+        "description": "Le onde di Bathsheba, la Harrison's Cave e i giardini.",
+        "highlights": [
+          "Bathsheba",
+          "Harrison's Cave",
+          "Hunte's Gardens"
+        ],
+        "seasons": "OOOOBBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Snorkeling con le tartarughe",
+        "description": "In catamarano sulla costa ovest."
+      },
+      {
+        "name": "Oistins Fish Fry",
+        "description": "Venerdì sera con pesce e musica."
+      },
+      {
+        "name": "Distilleria Mount Gay",
+        "description": "Il rum più antico del mondo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Barbados",
+        "days": 9,
+        "route": "Costa ovest o sud (8)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Si guida a sinistra.",
+      "Ottimo anche come base per crociere nei Caraibi del sud."
+    ]
+  },
+  "TT": {
+    "moreDescription": [
+      "Trinidad e Tobago unisce due isole diverse: Trinidad, energica e multiculturale, con il Carnevale tra i più famosi del mondo, la musica steel pan e la palude di Caroni con gli ibis scarlatti; Tobago, tranquilla, con spiagge come Pigeon Point e la foresta protetta più antica dell'emisfero occidentale. Stagione migliore da gennaio a maggio; il Carnevale è prima della Quaresima."
+    ],
+    "areas": [
+      {
+        "name": "Trinidad",
+        "description": "Port of Spain, il Carnevale, la palude di Caroni, Maracas Bay e la Asa Wright Nature Centre.",
+        "highlights": [
+          "Carnevale",
+          "Caroni Swamp",
+          "Maracas Bay",
+          "Asa Wright"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Da gennaio a maggio; Carnevale a febbraio–marzo."
+      },
+      {
+        "name": "Tobago",
+        "description": "Spiagge, la barriera di Buccoo, la foresta e le tartarughe.",
+        "highlights": [
+          "Pigeon Point",
+          "Buccoo Reef",
+          "Main Ridge Forest",
+          "Speyside"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Da gennaio a maggio; tartarughe da marzo ad agosto."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Carnevale di Trinidad",
+        "description": "Costumi, soca e calypso per giorni."
+      },
+      {
+        "name": "Ibis scarlatti a Caroni",
+        "description": "In barca al tramonto."
+      },
+      {
+        "name": "Snorkeling a Tobago",
+        "description": "Barriera di Buccoo e Speyside."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Due isole",
+        "days": 10,
+        "route": "Trinidad (3) → Tobago (6)",
+        "description": "Da gennaio a maggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Durante il Carnevale prezzi altissimi e soggiorni minimi.",
+      "Verifica viaggiaresicuri.it per alcune zone di Port of Spain."
+    ]
+  },
+  "HT": {
+    "areas": [
+      {
+        "name": "Haiti",
+        "description": "La Citadelle, il palazzo Sans-Souci, Jacmel e le spiagge del sud.",
+        "highlights": [
+          "Citadelle Laferrière",
+          "Sans-Souci",
+          "Jacmel"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Le crociere che fanno scalo a Labadee sono un caso a parte: verifica con la compagnia."
+    ]
+  },
+  "AW": {
+    "moreDescription": [
+      "Aruba è un'isola dei Caraibi olandesi fuori dalla fascia degli uragani: sole garantito tutto l'anno, alisei costanti, spiagge bianche come Eagle Beach e Palm Beach, il parco desertico di Arikok e i fenicotteri di Renaissance Island. Ideale per chi vuole i Caraibi anche d'estate o in autunno."
+    ],
+    "areas": [
+      {
+        "name": "Costa ovest (Eagle Beach, Palm Beach)",
+        "description": "Spiagge tra le più belle del mondo con hotel e resort.",
+        "highlights": [
+          "Eagle Beach",
+          "Palm Beach",
+          "Alberi fofoti",
+          "Renaissance Island"
+        ],
+        "seasons": "OOOOOOOOOOOO",
+        "seasonNote": "Sole tutto l'anno, fuori dalla zona degli uragani."
+      },
+      {
+        "name": "Arikok e costa nord",
+        "description": "Parco con cactus, grotte, la piscina naturale e la costa selvaggia.",
+        "highlights": [
+          "Parco di Arikok",
+          "Piscina naturale",
+          "California Lighthouse"
+        ],
+        "seasons": "OOOOOOOOOOOO",
+        "seasonNote": "Tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Fenicotteri a Renaissance Island",
+        "description": "Sulla spiaggia privata dell'isola del resort."
+      },
+      {
+        "name": "Jeep nell'Arikok",
+        "description": "Fino alla piscina naturale."
+      },
+      {
+        "name": "Kitesurf e windsurf",
+        "description": "Alisei costanti."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Aruba",
+        "days": 9,
+        "route": "Eagle Beach o Palm Beach (8)",
+        "description": "Tutto l'anno."
+      },
+      {
+        "title": "ABC Islands",
+        "days": 12,
+        "route": "Aruba (5) → Curaçao (6)",
+        "description": "Isole olandesi con voli brevi."
+      }
+    ],
+    "agentTips": [
+      "Serve l'ED card online prima dell'arrivo.",
+      "Fuori dalla fascia degli uragani: ottima proposta per l'estate e l'autunno.",
+      "Prezzi alti; si usa il fiorino arubano o il dollaro USA."
+    ]
+  },
+  "CW": {
+    "moreDescription": [
+      "Curaçao è l'isola più grande dei Caraibi olandesi: Willemstad con le case colorate UNESCO e il ponte galleggiante, decine di piccole baie per snorkeling e immersioni con tartarughe, il parco Christoffel e l'isolotto deserto di Klein Curaçao. Fuori dalla fascia degli uragani: si vende tutto l'anno."
+    ],
+    "areas": [
+      {
+        "name": "Willemstad",
+        "description": "Il lungomare di Handelskade, il ponte della regina Emma, il quartiere di Pietermaai.",
+        "highlights": [
+          "Handelskade",
+          "Ponte della regina Emma",
+          "Pietermaai",
+          "Sinagoga"
+        ],
+        "seasons": "OOOOOOOOOOOO",
+        "seasonNote": "Tutto l'anno."
+      },
+      {
+        "name": "Westpunt e baie",
+        "description": "Spiagge come Grote Knip e Playa Piskado con le tartarughe, il parco Christoffel e Shete Boka.",
+        "highlights": [
+          "Grote Knip",
+          "Playa Piskado",
+          "Christoffel",
+          "Shete Boka"
+        ],
+        "seasons": "OOOOOOOOOOOO",
+        "seasonNote": "Tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tartarughe a Playa Piskado",
+        "description": "Snorkeling tra le tartarughe davanti ai pescatori."
+      },
+      {
+        "name": "Klein Curaçao",
+        "description": "Gita in barca all'isola deserta con il faro."
+      },
+      {
+        "name": "Immersioni da riva",
+        "description": "Decine di siti accessibili dalla spiaggia."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Curaçao",
+        "days": 9,
+        "route": "Willemstad (3) → Westpunt (5)",
+        "description": "Tutto l'anno."
+      }
+    ],
+    "agentTips": [
+      "Serve la Digital Immigration Card prima dell'arrivo.",
+      "Fuori dalla fascia degli uragani.",
+      "Auto a noleggio consigliata per esplorare le baie."
+    ]
+  },
+  "BM": {
+    "moreDescription": [
+      "Le Bermuda non sono nei Caraibi ma nell'Atlantico, all'altezza della Carolina del Nord: spiagge rosa come Horseshoe Bay, case pastello, St. George's UNESCO e le Crystal Caves. Il clima è subtropicale: la stagione balneare va da maggio a ottobre; d'inverno fa fresco. Destinazione molto cara."
+    ],
+    "areas": [
+      {
+        "name": "South Shore",
+        "description": "Spiagge di sabbia rosa e calette.",
+        "highlights": [
+          "Horseshoe Bay",
+          "Warwick Long Bay",
+          "Elbow Beach"
+        ],
+        "seasons": "DDDBOOOOOODD",
+        "seasonNote": "Da maggio a ottobre; uragani possibili da agosto a ottobre."
+      },
+      {
+        "name": "St. George's e Hamilton",
+        "description": "La città storica UNESCO e la capitale, con il Royal Naval Dockyard.",
+        "highlights": [
+          "St. George's",
+          "Hamilton",
+          "Royal Naval Dockyard",
+          "Crystal Caves"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Spiagge rosa",
+        "description": "Horseshoe Bay e le calette nascoste."
+      },
+      {
+        "name": "Crystal Caves",
+        "description": "Grotte con laghi sotterranei."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "New York e Bermuda",
+        "days": 10,
+        "route": "New York (4) → Bermuda (5)",
+        "description": "Volo di 2 ore da New York."
+      }
+    ],
+    "agentTips": [
+      "Territorio britannico; si arriva via Londra o Stati Uniti (serve l'ESTA in transito).",
+      "Non si possono noleggiare auto: scooter elettrici o taxi.",
+      "Prezzi molto alti."
+    ]
+  },
+  "KY": {
+    "moreDescription": [
+      "Le Isole Cayman sono tre isole caraibiche di lusso: Grand Cayman con la Seven Mile Beach e Stingray City, Little Cayman e Cayman Brac per immersioni straordinarie lungo pareti verticali. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Grand Cayman",
+        "description": "Seven Mile Beach, Stingray City, Starfish Point e Rum Point.",
+        "highlights": [
+          "Seven Mile Beach",
+          "Stingray City",
+          "Starfish Point",
+          "Rum Point"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile; uragani possibili da agosto a ottobre."
+      },
+      {
+        "name": "Little Cayman e Cayman Brac",
+        "description": "Immersioni sul Bloody Bay Wall e natura tranquilla.",
+        "highlights": [
+          "Bloody Bay Wall",
+          "Point of Sand",
+          "Cayman Brac"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Stingray City",
+        "description": "In piedi su un banco di sabbia tra le razze."
+      },
+      {
+        "name": "Immersioni sul Bloody Bay Wall",
+        "description": "Parete corallina a picco."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Grand Cayman",
+        "days": 8,
+        "route": "Seven Mile Beach (7)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Territorio britannico; si vola via Stati Uniti o Londra.",
+      "Destinazione cara.",
+      "Molto sicura e adatta alle famiglie."
+    ]
+  },
+  "TC": {
+    "moreDescription": [
+      "Turks e Caicos sono isole basse con una delle spiagge più belle del mondo, Grace Bay a Providenciales, lagune turchesi come Chalk Sound e barriere coralline. Lusso e tranquillità. Stagione migliore da dicembre ad aprile; balene megattere da gennaio a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Providenciales",
+        "description": "Grace Bay, Chalk Sound, Long Bay per il kitesurf e la barriera.",
+        "highlights": [
+          "Grace Bay",
+          "Chalk Sound",
+          "Long Bay",
+          "Smith's Reef"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Grand Turk e isole minori",
+        "description": "La capitale storica, le balene e le isole delle iguane.",
+        "highlights": [
+          "Grand Turk",
+          "Balene",
+          "Iguana Island"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Balene da gennaio a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Snorkeling a Grace Bay",
+        "description": "Barriera vicina alla riva."
+      },
+      {
+        "name": "Balene a Grand Turk",
+        "description": "Da gennaio a marzo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Turks e Caicos",
+        "days": 9,
+        "route": "Providenciales (8)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Territorio britannico; voli via Stati Uniti (ESTA) o Londra.",
+      "Destinazione molto cara.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "VG": {
+    "moreDescription": [
+      "Le Isole Vergini Britanniche sono la capitale mondiale della vela nei Caraibi: decine di isole vicine, baie riparate e alisei costanti, ideali per un noleggio in catamarano. Imperdibili The Baths a Virgin Gorda e i bar sulla spiaggia di Jost Van Dyke. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Tortola e Jost Van Dyke",
+        "description": "Basi di noleggio, Cane Garden Bay e il Soggy Dollar Bar.",
+        "highlights": [
+          "Cane Garden Bay",
+          "White Bay",
+          "Soggy Dollar Bar"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Virgin Gorda e Anegada",
+        "description": "The Baths con massi di granito e Anegada piatta con aragoste e spiagge deserte.",
+        "highlights": [
+          "The Baths",
+          "Devil's Bay",
+          "Anegada"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Crociera in catamarano",
+        "description": "Una settimana con o senza skipper."
+      },
+      {
+        "name": "The Baths",
+        "description": "Percorso tra massi e piscine naturali."
+      },
+      {
+        "name": "Snorkeling a The Indians",
+        "description": "Pinnacoli rocciosi pieni di pesci."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Vela alle BVI",
+        "days": 9,
+        "route": "Tortola → crociera di 7 notti tra le isole",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Territorio britannico; si arriva via Porto Rico, Antigua o St. Thomas.",
+      "Per il noleggio senza skipper serve una patente nautica o un curriculum di vela.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "VI": {
+    "moreDescription": [
+      "Le Isole Vergini Americane (St. Thomas, St. John, St. Croix) sono territorio USA: St. John è in gran parte parco nazionale con spiagge come Trunk Bay; St. Thomas ha Charlotte Amalie e Magens Bay; St. Croix ha l'atmosfera danese e Buck Island. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "St. Thomas e St. John",
+        "description": "Shopping duty free, Magens Bay e il parco nazionale di St. John con Trunk Bay.",
+        "highlights": [
+          "Magens Bay",
+          "Trunk Bay",
+          "Charlotte Amalie",
+          "Cinnamon Bay"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "St. Croix",
+        "description": "Christiansted e Buck Island con il sentiero subacqueo.",
+        "highlights": [
+          "Christiansted",
+          "Buck Island",
+          "Frederiksted"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Sentiero subacqueo di Trunk Bay",
+        "description": "Snorkeling con cartelli sott'acqua."
+      },
+      {
+        "name": "Buck Island",
+        "description": "Monumento nazionale con barriera corallina."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Isole Vergini",
+        "days": 9,
+        "route": "St. Thomas (2) → St. John (4) → BVI in traghetto (2)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Valgono le regole d'ingresso USA: serve l'ESTA.",
+      "Si usa il dollaro USA e si guida a sinistra.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "AG": {
+    "moreDescription": [
+      "Antigua dice di avere 365 spiagge, una per ogni giorno dell'anno; con Barbuda, isola gemella selvaggia, offre resort di lusso, la storica Nelson's Dockyard e la vista da Shirley Heights. Famosa per la vela (Antigua Sailing Week ad aprile–maggio). Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Antigua",
+        "description": "Spiagge come Half Moon Bay e Dickenson Bay, Nelson's Dockyard e Shirley Heights.",
+        "highlights": [
+          "Nelson's Dockyard",
+          "Shirley Heights",
+          "Half Moon Bay",
+          "Devil's Bridge"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Barbuda",
+        "description": "Spiagge rosa deserte e la colonia di fregate.",
+        "highlights": [
+          "Spiaggia rosa",
+          "Santuario delle fregate"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Domenica a Shirley Heights",
+        "description": "Tramonto con steel band."
+      },
+      {
+        "name": "Gita a Barbuda",
+        "description": "Fregate e spiagge rosa."
+      },
+      {
+        "name": "Antigua Sailing Week",
+        "description": "Regate di fine aprile."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Antigua",
+        "days": 9,
+        "route": "Resort ad Antigua (7) → gita a Barbuda",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Voli via Londra.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "LC": {
+    "moreDescription": [
+      "Saint Lucia è una delle isole più spettacolari dei Caraibi grazie ai Pitons, due picchi vulcanici sul mare: resort romantici, il 'vulcano drive-in' di Sulphur Springs con i fanghi, la foresta pluviale e baie come Marigot e Anse Chastanet. Molto amata per i viaggi di nozze. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Soufrière e Pitons",
+        "description": "Resort con vista sui Pitons, Sulphur Springs, cascate e piantagioni di cacao.",
+        "highlights": [
+          "Pitons",
+          "Sulphur Springs",
+          "Anse Chastanet",
+          "Cascate di Toraille"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Nord (Rodney Bay, Pigeon Island)",
+        "description": "Spiagge, vita serale di Gros Islet e il parco di Pigeon Island.",
+        "highlights": [
+          "Rodney Bay",
+          "Pigeon Island",
+          "Gros Islet Friday"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Bagno di fango a Sulphur Springs",
+        "description": "Nel vulcano 'drive-in'."
+      },
+      {
+        "name": "Trekking sul Gros Piton",
+        "description": "Salita con guida."
+      },
+      {
+        "name": "Cacao e cioccolato",
+        "description": "Piantagioni storiche di Soufrière."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Viaggio di nozze a Saint Lucia",
+        "days": 10,
+        "route": "Soufrière (5) → Rodney Bay (4)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "L'aeroporto internazionale è a sud, a oltre un'ora dai resort del nord: valuta i trasferimenti.",
+      "Strade tortuose: meglio autista."
+    ]
+  },
+  "GD": {
+    "moreDescription": [
+      "Grenada è l''isola delle spezie': noce moscata, cacao, cascate nella foresta, la spiaggia di Grand Anse e il primo parco di sculture sommerse al mondo. Le isole Grenadine di Carriacou e Petite Martinique sono piccole e autentiche. Stagione migliore da gennaio a maggio."
+    ],
+    "areas": [
+      {
+        "name": "Grenada",
+        "description": "St. George's con il porto a ferro di cavallo, Grand Anse, le piantagioni di spezie e cacao e le cascate.",
+        "highlights": [
+          "St. George's",
+          "Grand Anse",
+          "Parco di sculture sommerse",
+          "Belmont Estate",
+          "Cascate di Annandale"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Da gennaio a maggio; più a sud, raramente colpita dagli uragani ma non esclusa."
+      },
+      {
+        "name": "Carriacou",
+        "description": "Isola tranquilla con Sandy Island e la tradizione delle barche in legno.",
+        "highlights": [
+          "Sandy Island",
+          "Paradise Beach"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Da gennaio a maggio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Snorkeling tra le sculture sommerse",
+        "description": "A Molinere Bay."
+      },
+      {
+        "name": "Tour delle spezie e del cioccolato",
+        "description": "Belmont Estate e le fabbriche di cioccolato bean-to-bar."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Grenada e Carriacou",
+        "days": 10,
+        "route": "Grenada (6) → Carriacou (3)",
+        "description": "Da gennaio a maggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Voli via Londra o isole vicine.",
+      "Ottima per viaggiatori che cercano Caraibi autentici."
+    ]
+  },
+  "DM": {
+    "moreDescription": [
+      "Dominica è l'isola-natura dei Caraibi: foresta pluviale, vulcani, cascate, sorgenti calde, il Boiling Lake (lago che bolle) e capodogli residenti al largo tutto l'anno. Poche spiagge di sabbia bianca ma ottime immersioni e trekking. Stagione migliore da gennaio a maggio."
+    ],
+    "areas": [
+      {
+        "name": "Morne Trois Pitons",
+        "description": "Parco UNESCO con il Boiling Lake, Emerald Pool e le cascate di Trafalgar.",
+        "highlights": [
+          "Boiling Lake",
+          "Emerald Pool",
+          "Cascate di Trafalgar",
+          "Titou Gorge"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Da gennaio a maggio."
+      },
+      {
+        "name": "Costa sud-ovest",
+        "description": "Champagne Reef con le bolle vulcaniche e Scotts Head; capodogli al largo.",
+        "highlights": [
+          "Champagne Reef",
+          "Scotts Head",
+          "Capodogli"
+        ],
+        "seasons": "OOOOOBDDDDBB",
+        "seasonNote": "Capodogli tutto l'anno, meglio da novembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Trekking al Boiling Lake",
+        "description": "Giornata intera nella foresta e nella Valle della Desolazione."
+      },
+      {
+        "name": "Nuotare con i capodogli",
+        "description": "Con permessi speciali."
+      },
+      {
+        "name": "Snorkeling al Champagne Reef",
+        "description": "Tra bolle di gas vulcanico."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Dominica natura",
+        "days": 8,
+        "route": "Roseau (3) → nord e Portsmouth (4)",
+        "description": "Da gennaio a maggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Voli via Antigua, Barbados o Guadalupa.",
+      "Strutture eco-lodge più che resort."
+    ]
+  },
+  "KN": {
+    "moreDescription": [
+      "Saint Kitts e Nevis sono due isole gemelle: St. Kitts con la fortezza di Brimstone Hill UNESCO, il treno panoramico delle piantagioni e resort; Nevis tranquilla, con plantation inn storici e la spiaggia di Pinney's. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "St. Kitts",
+        "description": "Basseterre, Brimstone Hill, il treno panoramico e le spiagge del sud.",
+        "highlights": [
+          "Brimstone Hill",
+          "Scenic Railway",
+          "Cockleshell Bay"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Nevis",
+        "description": "Plantation inn, il picco di Nevis e Pinney's Beach.",
+        "highlights": [
+          "Pinney's Beach",
+          "Nevis Peak",
+          "Plantation inn"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "St. Kitts Scenic Railway",
+        "description": "Giro dell'isola sul treno della canna da zucchero."
+      },
+      {
+        "name": "Notte in un plantation inn a Nevis",
+        "description": "Hotel storici nelle piantagioni."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Due isole",
+        "days": 9,
+        "route": "St. Kitts (4) → Nevis (4)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Traghetti frequenti tra le due isole.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "VC": {
+    "moreDescription": [
+      "Saint Vincent e Grenadine è un arcipelago perfetto per la vela: le Tobago Cays con le tartarughe, Bequia con la tradizione marinara, Mustique esclusiva, Union Island e il vulcano La Soufrière sull'isola principale. Stagione migliore da dicembre a maggio."
+    ],
+    "areas": [
+      {
+        "name": "Grenadine (Bequia, Mustique, Tobago Cays, Union)",
+        "description": "Isole per la vela, lo snorkeling con le tartarughe e il lusso discreto.",
+        "highlights": [
+          "Tobago Cays",
+          "Bequia",
+          "Mustique",
+          "Union Island",
+          "Petit St. Vincent"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre a maggio."
+      },
+      {
+        "name": "Saint Vincent",
+        "description": "Il vulcano La Soufrière, il giardino botanico più antico delle Americhe e le cascate.",
+        "highlights": [
+          "La Soufrière",
+          "Giardino botanico",
+          "Cascate di Dark View"
+        ],
+        "seasons": "OOOOOBDDDDBO",
+        "seasonNote": "Da gennaio a maggio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tartarughe alle Tobago Cays",
+        "description": "Snorkeling nel parco marino."
+      },
+      {
+        "name": "Crociera in catamarano",
+        "description": "Una settimana tra le Grenadine."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Vela nelle Grenadine",
+        "days": 10,
+        "route": "St. Vincent → crociera di 7 notti (Bequia, Mustique, Tobago Cays, Union)",
+        "description": "Da dicembre a maggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Collegamenti via Barbados o St. Lucia.",
+      "Mustique è privata: alloggi molto cari."
+    ]
+  },
+  "BL": {
+    "moreDescription": [
+      "Saint-Barthélemy (St. Barth) è l'isola caraibica più esclusiva: villaggio francese di Gustavia con yacht e boutique, spiagge come Saline e Gouverneur, ristoranti raffinati e ville di lusso. Si arriva con piccoli aerei (l'atterraggio è famoso) o in traghetto da St. Martin. Stagione migliore da dicembre ad aprile; Capodanno è l'apice."
+    ],
+    "areas": [
+      {
+        "name": "Gustavia e spiagge",
+        "description": "Il porto con yacht e boutique, le spiagge di Saline, Gouverneur, Colombier e Saint-Jean.",
+        "highlights": [
+          "Gustavia",
+          "Saline",
+          "Gouverneur",
+          "Colombier",
+          "Saint-Jean"
+        ],
+        "seasons": "OOOOOBBBXDBO",
+        "seasonNote": "Da dicembre ad aprile; molti hotel chiudono a settembre–ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Spiaggia di Colombier",
+        "description": "Raggiungibile a piedi o in barca."
+      },
+      {
+        "name": "Capodanno a Gustavia",
+        "description": "Yacht e feste, con prezzi altissimi."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "St. Barth e St. Martin",
+        "days": 9,
+        "route": "St. Martin (2) → St. Barth (6)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Territorio francese: valgono le regole UE; il passaporto è necessario se si transita da paesi extra UE (ad esempio Stati Uniti).",
+      "Si usa l'euro.",
+      "Per Natale e Capodanno soggiorni minimi e prenotazioni con un anno di anticipo."
+    ]
+  },
+  "SX": {
+    "moreDescription": [
+      "Saint Martin / Sint Maarten è un'isola divisa tra Francia (nord) e Paesi Bassi (sud): Maho Beach con gli aerei che atterrano sopra la spiaggia, Orient Bay, la gastronomia di Grand Case, lo shopping di Philipsburg. È anche la porta d'accesso per St. Barth e Anguilla. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Parte olandese (Sint Maarten)",
+        "description": "Maho Beach, Philipsburg e i casinò.",
+        "highlights": [
+          "Maho Beach",
+          "Philipsburg",
+          "Simpson Bay"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Parte francese (Saint-Martin)",
+        "description": "Orient Bay, Grand Case e l'isolotto di Pinel.",
+        "highlights": [
+          "Orient Bay",
+          "Grand Case",
+          "Pinel Island",
+          "Marigot"
+        ],
+        "seasons": "OOOOOBBBDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Aerei a Maho Beach",
+        "description": "Atterraggi a pochi metri dalla spiaggia."
+      },
+      {
+        "name": "Cena a Grand Case",
+        "description": "La capitale gastronomica dei Caraibi."
+      },
+      {
+        "name": "Gite a St. Barth e Anguilla",
+        "description": "In traghetto in giornata."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "St. Martin e isole vicine",
+        "days": 10,
+        "route": "St. Martin (6) → St. Barth o Anguilla (3)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Due parti con regole diverse: lato francese euro e UE, lato olandese fiorino e dollaro USA.",
+      "Voli diretti da Parigi e Amsterdam.",
+      "Assicurazione uragani da giugno a novembre."
+    ]
+  },
+  "AI": {
+    "moreDescription": [
+      "Anguilla è un'isola piatta e tranquilla con alcune delle spiagge più belle dei Caraibi (Shoal Bay, Meads Bay, Rendezvous Bay), resort di lusso, ristoranti eccellenti e nessuna folla. Si raggiunge in traghetto da St. Martin. Stagione migliore da dicembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Anguilla",
+        "description": "Spiagge bianchissime, isolotti come Sandy Island e Prickly Pear e locali di musica sulla spiaggia.",
+        "highlights": [
+          "Shoal Bay",
+          "Meads Bay",
+          "Rendezvous Bay",
+          "Sandy Island",
+          "Prickly Pear Cays"
+        ],
+        "seasons": "OOOOOBBBXDBO",
+        "seasonNote": "Da dicembre ad aprile; molti hotel chiusi a settembre–ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Gita a Prickly Pear Cays",
+        "description": "Snorkeling e pranzo sulla spiaggia."
+      },
+      {
+        "name": "Musica dal vivo sulla spiaggia",
+        "description": "Bar storici di Sandy Ground."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Anguilla",
+        "days": 9,
+        "route": "St. Martin → traghetto → Anguilla (7)",
+        "description": "Da dicembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Territorio britannico; gli italiani entrano senza visto.",
+      "Traghetto da St. Martin (20 minuti).",
+      "Destinazione costosa e tranquilla, adatta a coppie."
+    ]
+  }
+}

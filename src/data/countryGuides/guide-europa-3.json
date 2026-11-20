@@ -1,0 +1,1135 @@
+{
+  "AD": {
+    "moreDescription": [
+      "Andorra è un piccolo principato nei Pirenei tra Francia e Spagna, conosciuto per lo sci (Grandvalira e Pal Arinsal), lo shopping senza IVA e il centro termale Caldea. D'estate diventa una meta di trekking e mountain bike tra laghi e valli. Non ha aeroporto: si arriva da Barcellona o Tolosa in circa 3 ore."
+    ],
+    "areas": [
+      {
+        "name": "Comprensori sciistici (Grandvalira, Pal Arinsal, Ordino)",
+        "description": "Uno dei più grandi comprensori dei Pirenei, con piste per tutti i livelli e scuole di sci.",
+        "highlights": [
+          "Grandvalira",
+          "Pas de la Casa",
+          "Soldeu",
+          "Pal Arinsal",
+          "Ordino Arcalís"
+        ],
+        "seasons": "OOOBXBOOBXDO",
+        "seasonNote": "Sci da dicembre ad aprile; trekking da giugno a settembre."
+      },
+      {
+        "name": "Andorra la Vella ed Escaldes",
+        "description": "La capitale con lo shopping, la Casa de la Vall e le terme Caldea.",
+        "highlights": [
+          "Caldea",
+          "Casa de la Vall",
+          "Shopping"
+        ],
+        "seasons": "BBBBBOOOBBBO",
+        "seasonNote": "Tutto l'anno."
+      },
+      {
+        "name": "Valli e natura (Madriu, Sorteny)",
+        "description": "La valle del Madriu-Perafita-Claror, patrimonio UNESCO, laghi e rifugi.",
+        "highlights": [
+          "Valle del Madriu",
+          "Parco di Sorteny",
+          "Lago di Engolasters",
+          "Chiese romaniche"
+        ],
+        "seasons": "XXXXDOOOODXX",
+        "seasonNote": "Da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Settimana bianca a Grandvalira",
+        "description": "Pacchetti con hotel e skipass."
+      },
+      {
+        "name": "Terme Caldea",
+        "description": "Piscine termali in una struttura di vetro."
+      },
+      {
+        "name": "Trekking nella valle del Madriu",
+        "description": "Sentieri e rifugi di pastori."
+      },
+      {
+        "name": "Shopping",
+        "description": "Profumi, elettronica e liquori a prezzi agevolati (con limiti di franchigia)."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Sci in Andorra",
+        "days": 7,
+        "route": "Barcellona → Soldeu o Pas de la Casa (6)",
+        "description": "Settimana bianca con trasferimento da Barcellona."
+      },
+      {
+        "title": "Barcellona e Pirenei",
+        "days": 6,
+        "route": "Barcellona (3) → Andorra (2)",
+        "description": "Città e montagna d'estate."
+      }
+    ],
+    "agentTips": [
+      "Andorra non è nell'area Schengen né nell'UE: serve un documento valido per l'espatrio e le franchigie doganali sono limitate.",
+      "Si usa l'euro.",
+      "Non ci sono aeroporti né treni: prevedi trasferimenti da Barcellona o Tolosa.",
+      "Il roaming dati UE spesso non è incluso: avvisa il cliente."
+    ]
+  },
+  "LI": {
+    "moreDescription": [
+      "Il Liechtenstein è un minuscolo principato tra Svizzera e Austria, tutto da vedere in un giorno o due: la capitale Vaduz con il castello del Principe (non visitabile), musei d'arte, vigneti e sentieri alpini; d'inverno la piccola stazione sciistica di Malbun. Si visita spesso in abbinamento a un tour della Svizzera o del Vorarlberg."
+    ],
+    "areas": [
+      {
+        "name": "Vaduz e valle del Reno",
+        "description": "Il castello sulla collina, il Kunstmuseum, il museo nazionale, i vigneti del Principe e i borghi della valle.",
+        "highlights": [
+          "Castello di Vaduz",
+          "Kunstmuseum",
+          "Cantina del Principe",
+          "Castello di Gutenberg"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da aprile a ottobre."
+      },
+      {
+        "name": "Montagne (Malbun, Triesenberg)",
+        "description": "Sci per famiglie d'inverno e sentieri panoramici d'estate, come il percorso delle Tre Sorelle.",
+        "highlights": [
+          "Malbun",
+          "Tre Sorelle",
+          "Triesenberg"
+        ],
+        "seasons": "OOOBDOOOODDO",
+        "seasonNote": "Sci da dicembre a marzo; trekking da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Timbro sul passaporto",
+        "description": "Timbro ricordo all'ufficio turistico di Vaduz."
+      },
+      {
+        "name": "Degustazione alla Cantina del Principe",
+        "description": "Vini dei vigneti di famiglia."
+      },
+      {
+        "name": "Sentiero delle Tre Sorelle",
+        "description": "Cresta panoramica tra Liechtenstein e Austria."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Svizzera orientale e Liechtenstein",
+        "days": 4,
+        "route": "Zurigo (1) → San Gallo → Vaduz (1) → Appenzello (1)",
+        "description": "Weekend lungo in auto o treno."
+      }
+    ],
+    "agentTips": [
+      "Si entra liberamente dalla Svizzera (area Schengen); si usa il franco svizzero.",
+      "Non c'è aeroporto: il più vicino è Zurigo.",
+      "Il castello di Vaduz è residenza privata: si vede solo da fuori."
+    ]
+  },
+  "SM": {
+    "moreDescription": [
+      "San Marino è la repubblica più antica del mondo, sul Monte Titano a pochi chilometri da Rimini. Il centro storico UNESCO con le tre torri, il Palazzo Pubblico e i belvederi si visita in mezza giornata o in un giorno; si abbina perfettamente a un soggiorno sulla Riviera Romagnola, a Montefeltro e a San Leo. Il periodo migliore va da aprile a ottobre; a dicembre c'è il villaggio di Natale."
+    ],
+    "areas": [
+      {
+        "name": "Città di San Marino",
+        "description": "Le torri Guaita, Cesta e Montale, il Palazzo Pubblico con il cambio della guardia, la Basilica e i musei.",
+        "highlights": [
+          "Torre Guaita",
+          "Torre Cesta",
+          "Palazzo Pubblico",
+          "Basilica",
+          "Passo delle Streghe"
+        ],
+        "seasons": "DDBOOOOOOBDO",
+        "seasonNote": "Da aprile a ottobre; dicembre per il Natale delle Meraviglie."
+      },
+      {
+        "name": "Borgo Maggiore e castelli",
+        "description": "La funivia dal Borgo Maggiore e i piccoli castelli (comuni) del territorio.",
+        "highlights": [
+          "Funivia",
+          "Borgo Maggiore",
+          "Castelli del territorio"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da aprile a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Passeggiata tra le tre torri",
+        "description": "Il Passo delle Streghe con vista sulla Romagna fino al mare."
+      },
+      {
+        "name": "Cambio della guardia",
+        "description": "Davanti al Palazzo Pubblico in estate."
+      },
+      {
+        "name": "Giornate medievali",
+        "description": "Rievocazione storica a fine luglio."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Riviera e Montefeltro",
+        "days": 4,
+        "route": "Rimini (2) → San Marino (1) → San Leo e Urbino (1)",
+        "description": "Mare, storia e borghi."
+      }
+    ],
+    "agentTips": [
+      "Non ci sono controlli di frontiera; si usa l'euro.",
+      "In estate e nei weekend il centro è molto affollato: meglio arrivare al mattino.",
+      "Si raggiunge in bus da Rimini (circa 45 minuti)."
+    ]
+  },
+  "ME": {
+    "moreDescription": [
+      "Il Montenegro è piccolo ma vario: la baia di Kotor con le città veneziane, la costa con Budva e Sveti Stefan, il lago di Scutari, il monastero di Ostrog incastonato nella roccia e le montagne del Durmitor con il canyon del Tara. Il mare è al meglio da giugno a settembre (giugno e settembre i più piacevoli); le montagne da giugno a settembre. Si abbina bene a Dubrovnik e all'Albania."
+    ],
+    "morePlaces": [
+      {
+        "name": "Lago di Scutari",
+        "description": "Il lago più grande dei Balcani, con ninfee, pellicani e monasteri sulle isole.",
+        "search": "Skadar Lake"
+      },
+      {
+        "name": "Canyon del Tara",
+        "description": "Il canyon più profondo d'Europa, per rafting e il ponte Đurđevića.",
+        "search": "Tara River Canyon"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Bocche di Cattaro (Kotor, Perast)",
+        "description": "Il fiordo del Mediterraneo con Kotor murata, Perast e l'isola della Madonna dello Scalpello.",
+        "highlights": [
+          "Kotor",
+          "Mura e fortezza",
+          "Perast",
+          "Madonna dello Scalpello",
+          "Herceg Novi"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Da aprile a ottobre; luglio–agosto affollati dalle crociere."
+      },
+      {
+        "name": "Costa (Budva, Sveti Stefan, Ulcinj)",
+        "description": "Spiagge, la città vecchia di Budva, l'isola-hotel di Sveti Stefan e le lunghe spiagge di Ulcinj.",
+        "highlights": [
+          "Budva",
+          "Sveti Stefan",
+          "Petrovac",
+          "Ulcinj"
+        ],
+        "seasons": "XXDBOOOOOBXX",
+        "seasonNote": "Mare da giugno a settembre."
+      },
+      {
+        "name": "Interno (Cetinje, Lovćen, Scutari, Ostrog)",
+        "description": "L'antica capitale Cetinje, il mausoleo di Njegoš sul Lovćen, il lago di Scutari e il monastero di Ostrog.",
+        "highlights": [
+          "Cetinje",
+          "Lovćen",
+          "Lago di Scutari",
+          "Ostrog"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da aprile a ottobre."
+      },
+      {
+        "name": "Montagne (Durmitor, Tara, Biogradska Gora)",
+        "description": "Il parco del Durmitor con il Lago Nero, il rafting sul Tara e la foresta vergine di Biogradska.",
+        "highlights": [
+          "Žabljak",
+          "Lago Nero",
+          "Rafting sul Tara",
+          "Ponte Đurđevića"
+        ],
+        "seasons": "BBDDBOOOODDB",
+        "seasonNote": "Da giugno a settembre; inverno per lo sci a Žabljak e Kolašin."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Salita alla fortezza di Kotor",
+        "description": "1.350 gradini per la vista sulla baia, meglio al mattino."
+      },
+      {
+        "name": "Barca nella baia di Kotor",
+        "description": "Fino a Perast e alla Grotta Azzurra."
+      },
+      {
+        "name": "Rafting sul Tara",
+        "description": "Da maggio a settembre."
+      },
+      {
+        "name": "Barca sul lago di Scutari",
+        "description": "Tra ninfee e villaggi di pescatori."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Montenegro classico",
+        "days": 7,
+        "route": "Kotor (2) → Budva (2) → Lago di Scutari (1) → Durmitor (2)",
+        "description": "Mare e montagne in auto, da maggio a settembre."
+      },
+      {
+        "title": "Dubrovnik e Montenegro",
+        "days": 6,
+        "route": "Dubrovnik (2) → Kotor (2) → Budva (2)",
+        "description": "Combinato con la Croazia."
+      }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro anche se il paese non è nell'UE.",
+      "Il roaming UE non è incluso: avvisa il cliente.",
+      "Per il noleggio auto verifica la carta verde e l'autorizzazione a passare i confini.",
+      "Collegamenti in traghetto da Bari ad Antivari (Bar)."
+    ]
+  },
+  "AL": {
+    "moreDescription": [
+      "L'Albania è una delle mete emergenti del Mediterraneo: la Riviera albanese con spiagge turchesi (Ksamil, Dhërmi, Himara), città ottomane UNESCO come Berat e Argirocastro, il sito di Butrinto, le Alpi albanesi con Theth e Valbona e una capitale vivace come Tirana. Prezzi molto convenienti e vicinanza all'Italia. Il mare è al meglio da giugno a settembre; i tour in primavera e autunno."
+    ],
+    "morePlaces": [
+      {
+        "name": "Valbona",
+        "description": "Valle alpina collegata a Theth da un famoso sentiero.",
+        "search": "Valbona"
+      },
+      {
+        "name": "Lago di Koman",
+        "description": "Traghetto tra le gole di un lago-fiordo.",
+        "search": "Lake Koman"
+      },
+      {
+        "name": "Tirana",
+        "description": "Capitale colorata con il Bunk'Art e piazza Skanderbeg.",
+        "search": "Skanderbeg Square"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Riviera albanese (Valona, Himara, Dhërmi, Ksamil, Saranda)",
+        "description": "Spiagge di ciottoli bianchi e mare turchese lungo la costa ionica, con il passo di Llogara.",
+        "highlights": [
+          "Ksamil",
+          "Dhërmi",
+          "Himara",
+          "Saranda",
+          "Passo di Llogara",
+          "Gjipe"
+        ],
+        "seasons": "XXDBOOOOOBXX",
+        "seasonNote": "Mare da giugno a settembre; agosto affollato."
+      },
+      {
+        "name": "Sud storico (Butrinto, Argirocastro, Occhio Blu)",
+        "description": "Il sito di Butrinto, la città di pietra di Argirocastro e la sorgente dell'Occhio Blu.",
+        "highlights": [
+          "Butrinto",
+          "Argirocastro",
+          "Occhio Blu"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali."
+      },
+      {
+        "name": "Centro (Tirana, Berat, Kruja)",
+        "description": "Tirana, Berat 'la città delle mille finestre', Kruja con il castello di Scanderbeg e Durazzo.",
+        "highlights": [
+          "Tirana",
+          "Bunk'Art",
+          "Berat",
+          "Kruja",
+          "Durazzo"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; estate calda."
+      },
+      {
+        "name": "Alpi albanesi (Theth, Valbona, Koman)",
+        "description": "Montagne selvagge con villaggi, cascate, il traghetto sul lago di Koman e il trekking Theth–Valbona.",
+        "highlights": [
+          "Theth",
+          "Valbona",
+          "Lago di Koman",
+          "Occhio Blu di Theth"
+        ],
+        "seasons": "XXXXDOOOODXX",
+        "seasonNote": "Da giugno a settembre; d'inverno strade spesso chiuse."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Spiagge di Ksamil",
+        "description": "Isolette raggiungibili a nuoto o in pedalò."
+      },
+      {
+        "name": "Traghetto sul lago di Koman",
+        "description": "Tra pareti rocciose, verso Valbona."
+      },
+      {
+        "name": "Trekking Theth–Valbona",
+        "description": "Camminata di un giorno tra le Alpi albanesi."
+      },
+      {
+        "name": "Bunker e storia a Tirana",
+        "description": "Il Bunk'Art e la storia del regime."
+      },
+      {
+        "name": "Cucina albanese",
+        "description": "Prezzi bassissimi e pesce fresco sulla costa."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Albania classica",
+        "days": 9,
+        "route": "Tirana (1) → Kruja → Berat (1) → Argirocastro (1) → Butrinto e Ksamil (2) → Himara (2) → Valona (1)",
+        "description": "Tour in auto, primavera e settembre."
+      },
+      {
+        "title": "Riviera albanese",
+        "days": 8,
+        "route": "Saranda o Ksamil (4) → Himara o Dhërmi (3)",
+        "description": "Mare da giugno a settembre."
+      }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità valida per l'espatrio; moneta: il lek (euro accettato spesso).",
+      "Il roaming UE non è incluso.",
+      "Strade di montagna lente; in città guida caotica: valuta autista privato.",
+      "Traghetti da Bari, Brindisi e Ancona per Durazzo e Valona; Saranda è collegata a Corfù.",
+      "Ad agosto la Riviera è piena di turisti italiani e prezzi in salita."
+    ]
+  },
+  "BA": {
+    "moreDescription": [
+      "La Bosnia ed Erzegovina è un crocevia di culture: Sarajevo con il bazar ottomano, le chiese, le sinagoghe e la storia del Novecento; Mostar con il Ponte Vecchio; le cascate di Kravica; Medjugorje, meta di pellegrinaggi; Jajce e i laghi di Pliva. È conveniente e molto accogliente. Il periodo migliore va da maggio a settembre; d'inverno sci sulle montagne olimpiche di Sarajevo."
+    ],
+    "morePlaces": [
+      {
+        "name": "Blagaj",
+        "description": "Il monastero dei dervisci sulla sorgente del fiume Buna.",
+        "search": "Blagaj Tekija"
+      },
+      {
+        "name": "Tunnel della Speranza",
+        "description": "Il tunnel sotto l'aeroporto che salvò Sarajevo durante l'assedio.",
+        "search": "Sarajevo Tunnel"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Sarajevo",
+        "description": "La Baščaršija ottomana, la moschea Gazi Husrev-beg, il Ponte Latino, il Tunnel della Speranza e i monti olimpici.",
+        "highlights": [
+          "Baščaršija",
+          "Gazi Husrev-beg",
+          "Ponte Latino",
+          "Tunnel della Speranza",
+          "Trebević"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da aprile a ottobre; sci da dicembre a marzo."
+      },
+      {
+        "name": "Erzegovina (Mostar, Blagaj, Kravica, Počitelj)",
+        "description": "Mostar con lo Stari Most e i tuffatori, il monastero di Blagaj, il borgo di Počitelj e le cascate di Kravica.",
+        "highlights": [
+          "Stari Most",
+          "Blagaj",
+          "Počitelj",
+          "Cascate di Kravica"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; luglio–agosto molto caldi; Kravica balneabile in estate."
+      },
+      {
+        "name": "Medjugorje",
+        "description": "Santuario mariano meta di pellegrinaggi da tutto il mondo.",
+        "highlights": [
+          "Chiesa di San Giacomo",
+          "Collina delle apparizioni",
+          "Križevac"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Pellegrinaggi da marzo a ottobre; anniversario il 25 giugno."
+      },
+      {
+        "name": "Bosnia centrale (Jajce, Travnik)",
+        "description": "La cascata nel centro di Jajce, i mulini di Pliva e la città ottomana di Travnik.",
+        "highlights": [
+          "Cascata di Jajce",
+          "Mulini di Pliva",
+          "Travnik"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tuffatori di Mostar",
+        "description": "Il salto dal Ponte Vecchio, in estate."
+      },
+      {
+        "name": "Caffè bosniaco",
+        "description": "Servito nella džezva, nella Baščaršija."
+      },
+      {
+        "name": "Tour della storia di Sarajevo",
+        "description": "Dall'attentato del 1914 all'assedio degli anni '90."
+      },
+      {
+        "name": "Bagno a Kravica",
+        "description": "Cascate turchesi in una conca naturale."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bosnia ed Erzegovina",
+        "days": 6,
+        "route": "Sarajevo (2) → Jajce (1) → Mostar (2) → Blagaj e Kravica",
+        "description": "Da maggio a ottobre, anche abbinata a Dubrovnik."
+      },
+      {
+        "title": "Pellegrinaggio",
+        "days": 4,
+        "route": "Spalato o Dubrovnik → Medjugorje (3)",
+        "description": "Viaggio religioso con guida."
+      }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è il marco convertibile (euro spesso accettato).",
+      "Il roaming UE non è incluso.",
+      "Non uscire dai sentieri segnalati in zone rurali: restano campi minati da bonificare.",
+      "Si abbina bene a Croazia e Montenegro."
+    ]
+  },
+  "RS": {
+    "moreDescription": [
+      "La Serbia è una meta conveniente e vivace: Belgrado con la fortezza di Kalemegdan sulla confluenza di Sava e Danubio e una famosa vita notturna; Novi Sad e la fortezza di Petrovaradin; monasteri medievali UNESCO; le gole del Danubio alle Porte di Ferro; parchi come Tara e Zlatibor. Il periodo migliore va da maggio a settembre; a luglio il festival EXIT a Novi Sad."
+    ],
+    "morePlaces": [
+      {
+        "name": "Casa sul fiume Drina",
+        "description": "La casetta su una roccia in mezzo al fiume, nel parco di Tara.",
+        "search": "House on the Drina"
+      },
+      {
+        "name": "Zlatibor",
+        "description": "Montagna verde con villaggi e il trenino Šargan Eight.",
+        "search": "Šargan Eight"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Belgrado",
+        "description": "Kalemegdan, il Tempio di San Sava, Skadarlija con i ristoranti tradizionali, Zemun e i club galleggianti (splav) sul fiume.",
+        "highlights": [
+          "Kalemegdan",
+          "San Sava",
+          "Skadarlija",
+          "Zemun",
+          "Splav"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da aprile a ottobre."
+      },
+      {
+        "name": "Vojvodina (Novi Sad, Fruška Gora)",
+        "description": "Novi Sad con la fortezza, i monasteri e le cantine di Fruška Gora.",
+        "highlights": [
+          "Petrovaradin",
+          "Novi Sad",
+          "Fruška Gora",
+          "Sremski Karlovci"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a settembre; EXIT festival a luglio."
+      },
+      {
+        "name": "Danubio e est (Porte di Ferro, Golubac)",
+        "description": "La fortezza di Golubac, il sito di Lepenski Vir e le gole delle Porte di Ferro.",
+        "highlights": [
+          "Golubac",
+          "Porte di Ferro",
+          "Lepenski Vir"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a settembre."
+      },
+      {
+        "name": "Ovest e sud (Tara, Zlatibor, monasteri)",
+        "description": "Parchi di montagna, il trenino di Šargan e i monasteri di Studenica e Žiča.",
+        "highlights": [
+          "Parco di Tara",
+          "Zlatibor",
+          "Šargan Eight",
+          "Studenica"
+        ],
+        "seasons": "BBDBOOOOOBDB",
+        "seasonNote": "Da maggio a settembre; sci d'inverno a Kopaonik."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tramonto a Kalemegdan",
+        "description": "Sulla confluenza di Sava e Danubio."
+      },
+      {
+        "name": "Cena a Skadarlija",
+        "description": "Musica tradizionale e grigliate."
+      },
+      {
+        "name": "Vita notturna sugli splav",
+        "description": "I locali galleggianti di Belgrado."
+      },
+      {
+        "name": "Crociera alle Porte di Ferro",
+        "description": "Tra le gole del Danubio."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Serbia classica",
+        "days": 7,
+        "route": "Belgrado (3) → Novi Sad (1) → Danubio e Golubac (1) → Zlatibor (2)",
+        "description": "Da maggio a settembre."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani possono entrare con la carta d'identità valida per l'espatrio (verifica); la moneta è il dinaro.",
+      "Il roaming UE non è incluso.",
+      "Per entrare in Kosovo dalla Serbia e viceversa ci sono regole particolari: verifica viaggiaresicuri.it.",
+      "Prezzi molto convenienti."
+    ]
+  },
+  "MK": {
+    "moreDescription": [
+      "La Macedonia del Nord è un piccolo paese montuoso con un gioiello: il lago di Ocrida, uno dei più antichi d'Europa, con la città UNESCO piena di chiese bizantine. Skopje ha un vecchio bazar ottomano e un centro rinnovato di statue; vicino c'è il canyon di Matka. Il periodo migliore va da maggio a settembre; il lago è balneabile in estate."
+    ],
+    "morePlaces": [
+      {
+        "name": "Lago di Prespa",
+        "description": "Lago tra tre paesi con isole e monasteri.",
+        "search": "Lake Prespa"
+      },
+      {
+        "name": "Bitola",
+        "description": "Città elegante con le rovine di Heraclea Lyncestis.",
+        "search": "Heraclea Lyncestis"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Ocrida e lago",
+        "description": "La città vecchia con San Giovanni a Kaneo, la fortezza di Samuele, l'antico teatro e il monastero di San Naum con le sorgenti.",
+        "highlights": [
+          "San Giovanni a Kaneo",
+          "Fortezza di Samuele",
+          "San Naum",
+          "Baia delle Ossa"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a settembre; bagno nel lago a luglio–agosto."
+      },
+      {
+        "name": "Skopje e Matka",
+        "description": "Il vecchio bazar, la fortezza, la casa di Madre Teresa e il canyon di Matka a mezz'ora.",
+        "highlights": [
+          "Vecchio bazar",
+          "Ponte di pietra",
+          "Casa di Madre Teresa",
+          "Canyon di Matka"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; estate molto calda."
+      },
+      {
+        "name": "Sud (Bitola, Prespa, Tikveš)",
+        "description": "Bitola, il lago di Prespa e le cantine della regione di Tikveš.",
+        "highlights": [
+          "Bitola",
+          "Heraclea",
+          "Prespa",
+          "Cantine di Tikveš"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Vendemmia a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Barca sul lago di Ocrida",
+        "description": "Fino a San Naum e alle sue sorgenti."
+      },
+      {
+        "name": "Kayak nel canyon di Matka",
+        "description": "Fino alle grotte."
+      },
+      {
+        "name": "Vino di Tikveš",
+        "description": "Degustazioni nelle cantine."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Macedonia e Albania",
+        "days": 8,
+        "route": "Skopje (2) → Ocrida (3) → Berat (1) → Tirana (1)",
+        "description": "Laghi e città storiche dei Balcani."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani possono entrare con la carta d'identità valida per l'espatrio (verifica); moneta: il denar.",
+      "Il roaming UE non è incluso.",
+      "Ocrida ha un aeroporto con voli dall'Italia in estate."
+    ]
+  },
+  "XK": {
+    "moreDescription": [
+      "Il Kosovo è un piccolo paese dei Balcani poco turistico, con monasteri serbo-ortodossi UNESCO (Dečani, Peć, Gračanica), la città ottomana di Prizren e montagne come la gola di Rugova. Va proposto a viaggiatori curiosi, verificando sempre la situazione di sicurezza e le regole di confine con la Serbia."
+    ],
+    "areas": [
+      {
+        "name": "Prizren",
+        "description": "La città più bella del paese, con il ponte di pietra, le moschee, la fortezza e il festival del documentario ad agosto.",
+        "highlights": [
+          "Ponte di pietra",
+          "Moschea di Sinan Pasha",
+          "Fortezza",
+          "Dokufest"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a settembre."
+      },
+      {
+        "name": "Ovest (Peć, Dečani, Rugova)",
+        "description": "I monasteri UNESCO di Visoki Dečani e del Patriarcato di Peć e la gola di Rugova per escursioni e via ferrata.",
+        "highlights": [
+          "Visoki Dečani",
+          "Patriarcato di Peć",
+          "Gola di Rugova"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Pristina e centro",
+        "description": "La capitale giovane con il monumento Newborn, la biblioteca nazionale e il monastero di Gračanica.",
+        "highlights": [
+          "Newborn",
+          "Biblioteca nazionale",
+          "Gračanica",
+          "Cascate di Mirusha"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Monastero di Visoki Dečani",
+        "description": "Affreschi medievali tra i più belli dei Balcani (con documento)."
+      },
+      {
+        "name": "Via ferrata a Rugova",
+        "description": "Sulle pareti della gola."
+      },
+      {
+        "name": "Caffè macchiato a Pristina",
+        "description": "La cultura del caffè locale."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Balcani occidentali",
+        "days": 9,
+        "route": "Tirana (2) → Prizren (2) → Peć (1) → Pristina (1) → Skopje (2)",
+        "description": "Tour tra Albania, Kosovo e Macedonia."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre la situazione su viaggiaresicuri.it prima di proporre il viaggio.",
+      "Si usa l'euro; il roaming UE non è incluso.",
+      "Chi entra in Kosovo da Albania o Macedonia potrebbe avere problemi a uscire verso la Serbia: verifica le regole.",
+      "Ai monasteri serbi possono essere richiesti documenti all'ingresso e abbigliamento coperto."
+    ]
+  },
+  "MD": {
+    "moreDescription": [
+      "La Moldavia è una piccola meta per appassionati di vino: le cantine sotterranee di Cricova e Mileștii Mici (con chilometri di gallerie), monasteri rupestri come Orheiul Vechi e una capitale, Chișinău, verde e tranquilla. Il periodo migliore va da maggio a ottobre, con la festa nazionale del vino a inizio ottobre. Va verificata la situazione regionale; la Transnistria è un territorio separatista sconsigliato."
+    ],
+    "areas": [
+      {
+        "name": "Chișinău e cantine",
+        "description": "La capitale con i parchi e il mercato, le cantine di Cricova e Mileștii Mici e la tenuta di Purcari.",
+        "highlights": [
+          "Cricova",
+          "Mileștii Mici",
+          "Purcari",
+          "Castel Mimi",
+          "Chișinău"
+        ],
+        "seasons": "DDBOOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; festa del vino a inizio ottobre."
+      },
+      {
+        "name": "Centro e nord (Orheiul Vechi, Soroca)",
+        "description": "Il monastero nella roccia di Orheiul Vechi, i villaggi tradizionali e la fortezza di Soroca sul Dnestr.",
+        "highlights": [
+          "Orheiul Vechi",
+          "Butuceni",
+          "Soroca",
+          "Monastero di Căpriana"
+        ],
+        "seasons": "DDBOOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Cantine di Cricova",
+        "description": "In auto nelle gallerie sotterranee, con degustazione."
+      },
+      {
+        "name": "Orheiul Vechi",
+        "description": "Monastero scavato nella roccia sopra un'ansa del fiume."
+      },
+      {
+        "name": "Pranzo in un villaggio",
+        "description": "Cucina contadina a Butuceni."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Moldavia del vino",
+        "days": 4,
+        "route": "Chișinău (3), con cantine e Orheiul Vechi",
+        "description": "Weekend lungo enogastronomico."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre la situazione su viaggiaresicuri.it per la vicinanza all'Ucraina.",
+      "La Transnistria è sconsigliata e fuori dal controllo delle autorità moldave.",
+      "La moneta è il leu moldavo; il roaming UE non è incluso.",
+      "Le visite alle cantine si prenotano in anticipo."
+    ]
+  },
+  "UA": {
+    "areas": [
+      {
+        "name": "Kiev",
+        "description": "La Lavra delle Grotte, Santa Sofia, il monastero di San Michele, la discesa di Sant'Andrea.",
+        "highlights": [
+          "Lavra delle Grotte",
+          "Santa Sofia",
+          "San Michele",
+          "Discesa di Sant'Andrea"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      },
+      {
+        "name": "Ovest (Leopoli, Carpazi)",
+        "description": "Leopoli con il centro storico UNESCO, i caffè e i Carpazi con villaggi e chiese di legno.",
+        "highlights": [
+          "Leopoli",
+          "Carpazi",
+          "Chiese di legno"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      },
+      {
+        "name": "Sud (Odessa)",
+        "description": "La città sul Mar Nero con la scalinata Potëmkin e il teatro dell'opera.",
+        "highlights": [
+          "Scalinata Potëmkin",
+          "Teatro dell'opera"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Patrimonio UNESCO",
+        "description": "Santa Sofia, la Lavra e il centro di Leopoli, quando sarà di nuovo possibile visitarli."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "La Farnesina sconsiglia attualmente i viaggi: non proporre pacchetti turistici e verifica sempre viaggiaresicuri.it.",
+      "Le assicurazioni di viaggio normalmente non coprono paesi in guerra.",
+      "Per viaggi di lavoro o umanitari indirizza il cliente a organizzazioni specializzate."
+    ]
+  },
+  "BY": {
+    "moreDescription": [
+      "La Bielorussia ha castelli UNESCO (Mir e Njasviž), la foresta primordiale di Białowieża con i bisonti europei e una capitale, Minsk, di impronta sovietica. Il contesto politico e le relazioni con l'Unione Europea rendono oggi i viaggi sconsigliati o complessi: verifica sempre viaggiaresicuri.it prima di qualunque proposta."
+    ],
+    "areas": [
+      {
+        "name": "Minsk",
+        "description": "Larghi viali sovietici, il museo della Grande guerra patriottica e la città alta.",
+        "highlights": [
+          "Viale dell'Indipendenza",
+          "Museo della guerra",
+          "Città alta"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati o complessi: verificare."
+      },
+      {
+        "name": "Castelli e foreste (Mir, Njasviž, Białowieża)",
+        "description": "I castelli dei Radziwiłł e la foresta di Białowieża.",
+        "highlights": [
+          "Castello di Mir",
+          "Njasviž",
+          "Białowieża",
+          "Fortezza di Brest"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati o complessi: verificare."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Bisonti di Białowieża",
+        "description": "Visitabili anche dal lato polacco della foresta."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Alternativa polacca",
+        "days": 4,
+        "route": "Varsavia (1) → Białowieża lato polacco (2)",
+        "description": "Per vedere la foresta primordiale senza entrare in Bielorussia."
+      }
+    ],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it: al momento i viaggi sono sconsigliati.",
+      "Le carte di pagamento occidentali potrebbero non funzionare e i voli diretti dall'UE sono sospesi.",
+      "Proponi come alternativa la parte polacca della foresta di Białowieża."
+    ]
+  },
+  "RU": {
+    "areas": [
+      {
+        "name": "Mosca",
+        "description": "Cremlino, Piazza Rossa, San Basilio, la metropolitana monumentale e la Galleria Tret'jakov.",
+        "highlights": [
+          "Cremlino",
+          "Piazza Rossa",
+          "San Basilio",
+          "Metropolitana"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      },
+      {
+        "name": "San Pietroburgo",
+        "description": "L'Ermitage, la Prospettiva Nevskij, Peterhof, Puškin e le notti bianche di giugno.",
+        "highlights": [
+          "Ermitage",
+          "Peterhof",
+          "Palazzo di Caterina",
+          "Notti bianche"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      },
+      {
+        "name": "Anello d'Oro e Siberia",
+        "description": "Suzdal', Vladimir, la Transiberiana e il lago Bajkal.",
+        "highlights": [
+          "Suzdal'",
+          "Transiberiana",
+          "Lago Bajkal"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati: verificare la situazione."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Ermitage e Cremlino",
+        "description": "Da proporre solo quando la situazione lo permetterà."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "La Farnesina sconsiglia attualmente i viaggi: verifica sempre viaggiaresicuri.it.",
+      "Carte di credito e bancomat emessi in Italia non funzionano; non ci sono voli diretti dall'UE.",
+      "Le assicurazioni di viaggio spesso escludono la Russia."
+    ]
+  },
+  "GL": {
+    "moreDescription": [
+      "La Groenlandia è l'isola più grande del mondo, coperta per l'80% da ghiaccio: si va per vedere iceberg giganti, ghiacciai, villaggi inuit colorati, balene e, d'inverno, aurore e slitte con i cani. Non ci sono strade tra le città: ci si muove in aereo o in nave. L'estate (giugno–settembre) è la stagione principale con sole di mezzanotte; febbraio–aprile per neve, luce e slitte. È una destinazione costosa e di nicchia."
+    ],
+    "areas": [
+      {
+        "name": "Disko Bay (Ilulissat)",
+        "description": "Il fiordo ghiacciato UNESCO di Ilulissat, dove si staccano iceberg enormi, con navigazioni tra i ghiacci e balene.",
+        "highlights": [
+          "Fiordo ghiacciato",
+          "Iceberg",
+          "Balene",
+          "Sentiero di Sermermiut",
+          "Eqi"
+        ],
+        "seasons": "BBOOBOOOOBDD",
+        "seasonNote": "Da giugno a settembre per iceberg e balene; marzo–aprile per slitte e neve."
+      },
+      {
+        "name": "Kangerlussuaq e calotta",
+        "description": "Porta d'ingresso aerea con buoi muschiati, renne e l'escursione fino alla calotta glaciale.",
+        "highlights": [
+          "Calotta glaciale",
+          "Buoi muschiati",
+          "Ghiacciaio Russell"
+        ],
+        "seasons": "BBOOBOOOOBDD",
+        "seasonNote": "Estate per la calotta; inverno per l'aurora."
+      },
+      {
+        "name": "Sud e est (Nuuk, Narsaq, Tasiilaq)",
+        "description": "La capitale Nuuk con il fiordo, le fattorie e le rovine vichinghe del sud, la costa est selvaggia di Tasiilaq.",
+        "highlights": [
+          "Nuuk",
+          "Rovine vichinghe",
+          "Tasiilaq",
+          "Fiordo di Nuuk"
+        ],
+        "seasons": "DDBBBOOOODDD",
+        "seasonNote": "Da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Navigazione tra gli iceberg",
+        "description": "Anche di notte con il sole di mezzanotte a Ilulissat."
+      },
+      {
+        "name": "Slitta trainata dai cani",
+        "description": "Con i cacciatori inuit, da febbraio ad aprile."
+      },
+      {
+        "name": "Camminata sulla calotta",
+        "description": "Escursione dal ghiacciaio Russell."
+      },
+      {
+        "name": "Whale watching",
+        "description": "Megattere e balenottere in Disko Bay."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Groenlandia estiva",
+        "days": 8,
+        "route": "Copenaghen o Reykjavík → Kangerlussuaq (2) → Ilulissat (4) → Nuuk (1)",
+        "description": "Da giugno a settembre, con voli interni."
+      }
+    ],
+    "agentTips": [
+      "La Groenlandia fa parte del Regno di Danimarca ma non dell'UE né di Schengen: serve un documento valido.",
+      "I voli partono da Copenaghen o Reykjavík (e stagionalmente da altre città): i posti sono pochi.",
+      "Il meteo causa spesso ritardi dei voli interni: lascia giorni cuscinetto.",
+      "Destinazione molto cara: budget alto per alloggi ed escursioni."
+    ]
+  },
+  "FO": {
+    "moreDescription": [
+      "Le Isole Fær Øer sono 18 isole vulcaniche tra Islanda e Norvegia, con scogliere verticali, cascate sul mare, villaggi con i tetti d'erba e colonie di pulcinelle di mare. Sono collegate da tunnel sottomarini e traghetti: ideali per un fly & drive di 4–6 giorni. Il periodo migliore va da maggio a settembre; il meteo cambia rapidamente tutto l'anno."
+    ],
+    "areas": [
+      {
+        "name": "Vágar e Mykines",
+        "description": "Il lago Sørvágsvatn sospeso sull'oceano, la cascata di Gásadalur e l'isola di Mykines con le pulcinelle di mare.",
+        "highlights": [
+          "Sørvágsvatn",
+          "Gásadalur",
+          "Mykines",
+          "Pulcinelle di mare"
+        ],
+        "seasons": "XXXDBOOOBDXX",
+        "seasonNote": "Pulcinelle da maggio ad agosto; Mykines accessibile solo con meteo buono."
+      },
+      {
+        "name": "Streymoy ed Eysturoy (Tórshavn, Saksun, Gjógv)",
+        "description": "La capitale Tórshavn con il quartiere di Tinganes, la laguna di Saksun e il villaggio di Gjógv.",
+        "highlights": [
+          "Tórshavn",
+          "Tinganes",
+          "Saksun",
+          "Gjógv",
+          "Kirkjubøur"
+        ],
+        "seasons": "DDDBOOOOBDDD",
+        "seasonNote": "Da maggio a settembre."
+      },
+      {
+        "name": "Isole del nord (Kalsoy, Viðoy)",
+        "description": "Il faro di Kallur sulle scogliere e il promontorio di Enniberg.",
+        "highlights": [
+          "Faro di Kallur",
+          "Klaksvík",
+          "Enniberg"
+        ],
+        "seasons": "XXXDBOOOBDXX",
+        "seasonNote": "Da maggio a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Escursione al lago Sørvágsvatn",
+        "description": "Il lago che sembra sospeso sopra l'oceano."
+      },
+      {
+        "name": "Pulcinelle di mare a Mykines",
+        "description": "Da maggio ad agosto, con prenotazione del traghetto."
+      },
+      {
+        "name": "Faro di Kallur",
+        "description": "Sentiero sul crinale dell'isola di Kalsoy."
+      },
+      {
+        "name": "Barca sotto le scogliere di Vestmanna",
+        "description": "Tra grotte e faraglioni."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Fær Øer in auto",
+        "days": 5,
+        "route": "Vágar (1) → Tórshavn (2) → Eysturoy (1) → Kalsoy (1)",
+        "description": "Fly & drive da maggio a settembre."
+      }
+    ],
+    "agentTips": [
+      "Le Fær Øer fanno parte del Regno di Danimarca ma non dell'UE né di Schengen; moneta: corona faroese/danese.",
+      "Si vola via Copenaghen, Edimburgo o Reykjavík (e voli stagionali da altre città).",
+      "Alcuni sentieri sono su terreni privati con biglietto d'accesso.",
+      "Il meteo è molto variabile: consiglia abbigliamento impermeabile e giorni di margine."
+    ]
+  }
+}

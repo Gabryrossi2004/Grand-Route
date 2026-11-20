@@ -1,0 +1,583 @@
+{
+  "BW": {
+    "moreDescription": [
+      "Il Botswana è una delle mete di safari più esclusive al mondo: poche strutture, pochi turisti e natura spettacolare. Il delta dell'Okavango si esplora in fuoristrada, in mokoro (canoa scavata) e a piedi; il Chobe ha le più grandi concentrazioni di elefanti d'Africa; le saline del Makgadikgadi e il Kalahari offrono deserto, suricati e cieli infiniti. Ci si muove spesso con piccoli aerei tra i campi. La stagione secca da maggio a ottobre è la migliore per gli animali; il delta è pieno d'acqua da giugno ad agosto."
+    ],
+    "areas": [
+      {
+        "name": "Delta dell'Okavango e Moremi",
+        "description": "Un delta interno che si riempie d'acqua nella stagione secca: safari in mokoro e barca, a piedi e in fuoristrada, con leoni, leopardi, licaoni ed elefanti.",
+        "highlights": [
+          "Mokoro",
+          "Moremi",
+          "Isola di Chief",
+          "Licaoni",
+          "Voli panoramici"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre ideale (acqua alta giugno–agosto); da dicembre a marzo piogge e prezzi più bassi."
+      },
+      {
+        "name": "Chobe e Linyanti",
+        "description": "Il fiume Chobe con mandrie di elefanti e safari in barca, comodo da Kasane e dalle Cascate Vittoria; Linyanti e Savuti per i grandi predatori.",
+        "highlights": [
+          "Fiume Chobe",
+          "Safari in barca",
+          "Savuti",
+          "Linyanti"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; settembre–ottobre massime concentrazioni di elefanti."
+      },
+      {
+        "name": "Makgadikgadi e Kalahari",
+        "description": "Saline sconfinate con i suricati, i boscimani San, i baobab di Baines e la migrazione delle zebre nella stagione verde.",
+        "highlights": [
+          "Suricati",
+          "Saline di Makgadikgadi",
+          "Boscimani San",
+          "Kalahari centrale"
+        ],
+        "seasons": "OOOBOOOOODBO",
+        "seasonNote": "Saline asciutte da maggio a ottobre; migrazione delle zebre da dicembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Mokoro nel delta",
+        "description": "Silenziosa canoa tra canali e ninfee."
+      },
+      {
+        "name": "Volo panoramico sull'Okavango",
+        "description": "In elicottero senza portiere o con i voli tra i campi."
+      },
+      {
+        "name": "Suricati nel Makgadikgadi",
+        "description": "Avvicinamento a pochi metri delle colonie abituate all'uomo."
+      },
+      {
+        "name": "Safari in barca sul Chobe",
+        "description": "Elefanti che attraversano il fiume al tramonto."
+      },
+      {
+        "name": "Notte sotto le stelle sulle saline",
+        "description": "Sleep-out nel deserto bianco."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Botswana fly-in",
+        "days": 10,
+        "route": "Maun (1) → Okavango (3) → Moremi o Linyanti (3) → Chobe (2) → Cascate Vittoria",
+        "description": "Safari di lusso con voletti tra i campi, da maggio a ottobre."
+      },
+      {
+        "title": "Cascate e Chobe",
+        "days": 6,
+        "route": "Cascate Vittoria (2) → Chobe (3)",
+        "description": "Estensione di un viaggio in Sudafrica o Namibia."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni turistici; verifica le regole per i minori.",
+      "I campi sono pochi e cari, con politica 'high value, low volume': prenota 9–12 mesi prima per l'alta stagione.",
+      "Sui voletti il bagaglio è di circa 20 kg in borse morbide.",
+      "Profilassi antimalarica consigliata nel nord."
+    ]
+  },
+  "ZM": {
+    "moreDescription": [
+      "Lo Zambia è la patria del safari a piedi e dei parchi selvaggi: South Luangwa con leopardi e walking safari, il Lower Zambezi con canoa tra ippopotami ed elefanti, Kafue immenso e poco frequentato. Livingstone è la base per il lato zambiano delle Cascate Vittoria, con la Devil's Pool sul bordo del salto. La stagione secca da giugno a ottobre è la migliore; molti campi chiudono da dicembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Livingstone e Cascate Vittoria",
+        "description": "Il lato zambiano delle cascate, la Devil's Pool, il ponte e il fiume Zambesi con crociere al tramonto.",
+        "highlights": [
+          "Cascate Vittoria",
+          "Devil's Pool",
+          "Ponte delle cascate",
+          "Crociera sullo Zambesi"
+        ],
+        "seasons": "BBOOOOOOBDDB",
+        "seasonNote": "Portata massima a marzo–maggio (spruzzi altissimi); Devil's Pool solo da metà agosto a gennaio circa, con acqua bassa."
+      },
+      {
+        "name": "South Luangwa",
+        "description": "Il parco del leopardo e del safari a piedi, con lodge sul fiume.",
+        "highlights": [
+          "Leopardi",
+          "Walking safari",
+          "Safari notturni",
+          "Fiume Luangwa"
+        ],
+        "seasons": "XXXDBOOOOODX",
+        "seasonNote": "Da giugno a ottobre; molti campi chiusi in piena stagione delle piogge."
+      },
+      {
+        "name": "Lower Zambezi",
+        "description": "Canoa e barca sul fiume tra elefanti e ippopotami, pesca della tigre.",
+        "highlights": [
+          "Canoa",
+          "Pesca del pesce tigre",
+          "Elefanti sul fiume"
+        ],
+        "seasons": "XXXDBOOOOODX",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Kafue e Liuwa",
+        "description": "Parchi enormi e selvaggi; a Liuwa la migrazione degli gnu a novembre.",
+        "highlights": [
+          "Pianure di Busanga",
+          "Liuwa Plain"
+        ],
+        "seasons": "XXXXDOOOOBBX",
+        "seasonNote": "Kafue da giugno a ottobre; Liuwa a novembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Devil's Pool",
+        "description": "Bagno sul bordo delle cascate, con guide, da agosto a gennaio circa."
+      },
+      {
+        "name": "Walking safari",
+        "description": "Nato in South Luangwa, a piedi con guida e scout armato."
+      },
+      {
+        "name": "Canoa sullo Zambesi",
+        "description": "Nel Lower Zambezi tra gli elefanti."
+      },
+      {
+        "name": "Volo dell'angelo sulle cascate",
+        "description": "Elicottero o microlight."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Zambia classico",
+        "days": 10,
+        "route": "Livingstone (2) → South Luangwa (4) → Lower Zambezi (3)",
+        "description": "Safari a piedi e fluviali, da giugno a ottobre."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto (anche KAZA Univisa per Zambia e Zimbabwe).",
+      "Molti campi stagionali: verifica date di apertura.",
+      "Profilassi antimalarica consigliata.",
+      "Si abbina a Botswana, Zimbabwe e Malawi."
+    ]
+  },
+  "ZW": {
+    "moreDescription": [
+      "Lo Zimbabwe offre la vista più ampia delle Cascate Vittoria, parchi eccellenti come Hwange (grandi branchi di elefanti) e Mana Pools (safari a piedi e in canoa tra gli elefanti), il lago Kariba e le rovine di Grande Zimbabwe. Le guide sono tra le migliori d'Africa. La stagione secca da maggio a ottobre è la migliore per gli animali."
+    ],
+    "areas": [
+      {
+        "name": "Victoria Falls",
+        "description": "Il sentiero nella foresta pluviale davanti alle cascate, attività sullo Zambesi e il famoso hotel coloniale.",
+        "highlights": [
+          "Cascate Vittoria",
+          "Foresta pluviale",
+          "Crociera al tramonto",
+          "Victoria Falls Hotel"
+        ],
+        "seasons": "BBOOOOOOBDDB",
+        "seasonNote": "Spruzzi massimi da marzo a maggio; ottobre–novembre cascate più basse ma rocce visibili."
+      },
+      {
+        "name": "Hwange",
+        "description": "Il parco più grande del paese con migliaia di elefanti attorno alle pozze.",
+        "highlights": [
+          "Elefanti",
+          "Pozze",
+          "Licaoni"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da luglio a ottobre ideale."
+      },
+      {
+        "name": "Mana Pools e Kariba",
+        "description": "Safari a piedi e canoa sullo Zambesi, house-boat sul lago Kariba.",
+        "highlights": [
+          "Mana Pools",
+          "Canoa",
+          "Lago Kariba",
+          "Matusadona"
+        ],
+        "seasons": "XXXDBOOOOODX",
+        "seasonNote": "Mana Pools aperto circa da aprile a novembre."
+      },
+      {
+        "name": "Grande Zimbabwe e Matobo",
+        "description": "Le rovine della città medievale che dà il nome al paese e le colline di Matobo con rinoceronti e pitture rupestri.",
+        "highlights": [
+          "Grande Zimbabwe",
+          "Matobo",
+          "Rinoceronti"
+        ],
+        "seasons": "BBBOOOOOOBBB",
+        "seasonNote": "Visitabili tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Passeggiata alle cascate",
+        "description": "Il sentiero con 16 punti panoramici."
+      },
+      {
+        "name": "Canoa a Mana Pools",
+        "description": "Tra ippopotami ed elefanti sullo Zambesi."
+      },
+      {
+        "name": "Safari a piedi con le migliori guide",
+        "description": "Le guide professionali dello Zimbabwe sono leggendarie."
+      },
+      {
+        "name": "Rafting sullo Zambesi",
+        "description": "Rapide di grado 5 sotto le cascate, da agosto a dicembre."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Cascate e Hwange",
+        "days": 6,
+        "route": "Victoria Falls (2) → Hwange (3)",
+        "description": "Da giugno a ottobre."
+      },
+      {
+        "title": "Zimbabwe completo",
+        "days": 11,
+        "route": "Victoria Falls (2) → Hwange (3) → Mana Pools (3) → Harare (1)",
+        "description": "Per appassionati di safari."
+      }
+    ],
+    "agentTips": [
+      "Visto all'arrivo o KAZA Univisa.",
+      "Il contante (dollari USA in tagli piccoli) è spesso indispensabile.",
+      "Profilassi antimalarica consigliata.",
+      "Le cascate si abbinano facilmente a Chobe (Botswana) in giornata."
+    ]
+  },
+  "MW": {
+    "moreDescription": [
+      "Il Malawi, 'il cuore caldo dell'Africa', è un paese piccolo e accogliente, dominato dal lago Malawi con spiagge, villaggi e pesci colorati (ciclidi). Liwonde e Majete offrono safari con i Big Five grazie alla reintroduzione degli animali; il monte Mulanje e l'altopiano di Zomba sono perfetti per il trekking. Si abbina bene allo Zambia. Stagione secca da maggio a ottobre."
+    ],
+    "areas": [
+      {
+        "name": "Lago Malawi (Cape Maclear, Likoma)",
+        "description": "Spiagge, kayak e snorkeling nel lago patrimonio UNESCO, isole come Likoma e Mumbo.",
+        "highlights": [
+          "Cape Maclear",
+          "Isola di Likoma",
+          "Isola di Mumbo",
+          "Ciclidi"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; settembre–novembre caldo con acqua più limpida."
+      },
+      {
+        "name": "Liwonde e Majete",
+        "description": "Safari in barca e fuoristrada sul fiume Shire con elefanti, ippopotami e rinoceronti.",
+        "highlights": [
+          "Fiume Shire",
+          "Rinoceronti",
+          "Elefanti"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da giugno a ottobre."
+      },
+      {
+        "name": "Montagne (Mulanje, Zomba, Nyika)",
+        "description": "Trekking sul massiccio del Mulanje, l'altopiano di Zomba e i pascoli di Nyika.",
+        "highlights": [
+          "Mulanje",
+          "Zomba",
+          "Nyika"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Kayak sul lago",
+        "description": "Tra le isole del parco di Lake Malawi."
+      },
+      {
+        "name": "Safari in barca a Liwonde",
+        "description": "Lungo il fiume Shire."
+      },
+      {
+        "name": "Trekking sul Mulanje",
+        "description": "Più giorni tra rifugi."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Lago e safari",
+        "days": 9,
+        "route": "Lilongwe (1) → Liwonde (2) → Cape Maclear (3) → Mumbo (2)",
+        "description": "Da maggio a ottobre."
+      },
+      {
+        "title": "Zambia e Malawi",
+        "days": 12,
+        "route": "South Luangwa (4) → Lilongwe → Lago Malawi (5)",
+        "description": "Safari e lago."
+      }
+    ],
+    "agentTips": [
+      "Verifica le regole d'ingresso (esenzione dal visto o visto online).",
+      "Profilassi antimalarica consigliata.",
+      "Strutture semplici ma accoglienti: ottimo per viaggiatori responsabili."
+    ]
+  },
+  "MZ": {
+    "moreDescription": [
+      "Il Mozambico ha oltre 2.500 km di costa sull'Oceano Indiano con isole e barriere coralline: l'arcipelago di Bazaruto, l'isola di Mozambico UNESCO, le Quirimbas, e Tofo con squali balena e mante. È un'ottima estensione mare dopo un safari in Sudafrica. La stagione migliore va da maggio a novembre; da gennaio a marzo c'è il rischio cicloni. Il nord (Cabo Delgado) ha zone sconsigliate."
+    ],
+    "experiences": [
+      {
+        "name": "Snorkeling a Bazaruto",
+        "description": "Al Two Mile Reef."
+      },
+      {
+        "name": "Squali balena a Tofo",
+        "description": "Uscite in barca per nuotare con gli squali balena."
+      },
+      {
+        "name": "Dhow al tramonto",
+        "description": "Barca a vela tradizionale tra le isole."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Kruger e Bazaruto",
+        "days": 12,
+        "route": "Johannesburg (1) → Kruger (3) → Vilanculos e Bazaruto (6)",
+        "description": "Safari e mare, da maggio a novembre."
+      }
+    ],
+    "agentTips": [
+      "Verifica le regole d'ingresso (esenzione o e-visa).",
+      "Il nord (Cabo Delgado) ha zone sconsigliate: verifica viaggiaresicuri.it.",
+      "Profilassi antimalarica consigliata.",
+      "Da gennaio a marzo rischio cicloni."
+    ],
+    "areas": [
+      {
+        "name": "Bazaruto e Vilanculos",
+        "description": "Isole di dune e lagune turchesi con resort di lusso, dugonghi e barca a vela tradizionale.",
+        "highlights": [
+          "Bazaruto",
+          "Benguerra",
+          "Dhow",
+          "Dugonghi"
+        ],
+        "seasons": "DDDBOOOOOOOB",
+        "seasonNote": "Da maggio a novembre; gennaio–marzo caldo e cicloni."
+      },
+      {
+        "name": "Tofo e Inhambane",
+        "description": "Spiagge e immersioni con squali balena e mante tutto l'anno.",
+        "highlights": [
+          "Squali balena",
+          "Mante",
+          "Tofo"
+        ],
+        "seasons": "BDDBOOOOOOOB",
+        "seasonNote": "Balene megattere da luglio a ottobre."
+      },
+      {
+        "name": "Nord (Isola di Mozambico, Quirimbas)",
+        "description": "La città coloniale UNESCO e l'arcipelago delle Quirimbas.",
+        "highlights": [
+          "Isola di Mozambico",
+          "Quirimbas",
+          "Ibo"
+        ],
+        "seasons": "DDDBOOOOOOOB",
+        "seasonNote": "Da maggio a novembre; verificare la sicurezza a Cabo Delgado."
+      },
+      {
+        "name": "Maputo",
+        "description": "La capitale con architetture coloniali e il mercato del pesce.",
+        "highlights": [
+          "Stazione ferroviaria",
+          "Mercato del pesce",
+          "Inhaca"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Tutto l'anno."
+      }
+    ]
+  },
+  "LS": {
+    "moreDescription": [
+      "Il Lesotho è il 'regno del cielo', un paese interamente sopra i 1.000 metri circondato dal Sudafrica: montagne, villaggi basotho, pony, la cascata di Maletsunyane e il passo di Sani, una delle strade più spettacolari d'Africa. Si visita spesso in deviazione da un viaggio in Sudafrica (Drakensberg). Estate australe verde; d'inverno neve e sci ad Afriski."
+    ],
+    "areas": [
+      {
+        "name": "Montagne (Sani Pass, Maletsunyane)",
+        "description": "Il passo di Sani in 4x4 con il pub più alto d'Africa, la cascata di Maletsunyane e la diga di Katse.",
+        "highlights": [
+          "Sani Pass",
+          "Maletsunyane",
+          "Diga di Katse",
+          "Afriski"
+        ],
+        "seasons": "OOOBBBBBBOOO",
+        "seasonNote": "Da settembre ad aprile verde; da giugno ad agosto neve e freddo."
+      },
+      {
+        "name": "Maseru e Thaba Bosiu",
+        "description": "La capitale e la montagna sacra del re Moshoeshoe.",
+        "highlights": [
+          "Thaba Bosiu",
+          "Villaggio culturale"
+        ],
+        "seasons": "OOOBBBBBBOOO",
+        "seasonNote": "Tutto l'anno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Sani Pass in 4x4",
+        "description": "Dai Drakensberg sudafricani al Lesotho."
+      },
+      {
+        "name": "Pony trekking",
+        "description": "A cavallo tra villaggi basotho."
+      },
+      {
+        "name": "Abseiling a Maletsunyane",
+        "description": "Una delle calate su corda più lunghe al mondo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Drakensberg e Lesotho",
+        "days": 4,
+        "route": "Underberg (1) → Sani Pass → Lesotho (2)",
+        "description": "Deviazione da un tour del Sudafrica."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per brevi soggiorni.",
+      "Per il Sani Pass serve un 4x4: meglio un tour organizzato.",
+      "Verifica che il noleggio sudafricano consenta l'ingresso in Lesotho."
+    ]
+  },
+  "SZ": {
+    "moreDescription": [
+      "L'Eswatini (ex Swaziland) è un piccolo regno tra Sudafrica e Mozambico, con riserve naturali (Hlane, Mkhaya, Mlilwane), una cultura tradizionale viva con cerimonie reali e artigianato. Si abbina facilmente al Kruger e al KwaZulu-Natal. La stagione secca (maggio–settembre) è ideale per i safari."
+    ],
+    "areas": [
+      {
+        "name": "Riserve (Hlane, Mkhaya, Mlilwane)",
+        "description": "Safari con rinoceronti, elefanti e leoni a Hlane; rinoceronti neri a Mkhaya; trekking e mountain bike a Mlilwane.",
+        "highlights": [
+          "Hlane",
+          "Mkhaya",
+          "Mlilwane"
+        ],
+        "seasons": "BBBBOOOOOBBB",
+        "seasonNote": "Da maggio a settembre ideale."
+      },
+      {
+        "name": "Valle di Ezulwini",
+        "description": "La 'valle del cielo' con villaggi culturali, mercati artigianali e la fabbrica di vetro di Ngwenya.",
+        "highlights": [
+          "Villaggio culturale",
+          "Ngwenya Glass",
+          "Mercati"
+        ],
+        "seasons": "BBBBOOOOOBBB",
+        "seasonNote": "Tutto l'anno; a fine agosto–settembre la danza delle canne Umhlanga."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Safari con i rinoceronti a Mkhaya",
+        "description": "A piedi e in fuoristrada."
+      },
+      {
+        "name": "Umhlanga",
+        "description": "La danza delle canne tra agosto e settembre."
+      },
+      {
+        "name": "Artigianato",
+        "description": "Vetro, candele e tessuti."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Kruger ed Eswatini",
+        "days": 6,
+        "route": "Kruger (3) → Eswatini (2)",
+        "description": "Abbinato a un viaggio in Sudafrica."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Verifica che il noleggio sudafricano permetta il passaggio del confine.",
+      "Monarchia assoluta: rispetto per tradizioni e cerimonie."
+    ]
+  },
+  "KM": {
+    "moreDescription": [
+      "Le Comore sono un arcipelago vulcanico tra Madagascar e Mozambico, poco turistico e autentico: il vulcano Karthala, il parco marino di Mohéli con tartarughe e balene, spiagge e profumi di ylang-ylang e vaniglia. Strutture semplici. Periodo migliore da maggio a ottobre."
+    ],
+    "areas": [
+      {
+        "name": "Grande Comore (Ngazidja)",
+        "description": "La capitale Moroni, il vulcano Karthala e spiagge come Itsandra.",
+        "highlights": [
+          "Moroni",
+          "Karthala",
+          "Itsandra",
+          "Lago Salé"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; gennaio–marzo piogge e cicloni."
+      },
+      {
+        "name": "Mohéli e Anjouan",
+        "description": "Il parco marino di Mohéli con le tartarughe e le megattere; Anjouan con piantagioni di ylang-ylang.",
+        "highlights": [
+          "Parco marino di Mohéli",
+          "Tartarughe",
+          "Megattere",
+          "Anjouan"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Balene da luglio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tartarughe a Mohéli",
+        "description": "Deposizione notturna sulle spiagge."
+      },
+      {
+        "name": "Trekking sul Karthala",
+        "description": "Due giorni fino al cratere."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Comore",
+        "days": 8,
+        "route": "Grande Comore (3) → Mohéli (4)",
+        "description": "Per viaggiatori in cerca di isole autentiche."
+      }
+    ],
+    "agentTips": [
+      "Visto all'arrivo: verifica la procedura.",
+      "Paese musulmano: abbigliamento coperto fuori dalle spiagge.",
+      "Collegamenti interni irregolari; strutture semplici."
+    ]
+  }
+}

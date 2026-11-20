@@ -1,0 +1,550 @@
+{
+  "US": {
+    "moreDescription": [
+      "Gli Stati Uniti sono un continente: per un agente la chiave è capire le grandi aree e le loro stagioni. New York e le città dell'est (Boston, Washington) si vendono tutto l'anno, con primavera e autunno ideali e Natale molto richiesto; la costa ovest (California) ha clima mite tutto l'anno; i grandi parchi del sud-ovest (Grand Canyon, Monument Valley, Utah) sono perfetti in primavera e autunno, mentre d'estate fanno molto caldo; i parchi del nord (Yellowstone, Glacier) aprono davvero solo tra giugno e settembre. Florida e Hawaii sono mete di mare, con la Florida al meglio da novembre ad aprile (da giugno a novembre è stagione degli uragani).",
+      "Il tour classico per gli italiani è il fly & drive dell'Ovest in auto a noleggio, con motel e lodge nei parchi; per le città funzionano bene i pacchetti volo + hotel e i tour guidati in lingua italiana."
+    ],
+    "morePlaces": [
+      { "name": "Las Vegas", "description": "La capitale del divertimento nel deserto, base per Grand Canyon e Valley of Fire.", "search": "Las Vegas Strip" },
+      { "name": "Antelope Canyon", "description": "Canyon a fessura di arenaria con giochi di luce, visitabile solo con guide navajo.", "search": "Antelope Canyon" },
+      { "name": "Everglades", "description": "Le paludi della Florida con alligatori, lamantini e giri in airboat.", "search": "Everglades National Park" },
+      { "name": "New Orleans", "description": "Il jazz, il French Quarter e la cucina creola sul Mississippi.", "search": "French Quarter" }
+    ],
+    "areas": [
+      { "name": "New York e costa est (Boston, Washington, Philadelphia)", "description": "New York con Manhattan, Central Park, la Statua della Libertà, i musei e Brooklyn; Boston storica e universitaria; Washington con i monumenti e i musei gratuiti dello Smithsonian.", "highlights": ["Manhattan", "Central Park", "Statua della Libertà", "Brooklyn", "Boston", "Washington DC"], "seasons": "DDBOOBBBOOBO", "seasonNote": "Primavera e autunno ideali; dicembre per le luci di Natale; gennaio–febbraio freddo; estate calda e umida." },
+      { "name": "Ovest e parchi (California, Nevada, Arizona, Utah)", "description": "Il grande fly & drive: San Francisco, la costa della Highway 1, Los Angeles, Las Vegas, Grand Canyon, Antelope Canyon, Monument Valley, Bryce, Zion, Yosemite e la Death Valley.", "highlights": ["San Francisco", "Highway 1", "Yosemite", "Death Valley", "Las Vegas", "Grand Canyon", "Monument Valley", "Bryce e Zion"], "seasons": "DDBOOOBBOODD", "seasonNote": "Primavera e settembre–ottobre ideali; luglio–agosto molto caldi nei deserti; d'inverno alcune strade di montagna chiudono (Tioga Pass a Yosemite)." },
+      { "name": "Parchi del nord (Yellowstone, Grand Teton, Glacier, Mount Rushmore)", "description": "Geyser, bisonti, orsi e montagne: Yellowstone e Grand Teton nel Wyoming, Glacier nel Montana, Mount Rushmore nel South Dakota.", "highlights": ["Old Faithful", "Grand Prismatic", "Grand Teton", "Glacier", "Mount Rushmore"], "seasons": "XXXXDOOOODXX", "seasonNote": "Da giugno a settembre; molte strade sono chiuse da novembre a maggio." },
+      { "name": "Florida", "description": "Miami con South Beach e Art Déco, le Keys fino a Key West, le Everglades, Orlando con i parchi Disney e Universal, la costa del Golfo con spiagge bianche.", "highlights": ["Miami Beach", "Florida Keys", "Key West", "Everglades", "Orlando", "Kennedy Space Center"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile ideale; da giugno a novembre caldo umido e stagione degli uragani (picco agosto–ottobre)." },
+      { "name": "Sud (New Orleans, Nashville, Memphis)", "description": "Il viaggio nella musica americana: jazz a New Orleans, country a Nashville, blues ed Elvis a Memphis, piantagioni della Louisiana.", "highlights": ["New Orleans", "Nashville", "Graceland", "Bayou"], "seasons": "BBOOOBDDBOOB", "seasonNote": "Primavera e autunno ideali; estate molto calda e umida." },
+      { "name": "Hawaii", "description": "Arcipelago vulcanico nel Pacifico: Oahu con Honolulu e Waikiki, Maui con la strada di Hana, Big Island con i vulcani attivi, Kauai con la costa Na Pali.", "highlights": ["Waikiki", "Pearl Harbor", "Strada di Hana", "Volcanoes National Park", "Na Pali"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Bello tutto l'anno; inverno con più piogge e onde alte sulla costa nord; balene da dicembre ad aprile." }
+    ],
+    "experiences": [
+      { "name": "Fly & drive dell'Ovest", "description": "Auto a noleggio da San Francisco o Los Angeles attraverso i grandi parchi, con motel e lodge prenotati." },
+      { "name": "Elicottero sul Grand Canyon", "description": "Da Las Vegas o dal South Rim, anche con atterraggio sul fondo del canyon." },
+      { "name": "Musical a Broadway", "description": "Uno spettacolo a Times Square, da prenotare prima della partenza." },
+      { "name": "Notte in un lodge della Monument Valley", "description": "Con vista sui butte al tramonto e tour con guide navajo." },
+      { "name": "Parchi a tema a Orlando", "description": "Walt Disney World e Universal per famiglie, con biglietti multi-giorno." },
+      { "name": "Road trip sulla Highway 1", "description": "La costa della California da San Francisco a Los Angeles passando per Big Sur." },
+      { "name": "Osservatori di New York", "description": "Top of the Rock, Empire State Building, Summit One Vanderbilt e Edge." },
+      { "name": "Airboat nelle Everglades", "description": "Tra mangrovie e alligatori, a un'ora da Miami." }
+    ],
+    "itineraries": [
+      { "title": "New York", "days": 6, "route": "New York (5)", "description": "Il viaggio più venduto: Manhattan, Brooklyn, musei, musical e shopping." },
+      { "title": "Grande Ovest in fly & drive", "days": 15, "route": "San Francisco (3) → Yosemite (2) → Death Valley (1) → Las Vegas (2) → Zion e Bryce (2) → Monument Valley (1) → Grand Canyon (1) → Route 66 → Los Angeles (2)", "description": "Il classico on the road, ideale in maggio–giugno e settembre–ottobre." },
+      { "title": "New York e Florida", "days": 12, "route": "New York (5) → Miami (3) → Florida Keys (2)", "description": "Città e mare, da novembre ad aprile." }
+    ],
+    "agentTips": [
+      "Prima della partenza è obbligatoria l'autorizzazione ESTA, da richiedere online (a pagamento) almeno 72 ore prima; non serve se il cliente ha un visto.",
+      "Nei prezzi di hotel e ristoranti le tasse non sono incluse; nei ristoranti la mancia del 18–20% è attesa.",
+      "Il noleggio auto conviene con assicurazioni complete incluse; per guidare basta la patente italiana, ma la patente internazionale è consigliata.",
+      "La sanità è molto costosa: un'assicurazione con massimale spese mediche alto è indispensabile.",
+      "Negli hotel e nei parchi nazionali più famosi (lodge di Yosemite, Grand Canyon) prenota con molti mesi di anticipo."
+    ]
+  },
+  "CA": {
+    "moreDescription": [
+      "Il Canada si vende soprattutto in due formule: l'Ovest, con le Montagne Rocciose (Banff, Jasper, Icefields Parkway) e Vancouver, e l'Est, con Toronto, le cascate del Niagara, Montréal e Québec City. L'estate (giugno–settembre) è la stagione principale, con fine settembre–inizio ottobre spettacolare per il foliage nell'Est. D'inverno il Canada è sci, aurore boreali nel nord (Yukon e Territori del Nord-Ovest) e orsi polari a Churchill in autunno."
+    ],
+    "morePlaces": [
+      { "name": "Isola di Vancouver", "description": "Victoria, Tofino e l'osservazione di orche e balene.", "search": "Tofino" },
+      { "name": "Jasper", "description": "Parco delle Rocciose più selvaggio, con laghi, ghiacciai e fauna.", "search": "Jasper National Park" },
+      { "name": "Churchill", "description": "La capitale mondiale degli orsi polari, in autunno, e delle balene beluga in estate.", "search": "Churchill, Manitoba" }
+    ],
+    "areas": [
+      { "name": "Rocciose canadesi (Banff, Lake Louise, Jasper)", "description": "Laghi turchesi, ghiacciai, picchi e fauna: Banff, Lake Louise, Moraine Lake, la Icefields Parkway con il ghiacciaio Athabasca e Jasper.", "highlights": ["Lake Louise", "Moraine Lake", "Icefields Parkway", "Ghiacciaio Athabasca", "Maligne Lake"], "seasons": "BBDDDOOOODDB", "seasonNote": "Da giugno a settembre per laghi e trekking (Moraine Lake si raggiunge solo con navetta); da dicembre a marzo per lo sci; aprile–maggio laghi ancora ghiacciati." },
+      { "name": "Vancouver e costa pacifica", "description": "Vancouver tra oceano e montagne, Whistler, l'isola di Vancouver con Victoria e Tofino, l'osservazione di orche e orsi grizzly.", "highlights": ["Stanley Park", "Granville Island", "Whistler", "Victoria", "Tofino", "Orche"], "seasons": "DDDBOOOOODDD", "seasonNote": "Da maggio a settembre; inverno piovoso in città e neve a Whistler." },
+      { "name": "Ontario (Toronto, Niagara, Algonquin)", "description": "Toronto con la CN Tower, le cascate del Niagara e i laghi del parco Algonquin, ideali per canoa e foliage.", "highlights": ["Cascate del Niagara", "CN Tower", "Algonquin", "Mille Isole"], "seasons": "DDDBOOOOOODD", "seasonNote": "Da maggio a ottobre; fine settembre–inizio ottobre foliage; inverno molto freddo." },
+      { "name": "Québec (Montréal, Québec City, Charlevoix, Tadoussac)", "description": "Il Canada francese: Montréal, la città fortificata di Québec, le campagne di Charlevoix e le balene di Tadoussac nel fiume San Lorenzo.", "highlights": ["Vecchia Montréal", "Québec City", "Charlevoix", "Balene a Tadoussac", "Mont-Tremblant"], "seasons": "BBDDBOOOOODB", "seasonNote": "Estate e autunno ideali; balene da giugno a ottobre; febbraio per il carnevale invernale di Québec." },
+      { "name": "Provincie atlantiche (Nuova Scozia, Terranova)", "description": "Fari, villaggi di pescatori e aragoste: Halifax, il Cabot Trail sull'isola di Cape Breton, gli iceberg di Terranova.", "highlights": ["Cabot Trail", "Peggy's Cove", "Halifax", "Iceberg di Terranova"], "seasons": "XXXXDOOOODXX", "seasonNote": "Da giugno a settembre; iceberg a Terranova tra maggio e giugno." },
+      { "name": "Grande Nord (Yukon, Territori del Nord-Ovest, Manitoba)", "description": "Aurore boreali a Whitehorse e Yellowknife, orsi polari a Churchill, natura selvaggia.", "highlights": ["Aurore a Yellowknife", "Whitehorse", "Orsi polari di Churchill"], "seasons": "OOODXDDOOODO", "seasonNote": "Aurore da fine agosto ad aprile; orsi polari a ottobre–novembre; beluga a luglio–agosto." }
+    ],
+    "experiences": [
+      { "name": "Canoa su Lake Louise o Moraine Lake", "description": "All'alba, prima dell'arrivo dei gruppi." },
+      { "name": "Treno nelle Rocciose", "description": "Il Rocky Mountaineer tra Vancouver e Banff o Jasper, in carrozze panoramiche." },
+      { "name": "Battello alle cascate del Niagara", "description": "Fin sotto il ferro di cavallo delle cascate canadesi." },
+      { "name": "Whale watching a Tadoussac", "description": "Balenottere e beluga alla foce del fiume Saguenay." },
+      { "name": "Aurora boreale a Yellowknife", "description": "Uscite notturne con guide e campi riscaldati." },
+      { "name": "Orsi grizzly in British Columbia", "description": "Lodge e uscite in barca nelle foreste pluviali della costa." },
+      { "name": "Sci a Whistler e Banff", "description": "Comprensori enormi e neve secca da dicembre ad aprile." }
+    ],
+    "itineraries": [
+      { "title": "Canada dell'Ovest", "days": 12, "route": "Vancouver (3) → Kamloops (1) → Jasper (2) → Icefields Parkway → Lake Louise (1) → Banff (3) → Calgary (1)", "description": "Fly & drive delle Rocciose, da giugno a settembre." },
+      { "title": "Canada dell'Est", "days": 10, "route": "Toronto (2) → Niagara (1) → Mille Isole → Ottawa (1) → Montréal (2) → Québec City (2) → Tadoussac (1)", "description": "Città, cascate e foliage, ideale a fine settembre." },
+      { "title": "Est e Ovest", "days": 15, "route": "Toronto (2) → Niagara (1) → Montréal (2) → volo → Vancouver (3) → Rocciose (6)", "description": "Il meglio del Canada con un volo interno." }
+    ],
+    "agentTips": [
+      "Prima della partenza serve l'autorizzazione elettronica eTA per chi arriva in aereo, da richiedere online.",
+      "Nei prezzi le tasse si aggiungono alla cassa; nei ristoranti la mancia è del 15–20%.",
+      "In estate gli hotel di Banff e Lake Louise si esauriscono presto: prenota con largo anticipo.",
+      "Le distanze sono enormi: per Est e Ovest serve un volo interno.",
+      "Nelle Rocciose alcuni parcheggi famosi (Moraine Lake) non sono più accessibili alle auto private: servono navette prenotate."
+    ]
+  },
+  "MX": {
+    "moreDescription": [
+      "Il Messico è immenso e varia molto da regione a regione. Per il mercato italiano la meta principale è lo Yucatán con la Riviera Maya (Cancún, Playa del Carmen, Tulum), che unisce mare caraibico, cenotes e siti maya. Molto interessanti per un tour culturale sono Città del Messico, Oaxaca, il Chiapas e le città coloniali dell'altopiano. Il periodo migliore è la stagione secca, da novembre ad aprile; da giugno a novembre è la stagione delle piogge e degli uragani sulla costa caraibica, e da maggio–giugno a settembre il sargasso (alghe) può arrivare sulle spiagge della Riviera Maya."
+    ],
+    "morePlaces": [
+      { "name": "Città del Messico", "description": "Lo Zócalo, il Museo di Antropologia, i quartieri Roma e Coyoacán con la casa di Frida Kahlo.", "search": "Museo Nacional de Antropología" },
+      { "name": "Bacalar", "description": "La laguna dei sette colori nel sud del Quintana Roo.", "search": "Bacalar Lagoon" },
+      { "name": "Isla Holbox", "description": "Isola senza auto con squali balena da giugno a settembre.", "search": "Holbox" },
+      { "name": "San Miguel de Allende", "description": "Città coloniale tra le più belle del Messico, sull'altopiano.", "search": "San Miguel de Allende" }
+    ],
+    "areas": [
+      { "name": "Riviera Maya e Yucatán (Cancún, Playa del Carmen, Tulum, Mérida)", "description": "Spiagge caraibiche, resort all inclusive, cenotes, siti maya come Chichén Itzá, Tulum e Cobá, città coloniali come Mérida, Valladolid e Izamal, la laguna di Bacalar e le isole di Holbox e Cozumel.", "highlights": ["Tulum", "Chichén Itzá", "Cenotes", "Isla Mujeres", "Holbox", "Bacalar", "Mérida"], "seasons": "OOOOBDDDXXBO", "seasonNote": "Da dicembre ad aprile ideale; da giugno a novembre piogge e rischio uragani (picco settembre–ottobre); il sargasso può arrivare da maggio a settembre." },
+      { "name": "Città del Messico e altopiano centrale", "description": "La capitale con musei, murales e quartieri vivaci; le piramidi di Teotihuacán; le città coloniali di Puebla, Querétaro, Guanajuato e San Miguel de Allende.", "highlights": ["Zócalo", "Museo di Antropologia", "Coyoacán", "Teotihuacán", "Puebla", "Guanajuato"], "seasons": "OOOOBDDDDBOO", "seasonNote": "Da ottobre ad aprile asciutto; in estate piogge pomeridiane ma clima fresco grazie all'altitudine." },
+      { "name": "Oaxaca e Chiapas", "description": "Il Messico indigeno: Oaxaca con la cucina, il mezcal e Monte Albán; il Chiapas con San Cristóbal de las Casas, il canyon del Sumidero, le cascate di Agua Azul e Palenque nella giungla.", "highlights": ["Oaxaca", "Monte Albán", "Hierve el Agua", "San Cristóbal de las Casas", "Sumidero", "Palenque"], "seasons": "OOOOBDDDDBOO", "seasonNote": "Da novembre ad aprile; a fine ottobre–inizio novembre il Día de Muertos a Oaxaca è uno spettacolo." },
+      { "name": "Costa pacifica e Baja California (Los Cabos, Puerto Vallarta)", "description": "Resort e oceano: Los Cabos tra deserto e mare, il Mar di Cortez con balene grigie e squali balena, Puerto Vallarta e la costa di Oaxaca per il surf.", "highlights": ["Los Cabos", "Balene grigie", "La Paz", "Puerto Vallarta", "Puerto Escondido"], "seasons": "OOOOBBDDDBOO", "seasonNote": "Da novembre ad aprile; balene da gennaio a marzo in Baja California; estate calda con possibili uragani." }
+    ],
+    "experiences": [
+      { "name": "Nuotare nei cenotes", "description": "Pozzi d'acqua dolce nella giungla dello Yucatán, come Dos Ojos, Ik Kil o il Gran Cenote." },
+      { "name": "Chichén Itzá all'apertura", "description": "Una delle sette meraviglie moderne, da visitare presto per evitare caldo e folla." },
+      { "name": "Snorkeling con le tartarughe ad Akumal", "description": "Nella baia dove le tartarughe marine si nutrono vicino alla riva." },
+      { "name": "Squali balena a Holbox o Isla Mujeres", "description": "Da giugno a settembre, nuotata accanto ai pesci più grandi del mondo." },
+      { "name": "Día de Muertos", "description": "Tra fine ottobre e il 2 novembre, la festa dei morti con altari, fiori e parate." },
+      { "name": "Corso di cucina a Oaxaca", "description": "Mole, tortillas e mezcal in una delle capitali gastronomiche del mondo." },
+      { "name": "Xcaret e parchi ecologici", "description": "Parchi tra fiumi sotterranei e spettacoli, molto amati dalle famiglie." },
+      { "name": "Mongolfiera su Teotihuacán", "description": "All'alba sopra le piramidi del Sole e della Luna." }
+    ],
+    "itineraries": [
+      { "title": "Riviera Maya mare", "days": 10, "route": "Playa del Carmen o Tulum (9), con escursioni a Chichén Itzá e cenotes", "description": "La formula più venduta, con resort all inclusive." },
+      { "title": "Tour Messico coloniale e Yucatán", "days": 14, "route": "Città del Messico (3) → Oaxaca (3) → San Cristóbal (2) → Palenque (1) → Campeche (1) → Mérida (2) → Riviera Maya (2)", "description": "Il grande tour culturale con chiusura al mare, da novembre ad aprile." },
+      { "title": "Yucatán on the road", "days": 10, "route": "Cancún (1) → Valladolid (2) → Mérida (2) → Bacalar (2) → Tulum (3)", "description": "Fly & drive tra cenotes, siti maya e mare." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto; si compila il modulo d'ingresso online o all'arrivo.",
+      "Da maggio a settembre il sargasso può rovinare alcune spiagge della Riviera Maya: Isla Mujeres, Holbox e la costa nord sono spesso meno colpite.",
+      "Tra giugno e novembre è stagione degli uragani: consiglia un'assicurazione con copertura per eventi meteo.",
+      "Prima di proporre zone interne controlla viaggiaresicuri.it: la sicurezza varia molto tra stati.",
+      "A Tulum e in alcune zone di mare si paga una tassa ambientale; i parchi tipo Xcaret si prenotano in anticipo."
+    ]
+  },
+  "CU": {
+    "moreDescription": [
+      "Cuba è musica, auto d'epoca, città coloniali e spiagge bianche. Il tour classico unisce L'Avana, la valle di Viñales, Cienfuegos e Trinidad, con chiusura al mare a Varadero o nei cayos (Cayo Santa María, Cayo Coco, Cayo Largo). Per dormire si sceglie tra hotel statali e casas particulares, le case private dei cubani, autentiche e accoglienti. La stagione secca va da novembre ad aprile; da giugno a novembre fa caldo e c'è rischio uragani."
+    ],
+    "morePlaces": [
+      { "name": "Cayo Santa María", "description": "Isola collegata da un lungo terrapieno, con resort e spiagge bianche.", "search": "Cayo Santa María" },
+      { "name": "Santiago de Cuba", "description": "La città più caraibica e musicale, culla della rivoluzione e del son.", "search": "Santiago de Cuba" },
+      { "name": "Valle de los Ingenios", "description": "Valle delle antiche piantagioni di canna da zucchero vicino a Trinidad.", "search": "Valle de los Ingenios" }
+    ],
+    "areas": [
+      { "name": "L'Avana", "description": "La città vecchia UNESCO con le piazze coloniali, il Malecón, il Capitolio, i locali di musica, le auto americane d'epoca e la Fábrica de Arte Cubano.", "highlights": ["Habana Vieja", "Malecón", "Capitolio", "Plaza de la Catedral", "Vedado"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile ideale; estate calda e umida, uragani possibili da agosto a ottobre." },
+      { "name": "Ovest (Viñales, Pinar del Río)", "description": "La valle dei mogotes con le piantagioni di tabacco, le grotte e le case contadine.", "highlights": ["Valle di Viñales", "Piantagioni di tabacco", "Cueva del Indio", "Cayo Jutías"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Come L'Avana." },
+      { "name": "Centro (Trinidad, Cienfuegos, Santa Clara)", "description": "Trinidad, gioiello coloniale con le strade lastricate; Cienfuegos dall'architettura francese; Santa Clara con il mausoleo del Che.", "highlights": ["Trinidad", "Valle de los Ingenios", "Playa Ancón", "Cienfuegos", "Santa Clara", "Topes de Collantes"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Come L'Avana." },
+      { "name": "Mare (Varadero e i cayos)", "description": "Varadero con la sua lunga spiaggia e i grandi resort; i cayos del nord (Santa María, Coco, Guillermo) e Cayo Largo a sud, con sabbia bianca e mare turchese.", "highlights": ["Varadero", "Cayo Santa María", "Cayo Coco", "Cayo Guillermo", "Cayo Largo"], "seasons": "OOOOOBBBDDBO", "seasonNote": "Da novembre a maggio ideale; in estate mare caldissimo e rischio uragani da agosto a ottobre." },
+      { "name": "Oriente (Santiago de Cuba, Baracoa)", "description": "La Cuba più africana e musicale: Santiago con il carnevale e la Casa de la Trova; Baracoa, prima città coloniale, tra palme e cacao.", "highlights": ["Santiago de Cuba", "Castello del Morro", "Baracoa", "Sierra Maestra"], "seasons": "OOOOBDBDDDBO", "seasonNote": "Da novembre ad aprile; a luglio il carnevale di Santiago." }
+    ],
+    "experiences": [
+      { "name": "Giro in auto d'epoca all'Avana", "description": "Cabriolet americana degli anni '50 lungo il Malecón e il Vedado." },
+      { "name": "Notte in casa particular", "description": "Dormire e fare colazione da una famiglia cubana." },
+      { "name": "Piantagione di tabacco a Viñales", "description": "Visita a un contadino con dimostrazione della lavorazione dei sigari." },
+      { "name": "Musica dal vivo", "description": "Son e salsa nelle case della musica di Trinidad e nella Casa de la Trova di Santiago." },
+      { "name": "Lezione di salsa", "description": "Un'ora con un ballerino locale all'Avana o a Trinidad." },
+      { "name": "Escursione in catamarano a Cayo Blanco", "description": "Snorkeling e spiagge isolate da Varadero o Trinidad." },
+      { "name": "Trekking a Topes de Collantes", "description": "Cascate e foreste sui monti dell'Escambray." }
+    ],
+    "itineraries": [
+      { "title": "Cuba classica e mare", "days": 13, "route": "L'Avana (3) → Viñales (2) → Cienfuegos (1) → Trinidad (2) → Cayo Santa María o Varadero (4)", "description": "Il tour più venduto in auto con autista o in casas particulares." },
+      { "title": "Settimana a Cayo Largo o Varadero", "days": 9, "route": "L'Avana (2) → mare (6)", "description": "Mare caraibico con un assaggio della capitale." }
+    ],
+    "agentTips": [
+      "Per entrare servono la carta turistica (visto) e il modulo online D'Viajeros; è obbligatoria un'assicurazione sanitaria.",
+      "Le carte di credito emesse da banche legate agli USA non funzionano e il contante è spesso indispensabile: informa il cliente sulle regole valutarie del momento.",
+      "Nel paese ci sono frequenti blackout e carenze: hotel e case possono avere servizi limitati, va detto con chiarezza.",
+      "Internet è lento e limitato; consiglia di scaricare mappe offline.",
+      "Chi va a Cuba può poi avere più difficoltà a ottenere l'ESTA per gli Stati Uniti: avvisa i clienti che viaggiano spesso negli USA."
+    ]
+  },
+  "DO": {
+    "moreDescription": [
+      "La Repubblica Dominicana è una delle mete caraibiche più vendute dagli italiani, con voli diretti e un'ampia offerta di resort all inclusive. Punta Cana e Bayahibe sono le zone del mare classico; Samaná offre natura più selvaggia; Santo Domingo ha la città coloniale più antica delle Americhe. Il clima è caldo tutto l'anno; la stagione migliore è da dicembre ad aprile, mentre da giugno a novembre c'è il rischio uragani e da gennaio a marzo arrivano le megattere nella baia di Samaná."
+    ],
+    "morePlaces": [
+      { "name": "Isola Catalina", "description": "Isola vicino a La Romana con snorkeling sui coralli.", "search": "Catalina Island Dominican Republic" },
+      { "name": "Las Terrenas", "description": "Paese di mare sulla penisola di Samaná, con molti residenti italiani.", "search": "Las Terrenas" },
+      { "name": "Cayo Levantado", "description": "Isoletta nella baia di Samaná, tappa delle escursioni alle balene.", "search": "Cayo Levantado" }
+    ],
+    "areas": [
+      { "name": "Punta Cana e Bávaro", "description": "La costa est con spiagge di palme, grandi resort all inclusive, golf e le escursioni a Saona.", "highlights": ["Bávaro", "Cap Cana", "Macao", "Hoyo Azul", "Isola Saona"], "seasons": "OOOOBBBBDDBO", "seasonNote": "Da dicembre ad aprile ideale; da giugno a novembre caldo e rischio uragani (picco agosto–ottobre)." },
+      { "name": "Bayahibe e La Romana", "description": "Paese di pescatori diventato la base per Saona e Catalina, con resort e il villaggio di Altos de Chavón.", "highlights": ["Bayahibe", "Isola Saona", "Isola Catalina", "Altos de Chavón", "Parco del Este"], "seasons": "OOOOBBBBDDBO", "seasonNote": "Come Punta Cana; il mare a sud è più calmo." },
+      { "name": "Samaná", "description": "Penisola verde con cascate, spiagge selvagge e, da gennaio a marzo, le balene megattere nella baia.", "highlights": ["Balene", "Cascata El Limón", "Las Terrenas", "Playa Rincón", "Los Haitises"], "seasons": "OOOBBBBBDDBO", "seasonNote": "Balene da metà gennaio a fine marzo; più piovosa della costa est." },
+      { "name": "Santo Domingo", "description": "La Zona Colonial con la prima cattedrale delle Americhe, l'Alcázar de Colón e le vie animate.", "highlights": ["Zona Colonial", "Cattedrale", "Alcázar de Colón", "Los Tres Ojos"], "seasons": "OOOOBBBBDDBO", "seasonNote": "Visitabile tutto l'anno." },
+      { "name": "Costa nord (Puerto Plata, Cabarete)", "description": "Spiagge per kite e windsurf a Cabarete, la funivia di Puerto Plata e le cascate di Damajagua.", "highlights": ["Cabarete", "Puerto Plata", "27 cascate di Damajagua", "Sosúa"], "seasons": "BBBBOOOOBDBB", "seasonNote": "Più piovosa d'inverno; vento costante per gli sport." }
+    ],
+    "experiences": [
+      { "name": "Isola Saona in catamarano", "description": "La classica gita con la piscina naturale di stelle marine e la spiaggia bianca." },
+      { "name": "Balene nella baia di Samaná", "description": "Da gennaio a marzo, uscite in barca per vedere le megattere." },
+      { "name": "Cascata El Limón", "description": "A cavallo o a piedi nella foresta fino a una cascata di 40 metri." },
+      { "name": "Zona Colonial di Santo Domingo", "description": "Visita guidata della prima città europea delle Americhe." },
+      { "name": "Parco di Los Haitises", "description": "In barca tra mangrovie, isolotti calcarei e grotte con pitture taíno." },
+      { "name": "Golf a Punta Cana", "description": "Campi famosi sul mare come Punta Espada e Corales." }
+    ],
+    "itineraries": [
+      { "title": "Settimana mare", "days": 9, "route": "Punta Cana o Bayahibe (7), con escursione a Saona", "description": "La formula più richiesta con resort all inclusive." },
+      { "title": "Mare e balene", "days": 11, "route": "Santo Domingo (1) → Samaná (3) → Punta Cana (6)", "description": "Da gennaio a marzo, con natura e mare." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto; il modulo e-Ticket va compilato online prima dell'arrivo e prima del rientro.",
+      "La tassa turistica è di solito inclusa nel biglietto aereo, ma verifica.",
+      "Molte spiagge della costa est possono avere sargasso tra maggio e settembre: scegli resort con spiagge riparate.",
+      "Fuori dai resort consiglia escursioni organizzate e trasferimenti privati.",
+      "Tra giugno e novembre consiglia un'assicurazione con copertura per uragani."
+    ]
+  },
+  "CR": {
+    "moreDescription": [
+      "La Costa Rica è il paese della natura: foreste pluviali e nebulose, vulcani, spiagge su due oceani e una fauna incredibile (bradipi, scimmie, tucani, tartarughe, balene). Si visita bene in fly & drive con un 4x4 o con trasferimenti privati, cambiando base ogni 2–3 giorni. La stagione secca va da dicembre ad aprile; da maggio a novembre è la 'stagione verde' con piogge pomeridiane, prezzi più bassi e natura rigogliosa; la costa caraibica ha un clima diverso e i mesi migliori lì sono settembre e ottobre."
+    ],
+    "morePlaces": [
+      { "name": "Guanacaste", "description": "La costa pacifica nord, la più secca, con spiagge e resort.", "search": "Guanacaste Province" },
+      { "name": "Uvita e Marino Ballena", "description": "La spiaggia a coda di balena e le megattere tra luglio e ottobre e tra dicembre e marzo.", "search": "Marino Ballena National Park" },
+      { "name": "Puerto Viejo", "description": "Il Caribe afro-caraibico con spiagge e il parco di Cahuita.", "search": "Puerto Viejo de Talamanca" }
+    ],
+    "areas": [
+      { "name": "Arenal e Rio Celeste", "description": "Il vulcano Arenal con terme naturali, ponti sospesi, cascata La Fortuna e il fiume turchese di Rio Celeste.", "highlights": ["Vulcano Arenal", "Terme", "Ponti sospesi", "Cascata La Fortuna", "Rio Celeste"], "seasons": "OOOOBDDBDDBO", "seasonNote": "Più piovoso del Pacifico ma visitabile tutto l'anno." },
+      { "name": "Monteverde", "description": "La foresta nebulosa con ponti sospesi, zipline e il quetzal, l'uccello sacro dei Maya.", "highlights": ["Ponti sospesi", "Zipline", "Quetzal", "Tour notturno"], "seasons": "OOOOBDDBDDDB", "seasonNote": "Da dicembre ad aprile più asciutto; nebbia e vento sono normali." },
+      { "name": "Pacifico centrale e sud (Manuel Antonio, Uvita, Osa)", "description": "Manuel Antonio con bradipi e scimmie vicino alla spiaggia; Uvita con le balene; la penisola di Osa con il parco del Corcovado, il più selvaggio del paese.", "highlights": ["Manuel Antonio", "Marino Ballena", "Corcovado", "Bahía Drake", "Isola del Caño"], "seasons": "OOOOBDDBDXDB", "seasonNote": "Da dicembre ad aprile; settembre–ottobre molto piovosi (alcuni lodge di Osa chiudono)." },
+      { "name": "Guanacaste e Nicoya", "description": "Il Pacifico nord, secco e soleggiato: resort, surf a Tamarindo e Santa Teresa, il vulcano Rincón de la Vieja.", "highlights": ["Tamarindo", "Santa Teresa", "Nosara", "Rincón de la Vieja", "Papagayo"], "seasons": "OOOOBBBBDDBO", "seasonNote": "La zona più asciutta: buona anche a luglio–agosto." },
+      { "name": "Caribe (Tortuguero, Cahuita, Puerto Viejo)", "description": "Tortuguero con i canali tra la giungla e le tartarughe, Cahuita e Puerto Viejo con spiagge e cultura afro-caraibica.", "highlights": ["Tortuguero", "Tartarughe verdi", "Cahuita", "Puerto Viejo", "Manzanillo"], "seasons": "BBOBBDBBOODD", "seasonNote": "Clima diverso dal Pacifico: settembre–ottobre e febbraio–marzo sono i mesi migliori; tartarughe da luglio a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Terme dell'Arenal", "description": "Piscine naturali di acqua calda con vista sul vulcano." },
+      { "name": "Zipline e ponti sospesi", "description": "Sopra la foresta di Monteverde o dell'Arenal." },
+      { "name": "Tour notturno nella foresta", "description": "Con guida naturalista alla ricerca di rane, serpenti e bradipi." },
+      { "name": "Tartarughe a Tortuguero", "description": "Da luglio a ottobre, la deposizione notturna delle tartarughe verdi con guide." },
+      { "name": "Balene a Uvita", "description": "Megattere da luglio a ottobre e da dicembre a marzo." },
+      { "name": "Rafting sul Pacuare", "description": "Uno dei fiumi più belli al mondo per il rafting." },
+      { "name": "Surf nel Guanacaste", "description": "Scuole a Tamarindo, Nosara e Santa Teresa." },
+      { "name": "Piantagione di caffè e cacao", "description": "Visita con degustazione nella Valle Centrale o al Caribe." }
+    ],
+    "itineraries": [
+      { "title": "Costa Rica classica", "days": 13, "route": "San José (1) → Tortuguero (2) → Arenal (3) → Monteverde (2) → Manuel Antonio (3) → San José (1)", "description": "Il giro più completo in fly & drive o con trasferimenti, da dicembre ad aprile." },
+      { "title": "Natura e Guanacaste", "days": 11, "route": "Liberia (1) → Rincón de la Vieja (2) → Arenal (3) → Tamarindo o Papagayo (4)", "description": "Vulcani e mare, ideale anche in luglio–agosto." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni turistici; serve il biglietto di uscita.",
+      "Per le strade sterrate (Monteverde, Osa) serve un 4x4; i tempi di percorrenza sono lunghi.",
+      "La stagione verde (maggio–novembre) ha prezzi più bassi e piogge soprattutto pomeridiane: si può vendere bene spiegandolo.",
+      "La tassa d'uscita è spesso inclusa nel biglietto aereo, ma verifica.",
+      "Consiglia binocolo, scarpe da trekking e un impermeabile leggero."
+    ]
+  },
+  "PE": {
+    "moreDescription": [
+      "Il Perù è uno dei grandi viaggi culturali del mondo: Lima con la sua cucina, Cusco e la Valle Sacra degli Inca, Machu Picchu, il lago Titicaca, il canyon del Colca e l'Amazzonia. Il clima dipende dall'altitudine: sulle Ande la stagione secca va da maggio a settembre (giornate limpide e notti fredde), mentre da dicembre a marzo piove e a febbraio il Cammino Inca chiude per manutenzione. La costa (Lima, Paracas) è asciutta tutto l'anno, con cielo grigio da maggio a ottobre. L'altitudine va gestita con giorni di acclimatamento, iniziando dalla Valle Sacra (2.800 m) prima di Cusco (3.400 m)."
+    ],
+    "morePlaces": [
+      { "name": "Linee di Nazca", "description": "Gigantesche figure nel deserto da vedere in volo.", "search": "Nazca Lines" },
+      { "name": "Isole Ballestas e Paracas", "description": "Riserva marina con leoni marini, pinguini e uccelli.", "search": "Ballestas Islands" },
+      { "name": "Arequipa", "description": "La città bianca coloniale con il monastero di Santa Catalina.", "search": "Santa Catalina Monastery" },
+      { "name": "Puerto Maldonado e Tambopata", "description": "L'Amazzonia peruviana con lodge nella foresta.", "search": "Tambopata National Reserve" }
+    ],
+    "areas": [
+      { "name": "Cusco, Valle Sacra e Machu Picchu", "description": "L'antica capitale inca con le chiese coloniali; la Valle Sacra con Pisac, Ollantaytambo, Moray e le saline di Maras; Machu Picchu, raggiunto in treno o a piedi lungo il Cammino Inca.", "highlights": ["Machu Picchu", "Cusco", "Sacsayhuamán", "Pisac", "Ollantaytambo", "Moray e Maras", "Montagna Arcobaleno"], "seasons": "DDDBOOOOOBBD", "seasonNote": "Da maggio a settembre stagione secca; aprile e ottobre ottimi e meno affollati; gennaio–marzo piovoso, Cammino Inca chiuso a febbraio." },
+      { "name": "Lago Titicaca e Puno", "description": "Il lago navigabile più alto del mondo (3.800 m) con le isole galleggianti degli Uros e le comunità di Taquile e Amantaní.", "highlights": ["Isole Uros", "Taquile", "Amantaní", "Sillustani"], "seasons": "DDDBOOOOOBBD", "seasonNote": "Come Cusco; notti molto fredde in giugno–agosto." },
+      { "name": "Arequipa e canyon del Colca", "description": "La città bianca ai piedi dei vulcani e il canyon del Colca, dove si osservano i condor in volo al mattino.", "highlights": ["Santa Catalina", "Plaza de Armas", "Cruz del Cóndor", "Terrazze del Colca"], "seasons": "DDBOOOOOOOOB", "seasonNote": "Da aprile a novembre; i condor si vedono meglio tra giugno e ottobre." },
+      { "name": "Lima e costa sud (Paracas, Huacachina, Nazca)", "description": "Lima capitale gastronomica del Sud America; Paracas con le isole Ballestas; l'oasi di Huacachina tra le dune; il volo sulle linee di Nazca.", "highlights": ["Miraflores e Barranco", "Ristoranti di Lima", "Isole Ballestas", "Huacachina", "Linee di Nazca"], "seasons": "OOOOBBBBBBBO", "seasonNote": "Asciutto tutto l'anno; da dicembre ad aprile sole, da maggio a novembre cielo grigio (garúa)." },
+      { "name": "Amazzonia (Tambopata, Manu, Iquitos)", "description": "Lodge nella foresta pluviale con escursioni in canoa, torri di osservazione e le pareti di argilla dove si radunano pappagalli e ara.", "highlights": ["Tambopata", "Collpa delle ara", "Lago Sandoval", "Manu", "Crociere sul Rio delle Amazzoni"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre più asciutto e con meno zanzare." }
+    ],
+    "experiences": [
+      { "name": "Machu Picchu all'alba", "description": "Con biglietto a orario e circuito scelto in anticipo; per i più allenati la salita al Huayna Picchu." },
+      { "name": "Cammino Inca", "description": "4 giorni a piedi fino alla Porta del Sole; permessi limitati, da prenotare 5–6 mesi prima." },
+      { "name": "Treno panoramico per Machu Picchu", "description": "Vistadome o Hiram Bingham di lusso da Ollantaytambo o Cusco." },
+      { "name": "Montagna Arcobaleno", "description": "Escursione di un giorno da Cusco fino a oltre 5.000 metri, per persone acclimatate." },
+      { "name": "Cena gastronomica a Lima", "description": "Nei ristoranti tra i migliori al mondo, o un tour di ceviche e pisco." },
+      { "name": "Notte su un'isola del Titicaca", "description": "Ospiti di una famiglia ad Amantaní o in un lodge esclusivo." },
+      { "name": "Volo sulle linee di Nazca", "description": "Piccolo aereo sopra le figure del deserto." },
+      { "name": "Condor nel Colca", "description": "Al mattino al belvedere della Cruz del Cóndor." }
+    ],
+    "itineraries": [
+      { "title": "Perù classico", "days": 13, "route": "Lima (2) → Arequipa (2) → Colca (1) → Puno e Titicaca (2) → Cusco (2) → Valle Sacra (2) → Machu Picchu (1)", "description": "Il grande tour con salita graduale di quota, da aprile a ottobre." },
+      { "title": "Perù essenziale", "days": 9, "route": "Lima (1) → Valle Sacra (2) → Machu Picchu (1) → Cusco (3) → Lima (1)", "description": "Per chi ha poco tempo: Cusco e Machu Picchu." },
+      { "title": "Perù e Amazzonia", "days": 14, "route": "Lima (2) → Paracas (1) → Cusco e Valle Sacra (5) → Machu Picchu (1) → Tambopata (3)", "description": "Ande, costa e foresta." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Gli ingressi a Machu Picchu sono a numero chiuso, a orario e per circuito: prenota con largo anticipo insieme ai treni.",
+      "Prevedi sempre acclimatamento: iniziare dalla Valle Sacra e non fare sforzi il primo giorno a Cusco.",
+      "Il bagaglio sui treni per Machu Picchu è limitato a 5 kg: il resto resta in hotel.",
+      "Le proteste e gli scioperi possono bloccare strade e treni: verifica la situazione prima della partenza."
+    ]
+  },
+  "AR": {
+    "moreDescription": [
+      "L'Argentina è enorme, dal Nord andino alla Terra del Fuoco: un viaggio tipico unisce Buenos Aires, le cascate di Iguazú e la Patagonia con i ghiacciai e il Fitz Roy, usando voli interni. Il Nord (Salta, Jujuy) offre canyon colorati e villaggi andini; Mendoza vino e montagne; la Penisola Valdés balene e pinguini. Le stagioni sono invertite: la Patagonia si visita da ottobre ad aprile (d'inverno molti servizi chiudono), il Nord è al meglio in primavera e autunno australi, Buenos Aires tutto l'anno. Molti argentini hanno origini italiane e l'accoglienza è calorosa."
+    ],
+    "morePlaces": [
+      { "name": "Penisola Valdés", "description": "Balene franche australi, elefanti marini, pinguini e orche.", "search": "Península Valdés" },
+      { "name": "Mendoza", "description": "Le cantine del Malbec ai piedi delle Ande e l'Aconcagua.", "search": "Mendoza wine" },
+      { "name": "Bariloche", "description": "La 'Svizzera argentina' con laghi, boschi e cioccolato.", "search": "San Carlos de Bariloche" },
+      { "name": "Salinas Grandes", "description": "Distesa di sale bianco a 3.400 metri nel Nord.", "search": "Salinas Grandes" }
+    ],
+    "areas": [
+      { "name": "Buenos Aires", "description": "Città europea e latina: San Telmo con il tango, La Boca e il Caminito, Recoleta e il cimitero, Palermo con i parchi e i ristoranti, le bistecche e le milonghe.", "highlights": ["San Telmo", "La Boca", "Recoleta", "Palermo", "Teatro Colón", "Delta del Tigre"], "seasons": "BBOOOBBBOOOO", "seasonNote": "Visitabile tutto l'anno; gennaio caldo e la città si svuota; primavera (ottobre–novembre) e autunno (marzo–aprile) ideali." },
+      { "name": "Iguazú", "description": "Le cascate più spettacolari del mondo, con passerelle sul lato argentino fino alla Garganta del Diablo e gite in gommone sotto i salti.", "highlights": ["Garganta del Diablo", "Circuito superiore e inferiore", "Gommone sotto le cascate", "Lato brasiliano"], "seasons": "BBOOOOOOOOBB", "seasonNote": "Tutto l'anno; estate australe calda e umida con più portata d'acqua." },
+      { "name": "Patagonia (El Calafate, El Chaltén, Ushuaia)", "description": "Il ghiacciaio Perito Moreno, la navigazione tra gli iceberg del lago Argentino, i trekking del Fitz Roy da El Chaltén e Ushuaia, la città più a sud del mondo, con il canale di Beagle.", "highlights": ["Perito Moreno", "Fitz Roy", "Laguna de los Tres", "Canale di Beagle", "Parco Tierra del Fuego"], "seasons": "OOODXXXXDOOO", "seasonNote": "Da ottobre ad aprile; dicembre–febbraio alta stagione con vento forte; d'inverno molti servizi chiusi (tranne lo sci a Ushuaia)." },
+      { "name": "Penisola Valdés e costa atlantica", "description": "Riserva naturale con balene franche australi, pinguini di Magellano a Punta Tombo, elefanti marini e le orche che cacciano sulla spiaggia.", "highlights": ["Balene a Puerto Pirámides", "Punta Tombo", "Elefanti marini", "Orche a Punta Norte"], "seasons": "BBBXXDOOOOOO", "seasonNote": "Balene da giugno a dicembre (picco settembre–ottobre); pinguini da settembre ad aprile; orche a marzo–aprile." },
+      { "name": "Nord andino (Salta, Jujuy, Cafayate)", "description": "Canyon e montagne colorate: la Quebrada de Humahuaca con la collina dei sette colori di Purmamarca, le Salinas Grandes, le cantine d'altura di Cafayate e i villaggi coloniali.", "highlights": ["Purmamarca", "Quebrada de Humahuaca", "Salinas Grandes", "Cafayate", "Hornocal"], "seasons": "DDBOOOOOOOOD", "seasonNote": "Da aprile a novembre; da dicembre a marzo piogge estive che a volte interrompono le strade." },
+      { "name": "Mendoza e Bariloche", "description": "Mendoza con le cantine e l'Aconcagua; Bariloche e la Regione dei Laghi con boschi, laghi e la Ruta de los Siete Lagos.", "highlights": ["Cantine di Mendoza", "Aconcagua", "Bariloche", "Ruta de los Siete Lagos", "Cerro Catedral"], "seasons": "OOOOBBBBBOOO", "seasonNote": "Primavera, estate e vendemmia (marzo) ideali; d'inverno sci a Bariloche." }
+    ],
+    "experiences": [
+      { "name": "Minitrekking sul Perito Moreno", "description": "Camminata con ramponi sul ghiacciaio, con whisky e ghiaccio millenario." },
+      { "name": "Tango a Buenos Aires", "description": "Spettacolo con cena o una lezione in una milonga di quartiere." },
+      { "name": "Gommone sotto le cascate di Iguazú", "description": "La Gran Aventura fino sotto i salti, bagnati dalla testa ai piedi." },
+      { "name": "Trekking alla Laguna de los Tres", "description": "La camminata più bella della Patagonia, ai piedi del Fitz Roy." },
+      { "name": "Asado in un'estancia", "description": "Giornata in campagna con gauchos, cavalli e carne alla brace." },
+      { "name": "Degustazione a Mendoza", "description": "Tour delle cantine di Malbec in bicicletta o con autista." },
+      { "name": "Treno della Fine del Mondo", "description": "Breve treno storico nel parco Tierra del Fuego vicino a Ushuaia." },
+      { "name": "Balene a Puerto Pirámides", "description": "Da giugno a dicembre, uscite in barca vicinissime alle balene." }
+    ],
+    "itineraries": [
+      { "title": "Argentina classica", "days": 13, "route": "Buenos Aires (3) → Iguazú (2) → El Calafate (3) → El Chaltén (2) → Buenos Aires (1)", "description": "Città, cascate e ghiacciai con voli interni, da ottobre ad aprile." },
+      { "title": "Grande Patagonia", "days": 16, "route": "Buenos Aires (2) → Penisola Valdés (3) → El Calafate (3) → El Chaltén (3) → Ushuaia (3)", "description": "Fauna, ghiacciai e fine del mondo, da ottobre a marzo." },
+      { "title": "Nord e vino", "days": 12, "route": "Buenos Aires (3) → Salta (2) → Purmamarca e Humahuaca (2) → Cafayate (2) → Mendoza (2)", "description": "Canyon colorati e cantine, da aprile a novembre." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Le distanze sono enormi: ogni regione richiede un volo interno, da incastrare con attenzione.",
+      "In Patagonia il vento è fortissimo e il meteo cambia rapidamente: consiglia abbigliamento a strati.",
+      "Il contesto economico cambia spesso: informa il cliente sui metodi di pagamento più convenienti al momento (carte o contanti).",
+      "Si abbina molto bene al Cile (Torres del Paine) e al Brasile (lato brasiliano di Iguaçu)."
+    ]
+  },
+  "CL": {
+    "moreDescription": [
+      "Il Cile è una striscia lunghissima tra le Ande e il Pacifico, con paesaggi estremi: il deserto più arido del mondo (Atacama) al nord, Santiago e le valli del vino al centro, la Regione dei Laghi e vulcani, la Patagonia con Torres del Paine al sud e, in mezzo all'oceano, l'Isola di Pasqua. Le stagioni sono invertite: la Patagonia è al meglio da ottobre ad aprile, l'Atacama si visita tutto l'anno, Santiago in primavera e autunno australi."
+    ],
+    "morePlaces": [
+      { "name": "Valle della Luna", "description": "Paesaggio lunare di sale e argilla vicino a San Pedro de Atacama, al tramonto.", "search": "Valle de la Luna Chile" },
+      { "name": "Chiloé", "description": "Isola di palafitte colorate e chiese di legno UNESCO.", "search": "Chiloé" },
+      { "name": "Carretera Austral", "description": "La strada più selvaggia del paese, tra ghiacciai, fiordi e laghi.", "search": "Carretera Austral" },
+      { "name": "Valle di Colchagua", "description": "La più famosa valle del vino cileno.", "search": "Colchagua Valley" }
+    ],
+    "areas": [
+      { "name": "Atacama (San Pedro de Atacama)", "description": "Deserto, lagune altipiane con fenicotteri, geyser del Tatio all'alba, la Valle della Luna, saline e alcuni dei cieli stellati più puri del pianeta.", "highlights": ["Valle della Luna", "Geyser del Tatio", "Lagune altipiane", "Salar de Atacama", "Osservazione delle stelle"], "seasons": "BBOOOOOOOOOO", "seasonNote": "Visitabile tutto l'anno; a gennaio–febbraio possibili piogge dall'altipiano; notti fredde d'inverno." },
+      { "name": "Santiago, Valparaíso e valli del vino", "description": "La capitale ai piedi delle Ande, Valparaíso con le case colorate sulle colline, le cantine di Casablanca, Maipo e Colchagua.", "highlights": ["Santiago", "Valparaíso", "Viña del Mar", "Casablanca", "Colchagua"], "seasons": "OOOOBDDDBOOO", "seasonNote": "Da settembre ad aprile ideale; vendemmia a marzo–aprile; inverno fresco e piovoso." },
+      { "name": "Regione dei Laghi e Chiloé (Pucón, Puerto Varas)", "description": "Vulcani innevati, laghi e boschi: Pucón con il vulcano Villarrica e le terme, Puerto Varas con il vulcano Osorno, l'isola di Chiloé.", "highlights": ["Vulcano Villarrica", "Terme di Pucón", "Puerto Varas", "Vulcano Osorno", "Chiloé"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da novembre a marzo; il resto dell'anno è molto piovoso." },
+      { "name": "Patagonia (Torres del Paine, Punta Arenas)", "description": "Torres del Paine con le torri di granito, i laghi turchesi e i ghiacciai; il trekking W; i pinguini dell'isola Magdalena vicino a Punta Arenas.", "highlights": ["Torres del Paine", "Trekking W", "Ghiacciaio Grey", "Lago Pehoé", "Isola Magdalena"], "seasons": "OOODXXXXDOOO", "seasonNote": "Da ottobre ad aprile; dicembre–febbraio alta stagione con vento forte; d'inverno molti servizi chiusi." },
+      { "name": "Isola di Pasqua (Rapa Nui)", "description": "L'isola dei moai, nel mezzo del Pacifico, con le piattaforme cerimoniali, la cava di Rano Raraku e la spiaggia di Anakena.", "highlights": ["Ahu Tongariki", "Rano Raraku", "Anakena", "Orongo"], "seasons": "OOOOBBBBBOOO", "seasonNote": "Clima mite tutto l'anno; a febbraio il festival Tapati." }
+    ],
+    "experiences": [
+      { "name": "Trekking W a Torres del Paine", "description": "4–5 giorni tra rifugi e lodge fino alla base delle torri." },
+      { "name": "Geyser del Tatio all'alba", "description": "Partenza notturna da San Pedro per vedere i getti di vapore al sorgere del sole." },
+      { "name": "Osservazione astronomica", "description": "Tour con telescopi nel deserto dell'Atacama." },
+      { "name": "Alba a Ahu Tongariki", "description": "Quindici moai in fila con il sole che sorge alle spalle." },
+      { "name": "Degustazione di vino", "description": "Cantine di Casablanca o Colchagua, con pranzo in vigna." },
+      { "name": "Murales di Valparaíso", "description": "Passeggiata tra funicolari e vicoli colorati." },
+      { "name": "Ascensione al Villarrica", "description": "Salita con guida su un vulcano attivo, discesa sugli slittini." }
+    ],
+    "itineraries": [
+      { "title": "Cile classico", "days": 14, "route": "Santiago (2) → Valparaíso (1) → San Pedro de Atacama (4) → Punta Arenas → Torres del Paine (4) → Santiago (1)", "description": "Deserto e Patagonia con voli interni, da ottobre ad aprile." },
+      { "title": "Cile e Isola di Pasqua", "days": 12, "route": "Santiago (2) → Atacama (4) → Isola di Pasqua (4)", "description": "Per chi vuole i due luoghi più iconici." },
+      { "title": "Patagonia cilena e argentina", "days": 13, "route": "Punta Arenas (1) → Torres del Paine (4) → El Calafate (3) → El Chaltén (3) → Buenos Aires (1)", "description": "Il meglio della Patagonia attraversando il confine." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "A Torres del Paine i rifugi e i campeggi del trekking W vanno prenotati con molti mesi di anticipo.",
+      "San Pedro de Atacama è a 2.400 metri e le escursioni salgono oltre i 4.000: consiglia gradualità.",
+      "Per l'Isola di Pasqua si vola solo da Santiago (circa 5 ore); il biglietto del parco nazionale è obbligatorio e con regole d'accesso guidato.",
+      "Non si possono importare frutta, carne o semi: i controlli doganali sono severi."
+    ]
+  },
+  "BR": {
+    "moreDescription": [
+      "Il Brasile è grande quasi come l'Europa: un viaggio si costruisce scegliendo 2–4 regioni collegate da voli interni. Rio de Janeiro e Iguaçu sono i classici; Salvador de Bahia e il Nordeste sono il Brasile delle spiagge, della cultura afro-brasiliana e dei villaggi di pescatori; l'Amazzonia e il Pantanal sono per la natura. Il clima varia: Rio e il sud sono al meglio da settembre a marzo (estate australe calda), il Nordeste ha la stagione secca da settembre a febbraio e le piogge da aprile a luglio, il Pantanal si visita nella stagione secca da luglio a ottobre."
+    ],
+    "morePlaces": [
+      { "name": "Paraty e Ilha Grande", "description": "Cittadina coloniale e isola senza auto sulla Costa Verde tra Rio e San Paolo.", "search": "Paraty" },
+      { "name": "Fernando de Noronha", "description": "Arcipelago protetto con le spiagge più belle del Brasile e delfini.", "search": "Fernando de Noronha" },
+      { "name": "Pantanal", "description": "La zona umida più grande del mondo, con giaguari, caimani e uccelli.", "search": "Pantanal" },
+      { "name": "Chapada Diamantina", "description": "Altopiani, canyon, cascate e grotte nell'interno di Bahia.", "search": "Chapada Diamantina" }
+    ],
+    "areas": [
+      { "name": "Rio de Janeiro e Costa Verde", "description": "Rio con il Cristo Redentore, il Pan di Zucchero, Copacabana e Ipanema, Santa Teresa e la samba; la Costa Verde con Paraty e Ilha Grande.", "highlights": ["Cristo Redentore", "Pan di Zucchero", "Copacabana", "Ipanema", "Paraty", "Ilha Grande"], "seasons": "OOOBBBBBOOOO", "seasonNote": "Da settembre a marzo caldo e soleggiato; Carnevale a febbraio; d'inverno australe mite, con più giornate nuvolose." },
+      { "name": "Iguaçu", "description": "Le cascate viste dal lato brasiliano, con il panorama d'insieme e il Parque das Aves; si abbina al lato argentino.", "highlights": ["Passerella panoramica", "Garganta del Diablo", "Parque das Aves", "Volo in elicottero"], "seasons": "BBOOOOOOOOBB", "seasonNote": "Tutto l'anno; più acqua nell'estate australe." },
+      { "name": "Bahia (Salvador, Morro de São Paulo, Boipeba, Chapada Diamantina)", "description": "Salvador con il Pelourinho coloniale, la capoeira e la cucina afro-brasiliana; le isole di Morro de São Paulo e Boipeba; la Chapada Diamantina per il trekking.", "highlights": ["Pelourinho", "Morro de São Paulo", "Boipeba", "Praia do Forte", "Chapada Diamantina"], "seasons": "OOOBDDDBOOOO", "seasonNote": "Da settembre a marzo ideale; da aprile a luglio stagione delle piogge." },
+      { "name": "Nordeste (Natal, Pipa, Jericoacoara, Lençóis Maranhenses, Fernando de Noronha)", "description": "Le spiagge del Brasile più vendute dagli italiani: dune e lagune di Lençóis, il villaggio di Jericoacoara, Pipa, Porto de Galinhas e l'arcipelago protetto di Fernando de Noronha.", "highlights": ["Lençóis Maranhenses", "Jericoacoara", "Pipa", "Porto de Galinhas", "Fernando de Noronha", "Maragogi"], "seasons": "OOBDDDBOOOOO", "seasonNote": "Da agosto a gennaio stagione secca; le lagune di Lençóis sono piene da giugno a settembre; marzo–giugno piogge." },
+      { "name": "Amazzonia (Manaus)", "description": "Lodge nella foresta e crociere fluviali dall'incontro delle acque del Rio Negro e del Rio delle Amazzoni.", "highlights": ["Incontro delle acque", "Teatro Amazonas", "Lodge nella giungla", "Delfini rosa"], "seasons": "BBBBBBOOOOBB", "seasonNote": "Visitabile tutto l'anno: con l'acqua alta (gennaio–giugno) si naviga tra gli alberi; con l'acqua bassa (luglio–dicembre) si cammina e si vedono le spiagge fluviali." },
+      { "name": "Pantanal e Bonito", "description": "Il Pantanal con la migliore possibilità al mondo di vedere il giaguaro; Bonito con fiumi cristallini dove si fa snorkeling tra i pesci.", "highlights": ["Giaguari", "Transpantaneira", "Bonito", "Rio da Prata", "Buraco das Araras"], "seasons": "DDDDBBOOOOBD", "seasonNote": "Stagione secca da luglio a ottobre ideale per gli animali; da dicembre a marzo zone allagate." }
+    ],
+    "experiences": [
+      { "name": "Cristo Redentore e Pan di Zucchero", "description": "Il trenino del Corcovado e la funivia del Pan di Zucchero al tramonto." },
+      { "name": "Carnevale di Rio o Salvador", "description": "Sfilate al Sambodromo o i blocos per le strade, a febbraio." },
+      { "name": "Dune e lagune di Lençóis", "description": "In 4x4 e a piedi tra dune bianche e lagune d'acqua dolce, tra giugno e settembre." },
+      { "name": "Safari del giaguaro", "description": "In barca lungo i fiumi del Pantanal nord, da luglio a ottobre." },
+      { "name": "Notte in un lodge amazzonico", "description": "Escursioni in canoa, pesca dei piranha e uscite notturne." },
+      { "name": "Snorkeling nei fiumi di Bonito", "description": "Galleggiando nell'acqua trasparente tra pesci tropicali." },
+      { "name": "Capoeira e cucina a Salvador", "description": "Spettacoli, lezioni e la moqueca bahiana." },
+      { "name": "Buggy a Jericoacoara", "description": "Tra dune e lagune fino alla Pedra Furada." }
+    ],
+    "itineraries": [
+      { "title": "Rio, Iguaçu e Bahia", "days": 13, "route": "Rio de Janeiro (4) → Iguaçu (2) → Salvador (2) → Morro de São Paulo o Boipeba (4)", "description": "Il classico con città, cascate e mare, da settembre a marzo." },
+      { "title": "Nordeste delle dune", "days": 14, "route": "Fortaleza (1) → Jericoacoara (3) → Rota das Emoções → Lençóis Maranhenses (3) → Natal e Pipa (5)", "description": "Spiagge e dune, ideale da luglio a dicembre." },
+      { "title": "Natura brasiliana", "days": 12, "route": "Rio (3) → Pantanal (3) → Bonito (2) → Iguaçu (2)", "description": "Fauna e acqua, da luglio a ottobre." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo; verifica le regole in vigore prima della partenza.",
+      "Per l'Amazzonia e alcune zone è consigliata la vaccinazione contro la febbre gialla: consulta un centro di medicina dei viaggi.",
+      "Nelle grandi città consiglia di non esibire oggetti di valore, usare taxi o app di trasporto la sera e seguire i consigli dell'hotel.",
+      "Fernando de Noronha ha accessi limitati e tasse giornaliere: prenota con anticipo.",
+      "Il Carnevale fa salire molto i prezzi e richiede soggiorni minimi negli hotel."
+    ]
+  },
+  "CO": {
+    "moreDescription": [
+      "La Colombia è una delle mete emergenti del Sud America: Cartagena coloniale sul Caribe, Bogotá con il Museo dell'Oro, Medellín rinata, la zona del caffè con le palme di cera della valle di Cocora, il parco Tayrona e le isole caraibiche. Essendo vicina all'equatore il clima dipende dall'altitudine più che dalla stagione: le stagioni secche principali sono dicembre–marzo e luglio–agosto, quelle più piovose aprile–maggio e ottobre–novembre."
+    ],
+    "morePlaces": [
+      { "name": "Isole del Rosario", "description": "Arcipelago corallino a un'ora di barca da Cartagena.", "search": "Islas del Rosario" },
+      { "name": "Salento", "description": "Villaggio colorato della zona del caffè, base per Cocora.", "search": "Salento, Quindío" },
+      { "name": "Ciudad Perdida", "description": "La città perduta dei Tayrona, raggiungibile con un trekking di 4–5 giorni.", "search": "Ciudad Perdida" },
+      { "name": "Caño Cristales", "description": "Il 'fiume dei cinque colori', da luglio a novembre.", "search": "Caño Cristales" }
+    ],
+    "areas": [
+      { "name": "Cartagena e Caribe", "description": "Cartagena con la città murata coloniale, le isole del Rosario e Barú; Santa Marta, il parco Tayrona e il trekking della Ciudad Perdida; il villaggio di Palomino.", "highlights": ["Città murata", "Getsemaní", "Isole del Rosario", "Parco Tayrona", "Ciudad Perdida"], "seasons": "OOOBDBOBDDDO", "seasonNote": "Da dicembre a marzo ideale; ottobre–novembre più piovoso; Tayrona chiude per alcune settimane all'anno (di solito febbraio e giugno)." },
+      { "name": "Bogotá", "description": "La capitale a 2.600 metri con La Candelaria, il Museo dell'Oro, il Museo Botero, il Monserrate e la cattedrale di sale di Zipaquirá.", "highlights": ["La Candelaria", "Museo dell'Oro", "Museo Botero", "Monserrate", "Zipaquirá", "Villa de Leyva"], "seasons": "OOBDDBOOBDDO", "seasonNote": "Clima fresco tutto l'anno; più asciutto da dicembre a marzo e a luglio–agosto." },
+      { "name": "Medellín e Antioquia", "description": "La città dell'eterna primavera, con le funivie, la Comuna 13 e i murales; Guatapé con la roccia di El Peñol e il lago.", "highlights": ["Comuna 13", "Metrocable", "Plaza Botero", "Guatapé", "El Peñol"], "seasons": "OOBDDBOOBDDO", "seasonNote": "Clima mite tutto l'anno." },
+      { "name": "Zona del caffè (Salento, Cocora, Manizales)", "description": "Fincas di caffè, la valle di Cocora con le palme di cera alte 60 metri, villaggi colorati e terme.", "highlights": ["Valle di Cocora", "Salento", "Filandia", "Fincas di caffè", "Terme di Santa Rosa"], "seasons": "OOBDDBOOBDDO", "seasonNote": "Più asciutto in dicembre–marzo e luglio–agosto." },
+      { "name": "San Andrés e Providencia", "description": "Isole caraibiche lontane dalla costa, con il 'mare dei sette colori' e barriera corallina.", "highlights": ["San Andrés", "Johnny Cay", "Providencia", "Cangrejo"], "seasons": "OOOOBBBBDDDB", "seasonNote": "Da gennaio ad aprile ideale; ottobre–novembre piovoso." }
+    ],
+    "experiences": [
+      { "name": "Tour della Comuna 13", "description": "Il quartiere rinato di Medellín tra murales, scale mobili e hip hop." },
+      { "name": "Trekking nella valle di Cocora", "description": "Camminata tra palme di cera e foresta nebulosa." },
+      { "name": "Tour del caffè in una finca", "description": "Dalla pianta alla tazza, con degustazione." },
+      { "name": "Isole del Rosario in barca", "description": "Snorkeling e spiagge bianche vicino a Cartagena." },
+      { "name": "Tramonto sulle mura di Cartagena", "description": "Cocktail al Café del Mar e cena nella città vecchia." },
+      { "name": "Trekking alla Ciudad Perdida", "description": "4–5 giorni nella giungla fino alla città dei Tayrona." },
+      { "name": "Salsa a Cali", "description": "La capitale mondiale della salsa, con lezioni e locali." }
+    ],
+    "itineraries": [
+      { "title": "Colombia classica", "days": 13, "route": "Bogotá (2) → Medellín (3) → Zona del caffè (3) → Cartagena (3) → Isole del Rosario (1)", "description": "Città, caffè e Caribe con voli interni." },
+      { "title": "Caribe colombiano", "days": 10, "route": "Cartagena (3) → Santa Marta (1) → Tayrona e Palomino (3) → Isole del Rosario (2)", "description": "Mare, giungla e città coloniale." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto; prima dell'arrivo si compila il modulo Check-MIG online.",
+      "Controlla le zone sconsigliate su viaggiaresicuri.it: le mete turistiche principali sono tranquille, alcune zone rurali no.",
+      "Bogotá è a 2.600 metri: il primo giorno meglio leggero.",
+      "I voli interni sono economici e fanno risparmiare molto tempo rispetto agli spostamenti via terra.",
+      "Il parco Tayrona chiude per alcune settimane l'anno per rispetto delle comunità indigene: verifica le date."
+    ]
+  },
+  "AU": {
+    "moreDescription": [
+      "L'Australia è un continente con climi molto diversi: il nord tropicale (Cairns, Darwin, Kimberley) ha la stagione secca da maggio a ottobre e quella umida, con cicloni e meduse in mare, da novembre ad aprile; il sud (Sydney, Melbourne, Tasmania) ha stagioni temperate invertite rispetto alle nostre, con l'estate da dicembre a febbraio; il centro rosso (Uluru) è torrido d'estate e piacevole da aprile a settembre. Un viaggio tipico di 2–3 settimane unisce Sydney, il Red Centre, la Grande Barriera Corallina e Melbourne con la Great Ocean Road, usando voli interni.",
+      "I periodi migliori per un giro completo sono la primavera australe (settembre–novembre) e l'autunno (marzo–maggio)."
+    ],
+    "morePlaces": [
+      { "name": "Kangaroo Island", "description": "Isola del South Australia con canguri, koala, leoni marini e natura protetta.", "search": "Kangaroo Island" },
+      { "name": "Tasmania", "description": "Isola selvaggia con Cradle Mountain, Wineglass Bay e il museo MONA.", "search": "Cradle Mountain" },
+      { "name": "Kakadu", "description": "Parco nazionale con arte rupestre aborigena, coccodrilli e cascate.", "search": "Kakadu National Park" },
+      { "name": "Ningaloo Reef", "description": "Barriera nel Western Australia dove si nuota con gli squali balena.", "search": "Ningaloo Reef" }
+    ],
+    "areas": [
+      { "name": "Sydney e New South Wales", "description": "Sydney con l'Opera House, l'Harbour Bridge, Bondi e Manly; le Blue Mountains; la Hunter Valley del vino.", "highlights": ["Opera House", "Harbour Bridge", "Bondi", "Blue Mountains", "Hunter Valley"], "seasons": "OOOOBBBBOOOO", "seasonNote": "Visitabile tutto l'anno; estate da dicembre a febbraio; inverno mite." },
+      { "name": "Queensland tropicale e Grande Barriera (Cairns, Port Douglas, Whitsunday)", "description": "La barriera corallina più grande del mondo, la foresta di Daintree, le Whitsunday con Whitehaven Beach.", "highlights": ["Grande Barriera Corallina", "Daintree", "Port Douglas", "Whitehaven Beach", "Heart Reef"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre stagione secca; da novembre a maggio caldo umido, piogge e meduse (si nuota con la muta protettiva)." },
+      { "name": "Red Centre (Uluru, Kata Tjuta, Kings Canyon)", "description": "Il cuore rosso dell'Australia: il monolite sacro di Uluru, le cupole di Kata Tjuta, il Kings Canyon e la cultura aborigena.", "highlights": ["Uluru", "Kata Tjuta", "Kings Canyon", "Field of Light"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a settembre ideale (notti fredde d'inverno); dicembre–febbraio caldo estremo." },
+      { "name": "Victoria (Melbourne, Great Ocean Road)", "description": "Melbourne con caffè, arte e cucina; la Great Ocean Road con i Dodici Apostoli; i pinguini di Phillip Island; la Yarra Valley.", "highlights": ["Melbourne", "Dodici Apostoli", "Phillip Island", "Grampians", "Yarra Valley"], "seasons": "OOOBDDDDBOOO", "seasonNote": "Da ottobre ad aprile; d'inverno fresco e piovoso." },
+      { "name": "Western Australia (Perth, Ningaloo, Kimberley)", "description": "Perth e Fremantle, i pinnacoli del deserto, Ningaloo con gli squali balena, e il Kimberley con gole e cascate selvagge.", "highlights": ["Fremantle", "Rottnest e quokka", "Pinnacles", "Ningaloo", "Kimberley"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Perth piacevole da settembre a maggio; Ningaloo con gli squali balena da marzo a luglio; Kimberley solo da maggio a settembre." },
+      { "name": "Tasmania", "description": "L'isola selvaggia del sud, con parchi nazionali, Wineglass Bay, Cradle Mountain, Hobart e il MONA.", "highlights": ["Cradle Mountain", "Wineglass Bay", "Hobart", "MONA", "Port Arthur"], "seasons": "OOOBDDDDDBOO", "seasonNote": "Da novembre a marzo; inverno freddo." }
+    ],
+    "experiences": [
+      { "name": "Snorkeling o immersioni sulla Grande Barriera", "description": "In giornata da Cairns o Port Douglas, o con notte su una piattaforma o un'isola." },
+      { "name": "Tramonto e alba a Uluru", "description": "Con il Field of Light e una cena sotto le stelle nel deserto." },
+      { "name": "Volo sopra Heart Reef", "description": "Idrovolante sulle Whitsunday e Whitehaven Beach." },
+      { "name": "Great Ocean Road", "description": "Road trip con i Dodici Apostoli e i koala selvatici." },
+      { "name": "Salita sull'Harbour Bridge", "description": "Il BridgeClimb sopra la baia di Sydney." },
+      { "name": "Parata dei pinguini a Phillip Island", "description": "I piccoli pinguini che rientrano a riva al tramonto." },
+      { "name": "Esperienze aborigene", "description": "Passeggiate con guide anangu a Uluru o nel Kakadu." },
+      { "name": "Squali balena a Ningaloo", "description": "Da marzo a luglio, nuotata accanto agli squali balena." }
+    ],
+    "itineraries": [
+      { "title": "Australia classica", "days": 16, "route": "Sydney (4) → Uluru (3) → Cairns e Port Douglas (4) → Melbourne (2) → Great Ocean Road (2)", "description": "I grandi simboli con voli interni, ideale in primavera o autunno australe." },
+      { "title": "Australia e Nuova Zelanda", "days": 22, "route": "Sydney (4) → Uluru (2) → Cairns (3) → Auckland → Rotorua → Queenstown (10)", "description": "Il viaggio di nozze per eccellenza in Oceania." },
+      { "title": "Australia on the road", "days": 14, "route": "Sydney (3) → costa est in auto → Byron Bay (2) → Brisbane → Fraser Coast (2) → Whitsunday (3) → Cairns (3)", "description": "Fly & drive lungo la costa, da maggio a ottobre." }
+    ],
+    "agentTips": [
+      "Prima della partenza serve il visto elettronico (eVisitor per i cittadini UE), da richiedere online.",
+      "Le distanze sono enormi: per un viaggio completo servono voli interni.",
+      "Si guida a sinistra; in outback attenzione agli animali sulla strada al tramonto.",
+      "I controlli doganali su cibo, piante e prodotti animali sono severissimi: tutto va dichiarato.",
+      "Il fuso orario è di 8–10 ore: consiglia almeno 14–16 giorni e una sosta intermedia (Dubai, Singapore, Hong Kong)."
+    ]
+  },
+  "NZ": {
+    "moreDescription": [
+      "La Nuova Zelanda è la meta ideale per il self-drive: due isole con paesaggi di montagna, fiordi, vulcani, laghi, spiagge e una cultura maori viva. L'Isola del Nord ha Auckland, Rotorua con geyser e cultura maori, Hobbiton e il parco del Tongariro; l'Isola del Sud ha le Alpi Meridionali, i fiordi di Milford Sound, Queenstown e i ghiacciai. Le stagioni sono invertite: l'estate australe (dicembre–febbraio) è l'alta stagione, marzo–aprile ha colori autunnali e meno gente, l'inverno (giugno–agosto) è per lo sci e i paesaggi innevati."
+    ],
+    "morePlaces": [
+      { "name": "Bay of Islands", "description": "Baia con 144 isole, delfini e la storia del trattato di Waitangi.", "search": "Bay of Islands" },
+      { "name": "Abel Tasman", "description": "Parco costiero con spiagge dorate da percorrere in kayak o a piedi.", "search": "Abel Tasman National Park" },
+      { "name": "Kaikōura", "description": "Capodoglio, delfini e otarie davanti alle montagne innevate.", "search": "Kaikōura" },
+      { "name": "Tongariro Alpine Crossing", "description": "Una delle camminate di un giorno più belle al mondo, tra crateri e laghi smeraldo.", "search": "Tongariro Alpine Crossing" }
+    ],
+    "areas": [
+      { "name": "Isola del Nord (Auckland, Bay of Islands, Coromandel)", "description": "Auckland con il porto e le isole del golfo, la Bay of Islands, la penisola di Coromandel con Cathedral Cove e Hot Water Beach.", "highlights": ["Auckland", "Waiheke", "Bay of Islands", "Cathedral Cove", "Hot Water Beach"], "seasons": "OOOBDDDDDBOO", "seasonNote": "Da novembre ad aprile; inverno mite ma piovoso." },
+      { "name": "Isola del Nord centrale (Rotorua, Waitomo, Hobbiton, Tongariro)", "description": "Geyser e fanghi bollenti a Rotorua con serate maori, le grotte delle lucciole di Waitomo, il set di Hobbiton e il Tongariro con i vulcani.", "highlights": ["Rotorua", "Wai-O-Tapu", "Grotte di Waitomo", "Hobbiton", "Tongariro", "Lago Taupō"], "seasons": "OOOBDDDDBBOO", "seasonNote": "Visitabile tutto l'anno; il Tongariro Crossing è al meglio da dicembre ad aprile." },
+      { "name": "Isola del Sud nord (Abel Tasman, Kaikōura, Marlborough)", "description": "Il parco costiero Abel Tasman, la fauna marina di Kaikōura e i vigneti del Sauvignon nel Marlborough.", "highlights": ["Abel Tasman", "Kaikōura", "Marlborough", "Picton"], "seasons": "OOOBDDDDBBOO", "seasonNote": "Da novembre ad aprile; balene a Kaikōura tutto l'anno." },
+      { "name": "Costa ovest e ghiacciai (Punakaiki, Franz Josef, Fox)", "description": "Rocce a frittella di Punakaiki, foresta pluviale e i ghiacciai Franz Josef e Fox che scendono quasi al mare.", "highlights": ["Punakaiki", "Franz Josef", "Fox Glacier", "Lago Matheson"], "seasons": "OOOBDDDDBBOO", "seasonNote": "Piove spesso tutto l'anno: i voli sui ghiacciai dipendono dal meteo." },
+      { "name": "Alpi Meridionali e Fiordland (Queenstown, Wanaka, Milford Sound, Tekapo)", "description": "Queenstown capitale dell'avventura, Wanaka, il Milford Sound e il Doubtful Sound, il lago Tekapo con il cielo stellato e il monte Cook.", "highlights": ["Queenstown", "Milford Sound", "Doubtful Sound", "Wanaka", "Lago Tekapo", "Aoraki / Monte Cook"], "seasons": "OOOODBBBDBOO", "seasonNote": "Da novembre ad aprile per trekking e fiordi; da giugno a settembre sci a Queenstown e Wanaka." }
+    ],
+    "experiences": [
+      { "name": "Crociera nel Milford Sound", "description": "Tra pareti di roccia, cascate e foche, anche con volo panoramico da Queenstown." },
+      { "name": "Serata culturale maori a Rotorua", "description": "Haka, canti e il pasto hāngī cotto sotto terra." },
+      { "name": "Grotte delle lucciole di Waitomo", "description": "In barca sotto un cielo di lucciole, o in rafting nelle grotte." },
+      { "name": "Set di Hobbiton", "description": "Il villaggio degli hobbit del Signore degli Anelli, con birra al Green Dragon." },
+      { "name": "Tongariro Alpine Crossing", "description": "Camminata di 19 km tra crateri e laghi smeraldo." },
+      { "name": "Volo e camminata sul ghiacciaio", "description": "Elicottero con atterraggio sul Franz Josef o sul Fox." },
+      { "name": "Bungee e jet boat a Queenstown", "description": "Dove è nato il bungee jumping, con jet boat nelle gole." },
+      { "name": "Cielo stellato al lago Tekapo", "description": "In una delle riserve di cielo buio più grandi del mondo." }
+    ],
+    "itineraries": [
+      { "title": "Nuova Zelanda in self-drive", "days": 18, "route": "Auckland (2) → Waitomo → Rotorua (2) → Tongariro (1) → Wellington (1) → traghetto → Abel Tasman (2) → Punakaiki → Franz Josef (2) → Wanaka (1) → Queenstown (3) → Milford Sound (1) → Tekapo (1) → Christchurch (1)", "description": "Il giro completo delle due isole in auto o camper, da novembre ad aprile." },
+      { "title": "Isola del Sud", "days": 12, "route": "Christchurch (1) → Kaikōura (1) → Abel Tasman (2) → Franz Josef (2) → Wanaka (1) → Queenstown (3) → Tekapo (1)", "description": "Per chi vuole concentrarsi sulle montagne e i fiordi." }
+    ],
+    "agentTips": [
+      "Prima della partenza serve l'autorizzazione elettronica NZeTA con tassa turistica (IVL), da richiedere online.",
+      "Si guida a sinistra; le strade sono strette e tortuose: i tempi sono più lunghi di quanto sembrino.",
+      "I controlli biosanitari all'arrivo sono severissimi: dichiarare cibo, scarpe da trekking sporche e attrezzatura da campeggio.",
+      "Molte camminate famose (Great Walks, Milford Track) hanno posti limitati e si prenotano mesi prima.",
+      "Si abbina spesso all'Australia o alle isole del Pacifico (Fiji, Polinesia, Cook)."
+    ]
+  },
+  "PF": {
+    "moreDescription": [
+      "La Polinesia Francese è il viaggio di nozze da sogno: 118 isole sparse in un'area grande come l'Europa, divise in arcipelaghi. Le Isole della Società (Tahiti, Moorea, Bora Bora, Huahine, Raiatea, Taha'a) hanno montagne verdi e lagune turchesi con bungalow sull'acqua; le Tuamotu (Rangiroa, Fakarava, Tikehau) sono atolli piatti con immersioni tra le migliori al mondo; le Marchesi sono selvagge e culturali. La stagione secca da maggio a ottobre ha clima più fresco e asciutto; da novembre ad aprile fa più caldo e umido con piogge, ma resta una destinazione da tutto l'anno."
+    ],
+    "morePlaces": [
+      { "name": "Tikehau", "description": "Atollo con spiagge di sabbia rosa e lagune piene di pesci.", "search": "Tikehau" },
+      { "name": "Taha'a", "description": "L'isola della vaniglia, con il giardino di coralli.", "search": "Taha'a" },
+      { "name": "Isole Marchesi", "description": "Montagne a picco sull'oceano, cultura polinesiana e Paul Gauguin.", "search": "Marquesas Islands" }
+    ],
+    "areas": [
+      { "name": "Tahiti e Moorea", "description": "Tahiti con Papeete, il mercato e le spiagge di sabbia nera; Moorea a 30 minuti di traghetto, con le baie di Cook e Opunohu, il belvedere e lo snorkeling con razze e squali di barriera.", "highlights": ["Papeete", "Teahupo'o", "Baia di Cook", "Belvedere di Moorea", "Razze e squali"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Da maggio a ottobre stagione secca; da novembre ad aprile caldo umido e piovoso, rari cicloni." },
+      { "name": "Bora Bora", "description": "La laguna più famosa del mondo intorno al monte Otemanu, con resort e bungalow sull'acqua, snorkeling con razze e squali e i motu privati.", "highlights": ["Laguna di Bora Bora", "Monte Otemanu", "Matira Beach", "Coral Garden"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Come Tahiti." },
+      { "name": "Isole Sottovento (Huahine, Raiatea, Taha'a)", "description": "Isole più autentiche e tranquille, con siti sacri (marae), vaniglia, lagune da navigare in barca a vela.", "highlights": ["Huahine", "Marae di Taputapuātea", "Taha'a", "Giardino di coralli"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Come Tahiti." },
+      { "name": "Tuamotu (Rangiroa, Fakarava, Tikehau)", "description": "Atolli corallini con lagune immense: Rangiroa e Fakarava sono tra i migliori siti di immersione al mondo, con squali, delfini e mante.", "highlights": ["Laguna blu di Rangiroa", "Passo di Tiputa", "Fakarava sud", "Tikehau"], "seasons": "BBBBOOOOOOOB", "seasonNote": "Da aprile a novembre; a giugno–luglio a Fakarava sud la grande aggregazione di cernie e squali." }
+    ],
+    "experiences": [
+      { "name": "Bungalow sull'acqua", "description": "Soggiorno sulla laguna con colazione portata in canoa." },
+      { "name": "Snorkeling con razze e squali", "description": "Nelle lagune di Moorea e Bora Bora, in acqua bassa." },
+      { "name": "Immersioni nei passi delle Tuamotu", "description": "Correnti con centinaia di squali a Rangiroa e Fakarava." },
+      { "name": "Picnic su un motu", "description": "Pranzo polinesiano su un isolotto privato." },
+      { "name": "Crociera in barca a vela o catamarano", "description": "Tra Raiatea, Taha'a, Huahine e Bora Bora." },
+      { "name": "Balene a Moorea e Rurutu", "description": "Da agosto a ottobre, uscite per vedere le megattere." },
+      { "name": "Spettacolo di danze polinesiane", "description": "Con cena tradizionale nei resort o durante l'Heiva a luglio." }
+    ],
+    "itineraries": [
+      { "title": "Viaggio di nozze classico", "days": 12, "route": "Tahiti (1) → Moorea (3) → Bora Bora (5)", "description": "La combinazione più venduta, con voli interni e bungalow sull'acqua." },
+      { "title": "Isole e atolli", "days": 14, "route": "Tahiti (1) → Moorea (3) → Huahine (2) → Bora Bora (3) → Rangiroa o Tikehau (3)", "description": "Isole alte e atolli, con la Polinesia più autentica." },
+      { "title": "Giro del mondo nel Pacifico", "days": 18, "route": "Los Angeles (2) → Polinesia (9) → Nuova Zelanda o Isole Cook (5)", "description": "Combinato con biglietto intorno al mondo." }
+    ],
+    "agentTips": [
+      "Per i cittadini UE non serve visto; si vola via Parigi, Los Angeles, Tokyo o Auckland con tempi di viaggio lunghi (20–24 ore).",
+      "I voli interni Air Tahiti hanno limiti di bagaglio stretti: conviene il pass multi-isola.",
+      "È una destinazione molto cara anche sul posto: i pasti nei resort costano molto, conviene la mezza pensione.",
+      "Consiglia almeno 10–12 giorni e un combinato con Stati Uniti o Nuova Zelanda per spezzare il viaggio.",
+      "Le pensioni familiari sono un'ottima alternativa ai resort per budget più contenuti."
+    ]
+  }
+}

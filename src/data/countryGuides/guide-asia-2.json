@@ -1,0 +1,877 @@
+{
+  "LA": {
+    "moreDescription": [
+      "Il Laos è il paese più tranquillo del Sud-Est asiatico: Luang Prabang, città UNESCO di templi e monaci, il Mekong da navigare in barca lenta, le cascate turchesi di Kuang Si, i paesaggi carsici di Vang Vieng e le 4.000 isole del sud. Si abbina perfettamente a Thailandia, Vietnam e Cambogia. La stagione secca va da novembre a marzo; da maggio a ottobre piove ma i paesaggi sono verdissimi e le cascate piene."
+    ],
+    "morePlaces": [
+      {
+        "name": "Monte Phousi",
+        "description": "La collina di Luang Prabang per il tramonto sul Mekong.",
+        "search": "Mount Phousi"
+      },
+      {
+        "name": "Wat Phou",
+        "description": "Tempio khmer UNESCO vicino a Champasak.",
+        "search": "Wat Phou"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Luang Prabang e nord",
+        "description": "Templi dorati come il Wat Xieng Thong, la questua dei monaci all'alba, il mercato notturno, le cascate di Kuang Si e le grotte di Pak Ou sul Mekong; più a nord Nong Khiaw.",
+        "highlights": [
+          "Wat Xieng Thong",
+          "Questua dei monaci",
+          "Kuang Si",
+          "Pak Ou",
+          "Nong Khiaw"
+        ],
+        "seasons": "OOBDDDDDDBOO",
+        "seasonNote": "Da novembre a febbraio ideale; marzo–aprile fumo dagli incendi agricoli; maggio–ottobre piogge."
+      },
+      {
+        "name": "Vang Vieng e Vientiane",
+        "description": "Vang Vieng con montagne carsiche, lagune blu, kayak e mongolfiere; Vientiane, capitale rilassata con il That Luang.",
+        "highlights": [
+          "Vang Vieng",
+          "Blue Lagoon",
+          "Mongolfiera",
+          "That Luang",
+          "Buddha Park"
+        ],
+        "seasons": "OOBDDDDDDBOO",
+        "seasonNote": "Da novembre a febbraio."
+      },
+      {
+        "name": "Sud (Pakse, Bolaven, 4.000 isole)",
+        "description": "L'altopiano del caffè di Bolaven, il tempio di Wat Phou e le 4.000 isole sul Mekong con i delfini d'acqua dolce.",
+        "highlights": [
+          "Altopiano di Bolaven",
+          "Wat Phou",
+          "Don Det",
+          "Cascate di Khone Phapheng"
+        ],
+        "seasons": "OOBDDDDDDBOO",
+        "seasonNote": "Da novembre a febbraio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Questua dei monaci all'alba",
+        "description": "Il Tak Bat a Luang Prabang, da osservare con rispetto e in silenzio."
+      },
+      {
+        "name": "Slow boat sul Mekong",
+        "description": "Due giorni tra Huay Xai e Luang Prabang."
+      },
+      {
+        "name": "Cascate di Kuang Si",
+        "description": "Bagno nelle vasche turchesi."
+      },
+      {
+        "name": "Mongolfiera a Vang Vieng",
+        "description": "Sopra le montagne carsiche."
+      },
+      {
+        "name": "Corso di cucina laotiana",
+        "description": "Laap, sticky rice e mercato."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Laos classico",
+        "days": 8,
+        "route": "Luang Prabang (4) → treno → Vang Vieng (2) → Vientiane (1)",
+        "description": "Da novembre a marzo, con il treno veloce Laos–Cina."
+      },
+      {
+        "title": "Indocina",
+        "days": 15,
+        "route": "Hanoi (2) → Baia di Halong (1) → Luang Prabang (3) → Siem Reap (3) → Phnom Penh (2) → Saigon (2)",
+        "description": "Vietnam, Laos e Cambogia in un unico viaggio."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto, ottenibile online o all'arrivo.",
+      "Il treno veloce tra Vientiane, Vang Vieng e Luang Prabang ha posti limitati: prenota prima.",
+      "Abbigliamento coperto nei templi; non toccare i monaci.",
+      "Strutture sanitarie limitate: assicurazione con rimpatrio indispensabile."
+    ]
+  },
+  "MM": {
+    "areas": [
+      {
+        "name": "Yangon e sud",
+        "description": "La pagoda Shwedagon, il centro coloniale e la Roccia d'Oro di Kyaiktiyo.",
+        "highlights": [
+          "Shwedagon",
+          "Centro coloniale",
+          "Roccia d'Oro"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati; climaticamente il periodo migliore è novembre–febbraio."
+      },
+      {
+        "name": "Bagan e Mandalay",
+        "description": "La piana dei templi, le mongolfiere all'alba, Mandalay e il ponte U Bein.",
+        "highlights": [
+          "Bagan",
+          "Mongolfiera",
+          "Mandalay",
+          "Ponte U Bein"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati."
+      },
+      {
+        "name": "Lago Inle",
+        "description": "Villaggi su palafitte, orti galleggianti e pescatori.",
+        "highlights": [
+          "Pescatori",
+          "Orti galleggianti",
+          "Indein"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi attualmente sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Templi di Bagan",
+        "description": "Da proporre solo quando la situazione lo permetterà."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati dalla Farnesina: verifica sempre viaggiaresicuri.it.",
+      "Le assicurazioni standard possono escludere il paese.",
+      "Per l'Asia buddista proponi in alternativa Laos, Cambogia o Sri Lanka."
+    ]
+  },
+  "BT": {
+    "moreDescription": [
+      "Il Bhutan è il regno himalayano della 'Felicità Interna Lorda': monasteri-fortezza (dzong), bandiere di preghiera, valli verdi e la cultura buddista ancora viva. Il turismo è regolato: si viaggia con guida e autista locali e si paga una tassa giornaliera per lo sviluppo sostenibile. I periodi migliori sono la primavera (marzo–maggio, con i rododendri in fiore) e l'autunno (settembre–novembre, cielo terso e grandi festival tshechu)."
+    ],
+    "areas": [
+      {
+        "name": "Paro",
+        "description": "La valle d'ingresso con l'aeroporto, il Rinpung Dzong e la salita al monastero della Tana della Tigre (Taktsang).",
+        "highlights": [
+          "Tana della Tigre",
+          "Rinpung Dzong",
+          "Kyichu Lhakhang",
+          "Museo nazionale"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera e autunno ideali; estate monsonica; inverno freddo ma limpido."
+      },
+      {
+        "name": "Thimphu e passo Dochula",
+        "description": "La capitale senza semafori, il Buddha Dordenma, il Tashichho Dzong e il passo con i 108 chorten e la vista sull'Himalaya.",
+        "highlights": [
+          "Buddha Dordenma",
+          "Tashichho Dzong",
+          "Mercato del weekend",
+          "Passo Dochula"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Come Paro; festival di Thimphu a fine settembre–ottobre."
+      },
+      {
+        "name": "Punakha e Phobjikha",
+        "description": "Il dzong più bello del paese alla confluenza di due fiumi, il ponte sospeso e la valle glaciale di Phobjikha con le gru dal collo nero.",
+        "highlights": [
+          "Punakha Dzong",
+          "Ponte sospeso",
+          "Chimi Lhakhang",
+          "Phobjikha",
+          "Gru dal collo nero"
+        ],
+        "seasons": "OOOOBDDDOOOO",
+        "seasonNote": "Più mite; le gru a Phobjikha da novembre a febbraio."
+      },
+      {
+        "name": "Bumthang",
+        "description": "Il cuore spirituale del Bhutan, con templi antichissimi, villaggi e festival.",
+        "highlights": [
+          "Jakar Dzong",
+          "Jambay Lhakhang",
+          "Kurjey Lhakhang"
+        ],
+        "seasons": "DDBOOBDDOOBD",
+        "seasonNote": "Primavera e autunno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Salita alla Tana della Tigre",
+        "description": "Circa 5 ore andata e ritorno fino al monastero sulla parete."
+      },
+      {
+        "name": "Festival tshechu",
+        "description": "Danze in maschera nei dzong, con date secondo il calendario lunare."
+      },
+      {
+        "name": "Bagno di pietre calde",
+        "description": "Il bagno tradizionale in una fattoria."
+      },
+      {
+        "name": "Tiro con l'arco",
+        "description": "Lo sport nazionale, con gare nei villaggi."
+      },
+      {
+        "name": "Trekking himalayano",
+        "description": "Dal Druk Path di 5 giorni allo Snowman Trek per esperti."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bhutan classico",
+        "days": 7,
+        "route": "Paro (2) → Thimphu (2) → Punakha (2) → Paro",
+        "description": "Il giro della valle occidentale con la Tana della Tigre."
+      },
+      {
+        "title": "Nepal e Bhutan",
+        "days": 11,
+        "route": "Kathmandu (3) → Paro (2) → Thimphu (2) → Punakha (2)",
+        "description": "L'Himalaya buddista in due paesi."
+      }
+    ],
+    "agentTips": [
+      "Il visto si ottiene solo tramite operatore locale autorizzato, che organizza guida e trasporti.",
+      "La Sustainable Development Fee giornaliera è alta e incide molto sul prezzo: indicala chiaramente.",
+      "Voli limitati (Drukair e Bhutan Airlines) da Kathmandu, Delhi, Bangkok e Singapore: prenota presto, soprattutto nei festival.",
+      "Abbigliamento coperto nei dzong."
+    ]
+  },
+  "MN": {
+    "moreDescription": [
+      "La Mongolia è il paese degli spazi infiniti e della vita nomade: steppe, il deserto del Gobi con le dune cantanti e i fossili di dinosauro, il lago Khövsgöl, l'antica capitale di Karakorum e la cultura dei cavalli e delle gher (yurte). La stagione è breve, da giugno a settembre; a luglio il festival Naadam con lotta, tiro con l'arco e corse di cavalli. D'inverno fa estremamente freddo, ma esistono viaggi di nicchia come il festival delle aquile."
+    ],
+    "areas": [
+      {
+        "name": "Ulan Bator e Terelj",
+        "description": "La capitale con il monastero di Gandan e il museo nazionale; il parco di Gorkhi-Terelj e la statua equestre di Gengis Khan.",
+        "highlights": [
+          "Monastero di Gandan",
+          "Piazza Sükhbaatar",
+          "Terelj",
+          "Statua di Gengis Khan"
+        ],
+        "seasons": "XXXDBOOOODXX",
+        "seasonNote": "Da giugno a settembre; Naadam l'11–13 luglio."
+      },
+      {
+        "name": "Gobi",
+        "description": "Le dune di Khongoryn Els, le Flaming Cliffs con i fossili, la gola di Yolyn Am.",
+        "highlights": [
+          "Khongoryn Els",
+          "Flaming Cliffs",
+          "Yolyn Am",
+          "Tsagaan Suvarga"
+        ],
+        "seasons": "XXXDBOOOODXX",
+        "seasonNote": "Da maggio a settembre."
+      },
+      {
+        "name": "Mongolia centrale (Karakorum, Orkhon)",
+        "description": "Il monastero di Erdene Zuu sull'antica capitale, la valle dell'Orkhon UNESCO e le sorgenti calde.",
+        "highlights": [
+          "Erdene Zuu",
+          "Valle dell'Orkhon",
+          "Cascata dell'Orkhon",
+          "Terme di Tsenkher"
+        ],
+        "seasons": "XXXDBOOOODXX",
+        "seasonNote": "Da giugno a settembre."
+      },
+      {
+        "name": "Nord (Khövsgöl) e ovest (Altai)",
+        "description": "Il lago Khövsgöl con i pastori di renne; l'Altai con i cacciatori kazaki con l'aquila.",
+        "highlights": [
+          "Lago Khövsgöl",
+          "Pastori di renne",
+          "Altai",
+          "Festival dell'aquila"
+        ],
+        "seasons": "XXXXDOOOOBXX",
+        "seasonNote": "Da giugno a settembre; festival dell'aquila a inizio ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Notte in gher",
+        "description": "Campi tendati o ospiti di famiglie nomadi."
+      },
+      {
+        "name": "Festival Naadam",
+        "description": "A luglio, i 'tre giochi virili' della Mongolia."
+      },
+      {
+        "name": "Cavallo nella steppa",
+        "description": "Escursioni di qualche ora o di più giorni."
+      },
+      {
+        "name": "Dune del Gobi in cammello",
+        "description": "Con i cammelli battriani a due gobbe."
+      },
+      {
+        "name": "Festival dell'aquila",
+        "description": "Nell'Altai a ottobre."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Mongolia classica",
+        "days": 12,
+        "route": "Ulan Bator (2) → Gobi (4) → Karakorum e Orkhon (3) → Terelj (1) → Ulan Bator (1)",
+        "description": "In fuoristrada con autista e campi gher, da giugno a settembre."
+      },
+      {
+        "title": "Naadam",
+        "days": 9,
+        "route": "Ulan Bator (3, festival) → Terelj (1) → Karakorum (2)",
+        "description": "Viaggio in occasione del festival di luglio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per brevi soggiorni turistici (verifica le regole in vigore).",
+      "Le distanze sono enormi e le strade spesso sterrate: tour in fuoristrada con autista.",
+      "Comfort essenziale nei campi gher: va spiegato chiaramente.",
+      "Durante il Naadam voli e hotel di Ulan Bator si esauriscono presto."
+    ]
+  },
+  "TW": {
+    "moreDescription": [
+      "Taiwan è una delle sorprese dell'Asia: Taipei moderna con mercati notturni e cucina eccezionale, la gola di marmo di Taroko, il lago del Sole e della Luna, le montagne di Alishan con tè e foreste, templi e villaggi come Jiufen. I treni veloci rendono facili gli spostamenti. Il periodo migliore va da ottobre ad aprile; da giugno a settembre fa caldo e c'è rischio tifoni."
+    ],
+    "areas": [
+      {
+        "name": "Taipei e nord (Jiufen, Yehliu, Beitou)",
+        "description": "Taipei 101, il Museo del Palazzo Nazionale, i mercati notturni, le terme di Beitou, Jiufen con le case da tè e il geoparco di Yehliu.",
+        "highlights": [
+          "Taipei 101",
+          "Museo del Palazzo Nazionale",
+          "Mercati notturni",
+          "Jiufen",
+          "Shifen",
+          "Beitou"
+        ],
+        "seasons": "BBOOOBDDDOOB",
+        "seasonNote": "Da ottobre ad aprile; estate calda, tifoni tra luglio e settembre."
+      },
+      {
+        "name": "Costa est (Taroko, Hualien)",
+        "description": "La gola di Taroko con pareti di marmo, sentieri e la costa oceanica.",
+        "highlights": [
+          "Gola di Taroko",
+          "Qingshui Cliffs",
+          "Hualien"
+        ],
+        "seasons": "BBOOOBDDDOOB",
+        "seasonNote": "Da ottobre ad aprile; verifica sentieri aperti dopo i terremoti."
+      },
+      {
+        "name": "Centro (Sole e Luna, Alishan)",
+        "description": "Il lago del Sole e della Luna con templi e biciclette, le foreste e le piantagioni di tè di Alishan con l'alba sul mare di nuvole.",
+        "highlights": [
+          "Lago del Sole e della Luna",
+          "Alishan",
+          "Treno della foresta",
+          "Piantagioni di tè"
+        ],
+        "seasons": "BBOOOBDDBOOB",
+        "seasonNote": "Primavera per i ciliegi ad Alishan; autunno limpido."
+      },
+      {
+        "name": "Sud (Tainan, Kaohsiung, Kenting)",
+        "description": "Tainan antica capitale con templi e cucina, Kaohsiung portuale e le spiagge di Kenting.",
+        "highlights": [
+          "Tainan",
+          "Kaohsiung",
+          "Pier-2",
+          "Kenting"
+        ],
+        "seasons": "OOOOBBDDDBOO",
+        "seasonNote": "Più caldo: ottimo anche in inverno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Mercati notturni",
+        "description": "Shilin, Raohe e i mercati di Tainan."
+      },
+      {
+        "name": "Lanterne a Shifen",
+        "description": "Lanciare una lanterna sui binari del vecchio treno."
+      },
+      {
+        "name": "Festival delle Lanterne",
+        "description": "A febbraio, con il festival di Pingxi."
+      },
+      {
+        "name": "Cerimonia del tè",
+        "description": "Oolong d'alta quota a Jiufen o Alishan."
+      },
+      {
+        "name": "Trekking a Taroko",
+        "description": "Sentieri sulla gola di marmo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Taiwan classico",
+        "days": 10,
+        "route": "Taipei (3) → Hualien e Taroko (2) → Sole e Luna (1) → Alishan (1) → Tainan (2)",
+        "description": "In treno ad alta velocità e auto, da ottobre ad aprile."
+      },
+      {
+        "title": "Taipei e dintorni",
+        "days": 5,
+        "route": "Taipei (4), con Jiufen e Shifen",
+        "description": "Stopover lungo o city break."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni turistici brevi.",
+      "La EasyCard vale per metro, bus, treni locali e negozi.",
+      "Tra luglio e settembre rischio tifoni: consiglia un'assicurazione con copertura meteo.",
+      "Le prese sono come quelle americane: serve un adattatore."
+    ]
+  },
+  "HK": {
+    "moreDescription": [
+      "Hong Kong è una metropoli verticale sul mare, con grattacieli, templi, mercati, cucina cantonese straordinaria e, a sorpresa, isole e sentieri verdi. È spesso uno stopover verso l'Asia o l'Oceania, abbinata a Macao. Il periodo migliore va da ottobre a dicembre, con clima secco e limpido; da giugno a settembre è caldo umido con possibili tifoni."
+    ],
+    "areas": [
+      {
+        "name": "Hong Kong Island",
+        "description": "Central e i grattacieli, il Victoria Peak con il tram, i quartieri di Sheung Wan e Soho, Stanley e Repulse Bay.",
+        "highlights": [
+          "Victoria Peak",
+          "Peak Tram",
+          "Tempio di Man Mo",
+          "Soho",
+          "Stanley"
+        ],
+        "seasons": "BBBBDDDDBOOO",
+        "seasonNote": "Da ottobre a dicembre ideale; estate calda e umida con tifoni."
+      },
+      {
+        "name": "Kowloon",
+        "description": "Tsim Sha Tsui con la vista sullo skyline, il lungomare e lo spettacolo di luci, i mercati di Mong Kok e il Temple Street Night Market.",
+        "highlights": [
+          "Avenue of Stars",
+          "Symphony of Lights",
+          "Mong Kok",
+          "Temple Street",
+          "M+"
+        ],
+        "seasons": "BBBBDDDDBOOO",
+        "seasonNote": "Come l'isola."
+      },
+      {
+        "name": "Lantau e isole",
+        "description": "Il Tian Tan Buddha con la funivia Ngong Ping, il villaggio di pescatori di Tai O, Disneyland e le isole di Lamma e Cheung Chau.",
+        "highlights": [
+          "Tian Tan Buddha",
+          "Ngong Ping 360",
+          "Tai O",
+          "Disneyland",
+          "Lamma"
+        ],
+        "seasons": "BBBBDDDDBOOO",
+        "seasonNote": "Come l'isola."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Star Ferry",
+        "description": "La traversata storica del porto."
+      },
+      {
+        "name": "Dim sum",
+        "description": "Colazione o pranzo in una sala da tè cantonese."
+      },
+      {
+        "name": "Trekking del Dragon's Back",
+        "description": "Sentiero panoramico sull'isola."
+      },
+      {
+        "name": "Escursione a Macao",
+        "description": "In giornata con il ponte o il traghetto."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Stopover",
+        "days": 4,
+        "route": "Hong Kong (3), con Lantau",
+        "description": "Sulla rotta verso Asia, Australia o Nuova Zelanda."
+      },
+      {
+        "title": "Hong Kong e Macao",
+        "days": 5,
+        "route": "Hong Kong (3) → Macao (1)",
+        "description": "Due città in un viaggio breve."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi; è necessario il passaporto.",
+      "La carta Octopus serve per trasporti e piccoli acquisti.",
+      "Per entrare in Cina continentale serve un visto separato (o verifica le esenzioni in vigore).",
+      "Tifoni da luglio a settembre: possono bloccare voli e traghetti."
+    ]
+  },
+  "MO": {
+    "moreDescription": [
+      "Macao unisce il centro storico portoghese patrimonio UNESCO, con chiese e piazze in calçada, ai grandi casinò e resort del Cotai. Si visita in 1–2 giorni, spesso da Hong Kong grazie al ponte. Il periodo migliore è ottobre–dicembre."
+    ],
+    "areas": [
+      {
+        "name": "Centro storico",
+        "description": "Le Rovine di San Paolo, Largo do Senado, il Tempio di A-Ma, la fortezza del Monte e le stradine con le tortine portoghesi.",
+        "highlights": [
+          "Rovine di San Paolo",
+          "Largo do Senado",
+          "Tempio di A-Ma",
+          "Fortezza del Monte"
+        ],
+        "seasons": "BBBBDDDDBOOO",
+        "seasonNote": "Da ottobre a dicembre; estate calda con tifoni."
+      },
+      {
+        "name": "Cotai e Coloane",
+        "description": "Resort e casinò monumentali, spettacoli e il villaggio di Coloane, più tranquillo.",
+        "highlights": [
+          "Cotai Strip",
+          "Macau Tower",
+          "Villaggio di Coloane"
+        ],
+        "seasons": "BBBBDDDDBOOO",
+        "seasonNote": "Come il centro."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Pastéis de nata",
+        "description": "Le tortine portoghesi di Lord Stow a Coloane."
+      },
+      {
+        "name": "Cucina macanese",
+        "description": "Fusione portoghese e cantonese, patrimonio gastronomico."
+      },
+      {
+        "name": "Gran Premio di Macao",
+        "description": "A novembre, sul circuito cittadino."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Macao da Hong Kong",
+        "days": 2,
+        "route": "Macao (1)",
+        "description": "Escursione o notte in un resort."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Si usa la pataca, ma il dollaro di Hong Kong è accettato.",
+      "Navette gratuite dei casinò collegano frontiere e traghetti."
+    ]
+  },
+  "BN": {
+    "moreDescription": [
+      "Il Brunei è un piccolo sultanato sull'isola del Borneo, ricco e tranquillo: moschee dorate, il villaggio sull'acqua di Kampong Ayer e la foresta pluviale intatta di Ulu Temburong. Si visita in 2–3 giorni, spesso in abbinamento al Borneo malese (Sabah e Sarawak). Il clima è equatoriale; febbraio–aprile sono i mesi meno piovosi."
+    ],
+    "areas": [
+      {
+        "name": "Bandar Seri Begawan",
+        "description": "La moschea Omar Ali Saifuddien, la moschea Jame' Asr, Kampong Ayer e il Royal Regalia Museum.",
+        "highlights": [
+          "Moschea Omar Ali Saifuddien",
+          "Jame' Asr Hassanil Bolkiah",
+          "Kampong Ayer",
+          "Royal Regalia Museum"
+        ],
+        "seasons": "BOOOBBBBBBDD",
+        "seasonNote": "Visitabile tutto l'anno; più piovoso tra novembre e gennaio."
+      },
+      {
+        "name": "Ulu Temburong",
+        "description": "Foresta pluviale primaria con passerella sospesa tra le cime degli alberi, raggiungibile in barca lunga.",
+        "highlights": [
+          "Canopy walk",
+          "Barche lunghe",
+          "Nasiche"
+        ],
+        "seasons": "BOOOBBBBBBDD",
+        "seasonNote": "Come la capitale."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Kampong Ayer in water taxi",
+        "description": "Il più grande villaggio su palafitte del mondo."
+      },
+      {
+        "name": "Canopy walk a Temburong",
+        "description": "All'alba sopra la foresta."
+      },
+      {
+        "name": "Nasiche al tramonto",
+        "description": "Barca tra le mangrovie per vedere le scimmie nasiche."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Brunei e Borneo",
+        "days": 10,
+        "route": "Bandar Seri Begawan (2) → Temburong (1) → Kota Kinabalu e Sabah (6)",
+        "description": "Abbinato al Borneo malese."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Alcol vietato in vendita; legge islamica severa.",
+      "Il venerdì molte attività chiudono a mezzogiorno per la preghiera."
+    ]
+  },
+  "TL": {
+    "moreDescription": [
+      "Timor Est è uno dei paesi più giovani e meno visitati dell'Asia: barriere coralline intatte (l'isola di Atauro ha una delle biodiversità marine più alte al mondo), montagne con piantagioni di caffè, villaggi tradizionali e balene in migrazione. Il turismo è agli inizi, con strutture semplici. La stagione secca va da maggio a novembre."
+    ],
+    "areas": [
+      {
+        "name": "Dili e Atauro",
+        "description": "La capitale con il Cristo Rei e il lungomare; l'isola di Atauro per snorkeling e immersioni.",
+        "highlights": [
+          "Cristo Rei",
+          "Atauro",
+          "Barriere coralline"
+        ],
+        "seasons": "DDDDBOOOOOOD",
+        "seasonNote": "Da maggio a novembre; balene tra ottobre e novembre."
+      },
+      {
+        "name": "Montagne e est (Ramelau, Maubisse, Jaco)",
+        "description": "Il monte Ramelau con l'alba, le piantagioni di caffè di Maubisse e l'isola sacra di Jaco.",
+        "highlights": [
+          "Monte Ramelau",
+          "Maubisse",
+          "Isola di Jaco",
+          "Baucau"
+        ],
+        "seasons": "DDDDBOOOOODD",
+        "seasonNote": "Da maggio a ottobre; strade difficili con le piogge."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Immersioni ad Atauro",
+        "description": "Coralli e pesci in acque pochissimo frequentate."
+      },
+      {
+        "name": "Alba sul Ramelau",
+        "description": "Dalla vetta più alta del paese."
+      },
+      {
+        "name": "Balene e delfini",
+        "description": "Durante la migrazione tra ottobre e novembre."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Timor Est",
+        "days": 8,
+        "route": "Dili (2) → Atauro (2) → Maubisse e Ramelau (2) → Dili (1)",
+        "description": "Per viaggiatori avventurosi, da maggio a novembre."
+      }
+    ],
+    "agentTips": [
+      "Visto all'arrivo o online: verifica le regole in vigore.",
+      "Si usa il dollaro USA.",
+      "Strutture sanitarie molto limitate: assicurazione con evacuazione indispensabile.",
+      "Si arriva via Bali, Darwin o Singapore."
+    ]
+  },
+  "PK": {
+    "moreDescription": [
+      "Il Pakistan ha alcune delle montagne più spettacolari del pianeta: il Karakorum con il K2, la valle di Hunza, la Karakoram Highway e il lago Attabad; e città storiche come Lahore con la moschea Badshahi e il forte. Il nord si visita da aprile a ottobre (il ciliegio in fiore ad aprile e i colori dell'autunno in ottobre), le pianure da ottobre a marzo. Alcune zone sono sconsigliate: verifica sempre viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Nord (Hunza, Gilgit, Skardu)",
+        "description": "La valle di Hunza con i forti di Baltit e Altit, il lago Attabad, il passo di Khunjerab al confine cinese, Skardu e i campi base del Karakorum.",
+        "highlights": [
+          "Hunza",
+          "Forte di Baltit",
+          "Lago Attabad",
+          "Passo di Khunjerab",
+          "Skardu",
+          "Deosai"
+        ],
+        "seasons": "XXDOOOOOOODX",
+        "seasonNote": "Da aprile a ottobre; d'inverno molte strade chiuse; verificare la sicurezza."
+      },
+      {
+        "name": "Lahore e Punjab",
+        "description": "La moschea Badshahi, il forte di Lahore, la città vecchia, la cerimonia al confine di Wagah.",
+        "highlights": [
+          "Badshahi",
+          "Forte di Lahore",
+          "Moschea di Wazir Khan",
+          "Wagah"
+        ],
+        "seasons": "OOOBDXXXDOOO",
+        "seasonNote": "Da ottobre a marzo; estate torrida."
+      },
+      {
+        "name": "Islamabad",
+        "description": "La capitale verde con la moschea Faisal e le colline di Margalla.",
+        "highlights": [
+          "Moschea Faisal",
+          "Margalla",
+          "Taxila"
+        ],
+        "seasons": "OOOBDDDDBOOO",
+        "seasonNote": "Da ottobre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Karakoram Highway",
+        "description": "La strada tra le montagne più alte del mondo."
+      },
+      {
+        "name": "Trekking al campo base del K2",
+        "description": "Per escursionisti esperti, a luglio–agosto."
+      },
+      {
+        "name": "Cerimonia di Wagah",
+        "description": "La chiusura della frontiera con l'India al tramonto."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Pakistan del nord",
+        "days": 12,
+        "route": "Islamabad (1) → Gilgit (1) → Hunza (4) → Khunjerab → Skardu (3) → Islamabad (1)",
+        "description": "Da aprile a ottobre, con operatore locale."
+      }
+    ],
+    "agentTips": [
+      "Serve un e-visa da richiedere online.",
+      "Diverse zone sono sconsigliate: verifica sempre viaggiaresicuri.it.",
+      "I voli interni per Gilgit e Skardu dipendono dal meteo: molti giorni di margine.",
+      "Abbigliamento coperto per uomini e donne."
+    ]
+  },
+  "BD": {
+    "moreDescription": [
+      "Il Bangladesh è poco turistico ma autentico: la foresta di mangrovie delle Sundarbans con la tigre del Bengala, le piantagioni di tè di Sreemangal, i siti buddisti e le moschee di Bagerhat, la vita frenetica di Dhaka sul fiume. Il periodo migliore va da novembre a febbraio; da giugno a settembre monsoni forti e cicloni."
+    ],
+    "areas": [
+      {
+        "name": "Dhaka",
+        "description": "Il porto di Sadarghat, il forte di Lalbagh, Old Dhaka e il Palazzo Rosa.",
+        "highlights": [
+          "Sadarghat",
+          "Forte di Lalbagh",
+          "Ahsan Manzil",
+          "Old Dhaka"
+        ],
+        "seasons": "OOBDDXXXDBOO",
+        "seasonNote": "Da novembre a febbraio."
+      },
+      {
+        "name": "Sundarbans e Bagerhat",
+        "description": "Crociere nelle mangrovie UNESCO e la città-moschea di Bagerhat.",
+        "highlights": [
+          "Sundarbans",
+          "Tigre del Bengala",
+          "Moschea delle Sessanta Cupole"
+        ],
+        "seasons": "OOBDDXXXDBOO",
+        "seasonNote": "Da novembre a febbraio."
+      },
+      {
+        "name": "Sylhet e Sreemangal",
+        "description": "Piantagioni di tè, foreste e il lago di Ratargul.",
+        "highlights": [
+          "Sreemangal",
+          "Piantagioni di tè",
+          "Ratargul"
+        ],
+        "seasons": "OOBDDDDDDBOO",
+        "seasonNote": "Da novembre a febbraio; Ratargul bello in estate allagato."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Crociera nelle Sundarbans",
+        "description": "2–3 giorni in barca tra le mangrovie."
+      },
+      {
+        "name": "Tè a sette strati",
+        "description": "La specialità di Sreemangal."
+      },
+      {
+        "name": "Barca a Sadarghat",
+        "description": "Il porto fluviale più caotico del mondo."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bangladesh",
+        "days": 9,
+        "route": "Dhaka (2) → Sundarbans (3) → Bagerhat (1) → Sreemangal (2)",
+        "description": "Da novembre a febbraio."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto (online o all'arrivo): verifica la procedura.",
+      "Verifica viaggiaresicuri.it per manifestazioni e zone di confine.",
+      "Strutture semplici fuori da Dhaka.",
+      "Abbigliamento coperto."
+    ]
+  },
+  "KP": {
+    "areas": [
+      {
+        "name": "Pyongyang",
+        "description": "Monumenti, la metropolitana, la Torre Juche e la piazza Kim Il-sung, visitabili solo con guida.",
+        "highlights": [
+          "Piazza Kim Il-sung",
+          "Torre Juche",
+          "Metropolitana"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      },
+      {
+        "name": "Confine e sud (Panmunjom, Kaesong)",
+        "description": "La zona demilitarizzata e l'antica capitale Kaesong.",
+        "highlights": [
+          "Panmunjom",
+          "Kaesong"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza consigliata",
+        "description": "Il paese non è al momento una destinazione da proporre."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "L'Italia non ha un'ambasciata con piena assistenza consolare sul posto.",
+      "Il confine coreano si può vedere dal lato sud (DMZ dalla Corea del Sud)."
+    ]
+  }
+}

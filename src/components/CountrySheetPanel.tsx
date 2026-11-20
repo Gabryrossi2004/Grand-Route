@@ -14,6 +14,7 @@ import type { CountrySheetContent } from "@/lib/countrySheetAi";
 import type { CustomizeOptions } from "@/lib/countrySheetShared";
 import CountrySheetCustomize from "@/components/CountrySheetCustomize";
 import CountrySheetEditor from "@/components/CountrySheetEditor";
+import CountryGuideSections from "@/components/CountryGuideSections";
 import { flagOf } from "@/lib/geo/countryCodes";
 
 const FACTS: { key: keyof CountrySheet["content"]["facts"]; label: string }[] =
@@ -409,6 +410,7 @@ export default function CountrySheetPanel({
                 </p>
               </section>
             </div>
+            <CountryGuideSections content={c!} />
             </>
           )}
         </div>

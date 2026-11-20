@@ -1,0 +1,1033 @@
+{
+  "SN": {
+    "moreDescription": [
+      "Il Senegal è la porta dell'Africa occidentale: Dakar vivace e musicale, l'isola di Gorée e la memoria della tratta, Saint-Louis coloniale UNESCO, il delta del Sine-Saloum con mangrovie e isole di conchiglie, il Lago Rosa e la Casamance verde e tranquilla. Ottimo per un primo viaggio in Africa occidentale, anche con soggiorni mare a Saly e Cap Skirring. La stagione secca va da novembre a maggio."
+    ],
+    "areas": [
+      {
+        "name": "Dakar e Gorée",
+        "description": "La capitale con i mercati, la musica mbalax e il Monumento della Rinascita; l'isola di Gorée con la Casa degli Schiavi.",
+        "highlights": [
+          "Gorée",
+          "Casa degli Schiavi",
+          "Monumento della Rinascita",
+          "Mercato Sandaga",
+          "Lago Rosa"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Da novembre a maggio; da luglio a ottobre piogge e caldo umido."
+      },
+      {
+        "name": "Saint-Louis e nord",
+        "description": "La vecchia capitale coloniale sul fiume Senegal e il parco degli uccelli del Djoudj.",
+        "highlights": [
+          "Saint-Louis",
+          "Ponte Faidherbe",
+          "Djoudj",
+          "Dune di Lompoul"
+        ],
+        "seasons": "OOOOBBDDDBOO",
+        "seasonNote": "Djoudj con gli uccelli migratori da novembre ad aprile."
+      },
+      {
+        "name": "Petite Côte e Sine-Saloum",
+        "description": "I resort di Saly e il delta del Sine-Saloum con mangrovie, villaggi di pescatori e l'isola di conchiglie di Joal-Fadiouth.",
+        "highlights": [
+          "Saly",
+          "Sine-Saloum",
+          "Joal-Fadiouth",
+          "Riserva di Bandia"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Da novembre a maggio."
+      },
+      {
+        "name": "Casamance",
+        "description": "La regione più verde, con spiagge di Cap Skirring, villaggi diola e case a impluvium.",
+        "highlights": [
+          "Cap Skirring",
+          "Ziguinchor",
+          "Villaggi diola"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile; verificare la situazione di sicurezza nell'interno."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Isola di Gorée",
+        "description": "Visita alla Casa degli Schiavi e ai vicoli colorati."
+      },
+      {
+        "name": "Piroga nel Sine-Saloum",
+        "description": "Tra mangrovie e villaggi su isole."
+      },
+      {
+        "name": "Lago Rosa",
+        "description": "Il lago salato con la raccolta del sale."
+      },
+      {
+        "name": "Musica a Dakar",
+        "description": "Concerti dal vivo di mbalax."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Senegal classico",
+        "days": 10,
+        "route": "Dakar (2) → Gorée → Lago Rosa (1) → Saint-Louis (2) → Sine-Saloum (2) → Saly (2)",
+        "description": "Da novembre a maggio."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi.",
+      "Vaccinazione contro la febbre gialla consigliata (obbligatoria se si arriva da paesi a rischio); profilassi antimalarica.",
+      "Verifica viaggiaresicuri.it per la Casamance interna e il confine con il Mali."
+    ]
+  },
+  "GM": {
+    "moreDescription": [
+      "Il Gambia è il paese più piccolo dell'Africa continentale, una striscia lungo il fiume Gambia: spiagge e resort sulla costa atlantica, birdwatching eccellente, crociere sul fiume e l'isola di Kunta Kinteh legata alla storia della tratta. Periodo migliore da novembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Costa (Kololi, Banjul)",
+        "description": "Spiagge e resort, la riserva di Abuko e i mercati di Banjul.",
+        "highlights": [
+          "Kololi",
+          "Abuko",
+          "Banjul",
+          "Kachikally"
+        ],
+        "seasons": "OOOOBBDDDBOO",
+        "seasonNote": "Da novembre ad aprile."
+      },
+      {
+        "name": "Fiume Gambia",
+        "description": "Crociere, scimpanzé del River Gambia National Park, l'isola di Kunta Kinteh e i cerchi di pietre di Wassu.",
+        "highlights": [
+          "Isola di Kunta Kinteh",
+          "Scimpanzé",
+          "Cerchi di Wassu"
+        ],
+        "seasons": "OOOOBDDDDBOO",
+        "seasonNote": "Da novembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Crociera sul fiume",
+        "description": "Più giorni con birdwatching."
+      },
+      {
+        "name": "Coccodrilli sacri di Kachikally",
+        "description": "Il santuario vicino a Banjul."
+      },
+      {
+        "name": "Kunta Kinteh",
+        "description": "Memoria della tratta transatlantica."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Mare e fiume",
+        "days": 9,
+        "route": "Kololi (6) → crociera sul fiume (2)",
+        "description": "Da novembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Verifica le regole d'ingresso.",
+      "Febbre gialla e profilassi antimalarica.",
+      "Si abbina al Senegal."
+    ]
+  },
+  "GW": {
+    "moreDescription": [
+      "La Guinea-Bissau è nota per l'arcipelago delle Bijagós, riserva della biosfera con isole selvagge, ippopotami d'acqua salata, tartarughe e una cultura matriarcale. Turismo di nicchia, con lodge semplici o di pesca. Periodo migliore da novembre a maggio. Verifica la situazione politica su viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Arcipelago delle Bijagós",
+        "description": "Isole come Bubaque, Orango con gli ippopotami e Poilão con le tartarughe verdi.",
+        "highlights": [
+          "Bubaque",
+          "Orango",
+          "Poilão",
+          "Pesca sportiva"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Da novembre a maggio; tartarughe da luglio a novembre."
+      },
+      {
+        "name": "Bissau e continente",
+        "description": "La capitale con il quartiere coloniale e Cacheu.",
+        "highlights": [
+          "Bissau Velho",
+          "Cacheu"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Da novembre a maggio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Ippopotami di Orango",
+        "description": "Gli ippopotami che nuotano in mare."
+      },
+      {
+        "name": "Pesca sportiva",
+        "description": "Lodge specializzati nelle Bijagós."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bijagós",
+        "days": 8,
+        "route": "Bissau (1) → Bubaque e Orango (6)",
+        "description": "Isole selvagge da novembre a maggio."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla e profilassi antimalarica.",
+      "Verifica viaggiaresicuri.it: instabilità politica frequente.",
+      "Collegamenti tra le isole limitati: meglio barche private."
+    ]
+  },
+  "GN": {
+    "moreDescription": [
+      "La Guinea è verde e montuosa, con l'altopiano del Fouta Djalon (sorgenti dei grandi fiumi dell'Africa occidentale, cascate e villaggi peul) e le isole di Loos davanti a Conakry. Turismo poco sviluppato; verifica sempre la situazione su viaggiaresicuri.it. Periodo migliore da novembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Fouta Djalon",
+        "description": "Altopiani, cascate come Kambadaga e trekking tra villaggi.",
+        "highlights": [
+          "Dalaba",
+          "Cascate di Kambadaga",
+          "Doucki"
+        ],
+        "seasons": "OOOOBDDDDBOO",
+        "seasonNote": "Da novembre ad aprile."
+      },
+      {
+        "name": "Conakry e isole di Loos",
+        "description": "La capitale e le isole con spiagge.",
+        "highlights": [
+          "Conakry",
+          "Isole di Loos"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Trekking nel Fouta Djalon",
+        "description": "Con guide locali tra cascate e villaggi."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Fouta Djalon",
+        "days": 8,
+        "route": "Conakry (1) → Dalaba (3) → Doucki (3)",
+        "description": "Per viaggiatori esperti."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Verifica sempre viaggiaresicuri.it.",
+      "Strade e strutture molto semplici."
+    ]
+  },
+  "SL": {
+    "moreDescription": [
+      "La Sierra Leone sorprende con spiagge tropicali tra le più belle dell'Africa occidentale (River Number Two, Banana Islands), il santuario di scimpanzé di Tacugama e l'isola di Tiwai con i primati. Turismo agli inizi; periodo migliore da novembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Freetown e penisola",
+        "description": "La capitale, le spiagge della penisola, le Banana Islands e Tacugama.",
+        "highlights": [
+          "River Number Two",
+          "Banana Islands",
+          "Tacugama",
+          "Isola di Bunce"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile; luglio–settembre piogge molto forti."
+      },
+      {
+        "name": "Interno (Tiwai)",
+        "description": "Foresta con 11 specie di primati e ippopotami pigmei.",
+        "highlights": [
+          "Isola di Tiwai",
+          "Primati"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Spiagge della penisola",
+        "description": "Sabbia bianca e foresta alle spalle."
+      },
+      {
+        "name": "Scimpanzé di Tacugama",
+        "description": "Santuario per scimpanzé orfani."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Sierra Leone",
+        "days": 8,
+        "route": "Freetown (2) → spiagge della penisola (3) → Tiwai (2)",
+        "description": "Da novembre ad aprile."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria e profilassi antimalarica.",
+      "Dall'aeroporto a Freetown si attraversa la baia in barca o con lunghi trasferimenti.",
+      "Verifica viaggiaresicuri.it."
+    ]
+  },
+  "LR": {
+    "moreDescription": [
+      "La Liberia ha foreste pluviali primarie (Sapo), spiagge per il surf come Robertsport e una storia unica legata agli schiavi liberati americani. Turismo molto limitato; verifica viaggiaresicuri.it. Periodo migliore da novembre ad aprile."
+    ],
+    "areas": [
+      {
+        "name": "Costa (Monrovia, Robertsport)",
+        "description": "La capitale e il villaggio del surf di Robertsport con il lago Piso.",
+        "highlights": [
+          "Robertsport",
+          "Lago Piso",
+          "Providence Island"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile."
+      },
+      {
+        "name": "Foreste (Sapo, Gola)",
+        "description": "Foreste primarie con ippopotami pigmei e scimpanzé.",
+        "highlights": [
+          "Parco di Sapo",
+          "Foresta di Gola"
+        ],
+        "seasons": "OOOOBDXXXDBO",
+        "seasonNote": "Da novembre ad aprile."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Surf a Robertsport",
+        "description": "Onde lunghe e spiagge deserte."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Liberia",
+        "days": 7,
+        "route": "Monrovia (2) → Robertsport (3)",
+        "description": "Per viaggiatori avventurosi."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Strutture e sanità molto limitate.",
+      "Si usa anche il dollaro USA."
+    ]
+  },
+  "CI": {
+    "moreDescription": [
+      "La Costa d'Avorio è una delle economie più dinamiche dell'Africa occidentale: Abidjan moderna sulla laguna, Grand-Bassam coloniale UNESCO, le spiagge di Assinie, la basilica di Yamoussoukro (copia di San Pietro) e le foreste di Taï e di Man. Periodo migliore da novembre a marzo. Verifica viaggiaresicuri.it per il nord."
+    ],
+    "areas": [
+      {
+        "name": "Abidjan e costa (Grand-Bassam, Assinie)",
+        "description": "La città del Plateau, la laguna, Grand-Bassam e le spiagge chic di Assinie.",
+        "highlights": [
+          "Plateau",
+          "Grand-Bassam",
+          "Assinie"
+        ],
+        "seasons": "OOOBDXXBBDBO",
+        "seasonNote": "Da novembre a marzo; maggio–luglio piogge forti."
+      },
+      {
+        "name": "Centro e ovest (Yamoussoukro, Man, Taï)",
+        "description": "La basilica di Nostra Signora della Pace, le cascate e montagne di Man e la foresta di Taï con gli scimpanzé.",
+        "highlights": [
+          "Basilica di Yamoussoukro",
+          "Man",
+          "Parco di Taï"
+        ],
+        "seasons": "OOOBDDDDBBBO",
+        "seasonNote": "Da novembre a marzo."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Basilica di Yamoussoukro",
+        "description": "La chiesa più grande d'Africa."
+      },
+      {
+        "name": "Weekend ad Assinie",
+        "description": "Spiagge e lagune."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Costa d'Avorio",
+        "days": 7,
+        "route": "Abidjan (2) → Grand-Bassam (1) → Yamoussoukro (1) → Assinie (2)",
+        "description": "Da novembre a marzo."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto (e-visa); febbre gialla obbligatoria.",
+      "Verifica viaggiaresicuri.it per le zone di confine del nord.",
+      "Profilassi antimalarica."
+    ]
+  },
+  "GH": {
+    "moreDescription": [
+      "Il Ghana è il paese più accessibile dell'Africa occidentale anglofona: i castelli degli schiavi di Cape Coast ed Elmina, la passerella sospesa di Kakum, Kumasi capitale del regno Ashanti, il parco di Mole con gli elefanti, e Accra vivace. Molto richiesto per il turismo delle radici dalla diaspora. Periodo migliore da novembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Accra e costa (Cape Coast, Elmina, Kakum)",
+        "description": "La capitale, i castelli UNESCO della tratta e il parco di Kakum con la canopy walk.",
+        "highlights": [
+          "Castello di Cape Coast",
+          "Castello di Elmina",
+          "Kakum",
+          "Jamestown"
+        ],
+        "seasons": "OOOBDXXBBDBO",
+        "seasonNote": "Da novembre a marzo; maggio–giugno piogge forti."
+      },
+      {
+        "name": "Ashanti (Kumasi)",
+        "description": "Il mercato di Kejetia, il palazzo reale e i villaggi artigiani del kente.",
+        "highlights": [
+          "Mercato di Kejetia",
+          "Palazzo Manhyia",
+          "Villaggi del kente"
+        ],
+        "seasons": "OOOBDDDBBBBO",
+        "seasonNote": "Da novembre a marzo."
+      },
+      {
+        "name": "Nord e Volta (Mole, Wli)",
+        "description": "Safari a piedi con gli elefanti a Mole e le cascate di Wli nella regione del Volta.",
+        "highlights": [
+          "Parco di Mole",
+          "Cascate di Wli",
+          "Moschea di Larabanga"
+        ],
+        "seasons": "OOOBDDDDDBOO",
+        "seasonNote": "Da dicembre ad aprile per Mole."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Castelli della tratta",
+        "description": "Visita guidata a Cape Coast ed Elmina."
+      },
+      {
+        "name": "Canopy walk a Kakum",
+        "description": "Passerelle sospese sopra la foresta."
+      },
+      {
+        "name": "Kente a Bonwire",
+        "description": "Tessitura del tessuto reale."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Ghana classico",
+        "days": 9,
+        "route": "Accra (2) → Cape Coast ed Elmina (2) → Kakum → Kumasi (2) → Mole (2)",
+        "description": "Da novembre a marzo."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Profilassi antimalarica consigliata.",
+      "Paese stabile e accogliente: ottimo primo viaggio in Africa occidentale."
+    ]
+  },
+  "TG": {
+    "moreDescription": [
+      "Il Togo è una striscia sottile tra Ghana e Benin: Lomé con il mercato dei feticci, il lago Togo e Togoville, le colline verdi di Kpalimé e il paese dei Batammariba (Koutammakou) con le case-castello UNESCO. Spesso si visita insieme al Benin. Periodo migliore da novembre a marzo."
+    ],
+    "areas": [
+      {
+        "name": "Sud (Lomé, lago Togo, Kpalimé)",
+        "description": "La capitale, il lago Togo e le colline di Kpalimé con cascate e farfalle.",
+        "highlights": [
+          "Mercato di Akodessewa",
+          "Lago Togo",
+          "Togoville",
+          "Kpalimé"
+        ],
+        "seasons": "OOOBDDDBBDBO",
+        "seasonNote": "Da novembre a marzo."
+      },
+      {
+        "name": "Nord (Koutammakou)",
+        "description": "Le case fortificate tata dei Batammariba.",
+        "highlights": [
+          "Koutammakou",
+          "Kara"
+        ],
+        "seasons": "OOOBDDDDDBOO",
+        "seasonNote": "Da novembre a marzo; verificare la sicurezza al confine nord."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Mercato dei feticci",
+        "description": "Il mercato vudù di Lomé."
+      },
+      {
+        "name": "Case tata",
+        "description": "Visita al Koutammakou."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Togo e Benin",
+        "days": 10,
+        "route": "Lomé (2) → Kpalimé (2) → Koutammakou (2) → Benin del nord (2) → Cotonou (1)",
+        "description": "Vudù e architetture tradizionali."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Verifica viaggiaresicuri.it per il nord.",
+      "Profilassi antimalarica."
+    ]
+  },
+  "BJ": {
+    "moreDescription": [
+      "Il Benin è la culla del vudù: Ouidah con la Porta del Non Ritorno e il festival del 10 gennaio, il villaggio su palafitte di Ganvié, i palazzi reali di Abomey, le case Tata Somba e il parco della Pendjari con leoni ed elefanti. Periodo migliore da novembre a marzo. Il nord vicino al confine è sconsigliato: verifica viaggiaresicuri.it."
+    ],
+    "areas": [
+      {
+        "name": "Sud (Cotonou, Ouidah, Ganvié, Porto-Novo)",
+        "description": "La Strada degli Schiavi di Ouidah, il tempio dei pitoni, Ganvié sul lago Nokoué e Porto-Novo.",
+        "highlights": [
+          "Ouidah",
+          "Porta del Non Ritorno",
+          "Ganvié",
+          "Porto-Novo"
+        ],
+        "seasons": "OOOBDDDBBDBO",
+        "seasonNote": "Da novembre a marzo; 10 gennaio festa del vudù."
+      },
+      {
+        "name": "Centro e nord (Abomey, Tata Somba, Pendjari)",
+        "description": "I palazzi reali di Abomey, le case Tata Somba e il parco della Pendjari.",
+        "highlights": [
+          "Abomey",
+          "Tata Somba",
+          "Pendjari"
+        ],
+        "seasons": "OOOBDDDDDBOO",
+        "seasonNote": "Da dicembre ad aprile; verificare la sicurezza al nord."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Festival del vudù",
+        "description": "Il 10 gennaio a Ouidah, con cerimonie e danze."
+      },
+      {
+        "name": "Piroga a Ganvié",
+        "description": "La 'Venezia d'Africa'."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Benin del vudù",
+        "days": 7,
+        "route": "Cotonou (1) → Ouidah (2) → Ganvié (1) → Abomey (2)",
+        "description": "Da novembre a marzo, ideale a gennaio."
+      }
+    ],
+    "agentTips": [
+      "Serve l'e-visa; febbre gialla obbligatoria.",
+      "Il nord è sconsigliato: verifica viaggiaresicuri.it.",
+      "Fotografie durante le cerimonie solo con permesso."
+    ]
+  },
+  "BF": {
+    "areas": [
+      {
+        "name": "Burkina Faso",
+        "description": "Ouagadougou, Bobo-Dioulasso e i villaggi dipinti di Tiébélé.",
+        "highlights": [
+          "Tiébélé",
+          "Bobo-Dioulasso",
+          "Loropéni"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it."
+    ]
+  },
+  "NG": {
+    "moreDescription": [
+      "La Nigeria è il paese più popoloso d'Africa: Lagos è una megalopoli creativa (musica afrobeats, arte, Nollywood), il bosco sacro di Osun-Osogbo è patrimonio UNESCO e il paese ha una cultura ricchissima. Il turismo è soprattutto d'affari e culturale; molte regioni sono sconsigliate, verifica sempre viaggiaresicuri.it. Periodo migliore da novembre a marzo."
+    ],
+    "experiences": [
+      {
+        "name": "Arte contemporanea a Lagos",
+        "description": "Gallerie e mercati d'arte."
+      },
+      {
+        "name": "Bosco sacro di Osun",
+        "description": "Sculture e santuari yoruba."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Lagos e Osogbo",
+        "days": 5,
+        "route": "Lagos (3) → Osogbo (1)",
+        "description": "Viaggio culturale con operatore locale."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Molte regioni sconsigliate: verifica sempre viaggiaresicuri.it.",
+      "Trasferimenti con autista e operatore locale affidabile."
+    ],
+    "areas": [
+      {
+        "name": "Lagos",
+        "description": "Victoria Island, il Nike Art Centre, il Lekki Conservation Centre con la canopy walk, la vita notturna.",
+        "highlights": [
+          "Nike Art Centre",
+          "Lekki Conservation Centre",
+          "Victoria Island"
+        ],
+        "seasons": "OOOBDDDBBDBO",
+        "seasonNote": "Da novembre a marzo; verificare la sicurezza."
+      },
+      {
+        "name": "Sud-ovest (Osogbo, Abeokuta)",
+        "description": "Il bosco sacro di Osun e la roccia di Olumo.",
+        "highlights": [
+          "Osun-Osogbo",
+          "Roccia di Olumo"
+        ],
+        "seasons": "OOOBDDDBBDBO",
+        "seasonNote": "Festival di Osun ad agosto."
+      }
+    ]
+  },
+  "CM": {
+    "moreDescription": [
+      "Il Camerun è chiamato 'l'Africa in miniatura' per la varietà di paesaggi: il monte Camerun, le spiagge di Kribi con le cascate della Lobé che finiscono in mare, il sultanato di Foumban e le foreste. Alcune regioni (nord ed ex regioni anglofone) sono sconsigliate: verifica viaggiaresicuri.it. Periodo migliore da novembre a febbraio."
+    ],
+    "experiences": [
+      {
+        "name": "Cascate della Lobé",
+        "description": "In piroga fino alla cascata che cade in mare."
+      },
+      {
+        "name": "Sultanato di Foumban",
+        "description": "Arte e tradizioni bamoun."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Camerun",
+        "days": 8,
+        "route": "Douala (1) → Kribi (3) → Foumban (2) → Yaoundé (1)",
+        "description": "Da novembre a febbraio."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Nord e regioni anglofone sconsigliati: verifica viaggiaresicuri.it.",
+      "Profilassi antimalarica."
+    ],
+    "areas": [
+      {
+        "name": "Costa (Kribi, Limbe)",
+        "description": "Spiagge, la cascata della Lobé sul mare e i pigmei Bagyeli.",
+        "highlights": [
+          "Kribi",
+          "Cascate della Lobé",
+          "Limbe"
+        ],
+        "seasons": "OOBDDDDDDDBO",
+        "seasonNote": "Da dicembre a febbraio."
+      },
+      {
+        "name": "Ovest (Foumban)",
+        "description": "Il palazzo del sultano Bamoun e l'artigianato.",
+        "highlights": [
+          "Palazzo di Foumban",
+          "Museo dei re Bamoun"
+        ],
+        "seasons": "OOBDDDDDDDBO",
+        "seasonNote": "Da novembre a febbraio."
+      }
+    ]
+  },
+  "CF": {
+    "areas": [
+      {
+        "name": "Dzanga-Sangha",
+        "description": "Foresta pluviale con gorilla e la radura di Dzanga Bai con gli elefanti.",
+        "highlights": [
+          "Dzanga Bai",
+          "Gorilla di pianura"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Nessuna esperienza proponibile",
+        "description": "Il paese non è al momento una destinazione turistica."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Per i gorilla di pianura proponi in alternativa il Congo (Odzala) o il Gabon."
+    ]
+  },
+  "GQ": {
+    "moreDescription": [
+      "La Guinea Equatoriale è uno dei paesi meno visitati d'Africa: l'isola di Bioko con la capitale Malabo, il Pico Basilé, le spiagge di Ureka con le tartarughe marine e il parco del Monte Alén sul continente. Turismo minimo e visti complessi. Periodo migliore da dicembre a febbraio."
+    ],
+    "areas": [
+      {
+        "name": "Bioko (Malabo, Ureka)",
+        "description": "La capitale coloniale, il Pico Basilé e le spiagge di deposizione delle tartarughe.",
+        "highlights": [
+          "Malabo",
+          "Pico Basilé",
+          "Ureka"
+        ],
+        "seasons": "OOBDDDDDDDBO",
+        "seasonNote": "Da dicembre a febbraio; tartarughe da novembre a febbraio."
+      },
+      {
+        "name": "Continente (Bata, Monte Alén)",
+        "description": "Foreste pluviali e spiagge.",
+        "highlights": [
+          "Monte Alén",
+          "Bata"
+        ],
+        "seasons": "OOBDDDDDDDBO",
+        "seasonNote": "Da dicembre a febbraio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tartarughe a Ureka",
+        "description": "Deposizione notturna sulle spiagge."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Bioko",
+        "days": 6,
+        "route": "Malabo (2) → Ureka (2) → Pico Basilé (1)",
+        "description": "Per viaggiatori di nicchia."
+      }
+    ],
+    "agentTips": [
+      "Visto complesso da ottenere: verifica in anticipo.",
+      "Febbre gialla obbligatoria; profilassi antimalarica.",
+      "Prezzi molto alti e pochi servizi turistici."
+    ]
+  },
+  "GA": {
+    "moreDescription": [
+      "Il Gabon è l'ultimo Eden d'Africa: oltre l'80% di foresta, parchi nazionali come Loango dove elefanti, bufali e ippopotami camminano sulla spiaggia (i 'surfing hippos'), la Lopé con mandrilli e savane, e balene megattere lungo la costa. Turismo di nicchia e costoso. Periodo migliore da giugno a settembre (stagione secca, balene); da gennaio a marzo tartarughe."
+    ],
+    "areas": [
+      {
+        "name": "Loango",
+        "description": "Spiagge con elefanti e ippopotami, lagune, gorilla e balene al largo.",
+        "highlights": [
+          "Elefanti in spiaggia",
+          "Balene",
+          "Gorilla",
+          "Laguna di Iguéla"
+        ],
+        "seasons": "DBBDDOOOODDB",
+        "seasonNote": "Balene da luglio a settembre; tartarughe da novembre a febbraio."
+      },
+      {
+        "name": "Lopé e Ivindo",
+        "description": "Savane e foreste con grandi gruppi di mandrilli e cascate.",
+        "highlights": [
+          "Mandrilli",
+          "Lopé",
+          "Cascate di Kongou"
+        ],
+        "seasons": "DBBDDOOOODDB",
+        "seasonNote": "Mandrilli più visibili tra giugno e settembre."
+      },
+      {
+        "name": "Libreville e costa",
+        "description": "La capitale, Pointe Denis e Lambaréné con l'ospedale di Albert Schweitzer.",
+        "highlights": [
+          "Pointe Denis",
+          "Lambaréné"
+        ],
+        "seasons": "DBBDDOOOODDB",
+        "seasonNote": "Da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Safari a Loango",
+        "description": "Fuoristrada, barca e a piedi tra spiaggia e foresta."
+      },
+      {
+        "name": "Balene megattere",
+        "description": "Da luglio a settembre lungo la costa."
+      },
+      {
+        "name": "Mandrilli della Lopé",
+        "description": "Gruppi di centinaia di individui."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Gabon selvaggio",
+        "days": 10,
+        "route": "Libreville (1) → Lopé (3) → Loango (5)",
+        "description": "Da giugno a settembre, con operatore specializzato."
+      }
+    ],
+    "agentTips": [
+      "Serve l'e-visa; febbre gialla obbligatoria.",
+      "Logistica complessa e costosa: solo con operatori specializzati.",
+      "Profilassi antimalarica."
+    ]
+  },
+  "CG": {
+    "moreDescription": [
+      "Il Congo (Brazzaville) ospita il parco di Odzala-Kokoua, uno dei migliori luoghi al mondo per incontrare i gorilla di pianura occidentali in lodge di alto livello, oltre alle grandi radure (bai) con elefanti di foresta. Destinazione di nicchia e costosa; periodo migliore da giugno a settembre e da dicembre a febbraio."
+    ],
+    "areas": [
+      {
+        "name": "Odzala-Kokoua",
+        "description": "Trekking dei gorilla di pianura, bai con elefanti di foresta e navigazione fluviale.",
+        "highlights": [
+          "Gorilla di pianura",
+          "Elefanti di foresta",
+          "Lodge di Ngaga e Lango"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Stagioni secche più agevoli."
+      },
+      {
+        "name": "Brazzaville e Pointe-Noire",
+        "description": "La capitale sul fiume Congo davanti a Kinshasa e la costa atlantica.",
+        "highlights": [
+          "Fiume Congo",
+          "Basilica Sainte-Anne",
+          "Pointe-Noire"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Da giugno a settembre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Gorilla a Odzala",
+        "description": "Trekking con gruppi abituati alla presenza umana."
+      },
+      {
+        "name": "Fiume Congo",
+        "description": "Tramonto davanti alle rapide."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Gorilla di pianura",
+        "days": 8,
+        "route": "Brazzaville (1) → Odzala (6)",
+        "description": "Con operatore specializzato."
+      }
+    ],
+    "agentTips": [
+      "Serve il visto; febbre gialla obbligatoria.",
+      "Voli charter per Odzala: costi alti.",
+      "Verifica viaggiaresicuri.it."
+    ]
+  },
+  "CD": {
+    "areas": [
+      {
+        "name": "Est (Virunga, Nyiragongo, Kahuzi-Biega)",
+        "description": "Gorilla e vulcani, in zone attualmente instabili.",
+        "highlights": [
+          "Virunga",
+          "Nyiragongo",
+          "Kahuzi-Biega"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Viaggi sconsigliati."
+      },
+      {
+        "name": "Kinshasa",
+        "description": "La capitale sul fiume Congo e il santuario dei bonobo Lola ya Bonobo.",
+        "highlights": [
+          "Lola ya Bonobo",
+          "Fiume Congo"
+        ],
+        "seasons": "XXXXXXXXXXXX",
+        "seasonNote": "Verificare la situazione."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Gorilla di montagna",
+        "description": "Da proporre in alternativa in Ruanda o Uganda."
+      }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Per i gorilla proponi Ruanda o Uganda."
+    ]
+  },
+  "ST": {
+    "moreDescription": [
+      "São Tomé e Príncipe è un piccolo arcipelago nel golfo di Guinea, tra le mete più tranquille d'Africa: foreste pluviali, il picco vulcanico del Cão Grande, antiche piantagioni di cacao (roças), spiagge come Praia Banana e un ritmo 'leve leve' (piano piano). Príncipe è riserva della biosfera con eco-lodge di alto livello. Periodo migliore da giugno a settembre e da dicembre a febbraio."
+    ],
+    "areas": [
+      {
+        "name": "São Tomé",
+        "description": "La capitale coloniale, le roças del cacao, il Pico Cão Grande e l'isolotto di Rolas sull'equatore.",
+        "highlights": [
+          "Roça Agostinho Neto",
+          "Pico Cão Grande",
+          "Ilhéu das Rolas",
+          "Cioccolato"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Da giugno a settembre (gravana, stagione secca) e dicembre–febbraio."
+      },
+      {
+        "name": "Príncipe",
+        "description": "Isola selvaggia con spiagge, foresta ed eco-lodge; tartarughe e balene.",
+        "highlights": [
+          "Praia Banana",
+          "Bom Bom",
+          "Roça Sundy",
+          "Balene"
+        ],
+        "seasons": "OOBDDOOOOBDO",
+        "seasonNote": "Balene megattere da luglio a ottobre."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Tour del cacao",
+        "description": "Dalle roças al cioccolato artigianale."
+      },
+      {
+        "name": "Linea dell'equatore",
+        "description": "Sull'Ilhéu das Rolas."
+      },
+      {
+        "name": "Tartarughe a Príncipe",
+        "description": "Da novembre a febbraio."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "São Tomé e Príncipe",
+        "days": 10,
+        "route": "São Tomé (4) → Príncipe (5)",
+        "description": "Isole tranquille e natura."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per soggiorni brevi (verifica).",
+      "Voli via Lisbona; il volo per Príncipe è piccolo con bagaglio limitato.",
+      "Profilassi antimalarica consigliata."
+    ]
+  },
+  "AO": {
+    "moreDescription": [
+      "L'Angola è una meta emergente per viaggiatori curiosi: le cascate di Kalandula tra le più grandi d'Africa, i canyon del Miradouro da Lua, la strada a tornanti della Serra da Leba, il deserto del Namib nel parco di Iona e le spiagge vicino a Luanda. Turismo agli inizi; periodo migliore da maggio a ottobre."
+    ],
+    "areas": [
+      {
+        "name": "Luanda e costa",
+        "description": "La capitale con la fortezza di São Miguel, l'isola di Mussulo e il Miradouro da Lua.",
+        "highlights": [
+          "Fortezza di São Miguel",
+          "Mussulo",
+          "Miradouro da Lua"
+        ],
+        "seasons": "DDDDOOOOOODD",
+        "seasonNote": "Da maggio a ottobre (cacimbo, più fresco)."
+      },
+      {
+        "name": "Interno e sud (Kalandula, Serra da Leba, Iona)",
+        "description": "Le cascate di Kalandula, la Serra da Leba e il deserto di Iona.",
+        "highlights": [
+          "Kalandula",
+          "Serra da Leba",
+          "Parco di Iona",
+          "Tundavala"
+        ],
+        "seasons": "DDDDOOOOOODD",
+        "seasonNote": "Da maggio a ottobre; le cascate hanno più acqua tra marzo e maggio."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Cascate di Kalandula",
+        "description": "Escursione da Luanda o Malanje."
+      },
+      {
+        "name": "Serra da Leba",
+        "description": "La strada più fotografata del paese."
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Angola",
+        "days": 10,
+        "route": "Luanda (2) → Kalandula (2) → Lubango e Serra da Leba (3) → Namibe e Iona (2)",
+        "description": "Da maggio a ottobre, con operatore locale."
+      }
+    ],
+    "agentTips": [
+      "Gli italiani possono entrare senza visto per turismo breve (verifica le regole).",
+      "Febbre gialla obbligatoria; profilassi antimalarica.",
+      "Luanda è molto cara."
+    ]
+  }
+}

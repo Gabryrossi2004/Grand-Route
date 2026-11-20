@@ -1,0 +1,306 @@
+{
+  "EC": {
+    "moreDescription": [
+      "L'Ecuador concentra in un paese piccolo quattro mondi: le Ande con vulcani e mercati indigeni, la foresta amazzonica, la costa del Pacifico e le Galápagos, dove la fauna non teme l'uomo. Quito e Cuenca hanno centri coloniali UNESCO. Le Galápagos si visitano tutto l'anno: da dicembre a maggio acqua più calda e mare calmo, da giugno a novembre acqua più fresca ma più ricca di vita marina. Sulle Ande la stagione più secca va da giugno a settembre."
+    ],
+    "morePlaces": [
+      { "name": "Baños", "description": "Cittadina tra cascate e terme, con l'altalena sul vuoto.", "search": "Baños de Agua Santa" },
+      { "name": "Yasuní", "description": "Parco amazzonico tra i più ricchi di biodiversità al mondo.", "search": "Yasuní National Park" }
+    ],
+    "areas": [
+      { "name": "Galápagos", "description": "Isole vulcaniche con tartarughe giganti, iguane marine, leoni marini, sule dai piedi azzurri e snorkeling con squali e pinguini. Si visitano in crociera (5–8 giorni) o con soggiorni su isole abitate (Santa Cruz, Isabela, San Cristóbal).", "highlights": ["Santa Cruz", "Isabela", "San Cristóbal", "Tartarughe giganti", "Sule dai piedi azzurri", "Crociera"], "seasons": "OOOOOBBBBBBO", "seasonNote": "Tutto l'anno: dicembre–maggio mare caldo e calmo; giugno–novembre più fresco e mosso, con più fauna marina." },
+      { "name": "Quito e Ande del nord (Otavalo, Cotopaxi, Quilotoa)", "description": "Il centro coloniale di Quito, la linea dell'equatore, il mercato di Otavalo, il vulcano Cotopaxi e la laguna nel cratere di Quilotoa; haciendas storiche.", "highlights": ["Quito", "Mitad del Mundo", "Otavalo", "Cotopaxi", "Quilotoa"], "seasons": "BBDDBOOOOBBB", "seasonNote": "Da giugno a settembre più secco; si visita tutto l'anno." },
+      { "name": "Ande del sud (Cuenca, Baños, Chimborazo)", "description": "Cuenca coloniale, Baños con cascate e terme, il treno del Naso del Diavolo e il Chimborazo.", "highlights": ["Cuenca", "Baños", "Naso del Diavolo", "Ingapirca", "Chimborazo"], "seasons": "BBDDBOOOOBBB", "seasonNote": "Come Quito." },
+      { "name": "Amazzonia (Cuyabeno, Yasuní)", "description": "Lodge nella foresta con canoe, comunità indigene e fauna.", "highlights": ["Cuyabeno", "Yasuní", "Lodge nella giungla"], "seasons": "BBBDDDBBOOOB", "seasonNote": "Visitabile tutto l'anno; piogge frequenti." }
+    ],
+    "experiences": [
+      { "name": "Crociera alle Galápagos", "description": "Barche da 16 a 100 passeggeri con guide naturaliste, itinerari per isole diverse." },
+      { "name": "Snorkeling con leoni marini", "description": "A Kicker Rock o a Isabela." },
+      { "name": "Mercato di Otavalo", "description": "Il sabato, il mercato indigeno più grande del Sud America." },
+      { "name": "Notte in hacienda", "description": "Antiche fattorie coloniali ai piedi dei vulcani." },
+      { "name": "Treno del Naso del Diavolo", "description": "Ferrovia a zig-zag sulla montagna." }
+    ],
+    "itineraries": [
+      { "title": "Ande e Galápagos", "days": 12, "route": "Quito (2) → Otavalo (1) → Cotopaxi (1) → Galápagos (6) → Quito (1)", "description": "Il combinato classico." },
+      { "title": "Galápagos island hopping", "days": 9, "route": "Quito (1) → Santa Cruz (3) → Isabela (2) → San Cristóbal (2)", "description": "Alternativa più economica alla crociera." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Per le Galápagos servono carta di transito (TCT) e tassa d'ingresso al parco, pagate a Quito/Guayaquil e all'arrivo.",
+      "Le crociere migliori si esauriscono con molti mesi di anticipo.",
+      "Quito è a 2.850 metri: primo giorno leggero.",
+      "Si usa il dollaro USA. Verifica viaggiaresicuri.it per alcune zone costiere."
+    ]
+  },
+  "BO": {
+    "moreDescription": [
+      "La Bolivia è il paese più andino del Sud America: il Salar de Uyuni, il più grande deserto di sale del mondo, le lagune colorate con i fenicotteri, il lago Titicaca con l'Isla del Sol, La Paz con le funivie, Sucre e Potosí coloniali. Si viaggia quasi sempre in alta quota. La stagione secca (maggio–ottobre) è la migliore per i tour; da gennaio a marzo il Salar si copre d'acqua e diventa uno specchio."
+    ],
+    "areas": [
+      { "name": "Salar de Uyuni e Sud Lípez", "description": "Il deserto di sale con l'Isla Incahuasi e i cactus, le lagune Colorada e Verde, i geyser e le terme di Polques; tour di 3 giorni in 4x4 fino al confine cileno.", "highlights": ["Salar de Uyuni", "Isla Incahuasi", "Laguna Colorada", "Laguna Verde", "Geyser Sol de Mañana"], "seasons": "OOBBOOOOOOBB", "seasonNote": "Da maggio a ottobre secco e freddo; da gennaio a marzo effetto specchio (alcune zone non accessibili)." },
+      { "name": "La Paz e Titicaca", "description": "La Paz con le funivie Mi Teleférico e la Valle della Luna, Copacabana e l'Isla del Sol.", "highlights": ["Mi Teleférico", "Mercato delle Streghe", "Valle della Luna", "Copacabana", "Isla del Sol"], "seasons": "DDDBOOOOOBBD", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Sucre e Potosí", "description": "La capitale costituzionale bianca e la città mineraria del Cerro Rico.", "highlights": ["Sucre", "Potosí", "Cerro Rico", "Casa de la Moneda"], "seasons": "DDDBOOOOOBBD", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Amazzonia boliviana (Rurrenabaque, Madidi)", "description": "Il parco Madidi e le pampas con delfini rosa e caimani.", "highlights": ["Madidi", "Pampas", "Rurrenabaque"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Tour del Salar in 4x4", "description": "3 giorni tra sale, lagune e vulcani, con notti in hotel di sale." },
+      { "name": "Effetto specchio", "description": "Da gennaio a marzo, foto con il cielo riflesso." },
+      { "name": "Funivie di La Paz", "description": "La rete urbana sospesa più alta del mondo." },
+      { "name": "Isla del Sol", "description": "Sentieri inca sul Titicaca." }
+    ],
+    "itineraries": [
+      { "title": "Bolivia classica", "days": 12, "route": "La Paz (2) → Titicaca (2) → Sucre (2) → Potosí (1) → Uyuni e Sud Lípez (3) → San Pedro de Atacama", "description": "Da maggio a ottobre, chiusura in Cile." },
+      { "title": "Perù e Bolivia", "days": 15, "route": "Cusco e Machu Picchu (5) → Puno (1) → Isla del Sol (1) → La Paz (2) → Uyuni (3)", "description": "Le Ande in due paesi." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Quote sopra i 3.600 metri: acclimatamento indispensabile; i tour del Salar arrivano a 4.900 m.",
+      "Strutture semplici nel Sud Lípez: va spiegato chiaramente.",
+      "Blocchi stradali e proteste possono interrompere gli itinerari: verifica prima della partenza."
+    ]
+  },
+  "PA": {
+    "moreDescription": [
+      "Panama unisce una capitale moderna e il Casco Viejo coloniale, il Canale con le chiuse, le isole caraibiche di San Blas della comunità Guna Yala, Bocas del Toro, le montagne del caffè di Boquete e isole del Pacifico. Ottima anche come estensione mare dopo la Costa Rica. Stagione secca da dicembre ad aprile."
+    ],
+    "areas": [
+      { "name": "Panama City e Canale", "description": "Il Casco Viejo UNESCO, le chiuse di Miraflores, il Biomuseo e il lago Gatún con le scimmie.", "highlights": ["Casco Viejo", "Chiuse di Miraflores", "Biomuseo", "Lago Gatún"], "seasons": "OOOOBDDDDDDB", "seasonNote": "Da dicembre ad aprile." },
+      { "name": "San Blas (Guna Yala)", "description": "365 isolette caraibiche gestite dai Guna, con capanne semplici o in barca a vela.", "highlights": ["Isole San Blas", "Cultura Guna", "Barca a vela"], "seasons": "OOOOBBBBDDDB", "seasonNote": "Da dicembre ad aprile; visitabile quasi tutto l'anno." },
+      { "name": "Bocas del Toro", "description": "Arcipelago caraibico con palafitte, delfini e spiagge.", "highlights": ["Isla Colón", "Starfish Beach", "Zapatilla"], "seasons": "BBBBBDDBOOBD", "seasonNote": "Clima diverso: settembre–ottobre e febbraio–marzo i mesi migliori." },
+      { "name": "Boquete e Chiriquí", "description": "Montagne del caffè Geisha, vulcano Barú e il quetzal.", "highlights": ["Boquete", "Vulcano Barú", "Caffè Geisha"], "seasons": "OOOOBDDDDDDB", "seasonNote": "Da dicembre ad aprile." }
+    ],
+    "experiences": [
+      { "name": "Transito del Canale", "description": "Navigazione parziale attraverso le chiuse." },
+      { "name": "Isole San Blas in barca a vela", "description": "2–4 giorni tra isole." },
+      { "name": "Tour del caffè a Boquete", "description": "Degustazione del Geisha." }
+    ],
+    "itineraries": [
+      { "title": "Panama classica", "days": 10, "route": "Panama City (3) → San Blas (3) → Boquete (2) → Panama City (1)", "description": "Da dicembre ad aprile." },
+      { "title": "Costa Rica e Bocas", "days": 14, "route": "Costa Rica (9) → Bocas del Toro (4)", "description": "Estensione caraibica via terra." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Si usa il dollaro USA.",
+      "A San Blas le strutture sono molto semplici: spiegalo bene.",
+      "Hub Copa Airlines per collegamenti in tutta l'America Latina."
+    ]
+  },
+  "GT": {
+    "moreDescription": [
+      "Il Guatemala è il cuore del mondo maya: Tikal nella giungla del Petén, Antigua coloniale tra vulcani, il lago Atitlán con i villaggi indigeni, il mercato di Chichicastenango e le piscine turchesi di Semuc Champey. La stagione secca va da novembre ad aprile; la Settimana Santa ad Antigua è spettacolare."
+    ],
+    "areas": [
+      { "name": "Antigua e vulcani", "description": "La città coloniale UNESCO con chiese barocche e i vulcani Agua, Fuego e Acatenango; il Pacaya con la lava.", "highlights": ["Antigua", "Arco di Santa Catalina", "Acatenango", "Pacaya"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile; Settimana Santa con i tappeti di fiori." },
+      { "name": "Altopiano (Atitlán, Chichicastenango)", "description": "Il lago tra tre vulcani con villaggi come San Juan e Santiago, e il mercato di Chichicastenango (giovedì e domenica).", "highlights": ["Lago Atitlán", "San Juan La Laguna", "Chichicastenango"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile." },
+      { "name": "Petén (Tikal, Flores)", "description": "Le piramidi di Tikal nella giungla, Yaxhá e l'isola di Flores.", "highlights": ["Tikal", "Yaxhá", "Flores"], "seasons": "OOOODDDDDDBO", "seasonNote": "Da novembre ad aprile." },
+      { "name": "Alta Verapaz (Semuc Champey)", "description": "Piscine naturali turchesi e grotte nella foresta.", "highlights": ["Semuc Champey", "Grotte di K'anba"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile." }
+    ],
+    "experiences": [
+      { "name": "Alba a Tikal", "description": "Dal Tempio IV sopra la giungla." },
+      { "name": "Notte sull'Acatenango", "description": "Trekking con vista sulle eruzioni del Fuego." },
+      { "name": "Barca sul lago Atitlán", "description": "Tra i villaggi maya." },
+      { "name": "Settimana Santa ad Antigua", "description": "Processioni e tappeti di segatura colorata." }
+    ],
+    "itineraries": [
+      { "title": "Guatemala classico", "days": 10, "route": "Città del Guatemala → Antigua (3) → Atitlán (2) → Chichicastenango → volo → Flores e Tikal (2)", "description": "Da novembre ad aprile." },
+      { "title": "Mondo maya", "days": 14, "route": "Riviera Maya (3) → Belize (3) → Tikal (2) → Antigua (3) → Atitlán (2)", "description": "Messico, Belize e Guatemala." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Verifica viaggiaresicuri.it; usa trasferimenti privati o shuttle turistici.",
+      "Il trekking sull'Acatenango è impegnativo: serve buona forma fisica."
+    ]
+  },
+  "BZ": {
+    "moreDescription": [
+      "Il Belize ha la seconda barriera corallina più grande del mondo, con il Great Blue Hole e isole (cayes) per snorkeling e immersioni, e un interno di giungla con siti maya e grotte. È anglofono e piccolo, ideale in abbinamento a Messico e Guatemala. Stagione secca da dicembre ad aprile; da giugno a novembre rischio uragani."
+    ],
+    "areas": [
+      { "name": "Cayes e barriera (Ambergris, Caye Caulker, atolli)", "description": "Isole per snorkeling e immersioni, Hol Chan, il Great Blue Hole e gli atolli Lighthouse e Turneffe.", "highlights": ["Great Blue Hole", "Hol Chan", "Caye Caulker", "Ambergris Caye"], "seasons": "OOOOOBBBDDBO", "seasonNote": "Da dicembre a maggio; squali balena a Gladden Spit da marzo a giugno." },
+      { "name": "Interno (Cayo, San Ignacio)", "description": "La grotta di Actun Tunichil Muknal, Xunantunich, Caracol e lodge nella giungla.", "highlights": ["ATM Cave", "Xunantunich", "Caracol"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." },
+      { "name": "Sud (Placencia, Hopkins)", "description": "Spiagge, cultura garifuna e il santuario dei giaguari di Cockscomb.", "highlights": ["Placencia", "Hopkins", "Cockscomb"], "seasons": "OOOOOBBBDDBO", "seasonNote": "Da dicembre a maggio." }
+    ],
+    "experiences": [
+      { "name": "Volo sul Great Blue Hole", "description": "O immersione per sub esperti." },
+      { "name": "Actun Tunichil Muknal", "description": "Grotta maya con scheletri e ceramiche, a nuoto e a piedi." },
+      { "name": "Snorkeling a Hol Chan", "description": "Con squali nutrice e razze." }
+    ],
+    "itineraries": [
+      { "title": "Giungla e reef", "days": 9, "route": "San Ignacio (3) → Caye Caulker o Ambergris (5)", "description": "Da dicembre a maggio." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Valuta l'assicurazione contro gli uragani da giugno a novembre.",
+      "Si usa il dollaro beliziano (dollaro USA accettato)."
+    ]
+  },
+  "HN": {
+    "moreDescription": [
+      "L'Honduras è noto per le isole della Bahía (Roatán e Utila) con la barriera corallina, tra le immersioni più economiche al mondo, e per il sito maya di Copán, con le stele più belle del mondo maya. Le isole hanno la stagione migliore da febbraio ad agosto (d'autunno piogge). Verifica viaggiaresicuri.it per la terraferma."
+    ],
+    "areas": [
+      { "name": "Isole della Bahía (Roatán, Utila)", "description": "Spiagge, resort, immersioni e squali balena a Utila.", "highlights": ["West Bay", "Utila", "Squali balena", "Barriera mesoamericana"], "seasons": "BOOOOOOOBXXD", "seasonNote": "Da febbraio ad agosto; ottobre–dicembre piovoso." },
+      { "name": "Copán", "description": "Il sito maya con stele, la scalinata dei geroglifici e le macaw.", "highlights": ["Copán Ruinas", "Scalinata dei geroglifici", "Macaw Mountain"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile." }
+    ],
+    "experiences": [
+      { "name": "Corso sub a Utila", "description": "Brevetti tra i più economici del mondo." },
+      { "name": "Copán", "description": "Il 'Parigi del mondo maya'." }
+    ],
+    "itineraries": [
+      { "title": "Copán e Roatán", "days": 8, "route": "San Pedro Sula (1) → Copán (2) → Roatán (4)", "description": "Archeologia e mare." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo.",
+      "Verifica viaggiaresicuri.it; sulla terraferma meglio trasferimenti privati.",
+      "Roatán ha voli diretti dagli USA."
+    ]
+  },
+  "SV": {
+    "moreDescription": [
+      "El Salvador è il paese più piccolo dell'America centrale: spiagge da surf sul Pacifico (El Tunco, El Zonte), la Ruta de las Flores con villaggi coloniali e caffè, vulcani come il Santa Ana con il lago nel cratere, il sito maya di Joya de Cerén. Negli ultimi anni la sicurezza è molto migliorata. Stagione secca da novembre ad aprile."
+    ],
+    "areas": [
+      { "name": "Costa del surf (El Tunco, El Zonte)", "description": "Onde per tutti i livelli e tramonti sul Pacifico.", "highlights": ["El Tunco", "El Zonte", "Punta Roca"], "seasons": "OOOOBBBBDDBO", "seasonNote": "Surf migliore da marzo a ottobre; sole da novembre ad aprile." },
+      { "name": "Vulcani e Ruta de las Flores", "description": "Il vulcano Santa Ana, il lago di Coatepeque, villaggi come Juayúa e Ataco.", "highlights": ["Vulcano Santa Ana", "Lago di Coatepeque", "Juayúa", "Ataco"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile; festival gastronomico di Juayúa nei weekend." },
+      { "name": "Suchitoto e Joya de Cerén", "description": "Il borgo coloniale sul lago e la 'Pompei delle Americhe'.", "highlights": ["Suchitoto", "Joya de Cerén"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da novembre ad aprile." }
+    ],
+    "experiences": [
+      { "name": "Surf a El Tunco", "description": "Lezioni e tavole a noleggio." },
+      { "name": "Trekking sul Santa Ana", "description": "Fino al lago turchese nel cratere." }
+    ],
+    "itineraries": [
+      { "title": "El Salvador", "days": 7, "route": "San Salvador (1) → Ruta de las Flores (2) → Santa Ana (1) → El Tunco (3)", "description": "Da novembre ad aprile." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto; potrebbe essere richiesta una tassa d'ingresso.",
+      "Si usa il dollaro USA.",
+      "Verifica viaggiaresicuri.it per aggiornamenti."
+    ]
+  },
+  "NI": {
+    "moreDescription": [
+      "Il Nicaragua è la terra di laghi e vulcani: Granada coloniale sul lago Nicaragua, l'isola di Ometepe con due vulcani, León con chiese e vulcani per il sandboarding, il vulcano Masaya con la lava visibile e le Corn Islands caraibiche. Stagione secca da dicembre ad aprile. Verifica sempre la situazione politica su viaggiaresicuri.it."
+    ],
+    "areas": [
+      { "name": "Granada, Masaya e Apoyo", "description": "La città coloniale, le isolette del lago, il vulcano Masaya e la laguna di Apoyo.", "highlights": ["Granada", "Isletas", "Vulcano Masaya", "Laguna de Apoyo"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." },
+      { "name": "Ometepe", "description": "L'isola dei vulcani Concepción e Maderas.", "highlights": ["Concepción", "Maderas", "Ojo de Agua"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." },
+      { "name": "León e Pacifico", "description": "La città universitaria, il Cerro Negro e le spiagge di San Juan del Sur.", "highlights": ["León", "Cerro Negro", "San Juan del Sur"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." },
+      { "name": "Corn Islands", "description": "Isole caraibiche con snorkeling.", "highlights": ["Little Corn", "Big Corn"], "seasons": "BOOOOBDDDDDB", "seasonNote": "Da febbraio a maggio." }
+    ],
+    "experiences": [
+      { "name": "Lava del Masaya", "description": "Visita serale al cratere." },
+      { "name": "Sandboarding sul Cerro Negro", "description": "Discesa sul vulcano." }
+    ],
+    "itineraries": [
+      { "title": "Nicaragua", "days": 10, "route": "Granada (3) → Ometepe (2) → San Juan del Sur (2) → León (2)", "description": "Da dicembre ad aprile." }
+    ],
+    "agentTips": [
+      "Verifica sempre viaggiaresicuri.it e le regole d'ingresso (pre-registrazione).",
+      "Si abbina alla Costa Rica via terra."
+    ]
+  },
+  "UY": {
+    "moreDescription": [
+      "L'Uruguay è un paese tranquillo e sicuro: Montevideo con la Rambla, Colonia del Sacramento coloniale a un'ora di traghetto da Buenos Aires, le spiagge eleganti di Punta del Este e José Ignacio, Cabo Polonio senza strade, le estancias e le cantine del Tannat. Il mare è al meglio da dicembre a marzo; le città in primavera e autunno australi."
+    ],
+    "areas": [
+      { "name": "Montevideo e Colonia", "description": "La Ciudad Vieja, il mercato del Porto e il borgo UNESCO di Colonia.", "highlights": ["Ciudad Vieja", "Mercado del Puerto", "Colonia del Sacramento"], "seasons": "OOOOBDDDBOOO", "seasonNote": "Da ottobre ad aprile." },
+      { "name": "Costa atlantica (Punta del Este, José Ignacio, Cabo Polonio)", "description": "Spiagge mondane e villaggi bohémien, leoni marini e balene.", "highlights": ["Punta del Este", "Casapueblo", "José Ignacio", "Cabo Polonio"], "seasons": "OOOBDDDDBBBO", "seasonNote": "Da dicembre a marzo; balene da luglio a novembre." },
+      { "name": "Interno (estancias e vino)", "description": "Estancias con gauchos e le cantine di Canelones e Carmelo.", "highlights": ["Estancias", "Cantine di Tannat", "Carmelo"], "seasons": "OOOOBDDDBOOO", "seasonNote": "Vendemmia a febbraio–marzo." }
+    ],
+    "experiences": [
+      { "name": "Asado al Mercado del Puerto", "description": "La grigliata uruguaiana." },
+      { "name": "Notte in estancia", "description": "A cavallo con i gauchos." },
+      { "name": "Tramonto a Casapueblo", "description": "La casa-scultura di Carlos Páez Vilaró." }
+    ],
+    "itineraries": [
+      { "title": "Buenos Aires e Uruguay", "days": 9, "route": "Buenos Aires (3) → traghetto → Colonia (1) → Montevideo (2) → Punta del Este (2)", "description": "Da ottobre ad aprile." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Traghetti veloci da Buenos Aires a Colonia e Montevideo.",
+      "Prezzi alti per il Sud America, soprattutto a Punta del Este in gennaio."
+    ]
+  },
+  "PY": {
+    "moreDescription": [
+      "Il Paraguay è uno dei paesi meno turistici del Sud America: le missioni gesuitiche di Trinidad e Jesús (UNESCO), Asunción, la diga di Itaipú e il Chaco selvaggio. Si abbina spesso alle cascate di Iguazú. Periodo migliore da aprile a ottobre, quando fa meno caldo."
+    ],
+    "areas": [
+      { "name": "Missioni gesuitiche", "description": "Le rovine di Trinidad e Jesús de Tavarangüe, con spettacolo serale di luci.", "highlights": ["Trinidad", "Jesús de Tavarangüe"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Da aprile a ottobre; estate molto calda." },
+      { "name": "Asunción e dintorni", "description": "La capitale, il lago di San Bernardino e la diga di Itaipú vicino a Iguazú.", "highlights": ["Asunción", "San Bernardino", "Itaipú"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Da aprile a ottobre." },
+      { "name": "Chaco", "description": "Foreste secche e colonie mennonite, fauna selvaggia.", "highlights": ["Chaco", "Colonie mennonite"], "seasons": "DDDBOOOOODDD", "seasonNote": "Da maggio a settembre." }
+    ],
+    "experiences": [
+      { "name": "Missioni al tramonto", "description": "Spettacolo di luci a Trinidad." },
+      { "name": "Tereré", "description": "La bevanda nazionale fredda." }
+    ],
+    "itineraries": [
+      { "title": "Iguazú e missioni", "days": 6, "route": "Iguazú (2) → Encarnación e missioni (2) → Asunción (1)", "description": "Da aprile a ottobre." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto.",
+      "Vaccinazione contro la febbre gialla consigliata.",
+      "Ciudad del Este è una zona di frontiera commerciale caotica."
+    ]
+  },
+  "VE": {
+    "moreDescription": [
+      "Il Venezuela ha natura straordinaria: il Salto Angel, la cascata più alta del mondo, i tepui come il Roraima, l'arcipelago di Los Roques e le Ande di Mérida. La situazione politica, economica e di sicurezza rende i viaggi sconsigliati: verifica sempre viaggiaresicuri.it. Ha una grande comunità di origine italiana."
+    ],
+    "areas": [
+      { "name": "Canaima e Salto Angel", "description": "Il parco dei tepui con la cascata più alta del mondo.", "highlights": ["Salto Angel", "Laguna di Canaima"], "seasons": "XXXXXXXXXXXX", "seasonNote": "Viaggi sconsigliati; il Salto Angel è più spettacolare da giugno a novembre." },
+      { "name": "Los Roques", "description": "Arcipelago corallino caraibico con posadas.", "highlights": ["Gran Roque", "Cayo de Agua"], "seasons": "XXXXXXXXXXXX", "seasonNote": "Viaggi sconsigliati." }
+    ],
+    "experiences": [
+      { "name": "Salto Angel", "description": "Da proporre quando la situazione lo permetterà." }
+    ],
+    "itineraries": [],
+    "agentTips": [
+      "Viaggi sconsigliati: verifica viaggiaresicuri.it.",
+      "Voli internazionali limitati; carte di pagamento poco affidabili."
+    ]
+  },
+  "GY": {
+    "moreDescription": [
+      "La Guyana è l'America del Sud anglofona e selvaggia: le cascate Kaieteur nella foresta (cinque volte più alte del Niagara), le savane del Rupununi con lodge e ranch, la riserva di Iwokrama con la passerella tra gli alberi, lontre giganti e giaguari. Ecoturismo di nicchia. Periodi migliori settembre–novembre e febbraio–aprile."
+    ],
+    "areas": [
+      { "name": "Kaieteur e Georgetown", "description": "Volo panoramico e visita alle cascate; la capitale coloniale di legno.", "highlights": ["Cascate Kaieteur", "Cattedrale di St. George", "Mercato Stabroek"], "seasons": "BBBOBDDDOOOB", "seasonNote": "Settembre–novembre e febbraio–aprile più asciutti." },
+      { "name": "Interno (Iwokrama, Rupununi)", "description": "Foresta pluviale, savane, lodge comunitari e fauna.", "highlights": ["Iwokrama", "Canopy walkway", "Rupununi", "Lontre giganti"], "seasons": "BBBOBDDDOOOB", "seasonNote": "Come la costa." }
+    ],
+    "experiences": [
+      { "name": "Volo su Kaieteur", "description": "Escursione in giornata da Georgetown." },
+      { "name": "Canopy walkway di Iwokrama", "description": "All'alba sopra la foresta." }
+    ],
+    "itineraries": [
+      { "title": "Guyana selvaggia", "days": 9, "route": "Georgetown (1) → Kaieteur → Iwokrama (3) → Rupununi (3) → Georgetown (1)", "description": "Con operatore specializzato." }
+    ],
+    "agentTips": [
+      "Gli italiani entrano senza visto per turismo (verifica).",
+      "Febbre gialla consigliata; profilassi antimalarica nell'interno.",
+      "Voletti con bagaglio limitato."
+    ]
+  },
+  "SR": {
+    "moreDescription": [
+      "Il Suriname è un piccolo paese multietnico (creoli, indiani, giavanesi, maroon) con la capitale coloniale di legno di Paramaribo patrimonio UNESCO e un interno coperto dalla foresta amazzonica. Lingua ufficiale olandese. Periodi migliori febbraio–aprile e agosto–novembre."
+    ],
+    "areas": [
+      { "name": "Paramaribo e costa", "description": "Il centro storico di legno, Fort Zeelandia, le piantagioni del fiume Commewijne e le tartarughe di Galibi.", "highlights": ["Centro storico", "Fort Zeelandia", "Commewijne", "Galibi"], "seasons": "BOOODDDOOOOD", "seasonNote": "Febbraio–aprile e agosto–novembre; tartarughe da febbraio ad agosto." },
+      { "name": "Interno (Brownsberg, Suriname centrale)", "description": "Foresta, villaggi maroon e lodge sul fiume.", "highlights": ["Brownsberg", "Villaggi maroon", "Riserva del Suriname centrale"], "seasons": "BOOODDDOOOOD", "seasonNote": "Come la costa." }
+    ],
+    "experiences": [
+      { "name": "Delfini sul fiume Suriname", "description": "Tramonto in barca con i delfini di Guyana." },
+      { "name": "Lodge nella giungla", "description": "Soggiorni presso villaggi maroon." }
+    ],
+    "itineraries": [
+      { "title": "Suriname", "days": 8, "route": "Paramaribo (3) → Commewijne (1) → interno (3)", "description": "Per viaggiatori curiosi." }
+    ],
+    "agentTips": [
+      "Serve il visto o la tourist card (e-visa).",
+      "Voli via Amsterdam.",
+      "Febbre gialla consigliata; profilassi antimalarica nell'interno."
+    ]
+  }
+}

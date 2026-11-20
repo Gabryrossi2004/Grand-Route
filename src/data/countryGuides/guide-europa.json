@@ -1,0 +1,627 @@
+{
+  "ES": {
+    "moreDescription": [
+      "La Spagna si vende in tante formule: city break (Madrid, Barcellona, Siviglia, Valencia), tour dell'Andalusia, mare alle Baleari e alle Canarie, cammino di Santiago, enogastronomia nei Paesi Baschi e in Rioja. Il clima cambia molto tra nord e sud: l'Andalusia e Madrid sono torride a luglio–agosto e ideali in primavera e autunno; il nord atlantico (Galizia, Asturie, Paesi Baschi) è verde e fresco, perfetto d'estate; le Baleari sono mare da giugno a settembre; le Canarie hanno 'eterna primavera' e si vendono soprattutto d'inverno."
+    ],
+    "morePlaces": [
+      { "name": "Santiago de Compostela", "description": "La cattedrale meta del Cammino, nella Galizia verde.", "search": "Santiago de Compostela Cathedral" },
+      { "name": "San Sebastián", "description": "La baia della Concha e i pintxos dei bar baschi.", "search": "San Sebastián" },
+      { "name": "Città delle Arti e delle Scienze", "description": "Il complesso futuristico di Valencia, con l'Oceanogràfic.", "search": "City of Arts and Sciences" },
+      { "name": "Ronda", "description": "Paese bianco andaluso sospeso su una gola, con il ponte nuovo.", "search": "Ronda" }
+    ],
+    "areas": [
+      { "name": "Barcellona e Catalogna", "description": "Barcellona con Gaudí (Sagrada Família, Park Güell, Casa Batlló), il Barrio Gótico, le spiagge; poi Montserrat, Girona, la Costa Brava e Figueres con Dalí.", "highlights": ["Sagrada Família", "Park Güell", "Barrio Gótico", "Montserrat", "Girona", "Costa Brava"], "seasons": "BBOOOOBBOOBB", "seasonNote": "Bella tutto l'anno; luglio–agosto caldi e affollati; mare da giugno a settembre." },
+      { "name": "Madrid e Castiglia (Toledo, Segovia, Salamanca)", "description": "La capitale con il Prado, il Reina Sofía e il Palazzo Reale; Toledo città delle tre culture, Segovia con l'acquedotto, Salamanca universitaria.", "highlights": ["Prado", "Palazzo Reale", "Retiro", "Toledo", "Segovia", "Salamanca"], "seasons": "BBOOOODDOOBB", "seasonNote": "Primavera e autunno ideali; luglio–agosto molto caldi; inverno freddo ma soleggiato." },
+      { "name": "Andalusia (Siviglia, Granada, Cordova, Malaga)", "description": "L'Alhambra, la Mezquita, la cattedrale e l'Alcázar di Siviglia, il flamenco, i paesi bianchi, Ronda e la Costa del Sol.", "highlights": ["Alhambra", "Siviglia", "Mezquita", "Ronda", "Paesi bianchi", "Malaga"], "seasons": "BBOOOBXXBOOB", "seasonNote": "Marzo–maggio e ottobre ideali; luglio–agosto oltre 40 °C nell'interno; Settimana Santa e Feria de Abril a Siviglia." },
+      { "name": "Nord atlantico (Paesi Baschi, Cantabria, Asturie, Galizia)", "description": "La Spagna verde: San Sebastián e i pintxos, il Guggenheim di Bilbao, i Picos de Europa, le spiagge selvagge e Santiago de Compostela.", "highlights": ["San Sebastián", "Guggenheim Bilbao", "Picos de Europa", "Playa de las Catedrales", "Santiago"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a settembre; inverno piovoso." },
+      { "name": "Baleari (Maiorca, Minorca, Ibiza, Formentera)", "description": "Mare e calette: Maiorca grande e varia, Minorca tranquilla, Ibiza festaiola e chic, Formentera con le spiagge caraibiche.", "highlights": ["Palma", "Serra de Tramuntana", "Calette di Minorca", "Ibiza", "Ses Illetes"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Mare da giugno a settembre; maggio e ottobre buoni e tranquilli; d'inverno molti hotel chiusi." },
+      { "name": "Canarie (Tenerife, Gran Canaria, Lanzarote, Fuerteventura, La Palma)", "description": "Isole vulcaniche nell'Atlantico con clima mite tutto l'anno: il Teide a Tenerife, le dune di Maspalomas, i paesaggi lunari di Lanzarote, le spiagge di Fuerteventura.", "highlights": ["Teide", "Maspalomas", "Timanfaya", "Corralejo", "La Palma"], "seasons": "OOOOOOOOOOOO", "seasonNote": "Si vende tutto l'anno: l'inverno è la stagione principale (20–24 °C); il mare è più caldo in estate e autunno." },
+      { "name": "Valencia e costa mediterranea", "description": "Valencia con la Città delle Arti, la paella e le Fallas; la Costa Blanca con Alicante e i paesi come Altea.", "highlights": ["Città delle Arti", "Albufera", "Fallas", "Alicante", "Altea"], "seasons": "BBOOOOBBOOBB", "seasonNote": "Mare da giugno a settembre; le Fallas a metà marzo." }
+    ],
+    "experiences": [
+      { "name": "Alhambra di Granada", "description": "Palazzi Nasridi e giardini del Generalife, con biglietto a orario da prenotare mesi prima." },
+      { "name": "Spettacolo di flamenco", "description": "In un tablao di Siviglia o Granada, nel quartiere del Sacromonte." },
+      { "name": "Tapas e pintxos", "description": "Giro dei bar a Madrid, Siviglia o San Sebastián." },
+      { "name": "Cammino di Santiago", "description": "L'ultimo tratto da Sarria (100 km) con hotel e trasporto bagagli." },
+      { "name": "Salita al Teide", "description": "Funivia e sentiero, o osservazione delle stelle nel parco." },
+      { "name": "Calette di Minorca", "description": "In barca o a piedi lungo il Camí de Cavalls." },
+      { "name": "Settimana Santa e feste", "description": "Processioni a Siviglia, Feria de Abril, San Fermín a Pamplona, Fallas a Valencia." }
+    ],
+    "itineraries": [
+      { "title": "Andalusia classica", "days": 8, "route": "Malaga (1) → Granada (2) → Cordova (1) → Siviglia (3) → Ronda", "description": "Fly & drive o tour con guida, ideale in primavera e autunno." },
+      { "title": "Madrid e città d'arte", "days": 6, "route": "Madrid (3) → Toledo (1) → Segovia (1)", "description": "Musei e città storiche in treno o in auto." },
+      { "title": "Spagna del nord", "days": 9, "route": "Bilbao (2) → San Sebastián (2) → Santander → Picos de Europa (2) → Santiago de Compostela (2)", "description": "Verde, mare e gastronomia, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Per i cittadini italiani basta la carta d'identità valida per l'espatrio.",
+      "Molte città (Barcellona, Baleari, Canarie in futuro) applicano tasse di soggiorno: informa il cliente.",
+      "Alhambra, Sagrada Família e Prado vanno prenotati in anticipo.",
+      "In Spagna si mangia tardi: pranzo dopo le 14, cena dopo le 21.",
+      "Canarie in inverno e Baleari in estate sono due prodotti di mare molto diversi: proponili in base al periodo."
+    ]
+  },
+  "PT": {
+    "moreDescription": [
+      "Il Portogallo è vicino, accogliente e conveniente: Lisbona e Porto per i city break, il fly & drive da nord a sud con la valle del Douro, Coimbra, Óbidos e l'Alentejo, il mare dell'Algarve e le isole atlantiche di Madeira e Azzorre. Il clima è mite: primavera e autunno ideali ovunque, estate perfetta per l'Algarve e le Azzorre, Madeira piacevole tutto l'anno. L'Atlantico è fresco anche d'estate (18–21 °C)."
+    ],
+    "morePlaces": [
+      { "name": "Madeira", "description": "L'isola dell'eterna primavera, con levadas, scogliere e Funchal.", "search": "Madeira" },
+      { "name": "Azzorre", "description": "Nove isole vulcaniche con laghi nei crateri, terme e balene.", "search": "Sete Cidades" },
+      { "name": "Óbidos", "description": "Borgo medievale murato con la ginjinha servita in tazzine di cioccolato.", "search": "Óbidos" },
+      { "name": "Évora", "description": "Città romana e medievale nel cuore dell'Alentejo.", "search": "Évora" }
+    ],
+    "areas": [
+      { "name": "Lisbona e dintorni (Sintra, Cascais)", "description": "Lisbona con Alfama, il tram 28, Belém e il fado; Sintra con i palazzi romantici; Cascais e la costa dell'Estoril; Cabo da Roca.", "highlights": ["Alfama", "Belém", "Tram 28", "Sintra", "Cascais", "Cabo da Roca"], "seasons": "BBOOOOBBOOBB", "seasonNote": "Bella tutto l'anno; luglio–agosto caldi e affollati; a giugno le feste dei santi popolari." },
+      { "name": "Porto e valle del Douro", "description": "Porto con la Ribeira, le cantine del vino Porto, la libreria Lello; la valle del Douro con i vigneti terrazzati, le quinte e le crociere sul fiume.", "highlights": ["Ribeira", "Cantine di Vila Nova de Gaia", "Libreria Lello", "Valle del Douro", "Pinhão"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a ottobre; vendemmia a settembre; inverno piovoso." },
+      { "name": "Centro (Coimbra, Óbidos, Nazaré, Fátima)", "description": "L'università di Coimbra, il borgo di Óbidos, le onde giganti di Nazaré, i monasteri di Batalha e Alcobaça e il santuario di Fátima.", "highlights": ["Coimbra", "Óbidos", "Nazaré", "Batalha", "Fátima", "Tomar"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Primavera ed estate; le onde giganti a Nazaré tra ottobre e febbraio." },
+      { "name": "Alentejo", "description": "Campagna di sughere e ulivi, paesi bianchi come Monsaraz, Évora e le spiagge selvagge della costa vicentina.", "highlights": ["Évora", "Monsaraz", "Marvão", "Comporta", "Costa Vicentina"], "seasons": "BBOOOBDDOOBB", "seasonNote": "Primavera e autunno; luglio–agosto molto caldi nell'interno." },
+      { "name": "Algarve", "description": "Scogliere dorate, grotte e spiagge: Lagos, la grotta di Benagil, Ponta da Piedade, Tavira e i resort con golf.", "highlights": ["Benagil", "Ponta da Piedade", "Lagos", "Praia da Marinha", "Tavira"], "seasons": "DDBBOOOOOBDD", "seasonNote": "Mare da giugno a settembre; primavera e autunno per golf e passeggiate." },
+      { "name": "Madeira e Azzorre", "description": "Madeira con Funchal, le levadas e le piscine naturali; le Azzorre con laghi vulcanici, tè, terme e balene.", "highlights": ["Funchal", "Levadas", "Pico do Arieiro", "Sete Cidades", "Furnas", "Balene"], "seasons": "BBBOOOOOOBBB", "seasonNote": "Madeira bella tutto l'anno; Azzorre al meglio da maggio a settembre, con balene da aprile a ottobre." }
+    ],
+    "experiences": [
+      { "name": "Serata di fado", "description": "In una casa de fado di Alfama o Mouraria a Lisbona." },
+      { "name": "Crociera sul Douro", "description": "Tra i vigneti con degustazione nelle quinte." },
+      { "name": "Grotta di Benagil", "description": "In barca o kayak dentro la grotta più famosa dell'Algarve." },
+      { "name": "Levadas di Madeira", "description": "Camminate lungo i canali d'irrigazione tra foreste e scogliere." },
+      { "name": "Whale watching alle Azzorre", "description": "Capodogli e balenottere quasi tutto l'anno." },
+      { "name": "Pastéis de Belém", "description": "Il dolce più famoso, nella pasticceria storica." }
+    ],
+    "itineraries": [
+      { "title": "Portogallo da nord a sud", "days": 10, "route": "Porto (2) → Douro (1) → Coimbra (1) → Óbidos e Nazaré (1) → Lisbona (3) → Algarve (2)", "description": "Fly & drive classico, ideale da aprile a ottobre." },
+      { "title": "Lisbona e Porto", "days": 6, "route": "Lisbona (3) → treno → Porto (3)", "description": "Le due città in treno." },
+      { "title": "Azzorre", "days": 8, "route": "São Miguel (4) → Pico e Faial (3)", "description": "Natura vulcanica e balene, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità valida per l'espatrio.",
+      "Lisbona e Porto hanno tasse di soggiorno giornaliere.",
+      "L'Atlantico è freddo anche d'estate: va detto a chi si aspetta il mare del Mediterraneo.",
+      "Nell'Algarve e a Lisbona agosto è affollato e caro: meglio giugno e settembre.",
+      "A Madeira l'atterraggio può essere deviato con vento forte: avvisa il cliente."
+    ]
+  },
+  "FR": {
+    "moreDescription": [
+      "La Francia è la prima destinazione turistica del mondo: Parigi con musei e monumenti, i castelli della Loira, la Normandia e il Mont-Saint-Michel, la Bretagna, la Provenza con la lavanda, la Costa Azzurra, l'Alsazia con i villaggi e i mercatini di Natale, le regioni del vino (Bordeaux, Borgogna, Champagne), le Alpi per lo sci e la Corsica per il mare. Per gli italiani è ideale anche in auto. La lavanda in Provenza fiorisce tra fine giugno e metà luglio."
+    ],
+    "morePlaces": [
+      { "name": "Costa Azzurra", "description": "Nizza, Èze, Saint-Paul-de-Vence, Cannes e il Principato di Monaco.", "search": "Èze" },
+      { "name": "Villaggi dell'Alsazia", "description": "Colmar, Riquewihr ed Eguisheim con le case a graticcio e i mercatini.", "search": "Colmar" },
+      { "name": "Corsica", "description": "L'isola delle calanche di Piana, Bonifacio e le spiagge di Palombaggia.", "search": "Bonifacio" },
+      { "name": "Chamonix e Monte Bianco", "description": "L'Aiguille du Midi e la Mer de Glace.", "search": "Aiguille du Midi" }
+    ],
+    "areas": [
+      { "name": "Parigi e Île-de-France", "description": "Torre Eiffel, Louvre, Musée d'Orsay, Montmartre, Notre-Dame restaurata, il Marais, le crociere sulla Senna; fuori città Versailles, Giverny e Disneyland Paris.", "highlights": ["Torre Eiffel", "Louvre", "Orsay", "Montmartre", "Notre-Dame", "Versailles", "Disneyland"], "seasons": "BBBOOOBBOOBO", "seasonNote": "Bella tutto l'anno; primavera e settembre ideali; dicembre per le luci di Natale." },
+      { "name": "Normandia e Bretagna", "description": "Il Mont-Saint-Michel, le spiagge dello sbarco, Étretat, Honfleur, Giverny; la Bretagna con Saint-Malo, i fari e la costa di granito rosa.", "highlights": ["Mont-Saint-Michel", "Spiagge dello sbarco", "Étretat", "Honfleur", "Saint-Malo"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre; inverno piovoso e ventoso." },
+      { "name": "Valle della Loira", "description": "I castelli rinascimentali di Chambord, Chenonceau, Amboise con la tomba di Leonardo, vigneti e percorsi in bicicletta.", "highlights": ["Chambord", "Chenonceau", "Amboise", "Clos Lucé", "Villandry"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a ottobre; molti castelli con orari ridotti d'inverno." },
+      { "name": "Provenza", "description": "Campi di lavanda del Luberon e Valensole, villaggi come Gordes e Roussillon, Avignone, Arles, le Gole del Verdon e la Camargue.", "highlights": ["Valensole", "Gordes", "Avignone", "Arles", "Gole del Verdon", "Camargue"], "seasons": "DDBOOOOBOBDD", "seasonNote": "Lavanda tra fine giugno e metà luglio; primavera e settembre ideali; agosto caldo e affollato." },
+      { "name": "Costa Azzurra", "description": "Nizza, Antibes, Cannes, Saint-Tropez, i villaggi arroccati di Èze e Saint-Paul-de-Vence e Monaco.", "highlights": ["Nizza", "Èze", "Saint-Paul-de-Vence", "Cannes", "Saint-Tropez", "Monaco"], "seasons": "BBBOOOOOOBBB", "seasonNote": "Mare da giugno a settembre; mite in inverno; a febbraio il carnevale e la festa dei limoni di Mentone." },
+      { "name": "Alsazia e Champagne", "description": "Strasburgo, Colmar e i villaggi della strada del vino; le cantine di Reims ed Épernay.", "highlights": ["Strasburgo", "Colmar", "Riquewihr", "Reims", "Épernay"], "seasons": "DDDBOOOOOBDO", "seasonNote": "Da maggio a ottobre; dicembre per i mercatini di Natale più famosi d'Europa." },
+      { "name": "Alpi francesi", "description": "Chamonix e il Monte Bianco, i grandi comprensori sciistici (Val d'Isère, Courchevel, Les 3 Vallées), Annecy e il suo lago.", "highlights": ["Aiguille du Midi", "Mer de Glace", "Courchevel", "Val d'Isère", "Annecy"], "seasons": "OOOBDOOOBDDO", "seasonNote": "Sci da dicembre ad aprile; trekking da giugno a settembre." },
+      { "name": "Corsica", "description": "L'isola della bellezza: Bonifacio sulle scogliere, le spiagge di Palombaggia e Santa Giulia, le calanche di Piana, Calvi e il trekking del GR20.", "highlights": ["Bonifacio", "Palombaggia", "Calanche di Piana", "Scandola", "Calvi"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Mare da giugno a settembre; maggio e ottobre per visite e trekking." }
+    ],
+    "experiences": [
+      { "name": "Crociera sulla Senna", "description": "Di sera con le luci di Parigi, anche con cena." },
+      { "name": "Castelli della Loira in bicicletta", "description": "Lungo la Loire à Vélo tra castelli e vigneti." },
+      { "name": "Campi di lavanda", "description": "Tra fine giugno e metà luglio, a Valensole e nell'abbazia di Sénanque." },
+      { "name": "Degustazione di Champagne", "description": "Nelle cantine storiche di Reims ed Épernay." },
+      { "name": "Mercatini di Natale in Alsazia", "description": "Strasburgo e Colmar a dicembre." },
+      { "name": "Mont-Saint-Michel con la marea", "description": "Visita all'abbazia e attraversamento della baia a piedi con guida." },
+      { "name": "Aiguille du Midi", "description": "Funivia fino a 3.842 metri davanti al Monte Bianco." }
+    ],
+    "itineraries": [
+      { "title": "Parigi", "days": 5, "route": "Parigi (4), con Versailles", "description": "Il city break classico." },
+      { "title": "Normandia, Bretagna e Loira", "days": 9, "route": "Parigi (2) → Giverny → Rouen → Étretat e Honfleur (1) → Spiagge dello sbarco (1) → Mont-Saint-Michel (1) → Saint-Malo (1) → Loira (2)", "description": "Tour in auto da maggio a settembre." },
+      { "title": "Provenza e Costa Azzurra", "days": 8, "route": "Nizza (2) → Èze e Monaco → Gole del Verdon → Luberon (2) → Avignone e Arles (2)", "description": "Ideale in auto dall'Italia, a luglio per la lavanda." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità valida per l'espatrio.",
+      "Louvre, Versailles e Torre Eiffel hanno biglietti a orario: prenota in anticipo.",
+      "La fioritura della lavanda dipende dall'anno: indicare un intervallo, non una data precisa.",
+      "In molte città francesi ci sono zone a basse emissioni che richiedono il bollino Crit'Air per le auto.",
+      "La Corsica si raggiunge comodamente in traghetto dall'Italia (Livorno, Genova, Savona)."
+    ]
+  },
+  "GR": {
+    "moreDescription": [
+      "La Grecia è mare e storia: Atene con l'Acropoli, il Peloponneso con Olimpia, Micene ed Epidauro, Delfi e le Meteore, e oltre 200 isole abitate divise in arcipelaghi. Le Cicladi (Santorini, Mykonos, Paros, Naxos, Milos) sono le più famose e ventose (il meltemi soffia in luglio–agosto); le isole Ionie (Corfù, Cefalonia, Zante, Lefkada) sono verdi e con mare calmo; Creta e Rodi hanno la stagione più lunga. Il periodo ideale è fine maggio–giugno e settembre, con mare caldo e meno folla."
+    ],
+    "morePlaces": [
+      { "name": "Milos", "description": "L'isola dei paesaggi lunari di Sarakiniko e delle cale accessibili in barca.", "search": "Sarakiniko" },
+      { "name": "Spiaggia del Navagio", "description": "La spiaggia del relitto a Zante, vista dal belvedere o in barca.", "search": "Navagio" },
+      { "name": "Balos", "description": "La laguna turchese di Creta occidentale.", "search": "Balos Lagoon" },
+      { "name": "Nafplio", "description": "La prima capitale greca, base per Micene ed Epidauro.", "search": "Nafplio" }
+    ],
+    "areas": [
+      { "name": "Atene e Attica", "description": "L'Acropoli e il museo, la Plaka, l'Agorà, il quartiere di Monastiraki; il tempio di Poseidone a Capo Sunio al tramonto.", "highlights": ["Acropoli", "Museo dell'Acropoli", "Plaka", "Agorà", "Capo Sunio"], "seasons": "BBOOOOBBOOBB", "seasonNote": "Primavera e autunno ideali; luglio–agosto molto caldi." },
+      { "name": "Grecia continentale e Peloponneso (Delfi, Meteore, Olimpia, Micene)", "description": "I grandi siti archeologici e i monasteri sospesi sulle rocce delle Meteore; Nafplio, Monemvasia e la Mani.", "highlights": ["Delfi", "Meteore", "Olimpia", "Micene", "Epidauro", "Monemvasia"], "seasons": "DDBOOOBBOOBD", "seasonNote": "Da aprile a ottobre; d'estate visite al mattino." },
+      { "name": "Cicladi (Santorini, Mykonos, Paros, Naxos, Milos)", "description": "Case bianche e cupole blu: Santorini con la caldera e i tramonti, Mykonos mondana, Paros e Naxos con spiagge e villaggi, Milos con le sue scogliere.", "highlights": ["Oia", "Caldera", "Mykonos", "Naoussa", "Naxos", "Sarakiniko"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Da giugno a settembre; luglio–agosto ventosi (meltemi) e affollati; molti hotel chiusi da novembre a marzo." },
+      { "name": "Creta", "description": "La più grande isola greca: il palazzo di Cnosso, Chania veneziana, le spiagge di Balos ed Elafonissi, la gola di Samaria e villaggi di montagna.", "highlights": ["Cnosso", "Chania", "Balos", "Elafonissi", "Gola di Samaria", "Spinalonga"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Stagione lunga da aprile–maggio a ottobre." },
+      { "name": "Isole Ionie (Corfù, Cefalonia, Zante, Lefkada)", "description": "Isole verdi con mare turchese: Corfù veneziana, Cefalonia con Myrtos e la grotta di Melissani, Zante con il Navagio, Lefkada con Porto Katsiki.", "highlights": ["Corfù", "Myrtos", "Melissani", "Navagio", "Porto Katsiki"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Da giugno a settembre; più piovose delle Cicladi in inverno, ma meno ventose d'estate." },
+      { "name": "Dodecaneso e Rodi", "description": "Rodi con la città dei Cavalieri e Lindos, Kos, Patmos e Symi con le case colorate.", "highlights": ["Città di Rodi", "Lindos", "Symi", "Patmos", "Kos"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre; Rodi ha una delle stagioni più lunghe." }
+    ],
+    "experiences": [
+      { "name": "Tramonto a Oia", "description": "Il rito di Santorini, o in catamarano nella caldera." },
+      { "name": "Island hopping in traghetto", "description": "Tra le Cicladi, combinando 2–4 isole." },
+      { "name": "Meteore all'alba", "description": "Visita ai monasteri sospesi e tramonto dai belvederi." },
+      { "name": "Gola di Samaria", "description": "Trekking di 16 km fino al mare, da maggio a ottobre." },
+      { "name": "Gite in barca a Milos o Zante", "description": "Per raggiungere spiagge e grotte accessibili solo dal mare." },
+      { "name": "Cucina greca", "description": "Taverne sul mare, corsi di cucina e degustazioni di vini di Santorini." }
+    ],
+    "itineraries": [
+      { "title": "Atene e Cicladi", "days": 10, "route": "Atene (2) → Mykonos (3) → Santorini (4)", "description": "Il combinato più venduto, da giugno a settembre." },
+      { "title": "Grecia classica", "days": 8, "route": "Atene (2) → Corinto → Micene → Epidauro → Nafplio (1) → Olimpia (1) → Delfi (1) → Meteore (1)", "description": "Tour archeologico in pullman o auto, da aprile a ottobre." },
+      { "title": "Creta on the road", "days": 9, "route": "Heraklion (2) → Rethymno (1) → Chania (3) → Elounda (2)", "description": "La grande isola in auto." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità valida per l'espatrio.",
+      "Il meltemi di luglio–agosto può causare cancellazioni dei traghetti: lascia un margine prima del volo di rientro.",
+      "Santorini e Mykonos sono care in alta stagione: Paros, Naxos e Milos offrono un miglior rapporto qualità-prezzo.",
+      "Esiste una tassa di soggiorno (più alta a Santorini e Mykonos in alta stagione) e una tassa per i crocieristi.",
+      "Per l'Acropoli i biglietti sono a orario: prenota la mattina presto."
+    ]
+  },
+  "HR": {
+    "moreDescription": [
+      "La Croazia è una delle mete di mare più amate dagli italiani, raggiungibile in auto, in traghetto o in aereo. La costa dalmata con Spalato, le isole (Hvar, Brač, Korčula, Vis) e Dubrovnik è la parte più famosa; l'Istria offre città venete e cucina; l'interno ha i laghi di Plitvice e Zagabria. Il mare è al meglio da giugno a settembre, ma luglio e agosto sono affollati: giugno e settembre sono i mesi d'oro."
+    ],
+    "morePlaces": [
+      { "name": "Isola di Korčula", "description": "Città medievale fortificata e vigneti, patria (secondo la tradizione) di Marco Polo.", "search": "Korčula" },
+      { "name": "Zlatni Rat", "description": "La spiaggia a forma di corno a Bol, sull'isola di Brač.", "search": "Zlatni Rat" },
+      { "name": "Isola di Vis e Grotta Azzurra", "description": "L'isola più selvaggia e la grotta di Biševo.", "search": "Biševo Blue Cave" },
+      { "name": "Zagabria", "description": "La capitale mitteleuropea, con il mercatino dell'Avvento tra i più belli d'Europa.", "search": "Zagreb" }
+    ],
+    "areas": [
+      { "name": "Istria e Quarnaro", "description": "Rovigno, Parenzo con la basilica Eufrasiana, Pola con l'arena romana, i borghi dell'interno con tartufi e olio; Opatija e le isole di Krk e Lussino.", "highlights": ["Rovigno", "Parenzo", "Arena di Pola", "Motovun", "Opatija", "Lussino"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Mare da giugno a settembre; autunno per il tartufo bianco." },
+      { "name": "Dalmazia del nord (Zara, Šibenik, Kornati, Krka)", "description": "Zara con l'organo marino, Šibenik e la cattedrale, le cascate di Krka e l'arcipelago delle Kornati.", "highlights": ["Zara", "Organo marino", "Šibenik", "Krka", "Kornati"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Dalmazia centrale e isole (Spalato, Hvar, Brač, Vis)", "description": "Spalato con il palazzo di Diocleziano, Traù, le isole di Hvar, Brač e Vis, il parco di Biokovo e la Makarska.", "highlights": ["Palazzo di Diocleziano", "Traù", "Hvar", "Zlatni Rat", "Vis", "Makarska"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Da giugno a settembre; luglio–agosto affollati." },
+      { "name": "Dubrovnik e sud", "description": "La 'perla dell'Adriatico' con le mura, le isole Elafiti, Korčula e la penisola di Pelješac con le ostriche di Ston.", "highlights": ["Mura di Dubrovnik", "Monte Srđ", "Isole Elafiti", "Korčula", "Ston"], "seasons": "DDBOOOBBOOBD", "seasonNote": "Da aprile a ottobre; luglio–agosto caldi e affollati dalle crociere." },
+      { "name": "Interno (Plitvice, Zagabria)", "description": "I sedici laghi di Plitvice collegati da cascate, e Zagabria con il centro storico.", "highlights": ["Laghi di Plitvice", "Zagabria", "Rastoke"], "seasons": "DDDBOOOOOODO", "seasonNote": "Primavera e autunno per Plitvice (estate affollata); dicembre per l'Avvento di Zagabria." }
+    ],
+    "experiences": [
+      { "name": "Giro delle mura di Dubrovnik", "description": "Al mattino presto o al tramonto, prima o dopo le crociere." },
+      { "name": "Island hopping in catamarano", "description": "Tra Spalato, Hvar, Brač e Korčula." },
+      { "name": "Crociera in caicco", "description": "Settimana in barca tra le isole dalmate, con cabine e pranzo a bordo." },
+      { "name": "Laghi di Plitvice", "description": "Passerelle tra laghi turchesi e cascate, con biglietti a orario." },
+      { "name": "Tartufi in Istria", "description": "Caccia al tartufo e pranzo a Motovun." },
+      { "name": "Kayak a Dubrovnik", "description": "Intorno alle mura fino all'isola di Lokrum." }
+    ],
+    "itineraries": [
+      { "title": "Croazia classica", "days": 9, "route": "Zagabria (1) → Plitvice (1) → Zara (1) → Spalato (2) → Hvar (1) → Dubrovnik (2)", "description": "Fly & drive o tour, da maggio a ottobre." },
+      { "title": "Isole dalmate", "days": 8, "route": "Spalato (2) → Brač (2) → Hvar (2) → Korčula (1)", "description": "Mare e isole con traghetti e catamarani." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la Croazia è nell'area euro e Schengen.",
+      "Traghetti dall'Italia: Ancona–Spalato, Ancona–Zara, Bari–Dubrovnik.",
+      "In alta stagione prenota i traghetti con auto e gli ingressi a Plitvice con anticipo.",
+      "Molte spiagge sono di ciottoli o rocce: consiglia scarpette da scoglio.",
+      "Dubrovnik limita il numero di crocieristi: evita i giorni con più navi in porto."
+    ]
+  },
+  "GB": {
+    "moreDescription": [
+      "Il Regno Unito comprende Inghilterra, Scozia, Galles e Irlanda del Nord. Londra è la meta principale per i city break, con musei gratuiti, teatri e shopping; fuori città ci sono Oxford, Cambridge, Bath, Stonehenge e i Cotswolds; il sud-ovest con Cornovaglia e Devon; il Lake District; la Scozia con Edimburgo e le Highlands. Il clima è mite e variabile: la stagione migliore va da maggio a settembre, con giornate lunghissime in giugno; dicembre è molto richiesto per Londra a Natale."
+    ],
+    "morePlaces": [
+      { "name": "Bath", "description": "Le terme romane e l'architettura georgiana.", "search": "Roman Baths" },
+      { "name": "Isola di Skye", "description": "Paesaggi drammatici delle Ebridi con Old Man of Storr e Quiraing.", "search": "Isle of Skye" },
+      { "name": "Lake District", "description": "Laghi e colline del nord dell'Inghilterra, la terra di Beatrix Potter.", "search": "Lake District" },
+      { "name": "Cornovaglia", "description": "Scogliere, villaggi di pescatori come St Ives e il castello di St Michael's Mount.", "search": "St Michael's Mount" }
+    ],
+    "areas": [
+      { "name": "Londra", "description": "Buckingham Palace, Westminster, la Torre di Londra, il British Museum, la National Gallery, la Tate Modern, Camden, Notting Hill, i musical del West End e Harry Potter agli studi Warner Bros.", "highlights": ["Westminster", "Torre di Londra", "British Museum", "Tate Modern", "West End", "Studi di Harry Potter"], "seasons": "BBBOOOOOOBBO", "seasonNote": "Bella tutto l'anno; maggio–settembre più asciutto; dicembre per le luci di Natale." },
+      { "name": "Inghilterra del sud (Oxford, Cambridge, Bath, Stonehenge, Cotswolds)", "description": "Città universitarie, terme romane, il cerchio di pietre di Stonehenge e i villaggi di pietra dorata dei Cotswolds.", "highlights": ["Oxford", "Cambridge", "Bath", "Stonehenge", "Cotswolds", "Windsor"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a ottobre." },
+      { "name": "Sud-ovest (Cornovaglia, Devon)", "description": "Scogliere, spiagge da surf, villaggi di pescatori e giardini.", "highlights": ["St Ives", "St Michael's Mount", "Land's End", "Eden Project", "Dartmoor"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Nord dell'Inghilterra (York, Lake District, Liverpool, Manchester)", "description": "York medievale, il Lake District, Liverpool dei Beatles e Manchester del calcio.", "highlights": ["York", "Lake District", "Liverpool", "Manchester", "Muro di Adriano"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Scozia (Edimburgo, Highlands, Skye)", "description": "Edimburgo con il castello e il Royal Mile; le Highlands con Loch Ness, Glencoe e le distillerie di whisky; l'isola di Skye.", "highlights": ["Castello di Edimburgo", "Royal Mile", "Loch Ness", "Glencoe", "Skye", "Distillerie"], "seasons": "DDDBOOOOBDDB", "seasonNote": "Da maggio a settembre; ad agosto l'Edinburgh Festival; a fine dicembre l'Hogmanay; d'estate i moscerini nelle Highlands." },
+      { "name": "Galles e Irlanda del Nord", "description": "Castelli e parco di Snowdonia in Galles; Belfast con il Titanic Museum e il Giant's Causeway in Irlanda del Nord.", "highlights": ["Snowdonia", "Conwy", "Titanic Belfast", "Giant's Causeway", "Dark Hedges"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." }
+    ],
+    "experiences": [
+      { "name": "Musical nel West End", "description": "Uno spettacolo a Londra, da prenotare prima della partenza." },
+      { "name": "Studi di Harry Potter", "description": "Il tour Warner Bros. vicino a Londra, con biglietto a orario." },
+      { "name": "Afternoon tea", "description": "Tè con scones in un grande hotel o in una sala da tè di campagna." },
+      { "name": "Treno a vapore Jacobite", "description": "Il treno di Harry Potter sul viadotto di Glenfinnan, da aprile a ottobre." },
+      { "name": "Tour delle distillerie di whisky", "description": "Nello Speyside o sull'isola di Islay." },
+      { "name": "Calcio in Premier League", "description": "Una partita in uno stadio storico (biglietti difficili)." }
+    ],
+    "itineraries": [
+      { "title": "Londra", "days": 5, "route": "Londra (4)", "description": "City break con musei, musical e shopping." },
+      { "title": "Inghilterra del sud", "days": 8, "route": "Londra (3) → Windsor → Oxford (1) → Cotswolds (1) → Bath (1) → Stonehenge → Londra", "description": "Fly & drive o tour in pullman." },
+      { "title": "Scozia", "days": 8, "route": "Edimburgo (3) → Highlands e Loch Ness (2) → Skye (2) → Glasgow (1)", "description": "Castelli, laghi e whisky, da maggio a settembre." }
+    ],
+    "agentTips": [
+      "Dopo la Brexit serve il passaporto (non basta la carta d'identità) e l'autorizzazione elettronica ETA, da richiedere online.",
+      "Si guida a sinistra; i noleggi conviene ritirarli fuori Londra.",
+      "A Londra molti grandi musei sono gratuiti, mentre attrazioni come la Torre o il London Eye vanno prenotate.",
+      "La sterlina è la moneta: ovunque si paga con carta, anche piccoli importi.",
+      "Le prese elettriche sono di tipo G: serve un adattatore."
+    ]
+  },
+  "IE": {
+    "moreDescription": [
+      "L'Irlanda è la meta ideale per un fly & drive di 7–10 giorni: Dublino con i pub e la Guinness, la costa ovest con le scogliere di Moher, il Burren, il Connemara, il Ring of Kerry e la penisola di Dingle, e i castelli. Il clima è mite e piovoso tutto l'anno: la stagione migliore è da maggio a settembre, con giornate molto lunghe. Spesso si abbina all'Irlanda del Nord (Belfast e Giant's Causeway), che fa parte del Regno Unito."
+    ],
+    "morePlaces": [
+      { "name": "Penisola di Dingle", "description": "Strade panoramiche, villaggi colorati e la Slea Head Drive.", "search": "Slea Head Drive" },
+      { "name": "Kilkenny", "description": "Città medievale con il castello e i pub storici.", "search": "Kilkenny Castle" },
+      { "name": "Isole Aran", "description": "Isole di pietra con il forte di Dún Aonghasa sulle scogliere.", "search": "Dún Aonghasa" },
+      { "name": "Glendalough", "description": "Monastero medievale tra i laghi dei monti Wicklow.", "search": "Glendalough" }
+    ],
+    "areas": [
+      { "name": "Dublino e est (Wicklow, Boyne)", "description": "Dublino con il Trinity College e il Libro di Kells, il Guinness Storehouse e Temple Bar; i monti Wicklow con Glendalough; la valle del Boyne con Newgrange.", "highlights": ["Trinity College", "Guinness Storehouse", "Temple Bar", "Glendalough", "Newgrange"], "seasons": "DDBBOOOOBBDB", "seasonNote": "Visitabile tutto l'anno; a marzo la festa di San Patrizio." },
+      { "name": "Sud-ovest (Kerry, Cork, Dingle)", "description": "Il Ring of Kerry, il parco di Killarney, la penisola di Dingle, Cork e Kinsale, il castello di Blarney.", "highlights": ["Ring of Kerry", "Killarney", "Dingle", "Kinsale", "Blarney"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Ovest (Galway, Cliffs of Moher, Burren, Connemara)", "description": "Le scogliere di Moher, il paesaggio carsico del Burren, la vivace Galway, le Isole Aran e il Connemara con l'abbazia di Kylemore.", "highlights": ["Cliffs of Moher", "Burren", "Galway", "Isole Aran", "Kylemore Abbey"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre; vento e pioggia frequenti tutto l'anno." },
+      { "name": "Nord-ovest (Donegal, Sligo)", "description": "La costa più selvaggia, con le scogliere di Slieve League e le spiagge del Donegal.", "highlights": ["Slieve League", "Glenveagh", "Sligo"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre." }
+    ],
+    "experiences": [
+      { "name": "Serata di musica nei pub", "description": "Musica tradizionale dal vivo a Dublino, Galway o Doolin." },
+      { "name": "Guinness Storehouse", "description": "La storia della birra con pinta al Gravity Bar." },
+      { "name": "Ring of Kerry", "description": "Il giro panoramico in auto o pullman di un giorno." },
+      { "name": "Notte in un castello", "description": "Hotel nei castelli come Ashford o Dromoland." },
+      { "name": "Distillerie di whiskey", "description": "Visite e degustazioni a Dublino o Midleton." }
+    ],
+    "itineraries": [
+      { "title": "Irlanda classica", "days": 8, "route": "Dublino (2) → Kilkenny → Cork (1) → Killarney (2) → Cliffs of Moher → Galway (2)", "description": "Fly & drive da maggio a settembre." },
+      { "title": "Le due Irlande", "days": 10, "route": "Dublino (2) → Galway (2) → Connemara (1) → Donegal (1) → Giant's Causeway (1) → Belfast (2)", "description": "Repubblica e Irlanda del Nord." }
+    ],
+    "agentTips": [
+      "Per l'Irlanda basta la carta d'identità; per entrare in Irlanda del Nord (Regno Unito) serve il passaporto e l'ETA britannica.",
+      "Si guida a sinistra; le strade di campagna sono strette.",
+      "Consiglia sempre giacca impermeabile: il meteo cambia più volte al giorno.",
+      "Le prese elettriche sono di tipo G.",
+      "Dublino è cara per gli hotel: prenota con anticipo, soprattutto nei weekend con eventi."
+    ]
+  },
+  "IS": {
+    "moreDescription": [
+      "L'Islanda è natura pura: vulcani, ghiacciai, cascate, geyser, spiagge nere, lagune glaciali e, d'inverno, l'aurora boreale. In estate (giugno–agosto) le giornate durano quasi 24 ore e si può fare il giro completo dell'isola sulla Ring Road; in inverno (ottobre–marzo) si resta di solito nel sud e nell'ovest, con poche ore di luce e la possibilità di vedere l'aurora. Le Highlands interne sono aperte solo da fine giugno a settembre."
+    ],
+    "morePlaces": [
+      { "name": "Penisola di Snæfellsnes", "description": "L'Islanda in miniatura, con il Kirkjufell e il ghiacciaio Snæfellsjökull.", "search": "Snæfellsnes" },
+      { "name": "Lago Mývatn", "description": "Area vulcanica del nord con crateri, solfatare e bagni termali.", "search": "Mývatn" },
+      { "name": "Landmannalaugar", "description": "Montagne di riolite colorate nelle Highlands, accessibili d'estate.", "search": "Landmannalaugar" },
+      { "name": "Húsavík", "description": "La capitale islandese del whale watching.", "search": "Húsavík" }
+    ],
+    "areas": [
+      { "name": "Reykjavík e Circolo d'Oro", "description": "La capitale con la chiesa Hallgrímskirkja e l'Harpa; il Circolo d'Oro con Þingvellir, il geyser Strokkur e la cascata Gullfoss; la Laguna Blu e la Sky Lagoon.", "highlights": ["Hallgrímskirkja", "Þingvellir", "Geysir", "Gullfoss", "Laguna Blu"], "seasons": "BBBBBOOOBBBB", "seasonNote": "Visitabile tutto l'anno; d'inverno poche ore di luce, d'estate sole di mezzanotte." },
+      { "name": "Costa sud (Vík, Skaftafell, Jökulsárlón)", "description": "Cascate di Seljalandsfoss e Skógafoss, la spiaggia nera di Reynisfjara, il parco di Skaftafell, la laguna glaciale di Jökulsárlón e la Diamond Beach; d'inverno le grotte di ghiaccio.", "highlights": ["Seljalandsfoss", "Skógafoss", "Reynisfjara", "Skaftafell", "Jökulsárlón", "Grotte di ghiaccio"], "seasons": "BBBBBOOOOBBB", "seasonNote": "Visitabile tutto l'anno; grotte di ghiaccio da novembre a marzo; aurore da settembre ad aprile." },
+      { "name": "Nord (Akureyri, Mývatn, Húsavík)", "description": "Il lago Mývatn con crateri e bagni termali, la cascata Goðafoss, Dettifoss, le balene di Húsavík.", "highlights": ["Mývatn", "Goðafoss", "Dettifoss", "Húsavík", "Akureyri"], "seasons": "DDDDBOOOBDDD", "seasonNote": "Da giugno ad agosto; d'inverno strade difficili ma ottimo per l'aurora." },
+      { "name": "Ovest e fiordi (Snæfellsnes, Westfjords)", "description": "La penisola di Snæfellsnes con il Kirkjufell e i Westfjords, la regione più remota con la cascata Dynjandi.", "highlights": ["Kirkjufell", "Arnarstapi", "Dynjandi", "Westfjords"], "seasons": "DDDDBOOOBDDD", "seasonNote": "Snæfellsnes tutto l'anno; Westfjords da giugno a settembre." },
+      { "name": "Highlands (Landmannalaugar, Þórsmörk)", "description": "L'interno selvaggio con montagne colorate e trekking come il Laugavegur, accessibile solo con 4x4 o bus speciali.", "highlights": ["Landmannalaugar", "Laugavegur", "Þórsmörk", "Kerlingarfjöll"], "seasons": "XXXXXDOOBXXX", "seasonNote": "Strade aperte solo da fine giugno a settembre." }
+    ],
+    "experiences": [
+      { "name": "Caccia all'aurora boreale", "description": "Uscite notturne da settembre ad aprile con cielo sereno." },
+      { "name": "Grotta di ghiaccio", "description": "Visita con guida sotto il ghiacciaio Vatnajökull da novembre a marzo." },
+      { "name": "Camminata sul ghiacciaio", "description": "Con ramponi e guida a Sólheimajökull o Skaftafell." },
+      { "name": "Snorkeling a Silfra", "description": "Tra le placche tettoniche in acqua limpidissima, con muta stagna." },
+      { "name": "Whale watching", "description": "Da Húsavík o Reykjavík, al meglio da aprile a ottobre." },
+      { "name": "Bagni termali", "description": "Laguna Blu, Sky Lagoon o i bagni naturali del Mývatn." },
+      { "name": "Ring Road in auto", "description": "Il giro completo dell'isola in 8–12 giorni in estate." }
+    ],
+    "itineraries": [
+      { "title": "Ring Road", "days": 10, "route": "Reykjavík (1) → Circolo d'Oro → Costa sud (2) → Jökulsárlón (1) → Fiordi dell'est (1) → Mývatn (2) → Akureyri (1) → Snæfellsnes (1) → Reykjavík", "description": "Il giro completo in fly & drive, da giugno a settembre." },
+      { "title": "Inverno e aurore", "days": 6, "route": "Reykjavík (2) → Circolo d'Oro → Costa sud (2) → Jökulsárlón (1)", "description": "Aurore, cascate e grotte di ghiaccio da novembre a marzo." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità (Islanda è area Schengen).",
+      "In inverno consiglia auto 4x4, controllo quotidiano di meteo e strade (road.is, safetravel.is) o tour guidati.",
+      "È una destinazione molto cara: prevedi budget alto per pasti ed escursioni.",
+      "In estate gli alloggi lungo la Ring Road sono pochi: prenota con molti mesi di anticipo.",
+      "L'aurora non è mai garantita: spiega al cliente che dipende da cielo sereno e attività solare."
+    ]
+  },
+  "NO": {
+    "moreDescription": [
+      "La Norvegia ha due stagioni di vendita molto diverse: l'estate (giugno–agosto) per i fiordi, le Lofoten, le crociere costiere e il sole di mezzanotte a nord del circolo polare; l'inverno (da novembre a marzo) per l'aurora boreale, le slitte con i cani e le balene a Tromsø e nel nord. Il viaggio classico è il 'Norway in a Nutshell' tra Oslo, Flåm e Bergen, oppure un fly & drive dei fiordi. È una destinazione costosa ma molto ben organizzata."
+    ],
+    "morePlaces": [
+      { "name": "Ålesund", "description": "Città in stile art nouveau sul mare, porta del Geirangerfjord.", "search": "Ålesund" },
+      { "name": "Trolltunga", "description": "La 'lingua del troll', trekking impegnativo sopra un lago.", "search": "Trolltunga" },
+      { "name": "Capo Nord", "description": "La scogliera all'estremo nord d'Europa, con il sole di mezzanotte.", "search": "North Cape" },
+      { "name": "Strada Atlantica", "description": "Strada panoramica che salta da un'isola all'altra sull'oceano.", "search": "Atlantic Ocean Road" }
+    ],
+    "areas": [
+      { "name": "Oslo", "description": "La capitale con l'Opera, il museo Munch, il museo delle navi vichinghe, il parco Vigeland e il fiordo.", "highlights": ["Opera", "Museo Munch", "Parco Vigeland", "Bygdøy", "Aker Brygge"], "seasons": "DDDBOOOOBDDB", "seasonNote": "Da maggio a settembre; dicembre per il Natale." },
+      { "name": "Fiordi dell'ovest (Bergen, Flåm, Geiranger, Sognefjord)", "description": "Bergen con il quartiere anseatico di Bryggen, la ferrovia di Flåm, il Nærøyfjord, il Geirangerfjord, i ghiacciai e i belvederi come il Preikestolen.", "highlights": ["Bryggen", "Ferrovia di Flåm", "Nærøyfjord", "Geirangerfjord", "Preikestolen", "Trolltunga"], "seasons": "DDDBOOOOBDDD", "seasonNote": "Da maggio a settembre; alcune strade di montagna aprono solo a fine maggio–giugno." },
+      { "name": "Lofoten e Vesterålen", "description": "Montagne a picco sul mare, villaggi di pescatori con i rorbuer rossi, spiagge bianche, aurore in inverno e sole di mezzanotte in estate.", "highlights": ["Reine", "Hamnøy", "Henningsvær", "Spiaggia di Haukland", "Balene a Andenes"], "seasons": "BBBDBOOOBBDD", "seasonNote": "Da giugno ad agosto sole di mezzanotte; da settembre a marzo aurore." },
+      { "name": "Nord artico (Tromsø, Alta, Capo Nord)", "description": "Tromsø capitale dell'Artico, Alta con l'hotel di ghiaccio, Capo Nord, la cultura sami.", "highlights": ["Tromsø", "Aurora boreale", "Slitte con i cani", "Capo Nord", "Hotel di ghiaccio di Alta"], "seasons": "OOOBDOOOBBOO", "seasonNote": "Da novembre a marzo per aurore e attività invernali (orche e balene tra novembre e gennaio); giugno–agosto per il sole di mezzanotte." }
+    ],
+    "experiences": [
+      { "name": "Ferrovia di Flåm", "description": "Uno dei percorsi in treno più spettacolari del mondo." },
+      { "name": "Crociera nei fiordi", "description": "Nel Nærøyfjord o Geirangerfjord, anche con battelli elettrici silenziosi." },
+      { "name": "Hurtigruten", "description": "La crociera costiera da Bergen a Kirkenes tra fiordi e villaggi." },
+      { "name": "Slitta trainata dai cani", "description": "Nel nord artico, da dicembre a marzo." },
+      { "name": "Aurora boreale a Tromsø", "description": "Uscite notturne con guide che seguono il cielo sereno." },
+      { "name": "Trekking al Preikestolen", "description": "Camminata di 4 ore al pulpito di roccia sul Lysefjord." },
+      { "name": "Notte in un rorbu alle Lofoten", "description": "Le casette dei pescatori sul mare." }
+    ],
+    "itineraries": [
+      { "title": "Norway in a Nutshell", "days": 5, "route": "Oslo (2) → treno di Bergen → Flåm (1) → crociera sul Nærøyfjord → Bergen (2)", "description": "Il classico in treno e battello, da maggio a settembre." },
+      { "title": "Fiordi in fly & drive", "days": 10, "route": "Bergen (2) → Hardangerfjord (1) → Flåm (1) → Sognefjord (1) → Geiranger (2) → Ålesund (1) → Strada Atlantica → Trondheim (1)", "description": "In auto tra i fiordi, da giugno a settembre." },
+      { "title": "Aurora artica", "days": 6, "route": "Tromsø (5)", "description": "Aurore, slitte, balene e cultura sami da novembre a marzo." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità (Norvegia è area Schengen).",
+      "È una destinazione cara: consiglia di prevedere un budget alto per pasti e alcolici.",
+      "Molte strade di montagna sono chiuse d'inverno: il fly & drive dei fiordi è da maggio a settembre.",
+      "Strade a pedaggio e traghetti hanno sistemi automatici: verifica con il noleggiatore.",
+      "Da fine novembre a metà gennaio nel nord c'è la notte polare: il sole non sorge, ma c'è la luce blu del crepuscolo."
+    ]
+  },
+  "FI": {
+    "moreDescription": [
+      "La Finlandia si vende in due stagioni: l'inverno in Lapponia (dicembre–marzo) con neve, aurore, renne, husky, il villaggio di Babbo Natale a Rovaniemi e gli igloo di vetro; l'estate (giugno–agosto) con migliaia di laghi, notti bianche, Helsinki e l'arcipelago. Novembre e aprile sono mesi di passaggio, con poca neve o neve che si scioglie."
+    ],
+    "morePlaces": [
+      { "name": "Igloo di vetro di Kakslauttanen", "description": "Dormire sotto un cielo di aurore nella Lapponia nord.", "search": "Kakslauttanen" },
+      { "name": "Levi", "description": "Stazione sciistica e base per safari invernali.", "search": "Levi, Finland" },
+      { "name": "Turku e l'arcipelago", "description": "La città più antica e migliaia di isole del Baltico.", "search": "Turku Archipelago" }
+    ],
+    "areas": [
+      { "name": "Lapponia (Rovaniemi, Levi, Saariselkä, Inari)", "description": "Il villaggio di Babbo Natale sul circolo polare, safari con husky e renne, motoslitte, igloo di vetro, aurore e la cultura sami a Inari.", "highlights": ["Villaggio di Babbo Natale", "Husky", "Renne", "Igloo di vetro", "Aurora boreale", "Inari"], "seasons": "OOOBXBBBBBDO", "seasonNote": "Da dicembre a marzo per neve e aurore (dicembre per il Natale); giugno–luglio sole di mezzanotte; settembre per i colori dell'autunno (ruska)." },
+      { "name": "Helsinki", "description": "Capitale di design con la cattedrale, il mercato del porto, le saune pubbliche e la fortezza di Suomenlinna; a due ore di traghetto c'è Tallinn.", "highlights": ["Cattedrale", "Suomenlinna", "Distretto del design", "Saune pubbliche", "Tallinn in giornata"], "seasons": "DDDBOOOOBDDB", "seasonNote": "Da maggio a settembre; dicembre per il Natale." },
+      { "name": "Regione dei laghi (Savonlinna, Kuopio)", "description": "Laghi e foreste a perdita d'occhio, cottage con sauna, il castello di Olavinlinna e il festival dell'opera.", "highlights": ["Savonlinna", "Olavinlinna", "Kuopio", "Parco di Koli"], "seasons": "XXXDBOOOBDXX", "seasonNote": "Da giugno ad agosto; a luglio il festival dell'opera di Savonlinna." }
+    ],
+    "experiences": [
+      { "name": "Safari con gli husky", "description": "Guidare la propria slitta tra le foreste innevate." },
+      { "name": "Notte in un igloo di vetro", "description": "Aurore dal letto, a Saariselkä, Levi o Rovaniemi." },
+      { "name": "Villaggio di Babbo Natale", "description": "A Rovaniemi, l'ufficio postale di Babbo Natale e il circolo polare." },
+      { "name": "Sauna e tuffo nel lago ghiacciato", "description": "Il rito finlandese per eccellenza." },
+      { "name": "Motoslitta e pesca nel ghiaccio", "description": "Attività tipiche dell'inverno lappone." },
+      { "name": "Cottage sul lago", "description": "In estate, con sauna e barca a remi." }
+    ],
+    "itineraries": [
+      { "title": "Natale in Lapponia", "days": 5, "route": "Rovaniemi (4)", "description": "Babbo Natale, husky e renne, molto richiesto dalle famiglie a dicembre." },
+      { "title": "Aurore in Lapponia", "days": 6, "route": "Rovaniemi (2) → Saariselkä o Levi (3)", "description": "Da gennaio a marzo, con igloo di vetro." },
+      { "title": "Helsinki e i laghi", "days": 7, "route": "Helsinki (2) → Savonlinna (2) → Kuopio (2)", "description": "L'estate finlandese." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità.",
+      "A dicembre a Rovaniemi i prezzi sono altissimi: prenota con 9–12 mesi di anticipo.",
+      "Molti pacchetti invernali includono abbigliamento termico: verifica, perché le temperature scendono sotto i –25 °C.",
+      "Ci sono voli diretti stagionali dall'Italia a Rovaniemi e Kittilä in inverno.",
+      "L'aurora non è garantita: dipende da cielo sereno e attività solare."
+    ]
+  },
+  "NL": {
+    "moreDescription": [
+      "I Paesi Bassi sono ideali per un city break ad Amsterdam e per un tour breve tra canali, mulini, tulipani e città d'arte. La fioritura dei tulipani va da fine marzo a metà maggio, con il parco Keukenhof aperto solo in quel periodo; l'estate è perfetta per la bicicletta; l'inverno è fresco e piovoso ma Amsterdam resta piacevole, con il Festival delle Luci a dicembre."
+    ],
+    "morePlaces": [
+      { "name": "Zaanse Schans", "description": "Villaggio di mulini a vento e case di legno verde.", "search": "Zaanse Schans" },
+      { "name": "Museo Van Gogh", "description": "La più grande collezione del pittore, ad Amsterdam.", "search": "Van Gogh Museum" },
+      { "name": "Giethoorn", "description": "Il villaggio senza strade, solo canali e ponticelli.", "search": "Giethoorn" },
+      { "name": "Delft", "description": "La città delle ceramiche blu e di Vermeer.", "search": "Delft" }
+    ],
+    "areas": [
+      { "name": "Amsterdam", "description": "I canali UNESCO, il Rijksmuseum, il Museo Van Gogh, la Casa di Anna Frank, il quartiere Jordaan e la vita in bicicletta.", "highlights": ["Canali", "Rijksmuseum", "Museo Van Gogh", "Casa di Anna Frank", "Jordaan"], "seasons": "DDBOOOOOBBDB", "seasonNote": "Da aprile a settembre; dicembre per le luci; il 27 aprile la festa del Re." },
+      { "name": "Olanda del nord e campagne (Zaanse Schans, Volendam, Keukenhof)", "description": "Mulini a vento, villaggi di pescatori, formaggi a Edam e Alkmaar e i campi di tulipani di Lisse.", "highlights": ["Keukenhof", "Zaanse Schans", "Volendam", "Alkmaar", "Campi di tulipani"], "seasons": "XXOOOBBBBDXX", "seasonNote": "Tulipani da fine marzo a metà maggio; mercato del formaggio di Alkmaar da aprile a settembre." },
+      { "name": "Olanda del sud (Rotterdam, L'Aia, Delft, Kinderdijk)", "description": "Rotterdam con l'architettura moderna, L'Aia con il Mauritshuis, Delft e i mulini di Kinderdijk.", "highlights": ["Rotterdam", "Case cubiche", "Mauritshuis", "Delft", "Kinderdijk"], "seasons": "DDBOOOOOBBDD", "seasonNote": "Da aprile a settembre." }
+    ],
+    "experiences": [
+      { "name": "Crociera sui canali", "description": "In battello o in piccola barca privata, anche di sera." },
+      { "name": "Bicicletta in campagna", "description": "Tra mulini e campi di tulipani o lungo i canali." },
+      { "name": "Keukenhof", "description": "Il parco dei tulipani aperto da marzo a maggio." },
+      { "name": "Musei di Amsterdam", "description": "Rijksmuseum, Van Gogh e Casa di Anna Frank, tutti con biglietto a orario." },
+      { "name": "Mercato del formaggio di Alkmaar", "description": "Il venerdì mattina da aprile a settembre." }
+    ],
+    "itineraries": [
+      { "title": "Amsterdam", "days": 4, "route": "Amsterdam (3), con escursione a Zaanse Schans e Volendam", "description": "Il city break classico." },
+      { "title": "Olanda in fiore", "days": 6, "route": "Amsterdam (3) → Keukenhof → L'Aia e Delft (1) → Rotterdam e Kinderdijk (1)", "description": "Da fine marzo a metà maggio." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità.",
+      "La Casa di Anna Frank si prenota solo online, settimane prima.",
+      "Amsterdam ha una delle tasse di soggiorno più alte d'Europa e hotel cari.",
+      "Attenzione alle piste ciclabili: i turisti a piedi le invadono spesso.",
+      "Si abbina bene al Belgio (Bruxelles, Bruges) in treno."
+    ]
+  },
+  "DE": {
+    "moreDescription": [
+      "La Germania offre città d'arte e di storia (Berlino, Monaco, Amburgo, Dresda, Colonia), la Strada Romantica con castelli e borghi medievali, la valle del Reno e della Mosella con i vigneti, la Foresta Nera e le Alpi bavaresi. La stagione migliore va da maggio a settembre; da fine novembre a Natale i mercatini sono un prodotto di grande successo; a fine settembre l'Oktoberfest di Monaco."
+    ],
+    "morePlaces": [
+      { "name": "Foresta Nera", "description": "Boschi, laghi, orologi a cucù e la città termale di Baden-Baden.", "search": "Black Forest" },
+      { "name": "Dresda", "description": "La 'Firenze sull'Elba' con la Frauenkirche e lo Zwinger.", "search": "Dresden Frauenkirche" },
+      { "name": "Amburgo", "description": "Il porto, la Speicherstadt e l'Elbphilharmonie.", "search": "Elbphilharmonie" },
+      { "name": "Heidelberg", "description": "Città universitaria con il castello sul Neckar.", "search": "Heidelberg Castle" }
+    ],
+    "areas": [
+      { "name": "Berlino", "description": "Il Muro e l'East Side Gallery, la Porta di Brandeburgo, l'Isola dei Musei, il Reichstag, Checkpoint Charlie e i quartieri alternativi; Potsdam a mezz'ora.", "highlights": ["Porta di Brandeburgo", "Reichstag", "Isola dei Musei", "East Side Gallery", "Potsdam"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da aprile a ottobre; dicembre per i mercatini." },
+      { "name": "Baviera e Strada Romantica (Monaco, Neuschwanstein, Rothenburg)", "description": "Monaco con le birrerie e i musei, il castello di Neuschwanstein, Rothenburg, Norimberga e le Alpi bavaresi con Garmisch e Berchtesgaden.", "highlights": ["Monaco", "Neuschwanstein", "Linderhof", "Rothenburg", "Norimberga", "Königssee"], "seasons": "BBBBOOOOOBBO", "seasonNote": "Da maggio a ottobre; Oktoberfest da fine settembre a inizio ottobre; mercatini a Norimberga e Monaco a dicembre; sci d'inverno." },
+      { "name": "Reno, Mosella e Colonia", "description": "Il Duomo di Colonia, la valle del Reno con castelli e la Loreley, la valle della Mosella con vigneti e Cochem, Treviri romana.", "highlights": ["Duomo di Colonia", "Loreley", "Castello di Eltz", "Cochem", "Treviri"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da maggio a ottobre; vendemmia a settembre–ottobre." },
+      { "name": "Sud-ovest (Foresta Nera, Heidelberg, Lago di Costanza)", "description": "La Foresta Nera con Friburgo e Baden-Baden, Heidelberg e il lago di Costanza con l'isola dei fiori di Mainau.", "highlights": ["Friburgo", "Baden-Baden", "Triberg", "Heidelberg", "Mainau"], "seasons": "DDBOOOOOOBDB", "seasonNote": "Da maggio a ottobre." },
+      { "name": "Nord ed est (Amburgo, Dresda, Lipsia)", "description": "Amburgo con il porto, Dresda barocca, Lipsia di Bach, la Sassonia con la Svizzera sassone.", "highlights": ["Amburgo", "Dresda", "Lipsia", "Bastei"], "seasons": "DDBOOOOOBBDO", "seasonNote": "Da maggio a settembre; mercatini di Dresda tra i più antichi." }
+    ],
+    "experiences": [
+      { "name": "Mercatini di Natale", "description": "Norimberga, Monaco, Dresda, Colonia: da fine novembre al 23 dicembre." },
+      { "name": "Castello di Neuschwanstein", "description": "Il castello di Ludwig II, con biglietti a orario da prenotare." },
+      { "name": "Oktoberfest", "description": "La festa della birra a Monaco, con tavoli da riservare molto prima." },
+      { "name": "Crociera sul Reno o sulla Mosella", "description": "Tra castelli e vigneti, anche su navi fluviali per più giorni." },
+      { "name": "Storia di Berlino", "description": "Visita guidata del Muro, dei bunker e della DDR." },
+      { "name": "Terme di Baden-Baden", "description": "Le terme storiche della Foresta Nera." }
+    ],
+    "itineraries": [
+      { "title": "Berlino", "days": 4, "route": "Berlino (3), con Potsdam", "description": "City break storico e culturale." },
+      { "title": "Strada Romantica e Baviera", "days": 8, "route": "Francoforte (1) → Würzburg → Rothenburg (1) → Dinkelsbühl → Füssen e Neuschwanstein (2) → Monaco (3)", "description": "Fly & drive da maggio a ottobre." },
+      { "title": "Mercatini di Natale", "days": 4, "route": "Norimberga (2) → Monaco (2) oppure Colonia e Aquisgrana", "description": "Weekend lungo a dicembre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità.",
+      "Molte città hanno zone ambientali (Umweltzone) che richiedono il bollino per l'auto.",
+      "In molti locali si paga ancora in contanti: consiglia di averne con sé.",
+      "La domenica i negozi sono chiusi quasi ovunque.",
+      "Durante l'Oktoberfest e le grandi fiere a Monaco, Francoforte e Berlino gli hotel sono carissimi: verifica il calendario."
+    ]
+  },
+  "AT": {
+    "moreDescription": [
+      "L'Austria è vicina e varia: Vienna imperiale con musei, palazzi, caffè e musica classica; Salisburgo di Mozart; il Salzkammergut con i laghi e Hallstatt; il Tirolo con Innsbruck e le montagne; la valle della Wachau con vigneti. D'estate trekking, laghi e festival; d'inverno sci in località come St. Anton, Kitzbühel e Ischgl, e mercatini di Natale a Vienna, Salisburgo e Innsbruck."
+    ],
+    "morePlaces": [
+      { "name": "Kitzbühel", "description": "Località elegante del Tirolo, per sci e golf.", "search": "Kitzbühel" },
+      { "name": "Grossglockner", "description": "La strada alpina panoramica fino alla montagna più alta d'Austria.", "search": "Grossglockner High Alpine Road" },
+      { "name": "Abbazia di Melk", "description": "Il monastero barocco sul Danubio, porta della Wachau.", "search": "Melk Abbey" },
+      { "name": "Zell am See", "description": "Lago e montagne con il ghiacciaio di Kaprun.", "search": "Zell am See" }
+    ],
+    "areas": [
+      { "name": "Vienna", "description": "Schönbrunn, l'Hofburg, il Belvedere con il Bacio di Klimt, il Duomo di Santo Stefano, l'Opera, i caffè storici e il Prater.", "highlights": ["Schönbrunn", "Hofburg", "Belvedere", "Santo Stefano", "Opera", "Caffè storici"], "seasons": "BBBOOOOOOBBO", "seasonNote": "Bella tutto l'anno; dicembre per i mercatini; gennaio–febbraio stagione dei balli." },
+      { "name": "Salisburgo e Salzkammergut", "description": "Salisburgo con la fortezza e la casa natale di Mozart; Hallstatt, St. Wolfgang e i laghi del Salzkammergut.", "highlights": ["Fortezza di Salisburgo", "Casa di Mozart", "Hallstatt", "St. Wolfgang", "Miniere di sale"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da maggio a ottobre; Festival di Salisburgo a luglio–agosto; dicembre per i mercatini." },
+      { "name": "Tirolo (Innsbruck, Kitzbühel, Ötztal)", "description": "Innsbruck tra le montagne, i comprensori sciistici, i trekking estivi e i laghi alpini.", "highlights": ["Innsbruck", "Kitzbühel", "St. Anton", "Ötztal", "Achensee", "Cristalli Swarovski"], "seasons": "OOOBDOOOBDBO", "seasonNote": "Sci da dicembre ad aprile; trekking e laghi da giugno a settembre." },
+      { "name": "Danubio e Wachau", "description": "Vigneti terrazzati, l'abbazia di Melk, Dürnstein e crociere sul Danubio.", "highlights": ["Melk", "Dürnstein", "Krems", "Crociera sul Danubio"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Primavera per la fioritura delle albicocche, autunno per la vendemmia." },
+      { "name": "Carinzia e Stiria", "description": "Laghi caldi come il Wörthersee, Graz e la strada del vino della Stiria meridionale.", "highlights": ["Wörthersee", "Graz", "Strada del vino della Stiria"], "seasons": "DDBBOOOOOBDD", "seasonNote": "Da maggio a settembre per i laghi; autunno per il vino." }
+    ],
+    "experiences": [
+      { "name": "Concerto a Vienna", "description": "Musica di Mozart e Strauss o una sera all'Opera." },
+      { "name": "Caffè viennese", "description": "Sacher torte e strudel nei caffè storici." },
+      { "name": "Mercatini di Natale", "description": "Vienna, Salisburgo e Innsbruck a dicembre." },
+      { "name": "Settimana bianca in Tirolo", "description": "Grandi comprensori e après-ski." },
+      { "name": "Crociera sul Danubio", "description": "Nella Wachau, tra Melk e Krems." },
+      { "name": "Strada del Grossglockner", "description": "In auto o moto, da maggio a ottobre." }
+    ],
+    "itineraries": [
+      { "title": "Vienna", "days": 4, "route": "Vienna (3)", "description": "City break imperiale." },
+      { "title": "Austria classica", "days": 8, "route": "Vienna (3) → Wachau (1) → Salisburgo (2) → Hallstatt (1) → Innsbruck (1)", "description": "In treno o in auto, da maggio a ottobre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità.",
+      "Sulle autostrade serve la vignetta (anche digitale), e alcuni tunnel hanno pedaggi a parte.",
+      "Hallstatt è sovraffollata: consiglia di andare presto al mattino o di dormire lì.",
+      "Le gomme invernali sono obbligatorie con condizioni invernali da novembre ad aprile.",
+      "Si raggiunge comodamente in auto o in treno (Railjet e Nightjet) dall'Italia."
+    ]
+  },
+  "CZ": {
+    "moreDescription": [
+      "La Repubblica Ceca è soprattutto Praga, una delle capitali più belle d'Europa, perfetta per un weekend lungo. Con qualche giorno in più si visitano Český Krumlov, Kutná Hora, le terme di Karlovy Vary e la Moravia con vini e castelli. La stagione migliore va da maggio a settembre; dicembre è molto richiesto per i mercatini di Natale."
+    ],
+    "morePlaces": [
+      { "name": "Orologio astronomico", "description": "Il famoso orologio medievale nella Piazza della Città Vecchia.", "search": "Prague Astronomical Clock" },
+      { "name": "Ossario di Sedlec", "description": "La chiesa decorata con ossa umane a Kutná Hora.", "search": "Sedlec Ossuary" },
+      { "name": "Svizzera boema", "description": "Parco nazionale con il ponte di roccia di Pravčická brána.", "search": "Pravčická brána" }
+    ],
+    "areas": [
+      { "name": "Praga", "description": "Il Castello e la cattedrale di San Vito, il Ponte Carlo, la Città Vecchia con l'orologio astronomico, il quartiere ebraico, Malá Strana e le birrerie.", "highlights": ["Castello", "Ponte Carlo", "Orologio astronomico", "Quartiere ebraico", "Malá Strana"], "seasons": "DDBOOOOOOBDO", "seasonNote": "Da aprile a ottobre; dicembre per i mercatini." },
+      { "name": "Boemia (Český Krumlov, Karlovy Vary, Kutná Hora)", "description": "Il borgo UNESCO di Český Krumlov, le città termali di Karlovy Vary e Mariánské Lázně, Kutná Hora con la cattedrale di Santa Barbara.", "highlights": ["Český Krumlov", "Karlovy Vary", "Kutná Hora", "Castello di Karlštejn", "Pilsen"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da maggio a settembre." },
+      { "name": "Moravia (Brno, Lednice-Valtice, Olomouc)", "description": "Vini, castelli e paesaggi del complesso di Lednice-Valtice, Brno e Olomouc.", "highlights": ["Lednice", "Valtice", "Brno", "Olomouc"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da maggio a ottobre; vendemmia a settembre." }
+    ],
+    "experiences": [
+      { "name": "Crociera sulla Moldava", "description": "In battello sotto il Ponte Carlo, anche con cena." },
+      { "name": "Birrerie storiche", "description": "Tour della birra a Praga o visita al birrificio Pilsner Urquell a Pilsen." },
+      { "name": "Mercatini di Natale", "description": "Nella Piazza della Città Vecchia e in Piazza Venceslao." },
+      { "name": "Concerto in chiesa", "description": "Musica classica nelle chiese barocche di Praga." },
+      { "name": "Terme di Karlovy Vary", "description": "Bere l'acqua termale dalle tazze tradizionali tra i colonnati." }
+    ],
+    "itineraries": [
+      { "title": "Praga", "days": 4, "route": "Praga (3), con escursione a Kutná Hora o Karlštejn", "description": "Il weekend lungo classico." },
+      { "title": "Boemia", "days": 7, "route": "Praga (3) → Karlovy Vary (1) → Český Krumlov (2)", "description": "Città, terme e borghi." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; la moneta è la corona ceca.",
+      "Attenzione ai cambiavalute con commissioni nascoste: meglio pagare con carta o prelevare da bancomat bancari.",
+      "Sulle autostrade serve la vignetta elettronica.",
+      "Praga è molto affollata nei weekend estivi e a dicembre: consiglia arrivi infrasettimanali.",
+      "Si abbina bene a Vienna e Budapest in un tour delle capitali."
+    ]
+  },
+  "MT": {
+    "moreDescription": [
+      "Malta è un piccolo arcipelago (Malta, Gozo, Comino) a un'ora di volo dall'Italia, con 7.000 anni di storia, i Cavalieri di Malta, città fortificate e mare limpidissimo. Si vende tutto l'anno per le visite e i corsi di inglese, da giugno a settembre per il mare (bene anche maggio e ottobre). Molte spiagge sono di roccia; la Laguna Blu di Comino è la più famosa."
+    ],
+    "morePlaces": [
+      { "name": "Tre Città", "description": "Birgu, Senglea e Cospicua, di fronte alla Valletta.", "search": "Birgu" },
+      { "name": "Ipogeo di Ħal Saflieni", "description": "Necropoli sotterranea preistorica, con ingressi limitatissimi.", "search": "Ħal Saflieni Hypogeum" },
+      { "name": "Grotta Azzurra", "description": "Archi e grotte sul mare a sud dell'isola.", "search": "Blue Grotto Malta" }
+    ],
+    "areas": [
+      { "name": "La Valletta e Tre Città", "description": "La capitale barocca con la Concattedrale di San Giovanni e il Caravaggio, i giardini Barrakka, il porto e le Tre Città.", "highlights": ["Concattedrale di San Giovanni", "Upper Barrakka", "Palazzo del Gran Maestro", "Birgu"], "seasons": "BBOOOOBBOOOB", "seasonNote": "Visitabile tutto l'anno; luglio–agosto molto caldi." },
+      { "name": "Malta interna e sud (Mdina, Marsaxlokk, templi)", "description": "La città silenziosa di Mdina, il mercato del pesce di Marsaxlokk, la Grotta Azzurra, i templi megalitici di Ħaġar Qim e l'Ipogeo.", "highlights": ["Mdina", "Rabat", "Marsaxlokk", "Grotta Azzurra", "Ħaġar Qim", "Ipogeo"], "seasons": "BBOOOOBBOOOB", "seasonNote": "Visitabile tutto l'anno." },
+      { "name": "Nord e mare (St. Julian's, Sliema, Mellieħa)", "description": "La zona degli hotel, della vita notturna e delle spiagge di sabbia come Golden Bay e Mellieħa.", "highlights": ["St. Julian's", "Sliema", "Golden Bay", "Mellieħa", "Popeye Village"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Mare da giugno a settembre." },
+      { "name": "Gozo e Comino", "description": "Gozo più verde e rurale, con la Cittadella di Victoria, la baia di Ramla e le immersioni di Dwejra; Comino con la Laguna Blu.", "highlights": ["Cittadella di Victoria", "Ramla Bay", "Dwejra", "Laguna Blu", "Saline di Xwejni"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Mare da giugno a settembre; la Laguna Blu è affollatissima in agosto." }
+    ],
+    "experiences": [
+      { "name": "Il Caravaggio di San Giovanni", "description": "La Decollazione del Battista nella Concattedrale." },
+      { "name": "Gita in barca a Comino", "description": "Laguna Blu e grotte, meglio al mattino presto." },
+      { "name": "Immersioni a Gozo", "description": "Tra i migliori siti del Mediterraneo, con grotte e relitti." },
+      { "name": "Mercato di Marsaxlokk", "description": "La domenica, con le barche colorate luzzu." },
+      { "name": "Corsi di inglese", "description": "Malta è una delle mete principali per vacanze studio." }
+    ],
+    "itineraries": [
+      { "title": "Malta e Gozo", "days": 6, "route": "La Valletta o Sliema (4) → Gozo (1–2)", "description": "Storia e mare, ideale da maggio a ottobre." }
+    ],
+    "agentTips": [
+      "Per gli italiani basta la carta d'identità; si usa l'euro.",
+      "Si guida a sinistra e le prese sono di tipo G (come nel Regno Unito).",
+      "L'Ipogeo ha posti limitatissimi: va prenotato settimane prima.",
+      "Esiste una tassa di soggiorno giornaliera.",
+      "Collegamenti anche in traghetto veloce da Pozzallo e Catania."
+    ]
+  },
+  "TR": {
+    "moreDescription": [
+      "La Turchia è una delle destinazioni più complete del Mediterraneo: Istanbul tra Europa e Asia, la Cappadocia con le mongolfiere, le rovine di Efeso e Pamukkale, e la costa egea e mediterranea (Bodrum, Fethiye, Antalya) per il mare. La stagione migliore per i tour è aprile–giugno e settembre–ottobre; il mare da giugno a settembre; Istanbul è bella tutto l'anno. Il rapporto qualità-prezzo è molto buono."
+    ],
+    "morePlaces": [
+      { "name": "Palazzo Topkapı", "description": "La residenza dei sultani con l'harem e il tesoro.", "search": "Topkapı Palace" },
+      { "name": "Ölüdeniz", "description": "La laguna turchese vicino a Fethiye, famosa per il parapendio.", "search": "Ölüdeniz" },
+      { "name": "Antalya", "description": "Città vecchia e porto, con spiagge e resort sul Mediterraneo.", "search": "Kaleiçi" },
+      { "name": "Monte Nemrut", "description": "Le teste colossali sulla montagna, all'alba o al tramonto.", "search": "Mount Nemrut" }
+    ],
+    "areas": [
+      { "name": "Istanbul", "description": "Santa Sofia, la Moschea Blu, Topkapı, la Cisterna Basilica, il Gran Bazar e il Bazar delle Spezie, il Bosforo e i quartieri moderni di Beyoğlu e Karaköy.", "highlights": ["Santa Sofia", "Moschea Blu", "Topkapı", "Cisterna Basilica", "Gran Bazar", "Bosforo"], "seasons": "DDBOOOBBOOBD", "seasonNote": "Primavera e autunno ideali; in aprile i tulipani; inverno freddo e piovoso." },
+      { "name": "Cappadocia", "description": "I camini delle fate, le chiese rupestri del Museo all'aperto di Göreme, le città sotterranee e le valli da percorrere a piedi; hotel scavati nella roccia.", "highlights": ["Mongolfiere", "Göreme", "Città sotterranee", "Valle dell'Amore", "Uçhisar"], "seasons": "DDBOOOOOOOBD", "seasonNote": "Da aprile a ottobre; d'inverno neve e paesaggi magici ma voli in mongolfiera spesso cancellati." },
+      { "name": "Egeo (Efeso, Pamukkale, Bodrum, Smirne)", "description": "Efeso con la biblioteca di Celso, le terrazze bianche di Pamukkale e Hierapolis, la casa della Vergine, Bodrum e la penisola di Çeşme.", "highlights": ["Efeso", "Pamukkale", "Hierapolis", "Bodrum", "Alaçatı"], "seasons": "DDBOOOOOOOBD", "seasonNote": "Visite in primavera e autunno; mare da giugno a settembre." },
+      { "name": "Costa Turchese (Fethiye, Kaş, Antalya)", "description": "Calette, crociere in caicco, Ölüdeniz, la Via Licia, Kaş con le rovine sommerse di Kekova e Antalya con i grandi resort.", "highlights": ["Ölüdeniz", "Kaş", "Kekova", "Via Licia", "Antalya", "Side"], "seasons": "DDBBOOOOOOBD", "seasonNote": "Mare da maggio a ottobre; luglio–agosto molto caldi." }
+    ],
+    "experiences": [
+      { "name": "Mongolfiera in Cappadocia", "description": "All'alba tra centinaia di palloni; da prenotare in anticipo e soggetta al meteo." },
+      { "name": "Crociera sul Bosforo", "description": "Tra palazzi ottomani e ville sul mare, tra Europa e Asia." },
+      { "name": "Hammam turco", "description": "Bagno tradizionale in un hammam storico di Istanbul." },
+      { "name": "Crociera in caicco (caiccata)", "description": "Una settimana in barca tradizionale lungo la costa licia." },
+      { "name": "Bagno nelle terrazze di Pamukkale", "description": "Camminare a piedi nudi nelle vasche di travertino." },
+      { "name": "Danza dei dervisci", "description": "La cerimonia sufi a Istanbul o a Konya." }
+    ],
+    "itineraries": [
+      { "title": "Turchia classica", "days": 9, "route": "Istanbul (3) → Cappadocia (2) → Konya → Pamukkale (1) → Efeso e Kuşadası (1) → Istanbul (1)", "description": "Il tour più venduto, da aprile a ottobre." },
+      { "title": "Istanbul e Cappadocia", "days": 6, "route": "Istanbul (3) → Cappadocia (2)", "description": "Combinato breve con volo interno." },
+      { "title": "Istanbul e mare", "days": 9, "route": "Istanbul (3) → Bodrum o Fethiye (5)", "description": "Città e Costa Turchese, da giugno a settembre." }
+    ],
+    "agentTips": [
+      "Gli italiani possono entrare anche con la carta d'identità valida per l'espatrio (verifica le regole in vigore).",
+      "Le mongolfiere sono spesso cancellate per vento: prevedi due albe in Cappadocia.",
+      "Nelle moschee abbigliamento coperto e capo coperto per le donne; si entra senza scarpe.",
+      "Santa Sofia e la Moschea Blu sono luoghi di culto attivi: chiusure durante le preghiere.",
+      "La lira turca è soggetta a forti oscillazioni: i prezzi locali sono spesso in euro."
+    ]
+  },
+  "IT": {
+    "moreDescription": [
+      "Per l'Italia trovi un approfondimento regione per regione nella sezione dedicata del mappamondo: qui un quadro generale per orientarsi nelle vendite. L'Italia si vende tutto l'anno: città d'arte (Roma, Firenze, Venezia, Milano) in primavera e autunno; mare da giugno a settembre (Sardegna, Sicilia, Puglia, Costiera Amalfitana, Cinque Terre); montagna d'estate per il trekking sulle Dolomiti e d'inverno per lo sci; campagne e borghi (Toscana, Umbria, Langhe) splendidi in primavera e durante la vendemmia."
+    ],
+    "areas": [
+      { "name": "Città d'arte (Roma, Firenze, Venezia, Milano)", "description": "Roma con il Colosseo, i Musei Vaticani e le piazze barocche; Firenze con gli Uffizi e il Duomo; Venezia con San Marco e i canali; Milano con il Duomo e il Cenacolo.", "highlights": ["Colosseo", "Musei Vaticani", "Uffizi", "Duomo di Firenze", "San Marco", "Cenacolo"], "seasons": "BBOOOOBDOOBB", "seasonNote": "Primavera e autunno ideali; agosto caldo e con molti locali chiusi; Carnevale a Venezia a febbraio." },
+      { "name": "Campagne e borghi (Toscana, Umbria, Langhe)", "description": "Chianti e Val d'Orcia, Siena e San Gimignano, Assisi e Orvieto, le Langhe con il Barolo e il tartufo.", "highlights": ["Chianti", "Val d'Orcia", "Siena", "San Gimignano", "Assisi", "Langhe"], "seasons": "DDBOOOOBOODD", "seasonNote": "Da aprile a ottobre; vendemmia e tartufo in autunno." },
+      { "name": "Mare del sud e isole (Costiera, Puglia, Sicilia, Sardegna)", "description": "Costiera Amalfitana e Capri, Puglia con Salento e trulli, Sicilia con Taormina, la Valle dei Templi e le Eolie, Sardegna con la Costa Smeralda e il Golfo di Orosei.", "highlights": ["Costiera Amalfitana", "Capri", "Salento", "Taormina", "Eolie", "Costa Smeralda"], "seasons": "XXDBOOOOOBXX", "seasonNote": "Mare da giugno a settembre; maggio e ottobre buoni per visite e meno affollati." },
+      { "name": "Liguria e laghi (Cinque Terre, Portofino, Como, Garda)", "description": "Le Cinque Terre, Portofino, il lago di Como con le ville e il lago di Garda.", "highlights": ["Cinque Terre", "Portofino", "Bellagio", "Villa del Balbianello", "Sirmione"], "seasons": "DDBOOOOOOBDD", "seasonNote": "Da aprile a ottobre." },
+      { "name": "Montagna (Dolomiti, Alpi)", "description": "Le Dolomiti UNESCO, Cortina, Val Gardena, Val d'Aosta e il Monte Bianco: trekking d'estate e sci d'inverno.", "highlights": ["Tre Cime di Lavaredo", "Seceda", "Cortina", "Lago di Braies", "Monte Bianco"], "seasons": "OOOBDOOOODBO", "seasonNote": "Sci da dicembre a marzo; trekking da giugno a settembre; maggio e novembre mesi morti." }
+    ],
+    "experiences": [
+      { "name": "Musei Vaticani e Cappella Sistina", "description": "Con ingresso prenotato o tour all'alba." },
+      { "name": "Degustazione in Toscana o nelle Langhe", "description": "Cantine, pranzi in agriturismo e corsi di cucina." },
+      { "name": "Barca a Capri e in Costiera", "description": "Giro dell'isola con la Grotta Azzurra." },
+      { "name": "Trekking sulle Dolomiti", "description": "Tre Cime, Seceda e rifugi, da giugno a settembre." },
+      { "name": "Gondola a Venezia", "description": "Un classico, meglio al tramonto lontano dal Canal Grande." }
+    ],
+    "itineraries": [
+      { "title": "Grandi città d'arte", "days": 8, "route": "Roma (3) → Firenze (2) → Venezia (2)", "description": "In treno alta velocità, il classico per gli stranieri." },
+      { "title": "Toscana", "days": 7, "route": "Firenze (2) → Chianti (2) → Siena e Val d'Orcia (2)", "description": "Arte, vino e paesaggi in auto." }
+    ],
+    "agentTips": [
+      "Usa la sezione Italia del mappamondo per le regioni e le zone interne.",
+      "Musei come Uffizi, Cenacolo e Galleria Borghese vanno prenotati con largo anticipo.",
+      "Venezia applica un contributo d'accesso nei giorni di punta per chi non pernotta.",
+      "In agosto molte attività nelle città chiudono per ferie, mentre il mare è pieno e caro.",
+      "Molti centri storici hanno ZTL: avvisa chi noleggia un'auto."
+    ]
+  }
+}
