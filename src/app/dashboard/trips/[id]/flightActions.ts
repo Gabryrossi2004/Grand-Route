@@ -197,3 +197,115 @@ export async function searchFlight(
     return { error: "Impossibile contattare il servizio di ricerca voli." };
   }
 }
+
+// ── Coincidenza trovata da sola ──────────────────────────────────────────────
+// Si leggono le partenze dall'aeroporto dello scalo (stesso servizio AeroDataBox, finestre di 12 ore
+// al massimo) e si tengono quelle dirette alla destinazione finale, dando la precedenza alla stessa
+// compagnia della prima tratta.
+type FidsAirport = { iata?: string; name?: string; municipalityName?: string };
+type FidsItem = {
+  number?: string;
+  airline?: { name?: string };
+  aircraft?: { model?: string };
+  departure?: { airport?: FidsAirport; scheduledTime?: { local?: string } };
+  arrival?: { airport?: FidsAirport; scheduledTime?: { local?: string } };
+  movement?: { airport?: FidsAirport; scheduledTime?: { local?: string } };
+  codeshareStatus?: string;
+};
+
+const plain = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ")
+    .trim();
+
+// "2026-12-15" + "14:55" + minuti → "2026-12-15T15:35" (ora locale dell'aeroporto, senza fuso)
+function shiftLocal(date: string, time: string, minutes: number): string {
+  const d = new Date(`${date}T${time}:00Z`);
+  d.setUTCMinutes(d.getUTCMinutes() + minutes);
+  return d.toISOString().slice(0, 16);
+}
+
+export type ConnectionOption = FlightLookupResult & { wait: string; sameAirline: boolean };
+
+export async function findConnections(input: {
+  stopIata: string;
+  arrivalDate: string;
+  arrivalTime: string;
+  destination: string;
+  airline?: string;
+}): Promise<{ data?: ConnectionOption[]; error?: string }> {
+  const user = await getCachedUser();
+  if (!user) return { error: "Sessione scaduta: ricarica la pagina e accedi di nuovo." };
+  const apiKey = process.env.AERODATABOX_API_KEY;
+  if (!apiKey) return { error: "La ricerca voli non è configurata (manca la chiave API)." };
+
+  const stop = input.stopIata.trim().toUpperCase();
+  const dest = plain(input.destination);
+  if (!/^[A-Z]{3}$/.test(stop)) return { error: "Non conosco l'aeroporto dello scalo: inserisci il numero del secondo volo." };
+  if (!dest) return { error: "Scrivi la destinazione finale (es. BKK o Bangkok)." };
+  if (!input.arrivalDate || !/^\d{2}:\d{2}$/.test(input.arrivalTime)) return { error: "Manca l'orario di arrivo del primo volo." };
+
+  const matchesDest = (a?: FidsAirport) => {
+    if (!a) return false;
+    if (dest.length === 3 && a.iata && a.iata.toLowerCase() === dest) return true;
+    return [a.name, a.municipalityName].some((n) => n && plain(n).includes(dest));
+  };
+
+  // Tempo minimo per la coincidenza: 45 minuti dopo l'arrivo; si guarda fino a 24 ore dopo (due finestre)
+  const windows: [string, string][] = [
+    [shiftLocal(input.arrivalDate, input.arrivalTime, 45), shiftLocal(input.arrivalDate, input.arrivalTime, 45 + 11 * 60 + 59)],
+    [shiftLocal(input.arrivalDate, input.arrivalTime, 45 + 12 * 60), shiftLocal(input.arrivalDate, input.arrivalTime, 45 + 23 * 60 + 59)],
+  ];
+  const found: ConnectionOption[] = [];
+  const arrMs = new Date(`${input.arrivalDate}T${input.arrivalTime}:00Z`).getTime();
+  const airline = plain(input.airline ?? "");
+
+  try {
+    for (const [from, to] of windows) {
+      const res = await fetch(
+        `https://aerodatabox.p.rapidapi.com/flights/airports/iata/${stop}/${from}/${to}?withLeg=true&direction=Departure&withCancelled=false&withCodeshared=false&withCargo=false&withPrivate=false`,
+        { headers: { "x-rapidapi-key": apiKey, "x-rapidapi-host": "aerodatabox.p.rapidapi.com" }, cache: "no-store" },
+      );
+      if (res.status === 429) return { error: "Hai raggiunto il limite di ricerche del piano per ora." };
+      if (res.status === 204 || res.status === 404) continue;
+      if (!res.ok) return { error: "Errore durante la ricerca delle coincidenze. Riprova o inserisci il numero del volo." };
+      const json = (await res.json()) as { departures?: FidsItem[] };
+      for (const f of json.departures ?? []) {
+        const arrAirport = f.arrival?.airport ?? f.movement?.airport;
+        if (!matchesDest(arrAirport)) continue;
+        const depLocal = f.departure?.scheduledTime?.local ?? "";
+        const arrLocal = f.arrival?.scheduledTime?.local ?? "";
+        if (!depLocal) continue;
+        const waitMin = Math.round((new Date(`${depLocal.slice(0, 10)}T${depLocal.slice(11, 16)}:00Z`).getTime() - arrMs) / 60000);
+        const name = f.airline?.name ?? "";
+        found.push({
+          airline: name,
+          flightNumber: (f.number ?? "").replace(/\s+/g, ""),
+          departureAirport: formatAirport(f.departure?.airport ?? { iata: stop }),
+          departureDate: formatDate(depLocal),
+          departureTime: formatTime(depLocal),
+          arrivalAirport: formatAirport(arrAirport),
+          arrivalCity: arrAirport?.municipalityName ?? arrAirport?.name ?? "",
+          arrivalIata: arrAirport?.iata ?? "",
+          arrivalDate: formatDate(arrLocal),
+          arrivalTime: formatTime(arrLocal),
+          aircraft: f.aircraft?.model ?? null,
+          wait: `${Math.floor(waitMin / 60)} h ${String(waitMin % 60).padStart(2, "0")} min`,
+          sameAirline: !!airline && plain(name) === airline,
+        });
+      }
+      // con risultati nella prima finestra non serve guardare il giorno dopo
+      if (found.length > 0) break;
+    }
+  } catch {
+    return { error: "Impossibile contattare il servizio di ricerca voli." };
+  }
+
+  if (found.length === 0) return { error: "Nessun volo trovato dallo scalo verso questa destinazione nelle 24 ore successive. Prova con il codice dell'aeroporto o inserisci il numero del volo." };
+  const unique = found.filter((f, i) => found.findIndex((g) => g.flightNumber === f.flightNumber && g.departureTime === f.departureTime) === i);
+  unique.sort((a, b) => Number(b.sameAirline) - Number(a.sameAirline) || (a.departureDate + a.departureTime).localeCompare(b.departureDate + b.departureTime));
+  return { data: unique.slice(0, 8) };
+}

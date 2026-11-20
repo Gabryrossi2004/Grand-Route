@@ -28,7 +28,9 @@ import {
   uploadDocument,
 } from "@/app/dashboard/trips/[id]/actions";
 import {
+  findConnections,
   searchFlight,
+  type ConnectionOption,
   type FlightLookupResult,
 } from "@/app/dashboard/trips/[id]/flightActions";
 
@@ -96,8 +98,11 @@ export default function ActivityForm({
     | { status: "closed" }
     | { status: "open"; input: string; error?: string }
     | { status: "loading"; input: string }
-    | { status: "results"; input: string; results: FlightLookupResult[] }
+    | { status: "results"; input: string; results: (FlightLookupResult | ConnectionOption)[] }
   >({ status: "closed" });
+  // Coincidenza trovata da sola: destinazione finale scritta dall'utente
+  const [connDest, setConnDest] = useState("");
+  const [connFinding, setConnFinding] = useState(false);
   const [flightSearchState, setFlightSearchState] = useState<
     | { status: "idle" }
     | { status: "loading" }
@@ -226,6 +231,25 @@ export default function ActivityForm({
     const list = fitting.length > 0 ? fitting : result.data;
     if (list.length === 1) applyConnection(list[0]);
     else setConn({ status: "results", input, results: list });
+  }
+
+  async function runFindConnection() {
+    if (!firstLeg || (conn.status !== "open" && conn.status !== "results")) return;
+    const input = conn.input;
+    setConnFinding(true);
+    const result = await findConnections({
+      stopIata: firstLeg.arrivalIata,
+      arrivalDate: firstLeg.arrivalDate || dayDate || "",
+      arrivalTime: firstLeg.arrivalTime,
+      destination: connDest,
+      airline: firstLeg.airline,
+    });
+    setConnFinding(false);
+    if (result.error || !result.data) {
+      setConn({ status: "open", input, error: result.error ?? "Nessuna coincidenza trovata." });
+      return;
+    }
+    setConn({ status: "results", input, results: result.data });
   }
 
   async function runFlightSearch() {
@@ -478,6 +502,35 @@ export default function ActivityForm({
                         Annulla
                       </button>
                     </div>
+                    <p className="mb-1 mt-2 text-xs font-medium text-slate-600">
+                      Non conosci il numero? Scrivi la destinazione finale e cerco io i voli in
+                      partenza da {firstLeg.arrivalAirport.split(" – ")[0]} nelle 24 ore dopo
+                      l&apos;arrivo:
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={connDest}
+                        onChange={(e) => setConnDest(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            e.preventDefault();
+                            runFindConnection();
+                          }
+                        }}
+                        placeholder="Es. BKK o Bangkok"
+                        className="w-40 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm outline-none focus:border-[#cda876]"
+                      />
+                      <button
+                        type="button"
+                        onClick={runFindConnection}
+                        disabled={connFinding || conn.status === "loading"}
+                        className="flex items-center gap-1 rounded-md border border-[#233c5e] bg-white px-3 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#eef2f8] disabled:opacity-60"
+                      >
+                        <Search size={13} />
+                        {connFinding ? "Cerco…" : "Trova la coincidenza"}
+                      </button>
+                    </div>
                     {conn.status === "open" && conn.error && (
                       <p className="mt-1 text-xs text-red-600">{conn.error}</p>
                     )}
@@ -490,9 +543,17 @@ export default function ActivityForm({
                               onClick={() => applyConnection(r)}
                               className="w-full rounded-md border border-[#e6d7bb] bg-white px-2 py-1.5 text-left text-xs text-slate-700 hover:border-[#ddc8a0] hover:bg-[#faf3e6]"
                             >
+                              {"sameAirline" in r && r.sameAirline && (
+                                <span className="mr-1.5 rounded-full bg-[#233c5e] px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                                  Stessa compagnia
+                                </span>
+                              )}
                               {r.airline} {r.flightNumber}: {r.departureAirport}{" "}
-                              ({r.departureTime}) → {r.arrivalAirport} (
-                              {r.arrivalTime})
+                              ({r.departureTime}) → {r.arrivalAirport}
+                              {r.arrivalTime ? ` (${r.arrivalTime})` : ""}
+                              {"wait" in r && (
+                                <span className="ml-1 text-slate-500">· attesa {r.wait}</span>
+                              )}
                             </button>
                           </li>
                         ))}
