@@ -10,6 +10,7 @@ import ZefiroCard from "./ZefiroCard";
 import ZefiroUsageCard from "./ZefiroUsageCard";
 import ClientZefiroCard from "./ClientZefiroCard";
 import OpsSettingsCard from "./OpsSettingsCard";
+import AutoMessagesCard from "./AutoMessagesCard";
 import { parseAiPlan } from "@/lib/aiPricing";
 import { getAiUsageSummary } from "@/lib/aiQuota";
 import { parseLogoShape } from "@/lib/logoShape";
@@ -73,6 +74,7 @@ export default async function SettingsPage() {
       <SettingsForm profile={profile as Profile} />
 
       <div className="mt-6">
+        <AutoMessagesCard initiallyOn={(profile as Profile).ai_preferences?.auto_messages === "on"} />
         <OpsSettingsCard initiallyOn={(profile as Profile).ai_preferences?.ops_import === "on"} />
         <AiRulesCard profile={profile as Profile} />
         {usage && <ZefiroUsageCard summary={usage} />}

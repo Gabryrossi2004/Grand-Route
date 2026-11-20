@@ -256,7 +256,7 @@ export default async function TripDetailPage({
               }))}
               approvalStatus={(trip.approval_status ?? "none") as ApprovalStatus}
               agencyLabel="Tu"
-              preflight={checkTripBeforeSend({ trip, days: orderedDays, paymentsCount: ((tripPayments as TripPayment[]) || []).length })}
+              preflight={checkTripBeforeSend({ trip, days: orderedDays, paymentsCount: ((tripPayments as TripPayment[]) || []).length, countries: [...((trip as Trip & { countries?: string[] | null }).countries ?? []), ...((trip as Trip & { auto_countries?: string[] | null }).auto_countries ?? [])] })}
               stage={trip.itinerary_stage === "finale" ? "finale" : "preliminare"}
               extra={
                 <ClientZefiroTripSetting

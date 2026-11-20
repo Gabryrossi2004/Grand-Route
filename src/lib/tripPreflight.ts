@@ -1,4 +1,7 @@
 import type { Activity, Trip, TripDay } from "@/lib/types";
+import { ENTRY_REQUIREMENTS, ID_CARD_OK } from "@/data/entryRequirements";
+
+const regionName = new Intl.DisplayNames(["it"], { type: "region" });
 
 // Controllo prima di mandare l'itinerario al cliente: cose che di solito si
 // dimenticano. Si calcola dai dati del viaggio, senza AI (quindi gratis e
@@ -17,6 +20,7 @@ export function checkTripBeforeSend(params: {
   trip: Pick<Trip, "start_date" | "end_date" | "destination" | "cover_image_url">;
   days: DayWithActivities[];
   paymentsCount: number;
+  countries?: string[];
 }): PreflightIssue[] {
   const { trip, paymentsCount } = params;
   const days = [...params.days].sort((a, b) => a.day_order - b.day_order);
@@ -76,6 +80,15 @@ export function checkTripBeforeSend(params: {
       level: "nota",
       text: `${noDescription.length} ${noDescription.length === 1 ? "attività senza descrizione" : "attività senza descrizione"}.`,
     });
+  }
+  // Documenti d'ingresso per i paesi del viaggio
+  const codes = [...new Set(params.countries ?? [])];
+  for (const code of codes) {
+    const req = ENTRY_REQUIREMENTS[code];
+    if (req) issues.push({ level: "attenzione", text: `${regionName.of(code) ?? code}: serve ${req.doc} (${req.how}). Ricordalo al cliente almeno ${req.days} giorni prima.` });
+  }
+  if (codes.some((c) => !ID_CARD_OK.has(c))) {
+    issues.push({ level: "nota", text: "Serve il passaporto, di solito valido almeno 6 mesi dopo il rientro: verifica la scadenza nell'anagrafica del cliente." });
   }
   if (!trip.destination) issues.push({ level: "nota", text: "Manca la destinazione: il cliente non vedrà il meteo del viaggio." });
   if (paymentsCount === 0) issues.push({ level: "nota", text: "Nessun pagamento pianificato: il cliente non vedrà scadenze." });

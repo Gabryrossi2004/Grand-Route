@@ -58,9 +58,8 @@ export default async function DashboardHomePage() {
     tripIds.length
       ? supabase
           .from("trip_payments")
-          .select("trip_id, amount, due_date, paid_date")
+          .select("trip_id, amount, due_date, paid_date, direction")
           .in("trip_id", tripIds)
-          .eq("direction", "incasso")
           .is("paid_date", null)
           .not("due_date", "is", null)
       : Promise.resolve({ data: [] }),
@@ -68,7 +67,7 @@ export default async function DashboardHomePage() {
     allTrips.some((trip) => trip.client_id)
       ? supabase
           .from("clients")
-          .select("id, full_name, id_card_number, passport_number")
+          .select("id, full_name, id_card_number, passport_number, passport_expiry, date_of_birth")
           .eq("owner_id", user?.id ?? "")
       : Promise.resolve({ data: [] }),
   ]);
@@ -99,9 +98,16 @@ export default async function DashboardHomePage() {
     },
     today: romeToday(),
     trips: allTrips,
-    payments: (dueIncome as { trip_id: string; amount: number; due_date: string | null; paid_date: string | null }[] | null) ?? [],
+    payments: (dueIncome as { trip_id: string; amount: number; due_date: string | null; paid_date: string | null; direction: string }[] | null) ?? [],
     clients:
-      (briefingClients as { id: string; full_name: string; id_card_number: string | null; passport_number: string | null }[] | null) ?? [],
+      (briefingClients as {
+        id: string;
+        full_name: string;
+        id_card_number: string | null;
+        passport_number: string | null;
+        passport_expiry: string | null;
+        date_of_birth: string | null;
+      }[] | null) ?? [],
   });
   const romeHour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 
@@ -152,9 +158,14 @@ export default async function DashboardHomePage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div>
-        <p className="eyebrow">Panoramica</p>
-        <h1 className="mt-1 text-3xl font-medium tracking-tight text-[#233c5e] sm:text-4xl">I tuoi viaggi</h1>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="eyebrow">Panoramica</p>
+          <h1 className="mt-1 text-3xl font-medium tracking-tight text-[#233c5e] sm:text-4xl">I tuoi viaggi</h1>
+        </div>
+        <Link href="/dashboard/statistiche" className="rounded-full border border-[#e6d7bb] bg-white px-4 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#faf3e6]">
+          Statistiche →
+        </Link>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

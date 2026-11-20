@@ -142,3 +142,43 @@ end;
 $$;
 revoke all on function public.client_zefiro_remember(uuid, uuid, text, text) from public, anon;
 grant execute on function public.client_zefiro_remember(uuid, uuid, text, text) to authenticated;
+
+-- 6. Messaggi automatici ai clienti (notifica sul telefono): la vigilia della partenza, il primo
+--    giorno del viaggio e il giorno dopo il rientro. Solo per le agenzie che li hanno attivati
+--    (Impostazioni → «Messaggi automatici ai clienti») e per i clienti con le notifiche attive.
+--    Chiamata una volta al giorno dal cron, protetta dal segreto come le altre notifiche programmate.
+create or replace function public.get_client_auto_push_targets(p_secret text)
+returns table(endpoint text, p256dh text, auth_key text, kind text, trip_id uuid, trip_title text, agency_name text)
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_today date := (now() at time zone 'Europe/Rome')::date;
+begin
+  if p_secret is null or p_secret <> (select value from public.app_secrets where key = 'cron_secret') then
+    raise exception 'non autorizzato';
+  end if;
+
+  return query
+    select ps.endpoint, ps.p256dh, ps.auth,
+           case
+             when t.start_date = v_today + 1 then 'partenza'
+             when t.start_date = v_today then 'benvenuto'
+             else 'rientro'
+           end,
+           t.id, t.title, coalesce(o.agency_name, '')
+    from public.trips t
+    join public.profiles o on o.id = t.owner_id
+    join public.clients c on c.id = t.client_id
+    join public.profiles cp on cp.id = c.user_id
+    join public.push_subscriptions ps on ps.profile_id = c.user_id
+    where c.user_id is not null
+      and cp.notify_trips
+      and coalesce(to_jsonb(o) -> 'ai_preferences' ->> 'auto_messages', 'off') = 'on'
+      and (t.start_date = v_today + 1 or t.start_date = v_today or t.end_date = v_today - 1);
+end;
+$$;
+
+revoke all on function public.get_client_auto_push_targets(text) from public;
+grant execute on function public.get_client_auto_push_targets(text) to anon, authenticated;

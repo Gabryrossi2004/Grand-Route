@@ -10,6 +10,8 @@ import AssistantIcon from "@/components/AssistantIcon";
 import { useI18n } from "@/components/I18nProvider";
 import { DRAFT_KINDS, type DraftKind } from "@/lib/messageDrafts";
 import { draftClientMessage } from "@/lib/actions/zefiroAgency";
+import { templateMessage } from "@/lib/actions/messageTemplates";
+import { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplates";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 import {
   approveTrip,
@@ -78,7 +80,7 @@ export default function TripDialoguePanel({
   preflight?: PreflightIssue[];
 }) {
   const [showPreflight, setShowPreflight] = useState(false);
-  const [drafting, setDrafting] = useState<DraftKind | null>(null);
+  const [drafting, setDrafting] = useState<DraftKind | `t:${TemplateKind}` | null>(null);
   const { t, locale } = useI18n();
   const canApprove = stage === "preliminare";
   const router = useRouter();
@@ -185,6 +187,26 @@ export default function TripDialoguePanel({
   }
 
   // Zefiro scrive una bozza e la mette nella casella: da rileggere e modificare, non parte da sola
+  // Modello pronto compilato con i dati del viaggio (senza AI)
+  async function applyTemplate(kind: TemplateKind) {
+    setDrafting(`t:${kind}`);
+    setError(null);
+    setNotice(null);
+    try {
+      const result = await templateMessage(tripId, kind);
+      if (result.error || !result.text) setError(result.error ?? "Modello non disponibile.");
+      else {
+        setText(result.text.slice(0, 2000));
+        setNotice("Modello compilato con i dati del viaggio: rileggilo e modificalo prima di inviarlo.");
+        requestAnimationFrame(() => textRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }));
+      }
+    } catch {
+      setError("Non è stato possibile preparare il modello. Riprova.");
+    } finally {
+      setDrafting(null);
+    }
+  }
+
   async function draft(kind: DraftKind) {
     setDrafting(kind);
     setError(null);
@@ -425,6 +447,20 @@ export default function TripDialoguePanel({
             <p className="mt-1.5 text-[11px] text-slate-500">
               Se scrivi qualche nota nella casella prima di toccare un pulsante, Zefiro ne tiene conto.
             </p>
+            <p className="mb-1.5 mt-3 text-xs font-medium text-slate-600">Modelli pronti (gratis, senza AI)</p>
+            <div className="flex flex-wrap gap-1.5">
+              {TEMPLATE_KINDS.map((kind) => (
+                <button
+                  key={kind.id}
+                  type="button"
+                  onClick={() => applyTemplate(kind.id)}
+                  disabled={drafting !== null}
+                  className="min-h-9 rounded-full border border-dashed border-[#c58f2d] bg-white px-3 py-1 text-xs font-medium text-[#233c5e] transition hover:bg-[#faf3e6] disabled:opacity-50"
+                >
+                  {drafting === `t:${kind.id}` ? "Compilo…" : kind.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
         <textarea
