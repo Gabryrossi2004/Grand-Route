@@ -26,7 +26,7 @@
     "@tiptap/starter-kit": "^3.32.2",
     "exceljs": "^4.4.0",
     "lucide-react": "^1.66.0",
-    "next": "16.4.3",
+    "next": "^16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sanitize-html": "^2.18.1",
@@ -43,7 +43,7 @@
     "@types/three": "^0.170.0",
     "@types/web-push": "^3.6.4",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "^16.4.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
