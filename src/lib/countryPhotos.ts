@@ -6,6 +6,9 @@ export type SheetPhoto = { url: string; title: string; credit: string; license: 
 
 const UA = "GrandRoute/1.0 (https://grandroute.it)";
 const SKIP = /flag|bandiera|map|mappa|locator|location|coat[_ ]of[_ ]arms|stemma|emblem|logo|\.svg$|\.gif$|\.tif/i;
+// Foto con persone in primo piano (ritratti, folle, mestieri, feste): si scartano guardando nome del file e categorie
+const PEOPLE =
+  /\b(people|persons?|portraits?|ritratt\w*|men|women|man|woman|girls?|boys?|child|children|kids?|bambin\w*|crowds?|folla|tourists?|turisti|selfie|faces?|dancers?|dancing|musicians?|performers?|vendors?|workers?|fishermen|soldiers?|guards?|wedding|bride|actors?|players?|athletes?|nude|nudity|smiling|couples?|families|monks|nuns|pilgrims|riders?|surfers?|swimmers?|divers?|hikers?|skiers?|politicians?|presidents?|kings?|queens?|engravings?|incisioni|paintings?|dipint\w*|drawings?|lithographs?)\b/i;
 
 async function getJson(url: string): Promise<unknown | null> {
   try {
@@ -41,7 +44,7 @@ export async function findCountryPhotos(queries: { query: string; title: string 
   // 1. immagine principale delle voci (una alla volta, per rispettare i limiti di Wikipedia)
   const found: { file: string; title: string }[] = [];
   for (const q of queries) {
-    if (found.length >= wanted + 2) break;
+    if (found.length >= wanted + 4) break;
     const hit = (await pageImage(q.query, "it")) ?? (await pageImage(q.query, "en"));
     if (hit && !found.some((f) => f.file === hit.file)) found.push({ file: hit.file, title: q.title });
   }
@@ -52,13 +55,20 @@ export async function findCountryPhotos(queries: { query: string; title: string 
   // Commons prima; se non risponde (limiti di traffico) la stessa richiesta passa da Wikipedia, che espone i file di Commons
   let raw: unknown = null;
   for (const host of ["commons.wikimedia.org", "it.wikipedia.org", "en.wikipedia.org"]) {
-    raw = await getJson(`https://${host}/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=1280&titles=${encodeURIComponent(titles)}`);
+    raw = await getJson(`https://${host}/w/api.php?action=query&format=json&prop=imageinfo%7Ccategories&cllimit=max&clshow=!hidden&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=1280&titles=${encodeURIComponent(titles)}`);
     if ((raw as { query?: { pages?: object } } | null)?.query?.pages) break;
   }
   const data = raw as {
     query?: {
       normalized?: { from: string; to: string }[];
-      pages?: Record<string, { title: string; imageinfo?: { thumburl?: string; descriptionurl?: string; extmetadata?: Record<string, { value?: string }> }[] }>;
+      pages?: Record<
+        string,
+        {
+          title: string;
+          categories?: { title: string }[];
+          imageinfo?: { thumburl?: string; descriptionurl?: string; width?: number; height?: number; extmetadata?: Record<string, { value?: string }> }[];
+        }
+      >;
     };
   } | null;
   const pages = Object.values(data?.query?.pages ?? {});
@@ -73,6 +83,10 @@ export async function findCountryPhotos(queries: { query: string; title: string 
     const meta = info.extmetadata ?? {};
     const license = stripHtml(meta.LicenseShortName?.value ?? "");
     if (!license || /fair use|non-free/i.test(license)) continue;
+    // solo paesaggi orizzontali, senza persone come soggetto
+    if (info.width && info.height && info.width / info.height < 1.2) continue;
+    const cats = (page.categories ?? []).map((c) => c.title).join(" ");
+    if (PEOPLE.test(`${original} ${cats}`)) continue;
     photos.push({
       url: info.thumburl.replace(/\?.*$/, ""),
       title: match?.title ?? stripHtml(meta.ObjectName?.value ?? ""),
