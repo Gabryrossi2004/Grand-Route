@@ -1,3 +1,4 @@
+import AskMappamondo from "@/components/AskMappamondo";
 import { redirect } from "next/navigation";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { fillMissingCountries } from "@/lib/tripCountries";
@@ -88,6 +89,9 @@ export default async function AgencyGlobePage() {
         </p>
       </div>
       <AgencyGlobeView trips={trips} pending={pending} />
+      <div className="max-w-2xl">
+        <AskMappamondo />
+      </div>
     </div>
   );
 }

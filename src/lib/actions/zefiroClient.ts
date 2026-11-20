@@ -10,6 +10,7 @@ import { buildClientSystemPrompt, buildClientTripDigest, toneInstructions } from
 import { loadTripStops, romeToday, type DayInput } from "@/lib/destinationInfo";
 import { detectNearbyCategory, fetchNearby, formatNearby } from "@/lib/nearbyPlaces";
 import { guideFor, resolveTopics } from "@/lib/zefiroTopics";
+import { localAnswer, type FaqItem } from "@/lib/zefiroLocal";
 import type { Activity, Trip, TripDay, TripPayment } from "@/lib/types";
 
 // Zefiro risponde alle domande dei clienti sul loro viaggio. Si usa il modello
@@ -31,11 +32,16 @@ const AnswerSchema = z.object({
   needs_agency: z
     .boolean()
     .describe("True se l'informazione manca nei dati o serve l'agenzia (domande non coperte, emergenze, argomenti da non trattare)."),
+  general: z
+    .boolean()
+    .describe(
+      "True SOLO se la risposta è un'informazione generale valida per chiunque viaggi in quel paese (usanze, mance, clima, cucina, sicurezza, trasporti in generale) e NON usa il programma, le date, gli hotel, i pagamenti o altri dati di questo cliente.",
+    ),
 });
 
 export type ZefiroTurn = { role: "user" | "assistant"; content: string };
 export type ZefiroReply =
-  | { answer: string; needsAgency: boolean }
+  | { answer: string; needsAgency: boolean; free?: boolean }
   | { error: string; suggestAgency?: boolean };
 
 type Db = Awaited<ReturnType<typeof createClient>>;
@@ -119,21 +125,6 @@ export async function askZefiroAboutTrip(
   }
   if (!status.enabled) return { error: t("zefiro.err.off"), suggestAgency: true };
 
-  const budget = planById(parseAiPlan(status.plan)).dailyBudgetEur;
-  if (Number(status.spent_today) >= budget * CLIENT_SHARE_OF_BUDGET) {
-    return { error: t("zefiro.err.budget"), suggestAgency: true };
-  }
-
-  // 2. Prenota la domanda (qui il database applica i limiti per cliente)
-  const { data: callId, error: reserveError } = await supabase.rpc("client_zefiro_reserve", { p_trip_id: tripId });
-  if (reserveError || !callId) {
-    if (/limite_zefiro/.test(reserveError?.message ?? "")) {
-      return { error: t("zefiro.err.limit"), suggestAgency: true };
-    }
-    console.error("[askZefiro] prenotazione", reserveError?.code, reserveError?.message);
-    return { error: t("zefiro.err.contact") };
-  }
-
   try {
     // 3. I dati che il cliente può già vedere (le regole del database valgono anche qui)
     const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).maybeSingle();
@@ -168,6 +159,51 @@ export async function askZefiroAboutTrip(
     const topics = resolveTopics(ownerRow?.ai_preferences, plan);
     const guide = guideFor(ownerRow?.ai_preferences, plan);
 
+    // 3b. L'archivio: risposta gratuita dal viaggio, dalle domande frequenti dell'agenzia, dalle schede
+    //     paese o dalle risposte già date. Le schede e le regole sono in italiano: per le altre lingue l'AI.
+    const { data: knowledge } = await supabase.rpc("client_zefiro_knowledge", { p_trip_id: tripId });
+    const kb = (knowledge ?? {}) as { faqs?: FaqItem[]; memory?: (FaqItem & { id: string })[] };
+    const faqs = Array.isArray(kb.faqs) ? kb.faqs : [];
+    const memory = Array.isArray(kb.memory) ? kb.memory : [];
+    const tripRow = trip as Trip & { countries?: string[] | null; auto_countries?: string[] | null };
+    const countries = [...new Set([...(tripRow.countries ?? []), ...(tripRow.auto_countries ?? [])])];
+    const agencyPhone = (trip as Trip).show_emergency_button ? (ownerRow?.emergency_phone ?? null) : null;
+    if (lang === "it") {
+      const local = localAnswer(text, {
+        trip: trip as Trip,
+        days: orderedDays,
+        payments: (payments as TripPayment[]) ?? [],
+        today,
+        agencyPhone,
+        agencyName: ownerRow?.agency_name || "l'agenzia",
+        topics,
+        countries,
+        faqs,
+        memory,
+      });
+      if (local) {
+        const memoryId = local.source === "memoria" ? memory.find((m) => m.answer === local.answer)?.id ?? null : null;
+        const { error: freeError } = await supabase.rpc("client_zefiro_free", { p_trip_id: tripId, p_source: local.source, p_memory_id: memoryId });
+        if (freeError && !/function|does not exist|schema cache/i.test(freeError.message)) console.error("[askZefiro] gratis", freeError.message);
+        return { answer: local.answer, needsAgency: false, free: true };
+      }
+    }
+
+    // 3c. Serve l'AI: budget dell'agenzia e limiti per cliente
+    const budget = planById(parseAiPlan(status.plan)).dailyBudgetEur;
+    if (Number(status.spent_today) >= budget * CLIENT_SHARE_OF_BUDGET) {
+      return { error: t("zefiro.err.budget"), suggestAgency: true };
+    }
+    // 2. Prenota la domanda (qui il database applica i limiti per cliente)
+    const { data: callId, error: reserveError } = await supabase.rpc("client_zefiro_reserve", { p_trip_id: tripId });
+    if (reserveError || !callId) {
+      if (/limite_zefiro/.test(reserveError?.message ?? "")) {
+        return { error: t("zefiro.err.limit"), suggestAgency: true };
+      }
+      console.error("[askZefiro] prenotazione", reserveError?.code, reserveError?.message);
+      return { error: t("zefiro.err.contact") };
+    }
+
     // Ricerca sulla mappa (solo se l'argomento è attivo e la domanda chiede "cosa c'è vicino"):
     // dalla posizione del cliente, se l'ha condivisa, altrimenti dal centro della tappa di oggi.
     let nearby: string | null = null;
@@ -201,7 +237,7 @@ export async function askZefiroAboutTrip(
       digest,
       tone: toneInstructions(ownerRow?.ai_preferences),
       topics,
-      guide,
+      guide: [guide, faqs.length ? `DOMANDE FREQUENTI DELL'AGENZIA (risposte ufficiali, usale se pertinenti):\n${faqs.map((f) => `D: ${f.question}\nR: ${f.answer}`).join("\n").slice(0, 6000)}` : ""].filter(Boolean).join("\n\n"),
       nearby,
       language: lang,
     });
@@ -230,7 +266,13 @@ export async function askZefiroAboutTrip(
     if (result.response.stop_reason === "refusal" || !result.response.parsed_output) {
       return { answer: t("zefiro.err.refusal"), needsAgency: true };
     }
-    return { answer: result.response.parsed_output.answer, needsAgency: result.response.parsed_output.needs_agency };
+    const out = result.response.parsed_output;
+    // Risposta generale (non legata a questo cliente): si salva in memoria per le prossime domande simili
+    if (out.general && !out.needs_agency && lang === "it" && countries.length > 0) {
+      const { error: memError } = await supabase.rpc("client_zefiro_remember", { p_trip_id: tripId, p_call_id: callId, p_question: text, p_answer: out.answer });
+      if (memError && !/function|does not exist|schema cache/i.test(memError.message)) console.error("[askZefiro] memoria", memError.message);
+    }
+    return { answer: out.answer, needsAgency: out.needs_agency };
   } catch (error) {
     console.error("[askZefiro]", (error as Error).message);
     return { error: t("zefiro.err.fail"), suggestAgency: true };

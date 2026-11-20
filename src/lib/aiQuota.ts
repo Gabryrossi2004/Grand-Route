@@ -144,6 +144,7 @@ export async function reserveAiCall(
         .eq("user_id", user.id)
         .not("kind", "like", "cost:%")
         .not("kind", "like", "client:%")
+        .not("kind", "like", "free:%")
         .gte("created_at", hourAgo),
       supabase
         .from("ai_usage")
@@ -151,6 +152,7 @@ export async function reserveAiCall(
         .eq("user_id", user.id)
         .not("kind", "like", "cost:%")
         .not("kind", "like", "client:%")
+        .not("kind", "like", "free:%")
         .gte("created_at", dayAgo),
     ]);
 
