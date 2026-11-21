@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { ImagePlus } from "lucide-react";
-import RichTextEditor from "@/components/RichTextEditor";
+import RichTextEditor from "@/components/LazyRichTextEditor";
 
 export default function PostComposer({
   action,

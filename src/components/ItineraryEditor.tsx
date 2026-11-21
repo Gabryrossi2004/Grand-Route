@@ -69,7 +69,7 @@ import {
   type ActivitySnapshot,
   type DaySnapshot,
 } from "@/lib/actions/itineraryDelete";
-import RichTextEditor from "@/components/RichTextEditor";
+import RichTextEditor from "@/components/LazyRichTextEditor";
 
 type ActivityWithPhotos = Activity & { activity_photos: ActivityPhoto[] };
 type DayWithActivities = TripDay & { activities: ActivityWithPhotos[] };

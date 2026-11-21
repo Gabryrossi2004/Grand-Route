@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Folder, FolderOpen, Loader2, MapPin, Printer, X } from "lucide-react";
 import { getItalyPhotos } from "@/lib/actions/italy";
 import type { SheetPhoto } from "@/lib/countryPhotos";
+import { photoSrc } from "@/lib/photoSrc";
 import CountrySuppliers from "@/components/CountrySuppliers";
 import { ITALY_FACT_LABELS, ITALY_ORDER, ITALY_REGIONS, type ItalyPlace } from "@/lib/italyLibrary";
 
@@ -177,7 +178,7 @@ export default function ItalyPanel({
                     {pics.slice(0, 4).map((p, i) => (
                       <figure key={p.url} className={`relative overflow-hidden rounded-2xl bg-[#efe3c8] ${i === 0 && pics.length !== 4 ? "col-span-2" : ""}`}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.url} alt={p.title} loading="lazy" className="aspect-[4/3] h-full w-full object-cover" referrerPolicy="no-referrer" />
+                        <img src={photoSrc(p.url)} alt={p.title} loading="lazy" decoding="async" className="aspect-[4/3] h-full w-full object-cover" referrerPolicy="no-referrer" />
                         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2.5 pb-1.5 pt-6 text-white">
                           <span className="block text-sm font-semibold leading-tight">{p.title}</span>
                           <a href={p.source} target="_blank" rel="noreferrer" className="block truncate text-[10px] text-white/80 hover:underline">

@@ -1,7 +1,8 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
-import { buildTemplate, TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplates";
+import { buildTemplate } from "@/lib/messageTemplates";
+import { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplateKinds";
 import type { Activity, Trip, TripDay, TripPayment } from "@/lib/types";
 
 // Modello di messaggio compilato con i dati del viaggio (senza AI)

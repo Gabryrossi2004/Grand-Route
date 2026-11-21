@@ -4,7 +4,6 @@ import { useCallback, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import GlobeLoader from "@/components/GlobeLoader";
 import type { ItalyView } from "@/components/ItalyPanel";
-import CountrySheetPanel from "@/components/CountrySheetPanel";
 import type { AgencyCountryStat, AgencyGlobeData } from "@/components/TravelGlobe";
 import { codeOf, flagOf, nameItOfCode, namesOf } from "@/lib/geo/countryCodes";
 
@@ -31,6 +30,8 @@ const NO_TRIPS: [] = [];
 const NO_ZONES: { id: string; name: string; lat: number; lon: number }[] = [];
 // pannello Italia (regioni e zone): si scarica solo quando si apre
 const ItalyPanel = dynamic(() => import("@/components/ItalyPanel"), { ssr: false });
+// La scheda paese si scarica solo quando la apri
+const CountrySheetPanel = dynamic(() => import("@/components/CountrySheetPanel"), { ssr: false });
 const euro = (n: number) => n.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
 
 export default function AgencyGlobeView({ trips, pending }: { trips: AgencyTrip[]; pending: number }) {

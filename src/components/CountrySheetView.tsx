@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { CountrySheetContent } from "@/lib/countrySheetAi";
 import type { SheetPhoto } from "@/lib/countryPhotos";
+import { photoSrc } from "@/lib/photoSrc";
 import CountryGuideSections from "@/components/CountryGuideSections";
 
 const FACTS: { key: keyof CountrySheetContent["facts"]; label: string }[] =
@@ -76,9 +77,10 @@ export default function CountrySheetView({
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={p.url}
+                  src={photoSrc(p.url)}
                   alt={p.title}
                   loading="lazy"
+                          decoding="async"
                   className="aspect-[4/3] h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />

@@ -17,7 +17,7 @@ import {
   detailFields,
   CHECK_OUT_DATE_KEY,
 } from "@/lib/activityTypes";
-import RichTextEditor from "@/components/RichTextEditor";
+import RichTextEditor from "@/components/LazyRichTextEditor";
 import DropzoneUpload from "@/components/DropzoneUpload";
 import UploadForm from "@/components/UploadForm";
 import { toSafeHtml } from "@/lib/richText";

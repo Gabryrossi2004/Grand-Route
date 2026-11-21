@@ -11,7 +11,7 @@ import { useI18n } from "@/components/I18nProvider";
 import { DRAFT_KINDS, type DraftKind } from "@/lib/messageDrafts";
 import { draftClientMessage } from "@/lib/actions/zefiroAgency";
 import { templateMessage } from "@/lib/actions/messageTemplates";
-import { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplates";
+import { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplateKinds";
 import type { ApprovalStatus, TripMessage } from "@/lib/types";
 import {
   approveTrip,

@@ -91,6 +91,8 @@ export default function PostCard({
                 key={photo.id}
                 src={photo.url}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="aspect-square w-full rounded-lg object-cover"
               />
             ))}

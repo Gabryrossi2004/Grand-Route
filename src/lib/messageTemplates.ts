@@ -5,16 +5,8 @@ import { ENTRY_REQUIREMENTS, ID_CARD_OK } from "@/data/entryRequirements";
 import { librarySheet } from "@/lib/countrySheetLibrary";
 import type { Activity, Trip, TripDay, TripPayment } from "@/lib/types";
 
-export type TemplateKind = "conferma" | "pagamento" | "documenti" | "valigia" | "buonviaggio" | "bentornato";
-
-export const TEMPLATE_KINDS: { id: TemplateKind; label: string }[] = [
-  { id: "conferma", label: "Conferma" },
-  { id: "pagamento", label: "Sollecito pagamento" },
-  { id: "documenti", label: "Documenti e visti" },
-  { id: "valigia", label: "Lista per la partenza" },
-  { id: "buonviaggio", label: "Buon viaggio" },
-  { id: "bentornato", label: "Bentornato" },
-];
+export { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplateKinds";
+import type { TemplateKind } from "@/lib/messageTemplateKinds";
 
 type Ctx = {
   trip: Trip & { countries?: string[] | null; auto_countries?: string[] | null };
