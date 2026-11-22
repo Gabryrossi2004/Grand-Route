@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ZefiroBriefing from "@/components/ZefiroBriefing";
+import DepartureCalendar from "@/components/DepartureCalendar";
 import { buildBriefing } from "@/lib/agencyBriefing";
 import { riconfermaDays } from "@/lib/opsSheet";
 import { romeToday } from "@/lib/destinationInfo";
@@ -250,12 +251,9 @@ export default async function DashboardHomePage() {
               ))}
             </ul>
           )}
-          <Link
-            href="/dashboard/calendar"
-            className="mt-3 inline-block text-xs font-medium text-[#233c5e] hover:underline"
-          >
-            Apri il calendario completo →
-          </Link>
+          <a href="#calendario" className="mt-3 inline-block text-xs font-medium text-[#233c5e] hover:underline">
+            Vai al calendario completo ↓
+          </a>
         </section>
 
         <section className="rounded-2xl border border-[#e6d7bb] bg-gradient-to-b from-white to-[#faf7ee] p-5 shadow-sm">
@@ -281,6 +279,12 @@ export default async function DashboardHomePage() {
           )}
         </section>
       </div>
+
+      <section id="calendario" className="scroll-mt-24">
+        <h2 className="mb-1 text-xl font-medium text-[#233c5e]">Calendario delle partenze</h2>
+        <p className="mb-4 text-sm text-slate-500">Tutte le partenze (✈) e i rientri (↩) dei tuoi viaggi, mese per mese.</p>
+        <DepartureCalendar trips={allTrips} />
+      </section>
 
       {allTrips.length === 0 && (
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">

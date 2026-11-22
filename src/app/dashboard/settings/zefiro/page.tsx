@@ -11,7 +11,7 @@ const SOURCE_LABEL: Record<string, string> = {
   paese: "dalle schede paese",
   faq: "dalle domande frequenti",
   memoria: "dalle risposte salvate",
-  mappamondo: "«Chiedi al Mappamondo»",
+  mappamondo: "«Chiedi all'Atlante»",
 };
 
 export default async function ZefiroArchivePage() {
@@ -26,8 +26,8 @@ export default async function ZefiroArchivePage() {
       </Link>
       <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Archivio di Zefiro</h1>
       <p className="mt-1 text-sm text-slate-600">
-        Prima di usare l&apos;intelligenza artificiale, Zefiro cerca la risposta qui: nel viaggio del cliente, nelle schede del
-        Mappamondo, nelle tue domande frequenti e nelle risposte già date. Queste risposte sono immediate e non costano nulla.
+        Prima di usare l&apos;intelligenza artificiale, Zefiro cerca la risposta qui: nel viaggio del cliente, nelle schede dell&apos;
+        Atlante, nelle tue domande frequenti e nelle risposte già date. Queste risposte sono immediate e non costano nulla.
       </p>
 
       {!data.ready && (

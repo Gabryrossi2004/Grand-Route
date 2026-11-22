@@ -39,7 +39,7 @@ export default async function AgencyGlobePage() {
     console.error("[mappamondo agenzia]", error.message);
     return (
       <div className="flex flex-col gap-3">
-        <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Mappamondo</h1>
+        <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Atlante</h1>
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900">
           Per attivare il mappamondo dell&apos;agenzia serve un aggiornamento del database: esegui lo script <strong>0045_agency_globe.sql</strong> nell&apos;SQL Editor di Supabase, poi ricarica questa pagina.
         </div>
@@ -83,7 +83,7 @@ export default async function AgencyGlobePage() {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Mappamondo</h1>
+        <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Atlante</h1>
         <p className="mt-1 max-w-2xl text-sm text-slate-600">
           Dove hai venduto i tuoi viaggi, paese per paese. Tocca un paese per vedere i viaggi e aprire la <strong>scheda paese</strong> da presentare ai clienti.
         </p>

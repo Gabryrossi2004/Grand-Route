@@ -24,7 +24,7 @@ export default function AskMappamondo({ compact = false }: { compact?: boolean }
   return (
     <div className={`rounded-2xl border border-[#e6d7bb] bg-white ${compact ? "p-3" : "p-4"}`}>
       <p className="mb-1 flex items-center gap-1.5 text-sm font-semibold text-[#233c5e]">
-        <Sparkles size={15} className="text-[#c58f2d]" /> Chiedi al Mappamondo
+        <Sparkles size={15} className="text-[#c58f2d]" /> Chiedi all'Atlante
       </p>
       <p className="mb-2 text-xs text-slate-500">Risposta immediata dalle schede paese e dalle guide, gratis (senza AI).</p>
       <form

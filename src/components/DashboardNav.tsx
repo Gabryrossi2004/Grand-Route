@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Settings, X } from "lucide-react";
 
 type NavLink = { href: string; label: string };
-type NavGroup = { label: string; children: NavLink[] };
+type NavGroup = { label: string; children: NavLink[]; account?: boolean };
 type NavItem = NavLink | NavGroup;
 
 const navItems: NavItem[] = [
@@ -21,10 +21,17 @@ const navItems: NavItem[] = [
       { href: "/dashboard/suppliers", label: "Fornitori" },
     ],
   },
+  { href: "/dashboard/mappamondo", label: "Atlante" },
   { href: "/dashboard/community", label: "Community" },
-  { href: "/dashboard/calendar", label: "Calendario" },
-  { href: "/dashboard/mappamondo", label: "Mappamondo" },
-  { href: "/dashboard/settings", label: "Impostazioni" },
+  // Menu personale a destra: impostazioni, guida e uscita (logo e nome dell'agenzia restano a sinistra nell'intestazione)
+  {
+    label: "Account",
+    account: true,
+    children: [
+      { href: "/dashboard/settings", label: "Impostazioni" },
+      { href: "/dashboard/settings/guida", label: "Guida all'uso" },
+    ],
+  },
 ];
 
 function CountBadge({ count }: { count: number }) {
@@ -57,13 +64,14 @@ export default function DashboardNav({
   unreadMessages?: number;
 }) {
   const pathname = usePathname();
-  const [groupOpen, setGroupOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const groupOpen = openGroup !== null;
   const [mobileOpen, setMobileOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   // Chiude i menù quando si cambia pagina
   useEffect(() => {
-    setGroupOpen(false);
+    setOpenGroup(null);
     setMobileOpen(false);
   }, [pathname]);
 
@@ -72,13 +80,13 @@ export default function DashboardNav({
     if (!groupOpen && !mobileOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setGroupOpen(false);
+        setOpenGroup(null);
         setMobileOpen(false);
       }
     };
     const onDown = (e: PointerEvent) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setGroupOpen(false);
+        setOpenGroup(null);
         setMobileOpen(false);
       }
     };
@@ -97,22 +105,24 @@ export default function DashboardNav({
         {navItems.map((item) => {
           if (isGroup(item)) {
             const active = item.children.some((c) => isActive(pathname, c.href));
+            const open = openGroup === item.label;
             return (
-              <div key={item.label} className="relative">
+              <div key={item.label} className={`relative ${item.account ? "ml-2 border-l border-[#e6d7bb] pl-2" : ""}`}>
                 <button
                   type="button"
-                  aria-expanded={groupOpen}
+                  aria-expanded={open}
                   aria-haspopup="menu"
-                  onClick={() => setGroupOpen((v) => !v)}
+                  onClick={() => setOpenGroup(open ? null : item.label)}
                   className={`${linkBase} inline-flex items-center gap-1 ${active ? linkOn : linkOff}`}
                 >
+                  {item.account && <Settings size={15} aria-hidden />}
                   {item.label}
-                  <ChevronDown size={14} className={`transition ${groupOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={14} className={`transition ${open ? "rotate-180" : ""}`} />
                 </button>
-                {groupOpen && (
+                {open && (
                   <div
                     role="menu"
-                    className="absolute left-0 top-full z-30 mt-2 min-w-40 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg"
+                    className={`absolute ${item.account ? "right-0" : "left-0"} top-full z-30 mt-2 min-w-44 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg`}
                   >
                     {item.children.map((child) => {
                       const childActive = isActive(pathname, child.href);
@@ -130,6 +140,13 @@ export default function DashboardNav({
                         </Link>
                       );
                     })}
+                    {item.account && (
+                      <form action={signOut} className="mt-1 border-t border-[#e6d7bb] pt-1">
+                        <button type="submit" role="menuitem" className="block w-full rounded-xl px-3 py-2 text-left font-medium text-[#756548] transition hover:bg-[#f1e6cf]">
+                          Esci
+                        </button>
+                      </form>
+                    )}
                   </div>
                 )}
               </div>
@@ -148,11 +165,6 @@ export default function DashboardNav({
             </Link>
           );
         })}
-        <form action={signOut} className="ml-1">
-          <button type="submit" className="whitespace-nowrap px-3 py-1.5 font-medium text-[#756548] transition hover:text-[#233c5e]">
-            Esci
-          </button>
-        </form>
       </nav>
 
       {/* Telefono */}

@@ -29,7 +29,7 @@ export async function GET(request: Request) {
       sendPushToTargets([target], {
         title: "Partenza in arrivo",
         body: `Il viaggio "${target.trip_title}" parte tra 3 giorni.`,
-        url: "/dashboard/calendar",
+        url: "/dashboard#calendario",
       }),
     ),
   );

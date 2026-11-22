@@ -49,7 +49,7 @@ export default function TripCountriesDialog({
         <p className="text-xs font-semibold uppercase tracking-wide text-[#a87a1e]">Dall&apos;itinerario (automatici)</p>
         <p className="mb-3 mt-1 text-sm text-slate-700">
           {auto === null
-            ? "Si calcolano alla prossima apertura del Mappamondo."
+            ? "Si calcolano alla prossima apertura dell'Atlante."
             : auto.length === 0
               ? "Nessuna località riconosciuta nell'itinerario."
               : auto.map((c) => `${flagOf(c)} ${nameItOfCode(c)}`).join(" · ")}
