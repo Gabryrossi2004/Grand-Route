@@ -4,7 +4,9 @@ import { useActionState, useEffect, useRef } from "react";
 
 export default function CommentForm({
   action,
+  placeholder,
 }: {
+  placeholder?: string;
   action: (prevState: { error?: string } | undefined, formData: FormData) => Promise<{ error?: string }>;
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
@@ -24,7 +26,7 @@ export default function CommentForm({
         type="text"
         name="body"
         required
-        placeholder="Scrivi un commento…"
+        placeholder={placeholder ?? "Scrivi un commento…"}
         className="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]"
       />
       <button

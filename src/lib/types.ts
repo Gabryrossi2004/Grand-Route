@@ -274,12 +274,24 @@ export type TripPayment = {
   created_at: string;
 };
 
+export const COMMUNITY_CATEGORIES = [
+  { value: "hotel", label: "Hotel e alloggi" },
+  { value: "tour", label: "Tour e tour operator" },
+  { value: "trasporti", label: "Voli, navi e trasporti" },
+  { value: "esperienze", label: "Esperienze ed escursioni" },
+  { value: "destinazioni", label: "Destinazioni" },
+  { value: "fornitori", label: "Fornitori e agenzie locali" },
+  { value: "altro", label: "Altro" },
+] as const;
+
 export type CommunityGroup = {
   id: string;
   name: string;
   description: string | null;
   created_by: string;
   created_at: string;
+  is_open?: boolean;
+  category?: string | null;
 };
 
 export type CommunityGroupMemberRole = "owner" | "member";
@@ -303,6 +315,8 @@ export type CommunityGroupInvite = {
   created_at: string;
 };
 
+export type CommunityPostKind = "domanda" | "recensione" | "chat";
+
 export type CommunityPost = {
   id: string;
   group_id: string | null;
@@ -311,6 +325,13 @@ export type CommunityPost = {
   body: string;
   created_at: string;
   updated_at: string;
+  kind?: CommunityPostKind;
+  subject?: string | null;
+  rating?: number | null;
+  pros?: string | null;
+  cons?: string | null;
+  country_code?: string | null;
+  would_resell?: boolean | null;
 };
 
 export type CommunityPostPhoto = {

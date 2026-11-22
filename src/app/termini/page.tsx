@@ -11,7 +11,7 @@ export default function TerminiPage() {
     <AuthShell wide>
       <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Termini di Servizio</h1>
-        <p className="mb-6 text-xs text-slate-500">Ultimo aggiornamento: 10 novembre 2026</p>
+        <p className="mb-6 text-xs text-slate-500">Ultimo aggiornamento: 22 novembre 2026</p>
 
         <div className="flex flex-col gap-5 text-sm leading-relaxed text-slate-600">
           <section>
@@ -29,7 +29,8 @@ export default function TerminiPage() {
               Grand Route è un gestionale che consente a agenzie di viaggio e organizzatori
               indipendenti (gli &quot;Utenti Agenzia&quot;) di creare e gestire itinerari di viaggio e di
               condividerli con i propri clienti (i &quot;Clienti&quot;) tramite un&apos;area dedicata o un link
-              pubblico.
+              pubblico. Comprende inoltre l&apos;Atlante (schede e guide dei paesi), l&apos;assistente Zefiro,
+              le notifiche e la Community riservata ai professionisti del viaggio.
             </p>
           </section>
 
@@ -115,7 +116,117 @@ export default function TerminiPage() {
           </section>
 
           <section>
-            <h2 className="mb-1 font-semibold text-slate-800">9. Proprietà intellettuale</h2>
+            <h2 className="mb-1 font-semibold text-slate-800">9. Schede paese, guide e informazioni di viaggio</h2>
+            <p>
+              Le schede e le guide dell&apos;Atlante (documenti d&apos;ingresso, visti, sicurezza, salute,
+              clima, usanze, prezzi, fornitori e simili) hanno finalità puramente informativa e di
+              supporto al lavoro dell&apos;agenzia. Possono contenere errori o essere superate: le regole di
+              ingresso, sanitarie e di sicurezza cambiano spesso. L&apos;Utente Agenzia è tenuto a
+              verificarle sulle fonti ufficiali (ad esempio{" "}
+              <a href="https://www.viaggiaresicuri.it" className="font-medium text-[#233c5e] hover:underline">
+                viaggiaresicuri.it
+              </a>
+              , il sito delle autorità del paese di destinazione e le compagnie di trasporto) prima di
+              comunicarle ai Clienti. Il Fornitore non risponde di decisioni di viaggio, rifiuti
+              d&apos;imbarco, ingressi negati o altri danni derivanti dall&apos;uso di tali informazioni senza
+              verifica. Le fotografie delle schede provengono da archivi pubblici (ad esempio Wikimedia
+              Commons) e restano soggette alle rispettive licenze e ai diritti dei rispettivi autori.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">10. Assistente Zefiro e contenuti generati con l&apos;AI</h2>
+            <p>
+              Zefiro risponde in parte da informazioni già presenti nel Servizio (viaggio, schede paese,
+              domande frequenti dell&apos;agenzia) e, quando non bastano, tramite un servizio di
+              intelligenza artificiale di terzi. Le risposte e gli itinerari generati possono essere
+              imprecisi o incompleti e non sostituiscono la consulenza professionale: l&apos;Utente Agenzia le
+              rilegge e ne risponde prima di inviarle ai Clienti. Le risposte generali già date possono
+              essere conservate nell&apos;archivio dell&apos;agenzia per rispondere più rapidamente a domande
+              simili; l&apos;agenzia può correggerle o eliminarle in ogni momento. L&apos;uso dell&apos;AI può essere
+              soggetto a limiti giornalieri e di budget.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">11. Link condivisi e notifiche</h2>
+            <p>
+              L&apos;Utente Agenzia può creare link pubblici (ad esempio la scheda di un paese da inviare a un
+              Cliente): chiunque abbia il link può vedere il contenuto condiviso, che può essere
+              revocato in qualsiasi momento. L&apos;Utente è responsabile di ciò che condivide. Le notifiche
+              (promemoria di viaggio, messaggi automatici ai Clienti, Community) sono inviate solo a chi le ha
+              attivate e si possono disattivare dalle impostazioni; i messaggi automatici ai Clienti sono
+              attivi solo se l&apos;agenzia li abilita.
+            </p>
+          </section>
+
+          <section id="community">
+            <h2 className="mb-1 font-semibold text-slate-800">12. Community e contenuti degli utenti</h2>
+            <p className="mb-2">
+              La Community è uno spazio riservato ai professionisti del viaggio (agenzie e organizzatori),
+              in cui si scambiano recensioni, domande e messaggi su prodotti e fornitori. È organizzata in
+              gruppi <strong>aperti</strong> (visibili in vetrina a tutti i professionisti, a cui ci si unisce
+              con un clic) e gruppi <strong>privati</strong> (solo su invito del responsabile). Non è
+              accessibile ai Clienti. Pubblicando nella Community l&apos;Utente si impegna a rispettare queste
+              regole:
+            </p>
+            <ul className="ml-4 list-disc space-y-1">
+              <li>
+                scrivere in modo <strong>rispettoso e pertinente</strong>: sono vietati insulti, attacchi
+                personali, discriminazioni, minacce, molestie e toni aggressivi, anche verso fornitori e
+                colleghi;
+              </li>
+              <li>
+                <strong>recensioni oneste</strong>: raccontare solo esperienze reali e dirette, senza
+                recensioni false, concordate o scritte per danneggiare o favorire un concorrente o un
+                fornitore; i fatti vanno descritti per quello che sono, distinguendoli dalle opinioni;
+              </li>
+              <li>
+                <strong>nessun dato personale dei Clienti</strong> (nomi, contatti, documenti, foto
+                riconoscibili, dettagli di pratiche) né di altre persone senza il loro consenso;
+              </li>
+              <li>
+                nessuna pubblicità non richiesta, spam, offerte di lavoro o vendita di servizi non
+                pertinenti, contenuti illeciti o che violino diritti d&apos;autore e di terzi;
+              </li>
+              <li>nessun contenuto su questioni politiche, religiose o personali estranee al lavoro di viaggio.</li>
+            </ul>
+            <p className="mt-2">
+              <strong>Contenuti e responsabilità.</strong> L&apos;Utente resta l&apos;unico responsabile di ciò che
+              pubblica e ne garantisce la veridicità e la legittimità; le opinioni espresse sono dei singoli
+              utenti e non del Fornitore, che non le verifica preventivamente e non garantisce l&apos;esattezza
+              delle recensioni e dei consigli. Pubblicando, l&apos;Utente concede al Fornitore e agli altri membri
+              del gruppo una licenza gratuita, non esclusiva, limitata al funzionamento del Servizio, per
+              mostrare il contenuto ai destinatari previsti; il contenuto resta di sua proprietà e può
+              eliminarlo in ogni momento.
+            </p>
+            <p className="mt-2">
+              <strong>Segnalazioni e moderazione.</strong> Ogni membro può segnalare un post o un commento. Il
+              responsabile del gruppo (chi lo ha creato) può esaminare le segnalazioni e rimuovere contenuti
+              e membri del proprio gruppo; il Fornitore può rimuovere contenuti, sospendere o chiudere
+              l&apos;account di chi viola queste regole, anche senza preavviso nei casi gravi, e collaborare con le
+              autorità quando la legge lo richiede. Il responsabile di un gruppo agisce a titolo
+              volontario e non è un dipendente o un rappresentante del Fornitore. Per segnalare un
+              contenuto illecito o richiederne la rimozione si può anche scrivere a{" "}
+              <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">
+                privacy@grandroute.it
+              </a>
+              . La chiusura di un gruppo comporta l&apos;eliminazione dei suoi contenuti.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">13. Fornitori, recensioni e rapporti commerciali</h2>
+            <p>
+              Il Servizio permette di annotare fornitori e di leggere recensioni dei colleghi, ma non
+              intermedia né garantisce alcun acquisto, prenotazione o rapporto commerciale tra gli
+              utenti o con terzi. Ogni accordo è concluso e gestito direttamente dalle parti interessate,
+              sotto la loro esclusiva responsabilità.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">14. Proprietà intellettuale</h2>
             <p>
               Il nome Grand Route, il relativo logo e il software che compone il Servizio sono di
               proprietà del Fornitore e non possono essere riprodotti o utilizzati senza
@@ -124,7 +235,7 @@ export default function TerminiPage() {
           </section>
 
           <section>
-            <h2 className="mb-1 font-semibold text-slate-800">10. Modifiche ai Termini</h2>
+            <h2 className="mb-1 font-semibold text-slate-800">15. Modifiche ai Termini</h2>
             <p>
               Questi Termini possono essere aggiornati nel tempo. In caso di modifiche sostanziali,
               gli Utenti saranno informati tramite il Servizio o via email. L&apos;uso continuato del
@@ -133,7 +244,7 @@ export default function TerminiPage() {
           </section>
 
           <section>
-            <h2 className="mb-1 font-semibold text-slate-800">11. Legge applicabile</h2>
+            <h2 className="mb-1 font-semibold text-slate-800">16. Legge applicabile</h2>
             <p>
               I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà
               competente il foro del luogo di residenza del Fornitore, salvo diversa previsione
@@ -142,7 +253,7 @@ export default function TerminiPage() {
           </section>
 
           <section>
-            <h2 className="mb-1 font-semibold text-slate-800">12. Contatti</h2>
+            <h2 className="mb-1 font-semibold text-slate-800">17. Contatti</h2>
             <p>
               Per qualsiasi domanda relativa a questi Termini è possibile scrivere a{" "}
               <a href="mailto:privacy@grandroute.it" className="font-medium text-[#233c5e] hover:underline">

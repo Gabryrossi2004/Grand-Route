@@ -14,10 +14,16 @@ export async function createGroup(_prevState: { error?: string } | undefined, fo
   const name = String(formData.get("name") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim() || null;
   if (!name) return { error: "Il nome del gruppo è obbligatorio." };
+  if (name.length > 80) return { error: "Il nome del gruppo è troppo lungo (massimo 80 caratteri)." };
+  const isOpen = String(formData.get("visibility") ?? "open") === "open";
+  const categoryRaw = String(formData.get("category") ?? "");
+  const category = ["hotel", "tour", "trasporti", "esperienze", "destinazioni", "fornitori", "altro"].includes(categoryRaw)
+    ? categoryRaw
+    : "altro";
 
   const { data: group, error } = await supabase
     .from("community_groups")
-    .insert({ name, description, created_by: user.id })
+    .insert({ name, description, created_by: user.id, is_open: isOpen, category })
     .select("id")
     .single();
 
@@ -106,4 +112,12 @@ export async function deleteGroup(groupId: string) {
   const supabase = await createClient();
   await supabase.from("community_groups").delete().eq("id", groupId);
   redirect("/dashboard/community/groups");
+}
+
+export async function joinOpenGroup(groupId: string) {
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("join_open_community_group", { p_group_id: groupId });
+  if (error) return;
+  revalidatePath("/dashboard/community");
+  redirect(`/dashboard/community/groups/${groupId}`);
 }

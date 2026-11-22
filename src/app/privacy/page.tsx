@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <AuthShell wide>
       <AuthBrandHeader />
         <h1 className="mb-1 text-xl font-semibold text-slate-900">Informativa sulla Privacy</h1>
-        <p className="mb-6 text-xs text-slate-500">Ultimo aggiornamento: 10 novembre 2026</p>
+        <p className="mb-6 text-xs text-slate-500">Ultimo aggiornamento: 22 novembre 2026</p>
 
         <div className="flex flex-col gap-5 text-sm leading-relaxed text-slate-600">
           <section>
@@ -65,6 +65,24 @@ export default function PrivacyPage() {
                 archiviazione.
               </li>
               <li>
+                <strong>Contenuti della Community:</strong> recensioni, domande, messaggi, commenti, voti,
+                «mi piace» e foto che i professionisti pubblicano nei gruppi, insieme al nome dell&apos;agenzia e al
+                logo mostrati come autore, e le segnalazioni inviate ai responsabili dei gruppi. I contenuti
+                dei gruppi aperti sono visibili a tutti i professionisti registrati; quelli dei gruppi privati
+                solo ai membri. Non sono visibili ai Clienti né al pubblico. Chiediamo di non inserirvi dati
+                personali dei Clienti.
+              </li>
+              <li>
+                <strong>Preferenze e notifiche:</strong> iscrizione alle notifiche sul dispositivo e
+                preferenze di invio (promemoria di viaggio, Community, messaggi automatici ai Clienti), che si
+                possono disattivare in ogni momento.
+              </li>
+              <li>
+                <strong>Archivio di Zefiro e fornitori:</strong> domande frequenti scritte dall&apos;agenzia,
+                risposte generali già date dall&apos;assistente (senza dati dei singoli clienti), rubrica dei
+                fornitori e schede paese personalizzate; l&apos;agenzia può modificarli ed eliminarli.
+              </li>
+              <li>
                 <strong>Dati tecnici:</strong> indirizzo IP, log di accesso ed errori applicativi,
                 raccolti automaticamente per garantire sicurezza e stabilità del Servizio.
               </li>
@@ -93,7 +111,9 @@ export default function PrivacyPage() {
               I dati sono conservati per tutta la durata dell&apos;account e, dopo la sua eventuale
               chiusura, per il tempo necessario ad adempiere a obblighi legali o a far valere diritti
               in sede giudiziaria, e comunque non oltre 10 anni, salvo richiesta di cancellazione
-              anticipata.
+              anticipata. I contenuti pubblicati nella Community possono essere eliminati dall&apos;autore in
+              ogni momento; quelli di un gruppo vengono eliminati insieme al gruppo, mentre i post di un
+              account chiuso vengono cancellati con l&apos;account.
             </p>
           </section>
 
@@ -127,8 +147,16 @@ export default function PrivacyPage() {
                 di luogo cercato: la posizione del cliente non viene salvata.
               </li>
               <li>
+                <strong>Wikimedia Commons</strong> — fotografie pubbliche mostrate nelle schede paese. Non
+                riceve dati degli utenti oltre a quelli tecnici di una normale visita.
+              </li>
+              <li>
                 <strong>Open-Meteo</strong> — previsioni del tempo nell&apos;area clienti. Riceve
                 soltanto il nome della località di destinazione, nessun dato personale.
+              </li>
+              <li>
+                <strong>Servizi di notifica del browser</strong> — consegnano le notifiche push al
+                dispositivo di chi le ha attivate (il contenuto è limitato al testo della notifica).
               </li>
               <li>
                 <strong>Sentry</strong> — monitoraggio tecnico degli errori applicativi, per garantire

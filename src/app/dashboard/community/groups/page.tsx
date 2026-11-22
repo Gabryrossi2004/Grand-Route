@@ -29,11 +29,11 @@ export default async function CommunityGroupsPage() {
     <div className="mx-auto max-w-2xl">
       <div className="mb-6">
         <Link href="/dashboard/community" className="text-sm font-medium text-[#233c5e] hover:underline">
-          ← Torna alla bacheca
+          ← Torna alla community
         </Link>
         <h1 className="mt-2 text-3xl font-medium tracking-tight text-[#233c5e]">I miei gruppi</h1>
         <p className="mt-1 text-sm text-slate-500">
-          Gruppi privati, visibili solo a chi è stato invitato: ideali per reti commerciali o gruppi di tour operator.
+          I gruppi di cui fai parte. Puoi crearne uno aperto (compare in vetrina) o privato (solo su invito: ideale per reti commerciali o colleghi).
         </p>
       </div>
 

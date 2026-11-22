@@ -18,17 +18,24 @@ export type CommunityFeed = {
 
 export async function loadCommunityFeed(
   supabase: SupabaseClient,
-  groupId: string | null,
+  groupId: string | string[] | null,
   currentUserId?: string,
+  opts: { limit?: number; kind?: string } = {},
 ): Promise<CommunityFeed> {
-  const postsQuery = supabase
+  let postsQuery = supabase
     .from("community_posts")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(opts.limit ?? 60);
+  if (opts.kind) postsQuery = postsQuery.eq("kind", opts.kind);
 
-  const { data: posts } = groupId
-    ? await postsQuery.eq("group_id", groupId)
-    : await postsQuery.is("group_id", null);
+  const { data: posts } = Array.isArray(groupId)
+    ? groupId.length
+      ? await postsQuery.in("group_id", groupId)
+      : { data: [] }
+    : groupId
+      ? await postsQuery.eq("group_id", groupId)
+      : await postsQuery.is("group_id", null);
 
   const typedPosts = (posts as CommunityPost[]) || [];
   const postIds = typedPosts.map((p) => p.id);
