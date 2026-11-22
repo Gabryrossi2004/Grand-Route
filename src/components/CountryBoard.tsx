@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Download, ImagePlus, Loader2, Share2, Trash2, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import JournalPanel from "@/components/JournalPanel";
 import { shrinkImage } from "@/lib/shrinkImage";
 import { addCountryPhoto, deleteCountryPhoto, listCountryPhotos, setPhotoCaption, type CountryPhoto } from "@/lib/actions/clientPhotos";
 
@@ -41,6 +42,8 @@ export default function CountryBoard({
   const [busy, setBusy] = useState<string | null>(null);
   const [tripId, setTripId] = useState<string>(trips.length === 1 ? trips[0].id : "");
   const [open, setOpen] = useState<number | null>(null);
+  const [tab, setTab] = useState<"photos" | "diary">("photos");
+  const [diaryCount, setDiaryCount] = useState<number | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
 
   const load = useCallback(async () => {
@@ -139,7 +142,31 @@ export default function CountryBoard({
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-5 py-4">
+        <div className="flex gap-1 border-b border-[#e6d7bb] px-5 pt-2">
+          {(
+            [
+              ["photos", `Foto${photos ? ` (${photos.length})` : ""}`],
+              ["diary", `Diario${diaryCount ? ` (${diaryCount})` : ""}`],
+            ] as const
+          ).map(([key, label]) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setTab(key)}
+              className={`-mb-px rounded-t-lg border-b-2 px-4 py-2 text-sm font-semibold ${tab === key ? "border-[#233c5e] text-[#233c5e]" : "border-transparent text-slate-500 hover:text-[#233c5e]"}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {tab === "diary" && (
+          <div className="flex-1 overflow-y-auto px-5 py-4">
+            <JournalPanel country={country} trips={trips} onCountChange={setDiaryCount} />
+          </div>
+        )}
+
+        <div className={`flex-1 overflow-y-auto px-5 py-4 ${tab === "diary" ? "hidden" : ""}`}>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <button
               type="button"
