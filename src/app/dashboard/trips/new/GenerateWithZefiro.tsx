@@ -8,6 +8,7 @@ import type { GeneratedItinerary } from "@/lib/itineraryAi";
 import Modal from "@/components/Modal";
 import DateField from "@/components/DateField";
 import DropzoneUpload from "@/components/DropzoneUpload";
+import GuidedBrief from "./GuidedBrief";
 import AiQuestions, { formatClarifications } from "@/components/AiQuestions";
 import AssistantIcon from "@/components/AssistantIcon";
 import { ZefiroThinking } from "@/components/Zefiro";
@@ -55,6 +56,9 @@ export default function GenerateWithZefiro({
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"brief" | "questions" | "review" | "done">("brief");
+  // «Guidato» = domande una alla volta (senza AI); «Libero» = descrizione a parole
+  const [briefMode, setBriefMode] = useState<"guided" | "free">("guided");
+  const [briefText, setBriefText] = useState("");
   const [doneMessage, setDoneMessage] = useState("");
   const [planning, setPlanning] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -77,6 +81,7 @@ export default function GenerateWithZefiro({
     const onAction = (event: Event) => {
       if ((event as CustomEvent).detail === wanted) {
         setPhase("brief");
+        setBriefMode("guided");
         setError(null);
         setOpen(true);
       }
@@ -245,7 +250,17 @@ export default function GenerateWithZefiro({
           wide={phase === "review"}
           onClose={close}
         >
-          {phase === "brief" && (
+          {phase === "brief" && briefMode === "guided" && (
+            <GuidedBrief
+              onDone={(text) => {
+                setBriefText(text);
+                setBriefMode("free");
+              }}
+              onSkip={() => setBriefMode("free")}
+            />
+          )}
+
+          {phase === "brief" && briefMode === "free" && (
             <form onSubmit={onSubmitBrief} className="flex flex-col gap-3">
               <p className="-mt-2 text-sm text-slate-500">
                 Racconta a grandi linee il viaggio che vuoi. Se la richiesta è generica {ASSISTANT_NAME} propone{" "}
@@ -256,7 +271,8 @@ export default function GenerateWithZefiro({
                 name="brief"
                 rows={7}
                 autoFocus
-                defaultValue=""
+                key={briefText}
+                defaultValue={briefText}
                 placeholder="Es. Viaggio per 3 amici di vent'anni in Messico, cultura e vita notturna, 10 giorni, hotel, auto a noleggio (max 4 ore di guida)…"
                 className={inputClass}
               />
@@ -268,6 +284,9 @@ export default function GenerateWithZefiro({
                 className="w-fit text-xs font-medium text-[#233c5e] underline decoration-dotted"
               >
                 Inserisci un esempio
+              </button>
+              <button type="button" onClick={() => setBriefMode("guided")} className="w-fit text-xs font-medium text-[#233c5e] underline decoration-dotted">
+                Torna alle domande guidate
               </button>
               {!(trip && trip.hasContent) && <ItineraryModePicker value={itineraryMode} onChange={setItineraryMode} />}
               {promptStyles.length > 0 && (
