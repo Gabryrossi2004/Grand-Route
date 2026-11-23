@@ -1,7 +1,6 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
-import { flightSearchLinks } from "@/lib/airports";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Check, FileText, Plane, Plus, Search, Trash2, X } from "lucide-react";
@@ -514,14 +513,6 @@ export default function ActivityForm({
                   <Search size={13} />
                   {flightSearchState.status === "loading" ? "Cerco…" : "Cerca voli"}
                 </button>
-                {routeFrom.trim().length >= 2 && routeTo.trim().length >= 2 && (
-                  <FlightLinks
-                    from={routeFrom}
-                    to={routeTo}
-                    date={dayDate ?? null}
-                    toIata={flightSearchState.status === "results" ? flightSearchState.results[0]?.arrivalIata : null}
-                  />
-                )}
                 <p className="w-full text-[11px] text-slate-500">
                   «Cerca voli» mostra i voli diretti nella data di questo giorno e li inserisce qui. Con uno scalo: cerca fino allo scalo (es. Roma → Doha), scegli il volo, poi «Il volo continua con una coincidenza» → «Trova la coincidenza».
                 </p>
@@ -859,25 +850,3 @@ export default function ActivityForm({
   );
 }
 
-// Collegamenti gratuiti a Google Voli e Skyscanner, già compilati con tratta e data: lì si vedono
-// tutti i voli (anche con scalo) con i prezzi aggiornati. Non consumano ricerche del piano voli.
-function FlightLinks({ from, to, date, toIata }: { from: string; to: string; date: string | null; toIata?: string | null }) {
-  const links = flightSearchLinks(from, to, date, toIata);
-  const cls =
-    "inline-flex items-center gap-1 rounded-full border border-[#233c5e]/40 bg-white px-2.5 py-1 text-xs font-medium text-[#233c5e] hover:border-[#233c5e] hover:bg-[#eef2f8]";
-  return (
-    <div className="flex w-full flex-wrap items-center gap-1.5">
-      <span className="text-[11px] font-medium text-slate-600">Tutti i voli e i prezzi, gratis:</span>
-      <a href={links.google} target="_blank" rel="noopener noreferrer" className={cls}>
-        Google Voli ↗
-      </a>
-      {links.skyscanner ? (
-        <a href={links.skyscanner} target="_blank" rel="noopener noreferrer" className={cls}>
-          Skyscanner ↗
-        </a>
-      ) : (
-        <span className="text-[11px] text-slate-400">Skyscanner: scrivi il codice dell&apos;aeroporto (es. DEL)</span>
-      )}
-    </div>
-  );
-}
