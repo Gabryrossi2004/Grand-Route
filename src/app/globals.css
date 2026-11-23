@@ -55,6 +55,22 @@ html[data-ui-font="classico"] body {
 [data-ui="client"] {
   --radius-2xl: 1.5rem;
   --radius-3xl: 1.75rem;
+  /* Scritte un passo più grandi nell'area clienti (e viaggiatori): i testi piccoli e
+     normali salgono di una misura; i titoli (xl e oltre) restano come sono. */
+  --text-xs: 0.875rem;
+  --text-xs--line-height: calc(1.25 / 0.875);
+  --text-sm: 1rem;
+  --text-sm--line-height: calc(1.5 / 1);
+  --text-base: 1.125rem;
+  --text-base--line-height: calc(1.75 / 1.125);
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: calc(1.75 / 1.1875);
+}
+@layer utilities {
+  [data-ui="client"] .text-\[10px\] { font-size: 11.5px; }
+  [data-ui="client"] .text-\[11px\] { font-size: 12.5px; }
+  [data-ui="client"] .text-\[12px\] { font-size: 13.5px; }
+  [data-ui="client"] .text-\[13px\] { font-size: 14.5px; }
 }
 
 /* Etichetta maiuscola con spaziatura, sopra i titoli di pagina */
