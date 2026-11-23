@@ -51,6 +51,9 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
+    // Tornando su una pagina già vista entro 30 secondi, il sito la mostra subito dalla memoria
+    // del browser invece di rifare tutte le richieste (salvare o modificare qualcosa la aggiorna).
+    staleTimes: { dynamic: 30, static: 180 },
     serverActions: {
       bodySizeLimit: "10mb",
     },

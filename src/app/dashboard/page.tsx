@@ -28,7 +28,10 @@ export default async function DashboardHomePage() {
   const allTrips = (trips as Trip[]) || [];
   const tripIds = allTrips.map((trip) => trip.id);
 
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }] = await Promise.all([
+  // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
+  // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
+  const reconfirmDays = riconfermaDays(romeToday());
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -71,18 +74,16 @@ export default async function DashboardHomePage() {
           .select("id, full_name, id_card_number, passport_number, passport_expiry, date_of_birth")
           .eq("owner_id", user?.id ?? "")
       : Promise.resolve({ data: [] }),
+    supabase
+      .from("ops_rows")
+      .select("supplier, status")
+      .eq("owner_id", user?.id ?? "")
+      .in("service_date", reconfirmDays)
+      .neq("supplier", "")
+      .not("status", "in", "(riconfermato,cancellato)")
+      .limit(2000),
   ]);
 
-  // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora)
-  const reconfirmDays = riconfermaDays(romeToday());
-  const { data: openReconfirm } = await supabase
-    .from("ops_rows")
-    .select("supplier, status")
-    .eq("owner_id", user?.id ?? "")
-    .in("service_date", reconfirmDays)
-    .neq("supplier", "")
-    .not("status", "in", "(riconfermato,cancellato)")
-    .limit(2000);
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
 
   const briefing = buildBriefing({

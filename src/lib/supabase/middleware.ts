@@ -27,9 +27,10 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // getClaims() controlla la firma del token direttamente sul server del sito (senza chiamare Supabase
+  // a ogni pagina, come faceva getUser): un giro di rete in meno prima di ogni apertura.
+  const { data: claimsData } = await supabase.auth.getClaims();
+  const user = claimsData?.claims?.sub ? { id: claimsData.claims.sub } : null;
 
   const pathname = request.nextUrl.pathname;
   const isClientAuthRoute = pathname.startsWith("/client/login") || pathname.startsWith("/client/signup");

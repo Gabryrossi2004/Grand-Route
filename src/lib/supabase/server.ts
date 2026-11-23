@@ -30,16 +30,13 @@ export async function createClient() {
   );
 }
 
-// supabase.auth.getUser() fa una vera chiamata di rete (verifica il token
-// con il server di autenticazione), e layout + pagina lo richiamavano
-// entrambi a ogni apertura pagina: un secondo giro di rete via (quello tra
-// Vercel e Supabase è particolarmente lento) a vuoto, per lo stesso utente.
-// react cache() lo ricorda per tutta la stessa richiesta, quindi va in rete
-// una sola volta anche se più punti della pagina lo richiamano.
-export const getCachedUser = cache(async () => {
+// L'utente collegato (solo l'identificativo, che è ciò che serve alle pagine). Usa getClaims():
+// con le chiavi di firma asimmetriche di Supabase il token si verifica qui, senza andare in rete;
+// altrimenti ripiega da solo sul controllo con il server di autenticazione. react cache() lo ricorda
+// per tutta la stessa richiesta. Le regole di sicurezza del database (RLS) usano comunque lo stesso token.
+export const getCachedUser = cache(async (): Promise<{ id: string; email?: string } | null> => {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  return user;
+  const { data } = await supabase.auth.getClaims();
+  const claims = data?.claims;
+  return claims?.sub ? { id: claims.sub, email: typeof claims.email === "string" ? claims.email : undefined } : null;
 });
