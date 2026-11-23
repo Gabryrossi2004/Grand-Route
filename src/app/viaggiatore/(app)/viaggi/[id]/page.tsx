@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CalendarDays, MapPin } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { loadTripDays } from "@/lib/tripDays";
 import ItineraryEditor from "@/components/ItineraryEditor";
-import TripTitleEditor from "@/components/TripTitleEditor";
 import type { Activity, ActivityPhoto, TripDay } from "@/lib/types";
 import DeleteTravelerTrip from "./DeleteTravelerTrip";
+import TripHeader from "./TripHeader";
 
 type DayWithActivities = TripDay & { activities: (Activity & { activity_photos: ActivityPhoto[] })[] };
-const dateIt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
 
 export default async function TravelerTripPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -26,23 +24,7 @@ export default async function TravelerTripPage({ params }: { params: Promise<{ i
 
   return (
     <div className="flex flex-col gap-5">
-      <div>
-        <Link href="/viaggiatore" className="mb-2 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-[#233c5e]">
-          <ArrowLeft size={14} /> I miei viaggi
-        </Link>
-        <TripTitleEditor tripId={trip.id} title={trip.title} destination={trip.destination} />
-        <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-600">
-          {trip.destination && (
-            <span className="flex items-center gap-1.5">
-              <MapPin size={14} className="text-[#c58f2d]" /> {trip.destination}
-            </span>
-          )}
-          <span className="flex items-center gap-1.5">
-            <CalendarDays size={14} className="text-[#c58f2d]" />
-            {trip.start_date ? `${dateIt(trip.start_date)}${trip.end_date ? ` – ${dateIt(trip.end_date)}` : ""}` : "Date da decidere: impostale nella barra dei giorni"}
-          </span>
-        </p>
-      </div>
+      <TripHeader trip={trip} active="itinerario" />
 
       {error ? (
         <p className="rounded-2xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Non sono riuscito a caricare l&apos;itinerario. Ricarica la pagina.</p>
