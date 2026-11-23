@@ -280,19 +280,154 @@
         "title": "Dolomiti classiche in auto",
         "days": 7,
         "route": "Bolzano (1) → Val di Funes (1) → Val Gardena (2) → Cortina (1) → Lago di Braies (1)",
-        "description": "I passi dolomitici più belli, le Tre Cime e i laghi da cartolina; ideale da giugno a settembre."
+        "description": "I passi dolomitici più belli, le Tre Cime e i laghi da cartolina; ideale da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bolzano",
+            "a": [
+              "transfer|Arrivo a Bolzano|In treno o in auto lungo l'A22.|Bolzano",
+              "alloggio|Hotel in centro||Bolzano",
+              "attivita|Museo di Ötzi e piazza Walther|La mummia dei ghiacci e il centro tirolese.|Bolzano"
+            ]
+          },
+          {
+            "t": "Val di Funes",
+            "a": [
+              "transfer|Trasferimento in Val di Funes||Val di Funes",
+              "attivita|Chiesetta di San Giovanni in Ranui e le Odle|Una delle cartoline delle Dolomiti.|Val di Funes",
+              "alloggio|Maso o hotel in valle||Val di Funes"
+            ]
+          },
+          {
+            "t": "Val Gardena",
+            "a": [
+              "transfer|Trasferimento in Val Gardena||Val Gardena",
+              "alloggio|Hotel a Ortisei o Selva||Val Gardena",
+              "attivita|Alpe di Siusi|Il più grande alpeggio d'Europa, in cabinovia.|Alpe di Siusi"
+            ]
+          },
+          {
+            "t": "Seceda e Sella",
+            "a": [
+              "attivita|Funivia del Seceda|Le creste più fotografate delle Dolomiti.|Ortisei",
+              "attivita|Giro dei passi del Sella in auto|Passo Gardena, Campolongo, Pordoi e Sella.|Sella"
+            ]
+          },
+          {
+            "t": "Cortina",
+            "a": [
+              "transfer|Trasferimento a Cortina passando per il Falzarego||Cortina",
+              "alloggio|Hotel a Cortina||Cortina",
+              "attivita|Cinque Torri e Lagazuoi|Musei all'aperto della Grande Guerra.|Cortina"
+            ]
+          },
+          {
+            "t": "Tre Cime e Braies",
+            "a": [
+              "attivita|Tre Cime di Lavaredo|Giro ad anello dal rifugio Auronzo (strada a pedaggio).|Tre Cime",
+              "attivita|Lago di Braies|Accesso regolato in estate: prenotare parcheggio o navetta.|Braies",
+              "alloggio|Hotel in Val Pusteria||Braies"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mercatini di Natale",
         "days": 4,
         "route": "Trento (1) → Bolzano (1) → Merano (1)",
-        "description": "I mercatini più famosi dell'arco alpino con terme di Merano; da fine novembre all'Epifania."
+        "description": "I mercatini più famosi dell'arco alpino con terme di Merano; da fine novembre all'Epifania.",
+        "plan": [
+          {
+            "t": "Trento",
+            "a": [
+              "transfer|Arrivo a Trento||Trento",
+              "alloggio|Hotel in centro||Trento",
+              "attivita|Mercatino di piazza Fiera e Duomo|Casette di legno, vin brulé e strudel.|Trento",
+              "attivita|Castello del Buonconsiglio||Trento"
+            ]
+          },
+          {
+            "t": "Bolzano",
+            "a": [
+              "treno|Treno per Bolzano||Bolzano",
+              "alloggio|Hotel a Bolzano||Bolzano",
+              "attivita|Mercatino di piazza Walther|Il mercatino più famoso d'Italia.|Bolzano",
+              "attivita|Renon e trenino del Renon|Paesaggio innevato sopra la città.|Renon"
+            ]
+          },
+          {
+            "t": "Merano",
+            "a": [
+              "treno|Treno per Merano||Merano",
+              "alloggio|Hotel con spa a Merano||Merano",
+              "attivita|Mercatino sul lungo Passirio e terme di Merano||Merano"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Mercatino di Bressanone o Vipiteno sulla via del ritorno||Bressanone",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lago di Garda trentino e Brenta",
         "days": 6,
         "route": "Riva del Garda (3) → Madonna di Campiglio (2)",
-        "description": "Sport sul lago, il castello di Arco e poi le Dolomiti di Brenta per trekking e relax in quota."
+        "description": "Sport sul lago, il castello di Arco e poi le Dolomiti di Brenta per trekking e relax in quota.",
+        "plan": [
+          {
+            "t": "Arrivo a Riva del Garda",
+            "a": [
+              "transfer|Arrivo a Riva del Garda||Riva del Garda",
+              "alloggio|Hotel sul lago||Riva del Garda",
+              "attivita|Centro storico e Torre Apponale||Riva del Garda"
+            ]
+          },
+          {
+            "t": "Sport sul lago",
+            "a": [
+              "attivita|Windsurf, vela o SUP|Il vento Ora rende il nord del Garda perfetto per gli sport d'acqua.|Torbole",
+              "attivita|Cascata del Varone||Riva del Garda"
+            ]
+          },
+          {
+            "t": "Arco e dintorni",
+            "a": [
+              "attivita|Castello di Arco e arrampicata|Capitale mondiale del climbing.|Arco",
+              "attivita|Lago di Tenno e borgo di Canale||Tenno"
+            ]
+          },
+          {
+            "t": "Madonna di Campiglio",
+            "a": [
+              "transfer|Trasferimento a Madonna di Campiglio||Madonna di Campiglio",
+              "alloggio|Hotel a Campiglio||Madonna di Campiglio",
+              "attivita|Lago di Nambino e passeggiata in paese||Madonna di Campiglio"
+            ]
+          },
+          {
+            "t": "Dolomiti di Brenta",
+            "a": [
+              "attivita|Cabinovia del Grostè e sentieri delle Dolomiti di Brenta|In inverno sci nella Skiarea Campiglio.|Brenta",
+              "attivita|Cascate di Vallesinella||Brenta"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -577,19 +712,164 @@
         "title": "Venezia e la laguna",
         "days": 4,
         "route": "Venezia (3), con Murano, Burano e Torcello",
-        "description": "Piazza San Marco, Palazzo Ducale, gondola e isole della laguna; meglio in primavera o autunno."
+        "description": "Piazza San Marco, Palazzo Ducale, gondola e isole della laguna; meglio in primavera o autunno.",
+        "plan": [
+          {
+            "t": "Arrivo a Venezia",
+            "a": [
+              "treno|Arrivo a Venezia Santa Lucia||Venezia",
+              "traghetto|Vaporetto lungo il Canal Grande||Venezia",
+              "alloggio|Hotel nel centro storico|Per vivere Venezia anche la sera.|Venezia",
+              "info|Contributo d'accesso|Verificare i giorni in cui è richiesto e l'esenzione per chi dorme in città.|"
+            ]
+          },
+          {
+            "t": "San Marco",
+            "a": [
+              "attivita|Basilica di San Marco e Palazzo Ducale|Con il Ponte dei Sospiri; ingressi con orario.|Venezia",
+              "attivita|Campanile e Rialto||Venezia",
+              "attivita|Giro in gondola||Venezia"
+            ]
+          },
+          {
+            "t": "Isole della laguna",
+            "a": [
+              "traghetto|Vaporetto per le isole||Laguna",
+              "attivita|Murano e le fornaci del vetro||Murano",
+              "attivita|Burano, le case colorate e il merletto||Burano",
+              "attivita|Torcello e la basilica bizantina||Torcello"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Dorsoduro: Gallerie dell'Accademia o Peggy Guggenheim||Venezia",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Città d'arte venete",
-        "days": 7,
+        "days": 8,
         "route": "Venezia (2) → Padova (1) → Vicenza (1) → Verona (2) → Lago di Garda (1)",
-        "description": "Giotto alla Cappella degli Scrovegni, Palladio a Vicenza, l'Arena e il Garda: un tour in treno facile."
+        "description": "Giotto alla Cappella degli Scrovegni, Palladio a Vicenza, l'Arena e il Garda: un tour in treno facile.",
+        "plan": [
+          {
+            "t": "Arrivo a Venezia",
+            "a": [
+              "treno|Arrivo a Venezia||Venezia",
+              "alloggio|Hotel nel centro storico||Venezia",
+              "attivita|Canal Grande in vaporetto e Rialto||Venezia"
+            ]
+          },
+          {
+            "t": "Venezia",
+            "a": [
+              "attivita|San Marco, Palazzo Ducale e Burano nel pomeriggio||Venezia"
+            ]
+          },
+          {
+            "t": "Padova",
+            "a": [
+              "treno|Treno per Padova|30 minuti.|Padova",
+              "alloggio|Hotel a Padova||Padova",
+              "attivita|Cappella degli Scrovegni|Gli affreschi di Giotto: prenotazione obbligatoria.|Padova",
+              "attivita|Basilica del Santo e Prato della Valle||Padova"
+            ]
+          },
+          {
+            "t": "Vicenza",
+            "a": [
+              "treno|Treno per Vicenza||Vicenza",
+              "alloggio|Hotel a Vicenza||Vicenza",
+              "attivita|Teatro Olimpico e Basilica Palladiana|La città di Palladio, UNESCO.|Vicenza",
+              "attivita|Villa La Rotonda||Vicenza"
+            ]
+          },
+          {
+            "t": "Verona",
+            "a": [
+              "treno|Treno per Verona||Verona",
+              "alloggio|Hotel in centro||Verona",
+              "attivita|Arena, Casa di Giulietta e piazza delle Erbe||Verona"
+            ]
+          },
+          {
+            "t": "Verona e Valpolicella",
+            "a": [
+              "attivita|Castelvecchio e Ponte Pietra||Verona",
+              "attivita|Degustazione di Amarone in Valpolicella||Valpolicella",
+              "attivita|Opera all'Arena (estate)||Verona"
+            ]
+          },
+          {
+            "t": "Lago di Garda",
+            "a": [
+              "transfer|Trasferimento a Sirmione||Sirmione",
+              "alloggio|Hotel sul lago||Lago di Garda",
+              "attivita|Sirmione e Grotte di Catullo||Sirmione"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Prosecco e Dolomiti",
-        "days": 5,
+        "days": 6,
         "route": "Treviso (1) → Valdobbiadene e Conegliano (2) → Cortina (2)",
-        "description": "Colline UNESCO del Prosecco con degustazioni e poi la regina delle Dolomiti."
+        "description": "Colline UNESCO del Prosecco con degustazioni e poi la regina delle Dolomiti.",
+        "plan": [
+          {
+            "t": "Treviso",
+            "a": [
+              "transfer|Arrivo a Treviso||Treviso",
+              "alloggio|Hotel in centro||Treviso",
+              "attivita|Canali di Treviso e Pescheria||Treviso",
+              "ristorante|Tiramisù nella sua città||Treviso"
+            ]
+          },
+          {
+            "t": "Colline del Prosecco",
+            "a": [
+              "transfer|Trasferimento a Valdobbiadene||Valdobbiadene",
+              "alloggio|Agriturismo tra le colline||Valdobbiadene",
+              "attivita|Degustazione di Prosecco Superiore DOCG|Con il Cartizze, il cru più pregiato.|Valdobbiadene"
+            ]
+          },
+          {
+            "t": "Conegliano e Asolo",
+            "a": [
+              "attivita|Strada del Prosecco in bici elettrica||Conegliano",
+              "attivita|Asolo, la città dai cento orizzonti||Asolo"
+            ]
+          },
+          {
+            "t": "Cortina",
+            "a": [
+              "transfer|Trasferimento a Cortina d'Ampezzo||Cortina",
+              "alloggio|Hotel a Cortina||Cortina",
+              "attivita|Corso Italia e Tofane in funivia||Cortina"
+            ]
+          },
+          {
+            "t": "Dolomiti",
+            "a": [
+              "attivita|Tre Cime di Lavaredo o Cinque Torri|D'inverno sci nel Dolomiti Superski.|Cortina"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -832,21 +1112,170 @@
     "itineraries": [
       {
         "title": "Trieste e il Carso",
-        "days": 4,
+        "days": 5,
         "route": "Trieste (3) → Miramare e Grotta Gigante (1)",
-        "description": "Caffè letterari, Piazza Unità sul mare, il castello di Miramare e il Carso con osmize e grotte."
+        "description": "Caffè letterari, Piazza Unità sul mare, il castello di Miramare e il Carso con osmize e grotte.",
+        "plan": [
+          {
+            "t": "Arrivo a Trieste",
+            "a": [
+              "treno|Arrivo a Trieste||Trieste",
+              "alloggio|Hotel in centro||Trieste",
+              "attivita|Piazza Unità d'Italia e Molo Audace|La piazza più grande d'Europa affacciata sul mare.|Trieste",
+              "attivita|Caffè storico San Marco o Tommaseo||Trieste"
+            ]
+          },
+          {
+            "t": "Trieste mitteleuropea",
+            "a": [
+              "attivita|Colle di San Giusto e teatro romano||Trieste",
+              "attivita|Borgo Teresiano e Canal Grande||Trieste",
+              "attivita|Tram di Opicina e Strada Napoleonica|Sentiero panoramico sul golfo.|Opicina"
+            ]
+          },
+          {
+            "t": "Carso",
+            "a": [
+              "attivita|Osmize del Carso|Prodotti delle fattorie, vino Terrano e Vitovska.|Carso",
+              "attivita|Sentiero Rilke a Duino||Duino"
+            ]
+          },
+          {
+            "t": "Miramare e Grotta Gigante",
+            "a": [
+              "attivita|Castello di Miramare|La residenza di Massimiliano d'Asburgo sul mare.|Miramare",
+              "attivita|Grotta Gigante|Una delle grotte turistiche più grandi del mondo.|Sgonico",
+              "alloggio|Hotel a Trieste||Trieste"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Friuli d'arte e vino",
-        "days": 6,
+        "days": 7,
         "route": "Udine (2) → Cividale (1) → Collio (1) → Aquileia e Grado (2)",
-        "description": "Longobardi, mosaici paleocristiani UNESCO, cantine del Collio e la laguna di Grado."
+        "description": "Longobardi, mosaici paleocristiani UNESCO, cantine del Collio e la laguna di Grado.",
+        "plan": [
+          {
+            "t": "Arrivo a Udine",
+            "a": [
+              "transfer|Arrivo a Udine||Udine",
+              "alloggio|Hotel in centro||Udine",
+              "attivita|Piazza della Libertà e Castello||Udine",
+              "ristorante|Tajut in osteria|Il bicchiere di vino friulano con frico.|Udine"
+            ]
+          },
+          {
+            "t": "Udine e Palmanova",
+            "a": [
+              "attivita|Gallerie del Tiepolo||Udine",
+              "attivita|Palmanova, la città stellata UNESCO||Palmanova"
+            ]
+          },
+          {
+            "t": "Cividale",
+            "a": [
+              "transfer|Trasferimento a Cividale del Friuli||Cividale",
+              "alloggio|Hotel a Cividale||Cividale",
+              "attivita|Tempietto longobardo e Ponte del Diavolo|Patrimonio UNESCO.|Cividale"
+            ]
+          },
+          {
+            "t": "Collio",
+            "a": [
+              "transfer|Strada del vino del Collio||Collio",
+              "attivita|Degustazione di Ribolla e Friulano||Collio",
+              "alloggio|Agriturismo nel Collio||Collio"
+            ]
+          },
+          {
+            "t": "Aquileia e Grado",
+            "a": [
+              "transfer|Trasferimento ad Aquileia||Aquileia",
+              "attivita|Basilica di Aquileia e mosaici paleocristiani||Aquileia",
+              "alloggio|Hotel a Grado||Grado"
+            ]
+          },
+          {
+            "t": "Laguna di Grado",
+            "a": [
+              "attivita|Barca nella laguna e isola di Barbana||Grado",
+              "attivita|Centro storico e spiaggia di Grado||Grado"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Trieste, Lubiana e Istria",
         "days": 7,
         "route": "Trieste (2) → Lubiana (2) → Bled (1) → Pirano (1)",
-        "description": "Tour di confine tra tre culture, comodo in auto o con transfer privato."
+        "description": "Tour di confine tra tre culture, comodo in auto o con transfer privato.",
+        "plan": [
+          {
+            "t": "Arrivo a Trieste",
+            "a": [
+              "transfer|Arrivo a Trieste||Trieste",
+              "alloggio|Hotel in centro||Trieste",
+              "attivita|Piazza Unità e caffè storici||Trieste"
+            ]
+          },
+          {
+            "t": "Trieste",
+            "a": [
+              "attivita|San Giusto e Castello di Miramare||Trieste"
+            ]
+          },
+          {
+            "t": "Lubiana",
+            "a": [
+              "transfer|Trasferimento a Lubiana|Circa 1 ora e 15 minuti.|Lubiana",
+              "alloggio|Hotel in centro||Lubiana",
+              "attivita|Centro storico, Triplo Ponte e castello||Lubiana"
+            ]
+          },
+          {
+            "t": "Lubiana",
+            "a": [
+              "attivita|Mercato centrale e quartiere di Metelkova||Lubiana",
+              "attivita|Grotte di Postumia (facoltativo)||Postumia"
+            ]
+          },
+          {
+            "t": "Bled",
+            "a": [
+              "transfer|Trasferimento a Bled||Bled",
+              "alloggio|Hotel sul lago||Bled",
+              "attivita|Isola di Bled in pletna e castello|Con la torta alla crema.|Bled",
+              "attivita|Gola di Vintgar||Bled"
+            ]
+          },
+          {
+            "t": "Pirano",
+            "a": [
+              "transfer|Trasferimento a Pirano||Pirano",
+              "alloggio|Hotel a Pirano||Pirano",
+              "attivita|Piazza Tartini e mura veneziane||Pirano"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro via Trieste||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1089,21 +1518,160 @@
     "itineraries": [
       {
         "title": "Food Valley",
-        "days": 5,
+        "days": 6,
         "route": "Bologna (2) → Modena (1) → Parma (2)",
-        "description": "Mercati, caseifici di Parmigiano, acetaie e prosciuttifici, con cooking class di pasta fresca."
+        "description": "Mercati, caseifici di Parmigiano, acetaie e prosciuttifici, con cooking class di pasta fresca.",
+        "plan": [
+          {
+            "t": "Arrivo a Bologna",
+            "a": [
+              "treno|Arrivo a Bologna Centrale||Bologna",
+              "alloggio|Hotel in centro||Bologna",
+              "attivita|Piazza Maggiore, San Petronio e Due Torri||Bologna",
+              "ristorante|Tagliatelle al ragù e tortellini||Bologna"
+            ]
+          },
+          {
+            "t": "Bologna",
+            "a": [
+              "attivita|Mercato di Mezzo e Quadrilatero|Salumi, formaggi e pasta fresca.|Bologna",
+              "attivita|Corso di sfoglia con una sfoglina||Bologna",
+              "attivita|Portici di San Luca UNESCO||Bologna"
+            ]
+          },
+          {
+            "t": "Modena",
+            "a": [
+              "treno|Treno per Modena|20 minuti.|Modena",
+              "alloggio|Hotel a Modena||Modena",
+              "attivita|Acetaia di aceto balsamico tradizionale||Modena",
+              "attivita|Duomo e Ghirlandina UNESCO||Modena"
+            ]
+          },
+          {
+            "t": "Parma",
+            "a": [
+              "treno|Treno per Parma||Parma",
+              "alloggio|Hotel a Parma||Parma",
+              "attivita|Caseificio di Parmigiano Reggiano al mattino|Si vede nascere la forma.|Parma",
+              "attivita|Duomo, Battistero e Teatro Farnese||Parma"
+            ]
+          },
+          {
+            "t": "Langhirano",
+            "a": [
+              "attivita|Prosciuttificio a Langhirano|Visita e degustazione di Prosciutto di Parma.|Langhirano",
+              "attivita|Castello di Torrechiara||Torrechiara"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Rientro in treno||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mosaici e Rinascimento",
-        "days": 4,
+        "days": 5,
         "route": "Bologna (1) → Ferrara (1) → Ravenna (2)",
-        "description": "Le torri di Bologna, il Castello Estense e i mosaici bizantini di Ravenna."
+        "description": "Le torri di Bologna, il Castello Estense e i mosaici bizantini di Ravenna.",
+        "plan": [
+          {
+            "t": "Bologna",
+            "a": [
+              "treno|Arrivo a Bologna||Bologna",
+              "alloggio|Hotel in centro||Bologna",
+              "attivita|Centro storico e portici||Bologna"
+            ]
+          },
+          {
+            "t": "Ferrara",
+            "a": [
+              "treno|Treno per Ferrara|30 minuti.|Ferrara",
+              "alloggio|Hotel a Ferrara||Ferrara",
+              "attivita|Castello Estense e Palazzo dei Diamanti||Ferrara",
+              "attivita|Mura in bicicletta|La città delle biciclette.|Ferrara"
+            ]
+          },
+          {
+            "t": "Ravenna",
+            "a": [
+              "treno|Treno per Ravenna||Ravenna",
+              "alloggio|Hotel a Ravenna||Ravenna",
+              "attivita|San Vitale e Mausoleo di Galla Placidia|I mosaici bizantini UNESCO.|Ravenna"
+            ]
+          },
+          {
+            "t": "Ravenna",
+            "a": [
+              "attivita|Sant'Apollinare Nuovo e in Classe||Ravenna",
+              "attivita|Tomba di Dante||Ravenna"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Riviera e Motor Valley",
         "days": 7,
         "route": "Rimini o Riccione (5) → Maranello e Modena (1)",
-        "description": "Mare per famiglie con parchi divertimento e una giornata tra Ferrari e Lamborghini."
+        "description": "Mare per famiglie con parchi divertimento e una giornata tra Ferrari e Lamborghini.",
+        "plan": [
+          {
+            "t": "Arrivo in Riviera",
+            "a": [
+              "transfer|Arrivo a Rimini o Riccione||Rimini",
+              "alloggio|Hotel per famiglie vicino al mare|Molti con spiaggia convenzionata e animazione.|Rimini"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia attrezzata||Rimini"
+            ]
+          },
+          {
+            "t": "Parco divertimenti",
+            "a": [
+              "attivita|Mirabilandia, Aquafan o Oltremare||Riviera"
+            ]
+          },
+          {
+            "t": "Rimini storica",
+            "a": [
+              "attivita|Ponte di Tiberio, Arco d'Augusto e borgo San Giuliano||Rimini",
+              "attivita|San Marino in serata||San Marino"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata al mare e Italia in Miniatura||Riviera"
+            ]
+          },
+          {
+            "t": "Motor Valley",
+            "a": [
+              "transfer|Trasferimento verso Modena||Maranello",
+              "attivita|Museo Ferrari di Maranello||Maranello",
+              "attivita|Museo Lamborghini o Museo Enzo Ferrari||Modena",
+              "alloggio|Hotel a Modena||Modena"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   }

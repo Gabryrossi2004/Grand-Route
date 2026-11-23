@@ -198,21 +198,139 @@
     "itineraries": [
       {
         "title": "Parchi e borghi",
-        "days": 5,
+        "days": 6,
         "route": "L'Aquila (1) → Campo Imperatore e Santo Stefano (1) → Parco d'Abruzzo, Pescasseroli (2) → Scanno (1)",
-        "description": "Il Gran Sasso, borghi medievali e il parco degli orsi, ideale da maggio a ottobre."
+        "description": "Il Gran Sasso, borghi medievali e il parco degli orsi, ideale da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "L'Aquila",
+            "a": [
+              "transfer|Arrivo all'Aquila|Circa 1 ora e mezza da Roma.|L'Aquila",
+              "alloggio|Hotel all'Aquila||L'Aquila",
+              "attivita|Basilica di Collemaggio e Fontana delle 99 Cannelle||L'Aquila"
+            ]
+          },
+          {
+            "t": "Gran Sasso",
+            "a": [
+              "attivita|Campo Imperatore, il «piccolo Tibet»||Campo Imperatore",
+              "attivita|Rocca Calascio, il castello sopra le nuvole||Calascio",
+              "alloggio|Albergo diffuso a Santo Stefano di Sessanio||Santo Stefano di Sessanio"
+            ]
+          },
+          {
+            "t": "Parco d'Abruzzo",
+            "a": [
+              "transfer|Trasferimento a Pescasseroli||Pescasseroli",
+              "alloggio|Hotel a Pescasseroli||Pescasseroli",
+              "attivita|Centro visita e area faunistica||Pescasseroli"
+            ]
+          },
+          {
+            "t": "Parco d'Abruzzo",
+            "a": [
+              "attivita|Escursione con guida alla ricerca di orsi e cervi|Camosci in Val di Rose.|Parco d'Abruzzo"
+            ]
+          },
+          {
+            "t": "Scanno",
+            "a": [
+              "transfer|Trasferimento a Scanno||Scanno",
+              "attivita|Lago a forma di cuore e borgo di Scanno||Scanno",
+              "alloggio|Hotel a Scanno||Scanno"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Costa dei Trabocchi in bici",
         "days": 4,
         "route": "Ortona (1) → San Vito e Fossacesia (2) → Vasto (1)",
-        "description": "Ciclabile sul vecchio tracciato ferroviario tra trabocchi, calette e cene di pesce."
+        "description": "Ciclabile sul vecchio tracciato ferroviario tra trabocchi, calette e cene di pesce.",
+        "plan": [
+          {
+            "t": "Ortona",
+            "a": [
+              "transfer|Arrivo a Ortona||Ortona",
+              "alloggio|Hotel a Ortona||Ortona",
+              "attivita|Castello Aragonese e porto||Ortona"
+            ]
+          },
+          {
+            "t": "In bici sulla Via Verde",
+            "a": [
+              "attivita|Ciclabile Ortona–San Vito|Sul vecchio tracciato ferroviario a picco sul mare.|San Vito",
+              "ristorante|Cena in un trabocco|Le antiche macchine da pesca su palafitte.|San Vito",
+              "alloggio|Hotel a San Vito o Fossacesia||San Vito"
+            ]
+          },
+          {
+            "t": "Fossacesia e Punta Aderci",
+            "a": [
+              "attivita|Abbazia di San Giovanni in Venere||Fossacesia",
+              "attivita|Riserva di Punta Aderci in bici||Vasto"
+            ]
+          },
+          {
+            "t": "Vasto e rientro",
+            "a": [
+              "attivita|Vasto e il belvedere sul golfo||Vasto",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana bianca a Roccaraso",
         "days": 6,
         "route": "Roccaraso (5)",
-        "description": "Il comprensorio sciistico più grande del centro-sud, comodo da Roma e Napoli."
+        "description": "Il comprensorio sciistico più grande del centro-sud, comodo da Roma e Napoli.",
+        "plan": [
+          {
+            "t": "Arrivo a Roccaraso",
+            "a": [
+              "transfer|Arrivo a Roccaraso|Circa 2 ore e mezza da Roma o Napoli.|Roccaraso",
+              "alloggio|Hotel vicino agli impianti||Roccaraso",
+              "info|Skipass Skirama e noleggio||Roccaraso"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Giornata sulle piste dell'Aremogna||Roccaraso"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Pizzalto e Monte Pratello||Roccaraso"
+            ]
+          },
+          {
+            "t": "Pausa",
+            "a": [
+              "attivita|Mattina di sci e pomeriggio a Pescocostanzo|Uno dei borghi più belli d'Italia.|Pescocostanzo"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Ultima giornata sulle piste||Roccaraso"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -359,19 +477,124 @@
         "title": "Molise in breve",
         "days": 3,
         "route": "Campobasso (1) → Saepinum → Termoli (1)",
-        "description": "Città romana intatta in campagna e il borgo vecchio di Termoli sul mare."
+        "description": "Città romana intatta in campagna e il borgo vecchio di Termoli sul mare.",
+        "plan": [
+          {
+            "t": "Campobasso",
+            "a": [
+              "transfer|Arrivo a Campobasso||Campobasso",
+              "alloggio|Hotel a Campobasso||Campobasso",
+              "attivita|Castello Monforte e centro storico||Campobasso"
+            ]
+          },
+          {
+            "t": "Saepinum e Termoli",
+            "a": [
+              "attivita|Area archeologica di Saepinum|Città romana intatta in mezzo ai campi.|Sepino",
+              "transfer|Trasferimento a Termoli||Termoli",
+              "alloggio|Hotel a Termoli||Termoli",
+              "attivita|Borgo vecchio e castello svevo||Termoli"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Mattina al mare a Termoli||Termoli",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Molise sannita",
         "days": 4,
         "route": "Isernia (1) → Pietrabbondante → Agnone (2) → Castel San Vincenzo (1)",
-        "description": "Teatro sannita, campane pontificie e il lago tra le Mainarde."
+        "description": "Teatro sannita, campane pontificie e il lago tra le Mainarde.",
+        "plan": [
+          {
+            "t": "Isernia",
+            "a": [
+              "transfer|Arrivo a Isernia||Isernia",
+              "alloggio|Hotel a Isernia||Isernia",
+              "attivita|Museo del Paleolitico||Isernia"
+            ]
+          },
+          {
+            "t": "Pietrabbondante e Agnone",
+            "a": [
+              "attivita|Teatro sannita di Pietrabbondante||Pietrabbondante",
+              "transfer|Trasferimento ad Agnone||Agnone",
+              "alloggio|Hotel ad Agnone||Agnone"
+            ]
+          },
+          {
+            "t": "Agnone",
+            "a": [
+              "attivita|Pontificia Fonderia Marinelli e museo delle campane||Agnone",
+              "ristorante|Caciocavallo e confetti di Agnone||Agnone"
+            ]
+          },
+          {
+            "t": "Castel San Vincenzo e rientro",
+            "a": [
+              "attivita|Lago di Castel San Vincenzo e abbazia di San Vincenzo al Volturno||Castel San Vincenzo",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Molise e Abruzzo",
         "days": 6,
         "route": "Termoli (2) → Agnone (1) → Scanno (1) → Sulmona (2)",
-        "description": "Mare, montagna e confetti di Sulmona in un tour tra due regioni."
+        "description": "Mare, montagna e confetti di Sulmona in un tour tra due regioni.",
+        "plan": [
+          {
+            "t": "Termoli",
+            "a": [
+              "transfer|Arrivo a Termoli||Termoli",
+              "alloggio|Hotel a Termoli||Termoli",
+              "attivita|Borgo vecchio e trabucchi||Termoli"
+            ]
+          },
+          {
+            "t": "Termoli e Isole Tremiti",
+            "a": [
+              "traghetto|Escursione alle Isole Tremiti||Tremiti"
+            ]
+          },
+          {
+            "t": "Agnone",
+            "a": [
+              "transfer|Trasferimento ad Agnone||Agnone",
+              "alloggio|Hotel ad Agnone||Agnone",
+              "attivita|Fonderia delle campane||Agnone"
+            ]
+          },
+          {
+            "t": "Scanno",
+            "a": [
+              "transfer|Trasferimento a Scanno||Scanno",
+              "alloggio|Hotel a Scanno||Scanno",
+              "attivita|Lago di Scanno e borgo||Scanno"
+            ]
+          },
+          {
+            "t": "Sulmona",
+            "a": [
+              "transfer|Trasferimento a Sulmona||Sulmona",
+              "alloggio|Hotel a Sulmona||Sulmona",
+              "attivita|Confetti di Sulmona e acquedotto medievale||Sulmona"
+            ]
+          },
+          {
+            "t": "Sulmona e rientro",
+            "a": [
+              "attivita|Eremo di Celestino V e Abbazia di Santo Spirito||Sulmona",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -699,21 +922,185 @@
     "itineraries": [
       {
         "title": "Napoli, Pompei e Costiera",
-        "days": 7,
+        "days": 8,
         "route": "Napoli (2) → Pompei → Sorrento (2) → Positano e Amalfi (3)",
-        "description": "Il classico: città, archeologia e la costa più famosa del mondo, con un giorno a Capri da Sorrento."
+        "description": "Il classico: città, archeologia e la costa più famosa del mondo, con un giorno a Capri da Sorrento.",
+        "plan": [
+          {
+            "t": "Arrivo a Napoli",
+            "a": [
+              "treno|Arrivo a Napoli Centrale o Capodichino||Napoli",
+              "alloggio|Hotel sul lungomare o nel centro storico||Napoli",
+              "attivita|Spaccanapoli e San Gregorio Armeno||Napoli",
+              "ristorante|Pizza napoletana||Napoli"
+            ]
+          },
+          {
+            "t": "Napoli",
+            "a": [
+              "attivita|Cappella Sansevero e il Cristo Velato||Napoli",
+              "attivita|Napoli sotterranea||Napoli",
+              "attivita|Piazza del Plebiscito e lungomare di Castel dell'Ovo||Napoli"
+            ]
+          },
+          {
+            "t": "Pompei e Sorrento",
+            "a": [
+              "attivita|Scavi di Pompei con guida||Pompei",
+              "transfer|Trasferimento a Sorrento||Sorrento",
+              "alloggio|Hotel a Sorrento||Sorrento"
+            ]
+          },
+          {
+            "t": "Capri",
+            "a": [
+              "traghetto|Aliscafo per Capri||Capri",
+              "attivita|Grotta Azzurra e giro dell'isola in barca||Capri",
+              "attivita|Anacapri e seggiovia del Monte Solaro||Anacapri"
+            ]
+          },
+          {
+            "t": "Positano",
+            "a": [
+              "transfer|Trasferimento a Positano o Amalfi|Meglio con autista o in traghetto.|Positano",
+              "alloggio|Hotel in Costiera||Positano",
+              "attivita|Positano e spiaggia Grande||Positano"
+            ]
+          },
+          {
+            "t": "Amalfi e Ravello",
+            "a": [
+              "attivita|Duomo di Amalfi||Amalfi",
+              "attivita|Ravello: Villa Rufolo e Villa Cimbrone||Ravello"
+            ]
+          },
+          {
+            "t": "Sentiero degli Dei",
+            "a": [
+              "attivita|Sentiero degli Dei da Bomerano a Nocelle|Il trekking più panoramico della costa.|Agerola",
+              "ristorante|Cena di pesce con limoncello||Positano"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro via Napoli||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isole del golfo",
-        "days": 6,
+        "days": 7,
         "route": "Ischia (3) → Procida (1) → Capri (2)",
-        "description": "Terme e giardini di Ischia, i colori di Procida e il lusso di Capri, collegate da aliscafi."
+        "description": "Terme e giardini di Ischia, i colori di Procida e il lusso di Capri, collegate da aliscafi.",
+        "plan": [
+          {
+            "t": "Ischia",
+            "a": [
+              "traghetto|Aliscafo da Napoli per Ischia||Ischia",
+              "alloggio|Hotel termale a Ischia||Ischia",
+              "attivita|Castello Aragonese||Ischia"
+            ]
+          },
+          {
+            "t": "Ischia terme",
+            "a": [
+              "attivita|Parco termale Negombo o Poseidon||Ischia"
+            ]
+          },
+          {
+            "t": "Ischia",
+            "a": [
+              "attivita|Giardini La Mortella e Sant'Angelo||Ischia"
+            ]
+          },
+          {
+            "t": "Procida",
+            "a": [
+              "traghetto|Traghetto per Procida||Procida",
+              "alloggio|Hotel a Procida||Procida",
+              "attivita|Marina Corricella e Terra Murata||Procida"
+            ]
+          },
+          {
+            "t": "Capri",
+            "a": [
+              "traghetto|Aliscafo per Capri||Capri",
+              "alloggio|Hotel a Capri||Capri",
+              "attivita|Piazzetta, Giardini di Augusto e via Krupp||Capri"
+            ]
+          },
+          {
+            "t": "Capri",
+            "a": [
+              "attivita|Grotta Azzurra e giro in barca dei Faraglioni||Capri"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Aliscafo per Napoli e rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cilento e Paestum",
-        "days": 6,
+        "days": 7,
         "route": "Paestum (2) → Castellabate (2) → Palinuro (2)",
-        "description": "Templi greci, mozzarella di bufala e mare limpido del Cilento, a prezzi più accessibili della Costiera."
+        "description": "Templi greci, mozzarella di bufala e mare limpido del Cilento, a prezzi più accessibili della Costiera.",
+        "plan": [
+          {
+            "t": "Paestum",
+            "a": [
+              "transfer|Arrivo a Paestum||Paestum",
+              "alloggio|Hotel o agriturismo a Paestum||Paestum",
+              "attivita|Templi greci di Paestum e museo||Paestum"
+            ]
+          },
+          {
+            "t": "Paestum",
+            "a": [
+              "attivita|Caseificio di mozzarella di bufala||Paestum",
+              "attivita|Spiaggia di Paestum||Paestum"
+            ]
+          },
+          {
+            "t": "Castellabate",
+            "a": [
+              "transfer|Trasferimento a Castellabate||Castellabate",
+              "alloggio|Hotel a Santa Maria di Castellabate||Castellabate",
+              "attivita|Borgo di Castellabate||Castellabate"
+            ]
+          },
+          {
+            "t": "Mare del Cilento",
+            "a": [
+              "attivita|Punta Licosa e Agropoli||Castellabate"
+            ]
+          },
+          {
+            "t": "Palinuro",
+            "a": [
+              "transfer|Trasferimento a Palinuro||Palinuro",
+              "alloggio|Hotel a Palinuro||Palinuro",
+              "traghetto|Grotta Azzurra e Spiaggia del Buondormire in barca||Palinuro"
+            ]
+          },
+          {
+            "t": "Palinuro",
+            "a": [
+              "attivita|Baia degli Infreschi o Marina di Camerota||Palinuro"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1003,19 +1390,172 @@
         "title": "Valle d'Itria e Salento",
         "days": 8,
         "route": "Bari (1) → Alberobello e Ostuni (3) → Lecce (2) → Otranto (2)",
-        "description": "Trulli, città bianche, barocco e mare: il tour più completo, con auto a noleggio."
+        "description": "Trulli, città bianche, barocco e mare: il tour più completo, con auto a noleggio.",
+        "plan": [
+          {
+            "t": "Bari",
+            "a": [
+              "transfer|Arrivo a Bari e ritiro auto||Bari",
+              "alloggio|Hotel a Bari||Bari",
+              "attivita|Bari vecchia, Basilica di San Nicola e orecchiette fatte a mano||Bari"
+            ]
+          },
+          {
+            "t": "Polignano e Alberobello",
+            "a": [
+              "attivita|Polignano a Mare||Polignano",
+              "transfer|Trasferimento in Valle d'Itria||Valle d'Itria",
+              "alloggio|Masseria o trullo||Valle d'Itria",
+              "attivita|Trulli di Alberobello UNESCO||Alberobello"
+            ]
+          },
+          {
+            "t": "Valle d'Itria",
+            "a": [
+              "attivita|Locorotondo e Cisternino|Fornelli pronti nelle macellerie.|Cisternino",
+              "attivita|Martina Franca barocca||Martina Franca"
+            ]
+          },
+          {
+            "t": "Ostuni",
+            "a": [
+              "attivita|Ostuni, la città bianca||Ostuni",
+              "attivita|Uliveti secolari e frantoio||Ostuni"
+            ]
+          },
+          {
+            "t": "Lecce",
+            "a": [
+              "transfer|Trasferimento a Lecce||Lecce",
+              "alloggio|Hotel in centro||Lecce",
+              "attivita|Santa Croce e piazza del Duomo|Il barocco leccese.|Lecce"
+            ]
+          },
+          {
+            "t": "Lecce",
+            "a": [
+              "attivita|Laboratorio di cartapesta e pasticciotto||Lecce",
+              "attivita|Mare di Torre dell'Orso||Salento"
+            ]
+          },
+          {
+            "t": "Otranto",
+            "a": [
+              "transfer|Trasferimento a Otranto||Otranto",
+              "alloggio|Hotel a Otranto||Otranto",
+              "attivita|Cattedrale con il mosaico e castello||Otranto"
+            ]
+          },
+          {
+            "t": "Salento",
+            "a": [
+              "attivita|Grotta della Poesia e Santa Maria di Leuca||Salento",
+              "transfer|Rientro da Brindisi o Bari||"
+            ]
+          }
+        ]
       },
       {
         "title": "Puglia e Matera",
         "days": 5,
         "route": "Bari (1) → Matera (2) → Alberobello (1) → Polignano (1)",
-        "description": "Sassi di Matera, trulli e la città sul mare di Polignano."
+        "description": "Sassi di Matera, trulli e la città sul mare di Polignano.",
+        "plan": [
+          {
+            "t": "Bari",
+            "a": [
+              "transfer|Arrivo a Bari||Bari",
+              "alloggio|Hotel a Bari||Bari",
+              "attivita|Bari vecchia e lungomare||Bari"
+            ]
+          },
+          {
+            "t": "Matera",
+            "a": [
+              "transfer|Trasferimento a Matera|Circa 1 ora.|Matera",
+              "alloggio|Hotel nei Sassi||Matera",
+              "attivita|Sassi di Matera e chiese rupestri||Matera"
+            ]
+          },
+          {
+            "t": "Matera",
+            "a": [
+              "attivita|Casa grotta e Murgia materana||Matera",
+              "attivita|Matera di sera||Matera"
+            ]
+          },
+          {
+            "t": "Alberobello",
+            "a": [
+              "transfer|Trasferimento ad Alberobello||Alberobello",
+              "alloggio|Trullo ad Alberobello||Alberobello",
+              "attivita|Rione Monti e trullo sovrano||Alberobello"
+            ]
+          },
+          {
+            "t": "Polignano e rientro",
+            "a": [
+              "attivita|Polignano a Mare e Lama Monachile||Polignano",
+              "transfer|Rientro da Bari||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gargano e Tremiti",
-        "days": 6,
+        "days": 7,
         "route": "Vieste (4) → Isole Tremiti (1) → Monte Sant'Angelo (1)",
-        "description": "Faraglioni e spiagge del Gargano, gita alle Tremiti e il santuario UNESCO di San Michele."
+        "description": "Faraglioni e spiagge del Gargano, gita alle Tremiti e il santuario UNESCO di San Michele.",
+        "plan": [
+          {
+            "t": "Vieste",
+            "a": [
+              "transfer|Arrivo a Vieste||Vieste",
+              "alloggio|Hotel a Vieste||Vieste",
+              "attivita|Centro storico e Pizzomunno||Vieste"
+            ]
+          },
+          {
+            "t": "Grotte marine",
+            "a": [
+              "traghetto|Grotte marine in barca fino a Baia delle Zagare||Vieste"
+            ]
+          },
+          {
+            "t": "Foresta Umbra",
+            "a": [
+              "attivita|Foresta Umbra e Peschici||Gargano"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Vignanotica||Gargano"
+            ]
+          },
+          {
+            "t": "Tremiti",
+            "a": [
+              "traghetto|Traghetto per le Isole Tremiti||Tremiti",
+              "alloggio|Hotel a San Domino||Tremiti",
+              "attivita|Abbazia di San Nicola e snorkeling||Tremiti"
+            ]
+          },
+          {
+            "t": "Monte Sant'Angelo",
+            "a": [
+              "traghetto|Rientro sul continente||Gargano",
+              "attivita|Santuario di San Michele UNESCO||Monte Sant'Angelo",
+              "alloggio|Hotel a Monte Sant'Angelo||Monte Sant'Angelo"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1215,19 +1755,158 @@
         "title": "Matera e Dolomiti Lucane",
         "days": 4,
         "route": "Matera (2) → Castelmezzano e Pietrapertosa (1) → Craco (1)",
-        "description": "Sassi e chiese rupestri, il Volo dell'Angelo tra due borghi e la città fantasma di Craco."
+        "description": "Sassi e chiese rupestri, il Volo dell'Angelo tra due borghi e la città fantasma di Craco.",
+        "plan": [
+          {
+            "t": "Matera",
+            "a": [
+              "transfer|Arrivo a Matera||Matera",
+              "alloggio|Hotel nei Sassi||Matera",
+              "attivita|Sasso Caveoso e Sasso Barisano||Matera"
+            ]
+          },
+          {
+            "t": "Matera",
+            "a": [
+              "attivita|Chiese rupestri e belvedere della Murgia||Matera",
+              "ristorante|Pane di Matera e crapiata||Matera"
+            ]
+          },
+          {
+            "t": "Dolomiti Lucane",
+            "a": [
+              "transfer|Trasferimento a Castelmezzano||Castelmezzano",
+              "attivita|Volo dell'Angelo tra Castelmezzano e Pietrapertosa||Castelmezzano",
+              "alloggio|Albergo nel borgo||Pietrapertosa"
+            ]
+          },
+          {
+            "t": "Craco e rientro",
+            "a": [
+              "attivita|Craco, la città fantasma||Craco",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Maratea e Pollino",
-        "days": 6,
+        "days": 7,
         "route": "Maratea (4) → Pollino (2)",
-        "description": "Il mare più bello della regione con il Cristo Redentore e poi i pini loricati del Pollino."
+        "description": "Il mare più bello della regione con il Cristo Redentore e poi i pini loricati del Pollino.",
+        "plan": [
+          {
+            "t": "Maratea",
+            "a": [
+              "transfer|Arrivo a Maratea||Maratea",
+              "alloggio|Hotel sul mare||Maratea",
+              "attivita|Cristo Redentore e borgo||Maratea"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Grotte e calette in barca||Maratea"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia Nera e Cala Jannita||Maratea"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera al mare||Maratea"
+            ]
+          },
+          {
+            "t": "Pollino",
+            "a": [
+              "transfer|Trasferimento nel Parco del Pollino||Pollino",
+              "alloggio|Agriturismo nel Pollino||Pollino",
+              "attivita|Borghi arbëreshë di San Paolo Albanese||Pollino"
+            ]
+          },
+          {
+            "t": "Pollino",
+            "a": [
+              "attivita|Escursione ai pini loricati di Serra di Crispo||Pollino"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Basilicata da costa a costa",
-        "days": 7,
+        "days": 8,
         "route": "Metaponto (2) → Matera (2) → Venosa e Vulture (1) → Maratea (2)",
-        "description": "Magna Grecia, Sassi, vino Aglianico e il Tirreno."
+        "description": "Magna Grecia, Sassi, vino Aglianico e il Tirreno.",
+        "plan": [
+          {
+            "t": "Metaponto",
+            "a": [
+              "transfer|Arrivo a Metaponto||Metaponto",
+              "alloggio|Hotel sul mare||Metaponto",
+              "attivita|Tavole Palatine e parco archeologico||Metaponto"
+            ]
+          },
+          {
+            "t": "Ionio",
+            "a": [
+              "attivita|Spiaggia e Policoro||Metaponto"
+            ]
+          },
+          {
+            "t": "Matera",
+            "a": [
+              "transfer|Trasferimento a Matera||Matera",
+              "alloggio|Hotel nei Sassi||Matera",
+              "attivita|Sassi di Matera||Matera"
+            ]
+          },
+          {
+            "t": "Matera",
+            "a": [
+              "attivita|Chiese rupestri e Murgia||Matera"
+            ]
+          },
+          {
+            "t": "Vulture",
+            "a": [
+              "transfer|Trasferimento a Venosa||Venosa",
+              "attivita|Venosa e l'Incompiuta||Venosa",
+              "attivita|Degustazione di Aglianico del Vulture e laghi di Monticchio||Vulture",
+              "alloggio|Hotel nel Vulture||Vulture"
+            ]
+          },
+          {
+            "t": "Maratea",
+            "a": [
+              "transfer|Trasferimento a Maratea||Maratea",
+              "alloggio|Hotel a Maratea||Maratea",
+              "attivita|Cristo Redentore||Maratea"
+            ]
+          },
+          {
+            "t": "Maratea",
+            "a": [
+              "attivita|Mare di Maratea||Maratea"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1470,21 +2149,186 @@
     "itineraries": [
       {
         "title": "Costa degli Dei",
-        "days": 7,
+        "days": 8,
         "route": "Tropea (5) → Pizzo (1) → Capo Vaticano (1)",
-        "description": "Spiagge bianche, il gelato tartufo di Pizzo e le calette di Capo Vaticano; gite in barca alle Eolie."
+        "description": "Spiagge bianche, il gelato tartufo di Pizzo e le calette di Capo Vaticano; gite in barca alle Eolie.",
+        "plan": [
+          {
+            "t": "Tropea",
+            "a": [
+              "transfer|Arrivo a Lamezia e trasferimento a Tropea||Tropea",
+              "alloggio|Hotel a Tropea||Tropea",
+              "attivita|Santa Maria dell'Isola e centro storico||Tropea"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Tropea||Tropea"
+            ]
+          },
+          {
+            "t": "Eolie",
+            "a": [
+              "traghetto|Escursione alle Eolie: Stromboli e Panarea||Eolie"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiagge di Zambrone e Briatico||Costa degli Dei"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera e cipolla rossa di Tropea||Tropea"
+            ]
+          },
+          {
+            "t": "Pizzo",
+            "a": [
+              "transfer|Trasferimento a Pizzo||Pizzo",
+              "alloggio|Hotel a Pizzo||Pizzo",
+              "attivita|Chiesetta di Piedigrotta e tartufo di Pizzo||Pizzo"
+            ]
+          },
+          {
+            "t": "Capo Vaticano",
+            "a": [
+              "transfer|Trasferimento a Capo Vaticano||Capo Vaticano",
+              "alloggio|Hotel a Capo Vaticano||Capo Vaticano",
+              "attivita|Grotticelle e tramonto sul faro||Capo Vaticano"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Lamezia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Calabria tra due mari",
-        "days": 7,
+        "days": 8,
         "route": "Lamezia → Scilla (2) → Reggio e i Bronzi (1) → Gerace (1) → Le Castella (2)",
-        "description": "Tirreno e Ionio, borghi arroccati e il castello aragonese sul mare."
+        "description": "Tirreno e Ionio, borghi arroccati e il castello aragonese sul mare.",
+        "plan": [
+          {
+            "t": "Scilla",
+            "a": [
+              "transfer|Arrivo a Lamezia e trasferimento a Scilla||Scilla",
+              "alloggio|Hotel a Chianalea||Scilla",
+              "attivita|Chianalea, il borgo dei pescatori||Scilla"
+            ]
+          },
+          {
+            "t": "Costa Viola",
+            "a": [
+              "attivita|Castello Ruffo e Costa Viola in barca||Scilla",
+              "ristorante|Panino al pesce spada||Scilla"
+            ]
+          },
+          {
+            "t": "Reggio Calabria",
+            "a": [
+              "transfer|Trasferimento a Reggio||Reggio Calabria",
+              "alloggio|Hotel sul lungomare||Reggio Calabria",
+              "attivita|Bronzi di Riace al Museo Nazionale||Reggio Calabria"
+            ]
+          },
+          {
+            "t": "Gerace",
+            "a": [
+              "transfer|Trasferimento sullo Ionio||Gerace",
+              "alloggio|Hotel a Gerace o Locri||Gerace",
+              "attivita|Gerace e la cattedrale normanna||Gerace"
+            ]
+          },
+          {
+            "t": "Le Castella",
+            "a": [
+              "transfer|Trasferimento a Le Castella||Le Castella",
+              "alloggio|Hotel a Isola di Capo Rizzuto||Le Castella",
+              "attivita|Castello aragonese sul mare||Le Castella"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Area marina di Capo Rizzuto in barca dal fondo trasparente||Capo Rizzuto"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Le Castella"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Crotone o Lamezia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sila e mare",
-        "days": 6,
+        "days": 7,
         "route": "Camigliatello (2) → Lago Arvo (1) → Le Castella o Soverato (3)",
-        "description": "Boschi della Sila con funghi e formaggi, poi il mare ionio."
+        "description": "Boschi della Sila con funghi e formaggi, poi il mare ionio.",
+        "plan": [
+          {
+            "t": "Camigliatello",
+            "a": [
+              "transfer|Arrivo nella Sila||Camigliatello",
+              "alloggio|Hotel a Camigliatello||Camigliatello",
+              "attivita|Giganti della Sila|Pini larici secolari.|Croce di Magara"
+            ]
+          },
+          {
+            "t": "Sila",
+            "a": [
+              "attivita|Escursione nel Parco della Sila e caciocavallo||Sila"
+            ]
+          },
+          {
+            "t": "Lago Arvo",
+            "a": [
+              "transfer|Trasferimento a Lorica||Lorica",
+              "alloggio|Hotel sul lago Arvo||Lorica",
+              "attivita|Lago Arvo in canoa o bici||Lorica"
+            ]
+          },
+          {
+            "t": "Mare Ionio",
+            "a": [
+              "transfer|Trasferimento a Le Castella o Soverato||Soverato",
+              "alloggio|Hotel sul mare||Soverato",
+              "attivita|Spiaggia||Soverato"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata al mare||Soverato"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Escursione a Le Castella o Squillace||Ionio"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   }

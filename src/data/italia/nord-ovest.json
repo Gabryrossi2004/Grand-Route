@@ -244,21 +244,152 @@
     "itineraries": [
       {
         "title": "Torino e Langhe",
-        "days": 5,
+        "days": 6,
         "route": "Torino (2) → Alba (1) → Barolo e La Morra (2)",
-        "description": "Città regale, Museo Egizio e poi le colline del vino con degustazioni in cantina; in ottobre-novembre la Fiera del Tartufo d'Alba."
+        "description": "Città regale, Museo Egizio e poi le colline del vino con degustazioni in cantina; in ottobre-novembre la Fiera del Tartufo d'Alba.",
+        "plan": [
+          {
+            "t": "Arrivo a Torino",
+            "a": [
+              "treno|Arrivo a Torino Porta Nuova|Frecciarossa da Milano (1 ora) o da Roma (4 ore e mezza).|Torino",
+              "alloggio|Hotel in centro|Zona piazza San Carlo o Quadrilatero Romano.|Torino",
+              "attivita|Piazza Castello e Palazzo Reale|Il cuore sabaudo della città, con le sale dei Savoia.|Torino",
+              "ristorante|Aperitivo torinese e cena piemontese|Vermouth nei caffè storici, poi agnolotti del plin e brasato.|Torino"
+            ]
+          },
+          {
+            "t": "Torino: Egizio e Mole",
+            "a": [
+              "attivita|Museo Egizio|Il più importante al mondo dopo quello del Cairo: biglietto con orario.|Torino",
+              "attivita|Mole Antonelliana e Museo del Cinema|Ascensore panoramico fino alla cupola.|Torino",
+              "attivita|Bicerin al Caffè Al Bicerin e via Garibaldi|La bevanda di caffè, cioccolato e crema nata qui.|Torino"
+            ]
+          },
+          {
+            "t": "Da Torino ad Alba",
+            "a": [
+              "transfer|Trasferimento ad Alba|Circa 1 ora in auto: conviene noleggiarla per le Langhe.|Alba",
+              "alloggio|Agriturismo o relais tra le vigne|Da prenotare presto in autunno.|Alba",
+              "attivita|Centro storico di Alba e torri medievali|In autunno la Fiera internazionale del tartufo bianco.|Alba"
+            ]
+          },
+          {
+            "t": "Barolo e La Morra",
+            "a": [
+              "attivita|Degustazione in cantina a Barolo|Visita guidata e assaggio di Barolo e Nebbiolo.|Barolo",
+              "attivita|Belvedere di La Morra|La vista più famosa sulle colline UNESCO.|La Morra",
+              "ristorante|Pranzo in trattoria con tajarin al tartufo||Langhe"
+            ]
+          },
+          {
+            "t": "Langhe dei castelli",
+            "a": [
+              "attivita|Castello di Grinzane Cavour e WiMu di Barolo|La storia del vino e del Conte di Cavour.|Grinzane Cavour",
+              "attivita|Cappella del Barolo colorata da Sol LeWitt e David Tremlett|La chiesetta pop tra i vigneti.|La Morra",
+              "attivita|Barbaresco e la sua torre|Seconda degustazione nella zona del Barbaresco.|Barbaresco"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro|Da Alba a Torino o Milano in auto (1-2 ore).|"
+            ]
+          }
+        ]
       },
       {
         "title": "Laghi del Piemonte",
         "days": 4,
         "route": "Stresa (2) → Isole Borromee → Orta San Giulio (1)",
-        "description": "Palazzi e giardini delle Borromee e il borgo romantico di Orta, ideale in primavera e per viaggi di nozze."
+        "description": "Palazzi e giardini delle Borromee e il borgo romantico di Orta, ideale in primavera e per viaggi di nozze.",
+        "plan": [
+          {
+            "t": "Arrivo a Stresa",
+            "a": [
+              "treno|Treno per Stresa|Diretto da Milano in circa 1 ora.|Stresa",
+              "alloggio|Hotel sul lungolago|Vista sulle Isole Borromee.|Stresa",
+              "attivita|Lungolago e Villa Pallavicino|Parco botanico con animali, ideale anche con bambini.|Stresa"
+            ]
+          },
+          {
+            "t": "Isole Borromee",
+            "a": [
+              "traghetto|Battello per le Isole Borromee|Biglietto giornaliero tra le tre isole.|Lago Maggiore",
+              "attivita|Isola Bella: palazzo e giardini barocchi|Terrazze di fiori e pavoni bianchi.|Isola Bella",
+              "attivita|Isola dei Pescatori|Pranzo di pesce di lago nel borgo.|Isola dei Pescatori",
+              "attivita|Isola Madre e il suo giardino botanico||Isola Madre"
+            ]
+          },
+          {
+            "t": "Da Stresa a Orta San Giulio",
+            "a": [
+              "transfer|Trasferimento a Orta|Circa 40 minuti, con sosta al Mottarone (funivia, quando attiva).|Orta San Giulio",
+              "alloggio|Hotel nel borgo||Orta San Giulio",
+              "attivita|Isola di San Giulio e Sacro Monte UNESCO|Il borgo più romantico dei laghi.|Orta San Giulio"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro|Milano e l'aeroporto di Malpensa sono a circa 1 ora.|"
+            ]
+          }
+        ]
       },
       {
         "title": "Monferrato e Roero slow",
         "days": 6,
         "route": "Asti (1) → Monferrato e infernot (2) → Roero (1) → Bra e Pollenzo (1)",
-        "description": "Cantine sotterranee UNESCO, castelli e la città di Slow Food, in bici elettrica o in auto."
+        "description": "Cantine sotterranee UNESCO, castelli e la città di Slow Food, in bici elettrica o in auto.",
+        "plan": [
+          {
+            "t": "Arrivo ad Asti",
+            "a": [
+              "treno|Arrivo ad Asti|In treno da Torino (30 minuti) o in auto.|Asti",
+              "alloggio|Hotel nel centro storico||Asti",
+              "attivita|Asti medievale: torri, cattedrale e piazza del Palio||Asti"
+            ]
+          },
+          {
+            "t": "Monferrato degli infernot",
+            "a": [
+              "transfer|Auto o bici elettrica nel Monferrato|Colline UNESCO tra Asti e Casale.|Monferrato",
+              "attivita|Visita agli infernot|Cantine scavate nella pietra da cantoni.|Cella Monte",
+              "alloggio|Agriturismo o castello nel Monferrato||Monferrato",
+              "ristorante|Cena con vini Barbera e Grignolino||Monferrato"
+            ]
+          },
+          {
+            "t": "Monferrato in bici",
+            "a": [
+              "attivita|Percorso ciclabile tra Moncalvo e Vignale|Strade di crinale con viste sul Monte Rosa.|Monferrato",
+              "attivita|Castello di Gabiano o di Camino|Dimore storiche aperte con degustazione.|Monferrato"
+            ]
+          },
+          {
+            "t": "Roero",
+            "a": [
+              "transfer|Trasferimento nel Roero||Roero",
+              "alloggio|Agriturismo nel Roero||Roero",
+              "attivita|Rocche del Roero e sentieri tra calanchi|Paesaggio di torri naturali di sabbia.|Roero",
+              "attivita|Degustazione di Arneis e Roero rosso||Roero"
+            ]
+          },
+          {
+            "t": "Bra e Pollenzo",
+            "a": [
+              "attivita|Bra, la città di Slow Food|Salsiccia di Bra, formaggi e osterie.|Bra",
+              "attivita|Agenzia di Pollenzo e Banca del Vino|Università di Scienze Gastronomiche e cantina storica.|Pollenzo",
+              "alloggio|Hotel a Bra o Pollenzo||Bra"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro|Torino è a circa 1 ora.|"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -503,19 +634,151 @@
         "title": "Castelli e Monte Bianco",
         "days": 4,
         "route": "Aosta (1) → Fénis, Issogne e Bard (1) → Courmayeur e Skyway (2)",
-        "description": "Weekend lungo tra Aosta romana, i castelli della valle centrale e la funivia panoramica sul Monte Bianco; con terme a Pré-Saint-Didier."
+        "description": "Weekend lungo tra Aosta romana, i castelli della valle centrale e la funivia panoramica sul Monte Bianco; con terme a Pré-Saint-Didier.",
+        "plan": [
+          {
+            "t": "Arrivo ad Aosta",
+            "a": [
+              "transfer|Arrivo ad Aosta|In auto da Torino (1 ora) o Milano (2 ore).|Aosta",
+              "alloggio|Hotel in centro||Aosta",
+              "attivita|Aosta romana|Arco di Augusto, Porta Pretoria, teatro romano e criptoportico.|Aosta"
+            ]
+          },
+          {
+            "t": "Castelli della valle",
+            "a": [
+              "attivita|Castello di Fénis|Il castello delle fiabe con affreschi gotici.|Fénis",
+              "attivita|Castello di Issogne|Cortile con la fontana del melograno.|Issogne",
+              "attivita|Forte di Bard e Museo delle Alpi|Fortezza ottocentesca su uno sperone di roccia.|Bard",
+              "alloggio|Hotel a Courmayeur||Courmayeur"
+            ]
+          },
+          {
+            "t": "Skyway Monte Bianco",
+            "a": [
+              "attivita|Funivia Skyway fino a Punta Helbronner|3.466 metri, vista a 360° sulle Alpi: meglio al mattino.|Courmayeur",
+              "attivita|Pranzo in quota o al Pavillon||Courmayeur",
+              "attivita|Terme di Pré-Saint-Didier|Piscine calde all'aperto con vista sul Monte Bianco.|Pré-Saint-Didier"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Passeggiata in Val Ferret o Val Veny|Prati e ghiacciai a pochi minuti da Courmayeur.|Courmayeur",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana bianca",
-        "days": 7,
+        "days": 8,
         "route": "Cervinia o Courmayeur (7)",
-        "description": "Sci per tutti i livelli; da Cervinia si scia fino a Zermatt con lo skipass internazionale. Ottima per gruppi e famiglie."
+        "description": "Sci per tutti i livelli; da Cervinia si scia fino a Zermatt con lo skipass internazionale. Ottima per gruppi e famiglie.",
+        "plan": [
+          {
+            "t": "Arrivo in valle",
+            "a": [
+              "transfer|Arrivo a Cervinia o Courmayeur|In auto o con bus transfer da Torino e Milano.|",
+              "alloggio|Hotel o appartamento vicino agli impianti||Cervinia",
+              "info|Ritiro skipass e noleggio attrezzatura||Cervinia"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Giornata sulle piste|Piste per tutti i livelli, scuola sci per principianti e bambini.|Cervinia"
+            ]
+          },
+          {
+            "t": "Sci a Zermatt",
+            "a": [
+              "attivita|Sciata internazionale fino a Zermatt|Con lo skipass internazionale si scende in Svizzera ai piedi del Cervino.|Zermatt"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Giornata sulle piste e après-ski||Cervinia"
+            ]
+          },
+          {
+            "t": "Pausa relax",
+            "a": [
+              "attivita|Mattina di sci e pomeriggio alle terme|Terme di Pré-Saint-Didier o spa dell'hotel.|Valle d'Aosta"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Giornata sulle piste o ciaspolata|Per chi non scia: escursione con le racchette da neve.|Cervinia"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Ultima giornata sulle piste||Cervinia"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gran Paradiso d'estate",
-        "days": 5,
+        "days": 6,
         "route": "Cogne (3) → Valsavarenche (1) → Aosta (1)",
-        "description": "Stambecchi, cascate di Lillaz e rifugi raggiungibili anche da famiglie, con prodotti tipici e fontina."
+        "description": "Stambecchi, cascate di Lillaz e rifugi raggiungibili anche da famiglie, con prodotti tipici e fontina.",
+        "plan": [
+          {
+            "t": "Arrivo a Cogne",
+            "a": [
+              "transfer|Arrivo a Cogne|Circa 30 minuti da Aosta.|Cogne",
+              "alloggio|Hotel o chalet a Cogne||Cogne",
+              "attivita|Prato di Sant'Orso|Il grande prato davanti al Gran Paradiso.|Cogne"
+            ]
+          },
+          {
+            "t": "Cascate di Lillaz",
+            "a": [
+              "attivita|Sentiero delle cascate di Lillaz|Passeggiata facile adatta alle famiglie.|Lillaz",
+              "attivita|Giardino botanico Paradisia|Flora alpina in fiore a luglio.|Valnontey"
+            ]
+          },
+          {
+            "t": "Rifugio nel parco",
+            "a": [
+              "attivita|Escursione al rifugio Vittorio Sella|Si incontrano stambecchi e camosci.|Valnontey",
+              "ristorante|Pranzo con polenta e fontina in rifugio||Valnontey"
+            ]
+          },
+          {
+            "t": "Valsavarenche",
+            "a": [
+              "transfer|Trasferimento in Valsavarenche||Valsavarenche",
+              "alloggio|Albergo in valle||Valsavarenche",
+              "attivita|Passeggiata verso il Pont e il rifugio Chabod|La valle più selvaggia del parco.|Valsavarenche"
+            ]
+          },
+          {
+            "t": "Aosta",
+            "a": [
+              "transfer|Trasferimento ad Aosta||Aosta",
+              "attivita|Aosta romana e prodotti tipici|Fontina, lardo di Arnad e vini di montagna.|Aosta",
+              "alloggio|Hotel ad Aosta||Aosta"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -803,21 +1066,172 @@
     "itineraries": [
       {
         "title": "Milano e Lago di Como",
-        "days": 5,
+        "days": 6,
         "route": "Milano (2) → Bellagio e Varenna (3)",
-        "description": "Duomo, Cenacolo e quadrilatero della moda, poi il lago in battello tra ville e giardini."
+        "description": "Duomo, Cenacolo e quadrilatero della moda, poi il lago in battello tra ville e giardini.",
+        "plan": [
+          {
+            "t": "Arrivo a Milano",
+            "a": [
+              "treno|Arrivo a Milano Centrale||Milano",
+              "alloggio|Hotel in centro o a Brera||Milano",
+              "attivita|Duomo e terrazze|Salita sui tetti tra le guglie.|Milano",
+              "attivita|Galleria Vittorio Emanuele II e Scala||Milano",
+              "ristorante|Aperitivo sui Navigli||Milano"
+            ]
+          },
+          {
+            "t": "Milano d'arte",
+            "a": [
+              "attivita|Cenacolo di Leonardo|Visita di 15 minuti a numero chiuso: prenotare con settimane di anticipo.|Milano",
+              "attivita|Castello Sforzesco e Pietà Rondanini||Milano",
+              "attivita|Brera e Pinacoteca|Il quartiere degli artisti.|Milano"
+            ]
+          },
+          {
+            "t": "Verso il lago",
+            "a": [
+              "treno|Treno per Varenna|Circa 1 ora da Milano Centrale.|Varenna",
+              "traghetto|Battello per Bellagio||Bellagio",
+              "alloggio|Hotel sul lago a Bellagio|Vista sulle tre punte del lago.|Bellagio",
+              "attivita|Passeggiata tra i vicoli di Bellagio||Bellagio"
+            ]
+          },
+          {
+            "t": "Ville del lago",
+            "a": [
+              "attivita|Villa Carlotta a Tremezzo|Giardini e opere di Canova.|Tremezzo",
+              "attivita|Villa del Balbianello|Il set di film famosi, raggiungibile in barca.|Lenno",
+              "attivita|Varenna e Villa Monastero||Varenna"
+            ]
+          },
+          {
+            "t": "Lago in libertà",
+            "a": [
+              "attivita|Giro in motoscafo privato|Con sosta a Nesso e alla cascata.|Lago di Como",
+              "attivita|Como e funicolare per Brunate|Vista sul primo bacino del lago.|Como"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Battello e treno per Milano||Milano",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Città d'arte lombarde",
-        "days": 6,
+        "days": 7,
         "route": "Milano (2) → Bergamo (1) → Brescia e Franciacorta (1) → Mantova (2)",
-        "description": "Città alta di Bergamo, il Capitolium di Brescia, bollicine in Franciacorta e i Gonzaga a Mantova."
+        "description": "Città alta di Bergamo, il Capitolium di Brescia, bollicine in Franciacorta e i Gonzaga a Mantova.",
+        "plan": [
+          {
+            "t": "Arrivo a Milano",
+            "a": [
+              "treno|Arrivo a Milano||Milano",
+              "alloggio|Hotel in centro||Milano",
+              "attivita|Duomo e Galleria||Milano"
+            ]
+          },
+          {
+            "t": "Milano",
+            "a": [
+              "attivita|Cenacolo e Santa Maria delle Grazie||Milano",
+              "attivita|Castello Sforzesco, Brera e Navigli la sera||Milano"
+            ]
+          },
+          {
+            "t": "Bergamo",
+            "a": [
+              "treno|Treno per Bergamo|50 minuti.|Bergamo",
+              "alloggio|Hotel in Città Alta||Bergamo",
+              "attivita|Città Alta e funicolare|Piazza Vecchia, Cappella Colleoni e mura venete UNESCO.|Bergamo",
+              "ristorante|Casoncelli e polenta||Bergamo"
+            ]
+          },
+          {
+            "t": "Brescia e Franciacorta",
+            "a": [
+              "attivita|Brescia: Capitolium e Santa Giulia|Il tempio romano e il monastero longobardo UNESCO.|Brescia",
+              "attivita|Degustazione in Franciacorta|Bollicine metodo classico in cantina.|Franciacorta",
+              "alloggio|Relais in Franciacorta||Franciacorta"
+            ]
+          },
+          {
+            "t": "Mantova",
+            "a": [
+              "transfer|Trasferimento a Mantova||Mantova",
+              "alloggio|Hotel in centro||Mantova",
+              "attivita|Palazzo Ducale e Camera degli Sposi del Mantegna||Mantova"
+            ]
+          },
+          {
+            "t": "Mantova e Sabbioneta",
+            "a": [
+              "attivita|Palazzo Te di Giulio Romano||Mantova",
+              "attivita|Sabbioneta, la città ideale UNESCO||Sabbioneta",
+              "ristorante|Tortelli di zucca||Mantova"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Valtellina e Bernina",
-        "days": 5,
+        "days": 6,
         "route": "Sondrio (1) → Tirano e Bernina Express (1) → Bormio (3)",
-        "description": "Vigneti terrazzati, il trenino rosso UNESCO fino a St. Moritz e le terme di Bormio."
+        "description": "Vigneti terrazzati, il trenino rosso UNESCO fino a St. Moritz e le terme di Bormio.",
+        "plan": [
+          {
+            "t": "Arrivo a Sondrio",
+            "a": [
+              "treno|Treno per Sondrio|Circa 2 ore da Milano lungo il Lago di Como.|Sondrio",
+              "alloggio|Hotel a Sondrio||Sondrio",
+              "attivita|Vigneti terrazzati della Valtellina|Degustazione di Sforzato.|Valtellina"
+            ]
+          },
+          {
+            "t": "Bernina Express",
+            "a": [
+              "treno|Bernina Express da Tirano a St. Moritz|Il trenino rosso UNESCO tra ghiacciai e viadotti.|Tirano",
+              "attivita|St. Moritz e rientro|Passeggiata sul lago, ritorno a Tirano in treno.|St. Moritz",
+              "transfer|Trasferimento a Bormio||Bormio",
+              "alloggio|Hotel a Bormio||Bormio"
+            ]
+          },
+          {
+            "t": "Bormio terme",
+            "a": [
+              "attivita|Bagni Vecchi di Bormio|Grotte termali e vasche panoramiche.|Bormio"
+            ]
+          },
+          {
+            "t": "Parco dello Stelvio",
+            "a": [
+              "attivita|Passo dello Stelvio o Valfurva|Escursioni e ghiacciai; d'inverno sci a Bormio.|Stelvio",
+              "ristorante|Pizzoccheri e sciatt||Bormio"
+            ]
+          },
+          {
+            "t": "Bormio",
+            "a": [
+              "attivita|Centro storico e Livigno per lo shopping|Livigno è zona extradoganale.|Livigno"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1060,21 +1474,150 @@
     "itineraries": [
       {
         "title": "Cinque Terre e Portofino",
-        "days": 5,
+        "days": 6,
         "route": "La Spezia o Levanto (3) → Santa Margherita e Portofino (2)",
-        "description": "Treno e battello tra i cinque borghi e il sentiero Azzurro, poi la Riviera di Levante più elegante."
+        "description": "Treno e battello tra i cinque borghi e il sentiero Azzurro, poi la Riviera di Levante più elegante.",
+        "plan": [
+          {
+            "t": "Arrivo alle Cinque Terre",
+            "a": [
+              "treno|Treno per La Spezia o Levanto||La Spezia",
+              "alloggio|Hotel o B&B a Levanto o La Spezia|Basi comode per i treni delle Cinque Terre.|Levanto",
+              "info|Cinque Terre Card|Include i treni tra i borghi e i sentieri.|"
+            ]
+          },
+          {
+            "t": "I cinque borghi",
+            "a": [
+              "treno|Treno tra i borghi||Cinque Terre",
+              "attivita|Riomaggiore e Manarola|Le case colorate a picco sul mare.|Manarola",
+              "attivita|Corniglia e Vernazza||Vernazza",
+              "attivita|Monterosso al mare|La spiaggia più grande delle Cinque Terre.|Monterosso"
+            ]
+          },
+          {
+            "t": "Sentiero e battello",
+            "a": [
+              "attivita|Sentiero Azzurro tra Vernazza e Monterosso|Circa 2 ore, verificare l'apertura.|Vernazza",
+              "traghetto|Battello lungo la costa fino a Portovenere||Portovenere"
+            ]
+          },
+          {
+            "t": "Santa Margherita",
+            "a": [
+              "treno|Treno per Santa Margherita Ligure||Santa Margherita",
+              "alloggio|Hotel sul lungomare||Santa Margherita",
+              "attivita|Villa Durazzo e passeggiata a mare||Santa Margherita"
+            ]
+          },
+          {
+            "t": "Portofino",
+            "a": [
+              "attivita|Portofino a piedi o in battello|La piazzetta, il Castello Brown e il faro.|Portofino",
+              "attivita|San Fruttuoso e il Cristo degli Abissi|Abbazia raggiungibile solo dal mare o a piedi.|San Fruttuoso"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Rientro in treno||"
+            ]
+          }
+        ]
       },
       {
         "title": "Genova e Riviera",
         "days": 4,
         "route": "Genova (2) → Camogli e San Fruttuoso (1) → Portofino (1)",
-        "description": "Palazzi dei Rolli, Acquario e focaccia, poi in battello all'abbazia di San Fruttuoso."
+        "description": "Palazzi dei Rolli, Acquario e focaccia, poi in battello all'abbazia di San Fruttuoso.",
+        "plan": [
+          {
+            "t": "Arrivo a Genova",
+            "a": [
+              "treno|Arrivo a Genova||Genova",
+              "alloggio|Hotel nel centro storico||Genova",
+              "attivita|Via Garibaldi e Palazzi dei Rolli UNESCO||Genova",
+              "ristorante|Focaccia e pesto nei caruggi||Genova"
+            ]
+          },
+          {
+            "t": "Genova",
+            "a": [
+              "attivita|Acquario di Genova|Uno dei più grandi d'Europa.|Genova",
+              "attivita|Porto Antico, Boccadasse e Spianata Castelletto||Genova"
+            ]
+          },
+          {
+            "t": "Camogli e San Fruttuoso",
+            "a": [
+              "treno|Treno per Camogli||Camogli",
+              "attivita|Camogli e battello per San Fruttuoso|Abbazia e Cristo degli Abissi.|San Fruttuoso",
+              "alloggio|Hotel a Camogli||Camogli"
+            ]
+          },
+          {
+            "t": "Portofino",
+            "a": [
+              "attivita|Sentiero o battello per Portofino||Portofino",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ponente outdoor",
-        "days": 6,
+        "days": 7,
         "route": "Finale Ligure (4) → Alassio (2)",
-        "description": "Mountain bike, arrampicata e spiagge per famiglie, con l'entroterra dei borghi medievali."
+        "description": "Mountain bike, arrampicata e spiagge per famiglie, con l'entroterra dei borghi medievali.",
+        "plan": [
+          {
+            "t": "Arrivo a Finale Ligure",
+            "a": [
+              "treno|Arrivo a Finale Ligure||Finale Ligure",
+              "alloggio|Hotel o appartamento a Finale||Finale Ligure",
+              "attivita|Finalborgo, borgo medievale||Finale Ligure"
+            ]
+          },
+          {
+            "t": "Mountain bike",
+            "a": [
+              "attivita|Giornata in mountain bike con guida|Finale è una capitale europea dell'enduro.|Finale Ligure"
+            ]
+          },
+          {
+            "t": "Mare e Varigotti",
+            "a": [
+              "attivita|Spiaggia di Varigotti e Baia dei Saraceni|Borgo saraceno sul mare.|Varigotti"
+            ]
+          },
+          {
+            "t": "Arrampicata o trekking",
+            "a": [
+              "attivita|Arrampicata o trekking sull'Altopiano delle Manie||Finale Ligure",
+              "attivita|Grotte di Toirano|Grotte con tracce dell'orso delle caverne.|Toirano"
+            ]
+          },
+          {
+            "t": "Alassio",
+            "a": [
+              "transfer|Trasferimento ad Alassio||Alassio",
+              "alloggio|Hotel sul budello||Alassio",
+              "attivita|Muretto di Alassio e spiaggia||Alassio"
+            ]
+          },
+          {
+            "t": "Alassio e Laigueglia",
+            "a": [
+              "attivita|Passeggiata a Laigueglia e Isola Gallinara in barca||Laigueglia"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -383,19 +383,168 @@
         "title": "Firenze e colline",
         "days": 6,
         "route": "Firenze (3) → Chianti (1) → Siena (1) → San Gimignano (1)",
-        "description": "Rinascimento, vino e borghi medievali: il tour più venduto della regione, comodo con un'auto a noleggio dal secondo giorno."
+        "description": "Rinascimento, vino e borghi medievali: il tour più venduto della regione, comodo con un'auto a noleggio dal secondo giorno.",
+        "plan": [
+          {
+            "t": "Arrivo a Firenze",
+            "a": [
+              "treno|Arrivo a Firenze Santa Maria Novella||Firenze",
+              "alloggio|Hotel nel centro storico||Firenze",
+              "attivita|Duomo, Battistero e Campanile di Giotto|Con la salita alla cupola del Brunelleschi su prenotazione.|Firenze",
+              "ristorante|Bistecca alla fiorentina||Firenze"
+            ]
+          },
+          {
+            "t": "Firenze: Uffizi e Oltrarno",
+            "a": [
+              "attivita|Galleria degli Uffizi|Botticelli, Leonardo, Michelangelo: biglietto con orario.|Firenze",
+              "attivita|Ponte Vecchio e Palazzo Pitti con il Giardino di Boboli||Firenze",
+              "attivita|Piazzale Michelangelo al tramonto||Firenze"
+            ]
+          },
+          {
+            "t": "Firenze: David e mercati",
+            "a": [
+              "attivita|Galleria dell'Accademia e il David||Firenze",
+              "attivita|Mercato Centrale e San Lorenzo||Firenze",
+              "attivita|Laboratorio di pelletteria o carta marmorizzata||Firenze"
+            ]
+          },
+          {
+            "t": "Chianti",
+            "a": [
+              "transfer|Ritiro auto e strada del Chianti||Chianti",
+              "attivita|Greve e Panzano in Chianti||Greve",
+              "attivita|Degustazione di Chianti Classico in fattoria||Chianti",
+              "alloggio|Agriturismo nel Chianti||Chianti"
+            ]
+          },
+          {
+            "t": "Siena",
+            "a": [
+              "transfer|Trasferimento a Siena||Siena",
+              "attivita|Piazza del Campo, Duomo e Torre del Mangia||Siena",
+              "alloggio|Hotel a Siena||Siena"
+            ]
+          },
+          {
+            "t": "San Gimignano e rientro",
+            "a": [
+              "attivita|San Gimignano e le sue torri|Con la Vernaccia e il gelato pluripremiato.|San Gimignano",
+              "attivita|Monteriggioni||Monteriggioni",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Val d'Orcia e terme",
         "days": 5,
         "route": "Pienza (2) → Montalcino (1) → Bagno Vignoni o Saturnia (2)",
-        "description": "Cipressi e colline da cartolina, Brunello e bagni termali, ideale per coppie."
+        "description": "Cipressi e colline da cartolina, Brunello e bagni termali, ideale per coppie.",
+        "plan": [
+          {
+            "t": "Arrivo a Pienza",
+            "a": [
+              "transfer|Arrivo in Val d'Orcia|In auto da Firenze o Roma (circa 2 ore).|Pienza",
+              "alloggio|Agriturismo o relais in Val d'Orcia||Pienza",
+              "attivita|Pienza, la città ideale del Rinascimento|Con il pecorino di Pienza.|Pienza"
+            ]
+          },
+          {
+            "t": "Val d'Orcia",
+            "a": [
+              "attivita|Cipressi di San Quirico e cappella della Madonna di Vitaleta|Le cartoline più famose della Toscana.|San Quirico",
+              "attivita|Montepulciano e cantine del Nobile||Montepulciano"
+            ]
+          },
+          {
+            "t": "Montalcino",
+            "a": [
+              "transfer|Trasferimento a Montalcino||Montalcino",
+              "attivita|Degustazione di Brunello in cantina||Montalcino",
+              "attivita|Abbazia di Sant'Antimo|Il canto gregoriano dei monaci.|Castelnuovo dell'Abate",
+              "alloggio|Hotel a Montalcino||Montalcino"
+            ]
+          },
+          {
+            "t": "Terme",
+            "a": [
+              "transfer|Trasferimento a Bagno Vignoni o Saturnia||Saturnia",
+              "alloggio|Hotel termale||Saturnia",
+              "attivita|Cascate del Mulino di Saturnia o vasca di Bagno Vignoni||Saturnia"
+            ]
+          },
+          {
+            "t": "Terme e rientro",
+            "a": [
+              "attivita|Mattinata alle terme e pranzo in Maremma||Saturnia",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mare toscano",
-        "days": 7,
+        "days": 8,
         "route": "Maremma (3) → Isola d'Elba (4)",
-        "description": "Spiagge dell'Argentario e della Maremma, poi l'Elba con il suo mare limpido e i sentieri."
+        "description": "Spiagge dell'Argentario e della Maremma, poi l'Elba con il suo mare limpido e i sentieri.",
+        "plan": [
+          {
+            "t": "Arrivo in Maremma",
+            "a": [
+              "transfer|Arrivo in Maremma||Maremma",
+              "alloggio|Agriturismo o hotel vicino al mare||Maremma",
+              "attivita|Castiglione della Pescaia||Castiglione della Pescaia"
+            ]
+          },
+          {
+            "t": "Parco della Maremma",
+            "a": [
+              "attivita|Parco Naturale della Maremma|Sentieri fino a Cala di Forno, butteri e cavalli.|Alberese"
+            ]
+          },
+          {
+            "t": "Argentario",
+            "a": [
+              "attivita|Monte Argentario, Porto Santo Stefano e spiaggia della Feniglia||Argentario",
+              "attivita|Pitigliano, la città del tufo (facoltativo)||Pitigliano"
+            ]
+          },
+          {
+            "t": "Isola d'Elba",
+            "a": [
+              "traghetto|Traghetto da Piombino a Portoferraio|Circa 1 ora.|Elba",
+              "alloggio|Hotel all'Elba||Elba",
+              "attivita|Portoferraio e la casa di Napoleone||Portoferraio"
+            ]
+          },
+          {
+            "t": "Elba: spiagge",
+            "a": [
+              "attivita|Spiagge di Fetovaia e Cavoli||Elba"
+            ]
+          },
+          {
+            "t": "Elba: barca",
+            "a": [
+              "traghetto|Giro dell'isola in barca e snorkeling||Elba"
+            ]
+          },
+          {
+            "t": "Elba: Monte Capanne",
+            "a": [
+              "attivita|Cabinovia del Monte Capanne e Marciana||Elba",
+              "ristorante|Cacciucco e vini dell'Elba||Elba"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Traghetto per Piombino e rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -638,21 +787,146 @@
     "itineraries": [
       {
         "title": "Umbria classica",
-        "days": 6,
+        "days": 7,
         "route": "Assisi (2) → Perugia (1) → Gubbio (1) → Spoleto (1) → Orvieto (1)",
-        "description": "Le città più belle della regione con tempi distesi; si fa anche in treno con qualche transfer."
+        "description": "Le città più belle della regione con tempi distesi; si fa anche in treno con qualche transfer.",
+        "plan": [
+          {
+            "t": "Arrivo ad Assisi",
+            "a": [
+              "transfer|Arrivo ad Assisi||Assisi",
+              "alloggio|Hotel nel centro storico||Assisi",
+              "attivita|Basilica di San Francesco e affreschi di Giotto|Abbigliamento con spalle e gambe coperte.|Assisi"
+            ]
+          },
+          {
+            "t": "Assisi",
+            "a": [
+              "attivita|Santa Chiara, Rocca Maggiore ed Eremo delle Carceri||Assisi",
+              "attivita|Spello e le infiorate||Spello"
+            ]
+          },
+          {
+            "t": "Perugia",
+            "a": [
+              "transfer|Trasferimento a Perugia||Perugia",
+              "alloggio|Hotel in centro||Perugia",
+              "attivita|Corso Vannucci, Galleria Nazionale e Rocca Paolina||Perugia",
+              "attivita|Casa del Cioccolato Perugina||Perugia"
+            ]
+          },
+          {
+            "t": "Gubbio",
+            "a": [
+              "transfer|Trasferimento a Gubbio||Gubbio",
+              "alloggio|Hotel a Gubbio||Gubbio",
+              "attivita|Palazzo dei Consoli e funivia del Monte Ingino||Gubbio"
+            ]
+          },
+          {
+            "t": "Spoleto e Montefalco",
+            "a": [
+              "transfer|Trasferimento a Spoleto||Spoleto",
+              "attivita|Ponte delle Torri e Duomo||Spoleto",
+              "attivita|Degustazione di Sagrantino a Montefalco||Montefalco",
+              "alloggio|Hotel a Spoleto||Spoleto"
+            ]
+          },
+          {
+            "t": "Orvieto",
+            "a": [
+              "transfer|Trasferimento a Orvieto||Orvieto",
+              "attivita|Duomo di Orvieto, Pozzo di San Patrizio e Orvieto sotterranea||Orvieto",
+              "alloggio|Hotel a Orvieto||Orvieto"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Treno da Orvieto per Roma o Firenze||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cammino di Francesco breve",
         "days": 5,
         "route": "Assisi (1) → Spello → Foligno → Trevi (1) → Spoleto (2)",
-        "description": "Tappe a piedi facili tra uliveti e borghi, con trasporto bagagli."
+        "description": "Tappe a piedi facili tra uliveti e borghi, con trasporto bagagli.",
+        "plan": [
+          {
+            "t": "Assisi",
+            "a": [
+              "transfer|Arrivo ad Assisi||Assisi",
+              "alloggio|Hotel ad Assisi||Assisi",
+              "attivita|Basilica di San Francesco e credenziale del pellegrino||Assisi"
+            ]
+          },
+          {
+            "t": "Da Assisi a Trevi a piedi",
+            "a": [
+              "attivita|Tappa a piedi Assisi–Spello–Foligno|Circa 18 km tra uliveti; bagagli trasportati.|Spello",
+              "attivita|Trevi tra gli olivi||Trevi",
+              "alloggio|Albergo a Trevi||Trevi"
+            ]
+          },
+          {
+            "t": "Verso Spoleto",
+            "a": [
+              "attivita|Tappa a piedi Trevi–Fonti del Clitunno–Spoleto|Con il tempietto longobardo UNESCO.|Clitunno",
+              "alloggio|Hotel a Spoleto||Spoleto"
+            ]
+          },
+          {
+            "t": "Spoleto",
+            "a": [
+              "attivita|Ponte delle Torri e Monteluco|Il bosco sacro dei primi eremiti.|Spoleto"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tartufo e Valnerina",
         "days": 4,
         "route": "Norcia (2) → Castelluccio → Cascata delle Marmore (1)",
-        "description": "Norcineria, tartufo nero, l'altopiano fiorito e la cascata artificiale più alta d'Europa."
+        "description": "Norcineria, tartufo nero, l'altopiano fiorito e la cascata artificiale più alta d'Europa.",
+        "plan": [
+          {
+            "t": "Arrivo a Norcia",
+            "a": [
+              "transfer|Arrivo a Norcia||Norcia",
+              "alloggio|Agriturismo a Norcia||Norcia",
+              "attivita|Norcia e le norcinerie|Prosciutto, salumi e lenticchie.|Norcia"
+            ]
+          },
+          {
+            "t": "Tartufo e Castelluccio",
+            "a": [
+              "attivita|Caccia al tartufo nero con pranzo||Norcia",
+              "attivita|Piano Grande di Castelluccio|Fioritura tra fine giugno e luglio.|Castelluccio"
+            ]
+          },
+          {
+            "t": "Valnerina e Marmore",
+            "a": [
+              "attivita|Rafting sul fiume Corno o borghi della Valnerina||Valnerina",
+              "attivita|Cascata delle Marmore|Controllare gli orari di apertura delle acque.|Terni",
+              "alloggio|Hotel vicino alla cascata||Marmore"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -895,21 +1169,150 @@
     "itineraries": [
       {
         "title": "Conero e borghi",
-        "days": 6,
+        "days": 7,
         "route": "Sirolo o Numana (4) → Loreto e Recanati (1) → Grotte di Frasassi (1)",
-        "description": "Baie bianche del Conero, il santuario di Loreto, Leopardi e le grotte più spettacolari d'Italia."
+        "description": "Baie bianche del Conero, il santuario di Loreto, Leopardi e le grotte più spettacolari d'Italia.",
+        "plan": [
+          {
+            "t": "Arrivo al Conero",
+            "a": [
+              "transfer|Arrivo a Sirolo o Numana|20 minuti dall'aeroporto di Ancona.|Sirolo",
+              "alloggio|Hotel o residence sul Conero||Sirolo",
+              "attivita|Piazzetta di Sirolo e Belvedere||Sirolo"
+            ]
+          },
+          {
+            "t": "Spiaggia delle Due Sorelle",
+            "a": [
+              "traghetto|Barca per la spiaggia delle Due Sorelle|Raggiungibile solo dal mare.|Conero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di San Michele e Sassi Neri||Sirolo"
+            ]
+          },
+          {
+            "t": "Portonovo",
+            "a": [
+              "attivita|Baia di Portonovo e chiesa romanica||Portonovo",
+              "ristorante|Moscioli selvatici||Portonovo"
+            ]
+          },
+          {
+            "t": "Loreto e Recanati",
+            "a": [
+              "attivita|Santuario della Santa Casa di Loreto||Loreto",
+              "attivita|Recanati e la casa di Leopardi||Recanati",
+              "alloggio|Hotel a Recanati||Recanati"
+            ]
+          },
+          {
+            "t": "Frasassi",
+            "a": [
+              "attivita|Grotte di Frasassi|Visita guidata di circa 75 minuti.|Genga",
+              "attivita|Tempietto del Valadier||Genga",
+              "alloggio|Hotel nella zona di Fabriano||Fabriano"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Urbino e Montefeltro",
         "days": 4,
         "route": "Urbino (2) → Gradara (1) → Pesaro (1)",
-        "description": "Il Palazzo Ducale di Federico da Montefeltro, il castello di Paolo e Francesca e la città di Rossini."
+        "description": "Il Palazzo Ducale di Federico da Montefeltro, il castello di Paolo e Francesca e la città di Rossini.",
+        "plan": [
+          {
+            "t": "Urbino",
+            "a": [
+              "transfer|Arrivo a Urbino||Urbino",
+              "alloggio|Hotel nel centro storico||Urbino",
+              "attivita|Palazzo Ducale e Galleria Nazionale delle Marche||Urbino"
+            ]
+          },
+          {
+            "t": "Urbino e Montefeltro",
+            "a": [
+              "attivita|Casa natale di Raffaello||Urbino",
+              "attivita|San Leo e la fortezza|Il borgo amato da Dante.|San Leo"
+            ]
+          },
+          {
+            "t": "Gradara",
+            "a": [
+              "transfer|Trasferimento a Gradara||Gradara",
+              "alloggio|Hotel a Gradara||Gradara",
+              "attivita|Rocca di Gradara, il castello di Paolo e Francesca||Gradara"
+            ]
+          },
+          {
+            "t": "Pesaro e rientro",
+            "a": [
+              "attivita|Pesaro, la città di Rossini|Lungomare e Sfera di Pomodoro.|Pesaro",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sibillini e Piceno",
-        "days": 5,
+        "days": 6,
         "route": "Ascoli Piceno (2) → Sibillini (2) → San Benedetto (1)",
-        "description": "Piazza del Popolo e olive all'ascolana, trekking nei Sibillini e chiusura al mare."
+        "description": "Piazza del Popolo e olive all'ascolana, trekking nei Sibillini e chiusura al mare.",
+        "plan": [
+          {
+            "t": "Ascoli Piceno",
+            "a": [
+              "transfer|Arrivo ad Ascoli Piceno||Ascoli Piceno",
+              "alloggio|Hotel in centro||Ascoli Piceno",
+              "attivita|Piazza del Popolo e Caffè Meletti||Ascoli Piceno",
+              "ristorante|Olive all'ascolana||Ascoli Piceno"
+            ]
+          },
+          {
+            "t": "Ascoli",
+            "a": [
+              "attivita|Centro di travertino e quartiere delle torri||Ascoli Piceno",
+              "attivita|Offida e il merletto a tombolo||Offida"
+            ]
+          },
+          {
+            "t": "Sibillini",
+            "a": [
+              "transfer|Trasferimento nei Monti Sibillini||Sibillini",
+              "alloggio|Agriturismo nei Sibillini||Sibillini",
+              "attivita|Gola dell'Infernaccio|Sentiero tra pareti di roccia.|Montefortino"
+            ]
+          },
+          {
+            "t": "Sibillini",
+            "a": [
+              "attivita|Lago di Pilato o escursione al Monte Vettore||Sibillini"
+            ]
+          },
+          {
+            "t": "San Benedetto",
+            "a": [
+              "transfer|Trasferimento a San Benedetto del Tronto||San Benedetto",
+              "attivita|Lungomare delle palme e brodetto||San Benedetto",
+              "alloggio|Hotel sul mare||San Benedetto"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1157,21 +1560,167 @@
     "itineraries": [
       {
         "title": "Roma classica",
-        "days": 4,
+        "days": 5,
         "route": "Roma (4)",
-        "description": "Colosseo e Fori, Vaticano, Pantheon e Trastevere, con biglietti saltafila prenotati."
+        "description": "Colosseo e Fori, Vaticano, Pantheon e Trastevere, con biglietti saltafila prenotati.",
+        "plan": [
+          {
+            "t": "Arrivo a Roma",
+            "a": [
+              "treno|Arrivo a Roma Termini o Fiumicino||Roma",
+              "alloggio|Hotel in centro|Zone Monti, Pantheon o Trastevere.|Roma",
+              "attivita|Fontana di Trevi, Pantheon e piazza Navona||Roma",
+              "ristorante|Cacio e pepe e carbonara||Roma"
+            ]
+          },
+          {
+            "t": "Roma antica",
+            "a": [
+              "attivita|Colosseo, Foro Romano e Palatino|Biglietto con orario, meglio con guida.|Roma",
+              "attivita|Campidoglio e Bocca della Verità||Roma"
+            ]
+          },
+          {
+            "t": "Vaticano",
+            "a": [
+              "attivita|Musei Vaticani e Cappella Sistina|Biglietto saltafila con orario.|Città del Vaticano",
+              "attivita|Basilica e cupola di San Pietro||Città del Vaticano",
+              "attivita|Castel Sant'Angelo al tramonto||Roma"
+            ]
+          },
+          {
+            "t": "Trastevere e Villa Borghese",
+            "a": [
+              "attivita|Galleria Borghese|Bernini e Caravaggio: prenotazione obbligatoria.|Roma",
+              "attivita|Trastevere e Gianicolo||Roma"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Transfer in aeroporto o stazione||"
+            ]
+          }
+        ]
       },
       {
         "title": "Roma e dintorni",
-        "days": 6,
+        "days": 7,
         "route": "Roma (3) → Tivoli (1) → Castelli Romani (1) → Civita di Bagnoregio (1)",
-        "description": "Ville rinascimentali e imperiali, vino dei Castelli e il borgo sospeso della Tuscia."
+        "description": "Ville rinascimentali e imperiali, vino dei Castelli e il borgo sospeso della Tuscia.",
+        "plan": [
+          {
+            "t": "Arrivo a Roma",
+            "a": [
+              "treno|Arrivo a Roma||Roma",
+              "alloggio|Hotel in centro||Roma",
+              "attivita|Centro storico: Trevi, Pantheon, Navona||Roma"
+            ]
+          },
+          {
+            "t": "Roma antica",
+            "a": [
+              "attivita|Colosseo, Fori e Palatino||Roma"
+            ]
+          },
+          {
+            "t": "Vaticano",
+            "a": [
+              "attivita|Musei Vaticani e San Pietro||Città del Vaticano"
+            ]
+          },
+          {
+            "t": "Tivoli",
+            "a": [
+              "transfer|Trasferimento a Tivoli|40 minuti.|Tivoli",
+              "attivita|Villa d'Este e le sue fontane||Tivoli",
+              "attivita|Villa Adriana|La villa dell'imperatore UNESCO.|Tivoli",
+              "alloggio|Hotel a Tivoli||Tivoli"
+            ]
+          },
+          {
+            "t": "Castelli Romani",
+            "a": [
+              "attivita|Frascati e degustazione di vino||Frascati",
+              "attivita|Lago di Nemi e Castel Gandolfo||Castelli Romani",
+              "ristorante|Porchetta di Ariccia in fraschetta||Ariccia",
+              "alloggio|Hotel ai Castelli||Castelli Romani"
+            ]
+          },
+          {
+            "t": "Civita di Bagnoregio",
+            "a": [
+              "transfer|Trasferimento nella Tuscia||Tuscia",
+              "attivita|Civita di Bagnoregio, la città che muore||Civita di Bagnoregio",
+              "alloggio|Hotel nella Tuscia||Viterbo"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Viterbo e il quartiere medievale di San Pellegrino||Viterbo",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Riviera di Ulisse e Ponza",
-        "days": 6,
+        "days": 7,
         "route": "Sperlonga (2) → Gaeta (1) → Ponza (3)",
-        "description": "Spiagge e borghi bianchi del sud pontino, poi l'isola di Ponza in barca."
+        "description": "Spiagge e borghi bianchi del sud pontino, poi l'isola di Ponza in barca.",
+        "plan": [
+          {
+            "t": "Sperlonga",
+            "a": [
+              "transfer|Arrivo a Sperlonga||Sperlonga",
+              "alloggio|Hotel sul mare||Sperlonga",
+              "attivita|Borgo bianco e spiaggia di Sperlonga||Sperlonga"
+            ]
+          },
+          {
+            "t": "Sperlonga",
+            "a": [
+              "attivita|Grotta di Tiberio e museo archeologico||Sperlonga",
+              "attivita|Mare e tramonto in spiaggia||Sperlonga"
+            ]
+          },
+          {
+            "t": "Gaeta",
+            "a": [
+              "transfer|Trasferimento a Gaeta||Gaeta",
+              "alloggio|Hotel a Gaeta||Gaeta",
+              "attivita|Montagna Spaccata e quartiere medievale||Gaeta",
+              "ristorante|Tiella di Gaeta||Gaeta"
+            ]
+          },
+          {
+            "t": "Ponza",
+            "a": [
+              "traghetto|Aliscafo da Formia o Terracina per Ponza||Ponza",
+              "alloggio|Hotel a Ponza||Ponza",
+              "attivita|Porto e Chiaia di Luna||Ponza"
+            ]
+          },
+          {
+            "t": "Ponza",
+            "a": [
+              "traghetto|Giro dell'isola in barca|Faraglioni, grotte di Pilato e Cala Feola.|Ponza"
+            ]
+          },
+          {
+            "t": "Palmarola",
+            "a": [
+              "traghetto|Escursione a Palmarola||Palmarola"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Aliscafo e rientro||"
+            ]
+          }
+        ]
       }
     ]
   }

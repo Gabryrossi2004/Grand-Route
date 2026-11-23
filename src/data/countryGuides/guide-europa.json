@@ -156,19 +156,206 @@
         "title": "Andalusia classica",
         "days": 8,
         "route": "Malaga (1) → Granada (2) → Cordova (1) → Siviglia (3) → Ronda",
-        "description": "Fly & drive o tour con guida, ideale in primavera e autunno."
+        "description": "Fly & drive o tour con guida, ideale in primavera e autunno.",
+        "plan": [
+          {
+            "t": "Arrivo a Malaga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto o transfer||Malaga",
+              "alloggio|Hotel in centro||Malaga",
+              "attivita|Alcazaba e Museo Picasso||Malaga"
+            ]
+          },
+          {
+            "t": "Da Malaga a Granada",
+            "a": [
+              "transfer|Trasferimento a Granada|Circa 1 ora e 40 minuti.|Granada",
+              "alloggio|Hotel nell'Albaicín o in centro||Granada",
+              "attivita|Albaicín e Mirador de San Nicolás al tramonto||Granada",
+              "ristorante|Tapas gratuite con la consumazione||Granada"
+            ]
+          },
+          {
+            "t": "Alhambra",
+            "a": [
+              "attivita|Alhambra, Palazzi Nasridi e Generalife|Ingresso con orario, da prenotare con largo anticipo.|Granada",
+              "attivita|Sacromonte e spettacolo di flamenco in grotta||Granada"
+            ]
+          },
+          {
+            "t": "Da Granada a Cordova",
+            "a": [
+              "transfer|Trasferimento a Cordova||Cordova",
+              "alloggio|Hotel nella Judería||Cordova",
+              "attivita|Mezquita-Catedral|La grande moschea con la selva di colonne.|Cordova",
+              "attivita|Patios fioriti e Alcázar de los Reyes Cristianos||Cordova"
+            ]
+          },
+          {
+            "t": "Siviglia",
+            "a": [
+              "transfer|Trasferimento a Siviglia||Siviglia",
+              "alloggio|Hotel nel Barrio Santa Cruz||Siviglia",
+              "attivita|Cattedrale e Giralda||Siviglia"
+            ]
+          },
+          {
+            "t": "Siviglia",
+            "a": [
+              "attivita|Real Alcázar|Palazzi mudéjar e giardini.|Siviglia",
+              "attivita|Plaza de España e Parque de María Luisa||Siviglia",
+              "attivita|Flamenco a Triana||Siviglia"
+            ]
+          },
+          {
+            "t": "Siviglia",
+            "a": [
+              "attivita|Metropol Parasol e quartiere di Triana||Siviglia",
+              "attivita|Escursione facoltativa a Jerez o Cadice||Andalusia"
+            ]
+          },
+          {
+            "t": "Ronda e rientro",
+            "a": [
+              "attivita|Ronda e il Puente Nuevo sulla gola del Tajo|Sulla strada per Malaga.|Ronda",
+              "transfer|Transfer all'aeroporto di Malaga||Malaga",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Madrid e città d'arte",
         "days": 6,
         "route": "Madrid (3) → Toledo (1) → Segovia (1)",
-        "description": "Musei e città storiche in treno o in auto."
+        "description": "Musei e città storiche in treno o in auto.",
+        "plan": [
+          {
+            "t": "Arrivo a Madrid",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Madrid",
+              "alloggio|Hotel vicino a Gran Vía o Sol||Madrid",
+              "attivita|Puerta del Sol, Plaza Mayor e Mercado de San Miguel||Madrid"
+            ]
+          },
+          {
+            "t": "Madrid dei musei",
+            "a": [
+              "attivita|Museo del Prado|Velázquez, Goya e il Bosco.|Madrid",
+              "attivita|Parco del Retiro e Palazzo di Cristallo||Madrid",
+              "attivita|Reina Sofía e Guernica||Madrid"
+            ]
+          },
+          {
+            "t": "Madrid reale",
+            "a": [
+              "attivita|Palazzo Reale e Cattedrale dell'Almudena||Madrid",
+              "attivita|Tapas a La Latina||Madrid",
+              "attivita|Partita al Bernabéu o tour dello stadio (facoltativo)||Madrid"
+            ]
+          },
+          {
+            "t": "Toledo",
+            "a": [
+              "treno|Treno AVE per Toledo|30 minuti.|Toledo",
+              "alloggio|Hotel nel centro storico||Toledo",
+              "attivita|Cattedrale, sinagoghe e El Greco|La città delle tre culture.|Toledo"
+            ]
+          },
+          {
+            "t": "Segovia",
+            "a": [
+              "transfer|Trasferimento a Segovia||Segovia",
+              "alloggio|Hotel a Segovia||Segovia",
+              "attivita|Acquedotto romano, Alcázar e cochinillo||Segovia"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Treno per Madrid||Madrid",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Spagna del nord",
         "days": 9,
         "route": "Bilbao (2) → San Sebastián (2) → Santander → Picos de Europa (2) → Santiago de Compostela (2)",
-        "description": "Verde, mare e gastronomia, da maggio a settembre."
+        "description": "Verde, mare e gastronomia, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bilbao",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bilbao||Bilbao",
+              "attivita|Museo Guggenheim||Bilbao"
+            ]
+          },
+          {
+            "t": "Bilbao",
+            "a": [
+              "attivita|Casco Viejo e pintxos||Bilbao",
+              "attivita|Ponte di Vizcaya UNESCO||Getxo"
+            ]
+          },
+          {
+            "t": "San Sebastián",
+            "a": [
+              "transfer|Trasferimento a San Sebastián||San Sebastián",
+              "alloggio|Hotel vicino alla Concha||San Sebastián",
+              "attivita|Spiaggia della Concha e Monte Igueldo||San Sebastián",
+              "ristorante|Giro dei pintxos nella Parte Vieja||San Sebastián"
+            ]
+          },
+          {
+            "t": "San Sebastián",
+            "a": [
+              "attivita|Getaria e txakoli||Getaria",
+              "ristorante|Cena in un asador o ristorante stellato||San Sebastián"
+            ]
+          },
+          {
+            "t": "Santander e Picos de Europa",
+            "a": [
+              "attivita|Santander e Palacio de la Magdalena||Santander",
+              "transfer|Trasferimento nei Picos de Europa||Picos de Europa",
+              "alloggio|Hotel rurale nei Picos||Picos de Europa"
+            ]
+          },
+          {
+            "t": "Picos de Europa",
+            "a": [
+              "attivita|Funivia di Fuente Dé e laghi di Covadonga||Picos de Europa"
+            ]
+          },
+          {
+            "t": "Verso Santiago",
+            "a": [
+              "transfer|Trasferimento in Galizia lungo la costa asturiana||Santiago",
+              "alloggio|Hotel nel centro storico||Santiago de Compostela",
+              "attivita|Praia das Catedrais (con bassa marea)||Ribadeo"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "attivita|Cattedrale e Messa del pellegrino con il botafumeiro||Santiago de Compostela",
+              "ristorante|Pulpo a feira e Albariño||Santiago de Compostela"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -317,21 +504,215 @@
     "itineraries": [
       {
         "title": "Portogallo da nord a sud",
-        "days": 10,
+        "days": 11,
         "route": "Porto (2) → Douro (1) → Coimbra (1) → Óbidos e Nazaré (1) → Lisbona (3) → Algarve (2)",
-        "description": "Fly & drive classico, ideale da aprile a ottobre."
+        "description": "Fly & drive classico, ideale da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Porto",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Porto",
+              "alloggio|Hotel nel centro o a Ribeira||Porto",
+              "attivita|Ribeira e Ponte Dom Luís I al tramonto||Porto"
+            ]
+          },
+          {
+            "t": "Porto",
+            "a": [
+              "attivita|Livraria Lello, Torre dos Clérigos e stazione di São Bento||Porto",
+              "attivita|Cantine del Porto a Vila Nova de Gaia||Porto"
+            ]
+          },
+          {
+            "t": "Valle del Douro",
+            "a": [
+              "transfer|Trasferimento nella Valle del Douro||Douro",
+              "attivita|Quinta con degustazione e crociera sul fiume||Douro",
+              "alloggio|Quinta tra i vigneti||Douro"
+            ]
+          },
+          {
+            "t": "Coimbra",
+            "a": [
+              "transfer|Trasferimento a Coimbra||Coimbra",
+              "alloggio|Hotel a Coimbra||Coimbra",
+              "attivita|Università e Biblioteca Joanina||Coimbra"
+            ]
+          },
+          {
+            "t": "Óbidos e Nazaré",
+            "a": [
+              "attivita|Nazaré e le onde giganti||Nazaré",
+              "attivita|Óbidos con la ginjinha nel bicchiere di cioccolato||Óbidos",
+              "alloggio|Hotel a Óbidos||Óbidos"
+            ]
+          },
+          {
+            "t": "Lisbona",
+            "a": [
+              "transfer|Trasferimento a Lisbona||Lisbona",
+              "alloggio|Hotel in Baixa o Chiado||Lisbona",
+              "attivita|Alfama in tram 28 e Castello di São Jorge||Lisbona"
+            ]
+          },
+          {
+            "t": "Lisbona",
+            "a": [
+              "attivita|Belém: Monastero dos Jerónimos, Torre e pastéis||Lisbona",
+              "attivita|Fado ad Alfama||Lisbona"
+            ]
+          },
+          {
+            "t": "Sintra",
+            "a": [
+              "attivita|Sintra: Palácio da Pena e Quinta da Regaleira||Sintra",
+              "attivita|Cabo da Roca e Cascais||Cascais"
+            ]
+          },
+          {
+            "t": "Algarve",
+            "a": [
+              "transfer|Trasferimento in Algarve||Algarve",
+              "alloggio|Hotel sul mare||Algarve",
+              "attivita|Lagos e Ponta da Piedade||Lagos"
+            ]
+          },
+          {
+            "t": "Algarve",
+            "a": [
+              "traghetto|Grotta di Benagil in barca||Benagil"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Faro||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lisbona e Porto",
-        "days": 6,
+        "days": 7,
         "route": "Lisbona (3) → treno → Porto (3)",
-        "description": "Le due città in treno."
+        "description": "Le due città in treno.",
+        "plan": [
+          {
+            "t": "Arrivo a Lisbona",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Lisbona",
+              "alloggio|Hotel in centro||Lisbona",
+              "attivita|Baixa, Rossio e Elevador de Santa Justa||Lisbona"
+            ]
+          },
+          {
+            "t": "Lisbona",
+            "a": [
+              "attivita|Alfama, tram 28 e Castello||Lisbona",
+              "attivita|Fado la sera||Lisbona"
+            ]
+          },
+          {
+            "t": "Belém e Sintra",
+            "a": [
+              "attivita|Belém e pastéis de nata||Lisbona",
+              "attivita|Sintra e Palácio da Pena||Sintra"
+            ]
+          },
+          {
+            "t": "Verso Porto",
+            "a": [
+              "treno|Treno Alfa Pendular per Porto|Circa 3 ore.|Porto",
+              "alloggio|Hotel a Porto||Porto",
+              "attivita|Ribeira al tramonto||Porto"
+            ]
+          },
+          {
+            "t": "Porto",
+            "a": [
+              "attivita|Livraria Lello, São Bento e Clérigos||Porto",
+              "attivita|Cantine del Porto a Gaia||Porto"
+            ]
+          },
+          {
+            "t": "Douro",
+            "a": [
+              "attivita|Escursione nella Valle del Douro con crociera||Douro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Azzorre",
         "days": 8,
         "route": "São Miguel (4) → Pico e Faial (3)",
-        "description": "Natura vulcanica e balene, da maggio a settembre."
+        "description": "Natura vulcanica e balene, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a São Miguel",
+            "a": [
+              "volo|Volo per Ponta Delgada via Lisbona||",
+              "alloggio|Hotel a Ponta Delgada||Ponta Delgada",
+              "attivita|Centro di Ponta Delgada||Ponta Delgada"
+            ]
+          },
+          {
+            "t": "Sete Cidades",
+            "a": [
+              "attivita|Laghi di Sete Cidades e Lagoa do Fogo||São Miguel"
+            ]
+          },
+          {
+            "t": "Whale watching",
+            "a": [
+              "traghetto|Avvistamento di balene e delfini||São Miguel",
+              "attivita|Piantagione di tè Gorreana||São Miguel"
+            ]
+          },
+          {
+            "t": "Furnas",
+            "a": [
+              "attivita|Furnas: Terra Nostra e cozido cotto nella terra vulcanica||Furnas"
+            ]
+          },
+          {
+            "t": "Pico",
+            "a": [
+              "volo|Volo per Pico||Pico",
+              "alloggio|Hotel a Pico||Pico",
+              "attivita|Vigneti UNESCO di Pico||Pico"
+            ]
+          },
+          {
+            "t": "Pico",
+            "a": [
+              "attivita|Salita al Monte Pico o grotte laviche||Pico"
+            ]
+          },
+          {
+            "t": "Faial",
+            "a": [
+              "traghetto|Traghetto per Faial||Faial",
+              "attivita|Vulcano dos Capelinhos e porto di Horta con il Peter Café Sport||Faial"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Lisbona||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -513,19 +894,195 @@
         "title": "Parigi",
         "days": 5,
         "route": "Parigi (4), con Versailles",
-        "description": "Il city break classico."
+        "description": "Il city break classico.",
+        "plan": [
+          {
+            "t": "Arrivo a Parigi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Parigi",
+              "alloggio|Hotel in centro|Marais, Saint-Germain o Opéra.|Parigi",
+              "attivita|Crociera sulla Senna al tramonto||Parigi"
+            ]
+          },
+          {
+            "t": "Parigi classica",
+            "a": [
+              "attivita|Torre Eiffel con biglietto prenotato||Parigi",
+              "attivita|Arco di Trionfo e Champs-Élysées||Parigi",
+              "attivita|Notre-Dame e Île de la Cité||Parigi"
+            ]
+          },
+          {
+            "t": "Musei",
+            "a": [
+              "attivita|Louvre|Ingresso con orario.|Parigi",
+              "attivita|Musée d'Orsay e Saint-Germain||Parigi"
+            ]
+          },
+          {
+            "t": "Versailles",
+            "a": [
+              "treno|RER per Versailles||Versailles",
+              "attivita|Reggia e giardini di Versailles||Versailles",
+              "attivita|Montmartre e Sacré-Cœur la sera||Parigi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Marais e Galeries Lafayette||Parigi",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Normandia, Bretagna e Loira",
         "days": 9,
         "route": "Parigi (2) → Giverny → Rouen → Étretat e Honfleur (1) → Spiagge dello sbarco (1) → Mont-Saint-Michel (1) → Saint-Malo (1) → Loira (2)",
-        "description": "Tour in auto da maggio a settembre."
+        "description": "Tour in auto da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Parigi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Parigi||Parigi",
+              "attivita|Senna e centro storico||Parigi"
+            ]
+          },
+          {
+            "t": "Parigi",
+            "a": [
+              "attivita|Torre Eiffel e Louvre||Parigi"
+            ]
+          },
+          {
+            "t": "Giverny, Rouen ed Étretat",
+            "a": [
+              "attivita|Giardini di Monet a Giverny||Giverny",
+              "attivita|Rouen e la cattedrale||Rouen",
+              "attivita|Falesie di Étretat||Étretat",
+              "alloggio|Hotel a Honfleur||Honfleur"
+            ]
+          },
+          {
+            "t": "Spiagge dello sbarco",
+            "a": [
+              "attivita|Omaha Beach, Pointe du Hoc e cimitero americano||Normandia",
+              "attivita|Arazzo di Bayeux||Bayeux",
+              "alloggio|Hotel a Bayeux||Bayeux"
+            ]
+          },
+          {
+            "t": "Mont-Saint-Michel",
+            "a": [
+              "transfer|Trasferimento a Mont-Saint-Michel||Mont-Saint-Michel",
+              "attivita|Abbazia e alta marea||Mont-Saint-Michel",
+              "alloggio|Hotel vicino al Mont||Mont-Saint-Michel"
+            ]
+          },
+          {
+            "t": "Saint-Malo",
+            "a": [
+              "transfer|Trasferimento a Saint-Malo||Saint-Malo",
+              "attivita|Città corsara e mura||Saint-Malo",
+              "ristorante|Crêpes e sidro bretone||Saint-Malo",
+              "alloggio|Hotel a Saint-Malo||Saint-Malo"
+            ]
+          },
+          {
+            "t": "Valle della Loira",
+            "a": [
+              "transfer|Trasferimento nella Loira||Loira",
+              "alloggio|Château-hôtel nella Loira||Loira",
+              "attivita|Castello di Chenonceau||Chenonceau"
+            ]
+          },
+          {
+            "t": "Loira",
+            "a": [
+              "attivita|Castelli di Chambord e Amboise in bici o auto||Loira"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Treno per Parigi||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Provenza e Costa Azzurra",
         "days": 8,
         "route": "Nizza (2) → Èze e Monaco → Gole del Verdon → Luberon (2) → Avignone e Arles (2)",
-        "description": "Ideale in auto dall'Italia, a luglio per la lavanda."
+        "description": "Ideale in auto dall'Italia, a luglio per la lavanda.",
+        "plan": [
+          {
+            "t": "Arrivo a Nizza",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Nizza",
+              "alloggio|Hotel a Nizza||Nizza",
+              "attivita|Promenade des Anglais e Vieux Nice||Nizza"
+            ]
+          },
+          {
+            "t": "Èze e Monaco",
+            "a": [
+              "attivita|Èze e il giardino esotico||Èze",
+              "attivita|Monaco: Palazzo del Principe e Casinò||Monaco"
+            ]
+          },
+          {
+            "t": "Gole del Verdon",
+            "a": [
+              "transfer|Strada delle Gole del Verdon||Verdon",
+              "attivita|Lago di Sainte-Croix in pedalò o kayak||Verdon",
+              "alloggio|Hotel a Moustiers-Sainte-Marie||Moustiers"
+            ]
+          },
+          {
+            "t": "Luberon",
+            "a": [
+              "transfer|Trasferimento nel Luberon||Luberon",
+              "alloggio|Mas provenzale nel Luberon||Luberon",
+              "attivita|Lavanda di Valensole (giugno-luglio)||Valensole"
+            ]
+          },
+          {
+            "t": "Luberon",
+            "a": [
+              "attivita|Gordes, Roussillon e Abbazia di Sénanque||Luberon",
+              "attivita|Mercato provenzale||Luberon"
+            ]
+          },
+          {
+            "t": "Avignone",
+            "a": [
+              "transfer|Trasferimento ad Avignone||Avignone",
+              "alloggio|Hotel ad Avignone||Avignone",
+              "attivita|Palazzo dei Papi e Pont d'Avignon||Avignone"
+            ]
+          },
+          {
+            "t": "Arles e Camargue",
+            "a": [
+              "attivita|Arles romana e luoghi di Van Gogh||Arles",
+              "attivita|Camargue con fenicotteri e cavalli bianchi||Camargue"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Marsiglia o Nizza||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -676,19 +1233,219 @@
         "title": "Atene e Cicladi",
         "days": 10,
         "route": "Atene (2) → Mykonos (3) → Santorini (4)",
-        "description": "Il combinato più venduto, da giugno a settembre."
+        "description": "Il combinato più venduto, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo ad Atene",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Atene",
+              "alloggio|Hotel a Plaka||Atene",
+              "attivita|Plaka e Monastiraki||Atene"
+            ]
+          },
+          {
+            "t": "Atene",
+            "a": [
+              "attivita|Acropoli e Museo dell'Acropoli||Atene",
+              "attivita|Capo Sounion al tramonto||Sounion"
+            ]
+          },
+          {
+            "t": "Mykonos",
+            "a": [
+              "traghetto|Traghetto veloce per Mykonos||Mykonos",
+              "alloggio|Hotel a Mykonos||Mykonos",
+              "attivita|Piccola Venezia e mulini al tramonto||Mykonos"
+            ]
+          },
+          {
+            "t": "Mykonos",
+            "a": [
+              "attivita|Spiagge di Psarou e Paradise||Mykonos"
+            ]
+          },
+          {
+            "t": "Delos",
+            "a": [
+              "traghetto|Escursione a Delos||Delos"
+            ]
+          },
+          {
+            "t": "Santorini",
+            "a": [
+              "traghetto|Traghetto per Santorini||Santorini",
+              "alloggio|Hotel con vista sulla caldera a Fira o Imerovigli||Santorini",
+              "attivita|Fira e passeggiata sulla caldera||Santorini"
+            ]
+          },
+          {
+            "t": "Santorini",
+            "a": [
+              "traghetto|Crociera nella caldera con sosta alle sorgenti calde||Santorini"
+            ]
+          },
+          {
+            "t": "Santorini",
+            "a": [
+              "attivita|Akrotiri e spiaggia rossa||Santorini",
+              "attivita|Degustazione di Assyrtiko||Santorini"
+            ]
+          },
+          {
+            "t": "Santorini",
+            "a": [
+              "attivita|Oia al tramonto||Oia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grecia classica",
         "days": 8,
         "route": "Atene (2) → Corinto → Micene → Epidauro → Nafplio (1) → Olimpia (1) → Delfi (1) → Meteore (1)",
-        "description": "Tour archeologico in pullman o auto, da aprile a ottobre."
+        "description": "Tour archeologico in pullman o auto, da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo ad Atene",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Atene||Atene",
+              "attivita|Plaka||Atene"
+            ]
+          },
+          {
+            "t": "Atene",
+            "a": [
+              "attivita|Acropoli e Museo dell'Acropoli||Atene"
+            ]
+          },
+          {
+            "t": "Peloponneso",
+            "a": [
+              "attivita|Canale di Corinto||Corinto",
+              "attivita|Micene e Tomba di Agamennone||Micene",
+              "attivita|Teatro di Epidauro||Epidauro",
+              "alloggio|Hotel a Nafplio||Nafplio"
+            ]
+          },
+          {
+            "t": "Olimpia",
+            "a": [
+              "transfer|Trasferimento a Olimpia||Olimpia",
+              "attivita|Sito di Olimpia e stadio antico||Olimpia",
+              "alloggio|Hotel a Olimpia||Olimpia"
+            ]
+          },
+          {
+            "t": "Delfi",
+            "a": [
+              "transfer|Ponte di Rion-Antirion verso Delfi||Delfi",
+              "attivita|Santuario di Apollo||Delfi",
+              "alloggio|Hotel a Delfi||Delfi"
+            ]
+          },
+          {
+            "t": "Meteore",
+            "a": [
+              "transfer|Trasferimento a Kalambaka||Meteore",
+              "alloggio|Hotel a Kalambaka||Kalambaka",
+              "attivita|Monasteri delle Meteore al tramonto||Meteore"
+            ]
+          },
+          {
+            "t": "Rientro ad Atene",
+            "a": [
+              "attivita|Visita ai monasteri al mattino||Meteore",
+              "transfer|Rientro ad Atene||Atene"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Creta on the road",
         "days": 9,
         "route": "Heraklion (2) → Rethymno (1) → Chania (3) → Elounda (2)",
-        "description": "La grande isola in auto."
+        "description": "La grande isola in auto.",
+        "plan": [
+          {
+            "t": "Arrivo a Heraklion",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Heraklion",
+              "alloggio|Hotel a Heraklion||Heraklion"
+            ]
+          },
+          {
+            "t": "Cnosso",
+            "a": [
+              "attivita|Palazzo di Cnosso e Museo Archeologico||Heraklion"
+            ]
+          },
+          {
+            "t": "Rethymno",
+            "a": [
+              "transfer|Trasferimento a Rethymno||Rethymno",
+              "alloggio|Hotel a Rethymno||Rethymno",
+              "attivita|Fortezza e città veneziana||Rethymno"
+            ]
+          },
+          {
+            "t": "Chania",
+            "a": [
+              "transfer|Trasferimento a Chania||Chania",
+              "alloggio|Hotel nel porto veneziano||Chania",
+              "attivita|Porto veneziano e faro||Chania"
+            ]
+          },
+          {
+            "t": "Balos",
+            "a": [
+              "traghetto|Balos e Gramvousa in barca||Balos"
+            ]
+          },
+          {
+            "t": "Gole di Samaria",
+            "a": [
+              "attivita|Trekking nelle Gole di Samaria|16 km, da maggio a ottobre.|Samaria"
+            ]
+          },
+          {
+            "t": "Elounda",
+            "a": [
+              "transfer|Trasferimento a Elounda||Elounda",
+              "alloggio|Resort a Elounda||Elounda",
+              "attivita|Isola di Spinalonga||Spinalonga"
+            ]
+          },
+          {
+            "t": "Elounda",
+            "a": [
+              "attivita|Mare e Agios Nikolaos||Elounda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -823,19 +1580,196 @@
         "title": "Croazia classica",
         "days": 9,
         "route": "Zagabria (1) → Plitvice (1) → Zara (1) → Spalato (2) → Hvar (1) → Dubrovnik (2)",
-        "description": "Fly & drive o tour, da maggio a ottobre."
+        "description": "Fly & drive o tour, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Zagabria",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Zagabria||Zagabria",
+              "attivita|Città alta e Museo delle relazioni interrotte||Zagabria"
+            ]
+          },
+          {
+            "t": "Plitvice",
+            "a": [
+              "transfer|Trasferimento a Plitvice||Plitvice",
+              "attivita|Laghi di Plitvice|Passerelle tra 16 laghi e cascate.|Plitvice",
+              "alloggio|Hotel vicino al parco||Plitvice"
+            ]
+          },
+          {
+            "t": "Zara",
+            "a": [
+              "transfer|Trasferimento a Zara||Zara",
+              "alloggio|Hotel a Zara||Zara",
+              "attivita|Organo marino e Saluto al Sole||Zara"
+            ]
+          },
+          {
+            "t": "Spalato",
+            "a": [
+              "transfer|Trasferimento a Spalato con sosta a Krka||Spalato",
+              "alloggio|Hotel a Spalato||Spalato",
+              "attivita|Palazzo di Diocleziano||Spalato"
+            ]
+          },
+          {
+            "t": "Spalato",
+            "a": [
+              "attivita|Trogir e Riva di Spalato||Trogir"
+            ]
+          },
+          {
+            "t": "Hvar",
+            "a": [
+              "traghetto|Catamarano per Hvar||Hvar",
+              "alloggio|Hotel a Hvar||Hvar",
+              "attivita|Fortezza spagnola e piazza||Hvar"
+            ]
+          },
+          {
+            "t": "Dubrovnik",
+            "a": [
+              "traghetto|Catamarano per Dubrovnik||Dubrovnik",
+              "alloggio|Hotel a Dubrovnik||Dubrovnik",
+              "attivita|Mura di Dubrovnik||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Dubrovnik",
+            "a": [
+              "attivita|Funivia del Srđ e isola di Lokrum||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isole dalmate",
         "days": 8,
         "route": "Spalato (2) → Brač (2) → Hvar (2) → Korčula (1)",
-        "description": "Mare e isole con traghetti e catamarani."
+        "description": "Mare e isole con traghetti e catamarani.",
+        "plan": [
+          {
+            "t": "Arrivo a Spalato",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Spalato||Spalato",
+              "attivita|Palazzo di Diocleziano||Spalato"
+            ]
+          },
+          {
+            "t": "Spalato",
+            "a": [
+              "attivita|Trogir e spiagge||Spalato"
+            ]
+          },
+          {
+            "t": "Brač",
+            "a": [
+              "traghetto|Traghetto per Brač||Brač",
+              "alloggio|Hotel a Bol||Bol",
+              "attivita|Zlatni Rat||Bol"
+            ]
+          },
+          {
+            "t": "Brač",
+            "a": [
+              "attivita|Monastero di Blaca e Vidova Gora||Brač"
+            ]
+          },
+          {
+            "t": "Hvar",
+            "a": [
+              "traghetto|Catamarano per Hvar||Hvar",
+              "alloggio|Hotel a Hvar||Hvar",
+              "attivita|Città di Hvar e fortezza||Hvar"
+            ]
+          },
+          {
+            "t": "Hvar",
+            "a": [
+              "traghetto|Isole Pakleni in barca||Hvar"
+            ]
+          },
+          {
+            "t": "Korčula",
+            "a": [
+              "traghetto|Catamarano per Korčula||Korčula",
+              "alloggio|Hotel a Korčula||Korčula",
+              "attivita|Città vecchia e casa di Marco Polo||Korčula"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Catamarano per Spalato o Dubrovnik||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Istria e Quarnaro",
         "days": 7,
         "route": "Rovigno (3) → Parenzo e Motovun (1) → Opatija (2)",
-        "description": "Cittadine venete, tartufi e mare a poche ore dall'Italia; ottimo in auto."
+        "description": "Cittadine venete, tartufi e mare a poche ore dall'Italia; ottimo in auto.",
+        "plan": [
+          {
+            "t": "Rovigno",
+            "a": [
+              "transfer|Arrivo in auto in Istria||Rovigno",
+              "alloggio|Hotel a Rovigno||Rovigno",
+              "attivita|Centro storico e chiesa di Sant'Eufemia||Rovigno"
+            ]
+          },
+          {
+            "t": "Rovigno",
+            "a": [
+              "traghetto|Isole di Rovigno e canale di Leme||Rovigno"
+            ]
+          },
+          {
+            "t": "Istria interna",
+            "a": [
+              "attivita|Grisignana e Montona con tartufi||Istria"
+            ]
+          },
+          {
+            "t": "Parenzo e Motovun",
+            "a": [
+              "attivita|Basilica Eufrasiana di Parenzo||Parenzo",
+              "alloggio|Hotel a Motovun o Parenzo||Parenzo"
+            ]
+          },
+          {
+            "t": "Opatija",
+            "a": [
+              "transfer|Trasferimento ad Abbazia||Opatija",
+              "alloggio|Hotel ad Abbazia||Opatija",
+              "attivita|Lungomare Franz Joseph||Opatija"
+            ]
+          },
+          {
+            "t": "Quarnaro",
+            "a": [
+              "attivita|Isola di Krk o Parco del Učka||Quarnaro"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro in auto||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -986,19 +1920,184 @@
         "title": "Londra",
         "days": 5,
         "route": "Londra (4)",
-        "description": "City break con musei, musical e shopping."
+        "description": "City break con musei, musical e shopping.",
+        "plan": [
+          {
+            "t": "Arrivo a Londra",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Treno Heathrow o Gatwick Express||Londra",
+              "alloggio|Hotel in centro||Londra",
+              "attivita|South Bank e London Eye||Londra"
+            ]
+          },
+          {
+            "t": "Londra reale",
+            "a": [
+              "attivita|Buckingham Palace e cambio della guardia||Londra",
+              "attivita|Westminster e Big Ben||Londra",
+              "attivita|Covent Garden||Londra"
+            ]
+          },
+          {
+            "t": "Musei",
+            "a": [
+              "attivita|British Museum||Londra",
+              "attivita|National Gallery e Trafalgar Square||Londra",
+              "attivita|Musical nel West End||Londra"
+            ]
+          },
+          {
+            "t": "Torre e mercati",
+            "a": [
+              "attivita|Torre di Londra e Tower Bridge||Londra",
+              "attivita|Borough Market e Camden||Londra"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Inghilterra del sud",
         "days": 8,
         "route": "Londra (3) → Windsor → Oxford (1) → Cotswolds (1) → Bath (1) → Stonehenge → Londra",
-        "description": "Fly & drive o tour in pullman."
+        "description": "Fly & drive o tour in pullman.",
+        "plan": [
+          {
+            "t": "Arrivo a Londra",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Londra||Londra",
+              "attivita|Westminster e South Bank||Londra"
+            ]
+          },
+          {
+            "t": "Londra",
+            "a": [
+              "attivita|Torre di Londra e British Museum||Londra"
+            ]
+          },
+          {
+            "t": "Londra",
+            "a": [
+              "attivita|Notting Hill, Hyde Park e Kensington||Londra"
+            ]
+          },
+          {
+            "t": "Windsor e Oxford",
+            "a": [
+              "attivita|Castello di Windsor||Windsor",
+              "attivita|Oxford e i college||Oxford",
+              "alloggio|Hotel a Oxford||Oxford"
+            ]
+          },
+          {
+            "t": "Cotswolds",
+            "a": [
+              "attivita|Villaggi dei Cotswolds: Bibury e Castle Combe||Cotswolds",
+              "alloggio|Inn nei Cotswolds||Cotswolds"
+            ]
+          },
+          {
+            "t": "Bath",
+            "a": [
+              "attivita|Terme romane di Bath e Royal Crescent||Bath",
+              "alloggio|Hotel a Bath||Bath"
+            ]
+          },
+          {
+            "t": "Stonehenge",
+            "a": [
+              "attivita|Stonehenge||Stonehenge",
+              "transfer|Rientro a Londra||Londra"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Scozia",
-        "days": 8,
+        "days": 9,
         "route": "Edimburgo (3) → Highlands e Loch Ness (2) → Skye (2) → Glasgow (1)",
-        "description": "Castelli, laghi e whisky, da maggio a settembre."
+        "description": "Castelli, laghi e whisky, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Edimburgo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Edimburgo||Edimburgo",
+              "attivita|Royal Mile||Edimburgo"
+            ]
+          },
+          {
+            "t": "Edimburgo",
+            "a": [
+              "attivita|Castello di Edimburgo||Edimburgo",
+              "attivita|Holyrood e Arthur's Seat||Edimburgo"
+            ]
+          },
+          {
+            "t": "Edimburgo",
+            "a": [
+              "attivita|New Town e distilleria di whisky||Edimburgo"
+            ]
+          },
+          {
+            "t": "Highlands",
+            "a": [
+              "transfer|Trasferimento nelle Highlands via Glencoe||Highlands",
+              "attivita|Glencoe||Glencoe",
+              "alloggio|Hotel vicino a Loch Ness||Loch Ness"
+            ]
+          },
+          {
+            "t": "Loch Ness",
+            "a": [
+              "traghetto|Crociera sul Loch Ness e castello di Urquhart||Loch Ness"
+            ]
+          },
+          {
+            "t": "Skye",
+            "a": [
+              "transfer|Trasferimento a Skye con Eilean Donan||Skye",
+              "alloggio|Hotel a Portree||Skye",
+              "attivita|Old Man of Storr||Skye"
+            ]
+          },
+          {
+            "t": "Skye",
+            "a": [
+              "attivita|Fairy Pools e Quiraing||Skye"
+            ]
+          },
+          {
+            "t": "Glasgow",
+            "a": [
+              "transfer|Trasferimento a Glasgow||Glasgow",
+              "alloggio|Hotel a Glasgow||Glasgow",
+              "attivita|Cattedrale e Kelvingrove||Glasgow"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1114,19 +2213,190 @@
         "title": "Irlanda classica",
         "days": 8,
         "route": "Dublino (2) → Kilkenny → Cork (1) → Killarney (2) → Cliffs of Moher → Galway (2)",
-        "description": "Fly & drive da maggio a settembre."
+        "description": "Fly & drive da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Dublino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dublino||Dublino",
+              "attivita|Temple Bar||Dublino"
+            ]
+          },
+          {
+            "t": "Dublino",
+            "a": [
+              "attivita|Trinity College e Libro di Kells||Dublino",
+              "attivita|Guinness Storehouse||Dublino"
+            ]
+          },
+          {
+            "t": "Kilkenny e Cork",
+            "a": [
+              "attivita|Castello di Kilkenny||Kilkenny",
+              "attivita|Rocca di Cashel||Cashel",
+              "alloggio|Hotel a Cork||Cork"
+            ]
+          },
+          {
+            "t": "Killarney",
+            "a": [
+              "attivita|Blarney Castle||Blarney",
+              "transfer|Trasferimento a Killarney||Killarney",
+              "alloggio|Hotel a Killarney||Killarney"
+            ]
+          },
+          {
+            "t": "Ring of Kerry",
+            "a": [
+              "attivita|Ring of Kerry||Kerry"
+            ]
+          },
+          {
+            "t": "Cliffs of Moher e Galway",
+            "a": [
+              "attivita|Scogliere di Moher||Moher",
+              "attivita|Burren||Burren",
+              "alloggio|Hotel a Galway||Galway"
+            ]
+          },
+          {
+            "t": "Galway",
+            "a": [
+              "attivita|Galway e musica nei pub||Galway"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Dublino||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Le due Irlande",
         "days": 10,
         "route": "Dublino (2) → Galway (2) → Connemara (1) → Donegal (1) → Giant's Causeway (1) → Belfast (2)",
-        "description": "Repubblica e Irlanda del Nord."
+        "description": "Repubblica e Irlanda del Nord.",
+        "plan": [
+          {
+            "t": "Arrivo a Dublino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dublino||Dublino",
+              "attivita|Temple Bar||Dublino"
+            ]
+          },
+          {
+            "t": "Dublino",
+            "a": [
+              "attivita|Trinity College e Guinness||Dublino"
+            ]
+          },
+          {
+            "t": "Galway",
+            "a": [
+              "transfer|Trasferimento a Galway||Galway",
+              "alloggio|Hotel a Galway||Galway",
+              "attivita|Centro di Galway||Galway"
+            ]
+          },
+          {
+            "t": "Isole Aran",
+            "a": [
+              "traghetto|Inis Mór in bici e Dún Aonghasa||Aran"
+            ]
+          },
+          {
+            "t": "Connemara",
+            "a": [
+              "attivita|Kylemore Abbey e Connemara||Connemara",
+              "alloggio|Hotel nel Connemara||Connemara"
+            ]
+          },
+          {
+            "t": "Donegal",
+            "a": [
+              "transfer|Trasferimento nel Donegal||Donegal",
+              "alloggio|Hotel nel Donegal||Donegal",
+              "attivita|Scogliere di Slieve League||Donegal"
+            ]
+          },
+          {
+            "t": "Giant's Causeway",
+            "a": [
+              "attivita|Selciato del Gigante||Giant's Causeway",
+              "attivita|Dark Hedges||Antrim",
+              "alloggio|Hotel sulla Causeway Coast||Antrim"
+            ]
+          },
+          {
+            "t": "Belfast",
+            "a": [
+              "transfer|Trasferimento a Belfast||Belfast",
+              "alloggio|Hotel a Belfast||Belfast",
+              "attivita|Titanic Belfast||Belfast"
+            ]
+          },
+          {
+            "t": "Belfast",
+            "a": [
+              "attivita|Murales e Black Taxi Tour||Belfast"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dublino e la costa est",
         "days": 5,
         "route": "Dublino (3) → Wicklow e Glendalough (1) → Howth (1)",
-        "description": "Breve e senza auto: pub, Trinity College, la valle dei monaci e il villaggio di pescatori di Howth."
+        "description": "Breve e senza auto: pub, Trinity College, la valle dei monaci e il villaggio di pescatori di Howth.",
+        "plan": [
+          {
+            "t": "Arrivo a Dublino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dublino||Dublino",
+              "attivita|Temple Bar e Grafton Street||Dublino"
+            ]
+          },
+          {
+            "t": "Dublino",
+            "a": [
+              "attivita|Trinity College e Book of Kells||Dublino",
+              "attivita|Guinness Storehouse||Dublino"
+            ]
+          },
+          {
+            "t": "Dublino",
+            "a": [
+              "attivita|Kilmainham Gaol e Phoenix Park||Dublino"
+            ]
+          },
+          {
+            "t": "Wicklow",
+            "a": [
+              "attivita|Monti Wicklow e Glendalough||Wicklow"
+            ]
+          },
+          {
+            "t": "Howth e partenza",
+            "a": [
+              "attivita|Howth, il villaggio dei pescatori||Howth",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1262,21 +2532,206 @@
     "itineraries": [
       {
         "title": "Ring Road",
-        "days": 10,
+        "days": 11,
         "route": "Reykjavík (1) → Circolo d'Oro → Costa sud (2) → Jökulsárlón (1) → Fiordi dell'est (1) → Mývatn (2) → Akureyri (1) → Snæfellsnes (1) → Reykjavík",
-        "description": "Il giro completo in fly & drive, da giugno a settembre."
+        "description": "Il giro completo in fly & drive, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Reykjavík",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Reykjavík",
+              "alloggio|Hotel a Reykjavík||Reykjavík",
+              "attivita|Hallgrímskirkja e Harpa||Reykjavík"
+            ]
+          },
+          {
+            "t": "Circolo d'Oro",
+            "a": [
+              "attivita|Þingvellir, Geysir e Gullfoss||Circolo d'Oro",
+              "alloggio|Hotel sulla costa sud||Costa sud"
+            ]
+          },
+          {
+            "t": "Costa sud",
+            "a": [
+              "attivita|Seljalandsfoss e Skógafoss||Costa sud",
+              "attivita|Spiaggia nera di Reynisfjara||Vík"
+            ]
+          },
+          {
+            "t": "Jökulsárlón",
+            "a": [
+              "attivita|Laguna glaciale e Diamond Beach||Jökulsárlón",
+              "alloggio|Hotel vicino alla laguna||Jökulsárlón"
+            ]
+          },
+          {
+            "t": "Fiordi dell'est",
+            "a": [
+              "transfer|Fiordi dell'est||Fiordi dell'est",
+              "alloggio|Hotel negli Austfirðir||Fiordi dell'est"
+            ]
+          },
+          {
+            "t": "Mývatn",
+            "a": [
+              "transfer|Dettifoss e Mývatn||Mývatn",
+              "alloggio|Hotel a Mývatn||Mývatn",
+              "attivita|Mývatn Nature Baths||Mývatn"
+            ]
+          },
+          {
+            "t": "Mývatn",
+            "a": [
+              "attivita|Námaskarð e Hverfjall||Mývatn",
+              "attivita|Godafoss||Mývatn"
+            ]
+          },
+          {
+            "t": "Akureyri",
+            "a": [
+              "transfer|Trasferimento ad Akureyri||Akureyri",
+              "alloggio|Hotel ad Akureyri||Akureyri",
+              "traghetto|Whale watching a Húsavík o Akureyri||Akureyri"
+            ]
+          },
+          {
+            "t": "Snæfellsnes",
+            "a": [
+              "transfer|Trasferimento a Snæfellsnes||Snæfellsnes",
+              "alloggio|Hotel a Snæfellsnes||Snæfellsnes",
+              "attivita|Kirkjufell||Snæfellsnes"
+            ]
+          },
+          {
+            "t": "Rientro a Reykjavík",
+            "a": [
+              "attivita|Laguna Blu||Grindavík",
+              "transfer|Rientro a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Inverno e aurore",
         "days": 6,
         "route": "Reykjavík (2) → Circolo d'Oro → Costa sud (2) → Jökulsárlón (1)",
-        "description": "Aurore, cascate e grotte di ghiaccio da novembre a marzo."
+        "description": "Aurore, cascate e grotte di ghiaccio da novembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Reykjavík",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Reykjavík||Reykjavík",
+              "attivita|Centro di Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Reykjavík",
+            "a": [
+              "attivita|Caccia all'aurora boreale||Reykjavík"
+            ]
+          },
+          {
+            "t": "Circolo d'Oro e costa sud",
+            "a": [
+              "attivita|Þingvellir, Geysir e Gullfoss||Circolo d'Oro",
+              "alloggio|Hotel di campagna||Costa sud"
+            ]
+          },
+          {
+            "t": "Costa sud",
+            "a": [
+              "attivita|Cascate e spiaggia nera||Costa sud"
+            ]
+          },
+          {
+            "t": "Jökulsárlón",
+            "a": [
+              "attivita|Grotta di ghiaccio con guida||Vatnajökull",
+              "alloggio|Hotel vicino alla laguna||Jökulsárlón"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Laguna Blu sulla strada per l'aeroporto||Grindavík",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiordi dell'ovest",
         "days": 8,
         "route": "Reykjavík (1) → Snæfellsnes (2) → Fiordi occidentali (4)",
-        "description": "La parte più selvaggia dell'isola, con la cascata Dynjandi e le scogliere di Látrabjarg; solo d'estate."
+        "description": "La parte più selvaggia dell'isola, con la cascata Dynjandi e le scogliere di Látrabjarg; solo d'estate.",
+        "plan": [
+          {
+            "t": "Arrivo a Reykjavík",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Snæfellsnes",
+            "a": [
+              "transfer|Trasferimento a Snæfellsnes||Snæfellsnes",
+              "alloggio|Hotel a Snæfellsnes||Snæfellsnes",
+              "attivita|Kirkjufell e Arnarstapi||Snæfellsnes"
+            ]
+          },
+          {
+            "t": "Snæfellsnes",
+            "a": [
+              "attivita|Vulcano Snæfellsjökull e Djúpalónssandur||Snæfellsnes"
+            ]
+          },
+          {
+            "t": "Fiordi occidentali",
+            "a": [
+              "traghetto|Traghetto Baldur per i Westfjords||Fiordi occidentali",
+              "alloggio|Guesthouse nei fiordi||Fiordi occidentali"
+            ]
+          },
+          {
+            "t": "Látrabjarg",
+            "a": [
+              "attivita|Scogliere di Látrabjarg con i puffin||Látrabjarg"
+            ]
+          },
+          {
+            "t": "Dynjandi",
+            "a": [
+              "attivita|Cascata Dynjandi||Dynjandi",
+              "alloggio|Hotel a Ísafjörður||Ísafjörður"
+            ]
+          },
+          {
+            "t": "Ísafjörður",
+            "a": [
+              "attivita|Kayak nel fiordo||Ísafjörður"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo interno per Reykjavík||",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1401,21 +2856,181 @@
     "itineraries": [
       {
         "title": "Norway in a Nutshell",
-        "days": 5,
+        "days": 6,
         "route": "Oslo (2) → treno di Bergen → Flåm (1) → crociera sul Nærøyfjord → Bergen (2)",
-        "description": "Il classico in treno e battello, da maggio a settembre."
+        "description": "Il classico in treno e battello, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Oslo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Oslo||Oslo",
+              "attivita|Opera e Aker Brygge||Oslo"
+            ]
+          },
+          {
+            "t": "Oslo",
+            "a": [
+              "attivita|Museo Munch e Parco Vigeland||Oslo"
+            ]
+          },
+          {
+            "t": "Treno di Bergen e Flåm",
+            "a": [
+              "treno|Treno panoramico Oslo–Myrdal||Myrdal",
+              "treno|Ferrovia di Flåm||Flåm",
+              "alloggio|Hotel a Flåm||Flåm"
+            ]
+          },
+          {
+            "t": "Nærøyfjord e Bergen",
+            "a": [
+              "crociera|Crociera sul Nærøyfjord UNESCO||Nærøyfjord",
+              "transfer|Bus e treno per Bergen||Bergen",
+              "alloggio|Hotel a Bergen||Bergen"
+            ]
+          },
+          {
+            "t": "Bergen",
+            "a": [
+              "attivita|Bryggen e funicolare del Fløyen||Bergen"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiordi in fly & drive",
         "days": 10,
         "route": "Bergen (2) → Hardangerfjord (1) → Flåm (1) → Sognefjord (1) → Geiranger (2) → Ålesund (1) → Strada Atlantica → Trondheim (1)",
-        "description": "In auto tra i fiordi, da giugno a settembre."
+        "description": "In auto tra i fiordi, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bergen",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Bergen",
+              "alloggio|Hotel a Bergen||Bergen"
+            ]
+          },
+          {
+            "t": "Bergen",
+            "a": [
+              "attivita|Bryggen e Fløyen||Bergen"
+            ]
+          },
+          {
+            "t": "Hardangerfjord",
+            "a": [
+              "transfer|Strada dell'Hardangerfjord||Hardanger",
+              "attivita|Cascata Vøringsfossen||Hardanger",
+              "alloggio|Hotel sul fiordo||Hardanger"
+            ]
+          },
+          {
+            "t": "Flåm",
+            "a": [
+              "transfer|Trasferimento a Flåm||Flåm",
+              "treno|Ferrovia di Flåm||Flåm",
+              "alloggio|Hotel a Flåm||Flåm"
+            ]
+          },
+          {
+            "t": "Sognefjord",
+            "a": [
+              "traghetto|Traghetto sul Sognefjord||Sognefjord",
+              "attivita|Chiesa di legno di Urnes||Urnes",
+              "alloggio|Hotel sul Sognefjord||Sognefjord"
+            ]
+          },
+          {
+            "t": "Geiranger",
+            "a": [
+              "transfer|Strada verso Geiranger||Geiranger",
+              "alloggio|Hotel a Geiranger||Geiranger"
+            ]
+          },
+          {
+            "t": "Geiranger",
+            "a": [
+              "crociera|Crociera sul Geirangerfjord||Geiranger",
+              "attivita|Belvedere di Dalsnibba||Geiranger"
+            ]
+          },
+          {
+            "t": "Ålesund",
+            "a": [
+              "transfer|Trollstigen e Ålesund||Ålesund",
+              "alloggio|Hotel ad Ålesund||Ålesund"
+            ]
+          },
+          {
+            "t": "Strada Atlantica",
+            "a": [
+              "transfer|Strada Atlantica verso Trondheim||Atlanterhavsveien",
+              "alloggio|Hotel a Trondheim||Trondheim"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Aurora artica",
         "days": 6,
         "route": "Tromsø (5)",
-        "description": "Aurore, slitte, balene e cultura sami da novembre a marzo."
+        "description": "Aurore, slitte, balene e cultura sami da novembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Tromsø",
+            "a": [
+              "volo|Volo per Tromsø via Oslo||",
+              "alloggio|Hotel a Tromsø||Tromsø",
+              "attivita|Cattedrale Artica||Tromsø"
+            ]
+          },
+          {
+            "t": "Aurora",
+            "a": [
+              "attivita|Caccia all'aurora boreale in minibus||Tromsø"
+            ]
+          },
+          {
+            "t": "Slitta con i cani",
+            "a": [
+              "attivita|Slitta trainata dagli husky||Tromsø"
+            ]
+          },
+          {
+            "t": "Fiordi",
+            "a": [
+              "traghetto|Crociera nei fiordi (balene da novembre a gennaio)||Tromsø"
+            ]
+          },
+          {
+            "t": "Cultura sami",
+            "a": [
+              "attivita|Renne e cultura sami||Tromsø"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Oslo||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1519,19 +3134,144 @@
         "title": "Natale in Lapponia",
         "days": 5,
         "route": "Rovaniemi (4)",
-        "description": "Babbo Natale, husky e renne, molto richiesto dalle famiglie a dicembre."
+        "description": "Babbo Natale, husky e renne, molto richiesto dalle famiglie a dicembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Rovaniemi",
+            "a": [
+              "volo|Volo per Rovaniemi||",
+              "alloggio|Hotel o igloo di vetro||Rovaniemi",
+              "attivita|Abbigliamento termico fornito||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Villaggio di Babbo Natale",
+            "a": [
+              "attivita|Santa Claus Village sul Circolo Polare Artico||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Husky e renne",
+            "a": [
+              "attivita|Safari con husky e renne||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Aurora",
+            "a": [
+              "attivita|Motoslitta e caccia all'aurora||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Aurore in Lapponia",
         "days": 6,
         "route": "Rovaniemi (2) → Saariselkä o Levi (3)",
-        "description": "Da gennaio a marzo, con igloo di vetro."
+        "description": "Da gennaio a marzo, con igloo di vetro.",
+        "plan": [
+          {
+            "t": "Arrivo a Rovaniemi",
+            "a": [
+              "volo|Volo per Rovaniemi||",
+              "alloggio|Hotel a Rovaniemi||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Rovaniemi",
+            "a": [
+              "attivita|Villaggio di Babbo Natale e museo Arktikum||Rovaniemi"
+            ]
+          },
+          {
+            "t": "Saariselkä",
+            "a": [
+              "transfer|Trasferimento a Saariselkä o Levi||Saariselkä",
+              "alloggio|Igloo di vetro||Saariselkä"
+            ]
+          },
+          {
+            "t": "Saariselkä",
+            "a": [
+              "attivita|Husky e motoslitta||Saariselkä"
+            ]
+          },
+          {
+            "t": "Saariselkä",
+            "a": [
+              "attivita|Sauna finlandese e aurora||Saariselkä"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Ivalo o Kittilä||"
+            ]
+          }
+        ]
       },
       {
         "title": "Helsinki e i laghi",
         "days": 7,
         "route": "Helsinki (2) → Savonlinna (2) → Kuopio (2)",
-        "description": "L'estate finlandese."
+        "description": "L'estate finlandese.",
+        "plan": [
+          {
+            "t": "Arrivo a Helsinki",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Helsinki||Helsinki",
+              "attivita|Piazza del Senato e Cattedrale||Helsinki"
+            ]
+          },
+          {
+            "t": "Helsinki",
+            "a": [
+              "traghetto|Fortezza di Suomenlinna||Helsinki",
+              "attivita|Sauna pubblica Löyly||Helsinki"
+            ]
+          },
+          {
+            "t": "Savonlinna",
+            "a": [
+              "treno|Treno per Savonlinna||Savonlinna",
+              "alloggio|Hotel a Savonlinna||Savonlinna",
+              "attivita|Castello di Olavinlinna||Savonlinna"
+            ]
+          },
+          {
+            "t": "Laghi",
+            "a": [
+              "traghetto|Battello sul lago Saimaa||Saimaa"
+            ]
+          },
+          {
+            "t": "Kuopio",
+            "a": [
+              "traghetto|Battello o trasferimento a Kuopio||Kuopio",
+              "alloggio|Hotel a Kuopio||Kuopio",
+              "attivita|Torre di Puijo||Kuopio"
+            ]
+          },
+          {
+            "t": "Kuopio",
+            "a": [
+              "attivita|Sauna a fumo di Jätkänkämppä||Kuopio"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Kuopio via Helsinki||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1636,19 +3376,149 @@
         "title": "Amsterdam",
         "days": 4,
         "route": "Amsterdam (3), con escursione a Zaanse Schans e Volendam",
-        "description": "Il city break classico."
+        "description": "Il city break classico.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amsterdam",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "treno|Treno da Schiphol||Amsterdam",
+              "alloggio|Hotel sui canali||Amsterdam",
+              "attivita|Crociera sui canali||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Rijksmuseum e Museo Van Gogh|Ingressi con orario.|Amsterdam",
+              "attivita|Jordaan e Nove Stradine||Amsterdam"
+            ]
+          },
+          {
+            "t": "Zaanse Schans e Volendam",
+            "a": [
+              "attivita|Mulini di Zaanse Schans||Zaanse Schans",
+              "attivita|Volendam e Marken||Volendam",
+              "attivita|Casa di Anna Frank la sera||Amsterdam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Olanda in fiore",
         "days": 6,
         "route": "Amsterdam (3) → Keukenhof → L'Aia e Delft (1) → Rotterdam e Kinderdijk (1)",
-        "description": "Da fine marzo a metà maggio."
+        "description": "Da fine marzo a metà maggio.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amsterdam",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Amsterdam||Amsterdam",
+              "attivita|Crociera sui canali||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Rijksmuseum e Van Gogh||Amsterdam"
+            ]
+          },
+          {
+            "t": "Keukenhof",
+            "a": [
+              "attivita|Giardini di Keukenhof e campi di tulipani|Da metà marzo a metà maggio.|Lisse"
+            ]
+          },
+          {
+            "t": "L'Aia e Delft",
+            "a": [
+              "attivita|Mauritshuis e la Ragazza con l'orecchino di perla||L'Aia",
+              "attivita|Delft e le ceramiche blu||Delft",
+              "alloggio|Hotel a Delft||Delft"
+            ]
+          },
+          {
+            "t": "Rotterdam e Kinderdijk",
+            "a": [
+              "attivita|Mulini di Kinderdijk UNESCO||Kinderdijk",
+              "attivita|Architettura di Rotterdam e Markthal||Rotterdam",
+              "alloggio|Hotel a Rotterdam||Rotterdam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Olanda in bicicletta",
         "days": 7,
         "route": "Amsterdam (2) → Haarlem (1) → Leida (1) → L'Aia (1) → Delft (1)",
-        "description": "Città d'arte tra canali e piste ciclabili, con bagagli trasportati da hotel a hotel."
+        "description": "Città d'arte tra canali e piste ciclabili, con bagagli trasportati da hotel a hotel.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amsterdam",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Amsterdam||Amsterdam",
+              "attivita|Ritiro bici e giro dei canali||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Musei e Vondelpark in bici||Amsterdam"
+            ]
+          },
+          {
+            "t": "Haarlem",
+            "a": [
+              "attivita|In bici fino a Haarlem tra le dune||Haarlem",
+              "alloggio|Hotel a Haarlem||Haarlem",
+              "attivita|Grote Markt e Museo Frans Hals||Haarlem"
+            ]
+          },
+          {
+            "t": "Leida",
+            "a": [
+              "attivita|In bici tra i campi di fiori fino a Leida||Leida",
+              "alloggio|Hotel a Leida||Leida"
+            ]
+          },
+          {
+            "t": "L'Aia",
+            "a": [
+              "attivita|Pedalata fino all'Aia e Scheveningen||L'Aia",
+              "alloggio|Hotel all'Aia||L'Aia"
+            ]
+          },
+          {
+            "t": "Delft",
+            "a": [
+              "attivita|Pedalata fino a Delft||Delft",
+              "alloggio|Hotel a Delft||Delft"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Treno per Schiphol||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1783,19 +3653,145 @@
         "title": "Berlino",
         "days": 4,
         "route": "Berlino (3), con Potsdam",
-        "description": "City break storico e culturale."
+        "description": "City break storico e culturale.",
+        "plan": [
+          {
+            "t": "Arrivo a Berlino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Mitte||Berlino",
+              "attivita|Porta di Brandeburgo e Reichstag (cupola su prenotazione)||Berlino"
+            ]
+          },
+          {
+            "t": "Berlino storica",
+            "a": [
+              "attivita|Isola dei Musei e Pergamon||Berlino",
+              "attivita|Memoriale dell'Olocausto e Checkpoint Charlie||Berlino"
+            ]
+          },
+          {
+            "t": "Potsdam",
+            "a": [
+              "attivita|Sanssouci e Potsdam||Potsdam",
+              "attivita|East Side Gallery e Kreuzberg la sera||Berlino"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Strada Romantica e Baviera",
         "days": 8,
         "route": "Francoforte (1) → Würzburg → Rothenburg (1) → Dinkelsbühl → Füssen e Neuschwanstein (2) → Monaco (3)",
-        "description": "Fly & drive da maggio a ottobre."
+        "description": "Fly & drive da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Francoforte",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Francoforte",
+              "alloggio|Hotel a Francoforte||Francoforte",
+              "attivita|Römerberg||Francoforte"
+            ]
+          },
+          {
+            "t": "Würzburg e Rothenburg",
+            "a": [
+              "attivita|Residenza di Würzburg UNESCO||Würzburg",
+              "attivita|Rothenburg ob der Tauber||Rothenburg",
+              "alloggio|Hotel a Rothenburg||Rothenburg"
+            ]
+          },
+          {
+            "t": "Dinkelsbühl e Füssen",
+            "a": [
+              "attivita|Dinkelsbühl||Dinkelsbühl",
+              "transfer|Strada Romantica fino a Füssen||Füssen",
+              "alloggio|Hotel a Füssen||Füssen"
+            ]
+          },
+          {
+            "t": "Neuschwanstein",
+            "a": [
+              "attivita|Castelli di Neuschwanstein e Hohenschwangau|Biglietti con orario.|Schwangau",
+              "attivita|Chiesa di Wies||Wies"
+            ]
+          },
+          {
+            "t": "Verso Monaco",
+            "a": [
+              "attivita|Oberammergau e Linderhof||Oberammergau",
+              "transfer|Trasferimento a Monaco||Monaco",
+              "alloggio|Hotel a Monaco||Monaco"
+            ]
+          },
+          {
+            "t": "Monaco",
+            "a": [
+              "attivita|Marienplatz e Viktualienmarkt||Monaco",
+              "attivita|Birreria Hofbräuhaus||Monaco"
+            ]
+          },
+          {
+            "t": "Monaco",
+            "a": [
+              "attivita|Residenz e Englischer Garten||Monaco",
+              "attivita|BMW Welt o Nymphenburg||Monaco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mercatini di Natale",
         "days": 4,
         "route": "Norimberga (2) → Monaco (2) oppure Colonia e Aquisgrana",
-        "description": "Weekend lungo a dicembre."
+        "description": "Weekend lungo a dicembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Norimberga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Norimberga||Norimberga",
+              "attivita|Christkindlesmarkt||Norimberga"
+            ]
+          },
+          {
+            "t": "Norimberga",
+            "a": [
+              "attivita|Castello imperiale e centro storico||Norimberga",
+              "ristorante|Bratwurst e Lebkuchen||Norimberga"
+            ]
+          },
+          {
+            "t": "Monaco",
+            "a": [
+              "treno|Treno per Monaco||Monaco",
+              "alloggio|Hotel a Monaco||Monaco",
+              "attivita|Mercatini di Marienplatz e Residenz||Monaco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1929,19 +3925,160 @@
         "title": "Vienna",
         "days": 4,
         "route": "Vienna (3)",
-        "description": "City break imperiale."
+        "description": "City break imperiale.",
+        "plan": [
+          {
+            "t": "Arrivo a Vienna",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel nel centro||Vienna",
+              "attivita|Ring e Duomo di Santo Stefano||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna imperiale",
+            "a": [
+              "attivita|Hofburg e Museo di Sissi||Vienna",
+              "attivita|Caffè Sacher||Vienna",
+              "attivita|Opera di Stato||Vienna"
+            ]
+          },
+          {
+            "t": "Schönbrunn e Belvedere",
+            "a": [
+              "attivita|Castello di Schönbrunn||Vienna",
+              "attivita|Belvedere e Il Bacio di Klimt||Vienna",
+              "ristorante|Heuriger a Grinzing||Vienna"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Austria classica",
-        "days": 8,
+        "days": 9,
         "route": "Vienna (3) → Wachau (1) → Salisburgo (2) → Hallstatt (1) → Innsbruck (1)",
-        "description": "In treno o in auto, da maggio a ottobre."
+        "description": "In treno o in auto, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Vienna",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vienna||Vienna",
+              "attivita|Ring e Santo Stefano||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "attivita|Hofburg e Schönbrunn||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "attivita|Belvedere e Prater||Vienna"
+            ]
+          },
+          {
+            "t": "Wachau",
+            "a": [
+              "transfer|Trasferimento nella Wachau||Wachau",
+              "attivita|Abbazia di Melk e crociera sul Danubio||Wachau",
+              "alloggio|Hotel nella Wachau||Dürnstein"
+            ]
+          },
+          {
+            "t": "Salisburgo",
+            "a": [
+              "transfer|Trasferimento a Salisburgo||Salisburgo",
+              "alloggio|Hotel a Salisburgo||Salisburgo",
+              "attivita|Casa di Mozart e Getreidegasse||Salisburgo"
+            ]
+          },
+          {
+            "t": "Salisburgo",
+            "a": [
+              "attivita|Fortezza di Hohensalzburg e Mirabell||Salisburgo"
+            ]
+          },
+          {
+            "t": "Hallstatt",
+            "a": [
+              "transfer|Trasferimento a Hallstatt||Hallstatt",
+              "alloggio|Hotel a Hallstatt||Hallstatt",
+              "attivita|Borgo e miniere di sale||Hallstatt"
+            ]
+          },
+          {
+            "t": "Innsbruck",
+            "a": [
+              "transfer|Trasferimento a Innsbruck||Innsbruck",
+              "alloggio|Hotel a Innsbruck||Innsbruck",
+              "attivita|Tettuccio d'oro e Nordkette||Innsbruck"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mercatini e Salisburgo",
         "days": 5,
         "route": "Salisburgo (2) → Hallstatt (1) → Vienna (2)",
-        "description": "Proposta d'Avvento: mercatini di Natale, Salisburgo di Mozart e il lago di Hallstatt innevato; in treno o con auto."
+        "description": "Proposta d'Avvento: mercatini di Natale, Salisburgo di Mozart e il lago di Hallstatt innevato; in treno o con auto.",
+        "plan": [
+          {
+            "t": "Arrivo a Salisburgo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Salisburgo||Salisburgo",
+              "attivita|Mercatino del Duomo||Salisburgo"
+            ]
+          },
+          {
+            "t": "Salisburgo",
+            "a": [
+              "attivita|Fortezza e Mirabell||Salisburgo",
+              "attivita|Concerto di Mozart||Salisburgo"
+            ]
+          },
+          {
+            "t": "Hallstatt",
+            "a": [
+              "transfer|Trasferimento a Hallstatt||Hallstatt",
+              "alloggio|Hotel a Hallstatt||Hallstatt",
+              "attivita|Mercatino sul lago||Hallstatt"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "treno|Treno per Vienna||Vienna",
+              "alloggio|Hotel a Vienna||Vienna",
+              "attivita|Mercatini di Rathausplatz e Schönbrunn||Vienna"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Caffè storico e Sachertorte||Vienna",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2040,19 +4177,146 @@
         "title": "Praga",
         "days": 4,
         "route": "Praga (3), con escursione a Kutná Hora o Karlštejn",
-        "description": "Il weekend lungo classico."
+        "description": "Il weekend lungo classico.",
+        "plan": [
+          {
+            "t": "Arrivo a Praga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel nel centro||Praga",
+              "attivita|Piazza della Città Vecchia e orologio astronomico||Praga"
+            ]
+          },
+          {
+            "t": "Praga",
+            "a": [
+              "attivita|Castello di Praga e Cattedrale di San Vito||Praga",
+              "attivita|Ponte Carlo e Malá Strana||Praga"
+            ]
+          },
+          {
+            "t": "Kutná Hora",
+            "a": [
+              "attivita|Kutná Hora e Ossario di Sedlec||Kutná Hora",
+              "attivita|Quartiere ebraico||Praga"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Boemia",
         "days": 7,
         "route": "Praga (3) → Karlovy Vary (1) → Český Krumlov (2)",
-        "description": "Città, terme e borghi."
+        "description": "Città, terme e borghi.",
+        "plan": [
+          {
+            "t": "Arrivo a Praga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Praga||Praga",
+              "attivita|Città Vecchia||Praga"
+            ]
+          },
+          {
+            "t": "Praga",
+            "a": [
+              "attivita|Castello e Ponte Carlo||Praga"
+            ]
+          },
+          {
+            "t": "Praga",
+            "a": [
+              "attivita|Quartiere ebraico e Vyšehrad||Praga"
+            ]
+          },
+          {
+            "t": "Karlovy Vary",
+            "a": [
+              "transfer|Trasferimento a Karlovy Vary||Karlovy Vary",
+              "alloggio|Hotel termale||Karlovy Vary",
+              "attivita|Colonnati e acque termali||Karlovy Vary"
+            ]
+          },
+          {
+            "t": "Český Krumlov",
+            "a": [
+              "transfer|Trasferimento a Český Krumlov||Český Krumlov",
+              "alloggio|Hotel nel borgo||Český Krumlov",
+              "attivita|Castello e anse della Moldava||Český Krumlov"
+            ]
+          },
+          {
+            "t": "Český Krumlov",
+            "a": [
+              "attivita|Rafting o birrificio a České Budějovice||Boemia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Praga||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Moravia del vino",
         "days": 6,
         "route": "Praga (2) → Kutná Hora → Brno (1) → Lednice e Valtice (1) → Mikulov (1)",
-        "description": "Castelli e cantine della Moravia, meno turistica della Boemia e ottima per la vendemmia a settembre."
+        "description": "Castelli e cantine della Moravia, meno turistica della Boemia e ottima per la vendemmia a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Praga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Praga||Praga",
+              "attivita|Città Vecchia||Praga"
+            ]
+          },
+          {
+            "t": "Praga",
+            "a": [
+              "attivita|Castello e Ponte Carlo||Praga"
+            ]
+          },
+          {
+            "t": "Kutná Hora e Brno",
+            "a": [
+              "attivita|Kutná Hora||Kutná Hora",
+              "transfer|Trasferimento a Brno||Brno",
+              "alloggio|Hotel a Brno||Brno"
+            ]
+          },
+          {
+            "t": "Lednice e Valtice",
+            "a": [
+              "attivita|Paesaggio di Lednice–Valtice UNESCO e degustazione||Lednice",
+              "alloggio|Hotel a Valtice||Valtice"
+            ]
+          },
+          {
+            "t": "Mikulov",
+            "a": [
+              "attivita|Mikulov e cantine||Mikulov",
+              "alloggio|Hotel a Mikulov||Mikulov"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Trasferimento all'aeroporto di Vienna||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2165,19 +4429,168 @@
         "title": "Malta e Gozo",
         "days": 6,
         "route": "La Valletta o Sliema (4) → Gozo (1–2)",
-        "description": "Storia e mare, ideale da maggio a ottobre."
+        "description": "Storia e mare, ideale da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Malta",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a La Valletta o Sliema||La Valletta",
+              "attivita|Barrakka Gardens e La Valletta||La Valletta"
+            ]
+          },
+          {
+            "t": "La Valletta",
+            "a": [
+              "attivita|Concattedrale di San Giovanni e Caravaggio||La Valletta",
+              "attivita|Tre Città in dghajsa||Birgu"
+            ]
+          },
+          {
+            "t": "Mdina",
+            "a": [
+              "attivita|Mdina e Rabat||Mdina",
+              "attivita|Scogliere di Dingli||Dingli"
+            ]
+          },
+          {
+            "t": "Grotta Azzurra",
+            "a": [
+              "traghetto|Grotta Azzurra e Marsaxlokk||Marsaxlokk"
+            ]
+          },
+          {
+            "t": "Gozo",
+            "a": [
+              "traghetto|Traghetto per Gozo||Gozo",
+              "alloggio|Hotel a Gozo||Gozo",
+              "attivita|Cittadella di Victoria e Ramla Bay||Gozo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Traghetto per Malta||",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Malta in famiglia",
         "days": 7,
         "route": "Mellieħa (6), con Comino",
-        "description": "Spiaggia di sabbia, Popeye Village, Laguna Blu e voli brevi dall'Italia."
+        "description": "Spiaggia di sabbia, Popeye Village, Laguna Blu e voli brevi dall'Italia.",
+        "plan": [
+          {
+            "t": "Arrivo a Malta",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Mellieħa||Mellieħa",
+              "attivita|Mellieħa Bay||Mellieħa"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Mellieħa||Mellieħa"
+            ]
+          },
+          {
+            "t": "Comino",
+            "a": [
+              "traghetto|Laguna Blu di Comino||Comino"
+            ]
+          },
+          {
+            "t": "Popeye Village",
+            "a": [
+              "attivita|Popeye Village||Mellieħa"
+            ]
+          },
+          {
+            "t": "La Valletta",
+            "a": [
+              "attivita|La Valletta e il cannone delle 12||La Valletta"
+            ]
+          },
+          {
+            "t": "Acquario",
+            "a": [
+              "attivita|Acquario nazionale e Golden Bay||Malta"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Malta e Sicilia",
         "days": 8,
         "route": "Catania (2) → Ragusa (1) → Pozzallo → catamarano → La Valletta (4)",
-        "description": "Catamarano di 90 minuti tra Pozzallo e La Valletta: due isole barocche in un viaggio."
+        "description": "Catamarano di 90 minuti tra Pozzallo e La Valletta: due isole barocche in un viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Catania",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Catania||Catania",
+              "attivita|Centro di Catania||Catania"
+            ]
+          },
+          {
+            "t": "Etna",
+            "a": [
+              "attivita|Escursione sull'Etna||Etna"
+            ]
+          },
+          {
+            "t": "Ragusa",
+            "a": [
+              "transfer|Trasferimento a Ragusa||Ragusa",
+              "alloggio|Hotel a Ragusa Ibla||Ragusa",
+              "attivita|Modica e cioccolato||Modica"
+            ]
+          },
+          {
+            "t": "Verso Malta",
+            "a": [
+              "traghetto|Catamarano da Pozzallo a La Valletta|Circa 90 minuti.|La Valletta",
+              "alloggio|Hotel a La Valletta||La Valletta"
+            ]
+          },
+          {
+            "t": "La Valletta",
+            "a": [
+              "attivita|Concattedrale e Barrakka||La Valletta"
+            ]
+          },
+          {
+            "t": "Mdina",
+            "a": [
+              "attivita|Mdina e Rabat||Mdina"
+            ]
+          },
+          {
+            "t": "Gozo",
+            "a": [
+              "traghetto|Escursione a Gozo||Gozo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2301,19 +4714,190 @@
         "title": "Turchia classica",
         "days": 9,
         "route": "Istanbul (3) → Cappadocia (2) → Konya → Pamukkale (1) → Efeso e Kuşadası (1) → Istanbul (1)",
-        "description": "Il tour più venduto, da aprile a ottobre."
+        "description": "Il tour più venduto, da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Istanbul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Sultanahmet||Istanbul",
+              "attivita|Ippodromo e Moschea Blu||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Santa Sofia e Topkapı||Istanbul",
+              "attivita|Cisterna Basilica||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Gran Bazar e Bazar delle Spezie||Istanbul",
+              "traghetto|Crociera sul Bosforo||Istanbul"
+            ]
+          },
+          {
+            "t": "Cappadocia",
+            "a": [
+              "volo|Volo per la Cappadocia||Cappadocia",
+              "alloggio|Hotel in grotta a Göreme||Göreme",
+              "attivita|Valli di Göreme||Göreme"
+            ]
+          },
+          {
+            "t": "Cappadocia",
+            "a": [
+              "attivita|Mongolfiera all'alba||Cappadocia",
+              "attivita|Città sotterranea di Derinkuyu||Cappadocia"
+            ]
+          },
+          {
+            "t": "Konya e Pamukkale",
+            "a": [
+              "attivita|Museo di Mevlana||Konya",
+              "transfer|Trasferimento a Pamukkale||Pamukkale",
+              "alloggio|Hotel termale||Pamukkale"
+            ]
+          },
+          {
+            "t": "Pamukkale ed Efeso",
+            "a": [
+              "attivita|Vasche di travertino e Hierapolis||Pamukkale",
+              "transfer|Trasferimento a Kuşadası||Kuşadası",
+              "alloggio|Hotel a Kuşadası||Kuşadası"
+            ]
+          },
+          {
+            "t": "Efeso e Istanbul",
+            "a": [
+              "attivita|Efeso e Casa della Vergine||Efeso",
+              "volo|Volo per Istanbul||Istanbul",
+              "alloggio|Hotel a Istanbul||Istanbul"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Istanbul e Cappadocia",
         "days": 6,
         "route": "Istanbul (3) → Cappadocia (2)",
-        "description": "Combinato breve con volo interno."
+        "description": "Combinato breve con volo interno.",
+        "plan": [
+          {
+            "t": "Arrivo a Istanbul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Sultanahmet||Istanbul",
+              "attivita|Moschea Blu||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Santa Sofia, Topkapı e Cisterna||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Gran Bazar e crociera sul Bosforo||Istanbul"
+            ]
+          },
+          {
+            "t": "Cappadocia",
+            "a": [
+              "volo|Volo per la Cappadocia||Cappadocia",
+              "alloggio|Hotel in grotta||Göreme",
+              "attivita|Museo all'aperto di Göreme||Göreme"
+            ]
+          },
+          {
+            "t": "Cappadocia",
+            "a": [
+              "attivita|Mongolfiera e valli in quad o a cavallo||Cappadocia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Istanbul e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Istanbul e mare",
         "days": 9,
         "route": "Istanbul (3) → Bodrum o Fethiye (5)",
-        "description": "Città e Costa Turchese, da giugno a settembre."
+        "description": "Città e Costa Turchese, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Istanbul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Sultanahmet||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Santa Sofia e Topkapı||Istanbul"
+            ]
+          },
+          {
+            "t": "Istanbul",
+            "a": [
+              "attivita|Bazar e Bosforo||Istanbul"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "volo|Volo per Bodrum o Dalaman||Bodrum",
+              "alloggio|Resort sul mare||Bodrum"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Bodrum"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Gita in caicco||Bodrum"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Castello di San Pietro e mercato||Bodrum"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Bodrum"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2425,19 +5009,183 @@
         "title": "Grandi città d'arte",
         "days": 8,
         "route": "Roma (3) → Firenze (2) → Venezia (2)",
-        "description": "In treno alta velocità, il classico per gli stranieri."
+        "description": "In treno alta velocità, il classico per gli stranieri.",
+        "plan": [
+          {
+            "t": "Arrivo a Roma",
+            "a": [
+              "treno|Arrivo a Roma||Roma",
+              "alloggio|Hotel in centro||Roma",
+              "attivita|Trevi, Pantheon e Navona||Roma"
+            ]
+          },
+          {
+            "t": "Roma antica",
+            "a": [
+              "attivita|Colosseo e Fori||Roma"
+            ]
+          },
+          {
+            "t": "Vaticano",
+            "a": [
+              "attivita|Musei Vaticani e San Pietro||Città del Vaticano"
+            ]
+          },
+          {
+            "t": "Firenze",
+            "a": [
+              "treno|Frecciarossa per Firenze||Firenze",
+              "alloggio|Hotel a Firenze||Firenze",
+              "attivita|Duomo e Ponte Vecchio||Firenze"
+            ]
+          },
+          {
+            "t": "Firenze",
+            "a": [
+              "attivita|Uffizi e Accademia||Firenze"
+            ]
+          },
+          {
+            "t": "Venezia",
+            "a": [
+              "treno|Frecciarossa per Venezia||Venezia",
+              "alloggio|Hotel a Venezia||Venezia",
+              "attivita|Canal Grande e Rialto||Venezia"
+            ]
+          },
+          {
+            "t": "Venezia",
+            "a": [
+              "attivita|San Marco, Palazzo Ducale e Burano||Venezia"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Toscana",
         "days": 7,
         "route": "Firenze (2) → Chianti (2) → Siena e Val d'Orcia (2)",
-        "description": "Arte, vino e paesaggi in auto."
+        "description": "Arte, vino e paesaggi in auto.",
+        "plan": [
+          {
+            "t": "Arrivo a Firenze",
+            "a": [
+              "treno|Arrivo a Firenze||Firenze",
+              "alloggio|Hotel a Firenze||Firenze",
+              "attivita|Duomo e Ponte Vecchio||Firenze"
+            ]
+          },
+          {
+            "t": "Firenze",
+            "a": [
+              "attivita|Uffizi e Piazzale Michelangelo||Firenze"
+            ]
+          },
+          {
+            "t": "Chianti",
+            "a": [
+              "transfer|Strada del Chianti||Chianti",
+              "alloggio|Agriturismo nel Chianti||Chianti",
+              "attivita|Degustazione di Chianti Classico||Chianti"
+            ]
+          },
+          {
+            "t": "Chianti",
+            "a": [
+              "attivita|San Gimignano e Monteriggioni||San Gimignano"
+            ]
+          },
+          {
+            "t": "Siena",
+            "a": [
+              "transfer|Trasferimento a Siena||Siena",
+              "alloggio|Hotel in Val d'Orcia||Val d'Orcia",
+              "attivita|Piazza del Campo e Duomo||Siena"
+            ]
+          },
+          {
+            "t": "Val d'Orcia",
+            "a": [
+              "attivita|Pienza, Montalcino e Bagno Vignoni||Val d'Orcia"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sicilia barocca e greca",
         "days": 8,
         "route": "Catania (2) → Siracusa e Ortigia (2) → Noto, Modica e Ragusa (2) → Agrigento (1)",
-        "description": "Il sud-est dell'isola tra templi greci, città barocche UNESCO e cucina; ideale in primavera e a settembre."
+        "description": "Il sud-est dell'isola tra templi greci, città barocche UNESCO e cucina; ideale in primavera e a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Catania",
+            "a": [
+              "transfer|Arrivo a Catania||Catania",
+              "alloggio|Hotel a Catania||Catania",
+              "attivita|Centro barocco e pescheria||Catania"
+            ]
+          },
+          {
+            "t": "Etna",
+            "a": [
+              "attivita|Escursione sull'Etna e cantina||Etna"
+            ]
+          },
+          {
+            "t": "Siracusa",
+            "a": [
+              "transfer|Trasferimento a Siracusa||Siracusa",
+              "alloggio|Hotel a Ortigia||Siracusa",
+              "attivita|Parco della Neapolis||Siracusa"
+            ]
+          },
+          {
+            "t": "Ortigia",
+            "a": [
+              "attivita|Ortigia, Duomo e Fonte Aretusa||Siracusa"
+            ]
+          },
+          {
+            "t": "Noto e Modica",
+            "a": [
+              "attivita|Noto barocca||Noto",
+              "attivita|Modica e cioccolato||Modica",
+              "alloggio|Hotel a Ragusa||Ragusa"
+            ]
+          },
+          {
+            "t": "Ragusa",
+            "a": [
+              "attivita|Ragusa Ibla e Marzamemi||Ragusa"
+            ]
+          },
+          {
+            "t": "Agrigento",
+            "a": [
+              "transfer|Trasferimento ad Agrigento||Agrigento",
+              "alloggio|Hotel ad Agrigento||Agrigento",
+              "attivita|Valle dei Templi al tramonto||Agrigento"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Catania o Palermo||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

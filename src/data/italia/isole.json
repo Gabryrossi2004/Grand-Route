@@ -333,21 +333,204 @@
     "itineraries": [
       {
         "title": "Sicilia classica",
-        "days": 8,
+        "days": 9,
         "route": "Palermo (2) → Monreale e Cefalù → Agrigento (1) → Ragusa e Noto (2) → Siracusa (1) → Taormina (2)",
-        "description": "Il giro dell'isola essenziale, da Palermo a Catania, in auto o con tour accompagnato."
+        "description": "Il giro dell'isola essenziale, da Palermo a Catania, in auto o con tour accompagnato.",
+        "plan": [
+          {
+            "t": "Palermo",
+            "a": [
+              "transfer|Arrivo a Palermo||Palermo",
+              "alloggio|Hotel in centro||Palermo",
+              "attivita|Quattro Canti, Fontana Pretoria e Cattedrale||Palermo",
+              "ristorante|Street food: arancine e panelle||Palermo"
+            ]
+          },
+          {
+            "t": "Palermo",
+            "a": [
+              "attivita|Palazzo dei Normanni e Cappella Palatina||Palermo",
+              "attivita|Mercato di Ballarò e Teatro Massimo||Palermo"
+            ]
+          },
+          {
+            "t": "Monreale, Cefalù e Agrigento",
+            "a": [
+              "attivita|Duomo di Monreale|Mosaici d'oro arabo-normanni.|Monreale",
+              "attivita|Cefalù e il Duomo sul mare||Cefalù",
+              "transfer|Trasferimento ad Agrigento||Agrigento",
+              "alloggio|Hotel vicino alla Valle dei Templi||Agrigento"
+            ]
+          },
+          {
+            "t": "Valle dei Templi e Ragusa",
+            "a": [
+              "attivita|Valle dei Templi al mattino||Agrigento",
+              "attivita|Scala dei Turchi||Realmonte",
+              "transfer|Trasferimento a Ragusa||Ragusa",
+              "alloggio|Hotel a Ragusa Ibla||Ragusa"
+            ]
+          },
+          {
+            "t": "Barocco del Val di Noto",
+            "a": [
+              "attivita|Ragusa Ibla e Modica con il cioccolato||Modica",
+              "attivita|Noto al tramonto||Noto"
+            ]
+          },
+          {
+            "t": "Siracusa",
+            "a": [
+              "transfer|Trasferimento a Siracusa||Siracusa",
+              "alloggio|Hotel a Ortigia||Siracusa",
+              "attivita|Parco della Neapolis e Orecchio di Dionisio||Siracusa",
+              "attivita|Ortigia e Duomo||Siracusa"
+            ]
+          },
+          {
+            "t": "Taormina",
+            "a": [
+              "transfer|Trasferimento a Taormina||Taormina",
+              "alloggio|Hotel a Taormina||Taormina",
+              "attivita|Teatro Antico e corso Umberto||Taormina"
+            ]
+          },
+          {
+            "t": "Etna",
+            "a": [
+              "attivita|Escursione sull'Etna||Etna",
+              "attivita|Isola Bella||Taormina"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Catania||"
+            ]
+          }
+        ]
       },
       {
         "title": "Etna, Taormina e Eolie",
-        "days": 7,
+        "days": 8,
         "route": "Catania (1) → Taormina (2) → Etna → Milazzo → Lipari e Vulcano (2) → Salina (2)",
-        "description": "Il vulcano più alto d'Europa e l'arcipelago eoliano con Stromboli in barca."
+        "description": "Il vulcano più alto d'Europa e l'arcipelago eoliano con Stromboli in barca.",
+        "plan": [
+          {
+            "t": "Catania",
+            "a": [
+              "transfer|Arrivo a Catania||Catania",
+              "alloggio|Hotel in centro||Catania",
+              "attivita|Piazza Duomo e pescheria||Catania"
+            ]
+          },
+          {
+            "t": "Taormina",
+            "a": [
+              "transfer|Trasferimento a Taormina||Taormina",
+              "alloggio|Hotel a Taormina||Taormina",
+              "attivita|Teatro Antico||Taormina"
+            ]
+          },
+          {
+            "t": "Taormina e Isola Bella",
+            "a": [
+              "attivita|Isola Bella e Castelmola||Taormina"
+            ]
+          },
+          {
+            "t": "Etna e Milazzo",
+            "a": [
+              "attivita|Crateri Silvestri e funivia dell'Etna||Etna",
+              "transfer|Trasferimento a Milazzo||Milazzo",
+              "traghetto|Aliscafo per Lipari||Lipari",
+              "alloggio|Hotel a Lipari||Lipari"
+            ]
+          },
+          {
+            "t": "Lipari e Vulcano",
+            "a": [
+              "traghetto|Vulcano: fanghi e cratere||Vulcano",
+              "attivita|Castello e museo di Lipari||Lipari"
+            ]
+          },
+          {
+            "t": "Salina",
+            "a": [
+              "traghetto|Aliscafo per Salina||Salina",
+              "alloggio|Hotel a Salina||Salina",
+              "attivita|Pollara e malvasia||Salina"
+            ]
+          },
+          {
+            "t": "Stromboli",
+            "a": [
+              "traghetto|Escursione serale a Stromboli e Sciara del Fuoco||Stromboli"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Aliscafo per Milazzo e rientro da Catania||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sicilia occidentale ed Egadi",
-        "days": 6,
+        "days": 7,
         "route": "Palermo (2) → Trapani ed Erice (1) → Saline di Marsala → Favignana (3)",
-        "description": "Mercati di Palermo, saline al tramonto e le acque turchesi di Favignana."
+        "description": "Mercati di Palermo, saline al tramonto e le acque turchesi di Favignana.",
+        "plan": [
+          {
+            "t": "Palermo",
+            "a": [
+              "transfer|Arrivo a Palermo||Palermo",
+              "alloggio|Hotel in centro||Palermo",
+              "attivita|Centro storico e street food||Palermo"
+            ]
+          },
+          {
+            "t": "Palermo",
+            "a": [
+              "attivita|Cappella Palatina e Monreale||Palermo"
+            ]
+          },
+          {
+            "t": "Erice e Trapani",
+            "a": [
+              "transfer|Trasferimento a Trapani||Trapani",
+              "attivita|Erice e i dolci di genovesi||Erice",
+              "alloggio|Hotel a Trapani||Trapani"
+            ]
+          },
+          {
+            "t": "Saline e Favignana",
+            "a": [
+              "attivita|Saline di Marsala al tramonto e Mozia||Marsala",
+              "traghetto|Aliscafo per Favignana||Favignana",
+              "alloggio|Hotel a Favignana||Favignana"
+            ]
+          },
+          {
+            "t": "Favignana",
+            "a": [
+              "attivita|Cala Rossa e Bue Marino in bici||Favignana"
+            ]
+          },
+          {
+            "t": "Levanzo e Marettimo",
+            "a": [
+              "traghetto|Giro in barca a Levanzo e Marettimo||Egadi"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "traghetto|Aliscafo per Trapani e rientro||"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -640,21 +823,186 @@
     "itineraries": [
       {
         "title": "Nord Sardegna e La Maddalena",
-        "days": 7,
+        "days": 8,
         "route": "Olbia (1) → Costa Smeralda (3) → La Maddalena (2) → Santa Teresa (1)",
-        "description": "Spiagge della Costa Smeralda e una giornata in barca nell'arcipelago, con Corsica a un traghetto di distanza."
+        "description": "Spiagge della Costa Smeralda e una giornata in barca nell'arcipelago, con Corsica a un traghetto di distanza.",
+        "plan": [
+          {
+            "t": "Olbia",
+            "a": [
+              "transfer|Arrivo a Olbia||Olbia",
+              "alloggio|Hotel a Olbia||Olbia",
+              "attivita|Centro di Olbia e San Simplicio||Olbia"
+            ]
+          },
+          {
+            "t": "Costa Smeralda",
+            "a": [
+              "transfer|Trasferimento in Costa Smeralda||Costa Smeralda",
+              "alloggio|Hotel in Costa Smeralda||Costa Smeralda",
+              "attivita|Spiaggia del Principe||Costa Smeralda"
+            ]
+          },
+          {
+            "t": "Costa Smeralda",
+            "a": [
+              "attivita|Porto Cervo e Capriccioli||Costa Smeralda"
+            ]
+          },
+          {
+            "t": "San Pantaleo",
+            "a": [
+              "attivita|San Pantaleo e Cala di Volpe||Costa Smeralda"
+            ]
+          },
+          {
+            "t": "La Maddalena",
+            "a": [
+              "traghetto|Traghetto per La Maddalena||La Maddalena",
+              "alloggio|Hotel a La Maddalena||La Maddalena",
+              "attivita|Caprera e la casa di Garibaldi||Caprera"
+            ]
+          },
+          {
+            "t": "Arcipelago",
+            "a": [
+              "traghetto|Giro in barca: Budelli, Spargi e piscine di Santa Maria||La Maddalena"
+            ]
+          },
+          {
+            "t": "Santa Teresa",
+            "a": [
+              "transfer|Trasferimento a Santa Teresa Gallura||Santa Teresa",
+              "alloggio|Hotel a Santa Teresa||Santa Teresa",
+              "attivita|Capo Testa e Valle della Luna||Santa Teresa"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Olbia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Golfo di Orosei e Barbagia",
         "days": 7,
         "route": "Cala Gonone (4) → Orgosolo e Barbagia (1) → Su Gorropu (1)",
-        "description": "Calette raggiungibili in barca, murales di Orgosolo, cene con i pastori e il canyon di Gorropu."
+        "description": "Calette raggiungibili in barca, murales di Orgosolo, cene con i pastori e il canyon di Gorropu.",
+        "plan": [
+          {
+            "t": "Cala Gonone",
+            "a": [
+              "transfer|Arrivo a Olbia e trasferimento a Cala Gonone||Cala Gonone",
+              "alloggio|Hotel a Cala Gonone||Cala Gonone",
+              "attivita|Lungomare e acquario||Cala Gonone"
+            ]
+          },
+          {
+            "t": "Golfo in barca",
+            "a": [
+              "traghetto|Cala Luna, Cala Mariolu e Grotta del Bue Marino||Golfo di Orosei"
+            ]
+          },
+          {
+            "t": "Cala Goloritzé",
+            "a": [
+              "attivita|Trekking a Cala Goloritzé|Accesso a numero chiuso.|Baunei"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Cala Fuili e Cala Cartoe||Cala Gonone"
+            ]
+          },
+          {
+            "t": "Barbagia",
+            "a": [
+              "transfer|Trasferimento in Barbagia||Barbagia",
+              "attivita|Murales di Orgosolo e pranzo con i pastori||Orgosolo",
+              "alloggio|Agriturismo in Barbagia||Oliena"
+            ]
+          },
+          {
+            "t": "Su Gorropu",
+            "a": [
+              "attivita|Gola di Su Gorropu||Urzulei",
+              "attivita|Villaggio nuragico di Tiscali||Dorgali",
+              "alloggio|Hotel a Dorgali||Dorgali"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Olbia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sud Sardegna",
-        "days": 7,
+        "days": 8,
         "route": "Cagliari (2) → Villasimius o Chia (4) → Su Nuraxi di Barumini (1)",
-        "description": "Il capoluogo con il Poetto, spiagge caraibiche del sud e il nuraghe UNESCO."
+        "description": "Il capoluogo con il Poetto, spiagge caraibiche del sud e il nuraghe UNESCO.",
+        "plan": [
+          {
+            "t": "Cagliari",
+            "a": [
+              "transfer|Arrivo a Cagliari||Cagliari",
+              "alloggio|Hotel nel quartiere Castello||Cagliari",
+              "attivita|Bastione di Saint Remy e Castello||Cagliari"
+            ]
+          },
+          {
+            "t": "Cagliari",
+            "a": [
+              "attivita|Poetto e Sella del Diavolo||Cagliari",
+              "attivita|Fenicotteri del Molentargius||Cagliari"
+            ]
+          },
+          {
+            "t": "Villasimius o Chia",
+            "a": [
+              "transfer|Trasferimento al mare||Chia",
+              "alloggio|Resort sul mare||Chia",
+              "attivita|Spiaggia di Su Giudeu||Chia"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Tuerredda e Nora||Chia"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Chia"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Escursione a Villasimius o Porto Pino||Sud Sardegna"
+            ]
+          },
+          {
+            "t": "Barumini",
+            "a": [
+              "transfer|Trasferimento a Barumini||Barumini",
+              "attivita|Su Nuraxi di Barumini UNESCO||Barumini",
+              "alloggio|Agriturismo nella Marmilla||Barumini"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro da Cagliari||"
+            ]
+          }
+        ]
       }
     ]
   }

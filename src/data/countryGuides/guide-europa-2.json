@@ -122,27 +122,213 @@
     "itineraries": [
       {
         "title": "Svizzera in treno",
-        "days": 8,
+        "days": 9,
         "route": "Zurigo (1) → Lucerna (2) → Interlaken (2) → Zermatt (2) → Glacier Express → St. Moritz (1)",
-        "description": "Il grande giro con Swiss Travel Pass, da giugno a settembre."
+        "description": "Il grande giro con Swiss Travel Pass, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Zurigo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Zurigo||Zurigo",
+              "attivita|Città vecchia e lago di Zurigo||Zurigo",
+              "info|Swiss Travel Pass|Treni, battelli e molti musei inclusi.|"
+            ]
+          },
+          {
+            "t": "Lucerna",
+            "a": [
+              "treno|Treno per Lucerna||Lucerna",
+              "alloggio|Hotel sul lago||Lucerna",
+              "attivita|Ponte della Cappella e Monumento al Leone||Lucerna"
+            ]
+          },
+          {
+            "t": "Monte Pilatus",
+            "a": [
+              "attivita|Monte Pilatus con la cremagliera più ripida del mondo||Pilatus",
+              "traghetto|Battello sul lago dei Quattro Cantoni||Lucerna"
+            ]
+          },
+          {
+            "t": "Interlaken",
+            "a": [
+              "treno|Treno panoramico Luzern–Interlaken Express||Interlaken",
+              "alloggio|Hotel a Interlaken||Interlaken",
+              "attivita|Lago di Brienz e Harder Kulm||Interlaken"
+            ]
+          },
+          {
+            "t": "Jungfraujoch",
+            "a": [
+              "treno|Jungfraujoch, il tetto d'Europa|Trenino fino a 3.454 metri.|Jungfrau",
+              "attivita|Lauterbrunnen e le sue cascate||Lauterbrunnen"
+            ]
+          },
+          {
+            "t": "Zermatt",
+            "a": [
+              "treno|Treno per Zermatt||Zermatt",
+              "alloggio|Hotel a Zermatt||Zermatt",
+              "attivita|Paese senza auto e vista sul Cervino||Zermatt"
+            ]
+          },
+          {
+            "t": "Gornergrat",
+            "a": [
+              "treno|Gornergrat e ghiacciai||Zermatt"
+            ]
+          },
+          {
+            "t": "Glacier Express",
+            "a": [
+              "treno|Glacier Express Zermatt–St. Moritz|8 ore di viaggio panoramico, posti da prenotare.|Glacier Express",
+              "alloggio|Hotel a St. Moritz||St. Moritz"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Bernina Express fino a Tirano e rientro in Italia||Tirano"
+            ]
+          }
+        ]
       },
       {
         "title": "Bernina e Engadina",
         "days": 3,
         "route": "Tirano → Bernina Express → St. Moritz (2)",
-        "description": "Weekend lungo dall'Italia, anche d'inverno."
+        "description": "Weekend lungo dall'Italia, anche d'inverno.",
+        "plan": [
+          {
+            "t": "Tirano e Bernina Express",
+            "a": [
+              "treno|Bernina Express Tirano–St. Moritz|Viadotto elicoidale di Brusio e ghiacciai del Bernina.|Tirano",
+              "alloggio|Hotel a St. Moritz||St. Moritz"
+            ]
+          },
+          {
+            "t": "Engadina",
+            "a": [
+              "attivita|Lago di St. Moritz e Pontresina||St. Moritz",
+              "attivita|Muottas Muragl||Engadina"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Treno per Tirano||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ginevra e lago Lemano",
         "days": 5,
         "route": "Ginevra (2) → Losanna e Lavaux (1) → Montreux (2)",
-        "description": "Vigneti terrazzati, castello di Chillon e festival jazz a luglio; ottimo anche in treno."
+        "description": "Vigneti terrazzati, castello di Chillon e festival jazz a luglio; ottimo anche in treno.",
+        "plan": [
+          {
+            "t": "Arrivo a Ginevra",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Ginevra||Ginevra",
+              "attivita|Jet d'Eau e città vecchia||Ginevra"
+            ]
+          },
+          {
+            "t": "Ginevra",
+            "a": [
+              "attivita|Palazzo delle Nazioni e CERN||Ginevra"
+            ]
+          },
+          {
+            "t": "Losanna e Lavaux",
+            "a": [
+              "treno|Treno per Losanna||Losanna",
+              "attivita|Cattedrale e Museo Olimpico||Losanna",
+              "attivita|Vigneti terrazzati di Lavaux UNESCO||Lavaux",
+              "alloggio|Hotel a Losanna||Losanna"
+            ]
+          },
+          {
+            "t": "Montreux",
+            "a": [
+              "traghetto|Battello sul lago per Montreux||Montreux",
+              "alloggio|Hotel a Montreux||Montreux",
+              "attivita|Castello di Chillon||Montreux"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Rochers-de-Naye o Gruyères||Montreux",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Svizzera in inverno",
-        "days": 7,
+        "days": 8,
         "route": "Zurigo (1) → St. Moritz (3) → Zermatt (3)",
-        "description": "Due stazioni mondane collegate dal Glacier Express: sci, terme e il Cervino."
+        "description": "Due stazioni mondane collegate dal Glacier Express: sci, terme e il Cervino.",
+        "plan": [
+          {
+            "t": "Arrivo a Zurigo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Zurigo||Zurigo"
+            ]
+          },
+          {
+            "t": "St. Moritz",
+            "a": [
+              "treno|Treno per St. Moritz||St. Moritz",
+              "alloggio|Hotel a St. Moritz||St. Moritz",
+              "attivita|Lago ghiacciato||St. Moritz"
+            ]
+          },
+          {
+            "t": "St. Moritz",
+            "a": [
+              "attivita|Sci a Corviglia||St. Moritz"
+            ]
+          },
+          {
+            "t": "St. Moritz",
+            "a": [
+              "attivita|Diavolezza o slitta a Muottas Muragl||Engadina"
+            ]
+          },
+          {
+            "t": "Zermatt",
+            "a": [
+              "treno|Glacier Express per Zermatt||Zermatt",
+              "alloggio|Hotel a Zermatt||Zermatt"
+            ]
+          },
+          {
+            "t": "Zermatt",
+            "a": [
+              "attivita|Sci sul Matterhorn Glacier Paradise||Zermatt"
+            ]
+          },
+          {
+            "t": "Zermatt",
+            "a": [
+              "attivita|Sci fino a Cervinia||Zermatt"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -235,21 +421,184 @@
     "itineraries": [
       {
         "title": "Belgio in treno",
-        "days": 5,
+        "days": 6,
         "route": "Bruxelles (2) → Bruges (1) → Gand (1) → Anversa (1)",
-        "description": "Città d'arte vicine collegate da treni frequenti."
+        "description": "Città d'arte vicine collegate da treni frequenti.",
+        "plan": [
+          {
+            "t": "Arrivo a Bruxelles",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bruxelles||Bruxelles",
+              "attivita|Grand-Place e Manneken Pis||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruxelles",
+            "a": [
+              "attivita|Atomium e Museo Magritte||Bruxelles",
+              "ristorante|Moules-frites e birra||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruges",
+            "a": [
+              "treno|Treno per Bruges||Bruges",
+              "alloggio|Hotel a Bruges||Bruges",
+              "attivita|Canali e Markt||Bruges"
+            ]
+          },
+          {
+            "t": "Gand",
+            "a": [
+              "treno|Treno per Gand||Gand",
+              "alloggio|Hotel a Gand||Gand",
+              "attivita|Polittico dell'Agnello Mistico||Gand"
+            ]
+          },
+          {
+            "t": "Anversa",
+            "a": [
+              "treno|Treno per Anversa||Anversa",
+              "alloggio|Hotel ad Anversa||Anversa",
+              "attivita|Casa di Rubens e stazione||Anversa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Belgio e Olanda",
-        "days": 8,
+        "days": 9,
         "route": "Bruxelles (2) → Bruges (1) → Gand (1) → Anversa (1) → Amsterdam (3)",
-        "description": "Due paesi in treno."
+        "description": "Due paesi in treno.",
+        "plan": [
+          {
+            "t": "Arrivo a Bruxelles",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bruxelles||Bruxelles",
+              "attivita|Grand-Place||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruxelles",
+            "a": [
+              "attivita|Atomium e Magritte||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruges",
+            "a": [
+              "treno|Treno per Bruges||Bruges",
+              "alloggio|Hotel a Bruges||Bruges",
+              "attivita|Canali in barca||Bruges"
+            ]
+          },
+          {
+            "t": "Gand",
+            "a": [
+              "treno|Treno per Gand||Gand",
+              "alloggio|Hotel a Gand||Gand",
+              "attivita|Castello dei Conti||Gand"
+            ]
+          },
+          {
+            "t": "Anversa",
+            "a": [
+              "treno|Treno per Anversa||Anversa",
+              "alloggio|Hotel ad Anversa||Anversa",
+              "attivita|Quartiere dei diamanti||Anversa"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "treno|Treno per Amsterdam||Amsterdam",
+              "alloggio|Hotel ad Amsterdam||Amsterdam",
+              "attivita|Crociera sui canali||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Rijksmuseum e Van Gogh||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Zaanse Schans e Volendam||Amsterdam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiandre d'arte e birra",
         "days": 6,
         "route": "Bruxelles (1) → Bruges (2) → Gand (1) → Anversa (1)",
-        "description": "Musei dei primitivi fiamminghi, birrifici trappisti e cioccolato; ottimo anche come mercatini di Natale."
+        "description": "Musei dei primitivi fiamminghi, birrifici trappisti e cioccolato; ottimo anche come mercatini di Natale.",
+        "plan": [
+          {
+            "t": "Arrivo a Bruxelles",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bruxelles||Bruxelles",
+              "attivita|Grand-Place e Delirium Café||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruges",
+            "a": [
+              "treno|Treno per Bruges||Bruges",
+              "alloggio|Hotel a Bruges||Bruges",
+              "attivita|Birrificio De Halve Maan||Bruges"
+            ]
+          },
+          {
+            "t": "Bruges",
+            "a": [
+              "attivita|Museo Groeninge e cioccolato||Bruges",
+              "attivita|Abbazia trappista di Westvleteren o Damme in bici||Fiandre"
+            ]
+          },
+          {
+            "t": "Gand",
+            "a": [
+              "treno|Treno per Gand||Gand",
+              "alloggio|Hotel a Gand||Gand",
+              "attivita|Graslei e Korenlei||Gand"
+            ]
+          },
+          {
+            "t": "Anversa",
+            "a": [
+              "treno|Treno per Anversa||Anversa",
+              "alloggio|Hotel ad Anversa||Anversa",
+              "attivita|Casa di Rubens e Cattedrale||Anversa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -342,19 +691,157 @@
         "title": "Copenaghen",
         "days": 4,
         "route": "Copenaghen (3), con castelli della Zelanda",
-        "description": "City break da maggio a settembre."
+        "description": "City break da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Copenaghen",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Copenaghen||Copenaghen",
+              "attivita|Nyhavn e Strøget||Copenaghen"
+            ]
+          },
+          {
+            "t": "Copenaghen",
+            "a": [
+              "attivita|Rosenborg, Amalienborg e Sirenetta||Copenaghen",
+              "attivita|Giardini di Tivoli||Copenaghen"
+            ]
+          },
+          {
+            "t": "Castelli della Zelanda",
+            "a": [
+              "attivita|Castello di Kronborg a Helsingør||Helsingør",
+              "attivita|Castello di Frederiksborg||Hillerød"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Christiania e Torvehallerne||Copenaghen",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Capitali scandinave",
         "days": 9,
         "route": "Copenaghen (3) → Stoccolma (3) → Oslo (2)",
-        "description": "In treno o con traghetti notturni."
+        "description": "In treno o con traghetti notturni.",
+        "plan": [
+          {
+            "t": "Arrivo a Copenaghen",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Copenaghen||Copenaghen",
+              "attivita|Nyhavn||Copenaghen"
+            ]
+          },
+          {
+            "t": "Copenaghen",
+            "a": [
+              "attivita|Tivoli e Sirenetta||Copenaghen"
+            ]
+          },
+          {
+            "t": "Copenaghen",
+            "a": [
+              "attivita|Kronborg e Louisiana Museum||Zelanda"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "treno|Treno o volo per Stoccolma||Stoccolma",
+              "alloggio|Hotel a Gamla Stan||Stoccolma",
+              "attivita|Gamla Stan||Stoccolma"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "attivita|Museo Vasa e Skansen||Stoccolma"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "traghetto|Arcipelago di Stoccolma||Stoccolma"
+            ]
+          },
+          {
+            "t": "Oslo",
+            "a": [
+              "volo|Volo per Oslo||Oslo",
+              "alloggio|Hotel a Oslo||Oslo",
+              "attivita|Opera e Aker Brygge||Oslo"
+            ]
+          },
+          {
+            "t": "Oslo",
+            "a": [
+              "attivita|Museo Munch e Parco Vigeland||Oslo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Danimarca in famiglia",
         "days": 6,
         "route": "Copenaghen (3) → Billund e Legoland (2)",
-        "description": "Tivoli, Nyhavn e la casa del Lego: un classico estivo per bambini, con treni comodi tra le tappe."
+        "description": "Tivoli, Nyhavn e la casa del Lego: un classico estivo per bambini, con treni comodi tra le tappe.",
+        "plan": [
+          {
+            "t": "Arrivo a Copenaghen",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Copenaghen||Copenaghen",
+              "attivita|Nyhavn in barca||Copenaghen"
+            ]
+          },
+          {
+            "t": "Copenaghen",
+            "a": [
+              "attivita|Giardini di Tivoli||Copenaghen"
+            ]
+          },
+          {
+            "t": "Copenaghen",
+            "a": [
+              "attivita|Acquario Den Blå Planet e Sirenetta||Copenaghen"
+            ]
+          },
+          {
+            "t": "Billund",
+            "a": [
+              "treno|Treno per Billund||Billund",
+              "alloggio|Hotel Legoland||Billund",
+              "attivita|Legoland||Billund"
+            ]
+          },
+          {
+            "t": "Billund",
+            "a": [
+              "attivita|Lego House||Billund"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -462,19 +949,150 @@
         "title": "Stoccolma",
         "days": 4,
         "route": "Stoccolma (3), con arcipelago",
-        "description": "City break da maggio a settembre."
+        "description": "City break da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Stoccolma",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Gamla Stan||Stoccolma",
+              "attivita|Gamla Stan||Stoccolma"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "attivita|Museo Vasa, Skansen e ABBA Museum||Stoccolma"
+            ]
+          },
+          {
+            "t": "Arcipelago",
+            "a": [
+              "traghetto|Arcipelago e Vaxholm||Vaxholm",
+              "attivita|Fika e Södermalm||Stoccolma"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Municipio e metro artistica||Stoccolma",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lapponia invernale",
-        "days": 5,
+        "days": 6,
         "route": "Kiruna (1) → Jukkasjärvi e Icehotel (2) → Abisko (2)",
-        "description": "Da dicembre a marzo."
+        "description": "Da dicembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Kiruna",
+            "a": [
+              "volo|Volo per Kiruna via Stoccolma||",
+              "alloggio|Hotel a Kiruna||Kiruna"
+            ]
+          },
+          {
+            "t": "Icehotel",
+            "a": [
+              "transfer|Trasferimento a Jukkasjärvi||Jukkasjärvi",
+              "alloggio|Notte all'Icehotel||Jukkasjärvi",
+              "attivita|Icehotel e Icebar||Jukkasjärvi"
+            ]
+          },
+          {
+            "t": "Jukkasjärvi",
+            "a": [
+              "attivita|Husky o renne con i Sami||Jukkasjärvi"
+            ]
+          },
+          {
+            "t": "Abisko",
+            "a": [
+              "transfer|Trasferimento ad Abisko||Abisko",
+              "alloggio|Lodge ad Abisko||Abisko",
+              "attivita|Aurora Sky Station||Abisko"
+            ]
+          },
+          {
+            "t": "Abisko",
+            "a": [
+              "attivita|Ciaspolata nel parco nazionale||Abisko"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Kiruna||"
+            ]
+          }
+        ]
       },
       {
         "title": "Svezia d'estate",
         "days": 8,
         "route": "Stoccolma (3) → Dalarna (2) → Göteborg (2)",
-        "description": "Arcipelago, laghi della Dalarna e la costa ovest con il mare d'estate."
+        "description": "Arcipelago, laghi della Dalarna e la costa ovest con il mare d'estate.",
+        "plan": [
+          {
+            "t": "Arrivo a Stoccolma",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Stoccolma||Stoccolma",
+              "attivita|Gamla Stan||Stoccolma"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "attivita|Vasa e Skansen||Stoccolma"
+            ]
+          },
+          {
+            "t": "Stoccolma",
+            "a": [
+              "traghetto|Arcipelago||Stoccolma"
+            ]
+          },
+          {
+            "t": "Dalarna",
+            "a": [
+              "treno|Treno per la Dalarna||Dalarna",
+              "alloggio|Hotel sul lago Siljan||Dalarna",
+              "attivita|Cavallini di Dala e Midsommar||Dalarna"
+            ]
+          },
+          {
+            "t": "Dalarna",
+            "a": [
+              "attivita|Lago Siljan in canoa||Dalarna"
+            ]
+          },
+          {
+            "t": "Göteborg",
+            "a": [
+              "treno|Treno per Göteborg||Göteborg",
+              "alloggio|Hotel a Göteborg||Göteborg",
+              "attivita|Haga e Liseberg||Göteborg"
+            ]
+          },
+          {
+            "t": "Göteborg",
+            "a": [
+              "traghetto|Arcipelago di Göteborg e frutti di mare||Göteborg"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -584,19 +1202,152 @@
         "title": "Cracovia",
         "days": 4,
         "route": "Cracovia (3), con Auschwitz e Wieliczka",
-        "description": "Il weekend lungo più venduto."
+        "description": "Il weekend lungo più venduto.",
+        "plan": [
+          {
+            "t": "Arrivo a Cracovia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel in centro||Cracovia",
+              "attivita|Piazza del Mercato e Basilica di Santa Maria||Cracovia"
+            ]
+          },
+          {
+            "t": "Auschwitz",
+            "a": [
+              "attivita|Auschwitz-Birkenau con guida|Prenotazione obbligatoria.|Oświęcim",
+              "attivita|Kazimierz, il quartiere ebraico||Cracovia"
+            ]
+          },
+          {
+            "t": "Wieliczka e Wawel",
+            "a": [
+              "attivita|Miniera di sale di Wieliczka||Wieliczka",
+              "attivita|Castello del Wawel||Cracovia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Polonia classica",
-        "days": 8,
+        "days": 9,
         "route": "Varsavia (2) → Danzica (2) → Breslavia (1) → Cracovia (3)",
-        "description": "In treno, da maggio a settembre."
+        "description": "In treno, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Varsavia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Varsavia||Varsavia",
+              "attivita|Città vecchia||Varsavia"
+            ]
+          },
+          {
+            "t": "Varsavia",
+            "a": [
+              "attivita|Museo dell'Insurrezione e Łazienki||Varsavia"
+            ]
+          },
+          {
+            "t": "Danzica",
+            "a": [
+              "treno|Treno per Danzica||Danzica",
+              "alloggio|Hotel a Danzica||Danzica",
+              "attivita|Via Lunga e Fontana del Nettuno||Danzica"
+            ]
+          },
+          {
+            "t": "Danzica",
+            "a": [
+              "attivita|Castello di Malbork||Malbork"
+            ]
+          },
+          {
+            "t": "Breslavia",
+            "a": [
+              "volo|Volo o treno per Breslavia||Breslavia",
+              "alloggio|Hotel a Breslavia||Breslavia",
+              "attivita|Piazza del Mercato e gnomi||Breslavia"
+            ]
+          },
+          {
+            "t": "Cracovia",
+            "a": [
+              "treno|Treno per Cracovia||Cracovia",
+              "alloggio|Hotel a Cracovia||Cracovia",
+              "attivita|Rynek e Kazimierz||Cracovia"
+            ]
+          },
+          {
+            "t": "Cracovia",
+            "a": [
+              "attivita|Auschwitz-Birkenau||Oświęcim"
+            ]
+          },
+          {
+            "t": "Cracovia",
+            "a": [
+              "attivita|Wieliczka e Wawel||Cracovia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Danzica e Baltico",
         "days": 5,
         "route": "Danzica (3) → Malbork (1) → Sopot (1)",
-        "description": "Città anseatica, il castello dei Cavalieri Teutonici e le spiagge di Sopot."
+        "description": "Città anseatica, il castello dei Cavalieri Teutonici e le spiagge di Sopot.",
+        "plan": [
+          {
+            "t": "Arrivo a Danzica",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Danzica||Danzica",
+              "attivita|Via Lunga||Danzica"
+            ]
+          },
+          {
+            "t": "Danzica",
+            "a": [
+              "attivita|Museo della Seconda guerra mondiale e cantiere Solidarność||Danzica"
+            ]
+          },
+          {
+            "t": "Danzica",
+            "a": [
+              "attivita|Westerplatte e ambra baltica||Danzica"
+            ]
+          },
+          {
+            "t": "Malbork",
+            "a": [
+              "attivita|Castello dei Cavalieri Teutonici||Malbork",
+              "alloggio|Hotel a Malbork||Malbork"
+            ]
+          },
+          {
+            "t": "Sopot e partenza",
+            "a": [
+              "attivita|Molo di Sopot||Sopot",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -709,19 +1460,155 @@
         "title": "Budapest",
         "days": 4,
         "route": "Budapest (3), con ansa del Danubio",
-        "description": "Weekend lungo con terme."
+        "description": "Weekend lungo con terme.",
+        "plan": [
+          {
+            "t": "Arrivo a Budapest",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Budapest||Budapest",
+              "traghetto|Crociera sul Danubio la sera||Budapest"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "attivita|Parlamento e Basilica di Santo Stefano||Budapest",
+              "attivita|Bagni Széchenyi||Budapest"
+            ]
+          },
+          {
+            "t": "Ansa del Danubio",
+            "a": [
+              "attivita|Szentendre, Visegrád ed Esztergom||Ansa del Danubio"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Castello di Buda e Bastione dei Pescatori||Budapest",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Capitali danubiane",
         "days": 8,
         "route": "Vienna (3) → Bratislava (1) → Budapest (3)",
-        "description": "In treno o crociera fluviale."
+        "description": "In treno o crociera fluviale.",
+        "plan": [
+          {
+            "t": "Arrivo a Vienna",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vienna||Vienna",
+              "attivita|Ring e Santo Stefano||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "attivita|Hofburg e Schönbrunn||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "attivita|Belvedere e caffè||Vienna"
+            ]
+          },
+          {
+            "t": "Bratislava",
+            "a": [
+              "traghetto|Battello sul Danubio per Bratislava||Bratislava",
+              "alloggio|Hotel a Bratislava||Bratislava",
+              "attivita|Castello e centro storico||Bratislava"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "treno|Treno per Budapest||Budapest",
+              "alloggio|Hotel a Budapest||Budapest",
+              "traghetto|Danubio la sera||Budapest"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "attivita|Parlamento e Bagni Széchenyi||Budapest"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "attivita|Castello di Buda||Budapest"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Balaton e Budapest",
         "days": 7,
         "route": "Budapest (3) → Balaton (3)",
-        "description": "Terme di Budapest e il lago Balaton con Tihany e Hévíz, il lago termale."
+        "description": "Terme di Budapest e il lago Balaton con Tihany e Hévíz, il lago termale.",
+        "plan": [
+          {
+            "t": "Arrivo a Budapest",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Budapest||Budapest"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "attivita|Parlamento e Basilica||Budapest"
+            ]
+          },
+          {
+            "t": "Budapest",
+            "a": [
+              "attivita|Castello di Buda e terme||Budapest"
+            ]
+          },
+          {
+            "t": "Balaton",
+            "a": [
+              "transfer|Trasferimento al Balaton||Balaton",
+              "alloggio|Hotel sul lago||Balaton",
+              "attivita|Tihany e l'abbazia||Tihany"
+            ]
+          },
+          {
+            "t": "Balaton",
+            "a": [
+              "attivita|Lago termale di Hévíz||Hévíz"
+            ]
+          },
+          {
+            "t": "Balaton",
+            "a": [
+              "attivita|Vigneti di Badacsony||Badacsony"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -839,19 +1726,175 @@
         "title": "Transilvania e Bucovina",
         "days": 9,
         "route": "Bucarest (1) → Sinaia (1) → Brașov (2) → Sighișoara (1) → Bucovina (2) → Cluj (1) → Bucarest",
-        "description": "Il tour classico, da maggio a ottobre."
+        "description": "Il tour classico, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bucarest",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bucarest||Bucarest",
+              "attivita|Palazzo del Parlamento e città vecchia||Bucarest"
+            ]
+          },
+          {
+            "t": "Sinaia",
+            "a": [
+              "transfer|Trasferimento a Sinaia||Sinaia",
+              "alloggio|Hotel a Sinaia||Sinaia",
+              "attivita|Castello di Peleș||Sinaia"
+            ]
+          },
+          {
+            "t": "Brașov",
+            "a": [
+              "attivita|Castello di Bran||Bran",
+              "alloggio|Hotel a Brașov||Brașov",
+              "attivita|Chiesa Nera||Brașov"
+            ]
+          },
+          {
+            "t": "Brașov",
+            "a": [
+              "attivita|Chiese fortificate di Prejmer e Harman||Brașov"
+            ]
+          },
+          {
+            "t": "Sighișoara",
+            "a": [
+              "transfer|Trasferimento a Sighișoara||Sighișoara",
+              "alloggio|Hotel nella cittadella||Sighișoara",
+              "attivita|Cittadella medievale||Sighișoara"
+            ]
+          },
+          {
+            "t": "Bucovina",
+            "a": [
+              "transfer|Attraverso le gole di Bicaz||Bucovina",
+              "alloggio|Pensione in Bucovina||Bucovina"
+            ]
+          },
+          {
+            "t": "Bucovina",
+            "a": [
+              "attivita|Monasteri dipinti di Voroneț e Sucevița||Bucovina"
+            ]
+          },
+          {
+            "t": "Cluj",
+            "a": [
+              "transfer|Trasferimento a Cluj||Cluj",
+              "alloggio|Hotel a Cluj||Cluj",
+              "attivita|Miniera di sale di Turda||Turda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Transilvania breve",
-        "days": 5,
+        "days": 6,
         "route": "Bucarest (1) → Brașov (2) → Sighișoara (1) → Sibiu (1)",
-        "description": "Borghi e castelli."
+        "description": "Borghi e castelli.",
+        "plan": [
+          {
+            "t": "Arrivo a Bucarest",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bucarest||Bucarest"
+            ]
+          },
+          {
+            "t": "Brașov",
+            "a": [
+              "attivita|Castello di Peleș||Sinaia",
+              "alloggio|Hotel a Brașov||Brașov",
+              "attivita|Centro di Brașov||Brașov"
+            ]
+          },
+          {
+            "t": "Brașov",
+            "a": [
+              "attivita|Castello di Bran||Bran"
+            ]
+          },
+          {
+            "t": "Sighișoara",
+            "a": [
+              "attivita|Cittadella di Sighișoara||Sighișoara",
+              "alloggio|Hotel a Sighișoara||Sighișoara"
+            ]
+          },
+          {
+            "t": "Sibiu",
+            "a": [
+              "attivita|Piazza grande di Sibiu||Sibiu",
+              "alloggio|Hotel a Sibiu||Sibiu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Delta del Danubio",
         "days": 6,
         "route": "Bucarest (1) → Tulcea (1) → Delta del Danubio (3)",
-        "description": "Il più grande delta d'Europa in barca, tra pellicani e villaggi di pescatori."
+        "description": "Il più grande delta d'Europa in barca, tra pellicani e villaggi di pescatori.",
+        "plan": [
+          {
+            "t": "Arrivo a Bucarest",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bucarest||Bucarest",
+              "attivita|Centro storico||Bucarest"
+            ]
+          },
+          {
+            "t": "Tulcea",
+            "a": [
+              "transfer|Trasferimento a Tulcea||Tulcea",
+              "alloggio|Hotel a Tulcea||Tulcea",
+              "attivita|Museo del Delta||Tulcea"
+            ]
+          },
+          {
+            "t": "Delta",
+            "a": [
+              "traghetto|Barca nel Delta del Danubio||Delta",
+              "alloggio|Lodge nel Delta||Delta"
+            ]
+          },
+          {
+            "t": "Delta",
+            "a": [
+              "attivita|Pellicani e canali in canoa||Delta"
+            ]
+          },
+          {
+            "t": "Delta",
+            "a": [
+              "attivita|Villaggi di pescatori e cucina di pesce||Delta"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Bucarest||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -956,19 +1999,179 @@
         "title": "Bulgaria classica",
         "days": 8,
         "route": "Sofia (2) → Rila (1) → Plovdiv (2) → Kazanlak (1) → Veliko Tărnovo (1) → Sofia",
-        "description": "Monasteri e città antiche, da maggio a ottobre."
+        "description": "Monasteri e città antiche, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Sofia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Sofia||Sofia",
+              "attivita|Cattedrale Aleksandăr Nevski||Sofia"
+            ]
+          },
+          {
+            "t": "Sofia",
+            "a": [
+              "attivita|Chiesa di Boyana||Sofia"
+            ]
+          },
+          {
+            "t": "Rila",
+            "a": [
+              "attivita|Monastero di Rila||Rila",
+              "alloggio|Hotel a Rila||Rila"
+            ]
+          },
+          {
+            "t": "Plovdiv",
+            "a": [
+              "transfer|Trasferimento a Plovdiv||Plovdiv",
+              "alloggio|Hotel a Plovdiv||Plovdiv",
+              "attivita|Teatro romano e città vecchia||Plovdiv"
+            ]
+          },
+          {
+            "t": "Plovdiv",
+            "a": [
+              "attivita|Monastero di Bačkovo||Plovdiv"
+            ]
+          },
+          {
+            "t": "Kazanlak",
+            "a": [
+              "attivita|Valle delle Rose e tomba trace||Kazanlak",
+              "alloggio|Hotel a Kazanlak||Kazanlak"
+            ]
+          },
+          {
+            "t": "Veliko Tărnovo",
+            "a": [
+              "attivita|Fortezza di Tsarevets||Veliko Tărnovo",
+              "alloggio|Hotel a Veliko Tărnovo||Veliko Tărnovo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Sofia||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mar Nero",
         "days": 8,
         "route": "Varna (1) → Nesebăr o Sozopol (6)",
-        "description": "Mare e città antiche, luglio–agosto."
+        "description": "Mare e città antiche, luglio–agosto.",
+        "plan": [
+          {
+            "t": "Arrivo a Varna",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Varna||Varna"
+            ]
+          },
+          {
+            "t": "Nesebăr",
+            "a": [
+              "transfer|Trasferimento a Nesebăr o Sozopol||Nesebăr",
+              "alloggio|Hotel sul mare||Nesebăr",
+              "attivita|Città antica UNESCO||Nesebăr"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Nesebăr"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Sozopol||Sozopol"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Nesebăr"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Nesebăr"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata al mare||Nesebăr"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sci a Bansko e Sofia",
         "days": 7,
         "route": "Sofia (1) → Bansko (5) → Sofia",
-        "description": "La stazione sciistica più economica dell'Europa, con centro storico e terme; voli low cost su Sofia."
+        "description": "La stazione sciistica più economica dell'Europa, con centro storico e terme; voli low cost su Sofia.",
+        "plan": [
+          {
+            "t": "Arrivo a Sofia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Sofia||Sofia",
+              "attivita|Centro di Sofia||Sofia"
+            ]
+          },
+          {
+            "t": "Bansko",
+            "a": [
+              "transfer|Trasferimento a Bansko||Bansko",
+              "alloggio|Hotel a Bansko||Bansko"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci sulle piste del Pirin||Bansko"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci||Bansko"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci e terme||Bansko"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Ultima giornata di sci||Bansko"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Sofia||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1063,19 +2266,137 @@
         "title": "Slovenia in 5 giorni",
         "days": 5,
         "route": "Lubiana (2) → Bled e Bohinj (2) → Postumia → Pirano (1)",
-        "description": "Tour in auto da maggio a ottobre."
+        "description": "Tour in auto da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Lubiana",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Lubiana||Lubiana",
+              "attivita|Centro storico e Triplo Ponte||Lubiana"
+            ]
+          },
+          {
+            "t": "Lubiana",
+            "a": [
+              "attivita|Castello e mercato||Lubiana"
+            ]
+          },
+          {
+            "t": "Bled",
+            "a": [
+              "transfer|Trasferimento a Bled||Bled",
+              "alloggio|Hotel a Bled||Bled",
+              "attivita|Isola di Bled in pletna||Bled"
+            ]
+          },
+          {
+            "t": "Bohinj e Postumia",
+            "a": [
+              "attivita|Lago di Bohinj||Bohinj",
+              "attivita|Grotte di Postumia||Postumia",
+              "alloggio|Hotel a Pirano||Pirano"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Pirano||Pirano",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Slovenia e Istria",
         "days": 7,
         "route": "Lubiana (2) → Bled (2) → Postumia → Pirano (1) → Rovigno (1)",
-        "description": "Montagna, grotte e mare, comodo in auto dal Friuli."
+        "description": "Montagna, grotte e mare, comodo in auto dal Friuli.",
+        "plan": [
+          {
+            "t": "Arrivo a Lubiana",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Lubiana||Lubiana"
+            ]
+          },
+          {
+            "t": "Lubiana",
+            "a": [
+              "attivita|Centro e castello||Lubiana"
+            ]
+          },
+          {
+            "t": "Bled",
+            "a": [
+              "transfer|Trasferimento a Bled||Bled",
+              "alloggio|Hotel a Bled||Bled",
+              "attivita|Lago di Bled||Bled"
+            ]
+          },
+          {
+            "t": "Bled",
+            "a": [
+              "attivita|Gola di Vintgar e Bohinj||Bled"
+            ]
+          },
+          {
+            "t": "Postumia e Pirano",
+            "a": [
+              "attivita|Grotte di Postumia e Castello di Predjama||Postumia",
+              "alloggio|Hotel a Pirano||Pirano"
+            ]
+          },
+          {
+            "t": "Rovigno",
+            "a": [
+              "transfer|Trasferimento a Rovigno||Rovigno",
+              "alloggio|Hotel a Rovigno||Rovigno",
+              "attivita|Centro storico||Rovigno"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Valle dell'Isonzo",
         "days": 4,
         "route": "Bovec (2) → Kobarid (1)",
-        "description": "Rafting, kayak e trekking sul fiume più verde d'Europa, a due passi dal confine italiano."
+        "description": "Rafting, kayak e trekking sul fiume più verde d'Europa, a due passi dal confine italiano.",
+        "plan": [
+          {
+            "t": "Bovec",
+            "a": [
+              "transfer|Arrivo a Bovec||Bovec",
+              "alloggio|Hotel a Bovec||Bovec",
+              "attivita|Rafting sull'Isonzo||Bovec"
+            ]
+          },
+          {
+            "t": "Bovec",
+            "a": [
+              "attivita|Trekking alla cascata Boka o kayak||Bovec"
+            ]
+          },
+          {
+            "t": "Kobarid",
+            "a": [
+              "attivita|Museo della Grande Guerra e cascata Kozjak||Kobarid",
+              "alloggio|Hotel a Kobarid||Kobarid"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1166,21 +2487,152 @@
     "itineraries": [
       {
         "title": "Slovacchia in 7 giorni",
-        "days": 7,
+        "days": 8,
         "route": "Bratislava (2) → Bojnice (1) → Alti Tatra (2) → Spiš e Paradiso Slovacco (2)",
-        "description": "Tour in auto da maggio a ottobre."
+        "description": "Tour in auto da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bratislava",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bratislava||Bratislava",
+              "attivita|Centro storico||Bratislava"
+            ]
+          },
+          {
+            "t": "Bratislava",
+            "a": [
+              "attivita|Castello e Devín||Bratislava"
+            ]
+          },
+          {
+            "t": "Bojnice",
+            "a": [
+              "transfer|Trasferimento a Bojnice||Bojnice",
+              "alloggio|Hotel a Bojnice||Bojnice",
+              "attivita|Castello di Bojnice||Bojnice"
+            ]
+          },
+          {
+            "t": "Alti Tatra",
+            "a": [
+              "transfer|Trasferimento negli Alti Tatra||Tatra",
+              "alloggio|Hotel negli Alti Tatra||Tatra",
+              "attivita|Lago Štrbské Pleso||Tatra"
+            ]
+          },
+          {
+            "t": "Alti Tatra",
+            "a": [
+              "attivita|Escursione al lago Popradské||Tatra"
+            ]
+          },
+          {
+            "t": "Spiš",
+            "a": [
+              "attivita|Castello di Spiš e Levoča||Spiš",
+              "alloggio|Hotel a Levoča||Levoča"
+            ]
+          },
+          {
+            "t": "Paradiso Slovacco",
+            "a": [
+              "attivita|Gole del Paradiso Slovacco||Slovacchia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bratislava e Vienna",
         "days": 4,
         "route": "Vienna (2) → battello sul Danubio → Bratislava (1)",
-        "description": "Due capitali a un'ora di distanza collegate dal battello sul Danubio."
+        "description": "Due capitali a un'ora di distanza collegate dal battello sul Danubio.",
+        "plan": [
+          {
+            "t": "Arrivo a Vienna",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vienna||Vienna",
+              "attivita|Ring e Santo Stefano||Vienna"
+            ]
+          },
+          {
+            "t": "Vienna",
+            "a": [
+              "attivita|Hofburg e Schönbrunn||Vienna"
+            ]
+          },
+          {
+            "t": "Bratislava",
+            "a": [
+              "traghetto|Battello sul Danubio||Bratislava",
+              "alloggio|Hotel a Bratislava||Bratislava",
+              "attivita|Castello e centro||Bratislava"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tatra in inverno",
         "days": 6,
         "route": "Poprad (1) → Alti Tatra (4)",
-        "description": "Sci e terme a prezzi contenuti, con i villaggi di Ždiar e la città di Levoča."
+        "description": "Sci e terme a prezzi contenuti, con i villaggi di Ždiar e la città di Levoča.",
+        "plan": [
+          {
+            "t": "Arrivo a Poprad",
+            "a": [
+              "volo|Volo per Poprad o Cracovia||",
+              "alloggio|Hotel a Poprad||Poprad"
+            ]
+          },
+          {
+            "t": "Tatra",
+            "a": [
+              "transfer|Trasferimento negli Alti Tatra||Tatra",
+              "alloggio|Hotel negli Alti Tatra||Tatra",
+              "attivita|Sci||Tatra"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci a Tatranská Lomnica||Tatra"
+            ]
+          },
+          {
+            "t": "Terme",
+            "a": [
+              "attivita|AquaCity di Poprad||Poprad"
+            ]
+          },
+          {
+            "t": "Ždiar",
+            "a": [
+              "attivita|Villaggio di Ždiar e slitta||Ždiar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1285,19 +2737,190 @@
         "title": "Cipro mare e cultura",
         "days": 8,
         "route": "Paphos (3) → Troodos (1) → Limassol (1) → Ayia Napa (2)",
-        "description": "Fly & drive da aprile a ottobre."
+        "description": "Fly & drive da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Paphos",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Paphos||Paphos",
+              "attivita|Porto di Paphos||Paphos"
+            ]
+          },
+          {
+            "t": "Paphos",
+            "a": [
+              "attivita|Parco archeologico e mosaici||Paphos"
+            ]
+          },
+          {
+            "t": "Paphos",
+            "a": [
+              "attivita|Roccia di Afrodite e Bagni di Afrodite||Paphos"
+            ]
+          },
+          {
+            "t": "Troodos",
+            "a": [
+              "transfer|Trasferimento nei Troodos||Troodos",
+              "alloggio|Hotel nei Troodos||Troodos",
+              "attivita|Chiese dipinte UNESCO||Troodos"
+            ]
+          },
+          {
+            "t": "Limassol",
+            "a": [
+              "transfer|Trasferimento a Limassol||Limassol",
+              "alloggio|Hotel a Limassol||Limassol",
+              "attivita|Kourion||Limassol"
+            ]
+          },
+          {
+            "t": "Ayia Napa",
+            "a": [
+              "transfer|Trasferimento ad Ayia Napa||Ayia Napa",
+              "alloggio|Hotel ad Ayia Napa||Ayia Napa",
+              "attivita|Nissi Beach||Ayia Napa"
+            ]
+          },
+          {
+            "t": "Ayia Napa",
+            "a": [
+              "attivita|Capo Greco||Ayia Napa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cipro nord e sud",
         "days": 8,
         "route": "Larnaca (1) → Nicosia (2) → Kyrenia (2) → Paphos (2)",
-        "description": "L'isola divisa: capitale attraversata dalla linea verde, porto di Kyrenia e mosaici di Paphos."
+        "description": "L'isola divisa: capitale attraversata dalla linea verde, porto di Kyrenia e mosaici di Paphos.",
+        "plan": [
+          {
+            "t": "Arrivo a Larnaca",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Larnaca||Larnaca",
+              "attivita|Chiesa di San Lazzaro||Larnaca"
+            ]
+          },
+          {
+            "t": "Nicosia",
+            "a": [
+              "transfer|Trasferimento a Nicosia||Nicosia",
+              "alloggio|Hotel a Nicosia||Nicosia",
+              "attivita|Linea verde e città vecchia||Nicosia"
+            ]
+          },
+          {
+            "t": "Nicosia nord",
+            "a": [
+              "attivita|Nicosia nord e Büyük Han||Nicosia"
+            ]
+          },
+          {
+            "t": "Kyrenia",
+            "a": [
+              "transfer|Trasferimento a Kyrenia||Kyrenia",
+              "alloggio|Hotel a Kyrenia||Kyrenia",
+              "attivita|Porto e castello||Kyrenia"
+            ]
+          },
+          {
+            "t": "Kyrenia",
+            "a": [
+              "attivita|Abbazia di Bellapais e castello di Sant'Ilarione||Kyrenia"
+            ]
+          },
+          {
+            "t": "Paphos",
+            "a": [
+              "transfer|Trasferimento a Paphos||Paphos",
+              "alloggio|Hotel a Paphos||Paphos",
+              "attivita|Mosaici di Paphos||Paphos"
+            ]
+          },
+          {
+            "t": "Paphos",
+            "a": [
+              "attivita|Roccia di Afrodite||Paphos"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana mare in famiglia",
         "days": 8,
         "route": "Protaras o Ayia Napa (7)",
-        "description": "Acqua bassa e cristallina di Fig Tree Bay, hotel con animazione e voli diretti; stagione da maggio a ottobre."
+        "description": "Acqua bassa e cristallina di Fig Tree Bay, hotel con animazione e voli diretti; stagione da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Larnaca",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer a Protaras||Protaras",
+              "alloggio|Hotel per famiglie||Protaras"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Fig Tree Bay||Protaras"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Protaras"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Gita in barca a Capo Greco||Protaras"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Parco acquatico di Ayia Napa||Ayia Napa"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Protaras"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata al mare||Protaras"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1384,19 +3007,165 @@
         "title": "Capitali baltiche",
         "days": 8,
         "route": "Vilnius (2) → Collina delle Croci → Riga (3) → Tallinn (2)",
-        "description": "Il tour classico dei tre paesi, da maggio a settembre."
+        "description": "Il tour classico dei tre paesi, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Vilnius",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vilnius||Vilnius",
+              "attivita|Città vecchia||Vilnius"
+            ]
+          },
+          {
+            "t": "Vilnius",
+            "a": [
+              "attivita|Užupis e Trakai||Vilnius"
+            ]
+          },
+          {
+            "t": "Collina delle Croci e Riga",
+            "a": [
+              "attivita|Collina delle Croci||Šiauliai",
+              "attivita|Palazzo di Rundāle||Rundāle",
+              "alloggio|Hotel a Riga||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Art Nouveau e mercato centrale||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Jūrmala||Jūrmala"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "transfer|Trasferimento a Tallinn||Tallinn",
+              "alloggio|Hotel a Tallinn||Tallinn",
+              "attivita|Città vecchia||Tallinn"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "attivita|Toompea e Kadriorg||Tallinn"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tallinn ed Helsinki",
         "days": 5,
         "route": "Tallinn (3) → traghetto → Helsinki (1)",
-        "description": "Città medievale e capitale finlandese collegate da un traghetto di due ore: perfetto anche a dicembre."
+        "description": "Città medievale e capitale finlandese collegate da un traghetto di due ore: perfetto anche a dicembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Tallinn",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tallinn||Tallinn",
+              "attivita|Città vecchia||Tallinn"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "attivita|Toompea e Kadriorg||Tallinn"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "attivita|Telliskivi e Lahemaa||Tallinn"
+            ]
+          },
+          {
+            "t": "Helsinki",
+            "a": [
+              "traghetto|Traghetto per Helsinki|2 ore.|Helsinki",
+              "alloggio|Hotel a Helsinki||Helsinki",
+              "attivita|Suomenlinna||Helsinki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estonia natura",
         "days": 7,
         "route": "Tallinn (2) → Lahemaa (1) → Tartu (1) → Saaremaa (2)",
-        "description": "Paludi, foreste e isole: la parte meno conosciuta del Baltico, ottima d'estate in auto."
+        "description": "Paludi, foreste e isole: la parte meno conosciuta del Baltico, ottima d'estate in auto.",
+        "plan": [
+          {
+            "t": "Arrivo a Tallinn",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tallinn||Tallinn"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "attivita|Città vecchia||Tallinn"
+            ]
+          },
+          {
+            "t": "Lahemaa",
+            "a": [
+              "transfer|Trasferimento a Lahemaa||Lahemaa",
+              "alloggio|Manor house a Lahemaa||Lahemaa",
+              "attivita|Torbiere di Viru||Lahemaa"
+            ]
+          },
+          {
+            "t": "Tartu",
+            "a": [
+              "transfer|Trasferimento a Tartu||Tartu",
+              "alloggio|Hotel a Tartu||Tartu",
+              "attivita|Città universitaria||Tartu"
+            ]
+          },
+          {
+            "t": "Saaremaa",
+            "a": [
+              "transfer|Traghetto per Saaremaa||Saaremaa",
+              "alloggio|Hotel a Kuressaare||Saaremaa",
+              "attivita|Castello di Kuressaare||Saaremaa"
+            ]
+          },
+          {
+            "t": "Saaremaa",
+            "a": [
+              "attivita|Cratere di Kaali e mulini di Angla||Saaremaa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Tallinn||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1479,19 +3248,139 @@
         "title": "Riga e dintorni",
         "days": 5,
         "route": "Riga (3) → Sigulda (1) → Rundāle (1)",
-        "description": "City break esteso."
+        "description": "City break esteso.",
+        "plan": [
+          {
+            "t": "Arrivo a Riga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Riga||Riga",
+              "attivita|Città vecchia||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Art Nouveau e mercato centrale||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Jūrmala||Jūrmala"
+            ]
+          },
+          {
+            "t": "Sigulda",
+            "a": [
+              "transfer|Trasferimento a Sigulda||Sigulda",
+              "alloggio|Hotel a Sigulda||Sigulda",
+              "attivita|Castello di Turaida||Sigulda"
+            ]
+          },
+          {
+            "t": "Rundāle",
+            "a": [
+              "attivita|Palazzo di Rundāle||Rundāle",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Riga e Jūrmala",
         "days": 4,
         "route": "Riga (2) → Jūrmala (1)",
-        "description": "Art Nouveau, mercato centrale negli hangar degli zeppelin e la spiaggia di Jūrmala."
+        "description": "Art Nouveau, mercato centrale negli hangar degli zeppelin e la spiaggia di Jūrmala.",
+        "plan": [
+          {
+            "t": "Arrivo a Riga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Riga||Riga",
+              "attivita|Città vecchia||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Art Nouveau e mercato centrale||Riga"
+            ]
+          },
+          {
+            "t": "Jūrmala",
+            "a": [
+              "transfer|Trasferimento a Jūrmala||Jūrmala",
+              "alloggio|Hotel spa a Jūrmala||Jūrmala",
+              "attivita|Spiaggia e ville di legno||Jūrmala"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lettonia natura",
         "days": 7,
         "route": "Riga (2) → Gauja e Cēsis (2) → Kuldīga (1) → Ventspils (1)",
-        "description": "Castelli, foreste e la cascata più larga d'Europa a Kuldīga."
+        "description": "Castelli, foreste e la cascata più larga d'Europa a Kuldīga.",
+        "plan": [
+          {
+            "t": "Arrivo a Riga",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Riga||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Città vecchia||Riga"
+            ]
+          },
+          {
+            "t": "Gauja",
+            "a": [
+              "transfer|Trasferimento nel Parco del Gauja||Gauja",
+              "alloggio|Hotel a Cēsis||Cēsis",
+              "attivita|Castello di Cēsis||Cēsis"
+            ]
+          },
+          {
+            "t": "Gauja",
+            "a": [
+              "attivita|Canoa sul Gauja e Turaida||Gauja"
+            ]
+          },
+          {
+            "t": "Kuldīga",
+            "a": [
+              "transfer|Trasferimento a Kuldīga||Kuldīga",
+              "alloggio|Hotel a Kuldīga||Kuldīga",
+              "attivita|Cascata Venta||Kuldīga"
+            ]
+          },
+          {
+            "t": "Ventspils",
+            "a": [
+              "transfer|Trasferimento a Ventspils||Ventspils",
+              "alloggio|Hotel a Ventspils||Ventspils",
+              "attivita|Spiaggia e castello||Ventspils"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Riga||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1575,19 +3464,163 @@
         "title": "Lituania",
         "days": 6,
         "route": "Vilnius (2) → Trakai → Kaunas (1) → Collina delle Croci → Istmo dei Curi (2)",
-        "description": "Da maggio a settembre."
+        "description": "Da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Vilnius",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vilnius||Vilnius",
+              "attivita|Città vecchia||Vilnius"
+            ]
+          },
+          {
+            "t": "Vilnius",
+            "a": [
+              "attivita|Užupis e Porta dell'Aurora||Vilnius"
+            ]
+          },
+          {
+            "t": "Trakai e Kaunas",
+            "a": [
+              "attivita|Castello di Trakai||Trakai",
+              "alloggio|Hotel a Kaunas||Kaunas"
+            ]
+          },
+          {
+            "t": "Collina delle Croci",
+            "a": [
+              "attivita|Collina delle Croci||Šiauliai",
+              "transfer|Trasferimento a Nida||Nida",
+              "alloggio|Hotel a Nida||Nida"
+            ]
+          },
+          {
+            "t": "Istmo dei Curi",
+            "a": [
+              "attivita|Dune di Parnidis||Nida"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Trasferimento all'aeroporto di Palanga||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vilnius breve",
         "days": 4,
         "route": "Vilnius (3), con Trakai",
-        "description": "Città barocca, il quartiere artistico di Užupis e il castello sull'acqua di Trakai."
+        "description": "Città barocca, il quartiere artistico di Užupis e il castello sull'acqua di Trakai.",
+        "plan": [
+          {
+            "t": "Arrivo a Vilnius",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Vilnius||Vilnius",
+              "attivita|Città vecchia||Vilnius"
+            ]
+          },
+          {
+            "t": "Vilnius",
+            "a": [
+              "attivita|Užupis e Torre di Gediminas||Vilnius"
+            ]
+          },
+          {
+            "t": "Trakai",
+            "a": [
+              "attivita|Castello di Trakai||Trakai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Baltico in auto",
         "days": 10,
         "route": "Vilnius (2) → Istmo dei Curi (2) → Riga (2) → Pärnu (1) → Tallinn (2)",
-        "description": "I tre paesi baltici in auto, con le dune dell'Istmo dei Curi patrimonio UNESCO."
+        "description": "I tre paesi baltici in auto, con le dune dell'Istmo dei Curi patrimonio UNESCO.",
+        "plan": [
+          {
+            "t": "Arrivo a Vilnius",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Vilnius",
+              "alloggio|Hotel a Vilnius||Vilnius"
+            ]
+          },
+          {
+            "t": "Vilnius",
+            "a": [
+              "attivita|Città vecchia e Trakai||Vilnius"
+            ]
+          },
+          {
+            "t": "Istmo dei Curi",
+            "a": [
+              "transfer|Trasferimento a Nida||Nida",
+              "alloggio|Hotel a Nida||Nida",
+              "attivita|Dune||Nida"
+            ]
+          },
+          {
+            "t": "Istmo dei Curi",
+            "a": [
+              "attivita|Collina delle streghe||Juodkrantė"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "transfer|Trasferimento a Riga||Riga",
+              "alloggio|Hotel a Riga||Riga"
+            ]
+          },
+          {
+            "t": "Riga",
+            "a": [
+              "attivita|Città vecchia e mercato||Riga"
+            ]
+          },
+          {
+            "t": "Pärnu",
+            "a": [
+              "transfer|Trasferimento a Pärnu||Pärnu",
+              "alloggio|Hotel a Pärnu||Pärnu",
+              "attivita|Spiaggia||Pärnu"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "transfer|Trasferimento a Tallinn||Tallinn",
+              "alloggio|Hotel a Tallinn||Tallinn"
+            ]
+          },
+          {
+            "t": "Tallinn",
+            "a": [
+              "attivita|Città vecchia||Tallinn"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1663,19 +3696,131 @@
         "title": "Lussemburgo",
         "days": 3,
         "route": "Città di Lussemburgo (2) → Vianden e Mullerthal (1)",
-        "description": "Weekend lungo, anche abbinato a Belgio o Mosella tedesca."
+        "description": "Weekend lungo, anche abbinato a Belgio o Mosella tedesca.",
+        "plan": [
+          {
+            "t": "Arrivo a Lussemburgo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel in città||Lussemburgo",
+              "attivita|Casematte del Bock||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Lussemburgo",
+            "a": [
+              "attivita|Grund e Chemin de la Corniche||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Vianden e Mullerthal",
+            "a": [
+              "attivita|Castello di Vianden||Vianden",
+              "attivita|Mullerthal, la piccola Svizzera||Mullerthal",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Benelux in treno",
         "days": 8,
         "route": "Lussemburgo (2) → Bruxelles (2) → Bruges (1) → Amsterdam (2)",
-        "description": "Tre capitali e una città d'arte collegate da treni frequenti."
+        "description": "Tre capitali e una città d'arte collegate da treni frequenti.",
+        "plan": [
+          {
+            "t": "Arrivo a Lussemburgo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Lussemburgo||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Lussemburgo",
+            "a": [
+              "attivita|Casematte e Vianden||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Bruxelles",
+            "a": [
+              "treno|Treno per Bruxelles||Bruxelles",
+              "alloggio|Hotel a Bruxelles||Bruxelles",
+              "attivita|Grand-Place||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruxelles",
+            "a": [
+              "attivita|Atomium e Magritte||Bruxelles"
+            ]
+          },
+          {
+            "t": "Bruges",
+            "a": [
+              "treno|Treno per Bruges||Bruges",
+              "alloggio|Hotel a Bruges||Bruges",
+              "attivita|Canali||Bruges"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "treno|Treno per Amsterdam||Amsterdam",
+              "alloggio|Hotel ad Amsterdam||Amsterdam"
+            ]
+          },
+          {
+            "t": "Amsterdam",
+            "a": [
+              "attivita|Canali e musei||Amsterdam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lussemburgo e Mosella",
         "days": 4,
         "route": "Lussemburgo (2) → Valle della Mosella (1)",
-        "description": "Città fortezza UNESCO e vigneti della Mosella, con degustazione di crémant."
+        "description": "Città fortezza UNESCO e vigneti della Mosella, con degustazione di crémant.",
+        "plan": [
+          {
+            "t": "Arrivo a Lussemburgo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Lussemburgo||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Lussemburgo",
+            "a": [
+              "attivita|Città fortezza UNESCO||Lussemburgo"
+            ]
+          },
+          {
+            "t": "Mosella",
+            "a": [
+              "transfer|Trasferimento nella valle della Mosella||Mosella",
+              "alloggio|Hotel nella Mosella||Mosella",
+              "attivita|Degustazione di crémant||Mosella"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1737,19 +3882,128 @@
         "title": "Costa Azzurra e Monaco",
         "days": 4,
         "route": "Nizza (2) → Èze → Monaco (1)",
-        "description": "Weekend lungo, anche in auto dall'Italia."
+        "description": "Weekend lungo, anche in auto dall'Italia.",
+        "plan": [
+          {
+            "t": "Arrivo a Nizza",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Nizza||Nizza",
+              "attivita|Promenade des Anglais||Nizza"
+            ]
+          },
+          {
+            "t": "Nizza",
+            "a": [
+              "attivita|Vieux Nice e Colline du Château||Nizza"
+            ]
+          },
+          {
+            "t": "Èze e Monaco",
+            "a": [
+              "attivita|Èze||Èze",
+              "alloggio|Hotel a Monaco||Monaco",
+              "attivita|Palazzo del Principe e Casinò||Monaco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Museo Oceanografico||Monaco",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gran Premio di Monaco",
         "days": 4,
         "route": "Nizza (1) → Monaco (2)",
-        "description": "Pacchetto per il Gran Premio di maggio: hotel a Nizza o Mentone e tribuna o terrazza sul circuito."
+        "description": "Pacchetto per il Gran Premio di maggio: hotel a Nizza o Mentone e tribuna o terrazza sul circuito.",
+        "plan": [
+          {
+            "t": "Arrivo a Nizza",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Nizza||Nizza",
+              "attivita|Promenade||Nizza"
+            ]
+          },
+          {
+            "t": "Monaco",
+            "a": [
+              "treno|Treno per Monaco||Monaco",
+              "alloggio|Hotel a Monaco o Mentone||Monaco",
+              "attivita|Prove del Gran Premio||Monaco"
+            ]
+          },
+          {
+            "t": "Gran Premio",
+            "a": [
+              "attivita|Gara del Gran Premio di Monaco||Monaco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Riviera in treno",
         "days": 6,
         "route": "Sanremo (1) → Mentone (1) → Monaco (1) → Nizza (2)",
-        "description": "Da Ventimiglia a Nizza in treno regionale: giardini, casinò e il mercato dei fiori."
+        "description": "Da Ventimiglia a Nizza in treno regionale: giardini, casinò e il mercato dei fiori.",
+        "plan": [
+          {
+            "t": "Sanremo",
+            "a": [
+              "treno|Arrivo a Sanremo||Sanremo",
+              "alloggio|Hotel a Sanremo||Sanremo",
+              "attivita|Pigna e Casinò||Sanremo"
+            ]
+          },
+          {
+            "t": "Mentone",
+            "a": [
+              "treno|Treno per Mentone||Mentone",
+              "alloggio|Hotel a Mentone||Mentone",
+              "attivita|Città vecchia e giardini||Mentone"
+            ]
+          },
+          {
+            "t": "Monaco",
+            "a": [
+              "treno|Treno per Monaco||Monaco",
+              "alloggio|Hotel a Monaco||Monaco",
+              "attivita|Palazzo e Casinò||Monaco"
+            ]
+          },
+          {
+            "t": "Nizza",
+            "a": [
+              "treno|Treno per Nizza||Nizza",
+              "alloggio|Hotel a Nizza||Nizza",
+              "attivita|Mercato dei fiori di Cours Saleya||Nizza"
+            ]
+          },
+          {
+            "t": "Nizza",
+            "a": [
+              "attivita|Villefranche e Cap Ferrat||Nizza"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Rientro in treno||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
