@@ -1,6 +1,7 @@
 "use server";
 
 import { getCachedUser } from "@/lib/supabase/server";
+import { CITY_EN, airportCode } from "@/lib/airports";
 
 export type FlightLookupResult = {
   airline: string;
@@ -315,40 +316,10 @@ export async function findConnections(input: {
 // Si leggono le partenze dall'aeroporto di partenza nel giorno scelto (due finestre di 12 ore) e si
 // tengono i voli diretti verso la destinazione. Per i voli con scalo: si cerca la tratta fino allo
 // scalo e poi «Trova la coincidenza».
-const CITY_AIRPORTS: Record<string, string> = {
-  roma: "FCO", fiumicino: "FCO", ciampino: "CIA", milano: "MXP", malpensa: "MXP", linate: "LIN", bergamo: "BGY",
-  "orio al serio": "BGY", venezia: "VCE", treviso: "TSF", verona: "VRN", bologna: "BLQ", torino: "TRN", genova: "GOA",
-  firenze: "FLR", pisa: "PSA", napoli: "NAP", bari: "BRI", brindisi: "BDS", catania: "CTA", palermo: "PMO",
-  cagliari: "CAG", olbia: "OLB", alghero: "AHO", ancona: "AOI", pescara: "PSR", "lamezia terme": "SUF", lamezia: "SUF",
-  "reggio calabria": "REG", trieste: "TRS", trapani: "TPS", comiso: "CIY", rimini: "RMI", parma: "PMF", cuneo: "CUF",
-  perugia: "PEG", bolzano: "BZO", "forli": "FRL", foggia: "FOG", crotone: "CRV", salerno: "QSR",
-  // grandi scali e capitali europee usate spesso come partenza o scalo
-  londra: "LHR", parigi: "CDG", francoforte: "FRA", monaco: "MUC", amsterdam: "AMS", madrid: "MAD", barcellona: "BCN",
-  zurigo: "ZRH", vienna: "VIE", istanbul: "IST", doha: "DOH", dubai: "DXB", "abu dhabi": "AUH", lisbona: "LIS",
-  bruxelles: "BRU", "new york": "JFK", atene: "ATH",
-};
 
-// Nomi italiani → nomi usati dall'archivio voli (in inglese)
-const CITY_EN: Record<string, string> = {
-  roma: "rome", milano: "milan", venezia: "venice", napoli: "naples", firenze: "florence", torino: "turin", genova: "genoa",
-  londra: "london", parigi: "paris", monaco: "munich", "monaco di baviera": "munich", francoforte: "frankfurt",
-  bruxelles: "brussels", lisbona: "lisbon", atene: "athens", mosca: "moscow", pechino: "beijing", "il cairo": "cairo",
-  "citta del messico": "mexico city", "citta del capo": "cape town", seul: "seoul", zurigo: "zurich", ginevra: "geneva",
-  varsavia: "warsaw", praga: "prague", copenaghen: "copenhagen", stoccolma: "stockholm", edimburgo: "edinburgh",
-  siviglia: "seville", tunisi: "tunis", algeri: "algiers", avana: "havana", "l avana": "havana", "san paolo": "sao paulo",
-  gedda: "jeddah", riad: "riyadh", mascate: "muscat", katmandu: "kathmandu", giacarta: "jakarta", "nuova delhi": "delhi",
-  "ho chi minh": "ho chi minh", saigon: "ho chi minh", "citta del guatemala": "guatemala city", "san pietroburgo": "petersburg",
-  "rio de janeiro": "rio de janeiro", lione: "lyon", marsiglia: "marseille", nizza: "nice", dublino: "dublin",
-  "las palmas": "las palmas", tenerife: "tenerife", maiorca: "palma", "palma di maiorca": "palma", malta: "malta",
-};
 
-function airportCode(text: string): string | null {
-  const t = text.trim();
-  if (/^[A-Za-z]{3}$/.test(t)) return t.toUpperCase();
-  const m = t.match(/\b([A-Z]{3})\b/); // «Roma FCO», «FCO – Fiumicino»
-  if (m) return m[1];
-  return CITY_AIRPORTS[plain(t)] ?? null;
-}
+
+
 
 export async function searchRoute(input: {
   from: string;
