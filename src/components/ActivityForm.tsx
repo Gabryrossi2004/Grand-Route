@@ -30,6 +30,7 @@ import {
 import {
   findConnections,
   searchFlight,
+  searchRoute,
   type ConnectionOption,
   type FlightLookupResult,
 } from "@/app/dashboard/trips/[id]/flightActions";
@@ -92,6 +93,10 @@ export default function ActivityForm({
   );
   const [templateId, setTemplateId] = useState("");
   const [flightNumberInput, setFlightNumberInput] = useState("");
+  // Ricerca per numero di volo oppure per tratta (es. Roma → Delhi) nella data del giorno
+  const [flightMode, setFlightMode] = useState<"numero" | "tratta">("numero");
+  const [routeFrom, setRouteFrom] = useState("");
+  const [routeTo, setRouteTo] = useState("");
   // Volo con coincidenza (numeri diversi): la prima tratta cercata e la ricerca della seconda
   const [firstLeg, setFirstLeg] = useState<FlightLookupResult | null>(null);
   const [conn, setConn] = useState<
@@ -250,6 +255,24 @@ export default function ActivityForm({
       return;
     }
     setConn({ status: "results", input, results: result.data });
+  }
+
+  async function runRouteSearch() {
+    if (!dayDate) {
+      setFlightSearchState({ status: "error", message: "Imposta prima la data di questo giorno del viaggio." });
+      return;
+    }
+    if (!routeFrom.trim() || !routeTo.trim()) {
+      setFlightSearchState({ status: "error", message: "Scrivi da dove parte e dove arriva (es. Roma → Delhi)." });
+      return;
+    }
+    setFlightSearchState({ status: "loading" });
+    const result = await searchRoute({ from: routeFrom, to: routeTo, date: dayDate });
+    if (result.error || !result.data) {
+      setFlightSearchState({ status: "error", message: result.error ?? "Nessun volo trovato." });
+      return;
+    }
+    setFlightSearchState({ status: "results", results: result.data });
   }
 
   async function runFlightSearch() {
@@ -415,33 +438,86 @@ export default function ActivityForm({
 
         {activityType === "volo" && (
           <div className="rounded-md border border-[#f2e2c4] bg-[#faf3e6]/60 p-3">
-            <div className="mb-1 flex items-center gap-1.5 text-xs font-medium text-[#11161b]">
-              <Plane size={13} /> Compila automaticamente da numero di volo
+            <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs font-medium text-[#11161b]">
+              <span className="flex items-center gap-1.5">
+                <Plane size={13} /> Compila automaticamente
+              </span>
+              <span className="flex overflow-hidden rounded-full border border-[#ddc8a0] bg-white">
+                {(["numero", "tratta"] as const).map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    onClick={() => {
+                      setFlightMode(m);
+                      setFlightSearchState({ status: "idle" });
+                    }}
+                    className={`px-2.5 py-0.5 text-xs font-medium ${flightMode === m ? "bg-[#233c5e] text-white" : "text-[#233c5e] hover:bg-[#faf3e6]"}`}
+                  >
+                    {m === "numero" ? "Numero di volo" : "Tratta"}
+                  </button>
+                ))}
+              </span>
             </div>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={flightNumberInput}
-                onChange={(e) => setFlightNumberInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    runFlightSearch();
-                  }
-                }}
-                placeholder="Es. AZ610"
-                className="w-32 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
-              />
-              <button
-                type="button"
-                onClick={runFlightSearch}
-                disabled={flightSearchState.status === "loading"}
-                className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
-              >
-                <Search size={13} />
-                {flightSearchState.status === "loading" ? "Cerco…" : "Cerca"}
-              </button>
-            </div>
+            {flightMode === "numero" ? (
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={flightNumberInput}
+                  onChange={(e) => setFlightNumberInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      runFlightSearch();
+                    }
+                  }}
+                  placeholder="Es. AZ610"
+                  className="w-32 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+                />
+                <button
+                  type="button"
+                  onClick={runFlightSearch}
+                  disabled={flightSearchState.status === "loading"}
+                  className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
+                >
+                  <Search size={13} />
+                  {flightSearchState.status === "loading" ? "Cerco…" : "Cerca"}
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { value: routeFrom, set: setRouteFrom, ph: "Da: Roma o FCO" },
+                  { value: routeTo, set: setRouteTo, ph: "A: Delhi o DEL" },
+                ].map((f, i) => (
+                  <input
+                    key={i}
+                    type="text"
+                    value={f.value}
+                    onChange={(e) => f.set(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        runRouteSearch();
+                      }
+                    }}
+                    placeholder={f.ph}
+                    className="w-36 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]"
+                  />
+                ))}
+                <button
+                  type="button"
+                  onClick={runRouteSearch}
+                  disabled={flightSearchState.status === "loading"}
+                  className="flex items-center gap-1 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#17283f] disabled:opacity-60"
+                >
+                  <Search size={13} />
+                  {flightSearchState.status === "loading" ? "Cerco…" : "Cerca voli"}
+                </button>
+                <p className="w-full text-[11px] text-slate-500">
+                  Voli diretti nella data di questo giorno. Con uno scalo: cerca fino allo scalo (es. Roma → Doha), scegli il volo, poi «Il volo continua con una coincidenza» → «Trova la coincidenza».
+                </p>
+              </div>
+            )}
             {!dayDate && (
               <p className="mt-1.5 text-xs text-amber-600">
                 Questo giorno non ha una data: imposta prima la data per poter

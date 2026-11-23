@@ -251,7 +251,8 @@ export async function findConnections(input: {
   const matchesDest = (a?: FidsAirport) => {
     if (!a) return false;
     if (dest.length === 3 && a.iata && a.iata.toLowerCase() === dest) return true;
-    return [a.name, a.municipalityName].some((n) => n && plain(n).includes(dest));
+    const destEn = CITY_EN[dest] ?? dest;
+    return [a.name, a.municipalityName].some((n) => n && (plain(n).includes(dest) || plain(n).includes(destEn)));
   };
 
   // Tempo minimo per la coincidenza: 45 minuti dopo l'arrivo; si guarda fino a 24 ore dopo (due finestre)
@@ -308,4 +309,120 @@ export async function findConnections(input: {
   const unique = found.filter((f, i) => found.findIndex((g) => g.flightNumber === f.flightNumber && g.departureTime === f.departureTime) === i);
   unique.sort((a, b) => Number(b.sameAirline) - Number(a.sameAirline) || (a.departureDate + a.departureTime).localeCompare(b.departureDate + b.departureTime));
   return { data: unique.slice(0, 8) };
+}
+
+// ── Ricerca per tratta e data (es. Roma → Delhi il 15/12) ─────────────────────
+// Si leggono le partenze dall'aeroporto di partenza nel giorno scelto (due finestre di 12 ore) e si
+// tengono i voli diretti verso la destinazione. Per i voli con scalo: si cerca la tratta fino allo
+// scalo e poi «Trova la coincidenza».
+const CITY_AIRPORTS: Record<string, string> = {
+  roma: "FCO", fiumicino: "FCO", ciampino: "CIA", milano: "MXP", malpensa: "MXP", linate: "LIN", bergamo: "BGY",
+  "orio al serio": "BGY", venezia: "VCE", treviso: "TSF", verona: "VRN", bologna: "BLQ", torino: "TRN", genova: "GOA",
+  firenze: "FLR", pisa: "PSA", napoli: "NAP", bari: "BRI", brindisi: "BDS", catania: "CTA", palermo: "PMO",
+  cagliari: "CAG", olbia: "OLB", alghero: "AHO", ancona: "AOI", pescara: "PSR", "lamezia terme": "SUF", lamezia: "SUF",
+  "reggio calabria": "REG", trieste: "TRS", trapani: "TPS", comiso: "CIY", rimini: "RMI", parma: "PMF", cuneo: "CUF",
+  perugia: "PEG", bolzano: "BZO", "forli": "FRL", foggia: "FOG", crotone: "CRV", salerno: "QSR",
+  // grandi scali e capitali europee usate spesso come partenza o scalo
+  londra: "LHR", parigi: "CDG", francoforte: "FRA", monaco: "MUC", amsterdam: "AMS", madrid: "MAD", barcellona: "BCN",
+  zurigo: "ZRH", vienna: "VIE", istanbul: "IST", doha: "DOH", dubai: "DXB", "abu dhabi": "AUH", lisbona: "LIS",
+  bruxelles: "BRU", "new york": "JFK", atene: "ATH",
+};
+
+// Nomi italiani → nomi usati dall'archivio voli (in inglese)
+const CITY_EN: Record<string, string> = {
+  roma: "rome", milano: "milan", venezia: "venice", napoli: "naples", firenze: "florence", torino: "turin", genova: "genoa",
+  londra: "london", parigi: "paris", monaco: "munich", "monaco di baviera": "munich", francoforte: "frankfurt",
+  bruxelles: "brussels", lisbona: "lisbon", atene: "athens", mosca: "moscow", pechino: "beijing", "il cairo": "cairo",
+  "citta del messico": "mexico city", "citta del capo": "cape town", seul: "seoul", zurigo: "zurich", ginevra: "geneva",
+  varsavia: "warsaw", praga: "prague", copenaghen: "copenhagen", stoccolma: "stockholm", edimburgo: "edinburgh",
+  siviglia: "seville", tunisi: "tunis", algeri: "algiers", avana: "havana", "l avana": "havana", "san paolo": "sao paulo",
+  gedda: "jeddah", riad: "riyadh", mascate: "muscat", katmandu: "kathmandu", giacarta: "jakarta", "nuova delhi": "delhi",
+  "ho chi minh": "ho chi minh", saigon: "ho chi minh", "citta del guatemala": "guatemala city", "san pietroburgo": "petersburg",
+  "rio de janeiro": "rio de janeiro", lione: "lyon", marsiglia: "marseille", nizza: "nice", dublino: "dublin",
+  "las palmas": "las palmas", tenerife: "tenerife", maiorca: "palma", "palma di maiorca": "palma", malta: "malta",
+};
+
+function airportCode(text: string): string | null {
+  const t = text.trim();
+  if (/^[A-Za-z]{3}$/.test(t)) return t.toUpperCase();
+  const m = t.match(/\b([A-Z]{3})\b/); // «Roma FCO», «FCO – Fiumicino»
+  if (m) return m[1];
+  return CITY_AIRPORTS[plain(t)] ?? null;
+}
+
+export async function searchRoute(input: {
+  from: string;
+  to: string;
+  date: string;
+}): Promise<{ data?: FlightLookupResult[]; error?: string; fromCode?: string }> {
+  const user = await getCachedUser();
+  if (!user) return { error: "Sessione scaduta: ricarica la pagina e accedi di nuovo." };
+  const apiKey = process.env.AERODATABOX_API_KEY;
+  if (!apiKey) return { error: "La ricerca voli non è configurata (manca la chiave API)." };
+
+  const from = airportCode(String(input.from ?? "").slice(0, 60));
+  const destText = String(input.to ?? "").slice(0, 60).trim();
+  const destCode = /^[A-Za-z]{3}$/.test(destText) ? destText.toUpperCase() : airportCode(destText);
+  const dest = plain(destText);
+  const destEn = CITY_EN[dest] ?? dest;
+  if (!from) return { error: "Non riconosco l'aeroporto di partenza: scrivi la città (es. Roma) o il codice (es. FCO)." };
+  if (!dest) return { error: "Scrivi la destinazione (es. Delhi o DEL)." };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(input.date ?? "")) return { error: "Imposta prima la data di questo giorno del viaggio." };
+
+  const matchesDest = (a?: FidsAirport) => {
+    if (!a) return false;
+    if (destCode && a.iata && a.iata.toUpperCase() === destCode) return true;
+    return [a.name, a.municipalityName].some((n) => n && (plain(n).includes(dest) || plain(n).includes(destEn)));
+  };
+
+  const windows: [string, string][] = [
+    [`${input.date}T00:00`, `${input.date}T11:59`],
+    [`${input.date}T12:00`, `${input.date}T23:59`],
+  ];
+  const found: FlightLookupResult[] = [];
+  try {
+    for (const [start, end] of windows) {
+      const res = await fetch(
+        `https://aerodatabox.p.rapidapi.com/flights/airports/iata/${from}/${start}/${end}?withLeg=true&direction=Departure&withCancelled=false&withCodeshared=false&withCargo=false&withPrivate=false`,
+        { headers: { "x-rapidapi-key": apiKey, "x-rapidapi-host": "aerodatabox.p.rapidapi.com" }, cache: "no-store" },
+      );
+      if (res.status === 429) return { error: "Hai raggiunto il limite di ricerche del piano per ora." };
+      if (res.status === 400 || res.status === 404) return { error: `Non trovo l'aeroporto ${from}: controlla il codice.` };
+      if (res.status === 204) continue;
+      if (!res.ok) return { error: "Errore durante la ricerca dei voli. Riprova." };
+      const json = (await res.json()) as { departures?: FidsItem[] };
+      for (const f of json.departures ?? []) {
+        const arrAirport = f.arrival?.airport ?? f.movement?.airport;
+        if (!matchesDest(arrAirport)) continue;
+        const depLocal = f.departure?.scheduledTime?.local ?? "";
+        const arrLocal = f.arrival?.scheduledTime?.local ?? "";
+        if (!depLocal) continue;
+        found.push({
+          airline: f.airline?.name ?? "",
+          flightNumber: (f.number ?? "").replace(/\s+/g, ""),
+          departureAirport: formatAirport(f.departure?.airport ?? { iata: from }),
+          departureDate: formatDate(depLocal),
+          departureTime: formatTime(depLocal),
+          arrivalAirport: formatAirport(arrAirport),
+          arrivalCity: arrAirport?.municipalityName ?? arrAirport?.name ?? "",
+          arrivalIata: arrAirport?.iata ?? "",
+          arrivalDate: formatDate(arrLocal),
+          arrivalTime: formatTime(arrLocal),
+          aircraft: f.aircraft?.model ?? null,
+        });
+      }
+    }
+  } catch {
+    return { error: "Impossibile contattare il servizio di ricerca voli." };
+  }
+
+  if (found.length === 0) {
+    return {
+      fromCode: from,
+      error: `Nessun volo diretto da ${from} verso «${destText}» in questa data. Se serve uno scalo, cerca il volo fino allo scalo (es. ${from} → DOH, DXB, IST, FRA) e poi usa «Trova la coincidenza».`,
+    };
+  }
+  const unique = found.filter((f, i) => found.findIndex((g) => g.flightNumber === f.flightNumber && g.departureTime === f.departureTime) === i);
+  unique.sort((a, b) => (a.departureDate + a.departureTime).localeCompare(b.departureDate + b.departureTime));
+  return { data: unique.slice(0, 20), fromCode: from };
 }
