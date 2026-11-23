@@ -5250,9 +5250,44 @@
    "credit": "Cayambe",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Praia_coast_Cape_Verde_2011.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Principe_1220.jpg/1280px-Principe_1220.jpg",
+   "title": "Isola di Príncipe",
+   "credit": "César J. Pollo",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Principe_1220.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Rolas_Furnas_Geysir_Sao_Tome_e_Principe.jpg/1280px-Rolas_Furnas_Geysir_Sao_Tome_e_Principe.jpg",
+   "title": "Ilhéu das Rolas",
+   "credit": "Tomek",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:Rolas_Furnas_Geysir_Sao_Tome_e_Principe.jpg"
   }
  ],
  "SV": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Crat%C3%A8re_du_Volcan_de_Santa_Ana%2C_Salvador.jpg/1280px-Crat%C3%A8re_du_Volcan_de_Santa_Ana%2C_Salvador.jpg",
+   "title": "Vulcano di Santa Ana",
+   "credit": "Emberlifi",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Crat%C3%A8re_du_Volcan_de_Santa_Ana,_Salvador.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Lago_de_Coatepeque_28-11-2014_%282%29.JPG/1280px-Lago_de_Coatepeque_28-11-2014_%282%29.JPG",
+   "title": "Lago di Coatepeque",
+   "credit": "Alberto Uecke",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Lago_de_Coatepeque_28-11-2014_(2).JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Iglesia_De_Suchitoto..JPG/1280px-Iglesia_De_Suchitoto..JPG",
+   "title": "Suchitoto",
+   "credit": "ElmerGuevara",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Iglesia_De_Suchitoto..JPG"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/ES_Joya_Ceren_05_2012_Estructura_9_Area_2_Tamazcal_wide_angle_1479.JPG/1280px-ES_Joya_Ceren_05_2012_Estructura_9_Area_2_Tamazcal_wide_angle_1479.JPG",
    "title": "Joya de Cerén",
@@ -5275,6 +5310,20 @@
    "credit": "Dr. Thomas Liptak",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:St_Maarten_Philipsburg_Wathey_Square_Courthouse.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/American_757_on_final_approach_at_St_Maarten_Airport.jpg/1280px-American_757_on_final_approach_at_St_Maarten_Airport.jpg",
+   "title": "Maho Beach",
+   "credit": "Todd Neville from Scottsdale, USA",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:American_757_on_final_approach_at_St_Maarten_Airport.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Philipsburg%2C_St._Maarten_%282670667896%29.jpg/1280px-Philipsburg%2C_St._Maarten_%282670667896%29.jpg",
+   "title": "Philipsburg",
+   "credit": "Rennett Stowe from USA",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Philipsburg,_St._Maarten_(2670667896).jpg"
   }
  ],
  "SY": [
@@ -5316,6 +5365,13 @@
    "source": "https://commons.wikimedia.org/wiki/File:Mlilwane_Wildlife_Sanctuary_02.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Mlilwane_Wildlife_Sanctuary_in_Eswatini_01.jpg/1280px-Mlilwane_Wildlife_Sanctuary_in_Eswatini_01.jpg",
+   "title": "Mlilwane",
+   "credit": "Bernard Gagnon",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Mlilwane_Wildlife_Sanctuary_in_Eswatini_01.jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Blesbok_%28Damaliscus_pygargus_phillipsi%29_with_juvenile_Malolotja.jpg/1280px-Blesbok_%28Damaliscus_pygargus_phillipsi%29_with_juvenile_Malolotja.jpg",
    "title": "Hlane Royal National Park",
    "credit": "Charles J. Sharp",
@@ -5328,13 +5384,6 @@
    "credit": "theswazigirl",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Granite_monolith.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Female_Nyala%2C_Mlilwane_Wildlife_Sanctuary.jpg/1280px-Female_Nyala%2C_Mlilwane_Wildlife_Sanctuary.jpg",
-   "title": "Hlane Royal National Park",
-   "credit": "Bernard Gagnon",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Female_Nyala,_Mlilwane_Wildlife_Sanctuary.jpg"
   }
  ],
  "TC": [
@@ -5351,9 +5400,30 @@
    "credit": "Jason Boldero",
    "license": "CC BY 2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Sunset_in_Grace_Bay,_Turks_and_Caicos_Islands.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Grace_Bay_-_panoramio.jpg/1280px-Grace_Bay_-_panoramio.jpg",
+   "title": "Grace Bay",
+   "credit": "Csouthard",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Grace_Bay_-_panoramio.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Grace_bay%2C_Turks_and_Caicos_%2844250116614%29.jpg/1280px-Grace_bay%2C_Turks_and_Caicos_%2844250116614%29.jpg",
+   "title": "Grace Bay",
+   "credit": "VV Nincic from Toronto, Canada",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Grace_bay,_Turks_and_Caicos_(44250116614).jpg"
   }
  ],
  "TD": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Ourini_Arch_at_sunset%2C_Ennedi%2C_Chad_%2840598172781%29.jpg/1280px-Ourini_Arch_at_sunset%2C_Ennedi%2C_Chad_%2840598172781%29.jpg",
+   "title": "Arco dell'Ennedi",
+   "credit": "Valerian Guillot from Cambridge, United Kingdom",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Ourini_Arch_at_sunset,_Ennedi,_Chad_(40598172781).jpg"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tibesti_east_of_bardai.jpg/1280px-Tibesti_east_of_bardai.jpg",
    "title": "Tibesti",
@@ -5369,11 +5439,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Ounianga_Serir.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Antilope_Bubale.jpg/1280px-Antilope_Bubale.jpg",
-   "title": "Parco di Zakouma",
-   "credit": "YACOUB DOUNGOUS",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Antilope_Bubale.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Camels_in_the_Labyrinthe_%28Maze%29_sandstone_area_of_the_Ennedi%2C_Chad_%2842405451704%29.jpg/1280px-Camels_in_the_Labyrinthe_%28Maze%29_sandstone_area_of_the_Ennedi%2C_Chad_%2842405451704%29.jpg",
+   "title": "Altopiano dell'Ennedi",
+   "credit": "Valerian Guillot from Cambridge, United Kingdom",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Camels_in_the_Labyrinthe_(Maze)_sandstone_area_of_the_Ennedi,_Chad_(42405451704).jpg"
   }
  ],
  "TG": [
@@ -5390,9 +5460,30 @@
    "credit": "Александра Пугачевская (Alexandra Pugachevsky)",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Togoville,_Togo_view.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Au_bord_du_lac_Togo_avec_une_vue_sur_le_pont_Adido_%C3%A0_l%27embouchure_03.jpg/1280px-Au_bord_du_lac_Togo_avec_une_vue_sur_le_pont_Adido_%C3%A0_l%27embouchure_03.jpg",
+   "title": "Lago Togo",
+   "credit": "Joy.blessing08",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Au_bord_du_lac_Togo_avec_une_vue_sur_le_pont_Adido_%C3%A0_l%27embouchure_03.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Kpalim%C3%A9_hills%2C_DSC00773_-_by_Fanfan.jpg/1280px-Kpalim%C3%A9_hills%2C_DSC00773_-_by_Fanfan.jpg",
+   "title": "Kpalimé",
+   "credit": "Francois Jake Green (Fanfan)",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Kpalim%C3%A9_hills,_DSC00773_-_by_Fanfan.jpg"
   }
  ],
  "TH": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG/1280px-Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG",
+   "title": "Isole Phi Phi",
+   "credit": "Diego Delso",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Isla_Phi_Phi_Lay,_Tailandia,_2013-08-19,_DD_04.JPG"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg/1280px-%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg",
    "title": "Wat Arun",
@@ -5401,34 +5492,41 @@
    "source": "https://commons.wikimedia.org/wiki/File:%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Wat_Rong_Khun_-_Chiang_Rai.jpg/1280px-Wat_Rong_Khun_-_Chiang_Rai.jpg",
-   "title": "Tempio Bianco",
-   "credit": "JJ Harrison ( https://www.jjharrison.com.au/ )",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Wat_Rong_Khun_-_Chiang_Rai.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/01-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1.jpg/1280px-01-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/1280px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
    "title": "Grande Palazzo Reale",
-   "credit": "BerryJ",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:01-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1.jpg"
+   "credit": "Original image: Ninara from Helsinki, Finland. Edit: TSP",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Koh_Mak_%28island%29%2C_Thailand%2C_Palm_trees_on_the_beach.jpg/1280px-Koh_Mak_%28island%29%2C_Thailand%2C_Palm_trees_on_the_beach.jpg",
-   "title": "Thailandia",
-   "credit": "Vyacheslav Argenberg",
-   "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Koh_Mak_(island),_Thailand,_Palm_trees_on_the_beach.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Railay.jpg/1280px-Railay.jpg",
+   "title": "Railay",
+   "credit": "Wendy Harman",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Railay.jpg"
   }
  ],
  "TJ": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Iskanderkul.jpg/1280px-Iskanderkul.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Fann_Mountains_-_lake.jpg/1280px-Fann_Mountains_-_lake.jpg",
    "title": "Lago Iskanderkul",
-   "credit": "Marat Nadjibaev",
+   "credit": "Oleg Brovko from Halle (Saale), Germany",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Fann_Mountains_-_lake.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Tajikistan_Fan-Mountains_-_landscape_11.jpg/1280px-Tajikistan_Fan-Mountains_-_landscape_11.jpg",
+   "title": "Monti Fann",
+   "credit": "Шухрат Саъдиев",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Iskanderkul.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Tajikistan_Fan-Mountains_-_landscape_11.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Pamir_highway_%282%29_%2832589203445%29.jpg/1280px-Pamir_highway_%282%29_%2832589203445%29.jpg",
+   "title": "Strada del Pamir",
+   "credit": "Hans Birger Nilsen",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Pamir_highway_(2)_(32589203445).jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Historical_Museum_of_Sughd_region_in_Khujand%2C_Tajikistan_%282025%29.jpg/1280px-Historical_Museum_of_Sughd_region_in_Khujand%2C_Tajikistan_%282025%29.jpg",
@@ -5436,13 +5534,6 @@
    "credit": "Petar Milošević",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Historical_Museum_of_Sughd_region_in_Khujand,_Tajikistan_(2025).jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Iskanderkul_9.jpg/1280px-Iskanderkul_9.jpg",
-   "title": "Lago Iskanderkul",
-   "credit": "Marat Nadjibaev",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Iskanderkul_9.jpg"
   }
  ],
  "TL": [
