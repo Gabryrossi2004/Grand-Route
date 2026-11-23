@@ -76,19 +76,201 @@
         "title": "Senegal classico",
         "days": 10,
         "route": "Dakar (2) → Gorée → Lago Rosa (1) → Saint-Louis (2) → Sine-Saloum (2) → Saly (2)",
-        "description": "Da novembre a maggio."
+        "description": "Da novembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Dakar",
+            "a": [
+              "volo|Volo per Dakar||",
+              "alloggio|Hotel a Dakar||Dakar",
+              "attivita|Corniche e mercato Kermel||Dakar"
+            ]
+          },
+          {
+            "t": "Gorée",
+            "a": [
+              "traghetto|Isola di Gorée e Casa degli Schiavi|UNESCO, a 20 minuti di traghetto.|Gorée"
+            ]
+          },
+          {
+            "t": "Lago Rosa",
+            "a": [
+              "transfer|Trasferimento a Lago Rosa||Lago Rosa",
+              "alloggio|Lodge sul lago||Lago Rosa",
+              "attivita|Lago Retba rosa e raccoglitori di sale||Lago Rosa"
+            ]
+          },
+          {
+            "t": "Saint-Louis",
+            "a": [
+              "transfer|Trasferimento a Saint-Louis||Saint-Louis",
+              "alloggio|Hotel coloniale||Saint-Louis",
+              "attivita|Saint-Louis in calesse||Saint-Louis"
+            ]
+          },
+          {
+            "t": "Djoudj",
+            "a": [
+              "attivita|Parco degli uccelli del Djoudj|Pellicani e fenicotteri da novembre ad aprile.|Djoudj"
+            ]
+          },
+          {
+            "t": "Sine-Saloum",
+            "a": [
+              "transfer|Trasferimento a Sine-Saloum||Sine-Saloum",
+              "alloggio|Lodge tra le mangrovie||Sine-Saloum",
+              "attivita|Piroga tra le mangrovie||Sine-Saloum"
+            ]
+          },
+          {
+            "t": "Sine-Saloum",
+            "a": [
+              "attivita|Isola delle conchiglie di Joal-Fadiouth||Joal-Fadiouth"
+            ]
+          },
+          {
+            "t": "Saly",
+            "a": [
+              "transfer|Trasferimento a Saly||Saly",
+              "alloggio|Resort a Saly||Saly",
+              "attivita|Spiaggia||Saly"
+            ]
+          },
+          {
+            "t": "Saly",
+            "a": [
+              "attivita|Riserva di Bandia||Bandia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Casamance",
         "days": 8,
         "route": "Ziguinchor (1) → Cap Skirring (4) → villaggi diola (2)",
-        "description": "La regione più verde del Senegal, tra spiagge e case a impluvium."
+        "description": "La regione più verde del Senegal, tra spiagge e case a impluvium.",
+        "plan": [
+          {
+            "t": "Arrivo a Ziguinchor",
+            "a": [
+              "volo|Volo per Ziguinchor via Dakar||",
+              "alloggio|Hotel a Ziguinchor||Ziguinchor",
+              "attivita|Mercato e lungofiume||Ziguinchor"
+            ]
+          },
+          {
+            "t": "Cap Skirring",
+            "a": [
+              "transfer|Trasferimento a Cap Skirring||Cap Skirring",
+              "alloggio|Resort a Cap Skirring||Cap Skirring",
+              "attivita|Spiaggia||Cap Skirring"
+            ]
+          },
+          {
+            "t": "Cap Skirring",
+            "a": [
+              "attivita|Spiaggia e villaggio di pescatori di Boucotte||Cap Skirring"
+            ]
+          },
+          {
+            "t": "Cap Skirring",
+            "a": [
+              "traghetto|Piroga sul fiume Casamance||Cap Skirring"
+            ]
+          },
+          {
+            "t": "Cap Skirring",
+            "a": [
+              "attivita|Giornata libera||Cap Skirring"
+            ]
+          },
+          {
+            "t": "Villaggi diola",
+            "a": [
+              "transfer|Trasferimento a Villaggi diola||Villaggi diola",
+              "alloggio|Campement nel villaggio||Villaggi diola",
+              "attivita|Case a impluvium di Enampore||Villaggi diola"
+            ]
+          },
+          {
+            "t": "Villaggi diola",
+            "a": [
+              "attivita|Re di Oussouye e foresta sacra||Oussouye"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana a Saly",
         "days": 8,
         "route": "Saly (7)",
-        "description": "Mare e resort a un'ora da Dakar, con escursioni al Lago Rosa e all'isola di Gorée."
+        "description": "Mare e resort a un'ora da Dakar, con escursioni al Lago Rosa e all'isola di Gorée.",
+        "plan": [
+          {
+            "t": "Arrivo a Saly",
+            "a": [
+              "volo|Volo per Dakar e transfer a Saly||",
+              "alloggio|Resort a Saly||Saly"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Saly"
+            ]
+          },
+          {
+            "t": "Gorée",
+            "a": [
+              "traghetto|Isola di Gorée||Gorée"
+            ]
+          },
+          {
+            "t": "Lago Rosa",
+            "a": [
+              "attivita|Lago Rosa in 4x4 tra le dune||Lago Rosa"
+            ]
+          },
+          {
+            "t": "Bandia",
+            "a": [
+              "attivita|Riserva di Bandia con giraffe e rinoceronti||Bandia"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Saly"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Saly"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -145,19 +327,199 @@
         "title": "Mare e fiume",
         "days": 9,
         "route": "Kololi (6) → crociera sul fiume (2)",
-        "description": "Da novembre ad aprile."
+        "description": "Da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Kololi",
+            "a": [
+              "volo|Volo per Banjul||",
+              "alloggio|Hotel a Kololi||Kololi",
+              "attivita|Spiaggia||Kololi"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Kololi||Kololi"
+            ]
+          },
+          {
+            "t": "Banjul",
+            "a": [
+              "attivita|Banjul, mercato Albert e Arch 22||Banjul"
+            ]
+          },
+          {
+            "t": "Kachikally",
+            "a": [
+              "attivita|Stagno sacro dei coccodrilli e Bijilo||Bakau"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Kololi"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Riserva di Abuko||Abuko"
+            ]
+          },
+          {
+            "t": "Fiume Gambia",
+            "a": [
+              "traghetto|Crociera sul fiume Gambia|Isola di Kunta Kinteh UNESCO.|Fiume Gambia"
+            ]
+          },
+          {
+            "t": "Fiume Gambia",
+            "a": [
+              "traghetto|Scimpanzé del River Gambia National Park||Fiume Gambia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gambia e Senegal",
-        "days": 10,
+        "days": 9,
         "route": "Kololi (3) → Sine-Saloum in Senegal (3) → Dakar (2)",
-        "description": "Spiagge del Gambia e delta del Saloum con le sue mangrovie, rientro da Dakar."
+        "description": "Spiagge del Gambia e delta del Saloum con le sue mangrovie, rientro da Dakar.",
+        "plan": [
+          {
+            "t": "Arrivo a Kololi",
+            "a": [
+              "volo|Volo per Banjul||",
+              "alloggio|Hotel a Kololi||Kololi",
+              "attivita|Spiaggia||Kololi"
+            ]
+          },
+          {
+            "t": "Banjul",
+            "a": [
+              "attivita|Banjul e mercato||Banjul"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata al mare||Kololi"
+            ]
+          },
+          {
+            "t": "Sine-Saloum",
+            "a": [
+              "transfer|Trasferimento a Sine-Saloum||Sine-Saloum",
+              "alloggio|Lodge nel delta||Sine-Saloum",
+              "attivita|Frontiera e mangrovie||Sine-Saloum"
+            ]
+          },
+          {
+            "t": "Sine-Saloum",
+            "a": [
+              "traghetto|Piroga tra le isole||Sine-Saloum"
+            ]
+          },
+          {
+            "t": "Sine-Saloum",
+            "a": [
+              "attivita|Fadiouth||Joal-Fadiouth"
+            ]
+          },
+          {
+            "t": "Dakar",
+            "a": [
+              "transfer|Trasferimento a Dakar||Dakar",
+              "alloggio|Hotel a Dakar||Dakar",
+              "attivita|Corniche||Dakar"
+            ]
+          },
+          {
+            "t": "Gorée",
+            "a": [
+              "traghetto|Isola di Gorée||Gorée"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Birdwatching in Gambia",
         "days": 8,
         "route": "Kololi (2) → Tendaba (2) → Georgetown (2) → Kololi (1)",
-        "description": "Oltre 500 specie di uccelli lungo il fiume: tra novembre e marzo è una meta per appassionati."
+        "description": "Oltre 500 specie di uccelli lungo il fiume: tra novembre e marzo è una meta per appassionati.",
+        "plan": [
+          {
+            "t": "Arrivo a Kololi",
+            "a": [
+              "volo|Volo per Banjul||",
+              "alloggio|Hotel a Kololi||Kololi",
+              "attivita|Giardini dell'hotel e primi uccelli||Kololi"
+            ]
+          },
+          {
+            "t": "Kololi",
+            "a": [
+              "attivita|Abuko e Brufut Woods||Kololi"
+            ]
+          },
+          {
+            "t": "Tendaba",
+            "a": [
+              "transfer|Trasferimento a Tendaba||Tendaba",
+              "alloggio|Campo di Tendaba||Tendaba",
+              "attivita|Kiang West||Tendaba"
+            ]
+          },
+          {
+            "t": "Tendaba",
+            "a": [
+              "traghetto|Mangrovie di Bao Bolong in barca||Tendaba"
+            ]
+          },
+          {
+            "t": "Georgetown",
+            "a": [
+              "transfer|Trasferimento a Georgetown||Georgetown",
+              "alloggio|Lodge a Georgetown||Georgetown",
+              "attivita|Fiume e isole||Georgetown"
+            ]
+          },
+          {
+            "t": "Georgetown",
+            "a": [
+              "traghetto|Barca tra le isole degli scimpanzé||Georgetown"
+            ]
+          },
+          {
+            "t": "Kololi",
+            "a": [
+              "transfer|Trasferimento a Kololi||Kololi",
+              "alloggio|Hotel a Kololi||Kololi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -209,19 +571,177 @@
         "title": "Bijagós",
         "days": 8,
         "route": "Bissau (1) → Bubaque e Orango (6)",
-        "description": "Isole selvagge da novembre a maggio."
+        "description": "Isole selvagge da novembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Bissau",
+            "a": [
+              "volo|Volo per Bissau via Lisbona||",
+              "alloggio|Hotel a Bissau||Bissau",
+              "attivita|Bissau Velho||Bissau"
+            ]
+          },
+          {
+            "t": "Bubaque",
+            "a": [
+              "traghetto|Trasferimento a Bubaque||Bubaque",
+              "alloggio|Lodge a Bubaque||Bubaque",
+              "attivita|Spiaggia di Bruce||Bubaque"
+            ]
+          },
+          {
+            "t": "Bubaque",
+            "a": [
+              "attivita|Villaggi e mercato||Bubaque"
+            ]
+          },
+          {
+            "t": "Orango",
+            "a": [
+              "traghetto|Ippopotami marini di Orango||Orango"
+            ]
+          },
+          {
+            "t": "Orango",
+            "a": [
+              "attivita|Cultura matriarcale dei Bijagós||Orango"
+            ]
+          },
+          {
+            "t": "Poilão",
+            "a": [
+              "traghetto|Tartarughe a João Vieira e Poilão (stagionale)||João Vieira"
+            ]
+          },
+          {
+            "t": "Bubaque",
+            "a": [
+              "attivita|Relax||Bubaque"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Rientro a Bissau||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bissau e Cacheu",
         "days": 6,
         "route": "Bissau (2) → Cacheu (2) → Varela (1)",
-        "description": "Città coloniale, il forte di Cacheu e la spiaggia selvaggia di Varela."
+        "description": "Città coloniale, il forte di Cacheu e la spiaggia selvaggia di Varela.",
+        "plan": [
+          {
+            "t": "Arrivo a Bissau",
+            "a": [
+              "volo|Volo per Bissau||",
+              "alloggio|Hotel a Bissau||Bissau",
+              "attivita|Città vecchia e porto||Bissau"
+            ]
+          },
+          {
+            "t": "Bissau",
+            "a": [
+              "attivita|Mercato di Bandim e fortezza||Bissau"
+            ]
+          },
+          {
+            "t": "Cacheu",
+            "a": [
+              "transfer|Trasferimento a Cacheu||Cacheu",
+              "alloggio|Guesthouse a Cacheu||Cacheu",
+              "attivita|Forte di Cacheu||Cacheu"
+            ]
+          },
+          {
+            "t": "Cacheu",
+            "a": [
+              "traghetto|Mangrovie del parco del Cacheu||Cacheu"
+            ]
+          },
+          {
+            "t": "Varela",
+            "a": [
+              "transfer|Trasferimento a Varela||Varela",
+              "alloggio|Campement a Varela||Varela",
+              "attivita|Spiaggia selvaggia||Varela"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bijagós in barca",
         "days": 9,
         "route": "Bissau (1) → crociera tra le isole Bijagós (7)",
-        "description": "La riserva della biosfera con ippopotami marini e tartarughe, vista da una barca con cabine."
+        "description": "La riserva della biosfera con ippopotami marini e tartarughe, vista da una barca con cabine.",
+        "plan": [
+          {
+            "t": "Arrivo a Bissau",
+            "a": [
+              "volo|Volo per Bissau||",
+              "alloggio|Hotel a Bissau||Bissau"
+            ]
+          },
+          {
+            "t": "Imbarco",
+            "a": [
+              "traghetto|Imbarco sulla barca con cabine||Bijagós"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Isola di Rubane||Bijagós"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Orango e ippopotami||Orango"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Pesca e snorkeling||Bijagós"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Villaggi tradizionali||Bijagós"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Tartarughe a Poilão||Poilão"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Spiagge deserte||Bijagós"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Rientro a Bissau||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -268,19 +788,181 @@
         "title": "Fouta Djalon",
         "days": 8,
         "route": "Conakry (1) → Dalaba (3) → Doucki (3)",
-        "description": "Per viaggiatori esperti."
+        "description": "Per viaggiatori esperti.",
+        "plan": [
+          {
+            "t": "Arrivo a Conakry",
+            "a": [
+              "volo|Volo per Conakry||",
+              "alloggio|Hotel a Conakry||Conakry"
+            ]
+          },
+          {
+            "t": "Dalaba",
+            "a": [
+              "transfer|Trasferimento a Dalaba||Dalaba",
+              "alloggio|Hotel a Dalaba||Dalaba",
+              "attivita|Clima fresco e pinete||Dalaba"
+            ]
+          },
+          {
+            "t": "Dalaba",
+            "a": [
+              "attivita|Cascate di Ditinn||Dalaba"
+            ]
+          },
+          {
+            "t": "Dalaba",
+            "a": [
+              "attivita|Villaggi peul||Dalaba"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "transfer|Trasferimento a Doucki||Doucki",
+              "alloggio|Campement di Doucki||Doucki",
+              "attivita|Canyon di Doucki||Doucki"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "attivita|Trekking nel canyon e grotte||Doucki"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "attivita|Cascate e villaggi||Doucki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isole di Loos",
         "days": 5,
         "route": "Conakry (1) → Isole di Loos (3)",
-        "description": "Spiagge raggiungibili in barca dalla capitale, per chi è in Guinea per lavoro."
+        "description": "Spiagge raggiungibili in barca dalla capitale, per chi è in Guinea per lavoro.",
+        "plan": [
+          {
+            "t": "Arrivo a Conakry",
+            "a": [
+              "volo|Volo per Conakry||",
+              "alloggio|Hotel a Conakry||Conakry"
+            ]
+          },
+          {
+            "t": "Isole di Loos",
+            "a": [
+              "traghetto|Trasferimento a Isole di Loos||Isole di Loos",
+              "alloggio|Hotel a Kassa o Room||Isole di Loos",
+              "attivita|Spiagge||Isole di Loos"
+            ]
+          },
+          {
+            "t": "Isole di Loos",
+            "a": [
+              "attivita|Relax||Isole di Loos"
+            ]
+          },
+          {
+            "t": "Isole di Loos",
+            "a": [
+              "attivita|Giro delle isole||Isole di Loos"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guinea delle montagne",
         "days": 10,
         "route": "Conakry (1) → Kindia (1) → Dalaba (2) → Labé (2) → Doucki (3)",
-        "description": "Le cascate e i canyon del Fouta Djalon, con alloggi semplici e guida locale."
+        "description": "Le cascate e i canyon del Fouta Djalon, con alloggi semplici e guida locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Conakry",
+            "a": [
+              "volo|Volo per Conakry||",
+              "alloggio|Hotel a Conakry||Conakry"
+            ]
+          },
+          {
+            "t": "Kindia",
+            "a": [
+              "transfer|Trasferimento a Kindia||Kindia",
+              "alloggio|Hotel a Kindia||Kindia",
+              "attivita|Cascata Voile de la Mariée||Kindia"
+            ]
+          },
+          {
+            "t": "Dalaba",
+            "a": [
+              "transfer|Trasferimento a Dalaba||Dalaba",
+              "alloggio|Hotel a Dalaba||Dalaba"
+            ]
+          },
+          {
+            "t": "Dalaba",
+            "a": [
+              "attivita|Cascate di Ditinn||Dalaba"
+            ]
+          },
+          {
+            "t": "Labé",
+            "a": [
+              "transfer|Trasferimento a Labé||Labé",
+              "alloggio|Hotel a Labé||Labé",
+              "attivita|Mercato||Labé"
+            ]
+          },
+          {
+            "t": "Labé",
+            "a": [
+              "attivita|Cascate di Saala||Labé"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "transfer|Trasferimento a Doucki||Doucki",
+              "alloggio|Campement di Doucki||Doucki"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "attivita|Canyon||Doucki"
+            ]
+          },
+          {
+            "t": "Doucki",
+            "a": [
+              "attivita|Villaggi||Doucki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -332,19 +1014,182 @@
         "title": "Sierra Leone",
         "days": 8,
         "route": "Freetown (2) → spiagge della penisola (3) → Tiwai (2)",
-        "description": "Da novembre ad aprile."
+        "description": "Da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Freetown",
+            "a": [
+              "volo|Volo per Freetown||",
+              "alloggio|Hotel a Freetown||Freetown",
+              "attivita|Albero del Cotone e mercato||Freetown"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "attivita|Santuario di Tacugama||Freetown"
+            ]
+          },
+          {
+            "t": "Penisola",
+            "a": [
+              "transfer|Trasferimento a Penisola||Penisola",
+              "alloggio|Hotel sulla spiaggia||Penisola",
+              "attivita|River No. 2||Penisola"
+            ]
+          },
+          {
+            "t": "Penisola",
+            "a": [
+              "attivita|Tokeh Beach||Penisola"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "traghetto|Banana Islands in giornata||Banana Islands"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "transfer|Trasferimento a Tiwai||Tiwai",
+              "alloggio|Campo sull'isola||Tiwai",
+              "attivita|Barca sul fiume Moa||Tiwai"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "attivita|Ippopotami pigmei e primati||Tiwai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Freetown e isole",
         "days": 6,
         "route": "Freetown (1) → Banana Islands (3) → River No. 2 (1)",
-        "description": "Spiagge di sabbia bianca a un'ora dalla capitale e il santuario degli scimpanzé di Tacugama."
+        "description": "Spiagge di sabbia bianca a un'ora dalla capitale e il santuario degli scimpanzé di Tacugama.",
+        "plan": [
+          {
+            "t": "Arrivo a Freetown",
+            "a": [
+              "volo|Volo per Freetown||",
+              "alloggio|Hotel a Freetown||Freetown",
+              "attivita|Tacugama||Freetown"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "traghetto|Trasferimento a Banana Islands||Banana Islands",
+              "alloggio|Lodge sulle isole||Banana Islands",
+              "attivita|Spiaggia||Banana Islands"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "attivita|Snorkeling||Banana Islands"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "attivita|Relax||Banana Islands"
+            ]
+          },
+          {
+            "t": "River No. 2",
+            "a": [
+              "transfer|Trasferimento a River No. 2||River No. 2",
+              "alloggio|Hotel sulla spiaggia||River No. 2"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sierra Leone natura",
         "days": 9,
         "route": "Freetown (2) → Tiwai (2) → Gola (3) → Freetown (1)",
-        "description": "Ippopotami pigmei e primati nelle foreste pluviali, con guida locale."
+        "description": "Ippopotami pigmei e primati nelle foreste pluviali, con guida locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Freetown",
+            "a": [
+              "volo|Volo per Freetown||",
+              "alloggio|Hotel a Freetown||Freetown"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "attivita|Tacugama||Freetown"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "transfer|Trasferimento a Tiwai||Tiwai",
+              "alloggio|Campo||Tiwai",
+              "attivita|Fiume Moa||Tiwai"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "attivita|Primati||Tiwai"
+            ]
+          },
+          {
+            "t": "Gola",
+            "a": [
+              "transfer|Trasferimento a Gola||Gola",
+              "alloggio|Lodge nel parco||Gola"
+            ]
+          },
+          {
+            "t": "Gola",
+            "a": [
+              "attivita|Foresta pluviale di Gola||Gola"
+            ]
+          },
+          {
+            "t": "Gola",
+            "a": [
+              "attivita|Uccelli e pangolini||Gola"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "transfer|Trasferimento a Freetown||Freetown",
+              "alloggio|Hotel a Freetown||Freetown"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -389,21 +1234,188 @@
     "itineraries": [
       {
         "title": "Liberia",
-        "days": 7,
+        "days": 6,
         "route": "Monrovia (2) → Robertsport (3)",
-        "description": "Per viaggiatori avventurosi."
+        "description": "Per viaggiatori avventurosi.",
+        "plan": [
+          {
+            "t": "Arrivo a Monrovia",
+            "a": [
+              "volo|Volo per Monrovia||",
+              "alloggio|Hotel a Monrovia||Monrovia",
+              "attivita|Providence Island||Monrovia"
+            ]
+          },
+          {
+            "t": "Monrovia",
+            "a": [
+              "attivita|Museo nazionale e mercato||Monrovia"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "transfer|Trasferimento a Robertsport||Robertsport",
+              "alloggio|Lodge sulla spiaggia||Robertsport",
+              "attivita|Spiaggia||Robertsport"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "attivita|Surf||Robertsport"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "attivita|Lago Piso||Robertsport"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Liberia surf",
         "days": 6,
         "route": "Monrovia (1) → Robertsport (4)",
-        "description": "Onde costanti e spiagge deserte: un villaggio di surfisti per viaggiatori avventurosi."
+        "description": "Onde costanti e spiagge deserte: un villaggio di surfisti per viaggiatori avventurosi.",
+        "plan": [
+          {
+            "t": "Arrivo a Monrovia",
+            "a": [
+              "volo|Volo per Monrovia||",
+              "alloggio|Hotel a Monrovia||Monrovia"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "transfer|Trasferimento a Robertsport||Robertsport",
+              "alloggio|Lodge per surfisti||Robertsport",
+              "attivita|Onde di Cotton Trees||Robertsport"
+            ]
+          },
+          {
+            "t": "Surf",
+            "a": [
+              "attivita|Lezione o sessione di surf||Robertsport"
+            ]
+          },
+          {
+            "t": "Surf",
+            "a": [
+              "attivita|Surf||Robertsport"
+            ]
+          },
+          {
+            "t": "Surf",
+            "a": [
+              "attivita|Lago Piso in canoa||Robertsport"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Liberia e Sierra Leone",
         "days": 12,
         "route": "Monrovia (2) → Robertsport (2) → Freetown (3) → Banana Islands (2) → Tiwai (2)",
-        "description": "Combinazione via terra in Africa occidentale, solo con operatore locale."
+        "description": "Combinazione via terra in Africa occidentale, solo con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Monrovia",
+            "a": [
+              "volo|Volo per Monrovia||",
+              "alloggio|Hotel a Monrovia||Monrovia"
+            ]
+          },
+          {
+            "t": "Monrovia",
+            "a": [
+              "attivita|Città||Monrovia"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "transfer|Trasferimento a Robertsport||Robertsport",
+              "alloggio|Lodge||Robertsport",
+              "attivita|Spiaggia||Robertsport"
+            ]
+          },
+          {
+            "t": "Robertsport",
+            "a": [
+              "attivita|Surf||Robertsport"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "transfer|Trasferimento a Freetown||Freetown",
+              "alloggio|Hotel a Freetown||Freetown",
+              "attivita|Frontiera di Bo Waterside||Freetown"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "attivita|Tacugama||Freetown"
+            ]
+          },
+          {
+            "t": "Freetown",
+            "a": [
+              "attivita|River No. 2||Freetown"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "traghetto|Trasferimento a Banana Islands||Banana Islands",
+              "alloggio|Lodge||Banana Islands"
+            ]
+          },
+          {
+            "t": "Banana Islands",
+            "a": [
+              "attivita|Relax||Banana Islands"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "transfer|Trasferimento a Tiwai||Tiwai",
+              "alloggio|Campo||Tiwai"
+            ]
+          },
+          {
+            "t": "Tiwai",
+            "a": [
+              "attivita|Primati||Tiwai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -455,19 +1467,178 @@
         "title": "Costa d'Avorio",
         "days": 7,
         "route": "Abidjan (2) → Grand-Bassam (1) → Yamoussoukro (1) → Assinie (2)",
-        "description": "Da novembre a marzo."
+        "description": "Da novembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Abidjan",
+            "a": [
+              "volo|Volo per Abidjan||",
+              "alloggio|Hotel al Plateau||Abidjan",
+              "attivita|Cattedrale di Saint-Paul||Abidjan"
+            ]
+          },
+          {
+            "t": "Abidjan",
+            "a": [
+              "attivita|Mercato di Treichville e Cocody||Abidjan"
+            ]
+          },
+          {
+            "t": "Grand-Bassam",
+            "a": [
+              "transfer|Trasferimento a Grand-Bassam||Grand-Bassam",
+              "alloggio|Hotel sulla spiaggia||Grand-Bassam",
+              "attivita|Città coloniale UNESCO||Grand-Bassam"
+            ]
+          },
+          {
+            "t": "Yamoussoukro",
+            "a": [
+              "transfer|Trasferimento a Yamoussoukro||Yamoussoukro",
+              "alloggio|Hotel a Yamoussoukro||Yamoussoukro",
+              "attivita|Basilica di Nostra Signora della Pace||Yamoussoukro"
+            ]
+          },
+          {
+            "t": "Assinie",
+            "a": [
+              "transfer|Trasferimento a Assinie||Assinie",
+              "alloggio|Resort ad Assinie||Assinie",
+              "attivita|Laguna||Assinie"
+            ]
+          },
+          {
+            "t": "Assinie",
+            "a": [
+              "attivita|Spiaggia||Assinie"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Abidjan e Assinie",
-        "days": 5,
+        "days": 6,
         "route": "Abidjan (2) → Assinie (3)",
-        "description": "Weekend lungo per chi viaggia per lavoro: la Parigi africana e le spiagge di Assinie."
+        "description": "Weekend lungo per chi viaggia per lavoro: la Parigi africana e le spiagge di Assinie.",
+        "plan": [
+          {
+            "t": "Arrivo a Abidjan",
+            "a": [
+              "volo|Volo per Abidjan||",
+              "alloggio|Hotel ad Abidjan||Abidjan"
+            ]
+          },
+          {
+            "t": "Abidjan",
+            "a": [
+              "attivita|Plateau, Cocody e maquis||Abidjan"
+            ]
+          },
+          {
+            "t": "Assinie",
+            "a": [
+              "transfer|Trasferimento a Assinie||Assinie",
+              "alloggio|Resort ad Assinie||Assinie",
+              "attivita|Spiaggia||Assinie"
+            ]
+          },
+          {
+            "t": "Assinie",
+            "a": [
+              "attivita|Laguna in barca||Assinie"
+            ]
+          },
+          {
+            "t": "Assinie",
+            "a": [
+              "attivita|Relax||Assinie"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Costa d'Avorio dell'ovest",
         "days": 9,
         "route": "Abidjan (1) → Yamoussoukro (1) → Man (3) → Taï (3)",
-        "description": "Montagne, ponti di liane e scimpanzé nel parco di Taï, per viaggiatori avventurosi con guida."
+        "description": "Montagne, ponti di liane e scimpanzé nel parco di Taï, per viaggiatori avventurosi con guida.",
+        "plan": [
+          {
+            "t": "Arrivo a Abidjan",
+            "a": [
+              "volo|Volo per Abidjan||",
+              "alloggio|Hotel ad Abidjan||Abidjan"
+            ]
+          },
+          {
+            "t": "Yamoussoukro",
+            "a": [
+              "transfer|Trasferimento a Yamoussoukro||Yamoussoukro",
+              "alloggio|Hotel||Yamoussoukro",
+              "attivita|Basilica||Yamoussoukro"
+            ]
+          },
+          {
+            "t": "Man",
+            "a": [
+              "transfer|Trasferimento a Man||Man",
+              "alloggio|Hotel a Man||Man",
+              "attivita|Cascata di Man||Man"
+            ]
+          },
+          {
+            "t": "Man",
+            "a": [
+              "attivita|Ponti di liane||Man"
+            ]
+          },
+          {
+            "t": "Man",
+            "a": [
+              "attivita|Dent de Man||Man"
+            ]
+          },
+          {
+            "t": "Taï",
+            "a": [
+              "transfer|Trasferimento a Taï||Taï",
+              "alloggio|Ecolodge||Taï",
+              "attivita|Foresta di Taï||Taï"
+            ]
+          },
+          {
+            "t": "Taï",
+            "a": [
+              "attivita|Scimpanzé||Taï"
+            ]
+          },
+          {
+            "t": "Taï",
+            "a": [
+              "attivita|Foresta||Taï"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -535,19 +1706,207 @@
         "title": "Ghana classico",
         "days": 9,
         "route": "Accra (2) → Cape Coast ed Elmina (2) → Kakum → Kumasi (2) → Mole (2)",
-        "description": "Da novembre a marzo."
+        "description": "Da novembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Accra",
+            "a": [
+              "volo|Volo per Accra||",
+              "alloggio|Hotel ad Accra||Accra",
+              "attivita|Jamestown e Makola||Accra"
+            ]
+          },
+          {
+            "t": "Accra",
+            "a": [
+              "attivita|Kwame Nkrumah Memorial e Labadi Beach||Accra"
+            ]
+          },
+          {
+            "t": "Cape Coast",
+            "a": [
+              "transfer|Trasferimento a Cape Coast||Cape Coast",
+              "alloggio|Hotel sulla spiaggia||Cape Coast",
+              "attivita|Castello di Cape Coast||Cape Coast"
+            ]
+          },
+          {
+            "t": "Elmina",
+            "a": [
+              "attivita|Castello di Elmina||Elmina"
+            ]
+          },
+          {
+            "t": "Kakum e Kumasi",
+            "a": [
+              "attivita|Ponti sospesi di Kakum||Kakum",
+              "transfer|Trasferimento a Kumasi||Kumasi",
+              "alloggio|Hotel a Kumasi||Kumasi"
+            ]
+          },
+          {
+            "t": "Kumasi",
+            "a": [
+              "attivita|Palazzo Manhyia e mercato di Kejetia||Kumasi"
+            ]
+          },
+          {
+            "t": "Mole",
+            "a": [
+              "transfer|Trasferimento a Mole||Mole",
+              "alloggio|Mole Motel||Mole",
+              "attivita|Elefanti al tramonto||Mole"
+            ]
+          },
+          {
+            "t": "Mole",
+            "a": [
+              "attivita|Safari a piedi||Mole"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Accra||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Accra e Volta",
         "days": 6,
         "route": "Accra (2) → Lago Volta e Akosombo (2) → Wli (1)",
-        "description": "Breve circuito orientale con la cascata più alta del paese e la diga del Volta."
+        "description": "Breve circuito orientale con la cascata più alta del paese e la diga del Volta.",
+        "plan": [
+          {
+            "t": "Arrivo a Accra",
+            "a": [
+              "volo|Volo per Accra||",
+              "alloggio|Hotel ad Accra||Accra"
+            ]
+          },
+          {
+            "t": "Accra",
+            "a": [
+              "attivita|Jamestown||Accra"
+            ]
+          },
+          {
+            "t": "Akosombo",
+            "a": [
+              "transfer|Trasferimento a Akosombo||Akosombo",
+              "alloggio|Hotel sul lago Volta||Akosombo",
+              "attivita|Diga||Akosombo"
+            ]
+          },
+          {
+            "t": "Lago Volta",
+            "a": [
+              "traghetto|Crociera sul lago||Lago Volta"
+            ]
+          },
+          {
+            "t": "Wli",
+            "a": [
+              "transfer|Trasferimento a Wli||Wli",
+              "alloggio|Lodge||Wli",
+              "attivita|Cascate di Wli||Wli"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ghana e Togo",
         "days": 11,
         "route": "Accra (2) → Cape Coast (2) → Kumasi (2) → Hohoe (1) → Kpalimé (2) → Lomé (1)",
-        "description": "Castelli degli schiavi, regno Ashanti e mercati del Togo in un unico giro via terra."
+        "description": "Castelli degli schiavi, regno Ashanti e mercati del Togo in un unico giro via terra.",
+        "plan": [
+          {
+            "t": "Arrivo a Accra",
+            "a": [
+              "volo|Volo per Accra||",
+              "alloggio|Hotel ad Accra||Accra"
+            ]
+          },
+          {
+            "t": "Accra",
+            "a": [
+              "attivita|Jamestown||Accra"
+            ]
+          },
+          {
+            "t": "Cape Coast",
+            "a": [
+              "transfer|Trasferimento a Cape Coast||Cape Coast",
+              "alloggio|Hotel||Cape Coast",
+              "attivita|Castello||Cape Coast"
+            ]
+          },
+          {
+            "t": "Elmina",
+            "a": [
+              "attivita|Elmina e Kakum||Elmina"
+            ]
+          },
+          {
+            "t": "Kumasi",
+            "a": [
+              "transfer|Trasferimento a Kumasi||Kumasi",
+              "alloggio|Hotel a Kumasi||Kumasi"
+            ]
+          },
+          {
+            "t": "Kumasi",
+            "a": [
+              "attivita|Palazzo e mercato||Kumasi"
+            ]
+          },
+          {
+            "t": "Hohoe",
+            "a": [
+              "transfer|Trasferimento a Hohoe||Hohoe",
+              "alloggio|Hotel||Hohoe",
+              "attivita|Cascate di Wli||Hohoe"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "transfer|Trasferimento a Kpalimé||Kpalimé",
+              "alloggio|Hotel a Kpalimé||Kpalimé",
+              "attivita|Frontiera||Kpalimé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "attivita|Colline del caffè||Kpalimé"
+            ]
+          },
+          {
+            "t": "Lomé",
+            "a": [
+              "transfer|Trasferimento a Lomé||Lomé",
+              "alloggio|Hotel a Lomé||Lomé",
+              "attivita|Mercato dei feticci||Lomé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -599,19 +1958,222 @@
         "title": "Togo e Benin",
         "days": 10,
         "route": "Lomé (2) → Kpalimé (2) → Koutammakou (2) → Benin del nord (2) → Cotonou (1)",
-        "description": "Vudù e architetture tradizionali."
+        "description": "Vudù e architetture tradizionali.",
+        "plan": [
+          {
+            "t": "Arrivo a Lomé",
+            "a": [
+              "volo|Volo per Lomé||",
+              "alloggio|Hotel a Lomé||Lomé",
+              "attivita|Grande mercato||Lomé"
+            ]
+          },
+          {
+            "t": "Lomé",
+            "a": [
+              "attivita|Mercato dei feticci di Akodessewa||Lomé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "transfer|Trasferimento a Kpalimé||Kpalimé",
+              "alloggio|Hotel a Kpalimé||Kpalimé",
+              "attivita|Cascate di Kpimé||Kpalimé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "attivita|Mont Agou||Kpalimé"
+            ]
+          },
+          {
+            "t": "Koutammakou",
+            "a": [
+              "transfer|Trasferimento a Koutammakou||Koutammakou",
+              "alloggio|Guesthouse||Koutammakou",
+              "attivita|Case Tamberma UNESCO||Koutammakou"
+            ]
+          },
+          {
+            "t": "Koutammakou",
+            "a": [
+              "attivita|Villaggi batammariba||Koutammakou"
+            ]
+          },
+          {
+            "t": "Natitingou",
+            "a": [
+              "transfer|Trasferimento a Natitingou||Natitingou",
+              "alloggio|Hotel||Natitingou",
+              "attivita|Frontiera del Benin||Natitingou"
+            ]
+          },
+          {
+            "t": "Natitingou",
+            "a": [
+              "attivita|Tata Somba||Natitingou"
+            ]
+          },
+          {
+            "t": "Cotonou",
+            "a": [
+              "volo|Trasferimento a Cotonou||Cotonou",
+              "alloggio|Hotel a Cotonou||Cotonou"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Togo breve",
         "days": 5,
         "route": "Lomé (2) → Kpalimé (2)",
-        "description": "Mercato dei feticci, colline del caffè e cascate."
+        "description": "Mercato dei feticci, colline del caffè e cascate.",
+        "plan": [
+          {
+            "t": "Arrivo a Lomé",
+            "a": [
+              "volo|Volo per Lomé||",
+              "alloggio|Hotel a Lomé||Lomé",
+              "attivita|Grande mercato||Lomé"
+            ]
+          },
+          {
+            "t": "Lomé",
+            "a": [
+              "attivita|Mercato dei feticci||Lomé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "transfer|Trasferimento a Kpalimé||Kpalimé",
+              "alloggio|Hotel||Kpalimé",
+              "attivita|Colline del caffè||Kpalimé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "attivita|Cascate||Kpalimé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Togo, Benin e Ghana",
-        "days": 14,
+        "days": 13,
         "route": "Accra (2) → Cape Coast (2) → Lomé (1) → Kpalimé (2) → Abomey (1) → Ouidah (2) → Cotonou (1)",
-        "description": "Golfo di Guinea in tre paesi via terra."
+        "description": "Golfo di Guinea in tre paesi via terra.",
+        "plan": [
+          {
+            "t": "Arrivo a Accra",
+            "a": [
+              "volo|Volo per Accra||",
+              "alloggio|Hotel ad Accra||Accra"
+            ]
+          },
+          {
+            "t": "Accra",
+            "a": [
+              "attivita|Città||Accra"
+            ]
+          },
+          {
+            "t": "Cape Coast",
+            "a": [
+              "transfer|Trasferimento a Cape Coast||Cape Coast",
+              "alloggio|Hotel||Cape Coast",
+              "attivita|Castello||Cape Coast"
+            ]
+          },
+          {
+            "t": "Cape Coast",
+            "a": [
+              "attivita|Kakum||Cape Coast"
+            ]
+          },
+          {
+            "t": "Lomé",
+            "a": [
+              "transfer|Trasferimento a Lomé||Lomé",
+              "alloggio|Hotel a Lomé||Lomé",
+              "attivita|Frontiera di Aflao||Lomé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "transfer|Trasferimento a Kpalimé||Kpalimé",
+              "alloggio|Hotel||Kpalimé",
+              "attivita|Colline||Kpalimé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "attivita|Cascate||Kpalimé"
+            ]
+          },
+          {
+            "t": "Abomey",
+            "a": [
+              "transfer|Trasferimento a Abomey||Abomey",
+              "alloggio|Hotel ad Abomey||Abomey",
+              "attivita|Palazzi reali UNESCO||Abomey"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "transfer|Trasferimento a Ouidah||Ouidah",
+              "alloggio|Hotel a Ouidah||Ouidah",
+              "attivita|Tempio dei Pitoni||Ouidah"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "attivita|Porta del Non Ritorno||Ouidah"
+            ]
+          },
+          {
+            "t": "Cotonou",
+            "a": [
+              "transfer|Trasferimento a Cotonou||Cotonou",
+              "alloggio|Hotel||Cotonou",
+              "attivita|Ganvié||Cotonou"
+            ]
+          },
+          {
+            "t": "Cotonou",
+            "a": [
+              "attivita|Ganvié su palafitte||Ganvié"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -664,19 +2226,189 @@
         "title": "Benin del vudù",
         "days": 7,
         "route": "Cotonou (1) → Ouidah (2) → Ganvié (1) → Abomey (2)",
-        "description": "Da novembre a marzo, ideale a gennaio."
+        "description": "Da novembre a marzo, ideale a gennaio.",
+        "plan": [
+          {
+            "t": "Arrivo a Cotonou",
+            "a": [
+              "volo|Volo per Cotonou||",
+              "alloggio|Hotel a Cotonou||Cotonou",
+              "attivita|Mercato di Dantokpa||Cotonou"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "transfer|Trasferimento a Ouidah||Ouidah",
+              "alloggio|Hotel a Ouidah||Ouidah",
+              "attivita|Tempio dei Pitoni e Foresta sacra||Ouidah"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "attivita|Via degli schiavi e Porta del Non Ritorno||Ouidah"
+            ]
+          },
+          {
+            "t": "Ganvié",
+            "a": [
+              "traghetto|Ganvié, la Venezia d'Africa||Ganvié"
+            ]
+          },
+          {
+            "t": "Abomey",
+            "a": [
+              "transfer|Trasferimento a Abomey||Abomey",
+              "alloggio|Hotel ad Abomey||Abomey",
+              "attivita|Palazzi reali||Abomey"
+            ]
+          },
+          {
+            "t": "Abomey",
+            "a": [
+              "attivita|Cerimonia vudù con guida||Abomey"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Benin e Togo",
         "days": 10,
         "route": "Cotonou (1) → Ouidah (1) → Abomey (1) → Natitingou e Tata Somba (2) → Koutammakou (1) → Kpalimé (2) → Lomé (1)",
-        "description": "Il classico via terra tra due paesi: palazzi reali, case fortezza Tata e il festival del vudù a gennaio."
+        "description": "Il classico via terra tra due paesi: palazzi reali, case fortezza Tata e il festival del vudù a gennaio.",
+        "plan": [
+          {
+            "t": "Arrivo a Cotonou",
+            "a": [
+              "volo|Volo per Cotonou||",
+              "alloggio|Hotel a Cotonou||Cotonou"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "transfer|Trasferimento a Ouidah||Ouidah",
+              "alloggio|Hotel||Ouidah",
+              "attivita|Tempio dei Pitoni||Ouidah"
+            ]
+          },
+          {
+            "t": "Abomey",
+            "a": [
+              "transfer|Trasferimento a Abomey||Abomey",
+              "alloggio|Hotel||Abomey",
+              "attivita|Palazzi reali||Abomey"
+            ]
+          },
+          {
+            "t": "Natitingou",
+            "a": [
+              "transfer|Trasferimento a Natitingou||Natitingou",
+              "alloggio|Hotel||Natitingou",
+              "attivita|Tata Somba||Natitingou"
+            ]
+          },
+          {
+            "t": "Natitingou",
+            "a": [
+              "attivita|Villaggi somba||Natitingou"
+            ]
+          },
+          {
+            "t": "Koutammakou",
+            "a": [
+              "transfer|Trasferimento a Koutammakou||Koutammakou",
+              "alloggio|Guesthouse||Koutammakou",
+              "attivita|Case Tamberma||Koutammakou"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "transfer|Trasferimento a Kpalimé||Kpalimé",
+              "alloggio|Hotel||Kpalimé"
+            ]
+          },
+          {
+            "t": "Kpalimé",
+            "a": [
+              "attivita|Colline del caffè||Kpalimé"
+            ]
+          },
+          {
+            "t": "Lomé",
+            "a": [
+              "transfer|Trasferimento a Lomé||Lomé",
+              "alloggio|Hotel a Lomé||Lomé",
+              "attivita|Mercato dei feticci||Lomé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Festival del vudù",
         "days": 6,
         "route": "Cotonou (1) → Ouidah (3, festival del 10 gennaio) → Porto-Novo (1)",
-        "description": "Partenza a data fissa per il festival nazionale del vudù, con visita al Tempio dei Pitoni e alla Porta del Non Ritorno."
+        "description": "Partenza a data fissa per il festival nazionale del vudù, con visita al Tempio dei Pitoni e alla Porta del Non Ritorno.",
+        "plan": [
+          {
+            "t": "Arrivo a Cotonou",
+            "a": [
+              "volo|Volo per Cotonou||",
+              "alloggio|Hotel a Cotonou||Cotonou"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "transfer|Trasferimento a Ouidah||Ouidah",
+              "alloggio|Hotel a Ouidah||Ouidah",
+              "attivita|Tempio dei Pitoni||Ouidah"
+            ]
+          },
+          {
+            "t": "Festival",
+            "a": [
+              "attivita|Festival nazionale del vudù (10 gennaio)||Ouidah"
+            ]
+          },
+          {
+            "t": "Ouidah",
+            "a": [
+              "attivita|Cerimonie e Porta del Non Ritorno||Ouidah"
+            ]
+          },
+          {
+            "t": "Porto-Novo",
+            "a": [
+              "transfer|Trasferimento a Porto-Novo||Porto-Novo",
+              "alloggio|Hotel a Porto-Novo||Porto-Novo",
+              "attivita|Museo Honmè||Porto-Novo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -729,19 +2461,131 @@
         "title": "Lagos e Osogbo",
         "days": 5,
         "route": "Lagos (3) → Osogbo (1)",
-        "description": "Viaggio culturale con operatore locale."
+        "description": "Viaggio culturale con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Lagos",
+            "a": [
+              "volo|Volo per Lagos||",
+              "alloggio|Hotel a Victoria Island||Lagos",
+              "attivita|Lekki Conservation Centre||Lagos"
+            ]
+          },
+          {
+            "t": "Lagos",
+            "a": [
+              "attivita|Nike Art Gallery e mercati||Lagos"
+            ]
+          },
+          {
+            "t": "Lagos",
+            "a": [
+              "attivita|Tarkwa Bay||Lagos"
+            ]
+          },
+          {
+            "t": "Osogbo",
+            "a": [
+              "transfer|Trasferimento a Osogbo||Osogbo",
+              "alloggio|Hotel a Osogbo||Osogbo",
+              "attivita|Foresta sacra di Osun UNESCO||Osogbo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lagos weekend",
         "days": 3,
         "route": "Lagos (2), con Lekki e Tarkwa Bay",
-        "description": "Musei, mercati d'arte e spiagge, per chi è in città per lavoro."
+        "description": "Musei, mercati d'arte e spiagge, per chi è in città per lavoro.",
+        "plan": [
+          {
+            "t": "Arrivo a Lagos",
+            "a": [
+              "volo|Volo per Lagos||",
+              "alloggio|Hotel a Victoria Island||Lagos",
+              "attivita|Lekki||Lagos"
+            ]
+          },
+          {
+            "t": "Lagos",
+            "a": [
+              "attivita|Nike Art Gallery e Tarkwa Bay||Lagos"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nigeria e cultura yoruba",
         "days": 7,
         "route": "Lagos (2) → Abeokuta (1) → Osogbo (2) → Ibadan (1)",
-        "description": "La foresta sacra di Osun, la roccia di Olumo e l'arte yoruba, solo con operatore locale."
+        "description": "La foresta sacra di Osun, la roccia di Olumo e l'arte yoruba, solo con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Lagos",
+            "a": [
+              "volo|Volo per Lagos||",
+              "alloggio|Hotel a Lagos||Lagos"
+            ]
+          },
+          {
+            "t": "Lagos",
+            "a": [
+              "attivita|Lekki e Nike Art Gallery||Lagos"
+            ]
+          },
+          {
+            "t": "Abeokuta",
+            "a": [
+              "transfer|Trasferimento a Abeokuta||Abeokuta",
+              "alloggio|Hotel||Abeokuta",
+              "attivita|Roccia di Olumo||Abeokuta"
+            ]
+          },
+          {
+            "t": "Osogbo",
+            "a": [
+              "transfer|Trasferimento a Osogbo||Osogbo",
+              "alloggio|Hotel||Osogbo",
+              "attivita|Foresta sacra di Osun||Osogbo"
+            ]
+          },
+          {
+            "t": "Osogbo",
+            "a": [
+              "attivita|Arte di Susanne Wenger||Osogbo"
+            ]
+          },
+          {
+            "t": "Ibadan",
+            "a": [
+              "transfer|Trasferimento a Ibadan||Ibadan",
+              "alloggio|Hotel||Ibadan",
+              "attivita|Università e mercato||Ibadan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -792,19 +2636,193 @@
         "title": "Camerun",
         "days": 8,
         "route": "Douala (1) → Kribi (3) → Foumban (2) → Yaoundé (1)",
-        "description": "Da novembre a febbraio."
+        "description": "Da novembre a febbraio.",
+        "plan": [
+          {
+            "t": "Arrivo a Douala",
+            "a": [
+              "volo|Volo per Douala||",
+              "alloggio|Hotel a Douala||Douala"
+            ]
+          },
+          {
+            "t": "Kribi",
+            "a": [
+              "transfer|Trasferimento a Kribi||Kribi",
+              "alloggio|Hotel sulla spiaggia||Kribi",
+              "attivita|Cascate della Lobé sul mare||Kribi"
+            ]
+          },
+          {
+            "t": "Kribi",
+            "a": [
+              "attivita|Pigmei bagyeli||Kribi"
+            ]
+          },
+          {
+            "t": "Kribi",
+            "a": [
+              "attivita|Spiaggia||Kribi"
+            ]
+          },
+          {
+            "t": "Foumban",
+            "a": [
+              "transfer|Trasferimento a Foumban||Foumban",
+              "alloggio|Hotel||Foumban",
+              "attivita|Palazzo del sultano Bamoun||Foumban"
+            ]
+          },
+          {
+            "t": "Foumban",
+            "a": [
+              "attivita|Artigiani del bronzo||Foumban"
+            ]
+          },
+          {
+            "t": "Yaoundé",
+            "a": [
+              "transfer|Trasferimento a Yaoundé||Yaoundé",
+              "alloggio|Hotel a Yaoundé||Yaoundé",
+              "attivita|Mont Fébé||Yaoundé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Camerun del nord",
         "days": 9,
         "route": "Yaoundé (1) → Ngaoundéré (1) → Garoua (1) → Rhumsiki (3) → Waza (2)",
-        "description": "Paesaggi vulcanici e villaggi sui monti Mandara; verificare sempre la sicurezza dell'estremo nord."
+        "description": "Paesaggi vulcanici e villaggi sui monti Mandara; verificare sempre la sicurezza dell'estremo nord.",
+        "plan": [
+          {
+            "t": "Arrivo a Yaoundé",
+            "a": [
+              "volo|Volo per Yaoundé||",
+              "alloggio|Hotel||Yaoundé",
+              "attivita|Verificare la sicurezza del nord||Yaoundé"
+            ]
+          },
+          {
+            "t": "Ngaoundéré",
+            "a": [
+              "treno|Treno notturno per Ngaoundéré||Ngaoundéré",
+              "alloggio|Hotel||Ngaoundéré"
+            ]
+          },
+          {
+            "t": "Garoua",
+            "a": [
+              "transfer|Trasferimento a Garoua||Garoua",
+              "alloggio|Hotel||Garoua",
+              "attivita|Parco della Bénoué||Garoua"
+            ]
+          },
+          {
+            "t": "Rhumsiki",
+            "a": [
+              "transfer|Trasferimento a Rhumsiki||Rhumsiki",
+              "alloggio|Auberge||Rhumsiki",
+              "attivita|Paesaggi vulcanici||Rhumsiki"
+            ]
+          },
+          {
+            "t": "Rhumsiki",
+            "a": [
+              "attivita|Villaggi kapsiki||Rhumsiki"
+            ]
+          },
+          {
+            "t": "Rhumsiki",
+            "a": [
+              "attivita|Monti Mandara||Rhumsiki"
+            ]
+          },
+          {
+            "t": "Waza",
+            "a": [
+              "transfer|Trasferimento a Waza||Waza",
+              "alloggio|Lodge||Waza",
+              "attivita|Safari||Waza"
+            ]
+          },
+          {
+            "t": "Waza",
+            "a": [
+              "attivita|Elefanti e giraffe||Waza"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Monte Camerun e Limbe",
-        "days": 6,
+        "days": 7,
         "route": "Douala (1) → Limbe (2) → Buea e salita al Monte Camerun (3)",
-        "description": "Spiagge di sabbia nera, centro di primati e trekking sul vulcano più alto dell'Africa occidentale."
+        "description": "Spiagge di sabbia nera, centro di primati e trekking sul vulcano più alto dell'Africa occidentale.",
+        "plan": [
+          {
+            "t": "Arrivo a Douala",
+            "a": [
+              "volo|Volo per Douala||",
+              "alloggio|Hotel||Douala"
+            ]
+          },
+          {
+            "t": "Limbe",
+            "a": [
+              "transfer|Trasferimento a Limbe||Limbe",
+              "alloggio|Hotel a Limbe||Limbe",
+              "attivita|Spiagge di sabbia nera||Limbe"
+            ]
+          },
+          {
+            "t": "Limbe",
+            "a": [
+              "attivita|Wildlife Centre e giardino botanico||Limbe"
+            ]
+          },
+          {
+            "t": "Buea",
+            "a": [
+              "transfer|Trasferimento a Buea||Buea",
+              "alloggio|Rifugio||Buea",
+              "attivita|Inizio salita||Buea"
+            ]
+          },
+          {
+            "t": "Monte Camerun",
+            "a": [
+              "attivita|Salita al Monte Camerun||Monte Camerun"
+            ]
+          },
+          {
+            "t": "Monte Camerun",
+            "a": [
+              "attivita|Vetta e discesa||Buea"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -899,19 +2917,145 @@
         "title": "Bioko",
         "days": 6,
         "route": "Malabo (2) → Ureka (2) → Pico Basilé (1)",
-        "description": "Per viaggiatori di nicchia."
+        "description": "Per viaggiatori di nicchia.",
+        "plan": [
+          {
+            "t": "Arrivo a Malabo",
+            "a": [
+              "volo|Volo per Malabo||",
+              "alloggio|Hotel a Malabo||Malabo",
+              "attivita|Cattedrale||Malabo"
+            ]
+          },
+          {
+            "t": "Malabo",
+            "a": [
+              "attivita|Città coloniale||Malabo"
+            ]
+          },
+          {
+            "t": "Ureka",
+            "a": [
+              "transfer|Trasferimento a Ureka||Ureka",
+              "alloggio|Campo di ricerca||Ureka",
+              "attivita|Spiaggia delle tartarughe||Ureka"
+            ]
+          },
+          {
+            "t": "Ureka",
+            "a": [
+              "attivita|Primati endemici||Ureka"
+            ]
+          },
+          {
+            "t": "Pico Basilé",
+            "a": [
+              "transfer|Trasferimento a Pico Basilé||Pico Basilé",
+              "alloggio|Hotel a Moka||Pico Basilé",
+              "attivita|Vetta||Pico Basilé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Malabo e Bioko sud",
         "days": 5,
         "route": "Malabo (2) → Ureka (2)",
-        "description": "Tartarughe marine da novembre a febbraio e foreste con primati endemici."
+        "description": "Tartarughe marine da novembre a febbraio e foreste con primati endemici.",
+        "plan": [
+          {
+            "t": "Arrivo a Malabo",
+            "a": [
+              "volo|Volo per Malabo||",
+              "alloggio|Hotel a Malabo||Malabo"
+            ]
+          },
+          {
+            "t": "Malabo",
+            "a": [
+              "attivita|Città||Malabo"
+            ]
+          },
+          {
+            "t": "Ureka",
+            "a": [
+              "transfer|Trasferimento a Ureka||Ureka",
+              "alloggio|Campo||Ureka",
+              "attivita|Tartarughe||Ureka"
+            ]
+          },
+          {
+            "t": "Ureka",
+            "a": [
+              "attivita|Foresta||Ureka"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bata e la costa continentale",
         "days": 6,
         "route": "Bata (2) → Monte Alén (2) → Mbini (1)",
-        "description": "Il parco di Monte Alén con elefanti di foresta e cascate, per viaggiatori con permessi e guida."
+        "description": "Il parco di Monte Alén con elefanti di foresta e cascate, per viaggiatori con permessi e guida.",
+        "plan": [
+          {
+            "t": "Arrivo a Bata",
+            "a": [
+              "volo|Volo per Bata via Malabo||",
+              "alloggio|Hotel a Bata||Bata",
+              "attivita|Lungomare||Bata"
+            ]
+          },
+          {
+            "t": "Bata",
+            "a": [
+              "attivita|Città||Bata"
+            ]
+          },
+          {
+            "t": "Monte Alén",
+            "a": [
+              "transfer|Trasferimento a Monte Alén||Monte Alén",
+              "alloggio|Lodge||Monte Alén",
+              "attivita|Foresta||Monte Alén"
+            ]
+          },
+          {
+            "t": "Monte Alén",
+            "a": [
+              "attivita|Cascate ed elefanti di foresta||Monte Alén"
+            ]
+          },
+          {
+            "t": "Mbini",
+            "a": [
+              "transfer|Trasferimento a Mbini||Mbini",
+              "alloggio|Hotel||Mbini",
+              "attivita|Estuario||Mbini"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -978,19 +3122,192 @@
         "title": "Gabon selvaggio",
         "days": 10,
         "route": "Libreville (1) → Lopé (3) → Loango (5)",
-        "description": "Da giugno a settembre, con operatore specializzato."
+        "description": "Da giugno a settembre, con operatore specializzato.",
+        "plan": [
+          {
+            "t": "Arrivo a Libreville",
+            "a": [
+              "volo|Volo per Libreville||",
+              "alloggio|Hotel a Libreville||Libreville"
+            ]
+          },
+          {
+            "t": "Lopé",
+            "a": [
+              "treno|Treno Transgabonais per Lopé||Lopé",
+              "alloggio|Lodge||Lopé"
+            ]
+          },
+          {
+            "t": "Lopé",
+            "a": [
+              "attivita|Mandrilli e savana||Lopé"
+            ]
+          },
+          {
+            "t": "Lopé",
+            "a": [
+              "attivita|Foresta||Lopé"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "volo|Trasferimento a Loango||Loango",
+              "alloggio|Lodge a Loango||Loango",
+              "attivita|Laguna||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Elefanti sulla spiaggia||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "traghetto|Ippopotami e balene (luglio-settembre)||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Gorilla in habituation||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Laguna in barca||Loango"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gabon mare e foresta",
         "days": 8,
         "route": "Libreville (1) → Pongara (2) → Akanda (1) → Ivindo (3)",
-        "description": "Tartarughe liuto, mangrovie e le cascate di Kongou nella foresta pluviale."
+        "description": "Tartarughe liuto, mangrovie e le cascate di Kongou nella foresta pluviale.",
+        "plan": [
+          {
+            "t": "Arrivo a Libreville",
+            "a": [
+              "volo|Volo per Libreville||",
+              "alloggio|Hotel||Libreville"
+            ]
+          },
+          {
+            "t": "Pongara",
+            "a": [
+              "traghetto|Trasferimento a Pongara||Pongara",
+              "alloggio|Lodge||Pongara",
+              "attivita|Spiaggia||Pongara"
+            ]
+          },
+          {
+            "t": "Pongara",
+            "a": [
+              "attivita|Tartarughe liuto (novembre-febbraio)||Pongara"
+            ]
+          },
+          {
+            "t": "Akanda",
+            "a": [
+              "transfer|Trasferimento a Akanda||Akanda",
+              "alloggio|Lodge||Akanda",
+              "attivita|Mangrovie||Akanda"
+            ]
+          },
+          {
+            "t": "Ivindo",
+            "a": [
+              "volo|Trasferimento a Ivindo||Ivindo",
+              "alloggio|Lodge||Ivindo",
+              "attivita|Foresta||Ivindo"
+            ]
+          },
+          {
+            "t": "Ivindo",
+            "a": [
+              "attivita|Cascate di Kongou||Ivindo"
+            ]
+          },
+          {
+            "t": "Ivindo",
+            "a": [
+              "attivita|Foresta||Ivindo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Loango, gli ippopotami surfisti",
         "days": 7,
         "route": "Libreville (1) → Loango (5)",
-        "description": "Elefanti sulla spiaggia, gorilla e balene da luglio a settembre: il parco più spettacolare della costa africana."
+        "description": "Elefanti sulla spiaggia, gorilla e balene da luglio a settembre: il parco più spettacolare della costa africana.",
+        "plan": [
+          {
+            "t": "Arrivo a Libreville",
+            "a": [
+              "volo|Volo per Libreville||",
+              "alloggio|Hotel||Libreville"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "volo|Trasferimento a Loango||Loango",
+              "alloggio|Lodge a Loango||Loango",
+              "attivita|Laguna||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Elefanti in spiaggia||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "traghetto|Balene e delfini||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Gorilla||Loango"
+            ]
+          },
+          {
+            "t": "Loango",
+            "a": [
+              "attivita|Laguna||Loango"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1042,19 +3359,146 @@
         "title": "Gorilla di pianura",
         "days": 8,
         "route": "Brazzaville (1) → Odzala (6)",
-        "description": "Con operatore specializzato."
+        "description": "Con operatore specializzato.",
+        "plan": [
+          {
+            "t": "Arrivo a Brazzaville",
+            "a": [
+              "volo|Volo per Brazzaville||",
+              "alloggio|Hotel||Brazzaville"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "volo|Trasferimento a Odzala||Odzala",
+              "alloggio|Lodge a Odzala||Odzala",
+              "attivita|Bai nella foresta||Odzala"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "attivita|Trekking dei gorilla di pianura||Odzala"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "attivita|Bai con elefanti di foresta||Odzala"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "traghetto|Canoa sul fiume||Odzala"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "attivita|Gorilla||Odzala"
+            ]
+          },
+          {
+            "t": "Odzala",
+            "a": [
+              "attivita|Foresta||Odzala"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Brazzaville e Kinshasa",
         "days": 4,
         "route": "Brazzaville (2) → traghetto sul Congo → Kinshasa (1)",
-        "description": "Le due capitali più vicine al mondo; solo con referenti locali e verificando le condizioni di sicurezza."
+        "description": "Le due capitali più vicine al mondo; solo con referenti locali e verificando le condizioni di sicurezza.",
+        "plan": [
+          {
+            "t": "Arrivo a Brazzaville",
+            "a": [
+              "volo|Volo per Brazzaville||",
+              "alloggio|Hotel||Brazzaville",
+              "attivita|Basilica di Sant'Anna||Brazzaville"
+            ]
+          },
+          {
+            "t": "Brazzaville",
+            "a": [
+              "attivita|Rapide del Congo||Brazzaville"
+            ]
+          },
+          {
+            "t": "Kinshasa",
+            "a": [
+              "traghetto|Trasferimento a Kinshasa||Kinshasa",
+              "alloggio|Hotel a Kinshasa||Kinshasa",
+              "attivita|Verificare la sicurezza||Kinshasa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Costa atlantica",
         "days": 6,
         "route": "Pointe-Noire (3) → Conkouati-Douli (2)",
-        "description": "Spiagge, tartarughe marine e il parco di Conkouati con scimpanzé riabilitati."
+        "description": "Spiagge, tartarughe marine e il parco di Conkouati con scimpanzé riabilitati.",
+        "plan": [
+          {
+            "t": "Arrivo a Pointe-Noire",
+            "a": [
+              "volo|Volo per Pointe-Noire||",
+              "alloggio|Hotel sul mare||Pointe-Noire"
+            ]
+          },
+          {
+            "t": "Pointe-Noire",
+            "a": [
+              "attivita|Spiaggia||Pointe-Noire"
+            ]
+          },
+          {
+            "t": "Pointe-Noire",
+            "a": [
+              "attivita|Gole di Diosso||Pointe-Noire"
+            ]
+          },
+          {
+            "t": "Conkouati-Douli",
+            "a": [
+              "transfer|Trasferimento a Conkouati-Douli||Conkouati-Douli",
+              "alloggio|Campo||Conkouati-Douli",
+              "attivita|Laguna||Conkouati-Douli"
+            ]
+          },
+          {
+            "t": "Conkouati",
+            "a": [
+              "attivita|Scimpanzé riabilitati||Conkouati"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1148,19 +3592,181 @@
         "title": "São Tomé e Príncipe",
         "days": 10,
         "route": "São Tomé (4) → Príncipe (5)",
-        "description": "Isole tranquille e natura."
+        "description": "Isole tranquille e natura.",
+        "plan": [
+          {
+            "t": "Arrivo a São Tomé",
+            "a": [
+              "volo|Volo per São Tomé via Lisbona||",
+              "alloggio|Hotel a São Tomé||São Tomé",
+              "attivita|Città coloniale||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Roça Agostinho Neto e cacao||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Pico Cão Grande e cascata di São Nicolau||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Isola di Rolas e linea dell'Equatore||Rolas"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "volo|Trasferimento a Príncipe||Príncipe",
+              "alloggio|Eco-lodge||Príncipe",
+              "attivita|Spiagge||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Banana Beach||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Roça Sundy||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "traghetto|Barca lungo la costa||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Tartarughe (stagionale)||Príncipe"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Príncipe eco-lusso",
         "days": 8,
         "route": "São Tomé (1) → Príncipe (6)",
-        "description": "Lodge sostenibili nella riserva della biosfera, con tartarughe e spiagge vergini."
+        "description": "Lodge sostenibili nella riserva della biosfera, con tartarughe e spiagge vergini.",
+        "plan": [
+          {
+            "t": "Arrivo a São Tomé",
+            "a": [
+              "volo|Volo per São Tomé||",
+              "alloggio|Hotel||São Tomé"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "volo|Trasferimento a Príncipe||Príncipe",
+              "alloggio|Eco-lodge di lusso||Príncipe",
+              "attivita|Spiaggia||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Banana Beach||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Roça Sundy e cioccolato||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "traghetto|Barca e snorkeling||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Trekking nella foresta||Príncipe"
+            ]
+          },
+          {
+            "t": "Príncipe",
+            "a": [
+              "attivita|Relax||Príncipe"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "São Tomé cioccolato",
         "days": 6,
         "route": "São Tomé (5)",
-        "description": "Piantagioni di cacao in rovina, il Pico Cão Grande e la spiaggia di Banana."
+        "description": "Piantagioni di cacao in rovina, il Pico Cão Grande e la spiaggia di Banana.",
+        "plan": [
+          {
+            "t": "Arrivo a São Tomé",
+            "a": [
+              "volo|Volo per São Tomé||",
+              "alloggio|Hotel||São Tomé",
+              "attivita|Città||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Roças del cacao||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Laboratorio di cioccolato di Claudio Corallo||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Pico Cão Grande||São Tomé"
+            ]
+          },
+          {
+            "t": "São Tomé",
+            "a": [
+              "attivita|Spiaggia||São Tomé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1213,19 +3819,222 @@
         "title": "Angola",
         "days": 10,
         "route": "Luanda (2) → Kalandula (2) → Lubango e Serra da Leba (3) → Namibe e Iona (2)",
-        "description": "Da maggio a ottobre, con operatore locale."
+        "description": "Da maggio a ottobre, con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Luanda",
+            "a": [
+              "volo|Volo per Luanda||",
+              "alloggio|Hotel a Luanda||Luanda",
+              "attivita|Ilha e Marginal||Luanda"
+            ]
+          },
+          {
+            "t": "Luanda",
+            "a": [
+              "attivita|Fortezza di São Miguel||Luanda"
+            ]
+          },
+          {
+            "t": "Kalandula",
+            "a": [
+              "transfer|Trasferimento a Kalandula||Kalandula",
+              "alloggio|Lodge||Kalandula",
+              "attivita|Cascate di Kalandula||Kalandula"
+            ]
+          },
+          {
+            "t": "Kalandula",
+            "a": [
+              "attivita|Pedras Negras||Kalandula"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "volo|Trasferimento a Lubango||Lubango",
+              "alloggio|Hotel a Lubango||Lubango",
+              "attivita|Cristo Re||Lubango"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "attivita|Serra da Leba||Lubango"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "attivita|Tundavala||Lubango"
+            ]
+          },
+          {
+            "t": "Namibe",
+            "a": [
+              "transfer|Trasferimento a Namibe||Namibe",
+              "alloggio|Hotel||Namibe",
+              "attivita|Deserto||Namibe"
+            ]
+          },
+          {
+            "t": "Iona",
+            "a": [
+              "attivita|Parco di Iona e welwitschia||Iona"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Luanda e la costa",
         "days": 7,
         "route": "Luanda (2) → Mussulo (2) → Cabo Ledo (2)",
-        "description": "Per chi è a Luanda per lavoro o per una prima visita: città, la laguna di Mussulo e le spiagge da surf a sud."
+        "description": "Per chi è a Luanda per lavoro o per una prima visita: città, la laguna di Mussulo e le spiagge da surf a sud.",
+        "plan": [
+          {
+            "t": "Arrivo a Luanda",
+            "a": [
+              "volo|Volo per Luanda||",
+              "alloggio|Hotel||Luanda"
+            ]
+          },
+          {
+            "t": "Luanda",
+            "a": [
+              "attivita|Città||Luanda"
+            ]
+          },
+          {
+            "t": "Mussulo",
+            "a": [
+              "traghetto|Trasferimento a Mussulo||Mussulo",
+              "alloggio|Resort||Mussulo",
+              "attivita|Laguna||Mussulo"
+            ]
+          },
+          {
+            "t": "Mussulo",
+            "a": [
+              "attivita|Relax||Mussulo"
+            ]
+          },
+          {
+            "t": "Cabo Ledo",
+            "a": [
+              "transfer|Trasferimento a Cabo Ledo||Cabo Ledo",
+              "alloggio|Lodge||Cabo Ledo",
+              "attivita|Surf||Cabo Ledo"
+            ]
+          },
+          {
+            "t": "Cabo Ledo",
+            "a": [
+              "attivita|Miradouro da Lua||Cabo Ledo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Angola del sud in fuoristrada",
         "days": 12,
         "route": "Luanda (1) → Lubango (2) → Serra da Leba e Tundavala → Namibe (2) → Iona e deserto (4) → Lubango (2)",
-        "description": "Spedizione per viaggiatori esperti con guida locale: canyon, deserto del Namib angolano e popoli Mucubal e Himba."
+        "description": "Spedizione per viaggiatori esperti con guida locale: canyon, deserto del Namib angolano e popoli Mucubal e Himba.",
+        "plan": [
+          {
+            "t": "Arrivo a Luanda",
+            "a": [
+              "volo|Volo per Luanda||",
+              "alloggio|Hotel||Luanda"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "volo|Trasferimento a Lubango||Lubango",
+              "alloggio|Hotel||Lubango",
+              "attivita|Cristo Re||Lubango"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "attivita|Tundavala||Lubango"
+            ]
+          },
+          {
+            "t": "Serra da Leba",
+            "a": [
+              "attivita|Serra da Leba||Serra da Leba"
+            ]
+          },
+          {
+            "t": "Namibe",
+            "a": [
+              "transfer|Trasferimento a Namibe||Namibe",
+              "alloggio|Hotel||Namibe"
+            ]
+          },
+          {
+            "t": "Namibe",
+            "a": [
+              "attivita|Mucubal||Namibe"
+            ]
+          },
+          {
+            "t": "Iona",
+            "a": [
+              "transfer|Trasferimento a Iona||Iona",
+              "alloggio|Campo||Iona",
+              "attivita|Deserto||Iona"
+            ]
+          },
+          {
+            "t": "Iona",
+            "a": [
+              "attivita|Dune sul mare||Iona"
+            ]
+          },
+          {
+            "t": "Iona",
+            "a": [
+              "attivita|Himba||Iona"
+            ]
+          },
+          {
+            "t": "Iona",
+            "a": [
+              "attivita|Welwitschia||Iona"
+            ]
+          },
+          {
+            "t": "Lubango",
+            "a": [
+              "transfer|Trasferimento a Lubango||Lubango",
+              "alloggio|Hotel||Lubango"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

@@ -60,19 +60,178 @@
         "title": "Deserto di Djanet",
         "days": 8,
         "route": "Algeri (1) → Djanet (6, trekking nel Tassili)",
-        "description": "Da ottobre ad aprile, con agenzia locale."
+        "description": "Da ottobre ad aprile, con agenzia locale.",
+        "plan": [
+          {
+            "t": "Arrivo ad Algeri",
+            "a": [
+              "volo|Volo per Algeri||",
+              "info|Visto e operatore locale autorizzato obbligatori||",
+              "alloggio|Hotel ad Algeri||Algeri"
+            ]
+          },
+          {
+            "t": "Djanet",
+            "a": [
+              "volo|Volo per Djanet||Djanet",
+              "alloggio|Campo tendato||Tassili",
+              "attivita|Oasi di Djanet||Djanet"
+            ]
+          },
+          {
+            "t": "Tassili n'Ajjer",
+            "a": [
+              "attivita|Trekking con dromedari tra le rocce del Tassili||Tassili"
+            ]
+          },
+          {
+            "t": "Tassili n'Ajjer",
+            "a": [
+              "attivita|Pitture rupestri di Tin Taghirt||Tassili"
+            ]
+          },
+          {
+            "t": "Tadrart",
+            "a": [
+              "attivita|Erg Admer e dune rosse della Tadrart||Tadrart"
+            ]
+          },
+          {
+            "t": "Tadrart",
+            "a": [
+              "attivita|Archi di roccia di Moul Naga||Tadrart"
+            ]
+          },
+          {
+            "t": "Djanet",
+            "a": [
+              "attivita|Rientro a Djanet e notte sotto le stelle||Djanet"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Algeri e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Algeria del nord",
         "days": 8,
         "route": "Algeri (2) → Tipasa → Costantina (2) → Djemila → Timgad (1) → Ghardaïa (2)",
-        "description": "Città romane e M'zab, primavera e autunno."
+        "description": "Città romane e M'zab, primavera e autunno.",
+        "plan": [
+          {
+            "t": "Arrivo ad Algeri",
+            "a": [
+              "volo|Volo per Algeri||",
+              "alloggio|Hotel ad Algeri||Algeri",
+              "attivita|Casbah UNESCO||Algeri"
+            ]
+          },
+          {
+            "t": "Algeri e Tipasa",
+            "a": [
+              "attivita|Notre-Dame d'Afrique e Jardin d'Essai||Algeri",
+              "attivita|Rovine romane di Tipasa sul mare||Tipasa"
+            ]
+          },
+          {
+            "t": "Costantina",
+            "a": [
+              "volo|Volo per Costantina||Costantina",
+              "alloggio|Hotel a Costantina||Costantina",
+              "attivita|Città dei ponti sospesi||Costantina"
+            ]
+          },
+          {
+            "t": "Djemila",
+            "a": [
+              "attivita|Djemila romana UNESCO||Djemila"
+            ]
+          },
+          {
+            "t": "Timgad",
+            "a": [
+              "attivita|Timgad, la Pompei d'Africa||Timgad",
+              "alloggio|Hotel a Batna||Batna"
+            ]
+          },
+          {
+            "t": "Ghardaïa",
+            "a": [
+              "volo|Volo per Ghardaïa||Ghardaïa",
+              "alloggio|Hotel a Ghardaïa||Ghardaïa",
+              "attivita|Valle dello M'zab UNESCO||Ghardaïa"
+            ]
+          },
+          {
+            "t": "Ghardaïa",
+            "a": [
+              "attivita|Beni Isguen e mercato all'asta||Ghardaïa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Algeri e rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sahara di Timimoun",
         "days": 7,
         "route": "Algeri (1) → Timimoun (5)",
-        "description": "Le ksour di terra rossa e l'erg occidentale, ideale da ottobre a marzo con guida e permessi organizzati."
+        "description": "Le ksour di terra rossa e l'erg occidentale, ideale da ottobre a marzo con guida e permessi organizzati.",
+        "plan": [
+          {
+            "t": "Arrivo ad Algeri",
+            "a": [
+              "volo|Volo per Algeri||",
+              "alloggio|Hotel ad Algeri||Algeri"
+            ]
+          },
+          {
+            "t": "Timimoun",
+            "a": [
+              "volo|Volo per Timimoun||Timimoun",
+              "alloggio|Hotel in stile sudanese||Timimoun",
+              "attivita|Città rossa e foggara||Timimoun"
+            ]
+          },
+          {
+            "t": "Timimoun",
+            "a": [
+              "attivita|Ksour e palmeti in 4x4||Timimoun"
+            ]
+          },
+          {
+            "t": "Grande Erg",
+            "a": [
+              "attivita|Dune del Grande Erg Occidentale||Timimoun"
+            ]
+          },
+          {
+            "t": "Grande Erg",
+            "a": [
+              "attivita|Notte in campo tendato||Timimoun"
+            ]
+          },
+          {
+            "t": "Timimoun",
+            "a": [
+              "attivita|Sebkha e tramonto||Timimoun"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Algeri e rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -195,19 +354,202 @@
         "title": "Rotta storica",
         "days": 10,
         "route": "Addis Abeba (1) → Bahir Dar (2) → Gondar (1) → Simien (2) → Axum (1) → Lalibela (2)",
-        "description": "Con voli interni, da ottobre a marzo."
+        "description": "Con voli interni, da ottobre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo ad Addis Abeba",
+            "a": [
+              "volo|Volo per Addis Abeba||",
+              "info|E-visa etiope||",
+              "alloggio|Hotel ad Addis Abeba||Addis Abeba",
+              "attivita|Museo nazionale e Lucy||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Bahir Dar",
+            "a": [
+              "volo|Volo per Bahir Dar||Bahir Dar",
+              "alloggio|Hotel sul lago Tana||Bahir Dar",
+              "traghetto|Monasteri del lago Tana||Lago Tana"
+            ]
+          },
+          {
+            "t": "Bahir Dar",
+            "a": [
+              "attivita|Cascate del Nilo Azzurro||Bahir Dar"
+            ]
+          },
+          {
+            "t": "Gondar",
+            "a": [
+              "transfer|Trasferimento a Gondar||Gondar",
+              "alloggio|Hotel a Gondar||Gondar",
+              "attivita|Castelli di Fasil Ghebbi e Debre Berhan Selassie||Gondar"
+            ]
+          },
+          {
+            "t": "Simien",
+            "a": [
+              "transfer|Trasferimento nei Monti Simien||Simien",
+              "alloggio|Simien Lodge||Simien",
+              "attivita|Babbuini gelada||Simien"
+            ]
+          },
+          {
+            "t": "Simien",
+            "a": [
+              "attivita|Trekking tra le scarpate||Simien"
+            ]
+          },
+          {
+            "t": "Axum",
+            "a": [
+              "volo|Volo per Axum||Axum",
+              "alloggio|Hotel ad Axum||Axum",
+              "attivita|Stele e chiesa di Santa Maria di Sion||Axum"
+            ]
+          },
+          {
+            "t": "Lalibela",
+            "a": [
+              "volo|Volo per Lalibela||Lalibela",
+              "alloggio|Hotel a Lalibela||Lalibela",
+              "attivita|Chiese scavate nella roccia, gruppo nord||Lalibela"
+            ]
+          },
+          {
+            "t": "Lalibela",
+            "a": [
+              "attivita|Bete Giyorgis e gruppo est||Lalibela"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Addis Abeba e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Valle dell'Omo",
         "days": 9,
         "route": "Addis Abeba (1) → Arba Minch (1) → Jinka (2) → Turmi (3) → Addis Abeba",
-        "description": "Popoli del sud con fuoristrada."
+        "description": "Popoli del sud con fuoristrada.",
+        "plan": [
+          {
+            "t": "Arrivo ad Addis Abeba",
+            "a": [
+              "volo|Volo per Addis Abeba||",
+              "alloggio|Hotel||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Arba Minch",
+            "a": [
+              "volo|Volo per Arba Minch||Arba Minch",
+              "alloggio|Lodge||Arba Minch",
+              "traghetto|Coccodrilli del lago Chamo||Arba Minch"
+            ]
+          },
+          {
+            "t": "Jinka",
+            "a": [
+              "transfer|Trasferimento a Jinka con i villaggi konso||Jinka",
+              "alloggio|Lodge a Jinka||Jinka"
+            ]
+          },
+          {
+            "t": "Mursi",
+            "a": [
+              "attivita|Villaggio mursi nel parco del Mago||Jinka"
+            ]
+          },
+          {
+            "t": "Turmi",
+            "a": [
+              "transfer|Trasferimento a Turmi||Turmi",
+              "alloggio|Lodge a Turmi||Turmi",
+              "attivita|Mercato hamer||Turmi"
+            ]
+          },
+          {
+            "t": "Turmi",
+            "a": [
+              "attivita|Popolo dassanech sul fiume Omo||Omorate"
+            ]
+          },
+          {
+            "t": "Turmi",
+            "a": [
+              "attivita|Cerimonia del salto del toro (se in programma)||Turmi"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro ad Arba Minch e volo per Addis Abeba||Addis Abeba",
+              "alloggio|Hotel||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dancalia ed Erta Ale",
         "days": 6,
         "route": "Addis Abeba (1) → Macallè (1) → Dallol e lago di sale (2) → Erta Ale (1)",
-        "description": "Uno dei luoghi più estremi della Terra: sorgenti colorate di Dallol e il lago di lava; solo con scorta e operatore esperto."
+        "description": "Uno dei luoghi più estremi della Terra: sorgenti colorate di Dallol e il lago di lava; solo con scorta e operatore esperto.",
+        "plan": [
+          {
+            "t": "Arrivo ad Addis Abeba",
+            "a": [
+              "volo|Volo per Addis Abeba||",
+              "alloggio|Hotel||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Macallè",
+            "a": [
+              "volo|Volo per Macallè||Macallè",
+              "alloggio|Hotel a Macallè||Macallè"
+            ]
+          },
+          {
+            "t": "Dallol",
+            "a": [
+              "transfer|Discesa in Dancalia||Dancalia",
+              "attivita|Carovane del sale al lago Assale||Dancalia",
+              "alloggio|Campo semplice||Hamed Ela"
+            ]
+          },
+          {
+            "t": "Dallol",
+            "a": [
+              "attivita|Sorgenti colorate di Dallol||Dallol"
+            ]
+          },
+          {
+            "t": "Erta Ale",
+            "a": [
+              "transfer|Trasferimento al vulcano||Erta Ale",
+              "attivita|Salita notturna al lago di lava||Erta Ale",
+              "alloggio|Bivacco sul cratere||Erta Ale"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Macallè e volo per Addis Abeba||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -281,19 +623,183 @@
         "title": "Primati e safari",
         "days": 10,
         "route": "Entebbe (1) → Kibale (2) → Queen Elizabeth (2) → Bwindi (2) → Lago Bunyonyi (1) → Entebbe",
-        "description": "Gorilla, scimpanzé e savana."
+        "description": "Gorilla, scimpanzé e savana.",
+        "plan": [
+          {
+            "t": "Arrivo a Entebbe",
+            "a": [
+              "volo|Volo per Entebbe||",
+              "alloggio|Hotel sul lago Vittoria||Entebbe"
+            ]
+          },
+          {
+            "t": "Kibale",
+            "a": [
+              "transfer|Trasferimento a Kibale||Kibale",
+              "alloggio|Lodge nella foresta||Kibale"
+            ]
+          },
+          {
+            "t": "Kibale",
+            "a": [
+              "attivita|Trekking degli scimpanzé|Permesso da prenotare.|Kibale",
+              "attivita|Palude di Bigodi||Kibale"
+            ]
+          },
+          {
+            "t": "Queen Elizabeth",
+            "a": [
+              "transfer|Trasferimento nel Queen Elizabeth||Queen Elizabeth",
+              "alloggio|Lodge||Queen Elizabeth",
+              "traghetto|Canale di Kazinga in barca||Queen Elizabeth"
+            ]
+          },
+          {
+            "t": "Queen Elizabeth",
+            "a": [
+              "attivita|Leoni arrampicatori di Ishasha||Ishasha"
+            ]
+          },
+          {
+            "t": "Bwindi",
+            "a": [
+              "transfer|Trasferimento a Bwindi||Bwindi",
+              "alloggio|Lodge a Bwindi||Bwindi"
+            ]
+          },
+          {
+            "t": "Bwindi",
+            "a": [
+              "attivita|Trekking dei gorilla di montagna|Permesso costoso da prenotare con molto anticipo.|Bwindi"
+            ]
+          },
+          {
+            "t": "Lago Bunyonyi",
+            "a": [
+              "transfer|Trasferimento al lago Bunyonyi||Bunyonyi",
+              "alloggio|Lodge sul lago||Bunyonyi",
+              "traghetto|Canoa tra le isole||Bunyonyi"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro verso Entebbe o volo da Kisoro||Entebbe",
+              "alloggio|Hotel a Entebbe||Entebbe"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gorilla express",
         "days": 5,
         "route": "Kigali → Bwindi o Mgahinga (3) → Kigali",
-        "description": "Dal Ruanda, con trasferimento via terra."
+        "description": "Dal Ruanda, con trasferimento via terra.",
+        "plan": [
+          {
+            "t": "Arrivo a Kigali",
+            "a": [
+              "volo|Volo per Kigali||",
+              "alloggio|Hotel a Kigali||Kigali"
+            ]
+          },
+          {
+            "t": "Bwindi",
+            "a": [
+              "transfer|Trasferimento a Bwindi o Mgahinga||Bwindi",
+              "alloggio|Lodge||Bwindi"
+            ]
+          },
+          {
+            "t": "Gorilla",
+            "a": [
+              "attivita|Trekking dei gorilla||Bwindi"
+            ]
+          },
+          {
+            "t": "Bwindi",
+            "a": [
+              "attivita|Villaggio batwa e passeggiata||Bwindi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Kigali||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Uganda nord e Murchison",
         "days": 8,
         "route": "Entebbe (1) → Ziwa e rinoceronti (1) → Murchison Falls (3) → Kibale (2)",
-        "description": "Le cascate del Nilo, rinoceronti a piedi e scimpanzé."
+        "description": "Le cascate del Nilo, rinoceronti a piedi e scimpanzé.",
+        "plan": [
+          {
+            "t": "Arrivo a Entebbe",
+            "a": [
+              "volo|Volo per Entebbe||",
+              "alloggio|Hotel||Entebbe"
+            ]
+          },
+          {
+            "t": "Ziwa",
+            "a": [
+              "transfer|Trasferimento al santuario di Ziwa||Ziwa",
+              "alloggio|Lodge a Ziwa||Ziwa",
+              "attivita|Rinoceronti bianchi a piedi||Ziwa"
+            ]
+          },
+          {
+            "t": "Murchison",
+            "a": [
+              "transfer|Trasferimento al Murchison Falls||Murchison",
+              "alloggio|Lodge sul Nilo||Murchison",
+              "attivita|Cima delle cascate||Murchison"
+            ]
+          },
+          {
+            "t": "Murchison",
+            "a": [
+              "attivita|Fototour sulla sponda nord||Murchison",
+              "traghetto|Barca fino alle cascate||Murchison"
+            ]
+          },
+          {
+            "t": "Murchison",
+            "a": [
+              "attivita|Foresta di Budongo e scimpanzé||Budongo"
+            ]
+          },
+          {
+            "t": "Kibale",
+            "a": [
+              "transfer|Trasferimento a Kibale||Kibale",
+              "alloggio|Lodge||Kibale"
+            ]
+          },
+          {
+            "t": "Kibale",
+            "a": [
+              "attivita|Scimpanzé||Kibale"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Entebbe||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -374,21 +880,199 @@
     "itineraries": [
       {
         "title": "Ruanda completo",
-        "days": 8,
+        "days": 9,
         "route": "Kigali (1) → Akagera (2) → Nyungwe (2) → Lago Kivu (1) → Vulcani (2)",
-        "description": "Primati e savana."
+        "description": "Primati e savana.",
+        "plan": [
+          {
+            "t": "Arrivo a Kigali",
+            "a": [
+              "volo|Volo per Kigali||",
+              "alloggio|Hotel a Kigali||Kigali",
+              "attivita|Memoriale del genocidio||Kigali"
+            ]
+          },
+          {
+            "t": "Akagera",
+            "a": [
+              "transfer|Trasferimento ad Akagera||Akagera",
+              "alloggio|Lodge||Akagera",
+              "traghetto|Barca sul lago Ihema||Akagera"
+            ]
+          },
+          {
+            "t": "Akagera",
+            "a": [
+              "attivita|Fototour con i Big Five||Akagera"
+            ]
+          },
+          {
+            "t": "Nyungwe",
+            "a": [
+              "transfer|Trasferimento a Nyungwe||Nyungwe",
+              "alloggio|Lodge nella foresta||Nyungwe",
+              "attivita|Passerella sospesa||Nyungwe"
+            ]
+          },
+          {
+            "t": "Nyungwe",
+            "a": [
+              "attivita|Trekking degli scimpanzé||Nyungwe"
+            ]
+          },
+          {
+            "t": "Lago Kivu",
+            "a": [
+              "transfer|Trasferimento sul lago Kivu||Kivu",
+              "alloggio|Hotel sul lago||Kivu",
+              "traghetto|Barca sul lago||Kivu"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "transfer|Trasferimento a Musanze||Vulcani",
+              "alloggio|Lodge||Vulcani",
+              "attivita|Scimmie dorate||Vulcani"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "attivita|Trekking dei gorilla di montagna||Vulcani"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Kigali||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gorilla breve",
         "days": 4,
         "route": "Kigali (1) → Vulcani (2)",
-        "description": "Estensione di un safari in Kenya o Tanzania."
+        "description": "Estensione di un safari in Kenya o Tanzania.",
+        "plan": [
+          {
+            "t": "Arrivo a Kigali",
+            "a": [
+              "volo|Volo per Kigali||",
+              "alloggio|Hotel||Kigali",
+              "attivita|Memoriale del genocidio||Kigali"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "transfer|Trasferimento al parco dei Vulcani||Vulcani",
+              "alloggio|Lodge||Vulcani",
+              "attivita|Scimmie dorate||Vulcani"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "attivita|Trekking dei gorilla||Vulcani"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Kigali||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ruanda e Tanzania",
         "days": 12,
         "route": "Kigali (1) → Vulcani (2) → Serengeti (4) → Ngorongoro (1) → Zanzibar (3)",
-        "description": "Gorilla di montagna e grande migrazione con estensione di mare."
+        "description": "Gorilla di montagna e grande migrazione con estensione di mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Kigali",
+            "a": [
+              "volo|Volo per Kigali||",
+              "alloggio|Hotel||Kigali"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "transfer|Trasferimento al parco dei Vulcani||Vulcani",
+              "alloggio|Lodge||Vulcani"
+            ]
+          },
+          {
+            "t": "Vulcani",
+            "a": [
+              "attivita|Trekking dei gorilla||Vulcani"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "volo|Volo per il Serengeti via Kilimanjaro||Serengeti",
+              "alloggio|Campo tendato||Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Fototour||Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Fototour e grande migrazione||Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Mongolfiera all'alba||Serengeti"
+            ]
+          },
+          {
+            "t": "Ngorongoro",
+            "a": [
+              "transfer|Trasferimento al cratere||Ngorongoro",
+              "alloggio|Lodge sul bordo||Ngorongoro",
+              "attivita|Discesa nel cratere||Ngorongoro"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "volo|Volo per Zanzibar||Zanzibar",
+              "alloggio|Resort||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "attivita|Stone Town e spezie||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "attivita|Mare||Zanzibar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -437,19 +1121,160 @@
         "title": "Burundi",
         "days": 5,
         "route": "Bujumbura (2) → Gitega e Gishora (2)",
-        "description": "Solo per viaggiatori esperti, se la situazione lo consente."
+        "description": "Solo per viaggiatori esperti, se la situazione lo consente.",
+        "plan": [
+          {
+            "t": "Arrivo a Bujumbura",
+            "a": [
+              "volo|Volo per Bujumbura||",
+              "info|Solo con operatore locale e verifiche di sicurezza||",
+              "alloggio|Hotel sul lago Tanganica||Bujumbura"
+            ]
+          },
+          {
+            "t": "Bujumbura",
+            "a": [
+              "attivita|Spiaggia sul Tanganica e mercato||Bujumbura"
+            ]
+          },
+          {
+            "t": "Gitega",
+            "a": [
+              "transfer|Trasferimento a Gitega||Gitega",
+              "alloggio|Hotel a Gitega||Gitega",
+              "attivita|Museo nazionale||Gitega"
+            ]
+          },
+          {
+            "t": "Gishora",
+            "a": [
+              "attivita|Tamburini reali di Gishora||Gishora"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Bujumbura||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Burundi e Ruanda",
         "days": 9,
         "route": "Kigali (1) → Nyungwe (2) → Bujumbura (2) → Lago Tanganica (2) → Kigali",
-        "description": "Natura dei Grandi Laghi in due paesi: scimpanzé a Nyungwe, spiagge sul Tanganica; solo con operatore locale."
+        "description": "Natura dei Grandi Laghi in due paesi: scimpanzé a Nyungwe, spiagge sul Tanganica; solo con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Kigali",
+            "a": [
+              "volo|Volo per Kigali||",
+              "alloggio|Hotel||Kigali"
+            ]
+          },
+          {
+            "t": "Nyungwe",
+            "a": [
+              "transfer|Trasferimento a Nyungwe||Nyungwe",
+              "alloggio|Lodge||Nyungwe"
+            ]
+          },
+          {
+            "t": "Nyungwe",
+            "a": [
+              "attivita|Scimpanzé e passerella sospesa||Nyungwe"
+            ]
+          },
+          {
+            "t": "Bujumbura",
+            "a": [
+              "transfer|Frontiera e Bujumbura||Bujumbura",
+              "alloggio|Hotel sul lago||Bujumbura"
+            ]
+          },
+          {
+            "t": "Bujumbura",
+            "a": [
+              "attivita|Delta del Rusizi||Bujumbura"
+            ]
+          },
+          {
+            "t": "Tanganica",
+            "a": [
+              "attivita|Spiagge del Tanganica||Tanganica",
+              "alloggio|Lodge sul lago||Tanganica"
+            ]
+          },
+          {
+            "t": "Tanganica",
+            "a": [
+              "attivita|Giornata sul lago||Tanganica"
+            ]
+          },
+          {
+            "t": "Kigali",
+            "a": [
+              "transfer|Rientro a Kigali||Kigali",
+              "alloggio|Hotel||Kigali"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tanganica e tamburi",
         "days": 6,
         "route": "Bujumbura (2) → Rusizi (1) → Gishora (1) → Kibira (1)",
-        "description": "Ippopotami del delta del Rusizi, i tamburini reali di Gishora e la foresta di Kibira."
+        "description": "Ippopotami del delta del Rusizi, i tamburini reali di Gishora e la foresta di Kibira.",
+        "plan": [
+          {
+            "t": "Arrivo a Bujumbura",
+            "a": [
+              "volo|Volo per Bujumbura||",
+              "alloggio|Hotel||Bujumbura"
+            ]
+          },
+          {
+            "t": "Bujumbura",
+            "a": [
+              "attivita|Lago Tanganica||Bujumbura"
+            ]
+          },
+          {
+            "t": "Rusizi",
+            "a": [
+              "attivita|Ippopotami del delta del Rusizi||Rusizi",
+              "alloggio|Lodge||Rusizi"
+            ]
+          },
+          {
+            "t": "Gishora",
+            "a": [
+              "attivita|Tamburini reali||Gishora",
+              "alloggio|Hotel a Gitega||Gitega"
+            ]
+          },
+          {
+            "t": "Kibira",
+            "a": [
+              "attivita|Foresta di Kibira e piantagioni di tè||Kibira",
+              "alloggio|Lodge||Kibira"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Bujumbura||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -502,19 +1327,152 @@
         "title": "Eritrea",
         "days": 6,
         "route": "Asmara (3) → Massaua (2)",
-        "description": "Con permessi e agenzia locale."
+        "description": "Con permessi e agenzia locale.",
+        "plan": [
+          {
+            "t": "Arrivo ad Asmara",
+            "a": [
+              "volo|Volo per Asmara||",
+              "info|Visto e permessi di viaggio interni||",
+              "alloggio|Hotel ad Asmara||Asmara"
+            ]
+          },
+          {
+            "t": "Asmara",
+            "a": [
+              "attivita|Architettura razionalista: Fiat Tagliero e cinema Impero||Asmara"
+            ]
+          },
+          {
+            "t": "Asmara",
+            "a": [
+              "attivita|Cattedrale e mercato||Asmara"
+            ]
+          },
+          {
+            "t": "Massaua",
+            "a": [
+              "transfer|Discesa verso il Mar Rosso||Massaua",
+              "alloggio|Hotel a Massaua||Massaua",
+              "attivita|Città vecchia ottomana||Massaua"
+            ]
+          },
+          {
+            "t": "Massaua",
+            "a": [
+              "attivita|Spiagge di Gurgussum||Massaua"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Asmara||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Eritrea classica",
         "days": 8,
         "route": "Asmara (2) → Keren (1) → Massaua (2) → Arcipelago Dahlak (2)",
-        "description": "Architettura italiana razionalista ad Asmara, il treno storico e le isole Dahlak; solo con operatore locale."
+        "description": "Architettura italiana razionalista ad Asmara, il treno storico e le isole Dahlak; solo con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo ad Asmara",
+            "a": [
+              "volo|Volo per Asmara||",
+              "alloggio|Hotel||Asmara"
+            ]
+          },
+          {
+            "t": "Asmara",
+            "a": [
+              "attivita|Architettura italiana||Asmara"
+            ]
+          },
+          {
+            "t": "Keren",
+            "a": [
+              "transfer|Trasferimento a Keren||Keren",
+              "alloggio|Hotel a Keren||Keren",
+              "attivita|Mercato del lunedì e cimitero italiano||Keren"
+            ]
+          },
+          {
+            "t": "Massaua",
+            "a": [
+              "transfer|Trasferimento a Massaua||Massaua",
+              "alloggio|Hotel||Massaua"
+            ]
+          },
+          {
+            "t": "Massaua",
+            "a": [
+              "attivita|Città vecchia||Massaua"
+            ]
+          },
+          {
+            "t": "Dahlak",
+            "a": [
+              "traghetto|Arcipelago Dahlak||Dahlak",
+              "alloggio|Campo sull'isola||Dahlak"
+            ]
+          },
+          {
+            "t": "Dahlak",
+            "a": [
+              "attivita|Snorkeling||Dahlak"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Asmara||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Asmara e la ferrovia",
         "days": 5,
         "route": "Asmara (3) → Nefasit in treno a vapore (1) → Asmara",
-        "description": "Proposta breve per appassionati di storia e architettura del Novecento italiano."
+        "description": "Proposta breve per appassionati di storia e architettura del Novecento italiano.",
+        "plan": [
+          {
+            "t": "Arrivo ad Asmara",
+            "a": [
+              "volo|Volo per Asmara||",
+              "alloggio|Hotel||Asmara"
+            ]
+          },
+          {
+            "t": "Asmara",
+            "a": [
+              "attivita|Architettura del Novecento||Asmara"
+            ]
+          },
+          {
+            "t": "Asmara",
+            "a": [
+              "attivita|Caffè storici e Bar Zilli||Asmara"
+            ]
+          },
+          {
+            "t": "Ferrovia",
+            "a": [
+              "treno|Treno a vapore fino a Nefasit|Su richiesta, da organizzare in anticipo.|Nefasit",
+              "alloggio|Hotel ad Asmara||Asmara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -566,19 +1524,159 @@
         "title": "Gibuti",
         "days": 6,
         "route": "Gibuti (2) → Lago Assal (1) → Lago Abbe (1) → Tadjoura (1)",
-        "description": "Da novembre a febbraio."
+        "description": "Da novembre a febbraio.",
+        "plan": [
+          {
+            "t": "Arrivo a Gibuti",
+            "a": [
+              "volo|Volo per Gibuti||",
+              "alloggio|Hotel a Gibuti||Gibuti"
+            ]
+          },
+          {
+            "t": "Gibuti",
+            "a": [
+              "attivita|Mercato e Les Escales||Gibuti"
+            ]
+          },
+          {
+            "t": "Lago Assal",
+            "a": [
+              "transfer|Trasferimento al lago Assal||Assal",
+              "attivita|Lago salato più basso d'Africa||Assal",
+              "alloggio|Campo||Assal"
+            ]
+          },
+          {
+            "t": "Lago Abbe",
+            "a": [
+              "transfer|Camini calcarei del lago Abbe||Abbe",
+              "alloggio|Campo||Abbe"
+            ]
+          },
+          {
+            "t": "Tadjoura",
+            "a": [
+              "transfer|Trasferimento a Tadjoura||Tadjoura",
+              "alloggio|Hotel||Tadjoura",
+              "attivita|Città bianca sul golfo||Tadjoura"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Gibuti||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Squali balena",
         "days": 5,
         "route": "Gibuti (1) → Golfo di Tadjoura in barca (3)",
-        "description": "Da novembre a febbraio si nuota con gli squali balena nel golfo di Ghoubbet; facile da abbinare a un viaggio in Etiopia."
+        "description": "Da novembre a febbraio si nuota con gli squali balena nel golfo di Ghoubbet; facile da abbinare a un viaggio in Etiopia.",
+        "plan": [
+          {
+            "t": "Arrivo a Gibuti",
+            "a": [
+              "volo|Volo per Gibuti||",
+              "alloggio|Hotel||Gibuti"
+            ]
+          },
+          {
+            "t": "Golfo di Tadjoura",
+            "a": [
+              "traghetto|Imbarco per il golfo||Tadjoura",
+              "attivita|Nuoto con gli squali balena||Tadjoura"
+            ]
+          },
+          {
+            "t": "Golfo",
+            "a": [
+              "attivita|Squali balena e snorkeling||Tadjoura"
+            ]
+          },
+          {
+            "t": "Golfo",
+            "a": [
+              "attivita|Isole Moucha e Maskali||Tadjoura"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gibuti ed Etiopia",
-        "days": 11,
+        "days": 9,
         "route": "Gibuti (3) → Lago Assal → treno per Dire Dawa (1) → Harar (2) → Addis Abeba (2)",
-        "description": "La ferrovia Gibuti-Addis Abeba collega il mare con la città murata di Harar e i suoi uomini delle iene."
+        "description": "La ferrovia Gibuti-Addis Abeba collega il mare con la città murata di Harar e i suoi uomini delle iene.",
+        "plan": [
+          {
+            "t": "Arrivo a Gibuti",
+            "a": [
+              "volo|Volo per Gibuti||",
+              "alloggio|Hotel||Gibuti"
+            ]
+          },
+          {
+            "t": "Gibuti",
+            "a": [
+              "attivita|Città||Gibuti"
+            ]
+          },
+          {
+            "t": "Lago Assal",
+            "a": [
+              "attivita|Lago Assal||Assal"
+            ]
+          },
+          {
+            "t": "Treno",
+            "a": [
+              "treno|Treno per Dire Dawa||Dire Dawa",
+              "alloggio|Hotel a Dire Dawa||Dire Dawa"
+            ]
+          },
+          {
+            "t": "Harar",
+            "a": [
+              "transfer|Trasferimento a Harar||Harar",
+              "alloggio|Hotel a Harar||Harar",
+              "attivita|Città murata UNESCO||Harar"
+            ]
+          },
+          {
+            "t": "Harar",
+            "a": [
+              "attivita|Uomini delle iene la sera||Harar"
+            ]
+          },
+          {
+            "t": "Addis Abeba",
+            "a": [
+              "volo|Volo per Addis Abeba||Addis Abeba",
+              "alloggio|Hotel||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Addis Abeba",
+            "a": [
+              "attivita|Museo nazionale e Merkato||Addis Abeba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -608,21 +1706,162 @@
     "itineraries": [
       {
         "title": "Adrar",
-        "days": 8,
+        "days": 7,
         "route": "Atar (1) → Chinguetti (2) → Ouadane (2) → Terjit (1)",
-        "description": "Da novembre a marzo, con agenzia locale."
+        "description": "Da novembre a marzo, con agenzia locale.",
+        "plan": [
+          {
+            "t": "Arrivo ad Atar",
+            "a": [
+              "volo|Volo charter per Atar (stagione invernale)||",
+              "alloggio|Auberge ad Atar||Atar"
+            ]
+          },
+          {
+            "t": "Chinguetti",
+            "a": [
+              "transfer|Trasferimento a Chinguetti||Chinguetti",
+              "alloggio|Auberge||Chinguetti",
+              "attivita|Biblioteche di manoscritti||Chinguetti"
+            ]
+          },
+          {
+            "t": "Chinguetti",
+            "a": [
+              "attivita|Dune e tramonto||Chinguetti"
+            ]
+          },
+          {
+            "t": "Ouadane",
+            "a": [
+              "transfer|Trasferimento a Ouadane||Ouadane",
+              "alloggio|Auberge||Ouadane",
+              "attivita|Ksar in rovina UNESCO||Ouadane"
+            ]
+          },
+          {
+            "t": "Guelb er Richat",
+            "a": [
+              "attivita|Occhio del Sahara||Ouadane"
+            ]
+          },
+          {
+            "t": "Terjit",
+            "a": [
+              "transfer|Oasi di Terjit||Terjit",
+              "alloggio|Campo nell'oasi||Terjit"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Atar||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Banc d'Arguin",
         "days": 6,
         "route": "Nouakchott (1) → Banc d'Arguin (3) → Nouadhibou (1)",
-        "description": "Milioni di uccelli migratori e pescatori Imraguen nel parco nazionale UNESCO."
+        "description": "Milioni di uccelli migratori e pescatori Imraguen nel parco nazionale UNESCO.",
+        "plan": [
+          {
+            "t": "Arrivo a Nouakchott",
+            "a": [
+              "volo|Volo per Nouakchott||",
+              "alloggio|Hotel||Nouakchott",
+              "attivita|Mercato del pesce||Nouakchott"
+            ]
+          },
+          {
+            "t": "Banc d'Arguin",
+            "a": [
+              "transfer|Trasferimento lungo la spiaggia||Banc d'Arguin",
+              "alloggio|Campo tendato||Banc d'Arguin"
+            ]
+          },
+          {
+            "t": "Banc d'Arguin",
+            "a": [
+              "traghetto|Lanche dei pescatori imraguen tra gli uccelli||Banc d'Arguin"
+            ]
+          },
+          {
+            "t": "Banc d'Arguin",
+            "a": [
+              "attivita|Dune sul mare||Banc d'Arguin"
+            ]
+          },
+          {
+            "t": "Nouadhibou",
+            "a": [
+              "transfer|Trasferimento a Nouadhibou||Nouadhibou",
+              "alloggio|Hotel||Nouadhibou"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Treno del ferro",
         "days": 7,
         "route": "Nouadhibou (1) → treno del ferro → Choum → Atar (2) → Chinguetti (2)",
-        "description": "Avventura sul treno più lungo del mondo e le città carovaniere del deserto."
+        "description": "Avventura sul treno più lungo del mondo e le città carovaniere del deserto.",
+        "plan": [
+          {
+            "t": "Arrivo a Nouadhibou",
+            "a": [
+              "volo|Volo per Nouadhibou||",
+              "alloggio|Hotel||Nouadhibou"
+            ]
+          },
+          {
+            "t": "Treno del ferro",
+            "a": [
+              "treno|Treno del ferro fino a Choum|Esperienza spartana, con guida.|Choum"
+            ]
+          },
+          {
+            "t": "Atar",
+            "a": [
+              "transfer|Trasferimento ad Atar||Atar",
+              "alloggio|Auberge||Atar"
+            ]
+          },
+          {
+            "t": "Atar",
+            "a": [
+              "attivita|Passo di Amogjar||Atar"
+            ]
+          },
+          {
+            "t": "Chinguetti",
+            "a": [
+              "transfer|Trasferimento a Chinguetti||Chinguetti",
+              "alloggio|Auberge||Chinguetti"
+            ]
+          },
+          {
+            "t": "Chinguetti",
+            "a": [
+              "attivita|Biblioteche e dune||Chinguetti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Atar||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -725,19 +1964,200 @@
         "title": "Ennedi",
         "days": 12,
         "route": "N'Djamena (1) → Ennedi e Ounianga (10)",
-        "description": "Spedizione con operatore specializzato."
+        "description": "Spedizione con operatore specializzato.",
+        "plan": [
+          {
+            "t": "Arrivo a N'Djamena",
+            "a": [
+              "volo|Volo per N'Djamena||",
+              "info|Spedizione con operatore specializzato||",
+              "alloggio|Hotel||N'Djamena"
+            ]
+          },
+          {
+            "t": "Verso l'Ennedi",
+            "a": [
+              "volo|Volo charter o lunga pista verso Fada||Ennedi",
+              "alloggio|Campo mobile||Ennedi"
+            ]
+          },
+          {
+            "t": "Ennedi",
+            "a": [
+              "attivita|Arco di Aloba||Ennedi"
+            ]
+          },
+          {
+            "t": "Ennedi",
+            "a": [
+              "attivita|Guelta d'Archei con i cammelli e i coccodrilli||Ennedi"
+            ]
+          },
+          {
+            "t": "Ennedi",
+            "a": [
+              "attivita|Pitture rupestri||Ennedi"
+            ]
+          },
+          {
+            "t": "Ennedi",
+            "a": [
+              "attivita|Labirinti di roccia||Ennedi"
+            ]
+          },
+          {
+            "t": "Ounianga",
+            "a": [
+              "transfer|Trasferimento a Ounianga||Ounianga",
+              "alloggio|Campo||Ounianga"
+            ]
+          },
+          {
+            "t": "Ounianga",
+            "a": [
+              "attivita|Laghi di Ounianga UNESCO||Ounianga"
+            ]
+          },
+          {
+            "t": "Ounianga",
+            "a": [
+              "attivita|Dune e laghi colorati||Ounianga"
+            ]
+          },
+          {
+            "t": "Ritorno",
+            "a": [
+              "transfer|Rientro verso Fada||Fada",
+              "alloggio|Campo||Fada"
+            ]
+          },
+          {
+            "t": "N'Djamena",
+            "a": [
+              "volo|Volo per N'Djamena||N'Djamena",
+              "alloggio|Hotel||N'Djamena"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Zakouma",
         "days": 7,
         "route": "N'Djamena (1) → Zakouma (5)",
-        "description": "Il parco più rinato d'Africa: grandi branchi di bufali ed elefanti, con lodge stagionali."
+        "description": "Il parco più rinato d'Africa: grandi branchi di bufali ed elefanti, con lodge stagionali.",
+        "plan": [
+          {
+            "t": "Arrivo a N'Djamena",
+            "a": [
+              "volo|Volo per N'Djamena||",
+              "alloggio|Hotel||N'Djamena"
+            ]
+          },
+          {
+            "t": "Zakouma",
+            "a": [
+              "volo|Volo charter per Zakouma||Zakouma",
+              "alloggio|Camp Nomade o Tinga||Zakouma"
+            ]
+          },
+          {
+            "t": "Zakouma",
+            "a": [
+              "attivita|Fototour: bufali ed elefanti||Zakouma"
+            ]
+          },
+          {
+            "t": "Zakouma",
+            "a": [
+              "attivita|Pozze d'acqua al tramonto||Zakouma"
+            ]
+          },
+          {
+            "t": "Zakouma",
+            "a": [
+              "attivita|Safari a piedi||Zakouma"
+            ]
+          },
+          {
+            "t": "Zakouma",
+            "a": [
+              "attivita|Fototour||Zakouma"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per N'Djamena e rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lago Ciad e Guera",
         "days": 8,
         "route": "N'Djamena (2) → Guera (3) → Lago Ciad (2)",
-        "description": "Spedizione per esperti con operatore locale, verificando sempre la sicurezza."
+        "description": "Spedizione per esperti con operatore locale, verificando sempre la sicurezza.",
+        "plan": [
+          {
+            "t": "Arrivo a N'Djamena",
+            "a": [
+              "volo|Volo per N'Djamena||",
+              "info|Verificare sempre la sicurezza||",
+              "alloggio|Hotel||N'Djamena"
+            ]
+          },
+          {
+            "t": "N'Djamena",
+            "a": [
+              "attivita|Mercato e museo nazionale||N'Djamena"
+            ]
+          },
+          {
+            "t": "Guera",
+            "a": [
+              "transfer|Trasferimento nel Guera||Guera",
+              "alloggio|Campo||Guera"
+            ]
+          },
+          {
+            "t": "Guera",
+            "a": [
+              "attivita|Montagne di granito e villaggi||Guera"
+            ]
+          },
+          {
+            "t": "Guera",
+            "a": [
+              "attivita|Mercati||Guera"
+            ]
+          },
+          {
+            "t": "Lago Ciad",
+            "a": [
+              "transfer|Trasferimento al lago Ciad||Lago Ciad",
+              "alloggio|Campo||Lago Ciad"
+            ]
+          },
+          {
+            "t": "Lago Ciad",
+            "a": [
+              "traghetto|Barca tra le isole||Lago Ciad"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a N'Djamena||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

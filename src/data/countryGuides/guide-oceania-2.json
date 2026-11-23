@@ -63,21 +63,279 @@
     "itineraries": [
       {
         "title": "Fiji mare",
-        "days": 10,
+        "days": 11,
         "route": "Nadi (1) → Mamanuca (4) → Yasawa (4)",
-        "description": "Da maggio a ottobre."
+        "description": "Da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi via Asia o Australia||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Hotel a Denarau||Nadi",
+              "attivita|Riposo dal lungo viaggio||Nadi"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "traghetto|Trasferimento a Mamanuca||Mamanuca",
+              "alloggio|Resort alle Mamanuca||Mamanuca",
+              "attivita|Spiaggia||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "traghetto|Cloud 9, il bar galleggiante||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "attivita|Snorkeling sul reef||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "attivita|Monuriki, l'isola di Cast Away||Mamanuca"
+            ]
+          },
+          {
+            "t": "Yasawa",
+            "a": [
+              "traghetto|Trasferimento a Yasawa||Yasawa",
+              "alloggio|Resort alle Yasawa||Yasawa",
+              "attivita|Yasawa Flyer||Yasawa"
+            ]
+          },
+          {
+            "t": "Yasawa",
+            "a": [
+              "attivita|Grotte di Sawa-i-Lau||Yasawa"
+            ]
+          },
+          {
+            "t": "Yasawa",
+            "a": [
+              "attivita|Villaggio e cerimonia della kava||Yasawa"
+            ]
+          },
+          {
+            "t": "Yasawa",
+            "a": [
+              "traghetto|Mante a Drawaqa (maggio-ottobre)||Yasawa"
+            ]
+          },
+          {
+            "t": "Yasawa",
+            "a": [
+              "attivita|Relax||Yasawa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Australia e Fiji",
-        "days": 18,
+        "days": 17,
         "route": "Sydney (4) → Uluru (2) → Cairns (3) → Fiji (7)",
-        "description": "Combinato di Oceania."
+        "description": "Combinato di Oceania.",
+        "plan": [
+          {
+            "t": "Arrivo a Sydney",
+            "a": [
+              "volo|Volo per Sydney||",
+              "transfer|Transfer in hotel||Sydney",
+              "alloggio|Hotel||Sydney",
+              "attivita|Opera House||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Bondi e Manly||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Blue Mountains||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Harbour Bridge||Sydney"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "volo|Trasferimento a Uluru||Uluru",
+              "alloggio|Resort||Uluru",
+              "attivita|Tramonto su Uluru||Uluru"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "attivita|Kata Tjuta||Uluru"
+            ]
+          },
+          {
+            "t": "Cairns",
+            "a": [
+              "volo|Trasferimento a Cairns||Cairns",
+              "alloggio|Hotel||Cairns",
+              "attivita|Esplanade||Cairns"
+            ]
+          },
+          {
+            "t": "Grande Barriera",
+            "a": [
+              "traghetto|Grande Barriera||Cairns"
+            ]
+          },
+          {
+            "t": "Daintree",
+            "a": [
+              "attivita|Foresta pluviale||Daintree"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "volo|Trasferimento a Fiji||Fiji",
+              "alloggio|Resort alle Mamanuca||Fiji",
+              "attivita|Spiaggia||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "traghetto|Cloud 9||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Snorkeling||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Villaggio e kava||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Relax||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Spa||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Ultima giornata||Fiji"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiji in famiglia",
         "days": 10,
         "route": "Denarau (4) → Coral Coast (5)",
-        "description": "Resort con kids club, tradizione kava e spiagge accessibili in auto, senza barche tra le isole."
+        "description": "Resort con kids club, tradizione kava e spiagge accessibili in auto, senza barche tra le isole.",
+        "plan": [
+          {
+            "t": "Arrivo a Denarau",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Denarau",
+              "alloggio|Resort per famiglie a Denarau||Denarau",
+              "attivita|Piscina||Denarau"
+            ]
+          },
+          {
+            "t": "Denarau",
+            "a": [
+              "traghetto|Isole Mamanuca in giornata||Denarau"
+            ]
+          },
+          {
+            "t": "Denarau",
+            "a": [
+              "attivita|Giardino dell'Orchidea Dormiente e fanghi||Denarau"
+            ]
+          },
+          {
+            "t": "Denarau",
+            "a": [
+              "attivita|Relax||Denarau"
+            ]
+          },
+          {
+            "t": "Coral Coast",
+            "a": [
+              "transfer|Trasferimento a Coral Coast||Coral Coast",
+              "alloggio|Resort sulla Coral Coast||Coral Coast",
+              "attivita|Spiaggia||Coral Coast"
+            ]
+          },
+          {
+            "t": "Coral Coast",
+            "a": [
+              "attivita|Dune di Sigatoka||Coral Coast"
+            ]
+          },
+          {
+            "t": "Coral Coast",
+            "a": [
+              "attivita|Kula Wild Adventure Park||Coral Coast"
+            ]
+          },
+          {
+            "t": "Coral Coast",
+            "a": [
+              "attivita|Snorkeling||Coral Coast"
+            ]
+          },
+          {
+            "t": "Coral Coast",
+            "a": [
+              "attivita|Relax||Coral Coast"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -136,19 +394,249 @@
         "title": "Nuova Caledonia",
         "days": 10,
         "route": "Nouméa (3) → Île des Pins (3) → Ouvéa o Lifou (3)",
-        "description": "Da settembre a dicembre."
+        "description": "Da settembre a dicembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Nouméa",
+            "a": [
+              "volo|Volo per Nouméa via Tokyo o Sydney||",
+              "transfer|Transfer in hotel||Nouméa",
+              "alloggio|Hotel all'Anse Vata||Nouméa",
+              "attivita|Spiaggia||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "attivita|Centro culturale Tjibaou di Renzo Piano||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "traghetto|Faro Amédée e laguna UNESCO||Nouméa"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "volo|Trasferimento a Île des Pins||Île des Pins",
+              "alloggio|Hotel sull'Île des Pins||Île des Pins",
+              "attivita|Baia di Kanumera||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "attivita|Piscina naturale di Oro||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "traghetto|Piroga a vela nella baia di Upi||Île des Pins"
+            ]
+          },
+          {
+            "t": "Lifou",
+            "a": [
+              "volo|Trasferimento a Lifou||Lifou",
+              "alloggio|Hotel||Lifou",
+              "attivita|Falesie di Jokin||Lifou"
+            ]
+          },
+          {
+            "t": "Lifou",
+            "a": [
+              "attivita|Vaniglia e cultura kanak||Lifou"
+            ]
+          },
+          {
+            "t": "Lifou",
+            "a": [
+              "attivita|Relax||Lifou"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nuova Caledonia e Vanuatu",
-        "days": 12,
+        "days": 11,
         "route": "Nouméa (3) → Île des Pins (3) → Port Vila (2) → Tanna (2)",
-        "description": "La laguna più grande del mondo e il vulcano Yasur."
+        "description": "La laguna più grande del mondo e il vulcano Yasur.",
+        "plan": [
+          {
+            "t": "Arrivo a Nouméa",
+            "a": [
+              "volo|Volo per Nouméa||",
+              "transfer|Transfer in hotel||Nouméa",
+              "alloggio|Hotel||Nouméa",
+              "attivita|Anse Vata||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "attivita|Centro Tjibaou||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "traghetto|Faro Amédée||Nouméa"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "volo|Trasferimento a Île des Pins||Île des Pins",
+              "alloggio|Hotel||Île des Pins",
+              "attivita|Kanumera||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "attivita|Piscina di Oro||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "attivita|Relax||Île des Pins"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "volo|Trasferimento a Port Vila||Port Vila",
+              "alloggio|Resort||Port Vila",
+              "attivita|Laguna||Port Vila"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "attivita|Blue Lagoon||Port Vila"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "volo|Trasferimento a Tanna||Tanna",
+              "alloggio|Bungalow||Tanna",
+              "attivita|Villaggio||Tanna"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "attivita|Vulcano Yasur al tramonto|Si guarda il cratere attivo da vicino.|Tanna"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Australia e Nuova Caledonia",
-        "days": 14,
+        "days": 12,
         "route": "Sydney (4) → Nouméa (3) → Île des Pins (4)",
-        "description": "Città e mare francese del Pacifico, con voli diretti da Sydney o Brisbane."
+        "description": "Città e mare francese del Pacifico, con voli diretti da Sydney o Brisbane.",
+        "plan": [
+          {
+            "t": "Arrivo a Sydney",
+            "a": [
+              "volo|Volo per Sydney||",
+              "transfer|Transfer in hotel||Sydney",
+              "alloggio|Hotel||Sydney",
+              "attivita|Opera House||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Bondi||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Blue Mountains||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Manly||Sydney"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "volo|Trasferimento a Nouméa||Nouméa",
+              "alloggio|Hotel||Nouméa",
+              "attivita|Anse Vata||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "attivita|Centro Tjibaou||Nouméa"
+            ]
+          },
+          {
+            "t": "Nouméa",
+            "a": [
+              "traghetto|Faro Amédée||Nouméa"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "volo|Trasferimento a Île des Pins||Île des Pins",
+              "alloggio|Hotel||Île des Pins",
+              "attivita|Kanumera||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "attivita|Piscina di Oro||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "traghetto|Piroga a Upi||Île des Pins"
+            ]
+          },
+          {
+            "t": "Île des Pins",
+            "a": [
+              "attivita|Relax||Île des Pins"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -206,19 +694,246 @@
         "title": "Festival e Sepik",
         "days": 12,
         "route": "Port Moresby (1) → Mount Hagen (4) → Sepik (5) → Port Moresby (1)",
-        "description": "Con operatore specializzato, in agosto–settembre."
+        "description": "Con operatore specializzato, in agosto–settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Port Moresby",
+            "a": [
+              "volo|Volo per Port Moresby via Singapore o Brisbane||",
+              "transfer|Transfer in hotel||Port Moresby",
+              "alloggio|Hotel||Port Moresby"
+            ]
+          },
+          {
+            "t": "Mount Hagen",
+            "a": [
+              "volo|Trasferimento a Mount Hagen||Mount Hagen",
+              "alloggio|Lodge negli altipiani||Mount Hagen",
+              "attivita|Mercato||Mount Hagen"
+            ]
+          },
+          {
+            "t": "Mount Hagen",
+            "a": [
+              "attivita|Festival culturale (agosto) o sing-sing||Mount Hagen"
+            ]
+          },
+          {
+            "t": "Mount Hagen",
+            "a": [
+              "attivita|Huli wigmen della valle di Tari||Mount Hagen"
+            ]
+          },
+          {
+            "t": "Mount Hagen",
+            "a": [
+              "attivita|Uccelli del paradiso||Mount Hagen"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "volo|Trasferimento a Sepik||Sepik",
+              "alloggio|Lodge sul fiume||Sepik",
+              "attivita|Ambunti||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Villaggi e case degli spiriti||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Laghi Chambri||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Sculture dei villaggi||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "attivita|Relax||Sepik"
+            ]
+          },
+          {
+            "t": "Port Moresby",
+            "a": [
+              "volo|Trasferimento a Port Moresby||Port Moresby",
+              "alloggio|Hotel||Port Moresby"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Raja Ampat e Papua",
         "days": 12,
         "route": "Port Moresby (1) → Tufi (4) → Rabaul (3) → Kimbe Bay (3)",
-        "description": "Fiordi tropicali, vulcani e immersioni tra le più ricche del Pacifico."
+        "description": "Fiordi tropicali, vulcani e immersioni tra le più ricche del Pacifico.",
+        "plan": [
+          {
+            "t": "Arrivo a Port Moresby",
+            "a": [
+              "volo|Volo per Port Moresby||",
+              "transfer|Transfer in hotel||Port Moresby",
+              "alloggio|Hotel||Port Moresby"
+            ]
+          },
+          {
+            "t": "Tufi",
+            "a": [
+              "volo|Trasferimento a Tufi||Tufi",
+              "alloggio|Dive resort tra i fiordi||Tufi",
+              "attivita|Fiordi||Tufi"
+            ]
+          },
+          {
+            "t": "Tufi",
+            "a": [
+              "attivita|Immersioni||Tufi"
+            ]
+          },
+          {
+            "t": "Tufi",
+            "a": [
+              "attivita|Villaggi||Tufi"
+            ]
+          },
+          {
+            "t": "Tufi",
+            "a": [
+              "traghetto|Barriera||Tufi"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "volo|Trasferimento a Rabaul||Rabaul",
+              "alloggio|Hotel||Rabaul",
+              "attivita|Vulcano Tavurvur||Rabaul"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "attivita|Relitti della Seconda guerra mondiale||Rabaul"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "attivita|Danze baining del fuoco||Rabaul"
+            ]
+          },
+          {
+            "t": "Kimbe Bay",
+            "a": [
+              "volo|Trasferimento a Kimbe Bay||Kimbe Bay",
+              "alloggio|Walindi resort||Kimbe Bay",
+              "attivita|Barriera||Kimbe Bay"
+            ]
+          },
+          {
+            "t": "Kimbe Bay",
+            "a": [
+              "attivita|Immersioni||Kimbe Bay"
+            ]
+          },
+          {
+            "t": "Kimbe Bay",
+            "a": [
+              "attivita|Relax||Kimbe Bay"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Crociera sul Sepik",
         "days": 9,
         "route": "Port Moresby (1) → Wewak → crociera sul fiume Sepik (6) → Madang (1)",
-        "description": "Villaggi con case degli spiriti e arte sacra, in barca lungo il grande fiume."
+        "description": "Villaggi con case degli spiriti e arte sacra, in barca lungo il grande fiume.",
+        "plan": [
+          {
+            "t": "Arrivo a Port Moresby",
+            "a": [
+              "volo|Volo per Port Moresby||",
+              "transfer|Transfer in hotel||Port Moresby",
+              "alloggio|Hotel||Port Moresby"
+            ]
+          },
+          {
+            "t": "Wewak",
+            "a": [
+              "volo|Volo per Wewak||Wewak",
+              "traghetto|Imbarco sulla nave fluviale||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Villaggi del medio Sepik||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Case degli spiriti||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Laghi Chambri||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Cerimonie dei coccodrilli||Sepik"
+            ]
+          },
+          {
+            "t": "Sepik",
+            "a": [
+              "traghetto|Basso Sepik||Sepik"
+            ]
+          },
+          {
+            "t": "Madang",
+            "a": [
+              "transfer|Trasferimento a Madang||Madang",
+              "alloggio|Hotel||Madang",
+              "attivita|Città||Madang"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -270,19 +985,214 @@
         "title": "Isole Salomone",
         "days": 10,
         "route": "Honiara (2) → Munda (3) → Marovo (4)",
-        "description": "Per sub e viaggiatori avventurosi."
+        "description": "Per sub e viaggiatori avventurosi.",
+        "plan": [
+          {
+            "t": "Arrivo a Honiara",
+            "a": [
+              "volo|Volo per Honiara via Brisbane||",
+              "transfer|Transfer in hotel||Honiara",
+              "alloggio|Hotel||Honiara",
+              "attivita|Mercato||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Campi di battaglia di Guadalcanal||Honiara"
+            ]
+          },
+          {
+            "t": "Munda",
+            "a": [
+              "volo|Trasferimento a Munda||Munda",
+              "alloggio|Dive lodge||Munda",
+              "attivita|Laguna di Roviana||Munda"
+            ]
+          },
+          {
+            "t": "Munda",
+            "a": [
+              "attivita|Relitti||Munda"
+            ]
+          },
+          {
+            "t": "Munda",
+            "a": [
+              "attivita|Skull Island||Munda"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "traghetto|Trasferimento a Marovo||Marovo",
+              "alloggio|Eco-lodge sulla laguna||Marovo",
+              "attivita|Laguna più grande del mondo||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "attivita|Intagliatori del legno||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "traghetto|Snorkeling||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "attivita|Relax||Marovo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guadalcanal storico",
         "days": 6,
         "route": "Honiara (5)",
-        "description": "Campi di battaglia della seconda guerra mondiale e relitti da esplorare in snorkeling."
+        "description": "Campi di battaglia della seconda guerra mondiale e relitti da esplorare in snorkeling.",
+        "plan": [
+          {
+            "t": "Arrivo a Honiara",
+            "a": [
+              "volo|Volo per Honiara||",
+              "transfer|Transfer in hotel||Honiara",
+              "alloggio|Hotel||Honiara",
+              "attivita|Mercato||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Bloody Ridge e Red Beach||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Relitti di Bonegi||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Museo||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Cascate di Mataniko||Honiara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Salomone e Papua",
-        "days": 14,
+        "days": 12,
         "route": "Port Moresby (1) → Rabaul (3) → Honiara (2) → Marovo (5)",
-        "description": "Pacifico melanesiano remoto per viaggiatori esperti e sub."
+        "description": "Pacifico melanesiano remoto per viaggiatori esperti e sub.",
+        "plan": [
+          {
+            "t": "Arrivo a Port Moresby",
+            "a": [
+              "volo|Volo per Port Moresby||",
+              "transfer|Transfer in hotel||Port Moresby",
+              "alloggio|Hotel||Port Moresby"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "volo|Trasferimento a Rabaul||Rabaul",
+              "alloggio|Hotel||Rabaul",
+              "attivita|Vulcano||Rabaul"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "attivita|Relitti||Rabaul"
+            ]
+          },
+          {
+            "t": "Rabaul",
+            "a": [
+              "attivita|Danze del fuoco||Rabaul"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "volo|Trasferimento a Honiara||Honiara",
+              "alloggio|Hotel||Honiara",
+              "attivita|Mercato||Honiara"
+            ]
+          },
+          {
+            "t": "Honiara",
+            "a": [
+              "attivita|Guadalcanal||Honiara"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "traghetto|Trasferimento a Marovo||Marovo",
+              "alloggio|Eco-lodge||Marovo",
+              "attivita|Laguna||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "attivita|Immersioni||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "attivita|Villaggi||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "traghetto|Snorkeling||Marovo"
+            ]
+          },
+          {
+            "t": "Marovo",
+            "a": [
+              "attivita|Relax||Marovo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -348,19 +1258,215 @@
         "title": "Vanuatu",
         "days": 10,
         "route": "Port Vila (3) → Tanna (2) → Espiritu Santo (4)",
-        "description": "Da maggio a ottobre."
+        "description": "Da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Port Vila",
+            "a": [
+              "volo|Volo per Port Vila via Sydney o Nouméa||",
+              "transfer|Transfer in hotel||Port Vila",
+              "alloggio|Resort sulla laguna||Port Vila",
+              "attivita|Lungomare||Port Vila"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "attivita|Blue Lagoon e cascate di Mele||Port Vila"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "traghetto|Hideaway Island e ufficio postale subacqueo||Port Vila"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "volo|Trasferimento a Tanna||Tanna",
+              "alloggio|Bungalow||Tanna",
+              "attivita|Villaggio||Tanna"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "attivita|Vulcano Yasur al tramonto||Tanna"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "volo|Trasferimento a Espiritu Santo||Espiritu Santo",
+              "alloggio|Resort||Espiritu Santo",
+              "attivita|Champagne Beach||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Blue Holes||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Relitto SS President Coolidge||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Relax||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vanuatu sub",
-        "days": 9,
+        "days": 8,
         "route": "Espiritu Santo (8)",
-        "description": "La SS President Coolidge, uno dei relitti più famosi al mondo, e le blue holes."
+        "description": "La SS President Coolidge, uno dei relitti più famosi al mondo, e le blue holes.",
+        "plan": [
+          {
+            "t": "Arrivo a Espiritu Santo",
+            "a": [
+              "volo|Volo per Espiritu Santo via Port Vila||",
+              "transfer|Transfer in hotel||Espiritu Santo",
+              "alloggio|Dive resort||Espiritu Santo",
+              "attivita|Champagne Beach||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|SS President Coolidge||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|SS President Coolidge, la Dama||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Million Dollar Point||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Blue Holes||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Immersioni||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Espiritu Santo",
+            "a": [
+              "attivita|Relax||Espiritu Santo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Australia e Vanuatu",
-        "days": 12,
+        "days": 10,
         "route": "Brisbane (3) → Port Vila (3) → Tanna (2) → Port Vila (2)",
-        "description": "Città e Pacifico melanesiano con il vulcano Yasur."
+        "description": "Città e Pacifico melanesiano con il vulcano Yasur.",
+        "plan": [
+          {
+            "t": "Arrivo a Brisbane",
+            "a": [
+              "volo|Volo per Brisbane||",
+              "transfer|Transfer in hotel||Brisbane",
+              "alloggio|Hotel||Brisbane",
+              "attivita|South Bank||Brisbane"
+            ]
+          },
+          {
+            "t": "Brisbane",
+            "a": [
+              "attivita|Koala di Lone Pine||Brisbane"
+            ]
+          },
+          {
+            "t": "Brisbane",
+            "a": [
+              "attivita|Gold Coast||Brisbane"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "volo|Trasferimento a Port Vila||Port Vila",
+              "alloggio|Resort||Port Vila",
+              "attivita|Laguna||Port Vila"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "attivita|Blue Lagoon||Port Vila"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "attivita|Hideaway Island||Port Vila"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "volo|Trasferimento a Tanna||Tanna",
+              "alloggio|Bungalow||Tanna",
+              "attivita|Villaggio||Tanna"
+            ]
+          },
+          {
+            "t": "Tanna",
+            "a": [
+              "attivita|Vulcano Yasur||Tanna"
+            ]
+          },
+          {
+            "t": "Port Vila",
+            "a": [
+              "volo|Trasferimento a Port Vila||Port Vila",
+              "alloggio|Resort||Port Vila",
+              "attivita|Mercato||Port Vila"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -413,19 +1519,247 @@
         "title": "Samoa",
         "days": 9,
         "route": "Upolu (5) → Savai'i (3)",
-        "description": "Da maggio a ottobre."
+        "description": "Da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Upolu",
+            "a": [
+              "volo|Volo per Apia via Auckland||",
+              "transfer|Transfer in hotel||Upolu",
+              "alloggio|Hotel ad Apia||Upolu",
+              "attivita|Lungomare||Upolu"
+            ]
+          },
+          {
+            "t": "Upolu",
+            "a": [
+              "attivita|To Sua Ocean Trench|La piscina naturale più fotografata del Pacifico.|Upolu"
+            ]
+          },
+          {
+            "t": "Upolu",
+            "a": [
+              "attivita|Lalomanu Beach in fale sulla spiaggia||Upolu"
+            ]
+          },
+          {
+            "t": "Upolu",
+            "a": [
+              "attivita|Villa di Robert Louis Stevenson||Upolu"
+            ]
+          },
+          {
+            "t": "Upolu",
+            "a": [
+              "attivita|Villaggio culturale samoano||Upolu"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "traghetto|Trasferimento a Savai'i||Savai'i",
+              "alloggio|Fale sulla spiaggia||Savai'i",
+              "attivita|Isola||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Blowholes di Alofaaga e cascate||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Campi di lava||Savai'i"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Samoa e Fiji",
-        "days": 12,
+        "days": 11,
         "route": "Nadi (4) → Apia (2) → Lalomanu (4)",
-        "description": "Due isole polinesiane con il To Sua Ocean Trench, una delle piscine naturali più belle."
+        "description": "Due isole polinesiane con il To Sua Ocean Trench, una delle piscine naturali più belle.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Resort||Nadi",
+              "attivita|Spiaggia||Nadi"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "traghetto|Mamanuca||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Snorkeling||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Relax||Fiji"
+            ]
+          },
+          {
+            "t": "Apia",
+            "a": [
+              "volo|Trasferimento a Apia||Apia",
+              "alloggio|Hotel||Apia",
+              "attivita|Lungomare||Apia"
+            ]
+          },
+          {
+            "t": "Apia",
+            "a": [
+              "attivita|Villa Stevenson||Apia"
+            ]
+          },
+          {
+            "t": "Lalomanu",
+            "a": [
+              "transfer|Trasferimento a Lalomanu||Lalomanu",
+              "alloggio|Fale sulla spiaggia||Lalomanu",
+              "attivita|Spiaggia||Lalomanu"
+            ]
+          },
+          {
+            "t": "Lalomanu",
+            "a": [
+              "attivita|To Sua||Lalomanu"
+            ]
+          },
+          {
+            "t": "Lalomanu",
+            "a": [
+              "attivita|Snorkeling||Lalomanu"
+            ]
+          },
+          {
+            "t": "Lalomanu",
+            "a": [
+              "attivita|Relax||Lalomanu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Samoa e Nuova Zelanda",
-        "days": 14,
+        "days": 13,
         "route": "Auckland (2) → Rotorua (2) → Apia (2) → Savai'i (6)",
-        "description": "Volo diretto da Auckland per chiudere il viaggio in Nuova Zelanda con il mare."
+        "description": "Volo diretto da Auckland per chiudere il viaggio in Nuova Zelanda con il mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Auckland",
+            "a": [
+              "volo|Volo per Auckland||",
+              "transfer|Transfer in hotel||Auckland",
+              "alloggio|Hotel||Auckland",
+              "attivita|Sky Tower||Auckland"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "attivita|Waiheke||Auckland"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "transfer|In auto fino a Rotorua||Rotorua",
+              "alloggio|Hotel||Rotorua",
+              "attivita|Te Puia||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Hobbiton||Rotorua"
+            ]
+          },
+          {
+            "t": "Apia",
+            "a": [
+              "volo|Trasferimento a Apia||Apia",
+              "alloggio|Hotel||Apia",
+              "attivita|Lungomare||Apia"
+            ]
+          },
+          {
+            "t": "Apia",
+            "a": [
+              "attivita|To Sua||Apia"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "traghetto|Trasferimento a Savai'i||Savai'i",
+              "alloggio|Fale||Savai'i",
+              "attivita|Spiaggia||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Blowholes||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Campi di lava||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Snorkeling con tartarughe||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Relax||Savai'i"
+            ]
+          },
+          {
+            "t": "Savai'i",
+            "a": [
+              "attivita|Ultima giornata||Savai'i"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -477,19 +1811,218 @@
         "title": "Balene a Tonga",
         "days": 9,
         "route": "Tongatapu (1) → Vava'u (7)",
-        "description": "Da luglio a ottobre."
+        "description": "Da luglio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Tongatapu",
+            "a": [
+              "volo|Volo per Tongatapu via Auckland o Fiji||",
+              "transfer|Transfer in hotel||Tongatapu",
+              "alloggio|Hotel||Tongatapu"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "volo|Trasferimento a Vava'u||Vava'u",
+              "alloggio|Lodge a Neiafu||Vava'u",
+              "attivita|Porto||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Nuotare con le megattere (luglio-ottobre)|Uno dei pochi posti al mondo dove è permesso.|Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Megattere||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Swallows Cave||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Kayak||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Megattere||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Relax||Vava'u"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tonga mare",
         "days": 8,
         "route": "Tongatapu (2) → Ha'apai (5)",
-        "description": "Isole quasi deserte, kayak e cultura polinesiana autentica."
+        "description": "Isole quasi deserte, kayak e cultura polinesiana autentica.",
+        "plan": [
+          {
+            "t": "Arrivo a Tongatapu",
+            "a": [
+              "volo|Volo per Tongatapu||",
+              "transfer|Transfer in hotel||Tongatapu",
+              "alloggio|Hotel||Tongatapu",
+              "attivita|Nuku'alofa||Tongatapu"
+            ]
+          },
+          {
+            "t": "Tongatapu",
+            "a": [
+              "attivita|Blowholes e trilite di Ha'amonga||Tongatapu"
+            ]
+          },
+          {
+            "t": "Ha'apai",
+            "a": [
+              "volo|Trasferimento a Ha'apai||Ha'apai",
+              "alloggio|Resort||Ha'apai",
+              "attivita|Isola||Ha'apai"
+            ]
+          },
+          {
+            "t": "Ha'apai",
+            "a": [
+              "attivita|Snorkeling||Ha'apai"
+            ]
+          },
+          {
+            "t": "Ha'apai",
+            "a": [
+              "attivita|Kayak||Ha'apai"
+            ]
+          },
+          {
+            "t": "Ha'apai",
+            "a": [
+              "attivita|Balene (stagionali)||Ha'apai"
+            ]
+          },
+          {
+            "t": "Ha'apai",
+            "a": [
+              "attivita|Relax||Ha'apai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiji e Tonga",
         "days": 12,
         "route": "Nadi (3) → Tongatapu (1) → Vava'u (7)",
-        "description": "Il mare delle Fiji e la stagione delle balene a Tonga, da luglio a ottobre."
+        "description": "Il mare delle Fiji e la stagione delle balene a Tonga, da luglio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Resort||Nadi",
+              "attivita|Spiaggia||Nadi"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "traghetto|Mamanuca||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Relax||Fiji"
+            ]
+          },
+          {
+            "t": "Tongatapu",
+            "a": [
+              "volo|Trasferimento a Tongatapu||Tongatapu",
+              "alloggio|Hotel||Tongatapu",
+              "attivita|Nuku'alofa||Tongatapu"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "volo|Trasferimento a Vava'u||Vava'u",
+              "alloggio|Lodge||Vava'u",
+              "attivita|Porto||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Megattere||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "traghetto|Megattere||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Swallows Cave||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Kayak||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Relax||Vava'u"
+            ]
+          },
+          {
+            "t": "Vava'u",
+            "a": [
+              "attivita|Ultima giornata||Vava'u"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -541,19 +2074,286 @@
         "title": "Isole Cook",
         "days": 10,
         "route": "Rarotonga (4) → Aitutaki (5)",
-        "description": "Ottima estensione di un viaggio in Nuova Zelanda."
+        "description": "Ottima estensione di un viaggio in Nuova Zelanda.",
+        "plan": [
+          {
+            "t": "Arrivo a Rarotonga",
+            "a": [
+              "volo|Volo per Rarotonga via Auckland o Los Angeles||",
+              "transfer|Transfer in hotel||Rarotonga",
+              "alloggio|Resort a Muri Lagoon||Rarotonga",
+              "attivita|Laguna||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Giro dell'isola in autobus o scooter||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Cross-Island Track e Needle||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Mercato del sabato di Punanga Nui e serata culturale||Rarotonga"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "volo|Trasferimento a Aitutaki||Aitutaki",
+              "alloggio|Resort sulla laguna||Aitutaki",
+              "attivita|Laguna||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "traghetto|Giro della laguna e One Foot Island||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Snorkeling con trevally giganti||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Relax||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Spa||Aitutaki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cook e Polinesia",
         "days": 14,
         "route": "Tahiti (2) → Bora Bora (5) → Rarotonga (2) → Aitutaki (4)",
-        "description": "Due arcipelaghi in un solo viaggio: lusso a Bora Bora e la laguna più bella del Pacifico ad Aitutaki."
+        "description": "Due arcipelaghi in un solo viaggio: lusso a Bora Bora e la laguna più bella del Pacifico ad Aitutaki.",
+        "plan": [
+          {
+            "t": "Arrivo a Tahiti",
+            "a": [
+              "volo|Volo per Papeete||",
+              "transfer|Transfer in hotel||Tahiti",
+              "alloggio|Hotel||Tahiti"
+            ]
+          },
+          {
+            "t": "Tahiti",
+            "a": [
+              "attivita|Mercato di Papeete||Tahiti"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "volo|Trasferimento a Bora Bora||Bora Bora",
+              "alloggio|Overwater bungalow||Bora Bora",
+              "attivita|Tramonto||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "traghetto|Laguna||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Relax||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Spa||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Giornata libera||Bora Bora"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "volo|Trasferimento a Rarotonga||Rarotonga",
+              "alloggio|Resort||Rarotonga",
+              "attivita|Muri Lagoon||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Giro dell'isola||Rarotonga"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "volo|Trasferimento a Aitutaki||Aitutaki",
+              "alloggio|Resort||Aitutaki",
+              "attivita|Laguna||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "traghetto|One Foot Island||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Relax||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Ultima giornata||Aitutaki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nuova Zelanda e Cook",
-        "days": 16,
+        "days": 15,
         "route": "Auckland (2) → Rotorua (2) → Queenstown (3) → Rarotonga (2) → Aitutaki (5)",
-        "description": "La Nuova Zelanda seguita dal mare delle Cook, con volo diretto da Auckland."
+        "description": "La Nuova Zelanda seguita dal mare delle Cook, con volo diretto da Auckland.",
+        "plan": [
+          {
+            "t": "Arrivo a Auckland",
+            "a": [
+              "volo|Volo per Auckland||",
+              "transfer|Transfer in hotel||Auckland",
+              "alloggio|Hotel||Auckland",
+              "attivita|Sky Tower||Auckland"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "attivita|Waiheke||Auckland"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "transfer|In auto fino a Rotorua||Rotorua",
+              "alloggio|Hotel||Rotorua",
+              "attivita|Te Puia||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Hobbiton||Rotorua"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "volo|Trasferimento a Queenstown||Queenstown",
+              "alloggio|Hotel||Queenstown",
+              "attivita|Skyline||Queenstown"
+            ]
+          },
+          {
+            "t": "Milford Sound",
+            "a": [
+              "attivita|Milford Sound||Milford Sound"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Jet boat||Queenstown"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "volo|Trasferimento a Rarotonga||Rarotonga",
+              "alloggio|Resort||Rarotonga",
+              "attivita|Muri Lagoon||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Giro dell'isola||Rarotonga"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "volo|Trasferimento a Aitutaki||Aitutaki",
+              "alloggio|Resort||Aitutaki",
+              "attivita|Laguna||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "traghetto|One Foot Island||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Snorkeling||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Relax||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Ultima giornata||Aitutaki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -605,19 +2405,179 @@
         "title": "Guam e Micronesia",
         "days": 9,
         "route": "Guam (3) → Palau (5)",
-        "description": "Combinato con Palau."
+        "description": "Combinato con Palau.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam via Tokyo o Manila||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Hotel a Tumon||Guam",
+              "attivita|Spiaggia||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Two Lovers Point e Hagåtña||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Snorkeling a Ypao||Guam"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "volo|Trasferimento a Palau||Palau",
+              "alloggio|Resort a Koror||Palau",
+              "attivita|Laguna||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "traghetto|Rock Islands e Milky Way||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "traghetto|Jellyfish Lake||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "attivita|Blue Corner||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "attivita|Relax||Palau"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guam per famiglie",
         "days": 6,
         "route": "Tumon (5)",
-        "description": "Spiagge riparate, parchi acquatici e shopping: tappa comoda tra Giappone e Micronesia."
+        "description": "Spiagge riparate, parchi acquatici e shopping: tappa comoda tra Giappone e Micronesia.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Resort a Tumon||Guam",
+              "attivita|Spiaggia||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Fish Eye Marine Park||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Two Lovers Point||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Parco acquatico||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Relax||Guam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guam e Saipan",
         "days": 8,
         "route": "Guam (3) → Saipan (4)",
-        "description": "Due isole delle Marianne con storia della seconda guerra mondiale e la Grotto per i sub."
+        "description": "Due isole delle Marianne con storia della seconda guerra mondiale e la Grotto per i sub.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Hotel a Tumon||Guam",
+              "attivita|Spiaggia||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Hagåtña||Guam"
+            ]
+          },
+          {
+            "t": "Guam",
+            "a": [
+              "attivita|Snorkeling||Guam"
+            ]
+          },
+          {
+            "t": "Saipan",
+            "a": [
+              "volo|Trasferimento a Saipan||Saipan",
+              "alloggio|Resort||Saipan",
+              "attivita|Spiaggia||Saipan"
+            ]
+          },
+          {
+            "t": "Saipan",
+            "a": [
+              "attivita|Grotta Azzurra||Saipan"
+            ]
+          },
+          {
+            "t": "Saipan",
+            "a": [
+              "traghetto|Managaha Island||Saipan"
+            ]
+          },
+          {
+            "t": "Saipan",
+            "a": [
+              "attivita|Relax||Saipan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -674,19 +2634,215 @@
         "title": "Palau sub",
         "days": 9,
         "route": "Koror (8)",
-        "description": "Da novembre ad aprile, con pacchetti immersione."
+        "description": "Da novembre ad aprile, con pacchetti immersione.",
+        "plan": [
+          {
+            "t": "Arrivo a Koror",
+            "a": [
+              "volo|Volo per Palau via Manila, Taipei o Seul||",
+              "transfer|Transfer in hotel||Koror",
+              "alloggio|Dive resort a Koror||Koror",
+              "attivita|Porto||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Blue Corner, una delle immersioni più famose del mondo||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|German Channel e mante||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Ulong Channel||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Jellyfish Lake||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Relitti giapponesi||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Peleliu Wall||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Relax||Koror"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Palau mare e laghi",
         "days": 8,
         "route": "Koror (7), con Rock Islands e Jellyfish Lake",
-        "description": "Rock Islands in kayak e il lago delle meduse, quando è aperto ai visitatori."
+        "description": "Rock Islands in kayak e il lago delle meduse, quando è aperto ai visitatori.",
+        "plan": [
+          {
+            "t": "Arrivo a Koror",
+            "a": [
+              "volo|Volo per Palau||",
+              "transfer|Transfer in hotel||Koror",
+              "alloggio|Resort||Koror",
+              "attivita|Porto||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Rock Islands UNESCO||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Jellyfish Lake tra le meduse senza pungiglione||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "traghetto|Milky Way e fanghi bianchi||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Kayak||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Babeldaob||Koror"
+            ]
+          },
+          {
+            "t": "Koror",
+            "a": [
+              "attivita|Relax||Koror"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Palau e Filippine",
         "days": 12,
         "route": "Manila (1) → Palawan (4) → Palau (6)",
-        "description": "Due mari diversi: lagune di El Nido e immersioni di livello mondiale a Palau."
+        "description": "Due mari diversi: lagune di El Nido e immersioni di livello mondiale a Palau.",
+        "plan": [
+          {
+            "t": "Arrivo a Manila",
+            "a": [
+              "volo|Volo per Manila||",
+              "transfer|Transfer in hotel||Manila",
+              "alloggio|Hotel||Manila",
+              "attivita|Intramuros||Manila"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "volo|Trasferimento a El Nido||El Nido",
+              "alloggio|Resort||El Nido",
+              "attivita|Lagune||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "traghetto|Island hopping||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Nacpan Beach||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Relax||El Nido"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "volo|Trasferimento a Palau||Palau",
+              "alloggio|Resort||Palau",
+              "attivita|Porto||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "traghetto|Rock Islands||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "attivita|Jellyfish Lake||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "traghetto|Blue Corner||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "attivita|Kayak||Palau"
+            ]
+          },
+          {
+            "t": "Palau",
+            "a": [
+              "attivita|Relax||Palau"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -735,21 +2891,207 @@
     "itineraries": [
       {
         "title": "Micronesia sub",
-        "days": 12,
+        "days": 11,
         "route": "Guam (1) → Chuuk (6) → Pohnpei (3)",
-        "description": "Con il volo 'island hopper'."
+        "description": "Con il volo 'island hopper'.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Hotel||Guam"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "volo|Trasferimento a Chuuk||Chuuk",
+              "alloggio|Dive resort||Chuuk",
+              "attivita|Laguna||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|Relitti giapponesi della laguna di Truk||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|Fujikawa Maru||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|San Francisco Maru||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|Shinkoku Maru||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|Immersioni||Chuuk"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "volo|Trasferimento a Pohnpei||Pohnpei",
+              "alloggio|Hotel||Pohnpei",
+              "attivita|Isola||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Nan Madol UNESCO||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Mante||Pohnpei"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Yap e le pietre-moneta",
         "days": 7,
         "route": "Guam (1) → Yap (5)",
-        "description": "Mante, villaggi tradizionali e le grandi pietre rai usate come moneta."
+        "description": "Mante, villaggi tradizionali e le grandi pietre rai usate come moneta.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Hotel||Guam"
+            ]
+          },
+          {
+            "t": "Yap",
+            "a": [
+              "volo|Trasferimento a Yap||Yap",
+              "alloggio|Dive resort||Yap",
+              "attivita|Pietre-moneta||Yap"
+            ]
+          },
+          {
+            "t": "Yap",
+            "a": [
+              "traghetto|Mante di Mi'l Channel||Yap"
+            ]
+          },
+          {
+            "t": "Yap",
+            "a": [
+              "attivita|Villaggi e banche delle pietre||Yap"
+            ]
+          },
+          {
+            "t": "Yap",
+            "a": [
+              "attivita|Danze tradizionali||Yap"
+            ]
+          },
+          {
+            "t": "Yap",
+            "a": [
+              "attivita|Relax||Yap"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kosrae e Pohnpei",
         "days": 9,
         "route": "Pohnpei (4) → Kosrae (4)",
-        "description": "Le rovine di Nan Madol, cascate e la barriera intatta di Kosrae, per chi cerca il Pacifico più remoto."
+        "description": "Le rovine di Nan Madol, cascate e la barriera intatta di Kosrae, per chi cerca il Pacifico più remoto.",
+        "plan": [
+          {
+            "t": "Arrivo a Pohnpei",
+            "a": [
+              "volo|Volo per Pohnpei via Guam||",
+              "transfer|Transfer in hotel||Pohnpei",
+              "alloggio|Hotel||Pohnpei",
+              "attivita|Isola||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Nan Madol||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Cascate||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Mante||Pohnpei"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "volo|Trasferimento a Kosrae||Kosrae",
+              "alloggio|Lodge||Kosrae",
+              "attivita|Isola||Kosrae"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "attivita|Rovine di Lelu||Kosrae"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "attivita|Immersioni||Kosrae"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "attivita|Relax||Kosrae"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -790,19 +3132,218 @@
         "title": "Isole Marshall",
         "days": 6,
         "route": "Majuro (5)",
-        "description": "Parte di un viaggio 'island hopper' nel Pacifico."
+        "description": "Parte di un viaggio 'island hopper' nel Pacifico.",
+        "plan": [
+          {
+            "t": "Arrivo a Majuro",
+            "a": [
+              "volo|Volo per Majuro||",
+              "transfer|Transfer in hotel||Majuro",
+              "alloggio|Hotel||Majuro",
+              "attivita|Atollo||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "traghetto|Laguna||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "attivita|Museo Alele||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "attivita|Laura Beach||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "attivita|Relax||Majuro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bikini sub",
         "days": 10,
         "route": "Majuro (1) → Bikini (8)",
-        "description": "Immersioni sulla flotta affondata dei test nucleari: viaggio per sub esperti con partenze limitate."
+        "description": "Immersioni sulla flotta affondata dei test nucleari: viaggio per sub esperti con partenze limitate.",
+        "plan": [
+          {
+            "t": "Arrivo a Majuro",
+            "a": [
+              "volo|Volo per Majuro||",
+              "transfer|Transfer in hotel||Majuro",
+              "alloggio|Hotel||Majuro"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "volo|Volo per Bikini||Bikini",
+              "alloggio|Liveaboard||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Portaerei USS Saratoga||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Corazzata Nagato||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Relitti dei test nucleari||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Immersioni||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Immersioni||Bikini"
+            ]
+          },
+          {
+            "t": "Bikini",
+            "a": [
+              "traghetto|Immersioni||Bikini"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "volo|Volo per Majuro||Majuro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Micronesia island hopping",
-        "days": 14,
+        "days": 13,
         "route": "Guam (1) → Chuuk (4) → Pohnpei (3) → Kosrae (2) → Majuro (3)",
-        "description": "Il leggendario 'island hopper' di United che collega gli atolli del Pacifico centrale."
+        "description": "Il leggendario 'island hopper' di United che collega gli atolli del Pacifico centrale.",
+        "plan": [
+          {
+            "t": "Arrivo a Guam",
+            "a": [
+              "volo|Volo per Guam||",
+              "transfer|Transfer in hotel||Guam",
+              "alloggio|Hotel||Guam"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "volo|Trasferimento a Chuuk||Chuuk",
+              "alloggio|Dive resort||Chuuk",
+              "attivita|Laguna||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "traghetto|Relitti||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "traghetto|Relitti||Chuuk"
+            ]
+          },
+          {
+            "t": "Chuuk",
+            "a": [
+              "attivita|Relax||Chuuk"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "volo|Trasferimento a Pohnpei||Pohnpei",
+              "alloggio|Hotel||Pohnpei",
+              "attivita|Isola||Pohnpei"
+            ]
+          },
+          {
+            "t": "Pohnpei",
+            "a": [
+              "attivita|Nan Madol||Pohnpei"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "volo|Trasferimento a Kosrae||Kosrae",
+              "alloggio|Lodge||Kosrae",
+              "attivita|Isola||Kosrae"
+            ]
+          },
+          {
+            "t": "Kosrae",
+            "a": [
+              "attivita|Lelu||Kosrae"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "volo|Trasferimento a Majuro||Majuro",
+              "alloggio|Hotel||Majuro",
+              "attivita|Atollo||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "attivita|Laguna||Majuro"
+            ]
+          },
+          {
+            "t": "Majuro",
+            "a": [
+              "attivita|Relax||Majuro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -847,21 +3388,198 @@
     "itineraries": [
       {
         "title": "Pesca a Kiritimati",
-        "days": 9,
+        "days": 8,
         "route": "Honolulu o Fiji → Kiritimati (7)",
-        "description": "Per appassionati di pesca."
+        "description": "Per appassionati di pesca.",
+        "plan": [
+          {
+            "t": "Arrivo a Kiritimati",
+            "a": [
+              "volo|Volo per Honolulu o Fiji e volo settimanale per Kiritimati||",
+              "transfer|Transfer in hotel||Kiritimati",
+              "alloggio|Lodge di pesca||Kiritimati",
+              "attivita|Laguna||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Bonefish sulle piane||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Trevally giganti||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Pesca||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "attivita|Uccelli marini||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Pesca||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "attivita|Relax||Kiritimati"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tarawa",
         "days": 6,
         "route": "Fiji → Tarawa (5)",
-        "description": "Storia della battaglia del 1943 e vita sugli atolli; voli poco frequenti da programmare con largo anticipo."
+        "description": "Storia della battaglia del 1943 e vita sugli atolli; voli poco frequenti da programmare con largo anticipo.",
+        "plan": [
+          {
+            "t": "Arrivo a Tarawa",
+            "a": [
+              "volo|Volo per Fiji e poi Tarawa||",
+              "transfer|Transfer in hotel||Tarawa",
+              "alloggio|Hotel||Tarawa",
+              "attivita|Atollo||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "attivita|Siti della battaglia di Tarawa||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "traghetto|Laguna||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "attivita|Villaggi||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "attivita|Relax||Tarawa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiji e Kiribati",
         "days": 12,
         "route": "Nadi (2) → Mamanuca (4) → Kiritimati (5)",
-        "description": "Mare delle Fiji e pesca al bonefish nell'atollo più grande del mondo."
+        "description": "Mare delle Fiji e pesca al bonefish nell'atollo più grande del mondo.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Hotel||Nadi"
+            ]
+          },
+          {
+            "t": "Nadi",
+            "a": [
+              "attivita|Giardino dell'Orchidea Dormiente||Nadi"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "traghetto|Trasferimento a Mamanuca||Mamanuca",
+              "alloggio|Resort||Mamanuca",
+              "attivita|Spiaggia||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "traghetto|Cloud 9||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "attivita|Snorkeling||Mamanuca"
+            ]
+          },
+          {
+            "t": "Mamanuca",
+            "a": [
+              "attivita|Relax||Mamanuca"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "volo|Trasferimento a Kiritimati||Kiritimati",
+              "alloggio|Lodge||Kiritimati",
+              "attivita|Laguna||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Pesca||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "attivita|Uccelli||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "traghetto|Pesca||Kiritimati"
+            ]
+          },
+          {
+            "t": "Kiritimati",
+            "a": [
+              "attivita|Relax||Kiritimati"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -898,19 +3616,200 @@
         "title": "Tuvalu",
         "days": 5,
         "route": "Fiji → Funafuti (4)",
-        "description": "Per viaggiatori 'collezionisti'."
+        "description": "Per viaggiatori 'collezionisti'.",
+        "plan": [
+          {
+            "t": "Arrivo a Funafuti",
+            "a": [
+              "volo|Volo per Fiji e poi Funafuti||",
+              "transfer|Transfer in hotel||Funafuti",
+              "alloggio|Guesthouse||Funafuti",
+              "attivita|Atollo||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "traghetto|Area di conservazione di Funafuti||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "attivita|Pista dell'aeroporto la sera||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "attivita|Relax||Funafuti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fiji e Tuvalu",
-        "days": 10,
+        "days": 9,
         "route": "Nadi (4) → Funafuti (4)",
-        "description": "Uno degli stati più piccoli e minacciati dal mare, con estensione alle Fiji."
+        "description": "Uno degli stati più piccoli e minacciati dal mare, con estensione alle Fiji.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Resort||Nadi",
+              "attivita|Spiaggia||Nadi"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "traghetto|Mamanuca||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Snorkeling||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Relax||Fiji"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "volo|Trasferimento a Funafuti||Funafuti",
+              "alloggio|Guesthouse||Funafuti",
+              "attivita|Atollo||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "traghetto|Area di conservazione||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "attivita|Villaggio||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "attivita|Relax||Funafuti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Pacifico remoto",
-        "days": 14,
+        "days": 12,
         "route": "Nadi (2) → Funafuti (3) → Tarawa (4) → Nadi (2)",
-        "description": "Collezionisti di paesi: atolli tra Tuvalu e Kiribati."
+        "description": "Collezionisti di paesi: atolli tra Tuvalu e Kiribati.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Hotel||Nadi"
+            ]
+          },
+          {
+            "t": "Nadi",
+            "a": [
+              "attivita|Relax||Nadi"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "volo|Trasferimento a Funafuti||Funafuti",
+              "alloggio|Guesthouse||Funafuti",
+              "attivita|Atollo||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "traghetto|Area di conservazione||Funafuti"
+            ]
+          },
+          {
+            "t": "Funafuti",
+            "a": [
+              "attivita|Relax||Funafuti"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "volo|Trasferimento a Tarawa||Tarawa",
+              "alloggio|Hotel||Tarawa",
+              "attivita|Atollo||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "attivita|Siti della battaglia||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "traghetto|Laguna||Tarawa"
+            ]
+          },
+          {
+            "t": "Tarawa",
+            "a": [
+              "attivita|Relax||Tarawa"
+            ]
+          },
+          {
+            "t": "Nadi",
+            "a": [
+              "volo|Trasferimento a Nadi||Nadi",
+              "alloggio|Resort||Nadi",
+              "attivita|Spiaggia||Nadi"
+            ]
+          },
+          {
+            "t": "Nadi",
+            "a": [
+              "attivita|Relax||Nadi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -947,19 +3846,159 @@
         "title": "Nauru",
         "days": 3,
         "route": "Brisbane o Fiji → Nauru (2)",
-        "description": "Per viaggiatori 'collezionisti'."
+        "description": "Per viaggiatori 'collezionisti'.",
+        "plan": [
+          {
+            "t": "Arrivo a Nauru",
+            "a": [
+              "volo|Volo per Brisbane o Fiji e poi Nauru||",
+              "transfer|Transfer in hotel||Nauru",
+              "alloggio|Hotel||Nauru",
+              "attivita|Giro dell'isola||Nauru"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "attivita|Command Ridge e Anibare Bay||Nauru"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nauru e Fiji",
-        "days": 9,
+        "days": 8,
         "route": "Nadi (3) → Nauru (3) → Fiji (2)",
-        "description": "Uno dei paesi meno visitati al mondo con estensione di mare alle Fiji."
+        "description": "Uno dei paesi meno visitati al mondo con estensione di mare alle Fiji.",
+        "plan": [
+          {
+            "t": "Arrivo a Nadi",
+            "a": [
+              "volo|Volo per Nadi||",
+              "transfer|Transfer in hotel||Nadi",
+              "alloggio|Resort||Nadi",
+              "attivita|Spiaggia||Nadi"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "traghetto|Mamanuca||Fiji"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "attivita|Relax||Fiji"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "volo|Trasferimento a Nauru||Nauru",
+              "alloggio|Hotel||Nauru",
+              "attivita|Giro dell'isola||Nauru"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "attivita|Command Ridge||Nauru"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "attivita|Anibare Bay||Nauru"
+            ]
+          },
+          {
+            "t": "Fiji",
+            "a": [
+              "volo|Trasferimento a Fiji||Fiji",
+              "alloggio|Resort||Fiji",
+              "attivita|Spiaggia||Fiji"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nauru e Australia",
-        "days": 10,
+        "days": 8,
         "route": "Brisbane (3) → Nauru (3) → Brisbane (2)",
-        "description": "Per collezionisti di paesi: voli Nauru Airlines da Brisbane."
+        "description": "Per collezionisti di paesi: voli Nauru Airlines da Brisbane.",
+        "plan": [
+          {
+            "t": "Arrivo a Brisbane",
+            "a": [
+              "volo|Volo per Brisbane||",
+              "transfer|Transfer in hotel||Brisbane",
+              "alloggio|Hotel||Brisbane",
+              "attivita|South Bank||Brisbane"
+            ]
+          },
+          {
+            "t": "Brisbane",
+            "a": [
+              "attivita|Koala di Lone Pine||Brisbane"
+            ]
+          },
+          {
+            "t": "Brisbane",
+            "a": [
+              "attivita|Gold Coast||Brisbane"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "volo|Trasferimento a Nauru||Nauru",
+              "alloggio|Hotel||Nauru",
+              "attivita|Giro dell'isola||Nauru"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "attivita|Command Ridge||Nauru"
+            ]
+          },
+          {
+            "t": "Nauru",
+            "a": [
+              "attivita|Anibare Bay||Nauru"
+            ]
+          },
+          {
+            "t": "Brisbane",
+            "a": [
+              "volo|Trasferimento a Brisbane||Brisbane",
+              "alloggio|Hotel||Brisbane",
+              "attivita|Città||Brisbane"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

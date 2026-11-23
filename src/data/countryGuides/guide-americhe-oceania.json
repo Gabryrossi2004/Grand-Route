@@ -549,21 +549,306 @@
     "itineraries": [
       {
         "title": "Canada dell'Ovest",
-        "days": 12,
+        "days": 13,
         "route": "Vancouver (3) → Kamloops (1) → Jasper (2) → Icefields Parkway → Lake Louise (1) → Banff (3) → Calgary (1)",
-        "description": "Fly & drive delle Rocciose, da giugno a settembre."
+        "description": "Fly & drive delle Rocciose, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Vancouver",
+            "a": [
+              "volo|Volo per Vancouver||",
+              "transfer|Transfer in hotel||Vancouver",
+              "alloggio|Hotel a Downtown||Vancouver",
+              "attivita|Gastown|Il quartiere storico con l'orologio a vapore.|Vancouver"
+            ]
+          },
+          {
+            "t": "Vancouver",
+            "a": [
+              "attivita|Stanley Park in bici|Il giro della diga sull'oceano.|Vancouver",
+              "attivita|Granville Island||Vancouver"
+            ]
+          },
+          {
+            "t": "Vancouver",
+            "a": [
+              "attivita|Capilano Suspension Bridge e Grouse Mountain||Vancouver"
+            ]
+          },
+          {
+            "t": "Kamloops",
+            "a": [
+              "transfer|In auto fino a Kamloops||Kamloops",
+              "alloggio|Hotel a Kamloops||Kamloops",
+              "attivita|Lungo il Fraser Canyon||Kamloops"
+            ]
+          },
+          {
+            "t": "Jasper",
+            "a": [
+              "transfer|In auto fino a Jasper||Jasper",
+              "alloggio|Lodge a Jasper||Jasper",
+              "attivita|Monte Robson lungo la strada||Jasper"
+            ]
+          },
+          {
+            "t": "Jasper",
+            "a": [
+              "attivita|Maligne Canyon e crociera sul lago Maligne fino a Spirit Island||Jasper"
+            ]
+          },
+          {
+            "t": "Icefields Parkway",
+            "a": [
+              "transfer|Icefields Parkway, la strada più bella del Canada||Icefields Parkway",
+              "attivita|Ghiacciaio Athabasca in Ice Explorer||Columbia Icefield",
+              "alloggio|Lodge a Lake Louise||Lake Louise"
+            ]
+          },
+          {
+            "t": "Lake Louise",
+            "a": [
+              "attivita|Lake Louise e Moraine Lake all'alba|Navetta o parcheggio da prenotare.|Lake Louise"
+            ]
+          },
+          {
+            "t": "Banff",
+            "a": [
+              "transfer|In auto fino a Banff||Banff",
+              "alloggio|Hotel a Banff||Banff",
+              "attivita|Banff Avenue||Banff"
+            ]
+          },
+          {
+            "t": "Banff",
+            "a": [
+              "attivita|Banff Gondola e Upper Hot Springs||Banff"
+            ]
+          },
+          {
+            "t": "Banff",
+            "a": [
+              "attivita|Johnston Canyon o Yoho con Emerald Lake||Banff"
+            ]
+          },
+          {
+            "t": "Calgary",
+            "a": [
+              "transfer|In auto fino a Calgary||Calgary",
+              "alloggio|Hotel a Calgary||Calgary",
+              "attivita|Calgary Tower||Calgary"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Canada dell'Est",
-        "days": 10,
+        "days": 11,
         "route": "Toronto (2) → Niagara (1) → Mille Isole → Ottawa (1) → Montréal (2) → Québec City (2) → Tadoussac (1)",
-        "description": "Città, cascate e foliage, ideale a fine settembre."
+        "description": "Città, cascate e foliage, ideale a fine settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Toronto",
+            "a": [
+              "volo|Volo per Toronto||",
+              "transfer|Transfer in hotel||Toronto",
+              "alloggio|Hotel in centro||Toronto",
+              "attivita|CN Tower||Toronto"
+            ]
+          },
+          {
+            "t": "Toronto",
+            "a": [
+              "attivita|Distillery District e St. Lawrence Market||Toronto"
+            ]
+          },
+          {
+            "t": "Niagara",
+            "a": [
+              "transfer|In auto fino a Niagara||Niagara",
+              "alloggio|Hotel con vista sulle cascate||Niagara",
+              "attivita|Battello Niagara City Cruises fin sotto le cascate||Niagara"
+            ]
+          },
+          {
+            "t": "Mille Isole e Ottawa",
+            "a": [
+              "traghetto|Crociera nelle Mille Isole||Mille Isole",
+              "transfer|Proseguimento per Ottawa||Ottawa",
+              "alloggio|Hotel a Ottawa||Ottawa"
+            ]
+          },
+          {
+            "t": "Ottawa",
+            "a": [
+              "attivita|Parlament Hill e Museo della Civiltà||Ottawa"
+            ]
+          },
+          {
+            "t": "Montréal",
+            "a": [
+              "transfer|In auto fino a Montréal||Montréal",
+              "alloggio|Hotel a Montréal||Montréal",
+              "attivita|Vieux-Montréal e Notre-Dame||Montréal"
+            ]
+          },
+          {
+            "t": "Montréal",
+            "a": [
+              "attivita|Mont Royal, Plateau e bagel||Montréal"
+            ]
+          },
+          {
+            "t": "Québec City",
+            "a": [
+              "transfer|In auto fino a Québec City||Québec City",
+              "alloggio|Hotel in città vecchia||Québec City",
+              "attivita|Château Frontenac e quartiere Petit-Champlain||Québec City"
+            ]
+          },
+          {
+            "t": "Québec City",
+            "a": [
+              "attivita|Cascate di Montmorency e Île d'Orléans||Québec City"
+            ]
+          },
+          {
+            "t": "Tadoussac",
+            "a": [
+              "transfer|In auto fino a Tadoussac||Tadoussac",
+              "alloggio|Hotel a Tadoussac||Tadoussac",
+              "attivita|Balene nel fiordo del Saguenay|Da giugno a ottobre.|Tadoussac"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Est e Ovest",
         "days": 15,
         "route": "Toronto (2) → Niagara (1) → Montréal (2) → volo → Vancouver (3) → Rocciose (6)",
-        "description": "Il meglio del Canada con un volo interno."
+        "description": "Il meglio del Canada con un volo interno.",
+        "plan": [
+          {
+            "t": "Arrivo a Toronto",
+            "a": [
+              "volo|Volo per Toronto||",
+              "transfer|Transfer in hotel||Toronto",
+              "alloggio|Hotel||Toronto",
+              "attivita|CN Tower||Toronto"
+            ]
+          },
+          {
+            "t": "Toronto",
+            "a": [
+              "attivita|Distillery District||Toronto"
+            ]
+          },
+          {
+            "t": "Niagara",
+            "a": [
+              "transfer|In auto fino a Niagara||Niagara",
+              "alloggio|Hotel||Niagara",
+              "attivita|Cascate in battello||Niagara"
+            ]
+          },
+          {
+            "t": "Montréal",
+            "a": [
+              "treno|Trasferimento a Montréal||Montréal",
+              "alloggio|Hotel a Montréal||Montréal",
+              "attivita|Vieux-Montréal||Montréal"
+            ]
+          },
+          {
+            "t": "Montréal",
+            "a": [
+              "attivita|Mont Royal||Montréal"
+            ]
+          },
+          {
+            "t": "Vancouver",
+            "a": [
+              "volo|Trasferimento a Vancouver||Vancouver",
+              "alloggio|Hotel a Vancouver||Vancouver",
+              "attivita|Gastown||Vancouver"
+            ]
+          },
+          {
+            "t": "Vancouver",
+            "a": [
+              "attivita|Stanley Park||Vancouver"
+            ]
+          },
+          {
+            "t": "Vancouver",
+            "a": [
+              "attivita|Capilano e Grouse||Vancouver"
+            ]
+          },
+          {
+            "t": "Jasper",
+            "a": [
+              "volo|Trasferimento a Jasper||Jasper",
+              "alloggio|Lodge a Jasper||Jasper",
+              "attivita|Volo per Edmonton e auto fino a Jasper||Jasper"
+            ]
+          },
+          {
+            "t": "Jasper",
+            "a": [
+              "attivita|Maligne Lake||Jasper"
+            ]
+          },
+          {
+            "t": "Icefields Parkway",
+            "a": [
+              "transfer|Icefields Parkway||Icefields",
+              "attivita|Ghiacciaio Athabasca||Columbia Icefield",
+              "alloggio|Lodge a Lake Louise||Lake Louise"
+            ]
+          },
+          {
+            "t": "Lake Louise",
+            "a": [
+              "attivita|Moraine Lake||Lake Louise"
+            ]
+          },
+          {
+            "t": "Banff",
+            "a": [
+              "transfer|In auto fino a Banff||Banff",
+              "alloggio|Hotel a Banff||Banff",
+              "attivita|Gondola||Banff"
+            ]
+          },
+          {
+            "t": "Banff",
+            "a": [
+              "attivita|Johnston Canyon||Banff"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1087,19 +1372,253 @@
         "title": "Cuba classica e mare",
         "days": 13,
         "route": "L'Avana (3) → Viñales (2) → Cienfuegos (1) → Trinidad (2) → Cayo Santa María o Varadero (4)",
-        "description": "Il tour più venduto in auto con autista o in casas particulares."
+        "description": "Il tour più venduto in auto con autista o in casas particulares.",
+        "plan": [
+          {
+            "t": "Arrivo a L'Avana",
+            "a": [
+              "volo|Volo per L'Avana||",
+              "transfer|Transfer in hotel||L'Avana",
+              "alloggio|Casa particular o hotel all'Avana Vieja||L'Avana",
+              "attivita|Avana Vieja e le sue quattro piazze||L'Avana"
+            ]
+          },
+          {
+            "t": "L'Avana",
+            "a": [
+              "attivita|Giro in auto d'epoca e Malecón al tramonto||L'Avana",
+              "attivita|Museo della Rivoluzione||L'Avana"
+            ]
+          },
+          {
+            "t": "L'Avana",
+            "a": [
+              "attivita|Fábrica de Arte Cubano e musica dal vivo||L'Avana"
+            ]
+          },
+          {
+            "t": "Viñales",
+            "a": [
+              "transfer|Trasferimento a Viñales||Viñales",
+              "alloggio|Casa particular a Viñales||Viñales",
+              "attivita|Valle di Viñales|Mogotes e piantagioni di tabacco UNESCO.|Viñales"
+            ]
+          },
+          {
+            "t": "Viñales",
+            "a": [
+              "attivita|Piantagione di tabacco e grotta dell'Indio||Viñales"
+            ]
+          },
+          {
+            "t": "Cienfuegos",
+            "a": [
+              "transfer|Trasferimento a Cienfuegos||Cienfuegos",
+              "alloggio|Hotel a Cienfuegos||Cienfuegos",
+              "attivita|Teatro Tomás Terry e Punta Gorda||Cienfuegos"
+            ]
+          },
+          {
+            "t": "Trinidad",
+            "a": [
+              "transfer|Trasferimento a Trinidad||Trinidad",
+              "alloggio|Casa particular a Trinidad||Trinidad",
+              "attivita|Plaza Mayor e Casa de la Música||Trinidad"
+            ]
+          },
+          {
+            "t": "Trinidad",
+            "a": [
+              "attivita|Valle de los Ingenios e Playa Ancón||Trinidad"
+            ]
+          },
+          {
+            "t": "Cayo Santa María",
+            "a": [
+              "transfer|Trasferimento a Cayo Santa María||Cayo Santa María",
+              "alloggio|Resort all inclusive||Cayo Santa María",
+              "attivita|Spiaggia|Via Santa Clara e il mausoleo del Che.|Cayo Santa María"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Cayo Santa María"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Catamarano e snorkeling||Cayo Santa María"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Cayo Santa María"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana a Cayo Largo o Varadero",
         "days": 9,
         "route": "L'Avana (2) → mare (6)",
-        "description": "Mare caraibico con un assaggio della capitale."
+        "description": "Mare caraibico con un assaggio della capitale.",
+        "plan": [
+          {
+            "t": "Arrivo a L'Avana",
+            "a": [
+              "volo|Volo per L'Avana||",
+              "transfer|Transfer in hotel||L'Avana",
+              "alloggio|Hotel all'Avana Vieja||L'Avana",
+              "attivita|Avana Vieja||L'Avana"
+            ]
+          },
+          {
+            "t": "L'Avana",
+            "a": [
+              "attivita|Auto d'epoca e Malecón||L'Avana"
+            ]
+          },
+          {
+            "t": "Varadero",
+            "a": [
+              "transfer|Trasferimento a Varadero||Varadero",
+              "alloggio|Resort all inclusive||Varadero",
+              "attivita|Spiaggia||Varadero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Varadero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Cayo Blanco in catamarano||Varadero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Grotta di Saturno||Varadero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Varadero"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Varadero"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cuba orientale",
         "days": 11,
         "route": "L'Avana (2) → Camagüey (1) → Santiago de Cuba (2) → Baracoa (3) → Guardalavaca (2)",
-        "description": "Per chi ha già visto L'Avana e Trinidad: la Cuba più africana e autentica, con Baracoa e la Sierra Maestra."
+        "description": "Per chi ha già visto L'Avana e Trinidad: la Cuba più africana e autentica, con Baracoa e la Sierra Maestra.",
+        "plan": [
+          {
+            "t": "Arrivo a L'Avana",
+            "a": [
+              "volo|Volo per L'Avana||",
+              "transfer|Transfer in hotel||L'Avana",
+              "alloggio|Hotel||L'Avana",
+              "attivita|Avana Vieja||L'Avana"
+            ]
+          },
+          {
+            "t": "L'Avana",
+            "a": [
+              "attivita|Auto d'epoca||L'Avana"
+            ]
+          },
+          {
+            "t": "Camagüey",
+            "a": [
+              "volo|Trasferimento a Camagüey||Camagüey",
+              "alloggio|Hotel||Camagüey",
+              "attivita|Città dei tinajones||Camagüey"
+            ]
+          },
+          {
+            "t": "Santiago de Cuba",
+            "a": [
+              "transfer|Trasferimento a Santiago de Cuba||Santiago de Cuba",
+              "alloggio|Hotel||Santiago de Cuba",
+              "attivita|Casa de la Trova||Santiago de Cuba"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "attivita|Castello del Morro e Basilica del Cobre||Santiago de Cuba"
+            ]
+          },
+          {
+            "t": "Baracoa",
+            "a": [
+              "transfer|Trasferimento a Baracoa||Baracoa",
+              "alloggio|Casa particular||Baracoa",
+              "attivita|La Farola||Baracoa"
+            ]
+          },
+          {
+            "t": "Baracoa",
+            "a": [
+              "attivita|El Yunque e cacao||Baracoa"
+            ]
+          },
+          {
+            "t": "Baracoa",
+            "a": [
+              "attivita|Playa Maguana||Baracoa"
+            ]
+          },
+          {
+            "t": "Guardalavaca",
+            "a": [
+              "transfer|Trasferimento a Guardalavaca||Guardalavaca",
+              "alloggio|Resort||Guardalavaca",
+              "attivita|Spiaggia||Guardalavaca"
+            ]
+          },
+          {
+            "t": "Guardalavaca",
+            "a": [
+              "attivita|Relax||Guardalavaca"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Holguín per l'Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1225,21 +1744,223 @@
     "itineraries": [
       {
         "title": "Settimana mare",
-        "days": 9,
+        "days": 8,
         "route": "Punta Cana o Bayahibe (7), con escursione a Saona",
-        "description": "La formula più richiesta con resort all inclusive."
+        "description": "La formula più richiesta con resort all inclusive.",
+        "plan": [
+          {
+            "t": "Arrivo a Punta Cana",
+            "a": [
+              "volo|Volo per Punta Cana||",
+              "transfer|Transfer in hotel||Punta Cana",
+              "alloggio|Resort all inclusive a Bávaro o Bayahibe||Punta Cana",
+              "attivita|Spiaggia||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Punta Cana"
+            ]
+          },
+          {
+            "t": "Saona",
+            "a": [
+              "traghetto|Isola Saona in catamarano e piscina naturale||Saona"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Hoyo Azul a Scape Park||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Isola Catalina e snorkeling||Bayahibe"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Punta Cana"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mare e balene",
         "days": 11,
         "route": "Santo Domingo (1) → Samaná (3) → Punta Cana (6)",
-        "description": "Da gennaio a marzo, con natura e mare."
+        "description": "Da gennaio a marzo, con natura e mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Santo Domingo",
+            "a": [
+              "volo|Volo per Santo Domingo||",
+              "transfer|Transfer in hotel||Santo Domingo",
+              "alloggio|Hotel nella Zona Colonial||Santo Domingo",
+              "attivita|Zona Colonial UNESCO||Santo Domingo"
+            ]
+          },
+          {
+            "t": "Samaná",
+            "a": [
+              "transfer|Trasferimento a Samaná||Samaná",
+              "alloggio|Hotel a Las Terrenas o Samaná||Samaná",
+              "attivita|Spiagge||Samaná"
+            ]
+          },
+          {
+            "t": "Samaná",
+            "a": [
+              "traghetto|Balene megattere (gennaio-marzo)||Samaná"
+            ]
+          },
+          {
+            "t": "Samaná",
+            "a": [
+              "attivita|Cayo Levantado e cascata El Limón||Samaná"
+            ]
+          },
+          {
+            "t": "Punta Cana",
+            "a": [
+              "transfer|Trasferimento a Punta Cana||Punta Cana",
+              "alloggio|Resort||Punta Cana",
+              "attivita|Spiaggia||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Punta Cana"
+            ]
+          },
+          {
+            "t": "Saona",
+            "a": [
+              "traghetto|Isola Saona||Saona"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax||Punta Cana"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Punta Cana"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Repubblica Dominicana autentica",
         "days": 10,
         "route": "Santo Domingo (2) → Jarabacoa (2) → Puerto Plata (2) → Las Terrenas (3)",
-        "description": "Città coloniale, montagne del centro e la costa nord: per chi non vuole solo il resort."
+        "description": "Città coloniale, montagne del centro e la costa nord: per chi non vuole solo il resort.",
+        "plan": [
+          {
+            "t": "Arrivo a Santo Domingo",
+            "a": [
+              "volo|Volo per Santo Domingo||",
+              "transfer|Transfer in hotel||Santo Domingo",
+              "alloggio|Hotel nella Zona Colonial||Santo Domingo",
+              "attivita|Zona Colonial||Santo Domingo"
+            ]
+          },
+          {
+            "t": "Santo Domingo",
+            "a": [
+              "attivita|Los Tres Ojos e Malecón||Santo Domingo"
+            ]
+          },
+          {
+            "t": "Jarabacoa",
+            "a": [
+              "transfer|Trasferimento a Jarabacoa||Jarabacoa",
+              "alloggio|Lodge in montagna||Jarabacoa",
+              "attivita|Cascata di Jimenoa||Jarabacoa"
+            ]
+          },
+          {
+            "t": "Jarabacoa",
+            "a": [
+              "attivita|Rafting sul Yaque del Norte||Jarabacoa"
+            ]
+          },
+          {
+            "t": "Puerto Plata",
+            "a": [
+              "transfer|Trasferimento a Puerto Plata||Puerto Plata",
+              "alloggio|Hotel||Puerto Plata",
+              "attivita|Funivia e Fortezza||Puerto Plata"
+            ]
+          },
+          {
+            "t": "Puerto Plata",
+            "a": [
+              "attivita|27 cascate di Damajagua||Puerto Plata"
+            ]
+          },
+          {
+            "t": "Las Terrenas",
+            "a": [
+              "transfer|Trasferimento a Las Terrenas||Las Terrenas",
+              "alloggio|Hotel sul mare||Las Terrenas",
+              "attivita|Playa Bonita||Las Terrenas"
+            ]
+          },
+          {
+            "t": "Las Terrenas",
+            "a": [
+              "attivita|Playa Rincón||Las Terrenas"
+            ]
+          },
+          {
+            "t": "Las Terrenas",
+            "a": [
+              "attivita|Relax||Las Terrenas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1376,19 +2097,259 @@
         "title": "Costa Rica classica",
         "days": 13,
         "route": "San José (1) → Tortuguero (2) → Arenal (3) → Monteverde (2) → Manuel Antonio (3) → San José (1)",
-        "description": "Il giro più completo in fly & drive o con trasferimenti, da dicembre ad aprile."
+        "description": "Il giro più completo in fly & drive o con trasferimenti, da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a San José",
+            "a": [
+              "volo|Volo per San José||",
+              "transfer|Transfer in hotel||San José",
+              "alloggio|Hotel a San José||San José"
+            ]
+          },
+          {
+            "t": "Tortuguero",
+            "a": [
+              "transfer|Trasferimento a Tortuguero||Tortuguero",
+              "alloggio|Lodge sul canale||Tortuguero",
+              "attivita|Canali in barca|Via Braulio Carrillo.|Tortuguero"
+            ]
+          },
+          {
+            "t": "Tortuguero",
+            "a": [
+              "traghetto|Canali all'alba e tartarughe (luglio-ottobre)||Tortuguero"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "transfer|Trasferimento a Arenal||Arenal",
+              "alloggio|Hotel con vista sul vulcano||Arenal",
+              "attivita|Terme||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Ponti sospesi e cascata La Fortuna||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Rafting o canyoning||Arenal"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "transfer|Trasferimento a Monteverde||Monteverde",
+              "alloggio|Lodge nella foresta nebulosa||Monteverde",
+              "attivita|Escursione notturna||Monteverde"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "attivita|Riserva di Monteverde e zip line||Monteverde"
+            ]
+          },
+          {
+            "t": "Manuel Antonio",
+            "a": [
+              "transfer|Trasferimento a Manuel Antonio||Manuel Antonio",
+              "alloggio|Hotel sul mare||Manuel Antonio",
+              "attivita|Spiaggia||Manuel Antonio"
+            ]
+          },
+          {
+            "t": "Manuel Antonio",
+            "a": [
+              "attivita|Parco nazionale: bradipi e scimmie||Manuel Antonio"
+            ]
+          },
+          {
+            "t": "Manuel Antonio",
+            "a": [
+              "attivita|Catamarano||Manuel Antonio"
+            ]
+          },
+          {
+            "t": "San José",
+            "a": [
+              "transfer|Trasferimento a San José||San José",
+              "alloggio|Hotel||San José"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Natura e Guanacaste",
         "days": 11,
         "route": "Liberia (1) → Rincón de la Vieja (2) → Arenal (3) → Tamarindo o Papagayo (4)",
-        "description": "Vulcani e mare, ideale anche in luglio–agosto."
+        "description": "Vulcani e mare, ideale anche in luglio–agosto.",
+        "plan": [
+          {
+            "t": "Arrivo a Liberia",
+            "a": [
+              "volo|Volo per Liberia||",
+              "transfer|Transfer in hotel||Liberia",
+              "alloggio|Hotel||Liberia"
+            ]
+          },
+          {
+            "t": "Rincón de la Vieja",
+            "a": [
+              "transfer|Trasferimento a Rincón de la Vieja||Rincón de la Vieja",
+              "alloggio|Lodge||Rincón de la Vieja",
+              "attivita|Fumarole||Rincón de la Vieja"
+            ]
+          },
+          {
+            "t": "Rincón de la Vieja",
+            "a": [
+              "attivita|Bagni di fango e cascate||Rincón de la Vieja"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "transfer|Trasferimento a Arenal||Arenal",
+              "alloggio|Hotel||Arenal",
+              "attivita|Terme||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Ponti sospesi||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Rio Celeste||Arenal"
+            ]
+          },
+          {
+            "t": "Tamarindo",
+            "a": [
+              "transfer|Trasferimento a Tamarindo||Tamarindo",
+              "alloggio|Hotel sul mare||Tamarindo",
+              "attivita|Surf||Tamarindo"
+            ]
+          },
+          {
+            "t": "Tamarindo",
+            "a": [
+              "attivita|Spiaggia||Tamarindo"
+            ]
+          },
+          {
+            "t": "Tamarindo",
+            "a": [
+              "traghetto|Catamarano al tramonto||Tamarindo"
+            ]
+          },
+          {
+            "t": "Tamarindo",
+            "a": [
+              "attivita|Relax||Tamarindo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Costa Rica in famiglia",
         "days": 10,
         "route": "San José (1) → Arenal (3) → Monteverde (2) → Guanacaste (4)",
-        "description": "Ritmo lento con spostamenti brevi: ponti sospesi, zipline, vulcano e spiagge del Pacifico."
+        "description": "Ritmo lento con spostamenti brevi: ponti sospesi, zipline, vulcano e spiagge del Pacifico.",
+        "plan": [
+          {
+            "t": "Arrivo a San José",
+            "a": [
+              "volo|Volo per San José||",
+              "transfer|Transfer in hotel||San José",
+              "alloggio|Hotel||San José"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "transfer|Trasferimento a Arenal||Arenal",
+              "alloggio|Hotel per famiglie||Arenal",
+              "attivita|Terme||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Ponti sospesi||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Zip line per bambini||Arenal"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "transfer|Trasferimento a Monteverde||Monteverde",
+              "alloggio|Lodge||Monteverde",
+              "attivita|Escursione notturna||Monteverde"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "attivita|Riserva||Monteverde"
+            ]
+          },
+          {
+            "t": "Guanacaste",
+            "a": [
+              "transfer|Trasferimento a Guanacaste||Guanacaste",
+              "alloggio|Resort per famiglie||Guanacaste",
+              "attivita|Spiaggia||Guanacaste"
+            ]
+          },
+          {
+            "t": "Guanacaste",
+            "a": [
+              "attivita|Spiaggia||Guanacaste"
+            ]
+          },
+          {
+            "t": "Guanacaste",
+            "a": [
+              "attivita|Snorkeling||Guanacaste"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1945,21 +2906,298 @@
     "itineraries": [
       {
         "title": "Argentina classica",
-        "days": 13,
+        "days": 12,
         "route": "Buenos Aires (3) → Iguazú (2) → El Calafate (3) → El Chaltén (2) → Buenos Aires (1)",
-        "description": "Città, cascate e ghiacciai con voli interni, da ottobre ad aprile."
+        "description": "Città, cascate e ghiacciai con voli interni, da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Buenos Aires",
+            "a": [
+              "volo|Volo per Buenos Aires||",
+              "transfer|Transfer in hotel||Buenos Aires",
+              "alloggio|Hotel a Palermo o Recoleta||Buenos Aires",
+              "attivita|Plaza de Mayo e Casa Rosada||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|San Telmo e La Boca||Buenos Aires",
+              "attivita|Cena con spettacolo di tango||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|Recoleta e Palermo||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Iguazú",
+            "a": [
+              "volo|Trasferimento a Iguazú||Iguazú",
+              "alloggio|Hotel nel parco||Iguazú",
+              "attivita|Garganta del Diablo||Iguazú"
+            ]
+          },
+          {
+            "t": "Iguazú",
+            "a": [
+              "attivita|Lato brasiliano delle cascate||Iguazú"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "volo|Trasferimento a El Calafate||El Calafate",
+              "alloggio|Hotel a El Calafate||El Calafate",
+              "attivita|Lago Argentino||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "attivita|Ghiacciaio Perito Moreno e minitrekking||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "traghetto|Navigazione sui ghiacciai Upsala e Spegazzini||El Calafate"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "transfer|Trasferimento a El Chaltén||El Chaltén",
+              "alloggio|Hotel a El Chaltén||El Chaltén",
+              "attivita|Mirador de los Cóndores||El Chaltén"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "attivita|Trekking alla Laguna de los Tres e Fitz Roy||El Chaltén"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "volo|Trasferimento a Buenos Aires||Buenos Aires",
+              "alloggio|Hotel||Buenos Aires",
+              "attivita|Puerto Madero||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grande Patagonia",
-        "days": 16,
+        "days": 15,
         "route": "Buenos Aires (2) → Penisola Valdés (3) → El Calafate (3) → El Chaltén (3) → Ushuaia (3)",
-        "description": "Fauna, ghiacciai e fine del mondo, da ottobre a marzo."
+        "description": "Fauna, ghiacciai e fine del mondo, da ottobre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Buenos Aires",
+            "a": [
+              "volo|Volo per Buenos Aires||",
+              "transfer|Transfer in hotel||Buenos Aires",
+              "alloggio|Hotel||Buenos Aires",
+              "attivita|Plaza de Mayo||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|San Telmo e tango||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Penisola Valdés",
+            "a": [
+              "volo|Trasferimento a Penisola Valdés||Penisola Valdés",
+              "alloggio|Estancia a Puerto Madryn||Penisola Valdés",
+              "attivita|Puerto Madryn||Penisola Valdés"
+            ]
+          },
+          {
+            "t": "Penisola Valdés",
+            "a": [
+              "traghetto|Balene franche (giugno-dicembre)||Penisola Valdés"
+            ]
+          },
+          {
+            "t": "Penisola Valdés",
+            "a": [
+              "attivita|Pinguini di Punta Tombo||Punta Tombo"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "volo|Trasferimento a El Calafate||El Calafate",
+              "alloggio|Hotel||El Calafate",
+              "attivita|Lago Argentino||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "attivita|Perito Moreno||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "traghetto|Ghiacciai Upsala e Spegazzini||El Calafate"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "transfer|Trasferimento a El Chaltén||El Chaltén",
+              "alloggio|Hotel||El Chaltén",
+              "attivita|Fitz Roy||El Chaltén"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "attivita|Laguna de los Tres||El Chaltén"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "attivita|Laguna Torre||El Chaltén"
+            ]
+          },
+          {
+            "t": "Ushuaia",
+            "a": [
+              "volo|Trasferimento a Ushuaia||Ushuaia",
+              "alloggio|Hotel||Ushuaia",
+              "attivita|Città alla fine del mondo||Ushuaia"
+            ]
+          },
+          {
+            "t": "Ushuaia",
+            "a": [
+              "traghetto|Canale di Beagle e faro||Ushuaia"
+            ]
+          },
+          {
+            "t": "Ushuaia",
+            "a": [
+              "attivita|Parco della Terra del Fuoco e treno||Ushuaia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nord e vino",
         "days": 12,
         "route": "Buenos Aires (3) → Salta (2) → Purmamarca e Humahuaca (2) → Cafayate (2) → Mendoza (2)",
-        "description": "Canyon colorati e cantine, da aprile a novembre."
+        "description": "Canyon colorati e cantine, da aprile a novembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Buenos Aires",
+            "a": [
+              "volo|Volo per Buenos Aires||",
+              "transfer|Transfer in hotel||Buenos Aires",
+              "alloggio|Hotel||Buenos Aires",
+              "attivita|Plaza de Mayo||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|San Telmo e La Boca||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|Tango||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Salta",
+            "a": [
+              "volo|Trasferimento a Salta||Salta",
+              "alloggio|Hotel a Salta||Salta",
+              "attivita|Centro coloniale||Salta"
+            ]
+          },
+          {
+            "t": "Salta",
+            "a": [
+              "attivita|Museo di alta montagna||Salta"
+            ]
+          },
+          {
+            "t": "Purmamarca",
+            "a": [
+              "transfer|In auto fino a Purmamarca||Purmamarca",
+              "alloggio|Hotel||Purmamarca",
+              "attivita|Cerro de los Siete Colores||Purmamarca"
+            ]
+          },
+          {
+            "t": "Humahuaca",
+            "a": [
+              "attivita|Quebrada de Humahuaca e Serranía del Hornocal||Humahuaca"
+            ]
+          },
+          {
+            "t": "Cafayate",
+            "a": [
+              "transfer|In auto fino a Cafayate||Cafayate",
+              "alloggio|Bodega hotel||Cafayate",
+              "attivita|Quebrada de las Conchas||Cafayate"
+            ]
+          },
+          {
+            "t": "Cafayate",
+            "a": [
+              "attivita|Torrontés in cantina||Cafayate"
+            ]
+          },
+          {
+            "t": "Mendoza",
+            "a": [
+              "volo|Trasferimento a Mendoza||Mendoza",
+              "alloggio|Hotel||Mendoza",
+              "attivita|Città||Mendoza"
+            ]
+          },
+          {
+            "t": "Mendoza",
+            "a": [
+              "attivita|Malbec nella Valle de Uco||Mendoza"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2095,21 +3333,278 @@
     "itineraries": [
       {
         "title": "Cile classico",
-        "days": 14,
+        "days": 13,
         "route": "Santiago (2) → Valparaíso (1) → San Pedro de Atacama (4) → Punta Arenas → Torres del Paine (4) → Santiago (1)",
-        "description": "Deserto e Patagonia con voli interni, da ottobre ad aprile."
+        "description": "Deserto e Patagonia con voli interni, da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Santiago",
+            "a": [
+              "volo|Volo per Santiago||",
+              "transfer|Transfer in hotel||Santiago",
+              "alloggio|Hotel a Lastarria||Santiago",
+              "attivita|Cerro Santa Lucía||Santiago"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "attivita|Plaza de Armas e Cerro San Cristóbal||Santiago"
+            ]
+          },
+          {
+            "t": "Valparaíso",
+            "a": [
+              "transfer|Trasferimento a Valparaíso||Valparaíso",
+              "alloggio|Hotel sul cerro||Valparaíso",
+              "attivita|Murales e funicolari||Valparaíso"
+            ]
+          },
+          {
+            "t": "San Pedro de Atacama",
+            "a": [
+              "volo|Trasferimento a San Pedro de Atacama||San Pedro de Atacama",
+              "alloggio|Hotel||San Pedro de Atacama",
+              "attivita|Valle della Luna al tramonto||San Pedro de Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Lagune altiplaniche e saline||Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Geyser del Tatio all'alba||Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Osservazione delle stelle||Atacama"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "volo|Trasferimento a Torres del Paine||Torres del Paine",
+              "alloggio|Lodge nel parco||Torres del Paine",
+              "attivita|Volo per Punta Arenas e trasferimento||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Base delle Torri||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Ghiacciaio Grey||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Valle del Francés||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "volo|Trasferimento a Santiago||Santiago",
+              "alloggio|Hotel||Santiago"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cile e Isola di Pasqua",
-        "days": 12,
+        "days": 11,
         "route": "Santiago (2) → Atacama (4) → Isola di Pasqua (4)",
-        "description": "Per chi vuole i due luoghi più iconici."
+        "description": "Per chi vuole i due luoghi più iconici.",
+        "plan": [
+          {
+            "t": "Arrivo a Santiago",
+            "a": [
+              "volo|Volo per Santiago||",
+              "transfer|Transfer in hotel||Santiago",
+              "alloggio|Hotel||Santiago"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "attivita|Città e Valparaíso||Santiago"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "volo|Trasferimento a Atacama||Atacama",
+              "alloggio|Hotel||Atacama",
+              "attivita|Valle della Luna||Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Lagune||Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Geyser del Tatio||Atacama"
+            ]
+          },
+          {
+            "t": "Atacama",
+            "a": [
+              "attivita|Stelle||Atacama"
+            ]
+          },
+          {
+            "t": "Isola di Pasqua",
+            "a": [
+              "volo|Trasferimento a Isola di Pasqua||Isola di Pasqua",
+              "alloggio|Hotel a Hanga Roa||Isola di Pasqua",
+              "attivita|Moai al tramonto||Isola di Pasqua"
+            ]
+          },
+          {
+            "t": "Isola di Pasqua",
+            "a": [
+              "attivita|Rano Raraku e Tongariki||Isola di Pasqua"
+            ]
+          },
+          {
+            "t": "Isola di Pasqua",
+            "a": [
+              "attivita|Orongo e Anakena||Isola di Pasqua"
+            ]
+          },
+          {
+            "t": "Isola di Pasqua",
+            "a": [
+              "attivita|Snorkeling o cavallo||Isola di Pasqua"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Santiago e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Patagonia cilena e argentina",
         "days": 13,
         "route": "Punta Arenas (1) → Torres del Paine (4) → El Calafate (3) → El Chaltén (3) → Buenos Aires (1)",
-        "description": "Il meglio della Patagonia attraversando il confine."
+        "description": "Il meglio della Patagonia attraversando il confine.",
+        "plan": [
+          {
+            "t": "Arrivo a Punta Arenas",
+            "a": [
+              "volo|Volo per Punta Arenas via Santiago||",
+              "transfer|Transfer in hotel||Punta Arenas",
+              "alloggio|Hotel||Punta Arenas",
+              "attivita|Pinguini di Magdalena (stagionale)||Punta Arenas"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "transfer|Trasferimento a Torres del Paine||Torres del Paine",
+              "alloggio|Lodge nel parco||Torres del Paine",
+              "attivita|Lago Pehoé||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Base delle Torri||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Ghiacciaio Grey||Torres del Paine"
+            ]
+          },
+          {
+            "t": "Torres del Paine",
+            "a": [
+              "attivita|Valle del Francés||Torres del Paine"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "transfer|Trasferimento a El Calafate||El Calafate",
+              "alloggio|Hotel||El Calafate",
+              "attivita|Frontiera di Cerro Castillo||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "attivita|Perito Moreno||El Calafate"
+            ]
+          },
+          {
+            "t": "El Calafate",
+            "a": [
+              "traghetto|Navigazione sui ghiacciai||El Calafate"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "transfer|Trasferimento a El Chaltén||El Chaltén",
+              "alloggio|Hotel||El Chaltén",
+              "attivita|Fitz Roy||El Chaltén"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "attivita|Laguna de los Tres||El Chaltén"
+            ]
+          },
+          {
+            "t": "El Chaltén",
+            "a": [
+              "attivita|Laguna Torre||El Chaltén"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "volo|Trasferimento a Buenos Aires||Buenos Aires",
+              "alloggio|Hotel||Buenos Aires",
+              "attivita|Tango||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2265,19 +3760,285 @@
         "title": "Rio, Iguaçu e Bahia",
         "days": 13,
         "route": "Rio de Janeiro (4) → Iguaçu (2) → Salvador (2) → Morro de São Paulo o Boipeba (4)",
-        "description": "Il classico con città, cascate e mare, da settembre a marzo."
+        "description": "Il classico con città, cascate e mare, da settembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Rio de Janeiro",
+            "a": [
+              "volo|Volo per Rio de Janeiro||",
+              "transfer|Transfer in hotel||Rio de Janeiro",
+              "alloggio|Hotel a Copacabana o Ipanema||Rio de Janeiro",
+              "attivita|Spiaggia||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Rio",
+            "a": [
+              "attivita|Cristo Redentore e Corcovado||Rio de Janeiro",
+              "attivita|Pão de Açúcar al tramonto||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Rio",
+            "a": [
+              "attivita|Santa Teresa, Lapa e Escadaria Selarón||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Rio",
+            "a": [
+              "attivita|Ipanema e samba la sera||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Iguaçu",
+            "a": [
+              "volo|Trasferimento a Iguaçu||Iguaçu",
+              "alloggio|Hotel||Iguaçu",
+              "attivita|Lato brasiliano delle cascate||Iguaçu"
+            ]
+          },
+          {
+            "t": "Iguaçu",
+            "a": [
+              "attivita|Lato argentino e Garganta del Diablo||Iguaçu"
+            ]
+          },
+          {
+            "t": "Salvador",
+            "a": [
+              "volo|Trasferimento a Salvador||Salvador",
+              "alloggio|Hotel nel Pelourinho||Salvador",
+              "attivita|Pelourinho UNESCO||Salvador"
+            ]
+          },
+          {
+            "t": "Salvador",
+            "a": [
+              "attivita|Capoeira e cucina bahiana||Salvador"
+            ]
+          },
+          {
+            "t": "Morro de São Paulo",
+            "a": [
+              "traghetto|Trasferimento a Morro de São Paulo||Morro de São Paulo",
+              "alloggio|Pousada sul mare||Morro de São Paulo",
+              "attivita|Spiaggia||Morro de São Paulo"
+            ]
+          },
+          {
+            "t": "Morro",
+            "a": [
+              "attivita|Giro dell'isola in barca||Morro de São Paulo"
+            ]
+          },
+          {
+            "t": "Morro",
+            "a": [
+              "attivita|Boipeba||Morro de São Paulo"
+            ]
+          },
+          {
+            "t": "Morro",
+            "a": [
+              "attivita|Relax||Morro de São Paulo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nordeste delle dune",
         "days": 14,
         "route": "Fortaleza (1) → Jericoacoara (3) → Rota das Emoções → Lençóis Maranhenses (3) → Natal e Pipa (5)",
-        "description": "Spiagge e dune, ideale da luglio a dicembre."
+        "description": "Spiagge e dune, ideale da luglio a dicembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Fortaleza",
+            "a": [
+              "volo|Volo per Fortaleza||",
+              "transfer|Transfer in hotel||Fortaleza",
+              "alloggio|Hotel sul lungomare||Fortaleza"
+            ]
+          },
+          {
+            "t": "Jericoacoara",
+            "a": [
+              "transfer|Trasferimento a Jericoacoara||Jericoacoara",
+              "alloggio|Pousada a Jeri||Jericoacoara",
+              "attivita|Duna del tramonto||Jericoacoara"
+            ]
+          },
+          {
+            "t": "Jericoacoara",
+            "a": [
+              "attivita|Lagoa do Paraíso||Jericoacoara"
+            ]
+          },
+          {
+            "t": "Jericoacoara",
+            "a": [
+              "attivita|Kitesurf||Jericoacoara"
+            ]
+          },
+          {
+            "t": "Rota das Emoções",
+            "a": [
+              "transfer|Rota das Emoções in 4x4 e delta del Parnaíba||Parnaíba",
+              "alloggio|Pousada||Parnaíba"
+            ]
+          },
+          {
+            "t": "Lençóis Maranhenses",
+            "a": [
+              "transfer|Trasferimento a Lençóis Maranhenses||Lençóis Maranhenses",
+              "alloggio|Pousada a Barreirinhas||Lençóis Maranhenses",
+              "attivita|Lagune tra le dune (luglio-settembre)||Lençóis Maranhenses"
+            ]
+          },
+          {
+            "t": "Lençóis",
+            "a": [
+              "attivita|Lagoa Azul e Bonita||Lençóis Maranhenses"
+            ]
+          },
+          {
+            "t": "Lençóis",
+            "a": [
+              "attivita|Atins||Lençóis Maranhenses"
+            ]
+          },
+          {
+            "t": "Natal",
+            "a": [
+              "volo|Trasferimento a Natal||Natal",
+              "alloggio|Hotel||Natal",
+              "attivita|Dune di Genipabu||Natal"
+            ]
+          },
+          {
+            "t": "Pipa",
+            "a": [
+              "transfer|Trasferimento a Pipa||Pipa",
+              "alloggio|Pousada a Pipa||Pipa",
+              "attivita|Baia dos Golfinhos||Pipa"
+            ]
+          },
+          {
+            "t": "Pipa",
+            "a": [
+              "attivita|Spiagge||Pipa"
+            ]
+          },
+          {
+            "t": "Pipa",
+            "a": [
+              "attivita|Relax||Pipa"
+            ]
+          },
+          {
+            "t": "Pipa",
+            "a": [
+              "attivita|Ultima giornata||Pipa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Natura brasiliana",
-        "days": 12,
+        "days": 11,
         "route": "Rio (3) → Pantanal (3) → Bonito (2) → Iguaçu (2)",
-        "description": "Fauna e acqua, da luglio a ottobre."
+        "description": "Fauna e acqua, da luglio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Rio de Janeiro",
+            "a": [
+              "volo|Volo per Rio||",
+              "transfer|Transfer in hotel||Rio de Janeiro",
+              "alloggio|Hotel a Copacabana||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Rio",
+            "a": [
+              "attivita|Cristo Redentore e Pão de Açúcar||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Rio",
+            "a": [
+              "attivita|Santa Teresa||Rio de Janeiro"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "volo|Trasferimento a Pantanal||Pantanal",
+              "alloggio|Fazenda nel Pantanal||Pantanal",
+              "attivita|Volo per Cuiabá||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Giaguari in barca (luglio-ottobre)||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Uccelli e caimani||Pantanal"
+            ]
+          },
+          {
+            "t": "Bonito",
+            "a": [
+              "volo|Trasferimento a Bonito||Bonito",
+              "alloggio|Pousada||Bonito",
+              "attivita|Grotta azzurra||Bonito"
+            ]
+          },
+          {
+            "t": "Bonito",
+            "a": [
+              "attivita|Snorkeling nei fiumi cristallini||Bonito"
+            ]
+          },
+          {
+            "t": "Iguaçu",
+            "a": [
+              "volo|Trasferimento a Iguaçu||Iguaçu",
+              "alloggio|Hotel||Iguaçu",
+              "attivita|Cascate||Iguaçu"
+            ]
+          },
+          {
+            "t": "Iguaçu",
+            "a": [
+              "attivita|Lato argentino||Iguaçu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2416,19 +4177,260 @@
         "title": "Colombia classica",
         "days": 13,
         "route": "Bogotá (2) → Medellín (3) → Zona del caffè (3) → Cartagena (3) → Isole del Rosario (1)",
-        "description": "Città, caffè e Caribe con voli interni."
+        "description": "Città, caffè e Caribe con voli interni.",
+        "plan": [
+          {
+            "t": "Arrivo a Bogotá",
+            "a": [
+              "volo|Volo per Bogotá||",
+              "transfer|Transfer in hotel||Bogotá",
+              "alloggio|Hotel a La Candelaria||Bogotá",
+              "attivita|La Candelaria||Bogotá"
+            ]
+          },
+          {
+            "t": "Bogotá",
+            "a": [
+              "attivita|Museo dell'Oro e Monserrate||Bogotá"
+            ]
+          },
+          {
+            "t": "Medellín",
+            "a": [
+              "volo|Trasferimento a Medellín||Medellín",
+              "alloggio|Hotel a El Poblado||Medellín",
+              "attivita|Metrocable||Medellín"
+            ]
+          },
+          {
+            "t": "Medellín",
+            "a": [
+              "attivita|Comuna 13 con i graffiti||Medellín"
+            ]
+          },
+          {
+            "t": "Medellín",
+            "a": [
+              "attivita|Guatapé e la Piedra del Peñol||Guatapé"
+            ]
+          },
+          {
+            "t": "Zona del caffè",
+            "a": [
+              "volo|Trasferimento a Zona del caffè||Zona del caffè",
+              "alloggio|Hacienda del caffè||Zona del caffè",
+              "attivita|Piantagione||Zona del caffè"
+            ]
+          },
+          {
+            "t": "Zona del caffè",
+            "a": [
+              "attivita|Valle del Cocora e palme di cera||Salento"
+            ]
+          },
+          {
+            "t": "Zona del caffè",
+            "a": [
+              "attivita|Salento e Filandia||Salento"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "volo|Trasferimento a Cartagena||Cartagena",
+              "alloggio|Hotel nella città murata||Cartagena",
+              "attivita|Città vecchia||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|Castello di San Felipe e Getsemaní||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|Palenque o vulcano di fango||Cartagena"
+            ]
+          },
+          {
+            "t": "Isole del Rosario",
+            "a": [
+              "traghetto|Trasferimento a Isole del Rosario||Isole del Rosario",
+              "alloggio|Hotel sull'isola||Isole del Rosario",
+              "attivita|Snorkeling||Isole del Rosario"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Caribe colombiano",
         "days": 10,
         "route": "Cartagena (3) → Santa Marta (1) → Tayrona e Palomino (3) → Isole del Rosario (2)",
-        "description": "Mare, giungla e città coloniale."
+        "description": "Mare, giungla e città coloniale.",
+        "plan": [
+          {
+            "t": "Arrivo a Cartagena",
+            "a": [
+              "volo|Volo per Cartagena||",
+              "transfer|Transfer in hotel||Cartagena",
+              "alloggio|Hotel nella città murata||Cartagena",
+              "attivita|Città vecchia||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|San Felipe e Getsemaní||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|Playa Blanca||Cartagena"
+            ]
+          },
+          {
+            "t": "Santa Marta",
+            "a": [
+              "transfer|Trasferimento a Santa Marta||Santa Marta",
+              "alloggio|Hotel||Santa Marta",
+              "attivita|Centro||Santa Marta"
+            ]
+          },
+          {
+            "t": "Tayrona",
+            "a": [
+              "transfer|Trasferimento a Tayrona||Tayrona",
+              "alloggio|Eco-habs nel parco||Tayrona",
+              "attivita|Spiagge del Tayrona||Tayrona"
+            ]
+          },
+          {
+            "t": "Tayrona",
+            "a": [
+              "attivita|Cabo San Juan||Tayrona"
+            ]
+          },
+          {
+            "t": "Palomino",
+            "a": [
+              "attivita|Tubing sul fiume||Palomino"
+            ]
+          },
+          {
+            "t": "Isole del Rosario",
+            "a": [
+              "traghetto|Trasferimento a Isole del Rosario||Isole del Rosario",
+              "alloggio|Hotel||Isole del Rosario",
+              "attivita|Snorkeling||Isole del Rosario"
+            ]
+          },
+          {
+            "t": "Rosario",
+            "a": [
+              "attivita|Relax||Isole del Rosario"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Colombia e Amazzonia",
         "days": 11,
         "route": "Bogotá (2) → Leticia e Amazzonia (3) → Cartagena (3) → San Andrés (2)",
-        "description": "Le tre anime del paese: capitale andina, foresta amazzonica e mare caraibico."
+        "description": "Le tre anime del paese: capitale andina, foresta amazzonica e mare caraibico.",
+        "plan": [
+          {
+            "t": "Arrivo a Bogotá",
+            "a": [
+              "volo|Volo per Bogotá||",
+              "transfer|Transfer in hotel||Bogotá",
+              "alloggio|Hotel||Bogotá"
+            ]
+          },
+          {
+            "t": "Bogotá",
+            "a": [
+              "attivita|Museo dell'Oro||Bogotá"
+            ]
+          },
+          {
+            "t": "Leticia",
+            "a": [
+              "volo|Trasferimento a Leticia||Leticia",
+              "alloggio|Lodge nella foresta||Leticia",
+              "attivita|Amazzonia||Leticia"
+            ]
+          },
+          {
+            "t": "Amazzonia",
+            "a": [
+              "attivita|Delfini rosa||Amazzonia"
+            ]
+          },
+          {
+            "t": "Amazzonia",
+            "a": [
+              "attivita|Comunità indigene||Amazzonia"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "volo|Trasferimento a Cartagena||Cartagena",
+              "alloggio|Hotel||Cartagena",
+              "attivita|Città vecchia||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|San Felipe||Cartagena"
+            ]
+          },
+          {
+            "t": "Cartagena",
+            "a": [
+              "attivita|Rosario||Cartagena"
+            ]
+          },
+          {
+            "t": "San Andrés",
+            "a": [
+              "volo|Trasferimento a San Andrés||San Andrés",
+              "alloggio|Hotel||San Andrés",
+              "attivita|Mare dei sette colori||San Andrés"
+            ]
+          },
+          {
+            "t": "San Andrés",
+            "a": [
+              "attivita|Johnny Cay||San Andrés"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2584,19 +4586,382 @@
         "title": "Australia classica",
         "days": 16,
         "route": "Sydney (4) → Uluru (3) → Cairns e Port Douglas (4) → Melbourne (2) → Great Ocean Road (2)",
-        "description": "I grandi simboli con voli interni, ideale in primavera o autunno australe."
+        "description": "I grandi simboli con voli interni, ideale in primavera o autunno australe.",
+        "plan": [
+          {
+            "t": "Arrivo a Sydney",
+            "a": [
+              "volo|Volo per Sydney con uno scalo||",
+              "transfer|Transfer in hotel||Sydney",
+              "alloggio|Hotel a The Rocks o Circular Quay||Sydney",
+              "attivita|Opera House e Harbour Bridge||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Traghetto per Manly||Sydney",
+              "attivita|Bondi Beach e coastal walk fino a Coogee||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Blue Mountains e Three Sisters||Blue Mountains"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Taronga Zoo e Darling Harbour||Sydney"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "volo|Trasferimento a Uluru||Uluru",
+              "alloggio|Resort ad Ayers Rock||Uluru",
+              "attivita|Tramonto su Uluru||Uluru"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "attivita|Alba e giro della base di Uluru||Uluru"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "attivita|Kata Tjuta e Field of Light||Uluru"
+            ]
+          },
+          {
+            "t": "Port Douglas",
+            "a": [
+              "volo|Trasferimento a Port Douglas||Port Douglas",
+              "alloggio|Resort a Port Douglas||Port Douglas",
+              "attivita|Four Mile Beach||Port Douglas"
+            ]
+          },
+          {
+            "t": "Grande Barriera",
+            "a": [
+              "traghetto|Grande Barriera Corallina in catamarano||Grande Barriera"
+            ]
+          },
+          {
+            "t": "Daintree",
+            "a": [
+              "attivita|Foresta del Daintree e Cape Tribulation||Daintree"
+            ]
+          },
+          {
+            "t": "Port Douglas",
+            "a": [
+              "attivita|Kuranda Scenic Railway e Skyrail||Kuranda"
+            ]
+          },
+          {
+            "t": "Melbourne",
+            "a": [
+              "volo|Trasferimento a Melbourne||Melbourne",
+              "alloggio|Hotel||Melbourne",
+              "attivita|Laneways e street art||Melbourne"
+            ]
+          },
+          {
+            "t": "Melbourne",
+            "a": [
+              "attivita|Queen Victoria Market e St Kilda||Melbourne"
+            ]
+          },
+          {
+            "t": "Great Ocean Road",
+            "a": [
+              "transfer|In auto fino a Great Ocean Road||Great Ocean Road",
+              "alloggio|Hotel a Lorne o Apollo Bay||Great Ocean Road",
+              "attivita|Koala a Kennett River||Great Ocean Road"
+            ]
+          },
+          {
+            "t": "Great Ocean Road",
+            "a": [
+              "attivita|Dodici Apostoli||Great Ocean Road"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Australia e Nuova Zelanda",
         "days": 22,
         "route": "Sydney (4) → Uluru (2) → Cairns (3) → Auckland → Rotorua → Queenstown (10)",
-        "description": "Il viaggio di nozze per eccellenza in Oceania."
+        "description": "Il viaggio di nozze per eccellenza in Oceania.",
+        "plan": [
+          {
+            "t": "Arrivo a Sydney",
+            "a": [
+              "volo|Volo per Sydney||",
+              "transfer|Transfer in hotel||Sydney",
+              "alloggio|Hotel||Sydney",
+              "attivita|Opera House||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Bondi e Manly||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Blue Mountains||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Harbour Bridge||Sydney"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "volo|Trasferimento a Uluru||Uluru",
+              "alloggio|Resort||Uluru",
+              "attivita|Tramonto||Uluru"
+            ]
+          },
+          {
+            "t": "Uluru",
+            "a": [
+              "attivita|Kata Tjuta||Uluru"
+            ]
+          },
+          {
+            "t": "Cairns",
+            "a": [
+              "volo|Trasferimento a Cairns||Cairns",
+              "alloggio|Hotel||Cairns",
+              "attivita|Esplanade||Cairns"
+            ]
+          },
+          {
+            "t": "Grande Barriera",
+            "a": [
+              "traghetto|Grande Barriera||Cairns"
+            ]
+          },
+          {
+            "t": "Daintree",
+            "a": [
+              "attivita|Foresta pluviale||Daintree"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "volo|Trasferimento a Auckland||Auckland",
+              "alloggio|Hotel||Auckland",
+              "attivita|Sky Tower||Auckland"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "attivita|Waiheke||Auckland"
+            ]
+          },
+          {
+            "t": "Waitomo e Rotorua",
+            "a": [
+              "attivita|Grotte delle lucciole di Waitomo||Waitomo",
+              "alloggio|Hotel a Rotorua||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Te Puia e cultura maori||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Hobbiton||Matamata"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "volo|Trasferimento a Queenstown||Queenstown",
+              "alloggio|Hotel||Queenstown",
+              "attivita|Skyline||Queenstown"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Jet boat e bungy||Queenstown"
+            ]
+          },
+          {
+            "t": "Milford Sound",
+            "a": [
+              "attivita|Crociera a Milford Sound||Milford Sound"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Arrowtown||Queenstown"
+            ]
+          },
+          {
+            "t": "Wanaka",
+            "a": [
+              "attivita|Wanaka e Roys Peak||Wanaka"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Glenorchy||Queenstown"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Giornata libera||Queenstown"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Australia on the road",
-        "days": 14,
+        "days": 15,
         "route": "Sydney (3) → costa est in auto → Byron Bay (2) → Brisbane → Fraser Coast (2) → Whitsunday (3) → Cairns (3)",
-        "description": "Fly & drive lungo la costa, da maggio a ottobre."
+        "description": "Fly & drive lungo la costa, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Sydney",
+            "a": [
+              "volo|Volo per Sydney||",
+              "transfer|Transfer in hotel||Sydney",
+              "alloggio|Hotel||Sydney",
+              "attivita|Opera House||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Bondi e Manly||Sydney"
+            ]
+          },
+          {
+            "t": "Sydney",
+            "a": [
+              "attivita|Blue Mountains||Sydney"
+            ]
+          },
+          {
+            "t": "Costa est",
+            "a": [
+              "transfer|In auto lungo la costa del Nuovo Galles del Sud||Port Macquarie",
+              "alloggio|Motel||Port Macquarie"
+            ]
+          },
+          {
+            "t": "Byron Bay",
+            "a": [
+              "transfer|In auto fino a Byron Bay||Byron Bay",
+              "alloggio|Hotel||Byron Bay",
+              "attivita|Faro di Cape Byron||Byron Bay"
+            ]
+          },
+          {
+            "t": "Byron Bay",
+            "a": [
+              "attivita|Surf e spiagge||Byron Bay"
+            ]
+          },
+          {
+            "t": "Fraser Coast",
+            "a": [
+              "transfer|In auto fino a Fraser Coast||Fraser Coast",
+              "alloggio|Resort||Fraser Coast",
+              "attivita|Via Brisbane e Noosa||Fraser Coast"
+            ]
+          },
+          {
+            "t": "K'gari",
+            "a": [
+              "attivita|Isola di Fraser in 4x4||K'gari"
+            ]
+          },
+          {
+            "t": "Whitsunday",
+            "a": [
+              "volo|Trasferimento a Whitsunday||Whitsunday",
+              "alloggio|Resort ad Airlie Beach||Whitsunday",
+              "attivita|Lungomare||Whitsunday"
+            ]
+          },
+          {
+            "t": "Whitsunday",
+            "a": [
+              "traghetto|Whitehaven Beach e Hill Inlet||Whitsunday"
+            ]
+          },
+          {
+            "t": "Whitsunday",
+            "a": [
+              "attivita|Relax||Whitsunday"
+            ]
+          },
+          {
+            "t": "Cairns",
+            "a": [
+              "volo|Trasferimento a Cairns||Cairns",
+              "alloggio|Hotel||Cairns",
+              "attivita|Esplanade||Cairns"
+            ]
+          },
+          {
+            "t": "Grande Barriera",
+            "a": [
+              "traghetto|Grande Barriera||Cairns"
+            ]
+          },
+          {
+            "t": "Daintree",
+            "a": [
+              "attivita|Foresta pluviale||Daintree"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2737,21 +5102,323 @@
     "itineraries": [
       {
         "title": "Nuova Zelanda in self-drive",
-        "days": 18,
+        "days": 19,
         "route": "Auckland (2) → Waitomo → Rotorua (2) → Tongariro (1) → Wellington (1) → traghetto → Abel Tasman (2) → Punakaiki → Franz Josef (2) → Wanaka (1) → Queenstown (3) → Milford Sound (1) → Tekapo (1) → Christchurch (1)",
-        "description": "Il giro completo delle due isole in auto o camper, da novembre ad aprile."
+        "description": "Il giro completo delle due isole in auto o camper, da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Auckland",
+            "a": [
+              "volo|Volo per Auckland||",
+              "transfer|Transfer in hotel||Auckland",
+              "alloggio|Hotel||Auckland",
+              "attivita|Sky Tower||Auckland"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "attivita|Waiheke e vigneti||Auckland"
+            ]
+          },
+          {
+            "t": "Waitomo e Rotorua",
+            "a": [
+              "attivita|Grotte delle lucciole di Waitomo||Waitomo",
+              "transfer|Proseguimento per Rotorua||Rotorua",
+              "alloggio|Hotel a Rotorua||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Te Puia, geyser e serata hangi maori||Rotorua"
+            ]
+          },
+          {
+            "t": "Tongariro",
+            "a": [
+              "transfer|In auto fino a Tongariro||Tongariro",
+              "alloggio|Lodge||Tongariro",
+              "attivita|Hobbiton lungo la strada||Tongariro"
+            ]
+          },
+          {
+            "t": "Tongariro",
+            "a": [
+              "attivita|Tongariro Alpine Crossing|Uno dei trekking giornalieri più belli del mondo.|Tongariro"
+            ]
+          },
+          {
+            "t": "Wellington",
+            "a": [
+              "transfer|In auto fino a Wellington||Wellington",
+              "alloggio|Hotel||Wellington",
+              "attivita|Museo Te Papa||Wellington"
+            ]
+          },
+          {
+            "t": "Traghetto",
+            "a": [
+              "traghetto|Interislander per Picton||Picton",
+              "transfer|Proseguimento per Abel Tasman||Abel Tasman",
+              "alloggio|Lodge||Abel Tasman"
+            ]
+          },
+          {
+            "t": "Abel Tasman",
+            "a": [
+              "traghetto|Kayak e sentiero costiero||Abel Tasman"
+            ]
+          },
+          {
+            "t": "Punakaiki",
+            "a": [
+              "transfer|In auto fino a Punakaiki||Punakaiki",
+              "alloggio|Hotel||Punakaiki",
+              "attivita|Pancake Rocks||Punakaiki"
+            ]
+          },
+          {
+            "t": "Franz Josef",
+            "a": [
+              "transfer|In auto fino a Franz Josef||Franz Josef",
+              "alloggio|Hotel||Franz Josef",
+              "attivita|Ghiacciaio||Franz Josef"
+            ]
+          },
+          {
+            "t": "Franz Josef",
+            "a": [
+              "attivita|Heli-hike sul ghiacciaio||Franz Josef"
+            ]
+          },
+          {
+            "t": "Wanaka",
+            "a": [
+              "transfer|In auto fino a Wanaka||Wanaka",
+              "alloggio|Hotel||Wanaka",
+              "attivita|That Wanaka Tree||Wanaka"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "transfer|In auto fino a Queenstown||Queenstown",
+              "alloggio|Hotel||Queenstown",
+              "attivita|Skyline||Queenstown"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Jet boat||Queenstown"
+            ]
+          },
+          {
+            "t": "Milford Sound",
+            "a": [
+              "attivita|Crociera a Milford Sound||Milford Sound"
+            ]
+          },
+          {
+            "t": "Tekapo",
+            "a": [
+              "transfer|In auto fino a Tekapo||Tekapo",
+              "alloggio|Hotel||Tekapo",
+              "attivita|Chiesa del Buon Pastore e stelle||Tekapo"
+            ]
+          },
+          {
+            "t": "Christchurch",
+            "a": [
+              "transfer|In auto fino a Christchurch||Christchurch",
+              "alloggio|Hotel||Christchurch",
+              "attivita|Centro||Christchurch"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isola del Sud",
         "days": 12,
         "route": "Christchurch (1) → Kaikōura (1) → Abel Tasman (2) → Franz Josef (2) → Wanaka (1) → Queenstown (3) → Tekapo (1)",
-        "description": "Per chi vuole concentrarsi sulle montagne e i fiordi."
+        "description": "Per chi vuole concentrarsi sulle montagne e i fiordi.",
+        "plan": [
+          {
+            "t": "Arrivo a Christchurch",
+            "a": [
+              "volo|Volo per Christchurch||",
+              "transfer|Transfer in hotel||Christchurch",
+              "alloggio|Hotel||Christchurch"
+            ]
+          },
+          {
+            "t": "Kaikōura",
+            "a": [
+              "transfer|In auto fino a Kaikōura||Kaikōura",
+              "alloggio|Hotel||Kaikōura",
+              "attivita|Balene in barca||Kaikōura"
+            ]
+          },
+          {
+            "t": "Abel Tasman",
+            "a": [
+              "transfer|In auto fino a Abel Tasman||Abel Tasman",
+              "alloggio|Lodge||Abel Tasman",
+              "attivita|Spiaggia||Abel Tasman"
+            ]
+          },
+          {
+            "t": "Abel Tasman",
+            "a": [
+              "traghetto|Kayak||Abel Tasman"
+            ]
+          },
+          {
+            "t": "Franz Josef",
+            "a": [
+              "transfer|In auto fino a Franz Josef||Franz Josef",
+              "alloggio|Hotel||Franz Josef",
+              "attivita|Pancake Rocks lungo la strada||Franz Josef"
+            ]
+          },
+          {
+            "t": "Franz Josef",
+            "a": [
+              "attivita|Ghiacciaio||Franz Josef"
+            ]
+          },
+          {
+            "t": "Wanaka",
+            "a": [
+              "transfer|In auto fino a Wanaka||Wanaka",
+              "alloggio|Hotel||Wanaka",
+              "attivita|Lago||Wanaka"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "transfer|In auto fino a Queenstown||Queenstown",
+              "alloggio|Hotel||Queenstown",
+              "attivita|Skyline||Queenstown"
+            ]
+          },
+          {
+            "t": "Milford Sound",
+            "a": [
+              "attivita|Milford Sound||Milford Sound"
+            ]
+          },
+          {
+            "t": "Queenstown",
+            "a": [
+              "attivita|Arrowtown||Queenstown"
+            ]
+          },
+          {
+            "t": "Tekapo",
+            "a": [
+              "transfer|In auto fino a Tekapo||Tekapo",
+              "alloggio|Hotel||Tekapo",
+              "attivita|Stelle||Tekapo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isola del Nord",
         "days": 10,
         "route": "Auckland (2) → Bay of Islands (2) → Waitomo → Rotorua (2) → Taupo (1) → Wellington (2)",
-        "description": "Vulcani, cultura maori e grotte luminose, per chi ha meno tempo o torna in Nuova Zelanda."
+        "description": "Vulcani, cultura maori e grotte luminose, per chi ha meno tempo o torna in Nuova Zelanda.",
+        "plan": [
+          {
+            "t": "Arrivo a Auckland",
+            "a": [
+              "volo|Volo per Auckland||",
+              "transfer|Transfer in hotel||Auckland",
+              "alloggio|Hotel||Auckland",
+              "attivita|Sky Tower||Auckland"
+            ]
+          },
+          {
+            "t": "Auckland",
+            "a": [
+              "attivita|Waiheke||Auckland"
+            ]
+          },
+          {
+            "t": "Bay of Islands",
+            "a": [
+              "transfer|In auto fino a Bay of Islands||Bay of Islands",
+              "alloggio|Hotel a Paihia||Bay of Islands",
+              "attivita|Waitangi||Bay of Islands"
+            ]
+          },
+          {
+            "t": "Bay of Islands",
+            "a": [
+              "traghetto|Hole in the Rock e delfini||Bay of Islands"
+            ]
+          },
+          {
+            "t": "Waitomo e Rotorua",
+            "a": [
+              "attivita|Grotte di Waitomo||Waitomo",
+              "alloggio|Hotel a Rotorua||Rotorua"
+            ]
+          },
+          {
+            "t": "Rotorua",
+            "a": [
+              "attivita|Te Puia e Hobbiton||Rotorua"
+            ]
+          },
+          {
+            "t": "Taupo",
+            "a": [
+              "transfer|In auto fino a Taupo||Taupo",
+              "alloggio|Hotel||Taupo",
+              "attivita|Huka Falls||Taupo"
+            ]
+          },
+          {
+            "t": "Wellington",
+            "a": [
+              "transfer|In auto fino a Wellington||Wellington",
+              "alloggio|Hotel||Wellington",
+              "attivita|Te Papa||Wellington"
+            ]
+          },
+          {
+            "t": "Wellington",
+            "a": [
+              "attivita|Cuba Street e funicolare||Wellington"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2867,21 +5534,318 @@
     "itineraries": [
       {
         "title": "Viaggio di nozze classico",
-        "days": 12,
+        "days": 11,
         "route": "Tahiti (1) → Moorea (3) → Bora Bora (5)",
-        "description": "La combinazione più venduta, con voli interni e bungalow sull'acqua."
+        "description": "La combinazione più venduta, con voli interni e bungalow sull'acqua.",
+        "plan": [
+          {
+            "t": "Arrivo a Tahiti",
+            "a": [
+              "volo|Volo per Papeete via Parigi o Los Angeles||",
+              "transfer|Transfer in hotel||Tahiti",
+              "alloggio|Hotel a Tahiti||Tahiti",
+              "attivita|Collana di fiori all'arrivo||Tahiti"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "traghetto|Trasferimento a Moorea||Moorea",
+              "alloggio|Bungalow sull'acqua a Moorea||Moorea",
+              "attivita|Laguna||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Snorkeling con razze e squali pinna nera||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Belvedere e piantagioni di ananas||Moorea"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "volo|Trasferimento a Bora Bora||Bora Bora",
+              "alloggio|Overwater bungalow a Bora Bora||Bora Bora",
+              "attivita|Tramonto sul monte Otemanu||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "traghetto|Giro della laguna con pranzo su un motu||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Relax nel bungalow||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Spa di coppia||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Cena romantica sulla spiaggia||Bora Bora"
+            ]
+          },
+          {
+            "t": "Rientro a Tahiti",
+            "a": [
+              "volo|Volo per Tahiti||Tahiti",
+              "alloggio|Hotel o day use||Tahiti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isole e atolli",
         "days": 14,
         "route": "Tahiti (1) → Moorea (3) → Huahine (2) → Bora Bora (3) → Rangiroa o Tikehau (3)",
-        "description": "Isole alte e atolli, con la Polinesia più autentica."
+        "description": "Isole alte e atolli, con la Polinesia più autentica.",
+        "plan": [
+          {
+            "t": "Arrivo a Tahiti",
+            "a": [
+              "volo|Volo per Papeete||",
+              "transfer|Transfer in hotel||Tahiti",
+              "alloggio|Hotel||Tahiti"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "traghetto|Trasferimento a Moorea||Moorea",
+              "alloggio|Bungalow||Moorea",
+              "attivita|Laguna||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Razze e squali||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Belvedere||Moorea"
+            ]
+          },
+          {
+            "t": "Huahine",
+            "a": [
+              "volo|Trasferimento a Huahine||Huahine",
+              "alloggio|Pensione||Huahine",
+              "attivita|Isola autentica||Huahine"
+            ]
+          },
+          {
+            "t": "Huahine",
+            "a": [
+              "attivita|Siti sacri e anguille||Huahine"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "volo|Trasferimento a Bora Bora||Bora Bora",
+              "alloggio|Overwater bungalow||Bora Bora",
+              "attivita|Tramonto||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "traghetto|Laguna||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Relax||Bora Bora"
+            ]
+          },
+          {
+            "t": "Rangiroa",
+            "a": [
+              "volo|Trasferimento a Rangiroa||Rangiroa",
+              "alloggio|Pensione sull'atollo||Rangiroa",
+              "attivita|Laguna blu||Rangiroa"
+            ]
+          },
+          {
+            "t": "Rangiroa",
+            "a": [
+              "attivita|Immersioni nel passo di Tiputa con i delfini||Rangiroa"
+            ]
+          },
+          {
+            "t": "Rangiroa",
+            "a": [
+              "attivita|Laguna Blu||Rangiroa"
+            ]
+          },
+          {
+            "t": "Rientro a Tahiti",
+            "a": [
+              "volo|Volo per Tahiti||Tahiti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Giro del mondo nel Pacifico",
         "days": 18,
         "route": "Los Angeles (2) → Polinesia (9) → Nuova Zelanda o Isole Cook (5)",
-        "description": "Combinato con biglietto intorno al mondo."
+        "description": "Combinato con biglietto intorno al mondo.",
+        "plan": [
+          {
+            "t": "Arrivo a Los Angeles",
+            "a": [
+              "volo|Volo per Los Angeles||",
+              "transfer|Transfer in hotel||Los Angeles",
+              "alloggio|Hotel a Santa Monica||Los Angeles",
+              "attivita|Molo||Los Angeles"
+            ]
+          },
+          {
+            "t": "Los Angeles",
+            "a": [
+              "attivita|Hollywood e Griffith||Los Angeles"
+            ]
+          },
+          {
+            "t": "Tahiti",
+            "a": [
+              "volo|Trasferimento a Tahiti||Tahiti",
+              "alloggio|Hotel||Tahiti",
+              "attivita|Arrivo in Polinesia||Tahiti"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "traghetto|Trasferimento a Moorea||Moorea",
+              "alloggio|Bungalow||Moorea",
+              "attivita|Laguna||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Snorkeling||Moorea"
+            ]
+          },
+          {
+            "t": "Moorea",
+            "a": [
+              "attivita|Belvedere||Moorea"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "volo|Trasferimento a Bora Bora||Bora Bora",
+              "alloggio|Overwater bungalow||Bora Bora",
+              "attivita|Tramonto||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "traghetto|Laguna||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Relax||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Spa||Bora Bora"
+            ]
+          },
+          {
+            "t": "Bora Bora",
+            "a": [
+              "attivita|Giornata libera||Bora Bora"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "volo|Trasferimento a Rarotonga||Rarotonga",
+              "alloggio|Resort||Rarotonga",
+              "attivita|Isole Cook||Rarotonga"
+            ]
+          },
+          {
+            "t": "Rarotonga",
+            "a": [
+              "attivita|Giro dell'isola||Rarotonga"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "volo|Trasferimento a Aitutaki||Aitutaki",
+              "alloggio|Resort||Aitutaki",
+              "attivita|Laguna||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "traghetto|One Foot Island||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Relax||Aitutaki"
+            ]
+          },
+          {
+            "t": "Aitutaki",
+            "a": [
+              "attivita|Ultima giornata||Aitutaki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Auckland||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

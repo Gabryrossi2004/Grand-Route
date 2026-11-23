@@ -95,19 +95,244 @@
         "title": "Ande e Galápagos",
         "days": 12,
         "route": "Quito (2) → Otavalo (1) → Cotopaxi (1) → Galápagos (6) → Quito (1)",
-        "description": "Il combinato classico."
+        "description": "Il combinato classico.",
+        "plan": [
+          {
+            "t": "Arrivo a Quito",
+            "a": [
+              "volo|Volo per Quito||",
+              "transfer|Transfer in hotel||Quito",
+              "alloggio|Hotel nel centro storico||Quito",
+              "attivita|Centro storico UNESCO|La Compañía e Plaza Grande.|Quito"
+            ]
+          },
+          {
+            "t": "Quito",
+            "a": [
+              "attivita|Mitad del Mundo e TelefériQo||Quito"
+            ]
+          },
+          {
+            "t": "Otavalo",
+            "a": [
+              "transfer|Trasferimento a Otavalo||Otavalo",
+              "alloggio|Hacienda a Otavalo||Otavalo",
+              "attivita|Mercato artigiano di Otavalo|Il più grande delle Ande, al sabato.|Otavalo"
+            ]
+          },
+          {
+            "t": "Cotopaxi",
+            "a": [
+              "transfer|Trasferimento a Cotopaxi||Cotopaxi",
+              "alloggio|Hacienda ai piedi del vulcano||Cotopaxi",
+              "attivita|Laguna di Limpiopungo e rifugio del Cotopaxi||Cotopaxi"
+            ]
+          },
+          {
+            "t": "Galápagos",
+            "a": [
+              "volo|Volo per Baltra||",
+              "transfer|Transfer a Puerto Ayora||Santa Cruz",
+              "alloggio|Hotel a Santa Cruz||Santa Cruz",
+              "attivita|Tartarughe giganti nella riserva El Chato||Santa Cruz"
+            ]
+          },
+          {
+            "t": "Galápagos",
+            "a": [
+              "attivita|Stazione Charles Darwin e Tortuga Bay||Santa Cruz"
+            ]
+          },
+          {
+            "t": "Galápagos",
+            "a": [
+              "traghetto|North Seymour: sule dai piedi azzurri e fregate||North Seymour"
+            ]
+          },
+          {
+            "t": "Isabela",
+            "a": [
+              "traghetto|Trasferimento a Isabela||Isabela",
+              "alloggio|Hotel a Puerto Villamil||Isabela",
+              "attivita|Fenicotteri e laguna||Isabela"
+            ]
+          },
+          {
+            "t": "Isabela",
+            "a": [
+              "traghetto|Los Túneles: snorkeling con tartarughe marine e cavallucci||Isabela"
+            ]
+          },
+          {
+            "t": "Isabela",
+            "a": [
+              "attivita|Vulcano Sierra Negra||Isabela"
+            ]
+          },
+          {
+            "t": "Rientro a Quito",
+            "a": [
+              "volo|Volo per Quito||Quito",
+              "alloggio|Hotel||Quito"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Galápagos island hopping",
         "days": 9,
         "route": "Quito (1) → Santa Cruz (3) → Isabela (2) → San Cristóbal (2)",
-        "description": "Alternativa più economica alla crociera."
+        "description": "Alternativa più economica alla crociera.",
+        "plan": [
+          {
+            "t": "Arrivo a Quito",
+            "a": [
+              "volo|Volo per Quito||",
+              "transfer|Transfer in hotel||Quito",
+              "alloggio|Hotel nel centro storico||Quito",
+              "attivita|Centro storico||Quito"
+            ]
+          },
+          {
+            "t": "Santa Cruz",
+            "a": [
+              "volo|Volo per Baltra||",
+              "alloggio|Hotel a Puerto Ayora||Santa Cruz",
+              "attivita|Tartarughe giganti a El Chato||Santa Cruz"
+            ]
+          },
+          {
+            "t": "Santa Cruz",
+            "a": [
+              "attivita|Tortuga Bay e stazione Darwin||Santa Cruz"
+            ]
+          },
+          {
+            "t": "Santa Cruz",
+            "a": [
+              "traghetto|North Seymour o Bartolomé||Santa Cruz"
+            ]
+          },
+          {
+            "t": "Isabela",
+            "a": [
+              "traghetto|Trasferimento a Isabela||Isabela",
+              "alloggio|Hotel||Isabela",
+              "attivita|Fenicotteri||Isabela"
+            ]
+          },
+          {
+            "t": "Isabela",
+            "a": [
+              "traghetto|Los Túneles||Isabela"
+            ]
+          },
+          {
+            "t": "San Cristóbal",
+            "a": [
+              "traghetto|Trasferimento a San Cristóbal||San Cristóbal",
+              "alloggio|Hotel||San Cristóbal",
+              "attivita|Leoni marini sul lungomare||San Cristóbal"
+            ]
+          },
+          {
+            "t": "San Cristóbal",
+            "a": [
+              "traghetto|Kicker Rock con squali martello||San Cristóbal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Quito o Guayaquil e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ecuador in famiglia",
         "days": 10,
         "route": "Quito (2) → Mindo (2) → Baños (2) → Amazzonia, Tena (3)",
-        "description": "Foresta nebulosa, cascate e una notte in lodge amazzonico senza i costi delle Galápagos."
+        "description": "Foresta nebulosa, cascate e una notte in lodge amazzonico senza i costi delle Galápagos.",
+        "plan": [
+          {
+            "t": "Arrivo a Quito",
+            "a": [
+              "volo|Volo per Quito||",
+              "transfer|Transfer in hotel||Quito",
+              "alloggio|Hotel||Quito",
+              "attivita|Centro storico||Quito"
+            ]
+          },
+          {
+            "t": "Quito",
+            "a": [
+              "attivita|Mitad del Mundo||Quito"
+            ]
+          },
+          {
+            "t": "Mindo",
+            "a": [
+              "transfer|Trasferimento a Mindo||Mindo",
+              "alloggio|Lodge nella foresta nebulosa||Mindo",
+              "attivita|Colibrì e farfalle||Mindo"
+            ]
+          },
+          {
+            "t": "Mindo",
+            "a": [
+              "attivita|Teleferica e cascate, fabbrica di cioccolato||Mindo"
+            ]
+          },
+          {
+            "t": "Baños",
+            "a": [
+              "transfer|Trasferimento a Baños||Baños",
+              "alloggio|Hotel||Baños",
+              "attivita|Terme||Baños"
+            ]
+          },
+          {
+            "t": "Baños",
+            "a": [
+              "attivita|Altalena alla fine del mondo e Pailón del Diablo||Baños"
+            ]
+          },
+          {
+            "t": "Tena",
+            "a": [
+              "transfer|Trasferimento a Tena||Tena",
+              "alloggio|Lodge in Amazzonia||Tena",
+              "attivita|Rio Napo||Tena"
+            ]
+          },
+          {
+            "t": "Amazzonia",
+            "a": [
+              "attivita|Comunità kichwa e canoa||Tena"
+            ]
+          },
+          {
+            "t": "Amazzonia",
+            "a": [
+              "attivita|Centro di recupero animali||Tena"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -196,19 +421,264 @@
         "title": "Bolivia classica",
         "days": 12,
         "route": "La Paz (2) → Titicaca (2) → Sucre (2) → Potosí (1) → Uyuni e Sud Lípez (3) → San Pedro de Atacama",
-        "description": "Da maggio a ottobre, chiusura in Cile."
+        "description": "Da maggio a ottobre, chiusura in Cile.",
+        "plan": [
+          {
+            "t": "Arrivo a La Paz",
+            "a": [
+              "volo|Volo per La Paz||",
+              "transfer|Transfer in hotel||La Paz",
+              "alloggio|Hotel a La Paz||La Paz",
+              "attivita|Riposo per l'altitudine||La Paz"
+            ]
+          },
+          {
+            "t": "La Paz",
+            "a": [
+              "attivita|Funivie Mi Teleférico, mercato delle streghe e Valle della Luna||La Paz"
+            ]
+          },
+          {
+            "t": "Copacabana",
+            "a": [
+              "transfer|Trasferimento a Copacabana||Copacabana",
+              "alloggio|Hotel sul lago||Copacabana",
+              "attivita|Lago Titicaca||Copacabana"
+            ]
+          },
+          {
+            "t": "Titicaca",
+            "a": [
+              "traghetto|Isla del Sol e sentiero inca||Isla del Sol"
+            ]
+          },
+          {
+            "t": "Sucre",
+            "a": [
+              "volo|Trasferimento a Sucre||Sucre",
+              "alloggio|Hotel coloniale||Sucre",
+              "attivita|Città bianca UNESCO||Sucre"
+            ]
+          },
+          {
+            "t": "Sucre",
+            "a": [
+              "attivita|Impronte di dinosauri a Cal Orck'o||Sucre"
+            ]
+          },
+          {
+            "t": "Potosí",
+            "a": [
+              "transfer|Trasferimento a Potosí||Potosí",
+              "alloggio|Hotel||Potosí",
+              "attivita|Miniere del Cerro Rico e Casa de la Moneda||Potosí"
+            ]
+          },
+          {
+            "t": "Uyuni",
+            "a": [
+              "transfer|Trasferimento a Uyuni||Uyuni",
+              "alloggio|Hotel di sale||Uyuni",
+              "attivita|Cimitero dei treni e Salar de Uyuni al tramonto||Uyuni"
+            ]
+          },
+          {
+            "t": "Salar de Uyuni",
+            "a": [
+              "attivita|Isla Incahuasi e cactus giganti||Salar de Uyuni"
+            ]
+          },
+          {
+            "t": "Sud Lípez",
+            "a": [
+              "attivita|Laguna Colorada con i fenicotteri||Sud Lípez"
+            ]
+          },
+          {
+            "t": "San Pedro de Atacama",
+            "a": [
+              "transfer|Geyser Sol de Mañana, Laguna Verde e frontiera cilena||Sud Lípez",
+              "alloggio|Hotel a San Pedro||San Pedro de Atacama"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Calama||",
+              "volo|Volo via Santiago per l'Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Perù e Bolivia",
-        "days": 15,
+        "days": 13,
         "route": "Cusco e Machu Picchu (5) → Puno (1) → Isla del Sol (1) → La Paz (2) → Uyuni (3)",
-        "description": "Le Ande in due paesi."
+        "description": "Le Ande in due paesi.",
+        "plan": [
+          {
+            "t": "Arrivo a Cusco",
+            "a": [
+              "volo|Volo per Cusco via Lima||",
+              "transfer|Transfer in hotel||Cusco",
+              "alloggio|Hotel a Cusco||Cusco",
+              "attivita|Plaza de Armas||Cusco"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Qorikancha e Sacsayhuamán||Cusco"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "attivita|Pisac e Ollantaytambo||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Machu Picchu",
+            "a": [
+              "treno|Treno per Aguas Calientes||Aguas Calientes",
+              "attivita|Visita di Machu Picchu||Machu Picchu",
+              "alloggio|Hotel ad Aguas Calientes||Aguas Calientes"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "treno|Rientro a Cusco||Cusco",
+              "alloggio|Hotel||Cusco"
+            ]
+          },
+          {
+            "t": "Puno",
+            "a": [
+              "transfer|Trasferimento a Puno||Puno",
+              "alloggio|Hotel sul Titicaca||Puno",
+              "attivita|Isole galleggianti degli Uros||Puno"
+            ]
+          },
+          {
+            "t": "Isla del Sol",
+            "a": [
+              "traghetto|Trasferimento a Isla del Sol||Isla del Sol",
+              "alloggio|Ecolodge sull'isola||Isla del Sol",
+              "attivita|Via Copacabana e la frontiera||Isla del Sol"
+            ]
+          },
+          {
+            "t": "La Paz",
+            "a": [
+              "transfer|Trasferimento a La Paz||La Paz",
+              "alloggio|Hotel||La Paz",
+              "attivita|Funivie||La Paz"
+            ]
+          },
+          {
+            "t": "La Paz",
+            "a": [
+              "attivita|Valle della Luna e mercato delle streghe||La Paz"
+            ]
+          },
+          {
+            "t": "Uyuni",
+            "a": [
+              "volo|Trasferimento a Uyuni||Uyuni",
+              "alloggio|Hotel di sale||Uyuni",
+              "attivita|Salar al tramonto||Uyuni"
+            ]
+          },
+          {
+            "t": "Salar",
+            "a": [
+              "attivita|Isla Incahuasi||Salar de Uyuni"
+            ]
+          },
+          {
+            "t": "Salar",
+            "a": [
+              "attivita|Riflessi del salar (stagione delle piogge)||Salar de Uyuni"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per La Paz o Lima e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bolivia amazzonica",
         "days": 9,
         "route": "La Paz (2) → Rurrenabaque (1) → Madidi (3) → Pampas (2)",
-        "description": "Per chi ha già visto l'altopiano: lodge comunitari nel Madidi, delfini rosa e caimani nelle pampas."
+        "description": "Per chi ha già visto l'altopiano: lodge comunitari nel Madidi, delfini rosa e caimani nelle pampas.",
+        "plan": [
+          {
+            "t": "Arrivo a La Paz",
+            "a": [
+              "volo|Volo per La Paz||",
+              "transfer|Transfer in hotel||La Paz",
+              "alloggio|Hotel||La Paz",
+              "attivita|Funivie||La Paz"
+            ]
+          },
+          {
+            "t": "La Paz",
+            "a": [
+              "attivita|Valle della Luna||La Paz"
+            ]
+          },
+          {
+            "t": "Rurrenabaque",
+            "a": [
+              "volo|Trasferimento a Rurrenabaque||Rurrenabaque",
+              "alloggio|Hotel||Rurrenabaque",
+              "attivita|Rio Beni||Rurrenabaque"
+            ]
+          },
+          {
+            "t": "Madidi",
+            "a": [
+              "traghetto|Canoa sul fiume fino al lodge||Madidi",
+              "alloggio|Ecolodge nel Madidi||Madidi"
+            ]
+          },
+          {
+            "t": "Madidi",
+            "a": [
+              "attivita|Sentieri nella foresta e argilla dei pappagalli||Madidi"
+            ]
+          },
+          {
+            "t": "Madidi",
+            "a": [
+              "attivita|Escursione notturna||Madidi"
+            ]
+          },
+          {
+            "t": "Pampas",
+            "a": [
+              "transfer|Trasferimento a Pampas||Pampas",
+              "alloggio|Lodge nelle Pampas||Pampas",
+              "attivita|Delfini rosa del fiume Yacuma||Pampas"
+            ]
+          },
+          {
+            "t": "Pampas",
+            "a": [
+              "attivita|Caimani, capibara e anaconde||Pampas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per La Paz e rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -288,19 +758,254 @@
         "title": "Panama classica",
         "days": 10,
         "route": "Panama City (3) → San Blas (3) → Boquete (2) → Panama City (1)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Panama City",
+            "a": [
+              "volo|Volo per Panama City||",
+              "transfer|Transfer in hotel||Panama City",
+              "alloggio|Hotel nel Casco Viejo||Panama City",
+              "attivita|Casco Viejo UNESCO||Panama City"
+            ]
+          },
+          {
+            "t": "Panama City",
+            "a": [
+              "attivita|Chiuse di Miraflores sul Canale||Panama City",
+              "attivita|Calzada de Amador||Panama City"
+            ]
+          },
+          {
+            "t": "Panama City",
+            "a": [
+              "attivita|Gamboa e Lago Gatún tra le scimmie||Gamboa"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "transfer|Trasferimento a San Blas||San Blas",
+              "alloggio|Capanna sull'isola dei Guna||San Blas",
+              "attivita|Isole caraibiche||San Blas"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "traghetto|Piscina naturale e isolotti deserti||San Blas"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "attivita|Relax e cultura guna||San Blas"
+            ]
+          },
+          {
+            "t": "Boquete",
+            "a": [
+              "volo|Trasferimento a Boquete||Boquete",
+              "alloggio|Lodge tra i caffè||Boquete",
+              "attivita|Volo per David||Boquete"
+            ]
+          },
+          {
+            "t": "Boquete",
+            "a": [
+              "attivita|Piantagione di caffè Geisha e ponti sospesi||Boquete"
+            ]
+          },
+          {
+            "t": "Panama City",
+            "a": [
+              "volo|Trasferimento a Panama City||Panama City",
+              "alloggio|Hotel||Panama City",
+              "attivita|Ultima sera||Panama City"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Costa Rica e Bocas",
         "days": 14,
         "route": "Costa Rica (9) → Bocas del Toro (4)",
-        "description": "Estensione caraibica via terra."
+        "description": "Estensione caraibica via terra.",
+        "plan": [
+          {
+            "t": "Arrivo a San José",
+            "a": [
+              "volo|Volo per San José||",
+              "transfer|Transfer in hotel||San José",
+              "alloggio|Hotel||San José"
+            ]
+          },
+          {
+            "t": "Tortuguero",
+            "a": [
+              "transfer|Trasferimento a Tortuguero||Tortuguero",
+              "alloggio|Lodge sul canale||Tortuguero",
+              "attivita|Canali||Tortuguero"
+            ]
+          },
+          {
+            "t": "Tortuguero",
+            "a": [
+              "traghetto|Canali all'alba||Tortuguero"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "transfer|Trasferimento a Arenal||Arenal",
+              "alloggio|Hotel con terme||Arenal",
+              "attivita|Vulcano||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Ponti sospesi e cascata||Arenal"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "transfer|Trasferimento a Monteverde||Monteverde",
+              "alloggio|Lodge||Monteverde",
+              "attivita|Escursione notturna||Monteverde"
+            ]
+          },
+          {
+            "t": "Monteverde",
+            "a": [
+              "attivita|Foresta nebulosa||Monteverde"
+            ]
+          },
+          {
+            "t": "Puerto Viejo",
+            "a": [
+              "transfer|Trasferimento a Puerto Viejo||Puerto Viejo",
+              "alloggio|Hotel sui Caraibi||Puerto Viejo",
+              "attivita|Spiaggia||Puerto Viejo"
+            ]
+          },
+          {
+            "t": "Puerto Viejo",
+            "a": [
+              "attivita|Parco di Cahuita||Puerto Viejo"
+            ]
+          },
+          {
+            "t": "Bocas del Toro",
+            "a": [
+              "traghetto|Trasferimento a Bocas del Toro||Bocas del Toro",
+              "alloggio|Hotel sull'acqua||Bocas del Toro",
+              "attivita|Isla Colón||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Bocas",
+            "a": [
+              "traghetto|Starfish Beach e baia dei delfini||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Bocas",
+            "a": [
+              "attivita|Isla Bastimentos e Red Frog Beach||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Bocas",
+            "a": [
+              "attivita|Zapatilla||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Panama City e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Panama mare",
         "days": 9,
         "route": "Panama City (2) → Bocas del Toro (3) → San Blas (3)",
-        "description": "Città, isole caraibiche e le isole dei Kuna Yala con sistemazioni semplici."
+        "description": "Città, isole caraibiche e le isole dei Kuna Yala con sistemazioni semplici.",
+        "plan": [
+          {
+            "t": "Arrivo a Panama City",
+            "a": [
+              "volo|Volo per Panama City||",
+              "transfer|Transfer in hotel||Panama City",
+              "alloggio|Hotel nel Casco Viejo||Panama City",
+              "attivita|Casco Viejo||Panama City"
+            ]
+          },
+          {
+            "t": "Panama City",
+            "a": [
+              "attivita|Canale di Panama||Panama City"
+            ]
+          },
+          {
+            "t": "Bocas del Toro",
+            "a": [
+              "volo|Trasferimento a Bocas del Toro||Bocas del Toro",
+              "alloggio|Hotel sull'acqua||Bocas del Toro",
+              "attivita|Isla Colón||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Bocas",
+            "a": [
+              "traghetto|Starfish Beach||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "Bocas",
+            "a": [
+              "attivita|Isola Bastimentos||Bocas del Toro"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "volo|Trasferimento a San Blas||San Blas",
+              "alloggio|Capanna sull'isola||San Blas",
+              "attivita|Isole||San Blas"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "traghetto|Piscina naturale||San Blas"
+            ]
+          },
+          {
+            "t": "San Blas",
+            "a": [
+              "attivita|Relax||San Blas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -383,19 +1088,274 @@
         "title": "Guatemala classico",
         "days": 10,
         "route": "Città del Guatemala → Antigua (3) → Atitlán (2) → Chichicastenango → volo → Flores e Tikal (2)",
-        "description": "Da novembre ad aprile."
+        "description": "Da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Guatemala",
+            "a": [
+              "volo|Volo per Città del Guatemala||",
+              "transfer|Transfer in hotel||Città del Guatemala",
+              "alloggio|Transfer ad Antigua||Città del Guatemala",
+              "attivita|Antigua Guatemala||Città del Guatemala"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Arco di Santa Catalina e chiese barocche||Antigua",
+              "attivita|Cerro de la Cruz||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Escursione sul vulcano Pacaya||Antigua"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "transfer|Trasferimento a Atitlán||Atitlán",
+              "alloggio|Hotel sul lago||Atitlán",
+              "attivita|Lago tra tre vulcani||Atitlán"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "traghetto|Villaggi di San Juan e Santiago in lancia||Atitlán"
+            ]
+          },
+          {
+            "t": "Chichicastenango",
+            "a": [
+              "attivita|Mercato di Chichicastenango (giovedì e domenica)||Chichicastenango",
+              "transfer|Rientro in città||Città del Guatemala",
+              "alloggio|Hotel||Città del Guatemala"
+            ]
+          },
+          {
+            "t": "Flores",
+            "a": [
+              "volo|Trasferimento a Flores||Flores",
+              "alloggio|Hotel sull'isola di Flores||Flores",
+              "attivita|Tramonto sul lago Petén Itzá||Flores"
+            ]
+          },
+          {
+            "t": "Tikal",
+            "a": [
+              "attivita|Tikal all'alba tra le piramidi nella giungla||Tikal"
+            ]
+          },
+          {
+            "t": "Flores",
+            "a": [
+              "attivita|Yaxhá o relax||Flores"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mondo maya",
         "days": 14,
         "route": "Riviera Maya (3) → Belize (3) → Tikal (2) → Antigua (3) → Atitlán (2)",
-        "description": "Messico, Belize e Guatemala."
+        "description": "Messico, Belize e Guatemala.",
+        "plan": [
+          {
+            "t": "Arrivo a Cancún",
+            "a": [
+              "volo|Volo per Cancún||",
+              "transfer|Transfer in hotel||Cancún",
+              "alloggio|Hotel a Tulum||Cancún",
+              "attivita|Spiaggia||Cancún"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "attivita|Rovine di Tulum e cenote||Tulum"
+            ]
+          },
+          {
+            "t": "Chichén Itzá",
+            "a": [
+              "attivita|Chichén Itzá e cenote Ik Kil||Chichén Itzá"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "transfer|Trasferimento a San Ignacio||San Ignacio",
+              "alloggio|Lodge nella giungla||San Ignacio",
+              "attivita|Via Bacalar e la frontiera||San Ignacio"
+            ]
+          },
+          {
+            "t": "Belize",
+            "a": [
+              "attivita|Grotta ATM||San Ignacio"
+            ]
+          },
+          {
+            "t": "Belize",
+            "a": [
+              "attivita|Xunantunich||San Ignacio"
+            ]
+          },
+          {
+            "t": "Flores",
+            "a": [
+              "transfer|Trasferimento a Flores||Flores",
+              "alloggio|Hotel||Flores",
+              "attivita|Lago Petén Itzá||Flores"
+            ]
+          },
+          {
+            "t": "Tikal",
+            "a": [
+              "attivita|Tikal||Tikal"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "volo|Trasferimento a Antigua||Antigua",
+              "alloggio|Hotel||Antigua",
+              "attivita|Antigua||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Chiese barocche||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Vulcano Pacaya||Antigua"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "transfer|Trasferimento a Atitlán||Atitlán",
+              "alloggio|Hotel sul lago||Atitlán",
+              "attivita|Lago||Atitlán"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "traghetto|Villaggi in lancia||Atitlán"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guatemala e mare",
         "days": 12,
         "route": "Antigua (3) → Atitlán (3) → Flores e Tikal (2) → Belize, Caye Caulker (3)",
-        "description": "Il classico guatemalteco con estensione di mare sul reef del Belize."
+        "description": "Il classico guatemalteco con estensione di mare sul reef del Belize.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Guatemala",
+            "a": [
+              "volo|Volo per Città del Guatemala||",
+              "transfer|Transfer in hotel||Città del Guatemala",
+              "alloggio|Hotel ad Antigua||Città del Guatemala",
+              "attivita|Antigua||Città del Guatemala"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Chiese barocche||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Vulcano Pacaya||Antigua"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "transfer|Trasferimento a Atitlán||Atitlán",
+              "alloggio|Hotel sul lago||Atitlán",
+              "attivita|Lago||Atitlán"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "traghetto|Villaggi||Atitlán"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "attivita|Chichicastenango||Atitlán"
+            ]
+          },
+          {
+            "t": "Flores",
+            "a": [
+              "volo|Trasferimento a Flores||Flores",
+              "alloggio|Hotel||Flores",
+              "attivita|Lago||Flores"
+            ]
+          },
+          {
+            "t": "Tikal",
+            "a": [
+              "attivita|Tikal||Tikal"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Trasferimento a Caye Caulker||Caye Caulker",
+              "alloggio|Hotel sul mare||Caye Caulker",
+              "attivita|Via Belize City||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Snorkeling a Hol Chan con squali nutrice||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "attivita|Relax||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -463,19 +1423,220 @@
         "title": "Giungla e reef",
         "days": 9,
         "route": "San Ignacio (3) → Caye Caulker o Ambergris (5)",
-        "description": "Da dicembre a maggio."
+        "description": "Da dicembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a San Ignacio",
+            "a": [
+              "volo|Volo per Belize City||",
+              "transfer|Transfer in hotel||San Ignacio",
+              "alloggio|Lodge nella giungla||San Ignacio",
+              "attivita|San Ignacio||San Ignacio"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "attivita|Grotta ATM, uno dei luoghi maya più impressionanti||San Ignacio"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "attivita|Xunantunich e canoa sul Macal||San Ignacio"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Trasferimento a Caye Caulker||Caye Caulker",
+              "alloggio|Hotel sul mare||Caye Caulker",
+              "attivita|Go slow||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Hol Chan e Shark Ray Alley||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "attivita|Blue Hole in barca o in volo||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "attivita|Kayak e mangrovie||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "attivita|Relax||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Belize sub",
         "days": 8,
         "route": "Ambergris Caye (7), con Blue Hole e Hol Chan",
-        "description": "Immersioni e snorkeling sulla seconda barriera corallina del mondo; il Great Blue Hole si fa in giornata in barca."
+        "description": "Immersioni e snorkeling sulla seconda barriera corallina del mondo; il Great Blue Hole si fa in giornata in barca.",
+        "plan": [
+          {
+            "t": "Arrivo a Ambergris Caye",
+            "a": [
+              "volo|Volo per Belize City e volo interno||",
+              "transfer|Transfer in hotel||Ambergris Caye",
+              "alloggio|Resort a San Pedro||Ambergris Caye",
+              "attivita|Spiaggia||Ambergris Caye"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "traghetto|Hol Chan e Shark Ray Alley||Ambergris Caye"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "traghetto|Great Blue Hole e Lighthouse Reef||Blue Hole"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "attivita|Immersioni sul reef||Ambergris Caye"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "traghetto|Turneffe Atoll||Turneffe"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "attivita|Relax||Ambergris Caye"
+            ]
+          },
+          {
+            "t": "Ambergris",
+            "a": [
+              "attivita|Ultima giornata||Ambergris Caye"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Belize e Riviera Maya",
         "days": 12,
         "route": "Cancún (1) → Tulum (3) → Bacalar (1) → Belize, San Ignacio (3) → Caye Caulker (3)",
-        "description": "Combinazione via terra con il Messico: cenotes, rovine maya e isole caraibiche."
+        "description": "Combinazione via terra con il Messico: cenotes, rovine maya e isole caraibiche.",
+        "plan": [
+          {
+            "t": "Arrivo a Cancún",
+            "a": [
+              "volo|Volo per Cancún||",
+              "transfer|Transfer in hotel||Cancún",
+              "alloggio|Hotel||Cancún"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "transfer|Trasferimento a Tulum||Tulum",
+              "alloggio|Hotel||Tulum",
+              "attivita|Rovine sul mare||Tulum"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "attivita|Cenote||Tulum"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "attivita|Cobá||Tulum"
+            ]
+          },
+          {
+            "t": "Bacalar",
+            "a": [
+              "transfer|Trasferimento a Bacalar||Bacalar",
+              "alloggio|Hotel sulla laguna||Bacalar",
+              "attivita|Laguna dei sette colori||Bacalar"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "transfer|Trasferimento a San Ignacio||San Ignacio",
+              "alloggio|Lodge nella giungla||San Ignacio",
+              "attivita|Frontiera||San Ignacio"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "attivita|Grotta ATM||San Ignacio"
+            ]
+          },
+          {
+            "t": "San Ignacio",
+            "a": [
+              "attivita|Xunantunich||San Ignacio"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Trasferimento a Caye Caulker||Caye Caulker",
+              "alloggio|Hotel||Caye Caulker",
+              "attivita|Mare||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "traghetto|Hol Chan||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Caye Caulker",
+            "a": [
+              "attivita|Relax||Caye Caulker"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -528,19 +1689,194 @@
         "title": "Copán e Roatán",
         "days": 8,
         "route": "San Pedro Sula (1) → Copán (2) → Roatán (4)",
-        "description": "Archeologia e mare."
+        "description": "Archeologia e mare.",
+        "plan": [
+          {
+            "t": "Arrivo a San Pedro Sula",
+            "a": [
+              "volo|Volo per San Pedro Sula||",
+              "transfer|Transfer in hotel||San Pedro Sula",
+              "alloggio|Hotel||San Pedro Sula"
+            ]
+          },
+          {
+            "t": "Copán",
+            "a": [
+              "transfer|Trasferimento a Copán||Copán",
+              "alloggio|Hotel a Copán Ruinas||Copán",
+              "attivita|Città||Copán"
+            ]
+          },
+          {
+            "t": "Copán",
+            "a": [
+              "attivita|Rovine maya di Copán e la scalinata dei geroglifici||Copán",
+              "attivita|Riserva delle are||Copán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "volo|Trasferimento a Roatán||Roatán",
+              "alloggio|Resort a West Bay||Roatán",
+              "attivita|Spiaggia||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Snorkeling sulla barriera||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Immersione||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Relax||Roatán"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Honduras caraibico",
         "days": 9,
         "route": "La Ceiba (1) → Pico Bonito (2) → Utila (5)",
-        "description": "Foresta tropicale e l'isola più economica del Caribe per il brevetto sub, con squali balena da marzo ad aprile."
+        "description": "Foresta tropicale e l'isola più economica del Caribe per il brevetto sub, con squali balena da marzo ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a La Ceiba",
+            "a": [
+              "volo|Volo per San Pedro Sula e trasferimento||",
+              "transfer|Transfer in hotel||La Ceiba",
+              "alloggio|Hotel a La Ceiba||La Ceiba"
+            ]
+          },
+          {
+            "t": "Pico Bonito",
+            "a": [
+              "transfer|Trasferimento a Pico Bonito||Pico Bonito",
+              "alloggio|Lodge nella foresta||Pico Bonito",
+              "attivita|Fiume||Pico Bonito"
+            ]
+          },
+          {
+            "t": "Pico Bonito",
+            "a": [
+              "attivita|Rafting sul Cangrejal||Pico Bonito"
+            ]
+          },
+          {
+            "t": "Utila",
+            "a": [
+              "traghetto|Trasferimento a Utila||Utila",
+              "alloggio|Hotel a Utila||Utila",
+              "attivita|Isola dei sub||Utila"
+            ]
+          },
+          {
+            "t": "Utila",
+            "a": [
+              "attivita|Squali balena (stagionali)||Utila"
+            ]
+          },
+          {
+            "t": "Utila",
+            "a": [
+              "attivita|Corso di immersione||Utila"
+            ]
+          },
+          {
+            "t": "Utila",
+            "a": [
+              "attivita|Cayos||Utila"
+            ]
+          },
+          {
+            "t": "Utila",
+            "a": [
+              "attivita|Relax||Utila"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Roatán sub",
         "days": 8,
         "route": "Roatán (7)",
-        "description": "La barriera mesoamericana a pochi metri dalla riva di West Bay; voli via Stati Uniti."
+        "description": "La barriera mesoamericana a pochi metri dalla riva di West Bay; voli via Stati Uniti.",
+        "plan": [
+          {
+            "t": "Arrivo a Roatán",
+            "a": [
+              "volo|Volo per Roatán||",
+              "transfer|Transfer in hotel||Roatán",
+              "alloggio|Resort a West Bay||Roatán",
+              "attivita|Spiaggia||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Immersioni||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Immersioni||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Snorkeling||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Relax||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Immersioni||Roatán"
+            ]
+          },
+          {
+            "t": "Roatán",
+            "a": [
+              "attivita|Ultima giornata||Roatán"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -601,21 +1937,215 @@
     "itineraries": [
       {
         "title": "El Salvador",
-        "days": 7,
+        "days": 8,
         "route": "San Salvador (1) → Ruta de las Flores (2) → Santa Ana (1) → El Tunco (3)",
-        "description": "Da novembre ad aprile."
+        "description": "Da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a San Salvador",
+            "a": [
+              "volo|Volo per San Salvador||",
+              "transfer|Transfer in hotel||San Salvador",
+              "alloggio|Hotel||San Salvador"
+            ]
+          },
+          {
+            "t": "Ruta de las Flores",
+            "a": [
+              "transfer|Trasferimento a Ruta de las Flores||Ruta de las Flores",
+              "alloggio|Hotel a Juayúa||Ruta de las Flores",
+              "attivita|Villaggi colorati||Ruta de las Flores"
+            ]
+          },
+          {
+            "t": "Ruta de las Flores",
+            "a": [
+              "attivita|Cascate e festival gastronomico||Juayúa"
+            ]
+          },
+          {
+            "t": "Santa Ana",
+            "a": [
+              "transfer|Trasferimento a Santa Ana||Santa Ana",
+              "alloggio|Hotel||Santa Ana",
+              "attivita|Vulcano di Santa Ana||Santa Ana"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "transfer|Trasferimento a El Tunco||El Tunco",
+              "alloggio|Hotel sul mare||El Tunco",
+              "attivita|Surf||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Spiaggia||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Relax||El Tunco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "El Salvador surf",
         "days": 8,
         "route": "San Salvador (1) → El Tunco (3) → El Zonte (3)",
-        "description": "Surf City: onde costanti tutto l'anno e villaggi sul Pacifico."
+        "description": "Surf City: onde costanti tutto l'anno e villaggi sul Pacifico.",
+        "plan": [
+          {
+            "t": "Arrivo a San Salvador",
+            "a": [
+              "volo|Volo per San Salvador||",
+              "transfer|Transfer in hotel||San Salvador",
+              "alloggio|Hotel||San Salvador"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "transfer|Trasferimento a El Tunco||El Tunco",
+              "alloggio|Surf hotel||El Tunco",
+              "attivita|Spiaggia||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Surf||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Surf||El Tunco"
+            ]
+          },
+          {
+            "t": "El Zonte",
+            "a": [
+              "transfer|Trasferimento a El Zonte||El Zonte",
+              "alloggio|Hotel||El Zonte",
+              "attivita|Bitcoin Beach||El Zonte"
+            ]
+          },
+          {
+            "t": "El Zonte",
+            "a": [
+              "attivita|Surf||El Zonte"
+            ]
+          },
+          {
+            "t": "El Zonte",
+            "a": [
+              "attivita|Relax||El Zonte"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guatemala ed El Salvador",
         "days": 11,
         "route": "Antigua (3) → Atitlán (2) → Ruta de las Flores (2) → El Tunco (3)",
-        "description": "Due paesi vicini con laghi vulcanici, caffè e mare."
+        "description": "Due paesi vicini con laghi vulcanici, caffè e mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Guatemala",
+            "a": [
+              "volo|Volo per Città del Guatemala||",
+              "transfer|Transfer in hotel||Città del Guatemala",
+              "alloggio|Hotel ad Antigua||Città del Guatemala",
+              "attivita|Antigua||Città del Guatemala"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Chiese barocche||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Pacaya||Antigua"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "transfer|Trasferimento a Atitlán||Atitlán",
+              "alloggio|Hotel||Atitlán",
+              "attivita|Lago||Atitlán"
+            ]
+          },
+          {
+            "t": "Atitlán",
+            "a": [
+              "traghetto|Villaggi||Atitlán"
+            ]
+          },
+          {
+            "t": "Ruta de las Flores",
+            "a": [
+              "transfer|Trasferimento a Ruta de las Flores||Ruta de las Flores",
+              "alloggio|Hotel||Ruta de las Flores",
+              "attivita|Frontiera||Ruta de las Flores"
+            ]
+          },
+          {
+            "t": "Ruta de las Flores",
+            "a": [
+              "attivita|Cascate||Juayúa"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "transfer|Trasferimento a El Tunco||El Tunco",
+              "alloggio|Hotel||El Tunco",
+              "attivita|Surf||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Spiaggia||El Tunco"
+            ]
+          },
+          {
+            "t": "El Tunco",
+            "a": [
+              "attivita|Relax||El Tunco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -689,19 +2219,241 @@
         "title": "Nicaragua",
         "days": 10,
         "route": "Granada (3) → Ometepe (2) → San Juan del Sur (2) → León (2)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Granada",
+            "a": [
+              "volo|Volo per Managua||",
+              "transfer|Transfer in hotel||Granada",
+              "alloggio|Hotel coloniale a Granada||Granada",
+              "attivita|Granada||Granada"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "traghetto|Isletas del lago Nicaragua||Granada"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "attivita|Vulcano Masaya di notte||Granada"
+            ]
+          },
+          {
+            "t": "Ometepe",
+            "a": [
+              "traghetto|Trasferimento a Ometepe||Ometepe",
+              "alloggio|Hotel sull'isola||Ometepe",
+              "attivita|Isola con due vulcani||Ometepe"
+            ]
+          },
+          {
+            "t": "Ometepe",
+            "a": [
+              "attivita|Ojo de Agua e cascata di San Ramón||Ometepe"
+            ]
+          },
+          {
+            "t": "San Juan del Sur",
+            "a": [
+              "transfer|Trasferimento a San Juan del Sur||San Juan del Sur",
+              "alloggio|Hotel||San Juan del Sur",
+              "attivita|Spiaggia||San Juan del Sur"
+            ]
+          },
+          {
+            "t": "San Juan del Sur",
+            "a": [
+              "attivita|Surf e tartarughe||San Juan del Sur"
+            ]
+          },
+          {
+            "t": "León",
+            "a": [
+              "transfer|Trasferimento a León||León",
+              "alloggio|Hotel||León",
+              "attivita|Cattedrale||León"
+            ]
+          },
+          {
+            "t": "León",
+            "a": [
+              "attivita|Volcano boarding sul Cerro Negro||León"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nicaragua e Corn Islands",
         "days": 9,
         "route": "Managua (1) → Granada (2) → Corn Islands (5)",
-        "description": "Città coloniale e isole caraibiche con snorkeling su barriere quasi intatte."
+        "description": "Città coloniale e isole caraibiche con snorkeling su barriere quasi intatte.",
+        "plan": [
+          {
+            "t": "Arrivo a Managua",
+            "a": [
+              "volo|Volo per Managua||",
+              "transfer|Transfer in hotel||Managua",
+              "alloggio|Hotel||Managua"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "transfer|Trasferimento a Granada||Granada",
+              "alloggio|Hotel||Granada",
+              "attivita|Città coloniale||Granada"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "attivita|Isletas e Masaya||Granada"
+            ]
+          },
+          {
+            "t": "Corn Islands",
+            "a": [
+              "volo|Trasferimento a Corn Islands||Corn Islands",
+              "alloggio|Hotel||Corn Islands",
+              "attivita|Big Corn||Corn Islands"
+            ]
+          },
+          {
+            "t": "Little Corn",
+            "a": [
+              "traghetto|Trasferimento a Little Corn||Little Corn",
+              "alloggio|Hotel||Little Corn",
+              "attivita|Little Corn||Little Corn"
+            ]
+          },
+          {
+            "t": "Little Corn",
+            "a": [
+              "attivita|Snorkeling||Little Corn"
+            ]
+          },
+          {
+            "t": "Little Corn",
+            "a": [
+              "attivita|Relax||Little Corn"
+            ]
+          },
+          {
+            "t": "Little Corn",
+            "a": [
+              "attivita|Ultima giornata||Little Corn"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nicaragua con Costa Rica",
-        "days": 14,
+        "days": 12,
         "route": "San José (1) → Arenal (2) → Granada (3) → Ometepe (2) → San Juan del Sur (3)",
-        "description": "Combinazione via terra per viaggiatori indipendenti, con vulcani, lago e surf."
+        "description": "Combinazione via terra per viaggiatori indipendenti, con vulcani, lago e surf.",
+        "plan": [
+          {
+            "t": "Arrivo a San José",
+            "a": [
+              "volo|Volo per San José||",
+              "transfer|Transfer in hotel||San José",
+              "alloggio|Hotel||San José"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "transfer|Trasferimento a Arenal||Arenal",
+              "alloggio|Hotel||Arenal",
+              "attivita|Terme||Arenal"
+            ]
+          },
+          {
+            "t": "Arenal",
+            "a": [
+              "attivita|Ponti sospesi||Arenal"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "transfer|Trasferimento a Granada||Granada",
+              "alloggio|Hotel||Granada",
+              "attivita|Frontiera di Peñas Blancas||Granada"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "traghetto|Isletas||Granada"
+            ]
+          },
+          {
+            "t": "Granada",
+            "a": [
+              "attivita|Masaya||Granada"
+            ]
+          },
+          {
+            "t": "Ometepe",
+            "a": [
+              "traghetto|Trasferimento a Ometepe||Ometepe",
+              "alloggio|Hotel||Ometepe",
+              "attivita|Vulcani||Ometepe"
+            ]
+          },
+          {
+            "t": "Ometepe",
+            "a": [
+              "attivita|Ojo de Agua||Ometepe"
+            ]
+          },
+          {
+            "t": "San Juan del Sur",
+            "a": [
+              "transfer|Trasferimento a San Juan del Sur||San Juan del Sur",
+              "alloggio|Hotel||San Juan del Sur",
+              "attivita|Spiaggia||San Juan del Sur"
+            ]
+          },
+          {
+            "t": "San Juan del Sur",
+            "a": [
+              "attivita|Surf||San Juan del Sur"
+            ]
+          },
+          {
+            "t": "San Juan del Sur",
+            "a": [
+              "attivita|Relax||San Juan del Sur"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -768,19 +2520,191 @@
         "title": "Buenos Aires e Uruguay",
         "days": 9,
         "route": "Buenos Aires (3) → traghetto → Colonia (1) → Montevideo (2) → Punta del Este (2)",
-        "description": "Da ottobre ad aprile."
+        "description": "Da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Buenos Aires",
+            "a": [
+              "volo|Volo per Buenos Aires||",
+              "transfer|Transfer in hotel||Buenos Aires",
+              "alloggio|Hotel a Palermo||Buenos Aires",
+              "attivita|Plaza de Mayo||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|San Telmo e La Boca||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Buenos Aires",
+            "a": [
+              "attivita|Recoleta e tango||Buenos Aires"
+            ]
+          },
+          {
+            "t": "Colonia",
+            "a": [
+              "traghetto|Trasferimento a Colonia||Colonia",
+              "alloggio|Hotel||Colonia",
+              "attivita|Barrio Histórico UNESCO||Colonia"
+            ]
+          },
+          {
+            "t": "Montevideo",
+            "a": [
+              "transfer|Trasferimento a Montevideo||Montevideo",
+              "alloggio|Hotel||Montevideo",
+              "attivita|Ciudad Vieja e Mercado del Puerto||Montevideo"
+            ]
+          },
+          {
+            "t": "Montevideo",
+            "a": [
+              "attivita|Rambla e asado||Montevideo"
+            ]
+          },
+          {
+            "t": "Punta del Este",
+            "a": [
+              "transfer|Trasferimento a Punta del Este||Punta del Este",
+              "alloggio|Hotel||Punta del Este",
+              "attivita|La Mano||Punta del Este"
+            ]
+          },
+          {
+            "t": "Punta del Este",
+            "a": [
+              "attivita|Casapueblo e José Ignacio||Punta del Este"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Uruguay del vino",
         "days": 6,
         "route": "Montevideo (2) → Carmelo (2) → Colonia (1)",
-        "description": "Cantine di tannat, estancias e il centro storico UNESCO di Colonia."
+        "description": "Cantine di tannat, estancias e il centro storico UNESCO di Colonia.",
+        "plan": [
+          {
+            "t": "Arrivo a Montevideo",
+            "a": [
+              "volo|Volo per Montevideo||",
+              "transfer|Transfer in hotel||Montevideo",
+              "alloggio|Hotel||Montevideo",
+              "attivita|Ciudad Vieja||Montevideo"
+            ]
+          },
+          {
+            "t": "Montevideo",
+            "a": [
+              "attivita|Tannat a Canelones||Montevideo"
+            ]
+          },
+          {
+            "t": "Carmelo",
+            "a": [
+              "transfer|Trasferimento a Carmelo||Carmelo",
+              "alloggio|Hotel tra le vigne||Carmelo",
+              "attivita|Vigne||Carmelo"
+            ]
+          },
+          {
+            "t": "Carmelo",
+            "a": [
+              "attivita|Cantine in bicicletta||Carmelo"
+            ]
+          },
+          {
+            "t": "Colonia",
+            "a": [
+              "transfer|Trasferimento a Colonia||Colonia",
+              "alloggio|Hotel||Colonia",
+              "attivita|Barrio Histórico||Colonia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Traghetto per Buenos Aires||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Punta del Este e la costa",
         "days": 8,
         "route": "Montevideo (2) → Punta del Este (3) → José Ignacio (1) → Cabo Polonio (1)",
-        "description": "Estate australe tra spiagge mondane e villaggi senza elettricità."
+        "description": "Estate australe tra spiagge mondane e villaggi senza elettricità.",
+        "plan": [
+          {
+            "t": "Arrivo a Montevideo",
+            "a": [
+              "volo|Volo per Montevideo||",
+              "transfer|Transfer in hotel||Montevideo",
+              "alloggio|Hotel||Montevideo",
+              "attivita|Ciudad Vieja||Montevideo"
+            ]
+          },
+          {
+            "t": "Montevideo",
+            "a": [
+              "attivita|Rambla||Montevideo"
+            ]
+          },
+          {
+            "t": "Punta del Este",
+            "a": [
+              "transfer|Trasferimento a Punta del Este||Punta del Este",
+              "alloggio|Hotel||Punta del Este",
+              "attivita|La Mano||Punta del Este"
+            ]
+          },
+          {
+            "t": "Punta del Este",
+            "a": [
+              "attivita|Casapueblo||Punta del Este"
+            ]
+          },
+          {
+            "t": "Punta del Este",
+            "a": [
+              "attivita|Isla de Lobos||Punta del Este"
+            ]
+          },
+          {
+            "t": "José Ignacio",
+            "a": [
+              "transfer|Trasferimento a José Ignacio||José Ignacio",
+              "alloggio|Posada||José Ignacio",
+              "attivita|Faro||José Ignacio"
+            ]
+          },
+          {
+            "t": "Cabo Polonio",
+            "a": [
+              "transfer|Trasferimento a Cabo Polonio||Cabo Polonio",
+              "alloggio|Posada senza elettricità||Cabo Polonio",
+              "attivita|Leoni marini e dune||Cabo Polonio"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -841,19 +2765,179 @@
         "title": "Iguazú e missioni",
         "days": 6,
         "route": "Iguazú (2) → Encarnación e missioni (2) → Asunción (1)",
-        "description": "Da aprile a ottobre."
+        "description": "Da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Iguazú",
+            "a": [
+              "volo|Volo per Iguazú||",
+              "transfer|Transfer in hotel||Iguazú",
+              "alloggio|Hotel||Iguazú",
+              "attivita|Lato argentino||Iguazú"
+            ]
+          },
+          {
+            "t": "Iguazú",
+            "a": [
+              "attivita|Lato brasiliano||Iguazú"
+            ]
+          },
+          {
+            "t": "Encarnación",
+            "a": [
+              "transfer|Trasferimento a Encarnación||Encarnación",
+              "alloggio|Hotel||Encarnación",
+              "attivita|Missioni gesuitiche di Trinidad e Jesús UNESCO||Encarnación"
+            ]
+          },
+          {
+            "t": "Encarnación",
+            "a": [
+              "attivita|Costanera e San Cosme||Encarnación"
+            ]
+          },
+          {
+            "t": "Asunción",
+            "a": [
+              "transfer|Trasferimento a Asunción||Asunción",
+              "alloggio|Hotel||Asunción",
+              "attivita|Centro storico||Asunción"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Asunción e Chaco",
         "days": 7,
         "route": "Asunción (2) → Chaco (4)",
-        "description": "Il Paraguay più selvaggio: colonie mennonite, fauna e grandi spazi."
+        "description": "Il Paraguay più selvaggio: colonie mennonite, fauna e grandi spazi.",
+        "plan": [
+          {
+            "t": "Arrivo a Asunción",
+            "a": [
+              "volo|Volo per Asunción||",
+              "transfer|Transfer in hotel||Asunción",
+              "alloggio|Hotel||Asunción",
+              "attivita|Centro storico||Asunción"
+            ]
+          },
+          {
+            "t": "Asunción",
+            "a": [
+              "attivita|Areguá e lago Ypacaraí||Asunción"
+            ]
+          },
+          {
+            "t": "Chaco",
+            "a": [
+              "transfer|Trasferimento a Chaco||Chaco",
+              "alloggio|Estancia nel Chaco||Chaco",
+              "attivita|Colonie mennonite||Chaco"
+            ]
+          },
+          {
+            "t": "Chaco",
+            "a": [
+              "attivita|Fauna del Chaco||Chaco"
+            ]
+          },
+          {
+            "t": "Chaco",
+            "a": [
+              "attivita|Parco Defensores del Chaco||Chaco"
+            ]
+          },
+          {
+            "t": "Chaco",
+            "a": [
+              "attivita|Lagune salate||Chaco"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Iguazú e Pantanal",
-        "days": 10,
+        "days": 9,
         "route": "Iguazú (2) → Asunción (1) → Pantanal brasiliano (5)",
-        "description": "Cascate e la zona umida più ricca di fauna del Sud America."
+        "description": "Cascate e la zona umida più ricca di fauna del Sud America.",
+        "plan": [
+          {
+            "t": "Arrivo a Iguazú",
+            "a": [
+              "volo|Volo per Iguazú||",
+              "transfer|Transfer in hotel||Iguazú",
+              "alloggio|Hotel||Iguazú",
+              "attivita|Lato argentino||Iguazú"
+            ]
+          },
+          {
+            "t": "Iguazú",
+            "a": [
+              "attivita|Lato brasiliano||Iguazú"
+            ]
+          },
+          {
+            "t": "Asunción",
+            "a": [
+              "transfer|Trasferimento a Asunción||Asunción",
+              "alloggio|Hotel||Asunción",
+              "attivita|Città||Asunción"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "volo|Trasferimento a Pantanal||Pantanal",
+              "alloggio|Fazenda||Pantanal",
+              "attivita|Pantanal||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Giaguari||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Caimani||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Cavallo||Pantanal"
+            ]
+          },
+          {
+            "t": "Pantanal",
+            "a": [
+              "attivita|Relax||Pantanal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -944,19 +3028,194 @@
         "title": "Guyana selvaggia",
         "days": 9,
         "route": "Georgetown (1) → Kaieteur → Iwokrama (3) → Rupununi (3) → Georgetown (1)",
-        "description": "Con operatore specializzato."
+        "description": "Con operatore specializzato.",
+        "plan": [
+          {
+            "t": "Arrivo a Georgetown",
+            "a": [
+              "volo|Volo per Georgetown||",
+              "transfer|Transfer in hotel||Georgetown",
+              "alloggio|Hotel||Georgetown",
+              "attivita|Stabroek Market||Georgetown"
+            ]
+          },
+          {
+            "t": "Kaieteur e Iwokrama",
+            "a": [
+              "volo|Volo sulle cascate Kaieteur||Kaieteur",
+              "transfer|Proseguimento nella foresta||Iwokrama",
+              "alloggio|Lodge a Iwokrama||Iwokrama"
+            ]
+          },
+          {
+            "t": "Iwokrama",
+            "a": [
+              "attivita|Canopy walkway||Iwokrama"
+            ]
+          },
+          {
+            "t": "Iwokrama",
+            "a": [
+              "attivita|Fiume Essequibo||Iwokrama"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "transfer|Trasferimento a Rupununi||Rupununi",
+              "alloggio|Ranch nella savana||Rupununi",
+              "attivita|Savana||Rupununi"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "attivita|Lontre giganti||Rupununi"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "attivita|Formichieri giganti||Rupununi"
+            ]
+          },
+          {
+            "t": "Georgetown",
+            "a": [
+              "volo|Trasferimento a Georgetown||Georgetown",
+              "alloggio|Hotel||Georgetown",
+              "attivita|Città||Georgetown"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Guyana e Suriname",
-        "days": 12,
+        "days": 11,
         "route": "Georgetown (2) → Kaieteur → Rupununi (3) → Paramaribo (3) → Brownsberg (2)",
-        "description": "Due paesi sudamericani poco conosciuti, foresta intatta e città coloniali olandesi e inglesi."
+        "description": "Due paesi sudamericani poco conosciuti, foresta intatta e città coloniali olandesi e inglesi.",
+        "plan": [
+          {
+            "t": "Arrivo a Georgetown",
+            "a": [
+              "volo|Volo per Georgetown||",
+              "transfer|Transfer in hotel||Georgetown",
+              "alloggio|Hotel||Georgetown",
+              "attivita|Città||Georgetown"
+            ]
+          },
+          {
+            "t": "Kaieteur",
+            "a": [
+              "volo|Volo su Kaieteur||Kaieteur",
+              "alloggio|Hotel||Georgetown"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "volo|Trasferimento a Rupununi||Rupununi",
+              "alloggio|Ranch||Rupununi",
+              "attivita|Savana||Rupununi"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "attivita|Lontre giganti||Rupununi"
+            ]
+          },
+          {
+            "t": "Rupununi",
+            "a": [
+              "attivita|Formichieri||Rupununi"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "volo|Trasferimento a Paramaribo||Paramaribo",
+              "alloggio|Hotel||Paramaribo",
+              "attivita|Centro UNESCO||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Fort Zeelandia||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Delfini a Commewijne||Paramaribo"
+            ]
+          },
+          {
+            "t": "Brownsberg",
+            "a": [
+              "transfer|Trasferimento a Brownsberg||Brownsberg",
+              "alloggio|Lodge||Brownsberg",
+              "attivita|Foresta||Brownsberg"
+            ]
+          },
+          {
+            "t": "Brownsberg",
+            "a": [
+              "attivita|Scimmie e cascate||Brownsberg"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kaieteur in giornata",
         "days": 4,
         "route": "Georgetown (3), con volo su Kaieteur",
-        "description": "Volo panoramico sulla cascata a salto unico più potente del mondo e la capitale in legno."
+        "description": "Volo panoramico sulla cascata a salto unico più potente del mondo e la capitale in legno.",
+        "plan": [
+          {
+            "t": "Arrivo a Georgetown",
+            "a": [
+              "volo|Volo per Georgetown||",
+              "transfer|Transfer in hotel||Georgetown",
+              "alloggio|Hotel||Georgetown",
+              "attivita|Stabroek Market||Georgetown"
+            ]
+          },
+          {
+            "t": "Kaieteur",
+            "a": [
+              "attivita|Volo sulle cascate Kaieteur||Kaieteur"
+            ]
+          },
+          {
+            "t": "Georgetown",
+            "a": [
+              "attivita|Giardino botanico||Georgetown"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1009,19 +3268,189 @@
         "title": "Suriname",
         "days": 8,
         "route": "Paramaribo (3) → Commewijne (1) → interno (3)",
-        "description": "Per viaggiatori curiosi."
+        "description": "Per viaggiatori curiosi.",
+        "plan": [
+          {
+            "t": "Arrivo a Paramaribo",
+            "a": [
+              "volo|Volo per Paramaribo||",
+              "transfer|Transfer in hotel||Paramaribo",
+              "alloggio|Hotel||Paramaribo",
+              "attivita|Centro UNESCO||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Fort Zeelandia||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Mercato||Paramaribo"
+            ]
+          },
+          {
+            "t": "Commewijne",
+            "a": [
+              "transfer|Trasferimento a Commewijne||Commewijne",
+              "alloggio|Hotel nelle piantagioni||Commewijne",
+              "attivita|Delfini||Commewijne"
+            ]
+          },
+          {
+            "t": "Interno",
+            "a": [
+              "volo|Trasferimento a Interno||Interno",
+              "alloggio|Lodge nell'interno||Interno",
+              "attivita|Fiume||Interno"
+            ]
+          },
+          {
+            "t": "Interno",
+            "a": [
+              "attivita|Villaggi maroon||Interno"
+            ]
+          },
+          {
+            "t": "Interno",
+            "a": [
+              "attivita|Rapide||Interno"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Paramaribo e Guyana francese",
-        "days": 9,
+        "days": 8,
         "route": "Paramaribo (3) → Cayenne (2) → Kourou e Isole della Salvezza (2)",
-        "description": "Città olandese UNESCO e la base spaziale europea di Kourou."
+        "description": "Città olandese UNESCO e la base spaziale europea di Kourou.",
+        "plan": [
+          {
+            "t": "Arrivo a Paramaribo",
+            "a": [
+              "volo|Volo per Paramaribo||",
+              "transfer|Transfer in hotel||Paramaribo",
+              "alloggio|Hotel||Paramaribo",
+              "attivita|Centro||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Fort Zeelandia||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Commewijne||Paramaribo"
+            ]
+          },
+          {
+            "t": "Cayenne",
+            "a": [
+              "transfer|Trasferimento a Cayenne||Cayenne",
+              "alloggio|Hotel||Cayenne",
+              "attivita|Città||Cayenne"
+            ]
+          },
+          {
+            "t": "Cayenne",
+            "a": [
+              "attivita|Mercato||Cayenne"
+            ]
+          },
+          {
+            "t": "Kourou",
+            "a": [
+              "transfer|Trasferimento a Kourou||Kourou",
+              "alloggio|Hotel||Kourou",
+              "attivita|Centro spaziale||Kourou"
+            ]
+          },
+          {
+            "t": "Isole della Salvezza",
+            "a": [
+              "traghetto|Isole della Salvezza e il bagno penale||Isole della Salvezza"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Suriname nella foresta",
         "days": 7,
         "route": "Paramaribo (2) → Brownsberg (1) → Lago Brokopondo (1) → Danpaati (2)",
-        "description": "Lodge sul fiume con le comunità marron e foresta primaria."
+        "description": "Lodge sul fiume con le comunità marron e foresta primaria.",
+        "plan": [
+          {
+            "t": "Arrivo a Paramaribo",
+            "a": [
+              "volo|Volo per Paramaribo||",
+              "transfer|Transfer in hotel||Paramaribo",
+              "alloggio|Hotel||Paramaribo",
+              "attivita|Centro||Paramaribo"
+            ]
+          },
+          {
+            "t": "Paramaribo",
+            "a": [
+              "attivita|Fort Zeelandia||Paramaribo"
+            ]
+          },
+          {
+            "t": "Brownsberg",
+            "a": [
+              "transfer|Trasferimento a Brownsberg||Brownsberg",
+              "alloggio|Lodge||Brownsberg",
+              "attivita|Scimmie||Brownsberg"
+            ]
+          },
+          {
+            "t": "Brokopondo",
+            "a": [
+              "transfer|Trasferimento a Brokopondo||Brokopondo",
+              "alloggio|Lodge||Brokopondo",
+              "attivita|Lago||Brokopondo"
+            ]
+          },
+          {
+            "t": "Danpaati",
+            "a": [
+              "volo|Trasferimento a Danpaati||Danpaati",
+              "alloggio|Lodge sul fiume||Danpaati",
+              "attivita|Villaggi maroon||Danpaati"
+            ]
+          },
+          {
+            "t": "Danpaati",
+            "a": [
+              "attivita|Canoa||Danpaati"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

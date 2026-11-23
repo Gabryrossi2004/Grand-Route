@@ -69,19 +69,198 @@
         "title": "Botswana fly-in",
         "days": 10,
         "route": "Maun (1) → Okavango (3) → Moremi o Linyanti (3) → Chobe (2) → Cascate Vittoria",
-        "description": "Safari di lusso con voletti tra i campi, da maggio a ottobre."
+        "description": "Safari di lusso con voletti tra i campi, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Maun",
+            "a": [
+              "volo|Volo per Maun via Johannesburg||",
+              "alloggio|Lodge a Maun||Maun",
+              "attivita|Volo panoramico sul delta (facoltativo)||Maun"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "volo|Trasferimento a Okavango||Okavango",
+              "alloggio|Campo nel delta||Okavango",
+              "attivita|Mokoro al tramonto|Canoa tradizionale tra i canali.|Okavango"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "attivita|Safari a piedi sulle isole||Okavango"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "traghetto|Barca a motore e mokoro||Okavango"
+            ]
+          },
+          {
+            "t": "Moremi",
+            "a": [
+              "volo|Trasferimento a Moremi||Moremi",
+              "alloggio|Campo a Moremi o Linyanti||Moremi",
+              "attivita|Fototour||Moremi"
+            ]
+          },
+          {
+            "t": "Moremi",
+            "a": [
+              "attivita|Licaoni e leopardi||Moremi"
+            ]
+          },
+          {
+            "t": "Moremi",
+            "a": [
+              "attivita|Fototour all'alba e notturno||Moremi"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "volo|Trasferimento a Chobe||Chobe",
+              "alloggio|Lodge a Kasane||Chobe",
+              "attivita|Crociera sul Chobe con gli elefanti||Chobe"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "attivita|Fototour nel parco||Chobe"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "transfer|Trasferimento alle Cascate Vittoria||Cascate Vittoria",
+              "attivita|Visita delle cascate||Cascate Vittoria",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cascate e Chobe",
         "days": 6,
         "route": "Cascate Vittoria (2) → Chobe (3)",
-        "description": "Estensione di un viaggio in Sudafrica o Namibia."
+        "description": "Estensione di un viaggio in Sudafrica o Namibia.",
+        "plan": [
+          {
+            "t": "Arrivo a Cascate Vittoria",
+            "a": [
+              "volo|Volo per Victoria Falls||",
+              "alloggio|Hotel alle cascate||Cascate Vittoria",
+              "attivita|Crociera al tramonto sullo Zambesi||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "attivita|Visita delle cascate ed elicottero||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "transfer|Trasferimento a Chobe||Chobe",
+              "alloggio|Lodge sul Chobe||Chobe",
+              "attivita|Crociera sul fiume||Chobe"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "attivita|Fototour all'alba||Chobe"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "attivita|Isola di Sedudu e ippopotami||Chobe"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kalahari e Okavango",
         "days": 9,
         "route": "Maun (1) → Makgadikgadi (2) → Central Kalahari (2) → Okavango (3)",
-        "description": "Saline, deserto e delta: suricati, i boscimani San e mokoro nel delta; consigliato da maggio a ottobre."
+        "description": "Saline, deserto e delta: suricati, i boscimani San e mokoro nel delta; consigliato da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Maun",
+            "a": [
+              "volo|Volo per Maun||",
+              "alloggio|Lodge a Maun||Maun"
+            ]
+          },
+          {
+            "t": "Makgadikgadi",
+            "a": [
+              "transfer|Trasferimento a Makgadikgadi||Makgadikgadi",
+              "alloggio|Campo nelle saline||Makgadikgadi",
+              "attivita|Suricati||Makgadikgadi"
+            ]
+          },
+          {
+            "t": "Makgadikgadi",
+            "a": [
+              "attivita|Quad sulle saline e boscimani San||Makgadikgadi"
+            ]
+          },
+          {
+            "t": "Central Kalahari",
+            "a": [
+              "volo|Trasferimento a Central Kalahari||Central Kalahari",
+              "alloggio|Campo nel Kalahari||Central Kalahari",
+              "attivita|Leoni dalla criniera nera||Central Kalahari"
+            ]
+          },
+          {
+            "t": "Central Kalahari",
+            "a": [
+              "attivita|Deception Valley||Central Kalahari"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "volo|Trasferimento a Okavango||Okavango",
+              "alloggio|Campo nel delta||Okavango",
+              "attivita|Mokoro||Okavango"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "attivita|Safari a piedi||Okavango"
+            ]
+          },
+          {
+            "t": "Okavango",
+            "a": [
+              "attivita|Fototour||Okavango"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -165,19 +344,191 @@
         "title": "Zambia classico",
         "days": 10,
         "route": "Livingstone (2) → South Luangwa (4) → Lower Zambezi (3)",
-        "description": "Safari a piedi e fluviali, da giugno a ottobre."
+        "description": "Safari a piedi e fluviali, da giugno a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Livingstone",
+            "a": [
+              "volo|Volo per Livingstone||",
+              "alloggio|Lodge sullo Zambesi||Livingstone",
+              "attivita|Crociera al tramonto||Livingstone"
+            ]
+          },
+          {
+            "t": "Livingstone",
+            "a": [
+              "attivita|Cascate Vittoria e Devil's Pool (stagionale)||Livingstone"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "volo|Trasferimento a South Luangwa||South Luangwa",
+              "alloggio|Campo sul fiume Luangwa||South Luangwa",
+              "attivita|Fototour notturno|Leopardi di notte.|South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Safari a piedi||South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "volo|Trasferimento a Lower Zambezi||Lower Zambezi",
+              "alloggio|Campo sullo Zambesi||Lower Zambezi",
+              "attivita|Canoa tra ippopotami ed elefanti||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "attivita|Pesca della tigre||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "attivita|Fototour||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Walking safari",
         "days": 8,
         "route": "Lusaka (1) → South Luangwa (6)",
-        "description": "La culla del safari a piedi: leopardi e campi stagionali sul fiume Luangwa."
+        "description": "La culla del safari a piedi: leopardi e campi stagionali sul fiume Luangwa.",
+        "plan": [
+          {
+            "t": "Arrivo a Lusaka",
+            "a": [
+              "volo|Volo per Lusaka||",
+              "alloggio|Hotel a Lusaka||Lusaka"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "volo|Trasferimento a South Luangwa||South Luangwa",
+              "alloggio|Campo stagionale||South Luangwa",
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "Walking safari",
+            "a": [
+              "attivita|Safari a piedi tra i campi||South Luangwa"
+            ]
+          },
+          {
+            "t": "Walking safari",
+            "a": [
+              "attivita|Safari a piedi||South Luangwa"
+            ]
+          },
+          {
+            "t": "Walking safari",
+            "a": [
+              "attivita|Fototour notturno||South Luangwa"
+            ]
+          },
+          {
+            "t": "Walking safari",
+            "a": [
+              "attivita|Safari a piedi||South Luangwa"
+            ]
+          },
+          {
+            "t": "Walking safari",
+            "a": [
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cascate e Zambezi",
         "days": 7,
         "route": "Livingstone (3) → Lower Zambezi (3)",
-        "description": "Cascate Vittoria e canoa tra ippopotami ed elefanti."
+        "description": "Cascate Vittoria e canoa tra ippopotami ed elefanti.",
+        "plan": [
+          {
+            "t": "Arrivo a Livingstone",
+            "a": [
+              "volo|Volo per Livingstone||",
+              "alloggio|Lodge||Livingstone",
+              "attivita|Crociera al tramonto||Livingstone"
+            ]
+          },
+          {
+            "t": "Livingstone",
+            "a": [
+              "attivita|Cascate Vittoria||Livingstone"
+            ]
+          },
+          {
+            "t": "Livingstone",
+            "a": [
+              "attivita|Rafting o elicottero||Livingstone"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "volo|Trasferimento a Lower Zambezi||Lower Zambezi",
+              "alloggio|Campo sul fiume||Lower Zambezi",
+              "attivita|Canoa||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "attivita|Fototour||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Lower Zambezi",
+            "a": [
+              "attivita|Barca||Lower Zambezi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -262,19 +613,188 @@
         "title": "Cascate e Hwange",
         "days": 6,
         "route": "Victoria Falls (2) → Hwange (3)",
-        "description": "Da giugno a ottobre."
+        "description": "Da giugno a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Victoria Falls",
+            "a": [
+              "volo|Volo per Victoria Falls||",
+              "alloggio|Hotel alle cascate||Victoria Falls",
+              "attivita|Crociera al tramonto||Victoria Falls"
+            ]
+          },
+          {
+            "t": "Victoria Falls",
+            "a": [
+              "attivita|Visita delle cascate||Victoria Falls"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "transfer|Trasferimento a Hwange||Hwange",
+              "alloggio|Lodge a Hwange||Hwange",
+              "attivita|Pozza d'acqua||Hwange"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "attivita|Grandi branchi di elefanti||Hwange"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "attivita|Fototour||Hwange"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Zimbabwe completo",
-        "days": 11,
+        "days": 10,
         "route": "Victoria Falls (2) → Hwange (3) → Mana Pools (3) → Harare (1)",
-        "description": "Per appassionati di safari."
+        "description": "Per appassionati di safari.",
+        "plan": [
+          {
+            "t": "Arrivo a Victoria Falls",
+            "a": [
+              "volo|Volo per Victoria Falls||",
+              "alloggio|Hotel||Victoria Falls",
+              "attivita|Crociera al tramonto||Victoria Falls"
+            ]
+          },
+          {
+            "t": "Victoria Falls",
+            "a": [
+              "attivita|Cascate||Victoria Falls"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "transfer|Trasferimento a Hwange||Hwange",
+              "alloggio|Lodge||Hwange",
+              "attivita|Elefanti||Hwange"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "attivita|Fototour||Hwange"
+            ]
+          },
+          {
+            "t": "Hwange",
+            "a": [
+              "attivita|Safari a piedi||Hwange"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "volo|Trasferimento a Mana Pools||Mana Pools",
+              "alloggio|Campo a Mana Pools||Mana Pools",
+              "attivita|Canoa sullo Zambesi||Mana Pools"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "attivita|Safari a piedi||Mana Pools"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "attivita|Elefanti in piedi sulle zampe posteriori||Mana Pools"
+            ]
+          },
+          {
+            "t": "Harare",
+            "a": [
+              "volo|Trasferimento a Harare||Harare",
+              "alloggio|Hotel a Harare||Harare"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mana Pools e Kariba",
         "days": 8,
         "route": "Harare (1) → Lago Kariba (2) → Mana Pools (4)",
-        "description": "Il safari più selvaggio dello Zimbabwe, con canoa sullo Zambezi."
+        "description": "Il safari più selvaggio dello Zimbabwe, con canoa sullo Zambezi.",
+        "plan": [
+          {
+            "t": "Arrivo a Harare",
+            "a": [
+              "volo|Volo per Harare||",
+              "alloggio|Hotel||Harare"
+            ]
+          },
+          {
+            "t": "Lago Kariba",
+            "a": [
+              "volo|Trasferimento a Lago Kariba||Lago Kariba",
+              "alloggio|Lodge sul lago||Lago Kariba",
+              "attivita|Tramonto sul lago||Lago Kariba"
+            ]
+          },
+          {
+            "t": "Lago Kariba",
+            "a": [
+              "traghetto|Barca tra gli alberi sommersi||Lago Kariba"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "volo|Trasferimento a Mana Pools||Mana Pools",
+              "alloggio|Campo||Mana Pools",
+              "attivita|Fototour||Mana Pools"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "attivita|Canoa sullo Zambesi||Mana Pools"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "attivita|Safari a piedi||Mana Pools"
+            ]
+          },
+          {
+            "t": "Mana Pools",
+            "a": [
+              "attivita|Fototour||Mana Pools"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -343,19 +863,214 @@
         "title": "Lago e safari",
         "days": 9,
         "route": "Lilongwe (1) → Liwonde (2) → Cape Maclear (3) → Mumbo (2)",
-        "description": "Da maggio a ottobre."
+        "description": "Da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Lilongwe",
+            "a": [
+              "volo|Volo per Lilongwe||",
+              "alloggio|Hotel||Lilongwe"
+            ]
+          },
+          {
+            "t": "Liwonde",
+            "a": [
+              "transfer|Trasferimento a Liwonde||Liwonde",
+              "alloggio|Lodge sul fiume Shire||Liwonde",
+              "attivita|Barca tra ippopotami ed elefanti||Liwonde"
+            ]
+          },
+          {
+            "t": "Liwonde",
+            "a": [
+              "attivita|Rinoceronti e fototour||Liwonde"
+            ]
+          },
+          {
+            "t": "Cape Maclear",
+            "a": [
+              "transfer|Trasferimento a Cape Maclear||Cape Maclear",
+              "alloggio|Lodge sul lago Malawi||Cape Maclear",
+              "attivita|Spiaggia||Cape Maclear"
+            ]
+          },
+          {
+            "t": "Cape Maclear",
+            "a": [
+              "attivita|Snorkeling con i ciclidi||Cape Maclear"
+            ]
+          },
+          {
+            "t": "Cape Maclear",
+            "a": [
+              "attivita|Kayak||Cape Maclear"
+            ]
+          },
+          {
+            "t": "Mumbo",
+            "a": [
+              "traghetto|Trasferimento a Mumbo||Mumbo",
+              "alloggio|Eco-campo sull'isola||Mumbo",
+              "attivita|Isola deserta||Mumbo"
+            ]
+          },
+          {
+            "t": "Mumbo",
+            "a": [
+              "attivita|Relax e snorkeling||Mumbo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Zambia e Malawi",
-        "days": 12,
+        "days": 11,
         "route": "South Luangwa (4) → Lilongwe → Lago Malawi (5)",
-        "description": "Safari e lago."
+        "description": "Safari e lago.",
+        "plan": [
+          {
+            "t": "Arrivo a South Luangwa",
+            "a": [
+              "volo|Volo per Mfuwe via Lusaka||",
+              "alloggio|Campo nel parco||South Luangwa",
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Safari a piedi||South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Fototour notturno||South Luangwa"
+            ]
+          },
+          {
+            "t": "South Luangwa",
+            "a": [
+              "attivita|Fototour||South Luangwa"
+            ]
+          },
+          {
+            "t": "Lilongwe",
+            "a": [
+              "transfer|Trasferimento a Lilongwe||Lilongwe",
+              "alloggio|Hotel||Lilongwe",
+              "attivita|Frontiera di Mchinji||Lilongwe"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "transfer|Trasferimento a Lago Malawi||Lago Malawi",
+              "alloggio|Lodge sul lago||Lago Malawi",
+              "attivita|Spiaggia||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Snorkeling||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Kayak||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Villaggi||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Relax||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Malawi in famiglia",
         "days": 8,
         "route": "Lilongwe (1) → Majete (3) → Lago Malawi (3)",
-        "description": "Riserva con i Big Five in recupero e spiagge d'acqua dolce: un'Africa tranquilla e accogliente."
+        "description": "Riserva con i Big Five in recupero e spiagge d'acqua dolce: un'Africa tranquilla e accogliente.",
+        "plan": [
+          {
+            "t": "Arrivo a Lilongwe",
+            "a": [
+              "volo|Volo per Lilongwe||",
+              "alloggio|Hotel||Lilongwe"
+            ]
+          },
+          {
+            "t": "Majete",
+            "a": [
+              "transfer|Trasferimento a Majete||Majete",
+              "alloggio|Lodge a Majete||Majete",
+              "attivita|Fototour||Majete"
+            ]
+          },
+          {
+            "t": "Majete",
+            "a": [
+              "attivita|Big Five in una riserva tranquilla||Majete"
+            ]
+          },
+          {
+            "t": "Majete",
+            "a": [
+              "attivita|Barca sul fiume Shire||Majete"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "transfer|Trasferimento a Lago Malawi||Lago Malawi",
+              "alloggio|Lodge per famiglie||Lago Malawi",
+              "attivita|Spiaggia||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Kayak||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Lago Malawi",
+            "a": [
+              "attivita|Snorkeling||Lago Malawi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -385,21 +1100,208 @@
     "itineraries": [
       {
         "title": "Kruger e Bazaruto",
-        "days": 12,
+        "days": 11,
         "route": "Johannesburg (1) → Kruger (3) → Vilanculos e Bazaruto (6)",
-        "description": "Safari e mare, da maggio a novembre."
+        "description": "Safari e mare, da maggio a novembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Johannesburg",
+            "a": [
+              "volo|Volo per Johannesburg||",
+              "alloggio|Hotel||Johannesburg"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "volo|Trasferimento a Kruger||Kruger",
+              "alloggio|Lodge a Sabi Sand||Kruger",
+              "attivita|Fototour||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Big Five||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Safari a piedi||Kruger"
+            ]
+          },
+          {
+            "t": "Vilanculos",
+            "a": [
+              "volo|Trasferimento a Vilanculos||Vilanculos",
+              "alloggio|Resort a Vilanculos||Vilanculos",
+              "attivita|Spiaggia||Vilanculos"
+            ]
+          },
+          {
+            "t": "Bazaruto",
+            "a": [
+              "traghetto|Arcipelago di Bazaruto|Dune e snorkeling a Two Mile Reef.|Bazaruto"
+            ]
+          },
+          {
+            "t": "Vilanculos",
+            "a": [
+              "attivita|Relax||Vilanculos"
+            ]
+          },
+          {
+            "t": "Vilanculos",
+            "a": [
+              "traghetto|Dugonghi e mante||Vilanculos"
+            ]
+          },
+          {
+            "t": "Vilanculos",
+            "a": [
+              "attivita|Dhow al tramonto||Vilanculos"
+            ]
+          },
+          {
+            "t": "Vilanculos",
+            "a": [
+              "attivita|Giornata libera||Vilanculos"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Ilha de Moçambique",
         "days": 7,
         "route": "Nampula (1) → Ilha de Moçambique (3) → Nacala (2)",
-        "description": "Città di pietra UNESCO e baie per lo snorkeling nel nord del paese."
+        "description": "Città di pietra UNESCO e baie per lo snorkeling nel nord del paese.",
+        "plan": [
+          {
+            "t": "Arrivo a Nampula",
+            "a": [
+              "volo|Volo per Nampula||",
+              "alloggio|Hotel||Nampula"
+            ]
+          },
+          {
+            "t": "Ilha de Moçambique",
+            "a": [
+              "transfer|Trasferimento a Ilha de Moçambique||Ilha de Moçambique",
+              "alloggio|Hotel nella città di pietra||Ilha de Moçambique",
+              "attivita|Città di pietra UNESCO||Ilha de Moçambique"
+            ]
+          },
+          {
+            "t": "Ilha",
+            "a": [
+              "attivita|Fortezza di São Sebastião||Ilha de Moçambique"
+            ]
+          },
+          {
+            "t": "Ilha",
+            "a": [
+              "traghetto|Isole di Goa e Sete Paus||Ilha de Moçambique"
+            ]
+          },
+          {
+            "t": "Nacala",
+            "a": [
+              "transfer|Trasferimento a Nacala||Nacala",
+              "alloggio|Lodge sul mare||Nacala",
+              "attivita|Snorkeling||Nacala"
+            ]
+          },
+          {
+            "t": "Nacala",
+            "a": [
+              "attivita|Spiaggia||Nacala"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Quirimbas",
         "days": 9,
         "route": "Pemba (1) → Ibo (3) → isole private Quirimbas (4)",
-        "description": "Arcipelago remoto con lodge di lusso; verificare sempre la situazione della provincia di Cabo Delgado."
+        "description": "Arcipelago remoto con lodge di lusso; verificare sempre la situazione della provincia di Cabo Delgado.",
+        "plan": [
+          {
+            "t": "Arrivo a Pemba",
+            "a": [
+              "volo|Volo per Pemba||",
+              "alloggio|Hotel||Pemba",
+              "attivita|Verificare la sicurezza di Cabo Delgado||Pemba"
+            ]
+          },
+          {
+            "t": "Ibo",
+            "a": [
+              "volo|Trasferimento a Ibo||Ibo",
+              "alloggio|Lodge a Ibo||Ibo",
+              "attivita|Forte di São João||Ibo"
+            ]
+          },
+          {
+            "t": "Ibo",
+            "a": [
+              "attivita|Argentieri di Ibo||Ibo"
+            ]
+          },
+          {
+            "t": "Ibo",
+            "a": [
+              "traghetto|Sandbank||Ibo"
+            ]
+          },
+          {
+            "t": "Quirimbas",
+            "a": [
+              "volo|Trasferimento a Quirimbas||Quirimbas",
+              "alloggio|Lodge su isola privata||Quirimbas",
+              "attivita|Spiaggia||Quirimbas"
+            ]
+          },
+          {
+            "t": "Quirimbas",
+            "a": [
+              "attivita|Immersioni||Quirimbas"
+            ]
+          },
+          {
+            "t": "Quirimbas",
+            "a": [
+              "attivita|Relax||Quirimbas"
+            ]
+          },
+          {
+            "t": "Quirimbas",
+            "a": [
+              "attivita|Dhow||Quirimbas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -503,19 +1405,176 @@
         "title": "Drakensberg e Lesotho",
         "days": 4,
         "route": "Underberg (1) → Sani Pass → Lesotho (2)",
-        "description": "Deviazione da un tour del Sudafrica."
+        "description": "Deviazione da un tour del Sudafrica.",
+        "plan": [
+          {
+            "t": "Underberg",
+            "a": [
+              "transfer|Arrivo a Underberg da Durban||Underberg",
+              "alloggio|Lodge||Underberg"
+            ]
+          },
+          {
+            "t": "Sani Pass",
+            "a": [
+              "transfer|Sani Pass in 4x4||Sani Pass",
+              "attivita|Pub più alto d'Africa||Sani Pass",
+              "alloggio|Lodge in Lesotho||Lesotho"
+            ]
+          },
+          {
+            "t": "Lesotho",
+            "a": [
+              "attivita|Villaggi basotho e pony||Lesotho"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro a Durban||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lesotho a cavallo",
         "days": 7,
         "route": "Maseru (1) → Malealea (3) → Semonkong (2)",
-        "description": "Pony basotho, pitture rupestri e la cascata di Maletsunyane, una delle più alte d'Africa."
+        "description": "Pony basotho, pitture rupestri e la cascata di Maletsunyane, una delle più alte d'Africa.",
+        "plan": [
+          {
+            "t": "Arrivo a Maseru",
+            "a": [
+              "volo|Volo per Maseru via Johannesburg||",
+              "alloggio|Hotel||Maseru"
+            ]
+          },
+          {
+            "t": "Malealea",
+            "a": [
+              "transfer|Trasferimento a Malealea||Malealea",
+              "alloggio|Lodge a Malealea||Malealea",
+              "attivita|Pony basotho||Malealea"
+            ]
+          },
+          {
+            "t": "Malealea",
+            "a": [
+              "attivita|Pitture rupestri||Malealea"
+            ]
+          },
+          {
+            "t": "Malealea",
+            "a": [
+              "attivita|Cascata||Malealea"
+            ]
+          },
+          {
+            "t": "Semonkong",
+            "a": [
+              "transfer|Trasferimento a Semonkong||Semonkong",
+              "alloggio|Lodge||Semonkong",
+              "attivita|Cascata di Maletsunyane||Semonkong"
+            ]
+          },
+          {
+            "t": "Semonkong",
+            "a": [
+              "attivita|Discesa in corda doppia||Semonkong"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sudafrica e Lesotho",
-        "days": 12,
+        "days": 11,
         "route": "Johannesburg (1) → Drakensberg (2) → Sani Pass e Lesotho (2) → Durban (2) → Hluhluwe (3)",
-        "description": "Montagne, Oceano Indiano e safari nel KwaZulu-Natal."
+        "description": "Montagne, Oceano Indiano e safari nel KwaZulu-Natal.",
+        "plan": [
+          {
+            "t": "Arrivo a Johannesburg",
+            "a": [
+              "volo|Volo per Johannesburg||",
+              "alloggio|Hotel||Johannesburg"
+            ]
+          },
+          {
+            "t": "Drakensberg",
+            "a": [
+              "transfer|Trasferimento a Drakensberg||Drakensberg",
+              "alloggio|Lodge||Drakensberg",
+              "attivita|Anfiteatro||Drakensberg"
+            ]
+          },
+          {
+            "t": "Drakensberg",
+            "a": [
+              "attivita|Pitture san||Drakensberg"
+            ]
+          },
+          {
+            "t": "Lesotho",
+            "a": [
+              "transfer|Trasferimento a Lesotho||Lesotho",
+              "alloggio|Lodge||Lesotho",
+              "attivita|Sani Pass||Lesotho"
+            ]
+          },
+          {
+            "t": "Lesotho",
+            "a": [
+              "attivita|Villaggi||Lesotho"
+            ]
+          },
+          {
+            "t": "Durban",
+            "a": [
+              "transfer|Trasferimento a Durban||Durban",
+              "alloggio|Hotel sul mare||Durban",
+              "attivita|Golden Mile||Durban"
+            ]
+          },
+          {
+            "t": "Durban",
+            "a": [
+              "attivita|Mercato indiano||Durban"
+            ]
+          },
+          {
+            "t": "Hluhluwe",
+            "a": [
+              "transfer|Trasferimento a Hluhluwe||Hluhluwe",
+              "alloggio|Lodge||Hluhluwe",
+              "attivita|Rinoceronti||Hluhluwe"
+            ]
+          },
+          {
+            "t": "Hluhluwe",
+            "a": [
+              "attivita|Fototour||Hluhluwe"
+            ]
+          },
+          {
+            "t": "St Lucia",
+            "a": [
+              "traghetto|Estuario di iSimangaliso||St Lucia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -571,19 +1630,182 @@
         "title": "Kruger ed Eswatini",
         "days": 6,
         "route": "Kruger (3) → Eswatini (2)",
-        "description": "Abbinato a un viaggio in Sudafrica."
+        "description": "Abbinato a un viaggio in Sudafrica.",
+        "plan": [
+          {
+            "t": "Arrivo a Kruger",
+            "a": [
+              "volo|Volo per Nelspruit||",
+              "alloggio|Lodge||Kruger",
+              "attivita|Fototour||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Big Five||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Safari||Kruger"
+            ]
+          },
+          {
+            "t": "Eswatini",
+            "a": [
+              "transfer|Trasferimento a Eswatini||Eswatini",
+              "alloggio|Lodge a Mlilwane||Eswatini",
+              "attivita|Villaggio culturale||Eswatini"
+            ]
+          },
+          {
+            "t": "Eswatini",
+            "a": [
+              "attivita|Mercati e candele di Ngwenya||Eswatini"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Eswatini culturale",
         "days": 4,
         "route": "Mbabane (1) → Ezulwini (2)",
-        "description": "Il festival Umhlanga di fine agosto, villaggi tradizionali e la riserva di Mlilwane."
+        "description": "Il festival Umhlanga di fine agosto, villaggi tradizionali e la riserva di Mlilwane.",
+        "plan": [
+          {
+            "t": "Arrivo a Mbabane",
+            "a": [
+              "volo|Volo per Manzini via Johannesburg||",
+              "alloggio|Hotel||Mbabane"
+            ]
+          },
+          {
+            "t": "Ezulwini",
+            "a": [
+              "transfer|Trasferimento a Ezulwini||Ezulwini",
+              "alloggio|Lodge||Ezulwini",
+              "attivita|Villaggio culturale||Ezulwini"
+            ]
+          },
+          {
+            "t": "Ezulwini",
+            "a": [
+              "attivita|Mlilwane in bici||Ezulwini"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sudafrica, Eswatini e Mozambico",
-        "days": 14,
+        "days": 13,
         "route": "Johannesburg (1) → Kruger (3) → Eswatini (2) → Maputo (1) → Tofo (5)",
-        "description": "Safari, regno di Eswatini e mare del Mozambico con gli squali balena."
+        "description": "Safari, regno di Eswatini e mare del Mozambico con gli squali balena.",
+        "plan": [
+          {
+            "t": "Arrivo a Johannesburg",
+            "a": [
+              "volo|Volo per Johannesburg||",
+              "alloggio|Hotel||Johannesburg"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "transfer|Trasferimento a Kruger||Kruger",
+              "alloggio|Lodge||Kruger",
+              "attivita|Fototour||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Safari||Kruger"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Safari||Kruger"
+            ]
+          },
+          {
+            "t": "Eswatini",
+            "a": [
+              "transfer|Trasferimento a Eswatini||Eswatini",
+              "alloggio|Lodge||Eswatini",
+              "attivita|Cultura swazi||Eswatini"
+            ]
+          },
+          {
+            "t": "Eswatini",
+            "a": [
+              "attivita|Hlane e rinoceronti||Eswatini"
+            ]
+          },
+          {
+            "t": "Maputo",
+            "a": [
+              "transfer|Trasferimento a Maputo||Maputo",
+              "alloggio|Hotel||Maputo",
+              "attivita|Città||Maputo"
+            ]
+          },
+          {
+            "t": "Tofo",
+            "a": [
+              "transfer|Trasferimento a Tofo||Tofo",
+              "alloggio|Lodge||Tofo",
+              "attivita|Spiaggia||Tofo"
+            ]
+          },
+          {
+            "t": "Tofo",
+            "a": [
+              "traghetto|Squali balena||Tofo"
+            ]
+          },
+          {
+            "t": "Tofo",
+            "a": [
+              "attivita|Immersioni con le mante||Tofo"
+            ]
+          },
+          {
+            "t": "Tofo",
+            "a": [
+              "attivita|Relax||Tofo"
+            ]
+          },
+          {
+            "t": "Tofo",
+            "a": [
+              "attivita|Spiaggia||Tofo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -637,19 +1859,210 @@
         "title": "Comore",
         "days": 8,
         "route": "Grande Comore (3) → Mohéli (4)",
-        "description": "Per viaggiatori in cerca di isole autentiche."
+        "description": "Per viaggiatori in cerca di isole autentiche.",
+        "plan": [
+          {
+            "t": "Arrivo a Moroni",
+            "a": [
+              "volo|Volo per Moroni||",
+              "alloggio|Hotel||Moroni",
+              "attivita|Medina||Moroni"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Vulcano Karthala||Grande Comore"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Lago salato e spiagge||Grande Comore"
+            ]
+          },
+          {
+            "t": "Mohéli",
+            "a": [
+              "volo|Trasferimento a Mohéli||Mohéli",
+              "alloggio|Eco-lodge||Mohéli",
+              "attivita|Parco marino||Mohéli"
+            ]
+          },
+          {
+            "t": "Mohéli",
+            "a": [
+              "attivita|Tartarughe||Mohéli"
+            ]
+          },
+          {
+            "t": "Mohéli",
+            "a": [
+              "traghetto|Balene (stagionale)||Mohéli"
+            ]
+          },
+          {
+            "t": "Mohéli",
+            "a": [
+              "attivita|Relax||Mohéli"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Comore e Mayotte",
         "days": 9,
         "route": "Grande Comore (3) → Anjouan (2) → Mayotte (3)",
-        "description": "Vulcano Karthala, piantagioni di ylang-ylang e la laguna di Mayotte."
+        "description": "Vulcano Karthala, piantagioni di ylang-ylang e la laguna di Mayotte.",
+        "plan": [
+          {
+            "t": "Arrivo a Moroni",
+            "a": [
+              "volo|Volo per Moroni||",
+              "alloggio|Hotel||Moroni"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Karthala||Grande Comore"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Spiagge||Grande Comore"
+            ]
+          },
+          {
+            "t": "Anjouan",
+            "a": [
+              "volo|Trasferimento a Anjouan||Anjouan",
+              "alloggio|Hotel||Anjouan",
+              "attivita|Ylang-ylang||Anjouan"
+            ]
+          },
+          {
+            "t": "Anjouan",
+            "a": [
+              "attivita|Distillerie||Anjouan"
+            ]
+          },
+          {
+            "t": "Mayotte",
+            "a": [
+              "volo|Trasferimento a Mayotte||Mayotte",
+              "alloggio|Hotel||Mayotte",
+              "attivita|Laguna||Mayotte"
+            ]
+          },
+          {
+            "t": "Mayotte",
+            "a": [
+              "traghetto|Delfini e tartarughe||Mayotte"
+            ]
+          },
+          {
+            "t": "Mayotte",
+            "a": [
+              "attivita|Snorkeling||Mayotte"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Comore e Madagascar",
-        "days": 12,
+        "days": 11,
         "route": "Antananarivo (1) → Nosy Be (5) → Grande Comore (4)",
-        "description": "Il mare di Nosy Be con un'estensione nelle isole delle spezie."
+        "description": "Il mare di Nosy Be con un'estensione nelle isole delle spezie.",
+        "plan": [
+          {
+            "t": "Arrivo a Antananarivo",
+            "a": [
+              "volo|Volo per Antananarivo||",
+              "alloggio|Hotel||Antananarivo"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "volo|Trasferimento a Nosy Be||Nosy Be",
+              "alloggio|Resort||Nosy Be",
+              "attivita|Spiaggia||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "traghetto|Nosy Komba||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "traghetto|Nosy Iranja||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Relax||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Mont Passot||Nosy Be"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "volo|Trasferimento a Grande Comore||Grande Comore",
+              "alloggio|Hotel||Grande Comore",
+              "attivita|Moroni||Grande Comore"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Karthala||Grande Comore"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Spiagge||Grande Comore"
+            ]
+          },
+          {
+            "t": "Grande Comore",
+            "a": [
+              "attivita|Relax||Grande Comore"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

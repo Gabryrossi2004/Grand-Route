@@ -59,19 +59,209 @@
         "title": "Nassau ed Exuma",
         "days": 9,
         "route": "Nassau (3) → Exuma (5)",
-        "description": "Da dicembre a maggio."
+        "description": "Da dicembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Nassau",
+            "a": [
+              "volo|Volo per Nassau via Miami||",
+              "transfer|Transfer in hotel||Nassau",
+              "alloggio|Hotel a Cable Beach||Nassau",
+              "attivita|Spiaggia||Nassau"
+            ]
+          },
+          {
+            "t": "Nassau",
+            "a": [
+              "attivita|Queen's Staircase, Fort Fincastle e Straw Market||Nassau"
+            ]
+          },
+          {
+            "t": "Nassau",
+            "a": [
+              "attivita|Rose Island o Paradise Island||Nassau"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "volo|Trasferimento a Exuma||Exuma",
+              "alloggio|Resort a Great Exuma||Exuma",
+              "attivita|Spiaggia||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Maiali nuotatori, squali nutrice a Compass Cay e Thunderball Grotto|La gita più famosa delle Bahamas.|Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "attivita|Tropic of Cancer Beach||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Sandbar di Exuma al tramonto||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "attivita|Relax||Exuma"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Miami e Bahamas",
         "days": 10,
         "route": "Miami (3) → Nassau o Exuma (6)",
-        "description": "Combinato con la Florida."
+        "description": "Combinato con la Florida.",
+        "plan": [
+          {
+            "t": "Arrivo a Miami",
+            "a": [
+              "volo|Volo per Miami||",
+              "transfer|Transfer in hotel||Miami",
+              "alloggio|Hotel a South Beach||Miami",
+              "attivita|Ocean Drive Art Déco||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Wynwood Walls e Little Havana||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Everglades in airboat||Everglades"
+            ]
+          },
+          {
+            "t": "Nassau",
+            "a": [
+              "volo|Trasferimento a Nassau||Nassau",
+              "alloggio|Resort a Nassau o Exuma||Nassau",
+              "attivita|Spiaggia||Nassau"
+            ]
+          },
+          {
+            "t": "Bahamas",
+            "a": [
+              "traghetto|Maiali nuotatori di Exuma||Exuma"
+            ]
+          },
+          {
+            "t": "Bahamas",
+            "a": [
+              "attivita|Spiaggia||Bahamas"
+            ]
+          },
+          {
+            "t": "Bahamas",
+            "a": [
+              "traghetto|Snorkeling sul reef||Bahamas"
+            ]
+          },
+          {
+            "t": "Bahamas",
+            "a": [
+              "attivita|Relax||Bahamas"
+            ]
+          },
+          {
+            "t": "Bahamas",
+            "a": [
+              "attivita|Giornata libera||Bahamas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bahamas in barca",
         "days": 9,
         "route": "Nassau (1) → Exuma in catamarano (7)",
-        "description": "Le cayes più belle si vedono dal mare: maialini nuotatori, Thunderball Grotto e banchi di sabbia."
+        "description": "Le cayes più belle si vedono dal mare: maialini nuotatori, Thunderball Grotto e banchi di sabbia.",
+        "plan": [
+          {
+            "t": "Arrivo a Nassau",
+            "a": [
+              "volo|Volo per Nassau||",
+              "transfer|Transfer in hotel||Nassau",
+              "alloggio|Hotel||Nassau"
+            ]
+          },
+          {
+            "t": "Imbarco",
+            "a": [
+              "traghetto|Imbarco sul catamarano||Exuma",
+              "alloggio|Cabina a bordo||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Allen's Cay e le iguane||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Exuma Land and Sea Park||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Thunderball Grotto||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Maiali nuotatori di Big Major Cay||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Compass Cay e squali nutrice||Exuma"
+            ]
+          },
+          {
+            "t": "Exuma",
+            "a": [
+              "traghetto|Rientro e sbarco||Exuma"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -154,19 +344,214 @@
         "title": "Giamaica",
         "days": 10,
         "route": "Montego Bay (1) → Ocho Rios (3) → Negril (5)",
-        "description": "Mare e cultura, da dicembre ad aprile."
+        "description": "Mare e cultura, da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Montego Bay",
+            "a": [
+              "volo|Volo per Montego Bay||",
+              "transfer|Transfer in hotel||Montego Bay",
+              "alloggio|Hotel||Montego Bay"
+            ]
+          },
+          {
+            "t": "Ocho Rios",
+            "a": [
+              "transfer|Trasferimento a Ocho Rios||Ocho Rios",
+              "alloggio|Resort a Ocho Rios||Ocho Rios",
+              "attivita|Spiaggia||Ocho Rios"
+            ]
+          },
+          {
+            "t": "Ocho Rios",
+            "a": [
+              "attivita|Dunn's River Falls in risalita||Ocho Rios"
+            ]
+          },
+          {
+            "t": "Ocho Rios",
+            "a": [
+              "attivita|Nine Mile, il villaggio di Bob Marley||Ocho Rios"
+            ]
+          },
+          {
+            "t": "Negril",
+            "a": [
+              "transfer|Trasferimento a Negril||Negril",
+              "alloggio|Resort a Seven Mile Beach||Negril",
+              "attivita|Spiaggia||Negril"
+            ]
+          },
+          {
+            "t": "Negril",
+            "a": [
+              "attivita|Rick's Café e tuffi dalla scogliera al tramonto||Negril"
+            ]
+          },
+          {
+            "t": "Negril",
+            "a": [
+              "attivita|YS Falls e Black River||Negril"
+            ]
+          },
+          {
+            "t": "Negril",
+            "a": [
+              "traghetto|Catamarano e snorkeling||Negril"
+            ]
+          },
+          {
+            "t": "Negril",
+            "a": [
+              "attivita|Relax||Negril"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Giamaica autentica",
         "days": 10,
         "route": "Kingston (2) → Blue Mountains (2) → Port Antonio (2) → Treasure Beach (3)",
-        "description": "Reggae, piantagioni di caffè e la costa meno turistica dell'isola."
+        "description": "Reggae, piantagioni di caffè e la costa meno turistica dell'isola.",
+        "plan": [
+          {
+            "t": "Arrivo a Kingston",
+            "a": [
+              "volo|Volo per Kingston||",
+              "transfer|Transfer in hotel||Kingston",
+              "alloggio|Hotel||Kingston",
+              "attivita|Bob Marley Museum||Kingston"
+            ]
+          },
+          {
+            "t": "Kingston",
+            "a": [
+              "attivita|Port Royal e Devon House||Kingston"
+            ]
+          },
+          {
+            "t": "Blue Mountains",
+            "a": [
+              "transfer|Trasferimento a Blue Mountains||Blue Mountains",
+              "alloggio|Lodge tra i caffè||Blue Mountains",
+              "attivita|Piantagione di Blue Mountain coffee||Blue Mountains"
+            ]
+          },
+          {
+            "t": "Blue Mountains",
+            "a": [
+              "attivita|Alba sul Blue Mountain Peak||Blue Mountains"
+            ]
+          },
+          {
+            "t": "Port Antonio",
+            "a": [
+              "transfer|Trasferimento a Port Antonio||Port Antonio",
+              "alloggio|Villa||Port Antonio",
+              "attivita|Frenchman's Cove||Port Antonio"
+            ]
+          },
+          {
+            "t": "Port Antonio",
+            "a": [
+              "attivita|Blue Lagoon e rafting sul Rio Grande||Port Antonio"
+            ]
+          },
+          {
+            "t": "Treasure Beach",
+            "a": [
+              "transfer|Trasferimento a Treasure Beach||Treasure Beach",
+              "alloggio|Guesthouse||Treasure Beach",
+              "attivita|Spiaggia||Treasure Beach"
+            ]
+          },
+          {
+            "t": "Treasure Beach",
+            "a": [
+              "attivita|Pelican Bar sul mare||Treasure Beach"
+            ]
+          },
+          {
+            "t": "Treasure Beach",
+            "a": [
+              "attivita|Relax||Treasure Beach"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana a Montego Bay",
         "days": 8,
         "route": "Montego Bay (7)",
-        "description": "Resort all-inclusive, rafting sul Martha Brae e la cascata di Dunn's River in giornata."
+        "description": "Resort all-inclusive, rafting sul Martha Brae e la cascata di Dunn's River in giornata.",
+        "plan": [
+          {
+            "t": "Arrivo a Montego Bay",
+            "a": [
+              "volo|Volo per Montego Bay||",
+              "transfer|Transfer in hotel||Montego Bay",
+              "alloggio|Resort all inclusive||Montego Bay",
+              "attivita|Spiaggia||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "attivita|Doctor's Cave Beach||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "attivita|Dunn's River Falls||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "attivita|Rafting in bambù sul Martha Brae||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "traghetto|Catamarano||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "attivita|Luminous Lagoon di notte||Montego Bay"
+            ]
+          },
+          {
+            "t": "Montego Bay",
+            "a": [
+              "attivita|Relax||Montego Bay"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -232,19 +617,216 @@
         "title": "Porto Rico",
         "days": 8,
         "route": "San Juan (3) → Fajardo ed El Yunque (1) → Vieques o Culebra (3)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a San Juan",
+            "a": [
+              "volo|Volo per San Juan||",
+              "transfer|Transfer in hotel||San Juan",
+              "alloggio|Hotel a Old San Juan||San Juan",
+              "attivita|Viejo San Juan||San Juan"
+            ]
+          },
+          {
+            "t": "San Juan",
+            "a": [
+              "attivita|El Morro e Castillo San Cristóbal||San Juan",
+              "attivita|La Placita la sera||San Juan"
+            ]
+          },
+          {
+            "t": "San Juan",
+            "a": [
+              "attivita|Spiaggia di Condado e mofongo||San Juan"
+            ]
+          },
+          {
+            "t": "El Yunque",
+            "a": [
+              "attivita|Foresta pluviale di El Yunque||El Yunque",
+              "attivita|Baia bioluminescente in kayak||Fajardo",
+              "alloggio|Hotel a Fajardo||Fajardo"
+            ]
+          },
+          {
+            "t": "Vieques",
+            "a": [
+              "traghetto|Trasferimento a Vieques||Vieques",
+              "alloggio|Hotel a Vieques||Vieques",
+              "attivita|Spiagge selvagge||Vieques"
+            ]
+          },
+          {
+            "t": "Vieques",
+            "a": [
+              "attivita|Mosquito Bay, la baia più luminosa del mondo||Vieques"
+            ]
+          },
+          {
+            "t": "Culebra",
+            "a": [
+              "attivita|Flamenco Beach||Culebra"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Porto Rico in auto",
         "days": 10,
         "route": "San Juan (3) → El Yunque (1) → Ponce (2) → Rincón (3)",
-        "description": "Il giro dell'isola: foresta pluviale, città coloniali e spiagge da surf a ovest."
+        "description": "Il giro dell'isola: foresta pluviale, città coloniali e spiagge da surf a ovest.",
+        "plan": [
+          {
+            "t": "Arrivo a San Juan",
+            "a": [
+              "volo|Volo per San Juan||",
+              "transfer|Transfer in hotel||San Juan",
+              "alloggio|Hotel a Old San Juan||San Juan",
+              "attivita|Viejo San Juan||San Juan"
+            ]
+          },
+          {
+            "t": "San Juan",
+            "a": [
+              "attivita|El Morro||San Juan"
+            ]
+          },
+          {
+            "t": "San Juan",
+            "a": [
+              "attivita|Bacardí e Condado||San Juan"
+            ]
+          },
+          {
+            "t": "El Yunque",
+            "a": [
+              "transfer|In auto fino a El Yunque||El Yunque",
+              "alloggio|Hotel||El Yunque",
+              "attivita|Foresta pluviale||El Yunque"
+            ]
+          },
+          {
+            "t": "Ponce",
+            "a": [
+              "transfer|In auto fino a Ponce||Ponce",
+              "alloggio|Hotel||Ponce",
+              "attivita|Parque de Bombas||Ponce"
+            ]
+          },
+          {
+            "t": "Ponce",
+            "a": [
+              "attivita|Caffè nelle montagne di Jayuya||Ponce"
+            ]
+          },
+          {
+            "t": "Rincón",
+            "a": [
+              "transfer|In auto fino a Rincón||Rincón",
+              "alloggio|Hotel sul mare||Rincón",
+              "attivita|Surf e tramonti||Rincón"
+            ]
+          },
+          {
+            "t": "Rincón",
+            "a": [
+              "attivita|Balene (inverno)||Rincón"
+            ]
+          },
+          {
+            "t": "Rincón",
+            "a": [
+              "attivita|Relax||Rincón"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Crociera dai Caraibi",
-        "days": 9,
+        "days": 10,
         "route": "San Juan (2) → crociera nei Caraibi orientali (7)",
-        "description": "San Juan è porto di partenza di molte crociere: conviene aggiungere due notti in città."
+        "description": "San Juan è porto di partenza di molte crociere: conviene aggiungere due notti in città.",
+        "plan": [
+          {
+            "t": "Arrivo a San Juan",
+            "a": [
+              "volo|Volo per San Juan||",
+              "transfer|Transfer in hotel||San Juan",
+              "alloggio|Hotel||San Juan",
+              "attivita|Viejo San Juan||San Juan"
+            ]
+          },
+          {
+            "t": "San Juan",
+            "a": [
+              "attivita|El Morro||San Juan"
+            ]
+          },
+          {
+            "t": "Imbarco",
+            "a": [
+              "traghetto|Imbarco sulla nave da crociera||San Juan"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|St. Thomas||St. Thomas"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|St. Kitts||St. Kitts"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Antigua||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Saint Lucia||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Barbados||Barbados"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Navigazione e sbarco||San Juan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -312,19 +894,215 @@
         "title": "Barbados",
         "days": 9,
         "route": "Costa ovest o sud (8)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Barbados",
+            "a": [
+              "volo|Volo per Bridgetown||",
+              "transfer|Transfer in hotel||Barbados",
+              "alloggio|Hotel sulla costa ovest||Barbados",
+              "attivita|Spiaggia||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Bridgetown e Garrison UNESCO||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Harrison's Cave||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "traghetto|Catamarano con tartarughe a Carlisle Bay||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Bathsheba e costa est||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Fish Fry di Oistins il venerdì||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Rum alla Mount Gay||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Relax||Barbados"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Barbados e Grenadine",
         "days": 11,
         "route": "Barbados (5) → Mustique o Bequia (5)",
-        "description": "Mare e vita mondana a Barbados, poi un'isola tranquilla delle Grenadine raggiungibile con un volo breve."
+        "description": "Mare e vita mondana a Barbados, poi un'isola tranquilla delle Grenadine raggiungibile con un volo breve.",
+        "plan": [
+          {
+            "t": "Arrivo a Barbados",
+            "a": [
+              "volo|Volo per Bridgetown||",
+              "transfer|Transfer in hotel||Barbados",
+              "alloggio|Hotel||Barbados",
+              "attivita|Spiaggia||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Harrison's Cave||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "traghetto|Catamarano con tartarughe||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Oistins||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Relax||Barbados"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "volo|Trasferimento a Bequia||Bequia",
+              "alloggio|Hotel a Bequia||Bequia",
+              "attivita|Port Elizabeth||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Princess Margaret Beach||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "traghetto|Tobago Cays con tartarughe||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Mustique in giornata||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Relax||Bequia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Barbados a cavallo tra le coste",
         "days": 9,
         "route": "Costa ovest (5) → Costa est, Bathsheba (3)",
-        "description": "Prima la costa riparata con hotel di lusso, poi la costa atlantica selvaggia tra surf, giardini e piantagioni di rum."
+        "description": "Prima la costa riparata con hotel di lusso, poi la costa atlantica selvaggia tra surf, giardini e piantagioni di rum.",
+        "plan": [
+          {
+            "t": "Arrivo a Barbados",
+            "a": [
+              "volo|Volo per Bridgetown||",
+              "transfer|Transfer in hotel||Barbados",
+              "alloggio|Hotel sulla costa ovest||Barbados",
+              "attivita|Spiaggia||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Bridgetown||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "traghetto|Catamarano||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Harrison's Cave||Barbados"
+            ]
+          },
+          {
+            "t": "Barbados",
+            "a": [
+              "attivita|Relax||Barbados"
+            ]
+          },
+          {
+            "t": "Bathsheba",
+            "a": [
+              "transfer|Trasferimento a Bathsheba||Bathsheba",
+              "alloggio|Guesthouse a Bathsheba||Bathsheba",
+              "attivita|Costa atlantica||Bathsheba"
+            ]
+          },
+          {
+            "t": "Bathsheba",
+            "a": [
+              "attivita|Andromeda Gardens e Hunte's Gardens||Bathsheba"
+            ]
+          },
+          {
+            "t": "Bathsheba",
+            "a": [
+              "attivita|St. Nicholas Abbey||Bathsheba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -382,19 +1160,189 @@
         "title": "Due isole",
         "days": 10,
         "route": "Trinidad (3) → Tobago (6)",
-        "description": "Da gennaio a maggio."
+        "description": "Da gennaio a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Trinidad",
+            "a": [
+              "volo|Volo per Port of Spain||",
+              "transfer|Transfer in hotel||Trinidad",
+              "alloggio|Hotel||Trinidad",
+              "attivita|Queen's Park Savannah||Trinidad"
+            ]
+          },
+          {
+            "t": "Trinidad",
+            "a": [
+              "attivita|Caroni Swamp e ibis scarlatti al tramonto||Trinidad"
+            ]
+          },
+          {
+            "t": "Trinidad",
+            "a": [
+              "attivita|Maracas Beach e bake and shark||Trinidad"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "volo|Trasferimento a Tobago||Tobago",
+              "alloggio|Hotel a Tobago||Tobago",
+              "attivita|Pigeon Point||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "traghetto|Buccoo Reef e Nylon Pool||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Main Ridge, la foresta protetta più antica||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Speyside e Little Tobago||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Englishman's Bay||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Relax||Tobago"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Carnevale di Trinidad",
         "days": 7,
         "route": "Port of Spain (6)",
-        "description": "Uno dei carnevali più famosi al mondo, con calypso, steelband e J'ouvert all'alba."
+        "description": "Uno dei carnevali più famosi al mondo, con calypso, steelband e J'ouvert all'alba.",
+        "plan": [
+          {
+            "t": "Arrivo a Port of Spain",
+            "a": [
+              "volo|Volo per Port of Spain||",
+              "transfer|Transfer in hotel||Port of Spain",
+              "alloggio|Hotel||Port of Spain",
+              "attivita|Panyard e steelband||Port of Spain"
+            ]
+          },
+          {
+            "t": "Carnevale",
+            "a": [
+              "attivita|Panorama, la finale delle steelband||Port of Spain"
+            ]
+          },
+          {
+            "t": "Carnevale",
+            "a": [
+              "attivita|Dimanche Gras||Port of Spain"
+            ]
+          },
+          {
+            "t": "Carnevale",
+            "a": [
+              "attivita|J'ouvert all'alba||Port of Spain"
+            ]
+          },
+          {
+            "t": "Carnevale",
+            "a": [
+              "attivita|Parata in costume||Port of Spain"
+            ]
+          },
+          {
+            "t": "Riposo",
+            "a": [
+              "attivita|Maracas Beach||Port of Spain"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tobago natura",
         "days": 8,
         "route": "Tobago (7)",
-        "description": "Foresta pluviale più antica protetta dell'emisfero, barriera di Buccoo e spiagge di Castara."
+        "description": "Foresta pluviale più antica protetta dell'emisfero, barriera di Buccoo e spiagge di Castara.",
+        "plan": [
+          {
+            "t": "Arrivo a Tobago",
+            "a": [
+              "volo|Volo per Tobago via Port of Spain||",
+              "transfer|Transfer in hotel||Tobago",
+              "alloggio|Hotel||Tobago",
+              "attivita|Pigeon Point||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "traghetto|Buccoo Reef||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Main Ridge||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Speyside e mante||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Argyle Falls||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Tartarughe (stagionali)||Tobago"
+            ]
+          },
+          {
+            "t": "Tobago",
+            "a": [
+              "attivita|Relax||Tobago"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -477,19 +1425,219 @@
         "title": "Aruba",
         "days": 9,
         "route": "Eagle Beach o Palm Beach (8)",
-        "description": "Tutto l'anno."
+        "description": "Tutto l'anno.",
+        "plan": [
+          {
+            "t": "Arrivo a Aruba",
+            "a": [
+              "volo|Volo per Aruba||",
+              "transfer|Transfer in hotel||Aruba",
+              "alloggio|Hotel a Eagle Beach o Palm Beach||Aruba",
+              "attivita|Spiaggia||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Arikok in 4x4 e Natural Pool||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Flamingo Beach (con pass)||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "traghetto|Snorkeling sul relitto Antilla||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Oranjestad||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Baby Beach||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|California Lighthouse al tramonto||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Relax||Aruba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "ABC Islands",
         "days": 12,
         "route": "Aruba (5) → Curaçao (6)",
-        "description": "Isole olandesi con voli brevi."
+        "description": "Isole olandesi con voli brevi.",
+        "plan": [
+          {
+            "t": "Arrivo a Aruba",
+            "a": [
+              "volo|Volo per Aruba||",
+              "transfer|Transfer in hotel||Aruba",
+              "alloggio|Hotel a Palm Beach||Aruba",
+              "attivita|Spiaggia||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Arikok||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "traghetto|Relitto Antilla||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Flamingo Beach||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Relax||Aruba"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "volo|Trasferimento a Curaçao||Curaçao",
+              "alloggio|Hotel a Willemstad||Curaçao",
+              "attivita|Punda e Otrobanda||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Playa Kenepa||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Klein Curaçao||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Shete Boka||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Relax||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Ultima giornata||Curaçao"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Aruba in famiglia",
         "days": 9,
         "route": "Palm Beach (8)",
-        "description": "Hotel con kids club, acqua calma e bassa, escursioni in jeep nel parco Arikok e snorkeling: Aruba è fuori dalla fascia degli uragani."
+        "description": "Hotel con kids club, acqua calma e bassa, escursioni in jeep nel parco Arikok e snorkeling: Aruba è fuori dalla fascia degli uragani.",
+        "plan": [
+          {
+            "t": "Arrivo a Aruba",
+            "a": [
+              "volo|Volo per Aruba||",
+              "transfer|Transfer in hotel||Aruba",
+              "alloggio|Resort per famiglie a Palm Beach||Aruba",
+              "attivita|Spiaggia||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Baby Beach||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Butterfly Farm||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "traghetto|Sottomarino Atlantis||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Arikok||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Fenicotteri||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Spiaggia||Aruba"
+            ]
+          },
+          {
+            "t": "Aruba",
+            "a": [
+              "attivita|Relax||Aruba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -547,19 +1695,217 @@
         "title": "Curaçao",
         "days": 9,
         "route": "Willemstad (3) → Westpunt (5)",
-        "description": "Tutto l'anno."
+        "description": "Tutto l'anno.",
+        "plan": [
+          {
+            "t": "Arrivo a Willemstad",
+            "a": [
+              "volo|Volo per Curaçao||",
+              "transfer|Transfer in hotel||Willemstad",
+              "alloggio|Hotel a Willemstad||Willemstad",
+              "attivita|Punda e Otrobanda UNESCO||Willemstad"
+            ]
+          },
+          {
+            "t": "Willemstad",
+            "a": [
+              "attivita|Ponte Regina Emma e mercato galleggiante||Willemstad"
+            ]
+          },
+          {
+            "t": "Willemstad",
+            "a": [
+              "attivita|Klein Curaçao in barca||Willemstad"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "transfer|Trasferimento a Westpunt||Westpunt",
+              "alloggio|Hotel||Westpunt",
+              "attivita|Playa Kenepa||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Playa Piskado e tartarughe||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Christoffelpark||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Shete Boka||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Relax||Westpunt"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Curaçao sub",
         "days": 8,
         "route": "Willemstad (1) → Westpunt (6)",
-        "description": "Immersioni da riva con 65 siti accessibili senza barca; la capitale colorata è patrimonio UNESCO."
+        "description": "Immersioni da riva con 65 siti accessibili senza barca; la capitale colorata è patrimonio UNESCO.",
+        "plan": [
+          {
+            "t": "Arrivo a Willemstad",
+            "a": [
+              "volo|Volo per Curaçao||",
+              "transfer|Transfer in hotel||Willemstad",
+              "alloggio|Hotel||Willemstad",
+              "attivita|Punda||Willemstad"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "transfer|Trasferimento a Westpunt||Westpunt",
+              "alloggio|Dive resort||Westpunt",
+              "attivita|Immersione di prova||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Immersioni a Mushroom Forest||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Tugboat||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Playa Kalki||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Immersioni||Westpunt"
+            ]
+          },
+          {
+            "t": "Westpunt",
+            "a": [
+              "attivita|Relax||Westpunt"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "ABC tra Curaçao e Bonaire",
-        "days": 11,
+        "days": 12,
         "route": "Curaçao (5) → Bonaire (5)",
-        "description": "Città coloniale e snorkeling a Curaçao, poi Bonaire per sub, fenicotteri e kitesurf."
+        "description": "Città coloniale e snorkeling a Curaçao, poi Bonaire per sub, fenicotteri e kitesurf.",
+        "plan": [
+          {
+            "t": "Arrivo a Willemstad",
+            "a": [
+              "volo|Volo per Curaçao||",
+              "transfer|Transfer in hotel||Willemstad",
+              "alloggio|Hotel||Willemstad",
+              "attivita|Punda||Willemstad"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Playa Kenepa||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "traghetto|Klein Curaçao||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Shete Boka||Curaçao"
+            ]
+          },
+          {
+            "t": "Curaçao",
+            "a": [
+              "attivita|Relax||Curaçao"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "volo|Trasferimento a Bonaire||Bonaire",
+              "alloggio|Dive resort||Bonaire",
+              "attivita|Kralendijk||Bonaire"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "attivita|Immersioni da riva||Bonaire"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "attivita|Fenicotteri di Pekelmeer||Bonaire"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "attivita|Klein Bonaire||Bonaire"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "attivita|Washington Slagbaai||Bonaire"
+            ]
+          },
+          {
+            "t": "Bonaire",
+            "a": [
+              "attivita|Relax||Bonaire"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -612,19 +1958,203 @@
         "title": "New York e Bermuda",
         "days": 10,
         "route": "New York (4) → Bermuda (5)",
-        "description": "Volo di 2 ore da New York."
+        "description": "Volo di 2 ore da New York.",
+        "plan": [
+          {
+            "t": "Arrivo a New York",
+            "a": [
+              "volo|Volo per New York||",
+              "transfer|Transfer in hotel||New York",
+              "alloggio|Hotel a Manhattan||New York",
+              "attivita|Times Square||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Central Park, Met e Fifth Avenue||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Statua della Libertà e Ground Zero||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Brooklyn e High Line||New York"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "volo|Trasferimento a Bermuda||Bermuda",
+              "alloggio|Hotel sul mare||Bermuda",
+              "attivita|Horseshoe Bay||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|St. George's UNESCO||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Crystal Caves||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "traghetto|Snorkeling sui relitti||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Relax||Bermuda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bermuda mare e golf",
         "days": 8,
         "route": "Bermuda (7)",
-        "description": "Spiagge rosa di Horseshoe Bay, grotte e campi da golf; voli via Londra o città USA, stagione migliore maggio-ottobre."
+        "description": "Spiagge rosa di Horseshoe Bay, grotte e campi da golf; voli via Londra o città USA, stagione migliore maggio-ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bermuda",
+            "a": [
+              "volo|Volo per Bermuda via Londra o New York||",
+              "transfer|Transfer in hotel||Bermuda",
+              "alloggio|Hotel||Bermuda",
+              "attivita|Spiaggia rosa||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Horseshoe Bay||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Golf||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|St. George's||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Crystal Caves||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "traghetto|Relitti||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Relax||Bermuda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Boston e Bermuda",
         "days": 9,
         "route": "Boston (3) → Bermuda (5)",
-        "description": "Città e mare con un volo di due ore: ottima per maggio, giugno e settembre."
+        "description": "Città e mare con un volo di due ore: ottima per maggio, giugno e settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Boston",
+            "a": [
+              "volo|Volo per Boston||",
+              "transfer|Transfer in hotel||Boston",
+              "alloggio|Hotel||Boston",
+              "attivita|Freedom Trail||Boston"
+            ]
+          },
+          {
+            "t": "Boston",
+            "a": [
+              "attivita|Harvard e Cambridge||Boston"
+            ]
+          },
+          {
+            "t": "Boston",
+            "a": [
+              "attivita|Balene da Boston (stagionali)||Boston"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "volo|Trasferimento a Bermuda||Bermuda",
+              "alloggio|Hotel||Bermuda",
+              "attivita|Horseshoe Bay||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|St. George's||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Crystal Caves||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "traghetto|Relitti||Bermuda"
+            ]
+          },
+          {
+            "t": "Bermuda",
+            "a": [
+              "attivita|Relax||Bermuda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -677,19 +2207,197 @@
         "title": "Grand Cayman",
         "days": 8,
         "route": "Seven Mile Beach (7)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Grand Cayman",
+            "a": [
+              "volo|Volo per Grand Cayman via Miami||",
+              "transfer|Transfer in hotel||Grand Cayman",
+              "alloggio|Resort a Seven Mile Beach||Grand Cayman",
+              "attivita|Spiaggia||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "traghetto|Stingray City tra le razze||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Rum Point e Starfish Point||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Crystal Caves||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Bioluminescenza di notte||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Relax||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Ultima giornata||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cayman sub",
         "days": 8,
         "route": "Grand Cayman (4) → Little Cayman (3)",
-        "description": "Stingray City e i muri verticali di Bloody Bay, tra i migliori siti d'immersione dei Caraibi."
+        "description": "Stingray City e i muri verticali di Bloody Bay, tra i migliori siti d'immersione dei Caraibi.",
+        "plan": [
+          {
+            "t": "Arrivo a Grand Cayman",
+            "a": [
+              "volo|Volo per Grand Cayman||",
+              "transfer|Transfer in hotel||Grand Cayman",
+              "alloggio|Dive resort||Grand Cayman",
+              "attivita|Spiaggia||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "traghetto|Stingray City||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Relitto Kittiwake||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Immersioni a North Wall||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Little Cayman",
+            "a": [
+              "volo|Trasferimento a Little Cayman||Little Cayman",
+              "alloggio|Dive lodge||Little Cayman",
+              "attivita|Isola||Little Cayman"
+            ]
+          },
+          {
+            "t": "Little Cayman",
+            "a": [
+              "attivita|Bloody Bay Wall||Little Cayman"
+            ]
+          },
+          {
+            "t": "Little Cayman",
+            "a": [
+              "attivita|Immersioni||Little Cayman"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Miami e Cayman",
         "days": 10,
         "route": "Miami (3) → Grand Cayman (6)",
-        "description": "Città e mare con un volo di un'ora; ottimo per coppie da dicembre ad aprile."
+        "description": "Città e mare con un volo di un'ora; ottimo per coppie da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Miami",
+            "a": [
+              "volo|Volo per Miami||",
+              "transfer|Transfer in hotel||Miami",
+              "alloggio|Hotel a South Beach||Miami",
+              "attivita|Ocean Drive||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Wynwood e Little Havana||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Everglades||Miami"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "volo|Trasferimento a Grand Cayman||Grand Cayman",
+              "alloggio|Resort||Grand Cayman",
+              "attivita|Seven Mile Beach||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "traghetto|Stingray City||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Rum Point||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Crystal Caves||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Relax||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Grand Cayman",
+            "a": [
+              "attivita|Ultima giornata||Grand Cayman"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -740,21 +2448,199 @@
     "itineraries": [
       {
         "title": "Turks e Caicos",
-        "days": 9,
+        "days": 8,
         "route": "Providenciales (8)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Providenciales",
+            "a": [
+              "volo|Volo per Providenciales via Miami o Londra||",
+              "transfer|Transfer in hotel||Providenciales",
+              "alloggio|Resort a Grace Bay||Providenciales",
+              "attivita|Grace Bay||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "traghetto|Iguane di Little Water Cay e snorkeling||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Smith's Reef||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Chalk Sound in kayak||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Long Bay Beach||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Fish Fry del giovedì||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Relax||Providenciales"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Turks e Caicos in famiglia",
-        "days": 9,
+        "days": 8,
         "route": "Grace Bay (8)",
-        "description": "Acqua bassa e cristallina, resort con kids club e snorkeling a Smith's Reef."
+        "description": "Acqua bassa e cristallina, resort con kids club e snorkeling a Smith's Reef.",
+        "plan": [
+          {
+            "t": "Arrivo a Providenciales",
+            "a": [
+              "volo|Volo per Providenciales||",
+              "transfer|Transfer in hotel||Providenciales",
+              "alloggio|Resort per famiglie||Providenciales",
+              "attivita|Grace Bay||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Spiaggia||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "traghetto|Iguane||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Chalk Sound||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Snorkeling||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Relax||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Ultima giornata||Providenciales"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Isole remote",
         "days": 10,
         "route": "Providenciales (4) → Middle Caicos (2) → Grand Turk (3)",
-        "description": "Grotte, spiagge vuote e balene megattere da gennaio ad aprile."
+        "description": "Grotte, spiagge vuote e balene megattere da gennaio ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Providenciales",
+            "a": [
+              "volo|Volo per Providenciales||",
+              "transfer|Transfer in hotel||Providenciales",
+              "alloggio|Resort||Providenciales",
+              "attivita|Grace Bay||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "traghetto|Iguane||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Chalk Sound||Providenciales"
+            ]
+          },
+          {
+            "t": "Providenciales",
+            "a": [
+              "attivita|Relax||Providenciales"
+            ]
+          },
+          {
+            "t": "Middle Caicos",
+            "a": [
+              "traghetto|Trasferimento a Middle Caicos||Middle Caicos",
+              "alloggio|Lodge||Middle Caicos",
+              "attivita|Mudjin Harbour||Middle Caicos"
+            ]
+          },
+          {
+            "t": "Middle Caicos",
+            "a": [
+              "attivita|Grotte di Conch Bar||Middle Caicos"
+            ]
+          },
+          {
+            "t": "Grand Turk",
+            "a": [
+              "volo|Trasferimento a Grand Turk||Grand Turk",
+              "alloggio|Hotel||Grand Turk",
+              "attivita|Cockburn Town||Grand Turk"
+            ]
+          },
+          {
+            "t": "Grand Turk",
+            "a": [
+              "attivita|Megattere (gennaio-aprile)||Grand Turk"
+            ]
+          },
+          {
+            "t": "Grand Turk",
+            "a": [
+              "attivita|Relax||Grand Turk"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -810,19 +2696,206 @@
         "title": "Vela alle BVI",
         "days": 9,
         "route": "Tortola → crociera di 7 notti tra le isole",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Tortola",
+            "a": [
+              "volo|Volo per Tortola via Antigua o Porto Rico||",
+              "transfer|Transfer in hotel||Tortola",
+              "alloggio|Imbarco sul catamarano||Tortola",
+              "attivita|Road Town||Tortola"
+            ]
+          },
+          {
+            "t": "Norman Island",
+            "a": [
+              "traghetto|Grotte di Norman Island||Norman Island"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "traghetto|The Baths||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Anegada",
+            "a": [
+              "traghetto|Anegada e aragoste||Anegada"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "traghetto|White Bay e Soggy Dollar Bar||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Cooper Island",
+            "a": [
+              "traghetto|Cooper Island||Cooper Island"
+            ]
+          },
+          {
+            "t": "Peter Island",
+            "a": [
+              "traghetto|Peter Island||Peter Island"
+            ]
+          },
+          {
+            "t": "Tortola",
+            "a": [
+              "traghetto|Sbarco||Tortola"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Virgin Gorda",
         "days": 8,
         "route": "Tortola (1) → Virgin Gorda (6)",
-        "description": "The Baths, massi di granito sulla spiaggia, e resort di charme."
+        "description": "The Baths, massi di granito sulla spiaggia, e resort di charme.",
+        "plan": [
+          {
+            "t": "Arrivo a Tortola",
+            "a": [
+              "volo|Volo per Tortola||",
+              "transfer|Transfer in hotel||Tortola",
+              "alloggio|Hotel||Tortola"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "traghetto|Trasferimento a Virgin Gorda||Virgin Gorda",
+              "alloggio|Resort a Virgin Gorda||Virgin Gorda",
+              "attivita|Spiaggia||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "attivita|The Baths e Devil's Bay||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "attivita|Gorda Peak||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "traghetto|Anegada||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "attivita|Savannah Bay||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "attivita|Relax||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "BVI e USVI",
         "days": 10,
         "route": "St. Thomas (2) → St. John (3) → Tortola (1) → Jost Van Dyke (3)",
-        "description": "Isole vicine collegate da traghetti, con bar sulla spiaggia e snorkeling."
+        "description": "Isole vicine collegate da traghetti, con bar sulla spiaggia e snorkeling.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Thomas",
+            "a": [
+              "volo|Volo per St. Thomas via Miami||",
+              "transfer|Transfer in hotel||St. Thomas",
+              "alloggio|Hotel||St. Thomas",
+              "attivita|Charlotte Amalie||St. Thomas"
+            ]
+          },
+          {
+            "t": "St. Thomas",
+            "a": [
+              "attivita|Magens Bay||St. Thomas"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "traghetto|Trasferimento a St. John||St. John",
+              "alloggio|Hotel||St. John",
+              "attivita|Trunk Bay||St. John"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "attivita|Sentieri del Parco nazionale||St. John"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "attivita|Maho Bay e tartarughe||St. John"
+            ]
+          },
+          {
+            "t": "Tortola",
+            "a": [
+              "traghetto|Trasferimento a Tortola||Tortola",
+              "alloggio|Hotel||Tortola",
+              "attivita|Cane Garden Bay||Tortola"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "traghetto|Trasferimento a Jost Van Dyke||Jost Van Dyke",
+              "alloggio|Guesthouse||Jost Van Dyke",
+              "attivita|White Bay||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "attivita|Bubbly Pool||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "attivita|Relax||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -875,19 +2948,196 @@
         "title": "Isole Vergini",
         "days": 9,
         "route": "St. Thomas (2) → St. John (4) → BVI in traghetto (2)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Thomas",
+            "a": [
+              "volo|Volo per St. Thomas||",
+              "transfer|Transfer in hotel||St. Thomas",
+              "alloggio|Hotel||St. Thomas",
+              "attivita|Charlotte Amalie||St. Thomas"
+            ]
+          },
+          {
+            "t": "St. Thomas",
+            "a": [
+              "attivita|Magens Bay||St. Thomas"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "traghetto|Trasferimento a St. John||St. John",
+              "alloggio|Hotel||St. John",
+              "attivita|Trunk Bay||St. John"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "attivita|Sentiero sottomarino di Trunk Bay||St. John"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "attivita|Maho Bay||St. John"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "attivita|Relax||St. John"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "traghetto|Trasferimento a Jost Van Dyke||Jost Van Dyke",
+              "alloggio|Guesthouse alle BVI||Jost Van Dyke",
+              "attivita|White Bay||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "attivita|Relax||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "St. Croix",
         "days": 8,
         "route": "Christiansted (7)",
-        "description": "L'isola più tranquilla delle Vergini americane, con Buck Island e il rum Cruzan."
+        "description": "L'isola più tranquilla delle Vergini americane, con Buck Island e il rum Cruzan.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Croix",
+            "a": [
+              "volo|Volo per St. Croix||",
+              "transfer|Transfer in hotel||St. Croix",
+              "alloggio|Hotel a Christiansted||St. Croix",
+              "attivita|Città danese||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "traghetto|Buck Island Reef||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "attivita|Frederiksted||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "attivita|Rum Cruzan||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "attivita|Point Udall||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "attivita|Bioluminescenza||St. Croix"
+            ]
+          },
+          {
+            "t": "St. Croix",
+            "a": [
+              "attivita|Relax||St. Croix"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vela alle Isole Vergini",
         "days": 9,
         "route": "St. Thomas (1) → catamarano (7)",
-        "description": "Una settimana in barca tra USVI e BVI, la zona di vela più facile dei Caraibi."
+        "description": "Una settimana in barca tra USVI e BVI, la zona di vela più facile dei Caraibi.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Thomas",
+            "a": [
+              "volo|Volo per St. Thomas||",
+              "transfer|Transfer in hotel||St. Thomas",
+              "alloggio|Imbarco sul catamarano||St. Thomas"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "traghetto|St. John||St. John"
+            ]
+          },
+          {
+            "t": "Jost Van Dyke",
+            "a": [
+              "traghetto|Jost Van Dyke||Jost Van Dyke"
+            ]
+          },
+          {
+            "t": "Tortola",
+            "a": [
+              "traghetto|Cane Garden Bay||Tortola"
+            ]
+          },
+          {
+            "t": "Virgin Gorda",
+            "a": [
+              "traghetto|The Baths||Virgin Gorda"
+            ]
+          },
+          {
+            "t": "Norman Island",
+            "a": [
+              "traghetto|Norman Island||Norman Island"
+            ]
+          },
+          {
+            "t": "St. John",
+            "a": [
+              "traghetto|Maho Bay||St. John"
+            ]
+          },
+          {
+            "t": "St. Thomas",
+            "a": [
+              "traghetto|Sbarco||St. Thomas"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -941,21 +3191,203 @@
     "itineraries": [
       {
         "title": "Antigua",
-        "days": 9,
+        "days": 8,
         "route": "Resort ad Antigua (7) → gita a Barbuda",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Antigua",
+            "a": [
+              "volo|Volo per Antigua||",
+              "transfer|Transfer in hotel||Antigua",
+              "alloggio|Resort||Antigua",
+              "attivita|Una delle 365 spiagge||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Nelson's Dockyard e Shirley Heights al tramonto||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "traghetto|Giro dell'isola in catamarano||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Half Moon Bay||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Stingray City||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Relax||Antigua"
+            ]
+          },
+          {
+            "t": "Barbuda",
+            "a": [
+              "traghetto|Barbuda in giornata: rosa della Pink Beach e fregate||Barbuda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Antigua e Barbuda",
         "days": 10,
         "route": "Antigua (6) → Barbuda (3)",
-        "description": "Resort sulle 365 spiagge di Antigua e qualche notte nella quiete assoluta di Barbuda, con la colonia di fregate e la spiaggia rosa."
+        "description": "Resort sulle 365 spiagge di Antigua e qualche notte nella quiete assoluta di Barbuda, con la colonia di fregate e la spiaggia rosa.",
+        "plan": [
+          {
+            "t": "Arrivo a Antigua",
+            "a": [
+              "volo|Volo per Antigua||",
+              "transfer|Transfer in hotel||Antigua",
+              "alloggio|Resort||Antigua",
+              "attivita|Spiaggia||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Nelson's Dockyard||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "traghetto|Catamarano||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Half Moon Bay||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Relax||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Shirley Heights||Antigua"
+            ]
+          },
+          {
+            "t": "Barbuda",
+            "a": [
+              "traghetto|Trasferimento a Barbuda||Barbuda",
+              "alloggio|Lodge a Barbuda||Barbuda",
+              "attivita|Pink Sand Beach||Barbuda"
+            ]
+          },
+          {
+            "t": "Barbuda",
+            "a": [
+              "attivita|Colonia di fregate||Barbuda"
+            ]
+          },
+          {
+            "t": "Barbuda",
+            "a": [
+              "attivita|Relax||Barbuda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vela da English Harbour",
         "days": 9,
         "route": "Antigua, Nelson's Dockyard (1) → crociera in catamarano (7)",
-        "description": "Una settimana in barca con skipper tra le baie di Antigua, partendo dal cantiere storico di Nelson; perfetto per gruppi di amici."
+        "description": "Una settimana in barca con skipper tra le baie di Antigua, partendo dal cantiere storico di Nelson; perfetto per gruppi di amici.",
+        "plan": [
+          {
+            "t": "Arrivo a Antigua",
+            "a": [
+              "volo|Volo per Antigua||",
+              "transfer|Transfer in hotel||Antigua",
+              "alloggio|Hotel a English Harbour||Antigua",
+              "attivita|Nelson's Dockyard||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Imbarco e Green Island||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Barbuda||Barbuda"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Barbuda||Barbuda"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Jolly Harbour||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Deep Bay||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Falmouth||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Sbarco||Antigua"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1012,19 +3444,215 @@
         "title": "Viaggio di nozze a Saint Lucia",
         "days": 10,
         "route": "Soufrière (5) → Rodney Bay (4)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Soufrière",
+            "a": [
+              "volo|Volo per Saint Lucia||",
+              "transfer|Transfer in hotel||Soufrière",
+              "alloggio|Resort con vista sui Pitons||Soufrière",
+              "attivita|Pitons||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Sulphur Springs e bagni di fango||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "traghetto|Catamarano sotto i Pitons||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Diamond Falls e cena romantica||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Spa di coppia||Soufrière"
+            ]
+          },
+          {
+            "t": "Rodney Bay",
+            "a": [
+              "transfer|Trasferimento a Rodney Bay||Rodney Bay",
+              "alloggio|Resort a Rodney Bay||Rodney Bay",
+              "attivita|Spiaggia||Rodney Bay"
+            ]
+          },
+          {
+            "t": "Rodney Bay",
+            "a": [
+              "attivita|Pigeon Island||Rodney Bay"
+            ]
+          },
+          {
+            "t": "Rodney Bay",
+            "a": [
+              "attivita|Gros Islet Friday Night||Rodney Bay"
+            ]
+          },
+          {
+            "t": "Rodney Bay",
+            "a": [
+              "attivita|Relax||Rodney Bay"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Saint Lucia avventura",
         "days": 8,
         "route": "Soufrière (7)",
-        "description": "Salita al Gros Piton, vulcano drive-in, bagni di fango e immersioni ad Anse Chastanet."
+        "description": "Salita al Gros Piton, vulcano drive-in, bagni di fango e immersioni ad Anse Chastanet.",
+        "plan": [
+          {
+            "t": "Arrivo a Soufrière",
+            "a": [
+              "volo|Volo per Saint Lucia||",
+              "transfer|Transfer in hotel||Soufrière",
+              "alloggio|Hotel||Soufrière",
+              "attivita|Pitons||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Gros Piton in trekking||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Zip line nella foresta||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Sulphur Springs||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "traghetto|Snorkeling||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Kayak||Soufrière"
+            ]
+          },
+          {
+            "t": "Soufrière",
+            "a": [
+              "attivita|Relax||Soufrière"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Saint Lucia e Martinica",
         "days": 11,
         "route": "Martinica (4) → traghetto → Saint Lucia (6)",
-        "description": "Antille francesi e inglesi in un solo viaggio, collegate da un traghetto veloce."
+        "description": "Antille francesi e inglesi in un solo viaggio, collegate da un traghetto veloce.",
+        "plan": [
+          {
+            "t": "Arrivo a Martinica",
+            "a": [
+              "volo|Volo per Fort-de-France via Parigi||",
+              "transfer|Transfer in hotel||Martinica",
+              "alloggio|Hotel a Les Trois-Îlets||Martinica",
+              "attivita|Spiaggia||Martinica"
+            ]
+          },
+          {
+            "t": "Martinica",
+            "a": [
+              "attivita|Saint-Pierre e Mont Pelée||Martinica"
+            ]
+          },
+          {
+            "t": "Martinica",
+            "a": [
+              "attivita|Distillerie di rhum agricole||Martinica"
+            ]
+          },
+          {
+            "t": "Martinica",
+            "a": [
+              "attivita|Les Salines||Martinica"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "traghetto|Trasferimento a Saint Lucia||Saint Lucia",
+              "alloggio|Resort a Soufrière||Saint Lucia",
+              "attivita|Pitons||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "attivita|Sulphur Springs||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "traghetto|Catamarano||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "attivita|Diamond Falls||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "attivita|Relax||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Saint Lucia",
+            "a": [
+              "attivita|Ultima giornata||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1077,19 +3705,207 @@
         "title": "Grenada e Carriacou",
         "days": 10,
         "route": "Grenada (6) → Carriacou (3)",
-        "description": "Da gennaio a maggio."
+        "description": "Da gennaio a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Grenada",
+            "a": [
+              "volo|Volo per Grenada||",
+              "transfer|Transfer in hotel||Grenada",
+              "alloggio|Hotel a Grand Anse||Grenada",
+              "attivita|Spiaggia||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|St. George's e il forte||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Piantagione di spezie e cioccolato||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Grand Etang e cascate||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "traghetto|Parco sottomarino delle sculture||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Relax||Grenada"
+            ]
+          },
+          {
+            "t": "Carriacou",
+            "a": [
+              "traghetto|Trasferimento a Carriacou||Carriacou",
+              "alloggio|Guesthouse||Carriacou",
+              "attivita|Paradise Beach||Carriacou"
+            ]
+          },
+          {
+            "t": "Carriacou",
+            "a": [
+              "attivita|Sandy Island||Carriacou"
+            ]
+          },
+          {
+            "t": "Carriacou",
+            "a": [
+              "attivita|Relax||Carriacou"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grenada spezie e immersioni",
         "days": 8,
         "route": "Grand Anse (7)",
-        "description": "Il parco sottomarino di sculture, cascate e piantagioni di noce moscata; spiaggia di Grand Anse a due passi."
+        "description": "Il parco sottomarino di sculture, cascate e piantagioni di noce moscata; spiaggia di Grand Anse a due passi.",
+        "plan": [
+          {
+            "t": "Arrivo a Grenada",
+            "a": [
+              "volo|Volo per Grenada||",
+              "transfer|Transfer in hotel||Grenada",
+              "alloggio|Hotel a Grand Anse||Grenada",
+              "attivita|Spiaggia||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|St. George's||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "traghetto|Parco delle sculture||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Relitto Bianca C||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Spezie e cioccolato||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Grand Etang||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|Relax||Grenada"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grenadine in barca",
         "days": 10,
         "route": "Grenada (2) → catamarano fino a Tobago Cays (7)",
-        "description": "Crociera di una settimana verso nord tra Carriacou, Union e le Tobago Cays."
+        "description": "Crociera di una settimana verso nord tra Carriacou, Union e le Tobago Cays.",
+        "plan": [
+          {
+            "t": "Arrivo a Grenada",
+            "a": [
+              "volo|Volo per Grenada||",
+              "transfer|Transfer in hotel||Grenada",
+              "alloggio|Hotel||Grenada",
+              "attivita|Grand Anse||Grenada"
+            ]
+          },
+          {
+            "t": "Grenada",
+            "a": [
+              "attivita|St. George's||Grenada"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Imbarco e Carriacou||Carriacou"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Union Island||Union Island"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Tobago Cays e tartarughe||Tobago Cays"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Mayreau||Mayreau"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Bequia||Bequia"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Mustique||Mustique"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Sbarco||Union Island"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1146,19 +3962,203 @@
         "title": "Dominica natura",
         "days": 8,
         "route": "Roseau (3) → nord e Portsmouth (4)",
-        "description": "Da gennaio a maggio."
+        "description": "Da gennaio a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Roseau",
+            "a": [
+              "volo|Volo per Dominica via Antigua o Barbados||",
+              "transfer|Transfer in hotel||Roseau",
+              "alloggio|Eco-lodge vicino a Roseau||Roseau",
+              "attivita|Roseau||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Trafalgar Falls e terme||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Boiling Lake in trekking||Roseau"
+            ]
+          },
+          {
+            "t": "Portsmouth",
+            "a": [
+              "transfer|Trasferimento a Portsmouth||Portsmouth",
+              "alloggio|Lodge||Portsmouth",
+              "attivita|Costa nord||Portsmouth"
+            ]
+          },
+          {
+            "t": "Portsmouth",
+            "a": [
+              "traghetto|Indian River in barca||Portsmouth"
+            ]
+          },
+          {
+            "t": "Portsmouth",
+            "a": [
+              "attivita|Territorio kalinago||Portsmouth"
+            ]
+          },
+          {
+            "t": "Portsmouth",
+            "a": [
+              "attivita|Relax||Portsmouth"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dominica e Guadalupa",
         "days": 11,
         "route": "Guadalupa (4) → traghetto → Dominica (6)",
-        "description": "Combinazione via mare con le Antille francesi: spiagge in Guadalupa, cascate e sorgenti calde in Dominica."
+        "description": "Combinazione via mare con le Antille francesi: spiagge in Guadalupa, cascate e sorgenti calde in Dominica.",
+        "plan": [
+          {
+            "t": "Arrivo a Guadalupa",
+            "a": [
+              "volo|Volo per Pointe-à-Pitre via Parigi||",
+              "transfer|Transfer in hotel||Guadalupa",
+              "alloggio|Hotel a Sainte-Anne||Guadalupa",
+              "attivita|Spiaggia||Guadalupa"
+            ]
+          },
+          {
+            "t": "Guadalupa",
+            "a": [
+              "attivita|Basse-Terre e cascate del Carbet||Guadalupa"
+            ]
+          },
+          {
+            "t": "Guadalupa",
+            "a": [
+              "attivita|Riserva Cousteau||Guadalupa"
+            ]
+          },
+          {
+            "t": "Guadalupa",
+            "a": [
+              "attivita|Relax||Guadalupa"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "traghetto|Trasferimento a Dominica||Dominica",
+              "alloggio|Eco-lodge||Dominica",
+              "attivita|Roseau||Dominica"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "attivita|Trafalgar Falls||Dominica"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "attivita|Boiling Lake||Dominica"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "attivita|Champagne Reef||Dominica"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "attivita|Indian River||Dominica"
+            ]
+          },
+          {
+            "t": "Dominica",
+            "a": [
+              "attivita|Relax||Dominica"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Balene e immersioni",
         "days": 8,
         "route": "Roseau e Soufrière (7)",
-        "description": "Capodogli residenti tutto l'anno al largo di Roseau e immersioni a Champagne Reef tra le bollicine vulcaniche."
+        "description": "Capodogli residenti tutto l'anno al largo di Roseau e immersioni a Champagne Reef tra le bollicine vulcaniche.",
+        "plan": [
+          {
+            "t": "Arrivo a Roseau",
+            "a": [
+              "volo|Volo per Dominica||",
+              "transfer|Transfer in hotel||Roseau",
+              "alloggio|Dive resort||Roseau",
+              "attivita|Roseau||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "traghetto|Capodogli||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Champagne Reef||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Immersioni a Scotts Head||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "traghetto|Capodogli||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Trafalgar Falls||Roseau"
+            ]
+          },
+          {
+            "t": "Roseau",
+            "a": [
+              "attivita|Relax||Roseau"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1210,19 +4210,203 @@
         "title": "Due isole",
         "days": 9,
         "route": "St. Kitts (4) → Nevis (4)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Kitts",
+            "a": [
+              "volo|Volo per St. Kitts via Antigua||",
+              "transfer|Transfer in hotel||St. Kitts",
+              "alloggio|Hotel||St. Kitts",
+              "attivita|Basseterre||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Brimstone Hill UNESCO||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Treno panoramico di St. Kitts||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Cockleshell Bay||St. Kitts"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "traghetto|Trasferimento a Nevis||Nevis",
+              "alloggio|Inn in una piantagione||Nevis",
+              "attivita|Pinney's Beach||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Charlestown e Alexander Hamilton||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Nevis Peak||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Relax||Nevis"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "St. Kitts e Antigua",
         "days": 10,
         "route": "St. Kitts (4) → Antigua (5)",
-        "description": "La fortezza di Brimstone Hill, il treno panoramico delle piantagioni e le spiagge di Antigua."
+        "description": "La fortezza di Brimstone Hill, il treno panoramico delle piantagioni e le spiagge di Antigua.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Kitts",
+            "a": [
+              "volo|Volo per St. Kitts||",
+              "transfer|Transfer in hotel||St. Kitts",
+              "alloggio|Hotel||St. Kitts",
+              "attivita|Basseterre||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Brimstone Hill||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Treno panoramico||St. Kitts"
+            ]
+          },
+          {
+            "t": "St. Kitts",
+            "a": [
+              "attivita|Spiaggia||St. Kitts"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "volo|Trasferimento a Antigua||Antigua",
+              "alloggio|Resort||Antigua",
+              "attivita|Spiaggia||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Nelson's Dockyard||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "traghetto|Catamarano||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Half Moon Bay||Antigua"
+            ]
+          },
+          {
+            "t": "Antigua",
+            "a": [
+              "attivita|Relax||Antigua"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nevis in villa",
         "days": 8,
         "route": "Nevis (7)",
-        "description": "Piantagioni trasformate in hotel di charme e un'atmosfera tranquilla, a 10 minuti di barca da St. Kitts."
+        "description": "Piantagioni trasformate in hotel di charme e un'atmosfera tranquilla, a 10 minuti di barca da St. Kitts.",
+        "plan": [
+          {
+            "t": "Arrivo a Nevis",
+            "a": [
+              "volo|Volo per St. Kitts e traghetto||",
+              "transfer|Transfer in hotel||Nevis",
+              "alloggio|Villa a Nevis||Nevis",
+              "attivita|Pinney's Beach||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Charlestown||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Terme di Bath||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Nevis Peak||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "traghetto|Snorkeling||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Relax||Nevis"
+            ]
+          },
+          {
+            "t": "Nevis",
+            "a": [
+              "attivita|Relax||Nevis"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1274,21 +4458,206 @@
     "itineraries": [
       {
         "title": "Vela nelle Grenadine",
-        "days": 10,
+        "days": 9,
         "route": "St. Vincent → crociera di 7 notti (Bequia, Mustique, Tobago Cays, Union)",
-        "description": "Da dicembre a maggio."
+        "description": "Da dicembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Vincent",
+            "a": [
+              "volo|Volo per St. Vincent via Barbados||",
+              "transfer|Transfer in hotel||St. Vincent",
+              "alloggio|Imbarco sul catamarano||St. Vincent",
+              "attivita|Blue Lagoon||St. Vincent"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "traghetto|Bequia||Bequia"
+            ]
+          },
+          {
+            "t": "Mustique",
+            "a": [
+              "traghetto|Mustique||Mustique"
+            ]
+          },
+          {
+            "t": "Canouan",
+            "a": [
+              "traghetto|Canouan||Canouan"
+            ]
+          },
+          {
+            "t": "Tobago Cays",
+            "a": [
+              "traghetto|Tobago Cays con tartarughe||Tobago Cays"
+            ]
+          },
+          {
+            "t": "Mayreau",
+            "a": [
+              "traghetto|Salt Whistle Bay||Mayreau"
+            ]
+          },
+          {
+            "t": "Union",
+            "a": [
+              "traghetto|Union Island||Union Island"
+            ]
+          },
+          {
+            "t": "St. Vincent",
+            "a": [
+              "traghetto|Sbarco||St. Vincent"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "St. Vincent e Bequia",
         "days": 9,
         "route": "St. Vincent (3) → Bequia (5)",
-        "description": "La Soufrière, cascate e l'isola più autentica delle Grenadine."
+        "description": "La Soufrière, cascate e l'isola più autentica delle Grenadine.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Vincent",
+            "a": [
+              "volo|Volo per St. Vincent via Barbados||",
+              "transfer|Transfer in hotel||St. Vincent",
+              "alloggio|Hotel||St. Vincent",
+              "attivita|Kingstown||St. Vincent"
+            ]
+          },
+          {
+            "t": "St. Vincent",
+            "a": [
+              "attivita|Vulcano La Soufrière||St. Vincent"
+            ]
+          },
+          {
+            "t": "St. Vincent",
+            "a": [
+              "attivita|Cascate di Dark View||St. Vincent"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "traghetto|Trasferimento a Bequia||Bequia",
+              "alloggio|Hotel||Bequia",
+              "attivita|Princess Margaret Beach||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "traghetto|Tobago Cays||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Lower Bay||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Mustique in giornata||Bequia"
+            ]
+          },
+          {
+            "t": "Bequia",
+            "a": [
+              "attivita|Relax||Bequia"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mustique e Grenadine",
         "days": 9,
         "route": "Barbados (1) → Mustique (4) → Canouan (3)",
-        "description": "Il lusso delle Grenadine, con voli brevi da Barbados."
+        "description": "Il lusso delle Grenadine, con voli brevi da Barbados.",
+        "plan": [
+          {
+            "t": "Arrivo a Barbados",
+            "a": [
+              "volo|Volo per Barbados||",
+              "transfer|Transfer in hotel||Barbados",
+              "alloggio|Hotel||Barbados"
+            ]
+          },
+          {
+            "t": "Mustique",
+            "a": [
+              "volo|Trasferimento a Mustique||Mustique",
+              "alloggio|Villa o Cotton House||Mustique",
+              "attivita|Macaroni Beach||Mustique"
+            ]
+          },
+          {
+            "t": "Mustique",
+            "a": [
+              "attivita|Basil's Bar||Mustique"
+            ]
+          },
+          {
+            "t": "Mustique",
+            "a": [
+              "traghetto|Snorkeling||Mustique"
+            ]
+          },
+          {
+            "t": "Mustique",
+            "a": [
+              "attivita|Relax||Mustique"
+            ]
+          },
+          {
+            "t": "Canouan",
+            "a": [
+              "volo|Trasferimento a Canouan||Canouan",
+              "alloggio|Resort||Canouan",
+              "attivita|Spiaggia||Canouan"
+            ]
+          },
+          {
+            "t": "Canouan",
+            "a": [
+              "traghetto|Tobago Cays||Canouan"
+            ]
+          },
+          {
+            "t": "Canouan",
+            "a": [
+              "attivita|Relax||Canouan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1331,19 +4700,196 @@
         "title": "St. Barth e St. Martin",
         "days": 9,
         "route": "St. Martin (2) → St. Barth (6)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Martin",
+            "a": [
+              "volo|Volo per St. Martin via Parigi||",
+              "transfer|Transfer in hotel||St. Martin",
+              "alloggio|Hotel||St. Martin",
+              "attivita|Maho Beach||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Marigot e Orient Bay||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "volo|Trasferimento a St. Barth||St. Barth",
+              "alloggio|Hotel a St. Barth||St. Barth",
+              "attivita|Gustavia||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Saline||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Shell Beach||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "traghetto|Catamarano||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Colombier||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Relax||St. Barth"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "St. Barth in barca",
         "days": 9,
         "route": "St. Martin (1) → St. Barth (3) → crociera in catamarano (4)",
-        "description": "Lusso e vela: qualche notte a Gustavia e poi in barca tra Saint Martin, Anguilla e le baie più riparate."
+        "description": "Lusso e vela: qualche notte a Gustavia e poi in barca tra Saint Martin, Anguilla e le baie più riparate.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Martin",
+            "a": [
+              "volo|Volo per St. Martin||",
+              "transfer|Transfer in hotel||St. Martin",
+              "alloggio|Hotel||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "traghetto|Trasferimento a St. Barth||St. Barth",
+              "alloggio|Hotel||St. Barth",
+              "attivita|Gustavia||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Saline||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Relax||St. Barth"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Imbarco e Colombier||St. Barth"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Tintamarre||Tintamarre"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Anguilla||Anguilla"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Sbarco||St. Martin"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana a St. Barth",
         "days": 8,
         "route": "St. Barth (7)",
-        "description": "Villa o boutique hotel su St-Jean o Flamands, con auto a noleggio per girare le 14 spiagge; arrivo con volo breve da St. Martin."
+        "description": "Villa o boutique hotel su St-Jean o Flamands, con auto a noleggio per girare le 14 spiagge; arrivo con volo breve da St. Martin.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Barth",
+            "a": [
+              "volo|Volo per St. Martin e volo interno||",
+              "transfer|Transfer in hotel||St. Barth",
+              "alloggio|Hotel||St. Barth",
+              "attivita|Gustavia||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Saline||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Shell Beach||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Colombier||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "traghetto|Catamarano||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Gouverneur||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Relax||St. Barth"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1400,19 +4946,201 @@
         "title": "St. Martin e isole vicine",
         "days": 10,
         "route": "St. Martin (6) → St. Barth o Anguilla (3)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Martin",
+            "a": [
+              "volo|Volo per St. Martin||",
+              "transfer|Transfer in hotel||St. Martin",
+              "alloggio|Hotel a Orient Bay||St. Martin",
+              "attivita|Spiaggia||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Maho Beach e aerei a pelo d'acqua||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Marigot e Grand Case||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Pinel Island||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Philipsburg||St. Martin"
+            ]
+          },
+          {
+            "t": "St. Martin",
+            "a": [
+              "attivita|Relax||St. Martin"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "traghetto|Trasferimento a Anguilla||Anguilla",
+              "alloggio|Hotel||Anguilla",
+              "attivita|Shoal Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Meads Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Relax||Anguilla"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sint Maarten in famiglia",
         "days": 8,
         "route": "Simpson Bay (7)",
-        "description": "Due culture in un'isola, aerei che sfiorano Maho Beach e spiagge francesi a Orient Bay."
+        "description": "Due culture in un'isola, aerei che sfiorano Maho Beach e spiagge francesi a Orient Bay.",
+        "plan": [
+          {
+            "t": "Arrivo a Sint Maarten",
+            "a": [
+              "volo|Volo per Sint Maarten||",
+              "transfer|Transfer in hotel||Sint Maarten",
+              "alloggio|Resort a Simpson Bay||Sint Maarten",
+              "attivita|Spiaggia||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "attivita|Maho Beach||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "attivita|Pinel Island||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "attivita|Loterie Farm||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "traghetto|Catamarano||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "attivita|Philipsburg||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Sint Maarten",
+            "a": [
+              "attivita|Relax||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Crociera dai Caraibi",
         "days": 9,
         "route": "Sint Maarten (2) → crociera di 7 notti",
-        "description": "Porto di molte crociere nei Caraibi orientali: due notti prima della partenza."
+        "description": "Porto di molte crociere nei Caraibi orientali: due notti prima della partenza.",
+        "plan": [
+          {
+            "t": "Arrivo a Sint Maarten",
+            "a": [
+              "volo|Volo per Sint Maarten||",
+              "transfer|Transfer in hotel||Sint Maarten",
+              "alloggio|Hotel||Sint Maarten",
+              "attivita|Maho Beach||Sint Maarten"
+            ]
+          },
+          {
+            "t": "Imbarco",
+            "a": [
+              "traghetto|Imbarco sulla nave da crociera||Philipsburg"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Antigua||Antigua"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Dominica||Dominica"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Barbados||Barbados"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Saint Lucia||Saint Lucia"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|St. Kitts||St. Kitts"
+            ]
+          },
+          {
+            "t": "Crociera",
+            "a": [
+              "traghetto|Sbarco||Philipsburg"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1453,21 +5181,218 @@
     "itineraries": [
       {
         "title": "Anguilla",
-        "days": 9,
+        "days": 8,
         "route": "St. Martin → traghetto → Anguilla (7)",
-        "description": "Da dicembre ad aprile."
+        "description": "Da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Anguilla",
+            "a": [
+              "volo|Volo per St. Martin e traghetto||",
+              "transfer|Transfer in hotel||Anguilla",
+              "alloggio|Hotel||Anguilla",
+              "attivita|Shoal Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Meads Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "traghetto|Prickly Pear Cays||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Rendezvous Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Little Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Sandy Ground la sera||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Relax||Anguilla"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Anguilla e St. Barth",
         "days": 10,
         "route": "St. Martin (1) → Anguilla (5) → St. Barth (3)",
-        "description": "Due isole esclusive in un solo viaggio: spiagge bianche e ristoranti gourmet ad Anguilla, glamour francese a St. Barth."
+        "description": "Due isole esclusive in un solo viaggio: spiagge bianche e ristoranti gourmet ad Anguilla, glamour francese a St. Barth.",
+        "plan": [
+          {
+            "t": "Arrivo a St. Martin",
+            "a": [
+              "volo|Volo per St. Martin||",
+              "transfer|Transfer in hotel||St. Martin",
+              "alloggio|Hotel||St. Martin"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "traghetto|Trasferimento a Anguilla||Anguilla",
+              "alloggio|Hotel||Anguilla",
+              "attivita|Shoal Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Meads Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "traghetto|Prickly Pear||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Relax||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Little Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "volo|Trasferimento a St. Barth||St. Barth",
+              "alloggio|Hotel||St. Barth",
+              "attivita|Gustavia||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Saline||St. Barth"
+            ]
+          },
+          {
+            "t": "St. Barth",
+            "a": [
+              "attivita|Shell Beach||St. Barth"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Anguilla e Miami",
         "days": 11,
         "route": "Miami (3) → Anguilla (7)",
-        "description": "Volo comodo via Miami con qualche giorno di città, poi una settimana di mare tra Shoal Bay e Meads Bay."
+        "description": "Volo comodo via Miami con qualche giorno di città, poi una settimana di mare tra Shoal Bay e Meads Bay.",
+        "plan": [
+          {
+            "t": "Arrivo a Miami",
+            "a": [
+              "volo|Volo per Miami||",
+              "transfer|Transfer in hotel||Miami",
+              "alloggio|Hotel a South Beach||Miami",
+              "attivita|Ocean Drive||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Wynwood||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Everglades||Miami"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "volo|Trasferimento a Anguilla||Anguilla",
+              "alloggio|Hotel||Anguilla",
+              "attivita|Shoal Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Meads Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "traghetto|Prickly Pear||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Rendezvous Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Little Bay||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Relax||Anguilla"
+            ]
+          },
+          {
+            "t": "Anguilla",
+            "a": [
+              "attivita|Ultima giornata||Anguilla"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
