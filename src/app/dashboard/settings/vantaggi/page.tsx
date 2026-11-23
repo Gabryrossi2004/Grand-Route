@@ -37,7 +37,10 @@ export default async function BenefitsSettingsPage() {
         <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Vantaggi per i clienti</h1>
         <p className="mt-1 text-sm text-slate-600">
           Premia chi viaggia con te: punti fedeltà calcolati da soli sui pagamenti incassati, livelli con vantaggi decisi da te e offerte riservate.
-          I clienti li vedono nella loro area, alla voce «Vantaggi».
+          I clienti li vedono nella loro area, alla voce «Vantaggi».{" "}
+          <Link href="/dashboard/statistiche/vantaggi" className="font-medium text-[#233c5e] underline decoration-dotted">
+            Vedi come stanno andando
+          </Link>
         </p>
       </div>
 

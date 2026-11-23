@@ -111,6 +111,9 @@ export default async function StatsPage() {
         <p className="mt-1 text-sm text-slate-600">
           Ultimi 12 mesi: <strong>{depYear}</strong> partenze e <strong>{euro(totalYear)}</strong> incassati.
         </p>
+        <Link href="/dashboard/statistiche/vantaggi" className="mt-2 inline-block rounded-full border border-[#e6d7bb] bg-white px-4 py-1.5 text-sm font-medium text-[#233c5e] hover:bg-[#faf3e6]">
+          Statistiche sui vantaggi →
+        </Link>
       </div>
 
       {trips.length === 0 ? (

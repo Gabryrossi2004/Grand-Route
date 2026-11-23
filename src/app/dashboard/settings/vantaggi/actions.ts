@@ -129,13 +129,18 @@ export async function convertLead(id: string) {
   const contact = String(lead.contact);
   const email = /\S+@\S+\.\S+/.test(contact) ? contact.trim() : null;
   const phone = email ? null : contact.trim();
-  await supabase.from("clients").insert({
+  const newClient = {
     owner_id: user.id,
     full_name: lead.name,
     email,
     phone,
     notes: `Arrivato con «presenta un amico».${lead.message ? ` Messaggio: ${lead.message}` : ""}`.slice(0, 2000),
-  });
+  };
+  // Si ricorda chi ha presentato l'amico (colonna della migrazione 0057); senza, si crea il cliente come prima
+  let { error: insertError } = lead.referrer_client_id
+    ? await supabase.from("clients").insert({ ...newClient, referred_by_client_id: lead.referrer_client_id })
+    : { error: null };
+  if (insertError || !lead.referrer_client_id) ({ error: insertError } = await supabase.from("clients").insert(newClient));
   if (lead.referrer_client_id && !lead.bonus_given) {
     const { data: loyalty } = await supabase.from("agency_loyalty").select("enabled, referral_bonus").eq("owner_id", user.id).maybeSingle();
     const bonus = Number(loyalty?.referral_bonus ?? 0);
