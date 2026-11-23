@@ -1,5 +1,5 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import { costInEuro, formatEuro, parseAiPlan, planById, type AiPlanId, type AiUsageTokens } from "@/lib/aiPricing";
+import { costInEuro, formatEuro, parseAiPlan, planById, type AiPlanId, type AiUsageTokens, type PricedModel } from "@/lib/aiPricing";
 
 // Limiti d'uso delle funzioni AI (generazione itinerario, lettura listini,
 // lettura richieste dei clienti). Ogni chiamata costa denaro: questi tetti
@@ -21,7 +21,7 @@ export function tooLongMessage(maxChars: number) {
 
 
 // Inizio della giornata e del mese in Italia (il budget si rinnova a mezzanotte).
-function romeBoundaries(now = new Date()) {
+export function romeBoundaries(now = new Date()) {
   const wall = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Rome" }) + " UTC");
   const offset = wall.getTime() - Math.floor(now.getTime() / 1000) * 1000;
   const day = new Date(Date.UTC(wall.getUTCFullYear(), wall.getUTCMonth(), wall.getUTCDate()) - offset);
@@ -31,7 +31,7 @@ function romeBoundaries(now = new Date()) {
 
 // Registra il costo di una chiamata all'AI già eseguita (token → euro).
 // Non lancia mai errori: un contatore che non funziona non deve rompere Zefiro.
-export async function recordAiCost(kind: AiKind, usage: AiUsageTokens | null | undefined) {
+export async function recordAiCost(kind: AiKind, usage: AiUsageTokens | null | undefined, priced: PricedModel = "sonnet") {
   if (!usage) return;
   try {
     const user = await getCachedUser();
@@ -42,7 +42,7 @@ export async function recordAiCost(kind: AiKind, usage: AiUsageTokens | null | u
       kind: `cost:${kind}`,
       input_tokens: (usage.input_tokens ?? 0) + (usage.cache_read_input_tokens ?? 0),
       output_tokens: usage.output_tokens ?? 0,
-      cost_eur: Number(costInEuro(usage).toFixed(5)),
+      cost_eur: Number(costInEuro(usage, priced).toFixed(5)),
     });
     if (error) console.error("[aiQuota] costo non registrato:", error.message);
   } catch (error) {
@@ -145,6 +145,7 @@ export async function reserveAiCall(
         .not("kind", "like", "cost:%")
         .not("kind", "like", "client:%")
         .not("kind", "like", "free:%")
+        .not("kind", "like", "traveler:%")
         .gte("created_at", hourAgo),
       supabase
         .from("ai_usage")
@@ -153,6 +154,7 @@ export async function reserveAiCall(
         .not("kind", "like", "cost:%")
         .not("kind", "like", "client:%")
         .not("kind", "like", "free:%")
+        .not("kind", "like", "traveler:%")
         .gte("created_at", dayAgo),
     ]);
 

@@ -48,12 +48,15 @@ export default function GenerateWithZefiro({
   promptStyles,
   trip,
   showButton = true,
+  traveler = null,
 }: {
   clients: Client[];
   promptStyles: PromptStyle[];
   // Dentro un viaggio già creato: le proposte vanno qui (se vuoto) o diventano varianti
   trip?: { id: string; hasContent: boolean; startDate: string | null; mode?: ItineraryMode };
   showButton?: boolean;
+  // Viaggiatore privato: itinerari AI rimasti questo mese (solo testo, nessun file, nessuno stile)
+  traveler?: { left: number; total: number } | null;
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -344,9 +347,13 @@ export default function GenerateWithZefiro({
                     <Sparkles size={18} /> Genera itinerario
                   </span>
                   <span className="text-sm text-slate-600">
-                    {ASSISTANT_NAME} scrive su misura per il tuo cliente, da una descrizione o da una bozza.
+                    {traveler
+                      ? `${ASSISTANT_NAME} scrive un itinerario su misura per te, da quello che gli racconti.`
+                      : `${ASSISTANT_NAME} scrive su misura per il tuo cliente, da una descrizione o da una bozza.`}
                   </span>
-                  <span className="mt-auto w-fit rounded-full bg-[#233c5e] px-2.5 py-0.5 text-[11px] font-semibold text-white">Creato con AI</span>
+                  <span className="mt-auto w-fit rounded-full bg-[#233c5e] px-2.5 py-0.5 text-[11px] font-semibold text-white">
+                    {traveler ? `Creato con AI · ${traveler.left} su ${traveler.total} questo mese` : "Creato con AI"}
+                  </span>
                 </button>
                 <button
                   type="button"
@@ -357,7 +364,9 @@ export default function GenerateWithZefiro({
                     <BookOpen size={18} /> Consulta proposte
                   </span>
                   <span className="text-sm text-slate-600">
-                    Itinerari già pronti giorno per giorno: i vostri e quelli di Grand Route per ogni paese e regione italiana.
+                    {traveler
+                      ? "Itinerari già pronti giorno per giorno, per ogni paese e regione italiana: scegli e poi modifichi come vuoi."
+                      : "Itinerari già pronti giorno per giorno: i vostri e quelli di Grand Route per ogni paese e regione italiana."}
                   </span>
                   <span className="mt-auto w-fit rounded-full bg-emerald-600 px-2.5 py-0.5 text-[11px] font-semibold text-white">Gratis, senza AI</span>
                 </button>
@@ -388,8 +397,16 @@ export default function GenerateWithZefiro({
           {phase === "brief" && briefMode === "free" && (
             <form onSubmit={onSubmitBrief} className="flex flex-col gap-3">
               <p className="-mt-2 text-sm text-slate-500">
-                Racconta a grandi linee il viaggio che vuoi. Se la richiesta è generica {ASSISTANT_NAME} propone{" "}
-                <strong>3 itinerari diversi</strong>; se è già dettagliata (giorno per giorno) la ricostruisce com&apos;è.
+                {traveler ? (
+                  <>
+                    Racconta a grandi linee il viaggio che vuoi: {ASSISTANT_NAME} propone fino a <strong>{Math.min(3, traveler.left)} itinerari diversi</strong>, e ognuno conta come uno dei tuoi{" "}
+                    {traveler.total} itinerari del mese (te ne restano <strong>{traveler.left}</strong>). Le proposte pronte sono sempre gratis.
+                  </>
+                ) : (
+                  <>
+                    Racconta a grandi linee il viaggio che vuoi. Se la richiesta è generica {ASSISTANT_NAME} propone <strong>3 itinerari diversi</strong>; se è già dettagliata (giorno per giorno) la ricostruisce com&apos;è.
+                  </>
+                )}
               </p>
               <textarea
                 ref={briefRef}
@@ -413,8 +430,8 @@ export default function GenerateWithZefiro({
               <button type="button" onClick={() => setBriefMode("guided")} className="w-fit text-xs font-medium text-[#233c5e] underline decoration-dotted">
                 Torna alle domande guidate
               </button>
-              {!(trip && trip.hasContent) && <ItineraryModePicker value={itineraryMode} onChange={setItineraryMode} />}
-              {promptStyles.length > 0 && (
+              {!traveler && !(trip && trip.hasContent) && <ItineraryModePicker value={itineraryMode} onChange={setItineraryMode} />}
+              {!traveler && promptStyles.length > 0 && (
                 <div>
                   <label htmlFor="gen_style" className={labelClass}>
                     Stile di scrittura (opzionale)
@@ -429,12 +446,14 @@ export default function GenerateWithZefiro({
                   </select>
                 </div>
               )}
-              <DropzoneUpload
-                name="file"
-                accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv,.txt,.md"
-                label="Hai già una bozza? Carica un file (Excel/CSV, testo o foto)"
-                autoSubmit={false}
-              />
+              {!traveler && (
+                <DropzoneUpload
+                  name="file"
+                  accept="image/jpeg,image/png,image/webp,image/gif,.xlsx,.csv,.txt,.md"
+                  label="Hai già una bozza? Carica un file (Excel/CSV, testo o foto)"
+                  autoSubmit={false}
+                />
+              )}
               {error && (
                 <p className="text-sm text-red-600" role="alert">
                   {error}

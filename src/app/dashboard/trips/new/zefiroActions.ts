@@ -3,7 +3,8 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient, getCachedUser, getIsTraveler } from "@/lib/supabase/server";
+import { getTravelerAllowance, recordTravelerItineraries, travelerLimitMessage } from "@/lib/travelerAi";
 import { generatePublicSlug } from "@/lib/slug";
 import { loadAiRules } from "@/lib/aiRulesServer";
 import { MAX_DRAFT_CHARS, reserveAiCall, tooLongMessage } from "@/lib/aiQuota";
@@ -82,6 +83,16 @@ async function readBrief(formData: FormData): Promise<{ text: string; image: Dra
 // Primo passo: capisce la richiesta. Restituisce domande (se servono) oppure il
 // piano con una o tre idee di viaggio. Non crea nulla.
 export async function planTripWithZefiro(formData: FormData): Promise<PlanResult> {
+  // Viaggiatori privati: solo testo, modello economico e un numero limitato di itinerari al mese
+  const traveler = await getIsTraveler();
+  let maxConcepts = 3;
+  if (traveler) {
+    const file = formData.get("file");
+    if (file instanceof File && file.size > 0) return { error: "Nell'area viaggiatori Zefiro legge solo la descrizione scritta: allega il testo nel campo sopra." };
+    const allowance = await getTravelerAllowance();
+    if (allowance.left <= 0) return { error: travelerLimitMessage(allowance) };
+    maxConcepts = allowance.left;
+  }
   const read = await readBrief(formData);
   if ("error" in read) return read;
 
@@ -115,9 +126,14 @@ export async function planTripWithZefiro(formData: FormData): Promise<PlanResult
   }
 
   try {
-    const plan = await planTripFromBrief({ brief, rulesBlock: rules.text, allowQuestions: !clarifications });
+    const plan = await planTripFromBrief({ brief, rulesBlock: rules.text, allowQuestions: !clarifications, model: traveler ? "haiku" : "sonnet" });
     if (plan.questions.length > 0 && plan.concepts.length === 0 && !clarifications) return { questions: plan.questions };
     if (plan.concepts.length === 0) return { error: "Non sono riuscito a capire il viaggio. Aggiungi qualche dettaglio (destinazione, durata, chi viaggia)." };
+    // Un viaggiatore non può superare gli itinerari che gli restano: si contano ora, prima di scriverli
+    if (traveler) {
+      plan.concepts = plan.concepts.slice(0, maxConcepts);
+      await recordTravelerItineraries(plan.concepts.length);
+    }
     return {
       plan: {
         brief,
@@ -160,6 +176,13 @@ export async function generateProposal(input: {
 
   const quota = await reserveAiCall("itinerary", { record: false });
   if (!quota.ok) return { error: quota.error };
+  const traveler = await getIsTraveler();
+  if (traveler) {
+    // gli itinerari sono già stati contati al momento del piano: qui si controlla solo il tetto di spesa
+    const allowance = await getTravelerAllowance();
+    if (allowance.spentEur >= allowance.limitEur) return { error: travelerLimitMessage(allowance) };
+  }
+  const model = traveler ? ("haiku" as const) : ("sonnet" as const);
   const rules = await loadAiRules();
   try {
     if (parsed.data.faithful) {
@@ -170,6 +193,7 @@ export async function generateProposal(input: {
         tripDays: null,
         rulesBlock: rules.text,
         allowQuestions: false,
+        model,
       });
       if (generated.days.length === 0) return { error: "Non sono riuscito a ricavare dei giorni. Prova con più dettagli." };
       return { itinerary: generated };
@@ -180,6 +204,7 @@ export async function generateProposal(input: {
       durationDays: parsed.data.durationDays,
       rulesBlock: rules.text,
       styleInstructions: await loadStyle(parsed.data.styleId ?? null),
+      model,
     });
     return { itinerary };
   } catch (error) {
@@ -266,7 +291,8 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
     }
   }
 
-  redirect(`/dashboard/trips/${createdTripIds[0]}`);
+  // I viaggiatori privati hanno la loro area; le agenzie la scheda del viaggio nel gestionale
+  redirect((await getIsTraveler()) ? `/viaggiatore/viaggi/${createdTripIds[0]}` : `/dashboard/trips/${createdTripIds[0]}`);
 }
 
 

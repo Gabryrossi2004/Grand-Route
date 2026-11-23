@@ -68,6 +68,12 @@ export default function ClientLoginPage() {
           </Link>
         </p>
         <p className="mt-2 text-center text-xs text-slate-500">
+          Organizzi il viaggio da solo?{" "}
+          <Link href="/viaggiatore/login" className="font-medium text-slate-500 hover:underline">
+            Area viaggiatori
+          </Link>
+        </p>
+        <p className="mt-2 text-center text-xs text-slate-500">
           {t("auth.isAgency")}{" "}
           <Link href="/login" className="font-medium text-slate-500 hover:underline">
             {t("auth.agencyLogin")}

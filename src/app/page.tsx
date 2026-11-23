@@ -58,6 +58,9 @@ export default function Home() {
             <Link href="/client/signup" className="text-sm font-medium text-[#e3d9c4] hover:text-[#faf3e6] hover:underline">
               Prima volta? Registrati qui
             </Link>
+            <Link href="/viaggiatore/signup" className="mt-2 rounded-lg border border-[#faf3e6]/60 px-4 py-2 text-sm font-semibold text-[#faf3e6] transition hover:bg-[#faf3e6]/10">
+              Organizzo il viaggio da solo
+            </Link>
           </div>
         </section>
       </main>

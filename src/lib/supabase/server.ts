@@ -40,3 +40,13 @@ export const getCachedUser = cache(async (): Promise<{ id: string; email?: strin
   const claims = data?.claims;
   return claims?.sub ? { id: claims.sub, email: typeof claims.email === "string" ? claims.email : undefined } : null;
 });
+
+// Il profilo è di un viaggiatore privato (senza agenzia)? Un solo controllo per richiesta.
+export const getIsTraveler = cache(async (): Promise<boolean> => {
+  const user = await getCachedUser();
+  if (!user) return false;
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("profiles").select("is_traveler").eq("id", user.id).maybeSingle();
+  if (error) return false; // senza la migrazione 0058 nessuno è un viaggiatore
+  return Boolean((data as { is_traveler?: boolean } | null)?.is_traveler);
+});

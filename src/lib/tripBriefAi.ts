@@ -55,20 +55,24 @@ REGOLE
 ${rulesBlock}`;
 }
 
+// model «haiku»: il più economico, per i viaggiatori privati (tetto di spesa per utente)
+const MODEL_ID = { sonnet: "claude-sonnet-5-5", haiku: "claude-haiku-5-5" } as const;
+
 export async function planTripFromBrief(params: {
   brief: string;
   rulesBlock: string;
   allowQuestions: boolean;
+  model?: "sonnet" | "haiku";
 }): Promise<TripPlan> {
   const client = new Anthropic();
   const response = await client.messages.parse({
-    model: "claude-sonnet-5-5",
+    model: MODEL_ID[params.model ?? "sonnet"],
     max_tokens: 2500,
     system: planSystemPrompt(params.allowQuestions, params.rulesBlock),
     messages: [{ role: "user", content: params.brief }],
     output_config: { effort: "low", format: zodOutputFormat(TripPlanSchema) },
   });
-  await recordAiCost("itinerary", response.usage);
+  await recordAiCost("itinerary", response.usage, params.model ?? "sonnet");
   if (!response.parsed_output) throw new Error("piano non valido");
   return response.parsed_output;
 }
@@ -106,10 +110,11 @@ export async function generateProposalItinerary(params: {
   durationDays: number;
   rulesBlock: string;
   styleInstructions?: string | null;
+  model?: "sonnet" | "haiku";
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
   const response = await client.messages.parse({
-    model: "claude-sonnet-5-5",
+    model: MODEL_ID[params.model ?? "sonnet"],
     max_tokens: 12000,
     system: proposalSystemPrompt(params.durationDays, params.rulesBlock, params.styleInstructions ?? null),
     messages: [
@@ -121,7 +126,7 @@ export async function generateProposalItinerary(params: {
     // "low": è scrittura guidata da un piano già deciso, non ragionamento complesso. Meno token = più veloce e più economico.
     output_config: { effort: "low", format: zodOutputFormat(GeneratedItinerarySchema) },
   });
-  await recordAiCost("itinerary", response.usage);
+  await recordAiCost("itinerary", response.usage, params.model ?? "sonnet");
   if (!response.parsed_output || response.parsed_output.days.length === 0) throw new Error("proposta non valida");
   return response.parsed_output;
 }

@@ -35,17 +35,20 @@ export async function updateSession(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const isClientAuthRoute = pathname.startsWith("/client/login") || pathname.startsWith("/client/signup");
   const isClientPrivateRoute = pathname.startsWith("/client") && !isClientAuthRoute;
+  // Viaggiatori privati (senza agenzia)
+  const isTravelerAuthRoute = pathname.startsWith("/viaggiatore/login") || pathname.startsWith("/viaggiatore/signup");
+  const isTravelerPrivateRoute = pathname.startsWith("/viaggiatore") && !isTravelerAuthRoute;
 
-  const isPrivateRoute = pathname.startsWith("/dashboard") || isClientPrivateRoute;
+  const isPrivateRoute = pathname.startsWith("/dashboard") || isClientPrivateRoute || isTravelerPrivateRoute;
   const isAuthRoute =
-    pathname.startsWith("/login") || pathname.startsWith("/signup") || isClientAuthRoute;
+    pathname.startsWith("/login") || pathname.startsWith("/signup") || isClientAuthRoute || isTravelerAuthRoute;
 
   if (!user && isPrivateRoute) {
     const next = `${pathname}${request.nextUrl.search}`;
     const url = request.nextUrl.clone();
-    url.pathname = isClientPrivateRoute ? "/client/login" : "/login";
+    url.pathname = isTravelerPrivateRoute ? "/viaggiatore/login" : isClientPrivateRoute ? "/client/login" : "/login";
     url.search = "";
-    if (!isClientPrivateRoute) {
+    if (!isClientPrivateRoute && !isTravelerPrivateRoute) {
       url.searchParams.set("next", next);
     }
     return NextResponse.redirect(url);
@@ -53,7 +56,7 @@ export async function updateSession(request: NextRequest) {
 
   if (user && isAuthRoute) {
     const url = request.nextUrl.clone();
-    url.pathname = isClientAuthRoute ? "/client" : "/dashboard";
+    url.pathname = isTravelerAuthRoute ? "/viaggiatore" : isClientAuthRoute ? "/client" : "/dashboard";
     return NextResponse.redirect(url);
   }
 

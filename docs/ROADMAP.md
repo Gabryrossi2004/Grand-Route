@@ -5,12 +5,14 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 24/11/2026. Il det
 > **Promemoria (richiesta di Gabriele, 22/11):** per l'area cliente e per gli utenti privati prendere spunto da **Stippl** e adottare le funzioni utili, sia per l'agenzia sia per il cliente/privato (elenco al punto A).
 
 ## Adesso
-**Area cliente e utenti privati** — si parte ora (24/11). Prima si decide con Gabriele cosa entra nella prima versione (vedi blocco A).
+**Area viaggiatori (utenti privati)** — IN CORSO (24/11). Scelte di Gabriele: ingresso dallo stesso sito con la scelta alla registrazione; Zefiro con l'AI per i privati con **5 itinerari al mese e tetto di 15 centesimi** (modello economico Haiku); le richieste «Fallo preparare da un'agenzia» vanno a un'agenzia **scelta dal privato da un elenco**; prima versione con TUTTO: modificare il programma, mappamondo/diario/foto, valigia e budget/spese, condivisione con gli amici. Idea di Gabriele da realizzare con la fatturazione: servizio a pagamento, **gratis se ci si affida a un'agenzia**.
+- **Passo 1 FATTO (migrazione 0058 da eseguire):** pagine «Organizza il tuo viaggio» (registrazione) e accesso in /viaggiatore, collegamenti dalla pagina iniziale e dall'area clienti; Home con i viaggi; «Nuovo viaggio» con proposte pronte (gratis), Zefiro con l'AI (5 al mese) o viaggio vuoto; pagina del viaggio con l'editor del programma; contatori e limiti dell'AI.
+- Passo 2: mappamondo, diario e foto. Passo 3: valigia e spese tra amici. Passo 4: link per gli amici e richiesta alle agenzie (elenco agenzie con vetrina).
 
 ## Da fare, per blocco
 
 ### A. Area cliente e utenti privati
-- **Utenti privati** (punto 3): chi organizza da solo si registra senza agenzia, usa la creazione guidata e le proposte gratis della libreria, salva i viaggi. Include il pulsante **«Fallo preparare da un'agenzia»** (il privato manda il suo itinerario come richiesta a un'agenzia, che trova un nuovo cliente). Decisione già presa: le vendite restano alle agenzie.
+- **Utenti privati** (punto 3): vedi «Adesso». Piano a pagamento gratis per chi si affida a un'agenzia: con la fatturazione.
 - **Incentivi per prenotare con l'agenzia** (0l): assistenza e SOS, guida dell'agenzia in Zefiro, documenti offline, tutele del pacchetto, foto illimitate, convenzioni e punti; il fai-da-te ha limiti. Da decidere insieme ai privati.
 - **Cose per il cliente dall'elenco Stippl:** lista valigia da spuntare, budget e spese (con divisione tra amici), preferenze del cliente dopo la consegna.
 - **Diario e ricordi, parti restanti:** condividere con parenti e amici (link da revocare), film automatico dalle foto, fotolibro da stampare.

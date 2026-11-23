@@ -128,6 +128,8 @@ export async function generateItineraryFromDraft(params: {
   rulesBlock?: string;
   // Falso se l'agente ha già risposto alle domande: non se ne fanno altre.
   allowQuestions?: boolean;
+  // «haiku»: il più economico, per i viaggiatori privati
+  model?: "sonnet" | "haiku";
 }): Promise<GeneratedItinerary> {
   const client = new Anthropic();
 
@@ -147,7 +149,7 @@ export async function generateItineraryFromDraft(params: {
     : params.draftText;
 
   const response = await client.messages.parse({
-    model: "claude-sonnet-5-5",
+    model: params.model === "haiku" ? "claude-haiku-5-5" : "claude-sonnet-5-5",
     max_tokens: 16000,
     system: buildSystemPrompt(
       params.styleExamples,
@@ -165,7 +167,7 @@ export async function generateItineraryFromDraft(params: {
     output_config: { effort: "medium", format: zodOutputFormat(GeneratedItinerarySchema) },
   });
 
-  await recordAiCost("itinerary", response.usage);
+  await recordAiCost("itinerary", response.usage, params.model ?? "sonnet");
 
   if (!response.parsed_output) {
     throw new Error("L'AI non è riuscita a interpretare la bozza in un formato valido.");

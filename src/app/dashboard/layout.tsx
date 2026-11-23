@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import type { Profile } from "@/lib/types";
@@ -35,6 +36,8 @@ export default async function DashboardLayout({
     profile = data;
     unreadMessages = count ?? 0;
   }
+  // I viaggiatori privati hanno la loro area
+  if ((profile as { is_traveler?: boolean } | null)?.is_traveler) redirect("/viaggiatore");
 
   const brandColor = profile?.brand_color || "#233c5e";
 
