@@ -10,6 +10,10 @@ const SKIP = /flag|bandiera|map|mappa|locator|location|coat[_ ]of[_ ]arms|stemma
 const PEOPLE =
   /\b(people|persons?|portraits?|ritratt\w*|men|women|man|woman|girls?|boys?|child|children|kids?|bambin\w*|crowds?|folla|tourists?|turisti|selfie|faces?|dancers?|dancing|musicians?|performers?|vendors?|workers?|fishermen|soldiers?|guards?|wedding|bride|actors?|players?|athletes?|nude|nudity|smiling|couples?|families|monks|nuns|pilgrims|riders?|surfers?|swimmers?|divers?|hikers?|skiers?|politicians?|presidents?|kings?|queens?|engravings?|incisioni|paintings?|dipint\w*|drawings?|lithographs?)\b/i;
 
+// Soggetti poco da cartolina (interni, dettagli, oggetti, mezzi): si scartano
+const DULL =
+  /\b(interior|inside|indoor|ceiling|detail|details|close-?up|statue|sculpture|relief|inscription|mosaic|fresco|altar|organ|tomb|grave|coin|stamp|plan|drawing|museum|exhibit|door|window|carving|manuscript|plaque|bus|train|aircraft|airplane|helicopter|ship|navy|military|nave|crypt|cloister|stairs|staircase|chandelier|macro|specimen|flower|insect|interno|interni|dettaglio|statua|scultura|affresco|soffitto|portale|navata|cripta|chiostro|museo|sala)\b/i;
+
 async function getJson(url: string): Promise<unknown | null> {
   try {
     const response = await fetch(url, { headers: { "User-Agent": UA, "Api-User-Agent": UA }, signal: AbortSignal.timeout(6000), next: { revalidate: 60 * 60 * 24 * 7 } });
@@ -87,6 +91,7 @@ export async function findCountryPhotos(queries: { query: string; title: string 
     if (info.width && info.height && info.width / info.height < 1.2) continue;
     const cats = (page.categories ?? []).map((c) => c.title).join(" ");
     if (PEOPLE.test(`${original} ${cats}`)) continue;
+    if (DULL.test(original.replace(/_/g, " "))) continue;
     photos.push({
       url: info.thumburl.replace(/\?.*$/, ""),
       title: match?.title ?? stripHtml(meta.ObjectName?.value ?? ""),
