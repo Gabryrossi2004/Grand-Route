@@ -5550,6 +5550,20 @@
    "credit": "Bahnfrend",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Mercado_Municipal,_Baucau,_2018_(05).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Jaco_Beach_East_Timor_2012.jpg/1280px-Jaco_Beach_East_Timor_2012.jpg",
+   "title": "Isola di Jaco",
+   "credit": "Andidut",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jaco_Beach_East_Timor_2012.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Jaco_3.jpg/1280px-Jaco_3.jpg",
+   "title": "Jaco",
+   "credit": "Natália Carrascalão Antunes",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jaco_3.jpg"
   }
  ],
  "TM": [
@@ -5584,11 +5598,11 @@
  ],
  "TN": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/The_Amphitheatre_of_El_Jem%2C_built_around_AD_238_in_Thysdrus_in_Africa_Proconsularis%2C_the_estimated_capacity_is_35%2C000%2C_Tunisia_-_52717762494.jpg/1280px-The_Amphitheatre_of_El_Jem%2C_built_around_AD_238_in_Thysdrus_in_Africa_Proconsularis%2C_the_estimated_capacity_is_35%2C000%2C_Tunisia_-_52717762494.jpg",
-   "title": "El Jem",
-   "credit": "Carole Raddato",
-   "license": "CC BY-SA 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:The_Amphitheatre_of_El_Jem,_built_around_AD_238_in_Thysdrus_in_Africa_Proconsularis,_the_estimated_capacity_is_35,000,_Tunisia_-_52717762494.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Sidi_Bou_Said%2C_Tunisia%2C_19_March_2018_DSC_8004.jpg/1280px-Sidi_Bou_Said%2C_Tunisia%2C_19_March_2018_DSC_8004.jpg",
+   "title": "Sidi Bou Said",
+   "credit": "Habib M'henni",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sidi_Bou_Said,_Tunisia,_19_March_2018_DSC_8004.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Chott_Djerid_003.jpg/1280px-Chott_Djerid_003.jpg",
@@ -5598,18 +5612,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Chott_Djerid_003.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Carthage_National_Museum_048.jpg/1280px-Carthage_National_Museum_048.jpg",
-   "title": "Cartagine",
-   "credit": "Touzrimounir",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Anfiteatro%2C_El_Jem%2C_T%C3%BAnez%2C_2016-09-04%2C_DD_08.jpg/1280px-Anfiteatro%2C_El_Jem%2C_T%C3%BAnez%2C_2016-09-04%2C_DD_08.jpg",
+   "title": "Anfiteatro di El Jem",
+   "credit": "Diego Delso",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Carthage_National_Museum_048.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Port_El_Kantaoui_Marina%2C_Sousse.jpg/1280px-Port_El_Kantaoui_Marina%2C_Sousse.jpg",
-   "title": "Port El Kantaoui",
-   "credit": "Tony Hisgett",
-   "license": "CC BY 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Port_El_Kantaoui_Marina,_Sousse.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Anfiteatro,_El_Jem,_T%C3%BAnez,_2016-09-04,_DD_08.jpg"
   }
  ],
  "TO": [
@@ -5644,55 +5651,62 @@
  ],
  "TR": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Pamukkale%2C_Denizli_2026_68.jpg/1280px-Pamukkale%2C_Denizli_2026_68.jpg",
-   "title": "Pamukkale",
-   "credit": "Biologg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/U%C3%A7hisar%2C_Cappadocia_07.jpg/1280px-U%C3%A7hisar%2C_Cappadocia_07.jpg",
+   "title": "Cappadocia",
+   "credit": "Bernard Gagnon",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:U%C3%A7hisar,_Cappadocia_07.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Antalya_kalei%C3%A7i_2.jpg/1280px-Antalya_kalei%C3%A7i_2.jpg",
+   "title": "Antalya",
+   "credit": "REHBER0770",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Pamukkale,_Denizli_2026_68.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Antalya_kalei%C3%A7i_2.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Paragliding_view_oludeniz_-_panoramio_%282%29.jpg/1280px-Paragliding_view_oludeniz_-_panoramio_%282%29.jpg",
-   "title": "Ölüdeniz",
-   "credit": "Andrzej Szkopiński",
-   "license": "CC BY 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Paragliding_view_oludeniz_-_panoramio_(2).jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Istanbul_Hagia_Sophia_IMG_7346_1725.jpg/1280px-Istanbul_Hagia_Sophia_IMG_7346_1725.jpg",
-   "title": "Santa Sofia",
-   "credit": "Alexxx1979",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Topkap%C4%B1_-_01.jpg/1280px-Topkap%C4%B1_-_01.jpg",
+   "title": "Palazzo Topkapı",
+   "credit": "Carlos Delgado",
    "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Istanbul_Hagia_Sophia_IMG_7346_1725.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_-_01.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Ephesus_Celsus_Library_Fa%C3%A7ade.jpg/1280px-Ephesus_Celsus_Library_Fa%C3%A7ade.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Celsus-Bibliothek2.jpg/1280px-Celsus-Bibliothek2.jpg",
    "title": "Efeso",
-   "credit": "Benh LIEU SONG",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Ephesus_Celsus_Library_Fa%C3%A7ade.jpg"
+   "credit": "Autore sconosciuto",
+   "license": "CC BY-SA 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Celsus-Bibliothek2.jpg"
   }
  ],
  "TT": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/ScarlettIbis1_CincinnatiZoo.jpg/1280px-ScarlettIbis1_CincinnatiZoo.jpg",
-   "title": "Caroni Swamp",
-   "credit": "Ltshears",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:ScarlettIbis1_CincinnatiZoo.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Shallow_waters.jpg/1280px-Shallow_waters.jpg",
-   "title": "Buccoo Reef",
-   "credit": "WhatsupDarren",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/TnT_Maracas_Bay_1.jpg/1280px-TnT_Maracas_Bay_1.jpg",
+   "title": "Maracas Bay",
+   "credit": "Grueslayer",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Shallow_waters.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:TnT_Maracas_Bay_1.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Caronipanchrisfitzpatrick.JPG/1280px-Caronipanchrisfitzpatrick.JPG",
-   "title": "Caroni Swamp",
-   "credit": "Chris Fitzpatrick",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Pigeon_Point_beach.jpg/1280px-Pigeon_Point_beach.jpg",
+   "title": "Pigeon Point, Tobago",
+   "credit": "Kp93",
    "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Caronipanchrisfitzpatrick.JPG"
+   "source": "https://commons.wikimedia.org/wiki/File:Pigeon_Point_beach.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Scarlet_Ibises_%285535991204%29.jpg/1280px-Scarlet_Ibises_%285535991204%29.jpg",
+   "title": "Caroni Swamp",
+   "credit": "Mike's Birds",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Scarlet_Ibises_(5535991204).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Northern_sea_otter_%28Enhydra_lutris_kenyoni%29_female_and_pup_Tofino.jpg/1280px-Northern_sea_otter_%28Enhydra_lutris_kenyoni%29_female_and_pup_Tofino.jpg",
+   "title": "Pigeon Point",
+   "credit": "Charles J. Sharp",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Northern_sea_otter_(Enhydra_lutris_kenyoni)_female_and_pup_Tofino.jpg"
   }
  ],
  "TV": [
@@ -5709,6 +5723,20 @@
    "credit": "Davidarfonjones",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Funafuti_township.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Tuvalu_Funafuti_atoll_beach.jpg/1280px-Tuvalu_Funafuti_atoll_beach.jpg",
+   "title": "Laguna di Funafuti",
+   "credit": "Stefan Lins",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tuvalu_Funafuti_atoll_beach.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Tuvalu_-_Funafuti_-_Beach.jpg/1280px-Tuvalu_-_Funafuti_-_Beach.jpg",
+   "title": "Laguna di Funafuti",
+   "credit": "mrlins",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tuvalu_-_Funafuti_-_Beach.jpg"
   }
  ],
  "TW": [
@@ -5773,25 +5801,32 @@
  ],
  "UA": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%28%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%29_16.jpg/1280px-%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%28%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%29_16.jpg",
-   "title": "Leopoli",
-   "credit": "Konstantin Brizhnichenko",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_(%D0%9B%D1%8C%D0%B2%D1%96%D0%B2)_16.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Kyiv_Pechersk_Lavra_%28235578883%29.jpeg/1280px-Kyiv_Pechersk_Lavra_%28235578883%29.jpeg",
+   "title": "Lavra delle Grotte di Kiev",
+   "credit": "Francisco Anzola",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Kyiv_Pechersk_Lavra_(235578883).jpeg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/68-104-9007_Kamianets-Podilskyi_Fortress_RB_18_2.jpg/1280px-68-104-9007_Kamianets-Podilskyi_Fortress_RB_18_2.jpg",
-   "title": "Kam'janec'-Podil's'kyj",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/80-391-1247_Kyiv_Khmelnytsky_Monument_RB_18.jpg/1280px-80-391-1247_Kyiv_Khmelnytsky_Monument_RB_18.jpg",
+   "title": "Cattedrale di Santa Sofia, Kiev",
    "credit": "Rbrechko",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:68-104-9007_Kamianets-Podilskyi_Fortress_RB_18_2.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:80-391-1247_Kyiv_Khmelnytsky_Monument_RB_18.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/2009R4294_-_%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D0%B5%D1%86%D1%8C-%D0%9F%D0%BE%D0%B4%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg/1280px-2009R4294_-_%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D0%B5%D1%86%D1%8C-%D0%9F%D0%BE%D0%B4%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Lw%C3%B3w_-_Widok_z_wie%C5%BCy_ratuszowej_01.jpg/1280px-Lw%C3%B3w_-_Widok_z_wie%C5%BCy_ratuszowej_01.jpg",
+   "title": "Leopoli",
+   "credit": "Lestat (Jan Mehlich)",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Lw%C3%B3w_-_Widok_z_wie%C5%BCy_ratuszowej_01.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F_%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B0_%D0%B1%D1%80%D0%B0%D0%BC%D0%B0.jpg/1280px-%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F_%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B0_%D0%B1%D1%80%D0%B0%D0%BC%D0%B0.jpg",
    "title": "Kam'janec'-Podil's'kyj",
-   "credit": "Мирослав Видрак",
+   "credit": "Q-lieb-in",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:2009R4294_-_%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D0%B5%D1%86%D1%8C-%D0%9F%D0%BE%D0%B4%D1%96%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F_%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B0_%D0%B1%D1%80%D0%B0%D0%BC%D0%B0.jpg"
   }
  ],
  "UG": [
@@ -5803,13 +5838,6 @@
    "source": "https://commons.wikimedia.org/wiki/File:Gorila_de_monta%C3%B1a_(Gorilla_beringei_beringei),_parque_nacional_de_la_Selva_Impenetrable_de_Bwindi,_Uganda,_2024-02-02,_DD_80.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Lake_Bunyonyi_%288146148093%29.jpg/1280px-Lake_Bunyonyi_%288146148093%29.jpg",
-   "title": "Lago Bunyonyi",
-   "credit": "Carine06 from UK",
-   "license": "CC BY-SA 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Lake_Bunyonyi_(8146148093).jpg"
-  },
-  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/035_Uganda_kobs_mating_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg/1280px-035_Uganda_kobs_mating_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg",
    "title": "Queen Elizabeth",
    "credit": "Giles Laurent",
@@ -5817,11 +5845,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:035_Uganda_kobs_mating_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/African_buffalo_%28Syncerus_caffer%29_calf_2_weeks_suckling.jpg/1280px-African_buffalo_%28Syncerus_caffer%29_calf_2_weeks_suckling.jpg",
-   "title": "Uganda",
-   "credit": "Charles J. Sharp",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Top_of_Murchison_falls.jpg/1280px-Top_of_Murchison_falls.jpg",
+   "title": "Cascate Murchison",
+   "credit": "Jingo Faizal",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:African_buffalo_(Syncerus_caffer)_calf_2_weeks_suckling.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Top_of_Murchison_falls.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Bwindi_Impenetrable_National_Park-112393.jpg/1280px-Bwindi_Impenetrable_National_Park-112393.jpg",
+   "title": "Foresta impenetrabile di Bwindi",
+   "credit": "Ron Van Oers",
+   "license": "CC BY-SA 3.0 igo",
+   "source": "https://commons.wikimedia.org/wiki/File:Bwindi_Impenetrable_National_Park-112393.jpg"
   }
  ],
  "US": [
@@ -5886,20 +5921,6 @@
  ],
  "UZ": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Registan_square_Samarkand.jpg/1280px-Registan_square_Samarkand.jpg",
-   "title": "Registan",
-   "credit": "Ekrem Canli",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Registan_square_Samarkand.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/View_of_Po-i-Kalyan.jpg/1280px-View_of_Po-i-Kalyan.jpg",
-   "title": "Bukhara",
-   "credit": "RK",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:View_of_Po-i-Kalyan.jpg"
-  },
-  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/ShrineofAmirTimur.jpg/1280px-ShrineofAmirTimur.jpg",
    "title": "Mausoleo di Gur-e-Amir",
    "credit": "Willard84",
@@ -5907,11 +5928,25 @@
    "source": "https://commons.wikimedia.org/wiki/File:ShrineofAmirTimur.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Complex_of_Dorut_Tilavat_-_55474294886.jpg/1280px-Complex_of_Dorut_Tilavat_-_55474294886.jpg",
-   "title": "Shakhrisabz",
-   "credit": "xiquinhosilva",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Shah-i-Zinda_gumbazi_va_bezakli_barabani.jpg/1280px-Shah-i-Zinda_gumbazi_va_bezakli_barabani.jpg",
+   "title": "Shah-i-Zinda",
+   "credit": "AIDEPCUL",
    "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Complex_of_Dorut_Tilavat_-_55474294886.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Shah-i-Zinda_gumbazi_va_bezakli_barabani.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/KhivaWalls.jpg/1280px-KhivaWalls.jpg",
+   "title": "Khiva, Itchan Kala",
+   "credit": "Doron",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:KhivaWalls.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aydar_Lake.jpg/1280px-Aydar_Lake.jpg",
+   "title": "Campo di yurte del lago Aydarkul",
+   "credit": "DAVID HOLT",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Aydar_Lake.jpg"
   }
  ],
  "VC": [
@@ -5928,9 +5963,30 @@
    "credit": "Igbgrant at English Wikipedia",
    "license": "CC BY 2.5",
    "source": "https://commons.wikimedia.org/wiki/File:TobagoCaysAerial.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Friendship_Bay_and_St._Hilaire_Point_on_the_south_coast_of_Bequia_-_panoramio.jpg/1280px-Friendship_Bay_and_St._Hilaire_Point_on_the_south_coast_of_Bequia_-_panoramio.jpg",
+   "title": "Bequia",
+   "credit": "David Broad",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Friendship_Bay_and_St._Hilaire_Point_on_the_south_coast_of_Bequia_-_panoramio.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Brittania_Bay_from_Lovell_-_panoramio.jpg/1280px-Brittania_Bay_from_Lovell_-_panoramio.jpg",
+   "title": "Mustique",
+   "credit": "FishSpeaker",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Brittania_Bay_from_Lovell_-_panoramio.jpg"
   }
  ],
  "VE": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Salto_del_Angel-Canaima-Venezuela18.JPG/1280px-Salto_del_Angel-Canaima-Venezuela18.JPG",
+   "title": "Salto Angel",
+   "credit": "Diego Delso",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_del_Angel-Canaima-Venezuela18.JPG"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Gran_Roque_from_plane.jpg/1280px-Gran_Roque_from_plane.jpg",
    "title": "Los Roques",
@@ -5939,25 +5995,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:Gran_Roque_from_plane.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Canaima_34.JPG/1280px-Canaima_34.JPG",
+   "title": "Parco di Canaima",
+   "credit": "Tyraelux",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Canaima_34.JPG"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Roraima3_%2879%29.JPG/1280px-Roraima3_%2879%29.JPG",
    "title": "Monte Roraima",
    "credit": "Paolo Costa Baldi",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Roraima3_(79).JPG"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Cayo_de_Agua%2C_Archipi%C3%A9lago_de_Los_Roques%2C_Venezuela.jpg/1280px-Cayo_de_Agua%2C_Archipi%C3%A9lago_de_Los_Roques%2C_Venezuela.jpg",
-   "title": "Cayo de Agua",
-   "credit": "Paulo Capiotti",
-   "license": "CC BY-SA 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Cayo_de_Agua,_Archipi%C3%A9lago_de_Los_Roques,_Venezuela.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Monte_Roraima%2C_ponto_mais_alto.jpg/1280px-Monte_Roraima%2C_ponto_mais_alto.jpg",
-   "title": "Monte Roraima",
-   "credit": "Tinhojv",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Monte_Roraima,_ponto_mais_alto.jpg"
   }
  ],
  "VG": [
@@ -5974,6 +6023,20 @@
    "credit": "Gruepig",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Virgin_Gorda_North_Sound_2010.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Baths_approaching_sunset.jpg/1280px-The_Baths_approaching_sunset.jpg",
+   "title": "The Baths",
+   "credit": "Jim Sorbie",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Baths_approaching_sunset.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Great_Harbour_%28view_1%29.JPG/1280px-British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Great_Harbour_%28view_1%29.JPG",
+   "title": "Jost Van Dyke",
+   "credit": "User:Mattes",
+   "license": "CC BY 2.0 de",
+   "source": "https://commons.wikimedia.org/wiki/File:British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Great_Harbour_(view_1).JPG"
   }
  ],
  "VI": [
@@ -5985,6 +6048,13 @@
    "source": "https://commons.wikimedia.org/wiki/File:StJohnTrunkBay.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/St._John_-_USVI_-_Salmon_Bay_-_Honeymoon_Beach_2.JPG/1280px-St._John_-_USVI_-_Salmon_Bay_-_Honeymoon_Beach_2.JPG",
+   "title": "Saint John",
+   "credit": "Bradley Furlow",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:St._John_-_USVI_-_Salmon_Bay_-_Honeymoon_Beach_2.JPG"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/MagensBayOuterBrass.JPG/1280px-MagensBayOuterBrass.JPG",
    "title": "Magens Bay",
    "credit": "Gruepig",
@@ -5992,14 +6062,28 @@
    "source": "https://commons.wikimedia.org/wiki/File:MagensBayOuterBrass.JPG"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Virgin_Islands_National_Park.jpg/1280px-Virgin_Islands_National_Park.jpg",
-   "title": "Parco nazionale delle Isole Vergini",
-   "credit": "Unknown author Unknown author",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Line1502_-_Flickr_-_NOAA_Photo_Library.jpg/1280px-Line1502_-_Flickr_-_NOAA_Photo_Library.jpg",
+   "title": "Buck Island",
+   "credit": "Mr. Sean Linehan, NOAA, NGS, Remote Sensing.",
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File:Virgin_Islands_National_Park.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Line1502_-_Flickr_-_NOAA_Photo_Library.jpg"
   }
  ],
  "VN": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/A_local_fishing_craft_and_it%27s_trailer_amongst_the_karsts-_the_trailer_looks_almost_microscopic%21_%2831263639110%29.jpg/1280px-A_local_fishing_craft_and_it%27s_trailer_amongst_the_karsts-_the_trailer_looks_almost_microscopic%21_%2831263639110%29.jpg",
+   "title": "Baia di Halong",
+   "credit": "shankar s. from Dubai, united arab emirates",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:A_local_fishing_craft_and_it%27s_trailer_amongst_the_karsts-_the_trailer_looks_almost_microscopic!_(31263639110).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/R%C3%ADo_Saig%C3%B3n%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_29.JPG/1280px-R%C3%ADo_Saig%C3%B3n%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_29.JPG",
+   "title": "Ho Chi Minh City",
+   "credit": "Diego Delso",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:R%C3%ADo_Saig%C3%B3n,_Ciudad_Ho_Chi_Minh,_Vietnam,_2013-08-14,_DD_29.JPG"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg/1280px-Bai-sao-phu-quoc-tuonglamphotos.jpg",
    "title": "Phu Quoc",
@@ -6008,25 +6092,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Bai-sao-phu-quoc-tuonglamphotos.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/H%E1%BB%99i_An%2C_Ancient_Town%2C_2020-01_CN-06.jpg/1280px-H%E1%BB%99i_An%2C_Ancient_Town%2C_2020-01_CN-06.jpg",
-   "title": "Hoi An",
-   "credit": "Steffen Schmitz ( more photos )",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-06.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Hoi_An_%28I%29.jpg/1280px-Hoi_An_%28I%29.jpg",
-   "title": "Hoi An",
-   "credit": "This Photo was taken by Supanut Arunoprayote . Feel free to use any of my images, but please mention me as the author an",
-   "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Hoi_An_(I).jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Road_and_paddy_fields_in_Sa_Pa%2C_Vietnam%2C_20240126_1202_3586.jpg/1280px-Road_and_paddy_fields_in_Sa_Pa%2C_Vietnam%2C_20240126_1202_3586.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Ta_Van_Muong_Ha_vallei_%2888660%29.jpg/1280px-Ta_Van_Muong_Ha_vallei_%2888660%29.jpg",
    "title": "Sapa",
-   "credit": "Jakub Hałun",
+   "credit": "Andre Hospers",
    "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Road_and_paddy_fields_in_Sa_Pa,_Vietnam,_20240126_1202_3586.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Ta_Van_Muong_Ha_vallei_(88660).jpg"
   }
  ],
  "VU": [
@@ -6036,6 +6106,27 @@
    "credit": "Jae Lee",
    "license": "Public domain",
    "source": "https://commons.wikimedia.org/wiki/File:Champagne_Beach.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Mt._Yasur_Eruption.jpg/1280px-Mt._Yasur_Eruption.jpg",
+   "title": "Vulcano Yasur",
+   "credit": "Rolfcosar",
+   "license": "CC BY-SA 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Mt._Yasur_Eruption.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Port-Vila_2019_11_25_3473-1_modifi%C3%A9-1.jpg/1280px-Port-Vila_2019_11_25_3473-1_modifi%C3%A9-1.jpg",
+   "title": "Pentecoste",
+   "credit": "Langlois, Bruno",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Port-Vila_2019_11_25_3473-1_modifi%C3%A9-1.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Port_Vila_Harbour_%28Imagicity_816%29.jpg/1280px-Port_Vila_Harbour_%28Imagicity_816%29.jpg",
+   "title": "Port Vila",
+   "credit": "Graham Crumb",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Port_Vila_Harbour_(Imagicity_816).jpg"
   }
  ],
  "WS": [
@@ -6045,6 +6136,27 @@
    "credit": "Neil",
    "license": "CC BY 2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Lano_Beach_-_Savai%27i,_2007.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/To_Sua_Ocean_Trench_-_Lotofaga_village_-_Samoa.jpg/1280px-To_Sua_Ocean_Trench_-_Lotofaga_village_-_Samoa.jpg",
+   "title": "To Sua Ocean Trench",
+   "credit": "Neil",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:To_Sua_Ocean_Trench_-_Lotofaga_village_-_Samoa.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Lalomanu_Beach_-_Samoa.jpg/1280px-Lalomanu_Beach_-_Samoa.jpg",
+   "title": "Spiaggia di Lalomanu",
+   "credit": "Neil",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Lalomanu_Beach_-_Samoa.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Nu%27utele_island_seen_from_Lalomanu_beach%2C_Upolu%2C_Samoa_-_August_2016.jpg/1280px-Nu%27utele_island_seen_from_Lalomanu_beach%2C_Upolu%2C_Samoa_-_August_2016.jpg",
+   "title": "Spiaggia di Lalomanu",
+   "credit": "Rickard Törnblad",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Nu%27utele_island_seen_from_Lalomanu_beach,_Upolu,_Samoa_-_August_2016.jpg"
   }
  ],
  "XK": [
