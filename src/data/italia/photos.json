@@ -29,6 +29,36 @@
    "source": "https://commons.wikimedia.org/wiki/File:Monte_Velino_marzo_2024.jpg"
   }
  ],
+ "abruzzo/costa-trabocchi": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Trabocco_di_Punta_Aderci_-_panoramio_%281%29.jpg/1280px-Trabocco_di_Punta_Aderci_-_panoramio_%281%29.jpg",
+   "title": "Trabocchi",
+   "credit": "maury3001",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Trabocco_di_Punta_Aderci_-_panoramio_(1).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Trabocco%2C_localita%27_Canale%2C_Vasto.jpg/1280px-Trabocco%2C_localita%27_Canale%2C_Vasto.jpg",
+   "title": "Trabocchi",
+   "credit": "F Giammichele",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Trabocco,_localita%27_Canale,_Vasto.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Trabocco_-_panoramio.jpg/1280px-Trabocco_-_panoramio.jpg",
+   "title": "Trabocchi",
+   "credit": "maury3001",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Trabocco_-_panoramio.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/San_Giuseppe_Vasto.jpg/1280px-San_Giuseppe_Vasto.jpg",
+   "title": "Vasto",
+   "credit": "Alessiocav",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:San_Giuseppe_Vasto.jpg"
+  }
+ ],
  "abruzzo/gran-sasso": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Campo_Imperatore.jpg/1280px-Campo_Imperatore.jpg",
@@ -211,6 +241,36 @@
    "source": "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_seen_from_Via_Indipendenza_-_Tropea_-_Italy_2015_(3).JPG"
   }
  ],
+ "calabria/costa-degli-dei": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_03.jpg/1280px-Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_03.jpg",
+   "title": "Tropea",
+   "credit": "Norbert Nagel",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_03.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Cliff_at_Tropea%2C_Italy%2C_Sep_2005.jpg/1280px-Cliff_at_Tropea%2C_Italy%2C_Sep_2005.jpg",
+   "title": "Tropea",
+   "credit": "Autore sconosciuto",
+   "license": "CC BY-SA 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Cliff_at_Tropea,_Italy,_Sep_2005.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Promontori_di_Capo_Vaticano_dal_mare_2013.JPG/1280px-Promontori_di_Capo_Vaticano_dal_mare_2013.JPG",
+   "title": "Capo Vaticano",
+   "credit": "Marcuscalabresus",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Promontori_di_Capo_Vaticano_dal_mare_2013.JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/House_in_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_04.jpg/1280px-House_in_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_04.jpg",
+   "title": "Tropea",
+   "credit": "Norbert Nagel",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:House_in_Tropea_-_Calabria_-_Italy_-_July_25th_2013_-_04.jpg"
+  }
+ ],
  "calabria/ionio-calabrese": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Le_Castella_-_Castello_Aragonese_-_01.jpg/1280px-Le_Castella_-_Castello_Aragonese_-_01.jpg",
@@ -282,6 +342,13 @@
    "source": "https://commons.wikimedia.org/wiki/File:Positano_veduta_003.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Naples%2C_Italy%2C_A_view_over_Bay_of_Naples%2C_Port_of_Naples_and_Mt._Vesuvius.jpg/1280px-Naples%2C_Italy%2C_A_view_over_Bay_of_Naples%2C_Port_of_Naples_and_Mt._Vesuvius.jpg",
+   "title": "Golfo di Napoli e Vesuvio",
+   "credit": "Vyacheslav Argenberg",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Naples,_Italy,_A_view_over_Bay_of_Naples,_Port_of_Naples_and_Mt._Vesuvius.jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Faraglioni_%2852215154472%29.jpg/1280px-Faraglioni_%2852215154472%29.jpg",
    "title": "Faraglioni di Capri",
    "credit": "Alessio Maffeis from Stockholm, Sweden",
@@ -289,11 +356,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Faraglioni_(52215154472).jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Composition_ruins_Pompeii.jpg/1280px-Composition_ruins_Pompeii.jpg",
-   "title": "Pompei",
-   "credit": "Jebulon",
-   "license": "CC0",
-   "source": "https://commons.wikimedia.org/wiki/File:Composition_ruins_Pompeii.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Atrani_%28Costiera_Amalfitana%2C_23-8-2011%29.jpg/1280px-Atrani_%28Costiera_Amalfitana%2C_23-8-2011%29.jpg",
+   "title": "Costiera Amalfitana",
+   "credit": "Paolo Costa Baldi",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Atrani_(Costiera_Amalfitana,_23-8-2011).jpg"
   }
  ],
  "campania/capri-sorrento": [
@@ -469,6 +536,59 @@
    "credit": "Ingo Mehling",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Bologna_-_Piazza_Maggiore_from_Palazzo_Comunale.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Piazza_Maggiore_nell%27ora_blu.jpg/1280px-Piazza_Maggiore_nell%27ora_blu.jpg",
+   "title": "Piazza Maggiore",
+   "credit": "Vanni Lazzari",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Piazza_Maggiore_nell%27ora_blu.jpg"
+  }
+ ],
+ "emilia-romagna/bologna": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Piazza_Maggiore_nell%27ora_blu.jpg/1280px-Piazza_Maggiore_nell%27ora_blu.jpg",
+   "title": "Piazza Maggiore",
+   "credit": "Vanni Lazzari",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Piazza_Maggiore_nell%27ora_blu.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Torri_di_Bologna%2C_Bologna.jpg/1280px-Torri_di_Bologna%2C_Bologna.jpg",
+   "title": "Due Torri",
+   "credit": "Fabio Ciminelli",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Torri_di_Bologna,_Bologna.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Bologna_Piazza_Maggiore_3.JPG/1280px-Bologna_Piazza_Maggiore_3.JPG",
+   "title": "Piazza Maggiore",
+   "credit": "Zairon",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_3.JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bologna_Panorama.jpg/1280px-Bologna_Panorama.jpg",
+   "title": "Due Torri",
+   "credit": "Ввласенко",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bologna_Panorama.jpg"
+  }
+ ],
+ "emilia-romagna/parma-modena": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Parma_-_Italy_-_July_7th_2013_-_07.jpg/1280px-Parma_-_Italy_-_July_7th_2013_-_07.jpg",
+   "title": "Duomo di Parma",
+   "credit": "Norbert Nagel",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parma_-_Italy_-_July_7th_2013_-_07.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Duomo_e_Ghirlandina_a_Modena.JPG/1280px-Duomo_e_Ghirlandina_a_Modena.JPG",
+   "title": "Duomo di Modena",
+   "credit": "Cristina Guaetta",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Duomo_e_Ghirlandina_a_Modena.JPG"
   }
  ],
  "emilia-romagna/ravenna-ferrara-delta": [
@@ -681,6 +801,36 @@
    "credit": "User:New2022",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Civita_(Bagnoregio)_-_Panorama.jpg"
+  }
+ ],
+ "lazio/riviera-di-ulisse": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Spiaggia_di_Sperlonga_1.JPG/1280px-Spiaggia_di_Sperlonga_1.JPG",
+   "title": "Sperlonga",
+   "credit": "Ursula_Iris",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Spiaggia_di_Sperlonga_1.JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/GAETA_Q.jpg/1280px-GAETA_Q.jpg",
+   "title": "Gaeta",
+   "credit": "Frederick Sporchia",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:GAETA_Q.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Sperlonga-case.jpg/1280px-Sperlonga-case.jpg",
+   "title": "Sperlonga",
+   "credit": "Szczepan2",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sperlonga-case.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Gaeta_-_Panorama_da_Vindicio.jpg/1280px-Gaeta_-_Panorama_da_Vindicio.jpg",
+   "title": "Gaeta",
+   "credit": "Pufui PcPifpef",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Gaeta_-_Panorama_da_Vindicio.jpg"
   }
  ],
  "lazio/roma": [
@@ -1082,6 +1232,13 @@
    "credit": "Terragio67",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Basilica_di_Loreto_-_Ancona_(Upper_view).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Sirolo_piazza.JPG/1280px-Sirolo_piazza.JPG",
+   "title": "Sirolo",
+   "credit": "Claudio.stanco",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sirolo_piazza.JPG"
   }
  ],
  "marche/ascoli-sibillini": [
@@ -1112,6 +1269,22 @@
    "credit": "Giacomo Alessandroni",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Piana_di_Castelluccio_10.jpg"
+  }
+ ],
+ "marche/conero": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Sirolo_piazza.JPG/1280px-Sirolo_piazza.JPG",
+   "title": "Sirolo",
+   "credit": "Claudio.stanco",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sirolo_piazza.JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Sirolo-piazzetta01.jpg/1280px-Sirolo-piazzetta01.jpg",
+   "title": "Sirolo",
+   "credit": "gaspa",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sirolo-piazzetta01.jpg"
   }
  ],
  "marche/frasassi-jesi": [
@@ -1181,6 +1354,59 @@
    "credit": "Stapinium",
    "license": "CC BY 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:PortaBoiano(Saepinum-Altilia)outside.jpg"
+  }
+ ],
+ "molise/molise-interno": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Agnone_chiesa_e_scale.jpg/1280px-Agnone_chiesa_e_scale.jpg",
+   "title": "Agnone",
+   "credit": "Gianfranco Vitolo from Sarno (Sa), Italia",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Agnone_chiesa_e_scale.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Saepinum_%2866%29.JPG/1280px-Saepinum_%2866%29.JPG",
+   "title": "Saepinum",
+   "credit": "Adam91",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Saepinum_(66).JPG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Saepinum_%2826_agosto_2025%29_03.jpg/1280px-Saepinum_%2826_agosto_2025%29_03.jpg",
+   "title": "Saepinum",
+   "credit": "Accurimbono",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Saepinum_(26_agosto_2025)_03.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Agnone_-_chiesa_di_San_Marco_Evangelista_-_facciata.jpg/1280px-Agnone_-_chiesa_di_San_Marco_Evangelista_-_facciata.jpg",
+   "title": "Agnone",
+   "credit": "Gianfranco Vitolo from Sarno (Sa), Italia",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Agnone_-_chiesa_di_San_Marco_Evangelista_-_facciata.jpg"
+  }
+ ],
+ "molise/termoli-costa": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Termoli_borgo_antico.JPEG/1280px-Termoli_borgo_antico.JPEG",
+   "title": "Termoli",
+   "credit": "Antonio Raspa",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Termoli_borgo_antico.JPEG"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/TERMOLI_Borgo_antico_con_trabucco.jpg/1280px-TERMOLI_Borgo_antico_con_trabucco.jpg",
+   "title": "Termoli",
+   "credit": "[Antonio Raspa]",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:TERMOLI_Borgo_antico_con_trabucco.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Termoli_Spiaggia_di_Sant%27Antonio.jpg/1280px-Termoli_Spiaggia_di_Sant%27Antonio.jpg",
+   "title": "Termoli",
+   "credit": "AlMare",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Termoli_Spiaggia_di_Sant%27Antonio.jpg"
   }
  ],
  "piemonte": [
@@ -1293,18 +1519,11 @@
  ],
  "puglia": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Alberobello_BW_2016-10-16_13-43-03.jpg/1280px-Alberobello_BW_2016-10-16_13-43-03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Alberobello_con_il_drone.jpg/1280px-Alberobello_con_il_drone.jpg",
    "title": "Alberobello",
-   "credit": "Berthold Werner",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Alberobello_BW_2016-10-16_13-43-03.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Ostuni_col_drone.jpg/1280px-Ostuni_col_drone.jpg",
-   "title": "Ostuni",
    "credit": "ParisTaras",
-   "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Ostuni_col_drone.jpg"
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Alberobello_con_il_drone.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Otranto_-_Seafront_-_01.jpg/1280px-Otranto_-_Seafront_-_01.jpg",
@@ -1314,11 +1533,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:Otranto_-_Seafront_-_01.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Lama_Monachile.jpg/1280px-Lama_Monachile.jpg",
-   "title": "Lama Monachile",
-   "credit": "Calogero77",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Lama_Monachile.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Polignano-a-Mare.jpg/1280px-Polignano-a-Mare.jpg",
+   "title": "Polignano a Mare",
+   "credit": "acediscovery",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Polignano-a-Mare.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Ostuni_col_drone.jpg/1280px-Ostuni_col_drone.jpg",
+   "title": "Ostuni",
+   "credit": "ParisTaras",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Ostuni_col_drone.jpg"
   }
  ],
  "puglia/bari-polignano": [
@@ -1466,6 +1692,13 @@
    "source": "https://commons.wikimedia.org/wiki/File:La_Maddalena_Archipel_Aerial_view.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Cala_Goloritz%C3%A9_%28arco%29.jpg/1280px-Cala_Goloritz%C3%A9_%28arco%29.jpg",
+   "title": "Cala Goloritzé",
+   "credit": "Sara Pizzagalli",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cala_Goloritz%C3%A9_(arco).jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Grotte_di_Nettuno.jpg/1280px-Grotte_di_Nettuno.jpg",
    "title": "Grotta di Nettuno",
    "credit": "Photo2023",
@@ -1473,18 +1706,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Grotte_di_Nettuno.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Nuraghe_Su_Nuraxi_-_Barumini_-_Sardinia_-_Italy_-_30.jpg/1280px-Nuraghe_Su_Nuraxi_-_Barumini_-_Sardinia_-_Italy_-_30.jpg",
-   "title": "Su Nuraxi di Barumini",
-   "credit": "Norbert Nagel",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Nuraghe_Su_Nuraxi_-_Barumini_-_Sardinia_-_Italy_-_30.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Tuaredda.jpg/1280px-Tuaredda.jpg",
-   "title": "Spiaggia di Tuerredda",
-   "credit": "ilaria",
-   "license": "CC BY 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Tuaredda.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Stintino_-_Panorama_%2803%29.jpg/1280px-Stintino_-_Panorama_%2803%29.jpg",
+   "title": "Spiaggia della Pelosa",
+   "credit": "Gianni Careddu",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Stintino_-_Panorama_(03).jpg"
   }
  ],
  "sardegna/alghero-nord-ovest": [
@@ -1563,6 +1789,36 @@
    "source": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Caprera_(056).jpg"
   }
  ],
+ "sardegna/golfo-di-orosei": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Cala_Goloritz%C3%A9_%28arco%29.jpg/1280px-Cala_Goloritz%C3%A9_%28arco%29.jpg",
+   "title": "Cala Goloritzé",
+   "credit": "Sara Pizzagalli",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cala_Goloritz%C3%A9_(arco).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Baunei-Guglia_di_Cala_Goloritz%C3%A9.jpg/1280px-Baunei-Guglia_di_Cala_Goloritz%C3%A9.jpg",
+   "title": "Cala Goloritzé",
+   "credit": "fotografia di Rosanna C.",
+   "license": "CC BY 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Baunei-Guglia_di_Cala_Goloritz%C3%A9.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Cala_Luna.jpg/1280px-Cala_Luna.jpg",
+   "title": "Cala Luna",
+   "credit": "Sven Jungnickel",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cala_Luna.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Cala_Goloritze_o.jpg/1280px-Cala_Goloritze_o.jpg",
+   "title": "Cala Goloritzé",
+   "credit": "delaere",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg"
+  }
+ ],
  "sardegna/oristano-sinis": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Crabas.jpg/1280px-Crabas.jpg",
@@ -1614,6 +1870,22 @@
    "credit": "Berthold Werner",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Monreale_Cathedral_exterior_BW_2012-10-09_10-23-10.jpg"
+  }
+ ],
+ "sicilia/agrigento-sud": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Scala_dei_Turchi_panorama.jpg/1280px-Scala_dei_Turchi_panorama.jpg",
+   "title": "Scala dei Turchi",
+   "credit": "Carnby",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Scala_dei_Turchi_panorama.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Scala_dei_Turchi_2.jpg/1280px-Scala_dei_Turchi_2.jpg",
+   "title": "Scala dei Turchi",
+   "credit": "Piero Tasso",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Scala_dei_Turchi_2.jpg"
   }
  ],
  "sicilia/eolie": [
@@ -1782,11 +2054,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:PiazzadelCampoSiena.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Florence%2C_Italy_-_panoramio_%28125%29.jpg/1280px-Florence%2C_Italy_-_panoramio_%28125%29.jpg",
-   "title": "Galleria degli Uffizi",
-   "credit": "Arek N.",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Florence,_Italy_-_panoramio_(125).jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/The_Cathedral_panoramic_view_from_Vecchio_Palace_Florence_Italy.jpg/1280px-The_Cathedral_panoramic_view_from_Vecchio_Palace_Florence_Italy.jpg",
+   "title": "Duomo di Firenze",
+   "credit": "P.Z. (\"Photochrom Zuerich\").",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Cathedral_panoramic_view_from_Vecchio_Palace_Florence_Italy.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Endless_hills_of_Pienza1.jpg/1280px-Endless_hills_of_Pienza1.jpg",
@@ -2188,11 +2460,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Portali_del_Duomo_di_Orvieto.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/24_Castelluccio_%28Norcia%29.jpg/1280px-24_Castelluccio_%28Norcia%29.jpg",
-   "title": "Castelluccio di Norcia",
-   "credit": "Enric",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:24_Castelluccio_(Norcia).jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Cascata_delle_Marmore_%2833%29.jpg/1280px-Cascata_delle_Marmore_%2833%29.jpg",
+   "title": "Cascata delle Marmore",
+   "credit": "Elekes Andor",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cascata_delle_Marmore_(33).jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Alba_a_Castelluccio_di_Norcia.jpg/1280px-Alba_a_Castelluccio_di_Norcia.jpg",
