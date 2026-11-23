@@ -222,6 +222,23 @@ export default function ItalyPanel({
 
                 <Places title={zone ? "Da non perdere" : "Luoghi simbolo"} items={zone ? zone.highlights : region.places} />
 
+                {!zone && region.itineraries && region.itineraries.length > 0 && (
+                  <div>
+                    <h3 className="mb-2 font-[family-name:var(--font-display)] text-lg font-semibold text-[#233c5e]">Itinerari proposti</h3>
+                    <ul className="flex flex-col gap-2">
+                      {region.itineraries.map((it) => (
+                        <li key={it.title} className="rounded-xl border border-[#e6d7bb] bg-white px-3.5 py-3 text-sm">
+                          <p className="font-semibold text-[#1d2b40]">
+                            {it.title} <span className="font-normal text-[#a87a1e]">· {it.days} giorni</span>
+                          </p>
+                          <p className="mt-0.5 text-[13px] text-[#233c5e]">{it.route}</p>
+                          <p className="mt-1 text-slate-600">{it.description}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {view.region && <CountrySuppliers code="IT" region={view.region} />}
 
                 {zone && (

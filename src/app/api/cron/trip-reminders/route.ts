@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
+import { decryptField } from "@/lib/encryption";
 
 // Chiamata una volta al giorno da Vercel Cron (vedi vercel.json): avvisa le
 // agenzie dei viaggi che partono tra 3 giorni, se hanno attivato questa
@@ -55,5 +56,43 @@ export async function GET(request: Request) {
     clientSent = rows.length;
   }
 
-  return NextResponse.json({ sent: typedTargets.length, clientSent });
+  // Auguri ai clienti (compleanno e anniversario di viaggio), solo per le agenzie che li hanno attivati
+  // (Impostazioni → Vantaggi per i clienti). Senza la migrazione 0054 si salta.
+  let greetings = 0;
+  const { data: greetRows, error: greetError } = await supabase.rpc("get_greeting_candidates", { p_secret: process.env.CRON_SECRET });
+  if (greetError) {
+    console.error("[cron] auguri:", greetError.message);
+  } else {
+    const romeMd = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", month: "2-digit", day: "2-digit" }).format(new Date());
+    type Greet = PushTarget & { kind: string; client_id: string; agency_name: string; dob: string | null; trip_id: string | null; trip_title: string | null };
+    const rows = (greetRows as Greet[] | null) ?? [];
+    const birthdayClients = new Set<string>();
+    for (const row of rows) {
+      const sign = row.agency_name ? ` — ${row.agency_name}` : "";
+      if (row.kind === "compleanno") {
+        let dob: string | null = null;
+        try {
+          dob = decryptField(row.dob);
+        } catch {
+          dob = null;
+        }
+        if (!dob || dob.slice(5, 10) !== romeMd) continue;
+        await sendPushToTargets([row], { title: "Buon compleanno! 🎂", body: `Tanti auguri da tutti noi: ti aspettiamo per il prossimo viaggio.${sign}`, url: "/client/vantaggi" });
+        birthdayClients.add(row.client_id);
+        greetings++;
+      } else if (row.kind === "anniversario" && row.trip_id) {
+        await sendPushToTargets([row], {
+          title: "Ti ricordi questo viaggio?",
+          body: `Oggi è l'anniversario del rientro da «${row.trip_title}». Rivivi i ricordi nel tuo mappamondo.${sign}`,
+          url: "/client/mappamondo",
+        });
+        greetings++;
+      }
+    }
+    for (const clientId of birthdayClients) {
+      await supabase.rpc("award_birthday_bonus", { p_secret: process.env.CRON_SECRET, p_client_id: clientId });
+    }
+  }
+
+  return NextResponse.json({ sent: typedTargets.length, clientSent, greetings });
 }

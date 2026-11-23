@@ -6,7 +6,8 @@
       "La Toscana è il paesaggio italiano per eccellenza: colline disegnate da cipressi e vigneti, borghi medievali in pietra, città d'arte che hanno fatto la storia d'Europa. Firenze, Siena, Pisa, Lucca e San Gimignano convivono con campagne dove il tempo sembra rallentare.",
       "Da vedere: gli Uffizi, il Duomo e il David a Firenze, Piazza del Campo a Siena, la Torre di Pisa, le torri di San Gimignano, la Val d'Orcia con Pienza e Montalcino, il Chianti tra Greve e Radda, Montepulciano e Cortona, le mura di Lucca, la Maremma con Saturnia, l'Isola d'Elba.",
       "Le esperienze più richieste: degustazioni di Brunello, Chianti Classico e Nobile in cantina, pranzi in fattoria, corsi di cucina in villa, giri in Vespa o Fiat 500 d'epoca tra i cipressi, terme naturali, il Palio di Siena e le giostre medievali, soggiorni in agriturismo o in borghi trasformati in hotel diffusi.",
-      "Ideale per coppie, famiglie, gruppi, matrimoni e viaggi di nozze, enoturisti e amanti dell'arte. Durata consigliata: 6-10 giorni combinando Firenze, una base in campagna e una zona di mare o di terme; si abbina con Umbria, Cinque Terre o Roma."
+      "Ideale per coppie, famiglie, gruppi, matrimoni e viaggi di nozze, enoturisti e amanti dell'arte. Durata consigliata: 6-10 giorni combinando Firenze, una base in campagna e una zona di mare o di terme; si abbina con Umbria, Cinque Terre o Roma.",
+      "La Toscana è la regione italiana più richiesta dagli stranieri e tra le più amate dagli italiani: Firenze con gli Uffizi, Siena, Pisa, Lucca, San Gimignano, il Chianti e la Val d'Orcia, la Maremma e l'isola d'Elba. Funziona per tour d'arte, soggiorni in agriturismo o villa con piscina, matrimoni, viaggi di gruppo ed enoturismo; per Uffizi, Accademia e cene in cantina conviene prenotare tutto prima della partenza."
     ],
     "facts": {
       "capoluogo": "Firenze",
@@ -18,12 +19,36 @@
       "prodotti": "Brunello di Montalcino, Chianti Classico, Nobile di Montepulciano, Bolgheri; olio extravergine, pecorino di Pienza, finocchiona, bistecca fiorentina"
     },
     "places": [
-      { "name": "Galleria degli Uffizi", "description": "Botticelli, Leonardo, Michelangelo e Caravaggio in uno dei musei più importanti al mondo.", "search": "Galleria degli Uffizi" },
-      { "name": "Piazza del Campo", "description": "La piazza a conchiglia di Siena, teatro del Palio.", "search": "Piazza del Campo" },
-      { "name": "San Gimignano", "description": "La 'Manhattan del Medioevo' con le sue torri.", "search": "San Gimignano" },
-      { "name": "Pienza", "description": "Città ideale del Rinascimento affacciata sulla Val d'Orcia.", "search": "Pienza" },
-      { "name": "Torre di Pisa", "description": "Il campanile pendente nel Campo dei Miracoli.", "search": "Torre di Pisa" },
-      { "name": "Mura di Lucca", "description": "Bastioni rinascimentali percorribili a piedi e in bici.", "search": "Mura di Lucca" }
+      {
+        "name": "Galleria degli Uffizi",
+        "description": "Botticelli, Leonardo, Michelangelo e Caravaggio in uno dei musei più importanti al mondo.",
+        "search": "Galleria degli Uffizi"
+      },
+      {
+        "name": "Piazza del Campo",
+        "description": "La piazza a conchiglia di Siena, teatro del Palio.",
+        "search": "Piazza del Campo"
+      },
+      {
+        "name": "San Gimignano",
+        "description": "La 'Manhattan del Medioevo' con le sue torri.",
+        "search": "San Gimignano"
+      },
+      {
+        "name": "Pienza",
+        "description": "Città ideale del Rinascimento affacciata sulla Val d'Orcia.",
+        "search": "Pienza"
+      },
+      {
+        "name": "Torre di Pisa",
+        "description": "Il campanile pendente nel Campo dei Miracoli.",
+        "search": "Torre di Pisa"
+      },
+      {
+        "name": "Mura di Lucca",
+        "description": "Bastioni rinascimentali percorribili a piedi e in bici.",
+        "search": "Mura di Lucca"
+      }
     ],
     "experiences": [
       "Degustazione di Brunello con pranzo in cantina a Montalcino",
@@ -52,139 +77,325 @@
       {
         "id": "firenze",
         "name": "Firenze e dintorni",
-        "lat": 43.77, "lon": 11.25,
+        "lat": 43.77,
+        "lon": 11.25,
         "tagline": "La culla del Rinascimento e le colline di Fiesole.",
         "description": [
           "Firenze è un museo a cielo aperto: il Duomo con la cupola del Brunelleschi, il Battistero, Palazzo Vecchio, gli Uffizi, il David all'Accademia, Ponte Vecchio e Palazzo Pitti con il Giardino di Boboli. L'Oltrarno conserva botteghe artigiane e un'atmosfera più autentica.",
           "Sulle colline intorno, Fiesole regala la vista più bella sulla città, mentre le ville medicee UNESCO e i borghi del Mugello sono a breve distanza. Firenze è anche una capitale della moda e della pelletteria."
         ],
         "highlights": [
-          { "name": "Cupola del Brunelleschi", "description": "Salita di 463 gradini fino in cima.", "search": "Cupola del Brunelleschi" },
-          { "name": "Galleria dell'Accademia", "description": "Il David di Michelangelo.", "search": "Galleria dell'Accademia (Firenze)" },
-          { "name": "Ponte Vecchio", "description": "Il ponte delle oreficerie sull'Arno.", "search": "Ponte Vecchio" },
-          { "name": "Piazzale Michelangelo", "description": "Belvedere sulla città al tramonto.", "search": "Piazzale Michelangelo" },
-          { "name": "Fiesole", "description": "Teatro romano e vista su Firenze.", "search": "Fiesole" }
+          {
+            "name": "Cupola del Brunelleschi",
+            "description": "Salita di 463 gradini fino in cima.",
+            "search": "Cupola del Brunelleschi"
+          },
+          {
+            "name": "Galleria dell'Accademia",
+            "description": "Il David di Michelangelo.",
+            "search": "Galleria dell'Accademia (Firenze)"
+          },
+          {
+            "name": "Ponte Vecchio",
+            "description": "Il ponte delle oreficerie sull'Arno.",
+            "search": "Ponte Vecchio"
+          },
+          {
+            "name": "Piazzale Michelangelo",
+            "description": "Belvedere sulla città al tramonto.",
+            "search": "Piazzale Michelangelo"
+          },
+          {
+            "name": "Fiesole",
+            "description": "Teatro romano e vista su Firenze.",
+            "search": "Fiesole"
+          }
         ],
-        "experiences": ["Visita privata agli Uffizi", "Laboratorio artigiano in Oltrarno", "Cena con vista sul Duomo"],
+        "experiences": [
+          "Visita privata agli Uffizi",
+          "Laboratorio artigiano in Oltrarno",
+          "Cena con vista sul Duomo"
+        ],
         "idealFor": "Arte, coppie, gruppi, viaggi studio; 3-4 giorni",
         "bestPeriod": "Marzo-giugno, settembre-novembre"
       },
       {
         "id": "chianti",
         "name": "Chianti",
-        "lat": 43.53, "lon": 11.33,
+        "lat": 43.53,
+        "lon": 11.33,
         "tagline": "Vigneti, castelli e il Gallo Nero tra Firenze e Siena.",
         "description": [
           "Il Chianti Classico è il cuore vinicolo della Toscana: colline coperte di vigneti e uliveti, boschi, castelli e pievi romaniche. Greve con la piazza a portici, Panzano, Castellina, Radda e Gaiole sono i borghi principali, collegati dalla panoramica Chiantigiana (SR222).",
           "La zona è perfetta per soggiorni in villa o agriturismo, degustazioni in tenute storiche come Badia a Coltibuono o Castello di Brolio, e per itinerari in bici o a piedi tra le vigne."
         ],
         "highlights": [
-          { "name": "Greve in Chianti", "description": "Piazza a portici e macellerie storiche.", "search": "Greve in Chianti" },
-          { "name": "Castello di Brolio", "description": "Castello dei Ricasoli, culla della formula del Chianti.", "search": "Castello di Brolio" },
-          { "name": "Radda in Chianti", "description": "Borgo medievale sul crinale.", "search": "Radda in Chianti" },
-          { "name": "Badia a Passignano", "description": "Abbazia tra i vigneti.", "search": "Badia a Passignano" },
-          { "name": "Castellina in Chianti", "description": "Borgo con la via delle Volte.", "search": "Castellina in Chianti" }
+          {
+            "name": "Greve in Chianti",
+            "description": "Piazza a portici e macellerie storiche.",
+            "search": "Greve in Chianti"
+          },
+          {
+            "name": "Castello di Brolio",
+            "description": "Castello dei Ricasoli, culla della formula del Chianti.",
+            "search": "Castello di Brolio"
+          },
+          {
+            "name": "Radda in Chianti",
+            "description": "Borgo medievale sul crinale.",
+            "search": "Radda in Chianti"
+          },
+          {
+            "name": "Badia a Passignano",
+            "description": "Abbazia tra i vigneti.",
+            "search": "Badia a Passignano"
+          },
+          {
+            "name": "Castellina in Chianti",
+            "description": "Borgo con la via delle Volte.",
+            "search": "Castellina in Chianti"
+          }
         ],
-        "experiences": ["Degustazione in un castello vinicolo", "Corso di cucina in villa", "Tour in Vespa o e-bike tra le vigne", "Pranzo dal macellaio di Panzano"],
+        "experiences": [
+          "Degustazione in un castello vinicolo",
+          "Corso di cucina in villa",
+          "Tour in Vespa o e-bike tra le vigne",
+          "Pranzo dal macellaio di Panzano"
+        ],
         "idealFor": "Coppie, viaggi di nozze, famiglie in villa, enoturisti; 3-5 giorni",
         "bestPeriod": "Aprile-ottobre; vendemmia a settembre"
       },
       {
         "id": "val-d-orcia",
         "name": "Val d'Orcia",
-        "lat": 43.06, "lon": 11.6,
+        "lat": 43.06,
+        "lon": 11.6,
         "tagline": "Il paesaggio UNESCO dei cipressi, di Pienza e del Brunello.",
         "description": [
           "La Val d'Orcia è il paesaggio toscano delle cartoline: colline ondulate, filari di cipressi, casali isolati. Pienza, città ideale di Pio II, Montalcino con il Brunello, San Quirico d'Orcia con gli Horti Leonini, Castiglione e Rocca d'Orcia sono le tappe principali.",
           "Le terme sono parte dell'esperienza: Bagno Vignoni ha una piazza d'acqua termale al posto della piazza, Bagni San Filippo cascate di calcare bianco. Poco lontano il Monte Amiata e l'abbazia di Sant'Antimo."
         ],
         "highlights": [
-          { "name": "Pienza", "description": "Città rinascimentale e capitale del pecorino.", "search": "Pienza" },
-          { "name": "Montalcino", "description": "Fortezza e cantine del Brunello.", "search": "Montalcino" },
-          { "name": "Bagno Vignoni", "description": "Piazza d'acqua termale.", "search": "Bagno Vignoni" },
-          { "name": "Cappella della Madonna di Vitaleta", "description": "Chiesetta tra i cipressi, icona della valle.", "search": "Cappella della Madonna di Vitaleta" },
-          { "name": "Abbazia di Sant'Antimo", "description": "Abbazia romanica tra gli ulivi.", "search": "Abbazia di Sant'Antimo" }
+          {
+            "name": "Pienza",
+            "description": "Città rinascimentale e capitale del pecorino.",
+            "search": "Pienza"
+          },
+          {
+            "name": "Montalcino",
+            "description": "Fortezza e cantine del Brunello.",
+            "search": "Montalcino"
+          },
+          {
+            "name": "Bagno Vignoni",
+            "description": "Piazza d'acqua termale.",
+            "search": "Bagno Vignoni"
+          },
+          {
+            "name": "Cappella della Madonna di Vitaleta",
+            "description": "Chiesetta tra i cipressi, icona della valle.",
+            "search": "Cappella della Madonna di Vitaleta"
+          },
+          {
+            "name": "Abbazia di Sant'Antimo",
+            "description": "Abbazia romanica tra gli ulivi.",
+            "search": "Abbazia di Sant'Antimo"
+          }
         ],
-        "experiences": ["Degustazione di Brunello", "Alba in mongolfiera sulle colline", "Bagno termale libero a Bagni San Filippo", "Fotografia ai cipressi di San Quirico"],
+        "experiences": [
+          "Degustazione di Brunello",
+          "Alba in mongolfiera sulle colline",
+          "Bagno termale libero a Bagni San Filippo",
+          "Fotografia ai cipressi di San Quirico"
+        ],
         "idealFor": "Coppie, fotografi, enoturisti; 2-4 giorni",
         "bestPeriod": "Aprile-giugno (grano verde), settembre-ottobre"
       },
       {
         "id": "siena-crete",
         "name": "Siena, Crete Senesi e San Gimignano",
-        "lat": 43.32, "lon": 11.33,
+        "lat": 43.32,
+        "lon": 11.33,
         "tagline": "La città del Palio, le colline d'argilla e le torri medievali.",
         "description": [
           "Siena è un gioiello gotico: Piazza del Campo, il Palazzo Pubblico con la Torre del Mangia, il Duomo con il pavimento intarsiato e la Libreria Piccolomini. Due volte l'anno il Palio infiamma la città.",
           "A sud-est le Crete Senesi offrono paesaggi lunari di argilla e l'abbazia di Monte Oliveto Maggiore; a nord-ovest San Gimignano con le torri e la Vernaccia, e Monteriggioni con la sua cinta di mura intatta."
         ],
         "highlights": [
-          { "name": "Duomo di Siena", "description": "Pavimento a commesso marmoreo e Libreria Piccolomini.", "search": "Duomo di Siena" },
-          { "name": "San Gimignano", "description": "Le torri medievali e la Vernaccia.", "search": "San Gimignano" },
-          { "name": "Monteriggioni", "description": "Borgo murato citato da Dante.", "search": "Monteriggioni" },
-          { "name": "Abbazia di Monte Oliveto Maggiore", "description": "Abbazia con il chiostro affrescato.", "search": "Abbazia di Monte Oliveto Maggiore" }
+          {
+            "name": "Duomo di Siena",
+            "description": "Pavimento a commesso marmoreo e Libreria Piccolomini.",
+            "search": "Duomo di Siena"
+          },
+          {
+            "name": "San Gimignano",
+            "description": "Le torri medievali e la Vernaccia.",
+            "search": "San Gimignano"
+          },
+          {
+            "name": "Monteriggioni",
+            "description": "Borgo murato citato da Dante.",
+            "search": "Monteriggioni"
+          },
+          {
+            "name": "Abbazia di Monte Oliveto Maggiore",
+            "description": "Abbazia con il chiostro affrescato.",
+            "search": "Abbazia di Monte Oliveto Maggiore"
+          }
         ],
-        "experiences": ["Visita della contrada e del Palio", "Degustazione di Vernaccia a San Gimignano", "Tramonto sulle Crete"],
+        "experiences": [
+          "Visita della contrada e del Palio",
+          "Degustazione di Vernaccia a San Gimignano",
+          "Tramonto sulle Crete"
+        ],
         "idealFor": "Cultura, coppie, gruppi; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre; Palio 2 luglio e 16 agosto"
       },
       {
         "id": "montepulciano-cortona",
         "name": "Montepulciano, Cortona e Valdichiana",
-        "lat": 43.15, "lon": 11.85,
+        "lat": 43.15,
+        "lon": 11.85,
         "tagline": "Il Nobile, i borghi etruschi e la valle delle Chianine.",
         "description": [
           "Montepulciano è un borgo rinascimentale su un crinale, con cantine scavate nel tufo dove invecchia il Vino Nobile. Poco distante, il Tempio di San Biagio e le terme di Chianciano.",
           "Cortona, resa famosa da 'Sotto il sole della Toscana', domina la Valdichiana con mura etrusche e piazze vivaci. Arezzo, con gli affreschi di Piero della Francesca e la Fiera Antiquaria, completa la zona."
         ],
         "highlights": [
-          { "name": "Montepulciano", "description": "Piazza Grande e cantine storiche.", "search": "Montepulciano" },
-          { "name": "Tempio di San Biagio", "description": "Chiesa rinascimentale tra i cipressi.", "search": "Tempio di San Biagio" },
-          { "name": "Cortona", "description": "Borgo etrusco sulla Valdichiana.", "search": "Cortona" },
-          { "name": "Basilica di San Francesco ad Arezzo", "description": "La Leggenda della Vera Croce di Piero della Francesca.", "search": "Leggenda della Vera Croce" }
+          {
+            "name": "Montepulciano",
+            "description": "Piazza Grande e cantine storiche.",
+            "search": "Montepulciano"
+          },
+          {
+            "name": "Tempio di San Biagio",
+            "description": "Chiesa rinascimentale tra i cipressi.",
+            "search": "Tempio di San Biagio"
+          },
+          {
+            "name": "Cortona",
+            "description": "Borgo etrusco sulla Valdichiana.",
+            "search": "Cortona"
+          },
+          {
+            "name": "Basilica di San Francesco ad Arezzo",
+            "description": "La Leggenda della Vera Croce di Piero della Francesca.",
+            "search": "Leggenda della Vera Croce"
+          }
         ],
-        "experiences": ["Cantine sotterranee di Montepulciano", "Bistecca di Chianina", "Fiera Antiquaria di Arezzo (primo weekend del mese)"],
+        "experiences": [
+          "Cantine sotterranee di Montepulciano",
+          "Bistecca di Chianina",
+          "Fiera Antiquaria di Arezzo (primo weekend del mese)"
+        ],
         "idealFor": "Coppie, gruppi, chi abbina Toscana e Umbria; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "pisa-lucca-versilia",
         "name": "Pisa, Lucca e Versilia",
-        "lat": 43.85, "lon": 10.4,
+        "lat": 43.85,
+        "lon": 10.4,
         "tagline": "La Torre pendente, le mura di Lucca e le spiagge della Versilia.",
         "description": [
           "Pisa è molto più della Torre: il Campo dei Miracoli UNESCO con Duomo e Battistero, i lungarni e la Piazza dei Cavalieri. Lucca, chiusa da mura rinascimentali alberate, è una delle città più vivibili d'Italia, patria di Puccini.",
           "La Versilia — Forte dei Marmi, Pietrasanta, Viareggio — è la riviera elegante della Toscana, con stabilimenti storici e le Alpi Apuane alle spalle, dove si visitano le cave di marmo di Carrara."
         ],
         "highlights": [
-          { "name": "Piazza dei Miracoli", "description": "Torre, Duomo e Battistero di Pisa.", "search": "Piazza dei Miracoli" },
-          { "name": "Mura di Lucca", "description": "Passeggiata alberata sui bastioni.", "search": "Mura di Lucca" },
-          { "name": "Forte dei Marmi", "description": "Località balneare esclusiva.", "search": "Forte dei Marmi" },
-          { "name": "Cave di marmo di Carrara", "description": "Tour in jeep nelle cave di Michelangelo.", "search": "Marmo di Carrara" }
+          {
+            "name": "Piazza dei Miracoli",
+            "description": "Torre, Duomo e Battistero di Pisa.",
+            "search": "Piazza dei Miracoli"
+          },
+          {
+            "name": "Mura di Lucca",
+            "description": "Passeggiata alberata sui bastioni.",
+            "search": "Mura di Lucca"
+          },
+          {
+            "name": "Forte dei Marmi",
+            "description": "Località balneare esclusiva.",
+            "search": "Forte dei Marmi"
+          },
+          {
+            "name": "Cave di marmo di Carrara",
+            "description": "Tour in jeep nelle cave di Michelangelo.",
+            "search": "Marmo di Carrara"
+          }
         ],
-        "experiences": ["Bici sulle mura di Lucca", "Tour in jeep nelle cave di marmo", "Giornata in uno stabilimento storico a Forte dei Marmi"],
+        "experiences": [
+          "Bici sulle mura di Lucca",
+          "Tour in jeep nelle cave di marmo",
+          "Giornata in uno stabilimento storico a Forte dei Marmi"
+        ],
         "idealFor": "Famiglie, coppie, mare e cultura; 3-5 giorni",
         "bestPeriod": "Maggio-settembre per il mare; tutto l'anno per le città"
       },
       {
         "id": "maremma-costa",
         "name": "Maremma, Bolgheri e Isola d'Elba",
-        "lat": 42.75, "lon": 11.0,
+        "lat": 42.75,
+        "lon": 11.0,
         "tagline": "Terme di Saturnia, borghi del tufo, Super Tuscan e mare.",
         "description": [
           "La Maremma è la Toscana selvaggia: il Parco dell'Uccellina, i butteri a cavallo, le spiagge di Castiglione della Pescaia e dell'Argentario, le cascate termali gratuite di Saturnia. Nell'entroterra i borghi del tufo — Pitigliano, Sorano, Sovana — e il Giardino dei Tarocchi.",
           "Più a nord, Bolgheri con il viale dei cipressi è la patria dei Super Tuscan. Da Piombino si raggiunge l'Isola d'Elba, con calette, sentieri e le residenze napoleoniche."
         ],
         "highlights": [
-          { "name": "Cascate del Mulino di Saturnia", "description": "Vasche termali naturali all'aperto.", "search": "Cascate del Mulino" },
-          { "name": "Pitigliano", "description": "Borgo sospeso sul tufo.", "search": "Pitigliano" },
-          { "name": "Viale dei cipressi di Bolgheri", "description": "Il viale cantato da Carducci.", "search": "Bolgheri" },
-          { "name": "Isola d'Elba", "description": "Spiagge, sentieri e storia napoleonica.", "search": "Isola d'Elba" },
-          { "name": "Monte Argentario", "description": "Promontorio con Porto Ercole e Porto Santo Stefano.", "search": "Monte Argentario" }
+          {
+            "name": "Cascate del Mulino di Saturnia",
+            "description": "Vasche termali naturali all'aperto.",
+            "search": "Cascate del Mulino"
+          },
+          {
+            "name": "Pitigliano",
+            "description": "Borgo sospeso sul tufo.",
+            "search": "Pitigliano"
+          },
+          {
+            "name": "Viale dei cipressi di Bolgheri",
+            "description": "Il viale cantato da Carducci.",
+            "search": "Bolgheri"
+          },
+          {
+            "name": "Isola d'Elba",
+            "description": "Spiagge, sentieri e storia napoleonica.",
+            "search": "Isola d'Elba"
+          },
+          {
+            "name": "Monte Argentario",
+            "description": "Promontorio con Porto Ercole e Porto Santo Stefano.",
+            "search": "Monte Argentario"
+          }
         ],
-        "experiences": ["Bagno all'alba a Saturnia", "Degustazione di Super Tuscan a Bolgheri", "Escursione a cavallo con i butteri", "Barca intorno all'Elba"],
+        "experiences": [
+          "Bagno all'alba a Saturnia",
+          "Degustazione di Super Tuscan a Bolgheri",
+          "Escursione a cavallo con i butteri",
+          "Barca intorno all'Elba"
+        ],
         "idealFor": "Famiglie, coppie, mare e natura; 4-7 giorni",
         "bestPeriod": "Maggio-ottobre; terme tutto l'anno"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Firenze e colline",
+        "days": 6,
+        "route": "Firenze (3) → Chianti (1) → Siena (1) → San Gimignano (1)",
+        "description": "Rinascimento, vino e borghi medievali: il tour più venduto della regione, comodo con un'auto a noleggio dal secondo giorno."
+      },
+      {
+        "title": "Val d'Orcia e terme",
+        "days": 5,
+        "route": "Pienza (2) → Montalcino (1) → Bagno Vignoni o Saturnia (2)",
+        "description": "Cipressi e colline da cartolina, Brunello e bagni termali, ideale per coppie."
+      },
+      {
+        "title": "Mare toscano",
+        "days": 7,
+        "route": "Maremma (3) → Isola d'Elba (4)",
+        "description": "Spiagge dell'Argentario e della Maremma, poi l'Elba con il suo mare limpido e i sentieri."
       }
     ]
   },
@@ -195,7 +406,8 @@
       "L'Umbria è l'unica regione dell'Italia peninsulare senza sbocco sul mare, un susseguirsi di colline, boschi e borghi medievali arroccati. Assisi, Perugia, Spoleto, Orvieto, Gubbio e Todi sono città d'arte raccolte, perfette da visitare con calma.",
       "Da vedere: la Basilica di San Francesco ad Assisi con gli affreschi di Giotto, il Duomo di Orvieto e il Pozzo di San Patrizio, Perugia con la Rocca Paolina, Gubbio medievale, Spoleto e il Ponte delle Torri, la Cascata delle Marmore, il Lago Trasimeno e Castelluccio di Norcia con la fioritura delle lenticchie.",
       "Le esperienze più apprezzate: itinerari spirituali sulle orme di San Francesco, degustazioni di Sagrantino a Montefalco, caccia al tartufo nero a Norcia, il festival Umbria Jazz a Perugia, rafting e canyoning in Valnerina, soggiorni in borghi e agriturismi.",
-      "Ideale per coppie, pellegrinaggi, viaggi slow ed enogastronomici. Durata consigliata: 3-5 giorni; si abbina perfettamente con Toscana (Cortona, Montepulciano) e Roma (Orvieto è a un'ora)."
+      "Ideale per coppie, pellegrinaggi, viaggi slow ed enogastronomici. Durata consigliata: 3-5 giorni; si abbina perfettamente con Toscana (Cortona, Montepulciano) e Roma (Orvieto è a un'ora).",
+      "L'Umbria si vende come la Toscana più tranquilla: borghi in pietra, spiritualità francescana, tartufo e cantine di Sagrantino, a prezzi spesso più bassi. Assisi, Perugia, Spoleto, Orvieto, Gubbio e Todi si visitano con calma in una settimana, ideale per coppie, gruppi parrocchiali, cammini a piedi e famiglie con bambini; Castelluccio fiorita e Umbria Jazz sono i due grandi richiami dell'estate."
     ],
     "facts": {
       "capoluogo": "Perugia",
@@ -207,12 +419,36 @@
       "prodotti": "Tartufo nero di Norcia, Sagrantino di Montefalco, Orvieto Classico, olio DOP Umbria, norcineria, lenticchie di Castelluccio"
     },
     "places": [
-      { "name": "Basilica di San Francesco", "description": "Capolavoro gotico con gli affreschi di Giotto e Cimabue.", "search": "Basilica di San Francesco (Assisi)" },
-      { "name": "Duomo di Orvieto", "description": "Facciata dorata e Cappella di San Brizio affrescata da Signorelli.", "search": "Duomo di Orvieto" },
-      { "name": "Gubbio", "description": "Città medievale di pietra grigia con il Palazzo dei Consoli.", "search": "Gubbio" },
-      { "name": "Cascata delle Marmore", "description": "Cascata artificiale romana tra le più alte d'Europa.", "search": "Cascata delle Marmore" },
-      { "name": "Castelluccio di Norcia", "description": "Altopiano che fiorisce di colori a inizio estate.", "search": "Castelluccio" },
-      { "name": "Lago Trasimeno", "description": "Lago con isole e borghi come Castiglione del Lago.", "search": "Lago Trasimeno" }
+      {
+        "name": "Basilica di San Francesco",
+        "description": "Capolavoro gotico con gli affreschi di Giotto e Cimabue.",
+        "search": "Basilica di San Francesco (Assisi)"
+      },
+      {
+        "name": "Duomo di Orvieto",
+        "description": "Facciata dorata e Cappella di San Brizio affrescata da Signorelli.",
+        "search": "Duomo di Orvieto"
+      },
+      {
+        "name": "Gubbio",
+        "description": "Città medievale di pietra grigia con il Palazzo dei Consoli.",
+        "search": "Gubbio"
+      },
+      {
+        "name": "Cascata delle Marmore",
+        "description": "Cascata artificiale romana tra le più alte d'Europa.",
+        "search": "Cascata delle Marmore"
+      },
+      {
+        "name": "Castelluccio di Norcia",
+        "description": "Altopiano che fiorisce di colori a inizio estate.",
+        "search": "Castelluccio"
+      },
+      {
+        "name": "Lago Trasimeno",
+        "description": "Lago con isole e borghi come Castiglione del Lago.",
+        "search": "Lago Trasimeno"
+      }
     ],
     "experiences": [
       "Cammino di Francesco tra Assisi e i santuari francescani",
@@ -241,78 +477,182 @@
       {
         "id": "assisi-perugia",
         "name": "Assisi, Perugia e Spello",
-        "lat": 43.07, "lon": 12.6,
+        "lat": 43.07,
+        "lon": 12.6,
         "tagline": "La città di San Francesco e il capoluogo etrusco.",
         "description": [
           "Assisi è uno dei luoghi spirituali più visitati al mondo: la Basilica di San Francesco, Santa Chiara, l'Eremo delle Carceri sul Monte Subasio. Le sue vie in pietra rosa offrono scorci sulla valle umbra.",
           "Perugia, città universitaria e del cioccolato, ha la Fontana Maggiore e la Rocca Paolina sotterranea. Spello, coperta di fiori nella festa dell'Infiorata, e Bevagna completano la zona."
         ],
         "highlights": [
-          { "name": "Basilica di San Francesco", "description": "Affreschi di Giotto e Cimabue.", "search": "Basilica di San Francesco (Assisi)" },
-          { "name": "Eremo delle Carceri", "description": "Romitorio nel bosco del Subasio.", "search": "Eremo delle Carceri" },
-          { "name": "Fontana Maggiore", "description": "Cuore medievale di Perugia.", "search": "Fontana Maggiore" },
-          { "name": "Spello", "description": "Borgo dei fiori e delle Infiorate.", "search": "Spello" }
+          {
+            "name": "Basilica di San Francesco",
+            "description": "Affreschi di Giotto e Cimabue.",
+            "search": "Basilica di San Francesco (Assisi)"
+          },
+          {
+            "name": "Eremo delle Carceri",
+            "description": "Romitorio nel bosco del Subasio.",
+            "search": "Eremo delle Carceri"
+          },
+          {
+            "name": "Fontana Maggiore",
+            "description": "Cuore medievale di Perugia.",
+            "search": "Fontana Maggiore"
+          },
+          {
+            "name": "Spello",
+            "description": "Borgo dei fiori e delle Infiorate.",
+            "search": "Spello"
+          }
         ],
-        "experiences": ["Visita guidata spirituale ad Assisi", "Casa del Cioccolato Perugina", "Infiorata di Spello (Corpus Domini)"],
+        "experiences": [
+          "Visita guidata spirituale ad Assisi",
+          "Casa del Cioccolato Perugina",
+          "Infiorata di Spello (Corpus Domini)"
+        ],
         "idealFor": "Pellegrini, gruppi, coppie; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "orvieto-todi",
         "name": "Orvieto e Todi",
-        "lat": 42.72, "lon": 12.2,
+        "lat": 42.72,
+        "lon": 12.2,
         "tagline": "Città sul tufo, cattedrali e vini bianchi.",
         "description": [
           "Orvieto sorge su una rupe di tufo: il Duomo con la facciata a mosaico, il Pozzo di San Patrizio e la Orvieto sotterranea, un labirinto di grotte etrusche. È a un'ora da Roma, ideale anche in giornata.",
           "Todi, su un colle sopra il Tevere, ha una delle piazze medievali più belle d'Italia. Tra le due città, cantine di Orvieto Classico e il lago di Corbara."
         ],
         "highlights": [
-          { "name": "Duomo di Orvieto", "description": "Facciata a mosaico e Cappella di San Brizio.", "search": "Duomo di Orvieto" },
-          { "name": "Pozzo di San Patrizio", "description": "Pozzo rinascimentale a doppia elica.", "search": "Pozzo di San Patrizio" },
-          { "name": "Orvieto sotterranea", "description": "Grotte e cunicoli etruschi.", "search": "Orvieto underground" },
-          { "name": "Todi", "description": "Piazza del Popolo e Tempio della Consolazione.", "search": "Todi" }
+          {
+            "name": "Duomo di Orvieto",
+            "description": "Facciata a mosaico e Cappella di San Brizio.",
+            "search": "Duomo di Orvieto"
+          },
+          {
+            "name": "Pozzo di San Patrizio",
+            "description": "Pozzo rinascimentale a doppia elica.",
+            "search": "Pozzo di San Patrizio"
+          },
+          {
+            "name": "Orvieto sotterranea",
+            "description": "Grotte e cunicoli etruschi.",
+            "search": "Orvieto underground"
+          },
+          {
+            "name": "Todi",
+            "description": "Piazza del Popolo e Tempio della Consolazione.",
+            "search": "Todi"
+          }
         ],
-        "experiences": ["Tour di Orvieto sotterranea", "Degustazione di Orvieto Classico", "Tramonto a Civita di Bagnoregio (nel Lazio, vicinissima)"],
+        "experiences": [
+          "Tour di Orvieto sotterranea",
+          "Degustazione di Orvieto Classico",
+          "Tramonto a Civita di Bagnoregio (nel Lazio, vicinissima)"
+        ],
         "idealFor": "Coppie, gruppi da Roma, culturali; 1-2 giorni",
         "bestPeriod": "Tutto l'anno"
       },
       {
         "id": "montefalco-spoleto",
         "name": "Montefalco, Spoleto e la valle del Sagrantino",
-        "lat": 42.85, "lon": 12.65,
+        "lat": 42.85,
+        "lon": 12.65,
         "tagline": "Il vino più tannico d'Italia e il Festival dei Due Mondi.",
         "description": [
           "Montefalco, la 'ringhiera dell'Umbria', domina una valle di vigneti dove nasce il Sagrantino. Bevagna e Trevi, borgo degli uliveti, completano un itinerario tra arte e gusto.",
           "Spoleto, città del Festival dei Due Mondi, offre la Rocca Albornoziana, il Ponte delle Torri e un Duomo con affreschi di Filippo Lippi. Vicino, le Fonti del Clitunno."
         ],
         "highlights": [
-          { "name": "Montefalco", "description": "Borgo del Sagrantino.", "search": "Montefalco" },
-          { "name": "Ponte delle Torri", "description": "Ponte-acquedotto medievale di Spoleto.", "search": "Ponte delle Torri" },
-          { "name": "Fonti del Clitunno", "description": "Laghetto di sorgente cantato dai poeti.", "search": "Fonti del Clitunno" },
-          { "name": "Bevagna", "description": "Borgo medievale con mestieri antichi.", "search": "Bevagna" }
+          {
+            "name": "Montefalco",
+            "description": "Borgo del Sagrantino.",
+            "search": "Montefalco"
+          },
+          {
+            "name": "Ponte delle Torri",
+            "description": "Ponte-acquedotto medievale di Spoleto.",
+            "search": "Ponte delle Torri"
+          },
+          {
+            "name": "Fonti del Clitunno",
+            "description": "Laghetto di sorgente cantato dai poeti.",
+            "search": "Fonti del Clitunno"
+          },
+          {
+            "name": "Bevagna",
+            "description": "Borgo medievale con mestieri antichi.",
+            "search": "Bevagna"
+          }
         ],
-        "experiences": ["Degustazione di Sagrantino", "Frantoio a Trevi in autunno", "Festival dei Due Mondi (giugno-luglio)"],
+        "experiences": [
+          "Degustazione di Sagrantino",
+          "Frantoio a Trevi in autunno",
+          "Festival dei Due Mondi (giugno-luglio)"
+        ],
         "idealFor": "Enoturisti, coppie; 2 giorni",
         "bestPeriod": "Aprile-novembre"
       },
       {
         "id": "valnerina-norcia",
         "name": "Valnerina, Norcia e Castelluccio",
-        "lat": 42.79, "lon": 13.1,
+        "lat": 42.79,
+        "lon": 13.1,
         "tagline": "Montagne dei Sibillini, tartufo e la fioritura più famosa d'Italia.",
         "description": [
           "La Valnerina è una valle verde scavata dal fiume Nera, con abbazie romaniche e borghi di pietra. Norcia, patria di San Benedetto e della norcineria, è il centro del tartufo nero.",
           "Sopra, l'altopiano di Castelluccio nel Parco dei Monti Sibillini si accende di colori a inizio estate. A sud, la Cascata delle Marmore e le attività di rafting e canyoning."
         ],
         "highlights": [
-          { "name": "Pian Grande di Castelluccio", "description": "Fioritura delle lenticchie.", "search": "Piano Grande di Castelluccio" },
-          { "name": "Norcia", "description": "Città di San Benedetto e del tartufo.", "search": "Norcia" },
-          { "name": "Cascata delle Marmore", "description": "Cascata spettacolare a orari d'apertura.", "search": "Cascata delle Marmore" },
-          { "name": "Abbazia di San Pietro in Valle", "description": "Abbazia longobarda nella valle.", "search": "Abbazia di San Pietro in Valle" }
+          {
+            "name": "Pian Grande di Castelluccio",
+            "description": "Fioritura delle lenticchie.",
+            "search": "Piano Grande di Castelluccio"
+          },
+          {
+            "name": "Norcia",
+            "description": "Città di San Benedetto e del tartufo.",
+            "search": "Norcia"
+          },
+          {
+            "name": "Cascata delle Marmore",
+            "description": "Cascata spettacolare a orari d'apertura.",
+            "search": "Cascata delle Marmore"
+          },
+          {
+            "name": "Abbazia di San Pietro in Valle",
+            "description": "Abbazia longobarda nella valle.",
+            "search": "Abbazia di San Pietro in Valle"
+          }
         ],
-        "experiences": ["Caccia al tartufo nero", "Rafting sul Corno", "Volo in parapendio su Castelluccio"],
+        "experiences": [
+          "Caccia al tartufo nero",
+          "Rafting sul Corno",
+          "Volo in parapendio su Castelluccio"
+        ],
         "idealFor": "Natura, sport, gastronomia; 2-3 giorni",
         "bestPeriod": "Giugno-luglio per la fioritura; novembre per il tartufo"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Umbria classica",
+        "days": 6,
+        "route": "Assisi (2) → Perugia (1) → Gubbio (1) → Spoleto (1) → Orvieto (1)",
+        "description": "Le città più belle della regione con tempi distesi; si fa anche in treno con qualche transfer."
+      },
+      {
+        "title": "Cammino di Francesco breve",
+        "days": 5,
+        "route": "Assisi (1) → Spello → Foligno → Trevi (1) → Spoleto (2)",
+        "description": "Tappe a piedi facili tra uliveti e borghi, con trasporto bagagli."
+      },
+      {
+        "title": "Tartufo e Valnerina",
+        "days": 4,
+        "route": "Norcia (2) → Castelluccio → Cascata delle Marmore (1)",
+        "description": "Norcineria, tartufo nero, l'altopiano fiorito e la cascata artificiale più alta d'Europa."
       }
     ]
   },
@@ -323,7 +663,8 @@
       "Le Marche sono una regione 'al plurale': un mare limpido sulla Riviera del Conero, colline punteggiate da oltre 200 borghi, i Monti Sibillini e città d'arte rinascimentali. Ancora poco battute dal turismo di massa, offrono autenticità e ottimo rapporto qualità-prezzo.",
       "Da vedere: il Palazzo Ducale di Urbino con la Galleria Nazionale delle Marche, la baia delle Due Sorelle al Conero, Loreto con la Santa Casa, le Grotte di Frasassi, Ascoli Piceno con piazza del Popolo, Recanati di Leopardi, Gradara, il Sferisterio di Macerata.",
       "Le esperienze più richieste: giro in barca alle spiagge del Conero raggiungibili solo dal mare, visita alle Grotte di Frasassi, degustazione di Verdicchio, olive all'ascolana in una trattoria, opera all'aperto allo Sferisterio, trekking sui Sibillini.",
-      "Ideale per famiglie, coppie, viaggiatori in cerca di destinazioni autentiche. Durata consigliata: 4-6 giorni; si abbina con Umbria, Emilia-Romagna (Rimini-Urbino 1 ora) o Abruzzo."
+      "Ideale per famiglie, coppie, viaggiatori in cerca di destinazioni autentiche. Durata consigliata: 4-6 giorni; si abbina con Umbria, Emilia-Romagna (Rimini-Urbino 1 ora) o Abruzzo.",
+      "Le Marche sono la «regione al plurale»: mare della Riviera del Conero e di San Benedetto, colline con borghi come Urbino, Recanati e Corinaldo, montagne dei Sibillini, grotte di Frasassi. Hanno ottimi rapporti qualità-prezzo e si vendono a famiglie (spiagge Bandiera Blu), coppie e appassionati di arte e cucina; l'aeroporto di Ancona e l'autostrada adriatica le rendono facili da raggiungere."
     ],
     "facts": {
       "capoluogo": "Ancona",
@@ -335,12 +676,36 @@
       "prodotti": "Verdicchio dei Castelli di Jesi, Rosso Conero, olive all'ascolana, ciauscolo, vincisgrassi, tartufo di Acqualagna"
     },
     "places": [
-      { "name": "Palazzo Ducale di Urbino", "description": "La reggia di Federico da Montefeltro, simbolo del Rinascimento.", "search": "Palazzo Ducale di Urbino" },
-      { "name": "Spiaggia delle Due Sorelle", "description": "Spiaggia del Conero raggiungibile solo in barca.", "search": "Spiaggia delle Due Sorelle" },
-      { "name": "Grotte di Frasassi", "description": "Uno dei complessi carsici più spettacolari d'Europa.", "search": "Grotte di Frasassi" },
-      { "name": "Santuario di Loreto", "description": "Basilica che custodisce la Santa Casa.", "search": "Santuario della Santa Casa di Loreto" },
-      { "name": "Ascoli Piceno", "description": "Città di travertino con una delle piazze più belle d'Italia.", "search": "Piazza del Popolo (Ascoli Piceno)" },
-      { "name": "Gradara", "description": "Borgo con il castello di Paolo e Francesca.", "search": "Gradara" }
+      {
+        "name": "Palazzo Ducale di Urbino",
+        "description": "La reggia di Federico da Montefeltro, simbolo del Rinascimento.",
+        "search": "Palazzo Ducale di Urbino"
+      },
+      {
+        "name": "Spiaggia delle Due Sorelle",
+        "description": "Spiaggia del Conero raggiungibile solo in barca.",
+        "search": "Spiaggia delle Due Sorelle"
+      },
+      {
+        "name": "Grotte di Frasassi",
+        "description": "Uno dei complessi carsici più spettacolari d'Europa.",
+        "search": "Grotte di Frasassi"
+      },
+      {
+        "name": "Santuario di Loreto",
+        "description": "Basilica che custodisce la Santa Casa.",
+        "search": "Santuario della Santa Casa di Loreto"
+      },
+      {
+        "name": "Ascoli Piceno",
+        "description": "Città di travertino con una delle piazze più belle d'Italia.",
+        "search": "Piazza del Popolo (Ascoli Piceno)"
+      },
+      {
+        "name": "Gradara",
+        "description": "Borgo con il castello di Paolo e Francesca.",
+        "search": "Gradara"
+      }
     ],
     "experiences": [
       "Giro in barca tra le baie del Conero",
@@ -369,78 +734,182 @@
       {
         "id": "conero",
         "name": "Riviera del Conero",
-        "lat": 43.53, "lon": 13.6,
+        "lat": 43.53,
+        "lon": 13.6,
         "tagline": "Falesie bianche, mare cristallino e borghi sul promontorio.",
         "description": [
           "Il Monte Conero si tuffa nell'Adriatico con falesie bianche e baie di ghiaia: Portonovo con la chiesetta romanica, Sirolo e Numana, borghi con terrazze sul mare. La spiaggia delle Due Sorelle è raggiungibile solo in barca.",
           "Alle spalle, il Parco del Conero offre sentieri panoramici e vigneti di Rosso Conero. Loreto, con la Santa Casa, è a pochi chilometri."
         ],
         "highlights": [
-          { "name": "Sirolo", "description": "Borgo con il belvedere sul mare.", "search": "Sirolo" },
-          { "name": "Portonovo", "description": "Baia con chiesa romanica e torre.", "search": "Portonovo" },
-          { "name": "Due Sorelle", "description": "Spiaggia raggiungibile via mare.", "search": "Spiaggia delle Due Sorelle" },
-          { "name": "Loreto", "description": "Santuario della Santa Casa.", "search": "Loreto" }
+          {
+            "name": "Sirolo",
+            "description": "Borgo con il belvedere sul mare.",
+            "search": "Sirolo"
+          },
+          {
+            "name": "Portonovo",
+            "description": "Baia con chiesa romanica e torre.",
+            "search": "Portonovo"
+          },
+          {
+            "name": "Due Sorelle",
+            "description": "Spiaggia raggiungibile via mare.",
+            "search": "Spiaggia delle Due Sorelle"
+          },
+          {
+            "name": "Loreto",
+            "description": "Santuario della Santa Casa.",
+            "search": "Loreto"
+          }
         ],
-        "experiences": ["Barca alle Due Sorelle", "Moscioli selvatici a Portonovo", "Trekking sul Monte Conero"],
+        "experiences": [
+          "Barca alle Due Sorelle",
+          "Moscioli selvatici a Portonovo",
+          "Trekking sul Monte Conero"
+        ],
         "idealFor": "Famiglie, coppie, mare; 3-5 giorni",
         "bestPeriod": "Giugno-settembre"
       },
       {
         "id": "urbino-montefeltro",
         "name": "Urbino e Montefeltro",
-        "lat": 43.72, "lon": 12.64,
+        "lat": 43.72,
+        "lon": 12.64,
         "tagline": "La città ideale del Rinascimento e i paesaggi di Piero della Francesca.",
         "description": [
           "Urbino, patrimonio UNESCO, è la città di Raffaello e di Federico da Montefeltro: il Palazzo Ducale ospita capolavori come la Flagellazione di Piero della Francesca. La città è vivace grazie alla sua università.",
           "Il Montefeltro intorno offre rocche e paesaggi che si ritrovano negli sfondi dei dipinti rinascimentali, Acqualagna con il tartufo bianco e la Gola del Furlo."
         ],
         "highlights": [
-          { "name": "Palazzo Ducale", "description": "Galleria Nazionale delle Marche.", "search": "Palazzo Ducale di Urbino" },
-          { "name": "Casa natale di Raffaello", "description": "La casa del pittore a Urbino.", "search": "Casa natale di Raffaello" },
-          { "name": "Gola del Furlo", "description": "Canyon con la galleria romana.", "search": "Gola del Furlo" },
-          { "name": "Gradara", "description": "Rocca medievale.", "search": "Gradara" }
+          {
+            "name": "Palazzo Ducale",
+            "description": "Galleria Nazionale delle Marche.",
+            "search": "Palazzo Ducale di Urbino"
+          },
+          {
+            "name": "Casa natale di Raffaello",
+            "description": "La casa del pittore a Urbino.",
+            "search": "Casa natale di Raffaello"
+          },
+          {
+            "name": "Gola del Furlo",
+            "description": "Canyon con la galleria romana.",
+            "search": "Gola del Furlo"
+          },
+          {
+            "name": "Gradara",
+            "description": "Rocca medievale.",
+            "search": "Gradara"
+          }
         ],
-        "experiences": ["Visita guidata al Palazzo Ducale", "Fiera del tartufo di Acqualagna (ottobre-novembre)", "Itinerario dei balconi di Piero"],
+        "experiences": [
+          "Visita guidata al Palazzo Ducale",
+          "Fiera del tartufo di Acqualagna (ottobre-novembre)",
+          "Itinerario dei balconi di Piero"
+        ],
         "idealFor": "Cultura, coppie; 1-2 giorni",
         "bestPeriod": "Aprile-novembre"
       },
       {
         "id": "frasassi-jesi",
         "name": "Frasassi e Castelli di Jesi",
-        "lat": 43.45, "lon": 13.0,
+        "lat": 43.45,
+        "lon": 13.0,
         "tagline": "Grotte spettacolari e colline del Verdicchio.",
         "description": [
           "Le Grotte di Frasassi sono uno dei complessi carsici più belli d'Europa: la sala Abisso Ancona potrebbe contenere il Duomo di Milano. Nei dintorni, il tempietto del Valadier incastonato nella roccia.",
           "Le colline dei Castelli di Jesi sono la terra del Verdicchio: borghi fortificati come Staffolo, Cupramontana e Morro d'Alba, e Jesi con il teatro Pergolesi."
         ],
         "highlights": [
-          { "name": "Grotte di Frasassi", "description": "Visita guidata tra stalattiti giganti.", "search": "Grotte di Frasassi" },
-          { "name": "Tempio del Valadier", "description": "Tempietto neoclassico in una grotta.", "search": "Tempio del Valadier" },
-          { "name": "Jesi", "description": "Città di Federico II e del Verdicchio.", "search": "Jesi" },
-          { "name": "Fabriano", "description": "Città della carta e del Museo della Carta.", "search": "Fabriano" }
+          {
+            "name": "Grotte di Frasassi",
+            "description": "Visita guidata tra stalattiti giganti.",
+            "search": "Grotte di Frasassi"
+          },
+          {
+            "name": "Tempio del Valadier",
+            "description": "Tempietto neoclassico in una grotta.",
+            "search": "Tempio del Valadier"
+          },
+          {
+            "name": "Jesi",
+            "description": "Città di Federico II e del Verdicchio.",
+            "search": "Jesi"
+          },
+          {
+            "name": "Fabriano",
+            "description": "Città della carta e del Museo della Carta.",
+            "search": "Fabriano"
+          }
         ],
-        "experiences": ["Percorso speleologico a Frasassi", "Degustazione di Verdicchio", "Laboratorio della carta a Fabriano"],
+        "experiences": [
+          "Percorso speleologico a Frasassi",
+          "Degustazione di Verdicchio",
+          "Laboratorio della carta a Fabriano"
+        ],
         "idealFor": "Famiglie, gruppi scolastici, enoturisti; 1-2 giorni",
         "bestPeriod": "Tutto l'anno"
       },
       {
         "id": "ascoli-sibillini",
         "name": "Ascoli Piceno e Monti Sibillini",
-        "lat": 42.86, "lon": 13.4,
+        "lat": 42.86,
+        "lon": 13.4,
         "tagline": "Città di travertino e montagne delle leggende.",
         "description": [
           "Ascoli Piceno è una città elegante di travertino, con Piazza del Popolo e il Caffè Meletti, culla delle olive all'ascolana. In agosto la Quintana rievoca il Medioevo.",
           "I Monti Sibillini, parco nazionale tra Marche e Umbria, offrono il Lago di Pilato, le Gole dell'Infernaccio e borghi come Montemonaco. Sulla costa, San Benedetto del Tronto e Grottammare."
         ],
         "highlights": [
-          { "name": "Piazza del Popolo di Ascoli", "description": "Salotto di travertino.", "search": "Piazza del Popolo (Ascoli Piceno)" },
-          { "name": "Gola dell'Infernaccio", "description": "Canyon nei Sibillini.", "search": "Gola dell'Infernaccio" },
-          { "name": "Lago di Pilato", "description": "Lago glaciale sotto il Monte Vettore.", "search": "Lago di Pilato" },
-          { "name": "Grottammare", "description": "Borgo antico sul mare.", "search": "Grottammare" }
+          {
+            "name": "Piazza del Popolo di Ascoli",
+            "description": "Salotto di travertino.",
+            "search": "Piazza del Popolo (Ascoli Piceno)"
+          },
+          {
+            "name": "Gola dell'Infernaccio",
+            "description": "Canyon nei Sibillini.",
+            "search": "Gola dell'Infernaccio"
+          },
+          {
+            "name": "Lago di Pilato",
+            "description": "Lago glaciale sotto il Monte Vettore.",
+            "search": "Lago di Pilato"
+          },
+          {
+            "name": "Grottammare",
+            "description": "Borgo antico sul mare.",
+            "search": "Grottammare"
+          }
         ],
-        "experiences": ["Corso di olive all'ascolana", "Trekking al Lago di Pilato", "Quintana di Ascoli (agosto)"],
+        "experiences": [
+          "Corso di olive all'ascolana",
+          "Trekking al Lago di Pilato",
+          "Quintana di Ascoli (agosto)"
+        ],
         "idealFor": "Natura, gastronomia, famiglie; 2-3 giorni",
         "bestPeriod": "Maggio-ottobre"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Conero e borghi",
+        "days": 6,
+        "route": "Sirolo o Numana (4) → Loreto e Recanati (1) → Grotte di Frasassi (1)",
+        "description": "Baie bianche del Conero, il santuario di Loreto, Leopardi e le grotte più spettacolari d'Italia."
+      },
+      {
+        "title": "Urbino e Montefeltro",
+        "days": 4,
+        "route": "Urbino (2) → Gradara (1) → Pesaro (1)",
+        "description": "Il Palazzo Ducale di Federico da Montefeltro, il castello di Paolo e Francesca e la città di Rossini."
+      },
+      {
+        "title": "Sibillini e Piceno",
+        "days": 5,
+        "route": "Ascoli Piceno (2) → Sibillini (2) → San Benedetto (1)",
+        "description": "Piazza del Popolo e olive all'ascolana, trekking nei Sibillini e chiusura al mare."
       }
     ]
   },
@@ -451,7 +920,8 @@
       "Il Lazio è Roma, la città con più patrimonio artistico al mondo, ma anche molto altro: le ville di Tivoli, le necropoli etrusche, i laghi vulcanici dei Castelli Romani, borghi come Civita di Bagnoregio, le isole Pontine e la costa del Circeo.",
       "Da vedere: Colosseo, Foro Romano e Palatino, Pantheon, Musei Vaticani e Cappella Sistina, San Pietro, Fontana di Trevi, Galleria Borghese, Trastevere; fuori città Villa d'Este e Villa Adriana a Tivoli, Ostia Antica, Civita di Bagnoregio, Ponza e Sperlonga.",
       "Le esperienze più richieste: visite private ai Vaticani prima dell'apertura, sotterranei del Colosseo, corsi di carbonara e cacio e pepe, tour in Vespa o golf cart, gite ai Castelli Romani con fraschette e vino, giornate al mare a Sperlonga o in barca a Ponza.",
-      "Ideale per tutti: coppie, famiglie, gruppi, pellegrini, viaggi studio. Durata consigliata: 3-5 giorni a Roma più 1-3 nei dintorni; si abbina con Toscana, Umbria, Campania (Napoli è a 1h10 di treno)."
+      "Ideale per tutti: coppie, famiglie, gruppi, pellegrini, viaggi studio. Durata consigliata: 3-5 giorni a Roma più 1-3 nei dintorni; si abbina con Toscana, Umbria, Campania (Napoli è a 1h10 di treno).",
+      "Il Lazio non è solo Roma: oltre alla Capitale con Vaticano, Colosseo e quartieri come Trastevere, la regione offre Tivoli con Villa d'Este e Villa Adriana, i Castelli Romani, la Tuscia con Viterbo e Civita di Bagnoregio, il litorale di Sperlonga, Gaeta e le isole Pontine. Per Roma conviene vendere ingressi con orario a Musei Vaticani e Colosseo e scegliere hotel in centro; le gite fuori porta valorizzano soggiorni di 4-5 notti."
     ],
     "facts": {
       "capoluogo": "Roma",
@@ -463,12 +933,36 @@
       "prodotti": "Pecorino Romano, carciofi alla romana, porchetta di Ariccia, Frascati, Cesanese"
     },
     "places": [
-      { "name": "Colosseo", "description": "L'anfiteatro più grande del mondo romano, con arena e sotterranei.", "search": "Colosseo" },
-      { "name": "Musei Vaticani", "description": "Cappella Sistina, Stanze di Raffaello e collezioni papali.", "search": "Musei Vaticani" },
-      { "name": "Pantheon", "description": "Il tempio romano meglio conservato, con la cupola aperta al cielo.", "search": "Pantheon (Roma)" },
-      { "name": "Villa d'Este", "description": "Giardini rinascimentali con centinaia di fontane a Tivoli.", "search": "Villa d'Este" },
-      { "name": "Civita di Bagnoregio", "description": "Il 'paese che muore', borgo su uno sperone di tufo.", "search": "Civita di Bagnoregio" },
-      { "name": "Sperlonga", "description": "Borgo bianco a picco sul mare con la Villa di Tiberio.", "search": "Sperlonga" }
+      {
+        "name": "Colosseo",
+        "description": "L'anfiteatro più grande del mondo romano, con arena e sotterranei.",
+        "search": "Colosseo"
+      },
+      {
+        "name": "Musei Vaticani",
+        "description": "Cappella Sistina, Stanze di Raffaello e collezioni papali.",
+        "search": "Musei Vaticani"
+      },
+      {
+        "name": "Pantheon",
+        "description": "Il tempio romano meglio conservato, con la cupola aperta al cielo.",
+        "search": "Pantheon (Roma)"
+      },
+      {
+        "name": "Villa d'Este",
+        "description": "Giardini rinascimentali con centinaia di fontane a Tivoli.",
+        "search": "Villa d'Este"
+      },
+      {
+        "name": "Civita di Bagnoregio",
+        "description": "Il 'paese che muore', borgo su uno sperone di tufo.",
+        "search": "Civita di Bagnoregio"
+      },
+      {
+        "name": "Sperlonga",
+        "description": "Borgo bianco a picco sul mare con la Villa di Tiberio.",
+        "search": "Sperlonga"
+      }
     ],
     "experiences": [
       "Ingresso anticipato ai Musei Vaticani prima della folla",
@@ -497,79 +991,187 @@
       {
         "id": "roma",
         "name": "Roma",
-        "lat": 41.9, "lon": 12.49,
+        "lat": 41.9,
+        "lon": 12.49,
         "tagline": "La Città Eterna: tremila anni di storia in ogni strada.",
         "description": [
           "Roma è un museo diffuso: la Roma antica di Colosseo, Fori e Palatino; la Roma barocca di Piazza Navona, Fontana di Trevi e Piazza di Spagna; la Roma cristiana di San Pietro e delle grandi basiliche. Trastevere e Monti sono i quartieri più vivaci la sera.",
           "Accanto ai grandi classici ci sono gioielli meno noti: la Galleria Borghese, il Quartiere Coppedè, l'Aventino con il buco della serratura dei Cavalieri di Malta, la Via Appia Antica con le catacombe, da percorrere in bicicletta."
         ],
         "highlights": [
-          { "name": "Colosseo e Foro Romano", "description": "Il cuore della Roma antica.", "search": "Foro Romano" },
-          { "name": "Basilica di San Pietro", "description": "Cupola di Michelangelo e Pietà.", "search": "Basilica di San Pietro" },
-          { "name": "Fontana di Trevi", "description": "La fontana barocca più famosa al mondo.", "search": "Fontana di Trevi" },
-          { "name": "Galleria Borghese", "description": "Bernini e Caravaggio in villa.", "search": "Galleria Borghese" },
-          { "name": "Via Appia Antica", "description": "Strada romana con catacombe, ora UNESCO.", "search": "Via Appia Antica" }
+          {
+            "name": "Colosseo e Foro Romano",
+            "description": "Il cuore della Roma antica.",
+            "search": "Foro Romano"
+          },
+          {
+            "name": "Basilica di San Pietro",
+            "description": "Cupola di Michelangelo e Pietà.",
+            "search": "Basilica di San Pietro"
+          },
+          {
+            "name": "Fontana di Trevi",
+            "description": "La fontana barocca più famosa al mondo.",
+            "search": "Fontana di Trevi"
+          },
+          {
+            "name": "Galleria Borghese",
+            "description": "Bernini e Caravaggio in villa.",
+            "search": "Galleria Borghese"
+          },
+          {
+            "name": "Via Appia Antica",
+            "description": "Strada romana con catacombe, ora UNESCO.",
+            "search": "Via Appia Antica"
+          }
         ],
-        "experiences": ["Vaticani in apertura esclusiva", "Food tour a Trastevere", "Bici sull'Appia Antica"],
+        "experiences": [
+          "Vaticani in apertura esclusiva",
+          "Food tour a Trastevere",
+          "Bici sull'Appia Antica"
+        ],
         "idealFor": "Tutti; 3-5 giorni",
         "bestPeriod": "Marzo-giugno, settembre-novembre"
       },
       {
         "id": "tivoli-castelli",
         "name": "Tivoli e Castelli Romani",
-        "lat": 41.8, "lon": 12.7,
+        "lat": 41.8,
+        "lon": 12.7,
         "tagline": "Ville imperiali e rinascimentali, laghi vulcanici e vino.",
         "description": [
           "Tivoli custodisce due siti UNESCO: Villa Adriana, la residenza dell'imperatore Adriano, e Villa d'Este con i giardini delle fontane. È una gita perfetta da Roma.",
           "I Castelli Romani sono borghi sui Colli Albani: Castel Gandolfo sul lago Albano, Frascati con le ville tuscolane, Ariccia con la porchetta, Nemi con le fragoline. Fraschette e vino Frascati fanno il resto."
         ],
         "highlights": [
-          { "name": "Villa Adriana", "description": "Residenza imperiale con il Canopo.", "search": "Villa Adriana" },
-          { "name": "Villa d'Este", "description": "Giardino delle fontane.", "search": "Villa d'Este" },
-          { "name": "Castel Gandolfo", "description": "Palazzo papale sul Lago Albano.", "search": "Castel Gandolfo" },
-          { "name": "Nemi", "description": "Borgo delle fragoline sul lago.", "search": "Nemi" }
+          {
+            "name": "Villa Adriana",
+            "description": "Residenza imperiale con il Canopo.",
+            "search": "Villa Adriana"
+          },
+          {
+            "name": "Villa d'Este",
+            "description": "Giardino delle fontane.",
+            "search": "Villa d'Este"
+          },
+          {
+            "name": "Castel Gandolfo",
+            "description": "Palazzo papale sul Lago Albano.",
+            "search": "Castel Gandolfo"
+          },
+          {
+            "name": "Nemi",
+            "description": "Borgo delle fragoline sul lago.",
+            "search": "Nemi"
+          }
         ],
-        "experiences": ["Pranzo in fraschetta ad Ariccia", "Giardini pontifici di Castel Gandolfo", "Degustazione di Frascati"],
+        "experiences": [
+          "Pranzo in fraschetta ad Ariccia",
+          "Giardini pontifici di Castel Gandolfo",
+          "Degustazione di Frascati"
+        ],
         "idealFor": "Gite da Roma, gruppi, famiglie; 1-2 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "tuscia",
         "name": "Tuscia e Lago di Bolsena",
-        "lat": 42.5, "lon": 12.0,
+        "lat": 42.5,
+        "lon": 12.0,
         "tagline": "Etruschi, borghi di tufo e il lago vulcanico più grande d'Europa.",
         "description": [
           "La Tuscia, nel nord del Lazio, è terra etrusca: le necropoli UNESCO di Tarquinia e Cerveteri con le tombe dipinte, Tuscania, Viterbo con il Palazzo dei Papi. Civita di Bagnoregio, sospesa su una rupe di tufo, è tra i borghi più fotografati d'Italia.",
           "Il Lago di Bolsena, di origine vulcanica, ha borghi come Capodimonte e Marta; nei dintorni il Parco dei Mostri di Bomarzo, Villa Lante e le terme libere di Viterbo."
         ],
         "highlights": [
-          { "name": "Civita di Bagnoregio", "description": "Borgo raggiungibile solo con un ponte pedonale.", "search": "Civita di Bagnoregio" },
-          { "name": "Necropoli di Tarquinia", "description": "Tombe etrusche dipinte.", "search": "Necropoli dei Monterozzi" },
-          { "name": "Parco dei Mostri", "description": "Il Sacro Bosco di Bomarzo.", "search": "Parco dei Mostri" },
-          { "name": "Lago di Bolsena", "description": "Lago vulcanico con isole.", "search": "Lago di Bolsena" }
+          {
+            "name": "Civita di Bagnoregio",
+            "description": "Borgo raggiungibile solo con un ponte pedonale.",
+            "search": "Civita di Bagnoregio"
+          },
+          {
+            "name": "Necropoli di Tarquinia",
+            "description": "Tombe etrusche dipinte.",
+            "search": "Necropoli dei Monterozzi"
+          },
+          {
+            "name": "Parco dei Mostri",
+            "description": "Il Sacro Bosco di Bomarzo.",
+            "search": "Parco dei Mostri"
+          },
+          {
+            "name": "Lago di Bolsena",
+            "description": "Lago vulcanico con isole.",
+            "search": "Lago di Bolsena"
+          }
         ],
-        "experiences": ["Civita al tramonto", "Terme libere del Bullicame", "Barca all'isola Bisentina"],
+        "experiences": [
+          "Civita al tramonto",
+          "Terme libere del Bullicame",
+          "Barca all'isola Bisentina"
+        ],
         "idealFor": "Coppie, culturali, chi abbina Lazio e Toscana; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "riviera-di-ulisse",
         "name": "Riviera di Ulisse e Isole Pontine",
-        "lat": 41.15, "lon": 13.2,
+        "lat": 41.15,
+        "lon": 13.2,
         "tagline": "Sperlonga, Gaeta, Circeo e il mare di Ponza.",
         "description": [
           "La costa meridionale del Lazio è una sorpresa: il Parco del Circeo con dune e laghi costieri, Terracina con il Tempio di Giove, Sperlonga borgo bianco a picco sul mare, Gaeta con la Montagna Spaccata.",
           "Da Terracina, Formia e Anzio partono i traghetti per Ponza e Ventotene, isole vulcaniche con calette, grotte e acque trasparenti, perfette in barca."
         ],
         "highlights": [
-          { "name": "Sperlonga", "description": "Borgo bianco e spiagge.", "search": "Sperlonga" },
-          { "name": "Ponza", "description": "Isola delle calette e di Chiaia di Luna.", "search": "Ponza" },
-          { "name": "Montagna Spaccata", "description": "Santuario nella roccia a Gaeta.", "search": "Montagna Spaccata" },
-          { "name": "Parco Nazionale del Circeo", "description": "Promontorio, dune e laghi.", "search": "Parco nazionale del Circeo" }
+          {
+            "name": "Sperlonga",
+            "description": "Borgo bianco e spiagge.",
+            "search": "Sperlonga"
+          },
+          {
+            "name": "Ponza",
+            "description": "Isola delle calette e di Chiaia di Luna.",
+            "search": "Ponza"
+          },
+          {
+            "name": "Montagna Spaccata",
+            "description": "Santuario nella roccia a Gaeta.",
+            "search": "Montagna Spaccata"
+          },
+          {
+            "name": "Parco Nazionale del Circeo",
+            "description": "Promontorio, dune e laghi.",
+            "search": "Parco nazionale del Circeo"
+          }
         ],
-        "experiences": ["Giro dell'isola di Ponza in gozzo", "Tiella di Gaeta", "Trekking al Picco di Circe"],
+        "experiences": [
+          "Giro dell'isola di Ponza in gozzo",
+          "Tiella di Gaeta",
+          "Trekking al Picco di Circe"
+        ],
         "idealFor": "Mare, coppie, gruppi di amici; 3-5 giorni",
         "bestPeriod": "Giugno-settembre"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Roma classica",
+        "days": 4,
+        "route": "Roma (4)",
+        "description": "Colosseo e Fori, Vaticano, Pantheon e Trastevere, con biglietti saltafila prenotati."
+      },
+      {
+        "title": "Roma e dintorni",
+        "days": 6,
+        "route": "Roma (3) → Tivoli (1) → Castelli Romani (1) → Civita di Bagnoregio (1)",
+        "description": "Ville rinascimentali e imperiali, vino dei Castelli e il borgo sospeso della Tuscia."
+      },
+      {
+        "title": "Riviera di Ulisse e Ponza",
+        "days": 6,
+        "route": "Sperlonga (2) → Gaeta (1) → Ponza (3)",
+        "description": "Spiagge e borghi bianchi del sud pontino, poi l'isola di Ponza in barca."
       }
     ]
   }

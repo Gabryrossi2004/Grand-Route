@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Client } from "@/lib/types";
 import ClientsList from "@/components/ClientsList";
+import LeadsPanel from "@/components/LeadsPanel";
 
 export default async function ClientsPage() {
   const supabase = await createClient();
@@ -24,6 +25,8 @@ export default async function ClientsPage() {
           + Nuovo cliente
         </Link>
       </div>
+
+      <LeadsPanel ownerId={user?.id ?? ""} />
 
       <ClientsList clients={(clients as Client[]) || []} />
     </div>

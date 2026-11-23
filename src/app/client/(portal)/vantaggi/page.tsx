@@ -1,10 +1,15 @@
 import { CalendarClock, FileCheck2, Gift, Globe2, Headphones, LifeBuoy, ShieldCheck } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { levelFor, parseLevels, pointsFrom } from "@/lib/benefits";
+import { flagOf, nameItOfCode } from "@/lib/geo/countryCodes";
+import ShareInvite from "@/components/ShareInvite";
 
 export const metadata = { title: "I tuoi vantaggi" };
 
 type AgencyBenefits = {
+  owner_id?: string;
+  referral_bonus?: number;
+  countries?: string[];
   agency_name: string | null;
   logo_url: string | null;
   has_emergency: boolean;
@@ -15,7 +20,7 @@ type AgencyBenefits = {
   paid: number;
   bonus: number;
   history: { points: number; reason: string; created_at: string }[];
-  offers: { id: string; title: string; body: string | null; valid_until: string | null }[];
+  offers: { id: string; title: string; body: string | null; valid_until: string | null; kind?: string; country_code?: string | null; place?: string | null }[];
 };
 
 const dateIt = (iso: string) => new Date(`${iso.slice(0, 10)}T12:00:00`).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
@@ -50,6 +55,8 @@ export default async function ClientBenefitsPage() {
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("client_benefits");
   const agencies = error ? [] : ((data as AgencyBenefits[] | null) ?? []);
+  const { data: codeRows } = agencies.length ? await supabase.rpc("client_referral_codes") : { data: null };
+  const codeByOwner = new Map(((codeRows as { owner_id: string; code: string }[] | null) ?? []).map((r) => [r.owner_id, r.code]));
 
   return (
     <div className="flex flex-col gap-8">
@@ -70,6 +77,10 @@ export default async function ClientBenefitsPage() {
         const points = pointsFrom(Number(a.paid), Number(a.euros_per_point), Number(a.bonus));
         const { current, next } = levelFor(points, levels);
         const base = current?.min ?? 0;
+        const mine = new Set(a.countries ?? []);
+        const offers = a.offers.filter((o) => (o.kind ?? "offerta") === "offerta");
+        const deals = a.offers.filter((o) => o.kind === "convenzione" && (!o.country_code || mine.has(o.country_code)));
+        const code = a.owner_id ? codeByOwner.get(a.owner_id) : undefined;
         const progress = next ? Math.min(100, Math.round(((points - base) / Math.max(1, next.min - base)) * 100)) : 100;
         return (
           <div key={i} className="flex flex-col gap-6">
@@ -107,11 +118,11 @@ export default async function ClientBenefitsPage() {
               </section>
             )}
 
-            {a.offers.length > 0 && (
+            {offers.length > 0 && (
               <section>
                 <h2 className="mb-3 text-lg font-semibold text-[#233c5e]">Offerte riservate a te</h2>
                 <ul className="flex flex-col gap-3">
-                  {a.offers.map((o) => (
+                  {offers.map((o) => (
                     <li key={o.id} className="rounded-2xl border border-[#e3b04b] bg-white p-4">
                       <p className="font-semibold text-slate-900">{o.title}</p>
                       {o.valid_until && <p className="text-xs text-[#a87a1e]">Valida fino al {dateIt(o.valid_until)}</p>}
@@ -123,10 +134,40 @@ export default async function ClientBenefitsPage() {
               </section>
             )}
 
+            {deals.length > 0 && (
+              <section>
+                <h2 className="mb-1 text-lg font-semibold text-[#233c5e]">Convenzioni nei luoghi dei tuoi viaggi</h2>
+                <p className="mb-3 text-sm text-slate-600">Vantaggi con i partner della tua agenzia sul posto.</p>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {deals.map((o) => (
+                    <li key={o.id} className="rounded-2xl border border-[#e6d7bb] bg-white p-4">
+                      <p className="text-xs font-semibold text-[#a87a1e]">
+                        {o.country_code ? `${flagOf(o.country_code)} ${nameItOfCode(o.country_code)}` : "Tutti i viaggi"}
+                        {o.place ? ` · ${o.place}` : ""}
+                      </p>
+                      <p className="font-semibold text-slate-900">{o.title}</p>
+                      {o.body && <p className="mt-1 whitespace-pre-wrap text-sm text-slate-600">{o.body}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <section>
               <h2 className="mb-3 text-lg font-semibold text-[#233c5e]">Inclusi nel tuo viaggio</h2>
               <Included hasEmergency={a.has_emergency} />
             </section>
+
+            {code && (
+              <section className="rounded-2xl border border-[#e3b04b] bg-white p-5">
+                <h2 className="text-lg font-semibold text-[#233c5e]">Presenta un amico</h2>
+                <p className="mb-3 mt-1 text-sm text-slate-600">
+                  Manda il tuo link a chi vuole partire: lascia i suoi contatti e {a.agency_name || "l'agenzia"} lo richiama.
+                  {a.enabled && Number(a.referral_bonus) > 0 ? ` Se diventa cliente ricevi ${Number(a.referral_bonus)} punti.` : ""}
+                </p>
+                <ShareInvite code={code} agency={a.agency_name || "la mia agenzia"} />
+              </section>
+            )}
 
             {a.enabled && levels.length > 1 && (
               <section>

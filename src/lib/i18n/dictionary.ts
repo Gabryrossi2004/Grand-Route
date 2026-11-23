@@ -83,6 +83,11 @@ export const entries = {
     it: "Voli, alloggi e servizi sono ancora indicativi e potrebbero cambiare prima della conferma definitiva.",
     en: "Flights, accommodation and services are still indicative and may change before final confirmation.",
   },
+  "trip.verifiedTitle": { it: "Itinerario verificato da {agency}.", en: "Itinerary verified by {agency}." },
+  "trip.verifiedText": {
+    it: "Tappe, tempi e servizi sono stati controllati da un consulente di viaggio, che ti assiste prima, durante e dopo la partenza.",
+    en: "Stops, timings and services have been checked by a travel consultant, who assists you before, during and after the trip.",
+  },
   "trip.soon": { it: "L'itinerario sarà disponibile a breve.", en: "The itinerary will be available shortly." },
   "trip.summary": { it: "Riepilogo del viaggio", en: "Trip summary" },
   "trip.freeDay": { it: "Giornata libera", en: "Free day" },

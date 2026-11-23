@@ -30,6 +30,8 @@ export type ItalyRegion = {
   gettingAround: string[];
   tips: string[];
   zones: ItalyZone[];
+  // Itinerari proposti per la regione (notti tra parentesi nel percorso)
+  itineraries?: { title: string; days: number; route: string; description: string }[];
 };
 
 export const ITALY_REGIONS = { ...nordOvest, ...nordEst, ...centro, ...sud, ...isole } as unknown as Record<string, ItalyRegion>;

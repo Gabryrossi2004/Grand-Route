@@ -2,13 +2,14 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { DEFAULT_LEVELS, parseLevels } from "@/lib/benefits";
+import { countryOptions, flagOf, nameItOfCode } from "@/lib/geo/countryCodes";
 import SubmitButton from "@/components/SubmitButton";
 import ConfirmDeleteButton from "@/components/community/ConfirmDeleteButton";
 import { addOffer, deleteOffer, saveLoyalty, toggleOffer } from "./actions";
 
 export const metadata = { title: "Vantaggi per i clienti" };
 
-type Offer = { id: string; title: string; body: string | null; valid_until: string | null; active: boolean };
+type Offer = { id: string; title: string; body: string | null; valid_until: string | null; active: boolean; kind?: string; country_code?: string | null; place?: string | null };
 
 const input = "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const dateIt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
@@ -18,12 +19,14 @@ export default async function BenefitsSettingsPage() {
   const user = await getCachedUser();
   const [{ data: loyalty, error }, { data: offerRows }] = await Promise.all([
     supabase.from("agency_loyalty").select("*").eq("owner_id", user?.id ?? "").maybeSingle(),
-    supabase.from("agency_offers").select("id, title, body, valid_until, active").eq("owner_id", user?.id ?? "").order("created_at", { ascending: false }),
+    supabase.from("agency_offers").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: false }),
   ]);
   const notReady = Boolean(error);
   const levels = loyalty ? parseLevels(loyalty.levels) : DEFAULT_LEVELS;
   const rows = [...levels, ...Array.from({ length: Math.max(0, 5 - levels.length) }, () => ({ name: "", min: 0, perks: "" }))].slice(0, 5);
   const offers = (offerRows as Offer[] | null) ?? [];
+  const countries = countryOptions();
+  const phase2 = loyalty ? "referral_bonus" in loyalty : true;
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
@@ -62,6 +65,26 @@ export default async function BenefitsSettingsPage() {
           Messaggio di presentazione (facoltativo)
           <textarea name="intro" rows={2} maxLength={1000} defaultValue={loyalty?.intro ?? ""} placeholder="Es. Grazie di viaggiare con noi! Ogni viaggio ti avvicina a un premio." className={`${input} mt-1`} />
         </label>
+        <div className="grid gap-3 rounded-xl border border-[#e6d7bb] p-3 sm:grid-cols-2">
+          <label className="text-sm text-slate-700">
+            Bonus «presenta un amico»
+            <input name="referral_bonus" type="number" min="0" defaultValue={Number(loyalty?.referral_bonus ?? 100)} className={`${input} mt-1`} />
+            <span className="mt-1 block text-xs text-slate-500">Punti a chi ti presenta un amico che diventa cliente.</span>
+          </label>
+          <label className="text-sm text-slate-700">
+            Bonus di compleanno
+            <input name="birthday_bonus" type="number" min="0" defaultValue={Number(loyalty?.birthday_bonus ?? 0)} className={`${input} mt-1`} />
+            <span className="mt-1 block text-xs text-slate-500">0 = solo gli auguri, senza punti.</span>
+          </label>
+          <label className="flex items-start gap-2 text-sm text-slate-800 sm:col-span-2">
+            <input type="checkbox" name="greetings" defaultChecked={Boolean(loyalty?.greetings)} className="mt-0.5 h-4 w-4" />
+            <span>
+              Auguri automatici sul telefono dei clienti: il giorno del compleanno (se hai la data di nascita) e nell&apos;anniversario di un viaggio
+              («Un anno fa tornavi da…»).
+            </span>
+          </label>
+          {!phase2 && <p className="text-xs text-amber-700 sm:col-span-2">Per bonus amico, compleanni e convenzioni serve l&apos;aggiornamento 0054.</p>}
+        </div>
         <div>
           <p className="mb-2 text-sm font-medium text-slate-800">Livelli (fino a 5)</p>
           <div className="flex flex-col gap-3">
@@ -81,10 +104,29 @@ export default async function BenefitsSettingsPage() {
 
       <section className="flex flex-col gap-4 rounded-2xl border border-[#e6d7bb] bg-white p-5">
         <h2 className="text-lg font-semibold text-[#233c5e]">Offerte riservate</h2>
-        <p className="-mt-2 text-sm text-slate-600">Proposte visibili solo ai tuoi clienti (es. sconto sul prossimo viaggio, partenza di gruppo, early booking).</p>
+        <p className="-mt-2 text-sm text-slate-600">Proposte visibili solo ai tuoi clienti: offerte (sconto sul prossimo viaggio, partenze di gruppo, early booking) e convenzioni con fornitori sul posto, che il cliente vede per i paesi dei suoi viaggi.</p>
         <form action={addOffer} className="flex flex-col gap-2 rounded-xl bg-[#faf3e6] p-3">
+          <select name="kind" defaultValue="offerta" className={input} aria-label="Tipo">
+            <option value="offerta">Offerta riservata (es. sconto sul prossimo viaggio)</option>
+            <option value="convenzione">Convenzione con un fornitore sul posto (es. ristorante, escursione)</option>
+          </select>
           <input name="title" required minLength={3} maxLength={120} placeholder="Titolo dell'offerta" className={input} />
+          <div className="grid gap-2 sm:grid-cols-2">
+            <select name="country_code" defaultValue="" className={input} aria-label="Paese">
+              <option value="">Tutti i paesi</option>
+              {countries.map((c) => (
+                <option key={c.code} value={c.code}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+            <input name="place" maxLength={80} placeholder="Luogo (facoltativo, es. Bangkok)" className={input} />
+          </div>
           <textarea name="body" rows={3} maxLength={2000} placeholder="Dettagli: cosa include, per chi, come richiederla" className={input} />
+          <label className="flex items-center gap-2 text-sm text-slate-700">
+            <input type="checkbox" name="notify" defaultChecked className="h-4 w-4" />
+            Avvisa i clienti con una notifica sul telefono
+          </label>
           <label className="flex items-center gap-2 text-sm text-slate-700">
             Valida fino al
             <input name="valid_until" type="date" className={`${input} w-auto`} />
@@ -104,7 +146,12 @@ export default async function BenefitsSettingsPage() {
                     <p className="font-semibold text-slate-900">
                       {o.title} {!o.active && <span className="ml-1 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">nascosta</span>}
                     </p>
-                    {o.valid_until && <p className="text-xs text-slate-500">Valida fino al {dateIt(o.valid_until)}</p>}
+                    <p className="text-xs text-slate-500">
+                      {o.kind === "convenzione" ? "Convenzione" : "Offerta"}
+                      {o.country_code ? ` · ${flagOf(o.country_code)} ${nameItOfCode(o.country_code)}` : ""}
+                      {o.place ? ` · ${o.place}` : ""}
+                      {o.valid_until ? ` · valida fino al ${dateIt(o.valid_until)}` : ""}
+                    </p>
                     {o.body && <p className="mt-1 whitespace-pre-wrap text-sm text-slate-600">{o.body}</p>}
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">

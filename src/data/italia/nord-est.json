@@ -6,7 +6,8 @@
       "Il Trentino-Alto Adige è la regione delle Dolomiti, montagne di roccia chiara che al tramonto si accendono di rosa (l'enrosadira). Due province autonome con anime diverse: il Trentino italiano, con il Lago di Garda settentrionale e Trento rinascimentale, e l'Alto Adige-Südtirol bilingue, con Bolzano, Merano e masi tirolesi.",
       "Da vedere: le Tre Cime di Lavaredo, l'Alpe di Siusi, il Lago di Braies, la Val Gardena e la Val di Funes, Merano con le passeggiate e i giardini di Castel Trauttmansdorff, il Museo Archeologico di Bolzano con Ötzi, Trento con il Castello del Buonconsiglio, Riva del Garda e Arco.",
       "È una delle migliori destinazioni d'Europa per sci (Dolomiti Superski, il comprensorio più grande del mondo), escursionismo, mountain bike e benessere: gli hotel spa altoatesini sono un riferimento internazionale. In inverno i mercatini di Natale di Bolzano, Merano e Bressanone attirano visitatori da tutta Europa.",
-      "Ideale per famiglie, sportivi, coppie in cerca di benessere e clientela nordeuropea. Durata consigliata: 4-7 giorni; si abbina con Verona, il Lago di Garda o Venezia (2h30)."
+      "Ideale per famiglie, sportivi, coppie in cerca di benessere e clientela nordeuropea. Durata consigliata: 4-7 giorni; si abbina con Verona, il Lago di Garda o Venezia (2h30).",
+      "Trentino e Alto Adige sono le montagne più vendute d'Italia: Dolomiti UNESCO, sci nel Dolomiti Superski, laghi come Garda, Braies e Carezza, mercatini di Natale a Bolzano, Merano e Trento, e un'offerta di hotel benessere tra le migliori d'Europa. Si vendono tutto l'anno a famiglie, coppie e appassionati di trekking; i periodi di punta (agosto, Natale, febbraio) si esauriscono con molti mesi di anticipo."
     ],
     "facts": {
       "capoluogo": "Trento (regione); Bolzano e Trento sono i capoluoghi delle due province autonome",
@@ -18,12 +19,36 @@
       "prodotti": "Speck Alto Adige IGP, mele della Val di Non, Trentodoc, Gewürztraminer, Lagrein, Teroldego, formaggi di malga"
     },
     "places": [
-      { "name": "Tre Cime di Lavaredo", "description": "Le tre torri di roccia più famose delle Dolomiti, con un anello escursionistico facile.", "search": "Tre Cime di Lavaredo" },
-      { "name": "Alpe di Siusi", "description": "Il più grande alpeggio d'Europa, ai piedi dello Sciliar.", "search": "Alpe di Siusi" },
-      { "name": "Lago di Braies", "description": "Lago smeraldo con barche in legno, tra i più fotografati delle Alpi.", "search": "Lago di Braies" },
-      { "name": "Merano", "description": "Città termale con passeggiate lungo il Passirio e i giardini di Trauttmansdorff.", "search": "Merano" },
-      { "name": "Val di Funes", "description": "Valle con la chiesetta di Santa Maddalena davanti alle Odle.", "search": "Val di Funes" },
-      { "name": "Castello del Buonconsiglio", "description": "Residenza dei principi vescovi di Trento con il Ciclo dei Mesi.", "search": "Castello del Buonconsiglio" }
+      {
+        "name": "Tre Cime di Lavaredo",
+        "description": "Le tre torri di roccia più famose delle Dolomiti, con un anello escursionistico facile.",
+        "search": "Tre Cime di Lavaredo"
+      },
+      {
+        "name": "Alpe di Siusi",
+        "description": "Il più grande alpeggio d'Europa, ai piedi dello Sciliar.",
+        "search": "Alpe di Siusi"
+      },
+      {
+        "name": "Lago di Braies",
+        "description": "Lago smeraldo con barche in legno, tra i più fotografati delle Alpi.",
+        "search": "Lago di Braies"
+      },
+      {
+        "name": "Merano",
+        "description": "Città termale con passeggiate lungo il Passirio e i giardini di Trauttmansdorff.",
+        "search": "Merano"
+      },
+      {
+        "name": "Val di Funes",
+        "description": "Valle con la chiesetta di Santa Maddalena davanti alle Odle.",
+        "search": "Val di Funes"
+      },
+      {
+        "name": "Castello del Buonconsiglio",
+        "description": "Residenza dei principi vescovi di Trento con il Ciclo dei Mesi.",
+        "search": "Castello del Buonconsiglio"
+      }
     ],
     "experiences": [
       "Sciare sul Sellaronda, il giro dei quattro passi intorno al Gruppo del Sella",
@@ -52,97 +77,222 @@
       {
         "id": "val-gardena-alpe-di-siusi",
         "name": "Val Gardena e Alpe di Siusi",
-        "lat": 46.56, "lon": 11.68,
+        "lat": 46.56,
+        "lon": 11.68,
         "tagline": "Il cuore ladino delle Dolomiti, tra Sella, Sassolungo e Sciliar.",
         "description": [
           "Ortisei, Santa Cristina e Selva sono le località della Val Gardena, famosa per la scultura del legno e per lo sci sul Sellaronda. Sopra la valle si apre l'Alpe di Siusi, immenso pascolo d'alta quota con vista su Sassolungo e Sciliar.",
           "D'estate è un paradiso per escursioni facili, e-bike e passeggiate in famiglia; d'inverno per sci, slittino e sci di fondo. La cultura ladina, con la sua lingua e tradizioni, rende l'atmosfera unica."
         ],
         "highlights": [
-          { "name": "Alpe di Siusi", "description": "Alpeggio con baite e vista sulle Dolomiti.", "search": "Alpe di Siusi" },
-          { "name": "Seceda", "description": "Cresta affilata con vista sulle Odle.", "search": "Seceda" },
-          { "name": "Ortisei", "description": "Borgo dei maestri scultori del legno.", "search": "Ortisei" },
-          { "name": "Passo Gardena", "description": "Passo dolomitico tra Sella e Cir.", "search": "Passo Gardena" }
+          {
+            "name": "Alpe di Siusi",
+            "description": "Alpeggio con baite e vista sulle Dolomiti.",
+            "search": "Alpe di Siusi"
+          },
+          {
+            "name": "Seceda",
+            "description": "Cresta affilata con vista sulle Odle.",
+            "search": "Seceda"
+          },
+          {
+            "name": "Ortisei",
+            "description": "Borgo dei maestri scultori del legno.",
+            "search": "Ortisei"
+          },
+          {
+            "name": "Passo Gardena",
+            "description": "Passo dolomitico tra Sella e Cir.",
+            "search": "Passo Gardena"
+          }
         ],
-        "experiences": ["Sellaronda con guida", "Escursione alla Seceda all'alba", "Cena in baita sull'Alpe"],
+        "experiences": [
+          "Sellaronda con guida",
+          "Escursione alla Seceda all'alba",
+          "Cena in baita sull'Alpe"
+        ],
         "idealFor": "Famiglie, sciatori, escursionisti; 5-7 giorni",
         "bestPeriod": "Dicembre-marzo; giugno-settembre"
       },
       {
         "id": "dolomiti-orientali",
         "name": "Alta Pusteria e Tre Cime",
-        "lat": 46.7, "lon": 12.25,
+        "lat": 46.7,
+        "lon": 12.25,
         "tagline": "Lago di Braies, Tre Cime e le valli più spettacolari dell'Alto Adige.",
         "description": [
           "L'Alta Val Pusteria comprende San Candido, Sesto e Dobbiaco, porte d'accesso alle Tre Cime di Lavaredo e alle Dolomiti di Sesto. Il Lago di Braies, con la sua acqua smeraldo, è uno dei luoghi più iconici delle Alpi.",
           "La zona offre escursioni per tutti, una lunga ciclabile fino a Lienz in Austria e d'inverno lo sci sul Monte Elmo e sulla Croda Rossa, oltre a fondo e passeggiate innevate."
         ],
         "highlights": [
-          { "name": "Lago di Braies", "description": "Lago alpino con barche a remi.", "search": "Lago di Braies" },
-          { "name": "Tre Cime di Lavaredo", "description": "Anello intorno alle tre torri di roccia.", "search": "Tre Cime di Lavaredo" },
-          { "name": "Lago di Dobbiaco", "description": "Lago tranquillo all'ingresso della Val di Landro.", "search": "Lago di Dobbiaco" },
-          { "name": "San Candido", "description": "Borgo con la collegiata romanica.", "search": "San Candido" }
+          {
+            "name": "Lago di Braies",
+            "description": "Lago alpino con barche a remi.",
+            "search": "Lago di Braies"
+          },
+          {
+            "name": "Tre Cime di Lavaredo",
+            "description": "Anello intorno alle tre torri di roccia.",
+            "search": "Tre Cime di Lavaredo"
+          },
+          {
+            "name": "Lago di Dobbiaco",
+            "description": "Lago tranquillo all'ingresso della Val di Landro.",
+            "search": "Lago di Dobbiaco"
+          },
+          {
+            "name": "San Candido",
+            "description": "Borgo con la collegiata romanica.",
+            "search": "San Candido"
+          }
         ],
-        "experiences": ["Ciclabile San Candido–Lienz con rientro in treno", "Giro delle Tre Cime con pranzo al rifugio Locatelli", "Ciaspolata nella Val Fiscalina"],
+        "experiences": [
+          "Ciclabile San Candido–Lienz con rientro in treno",
+          "Giro delle Tre Cime con pranzo al rifugio Locatelli",
+          "Ciaspolata nella Val Fiscalina"
+        ],
         "idealFor": "Escursionisti, fotografi, famiglie; 3-5 giorni",
         "bestPeriod": "Giugno-settembre; gennaio-marzo"
       },
       {
         "id": "merano-bolzano",
         "name": "Merano, Bolzano e la Strada del Vino",
-        "lat": 46.6, "lon": 11.2,
+        "lat": 46.6,
+        "lon": 11.2,
         "tagline": "Città mitteleuropee, castelli e vigneti nella valle più mite delle Alpi.",
         "description": [
           "Bolzano è il capoluogo altoatesino, con i portici, il mercato di piazza delle Erbe e il Museo Archeologico che custodisce Ötzi. Merano è città termale elegante, con le passeggiate sul Passirio e i giardini di Castel Trauttmansdorff.",
           "Tra le due città e verso sud corre la Strada del Vino: Appiano, Caldaro con il suo lago, Termeno, patria del Gewürztraminer. Castelli, cantine e masi rendono la zona ideale per soggiorni enogastronomici e di benessere."
         ],
         "highlights": [
-          { "name": "Giardini di Castel Trauttmansdorff", "description": "Giardini botanici panoramici a Merano.", "search": "Giardini di Castel Trauttmansdorff" },
-          { "name": "Museo Archeologico dell'Alto Adige", "description": "La mummia di Ötzi, l'uomo venuto dal ghiaccio.", "search": "Museo archeologico dell'Alto Adige" },
-          { "name": "Terme Merano", "description": "Terme moderne con piscine interne ed esterne.", "search": "Terme Merano" },
-          { "name": "Lago di Caldaro", "description": "Lago tra i vigneti della Strada del Vino.", "search": "Lago di Caldaro" }
+          {
+            "name": "Giardini di Castel Trauttmansdorff",
+            "description": "Giardini botanici panoramici a Merano.",
+            "search": "Giardini di Castel Trauttmansdorff"
+          },
+          {
+            "name": "Museo Archeologico dell'Alto Adige",
+            "description": "La mummia di Ötzi, l'uomo venuto dal ghiaccio.",
+            "search": "Museo archeologico dell'Alto Adige"
+          },
+          {
+            "name": "Terme Merano",
+            "description": "Terme moderne con piscine interne ed esterne.",
+            "search": "Terme Merano"
+          },
+          {
+            "name": "Lago di Caldaro",
+            "description": "Lago tra i vigneti della Strada del Vino.",
+            "search": "Lago di Caldaro"
+          }
         ],
-        "experiences": ["Degustazione di Gewürztraminer a Termeno", "Mercatini di Natale di Bolzano e Merano", "Giornata alle Terme Merano"],
+        "experiences": [
+          "Degustazione di Gewürztraminer a Termeno",
+          "Mercatini di Natale di Bolzano e Merano",
+          "Giornata alle Terme Merano"
+        ],
         "idealFor": "Coppie, benessere, enogastronomia; 3-4 giorni",
         "bestPeriod": "Marzo-novembre; dicembre per i mercatini"
       },
       {
         "id": "trento-garda-trentino",
         "name": "Trento e Garda Trentino",
-        "lat": 45.95, "lon": 10.95,
+        "lat": 45.95,
+        "lon": 10.95,
         "tagline": "Città del Concilio, Riva del Garda e sport all'aria aperta.",
         "description": [
           "Trento è una città rinascimentale raccolta, con piazza Duomo, il Castello del Buonconsiglio e il MUSE di Renzo Piano. Nei dintorni si producono le bollicine Trentodoc e si apre la Val di Non dei meleti.",
           "A sud, la punta nord del Lago di Garda — Riva, Arco, Torbole — è un paradiso per windsurf, vela, arrampicata e mountain bike, con un clima mediterraneo ai piedi delle montagne."
         ],
         "highlights": [
-          { "name": "Castello del Buonconsiglio", "description": "Residenza dei principi vescovi con il Ciclo dei Mesi.", "search": "Castello del Buonconsiglio" },
-          { "name": "MUSE", "description": "Museo delle scienze progettato da Renzo Piano.", "search": "MUSE Trento" },
-          { "name": "Riva del Garda", "description": "Cittadina sul lago ai piedi della Rocchetta.", "search": "Riva del Garda" },
-          { "name": "Lago di Tovel", "description": "Lago alpino nel Parco Adamello-Brenta.", "search": "Lago di Tovel" }
+          {
+            "name": "Castello del Buonconsiglio",
+            "description": "Residenza dei principi vescovi con il Ciclo dei Mesi.",
+            "search": "Castello del Buonconsiglio"
+          },
+          {
+            "name": "MUSE",
+            "description": "Museo delle scienze progettato da Renzo Piano.",
+            "search": "MUSE Trento"
+          },
+          {
+            "name": "Riva del Garda",
+            "description": "Cittadina sul lago ai piedi della Rocchetta.",
+            "search": "Riva del Garda"
+          },
+          {
+            "name": "Lago di Tovel",
+            "description": "Lago alpino nel Parco Adamello-Brenta.",
+            "search": "Lago di Tovel"
+          }
         ],
-        "experiences": ["Degustazione di Trentodoc in cantina", "Windsurf o vela a Torbole", "Via ferrata o arrampicata ad Arco"],
+        "experiences": [
+          "Degustazione di Trentodoc in cantina",
+          "Windsurf o vela a Torbole",
+          "Via ferrata o arrampicata ad Arco"
+        ],
         "idealFor": "Sportivi, famiglie, gruppi scolastici e culturali; 2-4 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "dolomiti-di-brenta",
         "name": "Madonna di Campiglio e Dolomiti di Brenta",
-        "lat": 46.23, "lon": 10.83,
+        "lat": 46.23,
+        "lon": 10.83,
         "tagline": "Eleganza alpina e il gruppo dolomitico più occidentale.",
         "description": [
           "Madonna di Campiglio è una delle stazioni sciistiche più eleganti d'Italia, legata alla memoria degli Asburgo. Le Dolomiti di Brenta, con il Campanile Basso, offrono scenari rocciosi spettacolari.",
           "D'estate il Parco Naturale Adamello-Brenta propone laghi, cascate (Vallesinella, Nardis) e sentieri per tutti, mentre la Val di Sole è nota per rafting e mountain bike."
         ],
         "highlights": [
-          { "name": "Madonna di Campiglio", "description": "Località sciistica e mondana.", "search": "Madonna di Campiglio" },
-          { "name": "Cascate Nardis", "description": "Cascate in Val Genova.", "search": "Cascate Nardis" },
-          { "name": "Lago di Molveno", "description": "Lago alpino tra Brenta e Paganella.", "search": "Lago di Molveno" },
-          { "name": "Campanile Basso", "description": "Guglia simbolo dell'alpinismo dolomitico.", "search": "Campanile Basso" }
+          {
+            "name": "Madonna di Campiglio",
+            "description": "Località sciistica e mondana.",
+            "search": "Madonna di Campiglio"
+          },
+          {
+            "name": "Cascate Nardis",
+            "description": "Cascate in Val Genova.",
+            "search": "Cascate Nardis"
+          },
+          {
+            "name": "Lago di Molveno",
+            "description": "Lago alpino tra Brenta e Paganella.",
+            "search": "Lago di Molveno"
+          },
+          {
+            "name": "Campanile Basso",
+            "description": "Guglia simbolo dell'alpinismo dolomitico.",
+            "search": "Campanile Basso"
+          }
         ],
-        "experiences": ["Sci e après-ski a Campiglio", "Rafting in Val di Sole", "Escursione ai rifugi del Brenta"],
+        "experiences": [
+          "Sci e après-ski a Campiglio",
+          "Rafting in Val di Sole",
+          "Escursione ai rifugi del Brenta"
+        ],
         "idealFor": "Sciatori, famiglie, clientela alto-spendente; 4-7 giorni",
         "bestPeriod": "Dicembre-marzo; luglio-settembre"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Dolomiti classiche in auto",
+        "days": 7,
+        "route": "Bolzano (1) → Val di Funes (1) → Val Gardena (2) → Cortina (1) → Lago di Braies (1)",
+        "description": "I passi dolomitici più belli, le Tre Cime e i laghi da cartolina; ideale da giugno a settembre."
+      },
+      {
+        "title": "Mercatini di Natale",
+        "days": 4,
+        "route": "Trento (1) → Bolzano (1) → Merano (1)",
+        "description": "I mercatini più famosi dell'arco alpino con terme di Merano; da fine novembre all'Epifania."
+      },
+      {
+        "title": "Lago di Garda trentino e Brenta",
+        "days": 6,
+        "route": "Riva del Garda (3) → Madonna di Campiglio (2)",
+        "description": "Sport sul lago, il castello di Arco e poi le Dolomiti di Brenta per trekking e relax in quota."
       }
     ]
   },
@@ -153,7 +303,8 @@
       "Il Veneto concentra in poco spazio una varietà straordinaria: Venezia e la sua laguna, Verona romantica con l'Arena, le città d'arte di Padova e Vicenza, le ville palladiane lungo il Brenta, la sponda orientale del Garda, le Dolomiti di Cortina e le colline UNESCO del Prosecco.",
       "Da vedere: Piazza San Marco e il Canal Grande, le isole di Murano, Burano e Torcello, l'Arena e la casa di Giulietta a Verona, la Cappella degli Scrovegni di Giotto a Padova, il Teatro Olimpico e la Rotonda a Vicenza, Bassano del Grappa, Asolo, Cortina d'Ampezzo.",
       "Le esperienze vanno dal giro in gondola alle opere all'Arena in estate, dalla Biennale d'arte e cinema alle degustazioni di Amarone in Valpolicella e Prosecco a Valdobbiadene, fino alle crociere fluviali sul Brenta e allo sci a Cortina.",
-      "Ideale per viaggi culturali, coppie, gruppi e clientela internazionale. Durata consigliata: 3 giorni a Venezia più 2-4 in terraferma; si abbina con Lombardia, Friuli o Emilia-Romagna."
+      "Ideale per viaggi culturali, coppie, gruppi e clientela internazionale. Durata consigliata: 3 giorni a Venezia più 2-4 in terraferma; si abbina con Lombardia, Friuli o Emilia-Romagna.",
+      "Il Veneto è la prima regione turistica d'Italia: Venezia e la sua laguna con Murano e Burano, Verona con l'Arena e la stagione lirica, Padova e Vicenza palladiana, le colline del Prosecco UNESCO, il Lago di Garda veneto, le Dolomiti di Cortina e le spiagge di Jesolo e Caorle. Si presta a viaggi brevi in città, tour culturali di una settimana e soggiorni balneari per famiglie; a Venezia ricordare la tassa d'accesso nei giorni previsti e preferire hotel nel centro storico per vivere la città di sera."
     ],
     "facts": {
       "capoluogo": "Venezia",
@@ -165,12 +316,36 @@
       "prodotti": "Amarone e Valpolicella, Prosecco Superiore, Soave; Asiago, radicchio di Treviso, baccalà, tiramisù"
     },
     "places": [
-      { "name": "Piazza San Marco", "description": "Basilica, Palazzo Ducale e campanile: il cuore di Venezia.", "search": "Piazza San Marco" },
-      { "name": "Burano", "description": "Isola delle case colorate e del merletto.", "search": "Burano" },
-      { "name": "Arena di Verona", "description": "Anfiteatro romano dove d'estate va in scena l'opera.", "search": "Arena di Verona" },
-      { "name": "Cappella degli Scrovegni", "description": "Il ciclo di affreschi di Giotto a Padova.", "search": "Cappella degli Scrovegni" },
-      { "name": "Villa La Rotonda", "description": "Capolavoro di Palladio alle porte di Vicenza.", "search": "Villa La Rotonda" },
-      { "name": "Cortina d'Ampezzo", "description": "La 'regina delle Dolomiti', sede olimpica.", "search": "Cortina d'Ampezzo" }
+      {
+        "name": "Piazza San Marco",
+        "description": "Basilica, Palazzo Ducale e campanile: il cuore di Venezia.",
+        "search": "Piazza San Marco"
+      },
+      {
+        "name": "Burano",
+        "description": "Isola delle case colorate e del merletto.",
+        "search": "Burano"
+      },
+      {
+        "name": "Arena di Verona",
+        "description": "Anfiteatro romano dove d'estate va in scena l'opera.",
+        "search": "Arena di Verona"
+      },
+      {
+        "name": "Cappella degli Scrovegni",
+        "description": "Il ciclo di affreschi di Giotto a Padova.",
+        "search": "Cappella degli Scrovegni"
+      },
+      {
+        "name": "Villa La Rotonda",
+        "description": "Capolavoro di Palladio alle porte di Vicenza.",
+        "search": "Villa La Rotonda"
+      },
+      {
+        "name": "Cortina d'Ampezzo",
+        "description": "La 'regina delle Dolomiti', sede olimpica.",
+        "search": "Cortina d'Ampezzo"
+      }
     ],
     "experiences": [
       "Giro in gondola o in barca privata nei canali minori",
@@ -199,97 +374,222 @@
       {
         "id": "venezia-laguna",
         "name": "Venezia e la laguna",
-        "lat": 45.44, "lon": 12.33,
+        "lat": 45.44,
+        "lon": 12.33,
         "tagline": "La città sull'acqua e le isole di Murano, Burano e Torcello.",
         "description": [
           "Venezia non ha bisogno di presentazioni: San Marco, il Canal Grande, il Ponte di Rialto, le Gallerie dell'Accademia, la Collezione Peggy Guggenheim, i sestieri meno battuti come Cannaregio e Castello. Ogni angolo è scenografico, specialmente all'alba e la sera.",
           "La laguna completa l'esperienza: Murano con le fornaci del vetro, Burano con le case colorate, Torcello con la basilica bizantina e il Lido per il mare e la Mostra del Cinema."
         ],
         "highlights": [
-          { "name": "Palazzo Ducale", "description": "Sede dei Dogi con il Ponte dei Sospiri.", "search": "Palazzo Ducale (Venezia)" },
-          { "name": "Canal Grande", "description": "Il 'viale' d'acqua con i palazzi nobiliari.", "search": "Canal Grande" },
-          { "name": "Murano", "description": "Fornaci e vetro soffiato.", "search": "Murano" },
-          { "name": "Torcello", "description": "Isola silenziosa con la basilica di Santa Maria Assunta.", "search": "Torcello" }
+          {
+            "name": "Palazzo Ducale",
+            "description": "Sede dei Dogi con il Ponte dei Sospiri.",
+            "search": "Palazzo Ducale (Venezia)"
+          },
+          {
+            "name": "Canal Grande",
+            "description": "Il 'viale' d'acqua con i palazzi nobiliari.",
+            "search": "Canal Grande"
+          },
+          {
+            "name": "Murano",
+            "description": "Fornaci e vetro soffiato.",
+            "search": "Murano"
+          },
+          {
+            "name": "Torcello",
+            "description": "Isola silenziosa con la basilica di Santa Maria Assunta.",
+            "search": "Torcello"
+          }
         ],
-        "experiences": ["Gondola al tramonto", "Visita a una fornace di Murano", "Itinerari segreti di Palazzo Ducale"],
+        "experiences": [
+          "Gondola al tramonto",
+          "Visita a una fornace di Murano",
+          "Itinerari segreti di Palazzo Ducale"
+        ],
         "idealFor": "Coppie, viaggi di nozze, culturali; 2-4 giorni",
         "bestPeriod": "Marzo-giugno, settembre-novembre; Carnevale a febbraio"
       },
       {
         "id": "verona-valpolicella",
         "name": "Verona e Valpolicella",
-        "lat": 45.44, "lon": 10.99,
+        "lat": 45.44,
+        "lon": 10.99,
         "tagline": "La città di Giulietta, l'Arena e le cantine dell'Amarone.",
         "description": [
           "Verona è una città romantica e vivibile: l'Arena, piazza delle Erbe, la casa di Giulietta, Castelvecchio e il ponte scaligero, la basilica di San Zeno. D'estate il festival lirico all'Arena è un'esperienza unica.",
           "A nord la Valpolicella è terra di Amarone, Ripasso e Recioto, con ville venete e cantine storiche. Verso est le colline del Soave e verso ovest la sponda veneta del Garda con Bardolino, Garda e Malcesine."
         ],
         "highlights": [
-          { "name": "Arena di Verona", "description": "Anfiteatro romano e palcoscenico dell'opera.", "search": "Arena di Verona" },
-          { "name": "Piazza delle Erbe", "description": "La piazza più vivace della città.", "search": "Piazza delle Erbe (Verona)" },
-          { "name": "Malcesine", "description": "Borgo sul Garda con funivia per il Monte Baldo.", "search": "Malcesine" },
-          { "name": "Villa della Torre", "description": "Villa rinascimentale e cantina in Valpolicella.", "search": "Villa della Torre Fumane" }
+          {
+            "name": "Arena di Verona",
+            "description": "Anfiteatro romano e palcoscenico dell'opera.",
+            "search": "Arena di Verona"
+          },
+          {
+            "name": "Piazza delle Erbe",
+            "description": "La piazza più vivace della città.",
+            "search": "Piazza delle Erbe (Verona)"
+          },
+          {
+            "name": "Malcesine",
+            "description": "Borgo sul Garda con funivia per il Monte Baldo.",
+            "search": "Malcesine"
+          },
+          {
+            "name": "Villa della Torre",
+            "description": "Villa rinascimentale e cantina in Valpolicella.",
+            "search": "Villa della Torre Fumane"
+          }
         ],
-        "experiences": ["Opera all'Arena", "Degustazione di Amarone", "Funivia del Monte Baldo"],
+        "experiences": [
+          "Opera all'Arena",
+          "Degustazione di Amarone",
+          "Funivia del Monte Baldo"
+        ],
         "idealFor": "Coppie, appassionati di musica e vino; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre (lirica giugno-settembre)"
       },
       {
         "id": "padova-vicenza-brenta",
         "name": "Padova, Vicenza e Riviera del Brenta",
-        "lat": 45.45, "lon": 11.7,
+        "lat": 45.45,
+        "lon": 11.7,
         "tagline": "Giotto, Palladio e le ville venete lungo il fiume.",
         "description": [
           "Padova custodisce la Cappella degli Scrovegni di Giotto, la Basilica del Santo, l'Orto botanico più antico del mondo e Prato della Valle. Vicenza è la città di Palladio: Teatro Olimpico, Basilica Palladiana e, poco fuori, Villa La Rotonda.",
           "Lungo il Brenta tra Venezia e Padova si allineano le ville dei nobili veneziani, come Villa Pisani a Stra e la Malcontenta, visitabili anche in battello."
         ],
         "highlights": [
-          { "name": "Cappella degli Scrovegni", "description": "Affreschi di Giotto, ingresso a turni.", "search": "Cappella degli Scrovegni" },
-          { "name": "Teatro Olimpico", "description": "Primo teatro coperto moderno, di Palladio.", "search": "Teatro Olimpico" },
-          { "name": "Villa Pisani", "description": "Villa monumentale con labirinto a Stra.", "search": "Villa Pisani (Stra)" },
-          { "name": "Basilica di Sant'Antonio", "description": "Meta di pellegrinaggio a Padova.", "search": "Basilica di Sant'Antonio di Padova" }
+          {
+            "name": "Cappella degli Scrovegni",
+            "description": "Affreschi di Giotto, ingresso a turni.",
+            "search": "Cappella degli Scrovegni"
+          },
+          {
+            "name": "Teatro Olimpico",
+            "description": "Primo teatro coperto moderno, di Palladio.",
+            "search": "Teatro Olimpico"
+          },
+          {
+            "name": "Villa Pisani",
+            "description": "Villa monumentale con labirinto a Stra.",
+            "search": "Villa Pisani (Stra)"
+          },
+          {
+            "name": "Basilica di Sant'Antonio",
+            "description": "Meta di pellegrinaggio a Padova.",
+            "search": "Basilica di Sant'Antonio di Padova"
+          }
         ],
-        "experiences": ["Crociera sul Burchiello", "Tour delle ville palladiane", "Spritz in piazza dei Signori a Padova"],
+        "experiences": [
+          "Crociera sul Burchiello",
+          "Tour delle ville palladiane",
+          "Spritz in piazza dei Signori a Padova"
+        ],
         "idealFor": "Viaggi culturali, gruppi e scuole; 2-3 giorni",
         "bestPeriod": "Primavera e autunno"
       },
       {
         "id": "colline-prosecco",
         "name": "Colline del Prosecco e Pedemontana",
-        "lat": 45.88, "lon": 12.1,
+        "lat": 45.88,
+        "lon": 12.1,
         "tagline": "Vigneti UNESCO, Asolo, Bassano e la Strada del Prosecco.",
         "description": [
           "Tra Conegliano e Valdobbiadene le colline ripide disegnano un paesaggio a 'ciglioni' riconosciuto dall'UNESCO, dove nasce il Prosecco Superiore DOCG. Osterie, cantine e il Cartizze rendono la zona ideale per tour del vino.",
           "Lungo la Pedemontana si incontrano Asolo, la 'città dai cento orizzonti', Bassano del Grappa con il Ponte degli Alpini e la grappa, Possagno con la gipsoteca di Canova e Villa Barbaro a Maser con gli affreschi del Veronese."
         ],
         "highlights": [
-          { "name": "Valdobbiadene", "description": "Capitale del Prosecco Superiore.", "search": "Valdobbiadene" },
-          { "name": "Asolo", "description": "Borgo elegante tra i colli.", "search": "Asolo" },
-          { "name": "Ponte degli Alpini", "description": "Ponte coperto di Bassano del Grappa.", "search": "Ponte Vecchio (Bassano del Grappa)" },
-          { "name": "Villa Barbaro", "description": "Villa palladiana affrescata dal Veronese.", "search": "Villa Barbaro" }
+          {
+            "name": "Valdobbiadene",
+            "description": "Capitale del Prosecco Superiore.",
+            "search": "Valdobbiadene"
+          },
+          {
+            "name": "Asolo",
+            "description": "Borgo elegante tra i colli.",
+            "search": "Asolo"
+          },
+          {
+            "name": "Ponte degli Alpini",
+            "description": "Ponte coperto di Bassano del Grappa.",
+            "search": "Ponte Vecchio (Bassano del Grappa)"
+          },
+          {
+            "name": "Villa Barbaro",
+            "description": "Villa palladiana affrescata dal Veronese.",
+            "search": "Villa Barbaro"
+          }
         ],
-        "experiences": ["Degustazione di Cartizze", "Tour in e-bike tra i ciglioni", "Distilleria di grappa a Bassano"],
+        "experiences": [
+          "Degustazione di Cartizze",
+          "Tour in e-bike tra i ciglioni",
+          "Distilleria di grappa a Bassano"
+        ],
         "idealFor": "Enoturismo, coppie, piccoli gruppi; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "cortina-dolomiti-venete",
         "name": "Cortina e Dolomiti venete",
-        "lat": 46.54, "lon": 12.14,
+        "lat": 46.54,
+        "lon": 12.14,
         "tagline": "La regina delle Dolomiti, sede olimpica 2026.",
         "description": [
           "Cortina d'Ampezzo è la località alpina più mondana d'Italia, circondata da Tofane, Cristallo e Cinque Torri. Sci di livello mondiale, boutique sul Corso Italia e rifugi gourmet ne fanno una meta di prestigio.",
           "D'estate i sentieri della Grande Guerra, il Lago di Sorapis e le Cinque Torri attirano escursionisti; vicine anche la Val di Zoldo, l'Agordino e il Lago di Misurina."
         ],
         "highlights": [
-          { "name": "Cinque Torri", "description": "Museo all'aperto della Grande Guerra.", "search": "Cinque Torri" },
-          { "name": "Lago di Sorapis", "description": "Lago turchese raggiungibile a piedi.", "search": "Lago di Sorapis" },
-          { "name": "Tofana di Mezzo", "description": "Funivia fino a oltre 3.000 metri.", "search": "Tofana di Mezzo" },
-          { "name": "Lago di Misurina", "description": "Lago alpino davanti alle Tre Cime.", "search": "Lago di Misurina" }
+          {
+            "name": "Cinque Torri",
+            "description": "Museo all'aperto della Grande Guerra.",
+            "search": "Cinque Torri"
+          },
+          {
+            "name": "Lago di Sorapis",
+            "description": "Lago turchese raggiungibile a piedi.",
+            "search": "Lago di Sorapis"
+          },
+          {
+            "name": "Tofana di Mezzo",
+            "description": "Funivia fino a oltre 3.000 metri.",
+            "search": "Tofana di Mezzo"
+          },
+          {
+            "name": "Lago di Misurina",
+            "description": "Lago alpino davanti alle Tre Cime.",
+            "search": "Lago di Misurina"
+          }
         ],
-        "experiences": ["Sci sulle piste olimpiche", "Pranzo in rifugio gourmet", "Trekking della Grande Guerra"],
+        "experiences": [
+          "Sci sulle piste olimpiche",
+          "Pranzo in rifugio gourmet",
+          "Trekking della Grande Guerra"
+        ],
         "idealFor": "Clientela alto-spendente, sciatori, escursionisti; 4-7 giorni",
         "bestPeriod": "Dicembre-marzo; luglio-settembre"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Venezia e la laguna",
+        "days": 4,
+        "route": "Venezia (3), con Murano, Burano e Torcello",
+        "description": "Piazza San Marco, Palazzo Ducale, gondola e isole della laguna; meglio in primavera o autunno."
+      },
+      {
+        "title": "Città d'arte venete",
+        "days": 7,
+        "route": "Venezia (2) → Padova (1) → Vicenza (1) → Verona (2) → Lago di Garda (1)",
+        "description": "Giotto alla Cappella degli Scrovegni, Palladio a Vicenza, l'Arena e il Garda: un tour in treno facile."
+      },
+      {
+        "title": "Prosecco e Dolomiti",
+        "days": 5,
+        "route": "Treviso (1) → Valdobbiadene e Conegliano (2) → Cortina (2)",
+        "description": "Colline UNESCO del Prosecco con degustazioni e poi la regina delle Dolomiti."
       }
     ]
   },
@@ -300,7 +600,8 @@
       "Il Friuli Venezia Giulia è una terra di confine dove si incontrano culture latina, slava e germanica. Trieste, con Piazza Unità affacciata sul mare e i caffè letterari, ha un'atmosfera asburgica unica; Udine è elegante e veneziana; Aquileia e Cividale raccontano Roma e i Longobardi.",
       "Da vedere: Piazza Unità d'Italia e il Castello di Miramare a Trieste, la basilica di Aquileia con i mosaici, Cividale del Friuli con il Tempietto longobardo, Palmanova a forma di stella, Grado e la sua laguna, le colline del Collio, le Dolomiti friulane.",
       "Le esperienze più apprezzate sono enogastronomiche: degustazioni di bianchi del Collio e dei Colli Orientali, prosciutto di San Daniele, osmize del Carso. Il mare di Lignano e Grado si alterna a montagne poco affollate come il Tarvisiano.",
-      "Ideale per viaggiatori curiosi, enoturisti e chi cerca destinazioni meno conosciute. Durata consigliata: 3-5 giorni; si abbina perfettamente con Venezia, la Slovenia o l'Istria."
+      "Ideale per viaggiatori curiosi, enoturisti e chi cerca destinazioni meno conosciute. Durata consigliata: 3-5 giorni; si abbina perfettamente con Venezia, la Slovenia o l'Istria.",
+      "Il Friuli Venezia Giulia è la regione da proporre a chi cerca l'Italia autentica e poco affollata: Trieste mitteleuropea con i caffè storici e il castello di Miramare, Aquileia romana, Cividale longobarda, Udine, le colline del Collio con vini bianchi tra i migliori d'Italia, le Alpi Giulie e le spiagge di Lignano e Grado. Si combina benissimo con Slovenia e Croazia per un tour di confine."
     ],
     "facts": {
       "capoluogo": "Trieste",
@@ -312,12 +613,36 @@
       "prodotti": "Prosciutto di San Daniele, Montasio, frico; vini del Collio (Friulano, Ribolla Gialla), Picolit, Terrano"
     },
     "places": [
-      { "name": "Piazza Unità d'Italia", "description": "La grande piazza di Trieste aperta sul mare.", "search": "Piazza Unità d'Italia" },
-      { "name": "Castello di Miramare", "description": "Castello bianco di Massimiliano d'Asburgo sul golfo.", "search": "Castello di Miramare" },
-      { "name": "Basilica di Aquileia", "description": "Il più grande pavimento a mosaico paleocristiano d'Occidente.", "search": "Basilica di Aquileia" },
-      { "name": "Cividale del Friuli", "description": "Tempietto longobardo e Ponte del Diavolo sul Natisone.", "search": "Cividale del Friuli" },
-      { "name": "Palmanova", "description": "Città fortezza a stella a nove punte.", "search": "Palmanova" },
-      { "name": "Grado", "description": "Isola del sole con centro storico e laguna.", "search": "Grado (Italia)" }
+      {
+        "name": "Piazza Unità d'Italia",
+        "description": "La grande piazza di Trieste aperta sul mare.",
+        "search": "Piazza Unità d'Italia"
+      },
+      {
+        "name": "Castello di Miramare",
+        "description": "Castello bianco di Massimiliano d'Asburgo sul golfo.",
+        "search": "Castello di Miramare"
+      },
+      {
+        "name": "Basilica di Aquileia",
+        "description": "Il più grande pavimento a mosaico paleocristiano d'Occidente.",
+        "search": "Basilica di Aquileia"
+      },
+      {
+        "name": "Cividale del Friuli",
+        "description": "Tempietto longobardo e Ponte del Diavolo sul Natisone.",
+        "search": "Cividale del Friuli"
+      },
+      {
+        "name": "Palmanova",
+        "description": "Città fortezza a stella a nove punte.",
+        "search": "Palmanova"
+      },
+      {
+        "name": "Grado",
+        "description": "Isola del sole con centro storico e laguna.",
+        "search": "Grado (Italia)"
+      }
     ],
     "experiences": [
       "Caffè letterari di Trieste sulle orme di Joyce e Svevo",
@@ -346,78 +671,182 @@
       {
         "id": "trieste-carso",
         "name": "Trieste e il Carso",
-        "lat": 45.65, "lon": 13.78,
+        "lat": 45.65,
+        "lon": 13.78,
         "tagline": "La città asburgica sul mare e l'altopiano delle osmize.",
         "description": [
           "Trieste è una città sospesa tra Italia e Mitteleuropa: Piazza Unità, il Canal Grande, il Molo Audace, i caffè storici come San Marco e Tommaseo. Il Castello di Miramare e il Faro della Vittoria dominano il golfo.",
           "Alle spalle si estende il Carso, altopiano di pietra e boschi con la Grotta Gigante, la Strada Napoleonica panoramica e le osmize dove si gustano vino e salumi dei produttori."
         ],
         "highlights": [
-          { "name": "Castello di Miramare", "description": "Castello e parco sul mare.", "search": "Castello di Miramare" },
-          { "name": "Grotta Gigante", "description": "Una delle grotte turistiche più grandi del mondo.", "search": "Grotta Gigante" },
-          { "name": "Strada Napoleonica", "description": "Passeggiata panoramica sul golfo.", "search": "Strada Napoleonica" },
-          { "name": "Caffè San Marco", "description": "Caffè letterario e libreria.", "search": "Caffè San Marco" }
+          {
+            "name": "Castello di Miramare",
+            "description": "Castello e parco sul mare.",
+            "search": "Castello di Miramare"
+          },
+          {
+            "name": "Grotta Gigante",
+            "description": "Una delle grotte turistiche più grandi del mondo.",
+            "search": "Grotta Gigante"
+          },
+          {
+            "name": "Strada Napoleonica",
+            "description": "Passeggiata panoramica sul golfo.",
+            "search": "Strada Napoleonica"
+          },
+          {
+            "name": "Caffè San Marco",
+            "description": "Caffè letterario e libreria.",
+            "search": "Caffè San Marco"
+          }
         ],
-        "experiences": ["Tour dei caffè letterari", "Pranzo in osmiza", "Barcolana in ottobre"],
+        "experiences": [
+          "Tour dei caffè letterari",
+          "Pranzo in osmiza",
+          "Barcolana in ottobre"
+        ],
         "idealFor": "City break culturali, coppie; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "collio-udine-cividale",
         "name": "Udine, Cividale e Collio",
-        "lat": 46.05, "lon": 13.4,
+        "lat": 46.05,
+        "lon": 13.4,
         "tagline": "Città d'arte, Longobardi e i grandi vini bianchi.",
         "description": [
           "Udine ha piazze di gusto veneziano come Piazza Libertà e affreschi del Tiepolo. Cividale del Friuli, fondata da Giulio Cesare, conserva il Tempietto longobardo UNESCO e il Ponte del Diavolo sul Natisone.",
           "Il Collio e i Colli Orientali sono colline vitate al confine con la Slovenia, celebri per Friulano, Ribolla Gialla e i vini macerati. A sud, Palmanova stupisce con la pianta a stella."
         ],
         "highlights": [
-          { "name": "Tempietto longobardo", "description": "Capolavoro altomedievale a Cividale.", "search": "Tempietto longobardo" },
-          { "name": "Piazza Libertà", "description": "La piazza veneziana di Udine.", "search": "Piazza della Libertà (Udine)" },
-          { "name": "Palmanova", "description": "Città fortezza a stella.", "search": "Palmanova" },
-          { "name": "Collio", "description": "Colline del vino bianco.", "search": "Collio" }
+          {
+            "name": "Tempietto longobardo",
+            "description": "Capolavoro altomedievale a Cividale.",
+            "search": "Tempietto longobardo"
+          },
+          {
+            "name": "Piazza Libertà",
+            "description": "La piazza veneziana di Udine.",
+            "search": "Piazza della Libertà (Udine)"
+          },
+          {
+            "name": "Palmanova",
+            "description": "Città fortezza a stella.",
+            "search": "Palmanova"
+          },
+          {
+            "name": "Collio",
+            "description": "Colline del vino bianco.",
+            "search": "Collio"
+          }
         ],
-        "experiences": ["Degustazione di Ribolla Gialla", "Tour in bici nel Collio", "Pranzo con frico e Montasio"],
+        "experiences": [
+          "Degustazione di Ribolla Gialla",
+          "Tour in bici nel Collio",
+          "Pranzo con frico e Montasio"
+        ],
         "idealFor": "Enoturisti, viaggi culturali; 2-3 giorni",
         "bestPeriod": "Aprile-giugno, settembre-ottobre"
       },
       {
         "id": "aquileia-grado-lignano",
         "name": "Aquileia, Grado e Lignano",
-        "lat": 45.7, "lon": 13.3,
+        "lat": 45.7,
+        "lon": 13.3,
         "tagline": "Mosaici romani, laguna e spiagge.",
         "description": [
           "Aquileia fu una delle città più importanti dell'Impero romano: la basilica patriarcale custodisce un pavimento musivo di 760 metri quadrati. A pochi chilometri, Grado è un'isola con un centro storico veneziano e spiagge dolci.",
           "La laguna di Grado e Marano è un ambiente di casoni di pescatori e riserve naturali. Lignano Sabbiadoro è la località balneare per famiglie più grande della regione."
         ],
         "highlights": [
-          { "name": "Basilica di Aquileia", "description": "Mosaici paleocristiani.", "search": "Basilica di Aquileia" },
-          { "name": "Grado", "description": "Centro storico e spiagge.", "search": "Grado (Italia)" },
-          { "name": "Laguna di Marano", "description": "Casoni e riserve naturali.", "search": "Laguna di Marano" },
-          { "name": "Lignano Sabbiadoro", "description": "Spiagge per famiglie.", "search": "Lignano Sabbiadoro" }
+          {
+            "name": "Basilica di Aquileia",
+            "description": "Mosaici paleocristiani.",
+            "search": "Basilica di Aquileia"
+          },
+          {
+            "name": "Grado",
+            "description": "Centro storico e spiagge.",
+            "search": "Grado (Italia)"
+          },
+          {
+            "name": "Laguna di Marano",
+            "description": "Casoni e riserve naturali.",
+            "search": "Laguna di Marano"
+          },
+          {
+            "name": "Lignano Sabbiadoro",
+            "description": "Spiagge per famiglie.",
+            "search": "Lignano Sabbiadoro"
+          }
         ],
-        "experiences": ["Barca tra i casoni della laguna", "Visita guidata agli scavi di Aquileia", "Ciclabile Alpe Adria fino a Grado"],
+        "experiences": [
+          "Barca tra i casoni della laguna",
+          "Visita guidata agli scavi di Aquileia",
+          "Ciclabile Alpe Adria fino a Grado"
+        ],
         "idealFor": "Famiglie, cultura e mare; 2-4 giorni",
         "bestPeriod": "Maggio-settembre"
       },
       {
         "id": "montagna-friulana",
         "name": "Carnia, Tarvisiano e Dolomiti friulane",
-        "lat": 46.45, "lon": 13.0,
+        "lat": 46.45,
+        "lon": 13.0,
         "tagline": "Montagne autentiche, laghi e piste poco affollate.",
         "description": [
           "Il Tarvisiano, al confine con Austria e Slovenia, offre i Laghi di Fusine, il Monte Lussari con il santuario e lo sci, e la ciclabile Alpe Adria. La Carnia è terra di borghi di pietra, tradizioni e cucina di montagna.",
           "Le Dolomiti friulane, patrimonio UNESCO, sono le più selvagge e meno frequentate: perfette per chi cerca silenzio, fauna e sentieri tranquilli."
         ],
         "highlights": [
-          { "name": "Laghi di Fusine", "description": "Laghi alpini sotto il Mangart.", "search": "Laghi di Fusine" },
-          { "name": "Monte Lussari", "description": "Santuario e piste da sci sopra Tarvisio.", "search": "Monte Lussari" },
-          { "name": "Sauris", "description": "Borgo carnico famoso per il prosciutto affumicato.", "search": "Sauris" },
-          { "name": "Campanile di Val Montanaia", "description": "Guglia simbolo delle Dolomiti friulane.", "search": "Campanile di Val Montanaia" }
+          {
+            "name": "Laghi di Fusine",
+            "description": "Laghi alpini sotto il Mangart.",
+            "search": "Laghi di Fusine"
+          },
+          {
+            "name": "Monte Lussari",
+            "description": "Santuario e piste da sci sopra Tarvisio.",
+            "search": "Monte Lussari"
+          },
+          {
+            "name": "Sauris",
+            "description": "Borgo carnico famoso per il prosciutto affumicato.",
+            "search": "Sauris"
+          },
+          {
+            "name": "Campanile di Val Montanaia",
+            "description": "Guglia simbolo delle Dolomiti friulane.",
+            "search": "Campanile di Val Montanaia"
+          }
         ],
-        "experiences": ["Ciclabile Alpe Adria", "Sci al Lussari", "Degustazione di prosciutto di Sauris"],
+        "experiences": [
+          "Ciclabile Alpe Adria",
+          "Sci al Lussari",
+          "Degustazione di prosciutto di Sauris"
+        ],
         "idealFor": "Natura, famiglie, sportivi; 3-5 giorni",
         "bestPeriod": "Giugno-settembre; dicembre-marzo"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Trieste e il Carso",
+        "days": 4,
+        "route": "Trieste (3) → Miramare e Grotta Gigante (1)",
+        "description": "Caffè letterari, Piazza Unità sul mare, il castello di Miramare e il Carso con osmize e grotte."
+      },
+      {
+        "title": "Friuli d'arte e vino",
+        "days": 6,
+        "route": "Udine (2) → Cividale (1) → Collio (1) → Aquileia e Grado (2)",
+        "description": "Longobardi, mosaici paleocristiani UNESCO, cantine del Collio e la laguna di Grado."
+      },
+      {
+        "title": "Trieste, Lubiana e Istria",
+        "days": 7,
+        "route": "Trieste (2) → Lubiana (2) → Bled (1) → Pirano (1)",
+        "description": "Tour di confine tra tre culture, comodo in auto o con transfer privato."
       }
     ]
   },
@@ -428,7 +857,8 @@
       "L'Emilia-Romagna è la terra del Parmigiano Reggiano, del Prosciutto di Parma, dell'Aceto Balsamico di Modena e della pasta fresca. Bologna, con i portici UNESCO e la sua università millenaria, è il cuore di una regione dove si mangia benissimo ovunque.",
       "Da vedere: le Due Torri e Piazza Maggiore a Bologna, il Duomo e la Ghirlandina di Modena, Parma con il Teatro Regio e il Battistero, i mosaici bizantini di Ravenna, Ferrara rinascimentale e il Delta del Po, i borghi di San Leo e Dozza, la Riviera da Rimini a Cesenatico.",
       "Le esperienze più richieste sono food: visite ai caseifici di Parmigiano all'alba, acetaie, prosciuttifici, corsi di sfoglia. La Motor Valley — Ferrari a Maranello, Lamborghini, Ducati — attira appassionati da tutto il mondo; la Riviera offre mare, parchi e vita notturna.",
-      "Ideale per foodies, famiglie, appassionati di motori, viaggi di gruppo e incentive. Durata consigliata: 4-6 giorni; si abbina con Firenze (37 minuti di treno da Bologna), Venezia o le Marche."
+      "Ideale per foodies, famiglie, appassionati di motori, viaggi di gruppo e incentive. Durata consigliata: 4-6 giorni; si abbina con Firenze (37 minuti di treno da Bologna), Venezia o le Marche.",
+      "L'Emilia-Romagna è la regione del cibo e della Riviera: Bologna, Modena e Parma per tortellini, parmigiano, aceto balsamico e prosciutto, la Motor Valley con Ferrari, Lamborghini e Ducati, Ravenna con i mosaici UNESCO e Ferrara rinascimentale, poi la Riviera Romagnola da Rimini a Cesenatico, regina del turismo per famiglie. È perfetta per food tour, gruppi, scolastiche e weekend in treno grazie all'alta velocità."
     ],
     "facts": {
       "capoluogo": "Bologna",
@@ -440,12 +870,36 @@
       "prodotti": "Parmigiano Reggiano, Prosciutto di Parma, Aceto Balsamico Tradizionale, mortadella, culatello; Lambrusco, Sangiovese di Romagna"
     },
     "places": [
-      { "name": "Piazza Maggiore e Due Torri", "description": "Il centro medievale di Bologna sotto i portici.", "search": "Piazza Maggiore" },
-      { "name": "Basilica di San Vitale", "description": "Mosaici bizantini di Giustiniano e Teodora a Ravenna.", "search": "Basilica di San Vitale" },
-      { "name": "Duomo di Modena", "description": "Capolavoro romanico con la torre Ghirlandina.", "search": "Duomo di Modena" },
-      { "name": "Castello Estense di Ferrara", "description": "Fortezza con fossato nel cuore della città rinascimentale.", "search": "Castello Estense" },
-      { "name": "Museo Ferrari di Maranello", "description": "Il mito del Cavallino Rampante.", "search": "Museo Ferrari" },
-      { "name": "San Leo", "description": "Rocca su una rupe, tra i borghi più belli d'Italia.", "search": "San Leo" }
+      {
+        "name": "Piazza Maggiore e Due Torri",
+        "description": "Il centro medievale di Bologna sotto i portici.",
+        "search": "Piazza Maggiore"
+      },
+      {
+        "name": "Basilica di San Vitale",
+        "description": "Mosaici bizantini di Giustiniano e Teodora a Ravenna.",
+        "search": "Basilica di San Vitale"
+      },
+      {
+        "name": "Duomo di Modena",
+        "description": "Capolavoro romanico con la torre Ghirlandina.",
+        "search": "Duomo di Modena"
+      },
+      {
+        "name": "Castello Estense di Ferrara",
+        "description": "Fortezza con fossato nel cuore della città rinascimentale.",
+        "search": "Castello Estense"
+      },
+      {
+        "name": "Museo Ferrari di Maranello",
+        "description": "Il mito del Cavallino Rampante.",
+        "search": "Museo Ferrari"
+      },
+      {
+        "name": "San Leo",
+        "description": "Rocca su una rupe, tra i borghi più belli d'Italia.",
+        "search": "San Leo"
+      }
     ],
     "experiences": [
       "Visita a un caseificio di Parmigiano Reggiano con degustazione",
@@ -474,78 +928,182 @@
       {
         "id": "bologna",
         "name": "Bologna e colli",
-        "lat": 44.49, "lon": 11.34,
+        "lat": 44.49,
+        "lon": 11.34,
         "tagline": "La dotta, la grassa, la rossa: portici, torri e tortellini.",
         "description": [
           "Bologna ha uno dei centri storici medievali più grandi d'Europa, con quasi 40 chilometri di portici UNESCO, Piazza Maggiore, la Basilica di San Petronio e le Due Torri. L'Archiginnasio ricorda la più antica università del mondo occidentale.",
           "La città è una capitale gastronomica: il Quadrilatero con le botteghe storiche, osterie e trattorie. Sui colli, il portico più lungo del mondo sale al Santuario di San Luca."
         ],
         "highlights": [
-          { "name": "Due Torri", "description": "Asinelli e Garisenda, simbolo della città.", "search": "Due Torri (Bologna)" },
-          { "name": "Santuario di San Luca", "description": "Raggiungibile con il portico più lungo del mondo.", "search": "Santuario della Madonna di San Luca" },
-          { "name": "Archiginnasio", "description": "Antica sede universitaria con il Teatro Anatomico.", "search": "Archiginnasio di Bologna" },
-          { "name": "Quadrilatero", "description": "Mercato medievale di botteghe alimentari.", "search": "Quadrilatero (Bologna)" }
+          {
+            "name": "Due Torri",
+            "description": "Asinelli e Garisenda, simbolo della città.",
+            "search": "Due Torri (Bologna)"
+          },
+          {
+            "name": "Santuario di San Luca",
+            "description": "Raggiungibile con il portico più lungo del mondo.",
+            "search": "Santuario della Madonna di San Luca"
+          },
+          {
+            "name": "Archiginnasio",
+            "description": "Antica sede universitaria con il Teatro Anatomico.",
+            "search": "Archiginnasio di Bologna"
+          },
+          {
+            "name": "Quadrilatero",
+            "description": "Mercato medievale di botteghe alimentari.",
+            "search": "Quadrilatero (Bologna)"
+          }
         ],
-        "experiences": ["Food tour nel Quadrilatero", "Corso di tortellini", "Passeggiata a San Luca sotto il portico"],
+        "experiences": [
+          "Food tour nel Quadrilatero",
+          "Corso di tortellini",
+          "Passeggiata a San Luca sotto il portico"
+        ],
         "idealFor": "City break gastronomici, gruppi, incentive; 2-3 giorni",
         "bestPeriod": "Tutto l'anno"
       },
       {
         "id": "parma-modena",
         "name": "Parma, Modena e la Food Valley",
-        "lat": 44.7, "lon": 10.6,
+        "lat": 44.7,
+        "lon": 10.6,
         "tagline": "Parmigiano, prosciutto, balsamico e motori.",
         "description": [
           "Parma è eleganza ducale: il Duomo con la cupola del Correggio, il Battistero, il Teatro Farnese e il Teatro Regio di Verdi. Intorno, caseifici, prosciuttifici di Langhirano e il culatello della Bassa.",
           "Modena unisce il Duomo UNESCO, l'Aceto Balsamico Tradizionale e la Motor Valley: Maranello con il Museo Ferrari è a pochi chilometri."
         ],
         "highlights": [
-          { "name": "Duomo di Parma", "description": "Cupola affrescata dal Correggio.", "search": "Duomo di Parma" },
-          { "name": "Teatro Farnese", "description": "Teatro barocco in legno nel Palazzo della Pilotta.", "search": "Teatro Farnese" },
-          { "name": "Museo Enzo Ferrari", "description": "Museo dedicato a Enzo Ferrari a Modena.", "search": "Museo Enzo Ferrari" },
-          { "name": "Reggia di Colorno", "description": "La 'piccola Versailles' dei duchi di Parma.", "search": "Reggia di Colorno" }
+          {
+            "name": "Duomo di Parma",
+            "description": "Cupola affrescata dal Correggio.",
+            "search": "Duomo di Parma"
+          },
+          {
+            "name": "Teatro Farnese",
+            "description": "Teatro barocco in legno nel Palazzo della Pilotta.",
+            "search": "Teatro Farnese"
+          },
+          {
+            "name": "Museo Enzo Ferrari",
+            "description": "Museo dedicato a Enzo Ferrari a Modena.",
+            "search": "Museo Enzo Ferrari"
+          },
+          {
+            "name": "Reggia di Colorno",
+            "description": "La 'piccola Versailles' dei duchi di Parma.",
+            "search": "Reggia di Colorno"
+          }
         ],
-        "experiences": ["Caseificio all'alba", "Acetaia con degustazione", "Test drive Ferrari a Maranello"],
+        "experiences": [
+          "Caseificio all'alba",
+          "Acetaia con degustazione",
+          "Test drive Ferrari a Maranello"
+        ],
         "idealFor": "Foodies, appassionati di motori, gruppi; 2-3 giorni",
         "bestPeriod": "Tutto l'anno"
       },
       {
         "id": "ravenna-ferrara-delta",
         "name": "Ravenna, Ferrara e Delta del Po",
-        "lat": 44.6, "lon": 12.0,
+        "lat": 44.6,
+        "lon": 12.0,
         "tagline": "Mosaici bizantini, la città rinascimentale e un delta selvaggio.",
         "description": [
           "Ravenna fu capitale dell'Impero d'Occidente: otto monumenti UNESCO con mosaici dorati, da San Vitale al Mausoleo di Galla Placidia e Sant'Apollinare in Classe. Qui riposa anche Dante.",
           "Ferrara è la città degli Estensi, con il Castello, il Palazzo dei Diamanti e mura percorribili in bici. Il Delta del Po, con l'Abbazia di Pomposa e Comacchio, è un paradiso di birdwatching e anguille."
         ],
         "highlights": [
-          { "name": "Mausoleo di Galla Placidia", "description": "Il cielo stellato di mosaici.", "search": "Mausoleo di Galla Placidia" },
-          { "name": "Palazzo dei Diamanti", "description": "Facciata a bugne di marmo, sede di mostre.", "search": "Palazzo dei Diamanti" },
-          { "name": "Comacchio", "description": "La 'piccola Venezia' dei canali.", "search": "Comacchio" },
-          { "name": "Abbazia di Pomposa", "description": "Abbazia romanica nel Delta.", "search": "Abbazia di Pomposa" }
+          {
+            "name": "Mausoleo di Galla Placidia",
+            "description": "Il cielo stellato di mosaici.",
+            "search": "Mausoleo di Galla Placidia"
+          },
+          {
+            "name": "Palazzo dei Diamanti",
+            "description": "Facciata a bugne di marmo, sede di mostre.",
+            "search": "Palazzo dei Diamanti"
+          },
+          {
+            "name": "Comacchio",
+            "description": "La 'piccola Venezia' dei canali.",
+            "search": "Comacchio"
+          },
+          {
+            "name": "Abbazia di Pomposa",
+            "description": "Abbazia romanica nel Delta.",
+            "search": "Abbazia di Pomposa"
+          }
         ],
-        "experiences": ["Itinerario dei mosaici di Ravenna", "Mura di Ferrara in bicicletta", "Barca nelle valli di Comacchio"],
+        "experiences": [
+          "Itinerario dei mosaici di Ravenna",
+          "Mura di Ferrara in bicicletta",
+          "Barca nelle valli di Comacchio"
+        ],
         "idealFor": "Cultura, natura, cicloturismo; 2-3 giorni",
         "bestPeriod": "Aprile-ottobre"
       },
       {
         "id": "riviera-romagnola",
         "name": "Riviera romagnola ed entroterra",
-        "lat": 44.06, "lon": 12.57,
+        "lat": 44.06,
+        "lon": 12.57,
         "tagline": "Spiagge attrezzate, divertimento e borghi sulle colline.",
         "description": [
           "Da Cervia a Cattolica, la Riviera romagnola è la regina del turismo balneare: Rimini con il centro romano e la memoria di Fellini, Riccione e la vita notturna, Cesenatico con il porto leonardesco. Parchi a tema come Mirabilandia e Aquafan sono perfetti per famiglie.",
           "L'entroterra sorprende con borghi medievali come San Leo, Santarcangelo, Gradara e Verucchio, e la Repubblica di San Marino a 25 minuti dalla costa."
         ],
         "highlights": [
-          { "name": "Rimini", "description": "Ponte di Tiberio, Tempio Malatestiano e spiagge.", "search": "Rimini" },
-          { "name": "Cesenatico", "description": "Porto canale con le barche storiche.", "search": "Cesenatico" },
-          { "name": "San Marino", "description": "La repubblica sul Monte Titano.", "search": "San Marino" },
-          { "name": "Rocca di Gradara", "description": "Castello di Paolo e Francesca.", "search": "Castello di Gradara" }
+          {
+            "name": "Rimini",
+            "description": "Ponte di Tiberio, Tempio Malatestiano e spiagge.",
+            "search": "Rimini"
+          },
+          {
+            "name": "Cesenatico",
+            "description": "Porto canale con le barche storiche.",
+            "search": "Cesenatico"
+          },
+          {
+            "name": "San Marino",
+            "description": "La repubblica sul Monte Titano.",
+            "search": "San Marino"
+          },
+          {
+            "name": "Rocca di Gradara",
+            "description": "Castello di Paolo e Francesca.",
+            "search": "Castello di Gradara"
+          }
         ],
-        "experiences": ["Piadina in un chiosco storico", "Giornata a Mirabilandia", "Tour dei borghi malatestiani"],
+        "experiences": [
+          "Piadina in un chiosco storico",
+          "Giornata a Mirabilandia",
+          "Tour dei borghi malatestiani"
+        ],
         "idealFor": "Famiglie, giovani, gruppi; 4-7 giorni",
         "bestPeriod": "Giugno-settembre"
+      }
+    ],
+    "itineraries": [
+      {
+        "title": "Food Valley",
+        "days": 5,
+        "route": "Bologna (2) → Modena (1) → Parma (2)",
+        "description": "Mercati, caseifici di Parmigiano, acetaie e prosciuttifici, con cooking class di pasta fresca."
+      },
+      {
+        "title": "Mosaici e Rinascimento",
+        "days": 4,
+        "route": "Bologna (1) → Ferrara (1) → Ravenna (2)",
+        "description": "Le torri di Bologna, il Castello Estense e i mosaici bizantini di Ravenna."
+      },
+      {
+        "title": "Riviera e Motor Valley",
+        "days": 7,
+        "route": "Rimini o Riccione (5) → Maranello e Modena (1)",
+        "description": "Mare per famiglie con parchi divertimento e una giornata tra Ferrari e Lamborghini."
       }
     ]
   }

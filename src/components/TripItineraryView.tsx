@@ -124,6 +124,15 @@ export default async function TripItineraryView({
           </div>
         )}
 
+        {trip.itinerary_stage !== "preliminare" && days.length > 0 && agencyName && (
+          <div className="mb-6 flex items-start gap-2.5 rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+            <span aria-hidden className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-600 text-[11px] font-bold text-white">✓</span>
+            <span>
+              <strong>{t("trip.verifiedTitle", { agency: agencyName })}</strong> {t("trip.verifiedText")}
+            </span>
+          </div>
+        )}
+
         {days.length === 0 && <p className="theme-muted">{t("trip.soon")}</p>}
 
         {days.length > 0 && (
