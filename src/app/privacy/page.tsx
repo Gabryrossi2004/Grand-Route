@@ -83,6 +83,15 @@ export default function PrivacyPage() {
                 fornitori e schede paese personalizzate; l&apos;agenzia può modificarli ed eliminarli.
               </li>
               <li>
+                <strong>Viaggiatori privati e richieste alle agenzie:</strong> chi usa Grand Route senza
+                agenzia salva nel proprio account i suoi viaggi, la lista della valigia, le persone e le spese
+                del viaggio, foto e diario. Questi dati sono visibili solo a lui. Se sceglie di mandare un
+                viaggio a un&apos;agenzia dell&apos;elenco, spuntando il consenso, all&apos;agenzia arrivano il
+                nome, il contatto indicato e una copia dell&apos;itinerario (non spese, valigia, foto o
+                diario): da quel momento l&apos;agenzia li tratta come titolare. Il link di condivisione di un
+                viaggio mostra solo il programma e si può spegnere in qualsiasi momento.
+              </li>
+              <li>
                 <strong>Dati tecnici:</strong> indirizzo IP, log di accesso ed errori applicativi,
                 raccolti automaticamente per garantire sicurezza e stabilità del Servizio.
               </li>

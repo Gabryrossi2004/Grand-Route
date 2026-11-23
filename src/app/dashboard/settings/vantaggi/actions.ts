@@ -129,18 +129,28 @@ export async function convertLead(id: string) {
   const contact = String(lead.contact);
   const email = /\S+@\S+\.\S+/.test(contact) ? contact.trim() : null;
   const phone = email ? null : contact.trim();
+  const fromTraveler = lead.source === "privato";
   const newClient = {
     owner_id: user.id,
     full_name: lead.name,
     email,
     phone,
-    notes: `Arrivato con «presenta un amico».${lead.message ? ` Messaggio: ${lead.message}` : ""}`.slice(0, 2000),
+    notes: `${fromTraveler ? "Arrivato dall'area viaggiatori." : "Arrivato con «presenta un amico»."}${lead.message ? ` Messaggio: ${lead.message}` : ""}`.slice(0, 2000),
   };
   // Si ricorda chi ha presentato l'amico (colonna della migrazione 0057); senza, si crea il cliente come prima
-  let { error: insertError } = lead.referrer_client_id
-    ? await supabase.from("clients").insert({ ...newClient, referred_by_client_id: lead.referrer_client_id })
-    : { error: null };
-  if (insertError || !lead.referrer_client_id) ({ error: insertError } = await supabase.from("clients").insert(newClient));
+  let created: { id: string } | null = null;
+  if (lead.referrer_client_id) {
+    const withRef = await supabase.from("clients").insert({ ...newClient, referred_by_client_id: lead.referrer_client_id }).select("id").single();
+    created = withRef.data;
+  }
+  if (!created) {
+    const plain = await supabase.from("clients").insert(newClient).select("id").single();
+    created = plain.data;
+  }
+  // Il viaggio che il viaggiatore ha mandato passa al nuovo cliente
+  if (created && fromTraveler && lead.trip_id) {
+    await supabase.from("trips").update({ client_id: created.id }).eq("id", lead.trip_id).eq("owner_id", user.id);
+  }
   if (lead.referrer_client_id && !lead.bonus_given) {
     const { data: loyalty } = await supabase.from("agency_loyalty").select("enabled, referral_bonus").eq("owner_id", user.id).maybeSingle();
     const bonus = Number(loyalty?.referral_bonus ?? 0);

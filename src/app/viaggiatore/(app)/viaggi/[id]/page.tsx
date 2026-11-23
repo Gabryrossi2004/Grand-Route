@@ -40,6 +40,10 @@ export default async function TravelerTripPage({ params }: { params: Promise<{ i
         </section>
       )}
 
+      <Link href={`/viaggiatore/viaggi/${trip.id}/agenzia`} className="rounded-2xl border border-[#233c5e]/40 bg-white px-4 py-3 text-sm text-slate-700 transition hover:border-[#233c5e]">
+        <strong className="text-[#233c5e]">Vuoi che sia un&apos;agenzia a prenotare e seguirti?</strong> Fallo preparare da un&apos;agenzia: le mandi questo itinerario e ti risponde →
+      </Link>
+
       <Link href="/viaggiatore/mappamondo" className="rounded-2xl border border-[#e6d7bb] bg-white px-4 py-3 text-sm text-slate-700 transition hover:border-[#cda876]">
         <strong className="text-[#233c5e]">Diario e foto</strong> di questo viaggio: aprili dal mappamondo, toccando il paese o il luogo →
       </Link>

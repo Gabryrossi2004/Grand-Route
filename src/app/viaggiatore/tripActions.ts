@@ -148,3 +148,42 @@ export async function setTripBudget(tripId: string, amount: number | null): Prom
   refresh(tripId);
   return { ok: true };
 }
+
+// ── Condivisione con gli amici ───────────────────────────────────────────────
+// Il link pubblico del viaggio (/t/…) mostra solo il programma: niente spese né valigia.
+export async function setTripShare(tripId: string, on: boolean): Promise<Result> {
+  const own = await ownedTrip(tripId);
+  if (!own) return { ok: false, error: "Dati non validi." };
+  const { error } = await own.db.from("trips").update({ is_published: Boolean(on) }).eq("id", tripId).eq("owner_id", own.userId);
+  if (error) return { ok: false, error: "Non sono riuscito a salvare. Riprova." };
+  revalidatePath(`/viaggiatore/viaggi/${tripId}/condividi`);
+  return { ok: true };
+}
+
+// ── «Fallo preparare da un'agenzia» ──────────────────────────────────────────
+const RequestInput = z.object({
+  agencyId: z.string().uuid(),
+  message: z.string().trim().max(800),
+  contact: z.string().trim().min(3).max(160),
+  consent: z.literal(true),
+});
+
+export async function sendTripToAgency(tripId: string, input: z.input<typeof RequestInput>): Promise<Result> {
+  const parsed = RequestInput.safeParse(input);
+  const own = await ownedTrip(tripId);
+  if (!own) return { ok: false, error: "Viaggio non trovato." };
+  if (!parsed.success) return { ok: false, error: "Scrivi un contatto (email o telefono) e conferma il consenso." };
+  const { error } = await own.db.rpc("submit_traveler_request", {
+    p_trip_id: tripId,
+    p_agency_id: parsed.data.agencyId,
+    p_message: parsed.data.message,
+    p_contact: parsed.data.contact,
+  });
+  if (error) {
+    if (missing(error) || error.code === "PGRST202") return { ok: false, error: "Questa funzione richiede l'aggiornamento del database (migrazione 0060)." };
+    // I messaggi scritti nella funzione del database sono già in italiano e pensati per l'utente
+    return { ok: false, error: error.message && error.message.length < 200 && error.code === "P0001" ? error.message : "Non sono riuscito a mandare la richiesta. Riprova." };
+  }
+  revalidatePath(`/viaggiatore/viaggi/${tripId}/agenzia`);
+  return { ok: true };
+}

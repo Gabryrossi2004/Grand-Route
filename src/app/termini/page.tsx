@@ -262,6 +262,20 @@ export default function TerminiPage() {
               .
             </p>
           </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">18. Viaggiatori privati e richieste alle agenzie</h2>
+            <p>
+              L&apos;area viaggiatori è uno strumento per organizzare i propri viaggi: Grand Route non
+              vende viaggi, voli o servizi turistici e non è parte del rapporto tra il viaggiatore e le
+              agenzie. Gli itinerari proposti dalla libreria o scritti dall&apos;assistente sono idee da
+              verificare prima di prenotare. Se il viaggiatore manda un viaggio a un&apos;agenzia dell&apos;elenco,
+              ogni accordo, preventivo, prenotazione e tutela del pacchetto turistico riguarda solo lui e
+              l&apos;agenzia, che risponde dei propri servizi. Le agenzie in elenco decidono da sole se
+              comparire e come presentarsi. Alcune funzioni gratuite, come gli itinerari con l&apos;assistente,
+              hanno limiti mensili che possono cambiare.
+            </p>
+          </section>
         </div>
 
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">

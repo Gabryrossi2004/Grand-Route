@@ -2,9 +2,9 @@ import { UserPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { convertLead, setLeadStatus } from "@/app/dashboard/settings/vantaggi/actions";
 
-type Lead = { id: string; name: string; contact: string; message: string | null; status: string; created_at: string; referrer_client_id: string | null; source?: string };
+type Lead = { id: string; name: string; contact: string; message: string | null; status: string; created_at: string; referrer_client_id: string | null; source?: string; trip_id?: string | null };
 
-// Richieste arrivate da «presenta un amico» (e in futuro dai viaggiatori privati)
+// Richieste arrivate da «presenta un amico», dai preventivi dei clienti e dai viaggiatori privati
 export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -25,7 +25,7 @@ export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
       <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-[#233c5e]">
         <UserPlus size={18} className="text-[#c58f2d]" /> Nuove richieste ({leads.length})
       </h2>
-      <p className="mb-3 text-xs text-slate-500">Amici presentati dai tuoi clienti (dal loro link personale) e clienti che chiedono un preventivo per il prossimo viaggio. Per un amico, «Diventa cliente» crea la scheda e dà il bonus a chi l&apos;ha presentato.</p>
+      <p className="mb-3 text-xs text-slate-500">Amici presentati dai tuoi clienti, clienti che chiedono un preventivo e viaggiatori che ti mandano il loro itinerario da organizzare (lo trovi già tra i tuoi viaggi). «Diventa cliente» crea la scheda, dà il bonus a chi ha presentato l&apos;amico e collega il viaggio.</p>
       <ul className="flex flex-col divide-y divide-[#f0e6d2]">
         {leads.map((l) => (
           <li key={l.id} className="flex flex-wrap items-start justify-between gap-2 py-2.5 text-sm">
@@ -37,7 +37,9 @@ export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
               <p className="text-xs text-slate-500">
                 {l.source === "cliente"
                   ? "Richiesta di preventivo di un tuo cliente · "
-                  : l.referrer_client_id && refName.get(l.referrer_client_id)
+                  : l.source === "privato"
+                    ? "Viaggiatore dall'area viaggiatori · "
+                    : l.referrer_client_id && refName.get(l.referrer_client_id)
                     ? `Presentato da ${refName.get(l.referrer_client_id)} · `
                     : ""}
                 {new Date(l.created_at).toLocaleDateString("it-IT")}
@@ -50,9 +52,16 @@ export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
                   Apri il cliente
                 </a>
               ) : (
+                <>
+                  {l.source === "privato" && l.trip_id && (
+                    <a href={`/dashboard/trips/${l.trip_id}`} className="rounded-lg border border-[#233c5e] px-3 py-1.5 text-xs font-semibold text-[#233c5e] hover:bg-[#eef2f8]">
+                      Apri l&apos;itinerario
+                    </a>
+                  )}
                 <form action={convertLead.bind(null, l.id)}>
                   <button type="submit" className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#17283f]">Diventa cliente</button>
                 </form>
+                </>
               )}
               {l.status === "nuova" && (
                 <form action={setLeadStatus.bind(null, l.id, "contattata")}>
