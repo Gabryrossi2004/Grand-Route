@@ -1,15 +1,11 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import { loadTripDays } from "@/lib/tripDays";
-import { loadTripPlaces, romeToday, type DayInput } from "@/lib/destinationInfo";
+import { loadGlobeTrips } from "@/lib/globeTrips";
 import GlobeLoader from "@/components/GlobeLoader";
-import type { GlobeTrip } from "@/components/TravelGlobe";
 import { countPhotosByCountry, latestPhotoByCountry } from "@/lib/actions/clientPhotos";
 import { countJournalByPlace } from "@/lib/actions/clientJournal";
 
 // Le località si cercano in rete (in cache per 30 giorni): con molti viaggi serve qualche secondo
 export const maxDuration = 60;
-
-type DayRow = { day_date: string | null; title: string | null; activities?: { location: string | null; activity_type: string | null }[] };
 
 export default async function ClientGlobePage() {
   const supabase = await createClient();
@@ -27,33 +23,7 @@ export default async function ClientGlobePage() {
           .order("start_date", { ascending: false })
       : { data: [] };
 
-  const today = romeToday();
-  const trips: GlobeTrip[] = (
-    await Promise.all(
-      ((tripRows as { id: string; title: string; destination: string | null; start_date: string | null; end_date: string | null }[]) ?? []).slice(0, 30).map(
-        async (trip): Promise<GlobeTrip> => {
-          const { data } = await loadTripDays(supabase, trip.id, false);
-          const days: DayInput[] = ((data as DayRow[] | null) ?? []).map((d) => ({
-            date: d.day_date,
-            title: d.title,
-            places: (d.activities ?? []).map((a) => ({ location: a.location, type: a.activity_type })),
-          }));
-          const places = await loadTripPlaces(trip.destination, days);
-          const status: GlobeTrip["status"] =
-            trip.end_date && trip.end_date < today ? "done" : trip.start_date && trip.start_date > today ? "upcoming" : trip.start_date ? "current" : "upcoming";
-          return {
-            id: trip.id,
-            title: trip.title,
-            destination: trip.destination,
-            from: trip.start_date,
-            to: trip.end_date,
-            status,
-            places: places.map((p) => ({ name: p.place, lat: p.latitude, lon: p.longitude })),
-          };
-        },
-      ),
-    )
-  ).filter((t) => t.places.length > 0);
+  const trips = await loadGlobeTrips(supabase, (tripRows as { id: string; title: string; destination: string | null; start_date: string | null; end_date: string | null }[]) ?? []);
 
   const [photoCounts, photoThumbs, placeNotes] = await Promise.all([countPhotosByCountry(), latestPhotoByCountry(), countJournalByPlace()]);
 

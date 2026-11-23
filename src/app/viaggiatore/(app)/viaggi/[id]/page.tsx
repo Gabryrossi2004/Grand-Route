@@ -58,6 +58,10 @@ export default async function TravelerTripPage({ params }: { params: Promise<{ i
         </section>
       )}
 
+      <Link href="/viaggiatore/mappamondo" className="rounded-2xl border border-[#e6d7bb] bg-white px-4 py-3 text-sm text-slate-700 transition hover:border-[#cda876]">
+        <strong className="text-[#233c5e]">Diario e foto</strong> di questo viaggio: aprili dal mappamondo, toccando il paese o il luogo →
+      </Link>
+
       <div className="flex justify-end">
         <DeleteTravelerTrip tripId={trip.id} />
       </div>

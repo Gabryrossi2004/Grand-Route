@@ -31,6 +31,9 @@ export default async function TravelerLayout({ children }: { children: React.Rea
             <Link href="/viaggiatore" className={link}>
               Viaggi
             </Link>
+            <Link href="/viaggiatore/mappamondo" className={link}>
+              Mappamondo
+            </Link>
             <Link href="/viaggiatore/nuovo" className={link}>
               Nuovo
             </Link>
