@@ -419,6 +419,43 @@ export async function findLibraryProposals(text: string): Promise<{
   };
 }
 
+// «Consulta proposte»: gli itinerari pronti per un paese o una regione (prima quelli dell'agenzia,
+// poi quelli di Grand Route). Si può indicare la destinazione scelta dall'elenco o scrivere un luogo.
+export async function consultProposals(input: { kind: "country" | "italy"; key: string } | { text: string }): Promise<{
+  label: string;
+  kind: "country" | "italy";
+  key: string;
+  proposals: { name: string; route: string; summary: string; itinerary: GeneratedItinerary; agency: boolean }[];
+} | null> {
+  const user = await getCachedUser();
+  if (!user) return null;
+  const { matchLibrary, libraryProposalsFor } = await import("@/lib/libraryProposals");
+  let kind: "country" | "italy";
+  let key: string;
+  let label: string;
+  if ("text" in input) {
+    if (typeof input.text !== "string") return null;
+    const m = matchLibrary(input.text.slice(0, 400));
+    if (!m) return null;
+    ({ kind, key, label } = m);
+  } else {
+    if (!["country", "italy"].includes(input.kind) || typeof input.key !== "string" || input.key.length > 40) return null;
+    kind = input.kind;
+    key = input.key;
+    const { destinationOptions } = await import("@/lib/actions/agencyItineraries");
+    const found = (await destinationOptions()).find((o) => o.kind === kind && o.key === key);
+    if (!found) return null;
+    label = found.label;
+  }
+  const { listAgencyItineraries } = await import("@/lib/actions/agencyItineraries");
+  const own = await listAgencyItineraries({ kind, key });
+  const agency = own.ok
+    ? own.items.map((it) => ({ name: it.title, route: it.route ?? "", summary: it.description ?? "", itinerary: it.program, agency: true }))
+    : [];
+  const library = libraryProposalsFor(kind, key).map((p) => ({ name: p.title, route: p.route, summary: p.description, itinerary: p.itinerary, agency: false }));
+  return { label, kind, key, proposals: [...agency, ...library] };
+}
+
 const LibraryItineraryInput = z.object({
   kind: z.enum(["country", "italy"]),
   key: z.string().trim().min(2).max(40),

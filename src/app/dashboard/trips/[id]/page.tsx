@@ -508,6 +508,8 @@ function CoverHero({
           hasContent={hasContent}
           countries={"countries" in trip ? ((trip.countries as string[] | null) ?? []) : undefined}
           autoCountries={"auto_countries" in trip ? (trip.auto_countries as string[] | null) : null}
+          tripTitle={trip.title}
+          destination={trip.destination ?? null}
         />
       </div>
 

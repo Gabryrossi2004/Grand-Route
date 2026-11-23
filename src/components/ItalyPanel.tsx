@@ -7,6 +7,7 @@ import type { SheetPhoto } from "@/lib/countryPhotos";
 import { photoSrc } from "@/lib/photoSrc";
 import CountrySuppliers from "@/components/CountrySuppliers";
 import UseItineraryButton from "@/components/UseItineraryButton";
+import AgencyItinerariesSection from "@/components/AgencyItinerariesSection";
 import { ITALY_FACT_LABELS, ITALY_ORDER, ITALY_REGIONS, type ItalyPlace } from "@/lib/italyLibrary";
 
 export type ItalyView = { region: string | null; zone: string | null };
@@ -240,6 +241,8 @@ export default function ItalyPanel({
                     </ul>
                   </div>
                 )}
+
+                {view.region && !zone && <AgencyItinerariesSection kind="italy" placeKey={view.region} />}
 
                 {view.region && <CountrySuppliers code="IT" region={view.region} />}
 

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { CalendarDays, Copy, FileCheck2, FileDown, Globe2, Languages, ListChecks, MoreHorizontal } from "lucide-react";
+import { BookmarkPlus, CalendarDays, Copy, FileCheck2, FileDown, Globe2, Languages, ListChecks, MoreHorizontal } from "lucide-react";
+import SaveAsProposalDialog from "@/components/SaveAsProposalDialog";
 import TripCountriesDialog from "@/components/TripCountriesDialog";
 import SubmitButton from "@/components/SubmitButton";
 import { TranslateTripDialog } from "@/components/TranslateTripButton";
@@ -21,6 +22,8 @@ export default function TripMoreMenu({
   hasContent,
   countries,
   autoCountries,
+  tripTitle,
+  destination,
 }: {
   tripId: string;
   isFinal: boolean;
@@ -31,10 +34,13 @@ export default function TripMoreMenu({
   hasContent: boolean;
   countries?: string[] | null; // undefined = funzione non ancora attiva (manca SQL 0045)
   autoCountries?: string[] | null;
+  tripTitle: string;
+  destination: string | null;
 }) {
   const [open, setOpen] = useState(false);
   const [translateOpen, setTranslateOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
+  const [proposalOpen, setProposalOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   // Zefiro (il personaggio) può aprire la traduzione
@@ -115,6 +121,20 @@ export default function TripMoreMenu({
             </SubmitButton>
           </form>
 
+          {hasContent && (
+            <button
+              type="button"
+              role="menuitem"
+              className={item}
+              onClick={() => {
+                setOpen(false);
+                setProposalOpen(true);
+              }}
+            >
+              <BookmarkPlus size={16} /> Salva come proposta in Libreria
+            </button>
+          )}
+
           <button
             type="button"
             role="menuitem"
@@ -147,6 +167,15 @@ export default function TripMoreMenu({
       )}
 
       {translateOpen && <TranslateTripDialog tripId={tripId} onClose={() => setTranslateOpen(false)} />}
+      {proposalOpen && (
+        <SaveAsProposalDialog
+          tripId={tripId}
+          tripTitle={tripTitle}
+          destination={destination}
+          countries={[...new Set([...(countries ?? []), ...(autoCountries ?? [])])]}
+          onClose={() => setProposalOpen(false)}
+        />
+      )}
       {countriesOpen && <TripCountriesDialog tripId={tripId} manual={countries ?? []} auto={autoCountries ?? null} onClose={() => setCountriesOpen(false)} />}
     </div>
   );

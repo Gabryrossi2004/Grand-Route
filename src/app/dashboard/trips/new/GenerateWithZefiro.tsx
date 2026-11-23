@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AlertCircle, CheckCircle2, Loader2, RotateCcw, Sparkles } from "lucide-react";
+import { AlertCircle, BookOpen, CheckCircle2, Loader2, RotateCcw, Search, Sparkles } from "lucide-react";
 import type { Client, PromptStyle } from "@/lib/types";
 import type { GeneratedItinerary } from "@/lib/itineraryAi";
 import Modal from "@/components/Modal";
@@ -16,7 +16,8 @@ import ItineraryModePicker from "@/components/ItineraryModePicker";
 import type { ItineraryMode } from "@/lib/itineraryMode";
 import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 import { ASSISTANT_NAME } from "@/lib/assistant";
-import { applyProposalsToTrip, createTripFromProposals, findLibraryProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
+import { applyProposalsToTrip, consultProposals, createTripFromProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
+import { destinationOptions, listAgencyItineraries, type DestinationOption } from "@/lib/actions/agencyItineraries";
 
 const inputClass = "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
@@ -32,6 +33,7 @@ type Proposal = {
   itinerary?: GeneratedItinerary;
   error?: string;
   keep: boolean;
+  agency?: boolean;
 };
 
 function isRedirect(error: unknown) {
@@ -55,7 +57,8 @@ export default function GenerateWithZefiro({
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [phase, setPhase] = useState<"brief" | "questions" | "review" | "done">("brief");
+  // «choose» = le due strade: Genera itinerario (AI) o Consulta proposte (libreria, gratis)
+  const [phase, setPhase] = useState<"choose" | "browse" | "brief" | "questions" | "review" | "done">("choose");
   // «Guidato» = domande una alla volta (senza AI); «Libero» = descrizione a parole
   const [briefMode, setBriefMode] = useState<"guided" | "free">("guided");
   const [briefText, setBriefText] = useState("");
@@ -80,16 +83,22 @@ export default function GenerateWithZefiro({
   // Si apre dal pulsante, dal personaggio fluttuante o arrivando da "Creami un viaggio".
   useEffect(() => {
     const wanted = trip ? "trip-generate" : "new-trip";
+    const wantedProposals = trip ? "trip-proposals" : "new-trip-proposals";
     const onAction = (event: Event) => {
-      if ((event as CustomEvent).detail === wanted) {
-        setPhase("brief");
-        setBriefMode("guided");
-        setError(null);
+      const detail = (event as CustomEvent).detail;
+      if (detail === wanted || detail === wantedProposals) {
+        resetAll(detail === wanted ? "brief" : "browse");
         setOpen(true);
       }
     };
     window.addEventListener(ZEFIRO_ACTION_EVENT, onAction);
-    const timer = !trip && new URLSearchParams(window.location.search).get("zefiro") ? window.setTimeout(() => setOpen(true), 0) : null;
+    const param = !trip ? new URLSearchParams(window.location.search).get("zefiro") : null;
+    const timer = param
+      ? window.setTimeout(() => {
+          resetAll(param === "proposte" ? "browse" : param === "genera" ? "brief" : "choose");
+          setOpen(true);
+        }, 0)
+      : null;
     return () => {
       window.removeEventListener(ZEFIRO_ACTION_EVENT, onAction);
       if (timer) window.clearTimeout(timer);
@@ -100,6 +109,24 @@ export default function GenerateWithZefiro({
     if (planning || saving) return;
     setOpen(false);
     if (phase === "done") router.refresh();
+  }
+
+  // Riparte da capo sulla schermata indicata (la scelta, la ricerca delle proposte o la richiesta a Zefiro)
+  function resetAll(to: "choose" | "browse" | "brief") {
+    setLibraryLabel(null);
+    setPhase(to);
+    setBriefMode("guided");
+    setBriefText("");
+    setError(null);
+    setQuestions([]);
+    setAnswers([]);
+    setPlan(null);
+    setProposals([]);
+  }
+
+  function openChooser() {
+    resetAll("choose");
+    setOpen(true);
   }
 
   function reset() {
@@ -180,35 +207,46 @@ export default function GenerateWithZefiro({
       void runPlan(formData);
       return;
     }
-    // Prima le proposte già pronte della libreria (nessun costo); se non ce ne sono, Zefiro
+    void runPlan(formData);
+  }
+
+  // «Consulta proposte»: itinerari pronti per la destinazione scelta (gratis, nessuna AI)
+  async function showProposals(input: { kind: "country" | "italy"; key: string } | { text: string }) {
     setPlanning(true);
     setError(null);
-    findLibraryProposals(String(formData.get("brief") ?? ""))
-      .then((lib) => {
-        if (!lib) {
-          setPlanning(false);
-          void runPlan(formData);
-          return;
-        }
-        setPlanning(false);
-        setPlan(null);
-        setLibraryLabel(lib.label);
-        setTitle(`${lib.label} · ${lib.proposals[0].name}`);
-        setDestination(lib.label);
-        setProposals(lib.proposals.map((p, i) => ({ name: p.name, route: p.route, summary: p.summary, status: "ready", itinerary: p.itinerary, keep: i === 0 })));
-        setPhase("review");
-      })
-      .catch(() => {
-        setPlanning(false);
-        void runPlan(formData);
-      });
+    try {
+      const lib = await consultProposals(input);
+      if (!lib || lib.proposals.length === 0) {
+        setError(
+          lib
+            ? `Per ${lib.label} non ci sono ancora proposte pronte. Puoi farne generare a ${ASSISTANT_NAME}.`
+            : "Non ho trovato questa destinazione. Scegli un paese o una regione dall'elenco.",
+        );
+        return;
+      }
+      lastForm.current = null;
+      setPlan(null);
+      setLibraryLabel(lib.label);
+      setTitle(`${lib.label} · ${lib.proposals[0].name}`);
+      setDestination(lib.label);
+      setProposals(lib.proposals.map((p, i) => ({ name: p.name, route: p.route, summary: p.summary, status: "ready", itinerary: p.itinerary, keep: i === 0, agency: p.agency })));
+      setPhase("review");
+    } catch {
+      setError("Qualcosa non ha funzionato. Controlla la connessione e riprova.");
+    } finally {
+      setPlanning(false);
+    }
   }
 
   // Dalle proposte della libreria a nuove proposte scritte da Zefiro (con AI)
   function generateWithAi() {
-    if (!lastForm.current || planning) return;
-    setLibraryLabel(null);
-    void runPlan(lastForm.current);
+    if (planning) return;
+    const label = libraryLabel;
+    resetAll("brief");
+    if (label) {
+      setBriefText(`Viaggio in ${label}.`);
+      setBriefMode("free");
+    }
   }
 
   function onContinueWithAnswers() {
@@ -273,20 +311,70 @@ export default function GenerateWithZefiro({
       {showButton && (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={openChooser}
           className="flex items-center gap-1.5 rounded-md bg-[#233c5e] px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-[#17283f]"
         >
-          <Sparkles size={14} /> Genera con {ASSISTANT_NAME}
+          <Sparkles size={14} /> {ASSISTANT_NAME}: itinerari
         </button>
       )}
 
       {open && (
         <Modal
-          title={`Genera con ${ASSISTANT_NAME}`}
+          title={
+            phase === "choose"
+              ? `${ASSISTANT_NAME}: crea l'itinerario`
+              : phase === "browse" || (phase === "review" && libraryLabel)
+                ? "Consulta proposte"
+                : `Genera con ${ASSISTANT_NAME}`
+          }
           icon={<AssistantIcon size={26} />}
           wide={phase === "review"}
           onClose={close}
         >
+          {phase === "choose" && (
+            <div className="flex flex-col gap-3">
+              <p className="-mt-2 text-sm text-slate-500">Come vuoi partire?</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => resetAll("brief")}
+                  className="flex flex-col gap-2 rounded-2xl border-2 border-[#233c5e] bg-white p-4 text-left transition hover:bg-[#eef2f8]"
+                >
+                  <span className="flex items-center gap-2 text-base font-semibold text-[#233c5e]">
+                    <Sparkles size={18} /> Genera itinerario
+                  </span>
+                  <span className="text-sm text-slate-600">
+                    {ASSISTANT_NAME} scrive su misura per il tuo cliente, da una descrizione o da una bozza.
+                  </span>
+                  <span className="mt-auto w-fit rounded-full bg-[#233c5e] px-2.5 py-0.5 text-[11px] font-semibold text-white">Creato con AI</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => resetAll("browse")}
+                  className="flex flex-col gap-2 rounded-2xl border-2 border-emerald-600 bg-white p-4 text-left transition hover:bg-emerald-50"
+                >
+                  <span className="flex items-center gap-2 text-base font-semibold text-emerald-800">
+                    <BookOpen size={18} /> Consulta proposte
+                  </span>
+                  <span className="text-sm text-slate-600">
+                    Itinerari già pronti giorno per giorno: i vostri e quelli di Grand Route per ogni paese e regione italiana.
+                  </span>
+                  <span className="mt-auto w-fit rounded-full bg-emerald-600 px-2.5 py-0.5 text-[11px] font-semibold text-white">Gratis, senza AI</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {phase === "browse" && (
+            <BrowseProposals
+              busy={planning}
+              error={error}
+              onPick={(input) => void showProposals(input)}
+              onBack={() => resetAll("choose")}
+              onAi={() => resetAll("brief")}
+            />
+          )}
+
           {phase === "brief" && briefMode === "guided" && (
             <GuidedBrief
               onDone={(text) => {
@@ -406,7 +494,7 @@ export default function GenerateWithZefiro({
               {libraryLabel && (
                 <div className="-mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-2.5 text-sm text-emerald-900">
                   <span>
-                    <strong>Proposte pronte per {libraryLabel}</strong> dalla libreria Grand Route, con il programma giorno per giorno: gratis, senza usare l&apos;AI.
+                    <strong>Proposte pronte per {libraryLabel}</strong>, con il programma giorno per giorno: gratis, senza usare l&apos;AI.
                     Scegli quella che preferisci (più di una diventano varianti).
                   </span>
                   <button
@@ -489,8 +577,8 @@ export default function GenerateWithZefiro({
                 </p>
               )}
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <button type="button" onClick={reset} disabled={saving} className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60">
-                  <RotateCcw size={14} /> Ricomincia
+                <button type="button" onClick={() => resetAll(libraryLabel ? "browse" : "choose")} disabled={saving} className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60">
+                  <RotateCcw size={14} /> {libraryLabel ? "Altra destinazione" : "Ricomincia"}
                 </button>
                 <div className="flex items-center gap-2">
                   {waiting && <span className="text-xs text-slate-500">Zefiro sta ancora scrivendo…</span>}
@@ -535,6 +623,9 @@ function ProposalCard({
           <span className="min-w-0 text-base font-semibold text-[#233c5e]">{proposal.name}</span>
         </label>
       )}
+      {proposal.agency && (
+        <span className="w-fit rounded-full bg-[#233c5e] px-2 py-0.5 text-[11px] font-semibold text-white">Vostro itinerario</span>
+      )}
       {proposal.route && <p className="text-xs font-medium text-slate-600">{proposal.route}</p>}
       {proposal.summary && <p className="text-sm text-slate-700">{proposal.summary}</p>}
 
@@ -572,6 +663,125 @@ function ProposalCard({
             </ol>
           </details>
         )}
+      </div>
+    </div>
+  );
+}
+
+// Ricerca della destinazione per «Consulta proposte»: elenco di paesi e regioni italiane, oppure un
+// luogo scritto a mano (es. «Petra», «Machu Picchu»). In cima le destinazioni con itinerari dell'agenzia.
+function BrowseProposals({
+  busy,
+  error,
+  onPick,
+  onBack,
+  onAi,
+}: {
+  busy: boolean;
+  error: string | null;
+  onPick: (input: { kind: "country" | "italy"; key: string } | { text: string }) => void;
+  onBack: () => void;
+  onAi: () => void;
+}) {
+  const [options, setOptions] = useState<DestinationOption[]>([]);
+  const [mine, setMine] = useState<{ kind: "country" | "italy"; key: string; label: string; count: number }[]>([]);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    let alive = true;
+    destinationOptions().then((o) => alive && setOptions(o)).catch(() => {});
+    listAgencyItineraries()
+      .then((res) => {
+        if (!alive || !res.ok) return;
+        const byPlace = new Map<string, { kind: "country" | "italy"; key: string; label: string; count: number }>();
+        for (const it of res.items) {
+          const id = `${it.kind}:${it.place_key}`;
+          const cur = byPlace.get(id) ?? { kind: it.kind, key: it.place_key, label: it.place_label, count: 0 };
+          cur.count += 1;
+          byPlace.set(id, cur);
+        }
+        setMine([...byPlace.values()].sort((a, b) => b.count - a.count).slice(0, 12));
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const n = (v: string) => v.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  const q = n(query);
+  const suggestions = q.length >= 2 ? options.filter((o) => n(o.label).includes(q)).slice(0, 8) : [];
+
+  function submit(event: React.FormEvent) {
+    event.preventDefault();
+    if (busy || q.length < 2) return;
+    const exact = options.find((o) => n(o.label) === q) ?? (suggestions.length === 1 ? suggestions[0] : null);
+    onPick(exact ? { kind: exact.kind, key: exact.key } : { text: query });
+  }
+
+  const chip = "rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-sm text-[#233c5e] hover:border-[#cda876] hover:bg-[#faf3e6] disabled:opacity-60";
+
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="-mt-2 text-sm text-slate-500">
+        Scegli il paese o la regione italiana: vedrai gli itinerari pronti, con il programma giorno per giorno. Gratis, senza AI.
+      </p>
+      <form onSubmit={submit} className="relative">
+        <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+        <input
+          autoFocus
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Es. Giordania, Toscana, Petra, Bora Bora…"
+          className="w-full rounded-lg border border-slate-300 py-2.5 pl-9 pr-24 text-sm outline-none focus:border-[#cda876]"
+        />
+        <button
+          type="submit"
+          disabled={busy || q.length < 2}
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-md bg-emerald-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-800 disabled:opacity-50"
+        >
+          {busy ? "Cerco…" : "Cerca"}
+        </button>
+      </form>
+      {suggestions.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {suggestions.map((o) => (
+            <button key={`${o.kind}:${o.key}`} type="button" disabled={busy} onClick={() => onPick({ kind: o.kind, key: o.key })} className={chip}>
+              {o.label}
+              {o.kind === "italy" && <span className="ml-1 text-xs text-slate-500">(Italia)</span>}
+            </button>
+          ))}
+        </div>
+      )}
+      {mine.length > 0 && q.length < 2 && (
+        <div>
+          <p className="mb-1.5 text-xs font-medium text-slate-500">Dove avete già vostri itinerari</p>
+          <div className="flex flex-wrap gap-1.5">
+            {mine.map((m) => (
+              <button key={`${m.kind}:${m.key}`} type="button" disabled={busy} onClick={() => onPick({ kind: m.kind, key: m.key })} className={chip}>
+                {m.label} <span className="text-xs text-slate-500">· {m.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {busy && (
+        <p className="flex items-center gap-2 text-sm text-slate-600">
+          <Loader2 size={15} className="animate-spin" /> Cerco le proposte…
+        </p>
+      )}
+      {error && (
+        <div className="flex flex-col gap-1.5 text-sm text-red-600" role="alert">
+          <span>{error}</span>
+          <button type="button" onClick={onAi} className="w-fit font-medium text-[#233c5e] underline">
+            Genera con {ASSISTANT_NAME} (AI)
+          </button>
+        </div>
+      )}
+      <div className="flex justify-start">
+        <button type="button" onClick={onBack} disabled={busy} className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-50 disabled:opacity-60">
+          Indietro
+        </button>
       </div>
     </div>
   );

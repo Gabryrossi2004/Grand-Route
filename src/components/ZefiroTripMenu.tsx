@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ClipboardCheck, Languages, ListPlus, ListTodo, PencilLine, TextCursorInput, Wand2 } from "lucide-react";
+import { BookOpen, ChevronDown, ClipboardCheck, Languages, ListPlus, ListTodo, PencilLine, TextCursorInput, Wand2 } from "lucide-react";
 import AssistantIcon from "@/components/AssistantIcon";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { triggerZefiroAction, type ZefiroAction } from "@/components/ZefiroFloating";
@@ -48,7 +48,18 @@ export default function ZefiroTripMenu({ hasContent }: { hasContent: boolean }) 
       {open && (
         <div role="menu" className="absolute right-0 top-full z-30 mt-2 w-64 rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg">
           <button type="button" role="menuitem" className={item} onClick={() => run("trip-generate")}>
-            <Wand2 size={16} /> {hasContent ? "Genera altre proposte" : "Genera un itinerario"}
+            <Wand2 size={16} className="shrink-0" />
+            <span>
+              {hasContent ? "Genera altre proposte" : "Genera itinerario"}
+              <span className="block text-[11px] font-normal text-slate-500">Creato con AI</span>
+            </span>
+          </button>
+          <button type="button" role="menuitem" className={item} onClick={() => run("trip-proposals")}>
+            <BookOpen size={16} className="shrink-0 text-emerald-700" />
+            <span>
+              Consulta proposte
+              <span className="block text-[11px] font-normal text-slate-500">Itinerari pronti, gratis</span>
+            </span>
           </button>
           <button type="button" role="menuitem" className={item} onClick={() => run("trip-edit")}>
             <PencilLine size={16} /> Modifica

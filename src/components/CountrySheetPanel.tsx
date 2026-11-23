@@ -16,6 +16,7 @@ import type { CustomizeOptions } from "@/lib/countrySheetShared";
 import CountrySheetCustomize from "@/components/CountrySheetCustomize";
 import CountrySheetEditor from "@/components/CountrySheetEditor";
 import CountrySheetView from "@/components/CountrySheetView";
+import AgencyItinerariesSection from "@/components/AgencyItinerariesSection";
 import CountrySuppliers from "@/components/CountrySuppliers";
 import ShareSheetBar from "@/components/ShareSheetBar";
 import { flagOf } from "@/lib/geo/countryCodes";
@@ -321,6 +322,7 @@ export default function CountrySheetPanel({
               extra={
                 <>
                   {error && <p className="rounded-xl bg-amber-50 px-3 py-2 text-sm text-amber-800 print:hidden">{error}</p>}
+                  {mode === "view" && !initial && code !== "IT" && <AgencyItinerariesSection kind="country" placeKey={code} />}
                   {mode === "view" && <CountrySuppliers code={code} />}
                 </>
               }

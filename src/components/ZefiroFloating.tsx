@@ -17,7 +17,9 @@ export const ZEFIRO_ACTION_EVENT = "zefiro:action";
 export const ZEFIRO_RESET_EVENT = "zefiro:reset-position";
 export type ZefiroAction =
   | "new-trip"
+  | "new-trip-proposals"
   | "trip-generate"
+  | "trip-proposals"
   | "trip-edit"
   | "trip-review"
   | "trip-translate"
@@ -203,10 +205,11 @@ export default function ZefiroFloating() {
     router.refresh();
   }
 
-  function startNewTrip() {
+  // Nuovo viaggio: «genera» = Zefiro con AI, «proposte» = itinerari pronti della libreria (gratis)
+  function startNewTrip(kind: "genera" | "proposte") {
     setMenuOpen(false);
-    if (pathname === "/dashboard/trips/new") triggerZefiroAction("new-trip");
-    else router.push("/dashboard/trips/new?zefiro=1");
+    if (pathname === "/dashboard/trips/new") triggerZefiroAction(kind === "genera" ? "new-trip" : "new-trip-proposals");
+    else router.push(`/dashboard/trips/new?zefiro=${kind}`);
   }
 
   function tripAction(action: ZefiroAction) {
@@ -269,16 +272,41 @@ export default function ZefiroFloating() {
           } ${menuRight ? "right-0" : "left-0"}`}
         >
           <p className="px-3 pb-1 pt-1.5 text-xs text-slate-500">Ciao! Come posso aiutarti?</p>
-          <button type="button" role="menuitem" onClick={startNewTrip} className={itemClass}>
-            <Route size={16} className="shrink-0 text-[#233c5e]" />
-            Creami un viaggio
-          </button>
+          {!onTripPage && <p className="px-3 pb-0.5 pt-1 text-xs font-medium text-slate-500">Nuovo viaggio</p>}
+          {!onTripPage && (
+            <>
+              <button type="button" role="menuitem" onClick={() => startNewTrip("genera")} className={itemClass}>
+                <Wand2 size={16} className="shrink-0 text-[#233c5e]" />
+                <span>
+                  Genera itinerario
+                  <span className="block text-[11px] text-slate-500">Creato con AI</span>
+                </span>
+              </button>
+              <button type="button" role="menuitem" onClick={() => startNewTrip("proposte")} className={itemClass}>
+                <Route size={16} className="shrink-0 text-emerald-700" />
+                <span>
+                  Consulta proposte
+                  <span className="block text-[11px] text-slate-500">Itinerari pronti, gratis</span>
+                </span>
+              </button>
+            </>
+          )}
           {onTripPage && (
             <>
-              <p className="px-3 pb-0.5 pt-2 text-xs font-medium text-slate-500">Per questo viaggio</p>
+              <p className="px-3 pb-0.5 pt-1 text-xs font-medium text-slate-500">Per questo viaggio</p>
               <button type="button" role="menuitem" onClick={() => tripAction("trip-generate")} className={itemClass}>
                 <Wand2 size={16} className="shrink-0 text-[#233c5e]" />
-                Genera un itinerario
+                <span>
+                  Genera itinerario
+                  <span className="block text-[11px] text-slate-500">Creato con AI</span>
+                </span>
+              </button>
+              <button type="button" role="menuitem" onClick={() => tripAction("trip-proposals")} className={itemClass}>
+                <Route size={16} className="shrink-0 text-emerald-700" />
+                <span>
+                  Consulta proposte
+                  <span className="block text-[11px] text-slate-500">Itinerari pronti, gratis</span>
+                </span>
               </button>
               <button type="button" role="menuitem" onClick={() => tripAction("trip-edit")} className={itemClass}>
                 <PencilLine size={16} className="shrink-0 text-[#233c5e]" />
