@@ -250,11 +250,11 @@
  ],
  "AT": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Zell_am_See.Wiki.jpeg/1280px-Zell_am_See.Wiki.jpeg",
-   "title": "Zell am See",
-   "credit": "Bestzeller",
-   "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File:Zell_am_See.Wiki.jpeg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Hallstatt_-_Zentrum_.JPG/1280px-Hallstatt_-_Zentrum_.JPG",
+   "title": "Hallstatt",
+   "credit": "C.Stadler/Bwag",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Festung_Hohensalzburg_2.jpg/1280px-Festung_Hohensalzburg_2.jpg",
@@ -264,11 +264,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Festung_Hohensalzburg_2.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Stift_Melk%2C_Westansicht.jpg/1280px-Stift_Melk%2C_Westansicht.jpg",
-   "title": "Abbazia di Melk",
-   "credit": "Thomas Ledl",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Stift_Melk,_Westansicht.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Zell_am_See.Wiki.jpeg/1280px-Zell_am_See.Wiki.jpeg",
+   "title": "Zell am See",
+   "credit": "Bestzeller",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:Zell_am_See.Wiki.jpeg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Schloss_Sch%C3%B6nbrunn_Wien_2014_%28Zuschnitt_1%29.jpg/1280px-Schloss_Sch%C3%B6nbrunn_Wien_2014_%28Zuschnitt_1%29.jpg",
@@ -2564,6 +2564,20 @@
    "credit": "Unknown author Unknown author",
    "license": "CC0",
    "source": "https://commons.wikimedia.org/wiki/File:Chibaish_Marches,_Iraq_-_An_Nasiriyah.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Imam_Husayn_Shrine_%28karbala%29.jpg/1280px-Imam_Husayn_Shrine_%28karbala%29.jpg",
+   "title": "Santuario dell'Imam Husayn, Karbala",
+   "credit": "Ali Majid Abbood",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Imam_Husayn_Shrine_(karbala).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Hawler_Castle.jpg/1280px-Hawler_Castle.jpg",
+   "title": "Cittadella di Erbil",
+   "credit": "jan kurdistani",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hawler_Castle.jpg"
   }
  ],
  "IR": [
@@ -2670,9 +2684,30 @@
    "credit": "Autore sconosciuto",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Negril_Jamaica_2007-09.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Montego_Bay_East_Photo_Don_Ramey_Logan.jpg/1280px-Montego_Bay_East_Photo_Don_Ramey_Logan.jpg",
+   "title": "Montego Bay",
+   "credit": "Don Ramey Logan",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Montego_Bay_East_Photo_Don_Ramey_Logan.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Jamaica%2C_Negril_-_Flickr_-_VV_Nincic.jpg/1280px-Jamaica%2C_Negril_-_Flickr_-_VV_Nincic.jpg",
+   "title": "Seven Mile Beach, Negril",
+   "credit": "VV Nincic from Toronto, Canada",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jamaica,_Negril_-_Flickr_-_VV_Nincic.jpg"
   }
  ],
  "JO": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/The_Treasury_%28Al_Khazneh%29_at_Petra_%2812%29.jpg/1280px-The_Treasury_%28Al_Khazneh%29_at_Petra_%2812%29.jpg",
+   "title": "Petra, il Tesoro",
+   "credit": "Ankur P",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Treasury_(Al_Khazneh)_at_Petra_(12).jpg"
+  },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Mountain_in_Wadi_Rum%2C_Jordan.jpg/1280px-Mountain_in_Wadi_Rum%2C_Jordan.jpg",
    "title": "Wadi Rum",
@@ -2681,11 +2716,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Mountain_in_Wadi_Rum,_Jordan.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Siq_al-Berid_04.jpg/1280px-Siq_al-Berid_04.jpg",
-   "title": "Little Petra",
-   "credit": "Bernard Gagnon",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Siq_al-Berid_04.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Petra_Jordan_BW_37.JPG/1280px-Petra_Jordan_BW_37.JPG",
+   "title": "Il Monastero di Petra",
+   "credit": "Berthold Werner",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:Petra_Jordan_BW_37.JPG"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Dead_Sea_by_David_Shankbone.jpg/1280px-Dead_Sea_by_David_Shankbone.jpg",
@@ -2693,13 +2728,6 @@
    "credit": "David Shankbone",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Dead_Sea_by_David_Shankbone.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Oval_Plaza_%28Forum_Romanum%2C_Gerasa_-_Jerash%2C_Jordan%29_-_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A9%2C_%D8%AC%D8%B1%D8%B4.jpg/1280px-Oval_Plaza_%28Forum_Romanum%2C_Gerasa_-_Jerash%2C_Jordan%29_-_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A9%2C_%D8%AC%D8%B1%D8%B4.jpg",
-   "title": "Jerash",
-   "credit": "Petar Milošević",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Oval_Plaza_(Forum_Romanum,_Gerasa_-_Jerash,_Jordan)_-_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A9,_%D8%AC%D8%B1%D8%B4.jpg"
   }
  ],
  "JP": [
@@ -4204,6 +4232,20 @@
    "source": "https://commons.wikimedia.org/wiki/File:Living_on_a_Blue_Planet_-_Nauru.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/NauruBuada077.jpg/1280px-NauruBuada077.jpg",
+   "title": "Laguna di Buada",
+   "credit": "Erimacrus",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:NauruBuada077.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Aerial_view_of_Nauru.jpg/1280px-Aerial_view_of_Nauru.jpg",
+   "title": "Costa di Nauru",
+   "credit": "U.S. Department of Energy's Atmospheric Radiation Measurement Program",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Nauru.jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Parliament_%2815403802091%29.jpg/1280px-Parliament_%2815403802091%29.jpg",
    "title": "Yaren",
    "credit": "Sean Kelleher from Melbourne, Australia",
@@ -4278,6 +4320,27 @@
    "credit": "en:User:Tedder",
    "license": "CC BY 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Portobelo_Ruins_and_bay.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Panama_City_Skyline.jpg/1280px-Panama_City_Skyline.jpg",
+   "title": "Panamá",
+   "credit": "Marissa Strniste",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Panama_City_Skyline.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Panama_Canal_Gatun_Locks.jpg/1280px-Panama_Canal_Gatun_Locks.jpg",
+   "title": "Canale di Panama",
+   "credit": "User:Stan Shebs",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Islas_San_Blas_%C3%B8yer.jpg/1280px-Islas_San_Blas_%C3%B8yer.jpg",
+   "title": "San Blas",
+   "credit": "Haakon S. Krohn",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Islas_San_Blas_%C3%B8yer.jpg"
   }
  ],
  "PE": [
@@ -4312,6 +4375,13 @@
  ],
  "PF": [
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bora_Bora_%2816542797633%29.jpg/1280px-Bora_Bora_%2816542797633%29.jpg",
+   "title": "Bora Bora",
+   "credit": "The TerraMar Project",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bora_Bora_(16542797633).jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/DSC00042_Polyn%C3%A9sia_Moor%C3%A9a_Island_Motu_Mo%C3%A9a_Lagoon_and_transportation_Boat_%288076082190%29.jpg/1280px-DSC00042_Polyn%C3%A9sia_Moor%C3%A9a_Island_Motu_Mo%C3%A9a_Lagoon_and_transportation_Boat_%288076082190%29.jpg",
    "title": "Moorea",
    "credit": "DANIEL JULIE from Paris, France",
@@ -4319,11 +4389,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:DSC00042_Polyn%C3%A9sia_Moor%C3%A9a_Island_Motu_Mo%C3%A9a_Lagoon_and_transportation_Boat_(8076082190).jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Moorea_baie_cook.JPG/1280px-Moorea_baie_cook.JPG",
-   "title": "Moorea",
-   "credit": "Rv at fr.wikipedia",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Moorea_baie_cook.JPG"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/039_Sunset_at_Tikehau_%28French_Polynesia%29_Photo_by_Giles_Laurent.jpg/1280px-039_Sunset_at_Tikehau_%28French_Polynesia%29_Photo_by_Giles_Laurent.jpg",
+   "title": "Tikehau",
+   "credit": "Giles Laurent",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:039_Sunset_at_Tikehau_(French_Polynesia)_Photo_by_Giles_Laurent.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Tubuai_depuis_le_motu_Mitiha.jpg/1280px-Tubuai_depuis_le_motu_Mitiha.jpg",
@@ -4331,13 +4401,6 @@
    "credit": "Jérémie Silvestro (If you can improve this photo development, ask me the RAW .)",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Tubuai_depuis_le_motu_Mitiha.jpg"
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Papeete_-_Marina_Taina.JPG",
-   "title": "Papeete",
-   "credit": "Remi Jouan",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Papeete_-_Marina_Taina.JPG"
   }
  ],
  "PG": [
@@ -4361,6 +4424,13 @@
    "credit": "Taro Taylor from Sydney, Australia",
    "license": "CC BY 2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Dark_Days_Are_Coming.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Tavurvur_volcano_edit.jpg/1280px-Tavurvur_volcano_edit.jpg",
+   "title": "Rabaul",
+   "credit": "Taro Taylor edit by Richard Bartz",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tavurvur_volcano_edit.jpg"
   }
  ],
  "PH": [
@@ -4485,6 +4555,20 @@
  ],
  "PS": [
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Church_of_the_nativity_outside.jpg/1280px-Church_of_the_nativity_outside.jpg",
+   "title": "Basilica della Natività",
+   "credit": "Stanislav Kozlovskiy",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Church_of_the_nativity_outside.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Palestine%2C_Wadi_Qelt%2C_%28Valea_Hozevei%29_%28Landscape_with_the_Corss%29.jpg/1280px-Palestine%2C_Wadi_Qelt%2C_%28Valea_Hozevei%29_%28Landscape_with_the_Corss%29.jpg",
+   "title": "Monastero di San Giorgio di Koziba",
+   "credit": "Britchi Mirela",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Palestine,_Wadi_Qelt,_(Valea_Hozevei)_(Landscape_with_the_Corss).jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Christmas_Church_%28Bethlehem%293.jpg/1280px-Christmas_Church_%28Bethlehem%293.jpg",
    "title": "Campo dei Pastori",
    "credit": "Antoine Taveneaux",
@@ -4492,18 +4576,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Christmas_Church_(Bethlehem)3.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Jericho_BW_1.jpg/1280px-Jericho_BW_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Roman_aquaduct_near_Jericho.jpg/1280px-Roman_aquaduct_near_Jericho.jpg",
    "title": "Gerico",
-   "credit": "Berthold Werner",
-   "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File:Jericho_BW_1.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Komargorod_Church_2019_G2.jpg/1280px-Komargorod_Church_2019_G2.jpg",
-   "title": "Basilica della Natività",
-   "credit": "George Chernilevsky",
-   "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File:Komargorod_Church_2019_G2.jpg"
+   "credit": "Daniel Ventura",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Roman_aquaduct_near_Jericho.jpg"
   }
  ],
  "PT": [
@@ -4568,6 +4645,20 @@
  ],
  "PY": [
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Jesuit_Missions_of_La_Sant%C3%ADsima_Trinidad_-_panoramio_%282%29.jpg/1280px-Jesuit_Missions_of_La_Sant%C3%ADsima_Trinidad_-_panoramio_%282%29.jpg",
+   "title": "Missione di Trinidad",
+   "credit": "ogwen",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jesuit_Missions_of_La_Sant%C3%ADsima_Trinidad_-_panoramio_(2).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/J37_739_Jes%C3%BAs_de_Tavarang%C3%BCe%2C_Nordfassade.jpg/1280px-J37_739_Jes%C3%BAs_de_Tavarang%C3%BCe%2C_Nordfassade.jpg",
+   "title": "Jesús de Tavarangüe",
+   "credit": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_739_Jes%C3%BAs_de_Tavarang%C3%BCe,_Nordfassade.jpg"
+  },
+  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Palacio_de_los_L%C3%B3pez_Asunci%C3%B3n_2.jpg",
    "title": "Asunción",
    "credit": "MosheA",
@@ -4580,20 +4671,6 @@
    "credit": "Jonas de Carvalho",
    "license": "CC BY-SA 2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Itaipu_geral.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Church_of_San_Bernardino_from_Siena_in_Trevignano_Romano.jpg/1280px-Church_of_San_Bernardino_from_Siena_in_Trevignano_Romano.jpg",
-   "title": "San Bernardino",
-   "credit": "Livioandronico2013",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Church_of_San_Bernardino_from_Siena_in_Trevignano_Romano.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Iglesia_de_Nuestra_Se%C3%B1ora_de_la_Asunci%C3%B3n%2C_Almonte%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-07%2C_DD_02.JPG/1280px-Iglesia_de_Nuestra_Se%C3%B1ora_de_la_Asunci%C3%B3n%2C_Almonte%2C_Huelva%2C_Espa%C3%B1a%2C_2015-12-07%2C_DD_02.JPG",
-   "title": "Asunción",
-   "credit": "Diego Delso",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_Nuestra_Se%C3%B1ora_de_la_Asunci%C3%B3n,_Almonte,_Huelva,_Espa%C3%B1a,_2015-12-07,_DD_02.JPG"
   }
  ],
  "QA": [
