@@ -23,7 +23,7 @@ export async function GET(request: Request) {
       const where = row.place || row.day_title;
       return sendPushToTargets([row], {
         title: "Com'è andata oggi?",
-        body: `${where ? `Una giornata a ${where}: ` : ""}scrivi due righe nel tuo diario di viaggio, prima di dimenticarle.`,
+        body: `${where ? `Una giornata a ${where}: ` : ""}scrivi due righe e aggiungi qualche foto al tuo diario di viaggio, prima di dimenticarle.`,
         url: `/client/diario?trip=${row.trip_id}`,
       });
     }),

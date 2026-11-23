@@ -3,6 +3,7 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { romeToday } from "@/lib/destinationInfo";
 import { flagOf, nameItOfCode, namesOf } from "@/lib/geo/countryCodes";
 import JournalPanel from "@/components/JournalPanel";
+import DiaryPhotoButton from "@/components/DiaryPhotoButton";
 
 export const metadata = { title: "Il diario di oggi" };
 
@@ -36,7 +37,7 @@ export default async function DiaryTodayPage({ searchParams }: { searchParams: P
       <div>
         <p className="text-xs font-semibold uppercase tracking-wide text-[#a87a1e]">{trip.title}</p>
         <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Il diario di oggi</h1>
-        <p className="mt-1 text-sm text-slate-600">Due righe adesso valgono tanto tra qualche anno: cosa hai visto, mangiato, chi hai incontrato. Le note sono private e le ritrovi nel tuo mappamondo.</p>
+        <p className="mt-1 text-sm text-slate-600">Due righe e qualche foto adesso valgono tanto tra qualche anno: cosa hai visto, mangiato, chi hai incontrato. Note e foto sono private e le ritrovi nel tuo mappamondo.</p>
       </div>
       {codes.length > 1 && (
         <div className="flex flex-wrap gap-1.5">
@@ -50,6 +51,9 @@ export default async function DiaryTodayPage({ searchParams }: { searchParams: P
             </Link>
           ))}
         </div>
+      )}
+      {code && user && (
+        <DiaryPhotoButton key={`p-${code}`} userId={user.id} country={namesOf(code)[0]} tripId={trip.id} place={place} />
       )}
       {code ? (
         <JournalPanel
