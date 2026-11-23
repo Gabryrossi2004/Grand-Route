@@ -2160,6 +2160,13 @@
    "source": "https://commons.wikimedia.org/wiki/File:07-17-2012_-_Oia_-_Santorini_-_Greece_-_08.jpg"
   },
   {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg/1280px-Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg",
+   "title": "Acropoli di Atene",
+   "credit": "A.Savin",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg"
+  },
+  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Navagio%2C_Zante_01.jpg/1280px-Navagio%2C_Zante_01.jpg",
    "title": "Spiaggia del Navagio",
    "credit": "Wilnel José Verdú Guerrero",
@@ -2167,18 +2174,11 @@
    "source": "https://commons.wikimedia.org/wiki/File:Navagio,_Zante_01.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/View_of_Mykonos_03.jpg/1280px-View_of_Mykonos_03.jpg",
-   "title": "Mykonos",
-   "credit": "Bernard Gagnon",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:View_of_Mykonos_03.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Aerial_view_of_the_Old_Venetian_Harbour_in_Chania%2C_Greece.jpg/1280px-Aerial_view_of_the_Old_Venetian_Harbour_in_Chania%2C_Greece.jpg",
-   "title": "Chania",
-   "credit": "dronepicr",
-   "license": "CC BY 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Old_Venetian_Harbour_in_Chania,_Greece.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Meteora_morning.jpg/1280px-Meteora_morning.jpg",
+   "title": "Monasteri delle Meteore",
+   "credit": "KASPAR",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Meteora_morning.jpg"
   }
  ],
  "GT": [
@@ -2232,6 +2232,13 @@
    "credit": "U.S. National Park Service",
    "license": "Public domain",
    "source": "https://commons.wikimedia.org/wiki/File:View_of_Asan_Park_(cropped).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Umatac_coast%2C_Guam_-_DSC00956.JPG/1280px-Umatac_coast%2C_Guam_-_DSC00956.JPG",
+   "title": "Fort Soledad",
+   "credit": "Daderot",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Umatac_coast,_Guam_-_DSC00956.JPG"
   }
  ],
  "GW": [
@@ -2241,15 +2248,36 @@
    "credit": "Nammarci",
    "license": "CC BY 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Bubaque_port.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Zonas_H%C3%BAmida_de_Bissau.jpg/1280px-Zonas_H%C3%BAmida_de_Bissau.jpg",
+   "title": "Bissau Velho",
+   "credit": "Bnhamadjo",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Zonas_H%C3%BAmida_de_Bissau.jpg"
   }
  ],
  "GY": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Costa_rica_santa_elena_skywalk.jpg/1280px-Costa_rica_santa_elena_skywalk.jpg",
-   "title": "Canopy walkway",
-   "credit": "User DirkvdM on en.wikipedia",
-   "license": "CC BY 1.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Costa_rica_santa_elena_skywalk.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Kaieteur_Falls_Guyana_%282%29_2007.jpg/1280px-Kaieteur_Falls_Guyana_%282%29_2007.jpg",
+   "title": "Cascate Kaieteur",
+   "credit": "Bill Cameron",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Kaieteur_Falls_Guyana_(2)_2007.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Kaieteur_Falls%2C_Guyana_%2823580581821%29.jpg/1280px-Kaieteur_Falls%2C_Guyana_%2823580581821%29.jpg",
+   "title": "Cascate Kaieteur",
+   "credit": "Dan Sloan",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Kaieteur_Falls,_Guyana_(23580581821).jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Essequibo_River.jpg/1280px-Essequibo_River.jpg",
+   "title": "Fiume Essequibo",
+   "credit": "Dan Lundberg",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Essequibo_River.jpg"
   }
  ],
  "HK": [
@@ -2291,11 +2319,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:Copan_sculpture.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Scarlet_macaw_%28Ara_macao_cyanopterus%29_Copan.jpg/1280px-Scarlet_macaw_%28Ara_macao_cyanopterus%29_Copan.jpg",
-   "title": "Copán",
-   "credit": "Charles J. Sharp",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Scarlet_macaw_(Ara_macao_cyanopterus)_Copan.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/West_Bay_Beach_-Roatan_-Honduras-23May2009-c.jpg/1280px-West_Bay_Beach_-Roatan_-Honduras-23May2009-c.jpg",
+   "title": "Roatán",
+   "credit": "Adalberto Hernandez Vega from Copan Ruinas, Honduras",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:West_Bay_Beach_-Roatan_-Honduras-23May2009-c.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Tiki_bar%2C_Oak_Ridge%2C_Roatan%2C_Honduras.jpg/1280px-Tiki_bar%2C_Oak_Ridge%2C_Roatan%2C_Honduras.jpg",
+   "title": "Roatán",
+   "credit": "Cory Doctorow",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tiki_bar,_Oak_Ridge,_Roatan,_Honduras.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Yojoa_Lake.jpg/1280px-Yojoa_Lake.jpg",
@@ -2303,29 +2338,15 @@
    "credit": "Frank Domínguez 15",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Yojoa_Lake.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Utila_0001.jpg/1280px-Utila_0001.jpg",
-   "title": "Utila",
-   "credit": "CIA Factbook",
-   "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File:Utila_0001.jpg"
   }
  ],
  "HR": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Kor%C4%8Dula%2C_Croatia.jpg/1280px-Kor%C4%8Dula%2C_Croatia.jpg",
-   "title": "Isola di Korčula",
-   "credit": "Quintin Soloviev",
-   "license": "CC BY 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Kor%C4%8Dula,_Croatia.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/08_Nature_of_Croatia_-_Krka_river_landscape_in_Krka_National_Park_in_Croatia.jpg/1280px-08_Nature_of_Croatia_-_Krka_river_landscape_in_Krka_National_Park_in_Croatia.jpg",
-   "title": "Parco nazionale di Krka",
-   "credit": "Marek Ślusarczyk ( Tupungato ) Photo portfolio",
-   "license": "CC BY 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:08_Nature_of_Croatia_-_Krka_river_landscape_in_Krka_National_Park_in_Croatia.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Dubrovnik_june_2011..JPG/1280px-Dubrovnik_june_2011..JPG",
+   "title": "Dubrovnik",
+   "credit": "Bracodbk",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Dubrovnik_june_2011..JPG"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Plitvice_Lakes_National_Park_BW_2014-10-13_13-14-59.jpg/1280px-Plitvice_Lakes_National_Park_BW_2014-10-13_13-14-59.jpg",
@@ -2335,11 +2356,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:Plitvice_Lakes_National_Park_BW_2014-10-13_13-14-59.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Trogir_%2820611290808%29.jpg/1280px-Trogir_%2820611290808%29.jpg",
-   "title": "Traù",
-   "credit": "Nick Savchenko from Kiev, Ukraine",
-   "license": "CC BY-SA 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Trogir_(20611290808).jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Kor%C4%8Dula%2C_Croatia.jpg/1280px-Kor%C4%8Dula%2C_Croatia.jpg",
+   "title": "Isola di Korčula",
+   "credit": "Quintin Soloviev",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Kor%C4%8Dula,_Croatia.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Rovinj_Valdibora_Crkva_svete_Eufemije-1663.jpg/1280px-Rovinj_Valdibora_Crkva_svete_Eufemije-1663.jpg",
+   "title": "Rovigno",
+   "credit": "Isiwal",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Rovinj_Valdibora_Crkva_svete_Eufemije-1663.jpg"
   }
  ],
  "HT": [
@@ -2363,6 +2391,13 @@
    "credit": "User:Doron",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:JacmelView.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Sans-Souci_Palace_front.jpg/1280px-Sans-Souci_Palace_front.jpg",
+   "title": "Palazzo Sans-Souci",
+   "credit": "Rémi Kaupp",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sans-Souci_Palace_front.jpg"
   }
  ],
  "HU": [
@@ -2487,11 +2522,11 @@
  ],
  "IN": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
-   "title": "Hawa Mahal",
-   "credit": "Chainwit.",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Taj_Mahal%2C_Agra%2C_India_edit2.jpg/1280px-Taj_Mahal%2C_Agra%2C_India_edit2.jpg",
+   "title": "Taj Mahal",
+   "credit": "Yann ; edited by King of Hearts",
    "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg"
+   "source": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/1280px-The_Golden_Temple_of_Amrithsar_7.jpg",
@@ -2501,18 +2536,18 @@
    "source": "https://commons.wikimedia.org/wiki/File:The_Golden_Temple_of_Amrithsar_7.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/20191207_City_Palace%2C_Udaipur_1701_7325.jpg/1280px-20191207_City_Palace%2C_Udaipur_1701_7325.jpg",
-   "title": "Udaipur",
-   "credit": "Jakub Hałun",
-   "license": "CC BY-SA 4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:20191207_City_Palace,_Udaipur_1701_7325.jpg"
-  },
-  {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Varanasi_Munshi_Ghat3.jpg/1280px-Varanasi_Munshi_Ghat3.jpg",
    "title": "Varanasi",
    "credit": "Marcin Białek",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Varanasi_Munshi_Ghat3.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Hawa_Mahal_Final_1.jpg/1280px-Hawa_Mahal_Final_1.jpg",
+   "title": "Hawa Mahal",
+   "credit": "Manudavb",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hawa_Mahal_Final_1.jpg"
   }
  ],
  "IQ": [
@@ -3904,6 +3939,20 @@
    "credit": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
    "license": "Public domain",
    "source": "https://commons.wikimedia.org/wiki/File:ISS059-E-92404_-_View_of_Mozambique.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Island_of_Mozambique_boats.jpg/1280px-Island_of_Mozambique_boats.jpg",
+   "title": "Isola di Mozambico",
+   "credit": "Stig Nygaard",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Island_of_Mozambique_boats.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Bazaruto-Island-East-Coast-From-South.jpg/1280px-Bazaruto-Island-East-Coast-From-South.jpg",
+   "title": "Arcipelago di Bazaruto",
+   "credit": "Bjørn Christian Tørrissen",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bazaruto-Island-East-Coast-From-South.jpg"
   }
  ],
  "NA": [
@@ -3957,6 +4006,13 @@
    "credit": "Pilettes",
    "license": "CC BY-SA 3.0",
    "source": "https://commons.wikimedia.org/wiki/File:View_over_Noumea.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/%C3%8Elot_dans_le_lagon_d%27Ouv%C3%A9a.jpg/1280px-%C3%8Elot_dans_le_lagon_d%27Ouv%C3%A9a.jpg",
+   "title": "Île des Pins",
+   "credit": "Pacificbluefilm",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:%C3%8Elot_dans_le_lagon_d%27Ouv%C3%A9a.jpg"
   }
  ],
  "NE": [
@@ -3980,6 +4036,13 @@
    "credit": "Roland Huziaker",
    "license": "CC BY-SA 2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Niamey_from_grand_mosque_theatre_2006.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Visiting_and_Learning_from_Africa%E2%80%99s_Expeditionary_Air_Bases.jpg/1280px-Visiting_and_Learning_from_Africa%E2%80%99s_Expeditionary_Air_Bases.jpg",
+   "title": "Grande Moschea di Agadez",
+   "credit": "USAFRICOM",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Visiting_and_Learning_from_Africa%E2%80%99s_Expeditionary_Air_Bases.jpg"
   }
  ],
  "NG": [
@@ -3996,6 +4059,20 @@
    "credit": "Obiazi Emefile",
    "license": "CC BY-SA 4.0",
    "source": "https://commons.wikimedia.org/wiki/File:A_pathway_in_the_Lekki_Convention_Center.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Zuma_rock_abuja.jpg/1280px-Zuma_rock_abuja.jpg",
+   "title": "Zuma Rock",
+   "credit": "Adebayoisaac",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Zuma_rock_abuja.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/OsunOsogbo_Shrine_Sunset_over_the_Osun_River.jpg/1280px-OsunOsogbo_Shrine_Sunset_over_the_Osun_River.jpg",
+   "title": "Bosco sacro di Osun-Osogbo",
+   "credit": "Inyang Effiong",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:OsunOsogbo_Shrine_Sunset_over_the_Osun_River.jpg"
   }
  ],
  "NI": [
@@ -4007,18 +4084,25 @@
    "source": "https://commons.wikimedia.org/wiki/File:Nicaragua_2017-03-15_(33978834325).jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Ometepe.jpg/1280px-Ometepe.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Ometepe%2C_Nicaragua.jpg/1280px-Ometepe%2C_Nicaragua.jpg",
    "title": "Isola di Ometepe",
-   "credit": "Autore sconosciuto",
-   "license": "CC BY 2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Ometepe.jpg"
+   "credit": "Milei.vencel",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Ometepe,_Nicaragua.jpg"
   },
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Cerro_Negro_Volcano_Crater_Nicaragua_August_2011.jpg/1280px-Cerro_Negro_Volcano_Crater_Nicaragua_August_2011.jpg",
-   "title": "Cerro Negro",
-   "credit": "NicaPlease",
-   "license": "CC BY-SA 3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Cerro_Negro_Volcano_Crater_Nicaragua_August_2011.jpg"
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/San_juan_del_sur.jpg/1280px-San_juan_del_sur.jpg",
+   "title": "San Juan del Sur",
+   "credit": "Biomedeng at English Wikipedia",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:San_juan_del_sur.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Big_Corn_Island%2C_aka_Great_Corn_Island%2C_Nicaragua_01.jpg/1280px-Big_Corn_Island%2C_aka_Great_Corn_Island%2C_Nicaragua_01.jpg",
+   "title": "Corn Islands",
+   "credit": "Ridiculopathy",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Big_Corn_Island,_aka_Great_Corn_Island,_Nicaragua_01.jpg"
   }
  ],
  "NL": [
