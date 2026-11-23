@@ -84,3 +84,18 @@ export async function deleteJournalEntry(id: string): Promise<JournalResult> {
   const { error } = await supabase.from("client_journal").delete().eq("id", id).eq("user_id", user.id);
   return error ? { ok: false, error: "Non sono riuscito a eliminare la nota." } : { ok: true };
 }
+
+// Quante note per luogo (nome in minuscolo), per le schede dei luoghi sotto il mappamondo
+export async function countJournalByPlace(): Promise<Record<string, number>> {
+  const user = await getCachedUser();
+  if (!user) return {};
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("client_journal").select("place").eq("user_id", user.id).not("place", "is", null).limit(3000);
+  if (error) return {};
+  const counts: Record<string, number> = {};
+  for (const row of (data ?? []) as { place: string | null }[]) {
+    const key = (row.place ?? "").trim().toLowerCase();
+    if (key) counts[key] = (counts[key] ?? 0) + 1;
+  }
+  return counts;
+}

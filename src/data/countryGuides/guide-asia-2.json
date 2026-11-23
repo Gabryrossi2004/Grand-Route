@@ -89,6 +89,12 @@
         "days": 15,
         "route": "Hanoi (2) → Baia di Halong (1) → Luang Prabang (3) → Siem Reap (3) → Phnom Penh (2) → Saigon (2)",
         "description": "Vietnam, Laos e Cambogia in un unico viaggio."
+      },
+      {
+        "title": "Laos del sud",
+        "days": 8,
+        "route": "Pakse (1) → Altopiano di Bolaven (2) → Wat Phou (1) → 4000 Isole (3)",
+        "description": "Cascate, piantagioni di caffè, tempio khmer UNESCO e la vita lenta sul Mekong."
       }
     ],
     "agentTips": [
@@ -236,6 +242,12 @@
         "days": 11,
         "route": "Kathmandu (3) → Paro (2) → Thimphu (2) → Punakha (2)",
         "description": "L'Himalaya buddista in due paesi."
+      },
+      {
+        "title": "Bhutan e trekking",
+        "days": 10,
+        "route": "Paro (2) → Thimphu (2) → Punakha (2) → Valle di Phobjikha (2) → Paro, Tiger's Nest (1)",
+        "description": "Più tempo per i monasteri e la valle delle gru dal collo nero; ricordare la tassa di sviluppo sostenibile giornaliera."
       }
     ],
     "agentTips": [
@@ -333,6 +345,12 @@
         "days": 9,
         "route": "Ulan Bator (3, festival) → Terelj (1) → Karakorum (2)",
         "description": "Viaggio in occasione del festival di luglio."
+      },
+      {
+        "title": "Mongolia del nord",
+        "days": 10,
+        "route": "Ulan Bator (2) → Lago Khövsgöl (5) → Erdenet (1) → Ulan Bator (1)",
+        "description": "Il lago più puro dell'Asia, renne degli Tsaatan e campi di gher; solo d'estate."
       }
     ],
     "agentTips": [
@@ -431,6 +449,12 @@
         "days": 5,
         "route": "Taipei (4), con Jiufen e Shifen",
         "description": "Stopover lungo o city break."
+      },
+      {
+        "title": "Taiwan del sud e isole",
+        "days": 8,
+        "route": "Kaohsiung (2) → Kenting (2) → Penghu (2) → Tainan (1)",
+        "description": "Templi, spiagge tropicali e arcipelago di basalto, con treno veloce da Taipei."
       }
     ],
     "agentTips": [
@@ -515,6 +539,12 @@
         "days": 5,
         "route": "Hong Kong (3) → Macao (1)",
         "description": "Due città in un viaggio breve."
+      },
+      {
+        "title": "Hong Kong e Cina del sud",
+        "days": 8,
+        "route": "Hong Kong (3) → Guilin e Yangshuo (3) → Shenzhen (1)",
+        "description": "Treno veloce verso le montagne carsiche di Yangshuo: il modo più facile per unire Hong Kong e la Cina."
       }
     ],
     "agentTips": [
@@ -573,6 +603,18 @@
         "days": 2,
         "route": "Macao (1)",
         "description": "Escursione o notte in un resort."
+      },
+      {
+        "title": "Macao e Hong Kong",
+        "days": 5,
+        "route": "Hong Kong (3) → Macao (1)",
+        "description": "Ponte sul mare o traghetto: centro storico portoghese, casinò e cucina macanese."
+      },
+      {
+        "title": "Macao gourmet",
+        "days": 3,
+        "route": "Macao (2)",
+        "description": "Città con più ristoranti stellati per abitante: pasticcini alla crema, cucina portoghese e Cotai."
       }
     ],
     "agentTips": [
@@ -630,6 +672,18 @@
         "days": 10,
         "route": "Bandar Seri Begawan (2) → Temburong (1) → Kota Kinabalu e Sabah (6)",
         "description": "Abbinato al Borneo malese."
+      },
+      {
+        "title": "Brunei stopover",
+        "days": 3,
+        "route": "Bandar Seri Begawan (2)",
+        "description": "Sosta sulla rotta per Australia o Asia con Royal Brunei: moschee d'oro, villaggio sull'acqua di Kampong Ayer e foresta di Ulu Temburong."
+      },
+      {
+        "title": "Brunei e Sarawak",
+        "days": 9,
+        "route": "Kuching (3) → Bako (1) → Miri e Mulu (2) → Bandar Seri Begawan (2)",
+        "description": "Borneo da ovest a est: oranghi di Semenggoh, grotte di Mulu patrimonio UNESCO e il sultanato."
       }
     ],
     "agentTips": [
@@ -687,6 +741,18 @@
         "days": 8,
         "route": "Dili (2) → Atauro (2) → Maubisse e Ramelau (2) → Dili (1)",
         "description": "Per viaggiatori avventurosi, da maggio a novembre."
+      },
+      {
+        "title": "Atauro sub",
+        "days": 6,
+        "route": "Dili (1) → Atauro (4)",
+        "description": "Una delle barriere più ricche di specie al mondo, a un'ora di barca da Dili."
+      },
+      {
+        "title": "Bali e Timor Est",
+        "days": 12,
+        "route": "Bali (5) → Dili (2) → Atauro (3)",
+        "description": "Estensione per viaggiatori curiosi dopo Bali, con volo diretto."
       }
     ],
     "agentTips": [
@@ -759,6 +825,18 @@
         "days": 12,
         "route": "Islamabad (1) → Gilgit (1) → Hunza (4) → Khunjerab → Skardu (3) → Islamabad (1)",
         "description": "Da aprile a ottobre, con operatore locale."
+      },
+      {
+        "title": "Lahore e Islamabad",
+        "days": 6,
+        "route": "Lahore (3) → Islamabad (2)",
+        "description": "Moghul, il cambio della guardia di Wagah e la capitale verde, verificando le indicazioni di sicurezza."
+      },
+      {
+        "title": "Karakorum Highway",
+        "days": 14,
+        "route": "Islamabad (1) → Chilas (1) → Gilgit (1) → Hunza (4) → Passu (2) → Skardu (3) → Islamabad (1)",
+        "description": "La strada più spettacolare d'Asia tra i giganti del Karakorum; da maggio a ottobre."
       }
     ],
     "agentTips": [
@@ -828,6 +906,18 @@
         "days": 9,
         "route": "Dhaka (2) → Sundarbans (3) → Bagerhat (1) → Sreemangal (2)",
         "description": "Da novembre a febbraio."
+      },
+      {
+        "title": "Dhaka e Chittagong",
+        "days": 8,
+        "route": "Dhaka (2) → Chittagong (1) → Bandarban (2) → Cox's Bazar (2)",
+        "description": "Per viaggiatori esperti: colline tribali di Bandarban e la spiaggia più lunga del mondo a Cox's Bazar."
+      },
+      {
+        "title": "Patrimoni del Bangladesh",
+        "days": 7,
+        "route": "Dhaka (2) → Bogra e Mahasthangarh (1) → Paharpur (1) → Puthia e Rajshahi (2)",
+        "description": "Monasteri buddhisti e templi in terracotta poco conosciuti: per appassionati di archeologia, da novembre a febbraio."
       }
     ],
     "agentTips": [

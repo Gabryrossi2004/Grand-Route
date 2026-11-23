@@ -27,6 +27,7 @@ export default function CountryBoard({
   nameIt,
   userId,
   trips,
+  place = null,
   onClose,
   onCountChange,
 }: {
@@ -34,6 +35,7 @@ export default function CountryBoard({
   nameIt: string;
   userId: string;
   trips: BoardTrip[];
+  place?: string | null;
   onClose: () => void;
   onCountChange: (count: number) => void;
 }) {
@@ -42,7 +44,7 @@ export default function CountryBoard({
   const [busy, setBusy] = useState<string | null>(null);
   const [tripId, setTripId] = useState<string>(trips.length === 1 ? trips[0].id : "");
   const [open, setOpen] = useState<number | null>(null);
-  const [tab, setTab] = useState<"photos" | "diary">("photos");
+  const [tab, setTab] = useState<"photos" | "diary">(place ? "diary" : "photos");
   const [diaryCount, setDiaryCount] = useState<number | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -162,7 +164,7 @@ export default function CountryBoard({
 
         {tab === "diary" && (
           <div className="flex-1 overflow-y-auto px-5 py-4">
-            <JournalPanel country={country} trips={trips} onCountChange={setDiaryCount} />
+            <JournalPanel country={country} trips={trips} initialPlace={place} onCountChange={setDiaryCount} />
           </div>
         )}
 

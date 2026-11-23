@@ -71,6 +71,12 @@
         "days": 6,
         "route": "Barcellona (3) → Andorra (2)",
         "description": "Città e montagna d'estate."
+      },
+      {
+        "title": "Estate in montagna",
+        "days": 6,
+        "route": "Barcellona (1) → Andorra la Vella (4) → Barcellona",
+        "description": "Trekking facile tra laghi d'alta quota, terme di Caldea e shopping tax-free; ideale per famiglie da giugno a settembre."
       }
     ],
     "agentTips": [
@@ -129,6 +135,18 @@
         "days": 4,
         "route": "Zurigo (1) → San Gallo → Vaduz (1) → Appenzello (1)",
         "description": "Weekend lungo in auto o treno."
+      },
+      {
+        "title": "Vaduz e Lago di Costanza",
+        "days": 4,
+        "route": "Vaduz (1) → Bregenz (1) → Lindau e Costanza (1)",
+        "description": "Tre paesi in pochi giorni intorno al Lago di Costanza, comodo in auto dal nord Italia."
+      },
+      {
+        "title": "Liechtenstein trekking",
+        "days": 3,
+        "route": "Vaduz (1) → Malbun (1)",
+        "description": "Il sentiero panoramico dei Drei Schwestern e la piccola stazione di montagna di Malbun."
       }
     ],
     "agentTips": [
@@ -187,6 +205,18 @@
         "days": 4,
         "route": "Rimini (2) → San Marino (1) → San Leo e Urbino (1)",
         "description": "Mare, storia e borghi."
+      },
+      {
+        "title": "San Marino e Romagna",
+        "days": 3,
+        "route": "San Marino (2)",
+        "description": "Le tre torri, il centro storico e i musei, a 30 minuti da Rimini."
+      },
+      {
+        "title": "Marche e San Marino",
+        "days": 6,
+        "route": "San Marino (1) → Urbino (2) → Gradara (1) → Rimini (1)",
+        "description": "Città rinascimentali e castelli tra Romagna e Montefeltro."
       }
     ],
     "agentTips": [
@@ -292,6 +322,12 @@
         "days": 6,
         "route": "Dubrovnik (2) → Kotor (2) → Budva (2)",
         "description": "Combinato con la Croazia."
+      },
+      {
+        "title": "Montenegro mare",
+        "days": 8,
+        "route": "Budva (4) → Sveti Stefan (1) → Ulcinj (2)",
+        "description": "Spiagge e cittadine murate della costa, con escursioni in barca nelle Bocche di Cattaro."
       }
     ],
     "agentTips": [
@@ -408,6 +444,12 @@
         "days": 8,
         "route": "Saranda o Ksamil (4) → Himara o Dhërmi (3)",
         "description": "Mare da giugno a settembre."
+      },
+      {
+        "title": "Albania del nord",
+        "days": 7,
+        "route": "Tirana (1) → Scutari (1) → lago di Koman in traghetto → Valbona (2) → Theth (2) → Tirana",
+        "description": "Le Alpi albanesi tra villaggi di montagna e il traghetto sul lago di Koman: trekking da giugno a settembre, servono fuoristrada per Theth."
       }
     ],
     "agentTips": [
@@ -513,6 +555,12 @@
         "days": 4,
         "route": "Spalato o Dubrovnik → Medjugorje (3)",
         "description": "Viaggio religioso con guida."
+      },
+      {
+        "title": "Balcani in auto",
+        "days": 10,
+        "route": "Dubrovnik (1) → Mostar (2) → Sarajevo (2) → Višegrad (1) → Kotor (2) → Dubrovnik (1)",
+        "description": "Grande giro in auto tra Croazia, Bosnia e Montenegro: ponti ottomani, storia recente e Bocche di Cattaro."
       }
     ],
     "agentTips": [
@@ -612,6 +660,18 @@
         "days": 7,
         "route": "Belgrado (3) → Novi Sad (1) → Danubio e Golubac (1) → Zlatibor (2)",
         "description": "Da maggio a settembre."
+      },
+      {
+        "title": "Belgrado weekend",
+        "days": 4,
+        "route": "Belgrado (3)",
+        "description": "Fortezza di Kalemegdan, il quartiere bohémien di Skadarlija e la vita notturna sui battelli."
+      },
+      {
+        "title": "Serbia dei monasteri",
+        "days": 8,
+        "route": "Belgrado (2) → Studenica (1) → Kopaonik (2) → Niš (1)",
+        "description": "Monasteri medievali UNESCO e montagne, chiudendo nella città di Costantino."
       }
     ],
     "agentTips": [
@@ -695,6 +755,18 @@
         "days": 8,
         "route": "Skopje (2) → Ocrida (3) → Berat (1) → Tirana (1)",
         "description": "Laghi e città storiche dei Balcani."
+      },
+      {
+        "title": "Lago di Ocrida",
+        "days": 5,
+        "route": "Ocrida (4), con San Naum",
+        "description": "Chiese bizantine sul lago più antico d'Europa e il monastero di San Naum con le sorgenti."
+      },
+      {
+        "title": "Macedonia classica",
+        "days": 7,
+        "route": "Skopje (2) → Matka (1) → Bitola e Heraclea (1) → Ocrida (3)",
+        "description": "Capitale, canyon e città antiche, chiudendo sul lago di Ocrida."
       }
     ],
     "agentTips": [
@@ -764,6 +836,18 @@
         "days": 9,
         "route": "Tirana (2) → Prizren (2) → Peć (1) → Pristina (1) → Skopje (2)",
         "description": "Tour tra Albania, Kosovo e Macedonia."
+      },
+      {
+        "title": "Kosovo breve",
+        "days": 4,
+        "route": "Pristina (2) → Prizren (1)",
+        "description": "Capitale vivace, il monastero di Gračanica e la cittadina ottomana di Prizren."
+      },
+      {
+        "title": "Monasteri e montagne",
+        "days": 7,
+        "route": "Pristina (2) → Peć e monastero (1) → Rugova (2) → Prizren (1)",
+        "description": "Monasteri serbo-ortodossi UNESCO e la gola di Rugova per trekking e vie ferrate."
       }
     ],
     "agentTips": [
@@ -824,6 +908,18 @@
         "days": 4,
         "route": "Chișinău (3), con cantine e Orheiul Vechi",
         "description": "Weekend lungo enogastronomico."
+      },
+      {
+        "title": "Moldavia e Romania",
+        "days": 9,
+        "route": "Iași (1) → Chișinău (2) → Cricova e Mileștii Mici (1) → Soroca (1) → Bucovina (2) → Suceava (1)",
+        "description": "Cantine sotterranee più grandi al mondo e monasteri dipinti della Bucovina."
+      },
+      {
+        "title": "Chișinău e monasteri",
+        "days": 5,
+        "route": "Chișinău (2) → Orheiul Vechi (1) → Saharna e Țipova (1)",
+        "description": "Monasteri scavati nella roccia sul fiume Nistru, verificando sempre le indicazioni di viaggio."
       }
     ],
     "agentTips": [
@@ -923,6 +1019,18 @@
         "days": 4,
         "route": "Varsavia (1) → Białowieża lato polacco (2)",
         "description": "Per vedere la foresta primordiale senza entrare in Bielorussia."
+      },
+      {
+        "title": "Minsk e castelli",
+        "days": 5,
+        "route": "Minsk (3) → Mir e Nesvizh (1)",
+        "description": "Solo quando le indicazioni della Farnesina lo consentono: capitale sovietica e castelli UNESCO."
+      },
+      {
+        "title": "Brest e Białowieża",
+        "days": 5,
+        "route": "Varsavia (1) → Brest (2) → Białowieża (2)",
+        "description": "La foresta primaria con i bisonti europei e la fortezza di Brest; da proporre solo con viaggi consentiti verso la Bielorussia."
       }
     ],
     "agentTips": [
@@ -1048,6 +1156,18 @@
         "days": 8,
         "route": "Copenaghen o Reykjavík → Kangerlussuaq (2) → Ilulissat (4) → Nuuk (1)",
         "description": "Da giugno a settembre, con voli interni."
+      },
+      {
+        "title": "Groenlandia orientale",
+        "days": 7,
+        "route": "Reykjavík (1) → Kulusuk (1) → Tasiilaq (4)",
+        "description": "Iceberg, villaggi inuit e cani da slitta; voli brevi dall'Islanda."
+      },
+      {
+        "title": "Crociera di spedizione",
+        "days": 12,
+        "route": "Reykjavík → crociera lungo la costa ovest (10) → Kangerlussuaq",
+        "description": "Il modo più comodo per vedere fiordi e ghiacciai: navi piccole con sbarchi in gommone."
       }
     ],
     "agentTips": [
@@ -1123,6 +1243,18 @@
         "days": 5,
         "route": "Vágar (1) → Tórshavn (2) → Eysturoy (1) → Kalsoy (1)",
         "description": "Fly & drive da maggio a settembre."
+      },
+      {
+        "title": "Fær Øer e Islanda",
+        "days": 9,
+        "route": "Reykjavík (2) → Circolo d'Oro (1) → volo → Tórshavn (2) → Mykines (1) → Gásadalur (1)",
+        "description": "Due isole nordiche con un volo breve: geyser in Islanda, puffin e scogliere alle Fær Øer."
+      },
+      {
+        "title": "Fær Øer trekking",
+        "days": 7,
+        "route": "Tórshavn (2) → Mykines (1) → Saksun e Tjørnuvík (2) → Gjógv (1)",
+        "description": "Escursioni su sentieri a picco sull'oceano; da giugno ad agosto con molta luce."
       }
     ],
     "agentTips": [

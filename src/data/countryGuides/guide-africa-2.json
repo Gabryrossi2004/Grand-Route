@@ -67,6 +67,12 @@
         "days": 8,
         "route": "Algeri (2) → Tipasa → Costantina (2) → Djemila → Timgad (1) → Ghardaïa (2)",
         "description": "Città romane e M'zab, primavera e autunno."
+      },
+      {
+        "title": "Sahara di Timimoun",
+        "days": 7,
+        "route": "Algeri (1) → Timimoun (5)",
+        "description": "Le ksour di terra rossa e l'erg occidentale, ideale da ottobre a marzo con guida e permessi organizzati."
       }
     ],
     "agentTips": [
@@ -196,6 +202,12 @@
         "days": 9,
         "route": "Addis Abeba (1) → Arba Minch (1) → Jinka (2) → Turmi (3) → Addis Abeba",
         "description": "Popoli del sud con fuoristrada."
+      },
+      {
+        "title": "Dancalia ed Erta Ale",
+        "days": 6,
+        "route": "Addis Abeba (1) → Macallè (1) → Dallol e lago di sale (2) → Erta Ale (1)",
+        "description": "Uno dei luoghi più estremi della Terra: sorgenti colorate di Dallol e il lago di lava; solo con scorta e operatore esperto."
       }
     ],
     "agentTips": [
@@ -276,6 +288,12 @@
         "days": 5,
         "route": "Kigali → Bwindi o Mgahinga (3) → Kigali",
         "description": "Dal Ruanda, con trasferimento via terra."
+      },
+      {
+        "title": "Uganda nord e Murchison",
+        "days": 8,
+        "route": "Entebbe (1) → Ziwa e rinoceronti (1) → Murchison Falls (3) → Kibale (2)",
+        "description": "Le cascate del Nilo, rinoceronti a piedi e scimpanzé."
       }
     ],
     "agentTips": [
@@ -365,6 +383,12 @@
         "days": 4,
         "route": "Kigali (1) → Vulcani (2)",
         "description": "Estensione di un safari in Kenya o Tanzania."
+      },
+      {
+        "title": "Ruanda e Tanzania",
+        "days": 12,
+        "route": "Kigali (1) → Vulcani (2) → Serengeti (4) → Ngorongoro (1) → Zanzibar (3)",
+        "description": "Gorilla di montagna e grande migrazione con estensione di mare."
       }
     ],
     "agentTips": [
@@ -414,6 +438,18 @@
         "days": 5,
         "route": "Bujumbura (2) → Gitega e Gishora (2)",
         "description": "Solo per viaggiatori esperti, se la situazione lo consente."
+      },
+      {
+        "title": "Burundi e Ruanda",
+        "days": 9,
+        "route": "Kigali (1) → Nyungwe (2) → Bujumbura (2) → Lago Tanganica (2) → Kigali",
+        "description": "Natura dei Grandi Laghi in due paesi: scimpanzé a Nyungwe, spiagge sul Tanganica; solo con operatore locale."
+      },
+      {
+        "title": "Tanganica e tamburi",
+        "days": 6,
+        "route": "Bujumbura (2) → Rusizi (1) → Gishora (1) → Kibira (1)",
+        "description": "Ippopotami del delta del Rusizi, i tamburini reali di Gishora e la foresta di Kibira."
       }
     ],
     "agentTips": [
@@ -467,6 +503,18 @@
         "days": 6,
         "route": "Asmara (3) → Massaua (2)",
         "description": "Con permessi e agenzia locale."
+      },
+      {
+        "title": "Eritrea classica",
+        "days": 8,
+        "route": "Asmara (2) → Keren (1) → Massaua (2) → Arcipelago Dahlak (2)",
+        "description": "Architettura italiana razionalista ad Asmara, il treno storico e le isole Dahlak; solo con operatore locale."
+      },
+      {
+        "title": "Asmara e la ferrovia",
+        "days": 5,
+        "route": "Asmara (3) → Nefasit in treno a vapore (1) → Asmara",
+        "description": "Proposta breve per appassionati di storia e architettura del Novecento italiano."
       }
     ],
     "agentTips": [
@@ -519,6 +567,18 @@
         "days": 6,
         "route": "Gibuti (2) → Lago Assal (1) → Lago Abbe (1) → Tadjoura (1)",
         "description": "Da novembre a febbraio."
+      },
+      {
+        "title": "Squali balena",
+        "days": 5,
+        "route": "Gibuti (1) → Golfo di Tadjoura in barca (3)",
+        "description": "Da novembre a febbraio si nuota con gli squali balena nel golfo di Ghoubbet; facile da abbinare a un viaggio in Etiopia."
+      },
+      {
+        "title": "Gibuti ed Etiopia",
+        "days": 11,
+        "route": "Gibuti (3) → Lago Assal → treno per Dire Dawa (1) → Harar (2) → Addis Abeba (2)",
+        "description": "La ferrovia Gibuti-Addis Abeba collega il mare con la città murata di Harar e i suoi uomini delle iene."
       }
     ],
     "agentTips": [
@@ -551,6 +611,18 @@
         "days": 8,
         "route": "Atar (1) → Chinguetti (2) → Ouadane (2) → Terjit (1)",
         "description": "Da novembre a marzo, con agenzia locale."
+      },
+      {
+        "title": "Banc d'Arguin",
+        "days": 6,
+        "route": "Nouakchott (1) → Banc d'Arguin (3) → Nouadhibou (1)",
+        "description": "Milioni di uccelli migratori e pescatori Imraguen nel parco nazionale UNESCO."
+      },
+      {
+        "title": "Treno del ferro",
+        "days": 7,
+        "route": "Nouadhibou (1) → treno del ferro → Choum → Atar (2) → Chinguetti (2)",
+        "description": "Avventura sul treno più lungo del mondo e le città carovaniere del deserto."
       }
     ],
     "agentTips": [
@@ -654,6 +726,18 @@
         "days": 12,
         "route": "N'Djamena (1) → Ennedi e Ounianga (10)",
         "description": "Spedizione con operatore specializzato."
+      },
+      {
+        "title": "Zakouma",
+        "days": 7,
+        "route": "N'Djamena (1) → Zakouma (5)",
+        "description": "Il parco più rinato d'Africa: grandi branchi di bufali ed elefanti, con lodge stagionali."
+      },
+      {
+        "title": "Lago Ciad e Guera",
+        "days": 8,
+        "route": "N'Djamena (2) → Guera (3) → Lago Ciad (2)",
+        "description": "Spedizione per esperti con operatore locale, verificando sempre la sicurezza."
       }
     ],
     "agentTips": [

@@ -3,7 +3,8 @@ import { loadTripDays } from "@/lib/tripDays";
 import { loadTripPlaces, romeToday, type DayInput } from "@/lib/destinationInfo";
 import GlobeLoader from "@/components/GlobeLoader";
 import type { GlobeTrip } from "@/components/TravelGlobe";
-import { countPhotosByCountry } from "@/lib/actions/clientPhotos";
+import { countPhotosByCountry, latestPhotoByCountry } from "@/lib/actions/clientPhotos";
+import { countJournalByPlace } from "@/lib/actions/clientJournal";
 
 // Le località si cercano in rete (in cache per 30 giorni): con molti viaggi serve qualche secondo
 export const maxDuration = 60;
@@ -54,14 +55,14 @@ export default async function ClientGlobePage() {
     )
   ).filter((t) => t.places.length > 0);
 
-  const photoCounts = await countPhotosByCountry();
+  const [photoCounts, photoThumbs, placeNotes] = await Promise.all([countPhotosByCountry(), latestPhotoByCountry(), countJournalByPlace()]);
 
   return (
     <div className="flex flex-col gap-4">
       <div>
         <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Il tuo mappamondo</h1>
         <p className="mt-1 max-w-xl text-sm text-slate-600">
-          I paesi dove sei stato diventano d&apos;oro. Trascina per girare il globo, pizzica per ingrandire, tocca un paese per sceglierlo: sui paesi d&apos;oro si apre la bacheca dei tuoi ricordi, dove puoi raccogliere le foto e condividerle. In alto a sinistra scegli l&apos;aspetto: carta d&apos;epoca oppure mappamondo fisico.
+          I paesi dove sei stato diventano d&apos;oro e la linea tratteggiata segue il percorso dei tuoi viaggi. Trascina per girare il globo, pizzica per ingrandire, tocca un paese o un luogo qui sotto: si apre la bacheca dei ricordi, con le tue foto e il tuo diario di viaggio. In alto a sinistra scegli l&apos;aspetto: carta d&apos;epoca oppure mappamondo fisico.
         </p>
       </div>
       {trips.length === 0 ? (
@@ -69,7 +70,7 @@ export default async function ClientGlobePage() {
           Qui comparirà il mappamondo dei tuoi viaggi non appena la tua agenzia ne preparerà uno per te.
         </div>
       ) : (
-        <GlobeLoader trips={trips} userId={user?.id ?? ""} photoCounts={photoCounts} />
+        <GlobeLoader trips={trips} userId={user?.id ?? ""} photoCounts={photoCounts} photoThumbs={photoThumbs} placeNotes={placeNotes} />
       )}
     </div>
   );

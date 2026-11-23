@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Camera, Crosshair, Loader2 } from "lucide-react";
+import { Camera, Crosshair, Images, Loader2, NotebookPen } from "lucide-react";
 import CountryBoard from "@/components/CountryBoard";
 import GlobeSearch, { type GlobeSearchItem } from "@/components/GlobeSearch";
 import { namesOf } from "@/lib/geo/countryCodes";
@@ -214,6 +214,8 @@ export default function TravelGlobe({
   trips,
   userId = "",
   photoCounts = {},
+  photoThumbs = {},
+  placeNotes = {},
   mode = "client",
   agency,
   onOpenSheet,
@@ -227,6 +229,10 @@ export default function TravelGlobe({
   trips: GlobeTrip[];
   userId?: string;
   photoCounts?: Record<string, number>;
+  // Ultima foto per paese (bollino sul globo e copertina delle schede dei luoghi)
+  photoThumbs?: Record<string, string>;
+  // Note del diario per luogo (nome in minuscolo)
+  placeNotes?: Record<string, number>;
   mode?: "client" | "agency";
   agency?: AgencyGlobeData;
   onOpenSheet?: (name: string) => void;
@@ -247,6 +253,7 @@ export default function TravelGlobe({
     focus: (lat: number, lon: number, maxDist?: number) => void;
     setMe: (p: { lat: number; lon: number } | null) => void;
     chooseTrip: (tripId: string) => void;
+    openPlace: (index: number) => void;
     setStyle: (style: GlobeStyle) => Promise<boolean>;
     clear: () => void;
     selectCountry: (name: string) => void;
@@ -276,6 +283,11 @@ export default function TravelGlobe({
   const [style, setStyle] = useState<GlobeStyle>(readStyle);
   const styleRef = useRef<GlobeStyle>(style);
   const [counts, setCounts] = useState<Record<string, number>>(photoCounts);
+  // Schede dei luoghi sotto il globo (una per tappa di ogni viaggio)
+  const [placeCards, setPlaceCards] = useState<{ index: number; tripId: string; tripTitle: string; from: string | null; name: string; country: string | null }[]>([]);
+  const photoThumbsRef = useRef(photoThumbs);
+  // Luogo scelto da una scheda: la bacheca si apre sul diario di quel luogo
+  const [boardPlace, setBoardPlace] = useState<string | null>(null);
 
   const [styleBusy, setStyleBusy] = useState(false);
   const chooseStyle = useCallback(async (next: GlobeStyle) => {
@@ -341,6 +353,10 @@ export default function TravelGlobe({
         }
         if (mode === "agency") {
           for (const [name, stat] of Object.entries(agencyRef.current?.stats ?? {})) if (stat.count > 0) gold.add(name);
+        } else {
+          setPlaceCards(
+            pinsData.map((d, index) => ({ index, tripId: d.trip.id, tripTitle: d.trip.title, from: d.trip.from, name: d.place.name, country: d.country })),
+          );
         }
         gold.forEach((c) => soft.delete(c));
         setInfo({ gold: [...gold], soft: [...soft], byCountry });
@@ -540,6 +556,7 @@ export default function TravelGlobe({
           return { g, head, hit };
         };
         const seenTrip = new Set<string>();
+        const photoShown = new Set<string>();
         for (const { trip, place, country: pinCountry } of pinsData) {
           const color = trip.status === "upcoming" ? 0xffe9b8 : 0xfff3d4;
           const { g, head, hit } = makePin(place.lat, place.lon, color);
@@ -548,9 +565,57 @@ export default function TravelGlobe({
           const label = document.createElement("div");
           label.className = "tg-tag";
           label.textContent = first ? trip.destination || trip.title : place.name;
+          // Bollino con l'ultima foto del paese, sull'etichetta del primo luogo di quel paese
+          const thumb = pinCountry ? photoThumbsRef.current[pinCountry] : undefined;
+          if (thumb && pinCountry && !photoShown.has(pinCountry)) {
+            photoShown.add(pinCountry);
+            const img = document.createElement("img");
+            img.src = thumb;
+            img.alt = "";
+            img.className = "tg-ph";
+            label.prepend(img);
+            label.classList.add("tg-has-ph");
+          }
           label.dataset.main = first ? "1" : "0";
           labels.appendChild(label);
           markers.push({ group: g, head, hit, tripId: trip.id, country: pinCountry, label });
+        }
+
+        // Percorso di ogni viaggio: linea tratteggiata ad arco da una tappa all'altra
+        const routeMat = new LineMaterial({ color: 0xd2462f, linewidth: 3.2, transparent: true, opacity: 1, worldUnits: false });
+        routeMat.resolution.set(stage.clientWidth || 1, stage.clientHeight || 1);
+        lineMats.push(routeMat);
+        for (const trip of trips) {
+          if (trip.places.length < 2) continue;
+          const pos: number[] = [];
+          for (let i = 0; i < trip.places.length - 1; i++) {
+            const a = ll2v(trip.places[i].lat, trip.places[i].lon, 1);
+            const b = ll2v(trip.places[i + 1].lat, trip.places[i + 1].lon, 1);
+            const ang = a.angleTo(b);
+            if (ang < 1e-4) continue;
+            const steps = Math.max(6, Math.ceil(ang / 0.006));
+            const rise = Math.min(0.04, ang * 0.25);
+            let prev = a.clone().multiplyScalar(1.0015);
+            for (let k = 1; k <= steps; k++) {
+              const t = k / steps;
+              const v = a
+                .clone()
+                .multiplyScalar(Math.sin((1 - t) * ang) / Math.sin(ang))
+                .addScaledVector(b, Math.sin(t * ang) / Math.sin(ang))
+                .normalize()
+                .multiplyScalar(1.0015 + rise * Math.sin(Math.PI * t));
+              // tratteggio: due tratti sì, uno no
+              if (k % 3 !== 0) pos.push(prev.x, prev.y, prev.z, v.x, v.y, v.z);
+              prev = v;
+            }
+          }
+          if (pos.length === 0) continue;
+          const geom = new LineSegmentsGeometry();
+          geom.setPositions(pos);
+          const line = new LineSegments2(geom, routeMat);
+          line.frustumCulled = false;
+          line.renderOrder = 6;
+          yawG.add(line);
         }
 
         // "Sei qui" (solo sul telefono)
@@ -1013,6 +1078,13 @@ export default function TravelGlobe({
             if (!first) return;
             choose(first.country, tripId, false);
             api.current?.focus(first.place.lat, first.place.lon);
+          },
+          openPlace: (index) => {
+            const d = pinsData[index];
+            if (!d) return;
+            setBoardPlace(d.place.name);
+            choose(d.country, d.trip.id, true);
+            api.current?.focus(d.place.lat, d.place.lon, 1.8);
           },
           clear: () => choose(null, null, false),
           setStyle: applyStyle,
@@ -1510,12 +1582,16 @@ export default function TravelGlobe({
 
       {boardOpen && country && (
         <CountryBoard
-          key={country}
+          key={`${country}|${boardPlace ?? ""}`}
           country={country}
           nameIt={countryNameIt(country)}
           userId={userId}
           trips={countryTrips.map((t) => ({ id: t.id, title: t.title, from: t.from, status: t.status }))}
-          onClose={() => setBoardOpen(false)}
+          place={boardPlace}
+          onClose={() => {
+            setBoardOpen(false);
+            setBoardPlace(null);
+          }}
           onCountChange={onBoardCount}
         />
       )}
@@ -1523,6 +1599,49 @@ export default function TravelGlobe({
       {geoState === "denied" && <p className="text-sm text-amber-700">Non ho potuto leggere la tua posizione: controlla di aver dato il permesso al sito nelle impostazioni del telefono.</p>}
       {geoState === "unsupported" && <p className="text-sm text-amber-700">Questo dispositivo non permette di leggere la posizione.</p>}
       {geoState === "on" && <p className="text-xs text-slate-500">La tua posizione resta su questo telefono: non viene salvata né condivisa con nessuno.</p>}
+
+      {mode === "client" && placeCards.length > 0 && (
+        <div>
+          <h2 className="mb-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[#233c5e]">I tuoi luoghi</h2>
+          <div className="-mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-2">
+            {placeCards.map((card) => {
+              const thumb = card.country ? photoThumbs[card.country] : undefined;
+              const notes = placeNotes[card.name.trim().toLowerCase()] ?? 0;
+              const photos = card.country ? (counts[card.country] ?? 0) : 0;
+              return (
+                <button
+                  key={`${card.tripId}-${card.index}`}
+                  type="button"
+                  onClick={() => api.current?.openPlace(card.index)}
+                  className="group w-40 shrink-0 snap-start overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div className="relative h-24 bg-gradient-to-br from-[#243f66] to-[#c58f2d]">
+                    {thumb && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={thumb} alt="" loading="lazy" className="h-full w-full object-cover" />
+                    )}
+                    <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2.5 pb-1.5 pt-5 text-sm font-semibold text-white">{card.name}</span>
+                  </div>
+                  <div className="px-2.5 py-2">
+                    <p className="truncate text-xs text-slate-500">
+                      {card.tripTitle}
+                      {card.from ? ` · ${dateIt(card.from)}` : ""}
+                    </p>
+                    <p className="mt-1 flex items-center gap-3 text-xs text-slate-600">
+                      <span className="flex items-center gap-1" title="Note del diario">
+                        <NotebookPen size={12} /> {notes}
+                      </span>
+                      <span className="flex items-center gap-1" title="Foto del paese">
+                        <Images size={12} /> {photos}
+                      </span>
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {countriesDone !== null && trips.length > 0 && (
         <p className="text-sm text-[#756548]">
@@ -1553,6 +1672,8 @@ export default function TravelGlobe({
       <style>{`
         .tg-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -135%); white-space: nowrap; font-size: 11.5px; font-weight: 600; line-height: 1; padding: 5px 8px; border-radius: 99px; background: rgba(10,18,32,.72); color: #fff; border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(4px); transition: opacity .2s; will-change: transform; }
         .tg-me { background: #e24a3b; border-color: rgba(255,255,255,.5); }
+        .tg-has-ph { display: flex; align-items: center; gap: 6px; padding: 3px 9px 3px 3px; }
+        .tg-ph { width: 30px; height: 30px; border-radius: 99px; object-fit: cover; border: 2px solid #e3b04b; flex: none; }
         .tg-zone { position: absolute; left: 0; top: 0; white-space: nowrap; font-size: 11px; font-weight: 700; line-height: 1; padding: 5px 8px; border-radius: 99px; background: #faf3e6; color: #233c5e; border: 1.5px solid #c58f2d; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: pointer; transition: opacity .15s; will-change: transform; opacity: 0; }
         .tg-zone:hover, .tg-zone-dot:hover { background: #c58f2d; color: #fff; }
         .tg-zone-dot { position: absolute; left: 0; top: 0; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 99px; background: #233c5e; color: #fff; font-size: 11px; font-weight: 800; border: 2px solid #e3c27a; box-shadow: 0 2px 6px rgba(0,0,0,.35); cursor: pointer; transition: opacity .15s; will-change: transform; opacity: 0; }

@@ -211,6 +211,18 @@
         "days": 7,
         "route": "Erevan (3) → Garni e Geghard → Sevan e Dilijan (1) → Noravank → Tatev (1) → Erevan (1)",
         "description": "Monasteri e montagne con autista."
+      },
+      {
+        "title": "Armenia e Georgia",
+        "days": 12,
+        "route": "Tbilisi (3) → Kakheti (1) → Dilijan (1) → Sevan → Erevan (3) → Garni e Geghard → Khor Virap (1)",
+        "description": "Il Caucaso cristiano in un unico viaggio, con passaggio di frontiera via terra: monasteri, vino e cucina."
+      },
+      {
+        "title": "Armenia del sud",
+        "days": 9,
+        "route": "Erevan (2) → Khor Virap → Areni (1) → Jermuk (1) → Tatev e Goris (2) → Selim → Sevan (1) → Erevan (1)",
+        "description": "Per chi vuole più natura: canyon, la funivia di Tatev, cantine di Areni e caravanserragli sulla Via della Seta."
       }
     ],
     "agentTips": [
@@ -286,6 +298,18 @@
         "days": 6,
         "route": "Baku (3) → Gobustan → Shamakhi → Sheki (2)",
         "description": "Città e Caucaso, primavera e autunno."
+      },
+      {
+        "title": "Baku e Gabala",
+        "days": 6,
+        "route": "Baku (3) → Gabala (2) → Baku",
+        "description": "Capitale con la città vecchia UNESCO e le Flame Towers, poi le montagne del Caucaso a Gabala con funivie e resort."
+      },
+      {
+        "title": "Georgia e Azerbaigian",
+        "days": 12,
+        "route": "Baku (3) → Sheki (2) → frontiera di Lagodekhi → Kakheti (2) → Tbilisi (3) → Kazbegi (1)",
+        "description": "Due paesi molto diversi con passaggio via terra: palazzo del Khan a Sheki, vino in Kakheti e il Caucaso georgiano."
       }
     ],
     "agentTips": [
@@ -345,6 +369,18 @@
         "days": 3,
         "route": "Doha (2–3)",
         "description": "Combinato con voli Qatar Airways verso Asia e Oceano Indiano."
+      },
+      {
+        "title": "Doha e Maldive",
+        "days": 10,
+        "route": "Doha (2) → Maldive (7)",
+        "description": "Scalo con Qatar Airways trasformato in mini vacanza: musei, souk e deserto."
+      },
+      {
+        "title": "Qatar e deserto",
+        "days": 5,
+        "route": "Doha (3) → Khor Al Adaid (1)",
+        "description": "Musei di Islamic Art e Nazionale, poi notte nel deserto dove le dune incontrano il mare."
       }
     ],
     "agentTips": [
@@ -421,6 +457,18 @@
         "days": 8,
         "route": "Riad (2) → AlUla (3) → Jeddah (2)",
         "description": "Da novembre a marzo, con voli interni."
+      },
+      {
+        "title": "Mar Rosso saudita",
+        "days": 7,
+        "route": "Jeddah (2) → Red Sea Global (4)",
+        "description": "Resort di lusso su isole del Mar Rosso con barriera corallina intatta."
+      },
+      {
+        "title": "Arabia del sud",
+        "days": 8,
+        "route": "Riad (2) → Abha (3) → Najran (2)",
+        "description": "Villaggi di montagna dell'Asir e architettura di fango di Najran."
       }
     ],
     "agentTips": [
@@ -480,6 +528,18 @@
         "days": 3,
         "route": "Manama (2)",
         "description": "Stopover o abbinato a un evento sportivo."
+      },
+      {
+        "title": "Bahrein e Formula 1",
+        "days": 4,
+        "route": "Manama (3), con il circuito di Sakhir",
+        "description": "Pacchetto per il Gran Premio di marzo o per un weekend: forte di Qal'at, souk, moschea Al-Fateh e spiagge degli hotel."
+      },
+      {
+        "title": "Bahrein e Arabia",
+        "days": 8,
+        "route": "Manama (2) → ponte di re Fahd → Dammam e Al-Ahsa (2) → Riad (3)",
+        "description": "Combinazione via terra con l'Arabia Saudita: oasi UNESCO di Al-Ahsa e la capitale saudita."
       }
     ],
     "agentTips": [
@@ -532,6 +592,18 @@
         "days": 3,
         "route": "Kuwait City (2)",
         "description": "Per viaggi d'affari o di transito."
+      },
+      {
+        "title": "Kuwait e Bahrein",
+        "days": 6,
+        "route": "Kuwait City (2) → Manama (3)",
+        "description": "Due emirati del Golfo poco turistici, musei, souk e architettura moderna."
+      },
+      {
+        "title": "Stopover a Kuwait",
+        "days": 2,
+        "route": "Kuwait City (1)",
+        "description": "Sosta breve con Kuwait Airways: Kuwait Towers, Grande Moschea e Souk Al-Mubarakiya."
       }
     ],
     "agentTips": [
@@ -601,6 +673,18 @@
         "days": 6,
         "route": "Beirut (3) → Byblos → Qadisha (1) → Baalbek (1)",
         "description": "Solo se la situazione di sicurezza lo consente."
+      },
+      {
+        "title": "Libano tra mare e montagna",
+        "days": 7,
+        "route": "Beirut (2) → Byblos (1) → Cedri di Dio (1) → Sidone e Tiro (2)",
+        "description": "Città fenicie, cedri millenari e cucina; solo quando le indicazioni della Farnesina lo consentono."
+      },
+      {
+        "title": "Beirut e la Bekaa",
+        "days": 4,
+        "route": "Beirut (2) → Baalbek e cantine della Bekaa (1)",
+        "description": "Proposta breve con i templi romani di Baalbek e le cantine di Château Ksara."
       }
     ],
     "agentTips": [
@@ -656,6 +740,18 @@
         "days": 8,
         "route": "Gerusalemme (3) → Betlemme (1) → Gerico e Mar Morto (1) → Galilea (2)",
         "description": "Con guida autorizzata, solo se la situazione lo consente."
+      },
+      {
+        "title": "Betlemme e Gerusalemme",
+        "days": 5,
+        "route": "Gerusalemme (3) → Betlemme (1)",
+        "description": "Proposta breve per i luoghi della Natività, sempre verificando le indicazioni della Farnesina."
+      },
+      {
+        "title": "Giordania e Terra Santa",
+        "days": 11,
+        "route": "Amman (1) → Monte Nebo → Petra (2) → Gerusalemme (3) → Betlemme (1) → Galilea (2)",
+        "description": "Pellegrinaggio nei luoghi biblici dei due lati del Giordano."
       }
     ],
     "agentTips": [
@@ -956,6 +1052,12 @@
         "days": 12,
         "route": "Almaty (3) → Kirghizistan, Issyk-Kul (3) → Bishkek (1) → Uzbekistan (4)",
         "description": "Tra montagne e Via della Seta."
+      },
+      {
+        "title": "Astana e la steppa",
+        "days": 6,
+        "route": "Astana (3) → Burabay (2)",
+        "description": "La capitale futurista e il parco Burabay, la 'Svizzera kazaka', con laghi e foreste."
       }
     ],
     "agentTips": [
@@ -1030,6 +1132,18 @@
         "days": 10,
         "route": "Bishkek (1) → Issyk-Kul sud (2) → Karakol (2) → Kochkor → Song-Kul (2) → Bishkek (1)",
         "description": "Laghi e yurte, da giugno a settembre."
+      },
+      {
+        "title": "Kirghizistan e Uzbekistan",
+        "days": 12,
+        "route": "Bishkek (1) → Song-Kul (2) → Osh (2) → Fergana (1) → Tashkent (1) → Samarcanda (2) → Bukhara (2)",
+        "description": "Montagne e nomadi, poi le città della Via della Seta via terra."
+      },
+      {
+        "title": "Trekking dell'Ala-Kul",
+        "days": 7,
+        "route": "Bishkek (1) → Karakol (1) → trekking Ala-Kul e Altyn Arashan (4)",
+        "description": "Uno dei trekking più belli dell'Asia centrale, con lago glaciale e sorgenti calde; da luglio a settembre."
       }
     ],
     "agentTips": [
@@ -1086,6 +1200,18 @@
         "days": 12,
         "route": "Dušanbe (1) → Khorog (2) → Wakhan (3) → Murghab (1) → Karakul → Osh in Kirghizistan (1)",
         "description": "Spedizione in 4x4, da giugno a settembre."
+      },
+      {
+        "title": "Fann e Iskanderkul",
+        "days": 7,
+        "route": "Dušanbe (1) → Iskanderkul (2) → Monti Fann (3)",
+        "description": "Laghi turchesi e trekking tra le montagne più accessibili del Tagikistan."
+      },
+      {
+        "title": "Tagikistan e Uzbekistan",
+        "days": 10,
+        "route": "Samarcanda (2) → Penjikent (1) → Sette Laghi (2) → Dušanbe (2) → Khujand (1)",
+        "description": "Città della Via della Seta e laghi di montagna in un unico viaggio."
       }
     ],
     "agentTips": [
@@ -1146,6 +1272,18 @@
         "days": 10,
         "route": "Ashgabat (2) → Darvaza (1) → Kunya-Urgench → Khiva (2) → Bukhara (2) → Samarcanda (2)",
         "description": "La Via della Seta tra due paesi."
+      },
+      {
+        "title": "Darvaza e Ashgabat",
+        "days": 4,
+        "route": "Ashgabat (2) → Darvaza (1)",
+        "description": "La capitale di marmo bianco e la 'porta dell'inferno' di notte, in campo tendato."
+      },
+      {
+        "title": "Merv e Via della Seta",
+        "days": 7,
+        "route": "Ashgabat (2) → Merv (2) → Darvaza (1) → Dashoguz (1)",
+        "description": "L'antica Merv UNESCO e i paesaggi desertici, poi passaggio verso Khiva."
       }
     ],
     "agentTips": [

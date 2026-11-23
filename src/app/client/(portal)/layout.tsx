@@ -4,6 +4,7 @@ import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { clientSignOut } from "./actions";
 import { ClientSignOutForm, RegisterServiceWorker } from "@/components/ClientOfflineSupport";
 import LanguageSwitch from "@/components/LanguageSwitch";
+import { Gift } from "lucide-react";
 import { getT } from "@/lib/i18n/server";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
@@ -52,6 +53,14 @@ export default async function ClientPortalLayout({ children }: { children: React
               className="rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
             >
               {t("portal.nav.data")}
+            </Link>
+            <Link
+              href="/client/vantaggi"
+              aria-label="Vantaggi"
+              className="flex items-center gap-1 rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
+            >
+              <Gift size={15} className="text-[#c58f2d]" />
+              <span className="hidden sm:inline">Vantaggi</span>
             </Link>
             <ClientSignOutForm
               action={clientSignOut}

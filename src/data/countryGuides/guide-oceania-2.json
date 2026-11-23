@@ -4,19 +4,81 @@
       "Le Fiji sono oltre 300 isole nel Pacifico del sud, con una cultura dell'accoglienza famosa ('Bula!'): resort per famiglie e coppie sulla Coral Coast e a Denarau, isole da cartolina nelle Mamanuca e Yasawa, immersioni con squali e coralli molli a Taveuni e nella Beqa Lagoon. Spesso si abbinano ad Australia e Nuova Zelanda. La stagione secca va da maggio a ottobre; da novembre ad aprile caldo umido e rischio cicloni."
     ],
     "areas": [
-      { "name": "Mamanuca e Yasawa", "description": "Isole vicine a Nadi con spiagge bianche, resort su isole private e il Blue Lagoon delle Yasawa.", "highlights": ["Isole Mamanuca", "Cloud 9", "Isole Yasawa", "Blue Lagoon", "Grotte di Sawa-i-Lau"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre; da novembre ad aprile caldo, piogge e cicloni." },
-      { "name": "Viti Levu (Nadi, Coral Coast, Pacific Harbour)", "description": "L'isola principale con Denarau, la Coral Coast, le dune di Sigatoka e le immersioni con gli squali della Beqa Lagoon.", "highlights": ["Denarau", "Coral Coast", "Dune di Sigatoka", "Beqa Lagoon", "Villaggi fijiani"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." },
-      { "name": "Taveuni e Vanua Levu", "description": "L'isola giardino con cascate e il Rainbow Reef, e Savusavu.", "highlights": ["Rainbow Reef", "Cascate di Bouma", "Savusavu"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Mamanuca e Yasawa",
+        "description": "Isole vicine a Nadi con spiagge bianche, resort su isole private e il Blue Lagoon delle Yasawa.",
+        "highlights": [
+          "Isole Mamanuca",
+          "Cloud 9",
+          "Isole Yasawa",
+          "Blue Lagoon",
+          "Grotte di Sawa-i-Lau"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; da novembre ad aprile caldo, piogge e cicloni."
+      },
+      {
+        "name": "Viti Levu (Nadi, Coral Coast, Pacific Harbour)",
+        "description": "L'isola principale con Denarau, la Coral Coast, le dune di Sigatoka e le immersioni con gli squali della Beqa Lagoon.",
+        "highlights": [
+          "Denarau",
+          "Coral Coast",
+          "Dune di Sigatoka",
+          "Beqa Lagoon",
+          "Villaggi fijiani"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Taveuni e Vanua Levu",
+        "description": "L'isola giardino con cascate e il Rainbow Reef, e Savusavu.",
+        "highlights": [
+          "Rainbow Reef",
+          "Cascate di Bouma",
+          "Savusavu"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Cerimonia del kava", "description": "Visita a un villaggio con il rito di benvenuto." },
-      { "name": "Island hopping in catamarano", "description": "Con lo Yasawa Flyer tra le isole." },
-      { "name": "Immersione con gli squali a Beqa", "description": "Squali toro e tigre per sub esperti." },
-      { "name": "Cloud 9", "description": "La piattaforma galleggiante in mezzo al mare." }
+      {
+        "name": "Cerimonia del kava",
+        "description": "Visita a un villaggio con il rito di benvenuto."
+      },
+      {
+        "name": "Island hopping in catamarano",
+        "description": "Con lo Yasawa Flyer tra le isole."
+      },
+      {
+        "name": "Immersione con gli squali a Beqa",
+        "description": "Squali toro e tigre per sub esperti."
+      },
+      {
+        "name": "Cloud 9",
+        "description": "La piattaforma galleggiante in mezzo al mare."
+      }
     ],
     "itineraries": [
-      { "title": "Fiji mare", "days": 10, "route": "Nadi (1) → Mamanuca (4) → Yasawa (4)", "description": "Da maggio a ottobre." },
-      { "title": "Australia e Fiji", "days": 18, "route": "Sydney (4) → Uluru (2) → Cairns (3) → Fiji (7)", "description": "Combinato di Oceania." }
+      {
+        "title": "Fiji mare",
+        "days": 10,
+        "route": "Nadi (1) → Mamanuca (4) → Yasawa (4)",
+        "description": "Da maggio a ottobre."
+      },
+      {
+        "title": "Australia e Fiji",
+        "days": 18,
+        "route": "Sydney (4) → Uluru (2) → Cairns (3) → Fiji (7)",
+        "description": "Combinato di Oceania."
+      },
+      {
+        "title": "Fiji in famiglia",
+        "days": 10,
+        "route": "Denarau (4) → Coral Coast (5)",
+        "description": "Resort con kids club, tradizione kava e spiagge accessibili in auto, senza barche tra le isole."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto per soggiorni turistici.",
@@ -29,16 +91,65 @@
       "La Nuova Caledonia è un territorio francese nel Pacifico con una delle lagune più grandi del mondo (patrimonio UNESCO), la cultura kanak, Nouméa dall'atmosfera francese e l'Île des Pins con le araucarie e la piscina naturale. Clima migliore da settembre a dicembre; da gennaio a marzo stagione dei cicloni. Verifica la situazione politica su viaggiaresicuri.it."
     ],
     "areas": [
-      { "name": "Nouméa e Grande Terre", "description": "La capitale con il Centro Culturale Tjibaou, spiagge e l'interno montuoso.", "highlights": ["Centro Tjibaou", "Anse Vata", "Faro di Amédée", "Parco della Rivière Bleue"], "seasons": "DDDBBBBBOOOO", "seasonNote": "Da settembre a dicembre ideale; gennaio–marzo cicloni." },
-      { "name": "Île des Pins e Isole della Lealtà", "description": "Baie turchesi, la piscina naturale di Oro, Lifou e Ouvéa.", "highlights": ["Île des Pins", "Piscina di Oro", "Baia di Kuto", "Ouvéa", "Lifou"], "seasons": "DDDBBBBBOOOO", "seasonNote": "Da settembre a dicembre; balene a luglio–settembre." }
+      {
+        "name": "Nouméa e Grande Terre",
+        "description": "La capitale con il Centro Culturale Tjibaou, spiagge e l'interno montuoso.",
+        "highlights": [
+          "Centro Tjibaou",
+          "Anse Vata",
+          "Faro di Amédée",
+          "Parco della Rivière Bleue"
+        ],
+        "seasons": "DDDBBBBBOOOO",
+        "seasonNote": "Da settembre a dicembre ideale; gennaio–marzo cicloni."
+      },
+      {
+        "name": "Île des Pins e Isole della Lealtà",
+        "description": "Baie turchesi, la piscina naturale di Oro, Lifou e Ouvéa.",
+        "highlights": [
+          "Île des Pins",
+          "Piscina di Oro",
+          "Baia di Kuto",
+          "Ouvéa",
+          "Lifou"
+        ],
+        "seasons": "DDDBBBBBOOOO",
+        "seasonNote": "Da settembre a dicembre; balene a luglio–settembre."
+      }
     ],
     "experiences": [
-      { "name": "Piscina naturale di Oro", "description": "Snorkeling in una laguna protetta." },
-      { "name": "Faro di Amédée", "description": "Gita in giornata sull'isolotto del faro." },
-      { "name": "Cultura kanak", "description": "Il Centro Tjibaou di Renzo Piano." }
+      {
+        "name": "Piscina naturale di Oro",
+        "description": "Snorkeling in una laguna protetta."
+      },
+      {
+        "name": "Faro di Amédée",
+        "description": "Gita in giornata sull'isolotto del faro."
+      },
+      {
+        "name": "Cultura kanak",
+        "description": "Il Centro Tjibaou di Renzo Piano."
+      }
     ],
     "itineraries": [
-      { "title": "Nuova Caledonia", "days": 10, "route": "Nouméa (3) → Île des Pins (3) → Ouvéa o Lifou (3)", "description": "Da settembre a dicembre." }
+      {
+        "title": "Nuova Caledonia",
+        "days": 10,
+        "route": "Nouméa (3) → Île des Pins (3) → Ouvéa o Lifou (3)",
+        "description": "Da settembre a dicembre."
+      },
+      {
+        "title": "Nuova Caledonia e Vanuatu",
+        "days": 12,
+        "route": "Nouméa (3) → Île des Pins (3) → Port Vila (2) → Tanna (2)",
+        "description": "La laguna più grande del mondo e il vulcano Yasur."
+      },
+      {
+        "title": "Australia e Nuova Caledonia",
+        "days": 14,
+        "route": "Sydney (4) → Nouméa (3) → Île des Pins (4)",
+        "description": "Città e mare francese del Pacifico, con voli diretti da Sydney o Brisbane."
+      }
     ],
     "agentTips": [
       "Territorio francese: verifica documenti e regole d'ingresso.",
@@ -51,16 +162,64 @@
       "La Papua Nuova Guinea è una delle ultime frontiere del viaggio: centinaia di culture diverse, i festival tribali delle Highlands (Goroka, Mount Hagen), il fiume Sepik con l'arte delle case degli spiriti, immersioni eccezionali e uccelli del paradiso. Si viaggia con operatori specializzati; la sicurezza in alcune zone è critica. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Highlands (Goroka, Mount Hagen, Tari)", "description": "Festival delle tribù con trucchi e costumi tradizionali, uccelli del paradiso.", "highlights": ["Goroka Show", "Mount Hagen Show", "Huli wigmen", "Uccelli del paradiso"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Festival di Mount Hagen ad agosto e Goroka a settembre." },
-      { "name": "Sepik e costa (Madang, Milne Bay)", "description": "Villaggi sul fiume Sepik e immersioni a Madang, Kimbe Bay e Milne Bay.", "highlights": ["Fiume Sepik", "Kimbe Bay", "Milne Bay", "Madang"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Highlands (Goroka, Mount Hagen, Tari)",
+        "description": "Festival delle tribù con trucchi e costumi tradizionali, uccelli del paradiso.",
+        "highlights": [
+          "Goroka Show",
+          "Mount Hagen Show",
+          "Huli wigmen",
+          "Uccelli del paradiso"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Festival di Mount Hagen ad agosto e Goroka a settembre."
+      },
+      {
+        "name": "Sepik e costa (Madang, Milne Bay)",
+        "description": "Villaggi sul fiume Sepik e immersioni a Madang, Kimbe Bay e Milne Bay.",
+        "highlights": [
+          "Fiume Sepik",
+          "Kimbe Bay",
+          "Milne Bay",
+          "Madang"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Festival delle Highlands", "description": "Centinaia di tribù riunite con danze e costumi." },
-      { "name": "Crociera sul Sepik", "description": "Arte e case degli spiriti." },
-      { "name": "Immersioni a Kimbe Bay", "description": "Biodiversità marina tra le più alte al mondo." }
+      {
+        "name": "Festival delle Highlands",
+        "description": "Centinaia di tribù riunite con danze e costumi."
+      },
+      {
+        "name": "Crociera sul Sepik",
+        "description": "Arte e case degli spiriti."
+      },
+      {
+        "name": "Immersioni a Kimbe Bay",
+        "description": "Biodiversità marina tra le più alte al mondo."
+      }
     ],
     "itineraries": [
-      { "title": "Festival e Sepik", "days": 12, "route": "Port Moresby (1) → Mount Hagen (4) → Sepik (5) → Port Moresby (1)", "description": "Con operatore specializzato, in agosto–settembre." }
+      {
+        "title": "Festival e Sepik",
+        "days": 12,
+        "route": "Port Moresby (1) → Mount Hagen (4) → Sepik (5) → Port Moresby (1)",
+        "description": "Con operatore specializzato, in agosto–settembre."
+      },
+      {
+        "title": "Raja Ampat e Papua",
+        "days": 12,
+        "route": "Port Moresby (1) → Tufi (4) → Rabaul (3) → Kimbe Bay (3)",
+        "description": "Fiordi tropicali, vulcani e immersioni tra le più ricche del Pacifico."
+      },
+      {
+        "title": "Crociera sul Sepik",
+        "days": 9,
+        "route": "Port Moresby (1) → Wewak → crociera sul fiume Sepik (6) → Madang (1)",
+        "description": "Villaggi con case degli spiriti e arte sacra, in barca lungo il grande fiume."
+      }
     ],
     "agentTips": [
       "Serve il visto (e-visa).",
@@ -73,15 +232,58 @@
       "Le Isole Salomone sono un arcipelago poco turistico con relitti della Seconda guerra mondiale, lagune come Marovo, villaggi su isole artificiali e immersioni straordinarie. Strutture semplici, eco-lodge. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Guadalcanal e Honiara", "description": "La capitale, i luoghi della battaglia di Guadalcanal e i relitti.", "highlights": ["Siti della Seconda guerra mondiale", "Relitti di Iron Bottom Sound"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." },
-      { "name": "Provincia occidentale (Marovo, Gizo)", "description": "La laguna di Marovo, Gizo e Munda con immersioni e villaggi.", "highlights": ["Laguna di Marovo", "Gizo", "Munda", "Skull Island"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Guadalcanal e Honiara",
+        "description": "La capitale, i luoghi della battaglia di Guadalcanal e i relitti.",
+        "highlights": [
+          "Siti della Seconda guerra mondiale",
+          "Relitti di Iron Bottom Sound"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Provincia occidentale (Marovo, Gizo)",
+        "description": "La laguna di Marovo, Gizo e Munda con immersioni e villaggi.",
+        "highlights": [
+          "Laguna di Marovo",
+          "Gizo",
+          "Munda",
+          "Skull Island"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Immersioni sui relitti", "description": "Navi e aerei della guerra del Pacifico." },
-      { "name": "Eco-lodge a Marovo", "description": "Villaggi e laguna." }
+      {
+        "name": "Immersioni sui relitti",
+        "description": "Navi e aerei della guerra del Pacifico."
+      },
+      {
+        "name": "Eco-lodge a Marovo",
+        "description": "Villaggi e laguna."
+      }
     ],
     "itineraries": [
-      { "title": "Isole Salomone", "days": 10, "route": "Honiara (2) → Munda (3) → Marovo (4)", "description": "Per sub e viaggiatori avventurosi." }
+      {
+        "title": "Isole Salomone",
+        "days": 10,
+        "route": "Honiara (2) → Munda (3) → Marovo (4)",
+        "description": "Per sub e viaggiatori avventurosi."
+      },
+      {
+        "title": "Guadalcanal storico",
+        "days": 6,
+        "route": "Honiara (5)",
+        "description": "Campi di battaglia della seconda guerra mondiale e relitti da esplorare in snorkeling."
+      },
+      {
+        "title": "Salomone e Papua",
+        "days": 14,
+        "route": "Port Moresby (1) → Rabaul (3) → Honiara (2) → Marovo (5)",
+        "description": "Pacifico melanesiano remoto per viaggiatori esperti e sub."
+      }
     ],
     "agentTips": [
       "Visto all'arrivo.",
@@ -94,17 +296,72 @@
       "Vanuatu è un arcipelago di 80 isole con vulcani attivi (il Yasur di Tanna, dove si arriva sul bordo del cratere), il relitto del SS President Coolidge, i 'blue hole' di Espiritu Santo e la spiaggia di Champagne. Cultura melanesiana viva. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Efate (Port Vila)", "description": "La capitale, le cascate di Mele e la laguna.", "highlights": ["Port Vila", "Cascate di Mele", "Hideaway Island"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre; cicloni da gennaio a marzo." },
-      { "name": "Tanna", "description": "Il vulcano Yasur e i villaggi kastom.", "highlights": ["Vulcano Yasur", "Villaggi kastom"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." },
-      { "name": "Espiritu Santo", "description": "Champagne Beach, i blue hole e il relitto del Coolidge.", "highlights": ["Champagne Beach", "Blue hole", "SS President Coolidge"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Efate (Port Vila)",
+        "description": "La capitale, le cascate di Mele e la laguna.",
+        "highlights": [
+          "Port Vila",
+          "Cascate di Mele",
+          "Hideaway Island"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; cicloni da gennaio a marzo."
+      },
+      {
+        "name": "Tanna",
+        "description": "Il vulcano Yasur e i villaggi kastom.",
+        "highlights": [
+          "Vulcano Yasur",
+          "Villaggi kastom"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Espiritu Santo",
+        "description": "Champagne Beach, i blue hole e il relitto del Coolidge.",
+        "highlights": [
+          "Champagne Beach",
+          "Blue hole",
+          "SS President Coolidge"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Bordo del Yasur", "description": "Il vulcano accessibile più attivo del mondo, al tramonto." },
-      { "name": "Immersione sul Coolidge", "description": "Uno dei relitti più famosi al mondo." },
-      { "name": "Nuotata nei blue hole", "description": "Acqua dolce turchese nella giungla." }
+      {
+        "name": "Bordo del Yasur",
+        "description": "Il vulcano accessibile più attivo del mondo, al tramonto."
+      },
+      {
+        "name": "Immersione sul Coolidge",
+        "description": "Uno dei relitti più famosi al mondo."
+      },
+      {
+        "name": "Nuotata nei blue hole",
+        "description": "Acqua dolce turchese nella giungla."
+      }
     ],
     "itineraries": [
-      { "title": "Vanuatu", "days": 10, "route": "Port Vila (3) → Tanna (2) → Espiritu Santo (4)", "description": "Da maggio a ottobre." }
+      {
+        "title": "Vanuatu",
+        "days": 10,
+        "route": "Port Vila (3) → Tanna (2) → Espiritu Santo (4)",
+        "description": "Da maggio a ottobre."
+      },
+      {
+        "title": "Vanuatu sub",
+        "days": 9,
+        "route": "Espiritu Santo (8)",
+        "description": "La SS President Coolidge, uno dei relitti più famosi al mondo, e le blue holes."
+      },
+      {
+        "title": "Australia e Vanuatu",
+        "days": 12,
+        "route": "Brisbane (3) → Port Vila (3) → Tanna (2) → Port Vila (2)",
+        "description": "Città e Pacifico melanesiano con il vulcano Yasur."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto per soggiorni brevi.",
@@ -117,15 +374,59 @@
       "Samoa è il cuore della cultura polinesiana (fa'a Samoa): villaggi con le fale aperte, la piscina naturale di To Sua, spiagge con fale sulla sabbia, i blowhole di Savai'i e cascate. Ritmi lenti e autentici. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Upolu", "description": "Apia, la To Sua Ocean Trench, la spiaggia di Lalomanu e le cascate.", "highlights": ["To Sua", "Lalomanu", "Cascate di Papapapaitai", "Museo di Stevenson"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." },
-      { "name": "Savai'i", "description": "Campi di lava, i blowhole di Alofaaga e villaggi tradizionali.", "highlights": ["Blowhole di Alofaaga", "Campi di lava", "Canopy walk"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Upolu",
+        "description": "Apia, la To Sua Ocean Trench, la spiaggia di Lalomanu e le cascate.",
+        "highlights": [
+          "To Sua",
+          "Lalomanu",
+          "Cascate di Papapapaitai",
+          "Museo di Stevenson"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      },
+      {
+        "name": "Savai'i",
+        "description": "Campi di lava, i blowhole di Alofaaga e villaggi tradizionali.",
+        "highlights": [
+          "Blowhole di Alofaaga",
+          "Campi di lava",
+          "Canopy walk"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "To Sua Ocean Trench", "description": "Bagno in una voragine collegata al mare." },
-      { "name": "Notte in una fale sulla spiaggia", "description": "Capanne aperte a Lalomanu." }
+      {
+        "name": "To Sua Ocean Trench",
+        "description": "Bagno in una voragine collegata al mare."
+      },
+      {
+        "name": "Notte in una fale sulla spiaggia",
+        "description": "Capanne aperte a Lalomanu."
+      }
     ],
     "itineraries": [
-      { "title": "Samoa", "days": 9, "route": "Upolu (5) → Savai'i (3)", "description": "Da maggio a ottobre." }
+      {
+        "title": "Samoa",
+        "days": 9,
+        "route": "Upolu (5) → Savai'i (3)",
+        "description": "Da maggio a ottobre."
+      },
+      {
+        "title": "Samoa e Fiji",
+        "days": 12,
+        "route": "Nadi (4) → Apia (2) → Lalomanu (4)",
+        "description": "Due isole polinesiane con il To Sua Ocean Trench, una delle piscine naturali più belle."
+      },
+      {
+        "title": "Samoa e Nuova Zelanda",
+        "days": 14,
+        "route": "Auckland (2) → Rotorua (2) → Apia (2) → Savai'i (6)",
+        "description": "Volo diretto da Auckland per chiudere il viaggio in Nuova Zelanda con il mare."
+      }
     ],
     "agentTips": [
       "Gli italiani ricevono un permesso all'arrivo.",
@@ -138,15 +439,58 @@
       "Tonga è l'unico regno del Pacifico mai colonizzato: isole tranquille e soprattutto la possibilità, tra luglio e ottobre, di nuotare con le balene megattere nelle acque di Vava'u e Ha'apai. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Vava'u", "description": "Isole e baie riparate, nuoto con le balene, vela.", "highlights": ["Nuoto con le balene", "Swallows Cave", "Vela"], "seasons": "DDDDBOOOOOBD", "seasonNote": "Balene da luglio a ottobre." },
-      { "name": "Tongatapu e Ha'apai", "description": "La capitale, i blowhole di Mapu'a 'a Vaea e le isole remote di Ha'apai.", "highlights": ["Blowhole", "Ha'amonga 'a Maui", "Ha'apai"], "seasons": "DDDDBOOOOOBD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Vava'u",
+        "description": "Isole e baie riparate, nuoto con le balene, vela.",
+        "highlights": [
+          "Nuoto con le balene",
+          "Swallows Cave",
+          "Vela"
+        ],
+        "seasons": "DDDDBOOOOOBD",
+        "seasonNote": "Balene da luglio a ottobre."
+      },
+      {
+        "name": "Tongatapu e Ha'apai",
+        "description": "La capitale, i blowhole di Mapu'a 'a Vaea e le isole remote di Ha'apai.",
+        "highlights": [
+          "Blowhole",
+          "Ha'amonga 'a Maui",
+          "Ha'apai"
+        ],
+        "seasons": "DDDDBOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Nuotare con le megattere", "description": "Una delle poche nazioni dove è permesso, con operatori autorizzati." },
-      { "name": "Vela a Vava'u", "description": "Charter tra le isole." }
+      {
+        "name": "Nuotare con le megattere",
+        "description": "Una delle poche nazioni dove è permesso, con operatori autorizzati."
+      },
+      {
+        "name": "Vela a Vava'u",
+        "description": "Charter tra le isole."
+      }
     ],
     "itineraries": [
-      { "title": "Balene a Tonga", "days": 9, "route": "Tongatapu (1) → Vava'u (7)", "description": "Da luglio a ottobre." }
+      {
+        "title": "Balene a Tonga",
+        "days": 9,
+        "route": "Tongatapu (1) → Vava'u (7)",
+        "description": "Da luglio a ottobre."
+      },
+      {
+        "title": "Tonga mare",
+        "days": 8,
+        "route": "Tongatapu (2) → Ha'apai (5)",
+        "description": "Isole quasi deserte, kayak e cultura polinesiana autentica."
+      },
+      {
+        "title": "Fiji e Tonga",
+        "days": 12,
+        "route": "Nadi (3) → Tongatapu (1) → Vava'u (7)",
+        "description": "Il mare delle Fiji e la stagione delle balene a Tonga, da luglio a ottobre."
+      }
     ],
     "agentTips": [
       "Gli italiani ricevono un permesso all'arrivo.",
@@ -159,15 +503,58 @@
       "Le Isole Cook sono un arcipelago polinesiano legato alla Nuova Zelanda: Rarotonga con montagne verdi e laguna, Aitutaki con una delle lagune più belle del Pacifico. Atmosfera rilassata e prezzi più accessibili della Polinesia Francese. Stagione migliore da maggio a ottobre."
     ],
     "areas": [
-      { "name": "Rarotonga", "description": "Laguna, la traversata dell'isola a piedi e il mercato del sabato.", "highlights": ["Muri Lagoon", "Cross-Island Track", "Mercato di Punanga Nui"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre; cicloni possibili da dicembre a marzo." },
-      { "name": "Aitutaki", "description": "La laguna turchese con One Foot Island e motu disabitati.", "highlights": ["Laguna di Aitutaki", "One Foot Island", "Honeymoon Island"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Rarotonga",
+        "description": "Laguna, la traversata dell'isola a piedi e il mercato del sabato.",
+        "highlights": [
+          "Muri Lagoon",
+          "Cross-Island Track",
+          "Mercato di Punanga Nui"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre; cicloni possibili da dicembre a marzo."
+      },
+      {
+        "name": "Aitutaki",
+        "description": "La laguna turchese con One Foot Island e motu disabitati.",
+        "highlights": [
+          "Laguna di Aitutaki",
+          "One Foot Island",
+          "Honeymoon Island"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Crociera nella laguna di Aitutaki", "description": "Snorkeling e il timbro sul passaporto a One Foot Island." },
-      { "name": "Island Night", "description": "Danze polinesiane con cena." }
+      {
+        "name": "Crociera nella laguna di Aitutaki",
+        "description": "Snorkeling e il timbro sul passaporto a One Foot Island."
+      },
+      {
+        "name": "Island Night",
+        "description": "Danze polinesiane con cena."
+      }
     ],
     "itineraries": [
-      { "title": "Isole Cook", "days": 10, "route": "Rarotonga (4) → Aitutaki (5)", "description": "Ottima estensione di un viaggio in Nuova Zelanda." }
+      {
+        "title": "Isole Cook",
+        "days": 10,
+        "route": "Rarotonga (4) → Aitutaki (5)",
+        "description": "Ottima estensione di un viaggio in Nuova Zelanda."
+      },
+      {
+        "title": "Cook e Polinesia",
+        "days": 14,
+        "route": "Tahiti (2) → Bora Bora (5) → Rarotonga (2) → Aitutaki (4)",
+        "description": "Due arcipelaghi in un solo viaggio: lusso a Bora Bora e la laguna più bella del Pacifico ad Aitutaki."
+      },
+      {
+        "title": "Nuova Zelanda e Cook",
+        "days": 16,
+        "route": "Auckland (2) → Rotorua (2) → Queenstown (3) → Rarotonga (2) → Aitutaki (5)",
+        "description": "La Nuova Zelanda seguita dal mare delle Cook, con volo diretto da Auckland."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto per soggiorni brevi.",
@@ -180,15 +567,58 @@
       "Guam è un territorio degli Stati Uniti nel Pacifico occidentale, meta soprattutto per turisti giapponesi e coreani: spiagge di Tumon Bay, cultura chamorro, siti della Seconda guerra mondiale e shopping. Stagione migliore da dicembre a giugno."
     ],
     "areas": [
-      { "name": "Tumon e Hagåtña", "description": "Spiagge e hotel di Tumon Bay, la capitale e il belvedere di Two Lovers Point.", "highlights": ["Tumon Bay", "Two Lovers Point", "Plaza de España"], "seasons": "OOOOOBDDDDBO", "seasonNote": "Da dicembre a giugno; tifoni da luglio a novembre." },
-      { "name": "Sud dell'isola", "description": "Villaggi chamorro e il parco storico della guerra del Pacifico.", "highlights": ["War in the Pacific Park", "Umatac", "Cocos Island"], "seasons": "OOOOOBDDDDBO", "seasonNote": "Da dicembre a giugno." }
+      {
+        "name": "Tumon e Hagåtña",
+        "description": "Spiagge e hotel di Tumon Bay, la capitale e il belvedere di Two Lovers Point.",
+        "highlights": [
+          "Tumon Bay",
+          "Two Lovers Point",
+          "Plaza de España"
+        ],
+        "seasons": "OOOOOBDDDDBO",
+        "seasonNote": "Da dicembre a giugno; tifoni da luglio a novembre."
+      },
+      {
+        "name": "Sud dell'isola",
+        "description": "Villaggi chamorro e il parco storico della guerra del Pacifico.",
+        "highlights": [
+          "War in the Pacific Park",
+          "Umatac",
+          "Cocos Island"
+        ],
+        "seasons": "OOOOOBDDDDBO",
+        "seasonNote": "Da dicembre a giugno."
+      }
     ],
     "experiences": [
-      { "name": "Snorkeling a Tumon Bay", "description": "Riserva marina vicina agli hotel." },
-      { "name": "Cucina chamorro", "description": "Mercato notturno del mercoledì." }
+      {
+        "name": "Snorkeling a Tumon Bay",
+        "description": "Riserva marina vicina agli hotel."
+      },
+      {
+        "name": "Cucina chamorro",
+        "description": "Mercato notturno del mercoledì."
+      }
     ],
     "itineraries": [
-      { "title": "Guam e Micronesia", "days": 9, "route": "Guam (3) → Palau (5)", "description": "Combinato con Palau." }
+      {
+        "title": "Guam e Micronesia",
+        "days": 9,
+        "route": "Guam (3) → Palau (5)",
+        "description": "Combinato con Palau."
+      },
+      {
+        "title": "Guam per famiglie",
+        "days": 6,
+        "route": "Tumon (5)",
+        "description": "Spiagge riparate, parchi acquatici e shopping: tappa comoda tra Giappone e Micronesia."
+      },
+      {
+        "title": "Guam e Saipan",
+        "days": 8,
+        "route": "Guam (3) → Saipan (4)",
+        "description": "Due isole delle Marianne con storia della seconda guerra mondiale e la Grotto per i sub."
+      }
     ],
     "agentTips": [
       "Valgono le regole d'ingresso USA (ESTA o Guam-CNMI Visa Waiver: verifica).",
@@ -201,16 +631,63 @@
       "Palau è uno dei migliori luoghi di immersione al mondo: le Rock Islands a forma di funghi verdi sull'acqua turchese, il Jellyfish Lake con meduse innocue, il Blue Corner con squali e mante, i relitti della guerra. È anche un pioniere della tutela ambientale (il 'Palau Pledge'). Stagione migliore da novembre ad aprile."
     ],
     "areas": [
-      { "name": "Koror e Rock Islands", "description": "Le isole calcaree UNESCO, la Milky Way con i fanghi bianchi, il Jellyfish Lake e i siti di immersione.", "highlights": ["Rock Islands", "Jellyfish Lake", "Milky Way", "Blue Corner", "German Channel"], "seasons": "OOOOBDDDDBOO", "seasonNote": "Da novembre ad aprile; tifoni rari ma possibili in estate." },
-      { "name": "Babeldaob", "description": "L'isola più grande con i monoliti di Badrulchau e cascate.", "highlights": ["Monoliti di Badrulchau", "Cascate di Ngardmau"], "seasons": "OOOOBDDDDBOO", "seasonNote": "Da novembre ad aprile." }
+      {
+        "name": "Koror e Rock Islands",
+        "description": "Le isole calcaree UNESCO, la Milky Way con i fanghi bianchi, il Jellyfish Lake e i siti di immersione.",
+        "highlights": [
+          "Rock Islands",
+          "Jellyfish Lake",
+          "Milky Way",
+          "Blue Corner",
+          "German Channel"
+        ],
+        "seasons": "OOOOBDDDDBOO",
+        "seasonNote": "Da novembre ad aprile; tifoni rari ma possibili in estate."
+      },
+      {
+        "name": "Babeldaob",
+        "description": "L'isola più grande con i monoliti di Badrulchau e cascate.",
+        "highlights": [
+          "Monoliti di Badrulchau",
+          "Cascate di Ngardmau"
+        ],
+        "seasons": "OOOOBDDDDBOO",
+        "seasonNote": "Da novembre ad aprile."
+      }
     ],
     "experiences": [
-      { "name": "Immersioni al Blue Corner", "description": "Squali, mante e branchi di barracuda." },
-      { "name": "Nuoto con le meduse", "description": "Nel Jellyfish Lake, quando aperto." },
-      { "name": "Kayak tra le Rock Islands", "description": "Lagune e spiagge nascoste." }
+      {
+        "name": "Immersioni al Blue Corner",
+        "description": "Squali, mante e branchi di barracuda."
+      },
+      {
+        "name": "Nuoto con le meduse",
+        "description": "Nel Jellyfish Lake, quando aperto."
+      },
+      {
+        "name": "Kayak tra le Rock Islands",
+        "description": "Lagune e spiagge nascoste."
+      }
     ],
     "itineraries": [
-      { "title": "Palau sub", "days": 9, "route": "Koror (8)", "description": "Da novembre ad aprile, con pacchetti immersione." }
+      {
+        "title": "Palau sub",
+        "days": 9,
+        "route": "Koror (8)",
+        "description": "Da novembre ad aprile, con pacchetti immersione."
+      },
+      {
+        "title": "Palau mare e laghi",
+        "days": 8,
+        "route": "Koror (7), con Rock Islands e Jellyfish Lake",
+        "description": "Rock Islands in kayak e il lago delle meduse, quando è aperto ai visitatori."
+      },
+      {
+        "title": "Palau e Filippine",
+        "days": 12,
+        "route": "Manila (1) → Palawan (4) → Palau (6)",
+        "description": "Due mari diversi: lagune di El Nido e immersioni di livello mondiale a Palau."
+      }
     ],
     "agentTips": [
       "Gli italiani ricevono un permesso all'arrivo; all'ingresso si firma il Palau Pledge.",
@@ -223,15 +700,57 @@
       "Gli Stati Federati di Micronesia comprendono Chuuk con la laguna dei relitti giapponesi (paradiso dei sub), Pohnpei con le rovine di Nan Madol costruite sull'acqua, Yap con le monete di pietra e le mante, e Kosrae. Turismo di nicchia per sub e viaggiatori curiosi. Stagione migliore da dicembre ad aprile."
     ],
     "areas": [
-      { "name": "Chuuk", "description": "La laguna con oltre 60 relitti della flotta giapponese.", "highlights": ["Relitti di Truk Lagoon", "Fujikawa Maru"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." },
-      { "name": "Pohnpei e Yap", "description": "Le rovine di Nan Madol, le cascate, le monete di pietra e le mante di Yap.", "highlights": ["Nan Madol", "Monete di pietra", "Mante di Yap"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." }
+      {
+        "name": "Chuuk",
+        "description": "La laguna con oltre 60 relitti della flotta giapponese.",
+        "highlights": [
+          "Relitti di Truk Lagoon",
+          "Fujikawa Maru"
+        ],
+        "seasons": "OOOOBDDDDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      },
+      {
+        "name": "Pohnpei e Yap",
+        "description": "Le rovine di Nan Madol, le cascate, le monete di pietra e le mante di Yap.",
+        "highlights": [
+          "Nan Madol",
+          "Monete di pietra",
+          "Mante di Yap"
+        ],
+        "seasons": "OOOOBDDDDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
     ],
     "experiences": [
-      { "name": "Immersioni a Chuuk", "description": "Liveaboard sui relitti." },
-      { "name": "Nan Madol", "description": "La 'Venezia del Pacifico' in kayak." }
+      {
+        "name": "Immersioni a Chuuk",
+        "description": "Liveaboard sui relitti."
+      },
+      {
+        "name": "Nan Madol",
+        "description": "La 'Venezia del Pacifico' in kayak."
+      }
     ],
     "itineraries": [
-      { "title": "Micronesia sub", "days": 12, "route": "Guam (1) → Chuuk (6) → Pohnpei (3)", "description": "Con il volo 'island hopper'." }
+      {
+        "title": "Micronesia sub",
+        "days": 12,
+        "route": "Guam (1) → Chuuk (6) → Pohnpei (3)",
+        "description": "Con il volo 'island hopper'."
+      },
+      {
+        "title": "Yap e le pietre-moneta",
+        "days": 7,
+        "route": "Guam (1) → Yap (5)",
+        "description": "Mante, villaggi tradizionali e le grandi pietre rai usate come moneta."
+      },
+      {
+        "title": "Kosrae e Pohnpei",
+        "days": 9,
+        "route": "Pohnpei (4) → Kosrae (4)",
+        "description": "Le rovine di Nan Madol, cascate e la barriera intatta di Kosrae, per chi cerca il Pacifico più remoto."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto per soggiorni brevi (verifica).",
@@ -244,14 +763,47 @@
       "Le Isole Marshall sono atolli bassissimi nel Pacifico centrale: lagune, pesca e immersioni a Bikini (sito dei test nucleari, oggi relitti). Turismo quasi assente e collegamenti limitati. Stagione migliore da dicembre ad aprile."
     ],
     "areas": [
-      { "name": "Majuro e atolli", "description": "La capitale su un atollo stretto e lagune remote.", "highlights": ["Laguna di Majuro", "Arno", "Bikini Atoll"], "seasons": "OOOOBDDDDDBO", "seasonNote": "Da dicembre ad aprile." }
+      {
+        "name": "Majuro e atolli",
+        "description": "La capitale su un atollo stretto e lagune remote.",
+        "highlights": [
+          "Laguna di Majuro",
+          "Arno",
+          "Bikini Atoll"
+        ],
+        "seasons": "OOOOBDDDDDBO",
+        "seasonNote": "Da dicembre ad aprile."
+      }
     ],
     "experiences": [
-      { "name": "Relitti di Bikini", "description": "Per sub esperti, quando accessibile." },
-      { "name": "Vita degli atolli", "description": "Canoe e villaggi remoti." }
+      {
+        "name": "Relitti di Bikini",
+        "description": "Per sub esperti, quando accessibile."
+      },
+      {
+        "name": "Vita degli atolli",
+        "description": "Canoe e villaggi remoti."
+      }
     ],
     "itineraries": [
-      { "title": "Isole Marshall", "days": 6, "route": "Majuro (5)", "description": "Parte di un viaggio 'island hopper' nel Pacifico." }
+      {
+        "title": "Isole Marshall",
+        "days": 6,
+        "route": "Majuro (5)",
+        "description": "Parte di un viaggio 'island hopper' nel Pacifico."
+      },
+      {
+        "title": "Bikini sub",
+        "days": 10,
+        "route": "Majuro (1) → Bikini (8)",
+        "description": "Immersioni sulla flotta affondata dei test nucleari: viaggio per sub esperti con partenze limitate."
+      },
+      {
+        "title": "Micronesia island hopping",
+        "days": 14,
+        "route": "Guam (1) → Chuuk (4) → Pohnpei (3) → Kosrae (2) → Majuro (3)",
+        "description": "Il leggendario 'island hopper' di United che collega gli atolli del Pacifico centrale."
+      }
     ],
     "agentTips": [
       "Verifica le regole d'ingresso (visto).",
@@ -264,14 +816,53 @@
       "Kiribati è un arcipelago di atolli a cavallo dell'equatore e della linea del cambiamento di data: Kiritimati (Christmas Island) è famosa per la pesca a mosca e il birdwatching, Tarawa per la storia della Seconda guerra mondiale. Destinazione remota e di nicchia. Clima caldo tutto l'anno."
     ],
     "areas": [
-      { "name": "Kiritimati (Christmas Island)", "description": "Lagune per la pesca al bonefish e colonie di uccelli marini.", "highlights": ["Pesca a mosca", "Uccelli marini", "Laguna"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Visitabile tutto l'anno." },
-      { "name": "Tarawa", "description": "La capitale e i resti della battaglia di Tarawa.", "highlights": ["Siti della Seconda guerra mondiale", "Laguna"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Tutto l'anno." }
+      {
+        "name": "Kiritimati (Christmas Island)",
+        "description": "Lagune per la pesca al bonefish e colonie di uccelli marini.",
+        "highlights": [
+          "Pesca a mosca",
+          "Uccelli marini",
+          "Laguna"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Visitabile tutto l'anno."
+      },
+      {
+        "name": "Tarawa",
+        "description": "La capitale e i resti della battaglia di Tarawa.",
+        "highlights": [
+          "Siti della Seconda guerra mondiale",
+          "Laguna"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Tutto l'anno."
+      }
     ],
     "experiences": [
-      { "name": "Pesca a mosca a Kiritimati", "description": "Tra le migliori al mondo per il bonefish." }
+      {
+        "name": "Pesca a mosca a Kiritimati",
+        "description": "Tra le migliori al mondo per il bonefish."
+      }
     ],
     "itineraries": [
-      { "title": "Pesca a Kiritimati", "days": 9, "route": "Honolulu o Fiji → Kiritimati (7)", "description": "Per appassionati di pesca." }
+      {
+        "title": "Pesca a Kiritimati",
+        "days": 9,
+        "route": "Honolulu o Fiji → Kiritimati (7)",
+        "description": "Per appassionati di pesca."
+      },
+      {
+        "title": "Tarawa",
+        "days": 6,
+        "route": "Fiji → Tarawa (5)",
+        "description": "Storia della battaglia del 1943 e vita sugli atolli; voli poco frequenti da programmare con largo anticipo."
+      },
+      {
+        "title": "Fiji e Kiribati",
+        "days": 12,
+        "route": "Nadi (2) → Mamanuca (4) → Kiritimati (5)",
+        "description": "Mare delle Fiji e pesca al bonefish nell'atollo più grande del mondo."
+      }
     ],
     "agentTips": [
       "Verifica le regole d'ingresso.",
@@ -284,13 +875,43 @@
       "Tuvalu è uno dei paesi meno visitati al mondo: nove atolli bassissimi minacciati dall'innalzamento del mare, con la laguna di Funafuti e un'area di conservazione marina. Turismo quasi inesistente, solo per viaggiatori che collezionano paesi."
     ],
     "areas": [
-      { "name": "Funafuti", "description": "La laguna, l'area di conservazione marina e la pista d'atterraggio che diventa piazza del paese.", "highlights": ["Laguna di Funafuti", "Area di conservazione", "Isolotti"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Da maggio a ottobre più secco." }
+      {
+        "name": "Funafuti",
+        "description": "La laguna, l'area di conservazione marina e la pista d'atterraggio che diventa piazza del paese.",
+        "highlights": [
+          "Laguna di Funafuti",
+          "Area di conservazione",
+          "Isolotti"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Da maggio a ottobre più secco."
+      }
     ],
     "experiences": [
-      { "name": "Isolotti della laguna", "description": "Gita in barca alla riserva marina." }
+      {
+        "name": "Isolotti della laguna",
+        "description": "Gita in barca alla riserva marina."
+      }
     ],
     "itineraries": [
-      { "title": "Tuvalu", "days": 5, "route": "Fiji → Funafuti (4)", "description": "Per viaggiatori 'collezionisti'." }
+      {
+        "title": "Tuvalu",
+        "days": 5,
+        "route": "Fiji → Funafuti (4)",
+        "description": "Per viaggiatori 'collezionisti'."
+      },
+      {
+        "title": "Fiji e Tuvalu",
+        "days": 10,
+        "route": "Nadi (4) → Funafuti (4)",
+        "description": "Uno degli stati più piccoli e minacciati dal mare, con estensione alle Fiji."
+      },
+      {
+        "title": "Pacifico remoto",
+        "days": 14,
+        "route": "Nadi (2) → Funafuti (3) → Tarawa (4) → Nadi (2)",
+        "description": "Collezionisti di paesi: atolli tra Tuvalu e Kiribati."
+      }
     ],
     "agentTips": [
       "Visto all'arrivo.",
@@ -303,13 +924,43 @@
       "Nauru è uno dei paesi più piccoli del mondo, un'isola di 21 km² nel Pacifico centrale, segnata dall'estrazione dei fosfati. Si gira in un'ora e il turismo è quasi inesistente: interessa solo chi colleziona paesi."
     ],
     "areas": [
-      { "name": "Nauru", "description": "La costa con le formazioni di corallo, la laguna di Buada e le miniere dell'altopiano.", "highlights": ["Laguna di Buada", "Anibare Bay", "Command Ridge"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Clima equatoriale; da maggio a ottobre più secco." }
+      {
+        "name": "Nauru",
+        "description": "La costa con le formazioni di corallo, la laguna di Buada e le miniere dell'altopiano.",
+        "highlights": [
+          "Laguna di Buada",
+          "Anibare Bay",
+          "Command Ridge"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Clima equatoriale; da maggio a ottobre più secco."
+      }
     ],
     "experiences": [
-      { "name": "Giro dell'isola", "description": "In auto in meno di un'ora." }
+      {
+        "name": "Giro dell'isola",
+        "description": "In auto in meno di un'ora."
+      }
     ],
     "itineraries": [
-      { "title": "Nauru", "days": 3, "route": "Brisbane o Fiji → Nauru (2)", "description": "Per viaggiatori 'collezionisti'." }
+      {
+        "title": "Nauru",
+        "days": 3,
+        "route": "Brisbane o Fiji → Nauru (2)",
+        "description": "Per viaggiatori 'collezionisti'."
+      },
+      {
+        "title": "Nauru e Fiji",
+        "days": 9,
+        "route": "Nadi (3) → Nauru (3) → Fiji (2)",
+        "description": "Uno dei paesi meno visitati al mondo con estensione di mare alle Fiji."
+      },
+      {
+        "title": "Nauru e Australia",
+        "days": 10,
+        "route": "Brisbane (3) → Nauru (3) → Brisbane (2)",
+        "description": "Per collezionisti di paesi: voli Nauru Airlines da Brisbane."
+      }
     ],
     "agentTips": [
       "Serve il visto da richiedere in anticipo.",

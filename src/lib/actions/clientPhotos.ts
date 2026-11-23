@@ -107,3 +107,29 @@ export async function setPhotoCaption(id: string, caption: string): Promise<Phot
   const { error } = await supabase.from("client_photos").update({ caption: parsed.data || null }).eq("id", id).eq("user_id", user.id);
   return error ? { ok: false, error: "Non sono riuscito a salvare la didascalia." } : { ok: true };
 }
+
+// L'ultima foto di ogni paese (link temporaneo), per i bollini sul mappamondo e le schede dei luoghi
+export async function latestPhotoByCountry(): Promise<Record<string, string>> {
+  const user = await getCachedUser();
+  if (!user) return {};
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("client_photos")
+    .select("country, file_path")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(2000);
+  if (error || !data) return {};
+  const firstByCountry = new Map<string, string>();
+  for (const row of data as { country: string; file_path: string }[]) if (!firstByCountry.has(row.country)) firstByCountry.set(row.country, row.file_path);
+  if (firstByCountry.size === 0) return {};
+  const paths = [...firstByCountry.values()].slice(0, 150);
+  const { data: signed } = await supabase.storage.from("client-photos").createSignedUrls(paths, SIGNED_SECONDS);
+  const urlByPath = new Map((signed ?? []).map((s) => [s.path ?? "", s.signedUrl]));
+  const out: Record<string, string> = {};
+  for (const [country, path] of firstByCountry) {
+    const url = urlByPath.get(path);
+    if (url) out[country] = url;
+  }
+  return out;
+}

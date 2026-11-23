@@ -9,11 +9,21 @@ const today = () => new Date().toISOString().slice(0, 10);
 const longDate = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("it-IT", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 
 // Il diario di un paese: note private con data e luogo
-export default function JournalPanel({ country, trips, onCountChange }: { country: string; trips: BoardTrip[]; onCountChange: (n: number) => void }) {
+export default function JournalPanel({
+  country,
+  trips,
+  initialPlace = null,
+  onCountChange,
+}: {
+  country: string;
+  trips: BoardTrip[];
+  initialPlace?: string | null;
+  onCountChange: (n: number) => void;
+}) {
   const [entries, setEntries] = useState<JournalEntry[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [body, setBody] = useState("");
-  const [place, setPlace] = useState("");
+  const [place, setPlace] = useState(initialPlace ?? "");
   const [date, setDate] = useState(today());
   const [tripId, setTripId] = useState(trips.length === 1 ? trips[0].id : "");
   const [saving, setSaving] = useState(false);
@@ -73,7 +83,7 @@ export default function JournalPanel({ country, trips, onCountChange }: { countr
       <form onSubmit={save} className="mb-5 flex flex-col gap-2 rounded-2xl border border-[#e6d7bb] bg-white p-3">
         <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={4} maxLength={4000} placeholder="Cosa hai visto, mangiato, provato oggi? Scrivi i tuoi ricordi…" className={`${field} resize-y`} />
         <div className="flex flex-wrap items-center gap-2">
-          <input value={place} onChange={(e) => setPlace(e.target.value)} maxLength={80} placeholder="Luogo (es. Bangkok)" className={`${field} min-w-0 flex-1`} />
+          <input value={place} onChange={(e) => setPlace(e.target.value)} maxLength={80} placeholder="Luogo (es. Bangkok)" className={`${field} w-full sm:w-auto sm:min-w-0 sm:flex-1`} />
           <input type="date" value={date} max={today()} onChange={(e) => setDate(e.target.value)} aria-label="Giorno" className={field} />
           {trips.length > 1 && (
             <select value={tripId} onChange={(e) => setTripId(e.target.value)} aria-label="Viaggio" className={field}>

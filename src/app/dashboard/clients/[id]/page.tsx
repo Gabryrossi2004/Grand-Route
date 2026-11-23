@@ -5,6 +5,7 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { decryptField } from "@/lib/encryption";
 import type { Client, Trip } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
+import ClientLoyaltyCard from "@/components/ClientLoyaltyCard";
 import SubmitButton from "@/components/SubmitButton";
 import { deleteClient, linkTripToClient, unlinkTripFromClient, updateClient } from "../actions";
 
@@ -131,6 +132,8 @@ export default async function ClientDetailPage({
           Salva modifiche
         </SubmitButton>
       </form>
+
+      <ClientLoyaltyCard clientId={id} ownerId={user?.id ?? ""} />
 
       <section>
         <h2 className="mb-3 text-lg font-semibold text-slate-900">Viaggi di questo cliente</h2>

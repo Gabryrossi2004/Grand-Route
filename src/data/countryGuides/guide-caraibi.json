@@ -66,6 +66,12 @@
         "days": 10,
         "route": "Miami (3) → Nassau o Exuma (6)",
         "description": "Combinato con la Florida."
+      },
+      {
+        "title": "Bahamas in barca",
+        "days": 9,
+        "route": "Nassau (1) → Exuma in catamarano (7)",
+        "description": "Le cayes più belle si vedono dal mare: maialini nuotatori, Thunderball Grotto e banchi di sabbia."
       }
     ],
     "agentTips": [
@@ -149,6 +155,18 @@
         "days": 10,
         "route": "Montego Bay (1) → Ocho Rios (3) → Negril (5)",
         "description": "Mare e cultura, da dicembre ad aprile."
+      },
+      {
+        "title": "Giamaica autentica",
+        "days": 10,
+        "route": "Kingston (2) → Blue Mountains (2) → Port Antonio (2) → Treasure Beach (3)",
+        "description": "Reggae, piantagioni di caffè e la costa meno turistica dell'isola."
+      },
+      {
+        "title": "Settimana a Montego Bay",
+        "days": 8,
+        "route": "Montego Bay (7)",
+        "description": "Resort all-inclusive, rafting sul Martha Brae e la cascata di Dunn's River in giornata."
       }
     ],
     "agentTips": [
@@ -215,6 +233,18 @@
         "days": 8,
         "route": "San Juan (3) → Fajardo ed El Yunque (1) → Vieques o Culebra (3)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Porto Rico in auto",
+        "days": 10,
+        "route": "San Juan (3) → El Yunque (1) → Ponce (2) → Rincón (3)",
+        "description": "Il giro dell'isola: foresta pluviale, città coloniali e spiagge da surf a ovest."
+      },
+      {
+        "title": "Crociera dai Caraibi",
+        "days": 9,
+        "route": "San Juan (2) → crociera nei Caraibi orientali (7)",
+        "description": "San Juan è porto di partenza di molte crociere: conviene aggiungere due notti in città."
       }
     ],
     "agentTips": [
@@ -283,6 +313,18 @@
         "days": 9,
         "route": "Costa ovest o sud (8)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Barbados e Grenadine",
+        "days": 11,
+        "route": "Barbados (5) → Mustique o Bequia (5)",
+        "description": "Mare e vita mondana a Barbados, poi un'isola tranquilla delle Grenadine raggiungibile con un volo breve."
+      },
+      {
+        "title": "Barbados a cavallo tra le coste",
+        "days": 9,
+        "route": "Costa ovest (5) → Costa est, Bathsheba (3)",
+        "description": "Prima la costa riparata con hotel di lusso, poi la costa atlantica selvaggia tra surf, giardini e piantagioni di rum."
       }
     ],
     "agentTips": [
@@ -341,6 +383,18 @@
         "days": 10,
         "route": "Trinidad (3) → Tobago (6)",
         "description": "Da gennaio a maggio."
+      },
+      {
+        "title": "Carnevale di Trinidad",
+        "days": 7,
+        "route": "Port of Spain (6)",
+        "description": "Uno dei carnevali più famosi al mondo, con calypso, steelband e J'ouvert all'alba."
+      },
+      {
+        "title": "Tobago natura",
+        "days": 8,
+        "route": "Tobago (7)",
+        "description": "Foresta pluviale più antica protetta dell'emisfero, barriera di Buccoo e spiagge di Castara."
       }
     ],
     "agentTips": [
@@ -430,6 +484,12 @@
         "days": 12,
         "route": "Aruba (5) → Curaçao (6)",
         "description": "Isole olandesi con voli brevi."
+      },
+      {
+        "title": "Aruba in famiglia",
+        "days": 9,
+        "route": "Palm Beach (8)",
+        "description": "Hotel con kids club, acqua calma e bassa, escursioni in jeep nel parco Arikok e snorkeling: Aruba è fuori dalla fascia degli uragani."
       }
     ],
     "agentTips": [
@@ -488,6 +548,18 @@
         "days": 9,
         "route": "Willemstad (3) → Westpunt (5)",
         "description": "Tutto l'anno."
+      },
+      {
+        "title": "Curaçao sub",
+        "days": 8,
+        "route": "Willemstad (1) → Westpunt (6)",
+        "description": "Immersioni da riva con 65 siti accessibili senza barca; la capitale colorata è patrimonio UNESCO."
+      },
+      {
+        "title": "ABC tra Curaçao e Bonaire",
+        "days": 11,
+        "route": "Curaçao (5) → Bonaire (5)",
+        "description": "Città coloniale e snorkeling a Curaçao, poi Bonaire per sub, fenicotteri e kitesurf."
       }
     ],
     "agentTips": [
@@ -541,6 +613,18 @@
         "days": 10,
         "route": "New York (4) → Bermuda (5)",
         "description": "Volo di 2 ore da New York."
+      },
+      {
+        "title": "Bermuda mare e golf",
+        "days": 8,
+        "route": "Bermuda (7)",
+        "description": "Spiagge rosa di Horseshoe Bay, grotte e campi da golf; voli via Londra o città USA, stagione migliore maggio-ottobre."
+      },
+      {
+        "title": "Boston e Bermuda",
+        "days": 9,
+        "route": "Boston (3) → Bermuda (5)",
+        "description": "Città e mare con un volo di due ore: ottima per maggio, giugno e settembre."
       }
     ],
     "agentTips": [
@@ -594,6 +678,18 @@
         "days": 8,
         "route": "Seven Mile Beach (7)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Cayman sub",
+        "days": 8,
+        "route": "Grand Cayman (4) → Little Cayman (3)",
+        "description": "Stingray City e i muri verticali di Bloody Bay, tra i migliori siti d'immersione dei Caraibi."
+      },
+      {
+        "title": "Miami e Cayman",
+        "days": 10,
+        "route": "Miami (3) → Grand Cayman (6)",
+        "description": "Città e mare con un volo di un'ora; ottimo per coppie da dicembre ad aprile."
       }
     ],
     "agentTips": [
@@ -647,6 +743,18 @@
         "days": 9,
         "route": "Providenciales (8)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Turks e Caicos in famiglia",
+        "days": 9,
+        "route": "Grace Bay (8)",
+        "description": "Acqua bassa e cristallina, resort con kids club e snorkeling a Smith's Reef."
+      },
+      {
+        "title": "Isole remote",
+        "days": 10,
+        "route": "Providenciales (4) → Middle Caicos (2) → Grand Turk (3)",
+        "description": "Grotte, spiagge vuote e balene megattere da gennaio ad aprile."
       }
     ],
     "agentTips": [
@@ -703,6 +811,18 @@
         "days": 9,
         "route": "Tortola → crociera di 7 notti tra le isole",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Virgin Gorda",
+        "days": 8,
+        "route": "Tortola (1) → Virgin Gorda (6)",
+        "description": "The Baths, massi di granito sulla spiaggia, e resort di charme."
+      },
+      {
+        "title": "BVI e USVI",
+        "days": 10,
+        "route": "St. Thomas (2) → St. John (3) → Tortola (1) → Jost Van Dyke (3)",
+        "description": "Isole vicine collegate da traghetti, con bar sulla spiaggia e snorkeling."
       }
     ],
     "agentTips": [
@@ -756,6 +876,18 @@
         "days": 9,
         "route": "St. Thomas (2) → St. John (4) → BVI in traghetto (2)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "St. Croix",
+        "days": 8,
+        "route": "Christiansted (7)",
+        "description": "L'isola più tranquilla delle Vergini americane, con Buck Island e il rum Cruzan."
+      },
+      {
+        "title": "Vela alle Isole Vergini",
+        "days": 9,
+        "route": "St. Thomas (1) → catamarano (7)",
+        "description": "Una settimana in barca tra USVI e BVI, la zona di vela più facile dei Caraibi."
       }
     ],
     "agentTips": [
@@ -812,6 +944,18 @@
         "days": 9,
         "route": "Resort ad Antigua (7) → gita a Barbuda",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Antigua e Barbuda",
+        "days": 10,
+        "route": "Antigua (6) → Barbuda (3)",
+        "description": "Resort sulle 365 spiagge di Antigua e qualche notte nella quiete assoluta di Barbuda, con la colonia di fregate e la spiaggia rosa."
+      },
+      {
+        "title": "Vela da English Harbour",
+        "days": 9,
+        "route": "Antigua, Nelson's Dockyard (1) → crociera in catamarano (7)",
+        "description": "Una settimana in barca con skipper tra le baie di Antigua, partendo dal cantiere storico di Nelson; perfetto per gruppi di amici."
       }
     ],
     "agentTips": [
@@ -869,6 +1013,18 @@
         "days": 10,
         "route": "Soufrière (5) → Rodney Bay (4)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Saint Lucia avventura",
+        "days": 8,
+        "route": "Soufrière (7)",
+        "description": "Salita al Gros Piton, vulcano drive-in, bagni di fango e immersioni ad Anse Chastanet."
+      },
+      {
+        "title": "Saint Lucia e Martinica",
+        "days": 11,
+        "route": "Martinica (4) → traghetto → Saint Lucia (6)",
+        "description": "Antille francesi e inglesi in un solo viaggio, collegate da un traghetto veloce."
       }
     ],
     "agentTips": [
@@ -922,6 +1078,18 @@
         "days": 10,
         "route": "Grenada (6) → Carriacou (3)",
         "description": "Da gennaio a maggio."
+      },
+      {
+        "title": "Grenada spezie e immersioni",
+        "days": 8,
+        "route": "Grand Anse (7)",
+        "description": "Il parco sottomarino di sculture, cascate e piantagioni di noce moscata; spiaggia di Grand Anse a due passi."
+      },
+      {
+        "title": "Grenadine in barca",
+        "days": 10,
+        "route": "Grenada (2) → catamarano fino a Tobago Cays (7)",
+        "description": "Crociera di una settimana verso nord tra Carriacou, Union e le Tobago Cays."
       }
     ],
     "agentTips": [
@@ -979,6 +1147,18 @@
         "days": 8,
         "route": "Roseau (3) → nord e Portsmouth (4)",
         "description": "Da gennaio a maggio."
+      },
+      {
+        "title": "Dominica e Guadalupa",
+        "days": 11,
+        "route": "Guadalupa (4) → traghetto → Dominica (6)",
+        "description": "Combinazione via mare con le Antille francesi: spiagge in Guadalupa, cascate e sorgenti calde in Dominica."
+      },
+      {
+        "title": "Balene e immersioni",
+        "days": 8,
+        "route": "Roseau e Soufrière (7)",
+        "description": "Capodogli residenti tutto l'anno al largo di Roseau e immersioni a Champagne Reef tra le bollicine vulcaniche."
       }
     ],
     "agentTips": [
@@ -1031,6 +1211,18 @@
         "days": 9,
         "route": "St. Kitts (4) → Nevis (4)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "St. Kitts e Antigua",
+        "days": 10,
+        "route": "St. Kitts (4) → Antigua (5)",
+        "description": "La fortezza di Brimstone Hill, il treno panoramico delle piantagioni e le spiagge di Antigua."
+      },
+      {
+        "title": "Nevis in villa",
+        "days": 8,
+        "route": "Nevis (7)",
+        "description": "Piantagioni trasformate in hotel di charme e un'atmosfera tranquilla, a 10 minuti di barca da St. Kitts."
       }
     ],
     "agentTips": [
@@ -1085,6 +1277,18 @@
         "days": 10,
         "route": "St. Vincent → crociera di 7 notti (Bequia, Mustique, Tobago Cays, Union)",
         "description": "Da dicembre a maggio."
+      },
+      {
+        "title": "St. Vincent e Bequia",
+        "days": 9,
+        "route": "St. Vincent (3) → Bequia (5)",
+        "description": "La Soufrière, cascate e l'isola più autentica delle Grenadine."
+      },
+      {
+        "title": "Mustique e Grenadine",
+        "days": 9,
+        "route": "Barbados (1) → Mustique (4) → Canouan (3)",
+        "description": "Il lusso delle Grenadine, con voli brevi da Barbados."
       }
     ],
     "agentTips": [
@@ -1128,6 +1332,18 @@
         "days": 9,
         "route": "St. Martin (2) → St. Barth (6)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "St. Barth in barca",
+        "days": 9,
+        "route": "St. Martin (1) → St. Barth (3) → crociera in catamarano (4)",
+        "description": "Lusso e vela: qualche notte a Gustavia e poi in barca tra Saint Martin, Anguilla e le baie più riparate."
+      },
+      {
+        "title": "Settimana a St. Barth",
+        "days": 8,
+        "route": "St. Barth (7)",
+        "description": "Villa o boutique hotel su St-Jean o Flamands, con auto a noleggio per girare le 14 spiagge; arrivo con volo breve da St. Martin."
       }
     ],
     "agentTips": [
@@ -1185,6 +1401,18 @@
         "days": 10,
         "route": "St. Martin (6) → St. Barth o Anguilla (3)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Sint Maarten in famiglia",
+        "days": 8,
+        "route": "Simpson Bay (7)",
+        "description": "Due culture in un'isola, aerei che sfiorano Maho Beach e spiagge francesi a Orient Bay."
+      },
+      {
+        "title": "Crociera dai Caraibi",
+        "days": 9,
+        "route": "Sint Maarten (2) → crociera di 7 notti",
+        "description": "Porto di molte crociere nei Caraibi orientali: due notti prima della partenza."
       }
     ],
     "agentTips": [
@@ -1228,6 +1456,18 @@
         "days": 9,
         "route": "St. Martin → traghetto → Anguilla (7)",
         "description": "Da dicembre ad aprile."
+      },
+      {
+        "title": "Anguilla e St. Barth",
+        "days": 10,
+        "route": "St. Martin (1) → Anguilla (5) → St. Barth (3)",
+        "description": "Due isole esclusive in un solo viaggio: spiagge bianche e ristoranti gourmet ad Anguilla, glamour francese a St. Barth."
+      },
+      {
+        "title": "Anguilla e Miami",
+        "days": 11,
+        "route": "Miami (3) → Anguilla (7)",
+        "description": "Volo comodo via Miami con qualche giorno di città, poi una settimana di mare tra Shoal Bay e Meads Bay."
       }
     ],
     "agentTips": [

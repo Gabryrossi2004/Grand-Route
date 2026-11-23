@@ -77,6 +77,18 @@
         "days": 10,
         "route": "Dakar (2) → Gorée → Lago Rosa (1) → Saint-Louis (2) → Sine-Saloum (2) → Saly (2)",
         "description": "Da novembre a maggio."
+      },
+      {
+        "title": "Casamance",
+        "days": 8,
+        "route": "Ziguinchor (1) → Cap Skirring (4) → villaggi diola (2)",
+        "description": "La regione più verde del Senegal, tra spiagge e case a impluvium."
+      },
+      {
+        "title": "Settimana a Saly",
+        "days": 8,
+        "route": "Saly (7)",
+        "description": "Mare e resort a un'ora da Dakar, con escursioni al Lago Rosa e all'isola di Gorée."
       }
     ],
     "agentTips": [
@@ -134,6 +146,18 @@
         "days": 9,
         "route": "Kololi (6) → crociera sul fiume (2)",
         "description": "Da novembre ad aprile."
+      },
+      {
+        "title": "Gambia e Senegal",
+        "days": 10,
+        "route": "Kololi (3) → Sine-Saloum in Senegal (3) → Dakar (2)",
+        "description": "Spiagge del Gambia e delta del Saloum con le sue mangrovie, rientro da Dakar."
+      },
+      {
+        "title": "Birdwatching in Gambia",
+        "days": 8,
+        "route": "Kololi (2) → Tendaba (2) → Georgetown (2) → Kololi (1)",
+        "description": "Oltre 500 specie di uccelli lungo il fiume: tra novembre e marzo è una meta per appassionati."
       }
     ],
     "agentTips": [
@@ -186,6 +210,18 @@
         "days": 8,
         "route": "Bissau (1) → Bubaque e Orango (6)",
         "description": "Isole selvagge da novembre a maggio."
+      },
+      {
+        "title": "Bissau e Cacheu",
+        "days": 6,
+        "route": "Bissau (2) → Cacheu (2) → Varela (1)",
+        "description": "Città coloniale, il forte di Cacheu e la spiaggia selvaggia di Varela."
+      },
+      {
+        "title": "Bijagós in barca",
+        "days": 9,
+        "route": "Bissau (1) → crociera tra le isole Bijagós (7)",
+        "description": "La riserva della biosfera con ippopotami marini e tartarughe, vista da una barca con cabine."
       }
     ],
     "agentTips": [
@@ -233,6 +269,18 @@
         "days": 8,
         "route": "Conakry (1) → Dalaba (3) → Doucki (3)",
         "description": "Per viaggiatori esperti."
+      },
+      {
+        "title": "Isole di Loos",
+        "days": 5,
+        "route": "Conakry (1) → Isole di Loos (3)",
+        "description": "Spiagge raggiungibili in barca dalla capitale, per chi è in Guinea per lavoro."
+      },
+      {
+        "title": "Guinea delle montagne",
+        "days": 10,
+        "route": "Conakry (1) → Kindia (1) → Dalaba (2) → Labé (2) → Doucki (3)",
+        "description": "Le cascate e i canyon del Fouta Djalon, con alloggi semplici e guida locale."
       }
     ],
     "agentTips": [
@@ -285,6 +333,18 @@
         "days": 8,
         "route": "Freetown (2) → spiagge della penisola (3) → Tiwai (2)",
         "description": "Da novembre ad aprile."
+      },
+      {
+        "title": "Freetown e isole",
+        "days": 6,
+        "route": "Freetown (1) → Banana Islands (3) → River No. 2 (1)",
+        "description": "Spiagge di sabbia bianca a un'ora dalla capitale e il santuario degli scimpanzé di Tacugama."
+      },
+      {
+        "title": "Sierra Leone natura",
+        "days": 9,
+        "route": "Freetown (2) → Tiwai (2) → Gola (3) → Freetown (1)",
+        "description": "Ippopotami pigmei e primati nelle foreste pluviali, con guida locale."
       }
     ],
     "agentTips": [
@@ -332,6 +392,18 @@
         "days": 7,
         "route": "Monrovia (2) → Robertsport (3)",
         "description": "Per viaggiatori avventurosi."
+      },
+      {
+        "title": "Liberia surf",
+        "days": 6,
+        "route": "Monrovia (1) → Robertsport (4)",
+        "description": "Onde costanti e spiagge deserte: un villaggio di surfisti per viaggiatori avventurosi."
+      },
+      {
+        "title": "Liberia e Sierra Leone",
+        "days": 12,
+        "route": "Monrovia (2) → Robertsport (2) → Freetown (3) → Banana Islands (2) → Tiwai (2)",
+        "description": "Combinazione via terra in Africa occidentale, solo con operatore locale."
       }
     ],
     "agentTips": [
@@ -384,6 +456,18 @@
         "days": 7,
         "route": "Abidjan (2) → Grand-Bassam (1) → Yamoussoukro (1) → Assinie (2)",
         "description": "Da novembre a marzo."
+      },
+      {
+        "title": "Abidjan e Assinie",
+        "days": 5,
+        "route": "Abidjan (2) → Assinie (3)",
+        "description": "Weekend lungo per chi viaggia per lavoro: la Parigi africana e le spiagge di Assinie."
+      },
+      {
+        "title": "Costa d'Avorio dell'ovest",
+        "days": 9,
+        "route": "Abidjan (1) → Yamoussoukro (1) → Man (3) → Taï (3)",
+        "description": "Montagne, ponti di liane e scimpanzé nel parco di Taï, per viaggiatori avventurosi con guida."
       }
     ],
     "agentTips": [
@@ -452,6 +536,18 @@
         "days": 9,
         "route": "Accra (2) → Cape Coast ed Elmina (2) → Kakum → Kumasi (2) → Mole (2)",
         "description": "Da novembre a marzo."
+      },
+      {
+        "title": "Accra e Volta",
+        "days": 6,
+        "route": "Accra (2) → Lago Volta e Akosombo (2) → Wli (1)",
+        "description": "Breve circuito orientale con la cascata più alta del paese e la diga del Volta."
+      },
+      {
+        "title": "Ghana e Togo",
+        "days": 11,
+        "route": "Accra (2) → Cape Coast (2) → Kumasi (2) → Hohoe (1) → Kpalimé (2) → Lomé (1)",
+        "description": "Castelli degli schiavi, regno Ashanti e mercati del Togo in un unico giro via terra."
       }
     ],
     "agentTips": [
@@ -504,6 +600,18 @@
         "days": 10,
         "route": "Lomé (2) → Kpalimé (2) → Koutammakou (2) → Benin del nord (2) → Cotonou (1)",
         "description": "Vudù e architetture tradizionali."
+      },
+      {
+        "title": "Togo breve",
+        "days": 5,
+        "route": "Lomé (2) → Kpalimé (2)",
+        "description": "Mercato dei feticci, colline del caffè e cascate."
+      },
+      {
+        "title": "Togo, Benin e Ghana",
+        "days": 14,
+        "route": "Accra (2) → Cape Coast (2) → Lomé (1) → Kpalimé (2) → Abomey (1) → Ouidah (2) → Cotonou (1)",
+        "description": "Golfo di Guinea in tre paesi via terra."
       }
     ],
     "agentTips": [
@@ -557,6 +665,18 @@
         "days": 7,
         "route": "Cotonou (1) → Ouidah (2) → Ganvié (1) → Abomey (2)",
         "description": "Da novembre a marzo, ideale a gennaio."
+      },
+      {
+        "title": "Benin e Togo",
+        "days": 10,
+        "route": "Cotonou (1) → Ouidah (1) → Abomey (1) → Natitingou e Tata Somba (2) → Koutammakou (1) → Kpalimé (2) → Lomé (1)",
+        "description": "Il classico via terra tra due paesi: palazzi reali, case fortezza Tata e il festival del vudù a gennaio."
+      },
+      {
+        "title": "Festival del vudù",
+        "days": 6,
+        "route": "Cotonou (1) → Ouidah (3, festival del 10 gennaio) → Porto-Novo (1)",
+        "description": "Partenza a data fissa per il festival nazionale del vudù, con visita al Tempio dei Pitoni e alla Porta del Non Ritorno."
       }
     ],
     "agentTips": [
@@ -610,6 +730,18 @@
         "days": 5,
         "route": "Lagos (3) → Osogbo (1)",
         "description": "Viaggio culturale con operatore locale."
+      },
+      {
+        "title": "Lagos weekend",
+        "days": 3,
+        "route": "Lagos (2), con Lekki e Tarkwa Bay",
+        "description": "Musei, mercati d'arte e spiagge, per chi è in città per lavoro."
+      },
+      {
+        "title": "Nigeria e cultura yoruba",
+        "days": 7,
+        "route": "Lagos (2) → Abeokuta (1) → Osogbo (2) → Ibadan (1)",
+        "description": "La foresta sacra di Osun, la roccia di Olumo e l'arte yoruba, solo con operatore locale."
       }
     ],
     "agentTips": [
@@ -661,6 +793,18 @@
         "days": 8,
         "route": "Douala (1) → Kribi (3) → Foumban (2) → Yaoundé (1)",
         "description": "Da novembre a febbraio."
+      },
+      {
+        "title": "Camerun del nord",
+        "days": 9,
+        "route": "Yaoundé (1) → Ngaoundéré (1) → Garoua (1) → Rhumsiki (3) → Waza (2)",
+        "description": "Paesaggi vulcanici e villaggi sui monti Mandara; verificare sempre la sicurezza dell'estremo nord."
+      },
+      {
+        "title": "Monte Camerun e Limbe",
+        "days": 6,
+        "route": "Douala (1) → Limbe (2) → Buea e salita al Monte Camerun (3)",
+        "description": "Spiagge di sabbia nera, centro di primati e trekking sul vulcano più alto dell'Africa occidentale."
       }
     ],
     "agentTips": [
@@ -756,6 +900,18 @@
         "days": 6,
         "route": "Malabo (2) → Ureka (2) → Pico Basilé (1)",
         "description": "Per viaggiatori di nicchia."
+      },
+      {
+        "title": "Malabo e Bioko sud",
+        "days": 5,
+        "route": "Malabo (2) → Ureka (2)",
+        "description": "Tartarughe marine da novembre a febbraio e foreste con primati endemici."
+      },
+      {
+        "title": "Bata e la costa continentale",
+        "days": 6,
+        "route": "Bata (2) → Monte Alén (2) → Mbini (1)",
+        "description": "Il parco di Monte Alén con elefanti di foresta e cascate, per viaggiatori con permessi e guida."
       }
     ],
     "agentTips": [
@@ -823,6 +979,18 @@
         "days": 10,
         "route": "Libreville (1) → Lopé (3) → Loango (5)",
         "description": "Da giugno a settembre, con operatore specializzato."
+      },
+      {
+        "title": "Gabon mare e foresta",
+        "days": 8,
+        "route": "Libreville (1) → Pongara (2) → Akanda (1) → Ivindo (3)",
+        "description": "Tartarughe liuto, mangrovie e le cascate di Kongou nella foresta pluviale."
+      },
+      {
+        "title": "Loango, gli ippopotami surfisti",
+        "days": 7,
+        "route": "Libreville (1) → Loango (5)",
+        "description": "Elefanti sulla spiaggia, gorilla e balene da luglio a settembre: il parco più spettacolare della costa africana."
       }
     ],
     "agentTips": [
@@ -875,6 +1043,18 @@
         "days": 8,
         "route": "Brazzaville (1) → Odzala (6)",
         "description": "Con operatore specializzato."
+      },
+      {
+        "title": "Brazzaville e Kinshasa",
+        "days": 4,
+        "route": "Brazzaville (2) → traghetto sul Congo → Kinshasa (1)",
+        "description": "Le due capitali più vicine al mondo; solo con referenti locali e verificando le condizioni di sicurezza."
+      },
+      {
+        "title": "Costa atlantica",
+        "days": 6,
+        "route": "Pointe-Noire (3) → Conkouati-Douli (2)",
+        "description": "Spiagge, tartarughe marine e il parco di Conkouati con scimpanzé riabilitati."
       }
     ],
     "agentTips": [
@@ -969,6 +1149,18 @@
         "days": 10,
         "route": "São Tomé (4) → Príncipe (5)",
         "description": "Isole tranquille e natura."
+      },
+      {
+        "title": "Príncipe eco-lusso",
+        "days": 8,
+        "route": "São Tomé (1) → Príncipe (6)",
+        "description": "Lodge sostenibili nella riserva della biosfera, con tartarughe e spiagge vergini."
+      },
+      {
+        "title": "São Tomé cioccolato",
+        "days": 6,
+        "route": "São Tomé (5)",
+        "description": "Piantagioni di cacao in rovina, il Pico Cão Grande e la spiaggia di Banana."
       }
     ],
     "agentTips": [
@@ -1022,6 +1214,18 @@
         "days": 10,
         "route": "Luanda (2) → Kalandula (2) → Lubango e Serra da Leba (3) → Namibe e Iona (2)",
         "description": "Da maggio a ottobre, con operatore locale."
+      },
+      {
+        "title": "Luanda e la costa",
+        "days": 7,
+        "route": "Luanda (2) → Mussulo (2) → Cabo Ledo (2)",
+        "description": "Per chi è a Luanda per lavoro o per una prima visita: città, la laguna di Mussulo e le spiagge da surf a sud."
+      },
+      {
+        "title": "Angola del sud in fuoristrada",
+        "days": 12,
+        "route": "Luanda (1) → Lubango (2) → Serra da Leba e Tundavala → Namibe (2) → Iona e deserto (4) → Lubango (2)",
+        "description": "Spedizione per viaggiatori esperti con guida locale: canyon, deserto del Namib angolano e popoli Mucubal e Himba."
       }
     ],
     "agentTips": [

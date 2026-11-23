@@ -4,32 +4,145 @@
       "Il Marocco funziona per tanti tipi di clienti: un weekend lungo a Marrakech, il tour delle città imperiali, la notte nel deserto con i cammelli, il trekking nell'Atlante, il surf e il mare sull'Atlantico. Il clima va pensato per zona: le città dell'interno e il deserto sono ideali in primavera e autunno, d'estate il caldo supera spesso i 40 °C a Marrakech e nel Sahara, mentre la costa atlantica (Essaouira, Agadir) resta ventilata e piacevole tutto l'anno. D'inverno le giornate sono soleggiate ma le notti nel deserto sono fredde."
     ],
     "morePlaces": [
-      { "name": "Essaouira", "description": "Città fortificata sull'Atlantico, ventosa e artistica, con il porto dei pescatori.", "search": "Essaouira" },
-      { "name": "Giardino Majorelle", "description": "Il giardino blu di Yves Saint Laurent a Marrakech, con il museo dello stilista.", "search": "Jardin Majorelle" },
-      { "name": "Gole del Dadès e del Todra", "description": "Canyon spettacolari sulla strada dei kasbah verso il deserto.", "search": "Todgha Gorge" },
-      { "name": "Volubilis", "description": "Città romana con mosaici ancora sul posto, vicino a Meknès.", "search": "Volubilis" }
+      {
+        "name": "Essaouira",
+        "description": "Città fortificata sull'Atlantico, ventosa e artistica, con il porto dei pescatori.",
+        "search": "Essaouira"
+      },
+      {
+        "name": "Giardino Majorelle",
+        "description": "Il giardino blu di Yves Saint Laurent a Marrakech, con il museo dello stilista.",
+        "search": "Jardin Majorelle"
+      },
+      {
+        "name": "Gole del Dadès e del Todra",
+        "description": "Canyon spettacolari sulla strada dei kasbah verso il deserto.",
+        "search": "Todgha Gorge"
+      },
+      {
+        "name": "Volubilis",
+        "description": "Città romana con mosaici ancora sul posto, vicino a Meknès.",
+        "search": "Volubilis"
+      }
     ],
     "areas": [
-      { "name": "Città imperiali (Marrakech, Fès, Meknès, Rabat)", "description": "Le medine più famose del mondo arabo: Marrakech con la piazza Jemaa el-Fna, i souk e i riad; Fès con la medina medievale e le concerie; Meknès e Volubilis; Rabat capitale elegante sull'oceano.", "highlights": ["Jemaa el-Fna", "Medina di Fès", "Concerie Chouara", "Meknès", "Volubilis", "Rabat"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Primavera e autunno ideali; inverno soleggiato ma fresco; luglio–agosto molto caldi a Marrakech e Fès." },
-      { "name": "Deserto e valli del sud (Merzouga, Zagora, Ouarzazate, Dadès)", "description": "La strada delle mille kasbah fino alle dune dell'Erg Chebbi: Aït Ben Haddou, Ouarzazate con gli studi cinematografici, le gole del Dadès e del Todra, la notte nel campo tendato tra le dune.", "highlights": ["Erg Chebbi", "Aït Ben Haddou", "Ouarzazate", "Gole del Todra", "Valle del Draa"], "seasons": "BBOOBXXXBOOB", "seasonNote": "Da ottobre ad aprile clima ideale (notti fredde d'inverno); da giugno ad agosto caldo estremo." },
-      { "name": "Alto Atlante (Imlil, Toubkal, Ourika)", "description": "Villaggi berberi a un'ora da Marrakech, trekking per tutti i livelli e la salita al Toubkal, la vetta più alta del Nord Africa.", "highlights": ["Imlil", "Toubkal", "Valle dell'Ourika", "Cascate d'Ouzoud"], "seasons": "DDBOOOBBOOBD", "seasonNote": "Primavera e autunno ideali; d'estate fresco rispetto alla pianura; d'inverno neve in quota." },
-      { "name": "Costa atlantica (Essaouira, Agadir, Taghazout)", "description": "Mare, surf e vento: Essaouira con la medina bianca e blu, Taghazout per il surf, Agadir con i resort sul lungomare.", "highlights": ["Essaouira", "Taghazout", "Agadir", "Legzira"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Piacevole tutto l'anno; in estate è la meta più fresca del paese, ventosa." },
-      { "name": "Nord (Chefchaouen, Tangeri, Tetouan)", "description": "La città blu di Chefchaouen sulle montagne del Rif, Tangeri sullo stretto di Gibilterra, Tetouan andalusa.", "highlights": ["Chefchaouen", "Tangeri", "Tetouan", "Asilah"], "seasons": "DDBOOOOBOOBD", "seasonNote": "Da aprile a ottobre; d'inverno più piovoso e fresco." }
+      {
+        "name": "Città imperiali (Marrakech, Fès, Meknès, Rabat)",
+        "description": "Le medine più famose del mondo arabo: Marrakech con la piazza Jemaa el-Fna, i souk e i riad; Fès con la medina medievale e le concerie; Meknès e Volubilis; Rabat capitale elegante sull'oceano.",
+        "highlights": [
+          "Jemaa el-Fna",
+          "Medina di Fès",
+          "Concerie Chouara",
+          "Meknès",
+          "Volubilis",
+          "Rabat"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera e autunno ideali; inverno soleggiato ma fresco; luglio–agosto molto caldi a Marrakech e Fès."
+      },
+      {
+        "name": "Deserto e valli del sud (Merzouga, Zagora, Ouarzazate, Dadès)",
+        "description": "La strada delle mille kasbah fino alle dune dell'Erg Chebbi: Aït Ben Haddou, Ouarzazate con gli studi cinematografici, le gole del Dadès e del Todra, la notte nel campo tendato tra le dune.",
+        "highlights": [
+          "Erg Chebbi",
+          "Aït Ben Haddou",
+          "Ouarzazate",
+          "Gole del Todra",
+          "Valle del Draa"
+        ],
+        "seasons": "BBOOBXXXBOOB",
+        "seasonNote": "Da ottobre ad aprile clima ideale (notti fredde d'inverno); da giugno ad agosto caldo estremo."
+      },
+      {
+        "name": "Alto Atlante (Imlil, Toubkal, Ourika)",
+        "description": "Villaggi berberi a un'ora da Marrakech, trekking per tutti i livelli e la salita al Toubkal, la vetta più alta del Nord Africa.",
+        "highlights": [
+          "Imlil",
+          "Toubkal",
+          "Valle dell'Ourika",
+          "Cascate d'Ouzoud"
+        ],
+        "seasons": "DDBOOOBBOOBD",
+        "seasonNote": "Primavera e autunno ideali; d'estate fresco rispetto alla pianura; d'inverno neve in quota."
+      },
+      {
+        "name": "Costa atlantica (Essaouira, Agadir, Taghazout)",
+        "description": "Mare, surf e vento: Essaouira con la medina bianca e blu, Taghazout per il surf, Agadir con i resort sul lungomare.",
+        "highlights": [
+          "Essaouira",
+          "Taghazout",
+          "Agadir",
+          "Legzira"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Piacevole tutto l'anno; in estate è la meta più fresca del paese, ventosa."
+      },
+      {
+        "name": "Nord (Chefchaouen, Tangeri, Tetouan)",
+        "description": "La città blu di Chefchaouen sulle montagne del Rif, Tangeri sullo stretto di Gibilterra, Tetouan andalusa.",
+        "highlights": [
+          "Chefchaouen",
+          "Tangeri",
+          "Tetouan",
+          "Asilah"
+        ],
+        "seasons": "DDBOOOOBOOBD",
+        "seasonNote": "Da aprile a ottobre; d'inverno più piovoso e fresco."
+      }
     ],
     "experiences": [
-      { "name": "Notte in un riad", "description": "Dormire in una casa tradizionale con patio e terrazza nella medina di Marrakech o Fès." },
-      { "name": "Notte nel deserto con i cammelli", "description": "Escursione in dromedario tra le dune dell'Erg Chebbi al tramonto e notte in campo tendato, anche di lusso." },
-      { "name": "Hammam e spa", "description": "Il bagno di vapore tradizionale con scrub, nei riad o negli hammam storici." },
-      { "name": "Corso di cucina marocchina", "description": "Tajine, couscous e pastilla con spesa al souk." },
-      { "name": "Mongolfiera all'alba a Marrakech", "description": "Volo sopra i villaggi berberi con l'Atlante sullo sfondo." },
-      { "name": "Visita guidata della medina di Fès", "description": "Con una guida autorizzata tra le concerie, le madrase e i laboratori artigiani." },
-      { "name": "Trekking nei villaggi berberi", "description": "Da Imlil, con pranzo in una casa locale; per gli sportivi la salita al Toubkal in due giorni." },
-      { "name": "Surf a Taghazout", "description": "Scuole per tutti i livelli e surf camp sull'Atlantico." }
+      {
+        "name": "Notte in un riad",
+        "description": "Dormire in una casa tradizionale con patio e terrazza nella medina di Marrakech o Fès."
+      },
+      {
+        "name": "Notte nel deserto con i cammelli",
+        "description": "Escursione in dromedario tra le dune dell'Erg Chebbi al tramonto e notte in campo tendato, anche di lusso."
+      },
+      {
+        "name": "Hammam e spa",
+        "description": "Il bagno di vapore tradizionale con scrub, nei riad o negli hammam storici."
+      },
+      {
+        "name": "Corso di cucina marocchina",
+        "description": "Tajine, couscous e pastilla con spesa al souk."
+      },
+      {
+        "name": "Mongolfiera all'alba a Marrakech",
+        "description": "Volo sopra i villaggi berberi con l'Atlante sullo sfondo."
+      },
+      {
+        "name": "Visita guidata della medina di Fès",
+        "description": "Con una guida autorizzata tra le concerie, le madrase e i laboratori artigiani."
+      },
+      {
+        "name": "Trekking nei villaggi berberi",
+        "description": "Da Imlil, con pranzo in una casa locale; per gli sportivi la salita al Toubkal in due giorni."
+      },
+      {
+        "name": "Surf a Taghazout",
+        "description": "Scuole per tutti i livelli e surf camp sull'Atlantico."
+      }
     ],
     "itineraries": [
-      { "title": "Weekend lungo a Marrakech", "days": 4, "route": "Marrakech (3), con escursione nell'Atlante o a Essaouira", "description": "La formula più venduta: riad, souk, hammam e una giornata fuori città." },
-      { "title": "Città imperiali e deserto", "days": 10, "route": "Casablanca (1) → Rabat → Chefchaouen (1) → Fès (2) → Merzouga (1 nel deserto) → Dadès (1) → Ouarzazate (1) → Marrakech (2)", "description": "Il grande tour del Marocco in auto con autista, da ottobre a maggio." },
-      { "title": "Marrakech, deserto e mare", "days": 8, "route": "Marrakech (3) → deserto di Zagora o Merzouga (2) → Essaouira (2)", "description": "Ideale per coppie: città, dune e oceano in una settimana." }
+      {
+        "title": "Weekend lungo a Marrakech",
+        "days": 4,
+        "route": "Marrakech (3), con escursione nell'Atlante o a Essaouira",
+        "description": "La formula più venduta: riad, souk, hammam e una giornata fuori città."
+      },
+      {
+        "title": "Città imperiali e deserto",
+        "days": 10,
+        "route": "Casablanca (1) → Rabat → Chefchaouen (1) → Fès (2) → Merzouga (1 nel deserto) → Dadès (1) → Ouarzazate (1) → Marrakech (2)",
+        "description": "Il grande tour del Marocco in auto con autista, da ottobre a maggio."
+      },
+      {
+        "title": "Marrakech, deserto e mare",
+        "days": 8,
+        "route": "Marrakech (3) → deserto di Zagora o Merzouga (2) → Essaouira (2)",
+        "description": "Ideale per coppie: città, dune e oceano in una settimana."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto con il passaporto per soggiorni turistici brevi.",
@@ -44,31 +157,134 @@
       "L'Egitto si vende in due grandi formule, spesso abbinate: il tour archeologico (Cairo, Giza e la crociera sul Nilo tra Luxor e Assuan, con Abu Simbel) e il mare del Mar Rosso (Sharm el-Sheikh, Hurghada, Marsa Alam), ideale per le immersioni. Le visite sono al meglio da ottobre ad aprile: tra maggio e settembre l'Alto Egitto supera spesso i 40 °C. Il mare invece si vende tutto l'anno, con acqua più fresca e vento in inverno. Il nuovo Grand Egyptian Museum a Giza è oggi una tappa imprescindibile."
     ],
     "morePlaces": [
-      { "name": "Tempio di Luxor", "description": "Il tempio sul Nilo, illuminato la sera, collegato a Karnak dal viale delle sfingi.", "search": "Luxor Temple" },
-      { "name": "Tempio di Philae", "description": "Il tempio di Iside su un'isola vicino ad Assuan, raggiunto in barca.", "search": "Philae" },
-      { "name": "Cairo islamica e copta", "description": "La moschea di Ibn Tulun, la Cittadella, la chiesa sospesa e il bazar Khan el-Khalili.", "search": "Khan el-Khalili" },
-      { "name": "Marsa Alam", "description": "Il Mar Rosso del sud, con barriere intatte, delfini e dugonghi.", "search": "Marsa Alam" }
+      {
+        "name": "Tempio di Luxor",
+        "description": "Il tempio sul Nilo, illuminato la sera, collegato a Karnak dal viale delle sfingi.",
+        "search": "Luxor Temple"
+      },
+      {
+        "name": "Tempio di Philae",
+        "description": "Il tempio di Iside su un'isola vicino ad Assuan, raggiunto in barca.",
+        "search": "Philae"
+      },
+      {
+        "name": "Cairo islamica e copta",
+        "description": "La moschea di Ibn Tulun, la Cittadella, la chiesa sospesa e il bazar Khan el-Khalili.",
+        "search": "Khan el-Khalili"
+      },
+      {
+        "name": "Marsa Alam",
+        "description": "Il Mar Rosso del sud, con barriere intatte, delfini e dugonghi.",
+        "search": "Marsa Alam"
+      }
     ],
     "areas": [
-      { "name": "Cairo e Giza", "description": "Le piramidi e la Sfinge, il Grand Egyptian Museum con il tesoro di Tutankhamon, la Cairo islamica e copta, i bazar. Saqqara e Dahshur con le prime piramidi sono a breve distanza.", "highlights": ["Piramidi di Giza", "Grand Egyptian Museum", "Saqqara", "Khan el-Khalili", "Cittadella"], "seasons": "OOOBDDDDDOOO", "seasonNote": "Da ottobre ad aprile clima ideale; in primavera può soffiare il khamsin con sabbia; d'estate caldo ma visitabile." },
-      { "name": "Luxor", "description": "L'antica Tebe: i templi di Karnak e Luxor sulla riva est, la Valle dei Re, il tempio di Hatshepsut e i Colossi di Memnone sulla riva ovest. Partenza o arrivo di molte crociere.", "highlights": ["Karnak", "Valle dei Re", "Tempio di Hatshepsut", "Valle delle Regine", "Mongolfiera all'alba"], "seasons": "OOOBDXXXDOOO", "seasonNote": "Da ottobre ad aprile ideale; da giugno ad agosto caldo estremo, si visita solo all'alba." },
-      { "name": "Crociera sul Nilo, Assuan e Abu Simbel", "description": "La navigazione tra Luxor e Assuan con soste a Edfu e Kom Ombo; Assuan con il tempio di Philae, i villaggi nubiani e le feluche; Abu Simbel, i colossali templi di Ramses II vicino al confine con il Sudan.", "highlights": ["Edfu", "Kom Ombo", "Philae", "Villaggio nubiano", "Abu Simbel"], "seasons": "OOOBDXXXDOOO", "seasonNote": "Come Luxor; il 22 febbraio e il 22 ottobre il sole illumina il santuario di Abu Simbel." },
-      { "name": "Mar Rosso (Sharm el-Sheikh, Hurghada, Marsa Alam)", "description": "Barriere coralline tra le più belle del mondo: Ras Mohammed e Tiran a Sharm, isole Giftun a Hurghada, delfini e dugonghi a Marsa Alam. Grande offerta di villaggi e resort all inclusive.", "highlights": ["Ras Mohammed", "Isola di Tiran", "Isole Giftun", "Abu Dabbab", "Reef di Satayah"], "seasons": "BBOOOOOOOOOB", "seasonNote": "Si vende tutto l'anno: in inverno acqua sui 22 °C e vento, in estate caldo ma ventilato." }
+      {
+        "name": "Cairo e Giza",
+        "description": "Le piramidi e la Sfinge, il Grand Egyptian Museum con il tesoro di Tutankhamon, la Cairo islamica e copta, i bazar. Saqqara e Dahshur con le prime piramidi sono a breve distanza.",
+        "highlights": [
+          "Piramidi di Giza",
+          "Grand Egyptian Museum",
+          "Saqqara",
+          "Khan el-Khalili",
+          "Cittadella"
+        ],
+        "seasons": "OOOBDDDDDOOO",
+        "seasonNote": "Da ottobre ad aprile clima ideale; in primavera può soffiare il khamsin con sabbia; d'estate caldo ma visitabile."
+      },
+      {
+        "name": "Luxor",
+        "description": "L'antica Tebe: i templi di Karnak e Luxor sulla riva est, la Valle dei Re, il tempio di Hatshepsut e i Colossi di Memnone sulla riva ovest. Partenza o arrivo di molte crociere.",
+        "highlights": [
+          "Karnak",
+          "Valle dei Re",
+          "Tempio di Hatshepsut",
+          "Valle delle Regine",
+          "Mongolfiera all'alba"
+        ],
+        "seasons": "OOOBDXXXDOOO",
+        "seasonNote": "Da ottobre ad aprile ideale; da giugno ad agosto caldo estremo, si visita solo all'alba."
+      },
+      {
+        "name": "Crociera sul Nilo, Assuan e Abu Simbel",
+        "description": "La navigazione tra Luxor e Assuan con soste a Edfu e Kom Ombo; Assuan con il tempio di Philae, i villaggi nubiani e le feluche; Abu Simbel, i colossali templi di Ramses II vicino al confine con il Sudan.",
+        "highlights": [
+          "Edfu",
+          "Kom Ombo",
+          "Philae",
+          "Villaggio nubiano",
+          "Abu Simbel"
+        ],
+        "seasons": "OOOBDXXXDOOO",
+        "seasonNote": "Come Luxor; il 22 febbraio e il 22 ottobre il sole illumina il santuario di Abu Simbel."
+      },
+      {
+        "name": "Mar Rosso (Sharm el-Sheikh, Hurghada, Marsa Alam)",
+        "description": "Barriere coralline tra le più belle del mondo: Ras Mohammed e Tiran a Sharm, isole Giftun a Hurghada, delfini e dugonghi a Marsa Alam. Grande offerta di villaggi e resort all inclusive.",
+        "highlights": [
+          "Ras Mohammed",
+          "Isola di Tiran",
+          "Isole Giftun",
+          "Abu Dabbab",
+          "Reef di Satayah"
+        ],
+        "seasons": "BBOOOOOOOOOB",
+        "seasonNote": "Si vende tutto l'anno: in inverno acqua sui 22 °C e vento, in estate caldo ma ventilato."
+      }
     ],
     "experiences": [
-      { "name": "Piramidi e Grand Egyptian Museum", "description": "Una giornata intera a Giza, con il museo che espone l'intero corredo di Tutankhamon." },
-      { "name": "Crociera sul Nilo", "description": "3–4 notti tra Luxor e Assuan su motonave, o su dahabeya a vela per un'esperienza più esclusiva." },
-      { "name": "Mongolfiera all'alba a Luxor", "description": "Volo sopra la riva ovest, la Valle dei Re e il tempio di Hatshepsut." },
-      { "name": "Abu Simbel all'alba", "description": "Escursione da Assuan in volo o in pullman molto presto la mattina." },
-      { "name": "Feluca al tramonto ad Assuan", "description": "Navigazione tra le isole con visita a un villaggio nubiano." },
-      { "name": "Snorkeling a Ras Mohammed", "description": "Il parco marino più famoso del Mar Rosso, in barca da Sharm." },
-      { "name": "Dugonghi e tartarughe a Marsa Alam", "description": "Nella baia di Abu Dabbab, con buone probabilità di incontro." },
-      { "name": "Spettacolo suoni e luci", "description": "Alle piramidi di Giza o a Karnak, la sera." }
+      {
+        "name": "Piramidi e Grand Egyptian Museum",
+        "description": "Una giornata intera a Giza, con il museo che espone l'intero corredo di Tutankhamon."
+      },
+      {
+        "name": "Crociera sul Nilo",
+        "description": "3–4 notti tra Luxor e Assuan su motonave, o su dahabeya a vela per un'esperienza più esclusiva."
+      },
+      {
+        "name": "Mongolfiera all'alba a Luxor",
+        "description": "Volo sopra la riva ovest, la Valle dei Re e il tempio di Hatshepsut."
+      },
+      {
+        "name": "Abu Simbel all'alba",
+        "description": "Escursione da Assuan in volo o in pullman molto presto la mattina."
+      },
+      {
+        "name": "Feluca al tramonto ad Assuan",
+        "description": "Navigazione tra le isole con visita a un villaggio nubiano."
+      },
+      {
+        "name": "Snorkeling a Ras Mohammed",
+        "description": "Il parco marino più famoso del Mar Rosso, in barca da Sharm."
+      },
+      {
+        "name": "Dugonghi e tartarughe a Marsa Alam",
+        "description": "Nella baia di Abu Dabbab, con buone probabilità di incontro."
+      },
+      {
+        "name": "Spettacolo suoni e luci",
+        "description": "Alle piramidi di Giza o a Karnak, la sera."
+      }
     ],
     "itineraries": [
-      { "title": "Egitto classico", "days": 8, "route": "Cairo (2) → crociera Luxor–Assuan (4) con Abu Simbel → Cairo (1)", "description": "Piramidi, museo e crociera: il pacchetto più venduto, da ottobre ad aprile." },
-      { "title": "Nilo e Mar Rosso", "days": 12, "route": "Cairo (2) → crociera sul Nilo (4) → Hurghada o Marsa Alam (5)", "description": "Archeologia e mare, con trasferimento via terra da Luxor al Mar Rosso." },
-      { "title": "Settimana a Sharm", "days": 8, "route": "Sharm el-Sheikh (7), con escursione a Ras Mohammed", "description": "Mare e immersioni con voli diretti dall'Italia." }
+      {
+        "title": "Egitto classico",
+        "days": 8,
+        "route": "Cairo (2) → crociera Luxor–Assuan (4) con Abu Simbel → Cairo (1)",
+        "description": "Piramidi, museo e crociera: il pacchetto più venduto, da ottobre ad aprile."
+      },
+      {
+        "title": "Nilo e Mar Rosso",
+        "days": 12,
+        "route": "Cairo (2) → crociera sul Nilo (4) → Hurghada o Marsa Alam (5)",
+        "description": "Archeologia e mare, con trasferimento via terra da Luxor al Mar Rosso."
+      },
+      {
+        "title": "Settimana a Sharm",
+        "days": 8,
+        "route": "Sharm el-Sheikh (7), con escursione a Ras Mohammed",
+        "description": "Mare e immersioni con voli diretti dall'Italia."
+      }
     ],
     "agentTips": [
       "Il visto si ottiene online o all'arrivo; per brevi soggiorni a Sharm è previsto un timbro gratuito valido solo per il Sinai: verifica le regole.",
@@ -83,29 +299,137 @@
       "La Tunisia è vicinissima all'Italia e ha un'offerta varia: mare con villaggi e talassoterapia a Hammamet, Sousse, Monastir e Djerba; archeologia romana tra le migliori del Mediterraneo; il deserto del sud con oasi, villaggi berberi e set di Star Wars. Il mare si vende da giugno a settembre (bene anche maggio e ottobre); il deserto da ottobre ad aprile, quando il caldo è sopportabile."
     ],
     "morePlaces": [
-      { "name": "Dougga", "description": "La città romana meglio conservata del Nord Africa, sulle colline.", "search": "Dougga" },
-      { "name": "Kairouan", "description": "Città santa con la Grande Moschea e i tappeti tradizionali.", "search": "Great Mosque of Kairouan" },
-      { "name": "Oasi di montagna di Chebika e Tamerza", "description": "Gole, cascate e villaggi abbandonati vicino a Tozeur.", "search": "Chebika" },
-      { "name": "Ksar Ghilane", "description": "Oasi con sorgente calda alle porte del Grande Erg Orientale.", "search": "Ksar Ghilane" }
+      {
+        "name": "Dougga",
+        "description": "La città romana meglio conservata del Nord Africa, sulle colline.",
+        "search": "Dougga"
+      },
+      {
+        "name": "Kairouan",
+        "description": "Città santa con la Grande Moschea e i tappeti tradizionali.",
+        "search": "Great Mosque of Kairouan"
+      },
+      {
+        "name": "Oasi di montagna di Chebika e Tamerza",
+        "description": "Gole, cascate e villaggi abbandonati vicino a Tozeur.",
+        "search": "Chebika"
+      },
+      {
+        "name": "Ksar Ghilane",
+        "description": "Oasi con sorgente calda alle porte del Grande Erg Orientale.",
+        "search": "Ksar Ghilane"
+      }
     ],
     "areas": [
-      { "name": "Tunisi, Cartagine e Sidi Bou Saïd", "description": "La medina di Tunisi, il Museo del Bardo con i mosaici romani, le rovine di Cartagine e il villaggio bianco e blu di Sidi Bou Saïd sul mare.", "highlights": ["Medina di Tunisi", "Museo del Bardo", "Cartagine", "Sidi Bou Saïd"], "seasons": "BBOOOOBBOOBB", "seasonNote": "Visitabile tutto l'anno; estate calda ma mitigata dal mare." },
-      { "name": "Costa (Hammamet, Sousse, Monastir, Mahdia)", "description": "Spiagge lunghe, villaggi e hotel con talassoterapia, golf, medine sul mare come Sousse e Mahdia.", "highlights": ["Hammamet", "Port El Kantaoui", "Sousse", "Monastir", "Mahdia"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Mare da giugno a settembre; maggio e ottobre buoni; d'inverno ideale per la talassoterapia." },
-      { "name": "Djerba", "description": "L'isola delle sabbie bianche, con villaggi turistici, il mercato di Houmt Souk, la sinagoga della Ghriba e i villaggi di artisti di Djerbahood.", "highlights": ["Houmt Souk", "Ghriba", "Djerbahood", "Laguna di Ras Rmel"], "seasons": "DDBOOOOOOOBD", "seasonNote": "Più mite del nord: mare da maggio a ottobre." },
-      { "name": "Sud e deserto (Tozeur, Douz, Matmata, Tataouine)", "description": "Le oasi di Tozeur e Nefta, il lago salato Chott el-Jerid, le case troglodite di Matmata, gli ksour di Tataouine e le dune di Douz, porta del Sahara.", "highlights": ["Tozeur", "Chott el-Jerid", "Douz", "Matmata", "Ksar Ouled Soltane", "Set di Star Wars"], "seasons": "BBOOBXXXDOOB", "seasonNote": "Da ottobre ad aprile ideale; d'estate caldo estremo." },
-      { "name": "Interno archeologico (El Jem, Dougga, Kairouan)", "description": "Il Colosseo di El Jem, la città romana di Dougga e la città santa di Kairouan: le visite più importanti del paese.", "highlights": ["El Jem", "Dougga", "Kairouan", "Sbeitla"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Primavera e autunno ideali; d'estate si visita la mattina." }
+      {
+        "name": "Tunisi, Cartagine e Sidi Bou Saïd",
+        "description": "La medina di Tunisi, il Museo del Bardo con i mosaici romani, le rovine di Cartagine e il villaggio bianco e blu di Sidi Bou Saïd sul mare.",
+        "highlights": [
+          "Medina di Tunisi",
+          "Museo del Bardo",
+          "Cartagine",
+          "Sidi Bou Saïd"
+        ],
+        "seasons": "BBOOOOBBOOBB",
+        "seasonNote": "Visitabile tutto l'anno; estate calda ma mitigata dal mare."
+      },
+      {
+        "name": "Costa (Hammamet, Sousse, Monastir, Mahdia)",
+        "description": "Spiagge lunghe, villaggi e hotel con talassoterapia, golf, medine sul mare come Sousse e Mahdia.",
+        "highlights": [
+          "Hammamet",
+          "Port El Kantaoui",
+          "Sousse",
+          "Monastir",
+          "Mahdia"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Mare da giugno a settembre; maggio e ottobre buoni; d'inverno ideale per la talassoterapia."
+      },
+      {
+        "name": "Djerba",
+        "description": "L'isola delle sabbie bianche, con villaggi turistici, il mercato di Houmt Souk, la sinagoga della Ghriba e i villaggi di artisti di Djerbahood.",
+        "highlights": [
+          "Houmt Souk",
+          "Ghriba",
+          "Djerbahood",
+          "Laguna di Ras Rmel"
+        ],
+        "seasons": "DDBOOOOOOOBD",
+        "seasonNote": "Più mite del nord: mare da maggio a ottobre."
+      },
+      {
+        "name": "Sud e deserto (Tozeur, Douz, Matmata, Tataouine)",
+        "description": "Le oasi di Tozeur e Nefta, il lago salato Chott el-Jerid, le case troglodite di Matmata, gli ksour di Tataouine e le dune di Douz, porta del Sahara.",
+        "highlights": [
+          "Tozeur",
+          "Chott el-Jerid",
+          "Douz",
+          "Matmata",
+          "Ksar Ouled Soltane",
+          "Set di Star Wars"
+        ],
+        "seasons": "BBOOBXXXDOOB",
+        "seasonNote": "Da ottobre ad aprile ideale; d'estate caldo estremo."
+      },
+      {
+        "name": "Interno archeologico (El Jem, Dougga, Kairouan)",
+        "description": "Il Colosseo di El Jem, la città romana di Dougga e la città santa di Kairouan: le visite più importanti del paese.",
+        "highlights": [
+          "El Jem",
+          "Dougga",
+          "Kairouan",
+          "Sbeitla"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera e autunno ideali; d'estate si visita la mattina."
+      }
     ],
     "experiences": [
-      { "name": "Talassoterapia", "description": "Centri tra i migliori del Mediterraneo a Hammamet, Djerba e Monastir, con prezzi convenienti." },
-      { "name": "Fuoristrada nelle oasi di montagna", "description": "Chebika, Tamerza e Mides tra canyon e palmeti." },
-      { "name": "Notte nel Sahara", "description": "Campo tendato a Ksar Ghilane o tra le dune di Douz, con escursione in dromedario." },
-      { "name": "Set di Star Wars", "description": "Mos Espa vicino a Tozeur e l'hotel troglodita di Matmata." },
-      { "name": "Anfiteatro di El Jem", "description": "Il terzo anfiteatro romano del mondo, con concerti di musica classica in estate." },
-      { "name": "Festival del Sahara di Douz", "description": "A dicembre, con corse di cammelli e cultura nomade." }
+      {
+        "name": "Talassoterapia",
+        "description": "Centri tra i migliori del Mediterraneo a Hammamet, Djerba e Monastir, con prezzi convenienti."
+      },
+      {
+        "name": "Fuoristrada nelle oasi di montagna",
+        "description": "Chebika, Tamerza e Mides tra canyon e palmeti."
+      },
+      {
+        "name": "Notte nel Sahara",
+        "description": "Campo tendato a Ksar Ghilane o tra le dune di Douz, con escursione in dromedario."
+      },
+      {
+        "name": "Set di Star Wars",
+        "description": "Mos Espa vicino a Tozeur e l'hotel troglodita di Matmata."
+      },
+      {
+        "name": "Anfiteatro di El Jem",
+        "description": "Il terzo anfiteatro romano del mondo, con concerti di musica classica in estate."
+      },
+      {
+        "name": "Festival del Sahara di Douz",
+        "description": "A dicembre, con corse di cammelli e cultura nomade."
+      }
     ],
     "itineraries": [
-      { "title": "Mare e talasso", "days": 8, "route": "Hammamet o Djerba (7)", "description": "La formula più venduta, con voli diretti e traghetti dall'Italia." },
-      { "title": "Gran tour del sud", "days": 8, "route": "Tunisi (1) → El Jem → Matmata (1) → Douz (1) → Tozeur (2) → Kairouan (1) → Hammamet (1)", "description": "Archeologia, oasi e deserto in auto con autista, da ottobre ad aprile." }
+      {
+        "title": "Mare e talasso",
+        "days": 8,
+        "route": "Hammamet o Djerba (7)",
+        "description": "La formula più venduta, con voli diretti e traghetti dall'Italia."
+      },
+      {
+        "title": "Gran tour del sud",
+        "days": 8,
+        "route": "Tunisi (1) → El Jem → Matmata (1) → Douz (1) → Tozeur (2) → Kairouan (1) → Hammamet (1)",
+        "description": "Archeologia, oasi e deserto in auto con autista, da ottobre ad aprile."
+      },
+      {
+        "title": "Tunisi e Cartagine",
+        "days": 5,
+        "route": "Tunisi (2) → Cartagine e Sidi Bou Said (1) → Bizerta (1)",
+        "description": "La medina, il Museo del Bardo e i villaggi bianco-azzurri sul mare."
+      }
     ],
     "agentTips": [
       "Gli italiani entrano senza visto per soggiorni turistici brevi.",
@@ -120,31 +444,153 @@
       "La Giordania è un paese piccolo e molto vario, perfetto per un tour di 7–8 giorni in auto con autista: Amman, i castelli del deserto, Jerash romana, il Monte Nebo e Madaba, Petra, il deserto rosso del Wadi Rum, il Mar Morto e il Mar Rosso ad Aqaba. Il clima migliore è in primavera e autunno; d'estate il caldo è forte soprattutto al Mar Morto, d'inverno ad Amman e Petra può fare freddo e piovere."
     ],
     "morePlaces": [
-      { "name": "Madaba", "description": "La città dei mosaici, con la mappa bizantina della Terra Santa.", "search": "Madaba Map" },
-      { "name": "Little Petra", "description": "La 'piccola Petra' di Siq al-Barid, tranquilla e affascinante.", "search": "Little Petra" },
-      { "name": "Aqaba", "description": "La città sul Mar Rosso con coralli e snorkeling.", "search": "Aqaba" },
-      { "name": "Betania oltre il Giordano", "description": "Il luogo del battesimo di Gesù, patrimonio UNESCO.", "search": "Al-Maghtas" }
+      {
+        "name": "Madaba",
+        "description": "La città dei mosaici, con la mappa bizantina della Terra Santa.",
+        "search": "Madaba Map"
+      },
+      {
+        "name": "Little Petra",
+        "description": "La 'piccola Petra' di Siq al-Barid, tranquilla e affascinante.",
+        "search": "Little Petra"
+      },
+      {
+        "name": "Aqaba",
+        "description": "La città sul Mar Rosso con coralli e snorkeling.",
+        "search": "Aqaba"
+      },
+      {
+        "name": "Betania oltre il Giordano",
+        "description": "Il luogo del battesimo di Gesù, patrimonio UNESCO.",
+        "search": "Al-Maghtas"
+      }
     ],
     "areas": [
-      { "name": "Amman e nord (Jerash, Ajlun, Umm Qais)", "description": "La capitale con la Cittadella e il teatro romano; Jerash, una delle città romane meglio conservate al mondo; il castello di Ajlun e Umm Qais con vista sul lago di Tiberiade.", "highlights": ["Cittadella di Amman", "Teatro romano", "Jerash", "Castello di Ajlun", "Umm Qais"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Primavera e autunno ideali; inverno freddo e a volte piovoso; estate calda." },
-      { "name": "Strada dei Re (Madaba, Monte Nebo, Kerak)", "description": "L'antica strada che attraversa la Giordania da nord a sud: i mosaici di Madaba, il Monte Nebo da cui Mosè vide la Terra Promessa, il castello crociato di Kerak.", "highlights": ["Madaba", "Monte Nebo", "Kerak", "Wadi Mujib", "Shobak"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Come Amman." },
-      { "name": "Petra", "description": "La città dei Nabatei scavata nella roccia rosa: il Siq, il Tesoro, la via delle facciate, le Tombe reali e la salita al Monastero. Merita almeno due giorni.", "highlights": ["Siq", "Il Tesoro", "Tombe reali", "Monastero", "Petra by Night", "Little Petra"], "seasons": "BBOOOBDDOOBB", "seasonNote": "Primavera e autunno perfetti; d'estate si visita all'alba; d'inverno giornate fresche." },
-      { "name": "Wadi Rum", "description": "Il deserto di sabbia rossa e montagne di granito di Lawrence d'Arabia, con escursioni in jeep e notte nei campi beduini o nelle tende a bolla.", "highlights": ["Jeep tra le dune", "Ponte di roccia di Burdah", "Campi beduini", "Tende a bolla"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Notti fredde in inverno, giornate calde d'estate." },
-      { "name": "Mar Morto", "description": "Il punto più basso della terra: si galleggia nell'acqua salatissima e ci si cura con i fanghi negli hotel spa della riva.", "highlights": ["Galleggiamento", "Fanghi", "Resort spa", "Wadi Mujib"], "seasons": "OOOODXXXDOOO", "seasonNote": "D'inverno è il luogo più caldo del paese; d'estate supera i 40 °C." },
-      { "name": "Aqaba e Mar Rosso", "description": "Snorkeling e immersioni sui coralli del golfo di Aqaba, resort e relitti: si abbina a Wadi Rum per chiudere il viaggio.", "highlights": ["Parco marino di Aqaba", "Tala Bay", "Relitti sommersi"], "seasons": "BBOOOBBBOOOB", "seasonNote": "Mare buono quasi tutto l'anno, caldo d'estate." }
+      {
+        "name": "Amman e nord (Jerash, Ajlun, Umm Qais)",
+        "description": "La capitale con la Cittadella e il teatro romano; Jerash, una delle città romane meglio conservate al mondo; il castello di Ajlun e Umm Qais con vista sul lago di Tiberiade.",
+        "highlights": [
+          "Cittadella di Amman",
+          "Teatro romano",
+          "Jerash",
+          "Castello di Ajlun",
+          "Umm Qais"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera e autunno ideali; inverno freddo e a volte piovoso; estate calda."
+      },
+      {
+        "name": "Strada dei Re (Madaba, Monte Nebo, Kerak)",
+        "description": "L'antica strada che attraversa la Giordania da nord a sud: i mosaici di Madaba, il Monte Nebo da cui Mosè vide la Terra Promessa, il castello crociato di Kerak.",
+        "highlights": [
+          "Madaba",
+          "Monte Nebo",
+          "Kerak",
+          "Wadi Mujib",
+          "Shobak"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Come Amman."
+      },
+      {
+        "name": "Petra",
+        "description": "La città dei Nabatei scavata nella roccia rosa: il Siq, il Tesoro, la via delle facciate, le Tombe reali e la salita al Monastero. Merita almeno due giorni.",
+        "highlights": [
+          "Siq",
+          "Il Tesoro",
+          "Tombe reali",
+          "Monastero",
+          "Petra by Night",
+          "Little Petra"
+        ],
+        "seasons": "BBOOOBDDOOBB",
+        "seasonNote": "Primavera e autunno perfetti; d'estate si visita all'alba; d'inverno giornate fresche."
+      },
+      {
+        "name": "Wadi Rum",
+        "description": "Il deserto di sabbia rossa e montagne di granito di Lawrence d'Arabia, con escursioni in jeep e notte nei campi beduini o nelle tende a bolla.",
+        "highlights": [
+          "Jeep tra le dune",
+          "Ponte di roccia di Burdah",
+          "Campi beduini",
+          "Tende a bolla"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Notti fredde in inverno, giornate calde d'estate."
+      },
+      {
+        "name": "Mar Morto",
+        "description": "Il punto più basso della terra: si galleggia nell'acqua salatissima e ci si cura con i fanghi negli hotel spa della riva.",
+        "highlights": [
+          "Galleggiamento",
+          "Fanghi",
+          "Resort spa",
+          "Wadi Mujib"
+        ],
+        "seasons": "OOOODXXXDOOO",
+        "seasonNote": "D'inverno è il luogo più caldo del paese; d'estate supera i 40 °C."
+      },
+      {
+        "name": "Aqaba e Mar Rosso",
+        "description": "Snorkeling e immersioni sui coralli del golfo di Aqaba, resort e relitti: si abbina a Wadi Rum per chiudere il viaggio.",
+        "highlights": [
+          "Parco marino di Aqaba",
+          "Tala Bay",
+          "Relitti sommersi"
+        ],
+        "seasons": "BBOOOBBBOOOB",
+        "seasonNote": "Mare buono quasi tutto l'anno, caldo d'estate."
+      }
     ],
     "experiences": [
-      { "name": "Petra by Night", "description": "Il Siq e il Tesoro illuminati da centinaia di candele, alcune sere a settimana." },
-      { "name": "Salita al Monastero di Petra", "description": "Circa 800 gradini fino al monumento più grande della città." },
-      { "name": "Jeep e notte nel Wadi Rum", "description": "Tour tra canyon e dune con cena beduina e cielo stellato." },
-      { "name": "Galleggiare nel Mar Morto", "description": "Con fanghi e trattamenti nei resort della riva." },
-      { "name": "Jordan Trail", "description": "Tratti a piedi del sentiero che attraversa il paese, come il trekking da Dana a Petra." },
-      { "name": "Snorkeling ad Aqaba", "description": "Coralli a pochi metri dalla spiaggia." },
-      { "name": "Cucina giordana", "description": "Lezione per preparare mansaf, maqluba e mezze con una famiglia." }
+      {
+        "name": "Petra by Night",
+        "description": "Il Siq e il Tesoro illuminati da centinaia di candele, alcune sere a settimana."
+      },
+      {
+        "name": "Salita al Monastero di Petra",
+        "description": "Circa 800 gradini fino al monumento più grande della città."
+      },
+      {
+        "name": "Jeep e notte nel Wadi Rum",
+        "description": "Tour tra canyon e dune con cena beduina e cielo stellato."
+      },
+      {
+        "name": "Galleggiare nel Mar Morto",
+        "description": "Con fanghi e trattamenti nei resort della riva."
+      },
+      {
+        "name": "Jordan Trail",
+        "description": "Tratti a piedi del sentiero che attraversa il paese, come il trekking da Dana a Petra."
+      },
+      {
+        "name": "Snorkeling ad Aqaba",
+        "description": "Coralli a pochi metri dalla spiaggia."
+      },
+      {
+        "name": "Cucina giordana",
+        "description": "Lezione per preparare mansaf, maqluba e mezze con una famiglia."
+      }
     ],
     "itineraries": [
-      { "title": "Giordania classica", "days": 8, "route": "Amman (2) → Strada dei Re → Petra (2) → Wadi Rum (1) → Mar Morto (2)", "description": "Il tour più venduto in auto con autista, primavera e autunno." },
-      { "title": "Giordania e mare", "days": 10, "route": "Amman (2) → Petra (2) → Wadi Rum (1) → Aqaba (4)", "description": "Chiusura al Mar Rosso con snorkeling e relax." }
+      {
+        "title": "Giordania classica",
+        "days": 8,
+        "route": "Amman (2) → Strada dei Re → Petra (2) → Wadi Rum (1) → Mar Morto (2)",
+        "description": "Il tour più venduto in auto con autista, primavera e autunno."
+      },
+      {
+        "title": "Giordania e mare",
+        "days": 10,
+        "route": "Amman (2) → Petra (2) → Wadi Rum (1) → Aqaba (4)",
+        "description": "Chiusura al Mar Rosso con snorkeling e relax."
+      },
+      {
+        "title": "Trekking a Petra",
+        "days": 7,
+        "route": "Amman (1) → Dana (2) → trekking verso Petra (2) → Wadi Rum (1)",
+        "description": "Il Jordan Trail nel tratto più bello: dalla riserva di Dana si entra a Petra dalla porta posteriore."
+      }
     ],
     "agentTips": [
       "Il Jordan Pass include il visto e gli ingressi principali (anche Petra) se si soggiorna almeno tre notti: conviene quasi sempre.",
@@ -156,27 +602,112 @@
   },
   "AE": {
     "morePlaces": [
-      { "name": "Museum of the Future", "description": "Il museo dalla forma ovale coperta di calligrafia, a Dubai.", "search": "Museum of the Future" },
-      { "name": "Yas Island", "description": "Ferrari World, Warner Bros. World e il circuito di Formula 1 ad Abu Dhabi.", "search": "Yas Island" },
-      { "name": "Jebel Jais", "description": "La montagna più alta del paese a Ras Al Khaimah, con la zipline più lunga del mondo.", "search": "Jebel Jais" }
+      {
+        "name": "Museum of the Future",
+        "description": "Il museo dalla forma ovale coperta di calligrafia, a Dubai.",
+        "search": "Museum of the Future"
+      },
+      {
+        "name": "Yas Island",
+        "description": "Ferrari World, Warner Bros. World e il circuito di Formula 1 ad Abu Dhabi.",
+        "search": "Yas Island"
+      },
+      {
+        "name": "Jebel Jais",
+        "description": "La montagna più alta del paese a Ras Al Khaimah, con la zipline più lunga del mondo.",
+        "search": "Jebel Jais"
+      }
     ],
     "areas": [
-      { "name": "Dubai", "description": "La città dei record: Burj Khalifa, Dubai Mall con l'acquario, la Palm, la Marina, i souk dell'oro e delle spezie sul Creek, il Museo del Futuro e il deserto a mezz'ora.", "highlights": ["Burj Khalifa", "Dubai Mall", "Palm Jumeirah", "Old Dubai e Creek", "Museum of the Future", "Safari nel deserto"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da novembre a marzo ideale; da giugno a settembre oltre 40 °C, si vive al chiuso." },
-      { "name": "Abu Dhabi", "description": "La capitale più culturale: la Grande Moschea Sheikh Zayed, il Louvre Abu Dhabi, Qasr Al Watan e i parchi di Yas Island per famiglie.", "highlights": ["Moschea Sheikh Zayed", "Louvre Abu Dhabi", "Qasr Al Watan", "Yas Island", "Saadiyat"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Come Dubai." },
-      { "name": "Emirati del nord e costa est (Ras Al Khaimah, Fujairah)", "description": "Montagne, spiagge più tranquille e resort a prezzi migliori: Ras Al Khaimah con Jebel Jais, Fujairah sul Golfo di Oman per snorkeling e immersioni.", "highlights": ["Jebel Jais", "Spiagge di Ras Al Khaimah", "Fujairah", "Snoopy Island"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Come il resto del paese; in montagna qualche grado in meno." }
+      {
+        "name": "Dubai",
+        "description": "La città dei record: Burj Khalifa, Dubai Mall con l'acquario, la Palm, la Marina, i souk dell'oro e delle spezie sul Creek, il Museo del Futuro e il deserto a mezz'ora.",
+        "highlights": [
+          "Burj Khalifa",
+          "Dubai Mall",
+          "Palm Jumeirah",
+          "Old Dubai e Creek",
+          "Museum of the Future",
+          "Safari nel deserto"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da novembre a marzo ideale; da giugno a settembre oltre 40 °C, si vive al chiuso."
+      },
+      {
+        "name": "Abu Dhabi",
+        "description": "La capitale più culturale: la Grande Moschea Sheikh Zayed, il Louvre Abu Dhabi, Qasr Al Watan e i parchi di Yas Island per famiglie.",
+        "highlights": [
+          "Moschea Sheikh Zayed",
+          "Louvre Abu Dhabi",
+          "Qasr Al Watan",
+          "Yas Island",
+          "Saadiyat"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Come Dubai."
+      },
+      {
+        "name": "Emirati del nord e costa est (Ras Al Khaimah, Fujairah)",
+        "description": "Montagne, spiagge più tranquille e resort a prezzi migliori: Ras Al Khaimah con Jebel Jais, Fujairah sul Golfo di Oman per snorkeling e immersioni.",
+        "highlights": [
+          "Jebel Jais",
+          "Spiagge di Ras Al Khaimah",
+          "Fujairah",
+          "Snoopy Island"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Come il resto del paese; in montagna qualche grado in meno."
+      }
     ],
     "experiences": [
-      { "name": "Burj Khalifa al tramonto", "description": "Salita all'osservatorio con biglietto a orario per il tramonto." },
-      { "name": "Safari nel deserto", "description": "Fuoristrada tra le dune, campo beduino con cena e spettacoli; anche in versione esclusiva o in auto d'epoca." },
-      { "name": "Moschea Sheikh Zayed", "description": "Visita, anche al tramonto, alla moschea bianca di Abu Dhabi." },
-      { "name": "Abra sul Creek", "description": "La barchetta tradizionale tra i souk dell'oro e delle spezie." },
-      { "name": "Parchi a tema", "description": "Ferrari World, Warner Bros. World, IMG Worlds e i parchi acquatici: ideali per famiglie." },
-      { "name": "Crociera in dhow con cena", "description": "Sulla Marina di Dubai o sul Creek." },
-      { "name": "Zipline di Jebel Jais", "description": "Volo sopra le montagne di Ras Al Khaimah." }
+      {
+        "name": "Burj Khalifa al tramonto",
+        "description": "Salita all'osservatorio con biglietto a orario per il tramonto."
+      },
+      {
+        "name": "Safari nel deserto",
+        "description": "Fuoristrada tra le dune, campo beduino con cena e spettacoli; anche in versione esclusiva o in auto d'epoca."
+      },
+      {
+        "name": "Moschea Sheikh Zayed",
+        "description": "Visita, anche al tramonto, alla moschea bianca di Abu Dhabi."
+      },
+      {
+        "name": "Abra sul Creek",
+        "description": "La barchetta tradizionale tra i souk dell'oro e delle spezie."
+      },
+      {
+        "name": "Parchi a tema",
+        "description": "Ferrari World, Warner Bros. World, IMG Worlds e i parchi acquatici: ideali per famiglie."
+      },
+      {
+        "name": "Crociera in dhow con cena",
+        "description": "Sulla Marina di Dubai o sul Creek."
+      },
+      {
+        "name": "Zipline di Jebel Jais",
+        "description": "Volo sopra le montagne di Ras Al Khaimah."
+      }
     ],
     "itineraries": [
-      { "title": "Dubai e Abu Dhabi", "days": 6, "route": "Dubai (4) → Abu Dhabi (1–2)", "description": "Città, deserto e cultura, ideale anche per famiglie da novembre a marzo." },
-      { "title": "Stopover", "days": 3, "route": "Dubai (2–3) nel viaggio verso Maldive, Oceano Indiano o Asia", "description": "Formula molto richiesta con i voli delle compagnie del Golfo." }
+      {
+        "title": "Dubai e Abu Dhabi",
+        "days": 6,
+        "route": "Dubai (4) → Abu Dhabi (1–2)",
+        "description": "Città, deserto e cultura, ideale anche per famiglie da novembre a marzo."
+      },
+      {
+        "title": "Stopover",
+        "days": 3,
+        "route": "Dubai (2–3) nel viaggio verso Maldive, Oceano Indiano o Asia",
+        "description": "Formula molto richiesta con i voli delle compagnie del Golfo."
+      },
+      {
+        "title": "Dubai con le Maldive",
+        "days": 11,
+        "route": "Dubai (3) → Maldive (7)",
+        "description": "La combinazione più venduta per i viaggi di nozze: città e deserto all'andata, poi una settimana in resort con un solo cambio aereo."
+      }
     ],
     "agentTips": [
       "Gli italiani ricevono gratuitamente il visto all'arrivo per soggiorni brevi.",
@@ -184,6 +715,10 @@
       "Durante il Ramadan non si mangia né si beve in pubblico di giorno e alcuni locali cambiano orari.",
       "Abbigliamento coperto nelle moschee e nei luoghi pubblici tradizionali; in spiaggia e in piscina libero.",
       "D'estate i prezzi degli hotel crollano: ottimi affari per chi accetta il caldo e vive al chiuso."
+    ],
+    "moreDescription": [
+      "Gli Emirati si vendono soprattutto da ottobre ad aprile, quando le temperature sono piacevoli e si fa davvero vita all'aperto: da giugno a settembre il caldo supera spesso i 40 gradi e il viaggio si fa tra hotel, centri commerciali e attrazioni al chiuso, con prezzi degli hotel molto più bassi. Dubai è perfetta per un primo assaggio o come sosta sulla rotta di Maldive, Oceano Indiano e Asia; Abu Dhabi è più tranquilla e culturale, con la Grande Moschea e il Louvre, e Ras al-Khaimah offre resort sul mare a prezzi più contenuti.",
+      "Conviene orientare il cliente sulla zona dell'hotel: Downtown e Dubai Marina per chi vuole la città, Palm Jumeirah e Jumeirah Beach per il mare, Deira per chi cerca i souk e un budget più basso. Il safari nel deserto con cena, la salita al Burj Khalifa (da prenotare con orario) e una giornata ad Abu Dhabi sono le escursioni più richieste. Durante il Ramadan i ristoranti di giorno sono più discreti ma il viaggio resta possibile; il venerdì è giornata festiva."
     ]
   },
   "OM": {
@@ -191,30 +726,140 @@
       "L'Oman è l'Arabia autentica: forti, villaggi di fango tra le palme, montagne e canyon, deserto di dune, spiagge e tartarughe, con un'ospitalità discreta e un turismo ancora poco affollato. Si visita bene in auto 4x4, anche in self-drive. Il periodo migliore è da ottobre ad aprile; d'estate il caldo è estremo, tranne che nel Dhofar (Salalah), dove tra giugno e settembre il monsone khareef rende tutto verde e fresco."
     ],
     "morePlaces": [
-      { "name": "Jebel Akhdar", "description": "La 'montagna verde' a 2.000 metri, con terrazze di rose e villaggi sospesi.", "search": "Jebel Akhdar" },
-      { "name": "Ras al-Jinz", "description": "La riserva dove le tartarughe verdi depongono le uova ogni notte.", "search": "Ras al Jinz" },
-      { "name": "Salalah", "description": "La capitale del Dhofar, terra dell'incenso, spiagge e monsone estivo.", "search": "Salalah" },
-      { "name": "Souk di Mutrah", "description": "Il mercato tradizionale di Muscat sul lungomare.", "search": "Mutrah Souq" }
+      {
+        "name": "Jebel Akhdar",
+        "description": "La 'montagna verde' a 2.000 metri, con terrazze di rose e villaggi sospesi.",
+        "search": "Jebel Akhdar"
+      },
+      {
+        "name": "Ras al-Jinz",
+        "description": "La riserva dove le tartarughe verdi depongono le uova ogni notte.",
+        "search": "Ras al Jinz"
+      },
+      {
+        "name": "Salalah",
+        "description": "La capitale del Dhofar, terra dell'incenso, spiagge e monsone estivo.",
+        "search": "Salalah"
+      },
+      {
+        "name": "Souk di Mutrah",
+        "description": "Il mercato tradizionale di Muscat sul lungomare.",
+        "search": "Mutrah Souq"
+      }
     ],
     "areas": [
-      { "name": "Muscat", "description": "Capitale elegante e ordinata: la Grande Moschea del Sultano Qaboos, il souk di Mutrah, il Royal Opera House, le spiagge e le escursioni in barca con i delfini.", "highlights": ["Grande Moschea", "Souk di Mutrah", "Royal Opera House", "Delfini in barca", "Isole Daymaniyat"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da ottobre ad aprile ideale; d'estate caldo e umido." },
-      { "name": "Montagne e interno (Nizwa, Jebel Akhdar, Jebel Shams)", "description": "Il forte di Nizwa e il mercato del venerdì, Bahla e Jabrin, i villaggi di Misfat al Abriyeen, il 'Grand Canyon d'Arabia' di Jebel Shams e le terrazze di Jebel Akhdar.", "highlights": ["Forte di Nizwa", "Jebel Shams", "Jebel Akhdar", "Misfat al Abriyeen", "Bahla"], "seasons": "BOOOOBBBOOOB", "seasonNote": "In quota fa fresco anche d'estate; d'inverno notti fredde." },
-      { "name": "Deserto e costa est (Wahiba Sands, Sur, Ras al-Jinz)", "description": "Le dune di Wahiba con campi nel deserto, i wadi Shab e Bani Khalid con piscine naturali, Sur con i cantieri dei dhow e le tartarughe di Ras al-Jinz.", "highlights": ["Wahiba Sands", "Wadi Shab", "Wadi Bani Khalid", "Sur", "Ras al-Jinz"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da ottobre ad aprile; tartarughe tutto l'anno, con picchi tra giugno e settembre." },
-      { "name": "Musandam", "description": "Exclave a nord, separata dal resto del paese: fiordi di montagne a picco sul mare, crociere in dhow con delfini e snorkeling.", "highlights": ["Khasab", "Fiordi in dhow", "Telegraph Island"], "seasons": "OOOBDXXXDBOO", "seasonNote": "Da ottobre ad aprile; raggiungibile anche da Dubai." },
-      { "name": "Dhofar (Salalah)", "description": "Il sud tropicale: spiagge, piantagioni di cocco, i siti dell'incenso UNESCO e, d'estate, il khareef che copre di verde montagne e cascate.", "highlights": ["Salalah", "Al Baleed", "Wadi Darbat", "Spiaggia di Al Mughsayl"], "seasons": "OOOBBBOODBOO", "seasonNote": "Spiaggia e sole da ottobre ad aprile; tra luglio e agosto il khareef, amato dai turisti del Golfo." }
+      {
+        "name": "Muscat",
+        "description": "Capitale elegante e ordinata: la Grande Moschea del Sultano Qaboos, il souk di Mutrah, il Royal Opera House, le spiagge e le escursioni in barca con i delfini.",
+        "highlights": [
+          "Grande Moschea",
+          "Souk di Mutrah",
+          "Royal Opera House",
+          "Delfini in barca",
+          "Isole Daymaniyat"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da ottobre ad aprile ideale; d'estate caldo e umido."
+      },
+      {
+        "name": "Montagne e interno (Nizwa, Jebel Akhdar, Jebel Shams)",
+        "description": "Il forte di Nizwa e il mercato del venerdì, Bahla e Jabrin, i villaggi di Misfat al Abriyeen, il 'Grand Canyon d'Arabia' di Jebel Shams e le terrazze di Jebel Akhdar.",
+        "highlights": [
+          "Forte di Nizwa",
+          "Jebel Shams",
+          "Jebel Akhdar",
+          "Misfat al Abriyeen",
+          "Bahla"
+        ],
+        "seasons": "BOOOOBBBOOOB",
+        "seasonNote": "In quota fa fresco anche d'estate; d'inverno notti fredde."
+      },
+      {
+        "name": "Deserto e costa est (Wahiba Sands, Sur, Ras al-Jinz)",
+        "description": "Le dune di Wahiba con campi nel deserto, i wadi Shab e Bani Khalid con piscine naturali, Sur con i cantieri dei dhow e le tartarughe di Ras al-Jinz.",
+        "highlights": [
+          "Wahiba Sands",
+          "Wadi Shab",
+          "Wadi Bani Khalid",
+          "Sur",
+          "Ras al-Jinz"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da ottobre ad aprile; tartarughe tutto l'anno, con picchi tra giugno e settembre."
+      },
+      {
+        "name": "Musandam",
+        "description": "Exclave a nord, separata dal resto del paese: fiordi di montagne a picco sul mare, crociere in dhow con delfini e snorkeling.",
+        "highlights": [
+          "Khasab",
+          "Fiordi in dhow",
+          "Telegraph Island"
+        ],
+        "seasons": "OOOBDXXXDBOO",
+        "seasonNote": "Da ottobre ad aprile; raggiungibile anche da Dubai."
+      },
+      {
+        "name": "Dhofar (Salalah)",
+        "description": "Il sud tropicale: spiagge, piantagioni di cocco, i siti dell'incenso UNESCO e, d'estate, il khareef che copre di verde montagne e cascate.",
+        "highlights": [
+          "Salalah",
+          "Al Baleed",
+          "Wadi Darbat",
+          "Spiaggia di Al Mughsayl"
+        ],
+        "seasons": "OOOBBBOODBOO",
+        "seasonNote": "Spiaggia e sole da ottobre ad aprile; tra luglio e agosto il khareef, amato dai turisti del Golfo."
+      }
     ],
     "experiences": [
-      { "name": "Bagno nel Wadi Shab", "description": "Trekking tra le pareti del canyon e nuotata fino alla grotta con la cascata." },
-      { "name": "Notte nel deserto di Wahiba", "description": "Campo tra le dune, dune bashing e tramonto." },
-      { "name": "Tartarughe a Ras al-Jinz", "description": "Visita serale o all'alba alla deposizione delle uova." },
-      { "name": "Balcony Walk di Jebel Shams", "description": "Sentiero sul bordo del canyon fino a un villaggio abbandonato." },
-      { "name": "Mercato del venerdì di Nizwa", "description": "Asta delle capre e mercato tradizionale la mattina presto." },
-      { "name": "Dhow nei fiordi di Musandam", "description": "Giornata in barca con delfini e snorkeling." },
-      { "name": "Snorkeling alle isole Daymaniyat", "description": "Riserva marina con tartarughe e coralli, vicino a Muscat." }
+      {
+        "name": "Bagno nel Wadi Shab",
+        "description": "Trekking tra le pareti del canyon e nuotata fino alla grotta con la cascata."
+      },
+      {
+        "name": "Notte nel deserto di Wahiba",
+        "description": "Campo tra le dune, dune bashing e tramonto."
+      },
+      {
+        "name": "Tartarughe a Ras al-Jinz",
+        "description": "Visita serale o all'alba alla deposizione delle uova."
+      },
+      {
+        "name": "Balcony Walk di Jebel Shams",
+        "description": "Sentiero sul bordo del canyon fino a un villaggio abbandonato."
+      },
+      {
+        "name": "Mercato del venerdì di Nizwa",
+        "description": "Asta delle capre e mercato tradizionale la mattina presto."
+      },
+      {
+        "name": "Dhow nei fiordi di Musandam",
+        "description": "Giornata in barca con delfini e snorkeling."
+      },
+      {
+        "name": "Snorkeling alle isole Daymaniyat",
+        "description": "Riserva marina con tartarughe e coralli, vicino a Muscat."
+      }
     ],
     "itineraries": [
-      { "title": "Oman classico", "days": 9, "route": "Muscat (2) → Nizwa e Jebel Akhdar (2) → Wahiba Sands (1) → Sur e Ras al-Jinz (1) → Muscat (2)", "description": "Forti, montagne, deserto e mare in 4x4 con autista o in self-drive." },
-      { "title": "Dubai e Oman", "days": 10, "route": "Dubai (3) → Musandam (1) → Muscat (2) → Nizwa (2) → Wahiba (1)", "description": "Combinato tra il moderno e l'Arabia tradizionale." }
+      {
+        "title": "Oman classico",
+        "days": 9,
+        "route": "Muscat (2) → Nizwa e Jebel Akhdar (2) → Wahiba Sands (1) → Sur e Ras al-Jinz (1) → Muscat (2)",
+        "description": "Forti, montagne, deserto e mare in 4x4 con autista o in self-drive."
+      },
+      {
+        "title": "Dubai e Oman",
+        "days": 10,
+        "route": "Dubai (3) → Musandam (1) → Muscat (2) → Nizwa (2) → Wahiba (1)",
+        "description": "Combinato tra il moderno e l'Arabia tradizionale."
+      },
+      {
+        "title": "Oman mare e deserto",
+        "days": 9,
+        "route": "Muscat (2) → Wahiba Sands (1) → Ras al-Jinz (1) → Salalah (4)",
+        "description": "Tour del nord con estensione a Salalah, verde e piovosa in estate durante il khareef."
+      }
     ],
     "agentTips": [
       "Verifica le regole d'ingresso in vigore per gli italiani (esenzione dal visto per brevi soggiorni o e-visa).",
@@ -229,30 +874,126 @@
       "Il Kenya è la patria del safari: per un agente conta capire il calendario della grande migrazione degli gnu, che arriva nel Masai Mara da luglio a ottobre, e le stagioni delle piogge (lunghe ad aprile–maggio, brevi a novembre). Molto amata dal mercato italiano è la combinazione safari + mare a Watamu o Malindi, con tanti resort a gestione italiana. Per i safari si sceglie tra la riserva nazionale (più accessibile) e le conservancy private confinanti, più esclusive, con meno veicoli e attività come safari a piedi e notturni."
     ],
     "morePlaces": [
-      { "name": "Ol Pejeta", "description": "Conservancy nel Laikipia con rinoceronti bianchi e neri e scimpanzé.", "search": "Ol Pejeta Conservancy" },
-      { "name": "Samburu", "description": "Riserva arida del nord con specie uniche come la zebra di Grévy e la giraffa reticolata.", "search": "Samburu National Reserve" },
-      { "name": "Diani Beach", "description": "Spiaggia bianca a sud di Mombasa, con barriera corallina e attività acquatiche.", "search": "Diani Beach" }
+      {
+        "name": "Ol Pejeta",
+        "description": "Conservancy nel Laikipia con rinoceronti bianchi e neri e scimpanzé.",
+        "search": "Ol Pejeta Conservancy"
+      },
+      {
+        "name": "Samburu",
+        "description": "Riserva arida del nord con specie uniche come la zebra di Grévy e la giraffa reticolata.",
+        "search": "Samburu National Reserve"
+      },
+      {
+        "name": "Diani Beach",
+        "description": "Spiaggia bianca a sud di Mombasa, con barriera corallina e attività acquatiche.",
+        "search": "Diani Beach"
+      }
     ],
     "areas": [
-      { "name": "Masai Mara e conservancy", "description": "La riserva più famosa d'Africa: savana con leoni, ghepardi, elefanti e, da luglio a ottobre, la migrazione con gli attraversamenti del fiume Mara. Le conservancy confinanti offrono safari esclusivi.", "highlights": ["Attraversamenti del fiume Mara", "Grandi felini", "Mongolfiera", "Conservancy di Olare Motorogi e Naboisho"], "seasons": "OOBXDBOOOODB", "seasonNote": "Luglio–ottobre per la migrazione; gennaio–febbraio secco e ottimo; aprile–maggio piogge lunghe, alcuni campi chiudono." },
-      { "name": "Amboseli e Tsavo", "description": "Amboseli con i grandi branchi di elefanti davanti al Kilimangiaro; Tsavo Est e Ovest, i parchi più grandi del paese, comodi da abbinare al mare.", "highlights": ["Elefanti e Kilimangiaro", "Tsavo Est", "Tsavo Ovest", "Mzima Springs"], "seasons": "OOBXDOOOOODB", "seasonNote": "Stagione secca da giugno a ottobre e gennaio–febbraio; il Kilimangiaro è più visibile al mattino." },
-      { "name": "Laikipia e Samburu", "description": "Il Kenya del nord: conservancy private con rinoceronti, safari a piedi e a cavallo, Samburu con paesaggi aridi e animali rari.", "highlights": ["Ol Pejeta", "Lewa", "Samburu", "Monte Kenya"], "seasons": "OOBXDBOOOODB", "seasonNote": "Come il Mara; meno affollato in alta stagione." },
-      { "name": "Costa (Watamu, Malindi, Diani, Lamu)", "description": "Spiagge bianche e barriera corallina: Watamu e Malindi con molti resort italiani, Diani a sud di Mombasa, l'arcipelago di Lamu con la città swahili UNESCO.", "highlights": ["Parco marino di Watamu", "Malindi", "Diani", "Lamu", "Sardegna 2"], "seasons": "OOOBXXBBOOBO", "seasonNote": "Da dicembre a marzo e da luglio a ottobre; aprile–giugno piogge lunghe e alcuni hotel chiusi." }
+      {
+        "name": "Masai Mara e conservancy",
+        "description": "La riserva più famosa d'Africa: savana con leoni, ghepardi, elefanti e, da luglio a ottobre, la migrazione con gli attraversamenti del fiume Mara. Le conservancy confinanti offrono safari esclusivi.",
+        "highlights": [
+          "Attraversamenti del fiume Mara",
+          "Grandi felini",
+          "Mongolfiera",
+          "Conservancy di Olare Motorogi e Naboisho"
+        ],
+        "seasons": "OOBXDBOOOODB",
+        "seasonNote": "Luglio–ottobre per la migrazione; gennaio–febbraio secco e ottimo; aprile–maggio piogge lunghe, alcuni campi chiudono."
+      },
+      {
+        "name": "Amboseli e Tsavo",
+        "description": "Amboseli con i grandi branchi di elefanti davanti al Kilimangiaro; Tsavo Est e Ovest, i parchi più grandi del paese, comodi da abbinare al mare.",
+        "highlights": [
+          "Elefanti e Kilimangiaro",
+          "Tsavo Est",
+          "Tsavo Ovest",
+          "Mzima Springs"
+        ],
+        "seasons": "OOBXDOOOOODB",
+        "seasonNote": "Stagione secca da giugno a ottobre e gennaio–febbraio; il Kilimangiaro è più visibile al mattino."
+      },
+      {
+        "name": "Laikipia e Samburu",
+        "description": "Il Kenya del nord: conservancy private con rinoceronti, safari a piedi e a cavallo, Samburu con paesaggi aridi e animali rari.",
+        "highlights": [
+          "Ol Pejeta",
+          "Lewa",
+          "Samburu",
+          "Monte Kenya"
+        ],
+        "seasons": "OOBXDBOOOODB",
+        "seasonNote": "Come il Mara; meno affollato in alta stagione."
+      },
+      {
+        "name": "Costa (Watamu, Malindi, Diani, Lamu)",
+        "description": "Spiagge bianche e barriera corallina: Watamu e Malindi con molti resort italiani, Diani a sud di Mombasa, l'arcipelago di Lamu con la città swahili UNESCO.",
+        "highlights": [
+          "Parco marino di Watamu",
+          "Malindi",
+          "Diani",
+          "Lamu",
+          "Sardegna 2"
+        ],
+        "seasons": "OOOBXXBBOOBO",
+        "seasonNote": "Da dicembre a marzo e da luglio a ottobre; aprile–giugno piogge lunghe e alcuni hotel chiusi."
+      }
     ],
     "experiences": [
-      { "name": "Fotosafari in 4x4", "description": "Uscite all'alba e al tramonto con ranger esperti; nelle conservancy anche fuoripista e notturni." },
-      { "name": "Mongolfiera sul Masai Mara", "description": "Volo all'alba con colazione nella savana." },
-      { "name": "Attraversamenti del fiume Mara", "description": "Da luglio a ottobre, attesa sulle rive per vedere migliaia di gnu attraversare tra i coccodrilli." },
-      { "name": "Safari a piedi", "description": "Con guida armata nelle conservancy del Laikipia e del Mara." },
-      { "name": "Orfanotrofio degli elefanti a Nairobi", "description": "Visita al David Sheldrick Wildlife Trust e al Giraffe Centre." },
-      { "name": "Villaggio masai", "description": "Visita con una famiglia masai, meglio se organizzata dalle conservancy con benefici diretti alla comunità." },
-      { "name": "Snorkeling a Watamu", "description": "Parco marino con tartarughe e barriera vicino alla riva." },
-      { "name": "Dhow a Lamu", "description": "Navigazione al tramonto tra isole e mangrovie." }
+      {
+        "name": "Fotosafari in 4x4",
+        "description": "Uscite all'alba e al tramonto con ranger esperti; nelle conservancy anche fuoripista e notturni."
+      },
+      {
+        "name": "Mongolfiera sul Masai Mara",
+        "description": "Volo all'alba con colazione nella savana."
+      },
+      {
+        "name": "Attraversamenti del fiume Mara",
+        "description": "Da luglio a ottobre, attesa sulle rive per vedere migliaia di gnu attraversare tra i coccodrilli."
+      },
+      {
+        "name": "Safari a piedi",
+        "description": "Con guida armata nelle conservancy del Laikipia e del Mara."
+      },
+      {
+        "name": "Orfanotrofio degli elefanti a Nairobi",
+        "description": "Visita al David Sheldrick Wildlife Trust e al Giraffe Centre."
+      },
+      {
+        "name": "Villaggio masai",
+        "description": "Visita con una famiglia masai, meglio se organizzata dalle conservancy con benefici diretti alla comunità."
+      },
+      {
+        "name": "Snorkeling a Watamu",
+        "description": "Parco marino con tartarughe e barriera vicino alla riva."
+      },
+      {
+        "name": "Dhow a Lamu",
+        "description": "Navigazione al tramonto tra isole e mangrovie."
+      }
     ],
     "itineraries": [
-      { "title": "Safari e mare", "days": 12, "route": "Nairobi (1) → Masai Mara (3) → volo per la costa → Watamu o Malindi (7)", "description": "La formula più amata dagli italiani, perfetta da luglio a ottobre e a Natale." },
-      { "title": "Grande safari", "days": 10, "route": "Nairobi (1) → Samburu (2) → Ol Pejeta (2) → Lago Nakuru (1) → Masai Mara (3)", "description": "Per chi vuole solo natura, con voli interni o fuoristrada." },
-      { "title": "Mare e Tsavo", "days": 9, "route": "Watamu o Malindi (6) → Tsavo Est (2)", "description": "Soggiorno mare con safari breve via terra, ideale per famiglie." }
+      {
+        "title": "Safari e mare",
+        "days": 12,
+        "route": "Nairobi (1) → Masai Mara (3) → volo per la costa → Watamu o Malindi (7)",
+        "description": "La formula più amata dagli italiani, perfetta da luglio a ottobre e a Natale."
+      },
+      {
+        "title": "Grande safari",
+        "days": 10,
+        "route": "Nairobi (1) → Samburu (2) → Ol Pejeta (2) → Lago Nakuru (1) → Masai Mara (3)",
+        "description": "Per chi vuole solo natura, con voli interni o fuoristrada."
+      },
+      {
+        "title": "Mare e Tsavo",
+        "days": 9,
+        "route": "Watamu o Malindi (6) → Tsavo Est (2)",
+        "description": "Soggiorno mare con safari breve via terra, ideale per famiglie."
+      }
     ],
     "agentTips": [
       "Prima della partenza serve l'autorizzazione elettronica di viaggio (eTA) del Kenya, da richiedere online.",
@@ -267,30 +1008,127 @@
       "La Tanzania offre forse il safari più spettacolare d'Africa, con il Serengeti e il cratere di Ngorongoro, e il mare di Zanzibar. Il circuito nord (Arusha, Tarangire, Manyara, Ngorongoro, Serengeti) si vende tutto l'anno tranne aprile–maggio: la migrazione si sposta nel Serengeti e va seguita mese per mese (sud con le nascite tra gennaio e febbraio, ovest tra giugno e luglio, nord con gli attraversamenti del fiume Mara tra agosto e ottobre). I parchi del sud (Ruaha, Nyerere) sono più selvaggi e meno frequentati. Zanzibar chiude il viaggio con spiagge bianche e la città storica di Stone Town."
     ],
     "morePlaces": [
-      { "name": "Lago Manyara", "description": "Parco piccolo con foresta, lago e i leoni che salgono sugli alberi.", "search": "Lake Manyara National Park" },
-      { "name": "Parco nazionale di Ruaha", "description": "Il grande parco selvaggio del sud, con leoni, elefanti e licaoni.", "search": "Ruaha National Park" },
-      { "name": "Atollo di Mnemba", "description": "Riserva marina di Zanzibar con delfini, tartarughe e coralli.", "search": "Mnemba Island" }
+      {
+        "name": "Lago Manyara",
+        "description": "Parco piccolo con foresta, lago e i leoni che salgono sugli alberi.",
+        "search": "Lake Manyara National Park"
+      },
+      {
+        "name": "Parco nazionale di Ruaha",
+        "description": "Il grande parco selvaggio del sud, con leoni, elefanti e licaoni.",
+        "search": "Ruaha National Park"
+      },
+      {
+        "name": "Atollo di Mnemba",
+        "description": "Riserva marina di Zanzibar con delfini, tartarughe e coralli.",
+        "search": "Mnemba Island"
+      }
     ],
     "areas": [
-      { "name": "Circuito nord (Serengeti, Ngorongoro, Tarangire, Manyara)", "description": "Il safari classico: Tarangire con gli elefanti e i baobab, Manyara, il cratere di Ngorongoro con altissima densità di animali e il Serengeti con la grande migrazione. Si viaggia in fuoristrada con guida o con voli interni.", "highlights": ["Serengeti", "Cratere di Ngorongoro", "Tarangire", "Lago Manyara", "Gola di Olduvai"], "seasons": "OOBXDOOOOODB", "seasonNote": "Giugno–ottobre stagione secca; gennaio–febbraio nascite nel sud del Serengeti; aprile–maggio piogge lunghe, molti campi chiusi." },
-      { "name": "Parchi del sud (Ruaha, Nyerere)", "description": "Safari lontani dalla folla: Ruaha con grandi felini e licaoni, Nyerere (ex Selous) con safari in barca e a piedi lungo il fiume Rufiji.", "highlights": ["Ruaha", "Nyerere", "Safari in barca sul Rufiji", "Safari a piedi"], "seasons": "BBDXXOOOOOBD", "seasonNote": "Da giugno a ottobre ideale; da marzo a maggio molti campi chiusi." },
-      { "name": "Zanzibar", "description": "Spiagge bianche a Nungwi, Kendwa e sulla costa est con le maree, Stone Town UNESCO, piantagioni di spezie, la foresta di Jozani e l'atollo di Mnemba.", "highlights": ["Stone Town", "Nungwi e Kendwa", "Paje e Matemwe", "Mnemba", "Jozani", "Prison Island"], "seasons": "OOBXXOOOOODB", "seasonNote": "Da giugno a ottobre e da dicembre a febbraio; aprile–maggio piogge lunghe; novembre piogge brevi." },
-      { "name": "Kilimangiaro", "description": "La montagna più alta d'Africa (5.895 m), salita in 6–8 giorni lungo vie come la Machame o la Lemosho, senza difficoltà tecniche ma con alta quota.", "highlights": ["Via Machame", "Via Lemosho", "Uhuru Peak"], "seasons": "OOBXXBOOOOBB", "seasonNote": "Da gennaio a marzo e da giugno a ottobre; evitare aprile–maggio." }
+      {
+        "name": "Circuito nord (Serengeti, Ngorongoro, Tarangire, Manyara)",
+        "description": "Il safari classico: Tarangire con gli elefanti e i baobab, Manyara, il cratere di Ngorongoro con altissima densità di animali e il Serengeti con la grande migrazione. Si viaggia in fuoristrada con guida o con voli interni.",
+        "highlights": [
+          "Serengeti",
+          "Cratere di Ngorongoro",
+          "Tarangire",
+          "Lago Manyara",
+          "Gola di Olduvai"
+        ],
+        "seasons": "OOBXDOOOOODB",
+        "seasonNote": "Giugno–ottobre stagione secca; gennaio–febbraio nascite nel sud del Serengeti; aprile–maggio piogge lunghe, molti campi chiusi."
+      },
+      {
+        "name": "Parchi del sud (Ruaha, Nyerere)",
+        "description": "Safari lontani dalla folla: Ruaha con grandi felini e licaoni, Nyerere (ex Selous) con safari in barca e a piedi lungo il fiume Rufiji.",
+        "highlights": [
+          "Ruaha",
+          "Nyerere",
+          "Safari in barca sul Rufiji",
+          "Safari a piedi"
+        ],
+        "seasons": "BBDXXOOOOOBD",
+        "seasonNote": "Da giugno a ottobre ideale; da marzo a maggio molti campi chiusi."
+      },
+      {
+        "name": "Zanzibar",
+        "description": "Spiagge bianche a Nungwi, Kendwa e sulla costa est con le maree, Stone Town UNESCO, piantagioni di spezie, la foresta di Jozani e l'atollo di Mnemba.",
+        "highlights": [
+          "Stone Town",
+          "Nungwi e Kendwa",
+          "Paje e Matemwe",
+          "Mnemba",
+          "Jozani",
+          "Prison Island"
+        ],
+        "seasons": "OOBXXOOOOODB",
+        "seasonNote": "Da giugno a ottobre e da dicembre a febbraio; aprile–maggio piogge lunghe; novembre piogge brevi."
+      },
+      {
+        "name": "Kilimangiaro",
+        "description": "La montagna più alta d'Africa (5.895 m), salita in 6–8 giorni lungo vie come la Machame o la Lemosho, senza difficoltà tecniche ma con alta quota.",
+        "highlights": [
+          "Via Machame",
+          "Via Lemosho",
+          "Uhuru Peak"
+        ],
+        "seasons": "OOBXXBOOOOBB",
+        "seasonNote": "Da gennaio a marzo e da giugno a ottobre; evitare aprile–maggio."
+      }
     ],
     "experiences": [
-      { "name": "Discesa nel cratere di Ngorongoro", "description": "Una giornata nella caldera con leoni, rinoceronti e fenicotteri." },
-      { "name": "Mongolfiera sul Serengeti", "description": "Volo all'alba con colazione con champagne nella savana." },
-      { "name": "Nascite nel Serengeti sud", "description": "A gennaio–febbraio migliaia di gnu partoriscono nelle pianure di Ndutu, con tanti predatori." },
-      { "name": "Attraversamenti del fiume Mara", "description": "Da agosto a ottobre nel nord del Serengeti, a Kogatende." },
-      { "name": "Tour delle spezie e Stone Town", "description": "Piantagioni di chiodi di garofano, vaniglia e cannella e visita guidata della città storica." },
-      { "name": "Snorkeling a Mnemba", "description": "Con delfini, tartarughe e coralli." },
-      { "name": "Dhow al tramonto", "description": "Uscita in barca tradizionale da Nungwi o Kendwa." },
-      { "name": "Salita al Kilimangiaro", "description": "Per escursionisti allenati, con guide e portatori, 6–8 giorni." }
+      {
+        "name": "Discesa nel cratere di Ngorongoro",
+        "description": "Una giornata nella caldera con leoni, rinoceronti e fenicotteri."
+      },
+      {
+        "name": "Mongolfiera sul Serengeti",
+        "description": "Volo all'alba con colazione con champagne nella savana."
+      },
+      {
+        "name": "Nascite nel Serengeti sud",
+        "description": "A gennaio–febbraio migliaia di gnu partoriscono nelle pianure di Ndutu, con tanti predatori."
+      },
+      {
+        "name": "Attraversamenti del fiume Mara",
+        "description": "Da agosto a ottobre nel nord del Serengeti, a Kogatende."
+      },
+      {
+        "name": "Tour delle spezie e Stone Town",
+        "description": "Piantagioni di chiodi di garofano, vaniglia e cannella e visita guidata della città storica."
+      },
+      {
+        "name": "Snorkeling a Mnemba",
+        "description": "Con delfini, tartarughe e coralli."
+      },
+      {
+        "name": "Dhow al tramonto",
+        "description": "Uscita in barca tradizionale da Nungwi o Kendwa."
+      },
+      {
+        "name": "Salita al Kilimangiaro",
+        "description": "Per escursionisti allenati, con guide e portatori, 6–8 giorni."
+      }
     ],
     "itineraries": [
-      { "title": "Safari nord e Zanzibar", "days": 12, "route": "Arusha (1) → Tarangire (1) → Ngorongoro (1) → Serengeti (3) → volo per Zanzibar (6)", "description": "Il combinato più venduto, ideale da giugno a ottobre e da dicembre a febbraio." },
-      { "title": "Migrazione e nascite", "days": 9, "route": "Arusha (1) → Ngorongoro (2) → Ndutu (3) → Serengeti centrale (2)", "description": "A gennaio–febbraio, per vedere le nascite e i predatori." },
-      { "title": "Safari del sud", "days": 9, "route": "Dar es Salaam (1) → Nyerere (3) → Ruaha (4)", "description": "Per chi ha già fatto il nord o cerca un'Africa più selvaggia, da giugno a ottobre." }
+      {
+        "title": "Safari nord e Zanzibar",
+        "days": 12,
+        "route": "Arusha (1) → Tarangire (1) → Ngorongoro (1) → Serengeti (3) → volo per Zanzibar (6)",
+        "description": "Il combinato più venduto, ideale da giugno a ottobre e da dicembre a febbraio."
+      },
+      {
+        "title": "Migrazione e nascite",
+        "days": 9,
+        "route": "Arusha (1) → Ngorongoro (2) → Ndutu (3) → Serengeti centrale (2)",
+        "description": "A gennaio–febbraio, per vedere le nascite e i predatori."
+      },
+      {
+        "title": "Safari del sud",
+        "days": 9,
+        "route": "Dar es Salaam (1) → Nyerere (3) → Ruaha (4)",
+        "description": "Per chi ha già fatto il nord o cerca un'Africa più selvaggia, da giugno a ottobre."
+      }
     ],
     "agentTips": [
       "Il visto si richiede online prima della partenza (e-visa); per Zanzibar è richiesta un'assicurazione di viaggio obbligatoria: verifica le regole in vigore.",
@@ -305,33 +1143,158 @@
       "Il Sudafrica è una destinazione completa, ideale anche in self-drive: Città del Capo con la Table Mountain e i vigneti, la Garden Route lungo l'oceano, il Kruger e le riserve private per i Big Five, i Drakensberg e la costa dello Zululand. Essendo nell'emisfero australe, le stagioni sono invertite: Città del Capo è al meglio da novembre a marzo (la nostra estate è il loro inverno, più piovoso), mentre i safari nel Kruger sono ideali da maggio a ottobre, nella stagione secca, quando gli animali si concentrano attorno all'acqua."
     ],
     "morePlaces": [
-      { "name": "Franschhoek", "description": "Valle dei vigneti con cantine, ristoranti stellati e il tram del vino.", "search": "Franschhoek" },
-      { "name": "Garden Route", "description": "La strada costiera tra lagune, foreste e spiagge da Mossel Bay a Tsitsikamma.", "search": "Garden Route" },
-      { "name": "Hermanus", "description": "Il punto migliore al mondo per vedere le balene da terra, tra luglio e novembre.", "search": "Hermanus" },
-      { "name": "Sabi Sand", "description": "La riserva privata accanto al Kruger con i lodge più esclusivi e avvistamenti di leopardi.", "search": "Sabi Sand Game Reserve" }
+      {
+        "name": "Franschhoek",
+        "description": "Valle dei vigneti con cantine, ristoranti stellati e il tram del vino.",
+        "search": "Franschhoek"
+      },
+      {
+        "name": "Garden Route",
+        "description": "La strada costiera tra lagune, foreste e spiagge da Mossel Bay a Tsitsikamma.",
+        "search": "Garden Route"
+      },
+      {
+        "name": "Hermanus",
+        "description": "Il punto migliore al mondo per vedere le balene da terra, tra luglio e novembre.",
+        "search": "Hermanus"
+      },
+      {
+        "name": "Sabi Sand",
+        "description": "La riserva privata accanto al Kruger con i lodge più esclusivi e avvistamenti di leopardi.",
+        "search": "Sabi Sand Game Reserve"
+      }
     ],
     "areas": [
-      { "name": "Città del Capo e la penisola", "description": "Una delle città più belle del mondo: Table Mountain, il Waterfront, Bo-Kaap, Robben Island, la strada panoramica di Chapman's Peak fino al Capo di Buona Speranza e i pinguini di Boulders Beach.", "highlights": ["Table Mountain", "V&A Waterfront", "Bo-Kaap", "Capo di Buona Speranza", "Boulders Beach", "Robben Island"], "seasons": "OOOBBDDDBOOO", "seasonNote": "Estate australe (novembre–marzo) calda e secca; inverno (giugno–agosto) fresco e piovoso." },
-      { "name": "Winelands (Stellenbosch, Franschhoek, Paarl)", "description": "Valle di vigneti e cantine storiche in stile olandese, con degustazioni, ristoranti tra i migliori del paese e hotel di charme.", "highlights": ["Stellenbosch", "Franschhoek Wine Tram", "Paarl", "Cantine storiche"], "seasons": "OOOBBDDDBOOO", "seasonNote": "Come Città del Capo; vendemmia tra febbraio e marzo." },
-      { "name": "Garden Route e Overberg", "description": "Il viaggio on the road più famoso: Hermanus con le balene, Oudtshoorn con gli struzzi e le grotte Cango, Knysna, Plettenberg Bay e il parco di Tsitsikamma.", "highlights": ["Hermanus", "Oudtshoorn", "Knysna", "Plettenberg Bay", "Tsitsikamma"], "seasons": "OOOBBBBBBOOO", "seasonNote": "Clima mite tutto l'anno; balene da luglio a novembre." },
-      { "name": "Kruger e riserve private (Sabi Sand, Timbavati)", "description": "Il parco più famoso del paese e le riserve private senza recinzioni con lodge di lusso, safari in fuoristrada aperto e alte probabilità di vedere i Big Five. Vicino, la Panorama Route con il Blyde River Canyon.", "highlights": ["Kruger", "Sabi Sand", "Timbavati", "Blyde River Canyon", "God's Window"], "seasons": "DDBBOOOOOOBD", "seasonNote": "Da maggio a ottobre stagione secca ideale; l'estate australe è calda, verde e piovosa." },
-      { "name": "Riserve senza malaria (Madikwe, Pilanesberg, Eastern Cape)", "description": "Safari con i Big Five in zone senza malaria: la scelta giusta per famiglie con bambini piccoli e per chi non vuole la profilassi.", "highlights": ["Madikwe", "Pilanesberg", "Shamwari", "Addo Elephant Park"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Visitabili tutto l'anno; inverno secco ottimo per gli avvistamenti." },
-      { "name": "KwaZulu-Natal (Drakensberg, iSimangaliso, Durban)", "description": "Montagne dei Drakensberg con pitture rupestri, il parco umido di iSimangaliso con ippopotami e tartarughe, Durban con la cultura indiana e le spiagge sull'oceano Indiano.", "highlights": ["Drakensberg", "iSimangaliso", "Hluhluwe-iMfolozi", "Durban"], "seasons": "BBBBOOOOOBBB", "seasonNote": "Inverno secco e soleggiato; estate calda e umida con temporali." }
+      {
+        "name": "Città del Capo e la penisola",
+        "description": "Una delle città più belle del mondo: Table Mountain, il Waterfront, Bo-Kaap, Robben Island, la strada panoramica di Chapman's Peak fino al Capo di Buona Speranza e i pinguini di Boulders Beach.",
+        "highlights": [
+          "Table Mountain",
+          "V&A Waterfront",
+          "Bo-Kaap",
+          "Capo di Buona Speranza",
+          "Boulders Beach",
+          "Robben Island"
+        ],
+        "seasons": "OOOBBDDDBOOO",
+        "seasonNote": "Estate australe (novembre–marzo) calda e secca; inverno (giugno–agosto) fresco e piovoso."
+      },
+      {
+        "name": "Winelands (Stellenbosch, Franschhoek, Paarl)",
+        "description": "Valle di vigneti e cantine storiche in stile olandese, con degustazioni, ristoranti tra i migliori del paese e hotel di charme.",
+        "highlights": [
+          "Stellenbosch",
+          "Franschhoek Wine Tram",
+          "Paarl",
+          "Cantine storiche"
+        ],
+        "seasons": "OOOBBDDDBOOO",
+        "seasonNote": "Come Città del Capo; vendemmia tra febbraio e marzo."
+      },
+      {
+        "name": "Garden Route e Overberg",
+        "description": "Il viaggio on the road più famoso: Hermanus con le balene, Oudtshoorn con gli struzzi e le grotte Cango, Knysna, Plettenberg Bay e il parco di Tsitsikamma.",
+        "highlights": [
+          "Hermanus",
+          "Oudtshoorn",
+          "Knysna",
+          "Plettenberg Bay",
+          "Tsitsikamma"
+        ],
+        "seasons": "OOOBBBBBBOOO",
+        "seasonNote": "Clima mite tutto l'anno; balene da luglio a novembre."
+      },
+      {
+        "name": "Kruger e riserve private (Sabi Sand, Timbavati)",
+        "description": "Il parco più famoso del paese e le riserve private senza recinzioni con lodge di lusso, safari in fuoristrada aperto e alte probabilità di vedere i Big Five. Vicino, la Panorama Route con il Blyde River Canyon.",
+        "highlights": [
+          "Kruger",
+          "Sabi Sand",
+          "Timbavati",
+          "Blyde River Canyon",
+          "God's Window"
+        ],
+        "seasons": "DDBBOOOOOOBD",
+        "seasonNote": "Da maggio a ottobre stagione secca ideale; l'estate australe è calda, verde e piovosa."
+      },
+      {
+        "name": "Riserve senza malaria (Madikwe, Pilanesberg, Eastern Cape)",
+        "description": "Safari con i Big Five in zone senza malaria: la scelta giusta per famiglie con bambini piccoli e per chi non vuole la profilassi.",
+        "highlights": [
+          "Madikwe",
+          "Pilanesberg",
+          "Shamwari",
+          "Addo Elephant Park"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Visitabili tutto l'anno; inverno secco ottimo per gli avvistamenti."
+      },
+      {
+        "name": "KwaZulu-Natal (Drakensberg, iSimangaliso, Durban)",
+        "description": "Montagne dei Drakensberg con pitture rupestri, il parco umido di iSimangaliso con ippopotami e tartarughe, Durban con la cultura indiana e le spiagge sull'oceano Indiano.",
+        "highlights": [
+          "Drakensberg",
+          "iSimangaliso",
+          "Hluhluwe-iMfolozi",
+          "Durban"
+        ],
+        "seasons": "BBBBOOOOOBBB",
+        "seasonNote": "Inverno secco e soleggiato; estate calda e umida con temporali."
+      }
     ],
     "experiences": [
-      { "name": "Funivia sulla Table Mountain", "description": "Vista sulla città e sull'oceano; si sale nelle giornate senza vento e nuvole." },
-      { "name": "Safari in riserva privata", "description": "Game drive all'alba e al tramonto in fuoristrada aperto, con ranger e tracker." },
-      { "name": "Degustazione nelle Winelands", "description": "Tour delle cantine di Stellenbosch e Franschhoek, anche con il Wine Tram." },
-      { "name": "Pinguini di Boulders Beach", "description": "Colonia di pinguini africani su una spiaggia vicino a Città del Capo." },
-      { "name": "Whale watching a Hermanus", "description": "Balene franche australi da terra o in barca, da luglio a novembre." },
-      { "name": "Robben Island", "description": "La prigione di Nelson Mandela, con visite guidate da ex detenuti." },
-      { "name": "Treno di lusso", "description": "Rovos Rail o Blue Train tra Pretoria, Città del Capo e le Cascate Vittoria." },
-      { "name": "Bungee di Bloukrans", "description": "Uno dei salti più alti del mondo, sulla Garden Route." }
+      {
+        "name": "Funivia sulla Table Mountain",
+        "description": "Vista sulla città e sull'oceano; si sale nelle giornate senza vento e nuvole."
+      },
+      {
+        "name": "Safari in riserva privata",
+        "description": "Game drive all'alba e al tramonto in fuoristrada aperto, con ranger e tracker."
+      },
+      {
+        "name": "Degustazione nelle Winelands",
+        "description": "Tour delle cantine di Stellenbosch e Franschhoek, anche con il Wine Tram."
+      },
+      {
+        "name": "Pinguini di Boulders Beach",
+        "description": "Colonia di pinguini africani su una spiaggia vicino a Città del Capo."
+      },
+      {
+        "name": "Whale watching a Hermanus",
+        "description": "Balene franche australi da terra o in barca, da luglio a novembre."
+      },
+      {
+        "name": "Robben Island",
+        "description": "La prigione di Nelson Mandela, con visite guidate da ex detenuti."
+      },
+      {
+        "name": "Treno di lusso",
+        "description": "Rovos Rail o Blue Train tra Pretoria, Città del Capo e le Cascate Vittoria."
+      },
+      {
+        "name": "Bungee di Bloukrans",
+        "description": "Uno dei salti più alti del mondo, sulla Garden Route."
+      }
     ],
     "itineraries": [
-      { "title": "Capo, Garden Route e Kruger", "days": 14, "route": "Città del Capo (4) → Winelands (1) → Hermanus (1) → Garden Route (3) → volo → Kruger o Sabi Sand (3) → Johannesburg (1)", "description": "Il classico completo, ottimo da ottobre ad aprile (safari migliori nella stagione secca)." },
-      { "title": "Sudafrica e Cascate Vittoria", "days": 11, "route": "Città del Capo (4) → Sabi Sand (3) → Cascate Vittoria (2)", "description": "Città, safari di lusso e una meraviglia naturale." },
-      { "title": "Famiglie senza malaria", "days": 12, "route": "Città del Capo (4) → Garden Route (4) → Eastern Cape, Shamwari o Addo (3)", "description": "Tutto in auto, con safari in riserva senza malaria." }
+      {
+        "title": "Capo, Garden Route e Kruger",
+        "days": 14,
+        "route": "Città del Capo (4) → Winelands (1) → Hermanus (1) → Garden Route (3) → volo → Kruger o Sabi Sand (3) → Johannesburg (1)",
+        "description": "Il classico completo, ottimo da ottobre ad aprile (safari migliori nella stagione secca)."
+      },
+      {
+        "title": "Sudafrica e Cascate Vittoria",
+        "days": 11,
+        "route": "Città del Capo (4) → Sabi Sand (3) → Cascate Vittoria (2)",
+        "description": "Città, safari di lusso e una meraviglia naturale."
+      },
+      {
+        "title": "Famiglie senza malaria",
+        "days": 12,
+        "route": "Città del Capo (4) → Garden Route (4) → Eastern Cape, Shamwari o Addo (3)",
+        "description": "Tutto in auto, con safari in riserva senza malaria."
+      }
     ],
     "agentTips": [
       "Gli italiani non hanno bisogno di visto per brevi soggiorni turistici; per i minori servono documenti specifici: verifica le regole.",
@@ -346,29 +1309,133 @@
       "La Namibia è il paese dei grandi spazi: deserti rossi, costa nebbiosa, parchi con animali adattati al deserto e cieli stellati tra i più belli del mondo. È la destinazione ideale per il self-drive in 4x4, spesso con tenda sul tetto, ma esistono anche tour con guida e safari in volo. La stagione secca, da maggio a ottobre, è la migliore per vedere gli animali a Etosha; l'estate australe (novembre–aprile) è calda, con temporali pomeridiani e paesaggi verdi."
     ],
     "morePlaces": [
-      { "name": "Kolmanskop", "description": "Città mineraria fantasma invasa dalla sabbia, vicino a Lüderitz.", "search": "Kolmanskop" },
-      { "name": "Skeleton Coast", "description": "La costa dei naufragi e delle colonie di otarie, tra deserto e oceano.", "search": "Skeleton Coast" },
-      { "name": "Spitzkoppe", "description": "Montagne di granito che emergono dal deserto, perfette al tramonto.", "search": "Spitzkoppe" }
+      {
+        "name": "Kolmanskop",
+        "description": "Città mineraria fantasma invasa dalla sabbia, vicino a Lüderitz.",
+        "search": "Kolmanskop"
+      },
+      {
+        "name": "Skeleton Coast",
+        "description": "La costa dei naufragi e delle colonie di otarie, tra deserto e oceano.",
+        "search": "Skeleton Coast"
+      },
+      {
+        "name": "Spitzkoppe",
+        "description": "Montagne di granito che emergono dal deserto, perfette al tramonto.",
+        "search": "Spitzkoppe"
+      }
     ],
     "areas": [
-      { "name": "Namib e Sossusvlei", "description": "Le dune rosse più alte del mondo, la piana di argilla bianca di Deadvlei con gli alberi morti, il canyon di Sesriem e la riserva di NamibRand con i cieli stellati.", "highlights": ["Duna 45", "Deadvlei", "Big Daddy", "Sesriem Canyon", "NamibRand"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Visitabile tutto l'anno; da novembre a febbraio molto caldo a metà giornata." },
-      { "name": "Swakopmund e costa", "description": "Cittadina coloniale tedesca sull'oceano, base per escursioni nel deserto, kayak con le otarie a Walvis Bay, Sandwich Harbour in fuoristrada e voli panoramici.", "highlights": ["Swakopmund", "Walvis Bay", "Sandwich Harbour", "Cape Cross"], "seasons": "BBBBBBBBBBBB", "seasonNote": "Clima fresco e nebbioso tutto l'anno, per l'influenza dell'oceano freddo." },
-      { "name": "Damaraland e Kaokoland", "description": "Montagne, incisioni rupestri UNESCO di Twyfelfontein, elefanti e rinoceronti adattati al deserto e il popolo himba.", "highlights": ["Twyfelfontein", "Elefanti del deserto", "Brandberg", "Villaggi himba"], "seasons": "DDBBOOOOOOBD", "seasonNote": "Stagione secca da maggio a ottobre." },
-      { "name": "Etosha", "description": "Il grande parco con la salina bianca e le pozze d'acqua dove si radunano elefanti, leoni, rinoceronti e antilopi; le pozze illuminate di notte nei campi del parco.", "highlights": ["Okaukuejo", "Halali", "Namutoni", "Pozze illuminate"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da luglio a ottobre gli animali si concentrano alle pozze; da dicembre a marzo il parco è verde e gli animali sono più dispersi." },
-      { "name": "Caprivi (Zambezi) e nord-est", "description": "Fiumi, paludi e safari in barca, porta d'accesso a Okavango in Botswana e alle Cascate Vittoria.", "highlights": ["Fiume Okavango", "Bwabwata", "Fiume Kwando"], "seasons": "DDDBOOOOOBDD", "seasonNote": "Da maggio a ottobre." }
+      {
+        "name": "Namib e Sossusvlei",
+        "description": "Le dune rosse più alte del mondo, la piana di argilla bianca di Deadvlei con gli alberi morti, il canyon di Sesriem e la riserva di NamibRand con i cieli stellati.",
+        "highlights": [
+          "Duna 45",
+          "Deadvlei",
+          "Big Daddy",
+          "Sesriem Canyon",
+          "NamibRand"
+        ],
+        "seasons": "BBBOOOOOOOBB",
+        "seasonNote": "Visitabile tutto l'anno; da novembre a febbraio molto caldo a metà giornata."
+      },
+      {
+        "name": "Swakopmund e costa",
+        "description": "Cittadina coloniale tedesca sull'oceano, base per escursioni nel deserto, kayak con le otarie a Walvis Bay, Sandwich Harbour in fuoristrada e voli panoramici.",
+        "highlights": [
+          "Swakopmund",
+          "Walvis Bay",
+          "Sandwich Harbour",
+          "Cape Cross"
+        ],
+        "seasons": "BBBBBBBBBBBB",
+        "seasonNote": "Clima fresco e nebbioso tutto l'anno, per l'influenza dell'oceano freddo."
+      },
+      {
+        "name": "Damaraland e Kaokoland",
+        "description": "Montagne, incisioni rupestri UNESCO di Twyfelfontein, elefanti e rinoceronti adattati al deserto e il popolo himba.",
+        "highlights": [
+          "Twyfelfontein",
+          "Elefanti del deserto",
+          "Brandberg",
+          "Villaggi himba"
+        ],
+        "seasons": "DDBBOOOOOOBD",
+        "seasonNote": "Stagione secca da maggio a ottobre."
+      },
+      {
+        "name": "Etosha",
+        "description": "Il grande parco con la salina bianca e le pozze d'acqua dove si radunano elefanti, leoni, rinoceronti e antilopi; le pozze illuminate di notte nei campi del parco.",
+        "highlights": [
+          "Okaukuejo",
+          "Halali",
+          "Namutoni",
+          "Pozze illuminate"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da luglio a ottobre gli animali si concentrano alle pozze; da dicembre a marzo il parco è verde e gli animali sono più dispersi."
+      },
+      {
+        "name": "Caprivi (Zambezi) e nord-est",
+        "description": "Fiumi, paludi e safari in barca, porta d'accesso a Okavango in Botswana e alle Cascate Vittoria.",
+        "highlights": [
+          "Fiume Okavango",
+          "Bwabwata",
+          "Fiume Kwando"
+        ],
+        "seasons": "DDDBOOOOOBDD",
+        "seasonNote": "Da maggio a ottobre."
+      }
     ],
     "experiences": [
-      { "name": "Alba sulla Duna 45 e Deadvlei", "description": "Ingresso all'apertura del parco per vedere la luce sulle dune." },
-      { "name": "Self-drive in 4x4", "description": "Itinerario libero con lodge o campeggi prenotati, su strade sterrate ben tenute." },
-      { "name": "Pozze notturne a Etosha", "description": "Nei campi del parco si osservano gli animali che bevono sotto i riflettori." },
-      { "name": "Tracciamento dei rinoceronti", "description": "A piedi nel Damaraland con le guide delle conservancy." },
-      { "name": "Kayak con le otarie a Walvis Bay", "description": "Uscita in laguna tra otarie, delfini e fenicotteri." },
-      { "name": "Volo panoramico sulle dune e la costa", "description": "Da Swakopmund o Sossusvlei, sopra il Namib e i relitti." },
-      { "name": "Notte sotto le stelle", "description": "Nella riserva di NamibRand, cielo stellato tra i più bui del mondo." }
+      {
+        "name": "Alba sulla Duna 45 e Deadvlei",
+        "description": "Ingresso all'apertura del parco per vedere la luce sulle dune."
+      },
+      {
+        "name": "Self-drive in 4x4",
+        "description": "Itinerario libero con lodge o campeggi prenotati, su strade sterrate ben tenute."
+      },
+      {
+        "name": "Pozze notturne a Etosha",
+        "description": "Nei campi del parco si osservano gli animali che bevono sotto i riflettori."
+      },
+      {
+        "name": "Tracciamento dei rinoceronti",
+        "description": "A piedi nel Damaraland con le guide delle conservancy."
+      },
+      {
+        "name": "Kayak con le otarie a Walvis Bay",
+        "description": "Uscita in laguna tra otarie, delfini e fenicotteri."
+      },
+      {
+        "name": "Volo panoramico sulle dune e la costa",
+        "description": "Da Swakopmund o Sossusvlei, sopra il Namib e i relitti."
+      },
+      {
+        "name": "Notte sotto le stelle",
+        "description": "Nella riserva di NamibRand, cielo stellato tra i più bui del mondo."
+      }
     ],
     "itineraries": [
-      { "title": "Namibia classica in self-drive", "days": 14, "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Damaraland (2) → Etosha (3) → Okonjima (1) → Windhoek (1)", "description": "Il giro più completo, da maggio a ottobre, con 4x4 e lodge prenotati." },
-      { "title": "Namibia e Botswana", "days": 16, "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Etosha (3) → Caprivi (2) → Chobe (2) → Cascate Vittoria (2)", "description": "Deserto, safari e fiumi fino alle Cascate Vittoria." }
+      {
+        "title": "Namibia classica in self-drive",
+        "days": 14,
+        "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Damaraland (2) → Etosha (3) → Okonjima (1) → Windhoek (1)",
+        "description": "Il giro più completo, da maggio a ottobre, con 4x4 e lodge prenotati."
+      },
+      {
+        "title": "Namibia e Botswana",
+        "days": 16,
+        "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Etosha (3) → Caprivi (2) → Chobe (2) → Cascate Vittoria (2)",
+        "description": "Deserto, safari e fiumi fino alle Cascate Vittoria."
+      },
+      {
+        "title": "Namibia del nord",
+        "days": 10,
+        "route": "Windhoek (1) → Waterberg (1) → Etosha (3) → Kaokoland e Himba (3) → Windhoek (1)",
+        "description": "Per chi ha già visto Sossusvlei: Etosha, popolo Himba e paesaggi del nord-ovest."
+      }
     ],
     "agentTips": [
       "Dal 2025 per gli italiani serve il visto (online o all'arrivo): verifica la procedura in vigore.",
@@ -383,30 +1450,134 @@
       "Il Madagascar è un mondo a parte: oltre il 90% delle sue specie non esiste altrove, a partire dai lemuri. Per il mercato italiano è soprattutto Nosy Be, l'isola del nord con resort spesso a gestione italiana e voli diretti; ma l'isola grande offre tour indimenticabili lungo la RN7 nel sud, nell'ovest dei baobab e degli Tsingy e nelle foreste dell'est. Le strade sono lente e i voli interni poco affidabili: un buon viaggio in Madagascar va costruito con tempi larghi. La stagione secca va da aprile a novembre; da gennaio a marzo ci sono piogge e cicloni."
     ],
     "morePlaces": [
-      { "name": "Isola di Sainte-Marie", "description": "Isola tropicale dell'est, con le balene megattere tra luglio e settembre.", "search": "Île Sainte-Marie" },
-      { "name": "Nosy Iranja", "description": "Due isolette unite da una lingua di sabbia, escursione classica da Nosy Be.", "search": "Nosy Iranja" },
-      { "name": "Riserva di Anja", "description": "Piccola riserva comunitaria con i lemuri catta, lungo la RN7.", "search": "Anja Community Reserve" }
+      {
+        "name": "Isola di Sainte-Marie",
+        "description": "Isola tropicale dell'est, con le balene megattere tra luglio e settembre.",
+        "search": "Île Sainte-Marie"
+      },
+      {
+        "name": "Nosy Iranja",
+        "description": "Due isolette unite da una lingua di sabbia, escursione classica da Nosy Be.",
+        "search": "Nosy Iranja"
+      },
+      {
+        "name": "Riserva di Anja",
+        "description": "Piccola riserva comunitaria con i lemuri catta, lungo la RN7.",
+        "search": "Anja Community Reserve"
+      }
     ],
     "areas": [
-      { "name": "Altopiani e foreste dell'est (Antananarivo, Andasibe)", "description": "La capitale e, a 3–4 ore, Andasibe con la foresta pluviale e l'indri, il lemure più grande, il cui canto si sente all'alba.", "highlights": ["Antananarivo", "Andasibe", "Riserva di Mantadia", "Indri"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da aprile a novembre clima più secco; d'inverno australe le sere sugli altopiani sono fresche." },
-      { "name": "Il sud lungo la RN7 (Antsirabe, Ranomafana, Isalo, Ifaty)", "description": "Il viaggio su strada più classico: la cittadina di Antsirabe, la foresta di Ranomafana, i lemuri catta di Anja, i canyon e le piscine naturali dell'Isalo, fino al mare di Ifaty e Anakao.", "highlights": ["Antsirabe", "Ranomafana", "Anja", "Isalo", "Ifaty"], "seasons": "DDDBOOOOOOBD", "seasonNote": "Da aprile a novembre; da gennaio a marzo piogge e strade più difficili." },
-      { "name": "Ovest (Morondava, baobab, Tsingy di Bemaraha)", "description": "Il Viale dei Baobab al tramonto, la riserva di Kirindy con il fossa, e gli Tsingy di Bemaraha, pinnacoli calcarei UNESCO da percorrere con passerelle e vie ferrate.", "highlights": ["Viale dei Baobab", "Kirindy", "Grandi Tsingy", "Piccoli Tsingy"], "seasons": "XXXDOOOOOOBX", "seasonNote": "Gli Tsingy sono accessibili solo nella stagione secca, circa da maggio a novembre." },
-      { "name": "Nosy Be e il nord (Diego Suarez, Ankarana)", "description": "Nosy Be con spiagge, resort e isolette come Nosy Iranja, Nosy Komba e Nosy Tanikely; al nord Diego Suarez con il Mare di Smeraldo e la riserva dell'Ankarana.", "highlights": ["Nosy Be", "Nosy Iranja", "Nosy Komba", "Mare di Smeraldo", "Ankarana"], "seasons": "XDDBOOOOOOOB", "seasonNote": "Da aprile a dicembre; squali balena tra ottobre e dicembre; gennaio–marzo stagione dei cicloni." },
-      { "name": "Isola di Sainte-Marie", "description": "Isola lunga e verde sulla costa est, con spiagge, vecchi cimiteri dei pirati e le balene megattere che arrivano a partorire.", "highlights": ["Balene megattere", "Île aux Nattes", "Cimitero dei pirati"], "seasons": "XDDDBOOOOOBD", "seasonNote": "Balene da luglio a settembre; da gennaio a marzo piogge e cicloni." }
+      {
+        "name": "Altopiani e foreste dell'est (Antananarivo, Andasibe)",
+        "description": "La capitale e, a 3–4 ore, Andasibe con la foresta pluviale e l'indri, il lemure più grande, il cui canto si sente all'alba.",
+        "highlights": [
+          "Antananarivo",
+          "Andasibe",
+          "Riserva di Mantadia",
+          "Indri"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da aprile a novembre clima più secco; d'inverno australe le sere sugli altopiani sono fresche."
+      },
+      {
+        "name": "Il sud lungo la RN7 (Antsirabe, Ranomafana, Isalo, Ifaty)",
+        "description": "Il viaggio su strada più classico: la cittadina di Antsirabe, la foresta di Ranomafana, i lemuri catta di Anja, i canyon e le piscine naturali dell'Isalo, fino al mare di Ifaty e Anakao.",
+        "highlights": [
+          "Antsirabe",
+          "Ranomafana",
+          "Anja",
+          "Isalo",
+          "Ifaty"
+        ],
+        "seasons": "DDDBOOOOOOBD",
+        "seasonNote": "Da aprile a novembre; da gennaio a marzo piogge e strade più difficili."
+      },
+      {
+        "name": "Ovest (Morondava, baobab, Tsingy di Bemaraha)",
+        "description": "Il Viale dei Baobab al tramonto, la riserva di Kirindy con il fossa, e gli Tsingy di Bemaraha, pinnacoli calcarei UNESCO da percorrere con passerelle e vie ferrate.",
+        "highlights": [
+          "Viale dei Baobab",
+          "Kirindy",
+          "Grandi Tsingy",
+          "Piccoli Tsingy"
+        ],
+        "seasons": "XXXDOOOOOOBX",
+        "seasonNote": "Gli Tsingy sono accessibili solo nella stagione secca, circa da maggio a novembre."
+      },
+      {
+        "name": "Nosy Be e il nord (Diego Suarez, Ankarana)",
+        "description": "Nosy Be con spiagge, resort e isolette come Nosy Iranja, Nosy Komba e Nosy Tanikely; al nord Diego Suarez con il Mare di Smeraldo e la riserva dell'Ankarana.",
+        "highlights": [
+          "Nosy Be",
+          "Nosy Iranja",
+          "Nosy Komba",
+          "Mare di Smeraldo",
+          "Ankarana"
+        ],
+        "seasons": "XDDBOOOOOOOB",
+        "seasonNote": "Da aprile a dicembre; squali balena tra ottobre e dicembre; gennaio–marzo stagione dei cicloni."
+      },
+      {
+        "name": "Isola di Sainte-Marie",
+        "description": "Isola lunga e verde sulla costa est, con spiagge, vecchi cimiteri dei pirati e le balene megattere che arrivano a partorire.",
+        "highlights": [
+          "Balene megattere",
+          "Île aux Nattes",
+          "Cimitero dei pirati"
+        ],
+        "seasons": "XDDDBOOOOOBD",
+        "seasonNote": "Balene da luglio a settembre; da gennaio a marzo piogge e cicloni."
+      }
     ],
     "experiences": [
-      { "name": "Camminata notturna ad Andasibe", "description": "Alla ricerca di camaleonti, lemuri notturni e rane colorate." },
-      { "name": "Viale dei Baobab al tramonto", "description": "La foto più famosa del Madagascar, vicino a Morondava." },
-      { "name": "Tsingy di Bemaraha", "description": "Passerelle sospese e vie ferrate tra i pinnacoli di pietra, con guida." },
-      { "name": "Piscine naturali dell'Isalo", "description": "Trekking tra canyon e oasi, con bagno nelle piscine naturali." },
-      { "name": "Gite in barca da Nosy Be", "description": "Nosy Iranja, Nosy Tanikely con lo snorkeling, Nosy Komba con i lemuri." },
-      { "name": "Squali balena a Nosy Be", "description": "Tra ottobre e dicembre, uscite in barca con nuotata accanto agli squali balena." },
-      { "name": "Balene a Sainte-Marie", "description": "Tra luglio e settembre, osservazione delle megattere dalla barca e dalla riva." }
+      {
+        "name": "Camminata notturna ad Andasibe",
+        "description": "Alla ricerca di camaleonti, lemuri notturni e rane colorate."
+      },
+      {
+        "name": "Viale dei Baobab al tramonto",
+        "description": "La foto più famosa del Madagascar, vicino a Morondava."
+      },
+      {
+        "name": "Tsingy di Bemaraha",
+        "description": "Passerelle sospese e vie ferrate tra i pinnacoli di pietra, con guida."
+      },
+      {
+        "name": "Piscine naturali dell'Isalo",
+        "description": "Trekking tra canyon e oasi, con bagno nelle piscine naturali."
+      },
+      {
+        "name": "Gite in barca da Nosy Be",
+        "description": "Nosy Iranja, Nosy Tanikely con lo snorkeling, Nosy Komba con i lemuri."
+      },
+      {
+        "name": "Squali balena a Nosy Be",
+        "description": "Tra ottobre e dicembre, uscite in barca con nuotata accanto agli squali balena."
+      },
+      {
+        "name": "Balene a Sainte-Marie",
+        "description": "Tra luglio e settembre, osservazione delle megattere dalla barca e dalla riva."
+      }
     ],
     "itineraries": [
-      { "title": "Nosy Be mare", "days": 10, "route": "Nosy Be (9), con escursioni alle isole", "description": "La formula più venduta in Italia, con voli diretti stagionali." },
-      { "title": "Il sud lungo la RN7 e mare", "days": 15, "route": "Antananarivo (1) → Andasibe (2) → Antsirabe (1) → Ranomafana (2) → Isalo (2) → Ifaty (4) → Antananarivo (1)", "description": "Il grande tour con lemuri, foreste, canyon e mare, da aprile a novembre." },
-      { "title": "Baobab, Tsingy e Nosy Be", "days": 14, "route": "Antananarivo (1) → Morondava (2) → Tsingy di Bemaraha (2) → Morondava (1) → Nosy Be (7)", "description": "L'ovest selvaggio e il mare del nord, da maggio a novembre." }
+      {
+        "title": "Nosy Be mare",
+        "days": 10,
+        "route": "Nosy Be (9), con escursioni alle isole",
+        "description": "La formula più venduta in Italia, con voli diretti stagionali."
+      },
+      {
+        "title": "Il sud lungo la RN7 e mare",
+        "days": 15,
+        "route": "Antananarivo (1) → Andasibe (2) → Antsirabe (1) → Ranomafana (2) → Isalo (2) → Ifaty (4) → Antananarivo (1)",
+        "description": "Il grande tour con lemuri, foreste, canyon e mare, da aprile a novembre."
+      },
+      {
+        "title": "Baobab, Tsingy e Nosy Be",
+        "days": 14,
+        "route": "Antananarivo (1) → Morondava (2) → Tsingy di Bemaraha (2) → Morondava (1) → Nosy Be (7)",
+        "description": "L'ovest selvaggio e il mare del nord, da maggio a novembre."
+      }
     ],
     "agentTips": [
       "Il visto si ottiene online o all'arrivo; verifica validità del passaporto e procedure in vigore.",
@@ -421,29 +1592,121 @@
       "Mauritius si vende tutto l'anno, ma la scelta della costa conta. L'estate australe (novembre–aprile) è calda e umida, con rischio cicloni tra gennaio e marzo; l'inverno (maggio–ottobre) è secco, con 23–25 °C e alisei che soffiano soprattutto sulla costa est. Per questo d'estate (la nostra) si consigliano la costa nord e ovest, più riparate e soleggiate, e d'inverno (il nostro) tutte, con la costa est perfetta per chi cerca brezza. L'isola offre anche molto oltre la spiaggia: natura, cultura creola e indiana, ottima cucina."
     ],
     "morePlaces": [
-      { "name": "Giardino botanico di Pamplemousses", "description": "Giardino storico con ninfee giganti e palme rare.", "search": "Sir Seewoosagur Ramgoolam Botanical Garden" },
-      { "name": "Isola di Rodrigues", "description": "La piccola isola sorella, autentica e lontana dal turismo di massa.", "search": "Rodrigues" },
-      { "name": "Cascata sottomarina di Le Morne", "description": "L'illusione ottica più famosa dell'isola, visibile da elicottero o idrovolante.", "search": "Le Morne Brabant" }
+      {
+        "name": "Giardino botanico di Pamplemousses",
+        "description": "Giardino storico con ninfee giganti e palme rare.",
+        "search": "Sir Seewoosagur Ramgoolam Botanical Garden"
+      },
+      {
+        "name": "Isola di Rodrigues",
+        "description": "La piccola isola sorella, autentica e lontana dal turismo di massa.",
+        "search": "Rodrigues"
+      },
+      {
+        "name": "Cascata sottomarina di Le Morne",
+        "description": "L'illusione ottica più famosa dell'isola, visibile da elicottero o idrovolante.",
+        "search": "Le Morne Brabant"
+      }
     ],
     "areas": [
-      { "name": "Costa nord (Grand Baie, Trou aux Biches, Cap Malheureux)", "description": "La zona più vivace, con ristoranti, negozi, spiagge riparate e partenze per le isole del nord.", "highlights": ["Grand Baie", "Trou aux Biches", "Cap Malheureux", "Île Plate e Gabriel"], "seasons": "DDDBOOOOOOOO", "seasonNote": "Riparata e soleggiata tutto l'anno; rischio cicloni tra gennaio e marzo." },
-      { "name": "Costa est (Belle Mare, Trou d'Eau Douce)", "description": "Le spiagge più lunghe e bianche con lagune turchesi e resort di lusso; da qui si parte per l'Île aux Cerfs.", "highlights": ["Belle Mare", "Île aux Cerfs", "Trou d'Eau Douce", "Pointe de Flacq"], "seasons": "DDDBOBBBOOOO", "seasonNote": "Splendida da settembre ad aprile; tra giugno e agosto ventosa e più fresca." },
-      { "name": "Costa ovest e sud-ovest (Flic en Flac, Tamarin, Le Morne)", "description": "Tramonti, mare calmo, delfini al mattino a Tamarin e la penisola di Le Morne con la sua montagna simbolo, il kitesurf e resort eleganti.", "highlights": ["Le Morne", "Flic en Flac", "Tamarin", "Delfini"], "seasons": "DDDBOOOOOOOO", "seasonNote": "La costa più asciutta e soleggiata, ideale in ogni stagione." },
-      { "name": "Sud selvaggio e altopiani (Chamarel, Black River Gorges, Grand Bassin)", "description": "Il verde dell'interno: le gole del Black River, la terra dei sette colori di Chamarel, il lago sacro induista di Grand Bassin e la costa sud con scogliere e campi di canna.", "highlights": ["Chamarel", "Black River Gorges", "Grand Bassin", "Gris Gris"], "seasons": "BBBBOOOOOOBB", "seasonNote": "Più fresco e piovoso dell'interno costiero; bello tutto l'anno." }
+      {
+        "name": "Costa nord (Grand Baie, Trou aux Biches, Cap Malheureux)",
+        "description": "La zona più vivace, con ristoranti, negozi, spiagge riparate e partenze per le isole del nord.",
+        "highlights": [
+          "Grand Baie",
+          "Trou aux Biches",
+          "Cap Malheureux",
+          "Île Plate e Gabriel"
+        ],
+        "seasons": "DDDBOOOOOOOO",
+        "seasonNote": "Riparata e soleggiata tutto l'anno; rischio cicloni tra gennaio e marzo."
+      },
+      {
+        "name": "Costa est (Belle Mare, Trou d'Eau Douce)",
+        "description": "Le spiagge più lunghe e bianche con lagune turchesi e resort di lusso; da qui si parte per l'Île aux Cerfs.",
+        "highlights": [
+          "Belle Mare",
+          "Île aux Cerfs",
+          "Trou d'Eau Douce",
+          "Pointe de Flacq"
+        ],
+        "seasons": "DDDBOBBBOOOO",
+        "seasonNote": "Splendida da settembre ad aprile; tra giugno e agosto ventosa e più fresca."
+      },
+      {
+        "name": "Costa ovest e sud-ovest (Flic en Flac, Tamarin, Le Morne)",
+        "description": "Tramonti, mare calmo, delfini al mattino a Tamarin e la penisola di Le Morne con la sua montagna simbolo, il kitesurf e resort eleganti.",
+        "highlights": [
+          "Le Morne",
+          "Flic en Flac",
+          "Tamarin",
+          "Delfini"
+        ],
+        "seasons": "DDDBOOOOOOOO",
+        "seasonNote": "La costa più asciutta e soleggiata, ideale in ogni stagione."
+      },
+      {
+        "name": "Sud selvaggio e altopiani (Chamarel, Black River Gorges, Grand Bassin)",
+        "description": "Il verde dell'interno: le gole del Black River, la terra dei sette colori di Chamarel, il lago sacro induista di Grand Bassin e la costa sud con scogliere e campi di canna.",
+        "highlights": [
+          "Chamarel",
+          "Black River Gorges",
+          "Grand Bassin",
+          "Gris Gris"
+        ],
+        "seasons": "BBBBOOOOOOBB",
+        "seasonNote": "Più fresco e piovoso dell'interno costiero; bello tutto l'anno."
+      }
     ],
     "experiences": [
-      { "name": "Catamarano all'Île aux Cerfs", "description": "Giornata in barca con snorkeling, pranzo e la cascata di Grande Rivière Sud-Est." },
-      { "name": "Nuotata con i delfini", "description": "All'alba nella baia di Tamarin, con operatori responsabili." },
-      { "name": "Escursione su Le Morne", "description": "Trekking di mezza giornata sulla montagna UNESCO con vista sulla laguna." },
-      { "name": "Chamarel e distilleria di rum", "description": "La terra dei sette colori, la cascata e la degustazione di rum artigianale." },
-      { "name": "Elicottero o idrovolante", "description": "Volo sopra la laguna e la 'cascata sottomarina' di Le Morne." },
-      { "name": "Golf", "description": "Campi tra i migliori dell'Oceano Indiano, spesso inclusi nei resort." },
-      { "name": "Kitesurf a Le Morne", "description": "Uno degli spot più famosi al mondo, con scuole per tutti i livelli." }
+      {
+        "name": "Catamarano all'Île aux Cerfs",
+        "description": "Giornata in barca con snorkeling, pranzo e la cascata di Grande Rivière Sud-Est."
+      },
+      {
+        "name": "Nuotata con i delfini",
+        "description": "All'alba nella baia di Tamarin, con operatori responsabili."
+      },
+      {
+        "name": "Escursione su Le Morne",
+        "description": "Trekking di mezza giornata sulla montagna UNESCO con vista sulla laguna."
+      },
+      {
+        "name": "Chamarel e distilleria di rum",
+        "description": "La terra dei sette colori, la cascata e la degustazione di rum artigianale."
+      },
+      {
+        "name": "Elicottero o idrovolante",
+        "description": "Volo sopra la laguna e la 'cascata sottomarina' di Le Morne."
+      },
+      {
+        "name": "Golf",
+        "description": "Campi tra i migliori dell'Oceano Indiano, spesso inclusi nei resort."
+      },
+      {
+        "name": "Kitesurf a Le Morne",
+        "description": "Uno degli spot più famosi al mondo, con scuole per tutti i livelli."
+      }
     ],
     "itineraries": [
-      { "title": "Viaggio di nozze", "days": 11, "route": "Resort su costa est o ovest (9 notti) con escursioni", "description": "La formula più richiesta: resort con mezza pensione o all inclusive e qualche escursione." },
-      { "title": "Mauritius e Rodrigues", "days": 13, "route": "Mauritius (8) → Rodrigues (4)", "description": "Per chi cerca anche un'isola autentica e tranquilla." },
-      { "title": "Dubai e Mauritius", "days": 12, "route": "Dubai (3) → Mauritius (8)", "description": "Combinato classico con lo scalo trasformato in vacanza." }
+      {
+        "title": "Viaggio di nozze",
+        "days": 11,
+        "route": "Resort su costa est o ovest (9 notti) con escursioni",
+        "description": "La formula più richiesta: resort con mezza pensione o all inclusive e qualche escursione."
+      },
+      {
+        "title": "Mauritius e Rodrigues",
+        "days": 13,
+        "route": "Mauritius (8) → Rodrigues (4)",
+        "description": "Per chi cerca anche un'isola autentica e tranquilla."
+      },
+      {
+        "title": "Dubai e Mauritius",
+        "days": 12,
+        "route": "Dubai (3) → Mauritius (8)",
+        "description": "Combinato classico con lo scalo trasformato in vacanza."
+      }
     ],
     "agentTips": [
       "Abbina la costa alla stagione: in luglio–agosto meglio nord e ovest; la costa est è bellissima ma ventosa.",
@@ -458,29 +1721,124 @@
       "Le Seychelles sono 115 isole di granito e corallo con alcune delle spiagge più belle del mondo. Il viaggio tipico unisce Mahé, Praslin e La Digue con traghetti veloci, oppure un resort esclusivo su un'isola privata. Il clima è tropicale tutto l'anno; i mesi migliori sono quelli di passaggio tra i monsoni, aprile–maggio e ottobre–novembre, con mare calmo e acqua limpidissima. Da maggio a settembre gli alisei di sud-est rendono più mosse alcune spiagge e portano alghe su certe coste: va scelta la spiaggia giusta per la stagione."
     ],
     "morePlaces": [
-      { "name": "Isola di Curieuse", "description": "Tartarughe giganti in libertà e la mangrovia, vicino a Praslin.", "search": "Curieuse Island" },
-      { "name": "Anse Georgette", "description": "Spiaggia di Praslin tra le più belle del mondo, accesso regolato.", "search": "Anse Georgette" },
-      { "name": "Isole esterne (Desroches, Alphonse)", "description": "Atolli corallini lontani, per pesca a mosca, immersioni e lusso assoluto.", "search": "Alphonse Group" }
+      {
+        "name": "Isola di Curieuse",
+        "description": "Tartarughe giganti in libertà e la mangrovia, vicino a Praslin.",
+        "search": "Curieuse Island"
+      },
+      {
+        "name": "Anse Georgette",
+        "description": "Spiaggia di Praslin tra le più belle del mondo, accesso regolato.",
+        "search": "Anse Georgette"
+      },
+      {
+        "name": "Isole esterne (Desroches, Alphonse)",
+        "description": "Atolli corallini lontani, per pesca a mosca, immersioni e lusso assoluto.",
+        "search": "Alphonse Group"
+      }
     ],
     "areas": [
-      { "name": "Mahé", "description": "L'isola principale con la piccola capitale Victoria, il parco del Morne Seychellois, spiagge come Beau Vallon e Anse Intendance e molti resort.", "highlights": ["Victoria", "Beau Vallon", "Anse Intendance", "Morne Seychellois", "Parco marino di Sainte Anne"], "seasons": "BBBOOBBBBOOB", "seasonNote": "Caldo tutto l'anno; aprile–maggio e ottobre–novembre mare più calmo." },
-      { "name": "Praslin", "description": "La Vallée de Mai con il coco de mer (UNESCO), Anse Lazio e Anse Georgette, e partenza per Curieuse e La Digue.", "highlights": ["Vallée de Mai", "Anse Lazio", "Anse Georgette", "Curieuse", "Cousin"], "seasons": "BBBOOBBBBOOB", "seasonNote": "Come Mahé; con gli alisei estivi meglio le spiagge riparate del nord." },
-      { "name": "La Digue", "description": "L'isola delle biciclette e dei massi di granito rosa: Anse Source d'Argent, Grand Anse, Anse Cocos, ritmo lentissimo.", "highlights": ["Anse Source d'Argent", "Grand Anse", "Anse Cocos", "Union Estate"], "seasons": "BBBOODDDBOOB", "seasonNote": "Anse Source d'Argent si gode con la bassa marea; da giugno ad agosto alcune spiagge sono mosse e con alghe." },
-      { "name": "Isole private ed esterne (Denis, Bird, Desroches, Alphonse, North Island)", "description": "Isole con un solo resort, natura protetta, tartarughe, uccelli marini, immersioni e pesca: il massimo dell'esclusività.", "highlights": ["Denis Island", "Bird Island", "Desroches", "Alphonse", "North Island"], "seasons": "BBBOOBBBBOOB", "seasonNote": "Mare migliore tra un monsone e l'altro." }
+      {
+        "name": "Mahé",
+        "description": "L'isola principale con la piccola capitale Victoria, il parco del Morne Seychellois, spiagge come Beau Vallon e Anse Intendance e molti resort.",
+        "highlights": [
+          "Victoria",
+          "Beau Vallon",
+          "Anse Intendance",
+          "Morne Seychellois",
+          "Parco marino di Sainte Anne"
+        ],
+        "seasons": "BBBOOBBBBOOB",
+        "seasonNote": "Caldo tutto l'anno; aprile–maggio e ottobre–novembre mare più calmo."
+      },
+      {
+        "name": "Praslin",
+        "description": "La Vallée de Mai con il coco de mer (UNESCO), Anse Lazio e Anse Georgette, e partenza per Curieuse e La Digue.",
+        "highlights": [
+          "Vallée de Mai",
+          "Anse Lazio",
+          "Anse Georgette",
+          "Curieuse",
+          "Cousin"
+        ],
+        "seasons": "BBBOOBBBBOOB",
+        "seasonNote": "Come Mahé; con gli alisei estivi meglio le spiagge riparate del nord."
+      },
+      {
+        "name": "La Digue",
+        "description": "L'isola delle biciclette e dei massi di granito rosa: Anse Source d'Argent, Grand Anse, Anse Cocos, ritmo lentissimo.",
+        "highlights": [
+          "Anse Source d'Argent",
+          "Grand Anse",
+          "Anse Cocos",
+          "Union Estate"
+        ],
+        "seasons": "BBBOODDDBOOB",
+        "seasonNote": "Anse Source d'Argent si gode con la bassa marea; da giugno ad agosto alcune spiagge sono mosse e con alghe."
+      },
+      {
+        "name": "Isole private ed esterne (Denis, Bird, Desroches, Alphonse, North Island)",
+        "description": "Isole con un solo resort, natura protetta, tartarughe, uccelli marini, immersioni e pesca: il massimo dell'esclusività.",
+        "highlights": [
+          "Denis Island",
+          "Bird Island",
+          "Desroches",
+          "Alphonse",
+          "North Island"
+        ],
+        "seasons": "BBBOOBBBBOOB",
+        "seasonNote": "Mare migliore tra un monsone e l'altro."
+      }
     ],
     "experiences": [
-      { "name": "Island hopping", "description": "Mahé, Praslin e La Digue con traghetti veloci e soggiorni di 3–4 notti per isola." },
-      { "name": "La Digue in bicicletta", "description": "Pedalando tra spiagge di granito e villaggi senza auto." },
-      { "name": "Vallée de Mai", "description": "Passeggiata nella foresta del coco de mer e del pappagallo nero." },
-      { "name": "Snorkeling a Saint-Pierre e Curieuse", "description": "Gita in barca con tartarughe giganti e pranzo creolo." },
-      { "name": "Trekking del Morne Seychellois", "description": "Sentieri nella foresta fino ai belvederi sull'oceano." },
-      { "name": "Cena creola", "description": "Curry di pesce, polpo al cocco e frutta tropicale." },
-      { "name": "Birdwatching a Cousin o Aride", "description": "Riserve naturali con colonie di uccelli marini." }
+      {
+        "name": "Island hopping",
+        "description": "Mahé, Praslin e La Digue con traghetti veloci e soggiorni di 3–4 notti per isola."
+      },
+      {
+        "name": "La Digue in bicicletta",
+        "description": "Pedalando tra spiagge di granito e villaggi senza auto."
+      },
+      {
+        "name": "Vallée de Mai",
+        "description": "Passeggiata nella foresta del coco de mer e del pappagallo nero."
+      },
+      {
+        "name": "Snorkeling a Saint-Pierre e Curieuse",
+        "description": "Gita in barca con tartarughe giganti e pranzo creolo."
+      },
+      {
+        "name": "Trekking del Morne Seychellois",
+        "description": "Sentieri nella foresta fino ai belvederi sull'oceano."
+      },
+      {
+        "name": "Cena creola",
+        "description": "Curry di pesce, polpo al cocco e frutta tropicale."
+      },
+      {
+        "name": "Birdwatching a Cousin o Aride",
+        "description": "Riserve naturali con colonie di uccelli marini."
+      }
     ],
     "itineraries": [
-      { "title": "Tre isole", "days": 12, "route": "Mahé (3) → Praslin (4) → La Digue (3)", "description": "La combinazione classica per conoscere le isole principali." },
-      { "title": "Lusso su isola privata", "days": 10, "route": "Mahé (1) → isola privata (8)", "description": "Per viaggi di nozze e clienti alto-spendenti." },
-      { "title": "Mauritius e Seychelles", "days": 14, "route": "Mauritius (6) → Seychelles (7)", "description": "Due isole dell'Oceano Indiano in un unico viaggio." }
+      {
+        "title": "Tre isole",
+        "days": 12,
+        "route": "Mahé (3) → Praslin (4) → La Digue (3)",
+        "description": "La combinazione classica per conoscere le isole principali."
+      },
+      {
+        "title": "Lusso su isola privata",
+        "days": 10,
+        "route": "Mahé (1) → isola privata (8)",
+        "description": "Per viaggi di nozze e clienti alto-spendenti."
+      },
+      {
+        "title": "Mauritius e Seychelles",
+        "days": 14,
+        "route": "Mauritius (6) → Seychelles (7)",
+        "description": "Due isole dell'Oceano Indiano in un unico viaggio."
+      }
     ],
     "agentTips": [
       "Prima della partenza va richiesta online l'autorizzazione di viaggio delle Seychelles (a pagamento): ricordala sempre.",
@@ -495,28 +1853,125 @@
       "Capo Verde è un arcipelago atlantico a circa sei ore di volo dall'Italia, con voli diretti su Sal e Boa Vista. Sal e Boa Vista sono le isole del mare, con spiagge bianche, vento e resort; Santo Antão, São Vicente e Fogo sono le isole del trekking, della musica e del vino. Il clima è caldo e secco tutto l'anno: da dicembre a marzo è più ventoso e il mare più fresco (ideale per kite e windsurf), da agosto a ottobre più umido con qualche pioggia, ma con il mare più caldo."
     ],
     "morePlaces": [
-      { "name": "Cidade Velha", "description": "Il primo insediamento coloniale dei tropici, patrimonio UNESCO, sull'isola di Santiago.", "search": "Cidade Velha" },
-      { "name": "Deserto di Viana", "description": "Dune di sabbia bianca nell'interno di Boa Vista.", "search": "Boa Vista (Cape Verde)" },
-      { "name": "Isola di Maio", "description": "L'isola più tranquilla, con spiagge deserte e ritmo lentissimo.", "search": "Maio (Cape Verde)" }
+      {
+        "name": "Cidade Velha",
+        "description": "Il primo insediamento coloniale dei tropici, patrimonio UNESCO, sull'isola di Santiago.",
+        "search": "Cidade Velha"
+      },
+      {
+        "name": "Deserto di Viana",
+        "description": "Dune di sabbia bianca nell'interno di Boa Vista.",
+        "search": "Boa Vista (Cape Verde)"
+      },
+      {
+        "name": "Isola di Maio",
+        "description": "L'isola più tranquilla, con spiagge deserte e ritmo lentissimo.",
+        "search": "Maio (Cape Verde)"
+      }
     ],
     "areas": [
-      { "name": "Sal", "description": "L'isola più turistica: Santa Maria con la lunga spiaggia, il pontile dei pescatori, la salina di Pedra de Lume dentro un cratere e lo spot di kitesurf di Kite Beach.", "highlights": ["Santa Maria", "Pedra de Lume", "Buracona", "Shark Bay", "Kite Beach"], "seasons": "BBBOOOOBDDBB", "seasonNote": "Sole tutto l'anno; dicembre–marzo ventoso e mare più fresco; agosto–ottobre più umido con mare caldo." },
-      { "name": "Boa Vista", "description": "Spiagge immense e selvagge, dune del deserto di Viana, deposizione delle tartarughe in estate e balene in primavera; resort grandi e tranquilli.", "highlights": ["Praia de Chaves", "Santa Monica", "Deserto di Viana", "Tartarughe", "Sal Rei"], "seasons": "BBBOOOOBDDBB", "seasonNote": "Come Sal; tartarughe da luglio a ottobre, balene megattere da marzo a maggio." },
-      { "name": "Santo Antão e São Vicente", "description": "Santo Antão è l'isola del trekking tra canyon verdi, terrazzamenti e villaggi sospesi; São Vicente ha Mindelo, capitale della musica (la morna di Cesária Évora) e del Carnevale.", "highlights": ["Valle di Paul", "Cova", "Ponta do Sol", "Mindelo", "Monte Verde"], "seasons": "OOOOOBDDDBOO", "seasonNote": "Da novembre a giugno ideale per camminare; agosto–ottobre più piovoso sulle montagne." },
-      { "name": "Fogo e Santiago", "description": "Fogo con il vulcano attivo e il villaggio di Chã das Caldeiras dove si coltiva la vite; Santiago con la capitale Praia e Cidade Velha, l'isola più africana dell'arcipelago.", "highlights": ["Pico do Fogo", "Chã das Caldeiras", "Praia", "Cidade Velha", "Tarrafal"], "seasons": "OOOOOBDDDBOO", "seasonNote": "Come Santo Antão." }
+      {
+        "name": "Sal",
+        "description": "L'isola più turistica: Santa Maria con la lunga spiaggia, il pontile dei pescatori, la salina di Pedra de Lume dentro un cratere e lo spot di kitesurf di Kite Beach.",
+        "highlights": [
+          "Santa Maria",
+          "Pedra de Lume",
+          "Buracona",
+          "Shark Bay",
+          "Kite Beach"
+        ],
+        "seasons": "BBBOOOOBDDBB",
+        "seasonNote": "Sole tutto l'anno; dicembre–marzo ventoso e mare più fresco; agosto–ottobre più umido con mare caldo."
+      },
+      {
+        "name": "Boa Vista",
+        "description": "Spiagge immense e selvagge, dune del deserto di Viana, deposizione delle tartarughe in estate e balene in primavera; resort grandi e tranquilli.",
+        "highlights": [
+          "Praia de Chaves",
+          "Santa Monica",
+          "Deserto di Viana",
+          "Tartarughe",
+          "Sal Rei"
+        ],
+        "seasons": "BBBOOOOBDDBB",
+        "seasonNote": "Come Sal; tartarughe da luglio a ottobre, balene megattere da marzo a maggio."
+      },
+      {
+        "name": "Santo Antão e São Vicente",
+        "description": "Santo Antão è l'isola del trekking tra canyon verdi, terrazzamenti e villaggi sospesi; São Vicente ha Mindelo, capitale della musica (la morna di Cesária Évora) e del Carnevale.",
+        "highlights": [
+          "Valle di Paul",
+          "Cova",
+          "Ponta do Sol",
+          "Mindelo",
+          "Monte Verde"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Da novembre a giugno ideale per camminare; agosto–ottobre più piovoso sulle montagne."
+      },
+      {
+        "name": "Fogo e Santiago",
+        "description": "Fogo con il vulcano attivo e il villaggio di Chã das Caldeiras dove si coltiva la vite; Santiago con la capitale Praia e Cidade Velha, l'isola più africana dell'arcipelago.",
+        "highlights": [
+          "Pico do Fogo",
+          "Chã das Caldeiras",
+          "Praia",
+          "Cidade Velha",
+          "Tarrafal"
+        ],
+        "seasons": "OOOOOBDDDBOO",
+        "seasonNote": "Come Santo Antão."
+      }
     ],
     "experiences": [
-      { "name": "Galleggiare a Pedra de Lume", "description": "Nella salina dentro il cratere, con acqua più salata del Mar Morto." },
-      { "name": "Kitesurf e windsurf a Sal", "description": "Scuole e noleggi a Kite Beach e Santa Maria, al meglio da dicembre a marzo." },
-      { "name": "Tartarughe di Boa Vista", "description": "Osservazione notturna della deposizione con guide autorizzate, da luglio a ottobre." },
-      { "name": "Trekking a Santo Antão", "description": "Sentieri da Cova alla Valle di Paul o lungo la costa di Ponta do Sol." },
-      { "name": "Salita al vulcano di Fogo", "description": "Con guida dal villaggio di Chã das Caldeiras, con degustazione del vino locale." },
-      { "name": "Musica dal vivo a Mindelo", "description": "Serate di morna e coladeira nei locali della città." },
-      { "name": "Squali limone a Shark Bay", "description": "Si camminano in acqua bassa tra piccoli squali innocui." }
+      {
+        "name": "Galleggiare a Pedra de Lume",
+        "description": "Nella salina dentro il cratere, con acqua più salata del Mar Morto."
+      },
+      {
+        "name": "Kitesurf e windsurf a Sal",
+        "description": "Scuole e noleggi a Kite Beach e Santa Maria, al meglio da dicembre a marzo."
+      },
+      {
+        "name": "Tartarughe di Boa Vista",
+        "description": "Osservazione notturna della deposizione con guide autorizzate, da luglio a ottobre."
+      },
+      {
+        "name": "Trekking a Santo Antão",
+        "description": "Sentieri da Cova alla Valle di Paul o lungo la costa di Ponta do Sol."
+      },
+      {
+        "name": "Salita al vulcano di Fogo",
+        "description": "Con guida dal villaggio di Chã das Caldeiras, con degustazione del vino locale."
+      },
+      {
+        "name": "Musica dal vivo a Mindelo",
+        "description": "Serate di morna e coladeira nei locali della città."
+      },
+      {
+        "name": "Squali limone a Shark Bay",
+        "description": "Si camminano in acqua bassa tra piccoli squali innocui."
+      }
     ],
     "itineraries": [
-      { "title": "Settimana mare", "days": 8, "route": "Sal o Boa Vista (7)", "description": "La formula più venduta con volo diretto e villaggio o resort." },
-      { "title": "Mare e trekking", "days": 12, "route": "Sal (5) → São Vicente (2) → Santo Antão (4)", "description": "Per chi vuole unire spiaggia, musica e montagne." }
+      {
+        "title": "Settimana mare",
+        "days": 8,
+        "route": "Sal o Boa Vista (7)",
+        "description": "La formula più venduta con volo diretto e villaggio o resort."
+      },
+      {
+        "title": "Mare e trekking",
+        "days": 12,
+        "route": "Sal (5) → São Vicente (2) → Santo Antão (4)",
+        "description": "Per chi vuole unire spiaggia, musica e montagne."
+      },
+      {
+        "title": "Capo Verde a isole",
+        "days": 11,
+        "route": "Santiago (2) → Fogo (2) → São Vicente (2) → Santo Antão (3) → Sal (1)",
+        "description": "Isole diverse tra loro: il vulcano del Fogo, la musica di Mindelo e i sentieri di Santo Antão."
+      }
     ],
     "agentTips": [
       "Prima della partenza va fatta la preregistrazione online (EASE) e pagata la tassa di sicurezza aeroportuale: verifica la procedura.",
@@ -531,29 +1986,138 @@
       "Israele unisce luoghi sacri alle tre religioni monoteiste, archeologia, il deserto del Negev, il Mar Morto e una Tel Aviv moderna e vivace sul mare. È una meta classica per pellegrinaggi e viaggi culturali. Prima di proporla è indispensabile verificare la situazione di sicurezza aggiornata, perché il contesto regionale può cambiare rapidamente."
     ],
     "morePlaces": [
-      { "name": "Muro Occidentale", "description": "Il Muro del Pianto, luogo più sacro dell'ebraismo, con i tunnel sotterranei.", "search": "Western Wall" },
-      { "name": "Yad Vashem", "description": "Il memoriale della Shoah a Gerusalemme.", "search": "Yad Vashem" },
-      { "name": "Cratere Ramon", "description": "Grande cratere di erosione nel Negev, con trekking e cieli stellati.", "search": "Makhtesh Ramon" },
-      { "name": "Acri", "description": "Città crociata e ottomana sul mare, patrimonio UNESCO.", "search": "Acre, Israel" }
+      {
+        "name": "Muro Occidentale",
+        "description": "Il Muro del Pianto, luogo più sacro dell'ebraismo, con i tunnel sotterranei.",
+        "search": "Western Wall"
+      },
+      {
+        "name": "Yad Vashem",
+        "description": "Il memoriale della Shoah a Gerusalemme.",
+        "search": "Yad Vashem"
+      },
+      {
+        "name": "Cratere Ramon",
+        "description": "Grande cratere di erosione nel Negev, con trekking e cieli stellati.",
+        "search": "Makhtesh Ramon"
+      },
+      {
+        "name": "Acri",
+        "description": "Città crociata e ottomana sul mare, patrimonio UNESCO.",
+        "search": "Acre, Israel"
+      }
     ],
     "areas": [
-      { "name": "Gerusalemme", "description": "La Città Vecchia con i quartieri ebraico, cristiano, musulmano e armeno, il Santo Sepolcro, il Muro Occidentale, la Spianata delle Moschee, il Monte degli Ulivi; la città nuova con il Museo d'Israele e Yad Vashem. Betlemme è vicinissima.", "highlights": ["Santo Sepolcro", "Muro Occidentale", "Via Dolorosa", "Monte degli Ulivi", "Museo d'Israele", "Mahane Yehuda"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Primavera e autunno ideali; d'inverno può fare freddo e piovere; estate calda ma secca." },
-      { "name": "Tel Aviv e la costa (Giaffa, Cesarea, Haifa, Acri)", "description": "Tel Aviv con le spiagge, la città bianca Bauhaus e i mercati; Giaffa antica; le rovine romane di Cesarea, i giardini Bahá'í di Haifa e la città crociata di Acri.", "highlights": ["Tel Aviv", "Giaffa", "Cesarea", "Giardini Bahá'í", "Acri"], "seasons": "BBBOOOOOOOBB", "seasonNote": "Mare da maggio a ottobre; clima mite il resto dell'anno." },
-      { "name": "Galilea (Nazaret, Lago di Tiberiade)", "description": "I luoghi della vita di Gesù: Nazaret, Cafarnao, Tabga, il Monte delle Beatitudini, il lago di Tiberiade; più a nord le alture del Golan e i vigneti.", "highlights": ["Nazaret", "Cafarnao", "Monte delle Beatitudini", "Lago di Tiberiade", "Golan"], "seasons": "BBOOOBDDOOOB", "seasonNote": "Primavera verde e fiorita; estate calda." },
-      { "name": "Mar Morto e deserto di Giuda (Masada, Ein Gedi)", "description": "La fortezza di Masada, l'oasi di Ein Gedi e i resort del Mar Morto per galleggiare e fare fanghi.", "highlights": ["Masada", "Ein Gedi", "Mar Morto", "Qumran"], "seasons": "OOOODXXXDOOO", "seasonNote": "Da ottobre ad aprile ideale; d'estate oltre 40 °C." },
-      { "name": "Negev ed Eilat", "description": "Il deserto con il cratere Ramon e i kibbutz, fino a Eilat sul Mar Rosso con coralli e immersioni; da qui si può visitare Petra in Giordania.", "highlights": ["Cratere Ramon", "Mitzpe Ramon", "Eilat", "Riserva corallina"], "seasons": "OOOOBDDDBOOO", "seasonNote": "Da ottobre a maggio; d'estate caldo estremo." }
+      {
+        "name": "Gerusalemme",
+        "description": "La Città Vecchia con i quartieri ebraico, cristiano, musulmano e armeno, il Santo Sepolcro, il Muro Occidentale, la Spianata delle Moschee, il Monte degli Ulivi; la città nuova con il Museo d'Israele e Yad Vashem. Betlemme è vicinissima.",
+        "highlights": [
+          "Santo Sepolcro",
+          "Muro Occidentale",
+          "Via Dolorosa",
+          "Monte degli Ulivi",
+          "Museo d'Israele",
+          "Mahane Yehuda"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera e autunno ideali; d'inverno può fare freddo e piovere; estate calda ma secca."
+      },
+      {
+        "name": "Tel Aviv e la costa (Giaffa, Cesarea, Haifa, Acri)",
+        "description": "Tel Aviv con le spiagge, la città bianca Bauhaus e i mercati; Giaffa antica; le rovine romane di Cesarea, i giardini Bahá'í di Haifa e la città crociata di Acri.",
+        "highlights": [
+          "Tel Aviv",
+          "Giaffa",
+          "Cesarea",
+          "Giardini Bahá'í",
+          "Acri"
+        ],
+        "seasons": "BBBOOOOOOOBB",
+        "seasonNote": "Mare da maggio a ottobre; clima mite il resto dell'anno."
+      },
+      {
+        "name": "Galilea (Nazaret, Lago di Tiberiade)",
+        "description": "I luoghi della vita di Gesù: Nazaret, Cafarnao, Tabga, il Monte delle Beatitudini, il lago di Tiberiade; più a nord le alture del Golan e i vigneti.",
+        "highlights": [
+          "Nazaret",
+          "Cafarnao",
+          "Monte delle Beatitudini",
+          "Lago di Tiberiade",
+          "Golan"
+        ],
+        "seasons": "BBOOOBDDOOOB",
+        "seasonNote": "Primavera verde e fiorita; estate calda."
+      },
+      {
+        "name": "Mar Morto e deserto di Giuda (Masada, Ein Gedi)",
+        "description": "La fortezza di Masada, l'oasi di Ein Gedi e i resort del Mar Morto per galleggiare e fare fanghi.",
+        "highlights": [
+          "Masada",
+          "Ein Gedi",
+          "Mar Morto",
+          "Qumran"
+        ],
+        "seasons": "OOOODXXXDOOO",
+        "seasonNote": "Da ottobre ad aprile ideale; d'estate oltre 40 °C."
+      },
+      {
+        "name": "Negev ed Eilat",
+        "description": "Il deserto con il cratere Ramon e i kibbutz, fino a Eilat sul Mar Rosso con coralli e immersioni; da qui si può visitare Petra in Giordania.",
+        "highlights": [
+          "Cratere Ramon",
+          "Mitzpe Ramon",
+          "Eilat",
+          "Riserva corallina"
+        ],
+        "seasons": "OOOOBDDDBOOO",
+        "seasonNote": "Da ottobre a maggio; d'estate caldo estremo."
+      }
     ],
     "experiences": [
-      { "name": "Gerusalemme con una guida", "description": "Una giornata intera nella Città Vecchia tra i luoghi sacri delle tre religioni." },
-      { "name": "Alba a Masada", "description": "Salita a piedi lungo il Sentiero del Serpente prima del sorgere del sole." },
-      { "name": "Galleggiare nel Mar Morto", "description": "Con fanghi e trattamenti nei resort di Ein Bokek." },
-      { "name": "Mercati e cucina di Tel Aviv", "description": "Il mercato Carmel e la scena gastronomica tra le più vivaci del Mediterraneo." },
-      { "name": "Barca sul lago di Tiberiade", "description": "Navigazione su una barca in legno, tappa classica dei pellegrinaggi." },
-      { "name": "Notte nel deserto del Negev", "description": "Ecolodge vicino al cratere Ramon, con osservazione delle stelle." }
+      {
+        "name": "Gerusalemme con una guida",
+        "description": "Una giornata intera nella Città Vecchia tra i luoghi sacri delle tre religioni."
+      },
+      {
+        "name": "Alba a Masada",
+        "description": "Salita a piedi lungo il Sentiero del Serpente prima del sorgere del sole."
+      },
+      {
+        "name": "Galleggiare nel Mar Morto",
+        "description": "Con fanghi e trattamenti nei resort di Ein Bokek."
+      },
+      {
+        "name": "Mercati e cucina di Tel Aviv",
+        "description": "Il mercato Carmel e la scena gastronomica tra le più vivaci del Mediterraneo."
+      },
+      {
+        "name": "Barca sul lago di Tiberiade",
+        "description": "Navigazione su una barca in legno, tappa classica dei pellegrinaggi."
+      },
+      {
+        "name": "Notte nel deserto del Negev",
+        "description": "Ecolodge vicino al cratere Ramon, con osservazione delle stelle."
+      }
     ],
     "itineraries": [
-      { "title": "Terra Santa", "days": 8, "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Mar Morto (1)", "description": "Il classico per pellegrinaggi e viaggi culturali." },
-      { "title": "Israele e Giordania", "days": 11, "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Eilat (1) → Petra (2) → Amman (1)", "description": "Combinato attraverso il confine sud, da verificare in base alla situazione." }
+      {
+        "title": "Terra Santa",
+        "days": 8,
+        "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Mar Morto (1)",
+        "description": "Il classico per pellegrinaggi e viaggi culturali."
+      },
+      {
+        "title": "Israele e Giordania",
+        "days": 11,
+        "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Eilat (1) → Petra (2) → Amman (1)",
+        "description": "Combinato attraverso il confine sud, da verificare in base alla situazione."
+      },
+      {
+        "title": "Israele e Mar Rosso",
+        "days": 9,
+        "route": "Tel Aviv (2) → Gerusalemme (3) → Masada e Mar Morto (1) → Eilat (2)",
+        "description": "Città, storia e mare con barriera corallina, sempre verificando le indicazioni della Farnesina."
+      }
     ],
     "agentTips": [
       "Prima di vendere e di nuovo prima della partenza verifica la situazione su viaggiaresicuri.it: il contesto può cambiare rapidamente.",

@@ -19,7 +19,7 @@ import type { SheetPhoto } from "@/lib/countryPhotos";
 
 // Libreria Grand Route: schede paese già pronte per le destinazioni più vendute, uguali per tutte
 // le agenzie e senza costi di AI. L'agenzia può personalizzarle con Zefiro (la sua versione ha la precedenza).
-export const LIBRARY_UPDATED_AT = "2026-11-21T12:00:00.000Z";
+export const LIBRARY_UPDATED_AT = "2026-11-23T12:00:00.000Z";
 
 const SHEETS = { ...europa, ...africa, ...asia, ...americhe, ...europa2, ...europa3, ...medioriente2, ...asia2, ...africa2, ...africa3, ...africa4, ...americhe2, ...caraibi, ...oceania2 } as unknown as Record<string, CountrySheetContent>;
 const PHOTOS = photos as unknown as Record<string, SheetPhoto[]>;

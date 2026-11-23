@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Archive, BookOpen, ChevronRight } from "lucide-react";
+import { Archive, BookOpen, ChevronRight, Gift } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
@@ -46,6 +46,22 @@ export default async function SettingsPage() {
             <span className="block text-xs text-slate-500">
               Spiegazione passo per passo con schermate, pensata per chi parte da zero.
             </span>
+          </span>
+        </span>
+        <ChevronRight size={16} className="shrink-0 text-slate-500" />
+      </Link>
+
+      <Link
+        href="/dashboard/settings/vantaggi"
+        className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#e6d7bb] bg-white px-5 py-4 transition hover:shadow-sm"
+      >
+        <span className="flex items-center gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#233c5e] text-white">
+            <Gift size={16} />
+          </span>
+          <span>
+            <span className="block text-sm font-semibold text-slate-900">Vantaggi per i clienti</span>
+            <span className="block text-xs text-slate-500">Programma fedeltà a punti, livelli e offerte riservate a chi viaggia con te.</span>
           </span>
         </span>
         <ChevronRight size={16} className="shrink-0 text-slate-500" />

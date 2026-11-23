@@ -76,6 +76,12 @@
         "days": 6,
         "route": "Cascate Vittoria (2) → Chobe (3)",
         "description": "Estensione di un viaggio in Sudafrica o Namibia."
+      },
+      {
+        "title": "Kalahari e Okavango",
+        "days": 9,
+        "route": "Maun (1) → Makgadikgadi (2) → Central Kalahari (2) → Okavango (3)",
+        "description": "Saline, deserto e delta: suricati, i boscimani San e mokoro nel delta; consigliato da maggio a ottobre."
       }
     ],
     "agentTips": [
@@ -160,6 +166,18 @@
         "days": 10,
         "route": "Livingstone (2) → South Luangwa (4) → Lower Zambezi (3)",
         "description": "Safari a piedi e fluviali, da giugno a ottobre."
+      },
+      {
+        "title": "Walking safari",
+        "days": 8,
+        "route": "Lusaka (1) → South Luangwa (6)",
+        "description": "La culla del safari a piedi: leopardi e campi stagionali sul fiume Luangwa."
+      },
+      {
+        "title": "Cascate e Zambezi",
+        "days": 7,
+        "route": "Livingstone (3) → Lower Zambezi (3)",
+        "description": "Cascate Vittoria e canoa tra ippopotami ed elefanti."
       }
     ],
     "agentTips": [
@@ -251,6 +269,12 @@
         "days": 11,
         "route": "Victoria Falls (2) → Hwange (3) → Mana Pools (3) → Harare (1)",
         "description": "Per appassionati di safari."
+      },
+      {
+        "title": "Mana Pools e Kariba",
+        "days": 8,
+        "route": "Harare (1) → Lago Kariba (2) → Mana Pools (4)",
+        "description": "Il safari più selvaggio dello Zimbabwe, con canoa sullo Zambezi."
       }
     ],
     "agentTips": [
@@ -326,6 +350,12 @@
         "days": 12,
         "route": "South Luangwa (4) → Lilongwe → Lago Malawi (5)",
         "description": "Safari e lago."
+      },
+      {
+        "title": "Malawi in famiglia",
+        "days": 8,
+        "route": "Lilongwe (1) → Majete (3) → Lago Malawi (3)",
+        "description": "Riserva con i Big Five in recupero e spiagge d'acqua dolce: un'Africa tranquilla e accogliente."
       }
     ],
     "agentTips": [
@@ -358,6 +388,18 @@
         "days": 12,
         "route": "Johannesburg (1) → Kruger (3) → Vilanculos e Bazaruto (6)",
         "description": "Safari e mare, da maggio a novembre."
+      },
+      {
+        "title": "Ilha de Moçambique",
+        "days": 7,
+        "route": "Nampula (1) → Ilha de Moçambique (3) → Nacala (2)",
+        "description": "Città di pietra UNESCO e baie per lo snorkeling nel nord del paese."
+      },
+      {
+        "title": "Quirimbas",
+        "days": 9,
+        "route": "Pemba (1) → Ibo (3) → isole private Quirimbas (4)",
+        "description": "Arcipelago remoto con lodge di lusso; verificare sempre la situazione della provincia di Cabo Delgado."
       }
     ],
     "agentTips": [
@@ -462,6 +504,18 @@
         "days": 4,
         "route": "Underberg (1) → Sani Pass → Lesotho (2)",
         "description": "Deviazione da un tour del Sudafrica."
+      },
+      {
+        "title": "Lesotho a cavallo",
+        "days": 7,
+        "route": "Maseru (1) → Malealea (3) → Semonkong (2)",
+        "description": "Pony basotho, pitture rupestri e la cascata di Maletsunyane, una delle più alte d'Africa."
+      },
+      {
+        "title": "Sudafrica e Lesotho",
+        "days": 12,
+        "route": "Johannesburg (1) → Drakensberg (2) → Sani Pass e Lesotho (2) → Durban (2) → Hluhluwe (3)",
+        "description": "Montagne, Oceano Indiano e safari nel KwaZulu-Natal."
       }
     ],
     "agentTips": [
@@ -518,6 +572,18 @@
         "days": 6,
         "route": "Kruger (3) → Eswatini (2)",
         "description": "Abbinato a un viaggio in Sudafrica."
+      },
+      {
+        "title": "Eswatini culturale",
+        "days": 4,
+        "route": "Mbabane (1) → Ezulwini (2)",
+        "description": "Il festival Umhlanga di fine agosto, villaggi tradizionali e la riserva di Mlilwane."
+      },
+      {
+        "title": "Sudafrica, Eswatini e Mozambico",
+        "days": 14,
+        "route": "Johannesburg (1) → Kruger (3) → Eswatini (2) → Maputo (1) → Tofo (5)",
+        "description": "Safari, regno di Eswatini e mare del Mozambico con gli squali balena."
       }
     ],
     "agentTips": [
@@ -572,6 +638,18 @@
         "days": 8,
         "route": "Grande Comore (3) → Mohéli (4)",
         "description": "Per viaggiatori in cerca di isole autentiche."
+      },
+      {
+        "title": "Comore e Mayotte",
+        "days": 9,
+        "route": "Grande Comore (3) → Anjouan (2) → Mayotte (3)",
+        "description": "Vulcano Karthala, piantagioni di ylang-ylang e la laguna di Mayotte."
+      },
+      {
+        "title": "Comore e Madagascar",
+        "days": 12,
+        "route": "Antananarivo (1) → Nosy Be (5) → Grande Comore (4)",
+        "description": "Il mare di Nosy Be con un'estensione nelle isole delle spezie."
       }
     ],
     "agentTips": [
