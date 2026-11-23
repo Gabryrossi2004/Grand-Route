@@ -18,13 +18,22 @@ const AFFINITY: Record<string, string[]> = {
 const POPULAR = ["JP", "TH", "US", "MX", "EG", "ZA", "PE", "IS", "VN", "LK", "MA", "TZ", "PT", "NO", "AU"];
 
 export function suggestNextCountries(visited: string[], available: (code: string) => boolean, count = 3): string[] {
+  return suggestNextWithReason(visited, available, count).map((x) => x.code);
+}
+
+// Come sopra, ma dice anche da quale paese visitato nasce l'idea («Ti è piaciuto il Giappone? …»)
+export function suggestNextWithReason(
+  visited: string[],
+  available: (code: string) => boolean,
+  count = 3,
+): { code: string; because: string | null }[] {
   const seen = new Set(visited.map((c) => c.toUpperCase()));
-  const out: string[] = [];
-  const add = (c: string) => {
-    if (!seen.has(c) && !out.includes(c) && available(c)) out.push(c);
+  const out: { code: string; because: string | null }[] = [];
+  const add = (c: string, because: string | null) => {
+    if (!seen.has(c) && !out.some((x) => x.code === c) && available(c)) out.push({ code: c, because });
   };
   // le mete più recenti contano di più
-  for (const v of [...visited].reverse()) for (const c of AFFINITY[v.toUpperCase()] ?? []) add(c);
-  for (const c of POPULAR) add(c);
+  for (const v of [...visited].reverse()) for (const c of AFFINITY[v.toUpperCase()] ?? []) add(c, v.toUpperCase());
+  for (const c of POPULAR) add(c, null);
   return out.slice(0, count);
 }

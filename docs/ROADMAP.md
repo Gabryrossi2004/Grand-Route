@@ -14,6 +14,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 23/11/2026. Il det
 **Controllo generale (23/11) — FATTO.**
 - **Telefono FATTO:** area clienti senza scorrimento laterale e con la barra in basso (I viaggi, Mappamondo, I tuoi dati, Vantaggi); stessa barra per i viaggiatori; finestre e schede dell'agenzia sistemate sugli schermi piccoli.
 - **Foto FATTO:** controllate **a vista** tutte le foto dei 215 paesi, delle 20 regioni e delle 88 zone d'Italia; tolte quelle brutte (animali, oggetti, interni, dettagli) e aggiunti i luoghi simbolo che mancavano (Piramidi, Torre Eiffel, Taj Mahal, Petra, Acropoli, Halong, Cappadocia, Chefchaouen, Plitvice...). Didascalie in italiano. 201 paesi con 4 foto; restano con meno foto solo 4 paesi poco turistici (Anguilla, Rep. Centrafricana, Guinea Equatoriale, Guinea-Bissau) perché su Wikimedia non c'è di meglio.
+- **«Il tuo prossimo viaggio» FATTO (area cliente):** meta in primo piano con 3-4 foto grandi, nome e frase d'effetto, «Lo sapevi?» con due curiosità (scritte per tutte le 91 mete proponibili), «Da vivere», quando andare con l'avviso «È il momento perfetto per partire», ore di volo, itinerario pronto e pulsante «Voglio partire!»; le altre due idee si sfogliano con «Scopri di più». Testo più grande di un passo.
 - **Kit di prova per le agenzie** (dopo): account demo, domande per l'amico agente e la collega del tour operator, guida da 20 minuti.
 
 ## Da fare, per blocco

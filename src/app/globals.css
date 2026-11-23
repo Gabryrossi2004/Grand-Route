@@ -144,3 +144,11 @@ summary:focus-visible {
 html:has([data-ui="client"]) {
   font-size: 106.25%;
 }
+
+/* Comparsa morbida (es. cambio meta in «Il tuo prossimo viaggio») */
+@keyframes gr-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.gr-fade { animation: gr-fade 0.45s ease-out; }
+@media (prefers-reduced-motion: reduce) { .gr-fade { animation: none; } }
