@@ -4,7 +4,8 @@ import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { clientSignOut } from "./actions";
 import { ClientSignOutForm, RegisterServiceWorker } from "@/components/ClientOfflineSupport";
 import LanguageSwitch from "@/components/LanguageSwitch";
-import { Gift } from "lucide-react";
+import { Gift, Globe2, IdCard, Luggage } from "lucide-react";
+import MobileTabBar from "@/components/MobileTabBar";
 import { getT } from "@/lib/i18n/server";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
@@ -31,11 +32,16 @@ export default async function ClientPortalLayout({ children }: { children: React
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
           <Link href="/client" className="flex shrink-0 items-center gap-2 whitespace-nowrap text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />
-            <span className="hidden font-[family-name:var(--font-display)] text-base font-semibold tracking-wide min-[400px]:inline sm:text-xl">
+            <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">
               {t("portal.title")}
             </span>
           </Link>
-          <nav className="flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-[13px] sm:gap-1 sm:text-sm">
+          <ClientSignOutForm
+            action={clientSignOut}
+            label={t("common.logout")}
+            className="rounded-full border border-[#e6d7bb] bg-white px-3 py-1.5 text-[13px] font-medium text-[#756548] transition hover:text-[#233c5e] sm:hidden"
+          />
+          <nav className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm sm:flex">
             <Link
               href="/client"
               className="rounded-full px-2.5 py-1.5 font-medium sm:px-3.5 text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]"
@@ -71,7 +77,15 @@ export default async function ClientPortalLayout({ children }: { children: React
         </div>
       </HeaderAutoHide>
       <RegisterServiceWorker />
-      <main className="mx-auto max-w-3xl px-4 pb-12 pt-4">
+      <MobileTabBar
+        items={[
+          { href: "/client", label: t("portal.nav.trips"), icon: <Luggage size={19} />, exact: true, also: ["/client/trips", "/client/diario"] },
+          { href: "/client/mappamondo", label: "Mappamondo", icon: <Globe2 size={19} /> },
+          { href: "/client/documenti", label: t("portal.nav.data"), icon: <IdCard size={19} /> },
+          { href: "/client/vantaggi", label: "Vantaggi", icon: <Gift size={19} /> },
+        ]}
+      />
+      <main className="mx-auto max-w-3xl px-4 pb-28 pt-4 sm:pb-12">
         <div className="mb-3 flex justify-end print:hidden">
           <LanguageSwitch />
         </div>

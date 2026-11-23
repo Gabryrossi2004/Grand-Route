@@ -2,6 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
+import { Globe2, Luggage, Plus } from "lucide-react";
+import MobileTabBar from "@/components/MobileTabBar";
 import { travelerSignOut } from "../actions";
 
 export const metadata = { title: "Area viaggiatori" };
@@ -25,9 +27,14 @@ export default async function TravelerLayout({ children }: { children: React.Rea
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4">
           <Link href="/viaggiatore" className="flex shrink-0 items-center gap-2 text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />
-            <span className="hidden font-[family-name:var(--font-display)] text-base font-semibold tracking-wide min-[400px]:inline sm:text-xl">Grand Route</span>
+            <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">Grand Route</span>
           </Link>
-          <nav className="flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-[13px] sm:gap-1 sm:text-sm">
+          <form action={travelerSignOut} className="sm:hidden">
+            <button type="submit" className="rounded-full border border-[#e6d7bb] bg-white px-3 py-1.5 text-[13px] font-medium text-[#756548] hover:text-[#233c5e]">
+              Esci
+            </button>
+          </form>
+          <nav className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm sm:flex">
             <Link href="/viaggiatore" className={link}>
               Viaggi
             </Link>
@@ -45,7 +52,14 @@ export default async function TravelerLayout({ children }: { children: React.Rea
           </nav>
         </div>
       </HeaderAutoHide>
-      <main className="relative z-10 mx-auto max-w-4xl px-3 pb-16 pt-4 sm:px-4">{children}</main>
+      <MobileTabBar
+        items={[
+          { href: "/viaggiatore", label: "Viaggi", icon: <Luggage size={19} />, exact: true, also: ["/viaggiatore/viaggi"] },
+          { href: "/viaggiatore/mappamondo", label: "Mappamondo", icon: <Globe2 size={19} /> },
+          { href: "/viaggiatore/nuovo", label: "Nuovo viaggio", icon: <Plus size={19} /> },
+        ]}
+      />
+      <main className="relative z-10 mx-auto max-w-4xl px-3 pb-28 pt-4 sm:px-4 sm:pb-16">{children}</main>
     </div>
   );
 }

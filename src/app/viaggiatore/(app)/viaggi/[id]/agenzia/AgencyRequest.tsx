@@ -78,9 +78,9 @@ export default function AgencyRequest({
           <h3 className="mb-2 text-sm font-semibold text-[#233c5e]">Le tue richieste per questo viaggio</h3>
           <ul className="divide-y divide-[#f4ecdb] text-sm">
             {requests.map((r) => (
-              <li key={r.id} className="flex justify-between gap-2 py-1.5">
+              <li key={r.id} className="flex flex-col py-1.5 sm:flex-row sm:justify-between sm:gap-2">
                 <span className="font-medium text-slate-800">{r.agency_name}</span>
-                <span className="text-slate-500">
+                <span className="text-xs text-slate-500 sm:text-sm">
                   {STATUS[r.status] ?? r.status} · {new Date(r.created_at).toLocaleDateString("it-IT")}
                 </span>
               </li>
@@ -97,13 +97,13 @@ export default function AgencyRequest({
             const match = tripCountry && a.countries.includes(tripCountry);
             const on = a.id === chosen;
             return (
-              <li key={a.id} className={`flex flex-col gap-2 rounded-2xl border bg-white p-4 ${on ? "border-[#233c5e] ring-2 ring-[#233c5e]/20" : "border-[#e6d7bb]"}`}>
-                <div className="flex items-center gap-3">
+              <li key={a.id} className={`flex min-w-0 flex-col gap-2 rounded-2xl border bg-white p-4 ${on ? "border-[#233c5e] ring-2 ring-[#233c5e]/20" : "border-[#e6d7bb]"}`}>
+                <div className="flex min-w-0 items-center gap-3">
                   {a.logo_url ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={a.logo_url} alt="" className="h-11 w-11 rounded-lg object-contain" />
+                    <img src={a.logo_url} alt="" className="h-11 w-11 shrink-0 rounded-lg object-contain" />
                   ) : (
-                    <span className="flex h-11 w-11 items-center justify-center rounded-lg text-lg font-semibold text-white" style={{ background: a.brand_color || "#233c5e" }}>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-lg font-semibold text-white" style={{ background: a.brand_color || "#233c5e" }}>
                       {a.agency_name.slice(0, 1).toUpperCase()}
                     </span>
                   )}
@@ -113,7 +113,7 @@ export default function AgencyRequest({
                   </div>
                 </div>
                 {a.blurb && <p className="text-sm text-slate-600">{a.blurb}</p>}
-                {a.countries.length > 0 && <p className="text-sm">{a.countries.slice(0, 10).map((c) => flagOf(c)).join(" ")}</p>}
+                {a.countries.length > 0 && <p className="break-words text-sm">{a.countries.slice(0, 10).map((c) => flagOf(c)).join(" ")}</p>}
                 <button
                   type="button"
                   onClick={() => setChosen(on ? null : a.id)}

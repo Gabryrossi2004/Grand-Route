@@ -38,13 +38,13 @@ export default function TripHeader({
           {trip.start_date ? `${dateIt(trip.start_date)}${trip.end_date ? ` – ${dateIt(trip.end_date)}` : ""}` : "Date da decidere: impostale nella barra dei giorni"}
         </span>
       </p>
-      <nav className="mt-4 flex gap-1 overflow-x-auto whitespace-nowrap border-b border-[#e6d7bb]" aria-label="Sezioni del viaggio">
+      <nav className="-mx-1 mt-4 flex gap-0.5 overflow-x-auto px-1 whitespace-nowrap border-b border-[#e6d7bb]" aria-label="Sezioni del viaggio">
         {tabs.map((t) => (
           <Link
             key={t.id}
             href={t.href}
             aria-current={t.id === active ? "page" : undefined}
-            className={`px-4 py-2 text-sm font-medium transition ${t.id === active ? "border-b-2 border-[#233c5e] text-[#233c5e]" : "text-slate-500 hover:text-slate-700"}`}
+            className={`shrink-0 px-2.5 py-2 text-sm font-medium transition sm:px-4 ${t.id === active ? "border-b-2 border-[#233c5e] text-[#233c5e]" : "text-slate-500 hover:text-slate-700"}`}
           >
             {t.label}
           </Link>

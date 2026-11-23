@@ -185,8 +185,8 @@ export default function PackingList({
       )}
 
       <form onSubmit={submit} className="flex flex-wrap items-center gap-2 rounded-2xl border border-[#e6d7bb] bg-white p-3">
-        <input value={text} onChange={(e) => setText(e.target.value)} maxLength={120} placeholder="Aggiungi una cosa (es. Binocolo)" className={`${field} min-w-0 flex-1`} />
-        <select value={category} onChange={(e) => setCategory(e.target.value)} aria-label="Categoria" className={field}>
+        <input value={text} onChange={(e) => setText(e.target.value)} maxLength={120} placeholder="Aggiungi una cosa (es. Binocolo)" className={`${field} w-full min-w-0 sm:w-auto sm:flex-1`} />
+        <select value={category} onChange={(e) => setCategory(e.target.value)} aria-label="Categoria" className={`${field} min-w-0 flex-1 sm:flex-none`}>
           {PACK_CATEGORIES.map((c) => (
             <option key={c}>{c}</option>
           ))}
