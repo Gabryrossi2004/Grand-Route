@@ -156,19 +156,319 @@
         "title": "Il classico per la prima volta",
         "days": 13,
         "route": "Tokyo (4) → Hakone (1) → Kyoto (4) → Hiroshima e Miyajima (1) → Osaka (2)",
-        "description": "L'itinerario più venduto: metropoli, ryokan con vista Fuji, il Giappone dei templi, la memoria di Hiroshima e il cibo di Osaka. Nara si fa in giornata da Kyoto."
+        "description": "L'itinerario più venduto: metropoli, ryokan con vista Fuji, il Giappone dei templi, la memoria di Hiroshima e il cibo di Osaka. Nara si fa in giornata da Kyoto.",
+        "plan": [
+          {
+            "t": "Arrivo a Tokyo",
+            "a": [
+              "volo|Volo per Tokyo|Volo dall'Italia diretto o con uno scalo, circa 14 ore.|",
+              "transfer|Transfer in hotel con Narita Express o limousine bus||Tokyo",
+              "alloggio|Hotel a Shinjuku o Ginza|Zone comode per metro e linee JR.|Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo tradizionale",
+            "a": [
+              "attivita|Asakusa e tempio Senso-ji|Il tempio più antico della città e la via dei negozi Nakamise.|Asakusa",
+              "attivita|Crociera sul fiume Sumida|In battello fino ai giardini Hama-rikyu.|Tokyo",
+              "attivita|Tokyo Skytree al tramonto|Vista sulla città dalla torre più alta del Giappone.|Sumida"
+            ]
+          },
+          {
+            "t": "Tokyo moderna",
+            "a": [
+              "attivita|Santuario Meiji e Harajuku|Il bosco sacro nel cuore della città e la via di Takeshita.|Harajuku",
+              "attivita|Shibuya Crossing e Shibuya Sky|L'incrocio più famoso del mondo visto dall'alto.|Shibuya",
+              "ristorante|Cena a Shinjuku, Omoide Yokocho|Vicoli di locali con spiedini yakitori.|Shinjuku"
+            ]
+          },
+          {
+            "t": "Escursione a Nikko o Kamakura",
+            "a": [
+              "attivita|Nikko, santuari nel bosco|Il Toshogu decorato in oro e la cascata di Kegon (in alternativa Kamakura e il Grande Buddha).|Nikko",
+              "info|Japan Rail Pass|Valutare il pass se il viaggio prevede molti spostamenti in treno.|"
+            ]
+          },
+          {
+            "t": "Da Tokyo a Hakone",
+            "a": [
+              "treno|Treno Romancecar per Hakone|Circa 90 minuti da Shinjuku.|Hakone",
+              "attivita|Giro di Hakone: lago Ashi, funivia e Owakudani|Battello pirata sul lago e vista sul Fuji nelle giornate limpide.|Hakone",
+              "alloggio|Notte in ryokan con onsen|Cena kaiseki e bagni termali: l'esperienza più ricordata del viaggio.|Hakone"
+            ]
+          },
+          {
+            "t": "Da Hakone a Kyoto",
+            "a": [
+              "treno|Shinkansen da Odawara a Kyoto|Circa 2 ore sul treno proiettile.|Kyoto",
+              "alloggio|Hotel a Kyoto|Meglio vicino alla stazione o a Gion.|Kyoto",
+              "attivita|Passeggiata serale a Gion|Il quartiere delle geishe, Hanamikoji e Pontocho.|Gion"
+            ]
+          },
+          {
+            "t": "Kyoto: templi e giardini",
+            "a": [
+              "attivita|Fushimi Inari all'alba|Migliaia di torii rossi, presto per evitare la folla.|Kyoto",
+              "attivita|Kiyomizu-dera e Higashiyama|Il tempio sulle palafitte e le stradine di Sannenzaka.|Kyoto",
+              "attivita|Cerimonia del tè|Esperienza in una casa da tè tradizionale.|Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto: Arashiyama e Padiglione d'Oro",
+            "a": [
+              "attivita|Bosco di bambù di Arashiyama|Con il tempio Tenryu-ji e il ponte Togetsukyo.|Arashiyama",
+              "attivita|Kinkaku-ji, il Padiglione d'Oro|Il tempio ricoperto d'oro che si specchia nel laghetto.|Kyoto",
+              "attivita|Mercato di Nishiki|La «cucina di Kyoto» per assaggi e souvenir.|Kyoto"
+            ]
+          },
+          {
+            "t": "Escursione a Nara",
+            "a": [
+              "treno|Treno per Nara|45 minuti da Kyoto.|Nara",
+              "attivita|Todai-ji e il Grande Buddha|La statua di bronzo e il parco con i cervi liberi.|Nara",
+              "attivita|Santuario Kasuga Taisha|Le lanterne di pietra nel bosco.|Nara"
+            ]
+          },
+          {
+            "t": "Hiroshima e Miyajima",
+            "a": [
+              "treno|Shinkansen per Hiroshima|Circa 1 ora e 40 minuti da Kyoto.|Hiroshima",
+              "attivita|Parco e Museo della Pace|La Cupola della bomba atomica, patrimonio UNESCO.|Hiroshima",
+              "traghetto|Traghetto per Miyajima|Il torii galleggiante del santuario di Itsukushima.|Miyajima",
+              "alloggio|Hotel a Hiroshima o ryokan a Miyajima||Miyajima"
+            ]
+          },
+          {
+            "t": "Da Hiroshima a Osaka",
+            "a": [
+              "treno|Shinkansen per Osaka|Con sosta facoltativa al Castello di Himeji.|Himeji",
+              "alloggio|Hotel a Namba o Umeda||Osaka",
+              "ristorante|Street food a Dotonbori|Takoyaki e okonomiyaki tra le insegne luminose.|Osaka"
+            ]
+          },
+          {
+            "t": "Osaka",
+            "a": [
+              "attivita|Castello di Osaka|Il castello e il suo parco.|Osaka",
+              "attivita|Shinsekai e Kuromon Market|Il quartiere retrò e il mercato del pesce.|Osaka",
+              "attivita|Tempo libero per lo shopping||Osaka"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto del Kansai|Treno Haruka o limousine bus.|Osaka",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Alpi e tradizioni",
-        "days": 11,
+        "days": 12,
         "route": "Tokyo (3) → Matsumoto (1) → Takayama (2) → Shirakawa-go → Kanazawa (2) → Kyoto (3)",
-        "description": "Per chi vuole il Giappone rurale e meno affollato, con il trasferimento dei bagagli tra gli hotel e una notte in ryokan."
+        "description": "Per chi vuole il Giappone rurale e meno affollato, con il trasferimento dei bagagli tra gli hotel e una notte in ryokan.",
+        "plan": [
+          {
+            "t": "Arrivo a Tokyo",
+            "a": [
+              "volo|Volo per Tokyo||",
+              "transfer|Transfer in hotel||Tokyo",
+              "alloggio|Hotel a Tokyo||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "attivita|Asakusa, Senso-ji e Ueno|Il volto tradizionale della capitale.|Tokyo",
+              "attivita|Shibuya e Harajuku|Il volto moderno, con lo Shibuya Sky.|Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "attivita|teamLab e Odaiba|Il museo digitale e la baia.|Tokyo",
+              "info|Spedizione bagagli|Si spedisce la valigia grande a Kyoto e si viaggia leggeri nelle Alpi.|"
+            ]
+          },
+          {
+            "t": "Da Tokyo a Matsumoto",
+            "a": [
+              "treno|Treno espresso Azusa|Circa 2 ore e 40 minuti.|Matsumoto",
+              "attivita|Castello del Corvo|Uno dei castelli originali più belli del Giappone.|Matsumoto",
+              "alloggio|Hotel a Matsumoto||Matsumoto"
+            ]
+          },
+          {
+            "t": "Da Matsumoto a Takayama",
+            "a": [
+              "transfer|Bus panoramico per Takayama|Attraverso le Alpi del Nord.|Takayama",
+              "attivita|Centro storico di Sanmachi Suji|Case di legno, sake e mercato mattutino.|Takayama",
+              "alloggio|Ryokan a Takayama|Con cena a base di manzo di Hida.|Takayama"
+            ]
+          },
+          {
+            "t": "Takayama",
+            "a": [
+              "attivita|Hida Folk Village|Villaggio museo di case con il tetto di paglia.|Takayama",
+              "attivita|Mercati del mattino e Takayama Jinya|L'antica sede del governo locale.|Takayama"
+            ]
+          },
+          {
+            "t": "Shirakawa-go e Kanazawa",
+            "a": [
+              "transfer|Bus per Shirakawa-go|Il villaggio UNESCO delle case gassho.|Shirakawa-go",
+              "transfer|Bus per Kanazawa||Kanazawa",
+              "alloggio|Hotel a Kanazawa||Kanazawa"
+            ]
+          },
+          {
+            "t": "Kanazawa",
+            "a": [
+              "attivita|Giardino Kenroku-en|Uno dei tre giardini più belli del Giappone.|Kanazawa",
+              "attivita|Quartiere delle geishe di Higashi Chaya|Case da tè in legno e foglia d'oro.|Kanazawa",
+              "attivita|Mercato di Omicho|Pesce freschissimo del Mar del Giappone.|Kanazawa"
+            ]
+          },
+          {
+            "t": "Da Kanazawa a Kyoto",
+            "a": [
+              "treno|Treno Thunderbird per Kyoto|Circa 2 ore e 15 minuti.|Kyoto",
+              "alloggio|Hotel a Kyoto||Kyoto",
+              "attivita|Gion al tramonto||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Fushimi Inari e Kiyomizu-dera||Kyoto",
+              "attivita|Padiglione d'Oro e Ryoan-ji|Il tempio d'oro e il giardino zen più famoso.|Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto e Nara",
+            "a": [
+              "attivita|Arashiyama al mattino||Arashiyama",
+              "attivita|Pomeriggio a Nara con i cervi||Nara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto del Kansai||Kyoto",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Giappone e mare",
         "days": 15,
         "route": "Tokyo (4) → Kyoto (4) → Osaka (2) → Okinawa (4)",
-        "description": "Tour culturale con estensione mare a Okinawa, ideale da aprile a ottobre e per i viaggi di nozze."
+        "description": "Tour culturale con estensione mare a Okinawa, ideale da aprile a ottobre e per i viaggi di nozze.",
+        "plan": [
+          {
+            "t": "Arrivo a Tokyo",
+            "a": [
+              "volo|Volo per Tokyo||",
+              "transfer|Transfer in hotel||Tokyo",
+              "alloggio|Hotel a Tokyo||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo tradizionale",
+            "a": [
+              "attivita|Asakusa e Senso-ji||Tokyo",
+              "attivita|Giardini Hama-rikyu e Ginza||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo moderna",
+            "a": [
+              "attivita|Shibuya, Harajuku e Santuario Meiji||Tokyo",
+              "ristorante|Cena a Shinjuku||Tokyo"
+            ]
+          },
+          {
+            "t": "Escursione a Kamakura",
+            "a": [
+              "attivita|Grande Buddha e templi di Kamakura|Con la spiaggia di Enoshima.|Kamakura"
+            ]
+          },
+          {
+            "t": "Da Tokyo a Kyoto",
+            "a": [
+              "treno|Shinkansen per Kyoto||Kyoto",
+              "alloggio|Hotel a Kyoto||Kyoto",
+              "attivita|Passeggiata a Gion||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Fushimi Inari e Kiyomizu-dera||Kyoto",
+              "attivita|Cerimonia del tè in kimono||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Arashiyama e Kinkaku-ji||Kyoto"
+            ]
+          },
+          {
+            "t": "Nara",
+            "a": [
+              "attivita|Todai-ji e il parco dei cervi||Nara"
+            ]
+          },
+          {
+            "t": "Da Kyoto a Osaka",
+            "a": [
+              "treno|Treno per Osaka|30 minuti.|Osaka",
+              "alloggio|Hotel a Osaka||Osaka",
+              "ristorante|Street food a Dotonbori||Osaka"
+            ]
+          },
+          {
+            "t": "Osaka",
+            "a": [
+              "attivita|Castello e Kuromon Market||Osaka"
+            ]
+          },
+          {
+            "t": "Da Osaka a Okinawa",
+            "a": [
+              "volo|Volo per Okinawa|Circa 2 ore e 15 minuti.|Okinawa",
+              "alloggio|Resort sul mare a Okinawa|Zona di Onna o isole Kerama.|Okinawa"
+            ]
+          },
+          {
+            "t": "Okinawa: mare",
+            "a": [
+              "attivita|Relax e snorkeling|Le spiagge più belle del Giappone.|Okinawa"
+            ]
+          },
+          {
+            "t": "Okinawa: isole Kerama",
+            "a": [
+              "traghetto|Escursione alle isole Kerama|Acque turchesi e tartarughe marine.|Kerama"
+            ]
+          },
+          {
+            "t": "Okinawa: cultura",
+            "a": [
+              "attivita|Castello di Shuri e Acquario Churaumi|Il regno di Ryukyu e uno degli acquari più grandi del mondo.|Okinawa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Okinawa",
+              "volo|Volo di rientro in Italia via Tokyo||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -324,19 +624,291 @@
         "title": "Classico inverno (novembre–aprile)",
         "days": 14,
         "route": "Bangkok (3) → Chiang Mai (3) → Chiang Rai (1) → Krabi o Phuket (6)",
-        "description": "Templi, nord e mare delle Andamane nel periodo migliore: il pacchetto più richiesto per viaggi di nozze e prime volte in Asia."
+        "description": "Templi, nord e mare delle Andamane nel periodo migliore: il pacchetto più richiesto per viaggi di nozze e prime volte in Asia.",
+        "plan": [
+          {
+            "t": "Arrivo a Bangkok",
+            "a": [
+              "volo|Volo per Bangkok|Circa 11 ore diretto o con uno scalo nel Golfo.|",
+              "transfer|Transfer in hotel||Bangkok",
+              "alloggio|Hotel sul fiume o a Sukhumvit||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok dei templi",
+            "a": [
+              "attivita|Grande Palazzo Reale e Wat Phra Kaew|Il Buddha di Smeraldo: spalle e ginocchia coperte.|Bangkok",
+              "attivita|Wat Pho e il Buddha sdraiato|Con un massaggio thai alla scuola del tempio.|Bangkok",
+              "attivita|Wat Arun al tramonto|Si attraversa il fiume in barca.|Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok tra mercati e canali",
+            "a": [
+              "attivita|Mercato galleggiante di Damnoen Saduak|E il mercato sui binari di Maeklong.|Ratchaburi",
+              "attivita|Crociera sui klong di Thonburi||Bangkok",
+              "ristorante|Street food a Chinatown (Yaowarat)||Bangkok"
+            ]
+          },
+          {
+            "t": "Da Bangkok a Chiang Mai",
+            "a": [
+              "volo|Volo interno per Chiang Mai|Circa 1 ora e 10 minuti.|Chiang Mai",
+              "alloggio|Hotel nella città vecchia||Chiang Mai",
+              "attivita|Night Bazaar||Chiang Mai"
+            ]
+          },
+          {
+            "t": "Chiang Mai",
+            "a": [
+              "attivita|Doi Suthep|Il tempio d'oro sulla montagna sopra la città.|Chiang Mai",
+              "attivita|Templi della città vecchia|Wat Chedi Luang e Wat Phra Singh.|Chiang Mai",
+              "attivita|Corso di cucina thai||Chiang Mai"
+            ]
+          },
+          {
+            "t": "Chiang Mai: elefanti",
+            "a": [
+              "attivita|Santuario etico degli elefanti|Si nutrono e si accompagnano al fiume, senza monta.|Chiang Mai",
+              "attivita|Mercato del sabato o della domenica||Chiang Mai"
+            ]
+          },
+          {
+            "t": "Da Chiang Mai a Chiang Rai",
+            "a": [
+              "transfer|Trasferimento con sosta al Tempio Bianco|Wat Rong Khun, opera d'arte contemporanea.|Chiang Rai",
+              "attivita|Tempio Blu e Baan Dam||Chiang Rai",
+              "alloggio|Hotel a Chiang Rai||Chiang Rai"
+            ]
+          },
+          {
+            "t": "Triangolo d'Oro e volo per il mare",
+            "a": [
+              "attivita|Triangolo d'Oro|Il punto d'incontro di Thailandia, Laos e Myanmar.|Chiang Saen",
+              "volo|Volo per Krabi o Phuket via Bangkok||Krabi",
+              "alloggio|Resort sul mare||Krabi"
+            ]
+          },
+          {
+            "t": "Mare delle Andamane",
+            "a": [
+              "attivita|Relax in spiaggia||Krabi"
+            ]
+          },
+          {
+            "t": "Isole Phi Phi",
+            "a": [
+              "traghetto|Escursione in barca alle Phi Phi|Maya Bay e snorkeling.|Phi Phi"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera al mare||Krabi"
+            ]
+          },
+          {
+            "t": "Baia di Phang Nga",
+            "a": [
+              "attivita|Phang Nga in kayak|Faraglioni, grotte e l'isola di James Bond.|Phang Nga"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Railay e Ao Nang|Arrampicata o semplice relax tra le pareti di roccia.|Railay"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Krabi",
+              "volo|Volo di rientro in Italia via Bangkok||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estate al mare giusto (giugno–settembre)",
         "days": 13,
         "route": "Bangkok (3) → Ayutthaya (1) → Chiang Mai (2) → Koh Samui (7)",
-        "description": "In estate il mare va venduto nel Golfo: Samui come base, con escursioni a Phangan, Tao e al parco marino di Ang Thong."
+        "description": "In estate il mare va venduto nel Golfo: Samui come base, con escursioni a Phangan, Tao e al parco marino di Ang Thong.",
+        "plan": [
+          {
+            "t": "Arrivo a Bangkok",
+            "a": [
+              "volo|Volo per Bangkok||",
+              "transfer|Transfer in hotel||Bangkok",
+              "alloggio|Hotel a Bangkok||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok",
+            "a": [
+              "attivita|Grande Palazzo Reale, Wat Pho e Wat Arun||Bangkok",
+              "ristorante|Cena su una rooftop||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok",
+            "a": [
+              "attivita|Mercato galleggiante e mercato sui binari||Ratchaburi",
+              "attivita|Chinatown la sera||Bangkok"
+            ]
+          },
+          {
+            "t": "Ayutthaya",
+            "a": [
+              "transfer|Trasferimento ad Ayutthaya|1 ora e mezza a nord.|Ayutthaya",
+              "attivita|Antica capitale del Siam|Templi in rovina UNESCO, anche in bicicletta.|Ayutthaya",
+              "alloggio|Hotel ad Ayutthaya||Ayutthaya"
+            ]
+          },
+          {
+            "t": "Da Ayutthaya a Chiang Mai",
+            "a": [
+              "treno|Treno o volo per Chiang Mai||Chiang Mai",
+              "alloggio|Hotel a Chiang Mai||Chiang Mai"
+            ]
+          },
+          {
+            "t": "Chiang Mai",
+            "a": [
+              "attivita|Doi Suthep e città vecchia||Chiang Mai",
+              "attivita|Santuario degli elefanti||Chiang Mai"
+            ]
+          },
+          {
+            "t": "Da Chiang Mai a Koh Samui",
+            "a": [
+              "volo|Volo per Koh Samui|Diretto con Bangkok Airways.|Koh Samui",
+              "alloggio|Resort a Koh Samui|Chaweng per la vita, Bophut o Lamai per la tranquillità.|Koh Samui"
+            ]
+          },
+          {
+            "t": "Koh Samui",
+            "a": [
+              "attivita|Relax in spiaggia||Koh Samui"
+            ]
+          },
+          {
+            "t": "Parco marino di Ang Thong",
+            "a": [
+              "traghetto|Escursione ad Ang Thong|42 isole, kayak e laguna di smeraldo.|Ang Thong"
+            ]
+          },
+          {
+            "t": "Koh Samui",
+            "a": [
+              "attivita|Big Buddha e Fisherman's Village|Il mercato del venerdì sera a Bophut.|Koh Samui"
+            ]
+          },
+          {
+            "t": "Koh Tao e Nang Yuan",
+            "a": [
+              "traghetto|Snorkeling a Koh Tao e Nang Yuan||Koh Tao"
+            ]
+          },
+          {
+            "t": "Koh Samui",
+            "a": [
+              "attivita|Giornata libera al mare o spa||Koh Samui"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Koh Samui",
+              "volo|Volo di rientro in Italia via Bangkok||"
+            ]
+          }
+        ]
       },
       {
         "title": "Natura e isole",
         "days": 12,
         "route": "Bangkok (2) → Khao Sok (2) → Koh Yao Noi o Railay (3) → Koh Lanta (4)",
-        "description": "Per coppie e viaggiatori che vogliono meno folla: foresta pluviale, faraglioni e isole tranquille, da dicembre ad aprile."
+        "description": "Per coppie e viaggiatori che vogliono meno folla: foresta pluviale, faraglioni e isole tranquille, da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Bangkok",
+            "a": [
+              "volo|Volo per Bangkok||",
+              "transfer|Transfer in hotel||Bangkok",
+              "alloggio|Hotel a Bangkok||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok",
+            "a": [
+              "attivita|Templi e crociera sul fiume||Bangkok"
+            ]
+          },
+          {
+            "t": "Da Bangkok a Khao Sok",
+            "a": [
+              "volo|Volo per Surat Thani e transfer a Khao Sok||Khao Sok",
+              "alloggio|Lodge nella giungla||Khao Sok"
+            ]
+          },
+          {
+            "t": "Khao Sok",
+            "a": [
+              "attivita|Lago Cheow Lan in barca|Faraglioni nella foresta pluviale più antica del mondo.|Khao Sok"
+            ]
+          },
+          {
+            "t": "Da Khao Sok a Koh Yao Noi",
+            "a": [
+              "transfer|Transfer e barca per Koh Yao Noi||Koh Yao Noi",
+              "alloggio|Resort a Koh Yao Noi|Vista sulla baia di Phang Nga.|Koh Yao Noi"
+            ]
+          },
+          {
+            "t": "Koh Yao Noi",
+            "a": [
+              "attivita|Kayak nella baia di Phang Nga||Phang Nga"
+            ]
+          },
+          {
+            "t": "Koh Yao Noi",
+            "a": [
+              "attivita|Giro dell'isola in bicicletta|Villaggi di pescatori e risaie.|Koh Yao Noi"
+            ]
+          },
+          {
+            "t": "Da Koh Yao Noi a Koh Lanta",
+            "a": [
+              "traghetto|Barca per Koh Lanta||Koh Lanta",
+              "alloggio|Resort a Koh Lanta||Koh Lanta"
+            ]
+          },
+          {
+            "t": "Koh Lanta",
+            "a": [
+              "attivita|Spiagge di Long Beach e Kantiang Bay||Koh Lanta"
+            ]
+          },
+          {
+            "t": "Isole Koh Rok",
+            "a": [
+              "traghetto|Snorkeling alle isole Koh Rok|Tra le acque più limpide delle Andamane.|Koh Rok"
+            ]
+          },
+          {
+            "t": "Koh Lanta",
+            "a": [
+              "attivita|Old Town e parco nazionale||Koh Lanta"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Krabi||Koh Lanta",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -479,21 +1051,296 @@
     "itineraries": [
       {
         "title": "Da nord a sud",
-        "days": 15,
+        "days": 16,
         "route": "Hanoi (2) → Ninh Binh (1) → Halong (1 in crociera) → Hue (2) → Hoi An (3) → Ho Chi Minh City (2) → Delta del Mekong (1) → Phu Quoc (3)",
-        "description": "Il classico completo, ideale tra marzo e aprile; tra ottobre e dicembre conviene accorciare il centro."
+        "description": "Il classico completo, ideale tra marzo e aprile; tra ottobre e dicembre conviene accorciare il centro.",
+        "plan": [
+          {
+            "t": "Arrivo ad Hanoi",
+            "a": [
+              "volo|Volo per Hanoi||",
+              "transfer|Transfer in hotel||Hanoi",
+              "alloggio|Hotel nel Quartiere Vecchio||Hanoi"
+            ]
+          },
+          {
+            "t": "Hanoi",
+            "a": [
+              "attivita|Mausoleo di Ho Chi Minh, Tempio della Letteratura e lago Hoan Kiem||Hanoi",
+              "attivita|Teatro delle marionette sull'acqua||Hanoi"
+            ]
+          },
+          {
+            "t": "Ninh Binh",
+            "a": [
+              "transfer|Trasferimento a Ninh Binh||Ninh Binh",
+              "attivita|Barca tra le grotte di Tam Coc o Trang An||Ninh Binh",
+              "alloggio|Hotel tra le risaie||Ninh Binh"
+            ]
+          },
+          {
+            "t": "Baia di Halong",
+            "a": [
+              "transfer|Trasferimento alla baia||Halong",
+              "crociera|Crociera di una notte nella baia di Halong o Lan Ha||Halong"
+            ]
+          },
+          {
+            "t": "Halong e Hue",
+            "a": [
+              "attivita|Tai chi all'alba e grotte||Halong",
+              "volo|Volo da Hanoi per Hue||Hue",
+              "alloggio|Hotel a Hue||Hue"
+            ]
+          },
+          {
+            "t": "Hue",
+            "a": [
+              "attivita|Cittadella imperiale e tombe dei re||Hue"
+            ]
+          },
+          {
+            "t": "Verso Hoi An",
+            "a": [
+              "transfer|Passo delle Nuvole verso Hoi An||Hoi An",
+              "alloggio|Hotel a Hoi An||Hoi An",
+              "attivita|Città vecchia con le lanterne||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Santuario di My Son||My Son",
+              "attivita|Sarto su misura e corso di cucina||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Spiaggia di An Bang in bici||Hoi An"
+            ]
+          },
+          {
+            "t": "Ho Chi Minh City",
+            "a": [
+              "volo|Volo per Ho Chi Minh City||Ho Chi Minh City",
+              "alloggio|Hotel nel Distretto 1||Ho Chi Minh City",
+              "attivita|Mercato Ben Thanh e street food in moto||Ho Chi Minh City"
+            ]
+          },
+          {
+            "t": "Ho Chi Minh City",
+            "a": [
+              "attivita|Tunnel di Cu Chi e Museo dei residuati di guerra||Ho Chi Minh City"
+            ]
+          },
+          {
+            "t": "Delta del Mekong",
+            "a": [
+              "transfer|Trasferimento a Can Tho o Ben Tre||Mekong",
+              "attivita|Mercati galleggianti e canali in barca||Mekong",
+              "alloggio|Homestay o lodge sul fiume||Mekong"
+            ]
+          },
+          {
+            "t": "Phu Quoc",
+            "a": [
+              "volo|Volo per Phu Quoc||Phu Quoc",
+              "alloggio|Resort sul mare||Phu Quoc"
+            ]
+          },
+          {
+            "t": "Phu Quoc",
+            "a": [
+              "attivita|Snorkeling alle isole An Thoi||Phu Quoc"
+            ]
+          },
+          {
+            "t": "Phu Quoc",
+            "a": [
+              "attivita|Giornata libera al mare||Phu Quoc"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Phu Quoc",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vietnam e Cambogia",
-        "days": 14,
+        "days": 12,
         "route": "Hanoi (2) → Halong (1) → Hoi An (3) → Ho Chi Minh City (2) → Siem Reap (3)",
-        "description": "Il combinato più venduto, con Angkor come gran finale."
+        "description": "Il combinato più venduto, con Angkor come gran finale.",
+        "plan": [
+          {
+            "t": "Arrivo ad Hanoi",
+            "a": [
+              "volo|Volo per Hanoi||",
+              "alloggio|Hotel nel Quartiere Vecchio||Hanoi"
+            ]
+          },
+          {
+            "t": "Hanoi",
+            "a": [
+              "attivita|Visita della città e marionette sull'acqua||Hanoi"
+            ]
+          },
+          {
+            "t": "Baia di Halong",
+            "a": [
+              "crociera|Crociera di una notte||Halong"
+            ]
+          },
+          {
+            "t": "Halong e Hoi An",
+            "a": [
+              "attivita|Grotte all'alba||Halong",
+              "volo|Volo per Da Nang e trasferimento a Hoi An||Hoi An",
+              "alloggio|Hotel a Hoi An||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Città vecchia e My Son||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Bici in campagna e corso di cucina||Hoi An"
+            ]
+          },
+          {
+            "t": "Ho Chi Minh City",
+            "a": [
+              "volo|Volo per Ho Chi Minh City||Ho Chi Minh City",
+              "alloggio|Hotel nel Distretto 1||Ho Chi Minh City"
+            ]
+          },
+          {
+            "t": "Ho Chi Minh City",
+            "a": [
+              "attivita|Tunnel di Cu Chi e Delta del Mekong in giornata||Mekong"
+            ]
+          },
+          {
+            "t": "Siem Reap",
+            "a": [
+              "volo|Volo per Siem Reap||Siem Reap",
+              "alloggio|Hotel a Siem Reap||Siem Reap",
+              "attivita|Spettacolo del circo Phare||Siem Reap"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Angkor Wat all'alba, Angkor Thom e Bayon||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Ta Prohm, Banteay Srei e lago Tonle Sap||Angkor"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Siem Reap",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estate tra centro e nord",
         "days": 12,
         "route": "Hanoi (2) → Ninh Binh (2) → Hoi An (5) → Hue (2)",
-        "description": "In luglio e agosto il centro è nella stagione migliore: cultura e mare a Hoi An e Da Nang."
+        "description": "In luglio e agosto il centro è nella stagione migliore: cultura e mare a Hoi An e Da Nang.",
+        "plan": [
+          {
+            "t": "Arrivo ad Hanoi",
+            "a": [
+              "volo|Volo per Hanoi||",
+              "alloggio|Hotel nel Quartiere Vecchio||Hanoi"
+            ]
+          },
+          {
+            "t": "Hanoi",
+            "a": [
+              "attivita|Visita della città||Hanoi"
+            ]
+          },
+          {
+            "t": "Ninh Binh",
+            "a": [
+              "transfer|Trasferimento a Ninh Binh||Ninh Binh",
+              "alloggio|Hotel tra le risaie||Ninh Binh",
+              "attivita|Barca a Tam Coc||Ninh Binh"
+            ]
+          },
+          {
+            "t": "Ninh Binh",
+            "a": [
+              "attivita|Pagoda di Bai Dinh e Hang Mua in bici||Ninh Binh"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "volo|Volo per Da Nang e trasferimento a Hoi An||Hoi An",
+              "alloggio|Resort sulla spiaggia di An Bang o Cua Dai||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Città vecchia con le lanterne||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|My Son e Montagne di Marmo||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Mare e isole Cham in barca||Hoi An"
+            ]
+          },
+          {
+            "t": "Hoi An",
+            "a": [
+              "attivita|Giornata libera||Hoi An"
+            ]
+          },
+          {
+            "t": "Hue",
+            "a": [
+              "transfer|Passo delle Nuvole verso Hue||Hue",
+              "alloggio|Hotel a Hue||Hue"
+            ]
+          },
+          {
+            "t": "Hue",
+            "a": [
+              "attivita|Cittadella imperiale e barca sul fiume dei Profumi||Hue"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Hanoi e rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -785,19 +1632,295 @@
         "title": "Giava e Bali",
         "days": 15,
         "route": "Yogyakarta (3) → Bromo (1) → Ijen (1) → Ubud (4) → Bali mare (5)",
-        "description": "Il grande classico: templi, vulcani, cultura balinese e mare, da aprile a ottobre."
+        "description": "Il grande classico: templi, vulcani, cultura balinese e mare, da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Yogyakarta",
+            "a": [
+              "volo|Volo per Yogyakarta via Giacarta||",
+              "transfer|Transfer in hotel||Yogyakarta",
+              "alloggio|Hotel a Yogyakarta||Yogyakarta"
+            ]
+          },
+          {
+            "t": "Borobudur all'alba",
+            "a": [
+              "attivita|Borobudur all'alba|Il più grande tempio buddhista del mondo.|Borobudur",
+              "attivita|Kraton e quartiere dei batik||Yogyakarta"
+            ]
+          },
+          {
+            "t": "Prambanan",
+            "a": [
+              "attivita|Templi induisti di Prambanan|Con il balletto del Ramayana la sera (stagionale).|Prambanan"
+            ]
+          },
+          {
+            "t": "Verso il Bromo",
+            "a": [
+              "volo|Volo o treno verso Surabaya e trasferimento al Bromo||Bromo",
+              "alloggio|Lodge vicino al cratere||Bromo"
+            ]
+          },
+          {
+            "t": "Bromo e Ijen",
+            "a": [
+              "attivita|Alba sul vulcano Bromo||Bromo",
+              "transfer|Trasferimento verso l'Ijen||Ijen",
+              "alloggio|Hotel vicino all'Ijen||Ijen"
+            ]
+          },
+          {
+            "t": "Ijen e Bali",
+            "a": [
+              "attivita|Fuoco blu e lago acido dell'Ijen (notte)|Escursione impegnativa con maschera antigas.|Ijen",
+              "traghetto|Traghetto per Bali e trasferimento a Ubud||Ubud",
+              "alloggio|Hotel a Ubud||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Risaie di Tegalalang e Foresta delle scimmie||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Templi Tirta Empul e Gunung Kawi||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Corso di cucina o massaggio balinese||Ubud"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "transfer|Trasferimento al mare||Bali",
+              "alloggio|Resort a Nusa Dua, Sanur o Uluwatu||Bali"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "attivita|Relax in spiaggia||Bali"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "attivita|Tempio di Uluwatu e danza Kecak al tramonto||Uluwatu"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "traghetto|Escursione a Nusa Penida||Nusa Penida"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "attivita|Giornata libera||Bali"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Bali",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bali e Gili",
         "days": 12,
         "route": "Ubud (4) → Sidemen o Amed (2) → Gili Air (3) → Uluwatu o Seminyak (3)",
-        "description": "Ideale per viaggi di nozze e coppie: risaie, ville con piscina, isole senza auto e tramonti sulla scogliera."
+        "description": "Ideale per viaggi di nozze e coppie: risaie, ville con piscina, isole senza auto e tramonti sulla scogliera.",
+        "plan": [
+          {
+            "t": "Arrivo a Bali",
+            "a": [
+              "volo|Volo per Denpasar||",
+              "transfer|Transfer a Ubud||Ubud",
+              "alloggio|Hotel a Ubud||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Risaie di Tegalalang e Foresta delle scimmie||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Tirta Empul e Gunung Kawi||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Alba sul Batur o corso di cucina||Ubud"
+            ]
+          },
+          {
+            "t": "Sidemen",
+            "a": [
+              "transfer|Trasferimento a Sidemen o Amed||Sidemen",
+              "alloggio|Boutique hotel tra le risaie||Sidemen",
+              "attivita|Tempio di Lempuyang||Bali est"
+            ]
+          },
+          {
+            "t": "Amed",
+            "a": [
+              "attivita|Snorkeling sul relitto di Tulamben||Amed"
+            ]
+          },
+          {
+            "t": "Gili Air",
+            "a": [
+              "traghetto|Barca veloce per Gili Air||Gili Air",
+              "alloggio|Bungalow sul mare||Gili Air"
+            ]
+          },
+          {
+            "t": "Gili Air",
+            "a": [
+              "attivita|Snorkeling con le tartarughe||Gili Air"
+            ]
+          },
+          {
+            "t": "Gili Air",
+            "a": [
+              "attivita|Giro in bici e tramonto||Gili Air"
+            ]
+          },
+          {
+            "t": "Uluwatu",
+            "a": [
+              "traghetto|Barca per Bali e trasferimento a Uluwatu||Uluwatu",
+              "alloggio|Resort sulla scogliera||Uluwatu"
+            ]
+          },
+          {
+            "t": "Uluwatu",
+            "a": [
+              "attivita|Spiagge di Padang Padang e danza Kecak||Uluwatu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Bali",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bali e Komodo",
         "days": 14,
         "route": "Ubud (4) → Labuan Bajo e crociera Komodo (3) → Bali sud (6)",
-        "description": "Per chi vuole aggiungere l'avventura dei draghi e del mare di Flores."
+        "description": "Per chi vuole aggiungere l'avventura dei draghi e del mare di Flores.",
+        "plan": [
+          {
+            "t": "Arrivo a Bali",
+            "a": [
+              "volo|Volo per Denpasar||",
+              "transfer|Transfer a Ubud||Ubud",
+              "alloggio|Hotel a Ubud||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Risaie e Foresta delle scimmie||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Templi d'acqua||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Giornata libera o spa||Ubud"
+            ]
+          },
+          {
+            "t": "Labuan Bajo",
+            "a": [
+              "volo|Volo per Labuan Bajo||Labuan Bajo",
+              "crociera|Imbarco sul phinisi|Crociera di due notti nel parco di Komodo.|Komodo"
+            ]
+          },
+          {
+            "t": "Komodo",
+            "a": [
+              "attivita|I draghi di Komodo e Rinca||Komodo",
+              "attivita|Pink Beach e Manta Point||Komodo"
+            ]
+          },
+          {
+            "t": "Padar",
+            "a": [
+              "attivita|Alba sull'isola di Padar||Padar",
+              "volo|Sbarco e volo per Bali||Bali",
+              "alloggio|Resort al sud di Bali||Bali"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "attivita|Relax in spiaggia||Bali"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "attivita|Tempio di Uluwatu e Kecak||Bali"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "traghetto|Nusa Penida in giornata||Nusa Penida"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "attivita|Giornata libera||Bali"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "attivita|Tempio di Tanah Lot al tramonto||Bali"
+            ]
+          },
+          {
+            "t": "Bali sud",
+            "a": [
+              "attivita|Ultima giornata al mare||Bali"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Bali",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1055,21 +2178,295 @@
     "itineraries": [
       {
         "title": "Classico inverno",
-        "days": 13,
+        "days": 14,
         "route": "Negombo (1) → Sigiriya/Dambulla (3) → Kandy (2) → Nuwara Eliya (1) → Ella (2) → Yala (1) → Galle o Mirissa (3)",
-        "description": "Il giro dell'isola da dicembre ad aprile, chiudendo sul mare del sud."
+        "description": "Il giro dell'isola da dicembre ad aprile, chiudendo sul mare del sud.",
+        "plan": [
+          {
+            "t": "Arrivo a Negombo",
+            "a": [
+              "volo|Volo per Colombo||",
+              "transfer|Transfer a Negombo||Negombo",
+              "alloggio|Hotel sul mare a Negombo||Negombo"
+            ]
+          },
+          {
+            "t": "Dambulla",
+            "a": [
+              "transfer|Trasferimento nel triangolo culturale||Dambulla",
+              "attivita|Templi nella roccia di Dambulla||Dambulla",
+              "alloggio|Hotel nella zona di Sigiriya||Sigiriya"
+            ]
+          },
+          {
+            "t": "Sigiriya",
+            "a": [
+              "attivita|Rocca del Leone di Sigiriya all'alba||Sigiriya",
+              "attivita|Safari degli elefanti a Minneriya||Minneriya"
+            ]
+          },
+          {
+            "t": "Polonnaruwa",
+            "a": [
+              "attivita|Antica capitale di Polonnaruwa in bici||Polonnaruwa"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "transfer|Trasferimento a Kandy con giardino delle spezie||Kandy",
+              "alloggio|Hotel a Kandy||Kandy",
+              "attivita|Tempio del Dente del Buddha alla cerimonia serale||Kandy"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "attivita|Giardino botanico di Peradeniya e danze kandyane||Kandy"
+            ]
+          },
+          {
+            "t": "Nuwara Eliya",
+            "a": [
+              "transfer|Trasferimento tra le piantagioni di tè||Nuwara Eliya",
+              "attivita|Visita a una fabbrica di tè||Nuwara Eliya",
+              "alloggio|Hotel coloniale||Nuwara Eliya"
+            ]
+          },
+          {
+            "t": "Ella",
+            "a": [
+              "treno|Il treno panoramico più bello d'Asia fino a Ella||Ella",
+              "alloggio|Hotel a Ella||Ella"
+            ]
+          },
+          {
+            "t": "Ella",
+            "a": [
+              "attivita|Little Adam's Peak e Nine Arch Bridge||Ella"
+            ]
+          },
+          {
+            "t": "Yala",
+            "a": [
+              "transfer|Trasferimento a Yala||Yala",
+              "attivita|Safari pomeridiano: leopardi ed elefanti||Yala",
+              "alloggio|Campo o lodge a Yala||Yala"
+            ]
+          },
+          {
+            "t": "Galle o Mirissa",
+            "a": [
+              "transfer|Trasferimento sulla costa sud||Mirissa",
+              "alloggio|Resort sul mare||Mirissa"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Balene a Mirissa (novembre–aprile)||Mirissa"
+            ]
+          },
+          {
+            "t": "Galle",
+            "a": [
+              "attivita|Forte olandese di Galle||Galle"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Colombo||Colombo",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estate tra cultura e costa est",
         "days": 12,
         "route": "Negombo (1) → Sigiriya (3) → Kandy (2) → Trincomalee o Pasikudah (5)",
-        "description": "Da maggio a settembre il mare va venduto sulla costa est; Minneriya è al massimo in questo periodo."
+        "description": "Da maggio a settembre il mare va venduto sulla costa est; Minneriya è al massimo in questo periodo.",
+        "plan": [
+          {
+            "t": "Arrivo a Negombo",
+            "a": [
+              "volo|Volo per Colombo||",
+              "alloggio|Hotel a Negombo||Negombo"
+            ]
+          },
+          {
+            "t": "Sigiriya",
+            "a": [
+              "transfer|Trasferimento con sosta a Dambulla||Sigiriya",
+              "alloggio|Hotel a Sigiriya||Sigiriya"
+            ]
+          },
+          {
+            "t": "Sigiriya",
+            "a": [
+              "attivita|Rocca del Leone e safari a Minneriya||Sigiriya"
+            ]
+          },
+          {
+            "t": "Polonnaruwa",
+            "a": [
+              "attivita|Polonnaruwa in bici||Polonnaruwa"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "transfer|Trasferimento a Kandy||Kandy",
+              "alloggio|Hotel a Kandy||Kandy",
+              "attivita|Tempio del Dente||Kandy"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "attivita|Peradeniya e piantagione di tè||Kandy"
+            ]
+          },
+          {
+            "t": "Costa est",
+            "a": [
+              "transfer|Trasferimento a Trincomalee o Pasikudah||Trincomalee",
+              "alloggio|Resort sul mare|In estate la costa est ha il mare migliore.|Trincomalee"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Pigeon Island in snorkeling||Trincomalee"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax in spiaggia||Trincomalee"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Templi e balene di Trincomalee||Trincomalee"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Trincomalee"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Colombo||Colombo",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sri Lanka e Maldive",
         "days": 14,
         "route": "Negombo (1) → Sigiriya (2) → Kandy (2) → Ella (1) → Galle (1) → Maldive (6)",
-        "description": "Tour culturale breve con una settimana di resort alle Maldive: un classico per i viaggi di nozze."
+        "description": "Tour culturale breve con una settimana di resort alle Maldive: un classico per i viaggi di nozze.",
+        "plan": [
+          {
+            "t": "Arrivo a Negombo",
+            "a": [
+              "volo|Volo per Colombo||",
+              "alloggio|Hotel a Negombo||Negombo"
+            ]
+          },
+          {
+            "t": "Sigiriya",
+            "a": [
+              "transfer|Trasferimento con Dambulla||Sigiriya",
+              "alloggio|Hotel a Sigiriya||Sigiriya"
+            ]
+          },
+          {
+            "t": "Sigiriya",
+            "a": [
+              "attivita|Rocca del Leone e safari degli elefanti||Sigiriya"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "transfer|Trasferimento a Kandy||Kandy",
+              "alloggio|Hotel a Kandy||Kandy",
+              "attivita|Tempio del Dente||Kandy"
+            ]
+          },
+          {
+            "t": "Kandy",
+            "a": [
+              "attivita|Peradeniya e piantagioni di tè||Kandy"
+            ]
+          },
+          {
+            "t": "Ella",
+            "a": [
+              "treno|Treno panoramico per Ella||Ella",
+              "alloggio|Hotel a Ella||Ella"
+            ]
+          },
+          {
+            "t": "Galle",
+            "a": [
+              "transfer|Trasferimento a Galle||Galle",
+              "attivita|Forte di Galle al tramonto||Galle",
+              "alloggio|Hotel a Galle||Galle"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "volo|Volo da Colombo per Malé e idrovolante o barca||Maldive",
+              "alloggio|Resort alle Maldive|Villa sulla spiaggia o sull'acqua.|Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Snorkeling sul reef dell'isola||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Relax e spa||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Escursione con mante o squali balena||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Cena romantica sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Giornata libera||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { generatePublicSlug } from "@/lib/slug";
 import { loadAiRules } from "@/lib/aiRulesServer";
 import { MAX_DRAFT_CHARS, reserveAiCall, tooLongMessage } from "@/lib/aiQuota";
@@ -401,4 +401,51 @@ export async function applyProposalsToTrip(
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath("/dashboard/trips");
   return { ok: true, filled: fillFirst, variants: variantProposals.length };
+}
+
+// Proposte pronte dalla libreria (Atlante e Italia): gratis, nessuna chiamata AI.
+export async function findLibraryProposals(text: string): Promise<{
+  label: string;
+  proposals: { name: string; route: string; summary: string; itinerary: GeneratedItinerary }[];
+} | null> {
+  const user = await getCachedUser();
+  if (!user || typeof text !== "string") return null;
+  const { matchLibrary } = await import("@/lib/libraryProposals");
+  const m = matchLibrary(text.slice(0, 4000));
+  if (!m || m.proposals.length === 0) return null;
+  return {
+    label: m.label,
+    proposals: m.proposals.map((p) => ({ name: p.title, route: p.route, summary: p.description, itinerary: p.itinerary })),
+  };
+}
+
+const LibraryItineraryInput = z.object({
+  kind: z.enum(["country", "italy"]),
+  key: z.string().trim().min(2).max(40),
+  label: z.string().trim().min(1).max(80),
+  itinerary: z.object({
+    title: z.string().trim().min(1).max(160),
+    days: z.number().int().min(1).max(60),
+    route: z.string().trim().max(600),
+    description: z.string().max(2000),
+    plan: z.array(z.object({ t: z.string().max(200), a: z.array(z.string().max(1000)).max(12) })).max(60).optional(),
+  }),
+});
+
+// «Crea il viaggio da questo itinerario» (Atlante): il programma si crea gratis dalla libreria
+export async function createTripFromLibraryItinerary(input: z.input<typeof LibraryItineraryInput>): Promise<{ error: string }> {
+  const parsed = LibraryItineraryInput.safeParse(input);
+  if (!parsed.success) return { error: "Itinerario non valido." };
+  const user = await getCachedUser();
+  if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const { kind, key, label, itinerary } = parsed.data;
+  const { expandLibraryItinerary } = await import("@/lib/libraryProposals");
+  const generated = expandLibraryItinerary(kind, key, itinerary);
+  return createTripFromProposals({
+    title: `${label} · ${itinerary.title}`.slice(0, 200),
+    destination: label,
+    clientId: null,
+    startDate: null,
+    proposals: [{ name: itinerary.title.slice(0, 120), itinerary: generated }],
+  });
 }

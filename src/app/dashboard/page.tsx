@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ZefiroBriefing from "@/components/ZefiroBriefing";
+import ContactTodayCard from "@/components/ContactTodayCard";
+import { Suspense } from "react";
 import DepartureCalendar from "@/components/DepartureCalendar";
 import { buildBriefing } from "@/lib/agencyBriefing";
 import { riconfermaDays } from "@/lib/opsSheet";
@@ -189,6 +191,10 @@ export default async function DashboardHomePage() {
       </div>
 
       <ZefiroBriefing items={briefing} hour={romeHour} />
+
+      <Suspense fallback={null}>
+        <ContactTodayCard ownerId={user?.id ?? ""} trips={allTrips} />
+      </Suspense>
 
       {clientAttention.length > 0 && (
         <section className="rounded-2xl border border-[#cda876] bg-gradient-to-b from-[#fdf6e6] to-[#faf3e6] p-5 shadow-sm">

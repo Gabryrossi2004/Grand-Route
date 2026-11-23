@@ -1,5 +1,6 @@
 "use client";
 
+import { nameItOfCode } from "@/lib/geo/countryCodes";
 import { useEffect, useState } from "react";
 import { Check, Link2, Loader2, Pencil, Printer, Sparkles, X } from "lucide-react";
 import {
@@ -309,6 +310,7 @@ export default function CountrySheetPanel({
               content={c!}
               photos={sheet.photos}
               showAgentTips
+              useItinerary={mode === "view" ? { code, label: nameItOfCode(code) } : undefined}
               note={`${
                 mode === "proposal"
                   ? "Proposta non ancora salvata"

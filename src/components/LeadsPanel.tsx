@@ -2,14 +2,14 @@ import { UserPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { convertLead, setLeadStatus } from "@/app/dashboard/settings/vantaggi/actions";
 
-type Lead = { id: string; name: string; contact: string; message: string | null; status: string; created_at: string; referrer_client_id: string | null };
+type Lead = { id: string; name: string; contact: string; message: string | null; status: string; created_at: string; referrer_client_id: string | null; source?: string };
 
 // Richieste arrivate da «presenta un amico» (e in futuro dai viaggiatori privati)
 export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("agency_leads")
-    .select("id, name, contact, message, status, created_at, referrer_client_id")
+    .select("*")
     .eq("owner_id", ownerId)
     .in("status", ["nuova", "contattata"])
     .order("created_at", { ascending: false })
@@ -23,9 +23,9 @@ export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
   return (
     <section className="mb-6 rounded-2xl border border-[#e3b04b] bg-white p-4">
       <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-[#233c5e]">
-        <UserPlus size={18} className="text-[#c58f2d]" /> Amici presentati dai tuoi clienti ({leads.length})
+        <UserPlus size={18} className="text-[#c58f2d]" /> Nuove richieste ({leads.length})
       </h2>
-      <p className="mb-3 text-xs text-slate-500">Hanno lasciato i loro contatti dal link personale di un tuo cliente. «Diventa cliente» crea la scheda e dà il bonus a chi l&apos;ha presentato.</p>
+      <p className="mb-3 text-xs text-slate-500">Amici presentati dai tuoi clienti (dal loro link personale) e clienti che chiedono un preventivo per il prossimo viaggio. Per un amico, «Diventa cliente» crea la scheda e dà il bonus a chi l&apos;ha presentato.</p>
       <ul className="flex flex-col divide-y divide-[#f0e6d2]">
         {leads.map((l) => (
           <li key={l.id} className="flex flex-wrap items-start justify-between gap-2 py-2.5 text-sm">
@@ -35,15 +35,25 @@ export default async function LeadsPanel({ ownerId }: { ownerId: string }) {
                 {l.status === "contattata" && <span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">contattata</span>}
               </p>
               <p className="text-xs text-slate-500">
-                {l.referrer_client_id && refName.get(l.referrer_client_id) ? `Presentato da ${refName.get(l.referrer_client_id)} · ` : ""}
+                {l.source === "cliente"
+                  ? "Richiesta di preventivo di un tuo cliente · "
+                  : l.referrer_client_id && refName.get(l.referrer_client_id)
+                    ? `Presentato da ${refName.get(l.referrer_client_id)} · `
+                    : ""}
                 {new Date(l.created_at).toLocaleDateString("it-IT")}
               </p>
               {l.message && <p className="mt-0.5 text-slate-600">«{l.message}»</p>}
             </div>
             <div className="flex shrink-0 items-center gap-3">
-              <form action={convertLead.bind(null, l.id)}>
-                <button type="submit" className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#17283f]">Diventa cliente</button>
-              </form>
+              {l.source === "cliente" && l.referrer_client_id ? (
+                <a href={`/dashboard/clients/${l.referrer_client_id}`} className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#17283f]">
+                  Apri il cliente
+                </a>
+              ) : (
+                <form action={convertLead.bind(null, l.id)}>
+                  <button type="submit" className="rounded-lg bg-[#233c5e] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#17283f]">Diventa cliente</button>
+                </form>
+              )}
               {l.status === "nuova" && (
                 <form action={setLeadStatus.bind(null, l.id, "contattata")}>
                   <button type="submit" className="text-xs font-medium text-[#233c5e] hover:underline">Contattata</button>

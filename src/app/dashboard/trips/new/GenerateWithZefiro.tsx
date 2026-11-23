@@ -16,7 +16,7 @@ import ItineraryModePicker from "@/components/ItineraryModePicker";
 import type { ItineraryMode } from "@/lib/itineraryMode";
 import { ZEFIRO_ACTION_EVENT } from "@/components/ZefiroFloating";
 import { ASSISTANT_NAME } from "@/lib/assistant";
-import { applyProposalsToTrip, createTripFromProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
+import { applyProposalsToTrip, createTripFromProposals, findLibraryProposals, generateProposal, planTripWithZefiro, type PlanOk } from "./zefiroActions";
 
 const inputClass = "w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]";
 const labelClass = "mb-1 block text-sm font-medium text-slate-700";
@@ -59,6 +59,8 @@ export default function GenerateWithZefiro({
   // «Guidato» = domande una alla volta (senza AI); «Libero» = descrizione a parole
   const [briefMode, setBriefMode] = useState<"guided" | "free">("guided");
   const [briefText, setBriefText] = useState("");
+  // Proposte pronte dalla libreria (gratis): si mostrano prima di chiedere a Zefiro
+  const [libraryLabel, setLibraryLabel] = useState<string | null>(null);
   const [doneMessage, setDoneMessage] = useState("");
   const [planning, setPlanning] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -101,6 +103,7 @@ export default function GenerateWithZefiro({
   }
 
   function reset() {
+    setLibraryLabel(null);
     setPhase("brief");
     setError(null);
     setQuestions([]);
@@ -171,7 +174,41 @@ export default function GenerateWithZefiro({
     if (planning) return;
     const formData = new FormData(event.currentTarget);
     lastForm.current = formData;
-    void runPlan(formData);
+    const file = formData.get("file");
+    const hasFile = file instanceof File && file.size > 0;
+    if (hasFile) {
+      void runPlan(formData);
+      return;
+    }
+    // Prima le proposte già pronte della libreria (nessun costo); se non ce ne sono, Zefiro
+    setPlanning(true);
+    setError(null);
+    findLibraryProposals(String(formData.get("brief") ?? ""))
+      .then((lib) => {
+        if (!lib) {
+          setPlanning(false);
+          void runPlan(formData);
+          return;
+        }
+        setPlanning(false);
+        setPlan(null);
+        setLibraryLabel(lib.label);
+        setTitle(`${lib.label} · ${lib.proposals[0].name}`);
+        setDestination(lib.label);
+        setProposals(lib.proposals.map((p, i) => ({ name: p.name, route: p.route, summary: p.summary, status: "ready", itinerary: p.itinerary, keep: i === 0 })));
+        setPhase("review");
+      })
+      .catch(() => {
+        setPlanning(false);
+        void runPlan(formData);
+      });
+  }
+
+  // Dalle proposte della libreria a nuove proposte scritte da Zefiro (con AI)
+  function generateWithAi() {
+    if (!lastForm.current || planning) return;
+    setLibraryLabel(null);
+    void runPlan(lastForm.current);
   }
 
   function onContinueWithAnswers() {
@@ -366,6 +403,23 @@ export default function GenerateWithZefiro({
 
           {phase === "review" && (
             <div className="flex flex-col gap-4">
+              {libraryLabel && (
+                <div className="-mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-2.5 text-sm text-emerald-900">
+                  <span>
+                    <strong>Proposte pronte per {libraryLabel}</strong> dalla libreria Grand Route, con il programma giorno per giorno: gratis, senza usare l&apos;AI.
+                    Scegli quella che preferisci (più di una diventano varianti).
+                  </span>
+                  <button
+                    type="button"
+                    onClick={generateWithAi}
+                    disabled={planning || saving}
+                    className="flex shrink-0 items-center gap-1.5 rounded-md border border-emerald-700 px-3 py-1.5 text-xs font-semibold text-emerald-800 hover:bg-emerald-100 disabled:opacity-60"
+                  >
+                    <Sparkles size={13} /> Genera nuove proposte con {ASSISTANT_NAME}
+                  </button>
+                </div>
+              )}
+              {planning && <ZefiroThinking title={`${ASSISTANT_NAME} sta leggendo la richiesta…`} hint="Prepara nuove proposte su misura." />}
               <p className="-mt-2 text-sm text-slate-500">
                 {trip
                   ? trip.hasContent

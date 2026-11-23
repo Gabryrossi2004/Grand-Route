@@ -58,3 +58,15 @@ export async function updateClientTravelDocuments(clientId: string, formData: Fo
 
   revalidatePath("/client/documenti");
 }
+
+// «Chiedi un preventivo» dal suggerimento del prossimo viaggio: arriva all'agenzia come richiesta
+export async function requestQuote(title: string, message: string): Promise<{ ok: boolean; error?: string }> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("client_request_quote", {
+    p_title: String(title).slice(0, 200),
+    p_message: String(message ?? "").slice(0, 600),
+  });
+  if (error) return { ok: false, error: "Non è stato possibile inviare la richiesta: riprova più tardi o scrivi alla tua agenzia." };
+  if (data !== true) return { ok: false, error: "Hai già inviato diverse richieste oggi: la tua agenzia ti risponderà presto." };
+  return { ok: true };
+}

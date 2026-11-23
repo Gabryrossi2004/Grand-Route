@@ -2,6 +2,9 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import ClientTripsGrid, { type TripWithAgency } from "@/components/ClientTripsGrid";
 import { darkenForWhiteText, mixColors, sanitizeHex } from "@/lib/brandColor";
 import { getT } from "@/lib/i18n/server";
+import NextTripCard from "@/components/NextTripCard";
+import TodayTripCard from "@/components/TodayTripCard";
+import { romeToday } from "@/lib/destinationInfo";
 
 export default async function ClientHomePage() {
   const { t, locale } = await getT();
@@ -37,8 +40,27 @@ export default async function ClientHomePage() {
     ? { backgroundImage: `linear-gradient(135deg, ${heroFrom}, ${mixColors(heroFrom, "#ffffff", 0.16)})` }
     : undefined;
 
+  const today = romeToday();
+  type WithCountries = { countries?: string[] | null; auto_countries?: string[] | null; start_date: string | null; end_date: string | null };
+  const current = typedTrips.find((trip) => {
+    const t = trip as unknown as WithCountries;
+    return t.start_date && t.end_date && t.start_date <= today && t.end_date >= today;
+  });
+  // paesi già visitati (viaggi conclusi), dal più vecchio al più recente
+  const visited = [...typedTrips]
+    .filter((trip) => {
+      const t = trip as unknown as WithCountries;
+      return t.end_date && t.end_date < today;
+    })
+    .reverse()
+    .flatMap((trip) => {
+      const t = trip as unknown as WithCountries;
+      return [...(t.countries ?? []), ...(t.auto_countries ?? [])];
+    });
+
   return (
     <div>
+      {current && <TodayTripCard trip={current as unknown as Parameters<typeof TodayTripCard>[0]["trip"]} today={today} />}
       <div
         style={heroStyle}
         className="relative mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-[#233c5e] to-[#34527c] px-7 py-9 text-white"
@@ -72,6 +94,7 @@ export default async function ClientHomePage() {
           organizedBy: (agency) => t("portal.organizedBy", { agency }),
         }}
       />
+      {typedTrips.length > 0 && <NextTripCard visited={[...new Set(visited)]} />}
     </div>
   );
 }

@@ -26,12 +26,14 @@ export default function CountrySheetView({
   note,
   extra,
   showAgentTips = true,
+  useItinerary,
 }: {
   content: CountrySheetContent;
   photos: SheetPhoto[];
   note?: string;
   extra?: ReactNode;
   showAgentTips?: boolean;
+  useItinerary?: { code: string; label: string };
 }) {
   return (
     <>
@@ -128,7 +130,7 @@ export default function CountrySheetView({
         {note && <p className="text-xs text-slate-500">{note}</p>}
       </section>
     </div>
-    <CountryGuideSections content={content} hideAgentTips={!showAgentTips} />
+    <CountryGuideSections content={content} hideAgentTips={!showAgentTips} useItinerary={useItinerary} />
 
     </>
   );

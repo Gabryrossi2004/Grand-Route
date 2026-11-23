@@ -149,19 +149,265 @@
         "title": "New York",
         "days": 6,
         "route": "New York (5)",
-        "description": "Il viaggio più venduto: Manhattan, Brooklyn, musei, musical e shopping."
+        "description": "Il viaggio più venduto: Manhattan, Brooklyn, musei, musical e shopping.",
+        "plan": [
+          {
+            "t": "Arrivo a New York",
+            "a": [
+              "volo|Volo per New York|Circa 9 ore diretto.|",
+              "transfer|Transfer in hotel a Manhattan||New York",
+              "alloggio|Hotel a Midtown|Comodo per metro e attrazioni.|New York"
+            ]
+          },
+          {
+            "t": "Midtown e Central Park",
+            "a": [
+              "attivita|Times Square, Rockefeller Center e Top of the Rock||New York",
+              "attivita|Central Park in bici o a piedi||New York",
+              "attivita|Fifth Avenue e St. Patrick||New York"
+            ]
+          },
+          {
+            "t": "Downtown",
+            "a": [
+              "attivita|Statua della Libertà ed Ellis Island|Traghetto da Battery Park, biglietti da prenotare.|New York",
+              "attivita|Wall Street e Memoriale dell'11 settembre||New York",
+              "attivita|Ponte di Brooklyn a piedi al tramonto||Brooklyn"
+            ]
+          },
+          {
+            "t": "Musei e quartieri",
+            "a": [
+              "attivita|Metropolitan Museum o MoMA||New York",
+              "attivita|High Line, Chelsea Market e Vessel||New York",
+              "attivita|Musical a Broadway la sera||New York"
+            ]
+          },
+          {
+            "t": "Brooklyn e Harlem",
+            "a": [
+              "attivita|DUMBO e Williamsburg||Brooklyn",
+              "attivita|Messa gospel o giro di Harlem||Harlem"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||New York",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grande Ovest in fly & drive",
-        "days": 15,
+        "days": 16,
         "route": "San Francisco (3) → Yosemite (2) → Death Valley (1) → Las Vegas (2) → Zion e Bryce (2) → Monument Valley (1) → Grand Canyon (1) → Route 66 → Los Angeles (2)",
-        "description": "Il classico on the road, ideale in maggio–giugno e settembre–ottobre."
+        "description": "Il classico on the road, ideale in maggio–giugno e settembre–ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a San Francisco",
+            "a": [
+              "volo|Volo per San Francisco||",
+              "transfer|Transfer o ritiro auto||San Francisco",
+              "alloggio|Hotel a Union Square||San Francisco"
+            ]
+          },
+          {
+            "t": "San Francisco",
+            "a": [
+              "attivita|Golden Gate in bici fino a Sausalito||San Francisco",
+              "attivita|Cable car e Fisherman's Wharf||San Francisco"
+            ]
+          },
+          {
+            "t": "San Francisco",
+            "a": [
+              "attivita|Alcatraz|Biglietti da prenotare con settimane di anticipo.|San Francisco",
+              "attivita|Chinatown e Haight-Ashbury||San Francisco"
+            ]
+          },
+          {
+            "t": "Verso Yosemite",
+            "a": [
+              "transfer|Ritiro auto e guida verso Yosemite|Circa 4 ore.|Yosemite",
+              "alloggio|Lodge vicino al parco||Yosemite"
+            ]
+          },
+          {
+            "t": "Yosemite",
+            "a": [
+              "attivita|Yosemite Valley, El Capitan e Half Dome|Cascate e sequoie giganti di Mariposa.|Yosemite"
+            ]
+          },
+          {
+            "t": "Death Valley",
+            "a": [
+              "transfer|Attraverso il Tioga Pass (estate) verso la Death Valley||Death Valley",
+              "attivita|Zabriskie Point e Badwater||Death Valley",
+              "alloggio|Hotel nella valle||Death Valley"
+            ]
+          },
+          {
+            "t": "Las Vegas",
+            "a": [
+              "transfer|Guida verso Las Vegas||Las Vegas",
+              "alloggio|Hotel sulla Strip||Las Vegas",
+              "attivita|La Strip di sera e uno spettacolo||Las Vegas"
+            ]
+          },
+          {
+            "t": "Las Vegas",
+            "a": [
+              "attivita|Giornata libera, Valley of Fire o volo panoramico||Las Vegas"
+            ]
+          },
+          {
+            "t": "Zion",
+            "a": [
+              "transfer|Guida verso Zion||Zion",
+              "attivita|Navetta nel canyon e sentiero Riverside Walk||Zion",
+              "alloggio|Hotel a Springdale||Zion"
+            ]
+          },
+          {
+            "t": "Bryce Canyon",
+            "a": [
+              "attivita|Anfiteatro degli hoodoos e Navajo Loop||Bryce",
+              "alloggio|Lodge a Bryce o Page||Bryce"
+            ]
+          },
+          {
+            "t": "Monument Valley",
+            "a": [
+              "attivita|Horseshoe Bend e Antelope Canyon a Page|Antelope Canyon solo con guida navajo, da prenotare.|Page",
+              "attivita|Tramonto alla Monument Valley||Monument Valley",
+              "alloggio|Hotel nella Monument Valley||Monument Valley"
+            ]
+          },
+          {
+            "t": "Grand Canyon",
+            "a": [
+              "attivita|South Rim: Mather Point e Desert View||Grand Canyon",
+              "alloggio|Lodge al Grand Canyon||Grand Canyon"
+            ]
+          },
+          {
+            "t": "Route 66",
+            "a": [
+              "transfer|Lungo la Route 66 verso Los Angeles|Soste a Seligman e Oatman.|Route 66",
+              "alloggio|Motel lungo la strada o arrivo a Los Angeles||"
+            ]
+          },
+          {
+            "t": "Los Angeles",
+            "a": [
+              "attivita|Hollywood, Griffith Observatory e Santa Monica||Los Angeles",
+              "alloggio|Hotel a Santa Monica||Los Angeles"
+            ]
+          },
+          {
+            "t": "Los Angeles",
+            "a": [
+              "attivita|Universal Studios o Malibu||Los Angeles"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Riconsegna auto in aeroporto||Los Angeles",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "New York e Florida",
         "days": 12,
         "route": "New York (5) → Miami (3) → Florida Keys (2)",
-        "description": "Città e mare, da novembre ad aprile."
+        "description": "Città e mare, da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a New York",
+            "a": [
+              "volo|Volo per New York||",
+              "transfer|Transfer in hotel||New York",
+              "alloggio|Hotel a Manhattan||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Midtown, Top of the Rock e Central Park||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Statua della Libertà, Wall Street e Ponte di Brooklyn||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Musei, High Line e Broadway||New York"
+            ]
+          },
+          {
+            "t": "New York",
+            "a": [
+              "attivita|Brooklyn e Harlem||New York"
+            ]
+          },
+          {
+            "t": "Da New York a Miami",
+            "a": [
+              "volo|Volo per Miami|Circa 3 ore.|Miami",
+              "alloggio|Hotel a South Beach||Miami",
+              "attivita|Ocean Drive e Art Déco al tramonto||Miami"
+            ]
+          },
+          {
+            "t": "Miami",
+            "a": [
+              "attivita|Wynwood Walls e Little Havana||Miami"
+            ]
+          },
+          {
+            "t": "Everglades",
+            "a": [
+              "attivita|Airboat nelle Everglades|Alligatori e mangrovie.|Everglades"
+            ]
+          },
+          {
+            "t": "Verso le Keys",
+            "a": [
+              "transfer|Overseas Highway in auto|Ponti sul mare fino a Key West.|Florida Keys",
+              "alloggio|Hotel a Key West||Key West"
+            ]
+          },
+          {
+            "t": "Key West",
+            "a": [
+              "attivita|Duval Street, casa di Hemingway e tramonto a Mallory Square||Key West",
+              "attivita|Snorkeling sulla barriera||Key West"
+            ]
+          },
+          {
+            "t": "Rientro a Miami",
+            "a": [
+              "transfer|Guida verso Miami||Miami",
+              "alloggio|Hotel vicino all'aeroporto o a South Beach||Miami"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Riconsegna auto in aeroporto||Miami",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -451,19 +697,264 @@
         "title": "Riviera Maya mare",
         "days": 10,
         "route": "Playa del Carmen o Tulum (9), con escursioni a Chichén Itzá e cenotes",
-        "description": "La formula più venduta, con resort all inclusive."
+        "description": "La formula più venduta, con resort all inclusive.",
+        "plan": [
+          {
+            "t": "Arrivo a Cancún",
+            "a": [
+              "volo|Volo per Cancún|Circa 11 ore, anche diretto.|",
+              "transfer|Transfer nel resort||Riviera Maya",
+              "alloggio|Resort a Playa del Carmen o Tulum||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax in spiaggia||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Chichén Itzá",
+            "a": [
+              "attivita|Chichén Itzá e cenote Ik Kil|Una delle sette meraviglie del mondo moderno, con sosta a Valladolid.|Chichén Itzá"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Tulum e cenotes",
+            "a": [
+              "attivita|Rovine di Tulum sul mare||Tulum",
+              "attivita|Nuoto nei cenotes Gran Cenote o Dos Ojos||Tulum"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spa o golf||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Cozumel o Isla Mujeres",
+            "a": [
+              "traghetto|Escursione in barca e snorkeling|Barriera corallina e spiagge bianche.|Cozumel"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Xcaret o Xel-Há|Parchi tematici tra natura e spettacolo.|Riviera Maya"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata al mare||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Cancún",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tour Messico coloniale e Yucatán",
-        "days": 14,
+        "days": 15,
         "route": "Città del Messico (3) → Oaxaca (3) → San Cristóbal (2) → Palenque (1) → Campeche (1) → Mérida (2) → Riviera Maya (2)",
-        "description": "Il grande tour culturale con chiusura al mare, da novembre ad aprile."
+        "description": "Il grande tour culturale con chiusura al mare, da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Messico",
+            "a": [
+              "volo|Volo per Città del Messico||",
+              "transfer|Transfer in hotel||Città del Messico",
+              "alloggio|Hotel nel Centro Storico o a Roma Norte||Città del Messico"
+            ]
+          },
+          {
+            "t": "Città del Messico",
+            "a": [
+              "attivita|Zócalo, Templo Mayor e Palacio Nacional|Con i murales di Diego Rivera.|Città del Messico",
+              "attivita|Museo Nazionale di Antropologia||Città del Messico"
+            ]
+          },
+          {
+            "t": "Teotihuacán",
+            "a": [
+              "attivita|Piramidi del Sole e della Luna|Anche in mongolfiera all'alba.|Teotihuacán",
+              "attivita|Coyoacán e Casa di Frida Kahlo||Città del Messico"
+            ]
+          },
+          {
+            "t": "Volo per Oaxaca",
+            "a": [
+              "volo|Volo per Oaxaca||Oaxaca",
+              "alloggio|Hotel nel centro storico||Oaxaca",
+              "ristorante|Cena con mole e mezcal||Oaxaca"
+            ]
+          },
+          {
+            "t": "Oaxaca",
+            "a": [
+              "attivita|Monte Albán e centro storico||Oaxaca"
+            ]
+          },
+          {
+            "t": "Oaxaca",
+            "a": [
+              "attivita|Hierve el Agua e albero del Tule|Cascate pietrificate e mercati artigiani.|Oaxaca"
+            ]
+          },
+          {
+            "t": "Volo per il Chiapas",
+            "a": [
+              "volo|Volo per Tuxtla e Cañón del Sumidero in barca||Chiapas",
+              "alloggio|Hotel a San Cristóbal||San Cristóbal"
+            ]
+          },
+          {
+            "t": "San Cristóbal",
+            "a": [
+              "attivita|Comunità maya di San Juan Chamula e Zinacantán||San Cristóbal"
+            ]
+          },
+          {
+            "t": "Palenque",
+            "a": [
+              "transfer|Trasferimento con le cascate di Agua Azul||Palenque",
+              "attivita|Rovine di Palenque nella giungla||Palenque",
+              "alloggio|Hotel a Palenque||Palenque"
+            ]
+          },
+          {
+            "t": "Campeche",
+            "a": [
+              "transfer|Trasferimento a Campeche||Campeche",
+              "attivita|Città fortificata e lungomare||Campeche",
+              "alloggio|Hotel a Campeche||Campeche"
+            ]
+          },
+          {
+            "t": "Mérida",
+            "a": [
+              "attivita|Uxmal lungo la Ruta Puuc||Uxmal",
+              "alloggio|Hacienda o hotel a Mérida||Mérida"
+            ]
+          },
+          {
+            "t": "Mérida",
+            "a": [
+              "attivita|Chichén Itzá e cenote||Chichén Itzá"
+            ]
+          },
+          {
+            "t": "Riviera Maya",
+            "a": [
+              "transfer|Trasferimento in Riviera con sosta a Valladolid||Riviera Maya",
+              "alloggio|Resort sul mare||Riviera Maya"
+            ]
+          },
+          {
+            "t": "Riviera Maya",
+            "a": [
+              "attivita|Mare e Tulum||Tulum"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Cancún||Cancún",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Yucatán on the road",
         "days": 10,
         "route": "Cancún (1) → Valladolid (2) → Mérida (2) → Bacalar (2) → Tulum (3)",
-        "description": "Fly & drive tra cenotes, siti maya e mare."
+        "description": "Fly & drive tra cenotes, siti maya e mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Cancún",
+            "a": [
+              "volo|Volo per Cancún||",
+              "transfer|Ritiro auto||Cancún",
+              "alloggio|Hotel a Cancún||Cancún"
+            ]
+          },
+          {
+            "t": "Valladolid",
+            "a": [
+              "transfer|Guida verso Valladolid|Circa 2 ore.|Valladolid",
+              "attivita|Ek Balam e cenote||Valladolid",
+              "alloggio|Hotel coloniale||Valladolid"
+            ]
+          },
+          {
+            "t": "Chichén Itzá",
+            "a": [
+              "attivita|Chichén Itzá all'apertura|Prima dei pullman organizzati.|Chichén Itzá",
+              "attivita|Las Coloradas, le lagune rosa||Río Lagartos"
+            ]
+          },
+          {
+            "t": "Mérida",
+            "a": [
+              "transfer|Guida verso Mérida||Mérida",
+              "alloggio|Hotel o hacienda||Mérida",
+              "attivita|Centro storico e Paseo Montejo||Mérida"
+            ]
+          },
+          {
+            "t": "Uxmal",
+            "a": [
+              "attivita|Uxmal e la Ruta Puuc||Uxmal"
+            ]
+          },
+          {
+            "t": "Bacalar",
+            "a": [
+              "transfer|Lunga tappa verso Bacalar|Circa 5 ore.|Bacalar",
+              "alloggio|Hotel sulla laguna||Bacalar"
+            ]
+          },
+          {
+            "t": "Bacalar",
+            "a": [
+              "attivita|Laguna dei sette colori in barca o kayak||Bacalar"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "transfer|Guida verso Tulum||Tulum",
+              "alloggio|Hotel boutique a Tulum||Tulum",
+              "attivita|Rovine sul mare||Tulum"
+            ]
+          },
+          {
+            "t": "Tulum",
+            "a": [
+              "attivita|Cenotes e spiaggia||Tulum"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Riconsegna auto all'aeroporto di Cancún||Cancún",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1040,19 +1531,268 @@
         "title": "Perù classico",
         "days": 13,
         "route": "Lima (2) → Arequipa (2) → Colca (1) → Puno e Titicaca (2) → Cusco (2) → Valle Sacra (2) → Machu Picchu (1)",
-        "description": "Il grande tour con salita graduale di quota, da aprile a ottobre."
+        "description": "Il grande tour con salita graduale di quota, da aprile a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Lima",
+            "a": [
+              "volo|Volo per Lima||",
+              "transfer|Transfer a Miraflores||Lima",
+              "alloggio|Hotel a Miraflores||Lima"
+            ]
+          },
+          {
+            "t": "Lima",
+            "a": [
+              "attivita|Centro storico coloniale e Barranco||Lima",
+              "ristorante|Cena in uno dei ristoranti di Lima|Capitale gastronomica del Sud America.|Lima"
+            ]
+          },
+          {
+            "t": "Arequipa",
+            "a": [
+              "volo|Volo per Arequipa||Arequipa",
+              "alloggio|Hotel nel centro||Arequipa",
+              "attivita|Monastero di Santa Catalina||Arequipa"
+            ]
+          },
+          {
+            "t": "Arequipa",
+            "a": [
+              "attivita|Plaza de Armas e museo della mummia Juanita||Arequipa"
+            ]
+          },
+          {
+            "t": "Canyon del Colca",
+            "a": [
+              "transfer|Strada attraverso la riserva di Salinas e Aguada Blanca||Colca",
+              "alloggio|Lodge nel Colca||Colca",
+              "attivita|Terme di Chivay||Colca"
+            ]
+          },
+          {
+            "t": "Verso Puno",
+            "a": [
+              "attivita|Cruz del Cóndor all'alba||Colca",
+              "transfer|Trasferimento a Puno||Puno",
+              "alloggio|Hotel sul lago Titicaca||Puno"
+            ]
+          },
+          {
+            "t": "Lago Titicaca",
+            "a": [
+              "attivita|Isole galleggianti degli Uros e Taquile||Titicaca"
+            ]
+          },
+          {
+            "t": "Verso Cusco",
+            "a": [
+              "transfer|Bus panoramico o treno Titicaca fino a Cusco||Cusco",
+              "alloggio|Hotel a Cusco||Cusco"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Cattedrale, Qorikancha e Sacsayhuamán||Cusco"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "transfer|Pisac e il suo mercato||Pisac",
+              "alloggio|Hotel in Valle Sacra||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "attivita|Moray, saline di Maras e Ollantaytambo||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Machu Picchu",
+            "a": [
+              "treno|Treno per Aguas Calientes||Aguas Calientes",
+              "attivita|Visita guidata di Machu Picchu|Biglietti a numero chiuso, da prenotare con molto anticipo.|Machu Picchu",
+              "alloggio|Hotel ad Aguas Calientes||Aguas Calientes"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "treno|Treno e trasferimento a Cusco, volo per Lima e coincidenza per l'Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Perù essenziale",
         "days": 9,
         "route": "Lima (1) → Valle Sacra (2) → Machu Picchu (1) → Cusco (3) → Lima (1)",
-        "description": "Per chi ha poco tempo: Cusco e Machu Picchu."
+        "description": "Per chi ha poco tempo: Cusco e Machu Picchu.",
+        "plan": [
+          {
+            "t": "Arrivo a Lima",
+            "a": [
+              "volo|Volo per Lima||",
+              "alloggio|Hotel a Miraflores||Lima"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "volo|Volo per Cusco e trasferimento in Valle Sacra|Si scende di quota per acclimatarsi meglio.|Valle Sacra",
+              "attivita|Mercato di Pisac||Pisac",
+              "alloggio|Hotel in Valle Sacra||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "attivita|Moray, Maras e Ollantaytambo||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Machu Picchu",
+            "a": [
+              "treno|Treno per Aguas Calientes||Aguas Calientes",
+              "attivita|Visita di Machu Picchu||Machu Picchu",
+              "alloggio|Hotel ad Aguas Calientes||Aguas Calientes"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Seconda visita all'alba (facoltativa)||Machu Picchu",
+              "treno|Treno per Cusco||Cusco",
+              "alloggio|Hotel a Cusco||Cusco"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Centro storico, Qorikancha e San Pedro||Cusco"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Montagna dei Sette Colori o Sacsayhuamán||Cusco"
+            ]
+          },
+          {
+            "t": "Lima",
+            "a": [
+              "volo|Volo per Lima||Lima",
+              "attivita|Barranco e cena di cucina peruviana||Lima"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Perù e Amazzonia",
         "days": 14,
         "route": "Lima (2) → Paracas (1) → Cusco e Valle Sacra (5) → Machu Picchu (1) → Tambopata (3)",
-        "description": "Ande, costa e foresta."
+        "description": "Ande, costa e foresta.",
+        "plan": [
+          {
+            "t": "Arrivo a Lima",
+            "a": [
+              "volo|Volo per Lima||",
+              "alloggio|Hotel a Miraflores||Lima"
+            ]
+          },
+          {
+            "t": "Lima",
+            "a": [
+              "attivita|Centro storico e Barranco||Lima"
+            ]
+          },
+          {
+            "t": "Paracas",
+            "a": [
+              "transfer|Trasferimento a Paracas||Paracas",
+              "attivita|Isole Ballestas|Leoni marini e pinguini di Humboldt.|Paracas",
+              "alloggio|Resort a Paracas||Paracas"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "volo|Volo per Cusco||Cusco",
+              "alloggio|Hotel a Cusco||Cusco"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Centro storico e Sacsayhuamán||Cusco"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "attivita|Pisac, Moray e Maras||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Valle Sacra",
+            "a": [
+              "attivita|Ollantaytambo||Valle Sacra"
+            ]
+          },
+          {
+            "t": "Cusco",
+            "a": [
+              "attivita|Giornata libera o Montagna dei Sette Colori||Cusco"
+            ]
+          },
+          {
+            "t": "Machu Picchu",
+            "a": [
+              "treno|Treno e visita di Machu Picchu||Machu Picchu",
+              "alloggio|Hotel ad Aguas Calientes||Aguas Calientes"
+            ]
+          },
+          {
+            "t": "Tambopata",
+            "a": [
+              "volo|Volo per Puerto Maldonado e barca fino al lodge||Tambopata",
+              "alloggio|Lodge nella foresta||Tambopata"
+            ]
+          },
+          {
+            "t": "Tambopata",
+            "a": [
+              "attivita|Collpa dei pappagalli e lago Sandoval||Tambopata"
+            ]
+          },
+          {
+            "t": "Tambopata",
+            "a": [
+              "attivita|Escursione notturna e torre panoramica||Tambopata"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "volo|Volo per Lima||Lima"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

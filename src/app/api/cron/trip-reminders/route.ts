@@ -94,5 +94,23 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.json({ sent: typedTargets.length, clientSent, greetings });
+  // Convenzione del giorno: ai clienti in viaggio, se l'agenzia ha convenzioni nei paesi del viaggio
+  let deals = 0;
+  const { data: travelRows, error: travelError } = await supabase.rpc("get_traveling_client_targets", { p_secret: process.env.CRON_SECRET });
+  if (travelError) {
+    console.error("[cron] convenzioni del giorno:", travelError.message);
+  } else {
+    type Travel = PushTarget & { trip_id: string; agency_name: string; place: string | null; deals: string[] | null };
+    for (const row of ((travelRows as Travel[] | null) ?? []).filter((r) => r.deals && r.deals.length)) {
+      const list = row.deals!;
+      await sendPushToTargets([row], {
+        title: row.place ? `Oggi a ${row.place}` : "Un vantaggio per te oggi",
+        body: list.length === 1 ? `Ricorda la convenzione della tua agenzia: ${list[0]}.` : `Hai ${list.length} convenzioni della tua agenzia in questo viaggio, tra cui: ${list[0]}.`,
+        url: "/client",
+      });
+      deals++;
+    }
+  }
+
+  return NextResponse.json({ sent: typedTargets.length, clientSent, greetings, deals });
 }

@@ -18,7 +18,7 @@ export default function JournalPanel({
   country: string;
   trips: BoardTrip[];
   initialPlace?: string | null;
-  onCountChange: (n: number) => void;
+  onCountChange?: (n: number) => void;
 }) {
   const [entries, setEntries] = useState<JournalEntry[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -34,7 +34,7 @@ export default function JournalPanel({
       if (!alive) return;
       if (res.ok) {
         setEntries(res.entries);
-        onCountChange(res.entries.length);
+        onCountChange?.(res.entries.length);
       } else {
         setError(res.error);
         setEntries([]);
@@ -49,7 +49,7 @@ export default function JournalPanel({
     const res = await listJournal(country);
     if (res.ok) {
       setEntries(res.entries);
-      onCountChange(res.entries.length);
+      onCountChange?.(res.entries.length);
     }
   }
 

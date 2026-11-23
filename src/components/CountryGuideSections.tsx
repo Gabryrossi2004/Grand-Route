@@ -1,10 +1,21 @@
 import { Briefcase, CalendarDays, Compass, MapPinned, Route } from "lucide-react";
 import type { CountrySheetContent } from "@/lib/countrySheetAi";
 import { MONTHS_LONG, MONTHS_SHORT, SEASON_LEVELS } from "@/lib/countrySheetShared";
+import UseItineraryButton from "@/components/UseItineraryButton";
+import type { LibraryItinerary } from "@/lib/libraryItinerary";
 
 // Parti "guida" della scheda paese: zone con il calendario mese per mese, cosa fare, itinerari,
 // consigli per l'agente (questi ultimi non compaiono nella stampa per il cliente).
-export default function CountryGuideSections({ content, hideAgentTips = false }: { content: CountrySheetContent; hideAgentTips?: boolean }) {
+export default function CountryGuideSections({
+  content,
+  hideAgentTips = false,
+  useItinerary,
+}: {
+  content: CountrySheetContent;
+  hideAgentTips?: boolean;
+  // Solo per l'agenzia: paese (codice e nome) per creare un viaggio da un itinerario
+  useItinerary?: { code: string; label: string };
+}) {
   const areas = content.areas ?? [];
   const experiences = content.experiences ?? [];
   const itineraries = content.itineraries ?? [];
@@ -120,6 +131,10 @@ export default function CountryGuideSections({ content, hideAgentTips = false }:
                 </div>
                 <p className="mt-1 text-sm font-medium text-[#a87a1e]">{it.route}</p>
                 <p className="mt-1 text-sm text-slate-600">{it.description}</p>
+                {"plan" in it && Array.isArray((it as LibraryItinerary).plan) && (
+                  <p className="mt-1 text-xs font-medium text-emerald-700">Programma giorno per giorno già pronto</p>
+                )}
+                {useItinerary && <UseItineraryButton kind="country" code={useItinerary.code} label={useItinerary.label} itinerary={it as LibraryItinerary} />}
               </article>
             ))}
           </div>

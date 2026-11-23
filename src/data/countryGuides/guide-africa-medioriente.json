@@ -129,19 +129,186 @@
         "title": "Weekend lungo a Marrakech",
         "days": 4,
         "route": "Marrakech (3), con escursione nell'Atlante o a Essaouira",
-        "description": "La formula più venduta: riad, souk, hammam e una giornata fuori città."
+        "description": "La formula più venduta: riad, souk, hammam e una giornata fuori città.",
+        "plan": [
+          {
+            "t": "Arrivo a Marrakech",
+            "a": [
+              "volo|Volo per Marrakech|Circa 3 ore, anche low cost.|",
+              "transfer|Transfer al riad||Marrakech",
+              "alloggio|Riad nella medina||Marrakech",
+              "attivita|Piazza Jemaa el-Fna al tramonto||Marrakech"
+            ]
+          },
+          {
+            "t": "Marrakech",
+            "a": [
+              "attivita|Giardino Majorelle e Museo YSL||Marrakech",
+              "attivita|Palazzo Bahia e Medersa Ben Youssef||Marrakech",
+              "attivita|Hammam tradizionale||Marrakech"
+            ]
+          },
+          {
+            "t": "Atlante o Essaouira",
+            "a": [
+              "attivita|Valle dell'Ourika e villaggi berberi, oppure Essaouira sul mare||Atlante"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Marrakech",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Città imperiali e deserto",
         "days": 10,
         "route": "Casablanca (1) → Rabat → Chefchaouen (1) → Fès (2) → Merzouga (1 nel deserto) → Dadès (1) → Ouarzazate (1) → Marrakech (2)",
-        "description": "Il grande tour del Marocco in auto con autista, da ottobre a maggio."
+        "description": "Il grande tour del Marocco in auto con autista, da ottobre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Casablanca",
+            "a": [
+              "volo|Volo per Casablanca||",
+              "attivita|Moschea Hassan II||Casablanca",
+              "alloggio|Hotel a Casablanca||Casablanca"
+            ]
+          },
+          {
+            "t": "Rabat e Chefchaouen",
+            "a": [
+              "attivita|Rabat: Kasbah degli Oudaya e Torre Hassan||Rabat",
+              "transfer|Trasferimento a Chefchaouen||Chefchaouen",
+              "alloggio|Riad nella città blu||Chefchaouen"
+            ]
+          },
+          {
+            "t": "Verso Fès",
+            "a": [
+              "attivita|Passeggiata nella città blu||Chefchaouen",
+              "transfer|Trasferimento a Fès con Volubilis||Fès",
+              "alloggio|Riad nella medina||Fès"
+            ]
+          },
+          {
+            "t": "Fès",
+            "a": [
+              "attivita|Medina di Fès el-Bali con guida|Concerie Chouara e Medersa Bou Inania.|Fès"
+            ]
+          },
+          {
+            "t": "Verso il deserto",
+            "a": [
+              "transfer|Attraverso il Medio Atlante e la foresta di cedri||Merzouga",
+              "attivita|Dromedari al tramonto tra le dune di Erg Chebbi||Merzouga",
+              "alloggio|Campo tendato nel deserto||Merzouga"
+            ]
+          },
+          {
+            "t": "Gole del Todra e del Dadès",
+            "a": [
+              "attivita|Alba sulle dune||Merzouga",
+              "attivita|Gole del Todra||Todra",
+              "alloggio|Hotel nella valle del Dadès||Dadès"
+            ]
+          },
+          {
+            "t": "Ouarzazate",
+            "a": [
+              "attivita|Valle delle Rose e kasbah||Dadès",
+              "attivita|Ksar di Aït Ben Haddou||Ouarzazate",
+              "alloggio|Hotel a Ouarzazate||Ouarzazate"
+            ]
+          },
+          {
+            "t": "Verso Marrakech",
+            "a": [
+              "transfer|Passo del Tizi n'Tichka||Marrakech",
+              "alloggio|Riad a Marrakech||Marrakech",
+              "attivita|Jemaa el-Fna la sera||Marrakech"
+            ]
+          },
+          {
+            "t": "Marrakech",
+            "a": [
+              "attivita|Majorelle, Bahia e souk||Marrakech"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Marrakech",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Marrakech, deserto e mare",
         "days": 8,
         "route": "Marrakech (3) → deserto di Zagora o Merzouga (2) → Essaouira (2)",
-        "description": "Ideale per coppie: città, dune e oceano in una settimana."
+        "description": "Ideale per coppie: città, dune e oceano in una settimana.",
+        "plan": [
+          {
+            "t": "Arrivo a Marrakech",
+            "a": [
+              "volo|Volo per Marrakech||",
+              "alloggio|Riad nella medina||Marrakech",
+              "attivita|Jemaa el-Fna||Marrakech"
+            ]
+          },
+          {
+            "t": "Marrakech",
+            "a": [
+              "attivita|Majorelle, Bahia e souk||Marrakech"
+            ]
+          },
+          {
+            "t": "Marrakech",
+            "a": [
+              "attivita|Hammam e Palmeraie||Marrakech"
+            ]
+          },
+          {
+            "t": "Verso il deserto",
+            "a": [
+              "transfer|Tizi n'Tichka e Aït Ben Haddou||Ouarzazate",
+              "attivita|Dromedari al tramonto||Zagora",
+              "alloggio|Campo nel deserto||Zagora"
+            ]
+          },
+          {
+            "t": "Deserto",
+            "a": [
+              "attivita|Alba sulle dune e rientro verso Marrakech||Zagora",
+              "alloggio|Riad a Marrakech||Marrakech"
+            ]
+          },
+          {
+            "t": "Essaouira",
+            "a": [
+              "transfer|Trasferimento a Essaouira||Essaouira",
+              "alloggio|Riad sul mare||Essaouira",
+              "attivita|Medina e porto dei pescatori||Essaouira"
+            ]
+          },
+          {
+            "t": "Essaouira",
+            "a": [
+              "attivita|Spiaggia, kitesurf o cooperative dell'argan||Essaouira"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Marrakech||Marrakech",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -271,19 +438,213 @@
         "title": "Egitto classico",
         "days": 8,
         "route": "Cairo (2) → crociera Luxor–Assuan (4) con Abu Simbel → Cairo (1)",
-        "description": "Piramidi, museo e crociera: il pacchetto più venduto, da ottobre ad aprile."
+        "description": "Piramidi, museo e crociera: il pacchetto più venduto, da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo al Cairo",
+            "a": [
+              "volo|Volo per il Cairo|Circa 3 ore e mezza.|",
+              "transfer|Transfer in hotel||Cairo",
+              "alloggio|Hotel a Giza o in centro||Cairo"
+            ]
+          },
+          {
+            "t": "Piramidi e Grand Egyptian Museum",
+            "a": [
+              "attivita|Piramidi di Giza e Sfinge||Giza",
+              "attivita|Grand Egyptian Museum|Il tesoro di Tutankhamon nel nuovo museo.|Giza"
+            ]
+          },
+          {
+            "t": "Volo per Luxor e imbarco",
+            "a": [
+              "volo|Volo per Luxor||Luxor",
+              "crociera|Imbarco sulla motonave|Pensione completa a bordo.|Luxor",
+              "attivita|Templi di Karnak e Luxor||Luxor"
+            ]
+          },
+          {
+            "t": "Valle dei Re",
+            "a": [
+              "attivita|Valle dei Re, tempio di Hatshepsut e Colossi di Memnone||Luxor",
+              "crociera|Navigazione verso Edfu||Nilo"
+            ]
+          },
+          {
+            "t": "Edfu e Kom Ombo",
+            "a": [
+              "attivita|Tempio di Horus a Edfu||Edfu",
+              "attivita|Tempio di Kom Ombo||Kom Ombo"
+            ]
+          },
+          {
+            "t": "Assuan",
+            "a": [
+              "attivita|Abu Simbel all'alba|Escursione facoltativa in bus o in volo.|Abu Simbel",
+              "attivita|Feluca al tramonto e tempio di Philae||Assuan"
+            ]
+          },
+          {
+            "t": "Ritorno al Cairo",
+            "a": [
+              "volo|Volo per il Cairo||Cairo",
+              "attivita|Khan el-Khalili e Cairo islamico||Cairo",
+              "alloggio|Hotel al Cairo||Cairo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Cairo",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nilo e Mar Rosso",
         "days": 12,
         "route": "Cairo (2) → crociera sul Nilo (4) → Hurghada o Marsa Alam (5)",
-        "description": "Archeologia e mare, con trasferimento via terra da Luxor al Mar Rosso."
+        "description": "Archeologia e mare, con trasferimento via terra da Luxor al Mar Rosso.",
+        "plan": [
+          {
+            "t": "Arrivo al Cairo",
+            "a": [
+              "volo|Volo per il Cairo||",
+              "transfer|Transfer in hotel||Cairo",
+              "alloggio|Hotel al Cairo||Cairo"
+            ]
+          },
+          {
+            "t": "Piramidi e museo",
+            "a": [
+              "attivita|Piramidi di Giza e Sfinge||Giza",
+              "attivita|Grand Egyptian Museum||Giza"
+            ]
+          },
+          {
+            "t": "Luxor",
+            "a": [
+              "volo|Volo per Luxor e imbarco||Luxor",
+              "attivita|Templi di Karnak e Luxor||Luxor"
+            ]
+          },
+          {
+            "t": "Valle dei Re",
+            "a": [
+              "attivita|Valle dei Re e tempio di Hatshepsut||Luxor"
+            ]
+          },
+          {
+            "t": "Edfu e Kom Ombo",
+            "a": [
+              "attivita|Templi di Edfu e Kom Ombo||Nilo"
+            ]
+          },
+          {
+            "t": "Assuan",
+            "a": [
+              "attivita|Philae e feluca||Assuan"
+            ]
+          },
+          {
+            "t": "Dal Nilo al Mar Rosso",
+            "a": [
+              "transfer|Trasferimento a Marsa Alam o Hurghada|Circa 4 ore da Assuan o da Luxor.|Marsa Alam",
+              "alloggio|Resort sul Mar Rosso||Marsa Alam"
+            ]
+          },
+          {
+            "t": "Mar Rosso",
+            "a": [
+              "attivita|Snorkeling sulla barriera del resort||Marsa Alam"
+            ]
+          },
+          {
+            "t": "Mar Rosso",
+            "a": [
+              "attivita|Escursione con delfini o tartarughe ad Abu Dabbab||Marsa Alam"
+            ]
+          },
+          {
+            "t": "Mar Rosso",
+            "a": [
+              "attivita|Relax in spiaggia||Marsa Alam"
+            ]
+          },
+          {
+            "t": "Mar Rosso",
+            "a": [
+              "attivita|Giornata libera o immersioni||Marsa Alam"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Marsa Alam",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Settimana a Sharm",
         "days": 8,
         "route": "Sharm el-Sheikh (7), con escursione a Ras Mohammed",
-        "description": "Mare e immersioni con voli diretti dall'Italia."
+        "description": "Mare e immersioni con voli diretti dall'Italia.",
+        "plan": [
+          {
+            "t": "Arrivo a Sharm",
+            "a": [
+              "volo|Volo diretto per Sharm el-Sheikh|Circa 4 ore.|",
+              "transfer|Transfer nel resort||Sharm",
+              "alloggio|Resort con barriera corallina|Zona di Nabq o Sharks Bay.|Sharm"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Snorkeling sulla barriera del resort||Sharm"
+            ]
+          },
+          {
+            "t": "Ras Mohammed",
+            "a": [
+              "traghetto|Escursione in barca a Ras Mohammed|Il parco marino più famoso del Mar Rosso.|Ras Mohammed"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax e spa||Sharm"
+            ]
+          },
+          {
+            "t": "Tiran",
+            "a": [
+              "traghetto|Escursione all'isola di Tiran||Tiran"
+            ]
+          },
+          {
+            "t": "Deserto",
+            "a": [
+              "attivita|Quad o cena beduina nel deserto|In alternativa il Monastero di Santa Caterina e il Monte Sinai.|Sinai"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera e Naama Bay la sera||Sharm"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Sharm",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -980,19 +1341,229 @@
         "title": "Safari e mare",
         "days": 12,
         "route": "Nairobi (1) → Masai Mara (3) → volo per la costa → Watamu o Malindi (7)",
-        "description": "La formula più amata dagli italiani, perfetta da luglio a ottobre e a Natale."
+        "description": "La formula più amata dagli italiani, perfetta da luglio a ottobre e a Natale.",
+        "plan": [
+          {
+            "t": "Arrivo a Nairobi",
+            "a": [
+              "volo|Volo per Nairobi|Con uno scalo, circa 10 ore.|",
+              "transfer|Transfer in hotel||Nairobi",
+              "alloggio|Hotel a Nairobi||Nairobi"
+            ]
+          },
+          {
+            "t": "Verso il Masai Mara",
+            "a": [
+              "volo|Volo per il Masai Mara o trasferimento in jeep||Masai Mara",
+              "alloggio|Campo tendato nel Mara||Masai Mara",
+              "attivita|Primo fototour al pomeriggio||Masai Mara"
+            ]
+          },
+          {
+            "t": "Masai Mara",
+            "a": [
+              "attivita|Fototour di giornata intera|Big Five e, da luglio a ottobre, la grande migrazione.|Masai Mara"
+            ]
+          },
+          {
+            "t": "Masai Mara",
+            "a": [
+              "attivita|Mongolfiera all'alba (facoltativa) e villaggio masai||Masai Mara"
+            ]
+          },
+          {
+            "t": "Dal Mara al mare",
+            "a": [
+              "volo|Volo per Malindi o Watamu via Nairobi||Watamu",
+              "alloggio|Resort a Watamu o Malindi||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "attivita|Relax nel parco marino||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "traghetto|Barca alla Sardegna 2 e Mida Creek||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "attivita|Rovine di Gede e foresta di Arabuko||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "attivita|Giornata libera||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "attivita|Escursione facoltativa a Tsavo o pesca d'altura||Watamu"
+            ]
+          },
+          {
+            "t": "Watamu",
+            "a": [
+              "attivita|Ultima giornata al mare||Watamu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Malindi",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Grande safari",
         "days": 10,
         "route": "Nairobi (1) → Samburu (2) → Ol Pejeta (2) → Lago Nakuru (1) → Masai Mara (3)",
-        "description": "Per chi vuole solo natura, con voli interni o fuoristrada."
+        "description": "Per chi vuole solo natura, con voli interni o fuoristrada.",
+        "plan": [
+          {
+            "t": "Arrivo a Nairobi",
+            "a": [
+              "volo|Volo per Nairobi||",
+              "alloggio|Hotel a Nairobi||Nairobi"
+            ]
+          },
+          {
+            "t": "Samburu",
+            "a": [
+              "transfer|Trasferimento nel nord|Circa 6 ore o volo.|Samburu",
+              "alloggio|Lodge a Samburu||Samburu",
+              "attivita|Fototour del pomeriggio|Le «Samburu Special Five».|Samburu"
+            ]
+          },
+          {
+            "t": "Samburu",
+            "a": [
+              "attivita|Fototour di giornata||Samburu"
+            ]
+          },
+          {
+            "t": "Ol Pejeta",
+            "a": [
+              "transfer|Trasferimento a Ol Pejeta||Ol Pejeta",
+              "alloggio|Campo a Ol Pejeta||Ol Pejeta",
+              "attivita|Rinoceronti bianchi del nord e scimpanzé||Ol Pejeta"
+            ]
+          },
+          {
+            "t": "Ol Pejeta",
+            "a": [
+              "attivita|Fototour e safari notturno||Ol Pejeta"
+            ]
+          },
+          {
+            "t": "Lago Nakuru",
+            "a": [
+              "transfer|Trasferimento al Lago Nakuru||Nakuru",
+              "attivita|Fenicotteri e rinoceronti||Nakuru",
+              "alloggio|Lodge a Nakuru||Nakuru"
+            ]
+          },
+          {
+            "t": "Masai Mara",
+            "a": [
+              "transfer|Trasferimento al Masai Mara||Masai Mara",
+              "alloggio|Campo tendato||Masai Mara"
+            ]
+          },
+          {
+            "t": "Masai Mara",
+            "a": [
+              "attivita|Fototour di giornata||Masai Mara"
+            ]
+          },
+          {
+            "t": "Masai Mara",
+            "a": [
+              "attivita|Mongolfiera e villaggio masai||Masai Mara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Nairobi e coincidenza per l'Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mare e Tsavo",
         "days": 9,
         "route": "Watamu o Malindi (6) → Tsavo Est (2)",
-        "description": "Soggiorno mare con safari breve via terra, ideale per famiglie."
+        "description": "Soggiorno mare con safari breve via terra, ideale per famiglie.",
+        "plan": [
+          {
+            "t": "Arrivo a Malindi",
+            "a": [
+              "volo|Volo per Mombasa o Malindi||",
+              "transfer|Transfer nel resort||Watamu",
+              "alloggio|Resort sul mare||Watamu"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax in spiaggia||Watamu"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Barca alla Sardegna 2||Watamu"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Gede e Mida Creek||Watamu"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Watamu"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata al mare||Watamu"
+            ]
+          },
+          {
+            "t": "Tsavo Est",
+            "a": [
+              "transfer|Trasferimento in jeep nello Tsavo|Circa 3 ore.|Tsavo",
+              "alloggio|Lodge nello Tsavo||Tsavo",
+              "attivita|Elefanti rossi e Lugard Falls||Tsavo"
+            ]
+          },
+          {
+            "t": "Tsavo Est",
+            "a": [
+              "attivita|Fototour all'alba e rientro sulla costa||Tsavo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1113,21 +1684,227 @@
     "itineraries": [
       {
         "title": "Safari nord e Zanzibar",
-        "days": 12,
+        "days": 13,
         "route": "Arusha (1) → Tarangire (1) → Ngorongoro (1) → Serengeti (3) → volo per Zanzibar (6)",
-        "description": "Il combinato più venduto, ideale da giugno a ottobre e da dicembre a febbraio."
+        "description": "Il combinato più venduto, ideale da giugno a ottobre e da dicembre a febbraio.",
+        "plan": [
+          {
+            "t": "Arrivo ad Arusha",
+            "a": [
+              "volo|Volo per il Kilimanjaro||",
+              "transfer|Transfer ad Arusha||Arusha",
+              "alloggio|Lodge ad Arusha||Arusha"
+            ]
+          },
+          {
+            "t": "Tarangire",
+            "a": [
+              "attivita|Fototour nel Tarangire|Baobab e grandi branchi di elefanti.|Tarangire",
+              "alloggio|Lodge a Tarangire o Karatu||Tarangire"
+            ]
+          },
+          {
+            "t": "Ngorongoro",
+            "a": [
+              "attivita|Discesa nel cratere di Ngorongoro|Il «giardino dell'Eden» con i Big Five.|Ngorongoro",
+              "alloggio|Lodge sul bordo del cratere||Ngorongoro"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "transfer|Trasferimento nel Serengeti con fototour||Serengeti",
+              "alloggio|Campo tendato||Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Fototour di giornata|Grandi felini e, secondo il periodo, la migrazione.|Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Mongolfiera all'alba (facoltativa)||Serengeti"
+            ]
+          },
+          {
+            "t": "Volo per Zanzibar",
+            "a": [
+              "volo|Volo per Zanzibar||Zanzibar",
+              "alloggio|Resort a Nungwi o Kendwa||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "attivita|Relax in spiaggia||Zanzibar"
+            ]
+          },
+          {
+            "t": "Stone Town",
+            "a": [
+              "attivita|Stone Town e tour delle spezie||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "traghetto|Safari blu o snorkeling a Mnemba||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "attivita|Giornata libera||Zanzibar"
+            ]
+          },
+          {
+            "t": "Zanzibar",
+            "a": [
+              "attivita|Ultima giornata al mare||Zanzibar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||Zanzibar",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Migrazione e nascite",
         "days": 9,
         "route": "Arusha (1) → Ngorongoro (2) → Ndutu (3) → Serengeti centrale (2)",
-        "description": "A gennaio–febbraio, per vedere le nascite e i predatori."
+        "description": "A gennaio–febbraio, per vedere le nascite e i predatori.",
+        "plan": [
+          {
+            "t": "Arrivo ad Arusha",
+            "a": [
+              "volo|Volo per il Kilimanjaro||",
+              "alloggio|Lodge ad Arusha||Arusha"
+            ]
+          },
+          {
+            "t": "Ngorongoro",
+            "a": [
+              "transfer|Trasferimento verso il cratere||Ngorongoro",
+              "alloggio|Lodge sul bordo del cratere||Ngorongoro"
+            ]
+          },
+          {
+            "t": "Ngorongoro",
+            "a": [
+              "attivita|Giornata nel cratere||Ngorongoro"
+            ]
+          },
+          {
+            "t": "Ndutu",
+            "a": [
+              "transfer|Trasferimento a Ndutu||Ndutu",
+              "alloggio|Campo mobile a Ndutu||Ndutu"
+            ]
+          },
+          {
+            "t": "Ndutu",
+            "a": [
+              "attivita|Le nascite degli gnu (gennaio–marzo) e i predatori||Ndutu"
+            ]
+          },
+          {
+            "t": "Ndutu",
+            "a": [
+              "attivita|Fototour di giornata||Ndutu"
+            ]
+          },
+          {
+            "t": "Serengeti centrale",
+            "a": [
+              "transfer|Trasferimento a Seronera||Serengeti",
+              "alloggio|Campo tendato||Serengeti"
+            ]
+          },
+          {
+            "t": "Serengeti",
+            "a": [
+              "attivita|Fototour di giornata||Serengeti"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Arusha e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Safari del sud",
         "days": 9,
         "route": "Dar es Salaam (1) → Nyerere (3) → Ruaha (4)",
-        "description": "Per chi ha già fatto il nord o cerca un'Africa più selvaggia, da giugno a ottobre."
+        "description": "Per chi ha già fatto il nord o cerca un'Africa più selvaggia, da giugno a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Dar es Salaam",
+            "a": [
+              "volo|Volo per Dar es Salaam||",
+              "alloggio|Hotel a Dar es Salaam||Dar es Salaam"
+            ]
+          },
+          {
+            "t": "Nyerere",
+            "a": [
+              "volo|Volo per Nyerere (ex Selous)||Nyerere",
+              "alloggio|Campo sul fiume Rufiji||Nyerere"
+            ]
+          },
+          {
+            "t": "Nyerere",
+            "a": [
+              "attivita|Safari in barca sul Rufiji||Nyerere"
+            ]
+          },
+          {
+            "t": "Nyerere",
+            "a": [
+              "attivita|Safari a piedi e in jeep|Licaoni e ippopotami.|Nyerere"
+            ]
+          },
+          {
+            "t": "Ruaha",
+            "a": [
+              "volo|Volo per Ruaha||Ruaha",
+              "alloggio|Campo a Ruaha||Ruaha"
+            ]
+          },
+          {
+            "t": "Ruaha",
+            "a": [
+              "attivita|Fototour di giornata|Grandi gruppi di leoni e kudu.|Ruaha"
+            ]
+          },
+          {
+            "t": "Ruaha",
+            "a": [
+              "attivita|Safari a piedi||Ruaha"
+            ]
+          },
+          {
+            "t": "Ruaha",
+            "a": [
+              "attivita|Ultimo fototour||Ruaha"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Dar es Salaam e rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
