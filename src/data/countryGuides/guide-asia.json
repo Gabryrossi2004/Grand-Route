@@ -1470,21 +1470,232 @@
     "itineraries": [
       {
         "title": "Angkor e Phnom Penh",
-        "days": 6,
+        "days": 7,
         "route": "Phnom Penh (2) → Siem Reap (4)",
-        "description": "La Cambogia essenziale, perfetta in combinazione con Vietnam o Thailandia."
+        "description": "La Cambogia essenziale, perfetta in combinazione con Vietnam o Thailandia.",
+        "plan": [
+          {
+            "t": "Arrivo a Phnom Penh",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in hotel||Phnom Penh",
+              "alloggio|Hotel sul lungofiume||Phnom Penh",
+              "attivita|Tramonto sul Mekong in barca||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Phnom Penh",
+            "a": [
+              "attivita|Palazzo Reale e Pagoda d'Argento||Phnom Penh",
+              "attivita|Museo Tuol Sleng e Killing Fields|La storia dei Khmer rossi, con guida.|Phnom Penh",
+              "attivita|Mercato centrale e mercato russo||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Siem Reap",
+            "a": [
+              "volo|Volo per Siem Reap||Siem Reap",
+              "alloggio|Hotel a Siem Reap||Siem Reap",
+              "attivita|Circo Phare la sera||Siem Reap"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Angkor Wat all'alba|Pass di 3 giorni.|Angkor",
+              "attivita|Angkor Thom e il Bayon dai volti sorridenti||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Ta Prohm tra le radici e Banteay Srei||Angkor"
+            ]
+          },
+          {
+            "t": "Tonle Sap",
+            "a": [
+              "traghetto|Villaggi galleggianti del Tonle Sap||Tonle Sap",
+              "attivita|Mercato notturno e Pub Street||Siem Reap"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cambogia completa",
-        "days": 12,
+        "days": 13,
         "route": "Phnom Penh (2) → Kampot e Kep (2) → Koh Rong (3) → Battambang (1) → Siem Reap (4)",
-        "description": "Storia, costa, isole e Angkor, da novembre ad aprile."
+        "description": "Storia, costa, isole e Angkor, da novembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Phnom Penh",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Phnom Penh||Phnom Penh",
+              "attivita|Lungofiume al tramonto||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Phnom Penh",
+            "a": [
+              "attivita|Palazzo Reale e Tuol Sleng||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Kampot",
+            "a": [
+              "transfer|Trasferimento a Kampot||Kampot",
+              "alloggio|Lodge sul fiume||Kampot",
+              "attivita|Piantagione di pepe di Kampot||Kampot"
+            ]
+          },
+          {
+            "t": "Kep",
+            "a": [
+              "attivita|Mercato dei granchi di Kep e Bokor||Kep"
+            ]
+          },
+          {
+            "t": "Koh Rong",
+            "a": [
+              "traghetto|Barca veloce da Sihanoukville a Koh Rong||Koh Rong",
+              "alloggio|Bungalow sul mare||Koh Rong"
+            ]
+          },
+          {
+            "t": "Koh Rong",
+            "a": [
+              "attivita|Spiaggia e plancton luminoso la sera||Koh Rong"
+            ]
+          },
+          {
+            "t": "Koh Rong",
+            "a": [
+              "attivita|Snorkeling e Koh Rong Samloem||Koh Rong"
+            ]
+          },
+          {
+            "t": "Battambang",
+            "a": [
+              "transfer|Trasferimento a Battambang||Battambang",
+              "alloggio|Hotel a Battambang||Battambang",
+              "attivita|Treno di bambù e grotta dei pipistrelli||Battambang"
+            ]
+          },
+          {
+            "t": "Siem Reap",
+            "a": [
+              "traghetto|Barca sul Tonle Sap fino a Siem Reap (stagionale)||Siem Reap",
+              "alloggio|Hotel a Siem Reap||Siem Reap"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Angkor Wat all'alba e Angkor Thom||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Ta Prohm e Banteay Srei||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Beng Mealea o Koh Ker||Angkor"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Angkor e Thailandia",
         "days": 10,
         "route": "Bangkok (3) → Siem Reap (3) → Phuket o Krabi (4)",
-        "description": "Combinazione facile per una prima volta in Asia: città, templi e mare."
+        "description": "Combinazione facile per una prima volta in Asia: città, templi e mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Bangkok",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Bangkok||Bangkok",
+              "attivita|Crociera sul Chao Phraya||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok",
+            "a": [
+              "attivita|Grande Palazzo, Wat Pho e Wat Arun||Bangkok"
+            ]
+          },
+          {
+            "t": "Bangkok",
+            "a": [
+              "attivita|Mercato galleggiante e Chinatown||Bangkok"
+            ]
+          },
+          {
+            "t": "Siem Reap",
+            "a": [
+              "volo|Volo per Siem Reap||Siem Reap",
+              "alloggio|Hotel a Siem Reap||Siem Reap",
+              "attivita|Pub Street||Siem Reap"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Angkor Wat all'alba e Bayon||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Ta Prohm e Tonle Sap||Angkor"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "volo|Volo per Phuket o Krabi||Krabi",
+              "alloggio|Resort sul mare||Krabi"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "traghetto|Isole Phi Phi||Phi Phi"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Railay e relax||Krabi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2030,19 +2241,233 @@
         "title": "Viaggio di nozze",
         "days": 10,
         "route": "Malé → resort con villa sull'acqua (9 notti)",
-        "description": "La formula più venduta: scegliere un resort con buon house reef e trasferimento in idrovolante, ideale tra dicembre e aprile."
+        "description": "La formula più venduta: scegliere un resort con buon house reef e trasferimento in idrovolante, ideale tra dicembre e aprile.",
+        "plan": [
+          {
+            "t": "Arrivo alle Maldive",
+            "a": [
+              "volo|Volo per Malé con uno scalo||",
+              "transfer|Idrovolante o barca veloce per il resort||Maldive",
+              "alloggio|Villa sull'acqua|Con trattamento a mezza pensione o all inclusive.|Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Snorkeling sul reef della casa||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Massaggio di coppia nella spa sull'acqua||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Escursione con le mante o lo squalo balena||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Relax e giornata libera||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "ristorante|Cena romantica sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Crociera al tramonto con i delfini||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Isola deserta con picnic||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Ultima giornata al mare||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Idrovolante per Malé||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dubai e Maldive",
         "days": 11,
         "route": "Dubai (3) → Maldive (7)",
-        "description": "Combinato classico con lo scalo a Dubai trasformato in vacanza in città."
+        "description": "Combinato classico con lo scalo a Dubai trasformato in vacanza in città.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo per Dubai||",
+              "alloggio|Hotel a Downtown o Marina||Dubai",
+              "attivita|Dubai Mall e fontane||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Burj Khalifa e Dubai Creek in abra||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Safari nel deserto con cena||Dubai"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "volo|Volo per Malé e idrovolante||Maldive",
+              "alloggio|Resort alle Maldive||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Snorkeling sul reef||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Relax e spa||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Escursione con mante||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Giornata libera||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "ristorante|Cena sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Ultima giornata||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Dubai||"
+            ]
+          }
+        ]
       },
       {
         "title": "Due resort",
         "days": 12,
         "route": "Resort nell'atollo di Malé (4) → resort in idrovolante nel nord (7)",
-        "description": "Per chi vuole provare due stili diversi o spezzare un soggiorno lungo."
+        "description": "Per chi vuole provare due stili diversi o spezzare un soggiorno lungo.",
+        "plan": [
+          {
+            "t": "Arrivo alle Maldive",
+            "a": [
+              "volo|Volo per Malé||",
+              "transfer|Barca veloce per il resort di Malé Nord||Malé",
+              "alloggio|Resort nell'atollo di Malé||Malé"
+            ]
+          },
+          {
+            "t": "Primo resort",
+            "a": [
+              "attivita|Snorkeling e relax||Malé"
+            ]
+          },
+          {
+            "t": "Primo resort",
+            "a": [
+              "traghetto|Escursione con i delfini||Malé"
+            ]
+          },
+          {
+            "t": "Primo resort",
+            "a": [
+              "attivita|Giornata libera||Malé"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "transfer|Idrovolante verso un atollo del nord||Maldive",
+              "alloggio|Villa sull'acqua||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "attivita|Reef della casa||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "traghetto|Escursione sub o snorkeling sulle pass||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "attivita|Spa||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "attivita|Sandbank privata||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "ristorante|Cena sottomarina o sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Secondo resort",
+            "a": [
+              "attivita|Ultima giornata||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Idrovolante per Malé||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2611,21 +3036,273 @@
     "itineraries": [
       {
         "title": "Triangolo d'oro e Varanasi",
-        "days": 9,
+        "days": 8,
         "route": "Delhi (2) → Agra (1) → Jaipur (2) → Varanasi (2)",
-        "description": "La prima volta in India: Taj Mahal, palazzi di Jaipur e la spiritualità di Varanasi."
+        "description": "La prima volta in India: Taj Mahal, palazzi di Jaipur e la spiritualità di Varanasi.",
+        "plan": [
+          {
+            "t": "Arrivo a Delhi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Delhi||Delhi",
+              "info|E-visa indiano da richiedere prima della partenza||"
+            ]
+          },
+          {
+            "t": "Delhi",
+            "a": [
+              "attivita|Vecchia Delhi in risciò e Jama Masjid||Delhi",
+              "attivita|Tomba di Humayun e Qutb Minar||Delhi"
+            ]
+          },
+          {
+            "t": "Agra",
+            "a": [
+              "treno|Treno Gatimaan Express per Agra||Agra",
+              "alloggio|Hotel con vista sul Taj||Agra",
+              "attivita|Taj Mahal al tramonto o all'alba|Chiuso il venerdì.|Agra",
+              "attivita|Forte Rosso di Agra||Agra"
+            ]
+          },
+          {
+            "t": "Jaipur",
+            "a": [
+              "transfer|Trasferimento con Fatehpur Sikri e Abhaneri||Jaipur",
+              "alloggio|Haveli a Jaipur||Jaipur"
+            ]
+          },
+          {
+            "t": "Jaipur",
+            "a": [
+              "attivita|Forte di Amber||Jaipur",
+              "attivita|Palazzo dei Venti e City Palace||Jaipur",
+              "attivita|Jantar Mantar||Jaipur"
+            ]
+          },
+          {
+            "t": "Varanasi",
+            "a": [
+              "volo|Volo per Varanasi||Varanasi",
+              "alloggio|Hotel sui ghat||Varanasi",
+              "attivita|Aarti serale sul Gange||Varanasi"
+            ]
+          },
+          {
+            "t": "Varanasi",
+            "a": [
+              "traghetto|Barca all'alba sui ghat||Varanasi",
+              "attivita|Sarnath, dove il Buddha predicò||Sarnath"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Delhi e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Rajasthan completo",
         "days": 15,
         "route": "Delhi (2) → Mandawa (1) → Bikaner (1) → Jaisalmer (2) → Jodhpur (2) → Udaipur (3) → Jaipur (2) → Agra (1)",
-        "description": "Fortezze, deserto e laghi, con hotel heritage lungo tutto il percorso."
+        "description": "Fortezze, deserto e laghi, con hotel heritage lungo tutto il percorso.",
+        "plan": [
+          {
+            "t": "Arrivo a Delhi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Delhi||Delhi"
+            ]
+          },
+          {
+            "t": "Delhi",
+            "a": [
+              "attivita|Vecchia e Nuova Delhi||Delhi"
+            ]
+          },
+          {
+            "t": "Mandawa",
+            "a": [
+              "transfer|Trasferimento nella regione dello Shekhawati||Mandawa",
+              "alloggio|Haveli a Mandawa||Mandawa",
+              "attivita|Haveli affrescate||Mandawa"
+            ]
+          },
+          {
+            "t": "Bikaner",
+            "a": [
+              "transfer|Trasferimento a Bikaner||Bikaner",
+              "alloggio|Palazzo hotel||Bikaner",
+              "attivita|Forte Junagarh e tempio dei topi||Bikaner"
+            ]
+          },
+          {
+            "t": "Jaisalmer",
+            "a": [
+              "transfer|Trasferimento a Jaisalmer||Jaisalmer",
+              "alloggio|Hotel nella città d'oro||Jaisalmer",
+              "attivita|Forte vivente e haveli||Jaisalmer"
+            ]
+          },
+          {
+            "t": "Deserto del Thar",
+            "a": [
+              "attivita|Cammelli tra le dune di Sam al tramonto||Jaisalmer"
+            ]
+          },
+          {
+            "t": "Jodhpur",
+            "a": [
+              "transfer|Trasferimento a Jodhpur||Jodhpur",
+              "alloggio|Hotel a Jodhpur||Jodhpur",
+              "attivita|Città blu||Jodhpur"
+            ]
+          },
+          {
+            "t": "Jodhpur",
+            "a": [
+              "attivita|Forte di Mehrangarh e Jaswant Thada||Jodhpur"
+            ]
+          },
+          {
+            "t": "Ranakpur e Udaipur",
+            "a": [
+              "attivita|Templi giainisti di Ranakpur||Ranakpur",
+              "alloggio|Hotel sul lago a Udaipur||Udaipur"
+            ]
+          },
+          {
+            "t": "Udaipur",
+            "a": [
+              "attivita|City Palace e barca sul lago Pichola||Udaipur"
+            ]
+          },
+          {
+            "t": "Udaipur",
+            "a": [
+              "attivita|Giornata libera, corso di cucina||Udaipur"
+            ]
+          },
+          {
+            "t": "Jaipur",
+            "a": [
+              "transfer|Trasferimento a Jaipur con Pushkar||Jaipur",
+              "alloggio|Haveli a Jaipur||Jaipur"
+            ]
+          },
+          {
+            "t": "Jaipur",
+            "a": [
+              "attivita|Forte di Amber e Palazzo dei Venti||Jaipur"
+            ]
+          },
+          {
+            "t": "Agra",
+            "a": [
+              "transfer|Trasferimento ad Agra||Agra",
+              "alloggio|Hotel ad Agra||Agra",
+              "attivita|Taj Mahal al tramonto||Agra"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Delhi||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kerala e mare",
         "days": 12,
         "route": "Kochi (2) → Munnar (2) → Periyar (1) → Alleppey in houseboat (1) → Marari o Kovalam (5)",
-        "description": "L'India più dolce e verde, con chiusura sulle spiagge del sud."
+        "description": "L'India più dolce e verde, con chiusura sulle spiagge del sud.",
+        "plan": [
+          {
+            "t": "Arrivo a Kochi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Fort Kochi||Kochi",
+              "attivita|Reti cinesi al tramonto||Kochi"
+            ]
+          },
+          {
+            "t": "Kochi",
+            "a": [
+              "attivita|Mattancherry e quartiere ebraico||Kochi",
+              "attivita|Danza Kathakali||Kochi"
+            ]
+          },
+          {
+            "t": "Munnar",
+            "a": [
+              "transfer|Trasferimento a Munnar||Munnar",
+              "alloggio|Resort tra le piantagioni di tè||Munnar",
+              "attivita|Piantagioni e museo del tè||Munnar"
+            ]
+          },
+          {
+            "t": "Munnar",
+            "a": [
+              "attivita|Parco di Eravikulam||Munnar"
+            ]
+          },
+          {
+            "t": "Periyar",
+            "a": [
+              "transfer|Trasferimento a Thekkady||Periyar",
+              "alloggio|Lodge a Periyar||Periyar",
+              "attivita|Giardino delle spezie e barca sul lago||Periyar"
+            ]
+          },
+          {
+            "t": "Alleppey",
+            "a": [
+              "transfer|Trasferimento ad Alleppey||Alleppey",
+              "alloggio|Notte in houseboat nelle backwaters||Alleppey"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "transfer|Trasferimento a Marari o Kovalam||Marari",
+              "alloggio|Resort ayurvedico sul mare||Marari"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Trattamento ayurvedico||Marari"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia e villaggi di pescatori||Marari"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Yoga e relax||Marari"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata al mare||Marari"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2743,19 +3420,292 @@
         "title": "Nepal classico",
         "days": 10,
         "route": "Kathmandu (3) → Chitwan (2) → Pokhara (3) → Kathmandu (2)",
-        "description": "Templi della valle, giungla e montagne senza trekking impegnativi."
+        "description": "Templi della valle, giungla e montagne senza trekking impegnativi.",
+        "plan": [
+          {
+            "t": "Arrivo a Kathmandu",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Thamel||Kathmandu",
+              "info|Visto all'arrivo o online||"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Durbar Square e Swayambhunath||Kathmandu"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Pashupatinath e Boudhanath||Kathmandu",
+              "attivita|Bhaktapur||Bhaktapur"
+            ]
+          },
+          {
+            "t": "Chitwan",
+            "a": [
+              "transfer|Trasferimento a Chitwan||Chitwan",
+              "alloggio|Lodge nel parco||Chitwan",
+              "attivita|Villaggio tharu||Chitwan"
+            ]
+          },
+          {
+            "t": "Chitwan",
+            "a": [
+              "attivita|Safari in jeep: rinoceronti e, con fortuna, la tigre||Chitwan"
+            ]
+          },
+          {
+            "t": "Pokhara",
+            "a": [
+              "transfer|Trasferimento a Pokhara||Pokhara",
+              "alloggio|Hotel sul lago Phewa||Pokhara"
+            ]
+          },
+          {
+            "t": "Pokhara",
+            "a": [
+              "attivita|Alba su Annapurna da Sarangkot||Pokhara",
+              "traghetto|Barca sul lago Phewa||Pokhara"
+            ]
+          },
+          {
+            "t": "Pokhara",
+            "a": [
+              "attivita|World Peace Pagoda o parapendio||Pokhara"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "volo|Volo per Kathmandu||Kathmandu",
+              "alloggio|Hotel a Kathmandu||Kathmandu",
+              "attivita|Patan||Patan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Trekking di Poon Hill",
         "days": 12,
         "route": "Kathmandu (2) → Pokhara (1) → trekking Poon Hill (5) → Pokhara (2) → Kathmandu (2)",
-        "description": "Il trekking più adatto a chi cammina per la prima volta in Himalaya."
+        "description": "Il trekking più adatto a chi cammina per la prima volta in Himalaya.",
+        "plan": [
+          {
+            "t": "Arrivo a Kathmandu",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kathmandu||Kathmandu"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Durbar Square, Swayambhunath e Boudhanath||Kathmandu"
+            ]
+          },
+          {
+            "t": "Pokhara",
+            "a": [
+              "volo|Volo per Pokhara||Pokhara",
+              "alloggio|Hotel a Pokhara||Pokhara"
+            ]
+          },
+          {
+            "t": "Trekking giorno 1",
+            "a": [
+              "transfer|Trasferimento a Nayapul||Nayapul",
+              "attivita|Cammino fino a Tikhedhunga||Annapurna",
+              "alloggio|Lodge di montagna||Tikhedhunga"
+            ]
+          },
+          {
+            "t": "Trekking giorno 2",
+            "a": [
+              "attivita|Salita a Ghorepani|Circa 6 ore.|Ghorepani",
+              "alloggio|Lodge||Ghorepani"
+            ]
+          },
+          {
+            "t": "Trekking giorno 3",
+            "a": [
+              "attivita|Alba su Poon Hill e cammino a Tadapani||Poon Hill",
+              "alloggio|Lodge||Tadapani"
+            ]
+          },
+          {
+            "t": "Trekking giorno 4",
+            "a": [
+              "attivita|Discesa a Ghandruk, villaggio gurung||Ghandruk",
+              "alloggio|Lodge||Ghandruk"
+            ]
+          },
+          {
+            "t": "Trekking giorno 5",
+            "a": [
+              "attivita|Rientro a Pokhara||Pokhara",
+              "alloggio|Hotel a Pokhara||Pokhara"
+            ]
+          },
+          {
+            "t": "Pokhara",
+            "a": [
+              "attivita|Lago Phewa e relax||Pokhara"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "volo|Volo per Kathmandu||Kathmandu",
+              "alloggio|Hotel a Kathmandu||Kathmandu"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Bhaktapur||Bhaktapur"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Campo base dell'Everest",
         "days": 17,
         "route": "Kathmandu (2) → Lukla → trekking EBC (12) → Kathmandu (2), con giorni di riserva",
-        "description": "Per escursionisti esperti, con guide e portatori locali."
+        "description": "Per escursionisti esperti, con guide e portatori locali.",
+        "plan": [
+          {
+            "t": "Arrivo a Kathmandu",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kathmandu||Kathmandu",
+              "info|Assicurazione con copertura in alta quota obbligatoria||"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Briefing e visite||Kathmandu"
+            ]
+          },
+          {
+            "t": "Lukla",
+            "a": [
+              "volo|Volo per Lukla e cammino a Phakding||Phakding",
+              "alloggio|Lodge||Phakding"
+            ]
+          },
+          {
+            "t": "Namche",
+            "a": [
+              "attivita|Salita a Namche Bazar||Namche",
+              "alloggio|Lodge||Namche"
+            ]
+          },
+          {
+            "t": "Acclimatamento",
+            "a": [
+              "attivita|Giornata di acclimatamento con l'Everest View Hotel||Namche"
+            ]
+          },
+          {
+            "t": "Tengboche",
+            "a": [
+              "attivita|Cammino al monastero di Tengboche||Tengboche",
+              "alloggio|Lodge||Tengboche"
+            ]
+          },
+          {
+            "t": "Dingboche",
+            "a": [
+              "attivita|Cammino a Dingboche||Dingboche",
+              "alloggio|Lodge||Dingboche"
+            ]
+          },
+          {
+            "t": "Acclimatamento",
+            "a": [
+              "attivita|Salita a Nangkartshang||Dingboche"
+            ]
+          },
+          {
+            "t": "Lobuche",
+            "a": [
+              "attivita|Cammino a Lobuche||Lobuche",
+              "alloggio|Lodge||Lobuche"
+            ]
+          },
+          {
+            "t": "Campo base",
+            "a": [
+              "attivita|Gorak Shep e Campo base dell'Everest||Everest",
+              "alloggio|Lodge a Gorak Shep||Gorak Shep"
+            ]
+          },
+          {
+            "t": "Kala Patthar",
+            "a": [
+              "attivita|Alba sul Kala Patthar e discesa a Pheriche||Kala Patthar",
+              "alloggio|Lodge||Pheriche"
+            ]
+          },
+          {
+            "t": "Discesa",
+            "a": [
+              "attivita|Discesa a Namche||Namche",
+              "alloggio|Lodge||Namche"
+            ]
+          },
+          {
+            "t": "Discesa",
+            "a": [
+              "attivita|Discesa a Lukla||Lukla",
+              "alloggio|Lodge||Lukla"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "volo|Volo per Kathmandu||Kathmandu",
+              "alloggio|Hotel a Kathmandu||Kathmandu"
+            ]
+          },
+          {
+            "t": "Riserva",
+            "a": [
+              "info|Giorno di riserva per maltempo a Lukla||"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Giornata libera||Kathmandu"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2901,21 +3851,295 @@
     "itineraries": [
       {
         "title": "Cina classica",
-        "days": 12,
+        "days": 13,
         "route": "Pechino (4) → Xi'an (2) → Guilin e Yangshuo (3) → Shanghai (3)",
-        "description": "Il triangolo più venduto con il paesaggio del fiume Li, tutto in treno veloce."
+        "description": "Il triangolo più venduto con il paesaggio del fiume Li, tutto in treno veloce.",
+        "plan": [
+          {
+            "t": "Arrivo a Pechino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Pechino||Pechino",
+              "info|Visto o esenzione da verificare||"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Piazza Tienanmen e Città Proibita||Pechino",
+              "attivita|Hutong in risciò||Pechino"
+            ]
+          },
+          {
+            "t": "Grande Muraglia",
+            "a": [
+              "attivita|Grande Muraglia a Mutianyu||Mutianyu",
+              "ristorante|Anatra laccata||Pechino"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Tempio del Cielo e Palazzo d'Estate||Pechino"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "treno|Treno veloce per Xi'an||Xi'an",
+              "alloggio|Hotel a Xi'an||Xi'an",
+              "attivita|Mura in bicicletta e quartiere musulmano||Xi'an"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "attivita|Esercito di terracotta||Xi'an"
+            ]
+          },
+          {
+            "t": "Guilin",
+            "a": [
+              "volo|Volo per Guilin||Guilin",
+              "alloggio|Hotel a Yangshuo||Yangshuo"
+            ]
+          },
+          {
+            "t": "Li River",
+            "a": [
+              "crociera|Crociera sul fiume Li fino a Yangshuo||Li",
+              "attivita|Bici tra le risaie||Yangshuo"
+            ]
+          },
+          {
+            "t": "Longji",
+            "a": [
+              "attivita|Risaie terrazzate di Longji||Longji"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "volo|Volo per Shanghai||Shanghai",
+              "alloggio|Hotel a Shanghai||Shanghai",
+              "attivita|Bund la sera||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Giardino Yu e Museo di Shanghai||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Zhujiajiao, villaggio sull'acqua||Shanghai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cina e Yunnan",
-        "days": 15,
+        "days": 16,
         "route": "Pechino (4) → Xi'an (2) → Kunming (1) → Dali (2) → Lijiang (3) → Shanghai (3)",
-        "description": "Per chi vuole aggiungere le culture delle minoranze e le montagne del sud-ovest."
+        "description": "Per chi vuole aggiungere le culture delle minoranze e le montagne del sud-ovest.",
+        "plan": [
+          {
+            "t": "Arrivo a Pechino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Pechino||Pechino"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Città Proibita e Tienanmen||Pechino"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Grande Muraglia||Mutianyu"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Tempio del Cielo e Palazzo d'Estate||Pechino"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "treno|Treno veloce per Xi'an||Xi'an",
+              "alloggio|Hotel a Xi'an||Xi'an"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "attivita|Esercito di terracotta||Xi'an"
+            ]
+          },
+          {
+            "t": "Kunming",
+            "a": [
+              "volo|Volo per Kunming||Kunming",
+              "alloggio|Hotel a Kunming||Kunming",
+              "attivita|Foresta di Pietra||Kunming"
+            ]
+          },
+          {
+            "t": "Dali",
+            "a": [
+              "treno|Treno per Dali||Dali",
+              "alloggio|Hotel nella città vecchia||Dali",
+              "attivita|Tre Pagode||Dali"
+            ]
+          },
+          {
+            "t": "Dali",
+            "a": [
+              "attivita|Lago Erhai e villaggi bai||Dali"
+            ]
+          },
+          {
+            "t": "Lijiang",
+            "a": [
+              "treno|Treno per Lijiang||Lijiang",
+              "alloggio|Hotel nella città vecchia||Lijiang",
+              "attivita|Città vecchia UNESCO||Lijiang"
+            ]
+          },
+          {
+            "t": "Lijiang",
+            "a": [
+              "attivita|Montagna del Drago di Giada||Lijiang"
+            ]
+          },
+          {
+            "t": "Lijiang",
+            "a": [
+              "attivita|Gola del Salto della Tigre||Lijiang"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "volo|Volo per Shanghai||Shanghai",
+              "alloggio|Hotel a Shanghai||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Bund e Giardino Yu||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Concessione francese||Shanghai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Cina in treno veloce",
-        "days": 10,
+        "days": 11,
         "route": "Pechino (3) → Xi'an (2) → Chengdu (2) → Shanghai (3)",
-        "description": "Tutto in treno ad alta velocità: Grande Muraglia, guerrieri di terracotta, panda e il Bund."
+        "description": "Tutto in treno ad alta velocità: Grande Muraglia, guerrieri di terracotta, panda e il Bund.",
+        "plan": [
+          {
+            "t": "Arrivo a Pechino",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Pechino||Pechino"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Città Proibita e hutong||Pechino"
+            ]
+          },
+          {
+            "t": "Pechino",
+            "a": [
+              "attivita|Grande Muraglia e Tempio del Cielo||Pechino"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "treno|Treno veloce per Xi'an|4 ore e mezza.|Xi'an",
+              "alloggio|Hotel a Xi'an||Xi'an",
+              "attivita|Quartiere musulmano||Xi'an"
+            ]
+          },
+          {
+            "t": "Xi'an",
+            "a": [
+              "attivita|Esercito di terracotta||Xi'an"
+            ]
+          },
+          {
+            "t": "Chengdu",
+            "a": [
+              "treno|Treno veloce per Chengdu||Chengdu",
+              "alloggio|Hotel a Chengdu||Chengdu",
+              "attivita|Hot pot del Sichuan||Chengdu"
+            ]
+          },
+          {
+            "t": "Chengdu",
+            "a": [
+              "attivita|Centro dei panda giganti||Chengdu"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "volo|Volo per Shanghai||Shanghai",
+              "alloggio|Hotel a Shanghai||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Bund e Giardino Yu||Shanghai"
+            ]
+          },
+          {
+            "t": "Shanghai",
+            "a": [
+              "attivita|Suzhou o Hangzhou in treno||Suzhou"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -3032,21 +4256,240 @@
     "itineraries": [
       {
         "title": "Corea classica",
-        "days": 10,
+        "days": 11,
         "route": "Seoul (4) → Gyeongju (2) → Busan (2) → Jeju (2)",
-        "description": "Palazzi, storia antica, mare e isola vulcanica, con il treno veloce KTX e un volo interno."
+        "description": "Palazzi, storia antica, mare e isola vulcanica, con il treno veloce KTX e un volo interno.",
+        "plan": [
+          {
+            "t": "Arrivo a Seoul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Myeongdong||Seoul",
+              "info|K-ETA da verificare||"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|Palazzo Gyeongbokgung in hanbok||Seoul",
+              "attivita|Bukchon Hanok Village||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|N Seoul Tower e Myeongdong||Seoul",
+              "attivita|Gangnam e K-pop||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|DMZ in giornata||DMZ"
+            ]
+          },
+          {
+            "t": "Gyeongju",
+            "a": [
+              "treno|Treno KTX per Gyeongju||Gyeongju",
+              "alloggio|Hanok a Gyeongju||Gyeongju",
+              "attivita|Tombe reali e Cheomseongdae||Gyeongju"
+            ]
+          },
+          {
+            "t": "Gyeongju",
+            "a": [
+              "attivita|Tempio Bulguksa e grotta Seokguram||Gyeongju"
+            ]
+          },
+          {
+            "t": "Busan",
+            "a": [
+              "treno|Treno per Busan||Busan",
+              "alloggio|Hotel a Haeundae||Busan",
+              "attivita|Gamcheon Culture Village||Busan"
+            ]
+          },
+          {
+            "t": "Busan",
+            "a": [
+              "attivita|Mercato del pesce Jagalchi e Haedong Yonggungsa||Busan"
+            ]
+          },
+          {
+            "t": "Jeju",
+            "a": [
+              "volo|Volo per Jeju||Jeju",
+              "alloggio|Hotel a Jeju||Jeju",
+              "attivita|Seongsan Ilchulbong||Jeju"
+            ]
+          },
+          {
+            "t": "Jeju",
+            "a": [
+              "attivita|Grotta Manjanggul e haenyeo||Jeju"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo via Seoul per l'Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Corea e Giappone",
         "days": 15,
         "route": "Seoul (4) → Busan (2) → Fukuoka o Osaka → Kyoto (4) → Tokyo (4)",
-        "description": "Combinato in crescita, con traghetto o volo breve tra Busan e il Giappone."
+        "description": "Combinato in crescita, con traghetto o volo breve tra Busan e il Giappone.",
+        "plan": [
+          {
+            "t": "Arrivo a Seoul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Seoul||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|Gyeongbokgung e Bukchon||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|Myeongdong e Gangnam||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|DMZ||DMZ"
+            ]
+          },
+          {
+            "t": "Busan",
+            "a": [
+              "treno|KTX per Busan||Busan",
+              "alloggio|Hotel a Busan||Busan",
+              "attivita|Gamcheon||Busan"
+            ]
+          },
+          {
+            "t": "Busan",
+            "a": [
+              "attivita|Jagalchi e Haeundae||Busan"
+            ]
+          },
+          {
+            "t": "Verso il Giappone",
+            "a": [
+              "traghetto|Traghetto o volo per Fukuoka e shinkansen per Kyoto||Kyoto",
+              "alloggio|Hotel a Kyoto||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Fushimi Inari e Kiyomizu-dera||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Arashiyama e Kinkaku-ji||Kyoto"
+            ]
+          },
+          {
+            "t": "Kyoto",
+            "a": [
+              "attivita|Nara||Nara"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "treno|Shinkansen per Tokyo||Tokyo",
+              "alloggio|Hotel a Tokyo||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "attivita|Asakusa e Shibuya||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "attivita|Meiji e teamLab||Tokyo"
+            ]
+          },
+          {
+            "t": "Tokyo",
+            "a": [
+              "attivita|Kamakura o Nikko||Tokyo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Seoul e DMZ",
         "days": 6,
         "route": "Seoul (4) → DMZ in giornata → Suwon (1)",
-        "description": "Palazzi, quartieri moderni e la zona demilitarizzata, perfetto per un viaggio breve o in abbinata con il Giappone."
+        "description": "Palazzi, quartieri moderni e la zona demilitarizzata, perfetto per un viaggio breve o in abbinata con il Giappone.",
+        "plan": [
+          {
+            "t": "Arrivo a Seoul",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Seoul||Seoul",
+              "attivita|Myeongdong e street food||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|Gyeongbokgung e Bukchon||Seoul"
+            ]
+          },
+          {
+            "t": "Seoul",
+            "a": [
+              "attivita|N Seoul Tower e Insadong||Seoul"
+            ]
+          },
+          {
+            "t": "DMZ",
+            "a": [
+              "attivita|DMZ, tunnel e osservatorio||DMZ"
+            ]
+          },
+          {
+            "t": "Suwon",
+            "a": [
+              "transfer|Trasferimento a Suwon||Suwon",
+              "alloggio|Hotel a Suwon||Suwon",
+              "attivita|Fortezza di Hwaseong UNESCO||Suwon"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -3166,19 +4609,250 @@
         "title": "Palawan e Bohol",
         "days": 14,
         "route": "Manila (1) → El Nido (4) → Coron (3) → Bohol (3) → Cebu e Moalboal (2)",
-        "description": "Il giro più completo di isole e natura, da dicembre a maggio."
+        "description": "Il giro più completo di isole e natura, da dicembre a maggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Manila",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Makati||Manila",
+              "info|Modulo eTravel prima del volo||"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "volo|Volo per El Nido||El Nido",
+              "alloggio|Resort a El Nido||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "traghetto|Tour A: lagune e Seven Commando Beach||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "traghetto|Tour C: Hidden Beach e Matinloc||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Nacpan Beach||El Nido"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "traghetto|Traghetto per Coron||Coron",
+              "alloggio|Hotel a Coron||Coron"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "traghetto|Kayangan Lake e Twin Lagoon||Coron"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "attivita|Relitti giapponesi o terme di Maquinit||Coron"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "volo|Volo per Bohol via Cebu||Bohol",
+              "alloggio|Resort a Panglao||Bohol"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "attivita|Chocolate Hills e tarsi||Bohol"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "traghetto|Isola di Balicasag con le tartarughe||Bohol"
+            ]
+          },
+          {
+            "t": "Cebu",
+            "a": [
+              "traghetto|Traghetto per Cebu e trasferimento a Moalboal||Moalboal",
+              "alloggio|Hotel a Moalboal||Moalboal"
+            ]
+          },
+          {
+            "t": "Moalboal",
+            "a": [
+              "attivita|Sardine run e cascate di Kawasan||Moalboal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Viaggio di nozze a Palawan",
         "days": 11,
         "route": "Manila (1) → El Nido in resort su isola privata (6) → Coron (3)",
-        "description": "Lagune, resort sull'acqua e barche private."
+        "description": "Lagune, resort sull'acqua e barche private.",
+        "plan": [
+          {
+            "t": "Arrivo a Manila",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Manila||Manila"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "volo|Volo per El Nido e barca per l'isola privata||El Nido",
+              "alloggio|Resort su isola privata||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Relax e spa||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "traghetto|Lagune in kayak||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Snorkeling sul reef||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "ristorante|Cena romantica sulla spiaggia||El Nido"
+            ]
+          },
+          {
+            "t": "El Nido",
+            "a": [
+              "attivita|Giornata libera||El Nido"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "traghetto|Traghetto per Coron||Coron",
+              "alloggio|Resort a Coron||Coron"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "traghetto|Kayangan Lake||Coron"
+            ]
+          },
+          {
+            "t": "Coron",
+            "a": [
+              "attivita|Isola di Malcapuya||Coron"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Siargao e Bohol",
         "days": 10,
         "route": "Manila (1) → Bohol (3) → Siargao (5)",
-        "description": "Colline di cioccolato, tarsi e l'isola del surf e delle lagune."
+        "description": "Colline di cioccolato, tarsi e l'isola del surf e delle lagune.",
+        "plan": [
+          {
+            "t": "Arrivo a Manila",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Manila||Manila"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "volo|Volo per Bohol||Bohol",
+              "alloggio|Resort a Panglao||Bohol"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "attivita|Chocolate Hills e tarsi||Bohol"
+            ]
+          },
+          {
+            "t": "Bohol",
+            "a": [
+              "traghetto|Balicasag||Bohol"
+            ]
+          },
+          {
+            "t": "Siargao",
+            "a": [
+              "volo|Volo per Siargao||Siargao",
+              "alloggio|Resort a General Luna||Siargao"
+            ]
+          },
+          {
+            "t": "Siargao",
+            "a": [
+              "attivita|Lezione di surf a Cloud 9||Siargao"
+            ]
+          },
+          {
+            "t": "Siargao",
+            "a": [
+              "traghetto|Island hopping: Naked, Daku e Guyam||Siargao"
+            ]
+          },
+          {
+            "t": "Siargao",
+            "a": [
+              "attivita|Magpupungko Rock Pools||Siargao"
+            ]
+          },
+          {
+            "t": "Siargao",
+            "a": [
+              "traghetto|Laguna di Sugba||Siargao"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -3283,19 +4957,187 @@
         "title": "Stopover",
         "days": 3,
         "route": "Singapore (2–3 notti)",
-        "description": "Perfetta pausa nei viaggi verso Australia, Bali o Oceania."
+        "description": "Perfetta pausa nei viaggi verso Australia, Bali o Oceania.",
+        "plan": [
+          {
+            "t": "Arrivo a Singapore",
+            "a": [
+              "volo|Volo per Singapore||",
+              "alloggio|Hotel a Marina Bay||Singapore",
+              "info|SG Arrival Card nei 3 giorni prima||Singapore",
+              "attivita|Gardens by the Bay e spettacolo serale||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Chinatown, Little India e hawker centre||Singapore",
+              "attivita|Marina Bay Sands SkyPark||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Jewel Changi prima del volo||Singapore",
+              "volo|Volo di prosecuzione||"
+            ]
+          }
+        ]
       },
       {
         "title": "Singapore e Malesia",
         "days": 10,
         "route": "Singapore (3) → Malacca (1) → Kuala Lumpur (2) → Langkawi o Penang (4)",
-        "description": "Città, storia e mare con trasferimenti brevi."
+        "description": "Città, storia e mare con trasferimenti brevi.",
+        "plan": [
+          {
+            "t": "Arrivo a Singapore",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Singapore||Singapore",
+              "attivita|Gardens by the Bay||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Chinatown e Little India||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Sentosa o Zoo notturno||Singapore"
+            ]
+          },
+          {
+            "t": "Malacca",
+            "a": [
+              "transfer|Trasferimento a Malacca||Malacca",
+              "alloggio|Hotel a Malacca||Malacca",
+              "attivita|Città coloniale UNESCO e Jonker Street||Malacca"
+            ]
+          },
+          {
+            "t": "Kuala Lumpur",
+            "a": [
+              "transfer|Trasferimento a Kuala Lumpur||Kuala Lumpur",
+              "alloggio|Hotel a Kuala Lumpur||Kuala Lumpur",
+              "attivita|Torri Petronas||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Kuala Lumpur",
+            "a": [
+              "attivita|Batu Caves e Chinatown||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "volo|Volo per Langkawi o Penang||Langkawi",
+              "alloggio|Resort a Langkawi||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "attivita|Sky Bridge e funivia||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "traghetto|Mangrovie di Kilim||Langkawi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Singapore e Bali",
         "days": 11,
         "route": "Singapore (3) → Bali (8)",
-        "description": "Combinato classico per viaggi di nozze."
+        "description": "Combinato classico per viaggi di nozze.",
+        "plan": [
+          {
+            "t": "Arrivo a Singapore",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Singapore||Singapore",
+              "attivita|Gardens by the Bay||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Chinatown, Little India e Marina Bay||Singapore"
+            ]
+          },
+          {
+            "t": "Singapore",
+            "a": [
+              "attivita|Sentosa||Singapore"
+            ]
+          },
+          {
+            "t": "Bali",
+            "a": [
+              "volo|Volo per Bali||Bali",
+              "alloggio|Hotel a Ubud||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Risaie e Foresta delle scimmie||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Templi d'acqua||Ubud"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "transfer|Trasferimento al mare||Bali",
+              "alloggio|Resort a Seminyak o Nusa Dua||Bali"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "attivita|Spiaggia||Bali"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "attivita|Uluwatu e Kecak||Bali"
+            ]
+          },
+          {
+            "t": "Bali mare",
+            "a": [
+              "traghetto|Nusa Penida||Bali"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -3431,21 +5273,284 @@
     "itineraries": [
       {
         "title": "Malesia classica",
-        "days": 14,
+        "days": 15,
         "route": "Kuala Lumpur (3) → Malacca (1) → Cameron Highlands (2) → Penang (3) → Langkawi (5)",
-        "description": "Città, colonie, colline del tè e mare della costa ovest, da dicembre ad aprile."
+        "description": "Città, colonie, colline del tè e mare della costa ovest, da dicembre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuala Lumpur",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a KLCC||Kuala Lumpur",
+              "info|MDAC da compilare online||"
+            ]
+          },
+          {
+            "t": "Kuala Lumpur",
+            "a": [
+              "attivita|Torri Petronas e KL Tower||Kuala Lumpur",
+              "attivita|Batu Caves||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Kuala Lumpur",
+            "a": [
+              "attivita|Chinatown, Merdeka Square e Jalan Alor||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Malacca",
+            "a": [
+              "transfer|Trasferimento a Malacca||Malacca",
+              "alloggio|Hotel a Malacca||Malacca",
+              "attivita|Jonker Street e Stadthuys||Malacca"
+            ]
+          },
+          {
+            "t": "Cameron Highlands",
+            "a": [
+              "transfer|Trasferimento alle Cameron Highlands||Cameron Highlands",
+              "alloggio|Hotel coloniale||Cameron Highlands",
+              "attivita|Piantagioni di tè BOH||Cameron Highlands"
+            ]
+          },
+          {
+            "t": "Cameron Highlands",
+            "a": [
+              "attivita|Mossy Forest e fattorie di fragole||Cameron Highlands"
+            ]
+          },
+          {
+            "t": "Penang",
+            "a": [
+              "transfer|Trasferimento a Penang||Penang",
+              "alloggio|Hotel a George Town||Penang",
+              "attivita|Street art di George Town||Penang"
+            ]
+          },
+          {
+            "t": "Penang",
+            "a": [
+              "attivita|Kek Lok Si e Penang Hill||Penang"
+            ]
+          },
+          {
+            "t": "Penang",
+            "a": [
+              "ristorante|Tour del cibo di strada||Penang"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "volo|Volo per Langkawi||Langkawi",
+              "alloggio|Resort a Langkawi||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "attivita|Sky Bridge||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "traghetto|Mangrovie di Kilim||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "attivita|Spiaggia di Tanjung Rhu||Langkawi"
+            ]
+          },
+          {
+            "t": "Langkawi",
+            "a": [
+              "attivita|Giornata libera||Langkawi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estate tra Borneo e isole",
-        "days": 14,
+        "days": 13,
         "route": "Kuala Lumpur (2) → Sepilok (2) → Kinabatangan (2) → Kota Kinabalu (1) → Perhentian o Redang (5)",
-        "description": "Natura e mare nella stagione giusta, da maggio a settembre."
+        "description": "Natura e mare nella stagione giusta, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuala Lumpur",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kuala Lumpur||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Kuala Lumpur",
+            "a": [
+              "attivita|Petronas e Batu Caves||Kuala Lumpur"
+            ]
+          },
+          {
+            "t": "Sepilok",
+            "a": [
+              "volo|Volo per Sandakan||Sepilok",
+              "alloggio|Lodge a Sepilok||Sepilok",
+              "attivita|Centro di riabilitazione degli oranghi||Sepilok"
+            ]
+          },
+          {
+            "t": "Sepilok",
+            "a": [
+              "attivita|Orsi del sole e canopy walk||Sepilok"
+            ]
+          },
+          {
+            "t": "Kinabatangan",
+            "a": [
+              "transfer|Trasferimento sul fiume Kinabatangan||Kinabatangan",
+              "alloggio|Lodge sul fiume||Kinabatangan",
+              "traghetto|Crociera al tramonto: nasiche ed elefanti pigmei||Kinabatangan"
+            ]
+          },
+          {
+            "t": "Kinabatangan",
+            "a": [
+              "traghetto|Crociera all'alba||Kinabatangan"
+            ]
+          },
+          {
+            "t": "Kota Kinabalu",
+            "a": [
+              "volo|Volo per Kota Kinabalu||Kota Kinabalu",
+              "alloggio|Hotel a Kota Kinabalu||Kota Kinabalu",
+              "attivita|Mercato notturno||Kota Kinabalu"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "volo|Volo per Kuala Terengganu e barca per Redang o Perhentian||Perhentian",
+              "alloggio|Resort sull'isola||Perhentian"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "attivita|Snorkeling con le tartarughe||Perhentian"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "attivita|Relax||Perhentian"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "attivita|Immersioni o spiagge||Perhentian"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "attivita|Giornata libera||Perhentian"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Borneo malese",
         "days": 10,
         "route": "Kuching (3) → Bako (1) → Kota Kinabalu (2) → Kinabalu (2) → Sepilok (1)",
-        "description": "Oranghi, nasiche e il monte Kinabalu, con città coloniali e cucina locale."
+        "description": "Oranghi, nasiche e il monte Kinabalu, con città coloniali e cucina locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuching",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kuching||Kuching",
+              "attivita|Lungofiume||Kuching"
+            ]
+          },
+          {
+            "t": "Kuching",
+            "a": [
+              "attivita|Semenggoh e oranghi||Kuching"
+            ]
+          },
+          {
+            "t": "Kuching",
+            "a": [
+              "attivita|Villaggio culturale del Sarawak||Kuching"
+            ]
+          },
+          {
+            "t": "Bako",
+            "a": [
+              "traghetto|Barca per il Parco di Bako||Bako",
+              "alloggio|Lodge nel parco||Bako",
+              "attivita|Nasiche e sentieri||Bako"
+            ]
+          },
+          {
+            "t": "Kota Kinabalu",
+            "a": [
+              "volo|Volo per Kota Kinabalu||Kota Kinabalu",
+              "alloggio|Hotel a Kota Kinabalu||Kota Kinabalu"
+            ]
+          },
+          {
+            "t": "Kota Kinabalu",
+            "a": [
+              "traghetto|Isole del Tunku Abdul Rahman||Kota Kinabalu"
+            ]
+          },
+          {
+            "t": "Kinabalu",
+            "a": [
+              "transfer|Trasferimento al Parco del Kinabalu||Kinabalu",
+              "alloggio|Lodge nel parco||Kinabalu"
+            ]
+          },
+          {
+            "t": "Kinabalu",
+            "a": [
+              "attivita|Sentieri e sorgenti di Poring||Kinabalu"
+            ]
+          },
+          {
+            "t": "Sepilok",
+            "a": [
+              "transfer|Trasferimento a Sepilok||Sepilok",
+              "alloggio|Lodge a Sepilok||Sepilok",
+              "attivita|Oranghi||Sepilok"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -3559,21 +5664,250 @@
     "itineraries": [
       {
         "title": "Uzbekistan classico",
-        "days": 8,
+        "days": 9,
         "route": "Tashkent (1) → Khiva (2) → Bukhara (3) → Samarcanda (2)",
-        "description": "Le tre città della Via della Seta, con volo interno per Urgench e treno veloce."
+        "description": "Le tre città della Via della Seta, con volo interno per Urgench e treno veloce.",
+        "plan": [
+          {
+            "t": "Arrivo a Tashkent",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tashkent||Tashkent",
+              "attivita|Metro e bazar Chorsu||Tashkent"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "volo|Volo per Urgench e trasferimento a Khiva||Khiva",
+              "alloggio|Hotel nell'Itchan Kala||Khiva",
+              "attivita|Itchan Kala al tramonto||Khiva"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "attivita|Madrase e minareti di Khiva||Khiva"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "transfer|Attraverso il deserto del Kyzylkum fino a Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Poi Kalon e Ark||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Lyab-i Hauz e mausoleo dei Samanidi||Bukhara"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "treno|Treno Afrosiyob per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda",
+              "attivita|Registan||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Shah-i-Zinda e Gur-e-Amir||Samarcanda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Treno per Tashkent||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Via della Seta completa",
-        "days": 12,
+        "days": 13,
         "route": "Tashkent (2) → Fergana (2) → Samarcanda (3) → yurta Aydarkul (1) → Bukhara (2) → Khiva (2)",
-        "description": "Per chi vuole artigianato, deserto e un ritmo più lento."
+        "description": "Per chi vuole artigianato, deserto e un ritmo più lento.",
+        "plan": [
+          {
+            "t": "Arrivo a Tashkent",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tashkent||Tashkent"
+            ]
+          },
+          {
+            "t": "Tashkent",
+            "a": [
+              "attivita|Bazar Chorsu e complesso Hazrati Imam||Tashkent"
+            ]
+          },
+          {
+            "t": "Fergana",
+            "a": [
+              "treno|Treno per la valle di Fergana||Fergana",
+              "alloggio|Hotel a Fergana||Fergana",
+              "attivita|Laboratori di seta di Margilan||Margilan"
+            ]
+          },
+          {
+            "t": "Fergana",
+            "a": [
+              "attivita|Ceramiche di Rishtan||Rishtan"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "treno|Treno per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda",
+              "attivita|Registan||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Shah-i-Zinda e Bibi-Khanym||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Fabbrica di carta di seta e Shahrisabz||Samarcanda"
+            ]
+          },
+          {
+            "t": "Aydarkul",
+            "a": [
+              "transfer|Trasferimento al lago Aydarkul||Aydarkul",
+              "alloggio|Campo di yurte||Aydarkul",
+              "attivita|Cammelli e cena con canti||Aydarkul"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "transfer|Trasferimento a Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Poi Kalon, Ark e Lyab-i Hauz||Bukhara"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "transfer|Trasferimento a Khiva||Khiva",
+              "alloggio|Hotel a Khiva||Khiva"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "attivita|Itchan Kala||Khiva"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Urgench per Tashkent e rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Uzbekistan e Kazakistan",
         "days": 11,
         "route": "Almaty (3) → Tashkent (1) → Samarcanda (3) → Bukhara (2) → Khiva (1)",
-        "description": "Montagne kazake e città della Via della Seta, con treno veloce Afrosiyob."
+        "description": "Montagne kazake e città della Via della Seta, con treno veloce Afrosiyob.",
+        "plan": [
+          {
+            "t": "Arrivo ad Almaty",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Almaty||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Kok Tobe e bazar verde||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Canyon di Charyn e laghi Kolsai||Almaty"
+            ]
+          },
+          {
+            "t": "Tashkent",
+            "a": [
+              "volo|Volo per Tashkent||Tashkent",
+              "alloggio|Hotel a Tashkent||Tashkent",
+              "attivita|Metro e Chorsu||Tashkent"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "treno|Treno per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda",
+              "attivita|Registan||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Shah-i-Zinda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Gur-e-Amir e osservatorio di Ulugh Beg||Samarcanda"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "treno|Treno per Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Città vecchia||Bukhara"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "transfer|Trasferimento a Khiva||Khiva",
+              "alloggio|Hotel a Khiva||Khiva",
+              "attivita|Itchan Kala||Khiva"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Urgench e rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

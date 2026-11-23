@@ -777,19 +777,174 @@
         "title": "Mare e talasso",
         "days": 8,
         "route": "Hammamet o Djerba (7)",
-        "description": "La formula più venduta, con voli diretti e traghetti dall'Italia."
+        "description": "La formula più venduta, con voli diretti e traghetti dall'Italia.",
+        "plan": [
+          {
+            "t": "Arrivo in Tunisia",
+            "a": [
+              "volo|Volo per Enfidha o Djerba|Circa 1 ora e mezza.|",
+              "transfer|Transfer in hotel||Hammamet",
+              "alloggio|Resort con centro talassoterapia||Hammamet"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia e piscina||Hammamet"
+            ]
+          },
+          {
+            "t": "Talasso",
+            "a": [
+              "attivita|Percorso di talassoterapia e hammam||Hammamet"
+            ]
+          },
+          {
+            "t": "Medina",
+            "a": [
+              "attivita|Medina di Hammamet e Yasmine Hammamet||Hammamet"
+            ]
+          },
+          {
+            "t": "Escursione",
+            "a": [
+              "attivita|Kairouan e El Jem in giornata||El Jem"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Hammamet"
+            ]
+          },
+          {
+            "t": "Sidi Bou Said",
+            "a": [
+              "attivita|Sidi Bou Said e Cartagine||Sidi Bou Said"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Gran tour del sud",
         "days": 8,
         "route": "Tunisi (1) → El Jem → Matmata (1) → Douz (1) → Tozeur (2) → Kairouan (1) → Hammamet (1)",
-        "description": "Archeologia, oasi e deserto in auto con autista, da ottobre ad aprile."
+        "description": "Archeologia, oasi e deserto in auto con autista, da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Tunisi",
+            "a": [
+              "volo|Volo per Tunisi||",
+              "alloggio|Hotel a Tunisi||Tunisi",
+              "attivita|Museo del Bardo||Tunisi"
+            ]
+          },
+          {
+            "t": "El Jem e Matmata",
+            "a": [
+              "attivita|Anfiteatro di El Jem||El Jem",
+              "transfer|Trasferimento a Matmata||Matmata",
+              "alloggio|Hotel troglodita||Matmata",
+              "attivita|Case berbere scavate nella roccia||Matmata"
+            ]
+          },
+          {
+            "t": "Douz",
+            "a": [
+              "transfer|Trasferimento a Douz, porta del Sahara||Douz",
+              "alloggio|Hotel o campo nel deserto||Douz",
+              "attivita|Cammelli tra le dune al tramonto||Douz"
+            ]
+          },
+          {
+            "t": "Chott el-Jerid e Tozeur",
+            "a": [
+              "transfer|Attraverso il lago salato Chott el-Jerid||Tozeur",
+              "alloggio|Hotel a Tozeur||Tozeur",
+              "attivita|Medina in mattoni e palmeto||Tozeur"
+            ]
+          },
+          {
+            "t": "Oasi di montagna",
+            "a": [
+              "attivita|Oasi di Chebika, Tamerza e Mides in 4x4|Set di Star Wars e del Paziente inglese.|Tozeur"
+            ]
+          },
+          {
+            "t": "Kairouan",
+            "a": [
+              "transfer|Trasferimento a Kairouan||Kairouan",
+              "alloggio|Hotel a Kairouan||Kairouan",
+              "attivita|Grande Moschea e bacini aghlabidi||Kairouan"
+            ]
+          },
+          {
+            "t": "Hammamet",
+            "a": [
+              "transfer|Trasferimento a Hammamet||Hammamet",
+              "alloggio|Hotel sul mare||Hammamet"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tunisi e Cartagine",
         "days": 5,
         "route": "Tunisi (2) → Cartagine e Sidi Bou Said (1) → Bizerta (1)",
-        "description": "La medina, il Museo del Bardo e i villaggi bianco-azzurri sul mare."
+        "description": "La medina, il Museo del Bardo e i villaggi bianco-azzurri sul mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Tunisi",
+            "a": [
+              "volo|Volo per Tunisi||",
+              "alloggio|Hotel a Tunisi o Gammarth||Tunisi",
+              "attivita|Medina di Tunisi e souk||Tunisi"
+            ]
+          },
+          {
+            "t": "Tunisi",
+            "a": [
+              "attivita|Museo del Bardo e Zitouna||Tunisi"
+            ]
+          },
+          {
+            "t": "Cartagine e Sidi Bou Said",
+            "a": [
+              "attivita|Terme di Antonino e porti punici||Cartagine",
+              "attivita|Sidi Bou Said bianco e blu||Sidi Bou Said",
+              "alloggio|Hotel a Sidi Bou Said||Sidi Bou Said"
+            ]
+          },
+          {
+            "t": "Bizerta",
+            "a": [
+              "transfer|Trasferimento a Bizerta||Bizerta",
+              "alloggio|Hotel a Bizerta||Bizerta",
+              "attivita|Porto vecchio e Kasbah||Bizerta"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -938,19 +1093,202 @@
         "title": "Giordania classica",
         "days": 8,
         "route": "Amman (2) → Strada dei Re → Petra (2) → Wadi Rum (1) → Mar Morto (2)",
-        "description": "Il tour più venduto in auto con autista, primavera e autunno."
+        "description": "Il tour più venduto in auto con autista, primavera e autunno.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amman",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "info|Jordan Pass: visto e ingressi inclusi||",
+              "alloggio|Hotel ad Amman||Amman"
+            ]
+          },
+          {
+            "t": "Amman e Jerash",
+            "a": [
+              "attivita|Cittadella e teatro romano||Amman",
+              "attivita|Jerash, la Pompei d'Oriente||Jerash"
+            ]
+          },
+          {
+            "t": "Strada dei Re",
+            "a": [
+              "attivita|Madaba e la mappa a mosaico||Madaba",
+              "attivita|Monte Nebo||Nebo",
+              "attivita|Castello di Kerak||Kerak",
+              "alloggio|Hotel a Petra||Petra"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "attivita|Siq, Tesoro, Strada delle Facciate e Monastero|Una giornata intera, scarpe comode.|Petra",
+              "attivita|Petra by Night (lun, mer, gio)||Petra"
+            ]
+          },
+          {
+            "t": "Wadi Rum",
+            "a": [
+              "attivita|Piccola Petra di Siq al-Barid||Beida",
+              "transfer|Trasferimento nel Wadi Rum||Wadi Rum",
+              "attivita|Jeep tra le dune rosse e tramonto||Wadi Rum",
+              "alloggio|Campo tendato con cena beduina||Wadi Rum"
+            ]
+          },
+          {
+            "t": "Mar Morto",
+            "a": [
+              "transfer|Trasferimento al Mar Morto||Mar Morto",
+              "alloggio|Resort sul Mar Morto||Mar Morto",
+              "attivita|Galleggiamento e fanghi||Mar Morto"
+            ]
+          },
+          {
+            "t": "Mar Morto",
+            "a": [
+              "attivita|Betania, luogo del Battesimo||Betania",
+              "attivita|Spa||Mar Morto"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Giordania e mare",
         "days": 10,
         "route": "Amman (2) → Petra (2) → Wadi Rum (1) → Aqaba (4)",
-        "description": "Chiusura al Mar Rosso con snorkeling e relax."
+        "description": "Chiusura al Mar Rosso con snorkeling e relax.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amman",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Amman||Amman"
+            ]
+          },
+          {
+            "t": "Amman e Jerash",
+            "a": [
+              "attivita|Cittadella e Jerash||Amman"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "transfer|Strada dei Re con Madaba e Nebo||Petra",
+              "alloggio|Hotel a Petra||Petra"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "attivita|Siq, Tesoro e Monastero||Petra"
+            ]
+          },
+          {
+            "t": "Wadi Rum",
+            "a": [
+              "attivita|Jeep nel Wadi Rum||Wadi Rum",
+              "alloggio|Campo tendato||Wadi Rum"
+            ]
+          },
+          {
+            "t": "Aqaba",
+            "a": [
+              "transfer|Trasferimento ad Aqaba||Aqaba",
+              "alloggio|Resort sul Mar Rosso||Aqaba"
+            ]
+          },
+          {
+            "t": "Aqaba",
+            "a": [
+              "attivita|Snorkeling al Japanese Garden||Aqaba"
+            ]
+          },
+          {
+            "t": "Aqaba",
+            "a": [
+              "traghetto|Barca dal fondo trasparente e relitti||Aqaba"
+            ]
+          },
+          {
+            "t": "Aqaba",
+            "a": [
+              "attivita|Giornata libera||Aqaba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Trekking a Petra",
         "days": 7,
         "route": "Amman (1) → Dana (2) → trekking verso Petra (2) → Wadi Rum (1)",
-        "description": "Il Jordan Trail nel tratto più bello: dalla riserva di Dana si entra a Petra dalla porta posteriore."
+        "description": "Il Jordan Trail nel tratto più bello: dalla riserva di Dana si entra a Petra dalla porta posteriore.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amman",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Amman||Amman"
+            ]
+          },
+          {
+            "t": "Dana",
+            "a": [
+              "transfer|Trasferimento alla riserva di Dana||Dana",
+              "alloggio|Feynan Ecolodge o Dana Guest House||Dana",
+              "attivita|Villaggio ottomano di Dana||Dana"
+            ]
+          },
+          {
+            "t": "Dana",
+            "a": [
+              "attivita|Wadi Dana fino a Feynan||Dana"
+            ]
+          },
+          {
+            "t": "Trekking verso Petra",
+            "a": [
+              "attivita|Tappa del Jordan Trail verso Little Petra||Jordan Trail",
+              "alloggio|Campo nel deserto||Jordan Trail"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "attivita|Ingresso a Petra dal Monastero||Petra",
+              "alloggio|Hotel a Petra||Petra"
+            ]
+          },
+          {
+            "t": "Wadi Rum",
+            "a": [
+              "transfer|Trasferimento nel Wadi Rum||Wadi Rum",
+              "alloggio|Campo||Wadi Rum",
+              "attivita|Jebel Burdah||Wadi Rum"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer ad Aqaba o Amman||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1055,19 +1393,163 @@
         "title": "Dubai e Abu Dhabi",
         "days": 6,
         "route": "Dubai (4) → Abu Dhabi (1–2)",
-        "description": "Città, deserto e cultura, ideale anche per famiglie da novembre a marzo."
+        "description": "Città, deserto e cultura, ideale anche per famiglie da novembre a marzo.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Downtown o Dubai Marina||Dubai",
+              "attivita|Dubai Mall e fontane danzanti||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai moderna",
+            "a": [
+              "attivita|Burj Khalifa con biglietto a orario||Dubai",
+              "attivita|Dubai Marina e The Palm||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai storica",
+            "a": [
+              "traghetto|Dubai Creek in abra||Dubai",
+              "attivita|Souk dell'oro e delle spezie e quartiere Al Fahidi||Dubai",
+              "attivita|Museo del Futuro||Dubai"
+            ]
+          },
+          {
+            "t": "Deserto",
+            "a": [
+              "attivita|Mattinata in spiaggia a Jumeirah||Dubai",
+              "attivita|Safari nel deserto con cena e spettacolo||Dubai"
+            ]
+          },
+          {
+            "t": "Abu Dhabi",
+            "a": [
+              "transfer|Trasferimento ad Abu Dhabi||Abu Dhabi",
+              "alloggio|Hotel ad Abu Dhabi||Abu Dhabi",
+              "attivita|Grande Moschea Sheikh Zayed||Abu Dhabi",
+              "attivita|Louvre Abu Dhabi||Abu Dhabi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Ferrari World o Qasr Al Watan||Abu Dhabi",
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Stopover",
         "days": 3,
         "route": "Dubai (2–3) nel viaggio verso Maldive, Oceano Indiano o Asia",
-        "description": "Formula molto richiesta con i voli delle compagnie del Golfo."
+        "description": "Formula molto richiesta con i voli delle compagnie del Golfo.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo per Dubai||",
+              "alloggio|Hotel a Downtown||Dubai",
+              "attivita|Dubai Mall e fontane||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Burj Khalifa||Dubai",
+              "attivita|Safari nel deserto||Dubai"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Souk e Creek||Dubai",
+              "volo|Volo di prosecuzione||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dubai con le Maldive",
         "days": 11,
         "route": "Dubai (3) → Maldive (7)",
-        "description": "La combinazione più venduta per i viaggi di nozze: città e deserto all'andata, poi una settimana in resort con un solo cambio aereo."
+        "description": "La combinazione più venduta per i viaggi di nozze: città e deserto all'andata, poi una settimana in resort con un solo cambio aereo.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dubai||Dubai",
+              "attivita|Fontane del Dubai Mall||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Burj Khalifa e Marina||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Safari nel deserto||Dubai"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "volo|Volo per Malé e idrovolante||Maldive",
+              "alloggio|Villa sull'acqua||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Snorkeling||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Spa di coppia||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Escursione con le mante||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Giornata libera||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "ristorante|Cena sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Ultima giornata||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Dubai||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1207,19 +1689,220 @@
         "title": "Oman classico",
         "days": 9,
         "route": "Muscat (2) → Nizwa e Jebel Akhdar (2) → Wahiba Sands (1) → Sur e Ras al-Jinz (1) → Muscat (2)",
-        "description": "Forti, montagne, deserto e mare in 4x4 con autista o in self-drive."
+        "description": "Forti, montagne, deserto e mare in 4x4 con autista o in self-drive.",
+        "plan": [
+          {
+            "t": "Arrivo a Muscat",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Muscat||Muscat",
+              "attivita|Corniche di Muttrah||Muscat"
+            ]
+          },
+          {
+            "t": "Muscat",
+            "a": [
+              "attivita|Grande Moschea del Sultano Qaboos||Muscat",
+              "attivita|Royal Opera House e souk di Muttrah||Muscat"
+            ]
+          },
+          {
+            "t": "Nizwa",
+            "a": [
+              "transfer|Trasferimento a Nizwa||Nizwa",
+              "alloggio|Hotel a Nizwa||Nizwa",
+              "attivita|Forte e souk di Nizwa||Nizwa"
+            ]
+          },
+          {
+            "t": "Jebel Akhdar",
+            "a": [
+              "attivita|Villaggi terrazzati del Jebel Akhdar||Jebel Akhdar",
+              "attivita|Forte di Bahla e castello di Jabrin||Bahla"
+            ]
+          },
+          {
+            "t": "Wahiba Sands",
+            "a": [
+              "transfer|Wadi Bani Khalid e Wahiba Sands||Wahiba",
+              "alloggio|Campo nel deserto||Wahiba",
+              "attivita|Dune al tramonto||Wahiba"
+            ]
+          },
+          {
+            "t": "Ras al-Jinz",
+            "a": [
+              "transfer|Trasferimento a Sur||Sur",
+              "attivita|Cantiere dei dhow di Sur||Sur",
+              "alloggio|Riserva delle tartarughe||Ras al-Jinz",
+              "attivita|Deposizione delle tartarughe di notte||Ras al-Jinz"
+            ]
+          },
+          {
+            "t": "Verso Muscat",
+            "a": [
+              "attivita|Wadi Shab e Bimmah Sinkhole||Wadi Shab",
+              "alloggio|Hotel a Muscat||Muscat"
+            ]
+          },
+          {
+            "t": "Muscat",
+            "a": [
+              "traghetto|Delfini in barca||Muscat"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dubai e Oman",
         "days": 10,
         "route": "Dubai (3) → Musandam (1) → Muscat (2) → Nizwa (2) → Wahiba (1)",
-        "description": "Combinato tra il moderno e l'Arabia tradizionale."
+        "description": "Combinato tra il moderno e l'Arabia tradizionale.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dubai||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Burj Khalifa e Creek||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Safari nel deserto||Dubai"
+            ]
+          },
+          {
+            "t": "Musandam",
+            "a": [
+              "transfer|Trasferimento a Khasab||Musandam",
+              "traghetto|Crociera in dhow nei fiordi con i delfini||Musandam",
+              "alloggio|Hotel a Khasab||Musandam"
+            ]
+          },
+          {
+            "t": "Muscat",
+            "a": [
+              "volo|Volo per Muscat||Muscat",
+              "alloggio|Hotel a Muscat||Muscat",
+              "attivita|Souk di Muttrah||Muscat"
+            ]
+          },
+          {
+            "t": "Muscat",
+            "a": [
+              "attivita|Grande Moschea e Opera||Muscat"
+            ]
+          },
+          {
+            "t": "Nizwa",
+            "a": [
+              "transfer|Trasferimento a Nizwa||Nizwa",
+              "alloggio|Hotel a Nizwa||Nizwa",
+              "attivita|Forte||Nizwa"
+            ]
+          },
+          {
+            "t": "Nizwa",
+            "a": [
+              "attivita|Jebel Akhdar||Jebel Akhdar"
+            ]
+          },
+          {
+            "t": "Wahiba",
+            "a": [
+              "transfer|Wahiba Sands||Wahiba",
+              "alloggio|Campo nel deserto||Wahiba"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Muscat||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Oman mare e deserto",
         "days": 9,
         "route": "Muscat (2) → Wahiba Sands (1) → Ras al-Jinz (1) → Salalah (4)",
-        "description": "Tour del nord con estensione a Salalah, verde e piovosa in estate durante il khareef."
+        "description": "Tour del nord con estensione a Salalah, verde e piovosa in estate durante il khareef.",
+        "plan": [
+          {
+            "t": "Arrivo a Muscat",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Muscat||Muscat"
+            ]
+          },
+          {
+            "t": "Muscat",
+            "a": [
+              "attivita|Grande Moschea e Muttrah||Muscat"
+            ]
+          },
+          {
+            "t": "Wahiba",
+            "a": [
+              "transfer|Wadi Bani Khalid e Wahiba||Wahiba",
+              "alloggio|Campo nel deserto||Wahiba"
+            ]
+          },
+          {
+            "t": "Ras al-Jinz",
+            "a": [
+              "transfer|Sur e riserva delle tartarughe||Ras al-Jinz",
+              "alloggio|Hotel della riserva||Ras al-Jinz"
+            ]
+          },
+          {
+            "t": "Salalah",
+            "a": [
+              "volo|Volo per Salalah||Salalah",
+              "alloggio|Resort sul mare||Salalah"
+            ]
+          },
+          {
+            "t": "Salalah",
+            "a": [
+              "attivita|Wadi Darbat e Mughsail (verde nel khareef estivo)||Salalah"
+            ]
+          },
+          {
+            "t": "Salalah",
+            "a": [
+              "attivita|Sito dell'incenso di Sumhuram||Salalah"
+            ]
+          },
+          {
+            "t": "Salalah",
+            "a": [
+              "attivita|Spiaggia||Salalah"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2058,19 +2741,265 @@
         "title": "Capo, Garden Route e Kruger",
         "days": 14,
         "route": "Città del Capo (4) → Winelands (1) → Hermanus (1) → Garden Route (3) → volo → Kruger o Sabi Sand (3) → Johannesburg (1)",
-        "description": "Il classico completo, ottimo da ottobre ad aprile (safari migliori nella stagione secca)."
+        "description": "Il classico completo, ottimo da ottobre ad aprile (safari migliori nella stagione secca).",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Capo",
+            "a": [
+              "volo|Volo per Città del Capo con uno scalo||",
+              "transfer|Ritiro auto||Città del Capo",
+              "alloggio|Hotel al V&A Waterfront||Città del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "attivita|Table Mountain in funivia||Città del Capo",
+              "attivita|Bo-Kaap e V&A Waterfront||Città del Capo"
+            ]
+          },
+          {
+            "t": "Penisola del Capo",
+            "a": [
+              "attivita|Chapman's Peak, Capo di Buona Speranza e pinguini di Boulders||Penisola del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "traghetto|Robben Island||Città del Capo",
+              "attivita|Giardini di Kirstenbosch||Città del Capo"
+            ]
+          },
+          {
+            "t": "Winelands",
+            "a": [
+              "transfer|Trasferimento a Franschhoek||Franschhoek",
+              "alloggio|Wine estate||Franschhoek",
+              "attivita|Degustazioni a Stellenbosch e Franschhoek||Winelands"
+            ]
+          },
+          {
+            "t": "Hermanus",
+            "a": [
+              "transfer|Trasferimento a Hermanus||Hermanus",
+              "alloggio|Hotel a Hermanus||Hermanus",
+              "attivita|Balene dalla scogliera (giugno-novembre)||Hermanus"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "transfer|Trasferimento a Knysna||Knysna",
+              "alloggio|Lodge a Knysna||Knysna",
+              "attivita|Knysna Heads||Knysna"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "attivita|Tsitsikamma e Storms River||Tsitsikamma"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "attivita|Plettenberg Bay e Robberg||Plettenberg Bay"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "volo|Volo da Port Elizabeth per Nelspruit||Kruger",
+              "alloggio|Lodge nella Sabi Sand||Sabi Sand",
+              "attivita|Fototour al tramonto||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Fototour all'alba e al tramonto: Big Five||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Kruger",
+            "a": [
+              "attivita|Safari a piedi con ranger||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Johannesburg",
+            "a": [
+              "volo|Volo per Johannesburg||Johannesburg",
+              "alloggio|Hotel a Johannesburg||Johannesburg",
+              "attivita|Museo dell'Apartheid||Johannesburg"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Sudafrica e Cascate Vittoria",
-        "days": 11,
+        "days": 10,
         "route": "Città del Capo (4) → Sabi Sand (3) → Cascate Vittoria (2)",
-        "description": "Città, safari di lusso e una meraviglia naturale."
+        "description": "Città, safari di lusso e una meraviglia naturale.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Capo",
+            "a": [
+              "volo|Volo per Città del Capo||",
+              "alloggio|Hotel al Waterfront||Città del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "attivita|Table Mountain e Bo-Kaap||Città del Capo"
+            ]
+          },
+          {
+            "t": "Penisola del Capo",
+            "a": [
+              "attivita|Capo di Buona Speranza e pinguini||Penisola del Capo"
+            ]
+          },
+          {
+            "t": "Winelands",
+            "a": [
+              "attivita|Stellenbosch e Franschhoek||Winelands"
+            ]
+          },
+          {
+            "t": "Sabi Sand",
+            "a": [
+              "volo|Volo per il Kruger||Sabi Sand",
+              "alloggio|Lodge nella Sabi Sand||Sabi Sand",
+              "attivita|Fototour||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Sabi Sand",
+            "a": [
+              "attivita|Fototour all'alba e al tramonto||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Sabi Sand",
+            "a": [
+              "attivita|Safari a piedi||Sabi Sand"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "volo|Volo per Victoria Falls||Cascate Vittoria",
+              "alloggio|Hotel alle cascate||Cascate Vittoria",
+              "attivita|Crociera al tramonto sullo Zambesi||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "attivita|Visita delle cascate e volo in elicottero||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Johannesburg||"
+            ]
+          }
+        ]
       },
       {
         "title": "Famiglie senza malaria",
         "days": 12,
         "route": "Città del Capo (4) → Garden Route (4) → Eastern Cape, Shamwari o Addo (3)",
-        "description": "Tutto in auto, con safari in riserva senza malaria."
+        "description": "Tutto in auto, con safari in riserva senza malaria.",
+        "plan": [
+          {
+            "t": "Arrivo a Città del Capo",
+            "a": [
+              "volo|Volo per Città del Capo||",
+              "alloggio|Hotel o appartamento al Waterfront||Città del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "attivita|Table Mountain e Two Oceans Aquarium||Città del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "attivita|Pinguini di Boulders e Capo di Buona Speranza||Penisola del Capo"
+            ]
+          },
+          {
+            "t": "Città del Capo",
+            "a": [
+              "attivita|Kirstenbosch e Camps Bay||Città del Capo"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "transfer|Trasferimento lungo la costa||Garden Route",
+              "alloggio|Lodge a Plettenberg Bay||Plettenberg Bay"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "attivita|Monkeyland e Birds of Eden||Plettenberg Bay"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "attivita|Tsitsikamma e ponte sospeso||Tsitsikamma"
+            ]
+          },
+          {
+            "t": "Garden Route",
+            "a": [
+              "traghetto|Delfini e foche a Plettenberg Bay||Plettenberg Bay"
+            ]
+          },
+          {
+            "t": "Eastern Cape",
+            "a": [
+              "transfer|Trasferimento nell'Eastern Cape||Eastern Cape",
+              "alloggio|Lodge a Shamwari o Addo (zona senza malaria)||Eastern Cape"
+            ]
+          },
+          {
+            "t": "Safari",
+            "a": [
+              "attivita|Fototour con i Big Five||Eastern Cape"
+            ]
+          },
+          {
+            "t": "Safari",
+            "a": [
+              "attivita|Programma ranger junior per bambini||Eastern Cape"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Port Elizabeth||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2199,19 +3128,288 @@
         "title": "Namibia classica in self-drive",
         "days": 14,
         "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Damaraland (2) → Etosha (3) → Okonjima (1) → Windhoek (1)",
-        "description": "Il giro più completo, da maggio a ottobre, con 4x4 e lodge prenotati."
+        "description": "Il giro più completo, da maggio a ottobre, con 4x4 e lodge prenotati.",
+        "plan": [
+          {
+            "t": "Arrivo a Windhoek",
+            "a": [
+              "volo|Volo per Windhoek||",
+              "transfer|Ritiro del 4x4||Windhoek",
+              "alloggio|Guesthouse a Windhoek||Windhoek"
+            ]
+          },
+          {
+            "t": "Sossusvlei",
+            "a": [
+              "transfer|Trasferimento nel Namib||Sossusvlei",
+              "alloggio|Lodge a Sesriem||Sossusvlei",
+              "attivita|Canyon di Sesriem al tramonto||Sesriem"
+            ]
+          },
+          {
+            "t": "Sossusvlei",
+            "a": [
+              "attivita|Alba sulla Duna 45, Deadvlei e Big Daddy||Sossusvlei"
+            ]
+          },
+          {
+            "t": "Swakopmund",
+            "a": [
+              "transfer|Attraverso il Kuiseb e Walvis Bay||Swakopmund",
+              "alloggio|Hotel a Swakopmund||Swakopmund"
+            ]
+          },
+          {
+            "t": "Swakopmund",
+            "a": [
+              "traghetto|Catamarano a Walvis Bay con delfini e otarie||Walvis Bay",
+              "attivita|Sandwich Harbour in 4x4||Swakopmund"
+            ]
+          },
+          {
+            "t": "Damaraland",
+            "a": [
+              "transfer|Trasferimento in Damaraland con Cape Cross||Damaraland",
+              "alloggio|Lodge in Damaraland||Damaraland",
+              "attivita|Twyfelfontein UNESCO||Twyfelfontein"
+            ]
+          },
+          {
+            "t": "Damaraland",
+            "a": [
+              "attivita|Elefanti del deserto||Damaraland"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "transfer|Trasferimento a Etosha||Etosha",
+              "alloggio|Lodge vicino al parco||Etosha",
+              "attivita|Pozze d'acqua al tramonto||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Safari nel parco||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Lato est di Etosha e Namutoni||Etosha"
+            ]
+          },
+          {
+            "t": "Okonjima",
+            "a": [
+              "transfer|Trasferimento a Okonjima||Okonjima",
+              "alloggio|Lodge a Okonjima||Okonjima",
+              "attivita|Ghepardi e leopardi della fondazione AfriCat||Okonjima"
+            ]
+          },
+          {
+            "t": "Windhoek",
+            "a": [
+              "transfer|Rientro a Windhoek||Windhoek",
+              "alloggio|Guesthouse||Windhoek"
+            ]
+          },
+          {
+            "t": "Windhoek",
+            "a": [
+              "attivita|Joe's Beerhouse e Christuskirche||Windhoek"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Riconsegna auto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Namibia e Botswana",
-        "days": 16,
+        "days": 15,
         "route": "Windhoek (1) → Sossusvlei (2) → Swakopmund (2) → Etosha (3) → Caprivi (2) → Chobe (2) → Cascate Vittoria (2)",
-        "description": "Deserto, safari e fiumi fino alle Cascate Vittoria."
+        "description": "Deserto, safari e fiumi fino alle Cascate Vittoria.",
+        "plan": [
+          {
+            "t": "Arrivo a Windhoek",
+            "a": [
+              "volo|Volo per Windhoek||",
+              "alloggio|Guesthouse||Windhoek"
+            ]
+          },
+          {
+            "t": "Sossusvlei",
+            "a": [
+              "transfer|Trasferimento nel Namib||Sossusvlei",
+              "alloggio|Lodge||Sossusvlei"
+            ]
+          },
+          {
+            "t": "Sossusvlei",
+            "a": [
+              "attivita|Duna 45 e Deadvlei||Sossusvlei"
+            ]
+          },
+          {
+            "t": "Swakopmund",
+            "a": [
+              "transfer|Trasferimento a Swakopmund||Swakopmund",
+              "alloggio|Hotel||Swakopmund"
+            ]
+          },
+          {
+            "t": "Swakopmund",
+            "a": [
+              "traghetto|Walvis Bay in catamarano||Walvis Bay"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "transfer|Trasferimento a Etosha||Etosha",
+              "alloggio|Lodge||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Safari||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Safari||Etosha"
+            ]
+          },
+          {
+            "t": "Caprivi",
+            "a": [
+              "transfer|Trasferimento nella Striscia di Caprivi||Caprivi",
+              "alloggio|Lodge sul fiume||Caprivi"
+            ]
+          },
+          {
+            "t": "Caprivi",
+            "a": [
+              "traghetto|Barca sul fiume Okavango||Caprivi"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "transfer|Frontiera e Kasane||Chobe",
+              "alloggio|Lodge a Kasane||Chobe",
+              "traghetto|Crociera sul Chobe con gli elefanti||Chobe"
+            ]
+          },
+          {
+            "t": "Chobe",
+            "a": [
+              "attivita|Fototour nel Chobe||Chobe"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "transfer|Trasferimento a Victoria Falls||Cascate Vittoria",
+              "alloggio|Hotel||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Cascate Vittoria",
+            "a": [
+              "attivita|Cascate ed elicottero||Cascate Vittoria"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Johannesburg||"
+            ]
+          }
+        ]
       },
       {
         "title": "Namibia del nord",
         "days": 10,
         "route": "Windhoek (1) → Waterberg (1) → Etosha (3) → Kaokoland e Himba (3) → Windhoek (1)",
-        "description": "Per chi ha già visto Sossusvlei: Etosha, popolo Himba e paesaggi del nord-ovest."
+        "description": "Per chi ha già visto Sossusvlei: Etosha, popolo Himba e paesaggi del nord-ovest.",
+        "plan": [
+          {
+            "t": "Arrivo a Windhoek",
+            "a": [
+              "volo|Volo per Windhoek||",
+              "alloggio|Guesthouse||Windhoek"
+            ]
+          },
+          {
+            "t": "Waterberg",
+            "a": [
+              "transfer|Trasferimento al Waterberg||Waterberg",
+              "alloggio|Lodge||Waterberg",
+              "attivita|Escursione sull'altopiano||Waterberg"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "transfer|Trasferimento a Etosha||Etosha",
+              "alloggio|Lodge||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Safari||Etosha"
+            ]
+          },
+          {
+            "t": "Etosha",
+            "a": [
+              "attivita|Pozze notturne illuminate||Etosha"
+            ]
+          },
+          {
+            "t": "Kaokoland",
+            "a": [
+              "transfer|Trasferimento a Opuwo||Kaokoland",
+              "alloggio|Lodge a Opuwo||Kaokoland"
+            ]
+          },
+          {
+            "t": "Kaokoland",
+            "a": [
+              "attivita|Villaggio himba con guida locale||Kaokoland"
+            ]
+          },
+          {
+            "t": "Kaokoland",
+            "a": [
+              "attivita|Cascate di Epupa||Epupa"
+            ]
+          },
+          {
+            "t": "Windhoek",
+            "a": [
+              "transfer|Rientro a Windhoek||Windhoek",
+              "alloggio|Guesthouse||Windhoek"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2341,19 +3539,264 @@
         "title": "Nosy Be mare",
         "days": 10,
         "route": "Nosy Be (9), con escursioni alle isole",
-        "description": "La formula più venduta in Italia, con voli diretti stagionali."
+        "description": "La formula più venduta in Italia, con voli diretti stagionali.",
+        "plan": [
+          {
+            "t": "Arrivo a Nosy Be",
+            "a": [
+              "volo|Volo per Nosy Be|Voli diretti stagionali dall'Italia.|",
+              "alloggio|Resort sul mare||Nosy Be"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Andilana||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Komba",
+            "a": [
+              "traghetto|Nosy Komba e i lemuri||Nosy Komba"
+            ]
+          },
+          {
+            "t": "Nosy Tanikely",
+            "a": [
+              "traghetto|Snorkeling nella riserva di Tanikely||Nosy Tanikely"
+            ]
+          },
+          {
+            "t": "Nosy Iranja",
+            "a": [
+              "traghetto|Lingua di sabbia di Nosy Iranja e tartarughe||Nosy Iranja"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Nosy Be"
+            ]
+          },
+          {
+            "t": "Mont Passot",
+            "a": [
+              "attivita|Tramonto dal Mont Passot e ylang-ylang||Nosy Be"
+            ]
+          },
+          {
+            "t": "Squali balena",
+            "a": [
+              "traghetto|Squali balena (ottobre-dicembre) o delfini||Nosy Be"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Nosy Be"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Il sud lungo la RN7 e mare",
-        "days": 15,
+        "days": 14,
         "route": "Antananarivo (1) → Andasibe (2) → Antsirabe (1) → Ranomafana (2) → Isalo (2) → Ifaty (4) → Antananarivo (1)",
-        "description": "Il grande tour con lemuri, foreste, canyon e mare, da aprile a novembre."
+        "description": "Il grande tour con lemuri, foreste, canyon e mare, da aprile a novembre.",
+        "plan": [
+          {
+            "t": "Arrivo ad Antananarivo",
+            "a": [
+              "volo|Volo per Antananarivo||",
+              "alloggio|Hotel ad Antananarivo||Antananarivo"
+            ]
+          },
+          {
+            "t": "Andasibe",
+            "a": [
+              "transfer|Trasferimento ad Andasibe||Andasibe",
+              "alloggio|Lodge nella foresta||Andasibe",
+              "attivita|Escursione notturna||Andasibe"
+            ]
+          },
+          {
+            "t": "Andasibe",
+            "a": [
+              "attivita|Il canto dell'indri||Andasibe"
+            ]
+          },
+          {
+            "t": "Antsirabe",
+            "a": [
+              "transfer|Trasferimento ad Antsirabe||Antsirabe",
+              "alloggio|Hotel coloniale||Antsirabe",
+              "attivita|Pousse-pousse e laboratori artigiani||Antsirabe"
+            ]
+          },
+          {
+            "t": "Ranomafana",
+            "a": [
+              "transfer|Trasferimento a Ranomafana||Ranomafana",
+              "alloggio|Lodge||Ranomafana"
+            ]
+          },
+          {
+            "t": "Ranomafana",
+            "a": [
+              "attivita|Lemuri del bambù dorato||Ranomafana"
+            ]
+          },
+          {
+            "t": "Isalo",
+            "a": [
+              "transfer|Attraverso l'altopiano e Ambalavao||Isalo",
+              "alloggio|Lodge a Isalo||Isalo"
+            ]
+          },
+          {
+            "t": "Isalo",
+            "a": [
+              "attivita|Canyon, piscine naturali e finestra di Isalo al tramonto||Isalo"
+            ]
+          },
+          {
+            "t": "Ifaty",
+            "a": [
+              "transfer|Trasferimento a Tulear e Ifaty||Ifaty",
+              "alloggio|Resort sul mare||Ifaty"
+            ]
+          },
+          {
+            "t": "Ifaty",
+            "a": [
+              "attivita|Foresta di baobab spinosi||Ifaty"
+            ]
+          },
+          {
+            "t": "Ifaty",
+            "a": [
+              "traghetto|Snorkeling sulla barriera||Ifaty"
+            ]
+          },
+          {
+            "t": "Ifaty",
+            "a": [
+              "attivita|Giornata libera||Ifaty"
+            ]
+          },
+          {
+            "t": "Antananarivo",
+            "a": [
+              "volo|Volo per Antananarivo||Antananarivo",
+              "alloggio|Hotel||Antananarivo"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Baobab, Tsingy e Nosy Be",
-        "days": 14,
+        "days": 13,
         "route": "Antananarivo (1) → Morondava (2) → Tsingy di Bemaraha (2) → Morondava (1) → Nosy Be (7)",
-        "description": "L'ovest selvaggio e il mare del nord, da maggio a novembre."
+        "description": "L'ovest selvaggio e il mare del nord, da maggio a novembre.",
+        "plan": [
+          {
+            "t": "Arrivo ad Antananarivo",
+            "a": [
+              "volo|Volo per Antananarivo||",
+              "alloggio|Hotel||Antananarivo"
+            ]
+          },
+          {
+            "t": "Morondava",
+            "a": [
+              "volo|Volo per Morondava||Morondava",
+              "alloggio|Hotel sul mare||Morondava",
+              "attivita|Viale dei Baobab al tramonto||Morondava"
+            ]
+          },
+          {
+            "t": "Verso i Tsingy",
+            "a": [
+              "transfer|Pista verso Bekopaka e traghetti fluviali||Bekopaka",
+              "alloggio|Lodge vicino ai Tsingy||Bekopaka"
+            ]
+          },
+          {
+            "t": "Tsingy",
+            "a": [
+              "attivita|Grandi Tsingy di Bemaraha UNESCO||Bemaraha"
+            ]
+          },
+          {
+            "t": "Morondava",
+            "a": [
+              "transfer|Rientro a Morondava con la foresta di Kirindy||Morondava",
+              "alloggio|Hotel||Morondava"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "volo|Volo per Nosy Be via Antananarivo||Nosy Be",
+              "alloggio|Resort sul mare||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "traghetto|Nosy Komba e Tanikely||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "traghetto|Nosy Iranja||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Relax||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Mont Passot||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Giornata libera||Nosy Be"
+            ]
+          },
+          {
+            "t": "Nosy Be",
+            "a": [
+              "attivita|Ultima giornata||Nosy Be"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2470,19 +3913,247 @@
         "title": "Viaggio di nozze",
         "days": 11,
         "route": "Resort su costa est o ovest (9 notti) con escursioni",
-        "description": "La formula più richiesta: resort con mezza pensione o all inclusive e qualche escursione."
+        "description": "La formula più richiesta: resort con mezza pensione o all inclusive e qualche escursione.",
+        "plan": [
+          {
+            "t": "Arrivo a Mauritius",
+            "a": [
+              "volo|Volo per Mauritius||",
+              "transfer|Transfer nel resort||Mauritius",
+              "alloggio|Resort sulla costa est o ovest|Est per lagune riparate, ovest per i tramonti.|Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Laguna e relax||Mauritius"
+            ]
+          },
+          {
+            "t": "Île aux Cerfs",
+            "a": [
+              "traghetto|Île aux Cerfs in catamarano||Île aux Cerfs"
+            ]
+          },
+          {
+            "t": "Sud selvaggio",
+            "a": [
+              "attivita|Chamarel, Terra dei Sette Colori e Gorges della Black River||Chamarel"
+            ]
+          },
+          {
+            "t": "Delfini",
+            "a": [
+              "traghetto|Nuoto con i delfini a Tamarin all'alba||Tamarin"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spa di coppia||Mauritius"
+            ]
+          },
+          {
+            "t": "Nord",
+            "a": [
+              "attivita|Port Louis, Pamplemousses e Cap Malheureux||Nord"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Mauritius"
+            ]
+          },
+          {
+            "t": "Le Morne",
+            "a": [
+              "attivita|Le Morne Brabant UNESCO e kitesurf||Le Morne"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Cena romantica sulla spiaggia||Mauritius"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mauritius e Rodrigues",
         "days": 13,
         "route": "Mauritius (8) → Rodrigues (4)",
-        "description": "Per chi cerca anche un'isola autentica e tranquilla."
+        "description": "Per chi cerca anche un'isola autentica e tranquilla.",
+        "plan": [
+          {
+            "t": "Arrivo a Mauritius",
+            "a": [
+              "volo|Volo per Mauritius||",
+              "alloggio|Resort a Mauritius||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax||Mauritius"
+            ]
+          },
+          {
+            "t": "Île aux Cerfs",
+            "a": [
+              "traghetto|Île aux Cerfs||Mauritius"
+            ]
+          },
+          {
+            "t": "Sud",
+            "a": [
+              "attivita|Chamarel e Black River||Mauritius"
+            ]
+          },
+          {
+            "t": "Delfini",
+            "a": [
+              "traghetto|Delfini a Tamarin||Mauritius"
+            ]
+          },
+          {
+            "t": "Nord",
+            "a": [
+              "attivita|Port Louis e Pamplemousses||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Mauritius"
+            ]
+          },
+          {
+            "t": "Le Morne",
+            "a": [
+              "attivita|Le Morne||Mauritius"
+            ]
+          },
+          {
+            "t": "Rodrigues",
+            "a": [
+              "volo|Volo per Rodrigues||Rodrigues",
+              "alloggio|Hotel o guesthouse||Rodrigues"
+            ]
+          },
+          {
+            "t": "Rodrigues",
+            "a": [
+              "traghetto|Île aux Cocos||Rodrigues"
+            ]
+          },
+          {
+            "t": "Rodrigues",
+            "a": [
+              "attivita|Trekking costiero e grotte di Caverne Patate||Rodrigues"
+            ]
+          },
+          {
+            "t": "Rodrigues",
+            "a": [
+              "attivita|Riserva delle tartarughe François Leguat||Rodrigues"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo via Mauritius per l'Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dubai e Mauritius",
         "days": 12,
         "route": "Dubai (3) → Mauritius (8)",
-        "description": "Combinato classico con lo scalo trasformato in vacanza."
+        "description": "Combinato classico con lo scalo trasformato in vacanza.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubai",
+            "a": [
+              "volo|Volo per Dubai||",
+              "alloggio|Hotel a Dubai||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Burj Khalifa e Marina||Dubai"
+            ]
+          },
+          {
+            "t": "Dubai",
+            "a": [
+              "attivita|Safari nel deserto||Dubai"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "volo|Volo per Mauritius||Mauritius",
+              "alloggio|Resort||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "traghetto|Île aux Cerfs||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "attivita|Chamarel||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spa||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "traghetto|Delfini||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Mauritius"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Dubai||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2602,19 +4273,252 @@
         "title": "Tre isole",
         "days": 12,
         "route": "Mahé (3) → Praslin (4) → La Digue (3)",
-        "description": "La combinazione classica per conoscere le isole principali."
+        "description": "La combinazione classica per conoscere le isole principali.",
+        "plan": [
+          {
+            "t": "Arrivo a Mahé",
+            "a": [
+              "volo|Volo per Mahé||",
+              "alloggio|Hotel a Mahé||Mahé",
+              "attivita|Beau Vallon||Mahé"
+            ]
+          },
+          {
+            "t": "Mahé",
+            "a": [
+              "attivita|Victoria e mercato||Mahé",
+              "attivita|Anse Intendance||Mahé"
+            ]
+          },
+          {
+            "t": "Mahé",
+            "a": [
+              "attivita|Morne Seychellois e piantagione di tè||Mahé"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "traghetto|Catamarano per Praslin||Praslin",
+              "alloggio|Hotel a Praslin||Praslin",
+              "attivita|Anse Lazio||Praslin"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Vallée de Mai e coco de mer||Praslin"
+            ]
+          },
+          {
+            "t": "Isole",
+            "a": [
+              "traghetto|Curieuse con le tartarughe giganti e St. Pierre||Curieuse"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Anse Georgette||Praslin"
+            ]
+          },
+          {
+            "t": "La Digue",
+            "a": [
+              "traghetto|Traghetto per La Digue||La Digue",
+              "alloggio|Guesthouse a La Digue||La Digue",
+              "attivita|Bici fino a Anse Source d'Argent||La Digue"
+            ]
+          },
+          {
+            "t": "La Digue",
+            "a": [
+              "attivita|Grand Anse e Petite Anse||La Digue"
+            ]
+          },
+          {
+            "t": "La Digue",
+            "a": [
+              "traghetto|Snorkeling a Coco Island||La Digue"
+            ]
+          },
+          {
+            "t": "Mahé",
+            "a": [
+              "traghetto|Rientro a Mahé||Mahé"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lusso su isola privata",
         "days": 10,
         "route": "Mahé (1) → isola privata (8)",
-        "description": "Per viaggi di nozze e clienti alto-spendenti."
+        "description": "Per viaggi di nozze e clienti alto-spendenti.",
+        "plan": [
+          {
+            "t": "Arrivo a Mahé",
+            "a": [
+              "volo|Volo per Mahé||",
+              "alloggio|Hotel a Mahé||Mahé"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "volo|Elicottero o volo per l'isola privata||Seychelles",
+              "alloggio|Villa su isola privata||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "attivita|Spiaggia privata||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "attivita|Snorkeling e tartarughe||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "attivita|Spa||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "traghetto|Pesca o immersioni||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "attivita|Giornata libera||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "ristorante|Cena romantica||Seychelles"
+            ]
+          },
+          {
+            "t": "Isola privata",
+            "a": [
+              "attivita|Ultima giornata||Seychelles"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Mahé||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mauritius e Seychelles",
         "days": 14,
         "route": "Mauritius (6) → Seychelles (7)",
-        "description": "Due isole dell'Oceano Indiano in un unico viaggio."
+        "description": "Due isole dell'Oceano Indiano in un unico viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Mauritius",
+            "a": [
+              "volo|Volo per Mauritius||",
+              "alloggio|Resort a Mauritius||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Relax||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "traghetto|Île aux Cerfs||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "attivita|Chamarel e Black River||Mauritius"
+            ]
+          },
+          {
+            "t": "Mauritius",
+            "a": [
+              "traghetto|Delfini||Mauritius"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Mauritius"
+            ]
+          },
+          {
+            "t": "Seychelles",
+            "a": [
+              "volo|Volo per Mahé e catamarano per Praslin||Praslin",
+              "alloggio|Hotel a Praslin||Praslin"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Anse Lazio||Praslin"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Vallée de Mai||Praslin"
+            ]
+          },
+          {
+            "t": "La Digue",
+            "a": [
+              "traghetto|La Digue in giornata e Anse Source d'Argent||La Digue"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "traghetto|Curieuse||Praslin"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Giornata libera||Praslin"
+            ]
+          },
+          {
+            "t": "Praslin",
+            "a": [
+              "attivita|Ultima giornata||Praslin"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Mahé||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2735,19 +4639,221 @@
         "title": "Settimana mare",
         "days": 8,
         "route": "Sal o Boa Vista (7)",
-        "description": "La formula più venduta con volo diretto e villaggio o resort."
+        "description": "La formula più venduta con volo diretto e villaggio o resort.",
+        "plan": [
+          {
+            "t": "Arrivo a Sal",
+            "a": [
+              "volo|Volo diretto per Sal o Boa Vista|Circa 5 ore e mezza.|",
+              "alloggio|Resort all inclusive||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Santa Maria||Sal"
+            ]
+          },
+          {
+            "t": "Saline di Pedra de Lume",
+            "a": [
+              "attivita|Galleggiare nelle saline nel cratere||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Kitesurf o lezione di surf||Sal"
+            ]
+          },
+          {
+            "t": "Shark Bay",
+            "a": [
+              "attivita|Squali limone in acqua bassa e Buracona||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Ultima giornata||Sal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mare e trekking",
         "days": 12,
         "route": "Sal (5) → São Vicente (2) → Santo Antão (4)",
-        "description": "Per chi vuole unire spiaggia, musica e montagne."
+        "description": "Per chi vuole unire spiaggia, musica e montagne.",
+        "plan": [
+          {
+            "t": "Arrivo a Sal",
+            "a": [
+              "volo|Volo per Sal||",
+              "alloggio|Resort a Sal||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia||Sal"
+            ]
+          },
+          {
+            "t": "Sal",
+            "a": [
+              "attivita|Saline e Buracona||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Kitesurf||Sal"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Giornata libera||Sal"
+            ]
+          },
+          {
+            "t": "São Vicente",
+            "a": [
+              "volo|Volo per São Vicente||São Vicente",
+              "alloggio|Hotel a Mindelo||São Vicente",
+              "attivita|Mindelo e musica dal vivo||Mindelo"
+            ]
+          },
+          {
+            "t": "São Vicente",
+            "a": [
+              "attivita|Monte Verde e baia das Gatas||São Vicente"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "traghetto|Traghetto per Santo Antão||Santo Antão",
+              "alloggio|Guesthouse a Paul||Santo Antão"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "attivita|Trekking della Valle del Paul||Santo Antão"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "attivita|Sentiero costiero Ponta do Sol–Fontainhas||Santo Antão"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "attivita|Cratere di Cova||Santo Antão"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Traghetto per Mindelo e voli di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Capo Verde a isole",
         "days": 11,
         "route": "Santiago (2) → Fogo (2) → São Vicente (2) → Santo Antão (3) → Sal (1)",
-        "description": "Isole diverse tra loro: il vulcano del Fogo, la musica di Mindelo e i sentieri di Santo Antão."
+        "description": "Isole diverse tra loro: il vulcano del Fogo, la musica di Mindelo e i sentieri di Santo Antão.",
+        "plan": [
+          {
+            "t": "Arrivo a Santiago",
+            "a": [
+              "volo|Volo per Praia||",
+              "alloggio|Hotel a Praia||Santiago"
+            ]
+          },
+          {
+            "t": "Santiago",
+            "a": [
+              "attivita|Cidade Velha UNESCO e Tarrafal||Santiago"
+            ]
+          },
+          {
+            "t": "Fogo",
+            "a": [
+              "volo|Volo per Fogo||Fogo",
+              "alloggio|Guesthouse a Chã das Caldeiras||Fogo"
+            ]
+          },
+          {
+            "t": "Fogo",
+            "a": [
+              "attivita|Salita al vulcano Pico do Fogo e vino del cratere||Fogo"
+            ]
+          },
+          {
+            "t": "São Vicente",
+            "a": [
+              "volo|Volo per São Vicente||São Vicente",
+              "alloggio|Hotel a Mindelo||Mindelo"
+            ]
+          },
+          {
+            "t": "São Vicente",
+            "a": [
+              "attivita|Mindelo e Monte Verde||São Vicente"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "traghetto|Traghetto per Santo Antão||Santo Antão",
+              "alloggio|Guesthouse||Santo Antão"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "attivita|Valle del Paul||Santo Antão"
+            ]
+          },
+          {
+            "t": "Santo Antão",
+            "a": [
+              "attivita|Ponta do Sol e Fontainhas||Santo Antão"
+            ]
+          },
+          {
+            "t": "Sal",
+            "a": [
+              "volo|Volo per Sal||Sal",
+              "alloggio|Hotel a Sal||Sal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -2881,19 +4987,211 @@
         "title": "Terra Santa",
         "days": 8,
         "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Mar Morto (1)",
-        "description": "Il classico per pellegrinaggi e viaggi culturali."
+        "description": "Il classico per pellegrinaggi e viaggi culturali.",
+        "plan": [
+          {
+            "t": "Arrivo a Tel Aviv",
+            "a": [
+              "volo|Volo per Tel Aviv||",
+              "info|Verificare le indicazioni della Farnesina||",
+              "alloggio|Hotel a Tel Aviv||Tel Aviv",
+              "attivita|Giaffa al tramonto||Tel Aviv"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "transfer|Cesarea e Haifa con i giardini Bahá'í||Haifa",
+              "alloggio|Hotel a Tiberiade||Tiberiade"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "attivita|Nazareth, Cafarnao, Tabgha e Monte delle Beatitudini||Galilea"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "transfer|Trasferimento a Gerusalemme lungo il Giordano||Gerusalemme",
+              "alloggio|Hotel a Gerusalemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Città vecchia, Santo Sepolcro e Muro del Pianto||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Yad Vashem e Betlemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Mar Morto",
+            "a": [
+              "attivita|Masada e Ein Gedi||Masada",
+              "alloggio|Hotel sul Mar Morto||Mar Morto",
+              "attivita|Bagno nel Mar Morto||Mar Morto"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Tel Aviv||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Israele e Giordania",
         "days": 11,
         "route": "Tel Aviv (1) → Galilea (2) → Gerusalemme (3) → Eilat (1) → Petra (2) → Amman (1)",
-        "description": "Combinato attraverso il confine sud, da verificare in base alla situazione."
+        "description": "Combinato attraverso il confine sud, da verificare in base alla situazione.",
+        "plan": [
+          {
+            "t": "Arrivo a Tel Aviv",
+            "a": [
+              "volo|Volo per Tel Aviv||",
+              "alloggio|Hotel a Tel Aviv||Tel Aviv"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "transfer|Cesarea e Haifa||Haifa",
+              "alloggio|Hotel a Tiberiade||Tiberiade"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "attivita|Nazareth e Lago di Tiberiade||Galilea"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "transfer|Trasferimento a Gerusalemme||Gerusalemme",
+              "alloggio|Hotel||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Città vecchia||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Betlemme e Yad Vashem||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Eilat",
+            "a": [
+              "transfer|Masada, Mar Morto e Negev fino a Eilat||Eilat",
+              "alloggio|Hotel a Eilat||Eilat"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "transfer|Frontiera di Aqaba e trasferimento a Petra||Petra",
+              "alloggio|Hotel a Petra||Petra"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "attivita|Siq, Tesoro e Monastero||Petra"
+            ]
+          },
+          {
+            "t": "Amman",
+            "a": [
+              "transfer|Trasferimento ad Amman con Madaba e Nebo||Amman",
+              "alloggio|Hotel ad Amman||Amman"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Amman||"
+            ]
+          }
+        ]
       },
       {
         "title": "Israele e Mar Rosso",
         "days": 9,
         "route": "Tel Aviv (2) → Gerusalemme (3) → Masada e Mar Morto (1) → Eilat (2)",
-        "description": "Città, storia e mare con barriera corallina, sempre verificando le indicazioni della Farnesina."
+        "description": "Città, storia e mare con barriera corallina, sempre verificando le indicazioni della Farnesina.",
+        "plan": [
+          {
+            "t": "Arrivo a Tel Aviv",
+            "a": [
+              "volo|Volo per Tel Aviv||",
+              "alloggio|Hotel a Tel Aviv||Tel Aviv"
+            ]
+          },
+          {
+            "t": "Tel Aviv",
+            "a": [
+              "attivita|Giaffa, Neve Tzedek e spiaggia||Tel Aviv"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "transfer|Trasferimento a Gerusalemme||Gerusalemme",
+              "alloggio|Hotel||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Città vecchia||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Yad Vashem e Betlemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Mar Morto",
+            "a": [
+              "attivita|Masada e Ein Gedi||Masada",
+              "alloggio|Hotel sul Mar Morto||Mar Morto"
+            ]
+          },
+          {
+            "t": "Eilat",
+            "a": [
+              "transfer|Negev e Makhtesh Ramon fino a Eilat||Eilat",
+              "alloggio|Hotel a Eilat||Eilat"
+            ]
+          },
+          {
+            "t": "Eilat",
+            "a": [
+              "attivita|Riserva corallina e delfini||Eilat"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Eilat o Tel Aviv||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

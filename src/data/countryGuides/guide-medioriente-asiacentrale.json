@@ -102,19 +102,262 @@
         "title": "Georgia classica",
         "days": 9,
         "route": "Tbilisi (3) → Mtskheta → Kazbegi (2) → Kakheti (2) → Tbilisi (1)",
-        "description": "Il tour più venduto, da maggio a ottobre."
+        "description": "Il tour più venduto, da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Tbilisi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel nella città vecchia||Tbilisi",
+              "attivita|Tbilisi di sera dal ponte della Pace||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Fortezza di Narikala in funivia e bagni sulfurei||Tbilisi",
+              "attivita|Cattedrale di Sameba e Rustaveli||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Mercato di Dezerter e cena con khachapuri e khinkali||Tbilisi"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "attivita|Mtskheta UNESCO e Jvari||Mtskheta",
+              "transfer|Strada Militare Georgiana con Ananuri||Kazbegi",
+              "alloggio|Hotel a Stepantsminda||Kazbegi"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "attivita|Chiesa della Trinità di Gergeti sotto il Kazbek||Kazbegi"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "transfer|Trasferimento in Kakheti||Kakheti",
+              "alloggio|Chateau tra le vigne||Kakheti",
+              "attivita|Vino in anfora qvevri||Kakheti"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "attivita|Sighnaghi e monastero di Bodbe||Sighnaghi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "transfer|Rientro a Tbilisi con David Gareja (facoltativo)||Tbilisi",
+              "alloggio|Hotel a Tbilisi||Tbilisi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Georgia completa",
         "days": 14,
         "route": "Tbilisi (3) → Kazbegi (2) → Kakheti (2) → Borjomi e Vardzia (2) → Kutaisi (1) → Svaneti (3)",
-        "description": "Con le montagne dello Svaneti, da giugno a settembre."
+        "description": "Con le montagne dello Svaneti, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Tbilisi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tbilisi||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Narikala e bagni sulfurei||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Mtskheta||Mtskheta"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "transfer|Strada Militare Georgiana||Kazbegi",
+              "alloggio|Hotel a Kazbegi||Kazbegi"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "attivita|Gergeti e valle di Truso||Kazbegi"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "transfer|Trasferimento in Kakheti||Kakheti",
+              "alloggio|Chateau||Kakheti",
+              "attivita|Cantine qvevri||Kakheti"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "attivita|Sighnaghi||Sighnaghi"
+            ]
+          },
+          {
+            "t": "Borjomi",
+            "a": [
+              "transfer|Trasferimento a Borjomi||Borjomi",
+              "alloggio|Hotel a Borjomi||Borjomi",
+              "attivita|Parco delle acque minerali||Borjomi"
+            ]
+          },
+          {
+            "t": "Vardzia",
+            "a": [
+              "attivita|Città rupestre di Vardzia||Vardzia"
+            ]
+          },
+          {
+            "t": "Kutaisi",
+            "a": [
+              "transfer|Trasferimento a Kutaisi||Kutaisi",
+              "alloggio|Hotel a Kutaisi||Kutaisi",
+              "attivita|Gelati e Bagrati||Kutaisi"
+            ]
+          },
+          {
+            "t": "Svaneti",
+            "a": [
+              "transfer|Trasferimento a Mestia||Mestia",
+              "alloggio|Hotel a Mestia||Mestia"
+            ]
+          },
+          {
+            "t": "Svaneti",
+            "a": [
+              "attivita|Torri svane e museo||Mestia"
+            ]
+          },
+          {
+            "t": "Svaneti",
+            "a": [
+              "attivita|Villaggio di Ushguli UNESCO||Ushguli"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro via Kutaisi||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Georgia e Armenia",
         "days": 12,
         "route": "Tbilisi (3) → Kazbegi (1) → Kakheti (2) → Erevan (3) → Sevan e Dilijan (2)",
-        "description": "Il Caucaso cristiano in un unico viaggio."
+        "description": "Il Caucaso cristiano in un unico viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Tbilisi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tbilisi||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Città vecchia e Narikala||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Mtskheta||Mtskheta"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "transfer|Strada Militare Georgiana||Kazbegi",
+              "alloggio|Hotel a Kazbegi||Kazbegi",
+              "attivita|Gergeti||Kazbegi"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "transfer|Trasferimento in Kakheti||Kakheti",
+              "alloggio|Chateau||Kakheti"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "attivita|Sighnaghi e cantine||Kakheti"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "transfer|Frontiera di Sadakhlo e monasteri di Haghpat e Sanahin||Armenia",
+              "alloggio|Hotel a Erevan||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Cascade e Matenadaran||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Garni, Geghard e Khor Virap||Erevan"
+            ]
+          },
+          {
+            "t": "Sevan",
+            "a": [
+              "transfer|Trasferimento al lago Sevan||Sevan",
+              "alloggio|Hotel a Dilijan||Dilijan",
+              "attivita|Sevanavank||Sevan"
+            ]
+          },
+          {
+            "t": "Dilijan",
+            "a": [
+              "attivita|Haghartsin e Goshavank||Dilijan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Erevan||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -210,19 +453,213 @@
         "title": "Armenia classica",
         "days": 7,
         "route": "Erevan (3) → Garni e Geghard → Sevan e Dilijan (1) → Noravank → Tatev (1) → Erevan (1)",
-        "description": "Monasteri e montagne con autista."
+        "description": "Monasteri e montagne con autista.",
+        "plan": [
+          {
+            "t": "Arrivo a Erevan",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Erevan||Erevan",
+              "attivita|Piazza della Repubblica e fontane cantanti||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Cascade, Matenadaran e Memoriale del Genocidio||Erevan"
+            ]
+          },
+          {
+            "t": "Garni e Geghard",
+            "a": [
+              "attivita|Tempio di Garni e monastero di Geghard||Garni",
+              "attivita|Lavash e cognac armeno||Erevan"
+            ]
+          },
+          {
+            "t": "Sevan e Dilijan",
+            "a": [
+              "attivita|Sevanavank sul lago||Sevan",
+              "alloggio|Hotel a Dilijan||Dilijan",
+              "attivita|Haghartsin||Dilijan"
+            ]
+          },
+          {
+            "t": "Noravank e Tatev",
+            "a": [
+              "attivita|Noravank tra le rocce rosse||Noravank",
+              "attivita|Funivia di Tatev||Tatev",
+              "alloggio|Hotel a Goris||Goris"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "transfer|Rientro a Erevan con Khor Virap e l'Ararat||Erevan",
+              "alloggio|Hotel a Erevan||Erevan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Armenia e Georgia",
-        "days": 12,
+        "days": 11,
         "route": "Tbilisi (3) → Kakheti (1) → Dilijan (1) → Sevan → Erevan (3) → Garni e Geghard → Khor Virap (1)",
-        "description": "Il Caucaso cristiano in un unico viaggio, con passaggio di frontiera via terra: monasteri, vino e cucina."
+        "description": "Il Caucaso cristiano in un unico viaggio, con passaggio di frontiera via terra: monasteri, vino e cucina.",
+        "plan": [
+          {
+            "t": "Arrivo a Tbilisi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tbilisi||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Città vecchia e Narikala||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Mtskheta||Mtskheta"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "transfer|Trasferimento in Kakheti||Kakheti",
+              "alloggio|Chateau||Kakheti",
+              "attivita|Cantine e Sighnaghi||Kakheti"
+            ]
+          },
+          {
+            "t": "Dilijan",
+            "a": [
+              "transfer|Frontiera e trasferimento a Dilijan||Dilijan",
+              "alloggio|Hotel a Dilijan||Dilijan"
+            ]
+          },
+          {
+            "t": "Sevan ed Erevan",
+            "a": [
+              "attivita|Sevanavank||Sevan",
+              "alloggio|Hotel a Erevan||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Cascade e Matenadaran||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Echmiadzin e Zvartnots||Echmiadzin"
+            ]
+          },
+          {
+            "t": "Garni e Geghard",
+            "a": [
+              "attivita|Garni e Geghard||Garni"
+            ]
+          },
+          {
+            "t": "Khor Virap",
+            "a": [
+              "attivita|Khor Virap sotto l'Ararat e cantina di Areni||Khor Virap",
+              "alloggio|Hotel nella zona||Areni"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Erevan||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Armenia del sud",
         "days": 9,
         "route": "Erevan (2) → Khor Virap → Areni (1) → Jermuk (1) → Tatev e Goris (2) → Selim → Sevan (1) → Erevan (1)",
-        "description": "Per chi vuole più natura: canyon, la funivia di Tatev, cantine di Areni e caravanserragli sulla Via della Seta."
+        "description": "Per chi vuole più natura: canyon, la funivia di Tatev, cantine di Areni e caravanserragli sulla Via della Seta.",
+        "plan": [
+          {
+            "t": "Arrivo a Erevan",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Erevan||Erevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "attivita|Cascade e Matenadaran||Erevan"
+            ]
+          },
+          {
+            "t": "Areni",
+            "a": [
+              "attivita|Khor Virap||Khor Virap",
+              "attivita|Grotta e cantine di Areni||Areni",
+              "alloggio|Guesthouse ad Areni||Areni"
+            ]
+          },
+          {
+            "t": "Jermuk",
+            "a": [
+              "transfer|Trasferimento a Jermuk||Jermuk",
+              "alloggio|Hotel termale||Jermuk",
+              "attivita|Cascata e terme||Jermuk"
+            ]
+          },
+          {
+            "t": "Tatev",
+            "a": [
+              "transfer|Trasferimento a Tatev||Tatev",
+              "attivita|Funivia Wings of Tatev||Tatev",
+              "alloggio|Hotel a Goris||Goris"
+            ]
+          },
+          {
+            "t": "Goris",
+            "a": [
+              "attivita|Città rupestre di Khndzoresk||Goris"
+            ]
+          },
+          {
+            "t": "Sevan",
+            "a": [
+              "transfer|Caravanserraglio di Selim e lago Sevan||Sevan",
+              "alloggio|Hotel sul lago||Sevan"
+            ]
+          },
+          {
+            "t": "Erevan",
+            "a": [
+              "transfer|Rientro a Erevan||Erevan",
+              "alloggio|Hotel||Erevan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -297,19 +734,186 @@
         "title": "Azerbaigian",
         "days": 6,
         "route": "Baku (3) → Gobustan → Shamakhi → Sheki (2)",
-        "description": "Città e Caucaso, primavera e autunno."
+        "description": "Città e Caucaso, primavera e autunno.",
+        "plan": [
+          {
+            "t": "Arrivo a Baku",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Baku||Baku",
+              "attivita|Flame Towers e lungomare||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Città vecchia, Palazzo degli Shirvanshah e Torre della Vergine||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Centro Heydar Aliyev e Yanar Dag||Baku"
+            ]
+          },
+          {
+            "t": "Gobustan e Sheki",
+            "a": [
+              "attivita|Petroglifi di Gobustan e vulcani di fango||Gobustan",
+              "attivita|Moschea di Shamakhi||Shamakhi",
+              "alloggio|Caravanserraglio a Sheki||Sheki"
+            ]
+          },
+          {
+            "t": "Sheki",
+            "a": [
+              "attivita|Palazzo del Khan e chiesa albana di Kish||Sheki"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Baku||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Baku e Gabala",
         "days": 6,
         "route": "Baku (3) → Gabala (2) → Baku",
-        "description": "Capitale con la città vecchia UNESCO e le Flame Towers, poi le montagne del Caucaso a Gabala con funivie e resort."
+        "description": "Capitale con la città vecchia UNESCO e le Flame Towers, poi le montagne del Caucaso a Gabala con funivie e resort.",
+        "plan": [
+          {
+            "t": "Arrivo a Baku",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Baku||Baku",
+              "attivita|Lungomare||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Città vecchia||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Heydar Aliyev e Yanar Dag||Baku"
+            ]
+          },
+          {
+            "t": "Gabala",
+            "a": [
+              "transfer|Trasferimento a Gabala||Gabala",
+              "alloggio|Resort a Gabala||Gabala",
+              "attivita|Funivia di Tufandag||Gabala"
+            ]
+          },
+          {
+            "t": "Gabala",
+            "a": [
+              "attivita|Lago Nohur e cascate||Gabala"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Baku||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Georgia e Azerbaigian",
         "days": 12,
         "route": "Baku (3) → Sheki (2) → frontiera di Lagodekhi → Kakheti (2) → Tbilisi (3) → Kazbegi (1)",
-        "description": "Due paesi molto diversi con passaggio via terra: palazzo del Khan a Sheki, vino in Kakheti e il Caucaso georgiano."
+        "description": "Due paesi molto diversi con passaggio via terra: palazzo del Khan a Sheki, vino in Kakheti e il Caucaso georgiano.",
+        "plan": [
+          {
+            "t": "Arrivo a Baku",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Baku||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Città vecchia||Baku"
+            ]
+          },
+          {
+            "t": "Baku",
+            "a": [
+              "attivita|Gobustan||Gobustan"
+            ]
+          },
+          {
+            "t": "Sheki",
+            "a": [
+              "transfer|Trasferimento a Sheki||Sheki",
+              "alloggio|Caravanserraglio||Sheki"
+            ]
+          },
+          {
+            "t": "Sheki",
+            "a": [
+              "attivita|Palazzo del Khan||Sheki"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "transfer|Frontiera di Lagodekhi e Kakheti||Kakheti",
+              "alloggio|Chateau||Kakheti"
+            ]
+          },
+          {
+            "t": "Kakheti",
+            "a": [
+              "attivita|Sighnaghi e cantine||Kakheti"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "transfer|Trasferimento a Tbilisi||Tbilisi",
+              "alloggio|Hotel a Tbilisi||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Città vecchia e Narikala||Tbilisi"
+            ]
+          },
+          {
+            "t": "Tbilisi",
+            "a": [
+              "attivita|Mtskheta||Mtskheta"
+            ]
+          },
+          {
+            "t": "Kazbegi",
+            "a": [
+              "transfer|Strada Militare Georgiana||Kazbegi",
+              "alloggio|Hotel a Kazbegi||Kazbegi",
+              "attivita|Gergeti||Kazbegi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Tbilisi||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -368,19 +972,145 @@
         "title": "Stopover a Doha",
         "days": 3,
         "route": "Doha (2–3)",
-        "description": "Combinato con voli Qatar Airways verso Asia e Oceano Indiano."
+        "description": "Combinato con voli Qatar Airways verso Asia e Oceano Indiano.",
+        "plan": [
+          {
+            "t": "Arrivo a Doha",
+            "a": [
+              "volo|Volo con Qatar Airways||",
+              "alloggio|Hotel a Doha||Doha",
+              "attivita|Souq Waqif la sera||Doha"
+            ]
+          },
+          {
+            "t": "Doha",
+            "a": [
+              "attivita|Museo di Arte Islamica e Corniche||Doha",
+              "attivita|Museo Nazionale del Qatar||Doha"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|The Pearl o safari nel deserto||Doha",
+              "volo|Volo di prosecuzione||"
+            ]
+          }
+        ]
       },
       {
         "title": "Doha e Maldive",
         "days": 10,
         "route": "Doha (2) → Maldive (7)",
-        "description": "Scalo con Qatar Airways trasformato in mini vacanza: musei, souk e deserto."
+        "description": "Scalo con Qatar Airways trasformato in mini vacanza: musei, souk e deserto.",
+        "plan": [
+          {
+            "t": "Arrivo a Doha",
+            "a": [
+              "volo|Volo per Doha||",
+              "alloggio|Hotel a Doha||Doha",
+              "attivita|Souq Waqif||Doha"
+            ]
+          },
+          {
+            "t": "Doha",
+            "a": [
+              "attivita|Museo di Arte Islamica e safari nel deserto||Doha"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "volo|Volo per Malé e idrovolante||Maldive",
+              "alloggio|Resort alle Maldive||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Snorkeling||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Relax||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "traghetto|Escursione con mante||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Spa||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "attivita|Giornata libera||Maldive"
+            ]
+          },
+          {
+            "t": "Maldive",
+            "a": [
+              "ristorante|Cena sulla spiaggia||Maldive"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Doha||"
+            ]
+          }
+        ]
       },
       {
         "title": "Qatar e deserto",
         "days": 5,
         "route": "Doha (3) → Khor Al Adaid (1)",
-        "description": "Musei di Islamic Art e Nazionale, poi notte nel deserto dove le dune incontrano il mare."
+        "description": "Musei di Islamic Art e Nazionale, poi notte nel deserto dove le dune incontrano il mare.",
+        "plan": [
+          {
+            "t": "Arrivo a Doha",
+            "a": [
+              "volo|Volo per Doha||",
+              "alloggio|Hotel a Doha||Doha",
+              "attivita|Corniche||Doha"
+            ]
+          },
+          {
+            "t": "Doha",
+            "a": [
+              "attivita|Museo di Arte Islamica e Museo Nazionale||Doha"
+            ]
+          },
+          {
+            "t": "Doha",
+            "a": [
+              "attivita|Katara e The Pearl||Doha"
+            ]
+          },
+          {
+            "t": "Khor Al Adaid",
+            "a": [
+              "transfer|Safari in 4x4 tra le dune||Khor Al Adaid",
+              "alloggio|Campo nel deserto||Khor Al Adaid",
+              "attivita|Mare interno al tramonto||Khor Al Adaid"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Doha||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -456,19 +1186,177 @@
         "title": "Arabia Saudita",
         "days": 8,
         "route": "Riad (2) → AlUla (3) → Jeddah (2)",
-        "description": "Da novembre a marzo, con voli interni."
+        "description": "Da novembre a marzo, con voli interni.",
+        "plan": [
+          {
+            "t": "Arrivo a Riad",
+            "a": [
+              "volo|Volo per Riad||",
+              "info|Visto elettronico turistico||",
+              "alloggio|Hotel a Riad||Riad"
+            ]
+          },
+          {
+            "t": "Riad",
+            "a": [
+              "attivita|Diriyah UNESCO e Masmak Fort||Riad",
+              "attivita|Kingdom Centre Sky Bridge||Riad"
+            ]
+          },
+          {
+            "t": "AlUla",
+            "a": [
+              "volo|Volo per AlUla||AlUla",
+              "alloggio|Resort nel deserto||AlUla",
+              "attivita|Città vecchia di AlUla||AlUla"
+            ]
+          },
+          {
+            "t": "Hegra",
+            "a": [
+              "attivita|Hegra, tombe nabatee UNESCO||AlUla"
+            ]
+          },
+          {
+            "t": "AlUla",
+            "a": [
+              "attivita|Elephant Rock e Maraya||AlUla"
+            ]
+          },
+          {
+            "t": "Jeddah",
+            "a": [
+              "volo|Volo per Jeddah||Jeddah",
+              "alloggio|Hotel a Jeddah||Jeddah",
+              "attivita|Al-Balad, la città storica||Jeddah"
+            ]
+          },
+          {
+            "t": "Jeddah",
+            "a": [
+              "attivita|Corniche e Fontana di re Fahd||Jeddah"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mar Rosso saudita",
         "days": 7,
         "route": "Jeddah (2) → Red Sea Global (4)",
-        "description": "Resort di lusso su isole del Mar Rosso con barriera corallina intatta."
+        "description": "Resort di lusso su isole del Mar Rosso con barriera corallina intatta.",
+        "plan": [
+          {
+            "t": "Arrivo a Jeddah",
+            "a": [
+              "volo|Volo per Jeddah||",
+              "alloggio|Hotel a Jeddah||Jeddah"
+            ]
+          },
+          {
+            "t": "Jeddah",
+            "a": [
+              "attivita|Al-Balad e Corniche||Jeddah"
+            ]
+          },
+          {
+            "t": "Red Sea",
+            "a": [
+              "volo|Volo o idrovolante per il resort del Red Sea Global||Red Sea",
+              "alloggio|Resort di lusso su isola||Red Sea"
+            ]
+          },
+          {
+            "t": "Red Sea",
+            "a": [
+              "attivita|Snorkeling sulla barriera||Red Sea"
+            ]
+          },
+          {
+            "t": "Red Sea",
+            "a": [
+              "attivita|Spa e relax||Red Sea"
+            ]
+          },
+          {
+            "t": "Red Sea",
+            "a": [
+              "traghetto|Immersioni o crociera tra le isole||Red Sea"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Arabia del sud",
         "days": 8,
         "route": "Riad (2) → Abha (3) → Najran (2)",
-        "description": "Villaggi di montagna dell'Asir e architettura di fango di Najran."
+        "description": "Villaggi di montagna dell'Asir e architettura di fango di Najran.",
+        "plan": [
+          {
+            "t": "Arrivo a Riad",
+            "a": [
+              "volo|Volo per Riad||",
+              "alloggio|Hotel a Riad||Riad"
+            ]
+          },
+          {
+            "t": "Riad",
+            "a": [
+              "attivita|Diriyah||Riad"
+            ]
+          },
+          {
+            "t": "Abha",
+            "a": [
+              "volo|Volo per Abha||Abha",
+              "alloggio|Hotel ad Abha||Abha",
+              "attivita|Monti Asir in funivia||Abha"
+            ]
+          },
+          {
+            "t": "Abha",
+            "a": [
+              "attivita|Villaggio di Rijal Almaa||Abha"
+            ]
+          },
+          {
+            "t": "Abha",
+            "a": [
+              "attivita|Mercato del martedì e montagne||Abha"
+            ]
+          },
+          {
+            "t": "Najran",
+            "a": [
+              "transfer|Trasferimento a Najran||Najran",
+              "alloggio|Hotel a Najran||Najran",
+              "attivita|Forte e case di fango||Najran"
+            ]
+          },
+          {
+            "t": "Najran",
+            "a": [
+              "attivita|Sito di Al-Ukhdood||Najran"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Riad||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -527,19 +1415,124 @@
         "title": "Bahrein breve",
         "days": 3,
         "route": "Manama (2)",
-        "description": "Stopover o abbinato a un evento sportivo."
+        "description": "Stopover o abbinato a un evento sportivo.",
+        "plan": [
+          {
+            "t": "Arrivo a Manama",
+            "a": [
+              "volo|Volo per il Bahrein||",
+              "alloggio|Hotel a Manama||Manama",
+              "attivita|Bab al-Bahrain e souk||Manama"
+            ]
+          },
+          {
+            "t": "Manama",
+            "a": [
+              "attivita|Qal'at al-Bahrain UNESCO e Moschea Al-Fateh||Manama",
+              "attivita|Museo nazionale||Manama"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bahrein e Formula 1",
         "days": 4,
         "route": "Manama (3), con il circuito di Sakhir",
-        "description": "Pacchetto per il Gran Premio di marzo o per un weekend: forte di Qal'at, souk, moschea Al-Fateh e spiagge degli hotel."
+        "description": "Pacchetto per il Gran Premio di marzo o per un weekend: forte di Qal'at, souk, moschea Al-Fateh e spiagge degli hotel.",
+        "plan": [
+          {
+            "t": "Arrivo a Manama",
+            "a": [
+              "volo|Volo per il Bahrein||",
+              "alloggio|Hotel a Manama||Manama",
+              "attivita|Souk||Manama"
+            ]
+          },
+          {
+            "t": "Prove",
+            "a": [
+              "attivita|Prove libere al circuito di Sakhir||Sakhir"
+            ]
+          },
+          {
+            "t": "Gara",
+            "a": [
+              "attivita|Gran Premio del Bahrein||Sakhir"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bahrein e Arabia",
         "days": 8,
         "route": "Manama (2) → ponte di re Fahd → Dammam e Al-Ahsa (2) → Riad (3)",
-        "description": "Combinazione via terra con l'Arabia Saudita: oasi UNESCO di Al-Ahsa e la capitale saudita."
+        "description": "Combinazione via terra con l'Arabia Saudita: oasi UNESCO di Al-Ahsa e la capitale saudita.",
+        "plan": [
+          {
+            "t": "Arrivo a Manama",
+            "a": [
+              "volo|Volo per il Bahrein||",
+              "alloggio|Hotel a Manama||Manama"
+            ]
+          },
+          {
+            "t": "Manama",
+            "a": [
+              "attivita|Qal'at al-Bahrain e Al-Fateh||Manama"
+            ]
+          },
+          {
+            "t": "Al-Ahsa",
+            "a": [
+              "transfer|Ponte di re Fahd verso l'Arabia||Al-Ahsa",
+              "alloggio|Hotel ad Al-Ahsa||Al-Ahsa",
+              "attivita|Oasi di Al-Ahsa UNESCO||Al-Ahsa"
+            ]
+          },
+          {
+            "t": "Al-Ahsa",
+            "a": [
+              "attivita|Montagna di Al-Qarah||Al-Ahsa"
+            ]
+          },
+          {
+            "t": "Riad",
+            "a": [
+              "treno|Treno per Riad||Riad",
+              "alloggio|Hotel a Riad||Riad"
+            ]
+          },
+          {
+            "t": "Riad",
+            "a": [
+              "attivita|Diriyah||Riad"
+            ]
+          },
+          {
+            "t": "Riad",
+            "a": [
+              "attivita|Edge of the World||Riad"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -591,19 +1584,100 @@
         "title": "Kuwait breve",
         "days": 3,
         "route": "Kuwait City (2)",
-        "description": "Per viaggi d'affari o di transito."
+        "description": "Per viaggi d'affari o di transito.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuwait City",
+            "a": [
+              "volo|Volo per Kuwait City||",
+              "alloggio|Hotel a Kuwait City||Kuwait City",
+              "attivita|Kuwait Towers||Kuwait City"
+            ]
+          },
+          {
+            "t": "Kuwait City",
+            "a": [
+              "attivita|Grande Moschea e Souk Al-Mubarakiya||Kuwait City",
+              "attivita|Museo Sheikh Abdullah Al-Salem||Kuwait City"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kuwait e Bahrein",
         "days": 6,
         "route": "Kuwait City (2) → Manama (3)",
-        "description": "Due emirati del Golfo poco turistici, musei, souk e architettura moderna."
+        "description": "Due emirati del Golfo poco turistici, musei, souk e architettura moderna.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuwait City",
+            "a": [
+              "volo|Volo per Kuwait City||",
+              "alloggio|Hotel||Kuwait City",
+              "attivita|Kuwait Towers||Kuwait City"
+            ]
+          },
+          {
+            "t": "Kuwait City",
+            "a": [
+              "attivita|Grande Moschea e souk||Kuwait City"
+            ]
+          },
+          {
+            "t": "Bahrein",
+            "a": [
+              "volo|Volo per Manama||Manama",
+              "alloggio|Hotel a Manama||Manama"
+            ]
+          },
+          {
+            "t": "Bahrein",
+            "a": [
+              "attivita|Qal'at al-Bahrain||Manama"
+            ]
+          },
+          {
+            "t": "Bahrein",
+            "a": [
+              "attivita|Albero della vita e Al-Fateh||Bahrein"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Stopover a Kuwait",
         "days": 2,
         "route": "Kuwait City (1)",
-        "description": "Sosta breve con Kuwait Airways: Kuwait Towers, Grande Moschea e Souk Al-Mubarakiya."
+        "description": "Sosta breve con Kuwait Airways: Kuwait Towers, Grande Moschea e Souk Al-Mubarakiya.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuwait City",
+            "a": [
+              "volo|Volo per Kuwait City||",
+              "alloggio|Hotel||Kuwait City",
+              "attivita|Kuwait Towers e souk||Kuwait City"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Grande Moschea||Kuwait City",
+              "volo|Volo di prosecuzione||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -672,19 +1746,147 @@
         "title": "Libano classico",
         "days": 6,
         "route": "Beirut (3) → Byblos → Qadisha (1) → Baalbek (1)",
-        "description": "Solo se la situazione di sicurezza lo consente."
+        "description": "Solo se la situazione di sicurezza lo consente.",
+        "plan": [
+          {
+            "t": "Arrivo a Beirut",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "info|Proporre solo se la Farnesina non lo sconsiglia||",
+              "alloggio|Hotel a Beirut||Beirut",
+              "attivita|Corniche e Raouché||Beirut"
+            ]
+          },
+          {
+            "t": "Beirut",
+            "a": [
+              "attivita|Museo nazionale e Gemmayzeh||Beirut"
+            ]
+          },
+          {
+            "t": "Beirut",
+            "a": [
+              "attivita|Grotte di Jeita e Harissa||Jeita"
+            ]
+          },
+          {
+            "t": "Byblos e Qadisha",
+            "a": [
+              "attivita|Byblos fenicia||Byblos",
+              "transfer|Valle di Qadisha||Qadisha",
+              "alloggio|Hotel nella valle||Qadisha"
+            ]
+          },
+          {
+            "t": "Baalbek",
+            "a": [
+              "attivita|Templi romani di Baalbek||Baalbek",
+              "alloggio|Hotel nella Bekaa||Bekaa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Beirut||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Libano tra mare e montagna",
         "days": 7,
         "route": "Beirut (2) → Byblos (1) → Cedri di Dio (1) → Sidone e Tiro (2)",
-        "description": "Città fenicie, cedri millenari e cucina; solo quando le indicazioni della Farnesina lo consentono."
+        "description": "Città fenicie, cedri millenari e cucina; solo quando le indicazioni della Farnesina lo consentono.",
+        "plan": [
+          {
+            "t": "Arrivo a Beirut",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "info|Verificare le indicazioni di viaggio||",
+              "alloggio|Hotel a Beirut||Beirut"
+            ]
+          },
+          {
+            "t": "Beirut",
+            "a": [
+              "attivita|Museo nazionale e centro||Beirut"
+            ]
+          },
+          {
+            "t": "Byblos",
+            "a": [
+              "transfer|Trasferimento a Byblos||Byblos",
+              "alloggio|Hotel a Byblos||Byblos",
+              "attivita|Porto fenicio||Byblos"
+            ]
+          },
+          {
+            "t": "Cedri",
+            "a": [
+              "transfer|Trasferimento ai Cedri di Dio||Cedri",
+              "alloggio|Hotel ai Cedri||Cedri",
+              "attivita|Foresta dei cedri millenari||Cedri"
+            ]
+          },
+          {
+            "t": "Sidone e Tiro",
+            "a": [
+              "transfer|Trasferimento a sud||Sidone",
+              "attivita|Castello del Mare di Sidone||Sidone",
+              "alloggio|Hotel a Tiro||Tiro"
+            ]
+          },
+          {
+            "t": "Tiro",
+            "a": [
+              "attivita|Rovine romane di Tiro||Tiro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Beirut||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Beirut e la Bekaa",
         "days": 4,
         "route": "Beirut (2) → Baalbek e cantine della Bekaa (1)",
-        "description": "Proposta breve con i templi romani di Baalbek e le cantine di Château Ksara."
+        "description": "Proposta breve con i templi romani di Baalbek e le cantine di Château Ksara.",
+        "plan": [
+          {
+            "t": "Arrivo a Beirut",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Beirut||Beirut",
+              "attivita|Corniche||Beirut"
+            ]
+          },
+          {
+            "t": "Beirut",
+            "a": [
+              "attivita|Museo nazionale e Mar Mikhael||Beirut"
+            ]
+          },
+          {
+            "t": "Bekaa",
+            "a": [
+              "attivita|Baalbek e Château Ksara||Bekaa",
+              "alloggio|Hotel nella Bekaa||Bekaa"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Beirut||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -739,19 +1941,183 @@
         "title": "Pellegrinaggio in Terra Santa",
         "days": 8,
         "route": "Gerusalemme (3) → Betlemme (1) → Gerico e Mar Morto (1) → Galilea (2)",
-        "description": "Con guida autorizzata, solo se la situazione lo consente."
+        "description": "Con guida autorizzata, solo se la situazione lo consente.",
+        "plan": [
+          {
+            "t": "Arrivo a Gerusalemme",
+            "a": [
+              "volo|Volo per Tel Aviv||",
+              "info|Verificare sempre le indicazioni della Farnesina||",
+              "alloggio|Hotel a Gerusalemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Monte degli Ulivi, Getsemani e Via Dolorosa||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Santo Sepolcro e Muro del Pianto||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Betlemme",
+            "a": [
+              "transfer|Trasferimento a Betlemme||Betlemme",
+              "attivita|Basilica della Natività e Campo dei Pastori||Betlemme",
+              "alloggio|Hotel a Betlemme||Betlemme"
+            ]
+          },
+          {
+            "t": "Gerico e Mar Morto",
+            "a": [
+              "attivita|Gerico e Monte delle Tentazioni||Gerico",
+              "attivita|Bagno nel Mar Morto||Mar Morto",
+              "alloggio|Hotel sul Mar Morto||Mar Morto"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "transfer|Trasferimento in Galilea||Galilea",
+              "alloggio|Hotel a Nazareth o Tiberiade||Nazareth",
+              "attivita|Basilica dell'Annunciazione||Nazareth"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "attivita|Lago di Tiberiade, Cafarnao e Monte delle Beatitudini||Galilea"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Tel Aviv||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Betlemme e Gerusalemme",
         "days": 5,
         "route": "Gerusalemme (3) → Betlemme (1)",
-        "description": "Proposta breve per i luoghi della Natività, sempre verificando le indicazioni della Farnesina."
+        "description": "Proposta breve per i luoghi della Natività, sempre verificando le indicazioni della Farnesina.",
+        "plan": [
+          {
+            "t": "Arrivo a Gerusalemme",
+            "a": [
+              "volo|Volo per Tel Aviv||",
+              "alloggio|Hotel a Gerusalemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Città vecchia e Santo Sepolcro||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Monte degli Ulivi e Via Dolorosa||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Betlemme",
+            "a": [
+              "attivita|Basilica della Natività||Betlemme",
+              "alloggio|Hotel a Betlemme||Betlemme"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Tel Aviv||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Giordania e Terra Santa",
-        "days": 11,
+        "days": 10,
         "route": "Amman (1) → Monte Nebo → Petra (2) → Gerusalemme (3) → Betlemme (1) → Galilea (2)",
-        "description": "Pellegrinaggio nei luoghi biblici dei due lati del Giordano."
+        "description": "Pellegrinaggio nei luoghi biblici dei due lati del Giordano.",
+        "plan": [
+          {
+            "t": "Arrivo ad Amman",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Amman||Amman",
+              "attivita|Cittadella||Amman"
+            ]
+          },
+          {
+            "t": "Monte Nebo e Petra",
+            "a": [
+              "attivita|Monte Nebo e mosaici di Madaba||Madaba",
+              "transfer|Strada dei Re fino a Petra||Petra",
+              "alloggio|Hotel a Petra||Petra"
+            ]
+          },
+          {
+            "t": "Petra",
+            "a": [
+              "attivita|Siq, Tesoro e Monastero||Petra"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "transfer|Ponte di Allenby e trasferimento a Gerusalemme||Gerusalemme",
+              "alloggio|Hotel a Gerusalemme||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Santo Sepolcro e Muro del Pianto||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Gerusalemme",
+            "a": [
+              "attivita|Monte degli Ulivi||Gerusalemme"
+            ]
+          },
+          {
+            "t": "Betlemme",
+            "a": [
+              "attivita|Basilica della Natività||Betlemme",
+              "alloggio|Hotel a Betlemme||Betlemme"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "transfer|Trasferimento in Galilea||Galilea",
+              "alloggio|Hotel a Tiberiade||Tiberiade"
+            ]
+          },
+          {
+            "t": "Galilea",
+            "a": [
+              "attivita|Nazareth, Cafarnao e Lago di Tiberiade||Galilea"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Tel Aviv||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1045,19 +2411,192 @@
         "title": "Natura del Kazakistan",
         "days": 7,
         "route": "Almaty (3) → Charyn → Kolsai e Kaindy (2) → Almaty (1)",
-        "description": "Da maggio a settembre."
+        "description": "Da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo ad Almaty",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Almaty||Almaty",
+              "attivita|Bazar verde e cattedrale Zenkov||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Kok Tobe e Medeu||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Lago Big Almaty||Almaty"
+            ]
+          },
+          {
+            "t": "Charyn e Kolsai",
+            "a": [
+              "attivita|Canyon di Charyn||Charyn",
+              "alloggio|Guesthouse a Saty||Saty"
+            ]
+          },
+          {
+            "t": "Kolsai e Kaindy",
+            "a": [
+              "attivita|Laghi Kolsai e foresta sommersa di Kaindy||Kolsai"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "transfer|Rientro ad Almaty||Almaty",
+              "alloggio|Hotel||Almaty"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Asia centrale",
         "days": 12,
         "route": "Almaty (3) → Kirghizistan, Issyk-Kul (3) → Bishkek (1) → Uzbekistan (4)",
-        "description": "Tra montagne e Via della Seta."
+        "description": "Tra montagne e Via della Seta.",
+        "plan": [
+          {
+            "t": "Arrivo ad Almaty",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel ad Almaty||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Medeu e Kok Tobe||Almaty"
+            ]
+          },
+          {
+            "t": "Almaty",
+            "a": [
+              "attivita|Canyon di Charyn||Charyn"
+            ]
+          },
+          {
+            "t": "Issyk-Kul",
+            "a": [
+              "transfer|Frontiera e trasferimento sull'Issyk-Kul||Issyk-Kul",
+              "alloggio|Hotel o yurta sul lago||Issyk-Kul"
+            ]
+          },
+          {
+            "t": "Issyk-Kul",
+            "a": [
+              "attivita|Canyon di Skazka e Jeti-Oguz||Issyk-Kul"
+            ]
+          },
+          {
+            "t": "Issyk-Kul",
+            "a": [
+              "attivita|Cacciatori con l'aquila||Issyk-Kul"
+            ]
+          },
+          {
+            "t": "Bishkek",
+            "a": [
+              "transfer|Trasferimento a Bishkek||Bishkek",
+              "alloggio|Hotel a Bishkek||Bishkek",
+              "attivita|Bazar Osh||Bishkek"
+            ]
+          },
+          {
+            "t": "Uzbekistan",
+            "a": [
+              "volo|Volo per Tashkent e treno per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Registan e Shah-i-Zinda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "treno|Treno per Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Città vecchia||Bukhara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Bukhara o Tashkent||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Astana e la steppa",
         "days": 6,
         "route": "Astana (3) → Burabay (2)",
-        "description": "La capitale futurista e il parco Burabay, la 'Svizzera kazaka', con laghi e foreste."
+        "description": "La capitale futurista e il parco Burabay, la 'Svizzera kazaka', con laghi e foreste.",
+        "plan": [
+          {
+            "t": "Arrivo ad Astana",
+            "a": [
+              "volo|Volo per Astana||",
+              "alloggio|Hotel ad Astana||Astana",
+              "attivita|Bayterek e Nur Alem||Astana"
+            ]
+          },
+          {
+            "t": "Astana",
+            "a": [
+              "attivita|Khan Shatyr e Palazzo della Pace||Astana"
+            ]
+          },
+          {
+            "t": "Astana",
+            "a": [
+              "attivita|Museo nazionale||Astana"
+            ]
+          },
+          {
+            "t": "Burabay",
+            "a": [
+              "transfer|Trasferimento a Burabay||Burabay",
+              "alloggio|Resort a Burabay||Burabay",
+              "attivita|Lago e rocce||Burabay"
+            ]
+          },
+          {
+            "t": "Burabay",
+            "a": [
+              "attivita|Escursioni e kumys||Burabay"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Astana||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1129,21 +2668,221 @@
     "itineraries": [
       {
         "title": "Kirghizistan nomade",
-        "days": 10,
+        "days": 9,
         "route": "Bishkek (1) → Issyk-Kul sud (2) → Karakol (2) → Kochkor → Song-Kul (2) → Bishkek (1)",
-        "description": "Laghi e yurte, da giugno a settembre."
+        "description": "Laghi e yurte, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bishkek",
+            "a": [
+              "volo|Volo per Bishkek||",
+              "alloggio|Hotel a Bishkek||Bishkek",
+              "attivita|Bazar Osh||Bishkek"
+            ]
+          },
+          {
+            "t": "Issyk-Kul",
+            "a": [
+              "transfer|Trasferimento sulla sponda sud dell'Issyk-Kul||Issyk-Kul",
+              "alloggio|Yurta sul lago||Issyk-Kul",
+              "attivita|Canyon di Skazka||Issyk-Kul"
+            ]
+          },
+          {
+            "t": "Issyk-Kul",
+            "a": [
+              "attivita|Cacciatori con l'aquila a Bokonbaevo||Issyk-Kul"
+            ]
+          },
+          {
+            "t": "Karakol",
+            "a": [
+              "transfer|Trasferimento a Karakol||Karakol",
+              "alloggio|Guesthouse a Karakol||Karakol",
+              "attivita|Moschea dungan e cattedrale di legno||Karakol"
+            ]
+          },
+          {
+            "t": "Karakol",
+            "a": [
+              "attivita|Jeti-Oguz e valle di Altyn Arashan||Karakol"
+            ]
+          },
+          {
+            "t": "Song-Kul",
+            "a": [
+              "transfer|Trasferimento a Kochkor e Song-Kul||Song-Kul",
+              "alloggio|Campo di yurte||Song-Kul",
+              "attivita|Feltro shyrdak a Kochkor||Kochkor"
+            ]
+          },
+          {
+            "t": "Song-Kul",
+            "a": [
+              "attivita|Cavalli con i pastori nomadi||Song-Kul"
+            ]
+          },
+          {
+            "t": "Bishkek",
+            "a": [
+              "transfer|Rientro a Bishkek con la torre di Burana||Bishkek",
+              "alloggio|Hotel||Bishkek"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kirghizistan e Uzbekistan",
         "days": 12,
         "route": "Bishkek (1) → Song-Kul (2) → Osh (2) → Fergana (1) → Tashkent (1) → Samarcanda (2) → Bukhara (2)",
-        "description": "Montagne e nomadi, poi le città della Via della Seta via terra."
+        "description": "Montagne e nomadi, poi le città della Via della Seta via terra.",
+        "plan": [
+          {
+            "t": "Arrivo a Bishkek",
+            "a": [
+              "volo|Volo per Bishkek||",
+              "alloggio|Hotel a Bishkek||Bishkek"
+            ]
+          },
+          {
+            "t": "Song-Kul",
+            "a": [
+              "transfer|Trasferimento a Song-Kul||Song-Kul",
+              "alloggio|Campo di yurte||Song-Kul"
+            ]
+          },
+          {
+            "t": "Song-Kul",
+            "a": [
+              "attivita|Cavalli e nomadi||Song-Kul"
+            ]
+          },
+          {
+            "t": "Osh",
+            "a": [
+              "volo|Volo per Osh||Osh",
+              "alloggio|Hotel a Osh||Osh",
+              "attivita|Monte Sulaiman UNESCO||Osh"
+            ]
+          },
+          {
+            "t": "Osh",
+            "a": [
+              "attivita|Bazar di Osh||Osh"
+            ]
+          },
+          {
+            "t": "Fergana",
+            "a": [
+              "transfer|Frontiera e valle di Fergana||Fergana",
+              "alloggio|Hotel a Fergana||Fergana",
+              "attivita|Seta di Margilan||Fergana"
+            ]
+          },
+          {
+            "t": "Tashkent",
+            "a": [
+              "treno|Treno per Tashkent||Tashkent",
+              "alloggio|Hotel a Tashkent||Tashkent"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "treno|Treno per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda",
+              "attivita|Registan||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Shah-i-Zinda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "treno|Treno per Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Città vecchia||Bukhara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Trekking dell'Ala-Kul",
         "days": 7,
         "route": "Bishkek (1) → Karakol (1) → trekking Ala-Kul e Altyn Arashan (4)",
-        "description": "Uno dei trekking più belli dell'Asia centrale, con lago glaciale e sorgenti calde; da luglio a settembre."
+        "description": "Uno dei trekking più belli dell'Asia centrale, con lago glaciale e sorgenti calde; da luglio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Bishkek",
+            "a": [
+              "volo|Volo per Bishkek||",
+              "alloggio|Hotel a Bishkek||Bishkek"
+            ]
+          },
+          {
+            "t": "Karakol",
+            "a": [
+              "transfer|Trasferimento a Karakol||Karakol",
+              "alloggio|Guesthouse||Karakol"
+            ]
+          },
+          {
+            "t": "Trekking giorno 1",
+            "a": [
+              "attivita|Salita al campo di Sirota||Karakol",
+              "alloggio|Tenda||Karakol"
+            ]
+          },
+          {
+            "t": "Trekking giorno 2",
+            "a": [
+              "attivita|Lago glaciale Ala-Kul|3.500 metri.|Ala-Kul",
+              "alloggio|Tenda||Ala-Kul"
+            ]
+          },
+          {
+            "t": "Trekking giorno 3",
+            "a": [
+              "attivita|Passo e discesa ad Altyn Arashan||Altyn Arashan",
+              "alloggio|Rifugio con sorgenti calde||Altyn Arashan"
+            ]
+          },
+          {
+            "t": "Trekking giorno 4",
+            "a": [
+              "attivita|Discesa a Karakol||Karakol",
+              "alloggio|Guesthouse||Karakol"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Bishkek||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1197,21 +2936,202 @@
     "itineraries": [
       {
         "title": "Pamir Highway",
-        "days": 12,
+        "days": 10,
         "route": "Dušanbe (1) → Khorog (2) → Wakhan (3) → Murghab (1) → Karakul → Osh in Kirghizistan (1)",
-        "description": "Spedizione in 4x4, da giugno a settembre."
+        "description": "Spedizione in 4x4, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Dušanbe",
+            "a": [
+              "volo|Volo per Dušanbe||",
+              "info|Permesso GBAO per il Pamir||",
+              "alloggio|Hotel a Dušanbe||Dušanbe"
+            ]
+          },
+          {
+            "t": "Verso Khorog",
+            "a": [
+              "transfer|Lungo il Panj al confine afghano||Khorog",
+              "alloggio|Guesthouse a Khorog||Khorog"
+            ]
+          },
+          {
+            "t": "Khorog",
+            "a": [
+              "attivita|Giardino botanico e bazar||Khorog"
+            ]
+          },
+          {
+            "t": "Wakhan",
+            "a": [
+              "transfer|Valle del Wakhan||Wakhan",
+              "alloggio|Homestay||Wakhan",
+              "attivita|Fortezza di Yamchun e terme di Bibi Fatima||Wakhan"
+            ]
+          },
+          {
+            "t": "Wakhan",
+            "a": [
+              "attivita|Villaggi e vista sull'Hindu Kush||Wakhan"
+            ]
+          },
+          {
+            "t": "Wakhan",
+            "a": [
+              "attivita|Langar e petroglifi||Langar"
+            ]
+          },
+          {
+            "t": "Murghab",
+            "a": [
+              "transfer|Altopiano del Pamir||Murghab",
+              "alloggio|Homestay a Murghab||Murghab"
+            ]
+          },
+          {
+            "t": "Karakul",
+            "a": [
+              "transfer|Lago Karakul e passo Kyzyl-Art verso Osh||Karakul"
+            ]
+          },
+          {
+            "t": "Osh",
+            "a": [
+              "transfer|Arrivo a Osh in Kirghizistan||Osh",
+              "alloggio|Hotel a Osh||Osh"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Osh||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fann e Iskanderkul",
         "days": 7,
         "route": "Dušanbe (1) → Iskanderkul (2) → Monti Fann (3)",
-        "description": "Laghi turchesi e trekking tra le montagne più accessibili del Tagikistan."
+        "description": "Laghi turchesi e trekking tra le montagne più accessibili del Tagikistan.",
+        "plan": [
+          {
+            "t": "Arrivo a Dušanbe",
+            "a": [
+              "volo|Volo per Dušanbe||",
+              "alloggio|Hotel a Dušanbe||Dušanbe"
+            ]
+          },
+          {
+            "t": "Iskanderkul",
+            "a": [
+              "transfer|Trasferimento al lago Iskanderkul||Iskanderkul",
+              "alloggio|Guesthouse||Iskanderkul",
+              "attivita|Lago e cascata||Iskanderkul"
+            ]
+          },
+          {
+            "t": "Iskanderkul",
+            "a": [
+              "attivita|Escursione al lago Serpente||Iskanderkul"
+            ]
+          },
+          {
+            "t": "Monti Fann",
+            "a": [
+              "transfer|Trasferimento nei Monti Fann||Fann",
+              "alloggio|Campo||Fann"
+            ]
+          },
+          {
+            "t": "Monti Fann",
+            "a": [
+              "attivita|Laghi Kulikalon||Fann"
+            ]
+          },
+          {
+            "t": "Monti Fann",
+            "a": [
+              "attivita|Lago Alauddin||Fann"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Dušanbe||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Tagikistan e Uzbekistan",
-        "days": 10,
+        "days": 9,
         "route": "Samarcanda (2) → Penjikent (1) → Sette Laghi (2) → Dušanbe (2) → Khujand (1)",
-        "description": "Città della Via della Seta e laghi di montagna in un unico viaggio."
+        "description": "Città della Via della Seta e laghi di montagna in un unico viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Samarcanda",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Samarcanda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Registan e Shah-i-Zinda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Penjikent",
+            "a": [
+              "transfer|Frontiera e Penjikent||Penjikent",
+              "alloggio|Guesthouse||Penjikent",
+              "attivita|Antica Panjakent sogdiana||Penjikent"
+            ]
+          },
+          {
+            "t": "Sette Laghi",
+            "a": [
+              "transfer|Valle dei Sette Laghi di Marguzor||Sette Laghi",
+              "alloggio|Homestay||Sette Laghi"
+            ]
+          },
+          {
+            "t": "Sette Laghi",
+            "a": [
+              "attivita|Escursione tra i laghi||Sette Laghi"
+            ]
+          },
+          {
+            "t": "Dušanbe",
+            "a": [
+              "transfer|Trasferimento a Dušanbe||Dušanbe",
+              "alloggio|Hotel a Dušanbe||Dušanbe"
+            ]
+          },
+          {
+            "t": "Dušanbe",
+            "a": [
+              "attivita|Museo nazionale e Hisor||Dušanbe"
+            ]
+          },
+          {
+            "t": "Khujand",
+            "a": [
+              "transfer|Trasferimento a Khujand||Khujand",
+              "alloggio|Hotel a Khujand||Khujand",
+              "attivita|Fortezza e bazar Panjshanbe||Khujand"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1271,19 +3191,169 @@
         "title": "Turkmenistan e Uzbekistan",
         "days": 10,
         "route": "Ashgabat (2) → Darvaza (1) → Kunya-Urgench → Khiva (2) → Bukhara (2) → Samarcanda (2)",
-        "description": "La Via della Seta tra due paesi."
+        "description": "La Via della Seta tra due paesi.",
+        "plan": [
+          {
+            "t": "Arrivo ad Ashgabat",
+            "a": [
+              "volo|Volo per Ashgabat||",
+              "info|Lettera d'invito per il visto||",
+              "alloggio|Hotel ad Ashgabat||Ashgabat"
+            ]
+          },
+          {
+            "t": "Ashgabat",
+            "a": [
+              "attivita|Città di marmo bianco e Nisa||Ashgabat"
+            ]
+          },
+          {
+            "t": "Darvaza",
+            "a": [
+              "transfer|Deserto del Karakum||Darvaza",
+              "alloggio|Campo tendato||Darvaza",
+              "attivita|Porta dell'Inferno di notte||Darvaza"
+            ]
+          },
+          {
+            "t": "Kunya-Urgench e Khiva",
+            "a": [
+              "attivita|Kunya-Urgench UNESCO||Kunya-Urgench",
+              "transfer|Frontiera e trasferimento a Khiva||Khiva",
+              "alloggio|Hotel a Khiva||Khiva"
+            ]
+          },
+          {
+            "t": "Khiva",
+            "a": [
+              "attivita|Itchan Kala||Khiva"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "transfer|Trasferimento a Bukhara||Bukhara",
+              "alloggio|Hotel a Bukhara||Bukhara"
+            ]
+          },
+          {
+            "t": "Bukhara",
+            "a": [
+              "attivita|Città vecchia||Bukhara"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "treno|Treno per Samarcanda||Samarcanda",
+              "alloggio|Hotel a Samarcanda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Samarcanda",
+            "a": [
+              "attivita|Registan e Shah-i-Zinda||Samarcanda"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Treno per Tashkent e volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Darvaza e Ashgabat",
         "days": 4,
         "route": "Ashgabat (2) → Darvaza (1)",
-        "description": "La capitale di marmo bianco e la 'porta dell'inferno' di notte, in campo tendato."
+        "description": "La capitale di marmo bianco e la 'porta dell'inferno' di notte, in campo tendato.",
+        "plan": [
+          {
+            "t": "Arrivo ad Ashgabat",
+            "a": [
+              "volo|Volo per Ashgabat||",
+              "alloggio|Hotel ad Ashgabat||Ashgabat"
+            ]
+          },
+          {
+            "t": "Ashgabat",
+            "a": [
+              "attivita|Monumenti, bazar Tolkuchka e Nisa||Ashgabat"
+            ]
+          },
+          {
+            "t": "Darvaza",
+            "a": [
+              "transfer|Deserto del Karakum||Darvaza",
+              "alloggio|Campo tendato||Darvaza",
+              "attivita|Porta dell'Inferno||Darvaza"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro ad Ashgabat||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Merv e Via della Seta",
         "days": 7,
         "route": "Ashgabat (2) → Merv (2) → Darvaza (1) → Dashoguz (1)",
-        "description": "L'antica Merv UNESCO e i paesaggi desertici, poi passaggio verso Khiva."
+        "description": "L'antica Merv UNESCO e i paesaggi desertici, poi passaggio verso Khiva.",
+        "plan": [
+          {
+            "t": "Arrivo ad Ashgabat",
+            "a": [
+              "volo|Volo per Ashgabat||",
+              "alloggio|Hotel ad Ashgabat||Ashgabat"
+            ]
+          },
+          {
+            "t": "Ashgabat",
+            "a": [
+              "attivita|Città di marmo e Nisa||Ashgabat"
+            ]
+          },
+          {
+            "t": "Merv",
+            "a": [
+              "volo|Volo per Mary||Mary",
+              "alloggio|Hotel a Mary||Mary",
+              "attivita|Antica Merv UNESCO||Merv"
+            ]
+          },
+          {
+            "t": "Merv",
+            "a": [
+              "attivita|Mausoleo del sultano Sanjar||Merv"
+            ]
+          },
+          {
+            "t": "Darvaza",
+            "a": [
+              "transfer|Trasferimento a Darvaza||Darvaza",
+              "alloggio|Campo tendato||Darvaza",
+              "attivita|Porta dell'Inferno||Darvaza"
+            ]
+          },
+          {
+            "t": "Dashoguz",
+            "a": [
+              "transfer|Trasferimento a Dashoguz con Kunya-Urgench||Dashoguz",
+              "alloggio|Hotel a Dashoguz||Dashoguz"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Frontiera verso Khiva o volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

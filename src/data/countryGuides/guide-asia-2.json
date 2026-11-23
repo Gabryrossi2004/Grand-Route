@@ -82,19 +82,236 @@
         "title": "Laos classico",
         "days": 8,
         "route": "Luang Prabang (4) → treno → Vang Vieng (2) → Vientiane (1)",
-        "description": "Da novembre a marzo, con il treno veloce Laos–Cina."
+        "description": "Da novembre a marzo, con il treno veloce Laos–Cina.",
+        "plan": [
+          {
+            "t": "Arrivo a Luang Prabang",
+            "a": [
+              "volo|Volo per Luang Prabang via Bangkok||",
+              "alloggio|Hotel nella penisola||Luang Prabang",
+              "attivita|Mercato notturno||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Luang Prabang",
+            "a": [
+              "attivita|Questua dei monaci all'alba||Luang Prabang",
+              "attivita|Wat Xieng Thong e Palazzo Reale||Luang Prabang",
+              "attivita|Tramonto dal monte Phousi||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Kuang Si",
+            "a": [
+              "attivita|Cascate di Kuang Si e centro degli orsi||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Mekong",
+            "a": [
+              "traghetto|Barca sul Mekong fino alle grotte di Pak Ou||Pak Ou",
+              "attivita|Corso di cucina laotiana||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Vang Vieng",
+            "a": [
+              "treno|Treno veloce Laos-Cina per Vang Vieng||Vang Vieng",
+              "alloggio|Resort sul fiume||Vang Vieng",
+              "attivita|Tramonto sui karst||Vang Vieng"
+            ]
+          },
+          {
+            "t": "Vang Vieng",
+            "a": [
+              "attivita|Kayak, grotte e Blue Lagoon||Vang Vieng"
+            ]
+          },
+          {
+            "t": "Vientiane",
+            "a": [
+              "treno|Treno per Vientiane||Vientiane",
+              "alloggio|Hotel a Vientiane||Vientiane",
+              "attivita|Pha That Luang e Patuxai||Vientiane"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Indocina",
         "days": 15,
         "route": "Hanoi (2) → Baia di Halong (1) → Luang Prabang (3) → Siem Reap (3) → Phnom Penh (2) → Saigon (2)",
-        "description": "Vietnam, Laos e Cambogia in un unico viaggio."
+        "description": "Vietnam, Laos e Cambogia in un unico viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo ad Hanoi",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel nel Quartiere Vecchio||Hanoi"
+            ]
+          },
+          {
+            "t": "Hanoi",
+            "a": [
+              "attivita|Visita della città e marionette sull'acqua||Hanoi"
+            ]
+          },
+          {
+            "t": "Halong",
+            "a": [
+              "crociera|Crociera di una notte nella baia di Halong||Halong"
+            ]
+          },
+          {
+            "t": "Luang Prabang",
+            "a": [
+              "volo|Volo per Luang Prabang||Luang Prabang",
+              "alloggio|Hotel a Luang Prabang||Luang Prabang",
+              "attivita|Phousi al tramonto||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Luang Prabang",
+            "a": [
+              "attivita|Questua dei monaci e templi||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Luang Prabang",
+            "a": [
+              "attivita|Cascate di Kuang Si||Luang Prabang"
+            ]
+          },
+          {
+            "t": "Siem Reap",
+            "a": [
+              "volo|Volo per Siem Reap||Siem Reap",
+              "alloggio|Hotel a Siem Reap||Siem Reap"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Angkor Wat all'alba e Bayon||Angkor"
+            ]
+          },
+          {
+            "t": "Angkor",
+            "a": [
+              "attivita|Ta Prohm e Banteay Srei||Angkor"
+            ]
+          },
+          {
+            "t": "Phnom Penh",
+            "a": [
+              "volo|Volo per Phnom Penh||Phnom Penh",
+              "alloggio|Hotel a Phnom Penh||Phnom Penh",
+              "attivita|Palazzo Reale||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Phnom Penh",
+            "a": [
+              "attivita|Tuol Sleng e Killing Fields||Phnom Penh"
+            ]
+          },
+          {
+            "t": "Saigon",
+            "a": [
+              "volo|Volo per Ho Chi Minh City||Ho Chi Minh City",
+              "alloggio|Hotel nel Distretto 1||Ho Chi Minh City"
+            ]
+          },
+          {
+            "t": "Saigon",
+            "a": [
+              "attivita|Tunnel di Cu Chi||Ho Chi Minh City"
+            ]
+          },
+          {
+            "t": "Mekong",
+            "a": [
+              "attivita|Delta del Mekong in giornata||Mekong"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Laos del sud",
         "days": 8,
         "route": "Pakse (1) → Altopiano di Bolaven (2) → Wat Phou (1) → 4000 Isole (3)",
-        "description": "Cascate, piantagioni di caffè, tempio khmer UNESCO e la vita lenta sul Mekong."
+        "description": "Cascate, piantagioni di caffè, tempio khmer UNESCO e la vita lenta sul Mekong.",
+        "plan": [
+          {
+            "t": "Arrivo a Pakse",
+            "a": [
+              "volo|Volo per Pakse via Bangkok o Vientiane||",
+              "alloggio|Hotel a Pakse||Pakse",
+              "attivita|Lungofiume||Pakse"
+            ]
+          },
+          {
+            "t": "Bolaven",
+            "a": [
+              "transfer|Altopiano di Bolaven||Bolaven",
+              "alloggio|Lodge tra le piantagioni di caffè||Bolaven",
+              "attivita|Cascate Tad Fane||Bolaven"
+            ]
+          },
+          {
+            "t": "Bolaven",
+            "a": [
+              "attivita|Piantagioni di caffè e villaggi||Bolaven"
+            ]
+          },
+          {
+            "t": "Wat Phou",
+            "a": [
+              "attivita|Tempio khmer di Wat Phou UNESCO||Champasak",
+              "alloggio|Guesthouse a Champasak||Champasak"
+            ]
+          },
+          {
+            "t": "4000 Isole",
+            "a": [
+              "transfer|Trasferimento a Don Det||4000 Isole",
+              "alloggio|Bungalow sul Mekong||Don Khon"
+            ]
+          },
+          {
+            "t": "4000 Isole",
+            "a": [
+              "attivita|Cascate di Khone Phapheng e Li Phi||4000 Isole"
+            ]
+          },
+          {
+            "t": "4000 Isole",
+            "a": [
+              "traghetto|Delfini dell'Irrawaddy in barca||4000 Isole"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Pakse||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -235,19 +452,219 @@
         "title": "Bhutan classico",
         "days": 7,
         "route": "Paro (2) → Thimphu (2) → Punakha (2) → Paro",
-        "description": "Il giro della valle occidentale con la Tana della Tigre."
+        "description": "Il giro della valle occidentale con la Tana della Tigre.",
+        "plan": [
+          {
+            "t": "Arrivo a Paro",
+            "a": [
+              "volo|Volo per Paro via Delhi o Kathmandu|Atterraggio spettacolare tra le montagne.|",
+              "info|Tassa di sviluppo sostenibile giornaliera e guida obbligatoria||",
+              "alloggio|Hotel a Paro||Paro",
+              "attivita|Rinpung Dzong||Paro"
+            ]
+          },
+          {
+            "t": "Tiger's Nest",
+            "a": [
+              "attivita|Escursione al monastero di Taktsang|Circa 5 ore andata e ritorno.|Paro"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "transfer|Trasferimento a Thimphu||Thimphu",
+              "alloggio|Hotel a Thimphu||Thimphu",
+              "attivita|Buddha Dordenma e Tashichho Dzong||Thimphu"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "attivita|Mercato del weekend e scuola di arti tradizionali||Thimphu"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "transfer|Passo di Dochula con 108 stupa||Dochula",
+              "alloggio|Hotel a Punakha||Punakha",
+              "attivita|Punakha Dzong||Punakha"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "attivita|Chimi Lhakhang e ponte sospeso||Punakha"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Paro||",
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Nepal e Bhutan",
         "days": 11,
         "route": "Kathmandu (3) → Paro (2) → Thimphu (2) → Punakha (2)",
-        "description": "L'Himalaya buddista in due paesi."
+        "description": "L'Himalaya buddista in due paesi.",
+        "plan": [
+          {
+            "t": "Arrivo a Kathmandu",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kathmandu||Kathmandu"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Durbar Square e Swayambhunath||Kathmandu"
+            ]
+          },
+          {
+            "t": "Kathmandu",
+            "a": [
+              "attivita|Boudhanath, Pashupatinath e Bhaktapur||Kathmandu"
+            ]
+          },
+          {
+            "t": "Paro",
+            "a": [
+              "volo|Volo per Paro con vista sull'Everest||Paro",
+              "alloggio|Hotel a Paro||Paro",
+              "attivita|Rinpung Dzong||Paro"
+            ]
+          },
+          {
+            "t": "Paro",
+            "a": [
+              "attivita|Tiger's Nest||Paro"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "transfer|Trasferimento a Thimphu||Thimphu",
+              "alloggio|Hotel a Thimphu||Thimphu",
+              "attivita|Buddha Dordenma||Thimphu"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "attivita|Tashichho Dzong e mercato||Thimphu"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "transfer|Passo di Dochula||Punakha",
+              "alloggio|Hotel a Punakha||Punakha",
+              "attivita|Punakha Dzong||Punakha"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "attivita|Chimi Lhakhang||Punakha"
+            ]
+          },
+          {
+            "t": "Rientro a Paro",
+            "a": [
+              "transfer|Rientro a Paro||Paro",
+              "alloggio|Hotel a Paro||Paro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Kathmandu o Delhi||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bhutan e trekking",
         "days": 10,
         "route": "Paro (2) → Thimphu (2) → Punakha (2) → Valle di Phobjikha (2) → Paro, Tiger's Nest (1)",
-        "description": "Più tempo per i monasteri e la valle delle gru dal collo nero; ricordare la tassa di sviluppo sostenibile giornaliera."
+        "description": "Più tempo per i monasteri e la valle delle gru dal collo nero; ricordare la tassa di sviluppo sostenibile giornaliera.",
+        "plan": [
+          {
+            "t": "Arrivo a Paro",
+            "a": [
+              "volo|Volo per Paro||",
+              "alloggio|Hotel a Paro||Paro",
+              "attivita|Rinpung Dzong||Paro"
+            ]
+          },
+          {
+            "t": "Paro",
+            "a": [
+              "attivita|Museo nazionale e Kyichu Lhakhang||Paro"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "transfer|Trasferimento a Thimphu||Thimphu",
+              "alloggio|Hotel a Thimphu||Thimphu",
+              "attivita|Buddha Dordenma||Thimphu"
+            ]
+          },
+          {
+            "t": "Thimphu",
+            "a": [
+              "attivita|Escursione al monastero di Cheri||Thimphu"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "transfer|Passo di Dochula||Punakha",
+              "alloggio|Hotel a Punakha||Punakha",
+              "attivita|Punakha Dzong||Punakha"
+            ]
+          },
+          {
+            "t": "Punakha",
+            "a": [
+              "attivita|Khamsum Yulley Namgyal Chorten||Punakha"
+            ]
+          },
+          {
+            "t": "Phobjikha",
+            "a": [
+              "transfer|Trasferimento nella valle di Phobjikha||Phobjikha",
+              "alloggio|Lodge a Phobjikha||Phobjikha",
+              "attivita|Monastero di Gangtey||Phobjikha"
+            ]
+          },
+          {
+            "t": "Phobjikha",
+            "a": [
+              "attivita|Gangtey Nature Trail e gru dal collo nero (inverno)||Phobjikha"
+            ]
+          },
+          {
+            "t": "Paro",
+            "a": [
+              "transfer|Rientro a Paro||Paro",
+              "alloggio|Hotel a Paro||Paro"
+            ]
+          },
+          {
+            "t": "Tiger's Nest",
+            "a": [
+              "attivita|Tiger's Nest||Paro",
+              "volo|Volo di rientro il giorno dopo||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -338,19 +755,228 @@
         "title": "Mongolia classica",
         "days": 12,
         "route": "Ulan Bator (2) → Gobi (4) → Karakorum e Orkhon (3) → Terelj (1) → Ulan Bator (1)",
-        "description": "In fuoristrada con autista e campi gher, da giugno a settembre."
+        "description": "In fuoristrada con autista e campi gher, da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Ulan Bator",
+            "a": [
+              "volo|Volo per Ulan Bator||",
+              "alloggio|Hotel a Ulan Bator||Ulan Bator",
+              "attivita|Piazza Sükhbaatar||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Ulan Bator",
+            "a": [
+              "attivita|Monastero di Gandan e museo nazionale||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Gobi",
+            "a": [
+              "volo|Volo per Dalanzadgad||Gobi",
+              "alloggio|Campo di gher||Gobi",
+              "attivita|Valle di Yolyn Am||Gobi"
+            ]
+          },
+          {
+            "t": "Gobi",
+            "a": [
+              "attivita|Dune di Khongoryn Els in cammello||Gobi"
+            ]
+          },
+          {
+            "t": "Gobi",
+            "a": [
+              "attivita|Scogliere Fiammeggianti di Bayanzag e fossili||Gobi"
+            ]
+          },
+          {
+            "t": "Gobi",
+            "a": [
+              "attivita|Famiglia nomade||Gobi"
+            ]
+          },
+          {
+            "t": "Karakorum",
+            "a": [
+              "transfer|Trasferimento verso la valle dell'Orkhon||Orkhon",
+              "alloggio|Campo di gher||Orkhon"
+            ]
+          },
+          {
+            "t": "Karakorum",
+            "a": [
+              "attivita|Monastero di Erdene Zuu||Karakorum"
+            ]
+          },
+          {
+            "t": "Orkhon",
+            "a": [
+              "attivita|Cascata dell'Orkhon e cavalli||Orkhon"
+            ]
+          },
+          {
+            "t": "Terelj",
+            "a": [
+              "transfer|Trasferimento a Terelj||Terelj",
+              "alloggio|Campo di gher||Terelj",
+              "attivita|Statua di Gengis Khan||Terelj"
+            ]
+          },
+          {
+            "t": "Ulan Bator",
+            "a": [
+              "transfer|Rientro a Ulan Bator||Ulan Bator",
+              "alloggio|Hotel||Ulan Bator",
+              "attivita|Spettacolo di canto armonico||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Naadam",
         "days": 9,
         "route": "Ulan Bator (3, festival) → Terelj (1) → Karakorum (2)",
-        "description": "Viaggio in occasione del festival di luglio."
+        "description": "Viaggio in occasione del festival di luglio.",
+        "plan": [
+          {
+            "t": "Arrivo a Ulan Bator",
+            "a": [
+              "volo|Volo per Ulan Bator||",
+              "alloggio|Hotel a Ulan Bator||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Naadam",
+            "a": [
+              "attivita|Cerimonia di apertura del Naadam allo stadio nazionale|Biglietti da prenotare.|Ulan Bator"
+            ]
+          },
+          {
+            "t": "Naadam",
+            "a": [
+              "attivita|Lotta, tiro con l'arco e corse di cavalli||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Naadam",
+            "a": [
+              "attivita|Gandan e museo||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Terelj",
+            "a": [
+              "transfer|Trasferimento a Terelj||Terelj",
+              "alloggio|Campo di gher||Terelj"
+            ]
+          },
+          {
+            "t": "Karakorum",
+            "a": [
+              "transfer|Trasferimento a Karakorum||Karakorum",
+              "alloggio|Campo di gher||Karakorum"
+            ]
+          },
+          {
+            "t": "Karakorum",
+            "a": [
+              "attivita|Erdene Zuu||Karakorum"
+            ]
+          },
+          {
+            "t": "Ulan Bator",
+            "a": [
+              "transfer|Rientro a Ulan Bator||Ulan Bator",
+              "alloggio|Hotel||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Mongolia del nord",
         "days": 10,
         "route": "Ulan Bator (2) → Lago Khövsgöl (5) → Erdenet (1) → Ulan Bator (1)",
-        "description": "Il lago più puro dell'Asia, renne degli Tsaatan e campi di gher; solo d'estate."
+        "description": "Il lago più puro dell'Asia, renne degli Tsaatan e campi di gher; solo d'estate.",
+        "plan": [
+          {
+            "t": "Arrivo a Ulan Bator",
+            "a": [
+              "volo|Volo per Ulan Bator||",
+              "alloggio|Hotel a Ulan Bator||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Ulan Bator",
+            "a": [
+              "attivita|Gandan e museo||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Khövsgöl",
+            "a": [
+              "volo|Volo per Mörön e trasferimento al lago||Khövsgöl",
+              "alloggio|Campo di gher sul lago||Khövsgöl"
+            ]
+          },
+          {
+            "t": "Khövsgöl",
+            "a": [
+              "attivita|Cavalli lungo il lago||Khövsgöl"
+            ]
+          },
+          {
+            "t": "Khövsgöl",
+            "a": [
+              "attivita|Visita ai pastori di renne Tsaatan||Khövsgöl"
+            ]
+          },
+          {
+            "t": "Khövsgöl",
+            "a": [
+              "attivita|Kayak sul lago||Khövsgöl"
+            ]
+          },
+          {
+            "t": "Khövsgöl",
+            "a": [
+              "attivita|Escursione e pesca||Khövsgöl"
+            ]
+          },
+          {
+            "t": "Erdenet",
+            "a": [
+              "transfer|Trasferimento a Erdenet con il monastero di Amarbayasgalant||Erdenet",
+              "alloggio|Hotel a Erdenet||Erdenet"
+            ]
+          },
+          {
+            "t": "Ulan Bator",
+            "a": [
+              "transfer|Rientro a Ulan Bator||Ulan Bator",
+              "alloggio|Hotel||Ulan Bator"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -442,19 +1068,185 @@
         "title": "Taiwan classico",
         "days": 10,
         "route": "Taipei (3) → Hualien e Taroko (2) → Sole e Luna (1) → Alishan (1) → Tainan (2)",
-        "description": "In treno ad alta velocità e auto, da ottobre ad aprile."
+        "description": "In treno ad alta velocità e auto, da ottobre ad aprile.",
+        "plan": [
+          {
+            "t": "Arrivo a Taipei",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Taipei||Taipei",
+              "attivita|Mercato notturno di Shilin||Taipei"
+            ]
+          },
+          {
+            "t": "Taipei",
+            "a": [
+              "attivita|Taipei 101 e Museo del Palazzo Nazionale||Taipei"
+            ]
+          },
+          {
+            "t": "Jiufen e Shifen",
+            "a": [
+              "attivita|Jiufen, Shifen e lanterne||Jiufen"
+            ]
+          },
+          {
+            "t": "Hualien",
+            "a": [
+              "treno|Treno per Hualien||Hualien",
+              "alloggio|Hotel a Hualien||Hualien",
+              "attivita|Gola di Taroko||Taroko"
+            ]
+          },
+          {
+            "t": "Taroko",
+            "a": [
+              "attivita|Sentieri di Taroko e Qingshui Cliffs||Taroko"
+            ]
+          },
+          {
+            "t": "Sole e Luna",
+            "a": [
+              "transfer|Trasferimento al lago Sole e Luna||Sole e Luna",
+              "alloggio|Hotel sul lago||Sole e Luna",
+              "attivita|Battello e pista ciclabile||Sole e Luna"
+            ]
+          },
+          {
+            "t": "Alishan",
+            "a": [
+              "transfer|Trasferimento ad Alishan||Alishan",
+              "alloggio|Hotel ad Alishan||Alishan",
+              "attivita|Foresta di cedri e tè oolong||Alishan"
+            ]
+          },
+          {
+            "t": "Tainan",
+            "a": [
+              "attivita|Alba sul mare di nuvole||Alishan",
+              "transfer|Trasferimento a Tainan||Tainan",
+              "alloggio|Hotel a Tainan||Tainan"
+            ]
+          },
+          {
+            "t": "Tainan",
+            "a": [
+              "attivita|Templi e cibo di strada di Tainan||Tainan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "treno|Treno veloce per Taoyuan||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Taipei e dintorni",
         "days": 5,
         "route": "Taipei (4), con Jiufen e Shifen",
-        "description": "Stopover lungo o city break."
+        "description": "Stopover lungo o city break.",
+        "plan": [
+          {
+            "t": "Arrivo a Taipei",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Taipei||Taipei",
+              "attivita|Mercato notturno di Raohe||Taipei"
+            ]
+          },
+          {
+            "t": "Taipei",
+            "a": [
+              "attivita|Taipei 101 e memoriale di Chiang Kai-shek||Taipei"
+            ]
+          },
+          {
+            "t": "Taipei",
+            "a": [
+              "attivita|Museo del Palazzo Nazionale e Beitou||Taipei"
+            ]
+          },
+          {
+            "t": "Jiufen e Shifen",
+            "a": [
+              "attivita|Jiufen, lanterne a Shifen e cascate||Jiufen"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Taiwan del sud e isole",
         "days": 8,
         "route": "Kaohsiung (2) → Kenting (2) → Penghu (2) → Tainan (1)",
-        "description": "Templi, spiagge tropicali e arcipelago di basalto, con treno veloce da Taipei."
+        "description": "Templi, spiagge tropicali e arcipelago di basalto, con treno veloce da Taipei.",
+        "plan": [
+          {
+            "t": "Arrivo a Kaohsiung",
+            "a": [
+              "volo|Volo per Taipei e treno veloce per Kaohsiung||",
+              "alloggio|Hotel a Kaohsiung||Kaohsiung"
+            ]
+          },
+          {
+            "t": "Kaohsiung",
+            "a": [
+              "attivita|Pagode del Drago e della Tigre e Pier-2||Kaohsiung"
+            ]
+          },
+          {
+            "t": "Kenting",
+            "a": [
+              "transfer|Trasferimento a Kenting||Kenting",
+              "alloggio|Resort a Kenting||Kenting",
+              "attivita|Spiagge e faro di Eluanbi||Kenting"
+            ]
+          },
+          {
+            "t": "Kenting",
+            "a": [
+              "attivita|Parco nazionale di Kenting||Kenting"
+            ]
+          },
+          {
+            "t": "Penghu",
+            "a": [
+              "volo|Volo per Penghu||Penghu",
+              "alloggio|Hotel a Magong||Penghu",
+              "attivita|Colonne di basalto||Penghu"
+            ]
+          },
+          {
+            "t": "Penghu",
+            "a": [
+              "traghetto|Isole meridionali e cuore di pietra||Penghu"
+            ]
+          },
+          {
+            "t": "Tainan",
+            "a": [
+              "volo|Volo per Tainan||Tainan",
+              "alloggio|Hotel a Tainan||Tainan",
+              "attivita|Templi e street food||Tainan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -532,19 +1324,138 @@
         "title": "Stopover",
         "days": 4,
         "route": "Hong Kong (3), con Lantau",
-        "description": "Sulla rotta verso Asia, Australia o Nuova Zelanda."
+        "description": "Sulla rotta verso Asia, Australia o Nuova Zelanda.",
+        "plan": [
+          {
+            "t": "Arrivo a Hong Kong",
+            "a": [
+              "volo|Volo per Hong Kong||",
+              "alloggio|Hotel a Tsim Sha Tsui||Hong Kong",
+              "attivita|Star Ferry e Symphony of Lights||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Victoria Peak in tram||Hong Kong",
+              "attivita|Central e mercati di Mong Kok||Hong Kong"
+            ]
+          },
+          {
+            "t": "Lantau",
+            "a": [
+              "attivita|Funivia Ngong Ping e Big Buddha||Lantau",
+              "attivita|Villaggio di pescatori di Tai O||Lantau"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di prosecuzione o rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Hong Kong e Macao",
         "days": 5,
         "route": "Hong Kong (3) → Macao (1)",
-        "description": "Due città in un viaggio breve."
+        "description": "Due città in un viaggio breve.",
+        "plan": [
+          {
+            "t": "Arrivo a Hong Kong",
+            "a": [
+              "volo|Volo per Hong Kong||",
+              "alloggio|Hotel a Hong Kong||Hong Kong",
+              "attivita|Star Ferry||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Victoria Peak e Central||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Lantau e Big Buddha||Lantau"
+            ]
+          },
+          {
+            "t": "Macao",
+            "a": [
+              "traghetto|Traghetto o ponte per Macao||Macao",
+              "alloggio|Hotel a Macao||Macao",
+              "attivita|Rovine di San Paolo e Senado||Macao"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Hong Kong||"
+            ]
+          }
+        ]
       },
       {
         "title": "Hong Kong e Cina del sud",
         "days": 8,
         "route": "Hong Kong (3) → Guilin e Yangshuo (3) → Shenzhen (1)",
-        "description": "Treno veloce verso le montagne carsiche di Yangshuo: il modo più facile per unire Hong Kong e la Cina."
+        "description": "Treno veloce verso le montagne carsiche di Yangshuo: il modo più facile per unire Hong Kong e la Cina.",
+        "plan": [
+          {
+            "t": "Arrivo a Hong Kong",
+            "a": [
+              "volo|Volo per Hong Kong||",
+              "alloggio|Hotel a Hong Kong||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Victoria Peak e Star Ferry||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Lantau||Hong Kong"
+            ]
+          },
+          {
+            "t": "Guilin",
+            "a": [
+              "treno|Treno veloce per Guilin||Guilin",
+              "alloggio|Hotel a Yangshuo||Yangshuo"
+            ]
+          },
+          {
+            "t": "Li",
+            "a": [
+              "crociera|Crociera sul fiume Li||Li"
+            ]
+          },
+          {
+            "t": "Yangshuo",
+            "a": [
+              "attivita|Bici tra le risaie e zattera di bambù||Yangshuo"
+            ]
+          },
+          {
+            "t": "Shenzhen",
+            "a": [
+              "treno|Treno per Shenzhen||Shenzhen",
+              "alloggio|Hotel a Shenzhen||Shenzhen"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Hong Kong||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -602,19 +1513,95 @@
         "title": "Macao da Hong Kong",
         "days": 2,
         "route": "Macao (1)",
-        "description": "Escursione o notte in un resort."
+        "description": "Escursione o notte in un resort.",
+        "plan": [
+          {
+            "t": "Macao",
+            "a": [
+              "traghetto|Traghetto da Hong Kong||Macao",
+              "alloggio|Hotel a Macao||Macao",
+              "attivita|Centro storico UNESCO e Rovine di San Paolo||Macao"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Taipa e pastéis de nata||Macao",
+              "traghetto|Rientro a Hong Kong||"
+            ]
+          }
+        ]
       },
       {
         "title": "Macao e Hong Kong",
         "days": 5,
         "route": "Hong Kong (3) → Macao (1)",
-        "description": "Ponte sul mare o traghetto: centro storico portoghese, casinò e cucina macanese."
+        "description": "Ponte sul mare o traghetto: centro storico portoghese, casinò e cucina macanese.",
+        "plan": [
+          {
+            "t": "Arrivo a Hong Kong",
+            "a": [
+              "volo|Volo per Hong Kong||",
+              "alloggio|Hotel a Hong Kong||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Victoria Peak e Star Ferry||Hong Kong"
+            ]
+          },
+          {
+            "t": "Hong Kong",
+            "a": [
+              "attivita|Lantau||Hong Kong"
+            ]
+          },
+          {
+            "t": "Macao",
+            "a": [
+              "traghetto|Traghetto per Macao||Macao",
+              "alloggio|Hotel a Macao||Macao",
+              "attivita|Centro storico e Cotai||Macao"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro da Hong Kong||"
+            ]
+          }
+        ]
       },
       {
         "title": "Macao gourmet",
         "days": 3,
         "route": "Macao (2)",
-        "description": "Città con più ristoranti stellati per abitante: pasticcini alla crema, cucina portoghese e Cotai."
+        "description": "Città con più ristoranti stellati per abitante: pasticcini alla crema, cucina portoghese e Cotai.",
+        "plan": [
+          {
+            "t": "Arrivo a Macao",
+            "a": [
+              "traghetto|Arrivo a Macao||Macao",
+              "alloggio|Hotel a Macao||Macao",
+              "ristorante|Cena macanese||Macao"
+            ]
+          },
+          {
+            "t": "Macao",
+            "a": [
+              "attivita|Senado e Rovine di San Paolo||Macao",
+              "ristorante|Ristorante stellato a Cotai||Macao"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "attivita|Taipa e pasticcerie||Macao",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -671,19 +1658,174 @@
         "title": "Brunei e Borneo",
         "days": 10,
         "route": "Bandar Seri Begawan (2) → Temburong (1) → Kota Kinabalu e Sabah (6)",
-        "description": "Abbinato al Borneo malese."
+        "description": "Abbinato al Borneo malese.",
+        "plan": [
+          {
+            "t": "Arrivo a Bandar Seri Begawan",
+            "a": [
+              "volo|Volo con Royal Brunei||",
+              "alloggio|Hotel a Bandar Seri Begawan||Bandar Seri Begawan",
+              "attivita|Moschea Omar Ali Saifuddien||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Bandar Seri Begawan",
+            "a": [
+              "traghetto|Kampong Ayer e nasiche in barca||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Temburong",
+            "a": [
+              "traghetto|Barca per Temburong||Temburong",
+              "alloggio|Lodge nella foresta||Temburong",
+              "attivita|Passerella sugli alberi di Ulu Temburong||Temburong"
+            ]
+          },
+          {
+            "t": "Kota Kinabalu",
+            "a": [
+              "volo|Volo per Kota Kinabalu||Kota Kinabalu",
+              "alloggio|Hotel a Kota Kinabalu||Kota Kinabalu"
+            ]
+          },
+          {
+            "t": "Kota Kinabalu",
+            "a": [
+              "traghetto|Isole del parco Tunku Abdul Rahman||Kota Kinabalu"
+            ]
+          },
+          {
+            "t": "Kinabalu",
+            "a": [
+              "attivita|Parco del Kinabalu||Kinabalu"
+            ]
+          },
+          {
+            "t": "Sepilok",
+            "a": [
+              "volo|Volo per Sandakan||Sepilok",
+              "alloggio|Lodge a Sepilok||Sepilok",
+              "attivita|Oranghi||Sepilok"
+            ]
+          },
+          {
+            "t": "Kinabatangan",
+            "a": [
+              "traghetto|Crociera sul Kinabatangan||Kinabatangan",
+              "alloggio|Lodge sul fiume||Kinabatangan"
+            ]
+          },
+          {
+            "t": "Kinabatangan",
+            "a": [
+              "traghetto|Crociera all'alba||Kinabatangan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Brunei stopover",
         "days": 3,
         "route": "Bandar Seri Begawan (2)",
-        "description": "Sosta sulla rotta per Australia o Asia con Royal Brunei: moschee d'oro, villaggio sull'acqua di Kampong Ayer e foresta di Ulu Temburong."
+        "description": "Sosta sulla rotta per Australia o Asia con Royal Brunei: moschee d'oro, villaggio sull'acqua di Kampong Ayer e foresta di Ulu Temburong.",
+        "plan": [
+          {
+            "t": "Arrivo a Bandar Seri Begawan",
+            "a": [
+              "volo|Volo con Royal Brunei||",
+              "alloggio|Hotel in città||Bandar Seri Begawan",
+              "attivita|Moschea Omar Ali Saifuddien al tramonto||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Bandar Seri Begawan",
+            "a": [
+              "traghetto|Kampong Ayer in barca||Bandar Seri Begawan",
+              "attivita|Moschea Jame' Asr Hassanil Bolkiah e mercato notturno||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di prosecuzione||"
+            ]
+          }
+        ]
       },
       {
         "title": "Brunei e Sarawak",
         "days": 9,
         "route": "Kuching (3) → Bako (1) → Miri e Mulu (2) → Bandar Seri Begawan (2)",
-        "description": "Borneo da ovest a est: oranghi di Semenggoh, grotte di Mulu patrimonio UNESCO e il sultanato."
+        "description": "Borneo da ovest a est: oranghi di Semenggoh, grotte di Mulu patrimonio UNESCO e il sultanato.",
+        "plan": [
+          {
+            "t": "Arrivo a Kuching",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Kuching||Kuching"
+            ]
+          },
+          {
+            "t": "Kuching",
+            "a": [
+              "attivita|Semenggoh e oranghi||Kuching"
+            ]
+          },
+          {
+            "t": "Kuching",
+            "a": [
+              "attivita|Villaggio culturale del Sarawak||Kuching"
+            ]
+          },
+          {
+            "t": "Bako",
+            "a": [
+              "traghetto|Parco di Bako||Bako",
+              "alloggio|Lodge||Bako"
+            ]
+          },
+          {
+            "t": "Mulu",
+            "a": [
+              "volo|Volo per Mulu||Mulu",
+              "alloggio|Lodge a Mulu||Mulu",
+              "attivita|Deer Cave e uscita dei pipistrelli||Mulu"
+            ]
+          },
+          {
+            "t": "Mulu",
+            "a": [
+              "attivita|Clearwater Cave e canopy walk||Mulu"
+            ]
+          },
+          {
+            "t": "Brunei",
+            "a": [
+              "volo|Volo per Miri e trasferimento in Brunei||Bandar Seri Begawan",
+              "alloggio|Hotel||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Brunei",
+            "a": [
+              "attivita|Moschee e Kampong Ayer||Bandar Seri Begawan"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -740,19 +1882,188 @@
         "title": "Timor Est",
         "days": 8,
         "route": "Dili (2) → Atauro (2) → Maubisse e Ramelau (2) → Dili (1)",
-        "description": "Per viaggiatori avventurosi, da maggio a novembre."
+        "description": "Per viaggiatori avventurosi, da maggio a novembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Dili",
+            "a": [
+              "volo|Volo per Dili via Bali o Darwin||",
+              "alloggio|Hotel a Dili||Dili",
+              "attivita|Cristo Rei al tramonto||Dili"
+            ]
+          },
+          {
+            "t": "Dili",
+            "a": [
+              "attivita|Museo della resistenza e mercato||Dili"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "traghetto|Barca per Atauro||Atauro",
+              "alloggio|Eco-lodge||Atauro",
+              "attivita|Snorkeling sul reef||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Villaggi e sculture di Atauro||Atauro"
+            ]
+          },
+          {
+            "t": "Maubisse",
+            "a": [
+              "transfer|Trasferimento a Maubisse||Maubisse",
+              "alloggio|Pousada di Maubisse||Maubisse",
+              "attivita|Piantagioni di caffè||Maubisse"
+            ]
+          },
+          {
+            "t": "Ramelau",
+            "a": [
+              "attivita|Alba sul Monte Ramelau||Ramelau"
+            ]
+          },
+          {
+            "t": "Dili",
+            "a": [
+              "transfer|Rientro a Dili||Dili",
+              "alloggio|Hotel a Dili||Dili"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Atauro sub",
         "days": 6,
         "route": "Dili (1) → Atauro (4)",
-        "description": "Una delle barriere più ricche di specie al mondo, a un'ora di barca da Dili."
+        "description": "Una delle barriere più ricche di specie al mondo, a un'ora di barca da Dili.",
+        "plan": [
+          {
+            "t": "Arrivo a Dili",
+            "a": [
+              "volo|Volo per Dili||",
+              "alloggio|Hotel a Dili||Dili"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "traghetto|Barca per Atauro||Atauro",
+              "alloggio|Eco-lodge||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Immersioni sui muri corallini||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Immersioni||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Snorkeling e villaggi||Atauro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "traghetto|Rientro a Dili e volo||"
+            ]
+          }
+        ]
       },
       {
         "title": "Bali e Timor Est",
-        "days": 12,
+        "days": 11,
         "route": "Bali (5) → Dili (2) → Atauro (3)",
-        "description": "Estensione per viaggiatori curiosi dopo Bali, con volo diretto."
+        "description": "Estensione per viaggiatori curiosi dopo Bali, con volo diretto.",
+        "plan": [
+          {
+            "t": "Arrivo a Bali",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Ubud||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Risaie e Foresta delle scimmie||Ubud"
+            ]
+          },
+          {
+            "t": "Ubud",
+            "a": [
+              "attivita|Templi d'acqua||Ubud"
+            ]
+          },
+          {
+            "t": "Bali",
+            "a": [
+              "attivita|Uluwatu||Bali"
+            ]
+          },
+          {
+            "t": "Bali",
+            "a": [
+              "attivita|Spiaggia||Bali"
+            ]
+          },
+          {
+            "t": "Dili",
+            "a": [
+              "volo|Volo per Dili||Dili",
+              "alloggio|Hotel a Dili||Dili",
+              "attivita|Cristo Rei||Dili"
+            ]
+          },
+          {
+            "t": "Dili",
+            "a": [
+              "attivita|Museo della resistenza||Dili"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "traghetto|Barca per Atauro||Atauro",
+              "alloggio|Eco-lodge||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Snorkeling||Atauro"
+            ]
+          },
+          {
+            "t": "Atauro",
+            "a": [
+              "attivita|Immersioni||Atauro"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo da Dili via Bali||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -824,19 +2135,239 @@
         "title": "Pakistan del nord",
         "days": 12,
         "route": "Islamabad (1) → Gilgit (1) → Hunza (4) → Khunjerab → Skardu (3) → Islamabad (1)",
-        "description": "Da aprile a ottobre, con operatore locale."
+        "description": "Da aprile a ottobre, con operatore locale.",
+        "plan": [
+          {
+            "t": "Arrivo a Islamabad",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "info|Visto elettronico e verifica delle indicazioni di sicurezza||",
+              "alloggio|Hotel a Islamabad||Islamabad"
+            ]
+          },
+          {
+            "t": "Gilgit",
+            "a": [
+              "volo|Volo per Gilgit (meteo permettendo)||Gilgit",
+              "alloggio|Hotel a Gilgit||Gilgit"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "transfer|Karakorum Highway fino a Karimabad||Hunza",
+              "alloggio|Hotel a Karimabad||Hunza",
+              "attivita|Forti di Baltit e Altit||Hunza"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "attivita|Eagle's Nest al tramonto||Hunza"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "attivita|Lago Attabad e ponti sospesi di Passu||Hunza"
+            ]
+          },
+          {
+            "t": "Khunjerab",
+            "a": [
+              "attivita|Passo di Khunjerab al confine con la Cina||Khunjerab"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "transfer|Trasferimento a Skardu||Skardu",
+              "alloggio|Hotel a Skardu||Skardu"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "attivita|Laghi di Shangrila e deserto freddo||Skardu"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "attivita|Deosai o Shigar Fort||Skardu"
+            ]
+          },
+          {
+            "t": "Islamabad",
+            "a": [
+              "volo|Volo per Islamabad||Islamabad",
+              "alloggio|Hotel a Islamabad||Islamabad",
+              "attivita|Moschea Faisal||Islamabad"
+            ]
+          },
+          {
+            "t": "Islamabad",
+            "a": [
+              "attivita|Monte Margalla||Islamabad"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lahore e Islamabad",
         "days": 6,
         "route": "Lahore (3) → Islamabad (2)",
-        "description": "Moghul, il cambio della guardia di Wagah e la capitale verde, verificando le indicazioni di sicurezza."
+        "description": "Moghul, il cambio della guardia di Wagah e la capitale verde, verificando le indicazioni di sicurezza.",
+        "plan": [
+          {
+            "t": "Arrivo a Lahore",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Lahore||Lahore"
+            ]
+          },
+          {
+            "t": "Lahore",
+            "a": [
+              "attivita|Forte di Lahore e Moschea Badshahi||Lahore"
+            ]
+          },
+          {
+            "t": "Lahore",
+            "a": [
+              "attivita|Moschea Wazir Khan e Wagah Border||Lahore"
+            ]
+          },
+          {
+            "t": "Islamabad",
+            "a": [
+              "transfer|Trasferimento a Islamabad||Islamabad",
+              "alloggio|Hotel a Islamabad||Islamabad",
+              "attivita|Moschea Faisal||Islamabad"
+            ]
+          },
+          {
+            "t": "Islamabad",
+            "a": [
+              "attivita|Taxila||Taxila"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Karakorum Highway",
         "days": 14,
         "route": "Islamabad (1) → Chilas (1) → Gilgit (1) → Hunza (4) → Passu (2) → Skardu (3) → Islamabad (1)",
-        "description": "La strada più spettacolare d'Asia tra i giganti del Karakorum; da maggio a ottobre."
+        "description": "La strada più spettacolare d'Asia tra i giganti del Karakorum; da maggio a ottobre.",
+        "plan": [
+          {
+            "t": "Arrivo a Islamabad",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Islamabad||Islamabad"
+            ]
+          },
+          {
+            "t": "Chilas",
+            "a": [
+              "transfer|Lungo la Karakorum Highway fino a Chilas||Chilas",
+              "alloggio|Hotel a Chilas||Chilas"
+            ]
+          },
+          {
+            "t": "Gilgit",
+            "a": [
+              "attivita|Petroglifi e vista sul Nanga Parbat||Chilas",
+              "alloggio|Hotel a Gilgit||Gilgit"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "transfer|Trasferimento a Karimabad||Hunza",
+              "alloggio|Hotel a Karimabad||Hunza"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "attivita|Forti di Baltit e Altit||Hunza"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "attivita|Eagle's Nest||Hunza"
+            ]
+          },
+          {
+            "t": "Hunza",
+            "a": [
+              "attivita|Valle di Nagar e ghiacciai||Hunza"
+            ]
+          },
+          {
+            "t": "Passu",
+            "a": [
+              "transfer|Trasferimento a Passu||Passu",
+              "alloggio|Hotel a Passu||Passu",
+              "attivita|Ponti sospesi e coni di Passu||Passu"
+            ]
+          },
+          {
+            "t": "Passu",
+            "a": [
+              "attivita|Passo di Khunjerab||Khunjerab"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "transfer|Trasferimento a Skardu||Skardu",
+              "alloggio|Hotel a Skardu||Skardu"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "attivita|Laghi di Shangrila||Skardu"
+            ]
+          },
+          {
+            "t": "Skardu",
+            "a": [
+              "attivita|Shigar Fort||Skardu"
+            ]
+          },
+          {
+            "t": "Islamabad",
+            "a": [
+              "volo|Volo per Islamabad||Islamabad",
+              "alloggio|Hotel||Islamabad"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -905,19 +2436,190 @@
         "title": "Bangladesh",
         "days": 9,
         "route": "Dhaka (2) → Sundarbans (3) → Bagerhat (1) → Sreemangal (2)",
-        "description": "Da novembre a febbraio."
+        "description": "Da novembre a febbraio.",
+        "plan": [
+          {
+            "t": "Arrivo a Dhaka",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dhaka||Dhaka"
+            ]
+          },
+          {
+            "t": "Dhaka",
+            "a": [
+              "attivita|Vecchia Dhaka in risciò e Forte di Lalbagh||Dhaka"
+            ]
+          },
+          {
+            "t": "Sundarbans",
+            "a": [
+              "transfer|Trasferimento a Khulna e imbarco||Sundarbans",
+              "alloggio|Battello nelle Sundarbans||Sundarbans"
+            ]
+          },
+          {
+            "t": "Sundarbans",
+            "a": [
+              "attivita|Mangrovie e tigre del Bengala con guida||Sundarbans"
+            ]
+          },
+          {
+            "t": "Sundarbans",
+            "a": [
+              "attivita|Canali in barca||Sundarbans"
+            ]
+          },
+          {
+            "t": "Bagerhat",
+            "a": [
+              "attivita|Moschea delle Sessanta Cupole UNESCO||Bagerhat",
+              "alloggio|Hotel a Khulna||Khulna"
+            ]
+          },
+          {
+            "t": "Sreemangal",
+            "a": [
+              "transfer|Trasferimento a Sreemangal||Sreemangal",
+              "alloggio|Lodge tra il tè||Sreemangal",
+              "attivita|Tè a sette strati||Sreemangal"
+            ]
+          },
+          {
+            "t": "Sreemangal",
+            "a": [
+              "attivita|Parco di Lawachara e gibboni||Sreemangal"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dhaka e Chittagong",
         "days": 8,
         "route": "Dhaka (2) → Chittagong (1) → Bandarban (2) → Cox's Bazar (2)",
-        "description": "Per viaggiatori esperti: colline tribali di Bandarban e la spiaggia più lunga del mondo a Cox's Bazar."
+        "description": "Per viaggiatori esperti: colline tribali di Bandarban e la spiaggia più lunga del mondo a Cox's Bazar.",
+        "plan": [
+          {
+            "t": "Arrivo a Dhaka",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dhaka||Dhaka"
+            ]
+          },
+          {
+            "t": "Dhaka",
+            "a": [
+              "attivita|Vecchia Dhaka e fiume Buriganga||Dhaka"
+            ]
+          },
+          {
+            "t": "Chittagong",
+            "a": [
+              "volo|Volo per Chittagong||Chittagong",
+              "alloggio|Hotel a Chittagong||Chittagong",
+              "attivita|Porto e cantieri navali||Chittagong"
+            ]
+          },
+          {
+            "t": "Bandarban",
+            "a": [
+              "transfer|Trasferimento a Bandarban||Bandarban",
+              "alloggio|Resort sulle colline||Bandarban",
+              "attivita|Tempio d'oro||Bandarban"
+            ]
+          },
+          {
+            "t": "Bandarban",
+            "a": [
+              "attivita|Villaggi tribali e Nilgiri||Bandarban"
+            ]
+          },
+          {
+            "t": "Cox's Bazar",
+            "a": [
+              "transfer|Trasferimento a Cox's Bazar||Cox's Bazar",
+              "alloggio|Hotel sul mare||Cox's Bazar",
+              "attivita|La spiaggia più lunga del mondo||Cox's Bazar"
+            ]
+          },
+          {
+            "t": "Cox's Bazar",
+            "a": [
+              "attivita|Himchari e Inani Beach||Cox's Bazar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Dhaka||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Patrimoni del Bangladesh",
         "days": 7,
         "route": "Dhaka (2) → Bogra e Mahasthangarh (1) → Paharpur (1) → Puthia e Rajshahi (2)",
-        "description": "Monasteri buddhisti e templi in terracotta poco conosciuti: per appassionati di archeologia, da novembre a febbraio."
+        "description": "Monasteri buddhisti e templi in terracotta poco conosciuti: per appassionati di archeologia, da novembre a febbraio.",
+        "plan": [
+          {
+            "t": "Arrivo a Dhaka",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dhaka||Dhaka"
+            ]
+          },
+          {
+            "t": "Dhaka",
+            "a": [
+              "attivita|Vecchia Dhaka e Ahsan Manzil||Dhaka"
+            ]
+          },
+          {
+            "t": "Bogra",
+            "a": [
+              "transfer|Trasferimento a Bogra||Bogra",
+              "alloggio|Hotel a Bogra||Bogra",
+              "attivita|Mahasthangarh||Bogra"
+            ]
+          },
+          {
+            "t": "Paharpur",
+            "a": [
+              "attivita|Monastero buddhista di Paharpur UNESCO||Paharpur",
+              "alloggio|Hotel nella zona||Paharpur"
+            ]
+          },
+          {
+            "t": "Rajshahi",
+            "a": [
+              "transfer|Trasferimento a Rajshahi||Rajshahi",
+              "alloggio|Hotel a Rajshahi||Rajshahi",
+              "attivita|Templi in terracotta di Puthia||Puthia"
+            ]
+          },
+          {
+            "t": "Rajshahi",
+            "a": [
+              "attivita|Museo Varendra e fiume Padma||Rajshahi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Dhaka||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [

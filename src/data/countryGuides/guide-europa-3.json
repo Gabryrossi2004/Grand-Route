@@ -64,19 +64,155 @@
         "title": "Sci in Andorra",
         "days": 7,
         "route": "Barcellona → Soldeu o Pas de la Casa (6)",
-        "description": "Settimana bianca con trasferimento da Barcellona."
+        "description": "Settimana bianca con trasferimento da Barcellona.",
+        "plan": [
+          {
+            "t": "Arrivo a Barcellona e Andorra",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Transfer in Andorra|Circa 3 ore da Barcellona.|Andorra",
+              "alloggio|Hotel a Soldeu o Pas de la Casa||Andorra"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "info|Skipass Grandvalira e noleggio||Andorra",
+              "attivita|Giornata sulle piste di Grandvalira|Il comprensorio più grande dei Pirenei.|Grandvalira"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci e après-ski a Soldeu||Soldeu"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Sci fino a Pas de la Casa||Pas de la Casa"
+            ]
+          },
+          {
+            "t": "Pausa relax",
+            "a": [
+              "attivita|Terme di Caldea ad Andorra la Vella e shopping tax-free||Andorra la Vella"
+            ]
+          },
+          {
+            "t": "Sci",
+            "a": [
+              "attivita|Ultima giornata sulle piste||Grandvalira"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer a Barcellona||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Barcellona e Pirenei",
         "days": 6,
         "route": "Barcellona (3) → Andorra (2)",
-        "description": "Città e montagna d'estate."
+        "description": "Città e montagna d'estate.",
+        "plan": [
+          {
+            "t": "Arrivo a Barcellona",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel nell'Eixample||Barcellona",
+              "attivita|Rambla, Boqueria e Barrio Gotico||Barcellona"
+            ]
+          },
+          {
+            "t": "Gaudí",
+            "a": [
+              "attivita|Sagrada Família|Biglietto con orario.|Barcellona",
+              "attivita|Casa Batlló e Pedrera||Barcellona"
+            ]
+          },
+          {
+            "t": "Barcellona",
+            "a": [
+              "attivita|Park Güell e Montjuïc||Barcellona",
+              "ristorante|Tapas a El Born||Barcellona"
+            ]
+          },
+          {
+            "t": "Andorra",
+            "a": [
+              "transfer|Trasferimento in Andorra||Andorra",
+              "alloggio|Hotel ad Andorra la Vella||Andorra",
+              "attivita|Terme di Caldea||Andorra la Vella"
+            ]
+          },
+          {
+            "t": "Pirenei",
+            "a": [
+              "attivita|Valle del Madriu UNESCO o lago di Engolasters||Andorra"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Barcellona||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Estate in montagna",
         "days": 6,
         "route": "Barcellona (1) → Andorra la Vella (4) → Barcellona",
-        "description": "Trekking facile tra laghi d'alta quota, terme di Caldea e shopping tax-free; ideale per famiglie da giugno a settembre."
+        "description": "Trekking facile tra laghi d'alta quota, terme di Caldea e shopping tax-free; ideale per famiglie da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Barcellona",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Barcellona||Barcellona",
+              "attivita|Sagrada Família e Barrio Gotico||Barcellona"
+            ]
+          },
+          {
+            "t": "Andorra",
+            "a": [
+              "transfer|Trasferimento in Andorra||Andorra",
+              "alloggio|Hotel ad Andorra la Vella||Andorra",
+              "attivita|Centro e chiese romaniche||Andorra la Vella"
+            ]
+          },
+          {
+            "t": "Laghi di Tristaina",
+            "a": [
+              "attivita|Escursione ai laghi di Tristaina||Ordino"
+            ]
+          },
+          {
+            "t": "Mountain bike e Naturland",
+            "a": [
+              "attivita|Bike park di Vallnord o Naturland per famiglie||Andorra"
+            ]
+          },
+          {
+            "t": "Terme e shopping",
+            "a": [
+              "attivita|Caldea e shopping tax-free||Andorra la Vella"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Barcellona||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -134,19 +270,108 @@
         "title": "Svizzera orientale e Liechtenstein",
         "days": 4,
         "route": "Zurigo (1) → San Gallo → Vaduz (1) → Appenzello (1)",
-        "description": "Weekend lungo in auto o treno."
+        "description": "Weekend lungo in auto o treno.",
+        "plan": [
+          {
+            "t": "Arrivo a Zurigo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Zurigo||Zurigo",
+              "attivita|Città vecchia e lago||Zurigo"
+            ]
+          },
+          {
+            "t": "San Gallo e Vaduz",
+            "a": [
+              "attivita|Biblioteca dell'Abbazia di San Gallo UNESCO||San Gallo",
+              "transfer|Trasferimento a Vaduz||Vaduz",
+              "alloggio|Hotel a Vaduz||Vaduz",
+              "attivita|Castello e Kunstmuseum||Vaduz"
+            ]
+          },
+          {
+            "t": "Appenzello",
+            "a": [
+              "attivita|Villaggio di Appenzello e Ebenalp con il rifugio Aescher||Appenzello",
+              "alloggio|Hotel ad Appenzello||Appenzello"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Vaduz e Lago di Costanza",
         "days": 4,
         "route": "Vaduz (1) → Bregenz (1) → Lindau e Costanza (1)",
-        "description": "Tre paesi in pochi giorni intorno al Lago di Costanza, comodo in auto dal nord Italia."
+        "description": "Tre paesi in pochi giorni intorno al Lago di Costanza, comodo in auto dal nord Italia.",
+        "plan": [
+          {
+            "t": "Vaduz",
+            "a": [
+              "transfer|Arrivo a Vaduz in auto||Vaduz",
+              "alloggio|Hotel a Vaduz||Vaduz",
+              "attivita|Centro e cantina del Principe||Vaduz"
+            ]
+          },
+          {
+            "t": "Bregenz",
+            "a": [
+              "transfer|Trasferimento a Bregenz||Bregenz",
+              "alloggio|Hotel a Bregenz||Bregenz",
+              "attivita|Palco sul lago e funivia del Pfänder||Bregenz"
+            ]
+          },
+          {
+            "t": "Lindau e Costanza",
+            "a": [
+              "attivita|Isola di Lindau||Lindau",
+              "traghetto|Battello sul lago fino a Costanza e Isola di Mainau||Costanza",
+              "alloggio|Hotel a Costanza||Costanza"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro in auto||"
+            ]
+          }
+        ]
       },
       {
         "title": "Liechtenstein trekking",
         "days": 3,
         "route": "Vaduz (1) → Malbun (1)",
-        "description": "Il sentiero panoramico dei Drei Schwestern e la piccola stazione di montagna di Malbun."
+        "description": "Il sentiero panoramico dei Drei Schwestern e la piccola stazione di montagna di Malbun.",
+        "plan": [
+          {
+            "t": "Vaduz",
+            "a": [
+              "transfer|Arrivo a Vaduz||Vaduz",
+              "alloggio|Hotel a Vaduz||Vaduz",
+              "attivita|Castello e vigneti||Vaduz"
+            ]
+          },
+          {
+            "t": "Malbun",
+            "a": [
+              "transfer|Trasferimento a Malbun||Malbun",
+              "alloggio|Hotel a Malbun||Malbun",
+              "attivita|Sentiero dei Drei Schwestern||Malbun"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -204,19 +429,121 @@
         "title": "Riviera e Montefeltro",
         "days": 4,
         "route": "Rimini (2) → San Marino (1) → San Leo e Urbino (1)",
-        "description": "Mare, storia e borghi."
+        "description": "Mare, storia e borghi.",
+        "plan": [
+          {
+            "t": "Rimini",
+            "a": [
+              "transfer|Arrivo a Rimini||Rimini",
+              "alloggio|Hotel sul mare||Rimini",
+              "attivita|Ponte di Tiberio e borgo San Giuliano||Rimini"
+            ]
+          },
+          {
+            "t": "Rimini",
+            "a": [
+              "attivita|Spiaggia e Museo Fellini||Rimini"
+            ]
+          },
+          {
+            "t": "San Marino",
+            "a": [
+              "transfer|Trasferimento a San Marino||San Marino",
+              "alloggio|Hotel nel centro storico||San Marino",
+              "attivita|Tre Torri e Palazzo Pubblico||San Marino"
+            ]
+          },
+          {
+            "t": "San Leo e Urbino",
+            "a": [
+              "attivita|Fortezza di San Leo||San Leo",
+              "attivita|Palazzo Ducale di Urbino||Urbino",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "San Marino e Romagna",
         "days": 3,
         "route": "San Marino (2)",
-        "description": "Le tre torri, il centro storico e i musei, a 30 minuti da Rimini."
+        "description": "Le tre torri, il centro storico e i musei, a 30 minuti da Rimini.",
+        "plan": [
+          {
+            "t": "San Marino",
+            "a": [
+              "transfer|Arrivo a San Marino||San Marino",
+              "alloggio|Hotel nel centro storico||San Marino",
+              "attivita|Tre Torri e camminamenti||San Marino"
+            ]
+          },
+          {
+            "t": "San Marino",
+            "a": [
+              "attivita|Museo di Stato e Basilica||San Marino",
+              "ristorante|Torta Tre Monti||San Marino"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "attivita|Funivia per Borgo Maggiore||San Marino",
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       },
       {
         "title": "Marche e San Marino",
         "days": 6,
         "route": "San Marino (1) → Urbino (2) → Gradara (1) → Rimini (1)",
-        "description": "Città rinascimentali e castelli tra Romagna e Montefeltro."
+        "description": "Città rinascimentali e castelli tra Romagna e Montefeltro.",
+        "plan": [
+          {
+            "t": "San Marino",
+            "a": [
+              "transfer|Arrivo a San Marino||San Marino",
+              "alloggio|Hotel a San Marino||San Marino",
+              "attivita|Tre Torri||San Marino"
+            ]
+          },
+          {
+            "t": "Urbino",
+            "a": [
+              "transfer|Trasferimento a Urbino||Urbino",
+              "alloggio|Hotel a Urbino||Urbino",
+              "attivita|Palazzo Ducale||Urbino"
+            ]
+          },
+          {
+            "t": "Urbino",
+            "a": [
+              "attivita|Casa di Raffaello e San Leo||Urbino"
+            ]
+          },
+          {
+            "t": "Gradara",
+            "a": [
+              "transfer|Trasferimento a Gradara||Gradara",
+              "alloggio|Hotel a Gradara||Gradara",
+              "attivita|Rocca di Paolo e Francesca||Gradara"
+            ]
+          },
+          {
+            "t": "Rimini",
+            "a": [
+              "transfer|Trasferimento a Rimini||Rimini",
+              "alloggio|Hotel a Rimini||Rimini",
+              "attivita|Centro storico e mare||Rimini"
+            ]
+          },
+          {
+            "t": "Rientro",
+            "a": [
+              "transfer|Rientro||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -313,21 +640,188 @@
     "itineraries": [
       {
         "title": "Montenegro classico",
-        "days": 7,
+        "days": 8,
         "route": "Kotor (2) → Budva (2) → Lago di Scutari (1) → Durmitor (2)",
-        "description": "Mare e montagne in auto, da maggio a settembre."
+        "description": "Mare e montagne in auto, da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Kotor",
+            "a": [
+              "volo|Volo per Podgorica o Tivat||",
+              "alloggio|Hotel a Kotor||Kotor",
+              "attivita|Città vecchia di Kotor||Kotor"
+            ]
+          },
+          {
+            "t": "Bocche di Cattaro",
+            "a": [
+              "attivita|Salita alla fortezza di San Giovanni||Kotor",
+              "traghetto|Perast e Nostra Signora dello Scalpello in barca||Perast"
+            ]
+          },
+          {
+            "t": "Budva",
+            "a": [
+              "transfer|Trasferimento a Budva||Budva",
+              "alloggio|Hotel a Budva||Budva",
+              "attivita|Città vecchia e spiagge||Budva"
+            ]
+          },
+          {
+            "t": "Budva",
+            "a": [
+              "attivita|Sveti Stefan dal belvedere e spiaggia||Budva"
+            ]
+          },
+          {
+            "t": "Lago di Scutari",
+            "a": [
+              "transfer|Trasferimento al lago di Scutari||Scutari",
+              "traghetto|Barca tra le ninfee e i villaggi||Virpazar",
+              "alloggio|Guesthouse sul lago||Virpazar"
+            ]
+          },
+          {
+            "t": "Durmitor",
+            "a": [
+              "transfer|Canyon della Tara e ponte di Đurđevića||Tara",
+              "alloggio|Hotel a Žabljak||Žabljak"
+            ]
+          },
+          {
+            "t": "Durmitor",
+            "a": [
+              "attivita|Lago Nero e rafting sulla Tara||Durmitor"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Dubrovnik e Montenegro",
-        "days": 6,
+        "days": 7,
         "route": "Dubrovnik (2) → Kotor (2) → Budva (2)",
-        "description": "Combinato con la Croazia."
+        "description": "Combinato con la Croazia.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubrovnik",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Dubrovnik||Dubrovnik",
+              "attivita|Stradun||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Dubrovnik",
+            "a": [
+              "attivita|Mura e funivia del Srđ||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Kotor",
+            "a": [
+              "transfer|Trasferimento a Kotor|Frontiera di Debeli Brijeg.|Kotor",
+              "alloggio|Hotel a Kotor||Kotor",
+              "attivita|Città vecchia||Kotor"
+            ]
+          },
+          {
+            "t": "Bocche di Cattaro",
+            "a": [
+              "traghetto|Perast e isolotto||Perast"
+            ]
+          },
+          {
+            "t": "Budva",
+            "a": [
+              "transfer|Trasferimento a Budva||Budva",
+              "alloggio|Hotel a Budva||Budva",
+              "attivita|Città vecchia e spiaggia||Budva"
+            ]
+          },
+          {
+            "t": "Budva",
+            "a": [
+              "attivita|Sveti Stefan||Budva"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Montenegro mare",
         "days": 8,
         "route": "Budva (4) → Sveti Stefan (1) → Ulcinj (2)",
-        "description": "Spiagge e cittadine murate della costa, con escursioni in barca nelle Bocche di Cattaro."
+        "description": "Spiagge e cittadine murate della costa, con escursioni in barca nelle Bocche di Cattaro.",
+        "plan": [
+          {
+            "t": "Arrivo a Budva",
+            "a": [
+              "volo|Volo per Tivat||",
+              "alloggio|Hotel a Budva||Budva",
+              "attivita|Città vecchia||Budva"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Mogren||Budva"
+            ]
+          },
+          {
+            "t": "Bocche di Cattaro",
+            "a": [
+              "traghetto|Escursione a Kotor e Perast||Kotor"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiaggia di Jaz||Budva"
+            ]
+          },
+          {
+            "t": "Sveti Stefan",
+            "a": [
+              "transfer|Trasferimento a Sveti Stefan||Sveti Stefan",
+              "alloggio|Hotel a Sveti Stefan||Sveti Stefan",
+              "attivita|Spiaggia rosa e Miločer||Sveti Stefan"
+            ]
+          },
+          {
+            "t": "Ulcinj",
+            "a": [
+              "transfer|Trasferimento a Ulcinj||Ulcinj",
+              "alloggio|Hotel a Ulcinj||Ulcinj",
+              "attivita|Città vecchia||Ulcinj"
+            ]
+          },
+          {
+            "t": "Ulcinj",
+            "a": [
+              "attivita|Velika Plaža e isola di Ada Bojana||Ulcinj"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer all'aeroporto di Podgorica||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -437,19 +931,196 @@
         "title": "Albania classica",
         "days": 9,
         "route": "Tirana (1) → Kruja → Berat (1) → Argirocastro (1) → Butrinto e Ksamil (2) → Himara (2) → Valona (1)",
-        "description": "Tour in auto, primavera e settembre."
+        "description": "Tour in auto, primavera e settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Tirana",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tirana||Tirana",
+              "attivita|Piazza Skanderbeg, Bunk'Art e Blloku||Tirana"
+            ]
+          },
+          {
+            "t": "Kruja e Berat",
+            "a": [
+              "attivita|Castello e bazar di Kruja||Kruja",
+              "transfer|Trasferimento a Berat||Berat",
+              "alloggio|Hotel nel quartiere di Mangalem||Berat",
+              "attivita|La città dalle mille finestre||Berat"
+            ]
+          },
+          {
+            "t": "Argirocastro",
+            "a": [
+              "transfer|Trasferimento ad Argirocastro||Argirocastro",
+              "alloggio|Hotel nel centro storico||Argirocastro",
+              "attivita|Castello e casa Skenduli||Argirocastro"
+            ]
+          },
+          {
+            "t": "Butrinto e Ksamil",
+            "a": [
+              "attivita|Occhio Blu||Muzinë",
+              "attivita|Parco archeologico di Butrinto||Butrinto",
+              "alloggio|Hotel a Ksamil||Ksamil"
+            ]
+          },
+          {
+            "t": "Ksamil",
+            "a": [
+              "attivita|Isole di Ksamil e spiagge||Ksamil"
+            ]
+          },
+          {
+            "t": "Himara",
+            "a": [
+              "transfer|Riviera fino a Himara||Himara",
+              "alloggio|Hotel a Himara||Himara",
+              "attivita|Porto Palermo e castello di Ali Pascià||Himara"
+            ]
+          },
+          {
+            "t": "Riviera",
+            "a": [
+              "attivita|Spiaggia di Gjipe||Dhërmi"
+            ]
+          },
+          {
+            "t": "Valona",
+            "a": [
+              "transfer|Passo del Llogara verso Valona||Valona",
+              "alloggio|Hotel a Valona||Valona",
+              "attivita|Lungomare||Valona"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Riviera albanese",
         "days": 8,
         "route": "Saranda o Ksamil (4) → Himara o Dhërmi (3)",
-        "description": "Mare da giugno a settembre."
+        "description": "Mare da giugno a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Saranda",
+            "a": [
+              "volo|Volo per Corfù o Tirana e trasferimento||",
+              "alloggio|Hotel a Ksamil o Saranda||Ksamil",
+              "attivita|Lungomare di Saranda||Saranda"
+            ]
+          },
+          {
+            "t": "Ksamil",
+            "a": [
+              "attivita|Isole di Ksamil in barca||Ksamil"
+            ]
+          },
+          {
+            "t": "Butrinto",
+            "a": [
+              "attivita|Parco di Butrinto e Occhio Blu||Butrinto"
+            ]
+          },
+          {
+            "t": "Mare",
+            "a": [
+              "attivita|Spiagge di Ksamil||Ksamil"
+            ]
+          },
+          {
+            "t": "Himara",
+            "a": [
+              "transfer|Trasferimento a Himara o Dhërmi||Himara",
+              "alloggio|Hotel a Dhërmi||Dhërmi",
+              "attivita|Spiaggia||Dhërmi"
+            ]
+          },
+          {
+            "t": "Gjipe",
+            "a": [
+              "attivita|Spiaggia di Gjipe e canyon||Dhërmi"
+            ]
+          },
+          {
+            "t": "Porto Palermo",
+            "a": [
+              "attivita|Castello di Porto Palermo||Himara"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Albania del nord",
         "days": 7,
         "route": "Tirana (1) → Scutari (1) → lago di Koman in traghetto → Valbona (2) → Theth (2) → Tirana",
-        "description": "Le Alpi albanesi tra villaggi di montagna e il traghetto sul lago di Koman: trekking da giugno a settembre, servono fuoristrada per Theth."
+        "description": "Le Alpi albanesi tra villaggi di montagna e il traghetto sul lago di Koman: trekking da giugno a settembre, servono fuoristrada per Theth.",
+        "plan": [
+          {
+            "t": "Arrivo a Tirana",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tirana||Tirana",
+              "attivita|Centro di Tirana||Tirana"
+            ]
+          },
+          {
+            "t": "Scutari",
+            "a": [
+              "transfer|Trasferimento a Scutari||Scutari",
+              "alloggio|Hotel a Scutari||Scutari",
+              "attivita|Castello di Rozafa||Scutari"
+            ]
+          },
+          {
+            "t": "Lago di Koman",
+            "a": [
+              "traghetto|Traghetto sul lago di Koman|Uno dei viaggi in barca più belli d'Europa.|Koman",
+              "transfer|Trasferimento a Valbona||Valbona",
+              "alloggio|Guesthouse a Valbona||Valbona"
+            ]
+          },
+          {
+            "t": "Valbona",
+            "a": [
+              "attivita|Escursione nella valle di Valbona||Valbona"
+            ]
+          },
+          {
+            "t": "Theth",
+            "a": [
+              "attivita|Trekking Valbona–Theth|Circa 7 ore con guida e trasporto bagagli a mulo.|Theth",
+              "alloggio|Guesthouse a Theth||Theth"
+            ]
+          },
+          {
+            "t": "Theth",
+            "a": [
+              "attivita|Occhio Blu di Theth e torre della vendetta||Theth"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Tirana in fuoristrada||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -548,19 +1219,170 @@
         "title": "Bosnia ed Erzegovina",
         "days": 6,
         "route": "Sarajevo (2) → Jajce (1) → Mostar (2) → Blagaj e Kravica",
-        "description": "Da maggio a ottobre, anche abbinata a Dubrovnik."
+        "description": "Da maggio a ottobre, anche abbinata a Dubrovnik.",
+        "plan": [
+          {
+            "t": "Arrivo a Sarajevo",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Baščaršija||Sarajevo",
+              "attivita|Baščaršija e ćevapi||Sarajevo"
+            ]
+          },
+          {
+            "t": "Sarajevo",
+            "a": [
+              "attivita|Tunnel della Speranza e Ponte Latino||Sarajevo"
+            ]
+          },
+          {
+            "t": "Jajce",
+            "a": [
+              "transfer|Trasferimento a Jajce||Jajce",
+              "alloggio|Hotel a Jajce||Jajce",
+              "attivita|Cascata e mulini di Pliva||Jajce"
+            ]
+          },
+          {
+            "t": "Mostar",
+            "a": [
+              "transfer|Trasferimento a Mostar||Mostar",
+              "alloggio|Hotel nel centro storico||Mostar",
+              "attivita|Stari Most e tuffatori||Mostar"
+            ]
+          },
+          {
+            "t": "Blagaj e Kravica",
+            "a": [
+              "attivita|Tekija di Blagaj||Blagaj",
+              "attivita|Cascate di Kravica||Kravica"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro via Sarajevo o Dubrovnik||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Pellegrinaggio",
         "days": 4,
         "route": "Spalato o Dubrovnik → Medjugorje (3)",
-        "description": "Viaggio religioso con guida."
+        "description": "Viaggio religioso con guida.",
+        "plan": [
+          {
+            "t": "Arrivo e Medjugorje",
+            "a": [
+              "volo|Volo per Spalato o Dubrovnik||",
+              "transfer|Trasferimento a Medjugorje||Medjugorje",
+              "alloggio|Pensione a Medjugorje||Medjugorje"
+            ]
+          },
+          {
+            "t": "Medjugorje",
+            "a": [
+              "attivita|Collina delle Apparizioni (Podbrdo)||Medjugorje",
+              "attivita|Messa internazionale nella chiesa di San Giacomo||Medjugorje"
+            ]
+          },
+          {
+            "t": "Medjugorje",
+            "a": [
+              "attivita|Monte Križevac e Via Crucis||Medjugorje",
+              "attivita|Mostar nel pomeriggio (facoltativo)||Mostar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Trasferimento in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Balcani in auto",
         "days": 10,
         "route": "Dubrovnik (1) → Mostar (2) → Sarajevo (2) → Višegrad (1) → Kotor (2) → Dubrovnik (1)",
-        "description": "Grande giro in auto tra Croazia, Bosnia e Montenegro: ponti ottomani, storia recente e Bocche di Cattaro."
+        "description": "Grande giro in auto tra Croazia, Bosnia e Montenegro: ponti ottomani, storia recente e Bocche di Cattaro.",
+        "plan": [
+          {
+            "t": "Arrivo a Dubrovnik",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "transfer|Ritiro auto||Dubrovnik",
+              "alloggio|Hotel a Dubrovnik||Dubrovnik",
+              "attivita|Mura||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Mostar",
+            "a": [
+              "transfer|Trasferimento a Mostar con Kravica||Mostar",
+              "alloggio|Hotel a Mostar||Mostar",
+              "attivita|Stari Most||Mostar"
+            ]
+          },
+          {
+            "t": "Mostar",
+            "a": [
+              "attivita|Blagaj e Počitelj||Erzegovina"
+            ]
+          },
+          {
+            "t": "Sarajevo",
+            "a": [
+              "transfer|Trasferimento a Sarajevo||Sarajevo",
+              "alloggio|Hotel a Sarajevo||Sarajevo",
+              "attivita|Baščaršija||Sarajevo"
+            ]
+          },
+          {
+            "t": "Sarajevo",
+            "a": [
+              "attivita|Tunnel della Speranza e storia recente||Sarajevo"
+            ]
+          },
+          {
+            "t": "Višegrad",
+            "a": [
+              "transfer|Trasferimento a Višegrad||Višegrad",
+              "alloggio|Hotel a Višegrad||Višegrad",
+              "attivita|Ponte sulla Drina UNESCO||Višegrad"
+            ]
+          },
+          {
+            "t": "Kotor",
+            "a": [
+              "transfer|Trasferimento a Kotor||Kotor",
+              "alloggio|Hotel a Kotor||Kotor"
+            ]
+          },
+          {
+            "t": "Kotor",
+            "a": [
+              "attivita|Città vecchia e Perast||Kotor"
+            ]
+          },
+          {
+            "t": "Dubrovnik",
+            "a": [
+              "transfer|Rientro a Dubrovnik||Dubrovnik",
+              "alloggio|Hotel a Dubrovnik||Dubrovnik"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -657,21 +1479,169 @@
     "itineraries": [
       {
         "title": "Serbia classica",
-        "days": 7,
+        "days": 8,
         "route": "Belgrado (3) → Novi Sad (1) → Danubio e Golubac (1) → Zlatibor (2)",
-        "description": "Da maggio a settembre."
+        "description": "Da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Belgrado",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Belgrado||Belgrado",
+              "attivita|Kalemegdan||Belgrado"
+            ]
+          },
+          {
+            "t": "Belgrado",
+            "a": [
+              "attivita|Tempio di San Sava e Museo di Tesla||Belgrado"
+            ]
+          },
+          {
+            "t": "Belgrado",
+            "a": [
+              "attivita|Skadarlija e battelli sul Danubio||Belgrado"
+            ]
+          },
+          {
+            "t": "Novi Sad",
+            "a": [
+              "transfer|Trasferimento a Novi Sad||Novi Sad",
+              "alloggio|Hotel a Novi Sad||Novi Sad",
+              "attivita|Fortezza di Petrovaradin e monasteri della Fruška Gora||Novi Sad"
+            ]
+          },
+          {
+            "t": "Danubio",
+            "a": [
+              "transfer|Lungo il Danubio fino a Golubac||Golubac",
+              "attivita|Fortezza di Golubac e Porte di Ferro||Golubac",
+              "alloggio|Hotel sul Danubio||Golubac"
+            ]
+          },
+          {
+            "t": "Zlatibor",
+            "a": [
+              "transfer|Trasferimento a Zlatibor||Zlatibor",
+              "alloggio|Hotel a Zlatibor||Zlatibor",
+              "attivita|Villaggio etno di Sirogojno||Zlatibor"
+            ]
+          },
+          {
+            "t": "Zlatibor",
+            "a": [
+              "treno|Treno a vapore Šargan Eight||Mokra Gora"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Belgrado weekend",
         "days": 4,
         "route": "Belgrado (3)",
-        "description": "Fortezza di Kalemegdan, il quartiere bohémien di Skadarlija e la vita notturna sui battelli."
+        "description": "Fortezza di Kalemegdan, il quartiere bohémien di Skadarlija e la vita notturna sui battelli.",
+        "plan": [
+          {
+            "t": "Arrivo a Belgrado",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Belgrado||Belgrado",
+              "attivita|Knez Mihailova e Kalemegdan al tramonto||Belgrado"
+            ]
+          },
+          {
+            "t": "Belgrado",
+            "a": [
+              "attivita|Tempio di San Sava e Museo di Tesla||Belgrado",
+              "ristorante|Cena a Skadarlija||Belgrado"
+            ]
+          },
+          {
+            "t": "Belgrado",
+            "a": [
+              "attivita|Zemun e vita notturna sui splav||Belgrado"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Serbia dei monasteri",
         "days": 8,
         "route": "Belgrado (2) → Studenica (1) → Kopaonik (2) → Niš (1)",
-        "description": "Monasteri medievali UNESCO e montagne, chiudendo nella città di Costantino."
+        "description": "Monasteri medievali UNESCO e montagne, chiudendo nella città di Costantino.",
+        "plan": [
+          {
+            "t": "Arrivo a Belgrado",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Belgrado||Belgrado",
+              "attivita|Kalemegdan||Belgrado"
+            ]
+          },
+          {
+            "t": "Belgrado",
+            "a": [
+              "attivita|San Sava e Museo di Tesla||Belgrado"
+            ]
+          },
+          {
+            "t": "Studenica",
+            "a": [
+              "transfer|Trasferimento con sosta a Žiča||Studenica",
+              "attivita|Monastero di Studenica UNESCO||Studenica",
+              "alloggio|Hotel vicino al monastero||Studenica"
+            ]
+          },
+          {
+            "t": "Kopaonik",
+            "a": [
+              "transfer|Trasferimento a Kopaonik||Kopaonik",
+              "alloggio|Hotel a Kopaonik||Kopaonik",
+              "attivita|Escursioni o sci||Kopaonik"
+            ]
+          },
+          {
+            "t": "Kopaonik",
+            "a": [
+              "attivita|Monastero di Sopoćani UNESCO||Novi Pazar"
+            ]
+          },
+          {
+            "t": "Niš",
+            "a": [
+              "transfer|Trasferimento a Niš||Niš",
+              "alloggio|Hotel a Niš||Niš",
+              "attivita|Fortezza e Torre dei Teschi||Niš"
+            ]
+          },
+          {
+            "t": "Niš",
+            "a": [
+              "attivita|Mediana, la villa di Costantino||Niš"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -754,19 +1724,165 @@
         "title": "Macedonia e Albania",
         "days": 8,
         "route": "Skopje (2) → Ocrida (3) → Berat (1) → Tirana (1)",
-        "description": "Laghi e città storiche dei Balcani."
+        "description": "Laghi e città storiche dei Balcani.",
+        "plan": [
+          {
+            "t": "Arrivo a Skopje",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Skopje||Skopje",
+              "attivita|Vecchio bazar e fortezza||Skopje"
+            ]
+          },
+          {
+            "t": "Skopje",
+            "a": [
+              "attivita|Canyon di Matka in kayak||Matka"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "transfer|Trasferimento a Ocrida||Ocrida",
+              "alloggio|Hotel sul lago||Ocrida",
+              "attivita|San Giovanni Kaneo e Samuele||Ocrida"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "attivita|San Naum e le sorgenti in barca||Ocrida"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "attivita|Bay of Bones e villaggi del lago||Ocrida"
+            ]
+          },
+          {
+            "t": "Berat",
+            "a": [
+              "transfer|Trasferimento in Albania a Berat||Berat",
+              "alloggio|Hotel a Berat||Berat",
+              "attivita|Città dalle mille finestre||Berat"
+            ]
+          },
+          {
+            "t": "Tirana",
+            "a": [
+              "transfer|Trasferimento a Tirana||Tirana",
+              "alloggio|Hotel a Tirana||Tirana",
+              "attivita|Centro di Tirana||Tirana"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Lago di Ocrida",
         "days": 5,
         "route": "Ocrida (4), con San Naum",
-        "description": "Chiese bizantine sul lago più antico d'Europa e il monastero di San Naum con le sorgenti."
+        "description": "Chiese bizantine sul lago più antico d'Europa e il monastero di San Naum con le sorgenti.",
+        "plan": [
+          {
+            "t": "Arrivo a Ocrida",
+            "a": [
+              "volo|Volo per Ocrida o Skopje||",
+              "alloggio|Hotel sul lago||Ocrida",
+              "attivita|Città vecchia||Ocrida"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "attivita|San Giovanni Kaneo e Fortezza di Samuele||Ocrida"
+            ]
+          },
+          {
+            "t": "San Naum",
+            "a": [
+              "traghetto|Barca a San Naum e sorgenti del Drin Nero||San Naum"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "attivita|Laboratorio di perle di Ocrida e spiaggia||Ocrida"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Macedonia classica",
         "days": 7,
         "route": "Skopje (2) → Matka (1) → Bitola e Heraclea (1) → Ocrida (3)",
-        "description": "Capitale, canyon e città antiche, chiudendo sul lago di Ocrida."
+        "description": "Capitale, canyon e città antiche, chiudendo sul lago di Ocrida.",
+        "plan": [
+          {
+            "t": "Arrivo a Skopje",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Skopje||Skopje",
+              "attivita|Piazza Macedonia||Skopje"
+            ]
+          },
+          {
+            "t": "Skopje",
+            "a": [
+              "attivita|Vecchio bazar e Casa di Madre Teresa||Skopje"
+            ]
+          },
+          {
+            "t": "Matka",
+            "a": [
+              "attivita|Canyon di Matka||Matka",
+              "alloggio|Hotel a Skopje||Skopje"
+            ]
+          },
+          {
+            "t": "Bitola",
+            "a": [
+              "transfer|Trasferimento a Bitola||Bitola",
+              "alloggio|Hotel a Bitola||Bitola",
+              "attivita|Heraclea Lyncestis e Širok Sokak||Bitola"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "transfer|Trasferimento a Ocrida||Ocrida",
+              "alloggio|Hotel a Ocrida||Ocrida",
+              "attivita|Città vecchia||Ocrida"
+            ]
+          },
+          {
+            "t": "Ocrida",
+            "a": [
+              "attivita|San Naum||Ocrida"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -835,19 +1951,168 @@
         "title": "Balcani occidentali",
         "days": 9,
         "route": "Tirana (2) → Prizren (2) → Peć (1) → Pristina (1) → Skopje (2)",
-        "description": "Tour tra Albania, Kosovo e Macedonia."
+        "description": "Tour tra Albania, Kosovo e Macedonia.",
+        "plan": [
+          {
+            "t": "Arrivo a Tirana",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Tirana||Tirana",
+              "attivita|Centro di Tirana||Tirana"
+            ]
+          },
+          {
+            "t": "Tirana",
+            "a": [
+              "attivita|Bunk'Art e Dajti||Tirana"
+            ]
+          },
+          {
+            "t": "Prizren",
+            "a": [
+              "transfer|Trasferimento a Prizren||Prizren",
+              "alloggio|Hotel a Prizren||Prizren",
+              "attivita|Fortezza e ponte ottomano||Prizren"
+            ]
+          },
+          {
+            "t": "Prizren",
+            "a": [
+              "attivita|Moschea di Sinan Pascià e Lega di Prizren||Prizren"
+            ]
+          },
+          {
+            "t": "Peć",
+            "a": [
+              "transfer|Trasferimento a Peć||Peć",
+              "alloggio|Hotel a Peć||Peć",
+              "attivita|Patriarcato di Peć UNESCO||Peć"
+            ]
+          },
+          {
+            "t": "Pristina",
+            "a": [
+              "transfer|Trasferimento a Pristina con Dečani||Pristina",
+              "alloggio|Hotel a Pristina||Pristina",
+              "attivita|Monumento Newborn||Pristina"
+            ]
+          },
+          {
+            "t": "Skopje",
+            "a": [
+              "transfer|Trasferimento a Skopje||Skopje",
+              "alloggio|Hotel a Skopje||Skopje",
+              "attivita|Vecchio bazar||Skopje"
+            ]
+          },
+          {
+            "t": "Skopje",
+            "a": [
+              "attivita|Canyon di Matka||Matka"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Kosovo breve",
         "days": 4,
         "route": "Pristina (2) → Prizren (1)",
-        "description": "Capitale vivace, il monastero di Gračanica e la cittadina ottomana di Prizren."
+        "description": "Capitale vivace, il monastero di Gračanica e la cittadina ottomana di Prizren.",
+        "plan": [
+          {
+            "t": "Arrivo a Pristina",
+            "a": [
+              "volo|Volo per Pristina||",
+              "alloggio|Hotel a Pristina||Pristina",
+              "attivita|Centro e biblioteca nazionale||Pristina"
+            ]
+          },
+          {
+            "t": "Pristina",
+            "a": [
+              "attivita|Monastero di Gračanica||Gračanica"
+            ]
+          },
+          {
+            "t": "Prizren",
+            "a": [
+              "transfer|Trasferimento a Prizren||Prizren",
+              "alloggio|Hotel a Prizren||Prizren",
+              "attivita|Fortezza e centro ottomano||Prizren"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Pristina||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Monasteri e montagne",
         "days": 7,
         "route": "Pristina (2) → Peć e monastero (1) → Rugova (2) → Prizren (1)",
-        "description": "Monasteri serbo-ortodossi UNESCO e la gola di Rugova per trekking e vie ferrate."
+        "description": "Monasteri serbo-ortodossi UNESCO e la gola di Rugova per trekking e vie ferrate.",
+        "plan": [
+          {
+            "t": "Arrivo a Pristina",
+            "a": [
+              "volo|Volo per Pristina||",
+              "alloggio|Hotel a Pristina||Pristina"
+            ]
+          },
+          {
+            "t": "Pristina",
+            "a": [
+              "attivita|Gračanica e Bear Sanctuary||Pristina"
+            ]
+          },
+          {
+            "t": "Peć",
+            "a": [
+              "transfer|Trasferimento a Peć||Peć",
+              "attivita|Monastero di Visoki Dečani UNESCO||Dečani",
+              "alloggio|Hotel a Peć||Peć"
+            ]
+          },
+          {
+            "t": "Rugova",
+            "a": [
+              "attivita|Gola di Rugova e via ferrata||Rugova",
+              "alloggio|Guesthouse a Rugova||Rugova"
+            ]
+          },
+          {
+            "t": "Rugova",
+            "a": [
+              "attivita|Trekking ai laghi||Rugova"
+            ]
+          },
+          {
+            "t": "Prizren",
+            "a": [
+              "transfer|Trasferimento a Prizren||Prizren",
+              "alloggio|Hotel a Prizren||Prizren",
+              "attivita|Centro storico||Prizren"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Pristina||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -907,19 +2172,151 @@
         "title": "Moldavia del vino",
         "days": 4,
         "route": "Chișinău (3), con cantine e Orheiul Vechi",
-        "description": "Weekend lungo enogastronomico."
+        "description": "Weekend lungo enogastronomico.",
+        "plan": [
+          {
+            "t": "Arrivo a Chișinău",
+            "a": [
+              "volo|Volo per Chișinău|Verificare sempre le indicazioni della Farnesina.|",
+              "alloggio|Hotel a Chișinău||Chișinău",
+              "attivita|Centro e mercato centrale||Chișinău"
+            ]
+          },
+          {
+            "t": "Cantine",
+            "a": [
+              "attivita|Cantine sotterranee di Cricova e Mileștii Mici|Le gallerie di vino più grandi al mondo.|Cricova"
+            ]
+          },
+          {
+            "t": "Orheiul Vechi",
+            "a": [
+              "attivita|Monastero nella roccia di Orheiul Vechi||Orheiul Vechi"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Moldavia e Romania",
         "days": 9,
         "route": "Iași (1) → Chișinău (2) → Cricova e Mileștii Mici (1) → Soroca (1) → Bucovina (2) → Suceava (1)",
-        "description": "Cantine sotterranee più grandi al mondo e monasteri dipinti della Bucovina."
+        "description": "Cantine sotterranee più grandi al mondo e monasteri dipinti della Bucovina.",
+        "plan": [
+          {
+            "t": "Arrivo a Iași",
+            "a": [
+              "volo|Volo per Iași||",
+              "alloggio|Hotel a Iași||Iași",
+              "attivita|Palazzo della Cultura||Iași"
+            ]
+          },
+          {
+            "t": "Chișinău",
+            "a": [
+              "transfer|Trasferimento a Chișinău||Chișinău",
+              "alloggio|Hotel a Chișinău||Chișinău",
+              "attivita|Centro della città||Chișinău"
+            ]
+          },
+          {
+            "t": "Chișinău",
+            "a": [
+              "attivita|Orheiul Vechi||Orheiul Vechi"
+            ]
+          },
+          {
+            "t": "Cantine",
+            "a": [
+              "attivita|Cricova e Mileștii Mici||Cricova"
+            ]
+          },
+          {
+            "t": "Soroca",
+            "a": [
+              "transfer|Trasferimento a Soroca||Soroca",
+              "alloggio|Hotel a Soroca||Soroca",
+              "attivita|Fortezza sul Nistru||Soroca"
+            ]
+          },
+          {
+            "t": "Bucovina",
+            "a": [
+              "transfer|Trasferimento in Bucovina||Bucovina",
+              "alloggio|Pensione in Bucovina||Bucovina"
+            ]
+          },
+          {
+            "t": "Bucovina",
+            "a": [
+              "attivita|Monasteri dipinti di Voroneț e Moldovița||Bucovina"
+            ]
+          },
+          {
+            "t": "Suceava",
+            "a": [
+              "transfer|Trasferimento a Suceava||Suceava",
+              "alloggio|Hotel a Suceava||Suceava",
+              "attivita|Fortezza di Suceava||Suceava"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Chișinău e monasteri",
         "days": 5,
         "route": "Chișinău (2) → Orheiul Vechi (1) → Saharna e Țipova (1)",
-        "description": "Monasteri scavati nella roccia sul fiume Nistru, verificando sempre le indicazioni di viaggio."
+        "description": "Monasteri scavati nella roccia sul fiume Nistru, verificando sempre le indicazioni di viaggio.",
+        "plan": [
+          {
+            "t": "Arrivo a Chișinău",
+            "a": [
+              "volo|Volo per Chișinău||",
+              "alloggio|Hotel a Chișinău||Chișinău"
+            ]
+          },
+          {
+            "t": "Chișinău",
+            "a": [
+              "attivita|Centro e Cricova||Chișinău"
+            ]
+          },
+          {
+            "t": "Orheiul Vechi",
+            "a": [
+              "transfer|Trasferimento a Orheiul Vechi||Orheiul Vechi",
+              "alloggio|Guesthouse||Orheiul Vechi",
+              "attivita|Monastero nella roccia||Orheiul Vechi"
+            ]
+          },
+          {
+            "t": "Saharna e Țipova",
+            "a": [
+              "attivita|Monasteri di Saharna e Țipova sul Nistru||Saharna",
+              "transfer|Rientro a Chișinău||Chișinău"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Transfer in aeroporto||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1018,19 +2415,123 @@
         "title": "Alternativa polacca",
         "days": 4,
         "route": "Varsavia (1) → Białowieża lato polacco (2)",
-        "description": "Per vedere la foresta primordiale senza entrare in Bielorussia."
+        "description": "Per vedere la foresta primordiale senza entrare in Bielorussia.",
+        "plan": [
+          {
+            "t": "Arrivo a Varsavia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Varsavia||Varsavia",
+              "attivita|Città vecchia||Varsavia"
+            ]
+          },
+          {
+            "t": "Białowieża",
+            "a": [
+              "transfer|Trasferimento a Białowieża||Białowieża",
+              "alloggio|Hotel a Białowieża||Białowieża",
+              "attivita|Riserva dei bisonti europei||Białowieża"
+            ]
+          },
+          {
+            "t": "Białowieża",
+            "a": [
+              "attivita|Foresta primaria con guida||Białowieża"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Varsavia||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Minsk e castelli",
         "days": 5,
         "route": "Minsk (3) → Mir e Nesvizh (1)",
-        "description": "Solo quando le indicazioni della Farnesina lo consentono: capitale sovietica e castelli UNESCO."
+        "description": "Solo quando le indicazioni della Farnesina lo consentono: capitale sovietica e castelli UNESCO.",
+        "plan": [
+          {
+            "t": "Arrivo a Minsk",
+            "a": [
+              "info|Viaggio da proporre solo se la Farnesina non lo sconsiglia||",
+              "volo|Volo per Minsk||",
+              "alloggio|Hotel a Minsk||Minsk"
+            ]
+          },
+          {
+            "t": "Minsk",
+            "a": [
+              "attivita|Viale dell'Indipendenza e città alta||Minsk"
+            ]
+          },
+          {
+            "t": "Minsk",
+            "a": [
+              "attivita|Museo della Grande guerra patriottica||Minsk"
+            ]
+          },
+          {
+            "t": "Mir e Nesvizh",
+            "a": [
+              "attivita|Castelli di Mir e Nesvizh UNESCO||Mir"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Brest e Białowieża",
         "days": 5,
         "route": "Varsavia (1) → Brest (2) → Białowieża (2)",
-        "description": "La foresta primaria con i bisonti europei e la fortezza di Brest; da proporre solo con viaggi consentiti verso la Bielorussia."
+        "description": "La foresta primaria con i bisonti europei e la fortezza di Brest; da proporre solo con viaggi consentiti verso la Bielorussia.",
+        "plan": [
+          {
+            "t": "Arrivo a Varsavia",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "info|Proporre solo se gli spostamenti verso la Bielorussia sono consentiti||",
+              "alloggio|Hotel a Varsavia||Varsavia"
+            ]
+          },
+          {
+            "t": "Brest",
+            "a": [
+              "transfer|Trasferimento a Brest||Brest",
+              "alloggio|Hotel a Brest||Brest",
+              "attivita|Fortezza di Brest||Brest"
+            ]
+          },
+          {
+            "t": "Brest",
+            "a": [
+              "attivita|Centro di Brest||Brest"
+            ]
+          },
+          {
+            "t": "Białowieża",
+            "a": [
+              "transfer|Trasferimento a Białowieża||Białowieża",
+              "alloggio|Hotel a Białowieża||Białowieża",
+              "attivita|Foresta e bisonti||Białowieża"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "transfer|Rientro a Varsavia||",
+              "volo|Volo di rientro in Italia||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1155,19 +2656,198 @@
         "title": "Groenlandia estiva",
         "days": 8,
         "route": "Copenaghen o Reykjavík → Kangerlussuaq (2) → Ilulissat (4) → Nuuk (1)",
-        "description": "Da giugno a settembre, con voli interni."
+        "description": "Da giugno a settembre, con voli interni.",
+        "plan": [
+          {
+            "t": "Arrivo a Kangerlussuaq",
+            "a": [
+              "volo|Volo per Kangerlussuaq via Copenaghen||",
+              "alloggio|Hotel a Kangerlussuaq||Kangerlussuaq"
+            ]
+          },
+          {
+            "t": "Kangerlussuaq",
+            "a": [
+              "attivita|Calotta glaciale (Point 660) e buoi muschiati||Kangerlussuaq"
+            ]
+          },
+          {
+            "t": "Ilulissat",
+            "a": [
+              "volo|Volo per Ilulissat||Ilulissat",
+              "alloggio|Hotel a Ilulissat||Ilulissat",
+              "attivita|Sentiero dell'Icefjord UNESCO||Ilulissat"
+            ]
+          },
+          {
+            "t": "Ilulissat",
+            "a": [
+              "traghetto|Crociera tra gli iceberg a mezzanotte||Ilulissat"
+            ]
+          },
+          {
+            "t": "Ilulissat",
+            "a": [
+              "traghetto|Ghiacciaio Eqi in barca||Ilulissat"
+            ]
+          },
+          {
+            "t": "Ilulissat",
+            "a": [
+              "attivita|Villaggio di Oqaatsut e slitte estive||Ilulissat"
+            ]
+          },
+          {
+            "t": "Nuuk",
+            "a": [
+              "volo|Volo per Nuuk||Nuuk",
+              "alloggio|Hotel a Nuuk||Nuuk",
+              "attivita|Museo nazionale e mummie di Qilakitsoq||Nuuk"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Copenaghen||"
+            ]
+          }
+        ]
       },
       {
         "title": "Groenlandia orientale",
         "days": 7,
         "route": "Reykjavík (1) → Kulusuk (1) → Tasiilaq (4)",
-        "description": "Iceberg, villaggi inuit e cani da slitta; voli brevi dall'Islanda."
+        "description": "Iceberg, villaggi inuit e cani da slitta; voli brevi dall'Islanda.",
+        "plan": [
+          {
+            "t": "Arrivo a Reykjavík",
+            "a": [
+              "volo|Volo per Reykjavík||",
+              "alloggio|Hotel a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Kulusuk",
+            "a": [
+              "volo|Volo per Kulusuk||Kulusuk",
+              "alloggio|Hotel a Kulusuk||Kulusuk",
+              "attivita|Villaggio inuit||Kulusuk"
+            ]
+          },
+          {
+            "t": "Tasiilaq",
+            "a": [
+              "transfer|Elicottero o barca per Tasiilaq||Tasiilaq",
+              "alloggio|Hotel a Tasiilaq||Tasiilaq",
+              "attivita|Valle dei Fiori||Tasiilaq"
+            ]
+          },
+          {
+            "t": "Tasiilaq",
+            "a": [
+              "traghetto|Barca tra gli iceberg||Tasiilaq"
+            ]
+          },
+          {
+            "t": "Tasiilaq",
+            "a": [
+              "attivita|Escursione con i cani da slitta||Tasiilaq"
+            ]
+          },
+          {
+            "t": "Tasiilaq",
+            "a": [
+              "attivita|Kayak nel fiordo||Tasiilaq"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo per Reykjavík e rientro in Italia||"
+            ]
+          }
+        ]
       },
       {
         "title": "Crociera di spedizione",
         "days": 12,
         "route": "Reykjavík → crociera lungo la costa ovest (10) → Kangerlussuaq",
-        "description": "Il modo più comodo per vedere fiordi e ghiacciai: navi piccole con sbarchi in gommone."
+        "description": "Il modo più comodo per vedere fiordi e ghiacciai: navi piccole con sbarchi in gommone.",
+        "plan": [
+          {
+            "t": "Reykjavík",
+            "a": [
+              "volo|Volo per Reykjavík||",
+              "alloggio|Hotel a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Imbarco",
+            "a": [
+              "crociera|Imbarco sulla nave di spedizione||Reykjavík"
+            ]
+          },
+          {
+            "t": "Navigazione",
+            "a": [
+              "crociera|Navigazione nello stretto di Danimarca con conferenze a bordo||"
+            ]
+          },
+          {
+            "t": "Fiordi",
+            "a": [
+              "crociera|Sbarchi in gommone nei fiordi||Groenlandia"
+            ]
+          },
+          {
+            "t": "Villaggi",
+            "a": [
+              "attivita|Visita a un villaggio inuit||Groenlandia"
+            ]
+          },
+          {
+            "t": "Ghiacciai",
+            "a": [
+              "crociera|Fronte dei ghiacciai e iceberg||Groenlandia"
+            ]
+          },
+          {
+            "t": "Fauna",
+            "a": [
+              "attivita|Avvistamento di balene e foche||Groenlandia"
+            ]
+          },
+          {
+            "t": "Escursione",
+            "a": [
+              "attivita|Trekking sulla tundra||Groenlandia"
+            ]
+          },
+          {
+            "t": "Ilulissat",
+            "a": [
+              "attivita|Icefjord di Ilulissat||Ilulissat"
+            ]
+          },
+          {
+            "t": "Disko Bay",
+            "a": [
+              "crociera|Baia di Disko||Disko"
+            ]
+          },
+          {
+            "t": "Sbarco",
+            "a": [
+              "crociera|Sbarco a Kangerlussuaq||Kangerlussuaq"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Copenaghen||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
@@ -1242,19 +2922,167 @@
         "title": "Fær Øer in auto",
         "days": 5,
         "route": "Vágar (1) → Tórshavn (2) → Eysturoy (1) → Kalsoy (1)",
-        "description": "Fly & drive da maggio a settembre."
+        "description": "Fly & drive da maggio a settembre.",
+        "plan": [
+          {
+            "t": "Arrivo a Vágar",
+            "a": [
+              "volo|Volo per Vágar via Copenaghen||",
+              "transfer|Ritiro auto||Vágar",
+              "alloggio|Hotel a Vágar||Vágar",
+              "attivita|Cascata di Múlafossur a Gásadalur||Gásadalur"
+            ]
+          },
+          {
+            "t": "Tórshavn",
+            "a": [
+              "transfer|Trasferimento a Tórshavn||Tórshavn",
+              "alloggio|Hotel a Tórshavn||Tórshavn",
+              "attivita|Tinganes, il parlamento più antico||Tórshavn"
+            ]
+          },
+          {
+            "t": "Tórshavn",
+            "a": [
+              "attivita|Kirkjubøur e lago Sørvágsvatn||Streymoy"
+            ]
+          },
+          {
+            "t": "Eysturoy",
+            "a": [
+              "transfer|Trasferimento a Eysturoy||Eysturoy",
+              "alloggio|Guesthouse a Gjógv||Gjógv",
+              "attivita|Gjógv e Slættaratindur||Eysturoy"
+            ]
+          },
+          {
+            "t": "Kalsoy",
+            "a": [
+              "traghetto|Traghetto per Kalsoy e faro di Kallur||Kalsoy",
+              "transfer|Rientro all'aeroporto||Vágar"
+            ]
+          }
+        ]
       },
       {
         "title": "Fær Øer e Islanda",
-        "days": 9,
+        "days": 8,
         "route": "Reykjavík (2) → Circolo d'Oro (1) → volo → Tórshavn (2) → Mykines (1) → Gásadalur (1)",
-        "description": "Due isole nordiche con un volo breve: geyser in Islanda, puffin e scogliere alle Fær Øer."
+        "description": "Due isole nordiche con un volo breve: geyser in Islanda, puffin e scogliere alle Fær Øer.",
+        "plan": [
+          {
+            "t": "Arrivo a Reykjavík",
+            "a": [
+              "volo|Volo dall'Italia||",
+              "alloggio|Hotel a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Reykjavík",
+            "a": [
+              "attivita|Centro di Reykjavík e Laguna Blu||Reykjavík"
+            ]
+          },
+          {
+            "t": "Circolo d'Oro",
+            "a": [
+              "attivita|Þingvellir, Geysir e Gullfoss||Circolo d'Oro",
+              "alloggio|Hotel a Reykjavík||Reykjavík"
+            ]
+          },
+          {
+            "t": "Fær Øer",
+            "a": [
+              "volo|Volo per Vágar||Vágar",
+              "alloggio|Hotel a Tórshavn||Tórshavn",
+              "attivita|Tinganes||Tórshavn"
+            ]
+          },
+          {
+            "t": "Tórshavn",
+            "a": [
+              "attivita|Saksun e Tjørnuvík||Streymoy"
+            ]
+          },
+          {
+            "t": "Mykines",
+            "a": [
+              "traghetto|Barca per Mykines e i puffin||Mykines",
+              "alloggio|Guesthouse a Mykines||Mykines"
+            ]
+          },
+          {
+            "t": "Gásadalur",
+            "a": [
+              "attivita|Cascata di Múlafossur e Sørvágsvatn||Vágar",
+              "alloggio|Hotel a Vágar||Vágar"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Copenaghen||"
+            ]
+          }
+        ]
       },
       {
         "title": "Fær Øer trekking",
         "days": 7,
         "route": "Tórshavn (2) → Mykines (1) → Saksun e Tjørnuvík (2) → Gjógv (1)",
-        "description": "Escursioni su sentieri a picco sull'oceano; da giugno ad agosto con molta luce."
+        "description": "Escursioni su sentieri a picco sull'oceano; da giugno ad agosto con molta luce.",
+        "plan": [
+          {
+            "t": "Arrivo a Tórshavn",
+            "a": [
+              "volo|Volo per Vágar||",
+              "alloggio|Hotel a Tórshavn||Tórshavn",
+              "attivita|Tinganes||Tórshavn"
+            ]
+          },
+          {
+            "t": "Tórshavn",
+            "a": [
+              "attivita|Trekking a Kirkjubøur||Streymoy"
+            ]
+          },
+          {
+            "t": "Mykines",
+            "a": [
+              "traghetto|Barca per Mykines||Mykines",
+              "alloggio|Guesthouse||Mykines",
+              "attivita|Sentiero del faro e puffin||Mykines"
+            ]
+          },
+          {
+            "t": "Saksun",
+            "a": [
+              "transfer|Trasferimento a Saksun||Saksun",
+              "alloggio|Guesthouse a Tjørnuvík||Tjørnuvík",
+              "attivita|Laguna di Saksun||Saksun"
+            ]
+          },
+          {
+            "t": "Tjørnuvík",
+            "a": [
+              "attivita|Sentiero Tjørnuvík–Saksun||Streymoy"
+            ]
+          },
+          {
+            "t": "Gjógv",
+            "a": [
+              "transfer|Trasferimento a Gjógv||Gjógv",
+              "alloggio|Guesthouse a Gjógv||Gjógv",
+              "attivita|Slættaratindur, la vetta più alta||Eysturoy"
+            ]
+          },
+          {
+            "t": "Partenza",
+            "a": [
+              "volo|Volo di rientro via Copenaghen||"
+            ]
+          }
+        ]
       }
     ],
     "agentTips": [
