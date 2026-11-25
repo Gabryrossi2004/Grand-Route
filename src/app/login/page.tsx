@@ -17,13 +17,19 @@ export default function LoginPage() {
 
 function LoginForm() {
   const [state, formAction, pending] = useActionState(login, undefined);
-  const next = useSearchParams().get("next") ?? "";
+  const params = useSearchParams();
+  const next = params.get("next") ?? "";
+  // Area fornitori (guide, autisti, strutture…): stesso accesso, parole e collegamenti pensati per loro.
+  // Dopo l'accesso ognuno finisce nella sua area in base al tipo di account.
+  const supplier = params.get("area") === "fornitori";
 
   return (
     <AuthShell>
       <AuthBrandHeader />
-        <h1 className="mb-1 text-xl font-semibold text-slate-900">Accedi</h1>
-        <p className="mb-6 text-sm text-slate-500">Entra nel tuo gestionale viaggi</p>
+        <h1 className="mb-1 text-xl font-semibold text-slate-900">{supplier ? "Accedi all'area fornitori" : "Accedi"}</h1>
+        <p className="mb-6 text-sm text-slate-500">
+          {supplier ? "Guide, autisti, strutture, esperienze e agenzie locali" : "Entra nel gestionale della tua agenzia o del tuo tour operator"}
+        </p>
 
         <form action={formAction} className="flex flex-col gap-4">
           <input type="hidden" name="next" value={next} />
@@ -70,8 +76,14 @@ function LoginForm() {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           Non hai un account?{" "}
-          <Link href="/signup" className="font-medium text-[#233c5e] hover:underline">
-            Registrati
+          <Link href={supplier ? "/signup?tipo=guida" : "/signup"} className="font-medium text-[#233c5e] hover:underline">
+            {supplier ? "Registrati come fornitore" : "Registrati"}
+          </Link>
+        </p>
+        <p className="mt-2 text-center text-xs text-slate-500">
+          {supplier ? "Sei un'agenzia o un tour operator? " : "Sei una guida, un autista o una struttura? "}
+          <Link href={supplier ? "/login" : "/login?area=fornitori"} className="font-medium hover:underline">
+            {supplier ? "Accedi al gestionale" : "Area fornitori"}
           </Link>
         </p>
         <p className="mt-2 text-center text-xs text-slate-500">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Briefcase, Sparkles, User } from "lucide-react";
+import { Briefcase, Compass, Sparkles, User } from "lucide-react";
 
 export default function Home() {
   return (
@@ -12,16 +12,16 @@ export default function Home() {
         </span>
       </header>
 
-      <main className="grid flex-1 grid-cols-1 bg-gradient-to-b from-[#f2e2c4] via-[#cda876] to-[#233c5e] sm:grid-cols-2 sm:bg-gradient-to-r">
-        {/* Agenzie */}
-        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-16 text-center">
+      <main className="grid flex-1 grid-cols-1 bg-gradient-to-b from-[#f2e2c4] via-[#cda876] to-[#233c5e] lg:grid-cols-3 lg:bg-gradient-to-r">
+        {/* Agenzie e tour operator */}
+        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-14 text-center lg:py-16">
           <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#233c5e] text-[#e6d7bb] shadow-sm">
             <Briefcase size={24} />
           </span>
           <div className="relative">
-            <h2 className="text-2xl font-semibold text-[#233c5e]">Agenti di viaggio</h2>
+            <h2 className="text-2xl font-semibold text-[#233c5e]">Agenzie e tour operator</h2>
             <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#6b5f4a]">
-              Crea itinerari curati e condividili con i tuoi clienti attraverso una pagina brandizzata ed elegante.
+              Crea itinerari curati, gestisci clienti, fornitori e fatture, e condividi i viaggi con una pagina elegante.
             </p>
           </div>
           <div className="relative flex flex-col items-center gap-2.5">
@@ -32,16 +32,38 @@ export default function Home() {
               Inizia gratis
             </Link>
             <Link href="/login" className="text-sm font-medium text-[#6b5f4a] hover:text-[#233c5e] hover:underline">
-              Accedi al tuo account agenzia
+              Accedi al gestionale
             </Link>
-            <Link href="/signup?tipo=guida" className="max-w-[16rem] text-balance text-xs text-[#6b5f4a] hover:text-[#233c5e] hover:underline">
-              Guida, autista, hotel o altro fornitore? Entra nella Rete dei professionisti
+          </div>
+        </section>
+
+        {/* Fornitori: guide, autisti, strutture… */}
+        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-14 text-center lg:py-16">
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#faf3e6] text-[#233c5e] shadow-sm">
+            <Compass size={24} />
+          </span>
+          <div className="relative">
+            <h2 className="text-2xl font-semibold text-[#233c5e]">Fornitori</h2>
+            <p className="mx-auto mt-2 max-w-xs text-balance text-sm text-[#3d3424]">
+              Guide, autisti, hotel, esperienze e agenzie locali: ricevi richieste dalle agenzie, tieni l&apos;agenda e prepara le
+              fatture in un attimo.
+            </p>
+          </div>
+          <div className="relative flex flex-col items-center gap-2.5">
+            <Link
+              href="/login?area=fornitori"
+              className="rounded-lg bg-[#faf3e6] px-6 py-3 text-sm font-semibold text-[#233c5e] shadow-sm transition hover:bg-white hover:shadow-md"
+            >
+              Accedi come fornitore
+            </Link>
+            <Link href="/signup?tipo=guida" className="text-sm font-medium text-[#233c5e] hover:underline">
+              Prima volta? Registrati qui
             </Link>
           </div>
         </section>
 
         {/* Clienti */}
-        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-16 text-center">
+        <section className="relative flex flex-col items-center justify-center gap-5 px-6 py-14 text-center lg:py-16">
           <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#cda876] text-[#233c5e] shadow-sm">
             <User size={24} />
           </span>
