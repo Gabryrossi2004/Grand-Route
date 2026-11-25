@@ -7,6 +7,7 @@ import { sendMail } from "@/lib/email";
 import { checkInvoice, computeTotals, isValidIban, type InvoiceDoc, type InvoiceLine, type Natura } from "@/lib/invoicing/engine";
 import { buildDraft, DEFAULT_SETTINGS, partyFromProfile, type BillingSettings } from "@/lib/invoicing/draft";
 import { addDays, todayRome, type OrderRow } from "@/lib/orders/shared";
+import { ensureOrderThread } from "@/lib/actions/mail";
 
 export type ActionResult<T = object> = ({ ok: true } & T) | { ok: false; error: string };
 
@@ -51,6 +52,18 @@ async function notify(ref: { order?: string; invoice?: string }, push: { title: 
     console.error("[orders notify]", (e as Error).message);
   }
 }
+
+// Riga di evento nella conversazione dell'ordine (se c'è): conferme, modifiche, variazioni, fatture…
+async function orderEvent(orderId: string, text: string) {
+  try {
+    const supabase = await createClient();
+    await supabase.rpc("mail_order_event", { p_order: orderId, p_text: text });
+  } catch {
+    // la posta è un di più: non deve bloccare l'ordine
+  }
+}
+
+const eur = (n: number) => n.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 // ---------------- Ordini ----------------
 export type OrderInput = {
@@ -119,14 +132,17 @@ export async function createOrder(role: "buyer" | "seller", counterpart: string,
   if (error || typeof data !== "string") return { ok: false, error: message(error?.message) };
   refresh();
   if (buyerServiceId) revalidatePath("/dashboard/trips", "layout");
+  // La richiesta apre la sua conversazione nella posta, con il testo nello stile delle vostre email
+  const thread = await ensureOrderThread(data);
+  const url = thread.ok ? `/rete/posta/${thread.threadId}` : role === "buyer" ? "/rete/lavori" : "/rete/lavori?vista=ordini";
   await notify(
     { order: data },
     role === "buyer"
-      ? { title: "Nuovo ordine da confermare", body: `${input.title} – ${input.service_date}`, url: "/rete/lavori" }
-      : { title: "Un fornitore ha registrato un servizio", body: `${input.title} – ${input.service_date}`, url: "/rete/lavori?vista=ordini" },
+      ? { title: "Nuova richiesta di servizio", body: `${input.title} – ${input.service_date}`, url }
+      : { title: "Un fornitore ha registrato un servizio", body: `${input.title} – ${input.service_date}`, url },
     {
-      subject: role === "buyer" ? `Nuovo ordine: ${input.title}` : `Servizio registrato: ${input.title}`,
-      text: role === "buyer" ? `Hai ricevuto un nuovo ordine su Grand Route: ${input.title} (${input.service_date}). Confermalo o proponi una modifica.` : `Un tuo fornitore ha registrato un servizio su Grand Route: ${input.title} (${input.service_date}). Controllalo e confermalo.`,
+      subject: role === "buyer" ? `Nuova richiesta di servizio: ${input.title}` : `Servizio registrato: ${input.title}`,
+      text: role === "buyer" ? `Hai ricevuto una nuova richiesta di servizio su Grand Route: ${input.title} (${input.service_date}). Confermala o rispondi nella conversazione.` : `Un tuo fornitore ha registrato un servizio su Grand Route: ${input.title} (${input.service_date}). Controllalo e confermalo.`,
     },
   );
   return { ok: true, id: data };
@@ -140,6 +156,7 @@ export async function updateOrder(id: string, input: OrderInput): Promise<Action
   const { error } = await supabase.rpc("network_order_update", { p_id: id, p: orderPayload(input) });
   if (error) return { ok: false, error: message(error.message) };
   refresh();
+  await orderEvent(id, `Ha modificato l'ordine (${input.service_date.split("-").reverse().join("/")}${input.start_time ? ` ore ${input.start_time}` : ""}, ${eur(Number(input.quantity.replace(",", ".")) * Number(input.unit_price.replace(",", ".")))} ${input.currency} + IVA): va riconfermato se sono cambiati data, prezzo o condizioni.`);
   await notify({ order: id }, { title: "Ordine modificato", body: `${input.title}: controlla e conferma le modifiche`, url: "/rete/lavori" });
   return { ok: true };
 }
@@ -148,6 +165,7 @@ export async function confirmOrder(id: string): Promise<ActionResult> {
   const supabase = await createClient();
   const { error } = await supabase.rpc("network_order_confirm", { p_id: id });
   if (error) return { ok: false, error: message(error.message) };
+  await orderEvent(id, "Ha confermato il servizio.");
   refresh();
   revalidatePath("/dashboard/trips", "layout");
   await notify({ order: id }, { title: "Ordine confermato", body: "Il servizio è confermato.", url: "/rete/lavori" });
@@ -158,6 +176,7 @@ export async function declineOrder(id: string, reason: string): Promise<ActionRe
   const supabase = await createClient();
   const { error } = await supabase.rpc("network_order_decline", { p_id: id, p_reason: reason });
   if (error) return { ok: false, error: message(error.message) };
+  await orderEvent(id, `Ha rifiutato il servizio${reason ? `: «${reason}»` : "."}`);
   refresh();
   await notify({ order: id }, { title: "Ordine rifiutato", body: reason || "La proposta non è stata accettata.", url: "/rete/lavori" }, { subject: "Ordine rifiutato", text: `Un ordine su Grand Route è stato rifiutato.${reason ? ` Motivo: ${reason}` : ""}` });
   return { ok: true };
@@ -168,6 +187,7 @@ export async function cancelOrder(id: string): Promise<ActionResult<{ penalty: n
   const { data, error } = await supabase.rpc("network_order_cancel", { p_id: id });
   if (error) return { ok: false, error: message(error.message) };
   const penalty = Number(data ?? 0);
+  await orderEvent(id, penalty > 0 ? `Ha annullato il servizio oltre la data limite: penale di ${eur(penalty)}.` : "Ha annullato il servizio, senza penale.");
   refresh();
   revalidatePath("/dashboard/trips", "layout");
   await notify(
@@ -182,6 +202,7 @@ export async function setPenalty(id: string, amount: number): Promise<ActionResu
   const supabase = await createClient();
   const { error } = await supabase.rpc("network_order_set_penalty", { p_id: id, p_amount: Math.max(0, Math.round(amount * 100) / 100) });
   if (error) return { ok: false, error: message(error.message) };
+  await orderEvent(id, amount > 0 ? `Ha ridotto la penale a ${eur(amount)}.` : "Ha tolto la penale.");
   refresh();
   return { ok: true };
 }
@@ -202,6 +223,7 @@ export async function addExtra(orderId: string, kind: "servizio" | "spesa", desc
   });
   if (error) return { ok: false, error: message(error.message) };
   refresh();
+  await orderEvent(orderId, `Ha aggiunto una variazione${kind === "spesa" ? " (spesa anticipata)" : ""}: ${description.trim()} (${quantity} × ${eur(unitPrice)} = ${eur(quantity * unitPrice)})${receiptPath ? ", con ricevuta" : ""}.`);
   if (quantity * unitPrice > 0)
     await notify({ order: orderId }, { title: "Nuova variazione di prezzo", body: `${description.trim()}: hai ${3} giorni per contestarla`, url: "/rete/lavori?vista=ordini" });
   return { ok: true };
@@ -228,6 +250,7 @@ export async function decideExtra(id: string, orderId: string, accept: boolean, 
   const supabase = await createClient();
   const { error } = await supabase.rpc("network_extra_decide", { p_id: id, p_accept: accept, p_note: note });
   if (error) return { ok: false, error: message(error.message) };
+  await orderEvent(orderId, accept ? "Ha accettato una variazione di prezzo." : `Ha contestato una variazione di prezzo${note ? `: «${note}»` : "."}`);
   refresh();
   if (!accept) await notify({ order: orderId }, { title: "Variazione contestata", body: note || "Il cliente ha contestato una variazione.", url: "/rete/lavori" });
   return { ok: true };
@@ -406,6 +429,11 @@ export async function saveInvoice(
   if (error) return { ok: false, error: message(error.message) };
   refresh();
   revalidatePath(`/rete/fatture/${id}`);
+  if (emit) {
+    const { data: linked } = await supabase.from("network_orders").select("id").eq("invoice_id", id);
+    for (const o of (linked ?? []) as { id: string }[])
+      await orderEvent(o.id, `${isCredit ? "Ha emesso la nota di credito" : "Ha emesso la fattura"} n. ${number}: ${eur(t.netto)} ${cur.currency}.`);
+  }
   if (emit && isCredit)
     await notify(
       { invoice: id },
@@ -446,7 +474,14 @@ export async function setInvoicePaid(id: string, paid: boolean, date: string | n
   refresh();
   revalidatePath(`/rete/fatture/${id}`);
   revalidatePath(`/dashboard/ordini/fatture/${id}`);
-  if (paid) await notify({ invoice: id }, { title: "Fattura segnata come pagata", body: "Controlla l'incasso.", url: `/rete/fatture/${id}` });
+  if (paid) {
+    await notify({ invoice: id }, { title: "Fattura segnata come pagata", body: "Controlla l'incasso.", url: `/rete/fatture/${id}` });
+    const [{ data: inv }, { data: linked }] = await Promise.all([
+      supabase.from("network_invoices").select("number").eq("id", id).maybeSingle(),
+      supabase.from("network_orders").select("id").eq("invoice_id", id),
+    ]);
+    for (const o of (linked ?? []) as { id: string }[]) await orderEvent(o.id, `Ha segnato come pagata la fattura n. ${(inv as { number?: string } | null)?.number ?? ""}.`);
+  }
   return { ok: true };
 }
 
@@ -509,6 +544,8 @@ export async function sendReminder(invoiceId: string): Promise<ActionResult> {
   const { data: inv } = await supabase.from("network_invoices").select("number, issue_date, due_date, netto, currency").eq("id", invoiceId).maybeSingle();
   const i = inv as { number: string; issue_date: string; due_date: string | null; netto: number; currency: string } | null;
   if (i) {
+    const { data: linked } = await supabase.from("network_orders").select("id").eq("invoice_id", invoiceId);
+    for (const o of (linked ?? []) as { id: string }[]) await orderEvent(o.id, `Ha mandato un sollecito di pagamento per la fattura n. ${i.number}.`);
     const it = (d: string | null) => (d ? d.split("-").reverse().join("/") : "");
     await notify(
       { invoice: invoiceId },

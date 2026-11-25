@@ -695,6 +695,29 @@ const sections: Section[] = [
         ),
       },
       {
+        id: "rete-posta",
+        title: "Posta con i partner",
+        body: (
+          <>
+            La <strong>Posta</strong> (nel gestionale in <strong>Messaggi → Posta con i partner</strong>, nella Rete nel menu
+            in alto e nella barra in basso del telefono) funziona come un&apos;email, ma tutta dentro Grand Route: scrivi a uno
+            o più partner con cui hai una collaborazione, con oggetto, testo e <strong>allegati</strong> (fino a 20 file da
+            25 MB, anche trascinandoli). Le cartelle sono <strong>In arrivo, Richieste di servizio, Inviati, Con stella, Archiviati e Tutti</strong>;
+            la ricerca guarda oggetto, testo, nomi degli allegati e partner. Le conversazioni lunghe restano ordinate: si
+            vedono il primo messaggio e gli ultimi, gli altri si aprono con «Mostra messaggi precedenti». Puoi rispondere,
+            <strong> inoltrare</strong> (anche con gli allegati), segnare come da leggere, mettere una stella, archiviare e
+            aggiungere un partner alla conversazione. Ogni <strong>ordine di servizio ha la sua conversazione</strong>: la
+            richiesta parte già scritta nel formato delle vostre email (RICHIESTA SERVIZIO – data – nome × pax) e conferme,
+            modifiche, variazioni, fatture e solleciti compaiono come righe di cronologia, con la scheda dell&apos;ordine in
+            alto per confermare con un tocco. Per i nuovi messaggi arriva una notifica sul telefono e, al massimo ogni 10
+            minuti per conversazione, un&apos;email di avviso. <strong>Zefiro è facoltativo</strong>: «Chiedi a Zefiro» trova le
+            conversazioni da una domanda («la conferma del transfer Deluca»), e dentro una conversazione può riassumerla o
+            preparare una bozza di risposta (costano pochi centesimi dal contatore AI). Per ora si scrive solo ai partner
+            registrati su Grand Route.
+          </>
+        ),
+      },
+      {
         id: "rete-valutazioni",
         title: "Valutazioni anonime",
         body: (

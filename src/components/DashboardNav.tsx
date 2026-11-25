@@ -13,7 +13,13 @@ const navItems: NavItem[] = [
   { href: "/dashboard", label: "Home" },
   { href: "/dashboard/trips", label: "Viaggi" },
   { href: "/dashboard/operativo", label: "Operativo" },
-  { href: "/dashboard/messages", label: "Messaggi" },
+  {
+    label: "Messaggi",
+    children: [
+      { href: "/dashboard/messages", label: "Messaggi dei clienti" },
+      { href: "/dashboard/posta", label: "Posta con i partner" },
+    ],
+  },
   {
     label: "Anagrafiche",
     children: [
@@ -63,15 +69,17 @@ export default function DashboardNav({
   signOut,
   unreadMessages = 0,
   ordersTodo = 0,
+  mailUnread = 0,
   isAdmin = false,
 }: {
   signOut: () => Promise<void> | void;
   unreadMessages?: number;
   ordersTodo?: number;
+  mailUnread?: number;
   isAdmin?: boolean;
 }) {
   // Contatore accanto a una voce (messaggi dei clienti, ordini e fatture dei fornitori da guardare)
-  const countFor = (href: string) => (href === "/dashboard/messages" ? unreadMessages : href === "/dashboard/ordini" ? ordersTodo : 0);
+  const countFor = (href: string) => (href === "/dashboard/messages" ? unreadMessages : href === "/dashboard/ordini" ? ordersTodo : href === "/dashboard/posta" ? mailUnread : 0);
   const pathname = usePathname();
   // Gli amministratori hanno una voce in più nel menu Account
   const items: NavItem[] = isAdmin
@@ -178,7 +186,7 @@ export default function DashboardNav({
               className={`${linkBase} ${active ? linkOn : linkOff}`}
             >
               {item.label}
-              {item.href === "/dashboard/messages" && unreadMessages > 0 && <CountBadge count={unreadMessages} />}
+              {countFor(item.href) > 0 && <CountBadge count={countFor(item.href)} />}
             </Link>
           );
         })}
@@ -234,7 +242,7 @@ export default function DashboardNav({
                 }`}
               >
                 {item.label}
-                {item.href === "/dashboard/messages" && unreadMessages > 0 && <CountBadge count={unreadMessages} />}
+                {countFor(item.href) > 0 && <CountBadge count={countFor(item.href)} />}
               </Link>
             );
           })}

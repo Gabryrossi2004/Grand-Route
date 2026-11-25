@@ -310,6 +310,20 @@ export default function TerminiPage() {
               per le fatture scadute registrate sulla piattaforma; il fornitore può disattivarli in ogni momento.
             </p>
           </section>
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">21. Posta tra professionisti</h2>
+            <p>
+              La Posta permette ai partner che hanno una collaborazione attiva di scambiarsi messaggi e file all&apos;interno
+              di Grand Route. I messaggi e gli allegati sono visibili solo ai partecipanti della conversazione; chi viene
+              aggiunto a una conversazione ne vede anche i messaggi precedenti. Ogni utente è responsabile di ciò che scrive
+              e allega (inclusi i dati personali dei viaggiatori, che vanno condivisi solo se necessari al servizio) e non
+              deve inviare contenuti illeciti, pubblicità non richiesta o file dannosi. Grand Route conserva i messaggi
+              finché l&apos;account è attivo, invia avvisi per email e notifiche dei nuovi messaggi e, solo su richiesta
+              dell&apos;utente, li elabora con l&apos;assistente Zefiro per cercare, riassumere o proporre una risposta, con
+              i limiti indicati alla sezione 10. I messaggi legati a un ordine di servizio fanno parte della traccia
+              dell&apos;ordine.
+            </p>
+          </section>
         </div>
 
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">

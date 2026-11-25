@@ -34,6 +34,8 @@ import {
   type OrderRow,
 } from "@/lib/orders/shared";
 import { kindLabel } from "@/lib/network/kinds";
+import { ensureOrderThread } from "@/lib/actions/mail";
+import { MessagesSquare } from "lucide-react";
 
 const btn = "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition disabled:opacity-50";
 const input = "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876]";
@@ -180,7 +182,8 @@ function ExtraRow({ order, e, me, run, pending }: { order: OrderRow; e: OrderExt
   );
 }
 
-export default function OrderCard({ order, me, invoiceBase, defaultOpen = false }: { order: OrderRow; me: string; invoiceBase: string; defaultOpen?: boolean }) {
+export default function OrderCard({ order, me, invoiceBase, defaultOpen = false, inThread = false }: { order: OrderRow; me: string; invoiceBase: string; defaultOpen?: boolean; inThread?: boolean }) {
+  const mailBase = invoiceBase.startsWith("/dashboard") ? "/dashboard/posta" : "/rete/posta";
   const router = useRouter();
   const [open, setOpen] = useState(defaultOpen);
   const [error, setError] = useState<string | null>(null);
@@ -330,6 +333,23 @@ export default function OrderCard({ order, me, invoiceBase, defaultOpen = false 
             )}
             {canCancel && !cancelAsk && (
               <button type="button" onClick={() => setCancelAsk(true)} className={`${btn} text-[#b0413e]`}>{waitingOther ? "Ritira la richiesta" : "Annulla il servizio"}</button>
+            )}
+            {!inThread && (
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() =>
+                  start(async () => {
+                    setError(null);
+                    const r = await ensureOrderThread(o.id);
+                    if (!r.ok) setError(r.error);
+                    else router.push(`${mailBase}/${r.threadId}`);
+                  })
+                }
+                className={`${btn} border border-[#e6d7bb] text-[#233c5e]`}
+              >
+                <MessagesSquare size={15} /> Conversazione
+              </button>
             )}
             {o.invoice_id && (
               <Link href={`${invoiceBase}/${o.invoice_id}`} className={`${btn} border border-[#e6d7bb] text-[#233c5e]`}><FileText size={15} /> Apri la fattura</Link>

@@ -26,8 +26,9 @@ export default async function DashboardLayout({
   let unreadMessages = 0;
   let isAdmin = false;
   let ordersTodo = 0;
+  let mailUnread = 0;
   if (user) {
-    const [{ data }, { count }, { data: adminFlag }, { data: todo }] = await Promise.all([
+    const [{ data }, { count }, { data: adminFlag }, { data: todo }, { data: mailCount }] = await Promise.all([
       supabase.from("profiles").select("*").eq("id", user.id).single(),
       // Messaggi dei clienti non ancora letti (0 se la chat non è ancora attiva)
       supabase
@@ -39,7 +40,10 @@ export default async function DashboardLayout({
       supabase.rpc("is_platform_admin"),
       // Ordini, variazioni e fatture dei fornitori da guardare (0 se la migrazione 0065 non c'è ancora)
       supabase.rpc("network_todo_counts"),
+      // Posta non letta (0 se la migrazione 0067 non c'è ancora)
+      supabase.rpc("mail_unread_count"),
     ]);
+    mailUnread = typeof mailCount === "number" ? mailCount : 0;
     isAdmin = adminFlag === true;
     ordersTodo = Number((todo as { buyer?: number } | null)?.buyer ?? 0) || 0;
     profile = data;
@@ -82,7 +86,7 @@ export default async function DashboardLayout({
               {profile?.agency_name || "Il mio gestionale viaggi"}
             </span>
           </Link>
-          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} ordersTodo={ordersTodo} isAdmin={isAdmin} />
+          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} ordersTodo={ordersTodo} mailUnread={mailUnread} isAdmin={isAdmin} />
         </div>
       </HeaderAutoHide>
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>
