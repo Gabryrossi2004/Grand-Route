@@ -31,6 +31,7 @@ export default function InvoiceEditor({
   initialDue,
   currency,
   bolloCharge,
+  credit = false,
 }: {
   id: string;
   initialDoc: InvoiceDoc;
@@ -39,7 +40,9 @@ export default function InvoiceEditor({
   initialDue: string | null;
   currency: string;
   bolloCharge: boolean;
+  credit?: boolean;
 }) {
+  const what = credit ? "la nota di credito" : "la fattura";
   const router = useRouter();
   const [doc, setDoc] = useState<InvoiceDoc>(initialDoc);
   const [number, setNumber] = useState(initialNumber);
@@ -92,13 +95,17 @@ export default function InvoiceEditor({
           <DateField id="inv-date" name="issue" value={issue} onChange={setIssue} className={input} />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="inv-due">Scadenza del pagamento</label>
-          <DateField id="inv-due" name="due" value={due} onChange={setDue} className={input} />
+          {!credit && (
+            <>
+              <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="inv-due">Scadenza del pagamento</label>
+              <DateField id="inv-due" name="due" value={due} onChange={setDue} className={input} />
+            </>
+          )}
         </div>
       </div>
 
       <div className="rounded-2xl border border-[#e6d7bb] bg-white p-4">
-        <p className="text-sm font-semibold text-[#233c5e]">Righe della fattura</p>
+        <p className="text-sm font-semibold text-[#233c5e]">Righe {credit ? "della nota di credito" : "della fattura"}</p>
         <div className="mt-3 space-y-3">
           {contentLines.map((l) => (
             <div key={l.id} className="rounded-xl border border-[#f2e2c4] p-3">
@@ -187,14 +194,14 @@ export default function InvoiceEditor({
           {errors.some((p) => p.text.includes("impostazioni")) && <Link href="/rete/fatture/impostazioni" className="ml-3 inline-block font-medium text-[#233c5e] underline">Apri le impostazioni di fatturazione</Link>}
         </div>
       )}
-      {errors.length === 0 && <p className="flex items-center gap-2 text-sm text-emerald-700"><CheckCircle2 size={16} /> Tutto a posto per emettere la fattura.</p>}
+      {errors.length === 0 && <p className="flex items-center gap-2 text-sm text-emerald-700"><CheckCircle2 size={16} /> Tutto a posto per emettere {what}.</p>}
 
       {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
       {saved && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">{saved}</p>}
 
       {confirmEmit ? (
         <div className="rounded-2xl border border-[#233c5e] bg-white p-4 text-sm text-slate-700">
-          <p className="font-semibold text-[#233c5e]">Emettere la fattura {number}?</p>
+          <p className="font-semibold text-[#233c5e]">Emettere {what} {number}?</p>
           <p className="mt-1">
             Dopo non si può più modificare (per correggerla serve una nota di credito). Il cliente la vede subito su Grand Route con il dettaglio dei servizi.
             Poi <strong>scarica il file XML e caricalo</strong> sul portale «Fatture e Corrispettivi» dell&apos;Agenzia delle Entrate o nel tuo programma di fatturazione: la fattura è valida solo dopo l&apos;invio allo SDI.
@@ -206,7 +213,7 @@ export default function InvoiceEditor({
         </div>
       ) : (
         <div className="flex flex-wrap gap-2">
-          <button type="button" disabled={pending || errors.length > 0} onClick={() => setConfirmEmit(true)} className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50">Emetti la fattura</button>
+          <button type="button" disabled={pending || errors.length > 0} onClick={() => setConfirmEmit(true)} className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50">{credit ? "Emetti la nota di credito" : "Emetti la fattura"}</button>
           <button type="button" disabled={pending} onClick={() => persist(false)} className="rounded-full border border-[#233c5e] px-5 py-2.5 text-sm font-semibold text-[#233c5e] disabled:opacity-50">Salva la bozza</button>
           <a href={`/stampa/fattura/${id}`} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium text-slate-600 underline"><Printer size={15} /> Anteprima di stampa (dell&apos;ultima versione salvata)</a>
           <button
@@ -221,7 +228,7 @@ export default function InvoiceEditor({
             }
             className="rounded-full px-4 py-2.5 text-sm font-medium text-[#b0413e]"
           >
-            Elimina la bozza (i servizi tornano da fatturare)
+            {credit ? "Elimina la bozza" : "Elimina la bozza (i servizi tornano da fatturare)"}
           </button>
         </div>
       )}

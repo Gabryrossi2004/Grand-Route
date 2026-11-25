@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 import { decryptField } from "@/lib/encryption";
+import { sendInvoiceReminders } from "@/lib/invoicing/reminders";
 
 // Chiamata una volta al giorno da Vercel Cron (vedi vercel.json): avvisa le
 // agenzie dei viaggi che partono tra 3 giorni, se hanno attivato questa
@@ -112,5 +113,8 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.json({ sent: typedTargets.length, clientSent, greetings, deals });
+  // Solleciti automatici delle fatture scadute tra professionisti della Rete (senza la migrazione 0066 si salta)
+  const invoiceReminders = await sendInvoiceReminders(supabase, process.env.CRON_SECRET);
+
+  return NextResponse.json({ sent: typedTargets.length, clientSent, greetings, deals, invoiceReminders });
 }

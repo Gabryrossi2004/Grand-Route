@@ -132,6 +132,13 @@ export default function BillingSettingsForm({ initial, legalForm }: { initial: B
             <p className="mt-1 text-xs text-slate-500">Anteprima: <strong>{formatInvoiceNumber(s.number_pattern, s.next_number || 1, new Date().getFullYear())}</strong>. Usa {"{n}"} per il numero e {"{anno}"} per l&apos;anno.</p>
           </div>
         </div>
+        <label className="mt-3 flex items-start gap-2 text-sm text-slate-700">
+          <input type="checkbox" checked={s.auto_reminders !== false} onChange={(e) => set("auto_reminders", e.target.checked)} className="mt-0.5" />
+          <span>
+            Solleciti automatici per le fatture scadute
+            <span className="block text-xs text-slate-500">Al cliente arriva un promemoria (email e notifica) 1, 7, 15 e 30 giorni dopo la scadenza, solo per l&apos;importo ancora da pagare.</span>
+          </span>
+        </label>
         <div className="mt-3">
           <label className={label} htmlFor="bs-notes">Nota fissa in fattura (facoltativa)</label>
           <textarea id="bs-notes" value={s.invoice_notes ?? ""} onChange={(e) => set("invoice_notes", e.target.value)} rows={2} maxLength={400} className={input} placeholder="Es. Iscrizione albo guide n. …" />

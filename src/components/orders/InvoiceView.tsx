@@ -27,6 +27,8 @@ export default function InvoiceView({
   dueDate,
   currency,
   status,
+  docType = "TD01",
+  linked = null,
 }: {
   doc: InvoiceDoc;
   number: string | null;
@@ -34,20 +36,24 @@ export default function InvoiceView({
   dueDate: string | null;
   currency: string;
   status: string;
+  docType?: string;
+  linked?: { number: string | null; date: string | null } | null;
 }) {
+  const credit = docType === "TD04";
   const t = computeTotals(doc);
   return (
     <div className="relative rounded-2xl border border-[#e6d7bb] bg-white p-5 text-slate-800 sm:p-8 print:border-0 print:p-0">
       {status === "bozza" && (
-        <p className="mb-4 rounded-lg bg-amber-50 px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider text-amber-800">Bozza – non valida come fattura</p>
+        <p className="mb-4 rounded-lg bg-amber-50 px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider text-amber-800">Bozza – non valida {credit ? "come nota di credito" : "come fattura"}</p>
       )}
       {status === "stornata" && (
         <p className="mb-4 rounded-lg bg-slate-100 px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider text-slate-600">Fattura stornata</p>
       )}
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-2xl font-semibold text-[#233c5e]">Fattura {number ?? "—"}</p>
-          <p className="text-sm text-slate-600">del {fmtDate(issueDate) || "—"}{dueDate ? ` · scadenza ${fmtDate(dueDate)}` : ""}</p>
+          <p className="text-2xl font-semibold text-[#233c5e]">{credit ? "Nota di credito" : "Fattura"} {number ?? "—"}</p>
+          <p className="text-sm text-slate-600">del {fmtDate(issueDate) || "—"}{!credit && dueDate ? ` · scadenza ${fmtDate(dueDate)}` : ""}</p>
+          {credit && linked && <p className="text-sm font-medium text-slate-700">Rettifica la fattura n. {linked.number} del {fmtDate(linked.date)}</p>}
         </div>
         <p className="text-xs text-slate-500">Regime fiscale: {REGIMES[doc.regime]}</p>
       </div>
@@ -105,7 +111,7 @@ export default function InvoiceView({
           ))}
           {doc.bollo && <p>Imposta di bollo assolta in modo virtuale (2,00 €).</p>}
           {doc.notes && <p className="whitespace-pre-line text-slate-700">{doc.notes}</p>}
-          {doc.payment.iban && (
+          {!credit && doc.payment.iban && (
             <p className="text-slate-700">
               Pagamento con bonifico: IBAN <strong>{doc.payment.iban}</strong>{doc.payment.bank ? ` (${doc.payment.bank})` : ""}
             </p>
@@ -114,11 +120,11 @@ export default function InvoiceView({
         <div className="rounded-xl bg-[#faf3e6] p-4 text-sm">
           <p className="flex justify-between"><span>Imponibile</span><span>{fmtMoney(t.imponibile, currency)}</span></p>
           <p className="flex justify-between"><span>IVA</span><span>{fmtMoney(t.iva, currency)}</span></p>
-          <p className="mt-1 flex justify-between border-t border-[#e6d7bb] pt-1 font-semibold"><span>Totale fattura</span><span>{fmtMoney(t.totale, currency)}</span></p>
+          <p className="mt-1 flex justify-between border-t border-[#e6d7bb] pt-1 font-semibold"><span>{credit ? "Totale nota" : "Totale fattura"}</span><span>{fmtMoney(t.totale, currency)}</span></p>
           {t.ritenuta > 0 && (
             <p className="flex justify-between gap-3 text-slate-600"><span>Ritenuta d&apos;acconto {doc.ritenuta.rate}%</span><span>− {fmtMoney(t.ritenuta, currency)}</span></p>
           )}
-          <p className="mt-1 flex justify-between border-t border-[#e6d7bb] pt-1 text-base font-semibold text-[#233c5e]"><span>Da pagare</span><span>{fmtMoney(t.netto, currency)}</span></p>
+          <p className="mt-1 flex justify-between border-t border-[#e6d7bb] pt-1 text-base font-semibold text-[#233c5e]"><span>{credit ? "Importo a credito del cliente" : "Da pagare"}</span><span>{fmtMoney(t.netto, currency)}</span></p>
         </div>
       </div>
       <p className="mt-6 text-[11px] text-slate-400 print:mt-10">

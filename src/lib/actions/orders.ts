@@ -290,9 +290,16 @@ export async function saveBillingSettings(input: BillingSettings): Promise<Actio
     free_cancel_days: Math.min(365, Math.max(0, Math.round(Number(input.free_cancel_days) || 0))),
     penalty_pct: Math.min(100, Math.max(0, Math.round(Number(input.penalty_pct) || 0))),
     invoice_notes: (input.invoice_notes ?? "").trim().slice(0, 400) || null,
+    auto_reminders: input.auto_reminders !== false,
     updated_at: new Date().toISOString(),
   };
-  const { error } = await supabase.from("network_billing_settings").upsert(row, { onConflict: "user_id" });
+  let { error } = await supabase.from("network_billing_settings").upsert(row, { onConflict: "user_id" });
+  // senza la migrazione 0066 la colonna dei solleciti non c'è ancora: si salva il resto
+  if (error && /auto_reminders/.test(error.message)) {
+    const { auto_reminders: _skip, ...rest } = row;
+    void _skip;
+    ({ error } = await supabase.from("network_billing_settings").upsert(rest, { onConflict: "user_id" }));
+  }
   if (error) return { ok: false, error: message(error.message) };
   revalidatePath("/rete/fatture", "layout");
   return { ok: true };
@@ -365,8 +372,9 @@ export async function saveInvoice(
 ): Promise<ActionResult> {
   if (!UUID.test(id)) return { ok: false, error: "Fattura non trovata." };
   const supabase = await createClient();
-  const { data: current } = await supabase.from("network_invoices").select("doc, currency, status").eq("id", id).maybeSingle();
-  const cur = current as { doc: InvoiceDoc; currency: string; status: string } | null;
+  const { data: current } = await supabase.from("network_invoices").select("*").eq("id", id).maybeSingle();
+  const cur = current as { doc: InvoiceDoc; currency: string; status: string; doc_type?: string } | null;
+  const isCredit = cur?.doc_type === "TD04";
   if (!cur || cur.status !== "bozza") return { ok: false, error: "Questa fattura non è più una bozza." };
   // Intestazioni e regime restano quelli della bozza: dalla pagina cambiano solo righe, bollo, note e pagamento
   const clean: InvoiceDoc = {
@@ -398,7 +406,13 @@ export async function saveInvoice(
   if (error) return { ok: false, error: message(error.message) };
   refresh();
   revalidatePath(`/rete/fatture/${id}`);
-  if (emit)
+  if (emit && isCredit)
+    await notify(
+      { invoice: id },
+      { title: "Nota di credito ricevuta", body: `Nota di credito ${number}: ${t.netto.toFixed(2)} ${cur.currency}`, url: `/dashboard/ordini/fatture/${id}` },
+      { subject: `Nota di credito ${number} ricevuta su Grand Route`, text: `Un tuo fornitore ha emesso la nota di credito ${number} (${t.netto.toFixed(2)} ${cur.currency}). La trovi su Grand Route collegata alla fattura.` },
+    );
+  else if (emit)
     await notify(
       { invoice: id },
       { title: "Nuova fattura ricevuta", body: `Fattura ${number}: ${t.netto.toFixed(2)} da pagare`, url: `/dashboard/ordini/fatture/${id}` },
@@ -433,5 +447,79 @@ export async function setInvoicePaid(id: string, paid: boolean, date: string | n
   revalidatePath(`/rete/fatture/${id}`);
   revalidatePath(`/dashboard/ordini/fatture/${id}`);
   if (paid) await notify({ invoice: id }, { title: "Fattura segnata come pagata", body: "Controlla l'incasso.", url: `/rete/fatture/${id}` });
+  return { ok: true };
+}
+
+// ---------------- Note di credito ----------------
+// Totale: copia tutte le righe della fattura (alla emissione la fattura è stornata e i servizi tornano da fatturare).
+// Parziale: una riga di rettifica da compilare (es. una differenza di prezzo).
+export async function createCreditNote(invoiceId: string, full: boolean): Promise<ActionResult<{ id: string }>> {
+  if (!UUID.test(invoiceId)) return { ok: false, error: "Fattura non trovata." };
+  const supabase = await createClient();
+  const user = await getCachedUser();
+  if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
+  const { data } = await supabase.from("network_invoices").select("doc, number, issue_date, currency").eq("id", invoiceId).eq("seller_id", user.id).maybeSingle();
+  const inv = data as { doc: InvoiceDoc; number: string; issue_date: string; currency: string } | null;
+  if (!inv) return { ok: false, error: "Fattura non trovata." };
+  const { data: settings } = await supabase.from("network_billing_settings").select("next_number, number_pattern").eq("user_id", user.id).maybeSingle();
+  const s = (settings as { next_number?: number; number_pattern?: string } | null) ?? {};
+  const today = todayRome();
+  const first = inv.doc.lines.find((l) => l.kind === "servizio") ?? inv.doc.lines[0];
+  const ref = `Rettifica della fattura n. ${inv.number} del ${inv.issue_date.split("-").reverse().join("/")}`;
+  const doc: InvoiceDoc = full
+    ? { ...inv.doc, notes: [`Storno totale della fattura n. ${inv.number} del ${inv.issue_date.split("-").reverse().join("/")}.`, inv.doc.notes].filter(Boolean).join(" ") }
+    : {
+        ...inv.doc,
+        bollo: false,
+        lines: [
+          {
+            id: "r1",
+            kind: "servizio",
+            description: `${ref}: `,
+            quantity: 1,
+            unit: null,
+            unit_price: 0,
+            vat_rate: first?.vat_rate ?? 22,
+            natura: first?.natura ?? null,
+            ritenuta: !!first?.ritenuta,
+          },
+        ],
+        notes: `${ref}.`,
+      };
+  const t = computeTotals(doc);
+  const number = `${s.next_number ?? 1}/${today.slice(0, 4)}`;
+  const { data: id, error } = await supabase.rpc("network_credit_note_create", {
+    p_invoice: invoiceId,
+    p_full: full,
+    p_doc: doc,
+    p_number: (s.number_pattern ?? "{n}/{anno}").replace("{n}", String(s.next_number ?? 1)).replace("{anno}", today.slice(0, 4)) || number,
+    p_issue_date: today,
+    p_totals: { imponibile: t.imponibile, iva: t.iva, ritenuta: t.ritenuta, bollo: t.bollo, totale: t.totale, netto: t.netto },
+  });
+  if (error || typeof id !== "string") return { ok: false, error: message(error?.message) };
+  refresh();
+  return { ok: true, id };
+}
+
+// ---------------- Solleciti ----------------
+export async function sendReminder(invoiceId: string): Promise<ActionResult> {
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("network_invoice_remind", { p_id: invoiceId });
+  if (error) return { ok: false, error: message(error.message) };
+  const { data: inv } = await supabase.from("network_invoices").select("number, issue_date, due_date, netto, currency").eq("id", invoiceId).maybeSingle();
+  const i = inv as { number: string; issue_date: string; due_date: string | null; netto: number; currency: string } | null;
+  if (i) {
+    const it = (d: string | null) => (d ? d.split("-").reverse().join("/") : "");
+    await notify(
+      { invoice: invoiceId },
+      { title: "Sollecito di pagamento", body: `Fattura ${i.number}: ${Number(i.netto).toFixed(2)} ${i.currency}${i.due_date ? `, scaduta il ${it(i.due_date)}` : ""}`, url: `/dashboard/ordini/fatture/${invoiceId}` },
+      {
+        subject: `Sollecito di pagamento – fattura n. ${i.number} del ${it(i.issue_date)}`,
+        text: `Gentile cliente,\nti ricordiamo che la fattura n. ${i.number} del ${it(i.issue_date)}${i.due_date ? `, scaduta il ${it(i.due_date)},` : ""} risulta ancora da pagare (${Number(i.netto).toFixed(2)} ${i.currency}). Se hai già pagato, segnala la fattura come pagata su Grand Route. Il dettaglio dei servizi è collegato alla fattura.`,
+      },
+    );
+  }
+  refresh();
+  revalidatePath(`/rete/fatture/${invoiceId}`);
   return { ok: true };
 }

@@ -5,8 +5,10 @@ import { INVOICE_STATUS, fmtDate, fmtMoney, todayRome, type InvoiceListRow } fro
 // Elenco delle fatture (emesse o ricevute), con i totali da pagare / incassare
 export default function InvoiceTable({ rows, role, base }: { rows: InvoiceListRow[]; role: "seller" | "buyer"; base: string }) {
   const today = todayRome();
-  const open = rows.filter((r) => r.status === "emessa");
-  const openEur = open.filter((r) => r.currency === "EUR").reduce((s, r) => s + Number(r.netto), 0);
+  const isCredit = (r: InvoiceListRow) => r.doc_type === "TD04";
+  const due = (r: InvoiceListRow) => Number(r.residuo ?? r.netto);
+  const open = rows.filter((r) => r.status === "emessa" && !isCredit(r));
+  const openEur = open.filter((r) => r.currency === "EUR").reduce((s, r) => s + due(r), 0);
   const overdue = open.filter((r) => r.due_date && r.due_date < today);
   const drafts = rows.filter((r) => r.status === "bozza");
   return (
@@ -50,18 +52,30 @@ export default function InvoiceTable({ rows, role, base }: { rows: InvoiceListRo
             </thead>
             <tbody>
               {rows.map((r) => {
-                const late = r.status === "emessa" && r.due_date && r.due_date < today;
+                const credit = isCredit(r);
+                const late = !credit && r.status === "emessa" && r.due_date && r.due_date < today;
                 const st = INVOICE_STATUS[r.status];
                 return (
                   <tr key={r.id} className="border-b border-[#f2e2c4] last:border-0 hover:bg-[#fffaf0]">
-                    <td className="px-3 py-2.5 font-medium"><Link href={`${base}/${r.id}`} className="text-[#233c5e] underline">{r.number ?? "Bozza"}</Link></td>
+                    <td className="px-3 py-2.5 font-medium">
+                      <Link href={`${base}/${r.id}`} className="text-[#233c5e] underline">{r.number ?? "Bozza"}</Link>
+                      {credit && <span className="block text-xs font-normal text-violet-700">nota di credito{r.credit_of_number ? ` su fatt. ${r.credit_of_number}` : ""}</span>}
+                    </td>
                     <td className="px-3 py-2.5">{fmtDate(r.issue_date) || "—"}</td>
                     <td className="px-3 py-2.5">{r.counterpart_name}</td>
-                    <td className="px-3 py-2.5 text-right">{fmtMoney(Number(r.totale), r.currency)}</td>
-                    <td className="px-3 py-2.5 text-right font-semibold">{fmtMoney(Number(r.netto), r.currency)}</td>
-                    <td className={`px-3 py-2.5 ${late ? "font-semibold text-[#c0392b]" : ""}`}>{fmtDate(r.due_date) || "—"}</td>
+                    <td className="px-3 py-2.5 text-right">{fmtMoney(credit ? -Number(r.totale) : Number(r.totale), r.currency)}</td>
+                    <td className="px-3 py-2.5 text-right font-semibold">
+                      {credit ? fmtMoney(-Number(r.netto), r.currency) : fmtMoney(due(r), r.currency)}
+                      {!credit && Number(r.credited ?? 0) > 0 && <span className="block text-xs font-normal text-slate-500">dopo note di credito</span>}
+                    </td>
+                    <td className={`px-3 py-2.5 ${late ? "font-semibold text-[#c0392b]" : ""}`}>{credit ? "—" : fmtDate(r.due_date) || "—"}</td>
                     <td className="px-3 py-2.5">
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${late ? "bg-red-100 text-red-800" : st.tone}`}>{late ? "Scaduta" : st.label}</span>
+                      {credit ? (
+                        <span className="rounded-full bg-violet-100 px-2.5 py-0.5 text-xs font-semibold text-violet-800">{r.status === "bozza" ? "Bozza" : "Emessa"}</span>
+                      ) : (
+                        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${late ? "bg-red-100 text-red-800" : st.tone}`}>{late ? "Scaduta" : st.label}</span>
+                      )}
+                      {late && Number(r.reminders_sent ?? 0) > 0 && <span className="ml-1 text-xs text-slate-500">{r.reminders_sent} sollec.</span>}
                       {r.status === "pagata" && r.paid_at && <span className="ml-1 text-xs text-slate-500">{fmtDate(r.paid_at, { day: "numeric", month: "short" })}</span>}
                     </td>
                   </tr>

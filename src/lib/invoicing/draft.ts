@@ -22,6 +22,7 @@ export type BillingSettings = {
   free_cancel_days: number;
   penalty_pct: number;
   invoice_notes: string | null;
+  auto_reminders?: boolean;
 };
 
 export const DEFAULT_SETTINGS: BillingSettings = {
@@ -43,6 +44,7 @@ export const DEFAULT_SETTINGS: BillingSettings = {
   free_cancel_days: 2,
   penalty_pct: 100,
   invoice_notes: null,
+  auto_reminders: true,
 };
 
 type ProfileData = {

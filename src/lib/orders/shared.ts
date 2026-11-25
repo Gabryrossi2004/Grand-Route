@@ -79,6 +79,12 @@ export type InvoiceListRow = {
   emitted_at: string | null;
   created_at: string;
   orders_count: number;
+  doc_type?: "TD01" | "TD04";
+  credit_of?: string | null;
+  credit_of_number?: string | null;
+  credited?: number | null; // note di credito parziali emesse
+  residuo?: number | null; // da pagare al netto delle note di credito
+  reminders_sent?: number;
 };
 
 export type OrderPartner = { user_id: string; name: string; kind: string; free_cancel_days: number; penalty_pct: number };

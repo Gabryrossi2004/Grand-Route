@@ -62,7 +62,18 @@ export function xmlFileName(doc: InvoiceDoc, progressivo: string): string {
   return `IT${id}_${progressivo.replace(/[^A-Z0-9]/gi, "").slice(-5).padStart(5, "0")}.xml`;
 }
 
-export function buildFatturaXml(doc: InvoiceDoc, meta: { number: string; issueDate: string; dueDate: string | null; currency: string; progressivo: string }): string {
+export function buildFatturaXml(
+  doc: InvoiceDoc,
+  meta: {
+    number: string;
+    issueDate: string;
+    dueDate: string | null;
+    currency: string;
+    progressivo: string;
+    docType?: "TD01" | "TD04"; // fattura o nota di credito
+    linked?: { number: string; date: string | null } | null; // fattura stornata dalla nota di credito
+  },
+): string {
   const t = computeTotals(doc);
   const seller = doc.seller;
   const buyer = doc.buyer;
@@ -123,7 +134,7 @@ export function buildFatturaXml(doc: InvoiceDoc, meta: { number: string; issueDa
 
   const datiGenerali =
     "<DatiGenerali><DatiGeneraliDocumento>" +
-    "<TipoDocumento>TD01</TipoDocumento>" +
+    tag("TipoDocumento", meta.docType ?? "TD01") +
     tag("Divisa", meta.currency) +
     tag("Data", meta.issueDate) +
     tag("Numero", clean(meta.number, 20)) +
@@ -131,7 +142,11 @@ export function buildFatturaXml(doc: InvoiceDoc, meta: { number: string; issueDa
     bollo +
     tag("ImportoTotaleDocumento", amount(t.totale)) +
     causali.join("") +
-    "</DatiGeneraliDocumento></DatiGenerali>";
+    "</DatiGeneraliDocumento>" +
+    (meta.linked
+      ? "<DatiFattureCollegate>" + tag("IdDocumento", clean(meta.linked.number, 20)) + (meta.linked.date ? tag("Data", meta.linked.date) : "") + "</DatiFattureCollegate>"
+      : "") +
+    "</DatiGenerali>";
 
   const linee = doc.lines
     .map((l, i) => {
@@ -190,7 +205,7 @@ export function buildFatturaXml(doc: InvoiceDoc, meta: { number: string; issueDa
     linee +
     riepilogo +
     "</DatiBeniServizi>" +
-    pagamento +
+    (meta.docType === "TD04" ? "" : pagamento) +
     "</FatturaElettronicaBody>" +
     "</p:FatturaElettronica>\n"
   );

@@ -6,6 +6,8 @@ import DateField from "@/components/DateField";
 import { createOrder, updateOrder, type OrderInput } from "@/lib/actions/orders";
 import { CURRENCIES, UNITS, addDays, fmtDate, fmtMoney, todayRome, type OrderPartner } from "@/lib/orders/shared";
 import { kindLabel } from "@/lib/network/kinds";
+import { parseRequestEmail } from "@/lib/orders/emailParse";
+import { Mail } from "lucide-react";
 
 const input = "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]";
 const label = "mb-1 block text-sm font-medium text-slate-700";
@@ -56,6 +58,28 @@ export default function OrderForm({
   const [multiDay, setMultiDay] = useState(!!initial?.end_date && initial.end_date !== initial.service_date);
   const [more, setMore] = useState(!!(initial?.reference || initial?.lead_name || initial?.details));
   const set = (k: keyof OrderInput) => (v: string) => setF((x) => ({ ...x, [k]: v }));
+  const [pasteOpen, setPasteOpen] = useState(false);
+  const [pasted, setPasted] = useState("");
+  const [parsedInfo, setParsedInfo] = useState<{ found: string[]; warnings: string[] } | null>(null);
+  // Compila l'ordine dal testo di un'email di richiesta (senza AI): riempie solo quello che trova
+  const fromEmail = () => {
+    const r = parseRequestEmail(pasted, todayRome());
+    setF((x) => ({
+      ...x,
+      title: r.title ?? x.title,
+      service_date: r.service_date ?? x.service_date,
+      start_time: r.start_time ?? x.start_time,
+      place: r.place ?? x.place,
+      pax: r.pax ?? x.pax,
+      lead_name: r.lead_name ?? x.lead_name,
+      reference: r.reference ?? x.reference,
+      unit_price: r.unit_price ?? x.unit_price,
+      details: r.details ?? x.details,
+    }));
+    if (r.reference || r.lead_name || r.details) setMore(true);
+    setParsedInfo({ found: r.found, warnings: r.warnings });
+    setPasteOpen(false);
+  };
 
   // Quando si sceglie il partner, si propongono le sue condizioni di cancellazione
   const pick = (id: string) => {
@@ -89,6 +113,37 @@ export default function OrderForm({
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-4">
+      {mode === "create" && (
+        <div className="rounded-xl border border-dashed border-[#c58f2d] bg-[#fffaf0] p-3">
+          {!pasteOpen ? (
+            <button type="button" onClick={() => setPasteOpen(true)} className="flex items-center gap-2 text-sm font-semibold text-[#8a5a12]">
+              <Mail size={16} /> Hai già l&apos;email della richiesta? Incollala e compilo io i campi
+            </button>
+          ) : (
+            <div>
+              <label htmlFor="of-paste" className="mb-1 block text-sm font-medium text-slate-700">Incolla qui il testo dell&apos;email (anche con l&apos;oggetto)</label>
+              <textarea
+                id="of-paste"
+                value={pasted}
+                onChange={(e) => setPasted(e.target.value)}
+                rows={6}
+                className={input}
+                placeholder={"Oggetto: RICHIESTA SERVIZIO - 19 NOVEMBRE - DELUCA X4\n\nSIG.RI DELUCA (4 PAX)\nPICKUP: ROMA FCO APT, VOLO UA 177 ALLE ORE 11:55\nDROP OFF: HOTEL PALAZZO NAVONA\nTARIFFA: 100€ + IVA"}
+              />
+              <div className="mt-2 flex gap-2">
+                <button type="button" disabled={pasted.trim().length < 10} onClick={fromEmail} className="rounded-full bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">Compila i campi</button>
+                <button type="button" onClick={() => setPasteOpen(false)} className="rounded-full px-3 py-2 text-sm text-slate-600">Chiudi</button>
+              </div>
+              <p className="mt-1 text-xs text-slate-500">Leggo date, orari, persone, percorso (pickup / drop off), tariffa e nome di riferimento. Controlla sempre prima di inviare.</p>
+            </div>
+          )}
+          {parsedInfo && (
+            <p className="mt-2 text-xs text-slate-600">
+              {parsedInfo.found.length ? `Trovati: ${parsedInfo.found.join(", ")}.` : "Non ho riconosciuto dati: compila a mano."} {parsedInfo.warnings.join(" ")}
+            </p>
+          )}
+        </div>
+      )}
       {mode === "create" &&
         (fixedCounterpart ? (
           <p className="rounded-xl bg-[#faf3e6] px-4 py-3 text-sm text-slate-700">

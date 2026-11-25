@@ -10,12 +10,27 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   const user = await getCachedUser();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const supabase = await createClient();
-  const { data } = await supabase.from("network_invoices").select("id, status, number, issue_date, due_date, currency, doc").eq("id", id).maybeSingle();
-  const inv = data as { id: string; status: string; number: string | null; issue_date: string | null; due_date: string | null; currency: string; doc: InvoiceDoc } | null;
+  const { data } = await supabase.from("network_invoices").select("*").eq("id", id).maybeSingle();
+  const inv = data as { id: string; status: string; number: string | null; issue_date: string | null; due_date: string | null; currency: string; doc: InvoiceDoc; doc_type?: string; credit_of?: string | null } | null;
   if (!inv || !inv.number || !inv.issue_date || inv.status === "bozza") return NextResponse.json({ error: "not_found" }, { status: 404 });
   if (inv.doc.seller?.country !== "IT") return NextResponse.json({ error: "not_italian" }, { status: 400 });
   const progressivo = inv.id.replace(/-/g, "").slice(0, 10).toUpperCase();
-  const xml = buildFatturaXml(inv.doc, { number: inv.number, issueDate: inv.issue_date, dueDate: inv.due_date, currency: inv.currency, progressivo });
+  // Nota di credito: va indicata la fattura che rettifica
+  let linked: { number: string; date: string | null } | null = null;
+  if (inv.doc_type === "TD04" && inv.credit_of) {
+    const { data: orig } = await supabase.from("network_invoices").select("number, issue_date").eq("id", inv.credit_of).maybeSingle();
+    const o = orig as { number: string | null; issue_date: string | null } | null;
+    if (o?.number) linked = { number: o.number, date: o.issue_date };
+  }
+  const xml = buildFatturaXml(inv.doc, {
+    number: inv.number,
+    issueDate: inv.issue_date,
+    dueDate: inv.due_date,
+    currency: inv.currency,
+    progressivo,
+    docType: inv.doc_type === "TD04" ? "TD04" : "TD01",
+    linked,
+  });
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
