@@ -306,7 +306,8 @@ export default function TerminiPage() {
               tra le parti, che restano le sole responsabili dei servizi e dei pagamenti. Grand Route prepara una bozza di
               fattura con i dati inseriti dalle parti ma non emette fatture, non le invia al Sistema di Interscambio e non
               fornisce consulenza fiscale: chi fattura resta responsabile del contenuto, dell&apos;emissione e della
-              trasmissione della fattura.
+              trasmissione della fattura. Su richiesta del fornitore, Grand Route invia al cliente promemoria di pagamento
+              per le fatture scadute registrate sulla piattaforma; il fornitore può disattivarli in ogni momento.
             </p>
           </section>
         </div>

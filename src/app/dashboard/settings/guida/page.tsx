@@ -669,7 +669,9 @@ const sections: Section[] = [
             risulta svolto da solo. Si annulla fino al giorno del servizio: gratis fino alla data limite indicata, poi con
             la penale concordata. Ore di attesa, spese anticipate o sconti si aggiungono come <strong>variazioni</strong>:
             chi paga ha 3 giorni per contestarle, poi valgono come accettate. Quando la fattura arriva, con un tocco copi
-            l&apos;importo nel costo del servizio del viaggio.
+            l&apos;importo nel costo del servizio del viaggio. Se hai già scritto l&apos;email di richiesta, nel nuovo ordine
+            premi <strong>«Incolla l&apos;email»</strong>: data, ora, persone, percorso (pickup / drop off), tariffa e nome di
+            riferimento si compilano da soli (senza intelligenza artificiale); controlli e invii.
           </>
         ),
       },
@@ -684,8 +686,11 @@ const sections: Section[] = [
             <strong>Impostazioni di fatturazione</strong> (da fare una volta). Si può ritoccare, poi si emette: il cliente
             la vede subito collegata agli ordini. Per renderla valida si scarica il file XML e lo si carica sul portale
             «Fatture e Corrispettivi» dell&apos;Agenzia delle Entrate o nel proprio programma. Dalle fatture si scarica
-            anche l&apos;elenco per il commercialista (CSV). Grand Route non invia le fatture e non sostituisce il
-            commercialista.
+            anche l&apos;elenco per il commercialista (CSV). Per correggere una fattura emessa c&apos;è la{" "}
+            <strong>nota di credito</strong>: totale (annulla la fattura e i servizi tornano da fatturare) o parziale (es. una
+            differenza di prezzo: il cliente paga solo il resto). Le fatture scadute vengono <strong>sollecitate da sole</strong>{" "}
+            1, 7, 15 e 30 giorni dopo la scadenza (si può spegnere nelle impostazioni) e c&apos;è il tasto «Manda un sollecito
+            ora». Grand Route non invia le fatture allo SDI e non sostituisce il commercialista.
           </>
         ),
       },
