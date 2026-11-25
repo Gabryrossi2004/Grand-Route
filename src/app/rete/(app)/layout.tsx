@@ -25,7 +25,8 @@ export default async function NetworkLayout({ children }: { children: React.Reac
 
   await adoptSignupDraft();
   const { data: unread } = await supabase.rpc("network_unread_count");
-  const unreadCount = typeof unread === "number" ? unread : 0;
+  const { data: collabPending } = await supabase.rpc("network_collab_pending_count");
+  const unreadCount = (typeof unread === "number" ? unread : 0) + (typeof collabPending === "number" ? collabPending : 0);
   const trade = isTradeKind(p?.business_kind);
 
   const link = "rounded-full px-3 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";

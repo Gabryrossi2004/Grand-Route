@@ -4,6 +4,7 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { getBusinessKind } from "@/lib/network/server";
 import { KIND_INFO, KIND_FIELDS, isBusinessKind, isTradeKind, type BusinessKind } from "@/lib/network/kinds";
 import ProfileForm from "@/components/network/ProfileForm";
+import ShowcaseEditor, { type ShowcaseFile } from "@/components/network/ShowcaseEditor";
 import type { Values } from "@/components/network/BusinessFields";
 
 const STATUS: Record<string, { label: string; tone: string; text: string }> = {
@@ -39,6 +40,12 @@ export default async function NetworkProfilePageEdit() {
     }
   }
   const st = r?.status ? STATUS[r.status] : null;
+  const showcaseReady = !!r && "gallery" in r;
+  let files: ShowcaseFile[] = [];
+  if (showcaseReady) {
+    const { data: fileRows } = await supabase.from("network_files").select("id, title, path, size_bytes, visibility").eq("user_id", user.id).order("created_at", { ascending: false });
+    files = (fileRows ?? []) as ShowcaseFile[];
+  }
 
   return (
     <div>
@@ -59,7 +66,27 @@ export default async function NetworkProfilePageEdit() {
       ) : (
         <p className="mt-4 rounded-2xl bg-[#faf3e6] p-4 text-sm text-slate-700">Non hai ancora un profilo nella Rete: compilalo per comparire nell&apos;elenco dopo la verifica.</p>
       )}
-      <div className="mt-6">
+      {r && (
+        <div className="mt-6">
+          {showcaseReady ? (
+            <ShowcaseEditor
+              userId={user.id}
+              data={{
+                cover_path: (r.cover_path as string | null) ?? null,
+                logo_path: (r.logo_path as string | null) ?? null,
+                tagline: (r.tagline as string | null) ?? null,
+                brand_color: (r.brand_color as string | null) ?? null,
+                gallery: (r.gallery as string[] | null) ?? [],
+              }}
+              files={files}
+            />
+          ) : (
+            <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per personalizzare la vetrina (copertina, foto, listini) serve l&apos;aggiornamento del database 0064.</p>
+          )}
+        </div>
+      )}
+      <h2 className="mt-8 text-xl font-semibold text-[#233c5e]">Dati dell&apos;attività</h2>
+      <div className="mt-3">
         <ProfileForm kind={kind} kindLocked={!!kindFromProfile && !isTradeKind(kindFromProfile)} values={values} listed={r?.listed ?? true} />
       </div>
     </div>

@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BadgeCheck, Globe, Languages, MapPin } from "lucide-react";
+import { ArrowLeft, BadgeCheck, FileText, Globe, Languages, Lock, MapPin } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { nameItOfCode } from "@/lib/geo/countryCodes";
 import { kindLabel } from "@/lib/network/kinds";
 import { Rating, type NetworkRow } from "@/components/network/ProfileCard";
 import { ContactForm, ReviewButtons } from "@/components/network/ContactAndReview";
+import CollaborationBox, { type CollabState } from "@/components/network/CollaborationBox";
+import NetworkGallery from "@/components/network/NetworkGallery";
+import { FILES_BUCKET, brandOf, mediaUrl } from "@/lib/network/media";
 
 // Scheda pubblica di un professionista verificato. Nessun recapito: si scrive una richiesta.
 export default async function NetworkProfilePage({ params }: { params: Promise<{ id: string }> }) {
@@ -22,6 +25,21 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
     user ? supabase.rpc("network_kind_of", { p_uid: user.id }) : Promise.resolve({ data: null }),
   ]);
   const canReview = viewerKind != null && viewerKind !== row.kind;
+  const isOther = !!user && user.id !== id;
+
+  const [{ data: collabRows }, { data: fileRows }] = await Promise.all([
+    isOther ? supabase.rpc("network_collab_status", { p_user: id }) : Promise.resolve({ data: null }),
+    supabase.rpc("network_files_of", { p_user: id }),
+  ]);
+  const collab = ((collabRows ?? []) as NonNullable<CollabState>[])[0] ?? null;
+  const fileList = (fileRows ?? []) as { id: string; title: string; path: string; size_bytes: number | null; visibility: string }[];
+  const signed = fileList.length ? await supabase.storage.from(FILES_BUCKET).createSignedUrls(fileList.map((f) => f.path), 3600) : null;
+  const urlByPath = new Map((signed?.data ?? []).map((u) => [u.path ?? "", u.signedUrl]));
+
+  const brand = brandOf(row.brand_color);
+  const cover = mediaUrl(row.cover_path, 1280);
+  const logo = mediaUrl(row.logo_path, 300);
+  const photos = (row.gallery ?? []).map((g) => ({ thumb: mediaUrl(g, 640) ?? "", full: mediaUrl(g, 1280) ?? "" })).filter((p) => p.thumb);
 
   return (
     <div>
@@ -29,14 +47,28 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
         <ArrowLeft size={14} /> Torna all&apos;elenco
       </Link>
       <article className="overflow-hidden rounded-3xl border border-[#e6d7bb] bg-white shadow-sm">
-        <div className="bg-gradient-to-br from-[#233c5e] to-[#34527c] p-6 text-white">
-          <p className="text-sm text-white/70">{kindLabel(row.kind)}</p>
-          <h1 className="mt-1 flex items-center gap-2 text-3xl text-white">
-            {row.business_name} <BadgeCheck size={24} className="shrink-0 text-[#f2c14e]" aria-label="Verificato" />
-          </h1>
-          <p className="mt-1 flex items-center gap-1.5 text-sm text-white/80">
-            <MapPin size={14} /> {row.city}, {nameItOfCode(row.country)}
-          </p>
+        <div className="relative text-white" style={{ background: `linear-gradient(135deg, ${brand}, color-mix(in srgb, ${brand} 65%, #ffffff))` }}>
+          {cover && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={cover} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          )}
+          {cover && <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />}
+          <div className={`relative flex items-end gap-4 p-6 ${cover ? "min-h-[220px] sm:min-h-[280px]" : ""}`}>
+            {logo && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={logo} alt="" className="h-20 w-20 shrink-0 rounded-2xl border-2 border-white bg-white object-cover shadow-lg" />
+            )}
+            <div className="min-w-0">
+              <p className="text-sm text-white/80">{kindLabel(row.kind)}</p>
+              <h1 className="mt-1 flex items-center gap-2 text-3xl text-white">
+                <span className="min-w-0">{row.business_name}</span> <BadgeCheck size={24} className="shrink-0 text-[#f2c14e]" aria-label="Verificato" />
+              </h1>
+              {row.tagline && <p className="mt-1 text-base italic text-white/90">{row.tagline}</p>}
+              <p className="mt-1 flex items-center gap-1.5 text-sm text-white/85">
+                <MapPin size={14} /> {row.city}, {nameItOfCode(row.country)}
+              </p>
+            </div>
+          </div>
         </div>
         <div className="grid gap-6 p-6 sm:grid-cols-[1.4fr_1fr]">
           <div className="space-y-5">
@@ -71,6 +103,42 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
             </div>
           </div>
         </div>
+        {(photos.length > 0 || fileList.length > 0) && (
+          <div className="space-y-5 border-t border-[#f2e2c4] p-6">
+            {photos.length > 0 && (
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Foto</p>
+                <NetworkGallery photos={photos} />
+              </div>
+            )}
+            {fileList.length > 0 && (
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Listini e documenti</p>
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {fileList.map((f) => {
+                    const href = urlByPath.get(f.path);
+                    return (
+                      <li key={f.id}>
+                        {href ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-xl border border-[#e6d7bb] px-3 py-2.5 text-sm font-medium text-[#233c5e] hover:border-[#c58f2d]">
+                            <FileText size={18} className="shrink-0 text-[#c58f2d]" /> <span className="min-w-0 flex-1 truncate">{f.title}</span>
+                            {f.visibility === "partner" && <span title="Visibile solo ai partner"><Lock size={13} className="shrink-0 text-slate-400" /></span>}
+                          </a>
+                        ) : null}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <p className="mt-2 text-xs text-slate-500">Alcuni documenti sono riservati ai partner: per vederli proponi una collaborazione.</p>
+              </div>
+            )}
+          </div>
+        )}
+        {isOther && (
+          <div className="border-t border-[#f2e2c4] bg-[#fffaf0] px-6 pt-6">
+            <CollaborationBox toUser={id} name={row.business_name} state={collab} />
+          </div>
+        )}
         <div className="grid gap-6 border-t border-[#f2e2c4] bg-[#fffaf0] p-6 sm:grid-cols-2">
           {user && user.id !== id ? <ContactForm toUser={id} name={row.business_name} /> : <p className="text-sm text-slate-500">Questo è il tuo profilo.</p>}
           {user && user.id !== id && (

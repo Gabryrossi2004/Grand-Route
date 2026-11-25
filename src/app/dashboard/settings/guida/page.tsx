@@ -633,6 +633,31 @@ const sections: Section[] = [
         ),
       },
       {
+        id: "rete-vetrina",
+        title: "La tua vetrina: foto e listini",
+        body: (
+          <>
+            In <strong>Rete → Il mio profilo</strong>, sopra i dati dell&apos;attività, personalizzi come ti vedono gli
+            altri: <strong>copertina</strong> (si vede già nell&apos;elenco dei risultati), <strong>logo</strong>,
+            slogan, colore del profilo, fino a 8 foto nella galleria e i <strong>listini</strong> (PDF, Excel o
+            immagini). Per ogni documento scegli se lo apre tutta la Rete o solo i tuoi partner. Senza copertina
+            l&apos;elenco ti mostra come prima.
+          </>
+        ),
+      },
+      {
+        id: "rete-collaborazioni",
+        title: "Proporre una collaborazione",
+        body: (
+          <>
+            Nella scheda di un professionista premi <strong>Proponi una collaborazione</strong>. Quando accetta, i dati
+            dell&apos;attività di entrambi (nome, recapiti, partita IVA, sede, paesi) vengono salvati da soli nelle
+            rispettive rubriche: tu lo ritrovi in <strong>Anagrafiche → Fornitori</strong>. Le proposte ricevute si
+            accettano o si rifiutano da <strong>Rete → Messaggi</strong>. Serve avere il proprio profilo compilato.
+          </>
+        ),
+      },
+      {
         id: "rete-valutazioni",
         title: "Valutazioni anonime",
         body: (
