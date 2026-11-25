@@ -85,6 +85,14 @@ export default async function NetworkProfilePageEdit() {
           )}
         </div>
       )}
+      {!r && (
+        <div className="mt-6 rounded-2xl border border-dashed border-[#c58f2d] bg-white p-5">
+          <p className="text-base font-semibold text-[#233c5e]">Copertina, logo, foto e listini</p>
+          <p className="mt-1 text-sm text-slate-600">
+            Si sbloccano appena salvi i dati dell&apos;attività qui sotto: compila il modulo, premi <strong>Salva il profilo</strong> e questa sezione compare sopra.
+          </p>
+        </div>
+      )}
       <h2 className="mt-8 text-xl font-semibold text-[#233c5e]">Dati dell&apos;attività</h2>
       <div className="mt-3">
         <ProfileForm kind={kind} kindLocked={!!kindFromProfile && !isTradeKind(kindFromProfile)} values={values} listed={r?.listed ?? true} />
