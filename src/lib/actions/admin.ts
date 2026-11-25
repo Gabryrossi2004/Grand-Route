@@ -25,3 +25,16 @@ export async function handleReport(formData: FormData): Promise<void> {
   revalidatePath("/dashboard/admin/segnalazioni");
   revalidatePath("/dashboard/admin");
 }
+
+// Profili di prova per vedere il sito «pieno»: si creano e si tolgono da Amministrazione
+export async function createDemoData(): Promise<void> {
+  const supabase = await createClient();
+  await supabase.rpc("admin_demo_create");
+  revalidatePath("/dashboard/admin");
+}
+
+export async function removeDemoData(): Promise<void> {
+  const supabase = await createClient();
+  await supabase.rpc("admin_demo_remove");
+  revalidatePath("/dashboard/admin");
+}

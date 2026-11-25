@@ -59,6 +59,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 25/11/2026. Il det
 - **Amministratore:** si diventa con una riga di SQL in Supabase (con l'email di accesso a Grand Route); solo tu, nessun altro può farlo dal sito. Compare la voce **Amministrazione** in Account (e la scheda in Impostazioni).
 - **Pannello `/dashboard/admin`:** numeri (agenzie, tour operator, DMC, guide, autisti, strutture, esperienze, clienti, viaggiatori, nuovi in 7 giorni, sospesi); **Utenti** (ricerca per nome/email/agenzia, filtro per tipo, ultimo accesso, **sospendi/riattiva con motivo**; non si sospendono amministratori né se stessi); **Segnalazioni della Community** (gestisci, rimuovi il contenuto, riapri); verifica dei profili della Rete; regole di Zefiro.
 - **Sospensione:** chi è sospeso vede la pagina «Account sospeso» (con il motivo e il contatto) in gestionale, area clienti, viaggiatori e Rete; il profilo esce dall'elenco della Rete. Non può togliersela da solo (lo impedisce il database). Non è un blocco di accesso a Supabase: è un blocco nel sito.
+- **Profili di prova (migrazione 0063):** in Amministrazione, «Crea i profili di prova» fa comparire 14 profili fittizi già verificati (guide, autisti, strutture, esperienze, DMC, tour operator, agenzia) con valutazioni e 2 messaggi per te; «Rimuovi» li cancella tutti. Email finali `@demo.grandroute.invalid`, non si può accedere. Da togliere prima di far provare la Rete ai tester.
 - **Documenti:** brief per l'avvocato in `docs/legale/brief-avvocato.md` e indice di tutti i documenti in `docs/DOCUMENTI.md` (qui si aggiungono anche quelli per i due amici).
 - **Da fare dopo:** più ruoli (es. solo moderatore), registro delle azioni dell'amministratore, avviso per email a chi viene sospeso.
 
@@ -68,7 +69,7 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 25/11/2026. Il det
 - Dettagli già noti: pulizia dei testi (sanitize-html) spostata sul server.
 
 ## Migrazioni del database
-Eseguite fino alla **0060** (da eseguire: **0061** Rete professionale e **0062** amministrazione) (0056 itinerari dell'agenzia, 0057 chi ha presentato un amico, 0058 viaggiatori, 0059 valigia e spese, 0060 richieste alle agenzie). Se la 0055 non fosse stata eseguita, il pulsante «Chiedi un preventivo» e le notifiche della sera e del mattino non funzionano.
+Eseguite fino alla **0060** (0061 Rete e 0062 amministrazione eseguite; da eseguire: **0063** profili di prova) (0056 itinerari dell'agenzia, 0057 chi ha presentato un amico, 0058 viaggiatori, 0059 valigia e spese, 0060 richieste alle agenzie). Se la 0055 non fosse stata eseguita, il pulsante «Chiedi un preventivo» e le notifiche della sera e del mattino non funzionano.
 
 ## Fatto (in sintesi; dettagli nell'archivio)
 - **Zefiro:** avatar, costumi, contatore costi e pacchetti, archivio con risposte gratis, Zefiro per il cliente, dentro il viaggio (genera, modifica, controlla, traduce, suggerisce, checklist), **«Genera itinerario» (AI) e «Consulta proposte» (gratis)**.

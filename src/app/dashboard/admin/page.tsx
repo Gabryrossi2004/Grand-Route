@@ -4,6 +4,7 @@ import { BadgeCheck, Flag, Sparkles, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { ASSISTANT_NAME } from "@/lib/assistant";
 import { KIND_INFO, BUSINESS_KINDS } from "@/lib/network/kinds";
+import { createDemoData, removeDemoData } from "@/lib/actions/admin";
 
 type Overview = Record<string, number>;
 
@@ -29,6 +30,8 @@ export default async function AdminHome() {
   if (!isAdmin) notFound();
   const { data } = await supabase.rpc("admin_overview");
   const ov = (data ?? null) as Overview | null;
+  const { data: demoData, error: demoError } = await supabase.rpc("admin_demo_count");
+  const demo = typeof demoData === "number" ? demoData : 0;
   const { count: pending } = await supabase.from("network_profiles").select("user_id", { count: "exact", head: true }).eq("status", "in_verifica");
 
   return (
@@ -73,6 +76,28 @@ export default async function AdminHome() {
             </div>
           </div>
         </>
+      )}
+
+      <h2 className="mb-2 mt-10 text-xl font-medium text-[#233c5e]">Profili di prova</h2>
+      <p className="mb-3 text-sm text-slate-600">
+        Per vedere come sarà il sito pieno: crea 14 profili fittizi (guide, autisti, strutture, esperienze, agenzie locali, tour operator e un&apos;agenzia) già verificati, con valutazioni e due messaggi per te in Rete. Non si può accedere con questi account. Tutti i profili di prova sono visibili agli utenti della Rete finché non li togli.
+      </p>
+      {demoError ? (
+        <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Serve l&apos;aggiornamento del database 0063 (Supabase → SQL Editor).</p>
+      ) : (
+        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-[#e6d7bb] bg-white p-4">
+          <p className="mr-auto text-sm text-slate-700">
+            {demo > 0 ? <strong className="text-[#b0413e]">{demo} profili di prova attivi</strong> : "Nessun profilo di prova attivo."}
+          </p>
+          <form action={createDemoData}>
+            <button className="rounded-full bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white">{demo > 0 ? "Ricrea i profili di prova" : "Crea i profili di prova"}</button>
+          </form>
+          {demo > 0 && (
+            <form action={removeDemoData}>
+              <button className="rounded-full bg-[#b0413e] px-4 py-2 text-sm font-semibold text-white">Rimuovi tutti i profili di prova</button>
+            </form>
+          )}
+        </div>
       )}
     </div>
   );

@@ -49,6 +49,7 @@ export default async function AdminUsers({ searchParams }: { searchParams: Promi
                 <p className="truncate text-base font-semibold text-[#233c5e]">
                   {u.agency_name || u.full_name || u.email}
                   {u.is_admin && <span className="ml-2 rounded-full bg-[#233c5e] px-2 py-0.5 text-xs font-medium text-white">Amministratore</span>}
+                  {u.email.endsWith("@demo.grandroute.invalid") && <span className="ml-2 rounded-full bg-[#c58f2d] px-2 py-0.5 text-xs font-medium text-white">Prova</span>}
                   {u.suspended_at && <span className="ml-2 rounded-full bg-[#b0413e] px-2 py-0.5 text-xs font-medium text-white">Sospeso</span>}
                 </p>
                 <p className="truncate text-sm text-slate-600">{u.email}</p>
