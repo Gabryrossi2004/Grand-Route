@@ -51,6 +51,10 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 23/11/2026. Il det
 ### E. Lingua
 - **Sito in inglese (punto 4):** prima far funzionare la traduzione automatica dell'itinerario; poi il gestionale; poi altre lingue. Per ora il sito è solo in italiano.
 
+### G. Rete professionale del turismo (idea di Gabriele, 25/11) — DA DECIDERE
+- **Prima, piccolo:** al posto di «Viaggiatore privato / Agenzia» (scelta rimasta dalla prima versione, oggi non cambia nulla) chiedere il **tipo di attività** già alla registrazione: Agenzia di viaggi, Tour operator, Guida, Autista, Struttura, Altro. Serve a mostrare le sezioni giuste (il tour operator dopo la prova con la collega).
+- **La rete** (profili, vetrina, gruppi e chat, tipo «LinkedIn del turismo», con abbonamento e collegamenti nascosti): da costruire **a gradini**, non tutta insieme. Ordine consigliato: 1) profili e elenco per paese e servizio, contatti visibili solo a chi paga; 2) invitare i propri fornitori dalla rubrica per richieste e riconferme dentro Grand Route; 3) richieste private («cerco un autista a Marrakech»); 4) gruppi per paese con regole e moderazione; 5) recensioni aggregate e verificate; 6) abbonamenti (serve la partita IVA). Prima di cominciare: 5 agenzie e 5 guide/autisti da intervistare.
+
 ### F. Tecnica e velocità
 - Velocità, fase 2: istantanea della Home, meno richieste al database, misure con Speed Insights.
 - Pulizia periodica dei file di viaggi e attività eliminati; «Skew Protection» di Vercel Pro per aggiornamenti senza interruzioni.
