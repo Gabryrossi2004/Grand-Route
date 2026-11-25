@@ -1,4 +1,4 @@
-import { query, toAgencyMail } from "@/lib/mail/agencyRedirect";
+import { toAgencyMail } from "@/lib/mail/agencyRedirect";
 import ThreadPage from "@/components/mail/ThreadPage";
 
 export const metadata = { title: "Conversazione" };

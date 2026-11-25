@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Briefcase, Inbox, Mail, Search, UserRound } from "lucide-react";
+import { Briefcase, CalendarDays, Home, Inbox, Mail, Search, UserRound } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
@@ -45,26 +45,39 @@ export default async function NetworkLayout({ children }: { children: React.Reac
         <div className="absolute bottom-[-15%] right-[-8%] h-96 w-96 rounded-full bg-[#cda876]/20 blur-3xl" />
       </div>
       <HeaderAutoHide className="bg-[#faf3e6]/80 backdrop-blur">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4">
-          <Link href="/rete" className="flex shrink-0 items-center gap-2 text-[#233c5e]">
+        <div className={`mx-auto flex items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4 ${trade ? "max-w-4xl" : "max-w-6xl"}`}>
+          <Link href={trade ? "/rete" : "/rete/home"} className="flex shrink-0 items-center gap-2 text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />
             <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">Grand Route · Partner</span>
           </Link>
-          <form action={signOut} className="sm:hidden">
+          <form action={signOut} className={trade ? "sm:hidden" : "lg:hidden"}>
             <button type="submit" className="rounded-full border border-[#e6d7bb] bg-white px-3 py-1.5 text-[13px] font-medium text-[#756548]">
               Esci
             </button>
           </form>
           <PartnerNav
-            items={[
-              { href: "/rete", label: "Trova" },
-              // la Posta di agenzie e tour operator sta nel gestionale, in Messaggi
-              ...(trade ? [] : [{ href: "/rete/posta", label: "Posta", badge: mailUnread }]),
-              { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
-              { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
-              { href: "/rete/profilo", label: "Il mio profilo" },
-              ...(trade ? [{ href: "/dashboard", label: "Gestionale" }] : []),
-            ]}
+            showFrom={trade ? "sm" : "lg"}
+            items={
+              trade
+                ? [
+                    // agenzie e tour operator: la Posta sta nel gestionale, in Messaggi
+                    { href: "/rete", label: "Trova" },
+                    { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
+                    { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
+                    { href: "/rete/profilo", label: "Il mio profilo" },
+                    { href: "/dashboard", label: "Gestionale" },
+                  ]
+                : [
+                    // fornitori (guide, autisti, strutture…): la loro Home e l'Agenda prima di tutto
+                    { href: "/rete/home", label: "Home" },
+                    { href: "/rete/agenda", label: "Agenda" },
+                    { href: "/rete/posta", label: "Posta", badge: mailUnread },
+                    { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
+                    { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
+                    { href: "/rete", label: "Trova" },
+                    { href: "/rete/profilo", label: "Profilo" },
+                  ]
+            }
           >
             <form action={signOut}>
               <button type="submit" className="rounded-full px-3 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]">Esci</button>
@@ -73,15 +86,26 @@ export default async function NetworkLayout({ children }: { children: React.Reac
         </div>
       </HeaderAutoHide>
       <MobileTabBar
-        items={[
-          { href: "/rete", label: "Trova", icon: <Search size={19} />, exact: true, also: [] },
-          ...(trade ? [] : [{ href: "/rete/posta", label: "Posta", icon: <Mail size={19} />, badge: mailUnread }]),
-          { href: "/rete/messaggi", label: "Richieste", icon: <Inbox size={19} />, badge: unreadCount },
-          { href: "/rete/lavori", label: "Servizi", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
-          { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
-        ]}
+        hideFrom={trade ? "sm" : "lg"}
+        items={
+          trade
+            ? [
+                { href: "/rete", label: "Trova", icon: <Search size={19} />, exact: true, also: [] },
+                { href: "/rete/messaggi", label: "Richieste", icon: <Inbox size={19} />, badge: unreadCount },
+                { href: "/rete/lavori", label: "Servizi", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
+                { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
+              ]
+            : [
+                // sul telefono le richieste di contatto e «Trova» sono nella Home
+                { href: "/rete/home", label: "Home", icon: <Home size={19} />, badge: unreadCount },
+                { href: "/rete/agenda", label: "Agenda", icon: <CalendarDays size={19} /> },
+                { href: "/rete/posta", label: "Posta", icon: <Mail size={19} />, badge: mailUnread },
+                { href: "/rete/lavori", label: "Servizi", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
+                { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
+              ]
+        }
       />
-      <main className="mx-auto max-w-4xl px-4 pb-28 pt-4 sm:pb-12">{children}</main>
+      <main className={`mx-auto px-4 pb-28 pt-4 ${trade ? "max-w-4xl sm:pb-12" : "max-w-4xl lg:pb-12"}`}>{children}</main>
     </div>
   );
 }

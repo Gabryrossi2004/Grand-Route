@@ -53,8 +53,8 @@ export default async function DashboardLayout({
   if ((profile as { suspended_at?: string | null } | null)?.suspended_at) redirect("/sospeso");
   // I viaggiatori privati hanno la loro area
   if ((profile as { is_traveler?: boolean } | null)?.is_traveler) redirect("/viaggiatore");
-  // I fornitori (guide, autisti, strutture...) usano solo la Rete
-  if (!isTradeKind((profile as { business_kind?: string | null } | null)?.business_kind)) redirect("/rete");
+  // I fornitori (guide, autisti, strutture...) usano solo la sezione Partner: entrano dalla loro Home
+  if (!isTradeKind((profile as { business_kind?: string | null } | null)?.business_kind)) redirect("/rete/home");
   // Chi si è registrato con i dati dell'attività li trova già nel profilo della Rete
   await adoptSignupDraft();
 

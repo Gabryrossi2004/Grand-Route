@@ -627,6 +627,22 @@ const sections: Section[] = [
         ),
       },
       {
+        id: "rete-fornitori",
+        title: "Per guide, autisti e strutture: Home e Agenda",
+        body: (
+          <>
+            Chi è fornitore entra direttamente nella sua <strong>Home</strong>: in alto le cose da fare (richieste da
+            confermare, servizi da fatturare, fatture scadute, messaggi), poi i servizi di <strong>oggi</strong> e dei{" "}
+            <strong>prossimi 7 giorni</strong>, con tasti grandi per il telefono: <strong>Conferma</strong>,{" "}
+            <strong>Chiama</strong> (l&apos;agenzia), <strong>Mappa</strong> (apre il luogo su Google Maps) e{" "}
+            <strong>Messaggi</strong> (la conversazione dell&apos;ordine). Sotto c&apos;è l&apos;elenco di cosa manca alla
+            vetrina per essere scelti più spesso. L&apos;<strong>Agenda</strong> mostra i servizi per settimana (da
+            scorrere) o per mese (tocca un giorno per aprirlo). Sul telefono la barra in basso ha Home, Agenda, Posta,
+            Servizi e Profilo.
+          </>
+        ),
+      },
+      {
         id: "rete-cerca",
         title: "Cercare e scrivere",
         body: (

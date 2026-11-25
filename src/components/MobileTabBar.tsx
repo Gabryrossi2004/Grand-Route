@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 export type TabItem = { href: string; label: string; icon: React.ReactNode; exact?: boolean; also?: string[]; badge?: number };
 
 // Menu dei telefoni: barra fissa in basso con icone e nomi, come nelle app (su schermi grandi resta il menu in alto)
-export default function MobileTabBar({ items }: { items: TabItem[] }) {
+export default function MobileTabBar({ items, hideFrom = "sm" }: { items: TabItem[]; hideFrom?: "sm" | "lg" }) {
   const pathname = usePathname();
   return (
     <nav
       aria-label="Menu"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-[#e6d7bb] bg-[#faf3e6]/95 backdrop-blur print:hidden sm:hidden"
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-[#e6d7bb] bg-[#faf3e6]/95 backdrop-blur print:hidden ${hideFrom === "lg" ? "lg:hidden" : "sm:hidden"}`}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <ul className="mx-auto flex max-w-md">

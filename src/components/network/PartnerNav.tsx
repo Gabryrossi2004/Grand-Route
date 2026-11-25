@@ -14,10 +14,10 @@ export function partnerItemActive(pathname: string, it: PartnerNavItem) {
 }
 
 // Menu in alto della sezione Partner (computer): la voce della pagina in cui sei resta evidenziata
-export default function PartnerNav({ items, children }: { items: PartnerNavItem[]; children?: React.ReactNode }) {
+export default function PartnerNav({ items, children, showFrom = "sm" }: { items: PartnerNavItem[]; children?: React.ReactNode; showFrom?: "sm" | "lg" }) {
   const pathname = usePathname();
   return (
-    <nav aria-label="Menu Partner" className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm sm:flex">
+    <nav aria-label="Menu Partner" className={`hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm ${showFrom === "lg" ? "lg:flex" : "sm:flex"}`}>
       {items.map((it) => {
         const on = partnerItemActive(pathname, it);
         return (
