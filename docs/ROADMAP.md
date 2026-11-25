@@ -77,6 +77,6 @@ Eseguite fino alla **0060** (0056 itinerari dell'agenzia, 0057 chi ha presentato
 ## Prima del lancio commerciale
 - **Ricerca voli (AeroDataBox):** il piano gratuito non consente l'uso commerciale né la rivendita dei dati: serve un piano a pagamento.
 - **Piani e fornitori:** Supabase Pro, Vercel Pro, rinnovo del dominio.
-- **Legale:** revisione di avvocato e consulente privacy su Termini, Privacy (cita Anthropic, Open-Meteo, Wikimedia) e contratto con le agenzie; controllo legale se si vendono biglietti.
+- **Legale:** revisione di avvocato e consulente privacy su Termini, Privacy (cita Anthropic, Open-Meteo, Wikimedia), contratto con le agenzie e **Rete** (valutazioni anonime, dati di guide e autisti, regole di moderazione); controllo legale se si vendono biglietti. **Stima di costo (da verificare con 2-3 preventivi):** circa 2.000-5.000 € una tantum, se si porta il lavoro già preparato; da preparare un «brief per l'avvocato».
 - **Società:** partita IVA e fatturazione.
 - **Foto dei ricordi:** verificare lo spazio incluso nel piano Supabase (circa 0,3 MB a foto, tetto 600 per cliente), cancellare le foto quando si elimina un account, inserire nella privacy il trattamento delle foto dei clienti.
