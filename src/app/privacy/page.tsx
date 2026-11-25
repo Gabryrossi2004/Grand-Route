@@ -224,6 +224,20 @@ export default function PrivacyPage() {
               Utenti saranno informati tramite il Servizio o via email.
             </p>
           </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">11. Rete professionale del turismo</h2>
+            <p>
+              Chi si iscrive alla Rete fornisce i dati della propria attività (nome, partita IVA o equivalente,
+              indirizzo, telefono, licenze e assicurazioni) per essere verificato, fatturato e, dopo la verifica,
+              presentato nell&apos;elenco. Nell&apos;elenco compaiono solo nome dell&apos;attività, città e paese,
+              presentazione, paesi, lingue e specializzazioni, mai email, telefono o dati fiscali; i recapiti sono
+              visibili solo a chi riceve una richiesta di contatto da quella persona. Le valutazioni sono anonime:
+              conserviamo chi ha votato solo per evitare voti doppi e non lo mostriamo a nessuno, nemmeno al valutato.
+              Il profilo si può nascondere in ogni momento e, alla chiusura dell&apos;account, viene cancellato.
+              La base giuridica è l&apos;esecuzione del contratto di iscrizione (art. 6.1.b GDPR).
+            </p>
+          </section>
         </div>
 
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">

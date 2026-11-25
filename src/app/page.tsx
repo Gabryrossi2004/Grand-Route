@@ -34,6 +34,9 @@ export default function Home() {
             <Link href="/login" className="text-sm font-medium text-[#6b5f4a] hover:text-[#233c5e] hover:underline">
               Accedi al tuo account agenzia
             </Link>
+            <Link href="/signup?tipo=guida" className="max-w-[16rem] text-balance text-xs text-[#6b5f4a] hover:text-[#233c5e] hover:underline">
+              Guida, autista, hotel o altro fornitore? Entra nella Rete dei professionisti
+            </Link>
           </div>
         </section>
 

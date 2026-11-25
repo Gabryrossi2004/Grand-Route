@@ -603,6 +603,48 @@ const sections: Section[] = [
       },
     ],
   },
+  {
+    id: "rete",
+    title: "19. La Rete dei professionisti",
+    intro: "Un elenco di agenzie, tour operator, agenzie locali, guide, autisti e strutture verificati, per trovare chi ti serve in ogni paese.",
+    steps: [
+      {
+        id: "rete-profilo",
+        title: "Il tuo profilo",
+        body: (
+          <>
+            Dal menu <strong>Rete → Il mio profilo</strong> compili i dati dell&apos;attività (partita IVA, sede, licenze e
+            assicurazioni previste per il tuo tipo di attività) e scegli paesi, lingue e specializzazioni. Il team li
+            controlla: quando il profilo è <strong>verificato</strong> compari nell&apos;elenco. Email, telefono e dati
+            fiscali non sono pubblici. In <strong>Impostazioni → Tipo di attività</strong> scegli se sei agenzia, tour
+            operator o agenzia locale.
+          </>
+        ),
+      },
+      {
+        id: "rete-cerca",
+        title: "Cercare e scrivere",
+        body: (
+          <>
+            In <strong>Rete → Cerca</strong> filtri per paese, tipo di attività o parola. Aprendo una scheda leggi la
+            presentazione e scrivi una richiesta: chi la riceve vede il tuo nome e i tuoi recapiti e ti risponde
+            direttamente. Le richieste ricevute e inviate sono in <strong>Rete → Messaggi</strong>.
+          </>
+        ),
+      },
+      {
+        id: "rete-valutazioni",
+        title: "Valutazioni anonime",
+        body: (
+          <>
+            Puoi dare un voto <strong>positivo o negativo</strong>, senza testo e senza nome: nessuno, nemmeno il
+            valutato, vede chi ha votato, e i totali compaiono dal terzo voto. Non si valuta chi fa il tuo stesso
+            mestiere (un&apos;agenzia non valuta le agenzie, una guida non valuta le guide).
+          </>
+        ),
+      },
+    ],
+  },
 ];
 
 export default function GuidaPage() {

@@ -11,6 +11,8 @@ import { parseLogoShape } from "@/lib/logoShape";
 import ZefiroFloating from "@/components/ZefiroFloating";
 import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 import { ZefiroStyleProvider } from "@/components/ZefiroStyle";
+import { isTradeKind } from "@/lib/network/kinds";
+import { adoptSignupDraft } from "@/lib/network/server";
 
 export default async function DashboardLayout({
   children,
@@ -38,6 +40,10 @@ export default async function DashboardLayout({
   }
   // I viaggiatori privati hanno la loro area
   if ((profile as { is_traveler?: boolean } | null)?.is_traveler) redirect("/viaggiatore");
+  // I fornitori (guide, autisti, strutture...) usano solo la Rete
+  if (!isTradeKind((profile as { business_kind?: string | null } | null)?.business_kind)) redirect("/rete");
+  // Chi si è registrato con i dati dell'attività li trova già nel profilo della Rete
+  await adoptSignupDraft();
 
   const brandColor = profile?.brand_color || "#233c5e";
 

@@ -1,28 +1,49 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { isBusinessKind, isTradeKind } from "@/lib/network/kinds";
+import { formToRecord, hasBusinessInput, validateNetworkProfile } from "@/lib/network/validate";
 
-export async function signup(
-  _prevState: { error?: string; success?: boolean } | undefined,
-  formData: FormData,
-) {
-  const email = String(formData.get("email") ?? "");
+type State = { error?: string; errors?: Record<string, string>; success?: boolean } | undefined;
+
+export async function signup(_prevState: State, formData: FormData): Promise<State> {
+  const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
-  const fullName = String(formData.get("fullName") ?? "");
+  const fullName = String(formData.get("fullName") ?? "").trim();
+  const kindRaw = String(formData.get("kind") ?? "agenzia");
+  const kind = isBusinessKind(kindRaw) ? kindRaw : "agenzia";
 
+  if (fullName.length < 2) return { error: "Scrivi nome e cognome." };
   if (password.length < 6) {
     return { error: "La password deve avere almeno 6 caratteri." };
   }
-
   if (!formData.get("acceptTerms")) {
     return { error: "Devi accettare i Termini di Servizio e l'Informativa sulla Privacy." };
+  }
+
+  // Dati dell'attività: obbligatori per i fornitori, facoltativi per agenzie e tour operator (si completano nella Rete)
+  const record = formToRecord(formData);
+  for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth"]) delete record[k];
+  const trade = isTradeKind(kind);
+  let draft: Record<string, unknown> | null = null;
+  if (!trade || hasBusinessInput(record)) {
+    const checked = validateNetworkProfile(kind, record);
+    if (!checked.ok) return { error: "Controlla i campi evidenziati.", errors: checked.errors };
+    if (!formData.get("acceptTruth")) return { error: "Conferma che i dati dell'attività sono veritieri.", errors: { acceptTruth: "Obbligatorio." } };
+    draft = record;
   }
 
   const supabase = await createClient();
   const { error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { full_name: fullName } },
+    options: {
+      data: {
+        full_name: fullName,
+        business_kind: kind,
+        ...(draft ? { network_draft: draft } : {}),
+      },
+    },
   });
 
   if (error) {

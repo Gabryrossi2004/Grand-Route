@@ -17,6 +17,7 @@ export type Profile = {
   ui_font_size: UiFontSize;
   ui_font_family: UiFontFamily;
   is_professional: boolean;
+  business_kind?: string | null;
   emergency_phone: string | null;
   ai_rules: string | null;
   ai_preferences: Record<string, string> | null;

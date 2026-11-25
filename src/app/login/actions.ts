@@ -15,5 +15,5 @@ export async function login(_prevState: { error?: string } | undefined, formData
   }
 
   const next = String(formData.get("next") ?? "");
-  redirect(next.startsWith("/dashboard") ? next : "/dashboard");
+  redirect(next.startsWith("/dashboard") || next.startsWith("/rete") ? next : "/dashboard");
 }

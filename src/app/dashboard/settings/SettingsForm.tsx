@@ -12,17 +12,20 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
   return (
     <form action={formAction} className="flex flex-col gap-5 rounded-xl border border-[#e6d7bb] bg-white p-6">
       <div>
-        <label className="mb-2 block text-sm font-medium text-slate-700">Tipo di account</label>
-        <div className="flex gap-4 text-sm">
-          <label className="flex items-center gap-2">
-            <input type="radio" name="account_type" value="individual" defaultChecked={profile.account_type === "individual"} />
-            Viaggiatore privato
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="radio" name="account_type" value="agency" defaultChecked={profile.account_type === "agency"} />
-            Agenzia / Travel advisor
-          </label>
-        </div>
+        <label htmlFor="business_kind" className="mb-1 block text-sm font-medium text-slate-700">
+          Tipo di attività
+        </label>
+        <select
+          id="business_kind"
+          name="business_kind"
+          defaultValue={profile.business_kind ?? "agenzia"}
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876] sm:w-80"
+        >
+          <option value="agenzia">Agenzia di viaggi</option>
+          <option value="tour_operator">Tour operator</option>
+          <option value="dmc">Agenzia locale (DMC)</option>
+        </select>
+        <p className="mt-1 text-xs text-slate-500">Serve a mostrarti le sezioni giuste e a presentarti nella Rete dei professionisti.</p>
       </div>
 
       <div>

@@ -25,7 +25,7 @@ export async function updateProfile(
   } = await supabase.auth.getUser();
   if (!user) return { error: "Devi essere loggato." };
 
-  const accountType = String(formData.get("account_type") ?? "individual");
+  const kindRaw = String(formData.get("business_kind") ?? "");
   const agencyName = String(formData.get("agency_name") ?? "").trim() || null;
   const brandColor = String(formData.get("brand_color") ?? "#2563eb");
   const termsAndConditions = String(formData.get("terms_and_conditions") ?? "").trim() || null;
@@ -34,7 +34,7 @@ export async function updateProfile(
   const emergencyPhone = String(formData.get("emergency_phone") ?? "").trim() || null;
 
   const updates: Record<string, unknown> = {
-    account_type: accountType === "agency" ? "agency" : "individual",
+    account_type: "agency",
     agency_name: agencyName,
     brand_color: brandColor,
     terms_and_conditions: termsAndConditions,
@@ -48,6 +48,8 @@ export async function updateProfile(
 
   const { error } = await supabase.from("profiles").update(updates).eq("id", user.id);
   if (error) return { error: "Errore durante il salvataggio." };
+  // il tipo di attività si salva a parte: funziona dopo la migrazione 0061, prima viene ignorato
+  if (["agenzia", "tour_operator", "dmc"].includes(kindRaw)) await supabase.from("profiles").update({ business_kind: kindRaw }).eq("id", user.id);
 
   revalidatePath("/dashboard/settings");
   revalidatePath("/dashboard", "layout");

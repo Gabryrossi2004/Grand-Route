@@ -39,7 +39,7 @@ export async function updateSession(request: NextRequest) {
   const isTravelerAuthRoute = pathname.startsWith("/viaggiatore/login") || pathname.startsWith("/viaggiatore/signup");
   const isTravelerPrivateRoute = pathname.startsWith("/viaggiatore") && !isTravelerAuthRoute;
 
-  const isPrivateRoute = pathname.startsWith("/dashboard") || isClientPrivateRoute || isTravelerPrivateRoute;
+  const isPrivateRoute = pathname.startsWith("/dashboard") || pathname.startsWith("/rete") || isClientPrivateRoute || isTravelerPrivateRoute;
   const isAuthRoute =
     pathname.startsWith("/login") || pathname.startsWith("/signup") || isClientAuthRoute || isTravelerAuthRoute;
 

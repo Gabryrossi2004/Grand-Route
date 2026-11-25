@@ -276,6 +276,23 @@ export default function TerminiPage() {
               hanno limiti mensili che possono cambiare.
             </p>
           </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">19. Rete professionale del turismo</h2>
+            <p>
+              La Rete è un elenco di professionisti del turismo (agenzie, tour operator, agenzie locali, guide,
+              autisti, strutture e altri fornitori), riservato a chi svolge un&apos;attività e la dichiara con dati
+              veritieri: partita IVA o equivalente, licenze e assicurazioni previste dalla propria attività.
+              Grand Route controlla i dati prima di pubblicare un profilo, ma non garantisce la qualità dei servizi
+              dei professionisti in elenco e non è parte dei loro accordi: ogni contratto, preventivo e pagamento
+              riguarda solo le parti. Email e telefono non sono pubblici: si scrive una richiesta e chi la riceve
+              vede i recapiti di chi ha scritto. Le valutazioni sono anonime (solo positivo o negativo, senza testo),
+              non si danno a chi svolge la stessa attività del valutato e si mostrano in forma di totale dal terzo
+              voto. Grand Route non rivela chi ha votato, può rimuovere valutazioni abusive e sospendere i profili
+              con dati falsi o che violano questi Termini. L&apos;accesso potrà diventare a pagamento con un
+              abbonamento: i prezzi saranno comunicati prima.
+            </p>
+          </section>
         </div>
 
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">
