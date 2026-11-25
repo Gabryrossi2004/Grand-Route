@@ -187,6 +187,11 @@ html:has([data-ui="client"]) {
   button:disabled {
     cursor: not-allowed;
   }
+  /* pulsanti a tutta larghezza dentro un riquadro arrotondato (es. intestazione di una scheda):
+     l'evidenziatura segue gli angoli del riquadro invece di uscire con gli spigoli */
+  button[class*="w-full"]:not([class*="rounded"]) {
+    border-radius: inherit;
+  }
   button,
   a[class*="rounded-full"] {
     transition: filter 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, scale 0.1s ease;
@@ -200,7 +205,7 @@ html:has([data-ui="client"]) {
     /* pulsanti senza sfondo ma con bordo o spazio interno: compare un fondo leggero */
     button:not(:disabled):not([data-nofx]):not([class*="inset-0"]):not([class*="bg-"]):is([class*="border"], [class*="px-"], [class*="p-"]):hover,
     a[class*="rounded-full"]:not([class*="bg-"]):not([data-nofx]):not([class*="inset-0"]):hover {
-      background-color: rgb(35 60 94 / 0.07);
+      background-color: rgb(205 168 118 / 0.14);
       filter: none;
     }
     /* pulsanti di solo testo (es. «Annulla la richiesta»): si attenuano */

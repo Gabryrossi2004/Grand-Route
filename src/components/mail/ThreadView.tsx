@@ -205,7 +205,7 @@ export default function ThreadView({
                 <button
                   type="button"
                   onClick={() => setExpanded((e) => ({ ...e, [m.id]: !(e[m.id] ?? openByDefault(m.id, idx)) }))}
-                  className="flex w-full items-start gap-3 text-left"
+                  className="-m-2 flex w-[calc(100%+1rem)] items-start gap-3 rounded-xl p-2 text-left"
                 >
                   <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${m.author_id === me ? "bg-[#233c5e] text-white" : "bg-[#f2e2c4] text-[#233c5e]"}`}>
                     {initials(nameOf(m.author_id))}

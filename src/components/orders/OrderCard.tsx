@@ -226,7 +226,7 @@ export default function OrderCard({ order, me, invoiceBase, defaultOpen = false,
 
   return (
     <article className={`rounded-2xl border bg-white shadow-sm ${waiting ? "border-[#c58f2d]" : "border-[#e6d7bb]"}`}>
-      <button type="button" onClick={() => setOpen((v) => !v)} className="flex w-full items-start gap-3 p-4 text-left" aria-expanded={open}>
+      <button type="button" onClick={() => setOpen((v) => !v)} className={`flex w-full items-start gap-3 p-4 text-left ${open ? "rounded-t-2xl" : "rounded-2xl"}`} aria-expanded={open}>
         <div className="w-14 shrink-0 rounded-xl bg-[#faf3e6] py-1.5 text-center">
           <p className="text-[11px] font-semibold uppercase text-[#a08a5e]">{new Date(`${o.service_date}T12:00:00Z`).toLocaleDateString("it-IT", { month: "short", timeZone: "UTC" })}</p>
           <p className="text-xl font-semibold leading-none text-[#233c5e]">{Number(o.service_date.slice(8, 10))}</p>
