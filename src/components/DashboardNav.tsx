@@ -61,11 +61,19 @@ const linkOff = "border-transparent text-[#6b5f4a] hover:text-[#233c5e]";
 export default function DashboardNav({
   signOut,
   unreadMessages = 0,
+  isAdmin = false,
 }: {
   signOut: () => Promise<void> | void;
   unreadMessages?: number;
+  isAdmin?: boolean;
 }) {
   const pathname = usePathname();
+  // Gli amministratori hanno una voce in più nel menu Account
+  const items: NavItem[] = isAdmin
+    ? navItems.map((item) =>
+        isGroup(item) && item.account ? { ...item, children: [{ href: "/dashboard/admin", label: "Amministrazione" }, ...item.children] } : item,
+      )
+    : navItems;
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const groupOpen = openGroup !== null;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -104,7 +112,7 @@ export default function DashboardNav({
     <div ref={wrapRef} className="relative text-sm">
       {/* Computer */}
       <nav className="hidden items-center gap-1 xl:flex" aria-label="Menù principale">
-        {navItems.map((item) => {
+        {items.map((item) => {
           if (isGroup(item)) {
             const active = item.children.some((c) => isActive(pathname, c.href));
             const open = openGroup === item.label;
@@ -184,7 +192,7 @@ export default function DashboardNav({
           aria-label="Menù principale"
           className="absolute right-0 top-full z-30 mt-2 w-[min(18rem,calc(100vw-1.5rem))] overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-2 shadow-xl xl:hidden"
         >
-          {navItems.map((item) => {
+          {items.map((item) => {
             if (isGroup(item)) {
               return (
                 <div key={item.label} className="mt-1">

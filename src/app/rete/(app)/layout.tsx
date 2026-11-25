@@ -7,6 +7,7 @@ import HeaderAutoHide from "@/components/HeaderAutoHide";
 import MobileTabBar from "@/components/MobileTabBar";
 import { adoptSignupDraft } from "@/lib/network/server";
 import { isTradeKind } from "@/lib/network/kinds";
+import { redirectIfSuspended } from "@/lib/suspension";
 
 export const metadata = { title: "Rete professionale" };
 
@@ -15,6 +16,7 @@ export const metadata = { title: "Rete professionale" };
 export default async function NetworkLayout({ children }: { children: React.ReactNode }) {
   const user = await getCachedUser();
   if (!user) redirect("/login?next=/rete");
+  await redirectIfSuspended();
   const supabase = await createClient();
   const { data: profile } = await supabase.from("profiles").select("is_traveler, is_professional, business_kind").eq("id", user.id).maybeSingle();
   const p = profile as { is_traveler?: boolean; is_professional?: boolean; business_kind?: string | null } | null;

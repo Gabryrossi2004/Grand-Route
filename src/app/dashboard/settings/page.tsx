@@ -124,26 +124,12 @@ export default async function SettingsPage() {
 
       {isAdmin === true && (
         <Link
-          href="/dashboard/admin/ai-rules"
+          href="/dashboard/admin"
           className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#233c5e]/30 bg-white px-5 py-4 transition hover:shadow-sm"
         >
           <span>
-            <span className="block text-sm font-semibold text-slate-900">Regole di base di {ASSISTANT_NAME} (amministratore)</span>
-            <span className="block text-xs text-slate-500">
-              Le regole che {ASSISTANT_NAME} segue per tutte le agenzie: puoi modificarle, disattivarle o aggiungerne.
-            </span>
-          </span>
-          <ChevronRight size={16} className="shrink-0 text-slate-500" />
-        </Link>
-      )}
-      {isAdmin === true && (
-        <Link
-          href="/dashboard/admin/rete"
-          className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#233c5e]/30 bg-white px-5 py-4 transition hover:shadow-sm"
-        >
-          <span>
-            <span className="block text-sm font-semibold text-slate-900">Rete: verifica dei profili (amministratore)</span>
-            <span className="block text-xs text-slate-500">Controlla partita IVA, licenze e assicurazioni di chi si registra e approva il profilo.</span>
+            <span className="block text-sm font-semibold text-slate-900">Amministrazione</span>
+            <span className="block text-xs text-slate-500">Verifica dei profili della Rete, utenti e sospensioni, segnalazioni e regole di {ASSISTANT_NAME}.</span>
           </span>
           <ChevronRight size={16} className="shrink-0 text-slate-500" />
         </Link>

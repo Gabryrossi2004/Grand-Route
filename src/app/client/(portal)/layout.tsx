@@ -7,11 +7,13 @@ import LanguageSwitch from "@/components/LanguageSwitch";
 import { Gift, Globe2, IdCard, Luggage } from "lucide-react";
 import MobileTabBar from "@/components/MobileTabBar";
 import { getT } from "@/lib/i18n/server";
+import { redirectIfSuspended } from "@/lib/suspension";
 
 export default async function ClientPortalLayout({ children }: { children: React.ReactNode }) {
   const { t } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
+  await redirectIfSuspended();
 
   let fullName: string | null = null;
   if (user) {

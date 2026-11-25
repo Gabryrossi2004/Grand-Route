@@ -5,6 +5,7 @@ import HeaderAutoHide from "@/components/HeaderAutoHide";
 import { Globe2, Luggage, Plus } from "lucide-react";
 import MobileTabBar from "@/components/MobileTabBar";
 import { travelerSignOut } from "../actions";
+import { redirectIfSuspended } from "@/lib/suspension";
 
 export const metadata = { title: "Area viaggiatori" };
 
@@ -12,6 +13,7 @@ export const metadata = { title: "Area viaggiatori" };
 export default async function TravelerLayout({ children }: { children: React.ReactNode }) {
   const user = await getCachedUser();
   if (!user) redirect("/viaggiatore/login");
+  await redirectIfSuspended();
   const supabase = await createClient();
   const { data: profile } = await supabase.from("profiles").select("full_name, is_traveler, is_professional").eq("id", user.id).maybeSingle();
   if (profile && !profile.is_traveler) redirect(profile.is_professional ? "/dashboard" : "/client");

@@ -1,6 +1,6 @@
 # Grand Route — scaletta dei progetti
 
-Da riproporre al termine di ogni passo. Ultimo aggiornamento: 23/11/2026. Il dettaglio di tutto quello che è già stato fatto è in `docs/ROADMAP-archivio.md`.
+Da riproporre al termine di ogni passo. Ultimo aggiornamento: 25/11/2026. Il dettaglio di tutto quello che è già stato fatto è in `docs/ROADMAP-archivio.md`.
 
 > **Promemoria (richiesta di Gabriele, 22/11):** per l'area cliente e per gli utenti privati prendere spunto da **Stippl** e adottare le funzioni utili, sia per l'agenzia sia per il cliente/privato (elenco al punto A).
 
@@ -55,13 +55,20 @@ Da riproporre al termine di ogni passo. Ultimo aggiornamento: 23/11/2026. Il det
 - **Fatto (strada A, elenco):** al posto di «viaggiatore privato / agenzia» ora c'è il **tipo di attività** (agenzia di viaggi, tour operator, agenzia locale DMC, guida, autista, struttura, esperienze, altro). **Registrazione unica** con i dati richiesti per ogni attività (partita IVA con controllo, codice fiscale, SDI o PEC per la fattura, sede, contatti, paesi, lingue, licenze e assicurazioni specifiche; per l'estero numero di registrazione fiscale). Agenzie e tour operator possono compilare i dati dopo. Area **/rete**: elenco con ricerca per paese, attività e parola, scheda con richiesta di contatto (i recapiti li vede solo chi riceve), messaggi, profilo. **Valutazioni anonime** solo positivo/negativo, mai verso chi fa lo stesso mestiere, totali dal 3° voto. **Verifica a mano** in Impostazioni → Rete: verifica dei profili (amministratore). Fornitori vanno solo nella Rete, non nel gestionale; Community vecchia riservata a chi vende.
 - **Da decidere/fare:** abbonamento dei fornitori (5-6 € al mese, serve la partita IVA e la fatturazione; nel database c'è già l'interruttore), caricamento dei documenti (oggi si chiedono per email), richieste private, gruppi per paese con moderazione, avvocato per Termini, Privacy e valutazioni.
 
+### H. Accessi e amministrazione (richiesta di Gabriele, 25/11) — FATTO (migrazione 0062 da eseguire)
+- **Amministratore:** si diventa con una riga di SQL in Supabase (con l'email di accesso a Grand Route); solo tu, nessun altro può farlo dal sito. Compare la voce **Amministrazione** in Account (e la scheda in Impostazioni).
+- **Pannello `/dashboard/admin`:** numeri (agenzie, tour operator, DMC, guide, autisti, strutture, esperienze, clienti, viaggiatori, nuovi in 7 giorni, sospesi); **Utenti** (ricerca per nome/email/agenzia, filtro per tipo, ultimo accesso, **sospendi/riattiva con motivo**; non si sospendono amministratori né se stessi); **Segnalazioni della Community** (gestisci, rimuovi il contenuto, riapri); verifica dei profili della Rete; regole di Zefiro.
+- **Sospensione:** chi è sospeso vede la pagina «Account sospeso» (con il motivo e il contatto) in gestionale, area clienti, viaggiatori e Rete; il profilo esce dall'elenco della Rete. Non può togliersela da solo (lo impedisce il database). Non è un blocco di accesso a Supabase: è un blocco nel sito.
+- **Documenti:** brief per l'avvocato in `docs/legale/brief-avvocato.md` e indice di tutti i documenti in `docs/DOCUMENTI.md` (qui si aggiungono anche quelli per i due amici).
+- **Da fare dopo:** più ruoli (es. solo moderatore), registro delle azioni dell'amministratore, avviso per email a chi viene sospeso.
+
 ### F. Tecnica e velocità
 - Velocità, fase 2: istantanea della Home, meno richieste al database, misure con Speed Insights.
 - Pulizia periodica dei file di viaggi e attività eliminati; «Skew Protection» di Vercel Pro per aggiornamenti senza interruzioni.
 - Dettagli già noti: pulizia dei testi (sanitize-html) spostata sul server.
 
 ## Migrazioni del database
-Eseguite fino alla **0060** (0056 itinerari dell'agenzia, 0057 chi ha presentato un amico, 0058 viaggiatori, 0059 valigia e spese, 0060 richieste alle agenzie). Se la 0055 non fosse stata eseguita, il pulsante «Chiedi un preventivo» e le notifiche della sera e del mattino non funzionano.
+Eseguite fino alla **0060** (da eseguire: **0061** Rete professionale e **0062** amministrazione) (0056 itinerari dell'agenzia, 0057 chi ha presentato un amico, 0058 viaggiatori, 0059 valigia e spese, 0060 richieste alle agenzie). Se la 0055 non fosse stata eseguita, il pulsante «Chiedi un preventivo» e le notifiche della sera e del mattino non funzionano.
 
 ## Fatto (in sintesi; dettagli nell'archivio)
 - **Zefiro:** avatar, costumi, contatore costi e pacchetti, archivio con risposte gratis, Zefiro per il cliente, dentro il viaggio (genera, modifica, controlla, traduce, suggerisce, checklist), **«Genera itinerario» (AI) e «Consulta proposte» (gratis)**.
@@ -77,6 +84,6 @@ Eseguite fino alla **0060** (0056 itinerari dell'agenzia, 0057 chi ha presentato
 ## Prima del lancio commerciale
 - **Ricerca voli (AeroDataBox):** il piano gratuito non consente l'uso commerciale né la rivendita dei dati: serve un piano a pagamento.
 - **Piani e fornitori:** Supabase Pro, Vercel Pro, rinnovo del dominio.
-- **Legale:** revisione di avvocato e consulente privacy su Termini, Privacy (cita Anthropic, Open-Meteo, Wikimedia), contratto con le agenzie e **Rete** (valutazioni anonime, dati di guide e autisti, regole di moderazione); controllo legale se si vendono biglietti. **Stima di costo (da verificare con 2-3 preventivi):** circa 2.000-5.000 € una tantum, se si porta il lavoro già preparato; da preparare un «brief per l'avvocato».
+- **Legale:** revisione di avvocato e consulente privacy su Termini, Privacy (cita Anthropic, Open-Meteo, Wikimedia), contratto con le agenzie e **Rete** (valutazioni anonime, dati di guide e autisti, regole di moderazione); controllo legale se si vendono biglietti. **Stima di costo (da verificare con 2-3 preventivi):** circa 2.000-5.000 € una tantum, se si porta il lavoro già preparato; **brief per l'avvocato PRONTO** (`docs/legale/brief-avvocato.md`).
 - **Società:** partita IVA e fatturazione.
 - **Foto dei ricordi:** verificare lo spazio incluso nel piano Supabase (circa 0,3 MB a foto, tetto 600 per cliente), cancellare le foto quando si elimina un account, inserire nella privacy il trattamento delle foto dei clienti.

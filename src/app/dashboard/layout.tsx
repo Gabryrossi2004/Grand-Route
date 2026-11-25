@@ -24,8 +24,9 @@ export default async function DashboardLayout({
 
   let profile: Profile | null = null;
   let unreadMessages = 0;
+  let isAdmin = false;
   if (user) {
-    const [{ data }, { count }] = await Promise.all([
+    const [{ data }, { count }, { data: adminFlag }] = await Promise.all([
       supabase.from("profiles").select("*").eq("id", user.id).single(),
       // Messaggi dei clienti non ancora letti (0 se la chat non è ancora attiva)
       supabase
@@ -34,10 +35,14 @@ export default async function DashboardLayout({
         .eq("author_role", "client")
         .is("read_at", null)
         .neq("author_id", user.id),
+      supabase.rpc("is_platform_admin"),
     ]);
+    isAdmin = adminFlag === true;
     profile = data;
     unreadMessages = count ?? 0;
   }
+  // Account sospeso dall'amministrazione
+  if ((profile as { suspended_at?: string | null } | null)?.suspended_at) redirect("/sospeso");
   // I viaggiatori privati hanno la loro area
   if ((profile as { is_traveler?: boolean } | null)?.is_traveler) redirect("/viaggiatore");
   // I fornitori (guide, autisti, strutture...) usano solo la Rete
@@ -73,7 +78,7 @@ export default async function DashboardLayout({
               {profile?.agency_name || "Il mio gestionale viaggi"}
             </span>
           </Link>
-          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} />
+          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} isAdmin={isAdmin} />
         </div>
       </HeaderAutoHide>
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>
