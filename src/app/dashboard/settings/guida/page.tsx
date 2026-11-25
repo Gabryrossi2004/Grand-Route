@@ -706,8 +706,8 @@ const sections: Section[] = [
         title: "Posta con i partner",
         body: (
           <>
-            La <strong>Posta</strong> (nel gestionale in <strong>Messaggi → Posta con i partner</strong>, nella sezione Partner nel menu
-            in alto e nella barra in basso del telefono) funziona come un&apos;email, ma tutta dentro Grand Route: scrivi a uno
+            La <strong>Posta</strong> (nel gestionale sta solo in <strong>Messaggi → Posta con i partner</strong>; guide, autisti e
+            strutture, che non hanno il gestionale, la trovano nel menu della sezione Partner) funziona come un&apos;email, ma tutta dentro Grand Route: scrivi a uno
             o più partner con cui hai una collaborazione, con oggetto, testo e <strong>allegati</strong> (fino a 20 file da
             25 MB, anche trascinandoli). Le cartelle sono <strong>In arrivo, Richieste di servizio, Inviati, Con stella, Archiviati e Tutti</strong>;
             la ricerca guarda oggetto, testo, nomi degli allegati e partner. Come in Outlook, la <strong>risposta si scrive in alto</strong> (il riquadro cresce mentre scrivi e la bozza resta salvata

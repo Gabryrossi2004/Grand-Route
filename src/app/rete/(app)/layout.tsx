@@ -58,7 +58,8 @@ export default async function NetworkLayout({ children }: { children: React.Reac
           <PartnerNav
             items={[
               { href: "/rete", label: "Trova" },
-              { href: "/rete/posta", label: "Posta", badge: mailUnread },
+              // la Posta di agenzie e tour operator sta nel gestionale, in Messaggi
+              ...(trade ? [] : [{ href: "/rete/posta", label: "Posta", badge: mailUnread }]),
               { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
               { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
               { href: "/rete/profilo", label: "Il mio profilo" },
@@ -74,7 +75,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       <MobileTabBar
         items={[
           { href: "/rete", label: "Trova", icon: <Search size={19} />, exact: true, also: [] },
-          { href: "/rete/posta", label: "Posta", icon: <Mail size={19} />, badge: mailUnread },
+          ...(trade ? [] : [{ href: "/rete/posta", label: "Posta", icon: <Mail size={19} />, badge: mailUnread }]),
           { href: "/rete/messaggi", label: "Richieste", icon: <Inbox size={19} />, badge: unreadCount },
           { href: "/rete/lavori", label: "Servizi", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
           { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
