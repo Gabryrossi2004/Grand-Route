@@ -19,13 +19,13 @@ export default async function NetworkInvoices({ searchParams }: { searchParams: 
   );
   return (
     <div>
-      <p className="eyebrow">Rete professionale</p>
+      <p className="eyebrow">Partner</p>
       <h1 className="mt-1 text-3xl text-[#233c5e]">Fatture</h1>
       <p className="mt-2 max-w-2xl text-base text-slate-600">Le fatture dei servizi svolti tra partner, collegate agli ordini. Le prepari qui, le emetti caricando l&apos;XML sul portale dell&apos;Agenzia delle Entrate o nel tuo programma.</p>
       <div className="mt-4 flex flex-wrap items-center gap-2">
         {tab("/rete/fatture", "Emesse da me", role === "seller")}
         {tab("/rete/fatture?vista=ricevute", "Ricevute", role === "buyer")}
-        {tab("/rete/lavori", "Lavori", false)}
+        {tab("/rete/lavori", "Servizi", false)}
         <Link href="/rete/fatture/impostazioni" className="ml-auto inline-flex items-center gap-1.5 text-sm font-medium text-[#233c5e] underline"><Settings size={15} /> Impostazioni di fatturazione</Link>
       </div>
       <div className="mt-6">

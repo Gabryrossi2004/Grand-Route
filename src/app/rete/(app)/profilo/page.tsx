@@ -23,7 +23,7 @@ export default async function NetworkProfilePageEdit() {
   const { data: row, error } = await supabase.from("network_profiles").select("*").eq("user_id", user.id).maybeSingle();
 
   if (error)
-    return <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per attivare la Rete serve l&apos;aggiornamento del database (migrazione 0061, in Supabase → SQL Editor).</p>;
+    return <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per attivare la sezione Partner serve l&apos;aggiornamento del database (migrazione 0061, in Supabase → SQL Editor).</p>;
 
   const r = row as (Record<string, unknown> & { kind?: string; status?: string; status_note?: string | null; listed?: boolean; kind_data?: Record<string, string | string[]> }) | null;
   const kind: BusinessKind = (isBusinessKind(r?.kind) ? r.kind : kindFromProfile) ?? "agenzia";
@@ -49,7 +49,7 @@ export default async function NetworkProfilePageEdit() {
 
   return (
     <div>
-      <p className="eyebrow">Rete professionale</p>
+      <p className="eyebrow">Partner</p>
       <h1 className="mt-1 text-3xl text-[#233c5e]">Il mio profilo</h1>
       <p className="mt-2 max-w-xl text-base text-slate-600">
         {KIND_INFO[kind].label}. Partita IVA, indirizzo e recapiti non compaiono nell&apos;elenco: li usiamo per verificarti e per la fattura.
@@ -64,7 +64,7 @@ export default async function NetworkProfilePageEdit() {
           </div>
         </div>
       ) : (
-        <p className="mt-4 rounded-2xl bg-[#faf3e6] p-4 text-sm text-slate-700">Non hai ancora un profilo nella Rete: compilalo per comparire nell&apos;elenco dopo la verifica.</p>
+        <p className="mt-4 rounded-2xl bg-[#faf3e6] p-4 text-sm text-slate-700">Non hai ancora un profilo Partner: compilalo per comparire nell&apos;elenco dopo la verifica.</p>
       )}
       {r && (
         <div className="mt-6">

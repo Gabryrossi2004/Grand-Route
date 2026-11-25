@@ -34,7 +34,7 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
           <p className="text-sm text-slate-500">Ti abbiamo mandato un link di conferma. Clicca sul link e poi torna qui per accedere.</p>
           {!trade && (
             <p className="mt-3 text-sm text-slate-500">
-              Dopo il primo accesso il tuo profilo viene controllato dal nostro team: appena è verificato compari nell&apos;elenco della Rete.
+              Dopo il primo accesso il tuo profilo viene controllato dal nostro team: appena è verificato compari nell&apos;elenco dei Partner.
             </p>
           )}
           <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
@@ -81,7 +81,7 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
             })}
           </div>
           <p className="mt-2 text-xs text-slate-500">
-            {trade ? "Con questo account usi il gestionale e la Rete." : "Con questo account usi la Rete: profilo, elenco, richieste e valutazioni."}
+            {trade ? "Con questo account usi il gestionale e la sezione Partner." : "Con questo account usi la sezione Partner: profilo, elenco, richieste e valutazioni."}
           </p>
         </section>
 
@@ -108,7 +108,7 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
           {trade ? (
             <details className="rounded-xl border border-[#e6d7bb] p-4">
               <summary className="cursor-pointer text-sm font-medium text-[#233c5e]">
-                Facoltativo adesso: servono per comparire nell&apos;elenco della Rete (puoi completarli dopo)
+                Facoltativo adesso: servono per comparire nell&apos;elenco dei Partner (puoi completarli dopo)
               </summary>
               <div className="mt-5">
                 <BusinessFields key={kind} kind={kind} errors={errors} />

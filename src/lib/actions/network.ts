@@ -9,7 +9,7 @@ import { BRAND_COLORS, FILES_BUCKET, MAX_FILES, MAX_GALLERY, MEDIA_BUCKET } from
 
 type Result = { ok?: boolean; error?: string; errors?: Record<string, string> };
 
-const NOT_READY = "Per usare la Rete serve l'aggiornamento del database (migrazione 0061).";
+const NOT_READY = "Per usare la sezione Partner serve l'aggiornamento del database (migrazione 0061).";
 const rpcMessage = (m: string | undefined) => (m && !/function|relation|schema cache/i.test(m) ? m : NOT_READY);
 
 // Salva (o crea) il profilo professionale dell'account collegato

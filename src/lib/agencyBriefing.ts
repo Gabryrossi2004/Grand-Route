@@ -3,8 +3,11 @@
 
 import { ENTRY_REQUIREMENTS, ID_CARD_OK } from "@/data/entryRequirements";
 
+export type BriefingArea = "viaggi" | "contabilita";
+
 export type BriefingItem = {
   id: string;
+  area?: BriefingArea; // dove compare nel briefing (di base: Viaggi)
   tone: "alert" | "warn" | "info";
   text: string;
   href: string;
@@ -169,6 +172,7 @@ export function buildBriefing(input: {
     if (payment.direction === "pagamento") {
       if (delta <= 7) {
         items.push({
+          area: "contabilita",
           id: `sup-${payment.trip_id}-${payment.due_date}-${payment.amount}`,
           tone: delta < 0 ? "alert" : delta <= 2 ? "warn" : "info",
           text:
@@ -183,7 +187,8 @@ export function buildBriefing(input: {
     }
     if (delta < 0) {
       items.push({
-        id: `late-${payment.trip_id}-${payment.due_date}-${payment.amount}`,
+        area: "contabilita",
+          id: `late-${payment.trip_id}-${payment.due_date}-${payment.amount}`,
         tone: "alert",
         text: `Pagamento di ${euro(payment.amount)} scaduto da ${-delta} ${-delta === 1 ? "giorno" : "giorni"} per «${trip.title}».`,
         href: link(trip.id),
@@ -191,7 +196,8 @@ export function buildBriefing(input: {
       });
     } else if (delta <= 7) {
       items.push({
-        id: `due-${payment.trip_id}-${payment.due_date}-${payment.amount}`,
+        area: "contabilita",
+          id: `due-${payment.trip_id}-${payment.due_date}-${payment.amount}`,
         tone: delta <= 2 ? "warn" : "info",
         text: `Pagamento di ${euro(payment.amount)} per «${trip.title}» in scadenza ${inDays(delta)}.`,
         href: link(trip.id),
@@ -271,7 +277,7 @@ export function buildBriefing(input: {
     });
   }
 
-  return items.sort((a, b) => b.score - a.score).slice(0, 12);
+  return items.sort((a, b) => b.score - a.score);
 }
 
 export function greetingFor(hour: number) {
@@ -279,4 +285,140 @@ export function greetingFor(hour: number) {
   if (hour < 13) return "Buongiorno";
   if (hour < 18) return "Buon pomeriggio";
   return "Buonasera";
+}
+
+// ── Contabilità tra partner: fatture e ordini (dati dalla funzione network_accounting_briefing, migrazione 0068) ──
+type BriefInvoice = { id: string; number: string | null; due_date: string | null; currency: string; counterpart: string; residuo: number; reminders_sent?: number };
+export type AccountingBriefingData = {
+  today?: string;
+  to_pay?: BriefInvoice[];
+  to_pay_total?: number;
+  to_collect?: BriefInvoice[];
+  drafts?: number;
+  billable?: number;
+  billable_clients?: number;
+  extras_to_decide?: number;
+  extras_contested?: number;
+  orders_to_confirm_buyer?: number;
+  orders_to_confirm_seller?: number;
+};
+
+const money = (n: number, currency: string) =>
+  Number(n).toLocaleString("it-IT", { style: "currency", currency: currency || "EUR", minimumFractionDigits: 2 });
+const days = (n: number) => `${n} ${n === 1 ? "giorno" : "giorni"}`;
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+
+export function buildAccountingBriefing(d: AccountingBriefingData | null | undefined, today: string): BriefingItem[] {
+  if (!d) return [];
+  const t0 = dayNumber(today);
+  const items: BriefingItem[] = [];
+  const area = "contabilita" as const;
+
+  for (const inv of d.to_pay ?? []) {
+    const n = inv.number ? `n. ${inv.number} ` : "";
+    const delta = inv.due_date ? dayNumber(inv.due_date) - t0 : null;
+    items.push({
+      id: `inv-pay-${inv.id}`,
+      area,
+      tone: delta == null ? "info" : delta < 0 ? "alert" : delta <= 2 ? "warn" : "info",
+      text:
+        delta != null && delta < 0
+          ? `Fattura ${n}di ${inv.counterpart} da ${money(inv.residuo, inv.currency)} scaduta da ${days(-delta)}.`
+          : delta != null
+            ? `Fattura ${n}di ${inv.counterpart} da ${money(inv.residuo, inv.currency)} da pagare ${inDays(delta)}.`
+            : `Fattura ${n}di ${inv.counterpart} da ${money(inv.residuo, inv.currency)} da pagare.`,
+      href: `/dashboard/ordini/fatture/${inv.id}`,
+      score: delta != null && delta < 0 ? 97 + Math.min(-delta, 20) / 10 : 57 - (delta ?? 7),
+    });
+  }
+  const shownPay = (d.to_pay ?? []).length;
+  const otherPay = (d.to_pay_total ?? 0) - shownPay;
+  if (otherPay > 0) {
+    items.push({
+      id: "inv-pay-other",
+      area,
+      tone: "info",
+      text: `${plural(otherPay, "altra fattura ricevuta", "altre fatture ricevute")} da pagare più avanti.`,
+      href: "/dashboard/ordini?vista=fatture",
+      score: 15,
+    });
+  }
+
+  for (const inv of d.to_collect ?? []) {
+    const n = inv.number ? `n. ${inv.number} ` : "";
+    const late = inv.due_date ? t0 - dayNumber(inv.due_date) : 0;
+    items.push({
+      id: `inv-collect-${inv.id}`,
+      area,
+      tone: late > 15 ? "alert" : "warn",
+      text: `${inv.counterpart} non ha ancora pagato la fattura ${n}(${money(inv.residuo, inv.currency)}), scaduta da ${days(late)}${inv.reminders_sent ? ` · ${plural(inv.reminders_sent, "sollecito inviato", "solleciti inviati")}` : ""}.`,
+      href: `/rete/fatture/${inv.id}`,
+      score: 90 + Math.min(late, 30) / 10,
+    });
+  }
+
+  if ((d.billable ?? 0) > 0) {
+    const b = d.billable ?? 0;
+    const c = d.billable_clients ?? 1;
+    items.push({
+      id: "billable",
+      area,
+      tone: "warn",
+      text: `${plural(b, "servizio svolto", "servizi svolti")} da fatturare${c > 1 ? ` a ${c} clienti` : ""}: la fattura si prepara da sola.`,
+      href: "/rete/lavori",
+      score: 70,
+    });
+  }
+  if ((d.drafts ?? 0) > 0) {
+    items.push({
+      id: "drafts",
+      area,
+      tone: "info",
+      text: `${plural(d.drafts ?? 0, "fattura in bozza", "fatture in bozza")} da controllare ed emettere.`,
+      href: "/rete/fatture",
+      score: 55,
+    });
+  }
+  if ((d.extras_to_decide ?? 0) > 0) {
+    items.push({
+      id: "extras-decide",
+      area,
+      tone: "warn",
+      text: `${plural(d.extras_to_decide ?? 0, "variazione di prezzo di un fornitore", "variazioni di prezzo dei fornitori")} da accettare o contestare (dopo 3 giorni valgono come accettate).`,
+      href: "/dashboard/ordini",
+      score: 88,
+    });
+  }
+  if ((d.extras_contested ?? 0) > 0) {
+    items.push({
+      id: "extras-contested",
+      area,
+      tone: "warn",
+      text: `Un cliente ha contestato ${plural(d.extras_contested ?? 0, "tua variazione di prezzo", "tue variazioni di prezzo")}: rivedile prima di fatturare.`,
+      href: "/rete/lavori",
+      score: 86,
+    });
+  }
+  // Ordini da confermare: sono operativi, vanno tra i Viaggi
+  if ((d.orders_to_confirm_buyer ?? 0) > 0) {
+    items.push({
+      id: "orders-buyer",
+      area: "viaggi",
+      tone: "warn",
+      text: `${plural(d.orders_to_confirm_buyer ?? 0, "ordine a un fornitore aspetta", "ordini ai fornitori aspettano")} la tua conferma (modifiche o servizi registrati dal fornitore).`,
+      href: "/dashboard/ordini",
+      score: 84,
+    });
+  }
+  if ((d.orders_to_confirm_seller ?? 0) > 0) {
+    items.push({
+      id: "orders-seller",
+      area: "viaggi",
+      tone: "warn",
+      text: `${plural(d.orders_to_confirm_seller ?? 0, "richiesta di servizio da un partner aspetta", "richieste di servizio dai partner aspettano")} la tua conferma.`,
+      href: "/rete/lavori",
+      score: 83,
+    });
+  }
+  return items;
 }

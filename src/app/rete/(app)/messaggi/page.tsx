@@ -21,13 +21,13 @@ export default async function NetworkMessages() {
 
   return (
     <div>
-      <p className="eyebrow">Rete professionale</p>
+      <p className="eyebrow">Partner</p>
       <h1 className="mt-1 text-3xl text-[#233c5e]">Richieste e collaborazioni</h1>
       <p className="mt-2 text-base text-slate-600">Chi ti scrive lascia i suoi recapiti: rispondi direttamente per email o telefono.</p>
       <CollabList rows={collabs} />
       {rows.length > 0 && <h2 className="mt-8 text-xl font-semibold text-[#233c5e]">Richieste di contatto</h2>}
       {error ? (
-        <p className="mt-6 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per attivare la Rete serve l&apos;aggiornamento del database (migrazione 0061).</p>
+        <p className="mt-6 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per attivare la sezione Partner serve l&apos;aggiornamento del database (migrazione 0061).</p>
       ) : rows.length === 0 ? (
         collabs.length > 0 ? null : <div className="mt-6 rounded-2xl border border-dashed border-[#e6d7bb] bg-white/60 p-8 text-center text-slate-600">
           Nessuna richiesta per ora. <Link href="/rete" className="font-semibold text-[#233c5e] underline">Cerca un professionista</Link> per scrivere per primo.

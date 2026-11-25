@@ -341,7 +341,7 @@ export async function createInvoiceDraft(buyerId: string, orderIds: string[]): P
   const { data: partiesRaw, error: pErr } = await supabase.rpc("network_invoice_parties", { p_buyer: buyerId });
   if (pErr) return { ok: false, error: message(pErr.message) };
   const parties = partiesRaw as Parties;
-  if (!parties.seller) return { ok: false, error: "Completa prima il tuo profilo nella Rete (Il mio profilo): servono i tuoi dati in fattura." };
+  if (!parties.seller) return { ok: false, error: "Completa prima il tuo profilo (Partner → Il mio profilo): servono i tuoi dati in fattura." };
   if (!parties.buyer) return { ok: false, error: "Mancano i dati di fatturazione del cliente." };
   const { data: rows, error: oErr } = await supabase.rpc("network_orders_list", { p_role: "seller" });
   if (oErr) return { ok: false, error: message(oErr.message) };

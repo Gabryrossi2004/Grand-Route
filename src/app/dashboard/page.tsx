@@ -3,7 +3,7 @@ import ZefiroBriefing from "@/components/ZefiroBriefing";
 import ContactTodayCard from "@/components/ContactTodayCard";
 import { Suspense } from "react";
 import DepartureCalendar from "@/components/DepartureCalendar";
-import { buildBriefing } from "@/lib/agencyBriefing";
+import { buildAccountingBriefing, buildBriefing, type AccountingBriefingData } from "@/lib/agencyBriefing";
 import { riconfermaDays } from "@/lib/opsSheet";
 import { romeToday } from "@/lib/destinationInfo";
 import { Plane } from "lucide-react";
@@ -33,7 +33,7 @@ export default async function DashboardHomePage() {
   // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
   // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
   const reconfirmDays = riconfermaDays(romeToday());
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -84,6 +84,8 @@ export default async function DashboardHomePage() {
       .neq("supplier", "")
       .not("status", "in", "(riconfermato,cancellato)")
       .limit(2000),
+    // Fatture e ordini tra partner per la colonna «Contabilità» (vuoto se la migrazione 0068 non c'è ancora)
+    supabase.rpc("network_accounting_briefing"),
   ]);
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
@@ -113,6 +115,7 @@ export default async function DashboardHomePage() {
         date_of_birth: string | null;
       }[] | null) ?? [],
   });
+  briefing.push(...buildAccountingBriefing(accounting as AccountingBriefingData | null, romeToday()));
   const romeHour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 
   const unreadByTrip = new Map<string, number>();

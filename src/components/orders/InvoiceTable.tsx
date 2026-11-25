@@ -34,7 +34,7 @@ export default function InvoiceTable({ rows, role, base }: { rows: InvoiceListRo
       </div>
       {rows.length === 0 ? (
         <p className="mt-6 rounded-2xl border border-dashed border-[#e6d7bb] bg-white/70 p-8 text-center text-slate-600">
-          {role === "seller" ? "Nessuna fattura ancora. Quando un servizio è svolto lo trovi in «Lavori» pronto da fatturare." : "Nessuna fattura ricevuta. Le fatture dei fornitori partner arrivano qui, collegate agli ordini."}
+          {role === "seller" ? "Nessuna fattura ancora. Quando un servizio è svolto lo trovi in «Servizi» pronto da fatturare." : "Nessuna fattura ricevuta. Le fatture dei fornitori partner arrivano qui, collegate agli ordini."}
         </p>
       ) : (
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e6d7bb] bg-white">

@@ -21,7 +21,7 @@ export default async function BillingSettingsPage() {
   return (
     <div>
       <Link href="/rete/fatture" className="mb-4 flex w-fit items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-800"><ArrowLeft size={14} /> Fatture</Link>
-      <p className="eyebrow">Rete professionale</p>
+      <p className="eyebrow">Partner</p>
       <h1 className="mt-1 text-3xl text-[#233c5e]">Impostazioni di fatturazione</h1>
       {p ? (
         <p className="mt-2 text-base text-slate-600">In fattura come <strong>{p.business_name}</strong>, P. IVA {p.vat_number} (dal <Link href="/rete/profilo" className="underline">profilo</Link>).</p>

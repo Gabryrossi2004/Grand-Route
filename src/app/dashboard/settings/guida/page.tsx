@@ -379,7 +379,12 @@ const sections: Section[] = [
             l&apos;<strong>Incassato reale</strong> calcolato dai pagamenti che hai segnato come incassati. Trovi
             anche i messaggi dei clienti, i promemoria da fare, il calendario delle partenze e{" "}
             <strong>Chi contattare oggi</strong>: compleanni, anniversari di viaggio, clienti vicini a un livello
-            del programma fedeltà e amici presentati, con un tasto per scrivere subito.
+            del programma fedeltà e amici presentati, con un tasto per scrivere subito. In alto c&apos;è il{" "}
+            <strong>briefing di Zefiro</strong>, diviso in due colonne: <strong>Viaggi</strong> (partenze, itinerari
+            ancora preliminari, documenti e permessi d&apos;ingresso, riconferme, ordini ai fornitori da confermare) e{" "}
+            <strong>Contabilità</strong> (incassi e pagamenti dei viaggi, fatture dei fornitori da pagare, fatture emesse
+            non pagate, servizi da fatturare, bozze e variazioni di prezzo). Le cose urgenti sono in rosso; tocca una
+            riga per andare dove serve.
           </>
         ),
         images: [{ src: "/guide/21-dashboard.png", caption: "La Home del gestionale con le statistiche." }],
@@ -605,15 +610,15 @@ const sections: Section[] = [
   },
   {
     id: "rete",
-    title: "19. La Rete dei professionisti",
-    intro: "Un elenco di agenzie, tour operator, agenzie locali, guide, autisti e strutture verificati, per trovare chi ti serve in ogni paese.",
+    title: "19. Partner: la rete dei professionisti",
+    intro: "Un elenco di agenzie, tour operator, agenzie locali, guide, autisti e strutture verificati, per trovare chi ti serve in ogni paese. Dal gestionale ci arrivi da Community → Partner.",
     steps: [
       {
         id: "rete-profilo",
         title: "Il tuo profilo",
         body: (
           <>
-            Dal menu <strong>Rete → Il mio profilo</strong> compili i dati dell&apos;attività (partita IVA, sede, licenze e
+            Dal menu <strong>Partner → Il mio profilo</strong> compili i dati dell&apos;attività (partita IVA, sede, licenze e
             assicurazioni previste per il tuo tipo di attività) e scegli paesi, lingue e specializzazioni. Il team li
             controlla: quando il profilo è <strong>verificato</strong> compari nell&apos;elenco. Email, telefono e dati
             fiscali non sono pubblici. In <strong>Impostazioni → Tipo di attività</strong> scegli se sei agenzia, tour
@@ -626,9 +631,11 @@ const sections: Section[] = [
         title: "Cercare e scrivere",
         body: (
           <>
-            In <strong>Rete → Cerca</strong> filtri per paese, tipo di attività o parola. Aprendo una scheda leggi la
+            In <strong>Partner → Trova</strong> scrivi quello che cerchi come lo diresti a voce («guida Kyoto», «transfer
+            Sicilia», «hotel Marocco»): paese e tipo di attività si riconoscono da soli e l&apos;elenco si aggiorna
+            mentre scrivi. Puoi anche scegliere paese e attività dai due menu. Aprendo una scheda leggi la
             presentazione e scrivi una richiesta: chi la riceve vede il tuo nome e i tuoi recapiti e ti risponde
-            direttamente. Le richieste ricevute e inviate sono in <strong>Rete → Messaggi</strong>.
+            direttamente. Le richieste ricevute e inviate sono in <strong>Partner → Richieste</strong>.
           </>
         ),
       },
@@ -637,10 +644,10 @@ const sections: Section[] = [
         title: "La tua vetrina: foto e listini",
         body: (
           <>
-            In <strong>Rete → Il mio profilo</strong>, sopra i dati dell&apos;attività, personalizzi come ti vedono gli
+            In <strong>Partner → Il mio profilo</strong>, sopra i dati dell&apos;attività, personalizzi come ti vedono gli
             altri: <strong>copertina</strong> (si vede già nell&apos;elenco dei risultati), <strong>logo</strong>,
             slogan, colore del profilo, fino a 8 foto nella galleria e i <strong>listini</strong> (PDF, Excel o
-            immagini). Per ogni documento scegli se lo apre tutta la Rete o solo i tuoi partner. Senza copertina
+            immagini). Per ogni documento scegli se lo apre ogni professionista di Grand Route o solo i tuoi partner. Senza copertina
             l&apos;elenco ti mostra come prima.
           </>
         ),
@@ -653,7 +660,7 @@ const sections: Section[] = [
             Nella scheda di un professionista premi <strong>Proponi una collaborazione</strong>. Quando accetta, i dati
             dell&apos;attività di entrambi (nome, recapiti, partita IVA, sede, paesi) vengono salvati da soli nelle
             rispettive rubriche: tu lo ritrovi in <strong>Anagrafiche → Fornitori</strong>. Le proposte ricevute si
-            accettano o si rifiutano da <strong>Rete → Messaggi</strong>. Serve avere il proprio profilo compilato.
+            accettano o si rifiutano da <strong>Partner → Richieste</strong>. Serve avere il proprio profilo compilato.
           </>
         ),
       },
@@ -664,7 +671,7 @@ const sections: Section[] = [
           <>
             Con un partner si lavora con gli <strong>ordini di servizio</strong>. L&apos;agenzia ordina da{" "}
             <strong>Anagrafiche → Ordini e fatture fornitori</strong> o direttamente dal viaggio (Servizi e fornitori →
-            «Ordina tramite la Rete»); il fornitore può anche registrare lui un lavoro. L&apos;altra parte conferma, e ogni
+            «Ordina a un partner»); il fornitore può anche registrare lui un lavoro. L&apos;altra parte conferma, e ogni
             modifica di data, prezzo o condizioni va riconfermata. Il <strong>giorno dopo la data</strong> il servizio
             risulta svolto da solo. Si annulla fino al giorno del servizio: gratis fino alla data limite indicata, poi con
             la penale concordata. Ore di attesa, spese anticipate o sconti si aggiungono come <strong>variazioni</strong>:
@@ -680,7 +687,7 @@ const sections: Section[] = [
         title: "Fattura precompilata per i fornitori",
         body: (
           <>
-            In <strong>Rete → Lavori</strong> il fornitore trova i servizi svolti, divisi per cliente: li spunta e preme{" "}
+            In <strong>Partner → Servizi</strong> il fornitore trova i servizi svolti, divisi per cliente: li spunta e preme{" "}
             <strong>Prepara la fattura</strong>. La bozza si compila da sola con i dati di entrambi, le righe dei servizi e
             delle variazioni, l&apos;IVA, la ritenuta e la marca da bollo secondo le{" "}
             <strong>Impostazioni di fatturazione</strong> (da fare una volta). Si può ritoccare, poi si emette: il cliente
@@ -699,12 +706,13 @@ const sections: Section[] = [
         title: "Posta con i partner",
         body: (
           <>
-            La <strong>Posta</strong> (nel gestionale in <strong>Messaggi → Posta con i partner</strong>, nella Rete nel menu
+            La <strong>Posta</strong> (nel gestionale in <strong>Messaggi → Posta con i partner</strong>, nella sezione Partner nel menu
             in alto e nella barra in basso del telefono) funziona come un&apos;email, ma tutta dentro Grand Route: scrivi a uno
             o più partner con cui hai una collaborazione, con oggetto, testo e <strong>allegati</strong> (fino a 20 file da
             25 MB, anche trascinandoli). Le cartelle sono <strong>In arrivo, Richieste di servizio, Inviati, Con stella, Archiviati e Tutti</strong>;
-            la ricerca guarda oggetto, testo, nomi degli allegati e partner. Le conversazioni lunghe restano ordinate: si
-            vedono il primo messaggio e gli ultimi, gli altri si aprono con «Mostra messaggi precedenti». Puoi rispondere,
+            la ricerca guarda oggetto, testo, nomi degli allegati e partner. Come in Outlook, la <strong>risposta si scrive in alto</strong> (il riquadro cresce mentre scrivi e la bozza resta salvata
+            se cambi pagina) e sotto c&apos;è la conversazione, dal messaggio più recente; in quelle lunghe i messaggi in mezzo si
+            aprono con «Mostra messaggi precedenti». Puoi rispondere,
             <strong> inoltrare</strong> (anche con gli allegati), segnare come da leggere, mettere una stella, archiviare e
             aggiungere un partner alla conversazione. Ogni <strong>ordine di servizio ha la sua conversazione</strong>: la
             richiesta parte già scritta nel formato delle vostre email (RICHIESTA SERVIZIO – data – nome × pax) e conferme,

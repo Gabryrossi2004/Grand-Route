@@ -5,13 +5,14 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
 import MobileTabBar from "@/components/MobileTabBar";
+import PartnerNav from "@/components/network/PartnerNav";
 import { adoptSignupDraft } from "@/lib/network/server";
 import { isTradeKind } from "@/lib/network/kinds";
 import { redirectIfSuspended } from "@/lib/suspension";
 
-export const metadata = { title: "Rete professionale" };
+export const metadata = { title: "Partner" };
 
-// La Rete dei professionisti del turismo: elenco, richieste di contatto e profilo.
+// Sezione Partner (la rete dei professionisti del turismo): elenco, posta, richieste, servizi e profilo.
 // Vi entrano agenzie, tour operator e fornitori (guide, autisti, strutture...). Viaggiatori e clienti no.
 export default async function NetworkLayout({ children }: { children: React.ReactNode }) {
   const user = await getCachedUser();
@@ -24,8 +25,8 @@ export default async function NetworkLayout({ children }: { children: React.Reac
   if (p && p.is_professional === false) redirect("/client");
 
   await adoptSignupDraft();
-  const { data: unread } = await supabase.rpc("network_unread_count");
-  const [{ data: collabPending }, { data: mailCount }, { data: todo }] = await Promise.all([
+  const [{ data: unread }, { data: collabPending }, { data: mailCount }, { data: todo }] = await Promise.all([
+    supabase.rpc("network_unread_count"),
     supabase.rpc("network_collab_pending_count"),
     supabase.rpc("mail_unread_count"),
     // ordini e variazioni da gestire (0 se la migrazione 0065 non c'è ancora)
@@ -37,7 +38,6 @@ export default async function NetworkLayout({ children }: { children: React.Reac
   const unreadCount = (typeof unread === "number" ? unread : 0) + (typeof collabPending === "number" ? collabPending : 0);
   const trade = isTradeKind(p?.business_kind);
 
-  const link = "rounded-full px-3 py-1.5 font-medium text-[#6b5f4a] transition hover:bg-[#faf3e6] hover:text-[#233c5e]";
   return (
     <div data-ui="client" className="relative min-h-screen bg-gradient-to-br from-[#faf3e6] via-[#f7efdd] to-[#edddb8]">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -48,38 +48,35 @@ export default async function NetworkLayout({ children }: { children: React.Reac
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4">
           <Link href="/rete" className="flex shrink-0 items-center gap-2 text-[#233c5e]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#cda876]" />
-            <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">Grand Route · Rete</span>
+            <span className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide sm:text-xl">Grand Route · Partner</span>
           </Link>
           <form action={signOut} className="sm:hidden">
             <button type="submit" className="rounded-full border border-[#e6d7bb] bg-white px-3 py-1.5 text-[13px] font-medium text-[#756548]">
               Esci
             </button>
           </form>
-          <nav className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#e6d7bb] bg-white p-1 text-sm sm:flex">
-            <Link href="/rete" className={link}>Cerca</Link>
-            <Link href="/rete/posta" className={link}>
-              Posta{mailUnread > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 py-0.5 text-[11px] font-semibold text-white">{mailUnread}</span>}
-            </Link>
-            <Link href="/rete/messaggi" className={link}>
-              Richieste{unreadCount > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 py-0.5 text-[11px] font-semibold text-white">{unreadCount}</span>}
-            </Link>
-            <Link href="/rete/lavori" className={link}>
-              Lavori{jobsCount > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 py-0.5 text-[11px] font-semibold text-white">{jobsCount}</span>}
-            </Link>
-            <Link href="/rete/profilo" className={link}>Il mio profilo</Link>
-            {trade && <Link href="/dashboard" className={link}>Gestionale</Link>}
+          <PartnerNav
+            items={[
+              { href: "/rete", label: "Trova" },
+              { href: "/rete/posta", label: "Posta", badge: mailUnread },
+              { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
+              { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
+              { href: "/rete/profilo", label: "Il mio profilo" },
+              ...(trade ? [{ href: "/dashboard", label: "Gestionale" }] : []),
+            ]}
+          >
             <form action={signOut}>
               <button type="submit" className="rounded-full px-3 py-1.5 font-medium text-[#756548] transition hover:bg-[#faf3e6] hover:text-[#233c5e]">Esci</button>
             </form>
-          </nav>
+          </PartnerNav>
         </div>
       </HeaderAutoHide>
       <MobileTabBar
         items={[
-          { href: "/rete", label: "Cerca", icon: <Search size={19} />, exact: true },
+          { href: "/rete", label: "Trova", icon: <Search size={19} />, exact: true, also: [] },
           { href: "/rete/posta", label: "Posta", icon: <Mail size={19} />, badge: mailUnread },
           { href: "/rete/messaggi", label: "Richieste", icon: <Inbox size={19} />, badge: unreadCount },
-          { href: "/rete/lavori", label: "Lavori", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
+          { href: "/rete/lavori", label: "Servizi", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
           { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
         ]}
       />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Paperclip, Send, Sparkles, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -41,7 +41,38 @@ export default function Composer({
   const [hint, setHint] = useState("");
   const [aiOpen, setAiOpen] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
+  const area = useRef<HTMLTextAreaElement>(null);
   const isNew = !threadId;
+  const draftKey = `gr-mail-bozza-${threadId ?? "nuovo"}`;
+
+  // Il riquadro cresce con il testo: si vede sempre tutto quello che stai scrivendo, senza barra di scorrimento interna
+  useLayoutEffect(() => {
+    const el = area.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight + 2}px`;
+  }, [body]);
+
+  // Bozza salvata sul dispositivo: se cambi pagina o si chiude la finestra, il testo non si perde
+  useEffect(() => {
+    if (initialBody) return;
+    const id = requestAnimationFrame(() => {
+      try {
+        const saved = localStorage.getItem(draftKey);
+        if (saved) setBody((b) => b || saved);
+      } catch {}
+    });
+    return () => cancelAnimationFrame(id);
+  }, [draftKey, initialBody]);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      try {
+        if (body.trim()) localStorage.setItem(draftKey, body);
+        else localStorage.removeItem(draftKey);
+      } catch {}
+    }, 400);
+    return () => clearTimeout(t);
+  }, [body, draftKey]);
 
   const addFiles = (list: FileList | File[]) => {
     setError(null);
@@ -86,6 +117,9 @@ export default function Composer({
       if (!done.ok) return setError(done.error);
       setBody("");
       setFiles([]);
+      try {
+        localStorage.removeItem(draftKey);
+      } catch {}
       if (isNew) router.push(`${base}/${done.threadId}`);
       else router.refresh();
     });
@@ -146,7 +180,7 @@ export default function Composer({
                 ))}
               </div>
             )}
-            {partners.length === 0 && <p className="mt-1 text-xs text-amber-700">Non hai ancora partner: la posta si usa con chi ha accettato una collaborazione nella Rete.</p>}
+            {partners.length === 0 && <p className="mt-1 text-xs text-amber-700">Non hai ancora partner: la posta si usa con chi ha accettato una collaborazione nella sezione Partner.</p>}
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="mail-subject">Oggetto</label>
@@ -157,12 +191,13 @@ export default function Composer({
       <label className="sr-only" htmlFor="mail-body">Messaggio</label>
       <textarea
         id="mail-body"
+        ref={area}
         value={body}
         onChange={(e) => setBody(e.target.value)}
         rows={compact ? 4 : 10}
         maxLength={50000}
         placeholder={isNew ? "Scrivi il messaggio…" : "Scrivi la risposta…"}
-        className={`${input} resize-y leading-relaxed`}
+        className={`${input} min-h-24 resize-none overflow-hidden leading-relaxed`}
         onKeyDown={(e) => {
           if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) send();
         }}

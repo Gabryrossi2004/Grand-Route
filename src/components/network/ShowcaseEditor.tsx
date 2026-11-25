@@ -235,7 +235,7 @@ export default function ShowcaseEditor({ userId, data, files }: { userId: string
 
       <div className={card}>
         <h3 className="text-lg font-semibold text-[#233c5e]">Listini e documenti <span className="text-sm font-normal text-slate-500">({files.length}/{MAX_FILES})</span></h3>
-        <p className="mt-1 text-sm text-slate-600">PDF, Excel (.xlsx) o immagini fino a 15 MB. Scegli chi può aprirli: tutti nella Rete, oppure solo i tuoi partner (chi ha accettato una collaborazione).</p>
+        <p className="mt-1 text-sm text-slate-600">PDF, Excel (.xlsx) o immagini fino a 15 MB. Scegli chi può aprirli: tutti i professionisti di Grand Route, oppure solo i tuoi partner (chi ha accettato una collaborazione).</p>
         {files.length > 0 && (
           <ul className="mt-3 divide-y divide-[#f2e2c4] rounded-xl border border-[#e6d7bb]">
             {files.map((f) => (
@@ -243,7 +243,7 @@ export default function ShowcaseEditor({ userId, data, files }: { userId: string
                 <FileText size={18} className="shrink-0 text-[#c58f2d]" />
                 <span className="min-w-0 flex-1 truncate font-medium text-slate-800">{f.title} <span className="font-normal text-slate-400">{sizeLabel(f.size_bytes)}</span></span>
                 <select value={f.visibility} onChange={(e) => run(() => setNetworkFileVisibility(f.id, e.target.value as "rete" | "partner"))} disabled={pending} className="rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs" aria-label="Chi può aprirlo">
-                  <option value="rete">Tutta la Rete</option>
+                  <option value="rete">Tutti i professionisti</option>
                   <option value="partner">Solo i partner</option>
                 </select>
                 <button type="button" onClick={() => run(() => removeNetworkFile(f.id))} disabled={pending} className="rounded-full p-1.5 text-slate-400 hover:text-[#b0413e]" aria-label="Cancella il documento"><Trash2 size={16} /></button>
@@ -255,7 +255,7 @@ export default function ShowcaseEditor({ userId, data, files }: { userId: string
           <div className="mt-3 grid gap-2 sm:grid-cols-[1.4fr_1fr_auto]">
             <input value={fileTitle} onChange={(e) => setFileTitle(e.target.value)} maxLength={80} placeholder="Titolo (es. Listino 2027)" className="rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]" />
             <select value={fileVis} onChange={(e) => setFileVis(e.target.value as "rete" | "partner")} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm" aria-label="Chi può aprirlo">
-              <option value="rete">Visibile a tutta la Rete</option>
+              <option value="rete">Visibile a tutti i professionisti</option>
               <option value="partner">Solo ai partner</option>
             </select>
             <button type="button" className={btn} disabled={!!busy || pending} onClick={() => fileInput.current?.click()}>
@@ -264,7 +264,7 @@ export default function ShowcaseEditor({ userId, data, files }: { userId: string
           </div>
         )}
         <input ref={fileInput} type="file" accept=".pdf,.xlsx,.jpg,.jpeg,.png" className="hidden" onChange={onFile} />
-        <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-500"><Lock size={12} /> I documenti non sono pubblici: li apre solo chi ha un accesso attivo alla Rete{fileVis === "partner" ? " e ha una collaborazione con te" : ""}. <Users size={12} className="ml-1" /></p>
+        <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-500"><Lock size={12} /> I documenti non sono pubblici: li apre solo chi ha un accesso attivo alla sezione Partner{fileVis === "partner" ? " e ha una collaborazione con te" : ""}. <Users size={12} className="ml-1" /></p>
       </div>
 
       {busy && <p className="flex items-center gap-2 rounded-xl bg-[#faf3e6] px-4 py-3 text-sm text-slate-700"><Loader2 size={16} className="animate-spin" /> {busy}</p>}

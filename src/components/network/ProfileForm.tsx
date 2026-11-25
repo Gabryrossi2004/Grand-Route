@@ -44,7 +44,7 @@ export default function ProfileForm({
       <BusinessFields key={k} kind={k} values={values} errors={state?.errors} />
       <label className="flex items-start gap-2 text-sm text-slate-700">
         <input type="checkbox" name="listed" defaultChecked={listed} className="mt-0.5 h-4 w-4 rounded border-slate-300" />
-        <span>Compari nell&apos;elenco della Rete (dopo la verifica). Togli la spunta per nasconderti senza cancellare il profilo.</span>
+        <span>Compari nell&apos;elenco dei Partner (dopo la verifica). Togli la spunta per nasconderti senza cancellare il profilo.</span>
       </label>
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
       {state?.ok && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">Salvato.</p>}

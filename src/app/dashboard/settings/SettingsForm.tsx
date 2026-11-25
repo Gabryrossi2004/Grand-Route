@@ -25,7 +25,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
           <option value="tour_operator">Tour operator</option>
           <option value="dmc">Agenzia locale (DMC)</option>
         </select>
-        <p className="mt-1 text-xs text-slate-500">Serve a mostrarti le sezioni giuste e a presentarti nella Rete dei professionisti.</p>
+        <p className="mt-1 text-xs text-slate-500">Serve a mostrarti le sezioni giuste e a presentarti agli altri professionisti nella sezione Partner.</p>
       </div>
 
       <div>

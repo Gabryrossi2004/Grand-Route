@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, Settings, X } from "lucide-react";
 
-type NavLink = { href: string; label: string };
+type NavLink = { href: string; label: string; hint?: string };
 type NavGroup = { label: string; children: NavLink[]; account?: boolean };
 type NavItem = NavLink | NavGroup;
 
@@ -28,10 +28,21 @@ const navItems: NavItem[] = [
       { href: "/dashboard/ordini", label: "Ordini e fatture fornitori" },
     ],
   },
-  { href: "/dashboard/mappamondo", label: "Atlante" },
-  { href: "/dashboard/library", label: "Libreria" },
-  { href: "/dashboard/community", label: "Community" },
-  { href: "/rete", label: "Rete" },
+  {
+    label: "Risorse",
+    children: [
+      { href: "/dashboard/mappamondo", label: "Atlante", hint: "Schede paese, guide e mappamondo" },
+      { href: "/dashboard/library", label: "Libreria", hint: "Attività, itinerari e stili salvati" },
+    ],
+  },
+  // «Partner» (la rete dei professionisti) è la prima voce della Community, in evidenza
+  {
+    label: "Community",
+    children: [
+      { href: "/rete", label: "Partner", hint: "Fornitori e agenzie verificati: trova, ordina, fattura" },
+      { href: "/dashboard/community", label: "Bacheca della Community", hint: "Domande, recensioni e gruppi tra agenzie" },
+    ],
+  },
   // Menu personale a destra: impostazioni, guida e uscita (logo e nome dell'agenzia restano a sinistra nell'intestazione)
   {
     label: "Account",
@@ -92,11 +103,13 @@ export default function DashboardNav({
   const [mobileOpen, setMobileOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
-  // Chiude i menù quando si cambia pagina
-  useEffect(() => {
+  // Chiude i menù quando si cambia pagina (durante il disegno, senza un giro in più)
+  const [seenPath, setSeenPath] = useState(pathname);
+  if (seenPath !== pathname) {
+    setSeenPath(pathname);
     setOpenGroup(null);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   // Chiude con Esc o toccando fuori
   useEffect(() => {
@@ -146,7 +159,7 @@ export default function DashboardNav({
                 {open && (
                   <div
                     role="menu"
-                    className={`absolute ${item.account ? "right-0" : "left-0"} top-full z-30 mt-2 min-w-44 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg`}
+                    className={`absolute ${item.account ? "right-0" : "left-0"} top-full z-30 mt-2 min-w-44 max-w-80 overflow-hidden rounded-2xl border border-[#e6d7bb] bg-[#faf3e6] p-1.5 shadow-lg`}
                   >
                     {item.children.map((child) => {
                       const childActive = isActive(pathname, child.href);
@@ -156,12 +169,13 @@ export default function DashboardNav({
                           href={child.href}
                           role="menuitem"
                           aria-current={childActive ? "page" : undefined}
-                          className={`block rounded-xl px-3 py-2 font-medium transition hover:bg-[#f1e6cf] ${
+                          className={`block whitespace-normal rounded-xl px-3 py-2 font-medium transition hover:bg-[#f1e6cf] ${child.hint ? "min-w-64" : ""} ${
                             childActive ? "bg-[#f1e6cf] text-[#233c5e]" : "text-[#6b5f4a]"
                           }`}
                         >
-                          {child.label}
+                          <span className={child.href === "/rete" ? "font-semibold text-[#233c5e]" : undefined}>{child.label}</span>
                           {countFor(child.href) > 0 && <CountBadge count={countFor(child.href)} />}
+                          {child.hint && <span className="mt-0.5 block text-xs font-normal text-[#8a7a5e]">{child.hint}</span>}
                         </Link>
                       );
                     })}

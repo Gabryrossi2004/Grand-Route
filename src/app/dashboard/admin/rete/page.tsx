@@ -35,7 +35,7 @@ export default async function AdminNetwork({ searchParams }: { searchParams: Pro
       <Link href="/dashboard/settings" className="mb-4 flex w-fit items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-800">
         <ArrowLeft size={14} /> Impostazioni
       </Link>
-      <h1 className="mb-4 text-3xl font-medium text-[#233c5e]">Rete: verifica dei profili</h1>
+      <h1 className="mb-4 text-3xl font-medium text-[#233c5e]">Partner: verifica dei profili</h1>
       <div className="mb-6 flex flex-wrap gap-2">
         {TABS.map((t) => (
           <Link key={t.key} href={`/dashboard/admin/rete?s=${t.key}`} className={`rounded-full border px-4 py-1.5 text-sm font-medium ${s === t.key ? "border-[#233c5e] bg-[#233c5e] text-white" : "border-[#e6d7bb] bg-white text-[#233c5e]"}`}>

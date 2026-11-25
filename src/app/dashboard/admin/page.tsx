@@ -28,19 +28,21 @@ export default async function AdminHome() {
   const supabase = await createClient();
   const { data: isAdmin } = await supabase.rpc("is_platform_admin");
   if (!isAdmin) notFound();
-  const { data } = await supabase.rpc("admin_overview");
+  const [{ data }, { data: demoData, error: demoError }, { count: pending }] = await Promise.all([
+    supabase.rpc("admin_overview"),
+    supabase.rpc("admin_demo_count"),
+    supabase.from("network_profiles").select("user_id", { count: "exact", head: true }).eq("status", "in_verifica"),
+  ]);
   const ov = (data ?? null) as Overview | null;
-  const { data: demoData, error: demoError } = await supabase.rpc("admin_demo_count");
   const demo = typeof demoData === "number" ? demoData : 0;
-  const { count: pending } = await supabase.from("network_profiles").select("user_id", { count: "exact", head: true }).eq("status", "in_verifica");
 
   return (
     <div>
       <h1 className="mb-1 text-3xl font-medium text-[#233c5e]">Amministrazione</h1>
-      <p className="mb-6 text-base text-slate-600">Da qui controlli chi si iscrive, verifichi i profili della Rete e gestisci le segnalazioni.</p>
+      <p className="mb-6 text-base text-slate-600">Da qui controlli chi si iscrive, verifichi i profili dei Partner e gestisci le segnalazioni.</p>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Card href="/dashboard/admin/rete" icon={<BadgeCheck size={20} />} title="Rete: verifica dei profili" text="Controlla partita IVA, licenze e assicurazioni, poi approva." badge={pending ?? 0} />
+        <Card href="/dashboard/admin/rete" icon={<BadgeCheck size={20} />} title="Partner: verifica dei profili" text="Controlla partita IVA, licenze e assicurazioni, poi approva." badge={pending ?? 0} />
         <Card href="/dashboard/admin/utenti" icon={<Users size={20} />} title="Utenti" text="Elenco di tutti gli account, ricerca e sospensione." />
         <Card href="/dashboard/admin/segnalazioni" icon={<Flag size={20} />} title="Segnalazioni della Community" text="Post e commenti segnalati: gestisci o rimuovi." badge={ov?.segnalazioni_aperte ?? 0} />
         <Card href="/dashboard/admin/ai-rules" icon={<Sparkles size={20} />} title={`Regole di ${ASSISTANT_NAME}`} text="Le regole di base dell'assistente per tutte le agenzie." />

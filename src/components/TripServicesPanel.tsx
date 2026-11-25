@@ -744,7 +744,7 @@ export default function TripServicesPanel({
                                   if (partner)
                                     return (
                                       <button type="button" onClick={() => setOrderFor(service)} className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#c58f2d] px-3 py-1 text-xs font-semibold text-[#8a5a12] hover:bg-[#faf3e6]">
-                                        <Handshake size={14} /> Ordina tramite la Rete
+                                        <Handshake size={14} /> Ordina a un partner
                                       </button>
                                     );
                                   return null;
@@ -965,7 +965,7 @@ export default function TripServicesPanel({
         const partner = partnerOf(orderFor.supplier_id);
         if (!partner) return null;
         return (
-          <Modal title="Ordina tramite la Rete" onClose={() => setOrderFor(null)} wide>
+          <Modal title="Ordina a un partner" onClose={() => setOrderFor(null)} wide>
             <OrderForm
               mode="create"
               role="buyer"

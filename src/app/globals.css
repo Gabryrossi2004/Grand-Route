@@ -168,3 +168,55 @@ html:has([data-ui="client"]) {
 }
 .gr-fade { animation: gr-fade 0.45s ease-out; }
 @media (prefers-reduced-motion: reduce) { .gr-fade { animation: none; } }
+
+/* ── Riscontro visivo su tutti i pulsanti (richiesta di Gabriele, 25/11) ──
+   Manina sul cursore, colore che cambia al passaggio e leggera pressione al clic.
+   Sta nel livello "base": se un pulsante ha già i suoi effetti (classi hover:…), valgono quelli.
+   Per escludere un elemento: data-nofx. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="file"]:not(:disabled),
+  label:has(> input[type="checkbox"], > input[type="radio"]) {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  button,
+  a[class*="rounded-full"] {
+    transition: filter 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, scale 0.1s ease;
+  }
+  @media (hover: hover) {
+    /* pulsanti colorati e link a forma di pulsante: si scuriscono un poco */
+    button:not(:disabled):not([data-nofx]):not([class*="inset-0"]):hover,
+    a[class*="rounded-full"][class*="bg-"]:not([data-nofx]):not([class*="inset-0"]):hover {
+      filter: brightness(0.92) saturate(1.05);
+    }
+    /* pulsanti senza sfondo ma con bordo o spazio interno: compare un fondo leggero */
+    button:not(:disabled):not([data-nofx]):not([class*="inset-0"]):not([class*="bg-"]):is([class*="border"], [class*="px-"], [class*="p-"]):hover,
+    a[class*="rounded-full"]:not([class*="bg-"]):not([data-nofx]):not([class*="inset-0"]):hover {
+      background-color: rgb(35 60 94 / 0.07);
+      filter: none;
+    }
+    /* pulsanti di solo testo (es. «Annulla la richiesta»): si attenuano */
+    button:not(:disabled):not([data-nofx]):not([class*="inset-0"]):not([class*="bg-"]):not([class*="border"]):not([class*="px-"]):not([class*="p-"]):hover {
+      opacity: 0.7;
+      filter: none;
+    }
+  }
+  button:not(:disabled):not([data-nofx]):not([class*="inset-0"]):active,
+  a[class*="rounded-full"]:not([data-nofx]):not([class*="inset-0"]):active {
+    scale: 0.97;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  button:active,
+  a:active {
+    scale: none;
+  }
+}

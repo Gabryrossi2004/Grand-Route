@@ -145,7 +145,7 @@ export default function OrdersBoard({
           ))}
         </div>
         <button type="button" onClick={() => setCreating(true)} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#233c5e] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#17283f]">
-          <Plus size={16} /> {role === "seller" ? "Registra un lavoro" : "Nuovo ordine"}
+          <Plus size={16} /> {role === "seller" ? "Registra un servizio" : "Nuovo ordine"}
         </button>
       </div>
 
@@ -153,7 +153,7 @@ export default function OrdersBoard({
         <div className="mt-8 rounded-2xl border border-dashed border-[#e6d7bb] bg-white/70 p-8 text-center text-slate-600">
           <FileText className="mx-auto mb-2 text-[#c58f2d]" />
           {role === "seller" ? (
-            <p>Qui arrivano gli ordini dei tuoi clienti (agenzie e tour operator partner). Puoi anche registrare tu un lavoro: il cliente lo conferma, e quando è svolto lo trovi pronto da fatturare.</p>
+            <p>Qui arrivano gli ordini dei tuoi clienti (agenzie e tour operator partner). Puoi anche registrare tu un servizio: il cliente lo conferma, e quando è svolto lo trovi pronto da fatturare.</p>
           ) : (
             <p>Qui trovi gli ordini ai tuoi fornitori partner. Puoi crearli da qui o dal viaggio (Servizi e fornitori): il fornitore conferma, il giorno dopo il servizio risulta svolto e la fattura ti arriva già collegata.</p>
           )}
@@ -197,7 +197,7 @@ export default function OrdersBoard({
       )}
 
       {creating && (
-        <Modal title={role === "seller" ? "Registra un lavoro" : "Nuovo ordine a un fornitore"} onClose={() => setCreating(false)} wide>
+        <Modal title={role === "seller" ? "Registra un servizio" : "Nuovo ordine a un fornitore"} onClose={() => setCreating(false)} wide>
           <OrderForm mode="create" role={role} partners={partners} onDone={() => setCreating(false)} />
         </Modal>
       )}

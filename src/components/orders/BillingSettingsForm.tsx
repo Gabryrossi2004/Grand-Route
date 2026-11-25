@@ -41,7 +41,7 @@ export default function BillingSettingsForm({ initial, legalForm }: { initial: B
     >
       <div className={box}>
         <p className="text-base font-semibold text-[#233c5e]">Chi emette la fattura</p>
-        <p className="mt-1 text-sm text-slate-600">Partita IVA, indirizzo e codice fiscale arrivano dal tuo profilo della Rete.</p>
+        <p className="mt-1 text-sm text-slate-600">Partita IVA, indirizzo e codice fiscale arrivano dal tuo profilo Partner.</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {[
             [false, "Società o ditta (denominazione)"],

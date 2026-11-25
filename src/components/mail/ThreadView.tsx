@@ -102,10 +102,13 @@ export default function ThreadView({
   const realMessages = messages.filter((m) => m.kind === "messaggio");
   const lastReal = realMessages[realMessages.length - 1]?.id;
 
-  // Conversazioni lunghe: si vedono il primo messaggio e gli ultimi; gli altri si aprono con un tocco
+  // Come in Outlook: il più recente in alto, sotto la risposta. Nelle conversazioni lunghe si vedono gli ultimi
+  // messaggi e il primo (in fondo); quelli in mezzo si aprono con un tocco.
   const KEEP = 5;
-  const hidden = !showAll && messages.length > KEEP + 2 ? messages.slice(1, messages.length - KEEP) : [];
-  const visible = hidden.length ? [messages[0], ...messages.slice(messages.length - KEEP)] : messages;
+  const newestFirst = [...messages].reverse();
+  const hidden = !showAll && newestFirst.length > KEEP + 2 ? newestFirst.slice(KEEP, newestFirst.length - 1) : [];
+  const visible = hidden.length ? [...newestFirst.slice(0, KEEP), newestFirst[newestFirst.length - 1]] : newestFirst;
+  const openByDefault = (id: string, idx: number) => id === lastReal || idx < 3;
 
   const act = (fn: () => Promise<{ ok: boolean; error?: string }>, after?: () => void) =>
     start(async () => {
@@ -176,10 +179,19 @@ export default function ThreadView({
         </div>
       )}
 
-      <div className="mt-4 space-y-3">
+      <div className="mt-4" id="rispondi">
+        <p className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#233c5e]"><MailOpen size={16} /> Rispondi a tutti</p>
+        <Composer threadId={thread.id} base={base} compact />
+      </div>
+
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        Conversazione · {realMessages.length === 1 ? "1 messaggio" : `${realMessages.length} messaggi`}, dal più recente
+      </p>
+
+      <div className="mt-2 space-y-3">
         {visible.map((m, idx) => (
           <Fragment key={m.id}>
-            {hidden.length > 0 && idx === 1 && (
+            {hidden.length > 0 && idx === visible.length - 1 && (
               <button type="button" onClick={() => setShowAll(true)} className="w-full rounded-xl border border-dashed border-[#e6d7bb] py-2 text-sm font-medium text-[#233c5e] hover:bg-[#faf3e6]">
                 Mostra {hidden.length} messaggi precedenti
               </button>
@@ -192,7 +204,7 @@ export default function ThreadView({
               <article className="rounded-2xl border border-[#e6d7bb] bg-white p-4 shadow-sm">
                 <button
                   type="button"
-                  onClick={() => setExpanded((e) => ({ ...e, [m.id]: !(e[m.id] ?? (m.id === lastReal || idx >= visible.length - 3)) }))}
+                  onClick={() => setExpanded((e) => ({ ...e, [m.id]: !(e[m.id] ?? openByDefault(m.id, idx)) }))}
                   className="flex w-full items-start gap-3 text-left"
                 >
                   <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${m.author_id === me ? "bg-[#233c5e] text-white" : "bg-[#f2e2c4] text-[#233c5e]"}`}>
@@ -203,7 +215,7 @@ export default function ThreadView({
                       <span className="font-semibold text-slate-900">{nameOf(m.author_id)}</span>
                       <span className="text-xs text-slate-500">{mailDateFull(m.created_at)}</span>
                     </span>
-                    {!(expanded[m.id] ?? (m.id === lastReal || idx >= visible.length - 3)) && (
+                    {!(expanded[m.id] ?? openByDefault(m.id, idx)) && (
                       <span className="block truncate text-sm text-slate-500">
                         {m.body.replace(/\s+/g, " ").slice(0, 140)}
                         {byMessage(m.id).length > 0 && <Paperclip size={12} className="ml-1 inline" />}
@@ -211,7 +223,7 @@ export default function ThreadView({
                     )}
                   </span>
                 </button>
-                {(expanded[m.id] ?? (m.id === lastReal || idx >= visible.length - 3)) && (
+                {(expanded[m.id] ?? openByDefault(m.id, idx)) && (
                   <div className="mt-3 pl-0 sm:pl-12">
                     <Body text={m.body} />
                     <Attachments list={byMessage(m.id)} thumbs={thumbs} />
@@ -247,10 +259,6 @@ export default function ThreadView({
         ))}
       </div>
 
-      <div className="mt-5" id="rispondi">
-        <p className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#233c5e]"><MailOpen size={16} /> Rispondi a tutti</p>
-        <Composer threadId={thread.id} base={base} compact />
-      </div>
     </div>
   );
 }
