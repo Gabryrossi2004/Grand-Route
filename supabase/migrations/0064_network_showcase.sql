@@ -500,3 +500,6 @@ grant execute on function public.network_collab_pending_count() to authenticated
 grant execute on function public.network_search(text, text, text, int, int) to authenticated;
 grant execute on function public.network_get(uuid) to authenticated;
 grant execute on function public.admin_demo_create() to authenticated;
+
+-- 7. Foto ai profili di prova già creati (se non ce ne sono, non fa nulla)
+select public.demo_apply_media();
