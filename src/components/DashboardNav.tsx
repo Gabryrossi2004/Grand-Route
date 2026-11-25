@@ -22,6 +22,7 @@ const navItems: NavItem[] = [
     ],
   },
   { href: "/dashboard/mappamondo", label: "Atlante" },
+  { href: "/dashboard/library", label: "Libreria" },
   { href: "/dashboard/community", label: "Community" },
   // Menu personale a destra: impostazioni, guida e uscita (logo e nome dell'agenzia restano a sinistra nell'intestazione)
   {
