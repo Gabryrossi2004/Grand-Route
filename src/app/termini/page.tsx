@@ -293,6 +293,22 @@ export default function TerminiPage() {
               abbonamento: i prezzi saranno comunicati prima.
             </p>
           </section>
+
+          <section>
+            <h2 className="mb-1 font-semibold text-slate-800">20. Collaborazioni, ordini di servizio e fatture tra professionisti</h2>
+            <p>
+              Accettando una collaborazione, i due professionisti acconsentono a scambiarsi i dati dell&apos;attività
+              (denominazione, partita IVA, sede, recapiti), che vengono salvati nelle rispettive rubriche. Tra partner si
+              possono registrare ordini di servizio: ogni modifica a data, prezzo o condizioni va confermata dall&apos;altra
+              parte; il giorno dopo la data del servizio l&apos;ordine risulta svolto; l&apos;annullamento dopo la data limite
+              comporta la penale indicata nell&apos;ordine; le variazioni di prezzo proposte dal fornitore si possono
+              contestare entro 3 giorni, dopo valgono come accettate. Sono strumenti per tenere traccia degli accordi presi
+              tra le parti, che restano le sole responsabili dei servizi e dei pagamenti. Grand Route prepara una bozza di
+              fattura con i dati inseriti dalle parti ma non emette fatture, non le invia al Sistema di Interscambio e non
+              fornisce consulenza fiscale: chi fattura resta responsabile del contenuto, dell&apos;emissione e della
+              trasmissione della fattura.
+            </p>
+          </section>
         </div>
 
         <Link href="/" className="mt-8 inline-block text-sm font-medium text-[#233c5e] hover:underline">

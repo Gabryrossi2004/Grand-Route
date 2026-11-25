@@ -223,6 +223,7 @@ export type Supplier = {
   notes: string | null;
   countries?: string[] | null;
   regions?: string[] | null;
+  network_user_id?: string | null; // partner della Rete (dati arrivati con la collaborazione)
   created_at: string;
 };
 

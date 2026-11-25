@@ -658,6 +658,38 @@ const sections: Section[] = [
         ),
       },
       {
+        id: "rete-ordini",
+        title: "Ordini ai fornitori e lavori",
+        body: (
+          <>
+            Con un partner si lavora con gli <strong>ordini di servizio</strong>. L&apos;agenzia ordina da{" "}
+            <strong>Anagrafiche → Ordini e fatture fornitori</strong> o direttamente dal viaggio (Servizi e fornitori →
+            «Ordina tramite la Rete»); il fornitore può anche registrare lui un lavoro. L&apos;altra parte conferma, e ogni
+            modifica di data, prezzo o condizioni va riconfermata. Il <strong>giorno dopo la data</strong> il servizio
+            risulta svolto da solo. Si annulla fino al giorno del servizio: gratis fino alla data limite indicata, poi con
+            la penale concordata. Ore di attesa, spese anticipate o sconti si aggiungono come <strong>variazioni</strong>:
+            chi paga ha 3 giorni per contestarle, poi valgono come accettate. Quando la fattura arriva, con un tocco copi
+            l&apos;importo nel costo del servizio del viaggio.
+          </>
+        ),
+      },
+      {
+        id: "rete-fatture",
+        title: "Fattura precompilata per i fornitori",
+        body: (
+          <>
+            In <strong>Rete → Lavori</strong> il fornitore trova i servizi svolti, divisi per cliente: li spunta e preme{" "}
+            <strong>Prepara la fattura</strong>. La bozza si compila da sola con i dati di entrambi, le righe dei servizi e
+            delle variazioni, l&apos;IVA, la ritenuta e la marca da bollo secondo le{" "}
+            <strong>Impostazioni di fatturazione</strong> (da fare una volta). Si può ritoccare, poi si emette: il cliente
+            la vede subito collegata agli ordini. Per renderla valida si scarica il file XML e lo si carica sul portale
+            «Fatture e Corrispettivi» dell&apos;Agenzia delle Entrate o nel proprio programma. Dalle fatture si scarica
+            anche l&apos;elenco per il commercialista (CSV). Grand Route non invia le fatture e non sostituisce il
+            commercialista.
+          </>
+        ),
+      },
+      {
         id: "rete-valutazioni",
         title: "Valutazioni anonime",
         body: (

@@ -25,8 +25,9 @@ export default async function DashboardLayout({
   let profile: Profile | null = null;
   let unreadMessages = 0;
   let isAdmin = false;
+  let ordersTodo = 0;
   if (user) {
-    const [{ data }, { count }, { data: adminFlag }] = await Promise.all([
+    const [{ data }, { count }, { data: adminFlag }, { data: todo }] = await Promise.all([
       supabase.from("profiles").select("*").eq("id", user.id).single(),
       // Messaggi dei clienti non ancora letti (0 se la chat non è ancora attiva)
       supabase
@@ -36,8 +37,11 @@ export default async function DashboardLayout({
         .is("read_at", null)
         .neq("author_id", user.id),
       supabase.rpc("is_platform_admin"),
+      // Ordini, variazioni e fatture dei fornitori da guardare (0 se la migrazione 0065 non c'è ancora)
+      supabase.rpc("network_todo_counts"),
     ]);
     isAdmin = adminFlag === true;
+    ordersTodo = Number((todo as { buyer?: number } | null)?.buyer ?? 0) || 0;
     profile = data;
     unreadMessages = count ?? 0;
   }
@@ -78,7 +82,7 @@ export default async function DashboardLayout({
               {profile?.agency_name || "Il mio gestionale viaggi"}
             </span>
           </Link>
-          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} isAdmin={isAdmin} />
+          <DashboardNav signOut={signOut} unreadMessages={unreadMessages} ordersTodo={ordersTodo} isAdmin={isAdmin} />
         </div>
       </HeaderAutoHide>
       <main className="mx-auto max-w-7xl px-3 py-10 sm:px-6">{children}</main>

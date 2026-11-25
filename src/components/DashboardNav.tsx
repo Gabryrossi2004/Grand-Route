@@ -19,6 +19,7 @@ const navItems: NavItem[] = [
     children: [
       { href: "/dashboard/clients", label: "Clienti" },
       { href: "/dashboard/suppliers", label: "Fornitori" },
+      { href: "/dashboard/ordini", label: "Ordini e fatture fornitori" },
     ],
   },
   { href: "/dashboard/mappamondo", label: "Atlante" },
@@ -61,12 +62,16 @@ const linkOff = "border-transparent text-[#6b5f4a] hover:text-[#233c5e]";
 export default function DashboardNav({
   signOut,
   unreadMessages = 0,
+  ordersTodo = 0,
   isAdmin = false,
 }: {
   signOut: () => Promise<void> | void;
   unreadMessages?: number;
+  ordersTodo?: number;
   isAdmin?: boolean;
 }) {
+  // Contatore accanto a una voce (messaggi dei clienti, ordini e fatture dei fornitori da guardare)
+  const countFor = (href: string) => (href === "/dashboard/messages" ? unreadMessages : href === "/dashboard/ordini" ? ordersTodo : 0);
   const pathname = usePathname();
   // Gli amministratori hanno una voce in più nel menu Account
   const items: NavItem[] = isAdmin
@@ -127,6 +132,7 @@ export default function DashboardNav({
                 >
                   {item.account && <Settings size={15} aria-hidden />}
                   {item.label}
+                  {item.children.some((c) => countFor(c.href) > 0) && <CountBadge count={item.children.reduce((sum, c) => sum + countFor(c.href), 0)} />}
                   <ChevronDown size={14} className={`transition ${open ? "rotate-180" : ""}`} />
                 </button>
                 {open && (
@@ -147,6 +153,7 @@ export default function DashboardNav({
                           }`}
                         >
                           {child.label}
+                          {countFor(child.href) > 0 && <CountBadge count={countFor(child.href)} />}
                         </Link>
                       );
                     })}
@@ -209,6 +216,7 @@ export default function DashboardNav({
                         }`}
                       >
                         {child.label}
+                        {countFor(child.href) > 0 && <CountBadge count={countFor(child.href)} />}
                       </Link>
                     );
                   })}

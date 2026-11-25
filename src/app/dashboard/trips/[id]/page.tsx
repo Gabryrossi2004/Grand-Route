@@ -54,7 +54,8 @@ import ThemePicker from "@/components/ThemePicker";
 import TitleColorField from "@/components/TitleColorField";
 import TripChecklist from "@/components/TripChecklist";
 import TripTitleEditor from "@/components/TripTitleEditor";
-import TripServicesPanel from "@/components/TripServicesPanel";
+import TripServicesPanel, { type NetworkServiceOrder } from "@/components/TripServicesPanel";
+import type { OrderPartner } from "@/lib/orders/shared";
 import VariantLink from "@/components/VariantLink";
 import {
   deleteDocument,
@@ -145,6 +146,15 @@ export default async function TripDetailPage({
       : Promise.resolve({ data: [] as TripMessage[] }),
   ]);
 
+  // Ordini ai fornitori della Rete collegati ai servizi di questo viaggio (vuoto se la migrazione 0065 non c'è ancora)
+  const serviceIds = ((tripServices as TripService[]) || []).map((s) => s.id);
+  const [{ data: networkOrders }, { data: networkPartners }] = await Promise.all([
+    serviceIds.length
+      ? supabase.from("network_orders").select("id, status, penalty_amount, service_date, end_date, invoice_id, buyer_service_id").in("buyer_service_id", serviceIds)
+      : Promise.resolve({ data: [] }),
+    supabase.rpc("network_order_partners"),
+  ]);
+
   // Se l'itinerario non si carica NON mostriamo un itinerario vuoto (sembrerebbe cancellato):
   // facciamo comparire la schermata d'errore con «Riprova».
   if (daysError) {
@@ -219,6 +229,8 @@ export default async function TripDetailPage({
         payments={(tripPayments as TripPayment[]) || []}
         activityOptions={activityOptions}
         variantTrips={variantTrips || []}
+        networkOrders={(networkOrders as NetworkServiceOrder[] | null) ?? []}
+        networkPartners={(networkPartners as OrderPartner[] | null) ?? []}
       />
       <div className="flex flex-wrap items-start gap-4">
         <TripInfoForm trip={trip} />
@@ -383,6 +395,8 @@ function CoverHero({
   payments,
   activityOptions,
   variantTrips,
+  networkOrders,
+  networkPartners,
 }: {
   hasContent: boolean;
   trip: Trip;
@@ -394,6 +408,8 @@ function CoverHero({
   payments: TripPayment[];
   activityOptions: { id: string; label: string }[];
   variantTrips: { id: string; title: string; is_published: boolean }[];
+  networkOrders: NetworkServiceOrder[];
+  networkPartners: OrderPartner[];
 }) {
   const dateRange =
     trip.start_date && trip.end_date
@@ -496,6 +512,10 @@ function CoverHero({
           suppliers={suppliers}
           payments={payments}
           activityOptions={activityOptions}
+          networkOrders={networkOrders}
+          networkPartners={networkPartners}
+          tripStart={trip.start_date}
+          tripTitle={trip.title}
         />
 
         <TripMoreMenu

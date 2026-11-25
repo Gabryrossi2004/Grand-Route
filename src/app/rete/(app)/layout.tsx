@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Inbox, Search, UserRound } from "lucide-react";
+import { Briefcase, Inbox, Search, UserRound } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 import HeaderAutoHide from "@/components/HeaderAutoHide";
@@ -25,7 +25,13 @@ export default async function NetworkLayout({ children }: { children: React.Reac
 
   await adoptSignupDraft();
   const { data: unread } = await supabase.rpc("network_unread_count");
-  const { data: collabPending } = await supabase.rpc("network_collab_pending_count");
+  const [{ data: collabPending }, { data: todo }] = await Promise.all([
+    supabase.rpc("network_collab_pending_count"),
+    // ordini e variazioni da gestire (0 se la migrazione 0065 non c'è ancora)
+    supabase.rpc("network_todo_counts"),
+  ]);
+  const t = (todo as { seller?: number; buyer?: number } | null) ?? {};
+  const jobsCount = (Number(t.seller) || 0) + (Number(t.buyer) || 0);
   const unreadCount = (typeof unread === "number" ? unread : 0) + (typeof collabPending === "number" ? collabPending : 0);
   const trade = isTradeKind(p?.business_kind);
 
@@ -52,6 +58,9 @@ export default async function NetworkLayout({ children }: { children: React.Reac
             <Link href="/rete/messaggi" className={link}>
               Messaggi{unreadCount > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 py-0.5 text-[11px] font-semibold text-white">{unreadCount}</span>}
             </Link>
+            <Link href="/rete/lavori" className={link}>
+              Lavori{jobsCount > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 py-0.5 text-[11px] font-semibold text-white">{jobsCount}</span>}
+            </Link>
             <Link href="/rete/profilo" className={link}>Il mio profilo</Link>
             {trade && <Link href="/dashboard" className={link}>Gestionale</Link>}
             <form action={signOut}>
@@ -63,7 +72,8 @@ export default async function NetworkLayout({ children }: { children: React.Reac
       <MobileTabBar
         items={[
           { href: "/rete", label: "Cerca", icon: <Search size={19} />, exact: true },
-          { href: "/rete/messaggi", label: "Messaggi", icon: <Inbox size={19} /> },
+          { href: "/rete/messaggi", label: "Messaggi", icon: <Inbox size={19} />, badge: unreadCount },
+          { href: "/rete/lavori", label: "Lavori", icon: <Briefcase size={19} />, badge: jobsCount, also: ["/rete/fatture"] },
           { href: "/rete/profilo", label: "Profilo", icon: <UserRound size={19} /> },
         ]}
       />

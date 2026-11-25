@@ -2,7 +2,10 @@
 
 import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, Circle, ClipboardList, Inbox, Mail, Pencil, Trash2 } from "lucide-react";
+import { CheckCircle2, Circle, ClipboardList, Handshake, Inbox, Mail, Pencil, Trash2 } from "lucide-react";
+import Link from "next/link";
+import OrderForm from "@/components/orders/OrderForm";
+import { PHASES, orderPhase, type OrderPartner } from "@/lib/orders/shared";
 import type { PaymentDirection, Supplier, TripPayment, TripService } from "@/lib/types";
 import { serviceStatusOptions, serviceStatuses } from "@/lib/serviceStatus";
 import { formatEuro } from "@/lib/price";
@@ -21,6 +24,17 @@ import {
 import DateField from "@/components/DateField";
 
 type ActivityOption = { id: string; label: string };
+
+// Ordine della Rete collegato a un servizio del viaggio
+export type NetworkServiceOrder = {
+  id: string;
+  status: string;
+  penalty_amount: number | null;
+  service_date: string;
+  end_date: string | null;
+  invoice_id: string | null;
+  buyer_service_id: string | null;
+};
 
 function ServiceForm({
   tripId,
@@ -550,14 +564,30 @@ export default function TripServicesPanel({
   suppliers,
   payments,
   activityOptions,
+  networkOrders = [],
+  networkPartners = [],
+  tripStart = null,
+  tripTitle = "",
 }: {
   tripId: string;
   services: TripService[];
   suppliers: Supplier[];
   payments: TripPayment[];
   activityOptions: ActivityOption[];
+  networkOrders?: NetworkServiceOrder[];
+  networkPartners?: OrderPartner[];
+  tripStart?: string | null;
+  tripTitle?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [orderFor, setOrderFor] = useState<TripService | null>(null);
+  // Il fornitore è un partner della Rete? Allora il servizio si può ordinare da qui
+  const partnerOf = (supplierId: string | null) => {
+    const net = suppliers.find((s) => s.id === supplierId)?.network_user_id;
+    return net ? (networkPartners.find((p) => p.user_id === net) ?? null) : null;
+  };
+  const orderOf = (serviceId: string) =>
+    networkOrders.filter((o) => o.buyer_service_id === serviceId && o.status !== "rifiutato").sort((a, b) => (a.status === "annullato" ? 1 : 0) - (b.status === "annullato" ? 1 : 0))[0] ?? null;
   const [tab, setTab] = useState<"servizi" | "pagamenti">("servizi");
   const [serviceFormTarget, setServiceFormTarget] = useState<"new" | TripService | null>(null);
   const [paymentFormTarget, setPaymentFormTarget] = useState<"new" | TripPayment | null>(null);
@@ -698,6 +728,27 @@ export default function TripServicesPanel({
                                 {service.notes && (
                                   <p className="mt-1 whitespace-pre-line text-sm text-slate-600">{service.notes}</p>
                                 )}
+                                {(() => {
+                                  const ord = orderOf(service.id);
+                                  const partner = partnerOf(service.supplier_id);
+                                  if (ord) {
+                                    const ph = PHASES[orderPhase(ord)];
+                                    return (
+                                      <p className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                                        <Handshake size={14} className="text-[#c58f2d]" /> Ordine nella Rete:
+                                        <span className={`rounded-full px-2 py-0.5 font-semibold ${ph.tone}`}>{ph.label}</span>
+                                        <Link href="/dashboard/ordini" className="font-medium text-[#233c5e] underline">Apri gli ordini</Link>
+                                      </p>
+                                    );
+                                  }
+                                  if (partner)
+                                    return (
+                                      <button type="button" onClick={() => setOrderFor(service)} className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#c58f2d] px-3 py-1 text-xs font-semibold text-[#8a5a12] hover:bg-[#faf3e6]">
+                                        <Handshake size={14} /> Ordina tramite la Rete
+                                      </button>
+                                    );
+                                  return null;
+                                })()}
                               </div>
                               <div className="flex shrink-0 items-center gap-1">
                                 {supplierEmail(service.supplier_id) && (
@@ -910,6 +961,29 @@ export default function TripServicesPanel({
           )}
         </Modal>
       )}
+      {orderFor && (() => {
+        const partner = partnerOf(orderFor.supplier_id);
+        if (!partner) return null;
+        return (
+          <Modal title="Ordina tramite la Rete" onClose={() => setOrderFor(null)} wide>
+            <OrderForm
+              mode="create"
+              role="buyer"
+              fixedCounterpart={{ id: partner.user_id, name: partner.name, free_cancel_days: partner.free_cancel_days, penalty_pct: partner.penalty_pct }}
+              buyerServiceId={orderFor.id}
+              initial={{
+                title: orderFor.title,
+                service_date: tripStart ?? "",
+                unit_price: orderFor.net_cost != null ? String(orderFor.net_cost) : "",
+                reference: tripTitle,
+                free_cancel_days: String(partner.free_cancel_days),
+                penalty_pct: String(partner.penalty_pct),
+              }}
+              onDone={() => setOrderFor(null)}
+            />
+          </Modal>
+        );
+      })()}
     </>
   );
 }
