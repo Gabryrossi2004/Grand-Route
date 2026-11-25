@@ -4,7 +4,7 @@ Qui trovi dove stanno tutti i documenti preparati. Quando serve "tutti i documen
 
 | Documento | Per chi | Dove |
 | --- | --- | --- |
-| Brief per l'avvocato | Avvocato | `docs/legale/brief-avvocato.md` (copia sul repo) + documento condiviso (vedi link nella chat) |
+| Brief per l'avvocato | Avvocato | `docs/legale/brief-avvocato.md` (copia sul repo) + documento condiviso: https://claude.ai/artifact/YF8yPj5tpEagFQLX3VHzZE |
 | Kit per i tester | Tester / agenzie amiche | https://claude.ai/artifact/MVisFrzKkD9uR9ShPYMSkN |
 | Guida all'uso del gestionale | Agenzie | Nel sito: Account → Guida all'uso (`src/app/dashboard/guida`) |
 | Termini di servizio | Tutti | https://grandroute.it/termini (sez. 19: Rete) |
