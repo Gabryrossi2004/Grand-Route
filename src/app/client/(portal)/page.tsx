@@ -5,11 +5,20 @@ import { getT } from "@/lib/i18n/server";
 import NextTripCard from "@/components/NextTripCard";
 import TodayTripCard from "@/components/TodayTripCard";
 import { romeToday } from "@/lib/destinationInfo";
+import GettingStarted from "@/components/GettingStarted";
+import Link from "next/link";
+import { clientStepKeys, progressOf, type OnboardingStatus, type OnboardingStep } from "@/lib/onboarding";
 
-export default async function ClientHomePage() {
+export default async function ClientHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const { t, locale } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
+  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  const { data: onboardingData } = await supabase.rpc("onboarding_status");
+  const ob = (onboardingData as OnboardingStatus | null) ?? null;
+  const startSteps: OnboardingStep[] = ob
+    ? clientStepKeys(ob).map((x) => ({ key: x.key, href: x.href, done: x.done, label: t(`portal.start.${x.key}`), hint: t(`portal.start.${x.key}Hint`) }))
+    : [];
 
   let firstName: string | null = null;
   if (user) {
@@ -82,6 +91,14 @@ export default async function ClientHomePage() {
           />
         )}
       </div>
+      {ob && !ob.hidden && (
+        <div className="mb-8">
+          <GettingStarted steps={startSteps} title={t("portal.start.title")} intro={t("portal.start.intro")} hideLabel={t("portal.start.hide")} />
+        </div>
+      )}
+      {ob?.hidden && !progressOf(startSteps).complete && (
+        <Link href="/client?iniziare=1" className="mb-6 inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">{t("portal.start.reopen")}</Link>
+      )}
       <ClientTripsGrid
         trips={typedTrips}
         tripHref={(tripId) => `/client/trips/${tripId}`}

@@ -2,19 +2,24 @@ import Link from "next/link";
 import { CalendarDays, MapPin, Plus } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { getTravelerAllowance } from "@/lib/travelerAi";
+import GettingStarted from "@/components/GettingStarted";
+import { progressOf, travelerSteps, type OnboardingStatus } from "@/lib/onboarding";
 
 type TripRow = { id: string; title: string; destination: string | null; start_date: string | null; end_date: string | null };
 
 const dateIt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("it-IT", { day: "numeric", month: "short", year: "numeric" });
 
-export default async function TravelerHomePage() {
+export default async function TravelerHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const user = await getCachedUser();
   const supabase = await createClient();
-  const [{ data }, allowance, { data: profile }] = await Promise.all([
+  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  const [{ data }, allowance, { data: profile }, { data: onboarding }] = await Promise.all([
     supabase.from("trips").select("id, title, destination, start_date, end_date").eq("owner_id", user?.id ?? "").order("created_at", { ascending: false }),
     getTravelerAllowance(),
     supabase.from("profiles").select("full_name").eq("id", user?.id ?? "").maybeSingle(),
+    supabase.rpc("onboarding_status"),
   ]);
+  const ob = (onboarding as OnboardingStatus | null) ?? null;
   const trips = (data as TripRow[] | null) ?? [];
   const first = String(profile?.full_name ?? "").split(" ")[0];
 
@@ -29,6 +34,11 @@ export default async function TravelerHomePage() {
           <Plus size={16} /> Nuovo viaggio
         </Link>
       </div>
+
+      {ob && !ob.hidden && <GettingStarted steps={travelerSteps(ob)} name={first} />}
+      {ob?.hidden && !progressOf(travelerSteps(ob)).complete && (
+        <Link href="/viaggiatore?iniziare=1" className="text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Riapri la lista «Per iniziare»</Link>
+      )}
 
       {trips.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-[#e6d7bb] bg-white/70 p-8 text-center">

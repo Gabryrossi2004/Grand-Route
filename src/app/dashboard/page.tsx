@@ -10,14 +10,18 @@ import { Plane } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
+import GettingStarted from "@/components/GettingStarted";
+import { agencySteps, type OnboardingStatus } from "@/lib/onboarding";
 
 function dateLabel(value: string) {
   return new Date(value).toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short" });
 }
 
-export default async function DashboardHomePage() {
+export default async function DashboardHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const supabase = await createClient();
   const user = await getCachedUser();
+  // «Per iniziare» dal menu Account: la lista si riapre
+  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
 
   const [{ data: trips }, { count: clientsCount }] = await Promise.all([
     supabase.from("trips").select("*").eq("owner_id", user?.id ?? ""),
@@ -33,7 +37,7 @@ export default async function DashboardHomePage() {
   // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
   // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
   const reconfirmDays = riconfermaDays(romeToday());
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: onboarding }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -86,7 +90,10 @@ export default async function DashboardHomePage() {
       .limit(2000),
     // Fatture e ordini tra partner per la colonna «Contabilità» (vuoto se la migrazione 0068 non c'è ancora)
     supabase.rpc("network_accounting_briefing"),
+    // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora)
+    supabase.rpc("onboarding_status"),
   ]);
+  const onboardingStatus = (onboarding as OnboardingStatus | null) ?? null;
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
 
@@ -192,6 +199,8 @@ export default async function DashboardHomePage() {
           <p className="mt-1 text-sm text-[#cbbfa6]">Incassato reale</p>
         </div>
       </div>
+
+      {onboardingStatus && !onboardingStatus.hidden && <GettingStarted steps={agencySteps(onboardingStatus)} />}
 
       <ZefiroBriefing items={briefing} hour={romeHour} />
 

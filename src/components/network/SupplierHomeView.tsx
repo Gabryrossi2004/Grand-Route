@@ -4,6 +4,8 @@ import ServiceCard from "@/components/network/ServiceCard";
 import { addDays } from "@/lib/orders/shared";
 import { dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
 import { greetingFor, type AccountingBriefingData } from "@/lib/agencyBriefing";
+import GettingStarted from "@/components/GettingStarted";
+import { progressOf, supplierSteps, type OnboardingStatus } from "@/lib/onboarding";
 
 type Tile = { label: string; count: number; href: string; icon: React.ReactNode; urgent?: boolean };
 
@@ -20,10 +22,12 @@ export type SupplierHomeData = {
   collab: unknown;
   mail: unknown;
   pendingAgencies: number;
+  onboarding: OnboardingStatus | null;
 };
 
 // Home del fornitore (guida, autista, struttura…): cosa c'è oggi, cosa aspetta una risposta, cosa fatturare.
-export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail, pendingAgencies }: SupplierHomeData) {
+export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail, pendingAgencies, onboarding }: SupplierHomeData) {
+  const steps = onboarding ? supplierSteps(onboarding) : [];
   const user = { id: me };
   const rows = agenda.filter((r) => r.phase !== "svolto" && r.phase !== "fatturato");
   const toConfirm = rows.filter((r) => waitingForMe(r, user.id));
@@ -72,6 +76,11 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
           {p?.business_name ? `, ${p.business_name}` : ""}
         </h1>
       </div>
+
+      {onboarding && !onboarding.hidden && <GettingStarted steps={steps} />}
+      {onboarding?.hidden && !progressOf(steps).complete && (
+        <Link href="/rete/home?iniziare=1" className="inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Riapri la lista «Per iniziare»</Link>
+      )}
 
       {agendaError && (
         <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">

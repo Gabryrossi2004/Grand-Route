@@ -50,6 +50,7 @@ const navItems: NavItem[] = [
     children: [
       { href: "/dashboard/settings", label: "Impostazioni" },
       { href: "/dashboard/settings/guida", label: "Guida all'uso" },
+      { href: "/dashboard?iniziare=1", label: "Per iniziare", hint: "Riapri la lista di benvenuto" },
     ],
   },
 ];

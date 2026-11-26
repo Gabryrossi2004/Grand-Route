@@ -3,17 +3,20 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import SupplierHomeView from "@/components/network/SupplierHomeView";
 import { addDays, todayRome } from "@/lib/orders/shared";
 import type { AgendaRow } from "@/lib/network/agenda";
+import type { OnboardingStatus } from "@/lib/onboarding";
 
 export const metadata = { title: "Home" };
 
 // Home del fornitore: qui si caricano i dati, la pagina è in SupplierHomeView
-export default async function SupplierHome() {
+export default async function SupplierHome({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const user = await getCachedUser();
   if (!user) redirect("/professionisti?next=/rete/home");
   const supabase = await createClient();
   const today = todayRome();
+  // «Per iniziare» riaperta dal link in fondo alla Home
+  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
 
-  const [agendaRes, { data: acc }, { data: profile }, { count: filesCount }, { data: unread }, { data: collab }, { data: mail }, { data: drafts }] = await Promise.all([
+  const [agendaRes, { data: acc }, { data: profile }, { count: filesCount }, { data: unread }, { data: collab }, { data: mail }, { data: drafts }, { data: onboarding }] = await Promise.all([
     // 60 giorni: servizi dei prossimi giorni e richieste da confermare anche più avanti
     supabase.rpc("network_agenda", { p_from: today, p_to: addDays(today, 60) }),
     supabase.rpc("network_accounting_briefing"),
@@ -23,6 +26,7 @@ export default async function SupplierHome() {
     supabase.rpc("network_collab_pending_count"),
     supabase.rpc("mail_unread_count"),
     supabase.rpc("network_reminder_drafts"),
+    supabase.rpc("onboarding_status"),
   ]);
   const hour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 
@@ -39,6 +43,7 @@ export default async function SupplierHome() {
       unread={unread}
       collab={collab}
       mail={mail}
+      onboarding={(onboarding as OnboardingStatus | null) ?? null}
       pendingAgencies={((drafts ?? []) as { sent_at: string | null }[]).filter((d) => !d.sent_at).length}
     />
   );
