@@ -3,19 +3,21 @@
 import { useState, useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Check, Loader2, MapPin, MessageSquare, Phone, Users } from "lucide-react";
+import { Check, CheckCheck, Loader2, MapPin, MessageSquare, Phone, Users } from "lucide-react";
 import { confirmOrder } from "@/lib/actions/orders";
+import { reconfirmServices } from "@/lib/actions/agenda";
 import { PHASES, fmtDate, fmtMoney } from "@/lib/orders/shared";
 import { kindLabel } from "@/lib/network/kinds";
-import { mapsLink, telLink, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
+import { mapsLink, needsReconfirm, telLink, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
 
 // Un servizio in Home e in Agenda, pensato per il telefono: orario grande e tasti larghi
 // (conferma, chiama, mappa, messaggi) che si premono bene anche col pollice.
-export default function ServiceCard({ row, me, showDate = false }: { row: AgendaRow; me: string; showDate?: boolean }) {
+export default function ServiceCard({ row, me, today, showDate = false }: { row: AgendaRow; me: string; today: string; showDate?: boolean }) {
   const router = useRouter();
   const [pending, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const waiting = waitingForMe(row, me);
+  const mustReconfirm = row.role === "buyer" && needsReconfirm(row, today);
   const phase = PHASES[row.phase];
   const time = row.start_time ? row.start_time.slice(0, 5) : null;
   const multiDay = row.end_date && row.end_date !== row.service_date;
@@ -36,6 +38,12 @@ export default function ServiceCard({ row, me, showDate = false }: { row: Agenda
               {waiting ? "Tocca a te confermare" : phase.label}
             </span>
             <span className="text-sm font-semibold text-[#233c5e]">{fmtMoney(row.amount, row.currency)}</span>
+            {row.status === "confermato" && row.reconfirmed && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"><CheckCheck size={13} /> Riconfermato</span>
+            )}
+            {row.role === "seller" && needsReconfirm(row, today) && (
+              <span className="rounded-full border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800">In attesa di riconferma</span>
+            )}
           </div>
           <p className="mt-1 text-base font-semibold leading-snug text-slate-900">{row.title}</p>
           <p className="text-sm text-slate-600">
@@ -73,6 +81,23 @@ export default function ServiceCard({ row, me, showDate = false }: { row: Agenda
             className={`${action} w-full bg-emerald-600 text-white sm:w-auto`}
           >
             {pending ? <Loader2 size={16} className="animate-spin" /> : <Check size={16} />} Conferma
+          </button>
+        )}
+        {mustReconfirm && (
+          <button
+            type="button"
+            disabled={pending}
+            onClick={() =>
+              start(async () => {
+                setError(null);
+                const r = await reconfirmServices([row.id]);
+                if (!r.ok) setError(r.error);
+                else router.refresh();
+              })
+            }
+            className={`${action} w-full bg-[#233c5e] text-white sm:w-auto`}
+          >
+            {pending ? <Loader2 size={16} className="animate-spin" /> : <CheckCheck size={16} />} Riconferma
           </button>
         )}
         {row.counterpart_phone && (

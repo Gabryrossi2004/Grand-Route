@@ -16,6 +16,10 @@ export default async function AgendaPage({ searchParams }: { searchParams: Promi
   const ref = isIsoDate(data) ? data : today;
   const { from, to } = agendaRange(vista, ref);
   const supabase = await createClient();
-  const { data: rows, error } = await supabase.rpc("network_agenda", { p_from: from, p_to: to });
-  return <AgendaView me={user.id} today={today} vista={vista} refDate={ref} rows={(rows ?? []) as AgendaRow[]} error={!!error} />;
+  const [{ data: rows, error }, { data: prefs }] = await Promise.all([
+    supabase.rpc("network_agenda", { p_from: from, p_to: to }),
+    supabase.from("network_prefs").select("service_reminders").eq("user_id", user.id).maybeSingle(),
+  ]);
+  const reminders = (prefs as { service_reminders?: boolean } | null)?.service_reminders ?? true;
+  return <AgendaView me={user.id} today={today} vista={vista} refDate={ref} rows={(rows ?? []) as AgendaRow[]} error={!!error} reminders={reminders} />;
 }

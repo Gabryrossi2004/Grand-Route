@@ -234,7 +234,7 @@ export default function PrivacyPage() {
               presentazione, paesi, lingue e specializzazioni, mai email, telefono o dati fiscali; i recapiti sono
               visibili solo a chi riceve una richiesta di contatto da quella persona. Le valutazioni sono anonime:
               conserviamo chi ha votato solo per evitare voti doppi e non lo mostriamo a nessuno, nemmeno al valutato.
-              Il profilo si può nascondere in ogni momento e, alla chiusura dell&apos;account, viene cancellato.
+              Per le statistiche del professionista contiamo quante persone hanno visto la sua scheda (una per giorno, senza mostrare chi). Per il promemoria di riconferma inviamo all&apos;agenzia un&apos;email con i servizi del giorno dopo, a nome del fornitore. Chi aggiunge i servizi al calendario del telefono lo fa tramite un link privato: i dati (nome dell&apos;agenzia o del cliente, orario, luogo, numero di persone, riferimento) vengono letti dal fornitore del calendario scelto (ad esempio Apple o Google), e il link si può revocare in ogni momento. Il profilo si può nascondere in ogni momento e, alla chiusura dell&apos;account, viene cancellato.
               La base giuridica è l&apos;esecuzione del contratto di iscrizione (art. 6.1.b GDPR).
             </p>
           </section>

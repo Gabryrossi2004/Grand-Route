@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, CalendarDays, CheckCircle2, Circle, ClipboardList, FileText, Inbox, Mail, Plus, Receipt, Search } from "lucide-react";
+import { ArrowRight, BadgeCheck, BarChart3, CalendarDays, CheckCircle2, Circle, ClipboardList, FileText, Inbox, Mail, Plus, Receipt, Search } from "lucide-react";
 import ServiceCard from "@/components/network/ServiceCard";
 import { addDays } from "@/lib/orders/shared";
 import { dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
@@ -109,7 +109,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
           <h2 className="mb-2 text-lg font-semibold text-[#233c5e]">Da confermare</h2>
           <div className="space-y-3">
             {toConfirm.map((r) => (
-              <ServiceCard key={r.id} row={r} me={user.id} showDate />
+              <ServiceCard key={r.id} row={r} me={user.id} today={today} showDate />
             ))}
           </div>
         </section>
@@ -127,7 +127,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
         ) : (
           <div className="space-y-3">
             {todayRows.map((r) => (
-              <ServiceCard key={r.id} row={r} me={user.id} />
+              <ServiceCard key={r.id} row={r} me={user.id} today={today} />
             ))}
           </div>
         )}
@@ -142,7 +142,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
                 <p className="mb-1.5 text-sm font-semibold capitalize text-slate-600">{dayLabel(g.day)}</p>
                 <div className="space-y-3">
                   {g.items.map((r) => (
-                    <ServiceCard key={r.id} row={r} me={user.id} />
+                    <ServiceCard key={r.id} row={r} me={user.id} today={today} />
                   ))}
                 </div>
               </div>
@@ -184,6 +184,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
         {[
           { href: "/rete/lavori", label: "Registra un servizio", icon: <Plus size={18} /> },
           { href: "/rete/fatture", label: "Le mie fatture", icon: <Receipt size={18} /> },
+          { href: "/rete/statistiche", label: "Statistiche e andamento", icon: <BarChart3 size={18} /> },
           { href: "/rete/messaggi", label: "Richieste e collaborazioni", icon: <Inbox size={18} /> },
           { href: "/rete", label: "Trova altri partner", icon: <Search size={18} /> },
         ].map((q) => (

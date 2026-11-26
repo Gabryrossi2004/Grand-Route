@@ -307,7 +307,7 @@ export default function TerminiPage() {
               fattura con i dati inseriti dalle parti ma non emette fatture, non le invia al Sistema di Interscambio e non
               fornisce consulenza fiscale: chi fattura resta responsabile del contenuto, dell&apos;emissione e della
               trasmissione della fattura. Su richiesta del fornitore, Grand Route invia al cliente promemoria di pagamento
-              per le fatture scadute registrate sulla piattaforma; il fornitore può disattivarli in ogni momento.
+              per le fatture scadute registrate sulla piattaforma; il fornitore può disattivarli in ogni momento. Analogamente, di norma il giorno prima dei servizi Grand Route invia, a nome del fornitore e per conto suo, un promemoria di riconferma alle agenzie che non hanno ancora riconfermato; il fornitore può disattivarlo in ogni momento dall&apos;Agenda. La riconferma è un semplice strumento organizzativo e non modifica le condizioni dell&apos;ordine (data limite di cancellazione e penale restano quelle concordate). Il calendario del telefono si basa su un link privato scelto e custodito dall&apos;utente, che risponde di chi lo riceve; può essere revocato in ogni momento.
             </p>
           </section>
           <section>

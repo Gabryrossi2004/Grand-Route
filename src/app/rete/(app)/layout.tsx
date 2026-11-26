@@ -73,6 +73,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
                     { href: "/rete/agenda", label: "Agenda" },
                     { href: "/rete/posta", label: "Posta", badge: mailUnread },
                     { href: "/rete/lavori", label: "Servizi", badge: jobsCount, also: ["/rete/fatture"] },
+                    { href: "/rete/statistiche", label: "Statistiche" },
                     { href: "/rete/messaggi", label: "Richieste", badge: unreadCount },
                     { href: "/rete", label: "Trova" },
                     { href: "/rete/profilo", label: "Profilo" },

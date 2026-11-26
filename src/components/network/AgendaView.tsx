@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ServiceCard from "@/components/network/ServiceCard";
+import ReminderPanel from "@/components/network/ReminderPanel";
+import CalendarPanel from "@/components/network/CalendarPanel";
 import { addDays, fmtMoney } from "@/lib/orders/shared";
 import { agendaRange, dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
 
 const WEEKDAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 
 // Agenda dei servizi (fornitori e agenzie): settimana da scorrere sul telefono, mese a colpo d'occhio.
-export default function AgendaView({ me, today, vista, refDate, rows, error }: { me: string; today: string; vista: "settimana" | "mese"; refDate: string; rows: AgendaRow[]; error: boolean }) {
+export default function AgendaView({ me, today, vista, refDate, rows, error, reminders }: { me: string; today: string; vista: "settimana" | "mese"; refDate: string; rows: AgendaRow[]; error: boolean; reminders: boolean }) {
   const user = { id: me };
   const { from, to, prev, next, title } = agendaRange(vista, refDate);
   const days: string[] = [];
@@ -62,6 +64,9 @@ export default function AgendaView({ me, today, vista, refDate, rows, error }: {
         </p>
       </div>
 
+      <ReminderPanel initial={reminders} />
+      <CalendarPanel />
+
       {error && (
         <p className="mt-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
           Per usare l&apos;agenda serve l&apos;aggiornamento del database (migrazione 0069, in Supabase → SQL Editor).
@@ -84,7 +89,7 @@ export default function AgendaView({ me, today, vista, refDate, rows, error }: {
                 ) : (
                   <div className="space-y-3">
                     {items.map((r) => (
-                      <ServiceCard key={`${r.id}-${d}`} row={r} me={user.id} />
+                      <ServiceCard key={`${r.id}-${d}`} row={r} me={user.id} today={today} />
                     ))}
                   </div>
                 )}

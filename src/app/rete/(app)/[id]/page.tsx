@@ -24,6 +24,8 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
     supabase.rpc("network_my_review", { p_reviewed: id }),
     user ? supabase.rpc("network_kind_of", { p_uid: user.id }) : Promise.resolve({ data: null }),
   ]);
+  // visita alla scheda, per le statistiche del professionista (una al giorno; se la funzione manca non succede nulla)
+  if (user && user.id !== id) void supabase.rpc("network_profile_view", { p_profile: id }).then(() => {}, () => {});
   const canReview = viewerKind != null && viewerKind !== row.kind;
   const isOther = !!user && user.id !== id;
 

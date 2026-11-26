@@ -22,6 +22,7 @@ export type AgendaRow = {
   amount: number;
   currency: string;
   thread_id: string | null;
+  reconfirmed: boolean;
 };
 
 // Tocca a me confermare (richiesta nuova o modifica fatta dall'altra parte)
@@ -73,3 +74,7 @@ export function agendaRange(vista: "settimana" | "mese", ref: string) {
   }
   return { from, to, prev, next, title };
 }
+
+// Da riconfermare: servizio confermato, non ancora riconfermato, in programma oggi o nei prossimi 3 giorni
+export const needsReconfirm = (r: Pick<AgendaRow, "status" | "reconfirmed" | "service_date">, today: string) =>
+  r.status === "confermato" && !r.reconfirmed && r.service_date >= today && r.service_date <= addDays(today, 3);

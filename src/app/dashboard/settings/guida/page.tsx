@@ -643,6 +643,51 @@ const sections: Section[] = [
         ),
       },
       {
+        id: "rete-riconferme",
+        title: "Riconferma dei servizi e promemoria della sera prima",
+        body: (
+          <>
+            Il giorno prima di un servizio l&apos;agenzia lo <strong>riconferma</strong> con un tocco (tasto{" "}
+            <strong>Riconferma</strong> sul servizio, oppure «Riconferma tutti» nella pagina{" "}
+            <strong>Partner → Servizi → Riconferme</strong>): il fornitore vede «Riconfermato» e riceve una notifica. Per
+            non dover rincorrere nessuno c&apos;è il <strong>promemoria automatico</strong>: ogni giorno dopo le 16:00
+            controlliamo i servizi di domani (il venerdì e il sabato fino a lunedì) e, se un&apos;agenzia non li ha ancora
+            riconfermati, le arriva <strong>una sola email a nome del fornitore con tutti i suoi servizi</strong>,
+            divisi per giorno e in ordine di orario. Non parte se l&apos;agenzia ha già riconfermato o ti ha scritto oggi
+            nella conversazione dell&apos;ordine. Si spegne con l&apos;interruttore in <strong>Agenda</strong> (acceso di
+            base); su ogni ordine resta traccia in conversazione. Nei piani gratuiti l&apos;orario preciso dell&apos;invio
+            può slittare entro l&apos;ora (tra le 16 e le 17 circa). Ogni servizio modificato dopo la riconferma va
+            riconfermato di nuovo.
+          </>
+        ),
+      },
+      {
+        id: "rete-calendario",
+        title: "Calendario del telefono",
+        body: (
+          <>
+            In <strong>Agenda → Aggiungi al calendario del telefono</strong> trovi un link privato: su iPhone e Mac basta
+            un tocco su «Aggiungi a Calendario»; su Android e computer si copia il link in Google Calendar (<em>Altri
+            calendari → Da URL</em>). I servizi (confermati e da confermare) compaiono da soli, con orario, luogo, persone
+            e nome dell&apos;agenzia, e si aggiornano ogni tanto. Il link è come una password: se lo perdi o cambi
+            telefono, con «Nuovo link» il vecchio smette di funzionare.
+          </>
+        ),
+      },
+      {
+        id: "rete-statistiche",
+        title: "Statistiche",
+        body: (
+          <>
+            In <strong>Statistiche</strong> scegli il periodo (questo mese, ultimi 3 mesi, quest&apos;anno, ultimi 12
+            mesi) e vedi: servizi svolti, <strong>fatturato</strong> (senza IVA) e confronto con il periodo precedente,
+            incassato e ancora da incassare, in quanti giorni pagano le agenzie, il grafico mese per mese, quante richieste
+            ricevi, quante accetti e in quanto tempo rispondi, le agenzie che ti fanno lavorare di più e quante volte è
+            stata vista la tua vetrina. Le visite non mostrano chi è stato.
+          </>
+        ),
+      },
+      {
         id: "rete-cerca",
         title: "Cercare e scrivere",
         body: (

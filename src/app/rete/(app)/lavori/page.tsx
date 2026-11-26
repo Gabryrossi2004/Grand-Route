@@ -23,6 +23,7 @@ export default async function NetworkJobs({ searchParams }: { searchParams: Prom
         {tab("/rete/lavori", "Servizi che svolgo", role === "seller")}
         {tab("/rete/lavori?vista=ordini", "Ordini che faccio", role === "buyer")}
         {tab("/rete/fatture", "Fatture", false)}
+        {role === "buyer" && tab("/rete/riconferme", "Riconferme", false)}
       </div>
       <div className="mt-6">
         <OrdersHome role={role} base="/rete/lavori" invoiceBase="/rete/fatture" />
