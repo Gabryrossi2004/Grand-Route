@@ -1,7 +1,7 @@
 // «Per iniziare»: le voci della lista di benvenuto, diverse per ogni tipo di account.
 // Si spuntano da sole guardando cosa l'utente ha già fatto (dati calcolati da onboarding_status, migrazione 0072).
 export type OnboardingStatus = {
-  hidden: boolean;
+  seen: boolean;
   logo: boolean;
   trips: number;
   published: number;
@@ -57,3 +57,7 @@ export const progressOf = (steps: OnboardingStep[]) => {
   const done = tracked.filter((x) => x.done).length;
   return { done, total: tracked.length, complete: tracked.length > 0 && done === tracked.length };
 };
+
+// Zefiro compare al primo accesso (se c'è ancora qualcosa da fare) o quando la lista viene riaperta a mano
+export const shouldShowWelcome = (s: OnboardingStatus, steps: OnboardingStep[], reopen: boolean) =>
+  reopen || (!s.seen && !progressOf(steps).complete);

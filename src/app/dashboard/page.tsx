@@ -10,8 +10,8 @@ import { Plane } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
-import GettingStarted from "@/components/GettingStarted";
-import { agencySteps, type OnboardingStatus } from "@/lib/onboarding";
+import WelcomeZefiro from "@/components/WelcomeZefiro";
+import { agencySteps, shouldShowWelcome, type OnboardingStatus } from "@/lib/onboarding";
 
 function dateLabel(value: string) {
   return new Date(value).toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short" });
@@ -20,8 +20,8 @@ function dateLabel(value: string) {
 export default async function DashboardHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const supabase = await createClient();
   const user = await getCachedUser();
-  // «Per iniziare» dal menu Account: la lista si riapre
-  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  // «Per iniziare» dal menu Account: Zefiro riapre la lista dei primi passi
+  const reopenStart = Boolean((await searchParams).iniziare);
 
   const [{ data: trips }, { count: clientsCount }] = await Promise.all([
     supabase.from("trips").select("*").eq("owner_id", user?.id ?? ""),
@@ -37,7 +37,7 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
   // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
   // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
   const reconfirmDays = riconfermaDays(romeToday());
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: onboarding }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: onboarding }, { data: me }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -92,6 +92,7 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
     supabase.rpc("network_accounting_briefing"),
     // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora)
     supabase.rpc("onboarding_status"),
+    supabase.from("profiles").select("full_name").eq("id", user?.id ?? "").maybeSingle(),
   ]);
   const onboardingStatus = (onboarding as OnboardingStatus | null) ?? null;
 
@@ -200,7 +201,9 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
         </div>
       </div>
 
-      {onboardingStatus && !onboardingStatus.hidden && <GettingStarted steps={agencySteps(onboardingStatus)} />}
+      {onboardingStatus && shouldShowWelcome(onboardingStatus, agencySteps(onboardingStatus), reopenStart) && (
+        <WelcomeZefiro steps={agencySteps(onboardingStatus)} name={String((me as { full_name?: string | null } | null)?.full_name ?? "").split(" ")[0] || undefined} reopen={reopenStart} />
+      )}
 
       <ZefiroBriefing items={briefing} hour={romeHour} />
 

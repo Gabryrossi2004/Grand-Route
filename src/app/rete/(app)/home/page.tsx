@@ -13,8 +13,8 @@ export default async function SupplierHome({ searchParams }: { searchParams: Pro
   if (!user) redirect("/professionisti?next=/rete/home");
   const supabase = await createClient();
   const today = todayRome();
-  // «Per iniziare» riaperta dal link in fondo alla Home
-  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  // «Per iniziare» riaperta dal link sotto il titolo
+  const reopenStart = Boolean((await searchParams).iniziare);
 
   const [agendaRes, { data: acc }, { data: profile }, { count: filesCount }, { data: unread }, { data: collab }, { data: mail }, { data: drafts }, { data: onboarding }] = await Promise.all([
     // 60 giorni: servizi dei prossimi giorni e richieste da confermare anche più avanti
@@ -44,6 +44,7 @@ export default async function SupplierHome({ searchParams }: { searchParams: Pro
       collab={collab}
       mail={mail}
       onboarding={(onboarding as OnboardingStatus | null) ?? null}
+      reopenStart={reopenStart}
       pendingAgencies={((drafts ?? []) as { sent_at: string | null }[]).filter((d) => !d.sent_at).length}
     />
   );

@@ -1,11 +1,10 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 
-// Nasconde la lista «Per iniziare» (si riapre dal menu Account)
-export async function hideOnboarding() {
+// Ricorda che l'introduzione di Zefiro è stata vista: non ricompare agli accessi successivi.
+// (Niente revalidatePath: la pagina aperta non deve cambiare mentre Zefiro sta ancora parlando.)
+export async function markOnboardingSeen() {
   const supabase = await createClient();
-  await supabase.rpc("set_onboarding_hidden", { p_hidden: true });
-  revalidatePath("/", "layout");
+  await supabase.rpc("set_onboarding_seen", { p_seen: true });
 }

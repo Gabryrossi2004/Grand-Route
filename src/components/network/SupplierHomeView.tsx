@@ -4,8 +4,8 @@ import ServiceCard from "@/components/network/ServiceCard";
 import { addDays } from "@/lib/orders/shared";
 import { dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
 import { greetingFor, type AccountingBriefingData } from "@/lib/agencyBriefing";
-import GettingStarted from "@/components/GettingStarted";
-import { progressOf, supplierSteps, type OnboardingStatus } from "@/lib/onboarding";
+import WelcomeZefiro from "@/components/WelcomeZefiro";
+import { progressOf, shouldShowWelcome, supplierSteps, type OnboardingStatus } from "@/lib/onboarding";
 
 type Tile = { label: string; count: number; href: string; icon: React.ReactNode; urgent?: boolean };
 
@@ -23,11 +23,13 @@ export type SupplierHomeData = {
   mail: unknown;
   pendingAgencies: number;
   onboarding: OnboardingStatus | null;
+  reopenStart: boolean;
 };
 
 // Home del fornitore (guida, autista, struttura…): cosa c'è oggi, cosa aspetta una risposta, cosa fatturare.
-export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail, pendingAgencies, onboarding }: SupplierHomeData) {
+export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail, pendingAgencies, onboarding, reopenStart }: SupplierHomeData) {
   const steps = onboarding ? supplierSteps(onboarding) : [];
+  const showWelcome = !!onboarding && shouldShowWelcome(onboarding, steps, reopenStart);
   const user = { id: me };
   const rows = agenda.filter((r) => r.phase !== "svolto" && r.phase !== "fatturato");
   const toConfirm = rows.filter((r) => waitingForMe(r, user.id));
@@ -77,9 +79,9 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
         </h1>
       </div>
 
-      {onboarding && !onboarding.hidden && <GettingStarted steps={steps} />}
-      {onboarding?.hidden && !progressOf(steps).complete && (
-        <Link href="/rete/home?iniziare=1" className="inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Riapri la lista «Per iniziare»</Link>
+      {showWelcome && <WelcomeZefiro steps={steps} reopen={reopenStart} />}
+      {!showWelcome && onboarding && !progressOf(steps).complete && (
+        <Link href="/rete/home?iniziare=1" className="inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Rivedi i primi passi con Zefiro</Link>
       )}
 
       {agendaError && (

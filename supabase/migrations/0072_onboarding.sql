@@ -1,8 +1,8 @@
--- 0072 — «Per iniziare»: la lista di benvenuto in Home (agenzie, fornitori, viaggiatori, clienti).
--- Le voci si spuntano da sole guardando cosa l'utente ha già fatto; qui si salva solo se l'ha nascosta.
--- Nessun dato nuovo oltre a un interruttore sul profilo.
+-- 0072 — «Per iniziare»: Zefiro accoglie chi entra la prima volta e porta alla lista di benvenuto
+-- (agenzie, fornitori, viaggiatori, clienti). Le voci si spuntano da sole guardando cosa l'utente ha già fatto;
+-- qui si salva solo che l'introduzione è già stata vista. Nessun dato nuovo oltre a un interruttore sul profilo.
 
-alter table public.profiles add column if not exists onboarding_hidden boolean not null default false;
+alter table public.profiles add column if not exists onboarding_seen boolean not null default false;
 
 -- Cosa ha già fatto chi è collegato: un solo giro al database per tutte le voci. Conta fino a un massimo (non serve di più).
 create or replace function public.onboarding_status()
@@ -13,7 +13,7 @@ set search_path = public
 stable
 as $$
   select jsonb_build_object(
-    'hidden', coalesce(p.onboarding_hidden, false),
+    'seen', coalesce(p.onboarding_seen, false),
     'logo', coalesce(nullif(p.logo_url, ''), '') <> '',
     'trips', (select count(*) from (select 1 from public.trips t where t.owner_id = auth.uid() limit 5) x),
     'published', (select count(*) from (select 1 from public.trips t where t.owner_id = auth.uid() and t.is_published limit 5) x),
@@ -39,17 +39,17 @@ as $$
   where p.id = auth.uid();
 $$;
 
--- Nasconde (o riapre dal menu Account) la lista «Per iniziare»
-create or replace function public.set_onboarding_hidden(p_hidden boolean)
+-- Ricorda che l'introduzione di Zefiro è stata vista (la lista si riapre comunque quando si vuole)
+create or replace function public.set_onboarding_seen(p_seen boolean)
 returns void
 language sql
 security definer
 set search_path = public
 as $$
-  update public.profiles set onboarding_hidden = coalesce(p_hidden, false) where id = auth.uid();
+  update public.profiles set onboarding_seen = coalesce(p_seen, true) where id = auth.uid();
 $$;
 
 revoke all on function public.onboarding_status() from public, anon;
-revoke all on function public.set_onboarding_hidden(boolean) from public, anon;
+revoke all on function public.set_onboarding_seen(boolean) from public, anon;
 grant execute on function public.onboarding_status() to authenticated;
-grant execute on function public.set_onboarding_hidden(boolean) to authenticated;
+grant execute on function public.set_onboarding_seen(boolean) to authenticated;

@@ -5,15 +5,15 @@ import { getT } from "@/lib/i18n/server";
 import NextTripCard from "@/components/NextTripCard";
 import TodayTripCard from "@/components/TodayTripCard";
 import { romeToday } from "@/lib/destinationInfo";
-import GettingStarted from "@/components/GettingStarted";
+import WelcomeZefiro from "@/components/WelcomeZefiro";
 import Link from "next/link";
-import { clientStepKeys, progressOf, type OnboardingStatus, type OnboardingStep } from "@/lib/onboarding";
+import { clientStepKeys, progressOf, shouldShowWelcome, type OnboardingStatus, type OnboardingStep } from "@/lib/onboarding";
 
 export default async function ClientHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const { t, locale } = await getT();
   const supabase = await createClient();
   const user = await getCachedUser();
-  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  const reopenStart = Boolean((await searchParams).iniziare);
   const { data: onboardingData } = await supabase.rpc("onboarding_status");
   const ob = (onboardingData as OnboardingStatus | null) ?? null;
   const startSteps: OnboardingStep[] = ob
@@ -91,12 +91,23 @@ export default async function ClientHomePage({ searchParams }: { searchParams: P
           />
         )}
       </div>
-      {ob && !ob.hidden && (
-        <div className="mb-8">
-          <GettingStarted steps={startSteps} title={t("portal.start.title")} intro={t("portal.start.intro")} hideLabel={t("portal.start.hide")} />
-        </div>
+      {ob && shouldShowWelcome(ob, startSteps, reopenStart) && (
+        <WelcomeZefiro
+          steps={startSteps}
+          reopen={reopenStart}
+          labels={{
+            hello: firstName ? t("portal.start.hello", { name: firstName }) : t("portal.start.helloAnon"),
+            intro: t("portal.start.intro"),
+            explain: t("portal.start.explain"),
+            cta: t("portal.start.title"),
+            listDone: t("portal.start.listDone"),
+            listAgain: t("portal.start.listAgain"),
+            skip: t("portal.start.skip"),
+            close: t("portal.start.hide"),
+          }}
+        />
       )}
-      {ob?.hidden && !progressOf(startSteps).complete && (
+      {ob && !shouldShowWelcome(ob, startSteps, reopenStart) && !progressOf(startSteps).complete && (
         <Link href="/client?iniziare=1" className="mb-6 inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">{t("portal.start.reopen")}</Link>
       )}
       <ClientTripsGrid

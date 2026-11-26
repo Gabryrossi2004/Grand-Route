@@ -2,8 +2,8 @@ import Link from "next/link";
 import { CalendarDays, MapPin, Plus } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { getTravelerAllowance } from "@/lib/travelerAi";
-import GettingStarted from "@/components/GettingStarted";
-import { progressOf, travelerSteps, type OnboardingStatus } from "@/lib/onboarding";
+import WelcomeZefiro from "@/components/WelcomeZefiro";
+import { progressOf, shouldShowWelcome, travelerSteps, type OnboardingStatus } from "@/lib/onboarding";
 
 type TripRow = { id: string; title: string; destination: string | null; start_date: string | null; end_date: string | null };
 
@@ -12,7 +12,7 @@ const dateIt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("
 export default async function TravelerHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const user = await getCachedUser();
   const supabase = await createClient();
-  if ((await searchParams).iniziare) await supabase.rpc("set_onboarding_hidden", { p_hidden: false });
+  const reopenStart = Boolean((await searchParams).iniziare);
   const [{ data }, allowance, { data: profile }, { data: onboarding }] = await Promise.all([
     supabase.from("trips").select("id, title, destination, start_date, end_date").eq("owner_id", user?.id ?? "").order("created_at", { ascending: false }),
     getTravelerAllowance(),
@@ -35,9 +35,9 @@ export default async function TravelerHomePage({ searchParams }: { searchParams:
         </Link>
       </div>
 
-      {ob && !ob.hidden && <GettingStarted steps={travelerSteps(ob)} name={first} />}
-      {ob?.hidden && !progressOf(travelerSteps(ob)).complete && (
-        <Link href="/viaggiatore?iniziare=1" className="text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Riapri la lista «Per iniziare»</Link>
+      {ob && shouldShowWelcome(ob, travelerSteps(ob), reopenStart) && <WelcomeZefiro steps={travelerSteps(ob)} name={first || undefined} reopen={reopenStart} />}
+      {ob && !shouldShowWelcome(ob, travelerSteps(ob), reopenStart) && !progressOf(travelerSteps(ob)).complete && (
+        <Link href="/viaggiatore?iniziare=1" className="text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">Rivedi i primi passi con Zefiro</Link>
       )}
 
       {trips.length === 0 ? (
