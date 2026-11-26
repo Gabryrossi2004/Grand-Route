@@ -19,10 +19,11 @@ export type SupplierHomeData = {
   unread: unknown;
   collab: unknown;
   mail: unknown;
+  pendingAgencies: number;
 };
 
 // Home del fornitore (guida, autista, struttura…): cosa c'è oggi, cosa aspetta una risposta, cosa fatturare.
-export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail }: SupplierHomeData) {
+export default function SupplierHomeView({ me, today, hour, agendaError, agenda, acc, profile, filesCount, unread, collab, mail, pendingAgencies }: SupplierHomeData) {
   const user = { id: me };
   const rows = agenda.filter((r) => r.phase !== "svolto" && r.phase !== "fatturato");
   const toConfirm = rows.filter((r) => waitingForMe(r, user.id));
@@ -39,6 +40,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
     { label: (a?.to_collect ?? []).length === 1 ? "fattura scaduta non pagata" : "fatture scadute non pagate", count: (a?.to_collect ?? []).length, href: "/rete/fatture", icon: <Receipt size={20} />, urgent: true },
     { label: (a?.billable ?? 0) === 1 ? "servizio da fatturare" : "servizi da fatturare", count: a?.billable ?? 0, href: "/rete/lavori", icon: <FileText size={20} /> },
     { label: (a?.drafts ?? 0) === 1 ? "fattura in bozza" : "fatture in bozza", count: a?.drafts ?? 0, href: "/rete/fatture", icon: <FileText size={20} /> },
+    { label: pendingAgencies === 1 ? "agenzia da sollecitare per la riconferma" : "agenzie da sollecitare per la riconferma", count: pendingAgencies, href: "/rete/agenda#riconferme", icon: <Mail size={20} />, urgent: true },
     { label: "messaggi da leggere", count: typeof mail === "number" ? mail : 0, href: "/rete/posta", icon: <Mail size={20} /> },
     {
       label: "richieste di contatto o collaborazione",

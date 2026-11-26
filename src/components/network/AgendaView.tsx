@@ -1,15 +1,39 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ServiceCard from "@/components/network/ServiceCard";
-import ReminderPanel from "@/components/network/ReminderPanel";
-import CalendarPanel from "@/components/network/CalendarPanel";
+import ReminderSettings from "@/components/network/ReminderSettings";
+import ReminderDrafts, { type ReminderDraft } from "@/components/network/ReminderDrafts";
+import CalendarEvents, { type CalEvent } from "@/components/network/CalendarEvents";
+import type { ReminderPrefs } from "@/lib/actions/agenda";
 import { addDays, fmtMoney } from "@/lib/orders/shared";
 import { agendaRange, dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
 
 const WEEKDAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 
 // Agenda dei servizi (fornitori e agenzie): settimana da scorrere sul telefono, mese a colpo d'occhio.
-export default function AgendaView({ me, today, vista, refDate, rows, error, reminders }: { me: string; today: string; vista: "settimana" | "mese"; refDate: string; rows: AgendaRow[]; error: boolean; reminders: boolean }) {
+export default function AgendaView({
+  me,
+  today,
+  vista,
+  refDate,
+  rows,
+  error,
+  prefs,
+  drafts,
+  events,
+  sellerName,
+}: {
+  me: string;
+  today: string;
+  vista: "settimana" | "mese";
+  refDate: string;
+  rows: AgendaRow[];
+  error: boolean;
+  prefs: ReminderPrefs;
+  drafts: ReminderDraft[];
+  events: CalEvent[];
+  sellerName: string;
+}) {
   const user = { id: me };
   const { from, to, prev, next, title } = agendaRange(vista, refDate);
   const days: string[] = [];
@@ -64,8 +88,7 @@ export default function AgendaView({ me, today, vista, refDate, rows, error, rem
         </p>
       </div>
 
-      <ReminderPanel initial={reminders} />
-      <CalendarPanel />
+      <ReminderDrafts drafts={drafts} prefs={prefs} sellerName={sellerName} today={today} />
 
       {error && (
         <p className="mt-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
@@ -77,6 +100,7 @@ export default function AgendaView({ me, today, vista, refDate, rows, error, rem
         <div className="mt-4 space-y-5">
           {days.map((d) => {
             const items = rows.filter((r) => onDay(r, d));
+            const dayEvents = events.filter((e) => e.day_from <= d && e.day_to >= d);
             const isToday = d === today;
             return (
               <section key={d} id={`giorno-${d}`} className="scroll-mt-24">
@@ -84,8 +108,20 @@ export default function AgendaView({ me, today, vista, refDate, rows, error, rem
                   {dayLabel(d)}
                   {isToday && <span className="rounded-full bg-[#233c5e] px-2 py-0.5 text-[11px] font-semibold normal-case text-white">Oggi</span>}
                 </p>
+                {dayEvents.length > 0 && (
+                  <div className="mb-2 flex flex-wrap gap-1.5">
+                    {dayEvents.map((e) => (
+                      <span
+                        key={e.id}
+                        className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold ${e.kind === "nota" ? "bg-sky-100 text-sky-900" : "bg-[repeating-linear-gradient(135deg,#e9e0cb_0,#e9e0cb_5px,#f4efe2_5px,#f4efe2_10px)] text-slate-700"}`}
+                      >
+                        {e.kind === "nota" ? "Nota" : "Non disponibile"}{e.title ? ` · ${e.title}` : ""}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 {items.length === 0 ? (
-                  <p className="rounded-xl border border-dashed border-[#e6d7bb] px-3 py-2 text-sm text-slate-400">Nessun servizio</p>
+                  <p className="rounded-xl border border-dashed border-[#e6d7bb] px-3 py-2 text-sm text-slate-400">{dayEvents.some((e) => e.kind === "non_disponibile") ? "Giorno libero da servizi" : "Nessun servizio"}</p>
                 ) : (
                   <div className="space-y-3">
                     {items.map((r) => (
@@ -107,17 +143,25 @@ export default function AgendaView({ me, today, vista, refDate, rows, error, rem
           <div className="grid grid-cols-7">
             {days.map((d) => {
               const items = rows.filter((r) => onDay(r, d));
+              const dayEvents = events.filter((e) => e.day_from <= d && e.day_to >= d);
+              const off = dayEvents.find((e) => e.kind === "non_disponibile");
+              const note = dayEvents.find((e) => e.kind === "nota");
               const other = d.slice(0, 7) !== refDate.slice(0, 7);
               const waiting = items.some((r) => waitingForMe(r, user.id));
               return (
                 <Link
                   key={d}
                   href={`${link({ vista: "settimana", data: d })}#giorno-${d}`}
-                  className={`min-h-16 border-b border-r border-[#f2e2c4] p-1 text-left transition hover:bg-[#faf3e6] sm:min-h-24 sm:p-1.5 ${other ? "bg-[#fbf8f1] text-slate-400" : ""}`}
+                  className={`min-h-16 border-b border-r border-[#f2e2c4] p-1 text-left transition hover:bg-[#faf3e6] sm:min-h-24 sm:p-1.5 ${off ? "bg-[repeating-linear-gradient(135deg,#efe6d2_0,#efe6d2_5px,#fbf8f1_5px,#fbf8f1_10px)]" : other ? "bg-[#fbf8f1] text-slate-400" : ""}`}
                 >
                   <span className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold ${d === today ? "bg-[#233c5e] text-white" : ""}`}>
                     {Number(d.slice(8, 10))}
                   </span>
+                  {(off || note) && (
+                    <span className="mt-0.5 block truncate text-[10px] font-semibold leading-tight text-slate-600 sm:text-[11px]">
+                      {off ? (off.title ? off.title : "Non disp.") : note?.title}
+                    </span>
+                  )}
                   {items.length > 0 && (
                     <>
                       {/* telefono: solo il numero dei servizi */}
@@ -146,6 +190,9 @@ export default function AgendaView({ me, today, vista, refDate, rows, error, rem
         </div>
       )}
       {vista === "mese" && <p className="mt-2 text-xs text-slate-500">Tocca un giorno per vedere i servizi di quella settimana.</p>}
+
+      <CalendarEvents events={events} today={today} />
+      <ReminderSettings initial={prefs} sellerName={sellerName} today={today} />
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default async function SupplierHome() {
   const supabase = await createClient();
   const today = todayRome();
 
-  const [agendaRes, { data: acc }, { data: profile }, { count: filesCount }, { data: unread }, { data: collab }, { data: mail }] = await Promise.all([
+  const [agendaRes, { data: acc }, { data: profile }, { count: filesCount }, { data: unread }, { data: collab }, { data: mail }, { data: drafts }] = await Promise.all([
     // 60 giorni: servizi dei prossimi giorni e richieste da confermare anche più avanti
     supabase.rpc("network_agenda", { p_from: today, p_to: addDays(today, 60) }),
     supabase.rpc("network_accounting_briefing"),
@@ -22,6 +22,7 @@ export default async function SupplierHome() {
     supabase.rpc("network_unread_count"),
     supabase.rpc("network_collab_pending_count"),
     supabase.rpc("mail_unread_count"),
+    supabase.rpc("network_reminder_drafts"),
   ]);
   const hour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 
@@ -38,6 +39,7 @@ export default async function SupplierHome() {
       unread={unread}
       collab={collab}
       mail={mail}
+      pendingAgencies={((drafts ?? []) as { sent_at: string | null }[]).filter((d) => !d.sent_at).length}
     />
   );
 }

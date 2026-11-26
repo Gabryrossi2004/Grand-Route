@@ -644,33 +644,34 @@ const sections: Section[] = [
       },
       {
         id: "rete-riconferme",
-        title: "Riconferma dei servizi e promemoria della sera prima",
+        title: "Riconferma ai tuoi clienti la sera prima",
         body: (
           <>
-            Il giorno prima di un servizio l&apos;agenzia lo <strong>riconferma</strong> con un tocco (tasto{" "}
-            <strong>Riconferma</strong> sul servizio, oppure «Riconferma tutti» nella pagina{" "}
-            <strong>Partner → Servizi → Riconferme</strong>): il fornitore vede «Riconfermato» e riceve una notifica. Per
-            non dover rincorrere nessuno c&apos;è il <strong>promemoria automatico</strong>: ogni giorno dopo le 16:00
-            controlliamo i servizi di domani (il venerdì e il sabato fino a lunedì) e, se un&apos;agenzia non li ha ancora
-            riconfermati, le arriva <strong>una sola email a nome del fornitore con tutti i suoi servizi</strong>,
-            divisi per giorno e in ordine di orario. Non parte se l&apos;agenzia ha già riconfermato o ti ha scritto oggi
-            nella conversazione dell&apos;ordine. Si spegne con l&apos;interruttore in <strong>Agenda</strong> (acceso di
-            base); su ogni ordine resta traccia in conversazione. Nei piani gratuiti l&apos;orario preciso dell&apos;invio
-            può slittare entro l&apos;ora (tra le 16 e le 17 circa). Ogni servizio modificato dopo la riconferma va
-            riconfermato di nuovo.
+            La riconferma <strong>dell&apos;agenzia al fornitore</strong> si fa dall&apos;<strong>Operativo</strong>. Qui
+            c&apos;è quella <strong>del fornitore verso le agenzie e i tour operator</strong>: ogni giorno dopo le 16:00 per
+            ogni agenzia che non ti ha ancora riconfermato i servizi di domani (il venerdì e il sabato fino a lunedì)
+            si prepara <strong>una sola email in blocco</strong> con tutti i suoi servizi, divisi per giorno e in ordine di
+            orario, già scritta a tuo nome. In <strong>Agenda → Riconferma ai tuoi clienti la sera prima → Modifica</strong>{" "}
+            scegli come:
+            <strong> Automatico</strong> (parte da sola, una per agenzia al giorno), <strong>Lo rivedo io</strong> (ti
+            avvisiamo e la email resta pronta in Agenda: la leggi, la modifichi e premi «Invia ora») o <strong>Spento</strong>.
+            Puoi <strong>personalizzare apertura, chiusura e oggetto</strong> (con {"{agenzia}"}, {"{fornitore}"}, {"{quando}"}) e
+            vedi subito l&apos;anteprima. Le risposte arrivano a te. Non parte se l&apos;agenzia ti ha scritto oggi in Posta, o se
+            hai premuto <strong>«Riconferma ricevuta»</strong> sul servizio (utile quando riconferma per WhatsApp o
+            telefono). Nei piani gratuiti l&apos;orario preciso può slittare entro l&apos;ora (tra le 16 e le 17 circa).
           </>
         ),
       },
       {
         id: "rete-calendario",
-        title: "Calendario del telefono",
+        title: "Calendario e impegni",
         body: (
           <>
-            In <strong>Agenda → Aggiungi al calendario del telefono</strong> trovi un link privato: su iPhone e Mac basta
-            un tocco su «Aggiungi a Calendario»; su Android e computer si copia il link in Google Calendar (<em>Altri
-            calendari → Da URL</em>). I servizi (confermati e da confermare) compaiono da soli, con orario, luogo, persone
-            e nome dell&apos;agenzia, e si aggiornano ogni tanto. Il link è come una password: se lo perdi o cambi
-            telefono, con «Nuovo link» il vecchio smette di funzionare.
+            L&apos;<strong>Agenda</strong> è il tuo calendario dentro Grand Route: <strong>Settimana</strong> (da scorrere) e{" "}
+            <strong>Mese</strong>, con i servizi confermati e da confermare. Sotto trovi <strong>I tuoi impegni</strong>: con
+            «Aggiungi» segni i giorni in cui <strong>non sei disponibile</strong> (ferie, altro lavoro: nel mese sono a
+            righe) o una <strong>nota</strong>. Sono privati, li vedi solo tu. Il collegamento con il calendario del
+            telefono non c&apos;è ancora.
           </>
         ),
       },

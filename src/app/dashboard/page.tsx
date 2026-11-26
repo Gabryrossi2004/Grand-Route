@@ -10,7 +10,6 @@ import { Plane } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
-import { addDays } from "@/lib/orders/shared";
 
 function dateLabel(value: string) {
   return new Date(value).toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short" });
@@ -34,7 +33,7 @@ export default async function DashboardHomePage() {
   // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
   // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
   const reconfirmDays = riconfermaDays(romeToday());
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: platformServices }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -87,8 +86,6 @@ export default async function DashboardHomePage() {
       .limit(2000),
     // Fatture e ordini tra partner per la colonna «Contabilità» (vuoto se la migrazione 0068 non c'è ancora)
     supabase.rpc("network_accounting_briefing"),
-    // Servizi ordinati ai fornitori tramite Partner nei prossimi giorni (per sapere quali sono da riconfermare; vuoto senza la 0070)
-    supabase.rpc("network_agenda", { p_from: romeToday(), p_to: addDays(romeToday(), 3) }),
   ]);
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
@@ -118,16 +115,6 @@ export default async function DashboardHomePage() {
         date_of_birth: string | null;
       }[] | null) ?? [],
   });
-  const toReconfirm = ((platformServices as { role: string; status: string; reconfirmed: boolean }[] | null) ?? []).filter((r) => r.role === "buyer" && r.status === "confermato" && !r.reconfirmed);
-  if (toReconfirm.length > 0)
-    briefing.push({
-      id: "platform-reconfirm",
-      area: "viaggi",
-      tone: "warn",
-      text: `${toReconfirm.length} ${toReconfirm.length === 1 ? "servizio ordinato a un fornitore Partner" : "servizi ordinati ai fornitori Partner"} da riconfermare nei prossimi giorni.`,
-      href: "/rete/riconferme",
-      score: 93,
-    });
   briefing.push(...buildAccountingBriefing(accounting as AccountingBriefingData | null, romeToday()));
   const romeHour = Number(new Date().toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Rome" }));
 

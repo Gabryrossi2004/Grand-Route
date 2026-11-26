@@ -31,7 +31,6 @@ export default async function DashboardOrders({ searchParams }: { searchParams: 
       <div className="mt-4 flex flex-wrap gap-2">
         {tab("/dashboard/ordini", "Ordini", !invoices)}
         {tab("/dashboard/ordini?vista=fatture", "Fatture ricevute", invoices)}
-        {tab("/rete/riconferme", "Riconferme", false)}
         <Link href="/rete/lavori" className="ml-auto self-center text-sm font-medium text-[#233c5e] underline">Svolgi anche tu servizi per altri? Vai ai tuoi lavori</Link>
       </div>
       <div className="mt-6">

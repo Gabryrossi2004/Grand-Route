@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Check, CheckCheck, Loader2, MapPin, MessageSquare, Phone, Users } from "lucide-react";
 import { confirmOrder } from "@/lib/actions/orders";
-import { reconfirmServices } from "@/lib/actions/agenda";
+import { markReconfirmReceived } from "@/lib/actions/agenda";
 import { PHASES, fmtDate, fmtMoney } from "@/lib/orders/shared";
 import { kindLabel } from "@/lib/network/kinds";
 import { mapsLink, needsReconfirm, telLink, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
@@ -17,7 +17,7 @@ export default function ServiceCard({ row, me, today, showDate = false }: { row:
   const [pending, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const waiting = waitingForMe(row, me);
-  const mustReconfirm = row.role === "buyer" && needsReconfirm(row, today);
+  const askedReconfirm = row.role === "seller" && needsReconfirm(row, today);
   const phase = PHASES[row.phase];
   const time = row.start_time ? row.start_time.slice(0, 5) : null;
   const multiDay = row.end_date && row.end_date !== row.service_date;
@@ -41,7 +41,7 @@ export default function ServiceCard({ row, me, today, showDate = false }: { row:
             {row.status === "confermato" && row.reconfirmed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"><CheckCheck size={13} /> Riconfermato</span>
             )}
-            {row.role === "seller" && needsReconfirm(row, today) && (
+            {askedReconfirm && (
               <span className="rounded-full border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800">In attesa di riconferma</span>
             )}
           </div>
@@ -83,21 +83,21 @@ export default function ServiceCard({ row, me, today, showDate = false }: { row:
             {pending ? <Loader2 size={16} className="animate-spin" /> : <Check size={16} />} Conferma
           </button>
         )}
-        {mustReconfirm && (
+        {askedReconfirm && (
           <button
             type="button"
             disabled={pending}
             onClick={() =>
               start(async () => {
                 setError(null);
-                const r = await reconfirmServices([row.id]);
+                const r = await markReconfirmReceived([row.id], true);
                 if (!r.ok) setError(r.error);
                 else router.refresh();
               })
             }
-            className={`${action} w-full bg-[#233c5e] text-white sm:w-auto`}
+            className={`${action} w-full border border-emerald-600 text-emerald-700 hover:bg-emerald-50 sm:w-auto`}
           >
-            {pending ? <Loader2 size={16} className="animate-spin" /> : <CheckCheck size={16} />} Riconferma
+            {pending ? <Loader2 size={16} className="animate-spin" /> : <CheckCheck size={16} />} Riconferma ricevuta
           </button>
         )}
         {row.counterpart_phone && (
