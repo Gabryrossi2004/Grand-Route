@@ -12,7 +12,7 @@ export const metadata = { title: "Area viaggiatori" };
 // Area dei viaggiatori privati. Chi non lo è viene rimandato alla sua area.
 export default async function TravelerLayout({ children }: { children: React.ReactNode }) {
   const user = await getCachedUser();
-  if (!user) redirect("/viaggiatore/login");
+  if (!user) redirect("/clienti?next=/viaggiatore");
   await redirectIfSuspended();
   const supabase = await createClient();
   const { data: profile } = await supabase.from("profiles").select("full_name, is_traveler, is_professional").eq("id", user.id).maybeSingle();

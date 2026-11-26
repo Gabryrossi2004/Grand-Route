@@ -8,7 +8,7 @@ import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
 // Pagina degli ordini, per chi svolge i servizi («lavori») e per chi li compra («ordini»)
 export default async function OrdersHome({ role, base, invoiceBase, switchHref }: { role: "seller" | "buyer"; base: string; invoiceBase: string; switchHref?: { href: string; label: string } }) {
   const user = await getCachedUser();
-  if (!user) redirect(`/login?next=${base}`);
+  if (!user) redirect(`/professionisti?next=${base}`);
   const supabase = await createClient();
   const [{ data, error }, { data: partners }, { data: settings }, { data: profile }] = await Promise.all([
     supabase.rpc("network_orders_list", { p_role: "all" }),

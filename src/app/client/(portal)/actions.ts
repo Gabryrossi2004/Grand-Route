@@ -9,7 +9,7 @@ import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 export async function clientSignOut() {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  redirect("/client/login");
+  redirect("/clienti");
 }
 
 // Avvisa l'agenzia anche via notifica push (oltre al messaggio WhatsApp che

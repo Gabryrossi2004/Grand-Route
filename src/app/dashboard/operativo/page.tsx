@@ -17,7 +17,7 @@ type TripRow = { id: string; code: string | null; title: string; start_date: str
 
 export default async function OperativoPage({ searchParams }: { searchParams: Promise<{ v?: string; d?: string; codice?: string; riconferme?: string }> }) {
   const user = await getCachedUser();
-  if (!user) redirect("/login");
+  if (!user) redirect("/professionisti");
   const sp = await searchParams;
   const today = opsToday();
   const supabase = await createClient();

@@ -9,7 +9,7 @@ export const metadata = { title: "Home" };
 // Home del fornitore: qui si caricano i dati, la pagina è in SupplierHomeView
 export default async function SupplierHome() {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/home");
+  if (!user) redirect("/professionisti?next=/rete/home");
   const supabase = await createClient();
   const today = todayRome();
 

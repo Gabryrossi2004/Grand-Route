@@ -18,7 +18,7 @@ type Row = {
 export default async function InvoicePage({ id, backHref, backLabel }: { id: string; backHref: string; backLabel: string }) {
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const user = await getCachedUser();
-  if (!user) redirect("/login");
+  if (!user) redirect("/professionisti");
   const supabase = await createClient();
   const { data } = await supabase.from("network_invoices").select("*").eq("id", id).maybeSingle();
   const inv = data as Row | null;

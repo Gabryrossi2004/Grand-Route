@@ -17,7 +17,7 @@ const STATUS: Record<string, { label: string; tone: string; text: string }> = {
 
 export default async function NetworkProfilePageEdit() {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/profilo");
+  if (!user) redirect("/professionisti?next=/rete/profilo");
   const supabase = await createClient();
   const kindFromProfile = await getBusinessKind();
   const { data: row, error } = await supabase.from("network_profiles").select("*").eq("user_id", user.id).maybeSingle();

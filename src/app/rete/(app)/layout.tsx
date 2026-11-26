@@ -16,7 +16,7 @@ export const metadata = { title: "Partner" };
 // Vi entrano agenzie, tour operator e fornitori (guide, autisti, strutture...). Viaggiatori e clienti no.
 export default async function NetworkLayout({ children }: { children: React.ReactNode }) {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete");
+  if (!user) redirect("/professionisti?next=/rete");
   await redirectIfSuspended();
   const supabase = await createClient();
   const { data: profile } = await supabase.from("profiles").select("is_traveler, is_professional, business_kind").eq("id", user.id).maybeSingle();

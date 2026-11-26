@@ -11,7 +11,7 @@ export default async function NetworkInvoices({ searchParams }: { searchParams: 
   const { vista } = await searchParams;
   const role = vista === "ricevute" ? "buyer" : "seller";
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/fatture");
+  if (!user) redirect("/professionisti?next=/rete/fatture");
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("network_invoices_list", { p_role: role });
   const tab = (href: string, label: string, on: boolean) => (

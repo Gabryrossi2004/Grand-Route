@@ -1,5 +1,6 @@
 "use client";
 
+import { areaHref, PRO_LOGIN } from "@/lib/areas";
 import { useActionState } from "react";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
@@ -21,7 +22,7 @@ export default function ClientSignupPage() {
           <p className="text-sm text-slate-500">
             {t("auth.checkEmailText")}
           </p>
-          <Link href="/client/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
+          <Link href="/clienti" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             {t("auth.goLogin")}
           </Link>
         </div>
@@ -108,21 +109,21 @@ export default function ClientSignupPage() {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           {t("auth.haveAccount")}{" "}
-          <Link href="/client/login" className="font-medium text-[#233c5e] hover:underline">
+          <Link href="/clienti" className="font-medium text-[#233c5e] hover:underline">
             {t("auth.loginButton")}
           </Link>
         </p>
         <p className="mt-2 text-center text-xs text-slate-500">
-          Organizzi il viaggio da solo?{" "}
+          {t("auth.optSolo")}?{" "}
           <Link href="/viaggiatore/signup" className="font-medium text-slate-500 hover:underline">
-            Area viaggiatori
+            {t("auth.register")}
           </Link>
         </p>
         <p className="mt-2 text-center text-xs text-slate-500">
-          {t("auth.isAgency")}{" "}
-          <Link href="/signup" className="font-medium text-slate-500 hover:underline">
-            {t("auth.agencySignup")}
-          </Link>
+          {t("auth.proQ")}{" "}
+          <a href={areaHref("pro", PRO_LOGIN)} className="font-medium text-slate-500 hover:underline">
+            {t("auth.proLogin")}
+          </a>
         </p>
     </AuthShell>
   );

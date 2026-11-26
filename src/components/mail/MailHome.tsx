@@ -8,7 +8,7 @@ import { FOLDERS, isFolder, mailDate, type ThreadRow } from "@/lib/mail/shared";
 // Posta: cartelle, ricerca, elenco delle conversazioni (come una casella email)
 export default async function MailHome({ base, cartella, q, pagina }: { base: string; cartella?: string; q?: string; pagina?: string }) {
   const user = await getCachedUser();
-  if (!user) redirect(`/login?next=${base}`);
+  if (!user) redirect(`/professionisti?next=${base}`);
   const folder = isFolder(cartella) ? cartella : "inbox";
   const query = (q ?? "").trim().slice(0, 100);
   const page = Math.max(0, Number(pagina) || 0);

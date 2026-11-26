@@ -9,7 +9,7 @@ export const metadata = { title: "Statistiche" };
 // Statistiche del fornitore: servizi svolti, fatturato, incassi, clienti, andamento e visite alla vetrina
 export default async function StatsPage({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/statistiche");
+  if (!user) redirect("/professionisti?next=/rete/statistiche");
   const { periodo: p } = await searchParams;
   const periodo = isPeriod(p) ? p : "3mesi";
   const { from, to } = periodRange(periodo, todayRome());

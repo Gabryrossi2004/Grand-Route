@@ -1,5 +1,6 @@
 "use server";
 
+import { areaHosts, areaHref, CLIENT_LOGIN } from "@/lib/areas";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
@@ -47,7 +48,7 @@ export async function sendTripToClient(tripId: string): Promise<SendTripResult> 
     startDate: trip.start_date,
     endDate: trip.end_date,
     link: `${origin}/t/${trip.public_slug}`,
-    clientAreaLink: `${origin}/client/login`,
+    clientAreaLink: areaHosts() ? areaHref("client", CLIENT_LOGIN) : `${origin}${CLIENT_LOGIN}`,
   });
 
   const result = await sendMail({ to: email, ...mail, replyTo: profile?.email ?? null, fromName: agencyName });

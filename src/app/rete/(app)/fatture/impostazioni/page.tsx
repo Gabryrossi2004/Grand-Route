@@ -9,7 +9,7 @@ export const metadata = { title: "Impostazioni di fatturazione" };
 
 export default async function BillingSettingsPage() {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/fatture/impostazioni");
+  if (!user) redirect("/professionisti?next=/rete/fatture/impostazioni");
   const supabase = await createClient();
   const [{ data, error }, { data: profile }] = await Promise.all([
     supabase.from("network_billing_settings").select("*").eq("user_id", user.id).maybeSingle(),

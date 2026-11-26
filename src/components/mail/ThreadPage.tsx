@@ -8,7 +8,7 @@ import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
 export default async function ThreadPage({ id, base, invoiceBase }: { id: string; base: string; invoiceBase: string }) {
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const user = await getCachedUser();
-  if (!user) redirect(`/login?next=${base}/${id}`);
+  if (!user) redirect(`/professionisti?next=${base}/${id}`);
   const supabase = await createClient();
   const { data: t } = await supabase.from("mail_threads").select("id, subject, kind, order_id").eq("id", id).maybeSingle();
   const thread = t as { id: string; subject: string; kind: string; order_id: string | null } | null;

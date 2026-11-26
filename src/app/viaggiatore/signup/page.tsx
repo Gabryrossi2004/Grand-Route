@@ -1,5 +1,6 @@
 "use client";
 
+import { areaHref, PRO_LOGIN } from "@/lib/areas";
 import { useActionState } from "react";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
@@ -18,7 +19,7 @@ export default function TravelerSignupPage() {
           <AuthBrandHeader />
           <h1 className="mb-2 text-xl font-semibold text-slate-900">Controlla la tua email</h1>
           <p className="text-sm text-slate-500">Ti abbiamo mandato un link per confermare l&apos;indirizzo: aprilo e poi accedi.</p>
-          <Link href="/viaggiatore/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
+          <Link href="/clienti" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Vai all&apos;accesso
           </Link>
         </div>
@@ -72,7 +73,7 @@ export default function TravelerSignupPage() {
       </form>
       <p className="mt-6 text-center text-sm text-slate-500">
         Hai già un account?{" "}
-        <Link href="/viaggiatore/login" className="font-medium text-[#233c5e] hover:underline">
+        <Link href="/clienti" className="font-medium text-[#233c5e] hover:underline">
           Accedi
         </Link>
       </p>
@@ -82,9 +83,9 @@ export default function TravelerSignupPage() {
           Area clienti
         </Link>
         {" · "}
-        <Link href="/signup" className="font-medium text-slate-500 hover:underline">
-          Sono un&apos;agenzia
-        </Link>
+        <a href={areaHref("pro", PRO_LOGIN)} className="font-medium text-slate-500 hover:underline">
+          Sono un professionista
+        </a>
       </p>
     </AuthShell>
   );

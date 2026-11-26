@@ -386,6 +386,15 @@ export const entries = {
   "auth.passwordUpdated": { it: "Password aggiornata", en: "Password updated" },
   "auth.passwordUpdatedText": { it: "Ora puoi accedere con la nuova password.", en: "You can now log in with your new password." },
   "auth.clientAreaQ": { it: "Accedi all'area clienti?", en: "Looking for the client area?" },
+  "auth.travellersLabel": { it: "Viaggiatori", en: "Travellers" },
+  "auth.firstTime": { it: "Prima volta qui?", en: "First time here?" },
+  "auth.optAgency": { it: "Il mio viaggio è organizzato da un'agenzia", en: "My trip is organised by a travel agency" },
+  "auth.optAgencyHint": { it: "Crea l'account con la stessa email che hai dato all'agenzia.", en: "Create your account with the same email you gave the agency." },
+  "auth.optSolo": { it: "Organizzo il viaggio da solo", en: "I'm planning my trip myself" },
+  "auth.optSoloHint": { it: "Itinerario, valigia, spese e diario del tuo viaggio.", en: "Itinerary, packing list, expenses and travel diary." },
+  "auth.proQ": { it: "Sei un professionista del turismo?", en: "Are you a travel professional?" },
+  "auth.proLogin": { it: "Accedi qui", en: "Log in here" },
+  "auth.wrongAreaPro": { it: "Questo account è di un professionista del turismo: accedi dall'area professionisti.", en: "This account belongs to a travel professional: please use the professionals' login." },
   "auth.langSwitchAria": { it: "Lingua del sito", en: "Site language" },
 } as const;
 

@@ -11,7 +11,7 @@ export default async function PrintInvoice({ params }: { params: Promise<{ id: s
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const user = await getCachedUser();
-  if (!user) redirect("/login");
+  if (!user) redirect("/professionisti");
   const supabase = await createClient();
   const { data } = await supabase.from("network_invoices").select("number, issue_date, due_date, currency, status, doc").eq("id", id).maybeSingle();
   const inv = data as { number: string | null; issue_date: string | null; due_date: string | null; currency: string; status: string; doc: InvoiceDoc } | null;

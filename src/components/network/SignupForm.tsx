@@ -1,5 +1,6 @@
 "use client";
 
+import { areaHref, CLIENT_LOGIN } from "@/lib/areas";
 import { useState, useTransition } from "react";
 import Link from "next/link";
 import { Briefcase, Building2, Car, Compass, Hotel, MapPinned, Mountain, Shapes } from "lucide-react";
@@ -37,7 +38,7 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
               Dopo il primo accesso il tuo profilo viene controllato dal nostro team: appena è verificato compari nell&apos;elenco dei Partner.
             </p>
           )}
-          <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
+          <Link href="/professionisti" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             Vai al login
           </Link>
         </div>
@@ -156,11 +157,11 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
 
       <p className="mt-6 text-center text-sm text-slate-500">
         Hai già un account?{" "}
-        <Link href="/login" className="font-medium text-[#233c5e] hover:underline">Accedi</Link>
+        <Link href="/professionisti" className="font-medium text-[#233c5e] hover:underline">Accedi</Link>
       </p>
       <p className="mt-2 text-center text-xs text-slate-500">
-        Sei un cliente?{" "}
-        <Link href="/client/login" className="font-medium hover:underline">Accedi alla tua area qui</Link>
+        Sei un cliente o un viaggiatore?{" "}
+        <a href={areaHref("client", CLIENT_LOGIN)} className="font-medium hover:underline">Area clienti</a>
       </p>
     </AuthShell>
   );

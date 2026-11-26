@@ -25,7 +25,7 @@ type TripRow = {
 
 export default async function AgencyGlobePage() {
   const user = await getCachedUser();
-  if (!user) redirect("/login");
+  if (!user) redirect("/professionisti");
   const supabase = await createClient();
 
   const { data, error } = await supabase

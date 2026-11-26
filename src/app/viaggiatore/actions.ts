@@ -28,19 +28,10 @@ export async function travelerSignup(_prev: FormState, formData: FormData): Prom
   return { success: true };
 }
 
-export async function travelerLogin(_prev: FormState, formData: FormData): Promise<FormState> {
-  const email = String(formData.get("email") ?? "").trim();
-  const password = String(formData.get("password") ?? "");
-  const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) return { error: "Email o password non corrette." };
-  redirect("/viaggiatore");
-}
-
 export async function travelerSignOut() {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  redirect("/viaggiatore/login");
+  redirect("/clienti");
 }
 
 // Viaggio vuoto: titolo, destinazione, giorni (e data di partenza, se la sai)

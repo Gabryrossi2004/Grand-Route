@@ -1,6 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
+import { CLIENT_LOGIN, PRO_LOGIN } from "@/lib/areas";
+import { Suspense, useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
 import AuthShell from "@/components/AuthShell";
@@ -8,8 +10,18 @@ import { useI18n } from "@/components/I18nProvider";
 import { requestPasswordReset } from "./actions";
 
 export default function ForgotPasswordPage() {
+  return (
+    <Suspense>
+      <ForgotPassword />
+    </Suspense>
+  );
+}
+
+function ForgotPassword() {
   const [state, formAction, pending] = useActionState(requestPasswordReset, undefined);
   const { t } = useI18n();
+  // chi arriva dall'accesso dei professionisti torna lì, gli altri all'area clienti
+  const back = useSearchParams().get("area") === "professionisti" ? PRO_LOGIN : CLIENT_LOGIN;
 
   if (state?.success) {
     return (
@@ -20,7 +32,7 @@ export default function ForgotPasswordPage() {
           <p className="text-sm text-slate-500">
             {t("auth.forgotSent")}
           </p>
-          <Link href="/login" className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
+          <Link href={back} className="mt-6 inline-block text-sm font-medium text-[#233c5e] hover:underline">
             {t("auth.backToLogin")}
           </Link>
         </div>
@@ -62,7 +74,7 @@ export default function ForgotPasswordPage() {
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
-          <Link href="/login" className="font-medium text-[#233c5e] hover:underline">
+          <Link href={back} className="font-medium text-[#233c5e] hover:underline">
             {t("auth.backToLogin")}
           </Link>
         </p>

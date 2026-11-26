@@ -11,7 +11,7 @@ export const metadata = { title: "Agenda" };
 // Agenda dei servizi: qui si caricano i dati, la pagina è in AgendaView
 export default async function AgendaPage({ searchParams }: { searchParams: Promise<{ vista?: string; data?: string }> }) {
   const user = await getCachedUser();
-  if (!user) redirect("/login?next=/rete/agenda");
+  if (!user) redirect("/professionisti?next=/rete/agenda");
   const { vista: v, data } = await searchParams;
   const vista = v === "mese" ? "mese" : "settimana";
   const today = todayRome();
