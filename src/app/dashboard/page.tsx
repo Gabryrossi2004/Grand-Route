@@ -11,6 +11,8 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import WelcomeZefiro from "@/components/WelcomeZefiro";
+import RottaCard from "@/components/RottaCard";
+import type { RottaSummary } from "@/lib/rotta";
 import { agencySteps, shouldShowWelcome, type OnboardingStatus } from "@/lib/onboarding";
 
 function dateLabel(value: string) {
@@ -37,7 +39,7 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
   // Riconferme ai fornitori ancora aperte (scheda operativa; niente se la tabella non c'è ancora):
   // parte insieme alle altre richieste, non dopo, per non allungare l'attesa.
   const reconfirmDays = riconfermaDays(romeToday());
-  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: onboarding }, { data: me }] = await Promise.all([
+  const [{ data: pendingItems }, { data: paidIncome }, { data: unreadClientMessages }, { data: dueIncome }, { data: briefingClients }, { data: openReconfirm }, { data: accounting }, { data: onboarding }, { data: me }, { data: rotta }] = await Promise.all([
     tripIds.length
       ? supabase
           .from("trip_checklist_items")
@@ -93,7 +95,10 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
     // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora)
     supabase.rpc("onboarding_status"),
     supabase.from("profiles").select("full_name").eq("id", user?.id ?? "").maybeSingle(),
+    // Sconto Rotta (vuoto se la migrazione 0073 non c'è ancora)
+    supabase.rpc("rotta_summary"),
   ]);
+  const rottaSummary = (rotta as RottaSummary | null) ?? null;
   const onboardingStatus = (onboarding as OnboardingStatus | null) ?? null;
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
@@ -206,6 +211,8 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
       )}
 
       <ZefiroBriefing items={briefing} hour={romeHour} />
+
+      {rottaSummary && <RottaCard s={rottaSummary} />}
 
       <Suspense fallback={null}>
         <ContactTodayCard ownerId={user?.id ?? ""} trips={allTrips} />

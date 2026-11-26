@@ -49,6 +49,7 @@ const navItems: NavItem[] = [
     account: true,
     children: [
       { href: "/dashboard/settings", label: "Impostazioni" },
+      { href: "/dashboard/sconto", label: "Sconto Rotta", hint: "Viaggi verificati e sconto sul piano" },
       { href: "/dashboard/settings/guida", label: "Guida all'uso" },
       { href: "/dashboard?iniziare=1", label: "Per iniziare", hint: "Riapri la lista di benvenuto" },
     ],

@@ -70,3 +70,11 @@ export async function requestQuote(title: string, message: string): Promise<{ ok
   if (data !== true) return { ok: false, error: "Hai già inviato diverse richieste oggi: la tua agenzia ti risponderà presto." };
   return { ok: true };
 }
+
+// «Com'è andato il viaggio?»: il cliente conferma di aver fatto il viaggio (o di non essere partito)
+export async function confirmTripAction(tripId: string, status: "confermato" | "non_partito"): Promise<{ ok: boolean }> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("client_confirm_trip", { p_trip: tripId, p_status: status });
+  if (error || data !== true) return { ok: false };
+  return { ok: true };
+}

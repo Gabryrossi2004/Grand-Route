@@ -6,6 +6,7 @@ import NextTripCard from "@/components/NextTripCard";
 import TodayTripCard from "@/components/TodayTripCard";
 import { romeToday } from "@/lib/destinationInfo";
 import WelcomeZefiro from "@/components/WelcomeZefiro";
+import TripConfirmCard, { type PendingConfirm } from "@/components/TripConfirmCard";
 import Link from "next/link";
 import { clientStepKeys, progressOf, shouldShowWelcome, type OnboardingStatus, type OnboardingStep } from "@/lib/onboarding";
 
@@ -14,7 +15,8 @@ export default async function ClientHomePage({ searchParams }: { searchParams: P
   const supabase = await createClient();
   const user = await getCachedUser();
   const reopenStart = Boolean((await searchParams).iniziare);
-  const { data: onboardingData } = await supabase.rpc("onboarding_status");
+  const [{ data: onboardingData }, { data: pendingData }] = await Promise.all([supabase.rpc("onboarding_status"), supabase.rpc("client_pending_confirmations")]);
+  const pendingConfirms = (pendingData as PendingConfirm[] | null) ?? [];
   const ob = (onboardingData as OnboardingStatus | null) ?? null;
   const startSteps: OnboardingStep[] = ob
     ? clientStepKeys(ob).map((x) => ({ key: x.key, href: x.href, done: x.done, label: t(`portal.start.${x.key}`), hint: t(`portal.start.${x.key}Hint`) }))
@@ -109,6 +111,22 @@ export default async function ClientHomePage({ searchParams }: { searchParams: P
       )}
       {ob && !shouldShowWelcome(ob, startSteps, reopenStart) && !progressOf(startSteps).complete && (
         <Link href="/client?iniziare=1" className="mb-6 inline-block text-xs font-medium text-[#756548] hover:text-[#233c5e] hover:underline">{t("portal.start.reopen")}</Link>
+      )}
+      {pendingConfirms.length > 0 && (
+        <TripConfirmCard
+          trips={pendingConfirms}
+          labels={{
+            title: t("portal.confirm.title"),
+            hint: t("portal.confirm.hint"),
+            yes: t("portal.confirm.yes"),
+            no: t("portal.confirm.no"),
+            thanks: t("portal.confirm.thanks"),
+            thanksNo: t("portal.confirm.thanksNo"),
+            error: t("portal.confirm.error"),
+            ask: t("portal.confirm.ask"),
+            askNoAgency: t("portal.confirm.askNoAgency"),
+          }}
+        />
       )}
       <ClientTripsGrid
         trips={typedTrips}
