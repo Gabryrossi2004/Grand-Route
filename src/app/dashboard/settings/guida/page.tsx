@@ -658,7 +658,7 @@ const sections: Section[] = [
             Puoi <strong>personalizzare apertura, chiusura e oggetto</strong> (con {"{agenzia}"}, {"{fornitore}"}, {"{quando}"}) e
             vedi subito l&apos;anteprima. Le risposte arrivano a te. Non parte se l&apos;agenzia ti ha scritto oggi in Posta, o se
             hai premuto <strong>«Riconferma ricevuta»</strong> sul servizio (utile quando riconferma per WhatsApp o
-            telefono). Nei piani gratuiti l&apos;orario preciso può slittare entro l&apos;ora (tra le 16 e le 17 circa).
+            telefono). Le riconferme che arrivano da fuori (WhatsApp, telefono, altre email) Grand Route non le vede: è voluto, per portare le conversazioni dentro il sito. Se usi altri canali, cambia tu lo stato del servizio: «Riconferma ricevuta», e con «Togli» torni indietro. Nei piani gratuiti l&apos;orario preciso può slittare entro l&apos;ora (tra le 16 e le 17 circa).
           </>
         ),
       },
@@ -670,8 +670,12 @@ const sections: Section[] = [
             L&apos;<strong>Agenda</strong> è il tuo calendario dentro Grand Route: <strong>Settimana</strong> (da scorrere) e{" "}
             <strong>Mese</strong>, con i servizi confermati e da confermare. Sotto trovi <strong>I tuoi impegni</strong>: con
             «Aggiungi» segni i giorni in cui <strong>non sei disponibile</strong> (ferie, altro lavoro: nel mese sono a
-            righe) o una <strong>nota</strong>. Sono privati, li vedi solo tu. Il collegamento con il calendario del
-            telefono non c&apos;è ancora.
+            righe) o una <strong>nota</strong>. Sono privati, li vedi solo tu. Con l&apos;interruttore{" "}
+            <strong>«Mostra la mia disponibilità ai partner»</strong> (spento di base) le agenzie e i professionisti con cui
+            hai una <strong>collaborazione attiva</strong> vedono i tuoi giorni non disponibili nella tua scheda e,
+            quando ti ordinano un servizio, ricevono un avviso se scelgono una data in cui non ci sei. Puoi mostrare
+            anche i giorni già impegnati con altri servizi, senza dettagli. Non vedono mai motivi, note, clienti o
+            luoghi. Il collegamento con il calendario del telefono non c&apos;è ancora.
           </>
         ),
       },

@@ -2,8 +2,8 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { CalendarOff, Plus, StickyNote, Trash2 } from "lucide-react";
-import { addCalendarEvent, deleteCalendarEvent } from "@/lib/actions/agenda";
+import { CalendarOff, Eye, EyeOff, Plus, StickyNote, Trash2 } from "lucide-react";
+import { addCalendarEvent, deleteCalendarEvent, setAvailabilitySharing } from "@/lib/actions/agenda";
 import { dayLabel } from "@/lib/network/agenda";
 
 export type CalEvent = { id: string; kind: "non_disponibile" | "nota"; title: string; day_from: string; day_to: string };
@@ -13,7 +13,7 @@ const range = (e: CalEvent) =>
   e.day_from === e.day_to ? dayLabel(e.day_from, { weekday: "short", day: "numeric", month: "long" }) : `${dayLabel(e.day_from, { day: "numeric", month: "long" })} – ${dayLabel(e.day_to, { day: "numeric", month: "long" })}`;
 
 // I tuoi impegni nel calendario: giorni in cui non sei disponibile e note. Sono privati: li vedi solo tu.
-export default function CalendarEvents({ events, today }: { events: CalEvent[]; today: string }) {
+export default function CalendarEvents({ events, today, share }: { events: CalEvent[]; today: string; share: { on: boolean; busy: boolean } }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [kind, setKind] = useState<CalEvent["kind"]>("non_disponibile");
@@ -33,6 +33,23 @@ export default function CalendarEvents({ events, today }: { events: CalEvent[]; 
       setOpen(false);
       router.refresh();
     });
+  const [shareOn, setShareOn] = useState(share.on);
+  const [shareBusy, setShareBusy] = useState(share.busy);
+  const [shareMsg, setShareMsg] = useState<string | null>(null);
+  const saveShare = (on: boolean, busy: boolean) => {
+    const prev = { on: shareOn, busy: shareBusy };
+    setShareOn(on);
+    setShareBusy(busy);
+    setShareMsg(null);
+    start(async () => {
+      const r = await setAvailabilitySharing({ share: on, busy });
+      if (!r.ok) {
+        setShareOn(prev.on);
+        setShareBusy(prev.busy);
+        setShareMsg(r.error);
+      } else setShareMsg(on ? "Ora i tuoi partner vedono la tua disponibilità." : "La tua disponibilità non è più visibile.");
+    });
+  };
   const remove = (id: string) =>
     start(async () => {
       const r = await deleteCalendarEvent(id);
@@ -51,6 +68,39 @@ export default function CalendarEvents({ events, today }: { events: CalEvent[]; 
         <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#e6d7bb] px-4 text-sm font-semibold text-[#233c5e] hover:bg-[#faf3e6]">
           <Plus size={16} /> {open ? "Chiudi" : "Aggiungi"}
         </button>
+      </div>
+
+      <div className="mt-3 rounded-xl border border-[#e6d7bb] p-3">
+        <div className="flex items-start gap-3">
+          <span className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${shareOn ? "bg-[#233c5e] text-white" : "bg-slate-100 text-slate-500"}`}>{shareOn ? <Eye size={18} /> : <EyeOff size={18} />}</span>
+          <div className="min-w-0 flex-1">
+            <p className="font-semibold text-slate-900">Mostra la mia disponibilità ai partner</p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={shareOn}
+            aria-label="Mostra la mia disponibilità ai partner"
+            disabled={pending}
+            onClick={() => saveShare(!shareOn, shareBusy)}
+            data-nofx
+            className={`relative mt-1 h-7 w-12 shrink-0 rounded-full transition ${shareOn ? "bg-emerald-600" : "bg-slate-300"} disabled:opacity-60`}
+          >
+            <span className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-all ${shareOn ? "left-[1.375rem]" : "left-0.5"}`} />
+          </button>
+        </div>
+        <p className="mt-2 text-sm text-slate-600">
+              {shareOn
+                ? "Le agenzie e i professionisti con cui hai una collaborazione attiva vedono, nella tua scheda e quando ti ordinano un servizio, i giorni in cui non sei disponibile. Non vedono motivi, note, clienti né luoghi."
+                : "Spento: nessuno vede il tuo calendario. Se lo accendi, i partner con cui hai una collaborazione attiva vedono solo i giorni in cui non sei disponibile, così ti chiamano quando sei libero."}
+            </p>
+        {shareOn && (
+          <label className="mt-2 flex cursor-pointer items-start gap-2.5 rounded-lg bg-[#faf7ee] px-3 py-2 text-sm text-slate-700">
+            <input type="checkbox" checked={shareBusy} disabled={pending} onChange={(e) => saveShare(true, e.target.checked)} className="mt-0.5 h-4 w-4" />
+            <span>Mostra anche i giorni in cui ho già dei servizi confermati (solo «già impegnato», senza dettagli)</span>
+          </label>
+        )}
+        {shareMsg && <p className={`mt-2 text-sm font-medium ${/migrazione|riprova/.test(shareMsg) ? "text-red-700" : "text-emerald-700"}`}>{shareMsg}</p>}
       </div>
 
       {open && (

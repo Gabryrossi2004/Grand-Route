@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
+import { checkAvailability } from "@/lib/actions/agenda";
 import { useRouter } from "next/navigation";
 import DateField from "@/components/DateField";
 import { createOrder, updateOrder, type OrderInput } from "@/lib/actions/orders";
@@ -58,6 +59,21 @@ export default function OrderForm({
   const [multiDay, setMultiDay] = useState(!!initial?.end_date && initial.end_date !== initial.service_date);
   const [more, setMore] = useState(!!(initial?.reference || initial?.lead_name || initial?.details));
   const set = (k: keyof OrderInput) => (v: string) => setF((x) => ({ ...x, [k]: v }));
+  // Chi ordina vede se il fornitore ha segnato quei giorni come non disponibili (solo se li condivide con i partner)
+  const availKey = mode === "create" && role === "buyer" && counterpart && f.service_date ? `${counterpart}|${f.service_date}|${multiDay ? (f.end_date ?? "") : ""}` : null;
+  const [availability, setAvailability] = useState<{ key: string; state: string; days: number } | null>(null);
+  useEffect(() => {
+    if (!availKey) return;
+    let alive = true;
+    const [c, from, to] = availKey.split("|");
+    checkAvailability(c, from, to || from).then((r) => {
+      if (alive && r.ok) setAvailability({ key: availKey, state: r.state, days: r.days });
+    });
+    return () => {
+      alive = false;
+    };
+  }, [availKey]);
+  const avail = availability && availability.key === availKey ? availability : null;
   const [pasteOpen, setPasteOpen] = useState(false);
   const [pasted, setPasted] = useState("");
   const [parsedInfo, setParsedInfo] = useState<{ found: string[]; warnings: string[] } | null>(null);
@@ -194,6 +210,15 @@ export default function OrderForm({
           <input id="of-time" type="time" value={f.start_time} onChange={(e) => set("start_time")(e.target.value)} className={input} />
         </div>
       </div>
+      {avail?.state === "non_disponibile" && (
+        <p className="-mt-2 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          Il fornitore ha segnato come <strong>non disponibile</strong> {avail.days === 1 ? "questo giorno" : `${avail.days} giorni di questo periodo`}. Puoi inviare comunque la richiesta, ma conviene sentirlo prima.
+        </p>
+      )}
+      {avail?.state === "impegnato" && (
+        <p className="-mt-2 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">Il fornitore ha già altri servizi confermati in {avail.days === 1 ? "questo giorno" : "questo periodo"}: potrebbe non essere libero.</p>
+      )}
+      {avail?.state === "libero" && <p className="-mt-2 text-xs font-medium text-emerald-700">Il fornitore non ha segnalato impedimenti in questa data.</p>}
       {past && mode === "create" && (
         <p className="-mt-2 text-xs text-slate-500">Data già passata: il servizio comparirà subito tra quelli svolti, pronto da fatturare.</p>
       )}

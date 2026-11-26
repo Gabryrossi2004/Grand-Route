@@ -111,3 +111,44 @@ export async function deleteCalendarEvent(id: string): Promise<Result> {
   refresh();
   return { ok: true };
 }
+
+// ---------- Disponibilità visibile ai partner ----------
+// Il fornitore decide se mostrare ai partner (collaborazione attiva) i giorni in cui non è disponibile e, se vuole,
+// anche quelli già impegnati con altri servizi: mai nomi, luoghi o note.
+export async function setAvailabilitySharing(input: { share: boolean; busy: boolean }): Promise<Result> {
+  const user = await getCachedUser();
+  if (!user) return { ok: false, error: "Accedi di nuovo." };
+  const supabase = await createClient();
+  const { error } = await supabase.from("network_prefs").upsert({
+    user_id: user.id,
+    share_availability: !!input.share,
+    share_busy: !!input.share && !!input.busy,
+    updated_at: new Date().toISOString(),
+  });
+  if (error) return { ok: false, error: /schema cache|column|does not exist/i.test(error.message) ? "Serve l'aggiornamento del database (migrazione 0071, in Supabase → SQL Editor)." : "Non sono riuscito a salvare: riprova." };
+  refresh();
+  revalidatePath("/rete", "layout");
+  return { ok: true };
+}
+
+export type AvailabilityCheck = { ok: true; state: "non_condivisa" | "libero" | "non_disponibile" | "impegnato"; days: number } | { ok: false; error: string };
+
+// Per chi ordina: il fornitore ha segnato questa data (o periodo) come non disponibile o già impegnata?
+export async function checkAvailability(userId: string, from: string, to?: string): Promise<AvailabilityCheck> {
+  if (!UUID.test(userId) || !ISO.test(from) || (to && !ISO.test(to))) return { ok: false, error: "Dati non validi." };
+  const end = to && to >= from ? to : from;
+  if (new Date(`${end}T12:00:00Z`).getTime() - new Date(`${from}T12:00:00Z`).getTime() > 120 * 86_400_000) return { ok: true, state: "non_condivisa", days: 0 };
+  const supabase = await createClient();
+  const [{ data: info }, { data: rows }] = await Promise.all([
+    supabase.rpc("network_availability_info", { p_user: userId }),
+    supabase.rpc("network_availability", { p_user: userId, p_from: from, p_to: end }),
+  ]);
+  const i = (info as { shared: boolean }[] | null)?.[0];
+  if (!i?.shared) return { ok: true, state: "non_condivisa", days: 0 };
+  const list = (rows ?? []) as { day: string; state: string }[];
+  const off = list.filter((r) => r.state === "non_disponibile").length;
+  if (off > 0) return { ok: true, state: "non_disponibile", days: off };
+  const busy = list.filter((r) => r.state === "impegnato").length;
+  if (busy > 0) return { ok: true, state: "impegnato", days: busy };
+  return { ok: true, state: "libero", days: 0 };
+}

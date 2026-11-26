@@ -234,7 +234,7 @@ export default function PrivacyPage() {
               presentazione, paesi, lingue e specializzazioni, mai email, telefono o dati fiscali; i recapiti sono
               visibili solo a chi riceve una richiesta di contatto da quella persona. Le valutazioni sono anonime:
               conserviamo chi ha votato solo per evitare voti doppi e non lo mostriamo a nessuno, nemmeno al valutato.
-              Per le statistiche del professionista contiamo quante persone hanno visto la sua scheda (una per giorno, senza mostrare chi). Per il promemoria di riconferma, su scelta del fornitore, inviamo all&apos;agenzia un&apos;email con i servizi del giorno dopo, a nome del fornitore. Gli impegni scritti nel calendario (giorni non disponibili e note) sono privati e li vede solo chi li ha scritti. Il profilo si può nascondere in ogni momento e, alla chiusura dell&apos;account, viene cancellato.
+              Per le statistiche del professionista contiamo quante persone hanno visto la sua scheda (una per giorno, senza mostrare chi). Per il promemoria di riconferma, su scelta del fornitore, inviamo all&apos;agenzia un&apos;email con i servizi del giorno dopo, a nome del fornitore. Gli impegni scritti nel calendario (giorni non disponibili e note) sono privati e li vede solo chi li ha scritti; se il fornitore lo sceglie, i soli giorni non disponibili (ed eventualmente già impegnati) sono visibili ai partner con collaborazione attiva, senza motivi, note, clienti o luoghi. Il profilo si può nascondere in ogni momento e, alla chiusura dell&apos;account, viene cancellato.
               La base giuridica è l&apos;esecuzione del contratto di iscrizione (art. 6.1.b GDPR).
             </p>
           </section>

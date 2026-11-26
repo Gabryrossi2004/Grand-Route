@@ -41,6 +41,23 @@ export default function ServiceCard({ row, me, today, showDate = false }: { row:
             {row.status === "confermato" && row.reconfirmed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"><CheckCheck size={13} /> Riconfermato</span>
             )}
+            {row.role === "seller" && row.status === "confermato" && row.reconfirmed && row.service_date >= today && (
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() =>
+                  start(async () => {
+                    setError(null);
+                    const r = await markReconfirmReceived([row.id], false);
+                    if (!r.ok) setError(r.error);
+                    else router.refresh();
+                  })
+                }
+                className="text-xs font-medium text-slate-500 underline"
+              >
+                Togli
+              </button>
+            )}
             {askedReconfirm && (
               <span className="rounded-full border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800">In attesa di riconferma</span>
             )}

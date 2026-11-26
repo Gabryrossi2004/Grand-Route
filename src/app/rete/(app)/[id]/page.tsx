@@ -8,6 +8,8 @@ import { Rating, type NetworkRow } from "@/components/network/ProfileCard";
 import { ContactForm, ReviewButtons } from "@/components/network/ContactAndReview";
 import CollaborationBox, { type CollabState } from "@/components/network/CollaborationBox";
 import NetworkGallery from "@/components/network/NetworkGallery";
+import AvailabilityCalendar, { type AvailabilityDay } from "@/components/network/AvailabilityCalendar";
+import { addDays, todayRome } from "@/lib/orders/shared";
 import { FILES_BUCKET, brandOf, mediaUrl } from "@/lib/network/media";
 
 // Scheda pubblica di un professionista verificato. Nessun recapito: si scrive una richiesta.
@@ -29,10 +31,15 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
   const canReview = viewerKind != null && viewerKind !== row.kind;
   const isOther = !!user && user.id !== id;
 
-  const [{ data: collabRows }, { data: fileRows }] = await Promise.all([
+  const todayIso = todayRome();
+  const [{ data: collabRows }, { data: fileRows }, { data: availInfo }, { data: availRows }] = await Promise.all([
     isOther ? supabase.rpc("network_collab_status", { p_user: id }) : Promise.resolve({ data: null }),
     supabase.rpc("network_files_of", { p_user: id }),
+    // disponibilità condivisa dal professionista con i suoi partner (vuoto se non è un partner o se non la condivide)
+    isOther ? supabase.rpc("network_availability_info", { p_user: id }) : Promise.resolve({ data: null }),
+    isOther ? supabase.rpc("network_availability", { p_user: id, p_from: todayIso, p_to: addDays(todayIso, 100) }) : Promise.resolve({ data: null }),
   ]);
+  const availShared = ((availInfo as { shared: boolean; with_busy: boolean }[] | null)?.[0]) ?? null;
   const collab = ((collabRows ?? []) as NonNullable<CollabState>[])[0] ?? null;
   const fileList = (fileRows ?? []) as { id: string; title: string; path: string; size_bytes: number | null; visibility: string }[];
   const signed = fileList.length ? await supabase.storage.from(FILES_BUCKET).createSignedUrls(fileList.map((f) => f.path), 3600) : null;
@@ -134,6 +141,13 @@ export default async function NetworkProfilePage({ params }: { params: Promise<{
                 <p className="mt-2 text-xs text-slate-500">Alcuni documenti sono riservati ai partner: per vederli proponi una collaborazione.</p>
               </div>
             )}
+          </div>
+        )}
+        {availShared?.shared && (
+          <div className="border-t border-[#f2e2c4] p-6">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Disponibilità</p>
+            <p className="mb-3 text-sm text-slate-600">{row.business_name} la condivide con i suoi partner. Per essere sicuro, conferma sempre con una richiesta di servizio.</p>
+            <AvailabilityCalendar days={(availRows ?? []) as AvailabilityDay[]} today={todayIso} months={3} withBusy={availShared.with_busy} />
           </div>
         )}
         {isOther && (

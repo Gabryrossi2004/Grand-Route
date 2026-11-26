@@ -22,6 +22,7 @@ export default function AgendaView({
   drafts,
   events,
   sellerName,
+  share,
 }: {
   me: string;
   today: string;
@@ -33,6 +34,7 @@ export default function AgendaView({
   drafts: ReminderDraft[];
   events: CalEvent[];
   sellerName: string;
+  share: { on: boolean; busy: boolean };
 }) {
   const user = { id: me };
   const { from, to, prev, next, title } = agendaRange(vista, refDate);
@@ -191,7 +193,7 @@ export default function AgendaView({
       )}
       {vista === "mese" && <p className="mt-2 text-xs text-slate-500">Tocca un giorno per vedere i servizi di quella settimana.</p>}
 
-      <CalendarEvents events={events} today={today} />
+      <CalendarEvents events={events} today={today} share={share} />
       <ReminderSettings initial={prefs} sellerName={sellerName} today={today} />
     </div>
   );
