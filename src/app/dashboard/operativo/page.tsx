@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
-import OpsSheet from "@/components/OpsSheet";
+import OpsNavigator from "@/components/OpsNavigator";
 import { syncImportedRows } from "@/lib/opsImport";
 import { normalizeTripCode, opsRange, opsToday, TRIP_CODE_RE, type OpsRow, type OpsSource, type OpsTripRef, type OpsView } from "@/lib/opsSheet";
 import { companyIdOf } from "@/lib/team";
@@ -86,15 +86,11 @@ export default async function OperativoPage({ searchParams }: { searchParams: Pr
     [...new Set(((recent ?? []) as Record<string, string>[]).map((r) => (r[key] ?? "").trim()).filter(Boolean))];
 
   return (
-    <OpsSheet
+    <OpsNavigator
       key={`${view}-${from}-${trip?.id ?? ""}`}
-      initialRows={rows}
+      initial={{ view, anchor, from, to, rows }}
       openRiconferme={sp.riconferme === "1"}
       agencyName={(profile?.agency_name as string | null) ?? ""}
-      view={view}
-      anchor={anchor}
-      from={from}
-      to={to}
       today={today}
       trip={trip ?? null}
       missingCode={code && !trip ? code : null}

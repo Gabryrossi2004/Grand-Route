@@ -3,9 +3,9 @@
 import { z } from "zod";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { companyIdOf } from "@/lib/team";
-import { OPS_COLORS, OPS_SOURCE_KEYS, OPS_STATUS_IDS, OPS_TEXT_KEYS, type OpsRow, type OpsStatus } from "@/lib/opsSheet";
+import { OPS_COLORS, OPS_SOURCE_KEYS, OPS_STATUS_IDS, OPS_TEXT_KEYS, opsRange, type OpsRow, type OpsStatus, type OpsView } from "@/lib/opsSheet";
 import { DAY_BLOCK_TITLE } from "@/lib/itineraryMode";
-import { chunks, loadServices, nightsBetween, sourceFromActivity, type ImportActivity, type ImportDay } from "@/lib/opsImport";
+import { chunks, loadServices, nightsBetween, sourceFromActivity, syncImportedRows, type ImportActivity, type ImportDay } from "@/lib/opsImport";
 
 type Fail = { ok: false; error: string };
 const NOT_READY = "La scheda operativa non è ancora attiva: serve l'aggiornamento del database (SQL 0046).";
@@ -219,7 +219,7 @@ async function importRows(
         trip_id: day.trips!.id,
         activity_id: a.id,
         // viaggio appena segnato «finale»: si presume che i servizi siano confermati
-        ...(markConfirmed ? { status: "confermato" as const } : {}),
+        ...(markConfirmed || day.trips!.itinerary_stage === "finale" ? { status: "confermato" as const } : {}),
       };
     });
 
@@ -291,4 +291,26 @@ export async function opsServiceDays(from: string, to: string): Promise<Record<s
     out[r.service_date] = (out[r.service_date] ?? 0) + 1;
   }
   return out;
+}
+
+const PERIOD_FIELDS =
+  "id, service_date, trip_code, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, status, changes, source, row_color, cell_colors, trip_id, activity_id, created_at";
+
+/** Righe di un periodo (giorno, settimana o mese): l'Operativo cambia periodo senza ricaricare tutta la pagina. */
+export async function loadOpsPeriod(view: OpsView, anchor: string): Promise<{ ok: true; view: OpsView; anchor: string; from: string; to: string; rows: OpsRow[] } | Fail> {
+  const c = await ctx();
+  if (!c || !["giorno", "settimana", "mese"].includes(view) || !date.safeParse(anchor).success) return { ok: false, error: "Periodo non valido." };
+  const { from, to } = opsRange(view, anchor);
+  const { data, error } = await c.supabase
+    .from("ops_rows")
+    .select(PERIOD_FIELDS)
+    .eq("owner_id", c.companyId)
+    .gte("service_date", from)
+    .lte("service_date", to)
+    .order("service_date")
+    .limit(5000);
+  if (error) return { ok: false, error: "Non sono riuscito a leggere la scheda. Riprova." };
+  // righe importate: si allineano all'itinerario di adesso (le modifiche fatte a mano restano)
+  const rows = await syncImportedRows(c.supabase, (data ?? []) as unknown as Parameters<typeof syncImportedRows>[1]);
+  return { ok: true, view, anchor, from, to, rows };
 }

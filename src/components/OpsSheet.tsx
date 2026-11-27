@@ -60,6 +60,9 @@ type Props = {
   openRiconferme: boolean;
   clientNames: string[];
   suggestions: { client: string[]; agent: string[]; supplier: string[]; responsible: string[] };
+  // cambio di periodo senza ricaricare la pagina (vedi OpsNavigator)
+  onNavigate?: (view: OpsView, anchor: string) => void;
+  busy?: boolean;
 };
 
 type ColKey = OpsColumn["key"];
@@ -108,7 +111,7 @@ function sortRows(a: OpsRow, b: OpsRow, mode: "cliente" | "orario", fresh: Set<s
 const STICKY_TD: Record<number, string> = { 0: "sticky left-[30px] z-10", 1: "relative lg:sticky lg:left-[94px] lg:z-10", 2: "relative lg:sticky lg:left-[180px] lg:z-10" };
 const STICKY_TH: Record<number, string> = { 0: "left-[30px] z-30", 1: "z-20 lg:left-[94px] lg:z-30", 2: "z-20 lg:left-[180px] lg:z-30" };
 
-export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, openRiconferme, suppliers, agencyName, clientNames, suggestions }: Props) {
+export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, openRiconferme, suppliers, agencyName, clientNames, suggestions, onNavigate, busy = false }: Props) {
   const router = useRouter();
   const [rows, setRows] = useState<OpsRow[]>(initialRows);
   const [fresh, setFresh] = useState<Set<string>>(() => new Set());
@@ -132,7 +135,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const editToken = useRef(0);
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const go = (v: OpsView, d: string) => router.push(`/dashboard/operativo?v=${v}&d=${d}`);
+  const go = (v: OpsView, d: string) => (onNavigate && v !== "viaggio" ? onNavigate(v, d) : router.push(`/dashboard/operativo?v=${v}&d=${d}`));
   const openTrip = (code: string) => router.push(`/dashboard/operativo?codice=${code}`);
   const searchCode = normalizeTripCode(search);
   const codeMatch = searchCode.length === 6 && searchCode !== trip?.code ? trips.find((t) => t.code === searchCode) : undefined;
@@ -640,7 +643,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
               aria-expanded={agendaOpen}
               className="inline-flex min-w-[10rem] items-center justify-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-[#233c5e] hover:bg-[#faf3e6]"
             >
-              <CalendarDays className="h-4 w-4 text-[#c58f2d]" aria-hidden /> {periodLabel(view, from, to)}
+              <CalendarDays className={`h-4 w-4 text-[#c58f2d] ${busy ? "animate-pulse" : ""}`} aria-hidden /> {periodLabel(view, from, to)}
             </button>
             <button type="button" onClick={() => step(1)} className="rounded-full p-1.5 text-[#233c5e] hover:bg-[#faf3e6]" aria-label="Avanti">
               <ChevronRight className="h-4 w-4" />
