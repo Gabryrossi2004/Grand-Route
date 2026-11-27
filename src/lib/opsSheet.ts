@@ -25,7 +25,7 @@ export const OPS_STATUSES = [
   { id: "riconferma_inviata", label: "Riconferma inviata", bg: "#dbeafe", fg: "#1e3a8a", excel: "FFCFE2F3" },
   { id: "riconfermato", label: "Riconfermato", bg: "#1f7a45", fg: "#ffffff", excel: "FF93C47D" },
   { id: "qr_da_inviare", label: "QR / doc. da inviare", bg: "#fff3a3", fg: "#7a5d00", excel: "FFFFF2CC" },
-  { id: "cancellato", label: "Cancellato", bg: "#e5e7eb", fg: "#4b5563", excel: "FFEFEFEF" },
+  { id: "cancellato", label: "Cancellato", bg: "#dc2626", fg: "#ffffff", excel: "FFEA9999" },
 ] as const;
 export type OpsStatus = (typeof OPS_STATUSES)[number]["id"];
 export const OPS_STATUS_IDS = OPS_STATUSES.map((s) => s.id) as [OpsStatus, ...OpsStatus[]];

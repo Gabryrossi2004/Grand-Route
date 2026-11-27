@@ -138,17 +138,33 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const anchorMonth = parseIsoDate(anchor).getMonth();
   const tomorrow = shiftDays(today, 1);
 
-  // ── Suggerimenti per le celle (clienti, fornitori, agenti, responsabili già usati) ──
+  // ── Suggerimenti per le celle, come nei fogli di calcolo: i testi già scritti nella stessa colonna
+  //    (più le rubriche di clienti e fornitori), dal più usato ──
   const options = useMemo(() => {
-    const set = (base: string[], key: OpsTextKey) =>
-      [...new Set([...base, ...rows.map((r) => r[key])].map((v) => v.trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, "it"));
-    return {
-      client: set([...clientNames, ...suggestions.client], "client"),
-      agent: set(suggestions.agent, "agent"),
-      supplier: set([...suppliers.map((s) => s.name), ...suggestions.supplier], "supplier"),
-      responsible: set(suggestions.responsible, "responsible"),
+    const out: Record<string, Suggestion[]> = {};
+    const extra: Partial<Record<OpsTextKey, string[]>> = {
+      client: [...clientNames, ...suggestions.client],
+      agent: suggestions.agent,
+      supplier: [...suppliers.map((s) => s.name), ...suggestions.supplier],
+      responsible: suggestions.responsible,
     };
-  }, [rows, clientNames, suppliers, suggestions]);
+    for (const c of OPS_COLUMNS) {
+      if (c.key === "service_date" || c.key === "status" || c.key === "pax") continue;
+      const key = c.key as OpsTextKey;
+      const count = new Map<string, { value: string; n: number }>();
+      for (const v of [...rows.map((r) => r[key] ?? ""), ...(extra[key] ?? [])]) {
+        const value = v.trim();
+        if (value.length < 2) continue;
+        const k = value.toLocaleLowerCase("it");
+        const cur = count.get(k);
+        if (cur) cur.n += 1;
+        else count.set(k, { value, n: 1 });
+      }
+      out[key] = [...count.values()].sort((a, b) => b.n - a.n || a.value.localeCompare(b.value, "it")).map((x) => ({ value: x.value }));
+    }
+    out.trip_code = trips.map((t) => ({ value: t.code, hint: [t.client, t.title].filter(Boolean).join(" · ") })).filter((t) => t.value);
+    return out;
+  }, [rows, clientNames, suppliers, suggestions, trips]);
 
   const filterOptions = useMemo(() => {
     const vals = (key: OpsTextKey) => [...new Set(rows.map((r) => r[key].trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, "it"));
@@ -215,11 +231,12 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     setDraft(row[key] ?? "");
   }
 
-  function commit(next?: { id: string; key: ColKey } | null, selectNext = true) {
+  function commit(next?: { id: string; key: ColKey } | null, selectNext = true, picked?: string) {
     if (!editing || editing.token !== editToken.current) return;
     editToken.current = -editToken.current; // una sola conferma per ogni modifica
     const row = rows.find((r) => r.id === editing.id);
-    const value = editing.key === "service_date" ? draft : draft.replace(/\s+$/, "");
+    const raw = picked ?? draft;
+    const value = editing.key === "service_date" ? raw : raw.replace(/\s+$/, "");
     if (row && value !== row[editing.key] && !(editing.key === "service_date" && !/^\d{4}-\d{2}-\d{2}$/.test(value))) {
       const patch: Partial<OpsRow> = { [editing.key]: editing.key === "trip_code" ? normalizeTripCode(value) : value };
       // codice di un viaggio: la riga si collega al viaggio e prende il cliente se manca
@@ -246,20 +263,20 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     setEditing(null);
   }
 
-  function onEditorKey(e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function onEditorKey(e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) {
     if (!editing) return;
     if (e.key === "Escape") {
       e.preventDefault();
       cancelEdit();
     } else if (e.key === "Enter" && !e.shiftKey && !e.altKey) {
       e.preventDefault();
-      commit(null);
+      commit(null, true, picked);
     } else if (e.key === "Tab") {
       e.preventDefault();
       let idx = OPS_COLUMNS.findIndex((c) => c.key === editing.key) + (e.shiftKey ? -1 : 1);
       if (OPS_COLUMNS[idx]?.key === "status") idx += e.shiftKey ? -1 : 1; // lo stato si sceglie dal menù
       const col = OPS_COLUMNS[idx];
-      commit(col ? { id: editing.id, key: col.key } : null);
+      commit(col ? { id: editing.id, key: col.key } : null, true, picked);
     }
   }
 
@@ -396,7 +413,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
             const cell = line.getCell(i + 1);
             const cellColor = c.key !== "service_date" && c.key !== "status" ? r.cell_colors?.[c.key] : undefined;
             const st = c.key === "status" ? opsStatusInfo(r.status) : undefined;
-            const argb = st ? st.excel : cellColor ? OPS_COLOR_STYLE[cellColor].excelCell : r.row_color ? OPS_COLOR_STYLE[r.row_color].excelRow : null;
+            // servizio cancellato: tutta la riga in rosso anche nel file Excel
+            const argb = st ? st.excel : r.status === "cancellato" ? "FFF4CCCC" : cellColor ? OPS_COLOR_STYLE[cellColor].excelCell : r.row_color ? OPS_COLOR_STYLE[r.row_color].excelRow : null;
             if (argb) cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb } };
             cell.border = { bottom: { style: "thin", color: { argb: "FFD9D9D9" } }, right: { style: "thin", color: { argb: "FFD9D9D9" } } };
           });
@@ -780,6 +798,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                   onStartEdit={startEdit}
                   onBlurCommit={(token) => token === editToken.current && commit(null)}
                   onKey={onEditorKey}
+                  onPick={(v) => commit(null, true, v)}
+                  suggestFor={(key) => options[key] ?? []}
                   onCellColor={setCellColor}
                   onChanges={(id, el) => {
                     const r = el.getBoundingClientRect();
@@ -835,15 +855,6 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
         </div>
       </div>
 
-      <datalist id="ops-dl-trip_code">
-        {trips.map((t) => (
-          <option key={t.id} value={t.code} label={[t.client, t.title].filter(Boolean).join(" · ")} />
-        ))}
-      </datalist>
-      <datalist id="ops-dl-client">{options.client.map((v) => <option key={v} value={v} />)}</datalist>
-      <datalist id="ops-dl-agent">{options.agent.map((v) => <option key={v} value={v} />)}</datalist>
-      <datalist id="ops-dl-supplier">{options.supplier.map((v) => <option key={v} value={v} />)}</datalist>
-      <datalist id="ops-dl-responsible">{options.responsible.map((v) => <option key={v} value={v} />)}</datalist>
 
       {/* ── Menù della riga ── */}
       {menu && menuRow && (
@@ -1001,7 +1012,9 @@ type GroupProps = {
   setDraft: (v: string) => void;
   onStartEdit: (id: string, key: ColKey) => void;
   onBlurCommit: (token: number) => void;
-  onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) => void;
+  onPick: (value: string) => void;
+  suggestFor: (key: ColKey) => Suggestion[];
   onCellColor: (id: string, key: OpsTextKey, color: OpsColor | null) => void;
   onMenu: (id: string, el: HTMLElement) => void;
   onChanges: (id: string, el: HTMLElement) => void;
@@ -1010,7 +1023,7 @@ type GroupProps = {
   showHeader: boolean;
 };
 
-function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
+function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onPick, suggestFor, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
   const d = parseIsoDate(day);
   return (
     <>
@@ -1038,9 +1051,10 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
       </tr>
       )}
       {rows.map((r) => {
-        const rowBg = r.row_color ? OPS_COLOR_STYLE[r.row_color].row : "#ffffff";
-        const changed = hasChanges(r);
         const cancelled = r.status === "cancellato";
+        // servizio cancellato: tutta la riga in rosso
+        const rowBg = cancelled ? "#fecaca" : r.row_color ? OPS_COLOR_STYLE[r.row_color].row : "#ffffff";
+        const changed = hasChanges(r);
         return (
           <tr key={r.id} className="group">
             <td
@@ -1070,10 +1084,9 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
             {OPS_COLUMNS.map((c, i) => {
               const isEditing = editing?.id === r.id && editing.key === c.key;
               const cellColor = c.key !== "service_date" && c.key !== "status" ? r.cell_colors?.[c.key] : undefined;
-              const bg = cellColor ? OPS_COLOR_STYLE[cellColor].cell : rowBg;
+              const bg = cellColor && !cancelled ? OPS_COLOR_STYLE[cellColor].cell : rowBg;
               const fieldChanged = !!(r.changes as OpsChanges)?.[c.key as OpsSourceKey];
               if (c.key === "status") {
-                const st = opsStatusInfo(r.status);
                 return (
                   <td key={c.key} className="relative border-b border-r border-slate-200 px-1.5 py-1.5 align-top" style={{ background: rowBg }}>
                     <StatusPicker value={r.status} onChange={(next) => onStatus(r.id, next)} />
@@ -1086,11 +1099,11 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
                 <td
                   key={c.key}
                   onClick={() => !isEditing && onStartEdit(r.id, c.key)}
-                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""} ${fieldChanged && !isEditing ? "ring-2 ring-inset ring-amber-300" : ""} ${cancelled && c.key !== "service_date" ? "text-slate-400 line-through" : ""}`}
+                  className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""} ${fieldChanged && !isEditing ? "ring-2 ring-inset ring-amber-300" : ""} ${cancelled && c.key !== "service_date" ? "text-red-900 line-through decoration-red-900/50" : ""}`}
                   style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined }}
                 >
                   {isEditing ? (
-                    <CellEditor column={c} selectAll={!!editing?.selectAll} draft={draft} setDraft={setDraft} onCommit={() => onBlurCommit(editing!.token)} onKey={onKey} />
+                    <CellEditor column={c} selectAll={!!editing?.selectAll} draft={draft} setDraft={setDraft} onCommit={() => onBlurCommit(editing!.token)} onKey={onKey} onPick={onPick} suggestions={suggestFor(c.key)} />
                   ) : c.key === "service_date" ? (
                     <span className="flex flex-col leading-tight">
                       <span className="text-[15px] font-semibold text-[#233c5e]">{d.getDate()}</span>
@@ -1144,6 +1157,25 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
   );
 }
 
+type Suggestion = { value: string; hint?: string };
+
+// Suggerimenti mentre si scrive (come Google Sheets): bastano 2 lettere; prima chi inizia così, poi chi contiene una parola
+// che inizia così. Frecce per scegliere, Invio o Tab per accettare, Esc per chiudere il suggerimento.
+function matchSuggestions(all: Suggestion[], typed: string): Suggestion[] {
+  const q = typed.trim().toLocaleLowerCase("it");
+  if (q.length < 2) return [];
+  const starts: Suggestion[] = [];
+  const words: Suggestion[] = [];
+  for (const s of all) {
+    const v = s.value.toLocaleLowerCase("it");
+    if (v === q) continue;
+    if (v.startsWith(q)) starts.push(s);
+    else if (v.split(/[\s,/·-]+/).some((w) => w.startsWith(q))) words.push(s);
+    if (starts.length >= 6) break;
+  }
+  return [...starts, ...words].slice(0, 6);
+}
+
 function CellEditor({
   column,
   selectAll,
@@ -1151,21 +1183,97 @@ function CellEditor({
   setDraft,
   onCommit,
   onKey,
+  onPick,
+  suggestions,
 }: {
   column: OpsColumn;
   selectAll: boolean;
   draft: string;
   setDraft: (v: string) => void;
   onCommit: () => void;
-  onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) => void;
+  onPick: (value: string) => void;
+  suggestions: Suggestion[];
 }) {
   const areaRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [active, setActive] = useState(0);
+  const [closed, setClosed] = useState(false);
+  const [box, setBox] = useState<{ left: number; top: number; width: number } | null>(null);
+  const matches = closed ? [] : matchSuggestions(suggestions, draft);
+
   useLayoutEffect(() => {
     const el = areaRef.current;
     if (!el) return;
     el.style.height = "auto";
     el.style.height = `${el.scrollHeight}px`;
   }, [draft]);
+
+  // il riquadro dei suggerimenti sta sotto la cella (posizione fissa: non viene tagliato dalla tabella)
+  useLayoutEffect(() => {
+    const el = areaRef.current ?? inputRef.current;
+    const cell = el?.closest("td");
+    if (!cell || matches.length === 0) return;
+    const r = cell.getBoundingClientRect();
+    const width = Math.max(r.width, 220);
+    setBox({ left: Math.min(r.left, window.innerWidth - width - 8), top: r.bottom + 2, width });
+  }, [draft, matches.length]);
+
+  const handleKey = (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (matches.length > 0) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        setActive((i) => (i + (e.key === "ArrowDown" ? 1 : matches.length - 1)) % matches.length);
+        return;
+      }
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setClosed(true);
+        return;
+      }
+      if ((e.key === "Enter" && !e.shiftKey && !e.altKey) || e.key === "Tab") {
+        onKey(e, matches[Math.min(active, matches.length - 1)].value);
+        return;
+      }
+    }
+    onKey(e);
+  };
+  const change = (v: string) => {
+    setDraft(v);
+    setActive(0);
+    setClosed(false);
+  };
+
+  const list =
+    matches.length > 0 && box ? (
+      <ul
+        role="listbox"
+        aria-label="Suggerimenti"
+        className="fixed z-50 overflow-hidden rounded-lg border border-[#e6d7bb] bg-white py-1 text-[13px] shadow-xl"
+        style={{ left: box.left, top: box.top, width: box.width }}
+      >
+        {matches.map((m, i) => (
+          <li key={m.value}>
+            <button
+              type="button"
+              role="option"
+              aria-selected={i === active}
+              // mousedown: sceglie prima che la cella perda il fuoco
+              onMouseDown={(e) => {
+                e.preventDefault();
+                onPick(m.value);
+              }}
+              onMouseEnter={() => setActive(i)}
+              className={`block w-full truncate px-3 py-1.5 text-left ${i === active ? "bg-[#233c5e] text-white" : "text-slate-800 hover:bg-[#faf3e6]"}`}
+            >
+              {m.value}
+              {m.hint && <span className={`ml-2 text-[11px] ${i === active ? "text-white/70" : "text-slate-400"}`}>{m.hint}</span>}
+            </button>
+          </li>
+        ))}
+        <li className="border-t border-slate-100 px-3 pt-1 text-[10.5px] text-slate-400">Invio o Tab per scegliere · Esc per chiudere</li>
+      </ul>
+    ) : null;
 
   const cls = "block w-full resize-none border-0 bg-transparent p-0 text-[13px] leading-[1.25rem] text-slate-900 outline-none focus:shadow-none";
   if (column.key === "service_date")
@@ -1183,31 +1291,38 @@ function CellEditor({
     );
   if (column.multiline)
     return (
-      <textarea
-        ref={areaRef}
-        autoFocus
-        rows={1}
-        value={draft}
-        onChange={(e) => setDraft(e.target.value)}
-        onBlur={onCommit}
-        onKeyDown={onKey}
-        onFocus={(e) => (selectAll ? e.currentTarget.select() : e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length))}
-        className={cls}
-        style={{ boxShadow: "none" }}
-      />
+      <>
+        <textarea
+          ref={areaRef}
+          autoFocus
+          rows={1}
+          value={draft}
+          onChange={(e) => change(e.target.value)}
+          onBlur={onCommit}
+          onKeyDown={handleKey}
+          onFocus={(e) => (selectAll ? e.currentTarget.select() : e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length))}
+          className={cls}
+          style={{ boxShadow: "none" }}
+        />
+        {list}
+      </>
     );
   return (
-    <input
-      autoFocus
-      value={draft}
-      list={column.suggest ? `ops-dl-${column.key}` : undefined}
-      onFocus={(e) => (selectAll ? e.currentTarget.select() : e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length))}
-      onChange={(e) => setDraft(e.target.value)}
-      onBlur={onCommit}
-      onKeyDown={onKey}
-      className={`${cls} ${column.key === "pax" ? "text-center" : column.key === "meeting_time" ? "text-right" : ""}`}
-      style={{ boxShadow: "none" }}
-    />
+    <>
+      <input
+        ref={inputRef}
+        autoFocus
+        value={draft}
+        autoComplete="off"
+        onFocus={(e) => (selectAll ? e.currentTarget.select() : e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length))}
+        onChange={(e) => change(e.target.value)}
+        onBlur={onCommit}
+        onKeyDown={handleKey}
+        className={`${cls} ${column.key === "pax" ? "text-center" : column.key === "meeting_time" ? "text-right" : ""}`}
+        style={{ boxShadow: "none" }}
+      />
+      {list}
+    </>
   );
 }
 
