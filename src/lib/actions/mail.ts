@@ -35,7 +35,14 @@ async function myName(): Promise<string> {
     supabase.from("network_profiles").select("business_name").eq("user_id", user.id).maybeSingle(),
     supabase.from("profiles").select("agency_name, full_name").eq("id", user.id).maybeSingle(),
   ]);
-  return (np as { business_name?: string } | null)?.business_name || (pr as { agency_name?: string; full_name?: string } | null)?.agency_name || (pr as { full_name?: string } | null)?.full_name || "";
+  const company = (np as { business_name?: string } | null)?.business_name || (pr as { agency_name?: string; full_name?: string } | null)?.agency_name || (pr as { full_name?: string } | null)?.full_name || "";
+  // Chi scrive per un'agenzia con un team: «Mario Rossi · Agenzia X»
+  if (user.personId !== user.id) {
+    const { data: me } = await supabase.from("profiles").select("full_name").eq("id", user.personId).maybeSingle();
+    const person = (me as { full_name?: string } | null)?.full_name?.trim();
+    if (person) return company ? `${person} · ${company}` : person;
+  }
+  return company;
 }
 
 // ---------------- Scrivere ----------------
@@ -124,6 +131,31 @@ export async function setThreadState(threadId: string, state: { read?: boolean; 
   refresh(threadId);
   return { ok: true };
 }
+
+// ---------------- Posta del team ----------------
+// Passa la conversazione a un collega (con una nota interna che il partner non vede),
+// la prende in carico chi la apre (personId = sé stessi) o la rimette nella posta generale (null)
+export async function assignThread(threadId: string, personId: string | null, note: string): Promise<MailResult> {
+  if (!UUID.test(threadId) || (personId !== null && !UUID.test(personId))) return { ok: false, error: "Dati non validi." };
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("mail_assign", { p_thread: threadId, p_person: personId, p_note: note.trim().slice(0, 1000) || null });
+  if (error) return { ok: false, error: teamMessage(error.message) };
+  refresh(threadId);
+  return { ok: true };
+}
+
+// Solo i titolari: la conversazione la segue e la vede solo chi la rende privata
+export async function setThreadPrivate(threadId: string, isPrivate: boolean): Promise<MailResult> {
+  if (!UUID.test(threadId)) return { ok: false, error: "Conversazione non trovata." };
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("mail_set_private", { p_thread: threadId, p_private: isPrivate });
+  if (error) return { ok: false, error: teamMessage(error.message) };
+  refresh(threadId);
+  return { ok: true };
+}
+
+const teamMessage = (m?: string) =>
+  m && !/function|relation|schema cache|does not exist|permission denied/i.test(m) ? m : "Per la posta del team serve l'aggiornamento del database (migrazione 0077).";
 
 export async function addParticipant(threadId: string, userId: string): Promise<MailResult> {
   if (!UUID.test(threadId) || !UUID.test(userId)) return { ok: false, error: "Dati non validi." };

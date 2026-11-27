@@ -3,15 +3,24 @@
 import { Fragment, useState, useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Archive, ArrowLeft, Download, FileText, Forward, Inbox, Mail, MailOpen, Paperclip, Sparkles, Star, UserPlus, X } from "lucide-react";
+import { Archive, ArrowLeft, Download, FileText, Forward, Hand, Inbox, Lock, LockOpen, Mail, MailOpen, Paperclip, Send, Sparkles, Star, UserPlus, Users, X } from "lucide-react";
 import Composer from "@/components/mail/Composer";
 import OrderCard from "@/components/orders/OrderCard";
-import { addParticipant, attachmentUrl, forwardMessage, setThreadState, summarizeWithZefiro } from "@/lib/actions/mail";
+import { addParticipant, assignThread, attachmentUrl, forwardMessage, setThreadPrivate, setThreadState, summarizeWithZefiro } from "@/lib/actions/mail";
 import { fileSize, initials, mailDateFull, type MailAttachment, type MailMessage } from "@/lib/mail/shared";
 import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
 import type { MailSummary } from "@/lib/mailAi";
 
 type Person = { id: string; name: string };
+
+// Posta del team: chi segue la conversazione dentro l'agenzia (null = account senza colleghi)
+export type ThreadTeam = {
+  people: Person[];
+  assigneeId: string | null;
+  isPrivate: boolean;
+  handoff: { by: string; note: string | null; at: string | null } | null;
+  isTitolare: boolean;
+};
 
 // Testo del messaggio con i link cliccabili (niente HTML: solo testo e a capo)
 function Body({ text }: { text: string }) {
@@ -62,11 +71,112 @@ function Attachments({ list, thumbs }: { list: MailAttachment[]; thumbs: Record<
   );
 }
 
+// «Lo segue»: chi segue la conversazione nell'agenzia, passaggio a un collega con nota, privata (titolari)
+function TeamBar({
+  team,
+  mePerson,
+  pending,
+  passing,
+  setPassing,
+  passTo,
+  setPassTo,
+  passNote,
+  setPassNote,
+  onAssign,
+  onPrivate,
+}: {
+  team: ThreadTeam;
+  mePerson: string;
+  pending: boolean;
+  passing: boolean;
+  setPassing: (v: boolean) => void;
+  passTo: string | null;
+  setPassTo: (v: string | null) => void;
+  passNote: string;
+  setPassNote: (v: string) => void;
+  onAssign: (person: string | null, note: string) => void;
+  onPrivate: (v: boolean) => void;
+}) {
+  const assignee = team.people.find((p) => p.id === team.assigneeId);
+  const mineNow = team.assigneeId === mePerson;
+  const colleagues = team.people.filter((p) => p.id !== mePerson);
+  const btn = "inline-flex items-center gap-1.5 rounded-full border border-[#e6d7bb] bg-white px-3 py-1 text-sm font-medium text-[#233c5e] hover:border-[#c58f2d] disabled:opacity-50";
+  return (
+    <div className="mt-3 space-y-2">
+      {team.handoff && mineNow && (
+        <div className="rounded-xl border border-[#cda876] bg-[#fff6e3] px-4 py-3 text-sm text-slate-800">
+          <p className="flex items-center gap-2 font-semibold text-[#8a5a12]"><Hand size={15} /> {team.handoff.by} ti ha passato questa conversazione</p>
+          {team.handoff.note && <p className="mt-1 whitespace-pre-wrap">«{team.handoff.note}»</p>}
+          <p className="mt-1 text-xs text-slate-500">La nota è interna: il partner non la vede.</p>
+        </div>
+      )}
+      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-[#faf3e6] px-3 py-2 text-sm">
+        <span className="flex items-center gap-1.5 text-slate-600">
+          <Users size={15} className="text-[#8a5a12]" /> Lo segue:
+          <strong className="text-slate-900">{mineNow ? "tu" : assignee?.name ?? "nessuno (posta generale)"}</strong>
+          {team.isPrivate && <span className="rounded bg-[#233c5e] px-1.5 text-[11px] font-semibold uppercase text-white">Privata</span>}
+        </span>
+        <span className="ml-auto flex flex-wrap gap-1.5">
+          {!mineNow && (
+            <button type="button" disabled={pending} onClick={() => onAssign(mePerson, "")} className={btn}>
+              <Hand size={14} /> Prendi in carico
+            </button>
+          )}
+          {colleagues.length > 0 && (
+            <button type="button" disabled={pending} onClick={() => { setPassing(!passing); setPassTo(null); }} className={btn} aria-expanded={passing}>
+              <Send size={14} /> Passa a un collega
+            </button>
+          )}
+          {team.isTitolare && (
+            <button
+              type="button"
+              disabled={pending}
+              onClick={() => onPrivate(!team.isPrivate)}
+              className={btn}
+              title={team.isPrivate ? "Torna visibile agli altri titolari" : "La vedi e la segui solo tu: gli altri titolari e i colleghi non la vedono"}
+            >
+              {team.isPrivate ? <LockOpen size={14} /> : <Lock size={14} />} {team.isPrivate ? "Togli privata" : "Rendi privata"}
+            </button>
+          )}
+        </span>
+      </div>
+      {passing && (
+        <div className="space-y-2 rounded-xl border border-[#e6d7bb] bg-white p-3 text-sm">
+          <p className="font-medium text-slate-700">A chi la passi?</p>
+          <div className="flex flex-wrap gap-1.5">
+            {colleagues.map((p) => (
+              <button key={p.id} type="button" onClick={() => setPassTo(p.id)} aria-pressed={passTo === p.id} className={`rounded-full border px-3 py-1 ${passTo === p.id ? "border-[#233c5e] bg-[#233c5e] text-white" : "border-[#e6d7bb] bg-white text-[#233c5e]"}`}>
+                {p.name}
+              </button>
+            ))}
+          </div>
+          <textarea value={passNote} onChange={(e) => setPassNote(e.target.value)} rows={2} maxLength={1000} placeholder="Nota per il collega (facoltativa, il partner non la vede)" className="w-full rounded-lg border border-slate-300 px-3 py-2" />
+          <div className="flex flex-wrap items-center gap-2">
+            <button type="button" disabled={pending || !passTo} onClick={() => onAssign(passTo, passNote)} className="rounded-full bg-[#233c5e] px-4 py-1.5 font-semibold text-white disabled:opacity-50">
+              Passa la conversazione
+            </button>
+            {team.assigneeId && (
+              <button type="button" disabled={pending} onClick={() => onAssign(null, "")} className="px-2 text-slate-600 underline">
+                Rimettila nella posta generale
+              </button>
+            )}
+            <button type="button" onClick={() => setPassing(false)} className="px-2 text-slate-600">Annulla</button>
+          </div>
+          {!team.isTitolare && <p className="text-xs text-slate-500">Dopo averla passata non la vedrai più: la vedranno chi la riceve e i titolari.</p>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ThreadView({
   base,
   me,
+  mePerson,
   thread,
   people,
+  authors,
+  team,
   messages,
   attachments,
   thumbs,
@@ -76,8 +186,11 @@ export default function ThreadView({
 }: {
   base: string;
   me: string;
+  mePerson: string;
   thread: { id: string; subject: string; starred: boolean; archived: boolean; kind: string };
   people: Person[];
+  authors: Record<string, string>;
+  team: ThreadTeam | null;
   messages: MailMessage[];
   attachments: MailAttachment[];
   thumbs: Record<string, string>;
@@ -96,7 +209,16 @@ export default function ThreadView({
   const [fwNote, setFwNote] = useState("");
   const [adding, setAdding] = useState(false);
 
-  const nameOf = (id: string | null) => (id === me ? "Tu" : people.find((p) => p.id === id)?.name ?? "Grand Route");
+  const [passing, setPassing] = useState(false);
+  const [passTo, setPassTo] = useState<string | null>(null);
+  const [passNote, setPassNote] = useState("");
+
+  // Chi ha scritto: «Tu», il collega per nome, oppure la persona e l'agenzia del partner
+  const nameOf = (id: string | null, person?: string | null) => {
+    if ((person ?? id) === mePerson) return "Tu";
+    if (person && authors[person]) return authors[person];
+    return people.find((p) => p.id === id)?.name ?? "Grand Route";
+  };
   const others = people.filter((p) => p.id !== me);
   const byMessage = (id: string) => attachments.filter((a) => a.message_id === id);
   const realMessages = messages.filter((m) => m.kind === "messaggio");
@@ -159,6 +281,28 @@ export default function ThreadView({
           <span className="w-full text-xs text-slate-500">Chi aggiungi vede anche i messaggi precedenti della conversazione.</span>
         </div>
       )}
+      {team && (
+        <TeamBar
+          team={team}
+          mePerson={mePerson}
+          pending={pending}
+          passing={passing}
+          setPassing={setPassing}
+          passTo={passTo}
+          setPassTo={setPassTo}
+          passNote={passNote}
+          setPassNote={setPassNote}
+          onAssign={(person, note) =>
+            act(() => assignThread(thread.id, person, note), () => {
+              setPassing(false);
+              setPassNote("");
+              // chi non è titolare, dopo averla passata, non la vede più
+              if (person !== mePerson && !team.isTitolare) router.push(base);
+            })
+          }
+          onPrivate={(v) => act(() => setThreadPrivate(thread.id, v))}
+        />
+      )}
       {summary && (
         <div className="mt-3 rounded-2xl border border-[#e6d7bb] bg-[#fffaf0] p-4 text-sm text-slate-700">
           <div className="flex items-start justify-between gap-2">
@@ -198,7 +342,7 @@ export default function ThreadView({
             )}
             {m.kind === "evento" ? (
               <p className="px-2 text-center text-xs text-slate-500">
-                <span className="font-medium text-slate-600">{nameOf(m.author_id)}</span> · {m.body} · {mailDateFull(m.created_at)}
+                <span className="font-medium text-slate-600">{nameOf(m.author_id, m.author_person)}</span> · {m.body} · {mailDateFull(m.created_at)}
               </p>
             ) : (
               <article className="rounded-2xl border border-[#e6d7bb] bg-white p-4 shadow-sm">
@@ -208,11 +352,11 @@ export default function ThreadView({
                   className="-m-2 flex w-[calc(100%+1rem)] items-start gap-3 rounded-xl p-2 text-left"
                 >
                   <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${m.author_id === me ? "bg-[#233c5e] text-white" : "bg-[#f2e2c4] text-[#233c5e]"}`}>
-                    {initials(nameOf(m.author_id))}
+                    {initials(nameOf(m.author_id, m.author_person))}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-baseline justify-between gap-x-3">
-                      <span className="font-semibold text-slate-900">{nameOf(m.author_id)}</span>
+                      <span className="font-semibold text-slate-900">{nameOf(m.author_id, m.author_person)}</span>
                       <span className="text-xs text-slate-500">{mailDateFull(m.created_at)}</span>
                     </span>
                     {!(expanded[m.id] ?? openByDefault(m.id, idx)) && (

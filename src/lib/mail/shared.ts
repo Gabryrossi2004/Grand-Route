@@ -1,6 +1,6 @@
 // Posta di Grand Route: tipi e piccole regole comuni a pagine e server.
 
-export type MailFolder = "inbox" | "orders" | "sent" | "starred" | "archived" | "all";
+export type MailFolder = "inbox" | "mine" | "general" | "private" | "orders" | "sent" | "starred" | "archived" | "all";
 
 export const FOLDERS: { id: MailFolder; label: string }[] = [
   { id: "inbox", label: "In arrivo" },
@@ -10,7 +10,19 @@ export const FOLDERS: { id: MailFolder; label: string }[] = [
   { id: "archived", label: "Archiviati" },
   { id: "all", label: "Tutti" },
 ];
-export const isFolder = (v: unknown): v is MailFolder => typeof v === "string" && FOLDERS.some((f) => f.id === v);
+// Cartelle in più per le agenzie con un team: «Le mie» per tutti, «Posta generale» e «Private» per i titolari
+export const TEAM_FOLDERS: { id: MailFolder; label: string; titolare: boolean }[] = [
+  { id: "mine", label: "Seguite da me", titolare: false },
+  { id: "general", label: "Posta generale", titolare: true },
+  { id: "private", label: "Private", titolare: true },
+];
+export function foldersFor(team: { isTitolare: boolean } | null): { id: MailFolder; label: string }[] {
+  if (!team) return FOLDERS;
+  const extra = TEAM_FOLDERS.filter((f) => !f.titolare || team.isTitolare);
+  return [FOLDERS[0], ...extra, ...FOLDERS.slice(1)];
+}
+export const isFolder = (v: unknown): v is MailFolder =>
+  typeof v === "string" && (FOLDERS.some((f) => f.id === v) || TEAM_FOLDERS.some((f) => f.id === v));
 
 export type ThreadRow = {
   thread_id: string;
@@ -26,10 +38,15 @@ export type ThreadRow = {
   last_snippet: string | null;
   has_attachments: boolean;
   messages_count: number;
+  // posta del team (migrazione 0077)
+  assignee_id?: string | null;
+  assignee_name?: string | null;
+  is_private?: boolean;
+  handed_to_me?: boolean;
 };
 
 export type MailAttachment = { id: string; message_id: string; path: string; name: string; size_bytes: number | null; mime: string | null };
-export type MailMessage = { id: string; author_id: string | null; kind: "messaggio" | "evento"; body: string; created_at: string; draft: boolean };
+export type MailMessage = { id: string; author_id: string | null; author_person?: string | null; kind: "messaggio" | "evento"; body: string; created_at: string; draft: boolean };
 
 export const MAX_FILE_BYTES = 25 * 1024 * 1024;
 export const MAX_FILES = 20;

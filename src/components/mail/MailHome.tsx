@@ -1,15 +1,20 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Paperclip, PenSquare, Search, Star } from "lucide-react";
+import { Hand, Lock, Paperclip, PenSquare, Search, Star } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { getTeamContext, getTeamPeople } from "@/lib/team";
 import ZefiroMailPanel from "@/components/mail/ZefiroMailPanel";
-import { FOLDERS, isFolder, mailDate, type ThreadRow } from "@/lib/mail/shared";
+import { foldersFor, isFolder, mailDate, type ThreadRow } from "@/lib/mail/shared";
 
 // Posta: cartelle, ricerca, elenco delle conversazioni (come una casella email)
 export default async function MailHome({ base, cartella, q, pagina }: { base: string; cartella?: string; q?: string; pagina?: string }) {
   const user = await getCachedUser();
   if (!user) redirect(`/professionisti?next=${base}`);
-  const folder = isFolder(cartella) ? cartella : "inbox";
+  const [ctx, teamPeople] = await Promise.all([getTeamContext(), getTeamPeople()]);
+  // Cartelle e etichette del team solo per le agenzie con colleghi
+  const team = ctx && teamPeople.length > 1 ? { isTitolare: ctx.isTitolare } : null;
+  const folders = foldersFor(team);
+  const folder = isFolder(cartella) && folders.some((f) => f.id === cartella) ? cartella : "inbox";
   const query = (q ?? "").trim().slice(0, 100);
   const page = Math.max(0, Number(pagina) || 0);
   const PAGE = 50;
@@ -44,7 +49,7 @@ export default async function MailHome({ base, cartella, q, pagina }: { base: st
         <button className="rounded-full border border-[#e6d7bb] bg-white px-4 text-sm font-medium text-[#233c5e]">Cerca</button>
       </form>
       <nav className="mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label="Cartelle">
-        {FOLDERS.map((f) => (
+        {folders.map((f) => (
           <Link key={f.id} href={href(f.id)} className={`shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium ${!query && folder === f.id ? "bg-[#233c5e] text-white" : "border border-[#e6d7bb] bg-white text-[#233c5e]"}`}>
             {f.label}
             {f.id === "inbox" && unreadCount > 0 && <span className="ml-1.5 rounded-full bg-[#c0392b] px-1.5 text-[11px] font-semibold text-white">{unreadCount}</span>}
@@ -55,7 +60,15 @@ export default async function MailHome({ base, cartella, q, pagina }: { base: st
 
       {rows.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-dashed border-[#e6d7bb] bg-white/70 p-8 text-center text-slate-600">
-          {query ? "Nessuna conversazione trovata." : folder === "inbox" ? "Nessun messaggio in arrivo. Le richieste di servizio e le risposte dei partner arrivano qui." : "Nessuna conversazione in questa cartella."}
+          {query
+            ? "Nessuna conversazione trovata."
+            : folder === "inbox"
+              ? "Nessun messaggio in arrivo. Le richieste di servizio e le risposte dei partner arrivano qui."
+              : folder === "general"
+                ? "Nessuna conversazione da assegnare: qui arrivano i messaggi dei partner che nessuno del team segue ancora."
+                : folder === "private"
+                  ? "Nessuna conversazione privata. Aprendo una conversazione puoi renderla privata: la vedrai solo tu."
+                  : "Nessuna conversazione in questa cartella."}
         </div>
       ) : (
         <ul className="mt-4 divide-y divide-[#f2e2c4] overflow-hidden rounded-2xl border border-[#e6d7bb] bg-white">
@@ -75,6 +88,10 @@ export default async function MailHome({ base, cartella, q, pagina }: { base: st
                     </span>
                     <span className="flex items-center gap-1.5">
                       {r.order_id && <span className="shrink-0 rounded bg-[#faf3e6] px-1.5 text-[11px] font-semibold uppercase text-[#8a5a12]">Ordine</span>}
+                      {team && r.handed_to_me && <span className="inline-flex shrink-0 items-center gap-1 rounded bg-[#fff0cf] px-1.5 text-[11px] font-semibold text-[#8a5a12]"><Hand size={11} /> Passata a te</span>}
+                      {team && r.is_private && <span className="inline-flex shrink-0 items-center gap-1 rounded bg-[#233c5e] px-1.5 text-[11px] font-semibold text-white"><Lock size={10} /> Privata</span>}
+                      {team && !r.assignee_id && <span className="shrink-0 rounded border border-[#e6d7bb] px-1.5 text-[11px] font-semibold text-slate-600">Generale</span>}
+                      {team && r.assignee_id && r.assignee_id !== ctx?.userId && <span className="max-w-[9rem] shrink-0 truncate rounded bg-slate-100 px-1.5 text-[11px] font-medium text-slate-600">→ {r.assignee_name ?? "collega"}</span>}
                       <span className={`truncate text-sm ${r.unread ? "font-semibold text-[#233c5e]" : "text-[#233c5e]"}`}>{r.subject}</span>
                       {r.has_attachments && <Paperclip size={13} className="shrink-0 text-slate-400" />}
                       {r.starred && <Star size={13} className="shrink-0 fill-[#c58f2d] text-[#c58f2d]" />}
