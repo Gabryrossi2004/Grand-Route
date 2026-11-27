@@ -6,7 +6,7 @@ export const FOLDERS: { id: MailFolder; label: string }[] = [
   { id: "inbox", label: "In arrivo" },
   { id: "orders", label: "Richieste di servizio" },
   { id: "sent", label: "Inviati" },
-  { id: "starred", label: "Con stella" },
+  { id: "starred", label: "Preferiti" },
   { id: "archived", label: "Archiviati" },
   { id: "all", label: "Tutti" },
 ];

@@ -775,11 +775,11 @@ const sections: Section[] = [
             La <strong>Posta</strong> (nel gestionale sta solo in <strong>Messaggi → Posta con i partner</strong>; guide, autisti e
             strutture, che non hanno il gestionale, la trovano nel menu della sezione Partner) funziona come un&apos;email, ma tutta dentro Grand Route: scrivi a uno
             o più partner con cui hai una collaborazione, con oggetto, testo e <strong>allegati</strong> (fino a 20 file da
-            25 MB, anche trascinandoli). Le cartelle sono <strong>In arrivo, Richieste di servizio, Inviati, Con stella, Archiviati e Tutti</strong>;
+            25 MB, anche trascinandoli). Le cartelle sono <strong>In arrivo, Richieste di servizio, Inviati, Preferiti, Archiviati e Tutti</strong>;
             la ricerca guarda oggetto, testo, nomi degli allegati e partner. Come in Outlook, la <strong>risposta si scrive in alto</strong> (il riquadro cresce mentre scrivi e la bozza resta salvata
             se cambi pagina) e sotto c&apos;è la conversazione, dal messaggio più recente; in quelle lunghe i messaggi in mezzo si
             aprono con «Mostra messaggi precedenti». Puoi rispondere,
-            <strong> inoltrare</strong> (anche con gli allegati), segnare come da leggere, mettere una stella, archiviare e
+            <strong> inoltrare</strong> (anche con gli allegati), segnare come da leggere, aggiungere ai preferiti, archiviare e
             aggiungere un partner alla conversazione. Ogni <strong>ordine di servizio ha la sua conversazione</strong>: la
             richiesta parte già scritta nel formato delle vostre email (RICHIESTA SERVIZIO – data – nome × pax) e conferme,
             modifiche, variazioni, fatture e solleciti compaiono come righe di cronologia, con la scheda dell&apos;ordine in

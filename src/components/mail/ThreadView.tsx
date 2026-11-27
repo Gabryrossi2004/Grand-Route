@@ -258,7 +258,7 @@ export default function ThreadView({
       </div>
       <div className="mt-3 flex flex-wrap gap-1 border-y border-[#f2e2c4] py-1.5">
         <button type="button" disabled={pending} onClick={() => act(() => setThreadState(thread.id, { starred: !thread.starred }))} className={tool}>
-          <Star size={15} className={thread.starred ? "fill-[#c58f2d] text-[#c58f2d]" : ""} /> {thread.starred ? "Togli la stella" : "Stella"}
+          <Star size={15} className={thread.starred ? "fill-[#c58f2d] text-[#c58f2d]" : ""} /> {thread.starred ? "Togli dai preferiti" : "Aggiungi ai preferiti"}
         </button>
         <button type="button" disabled={pending} onClick={() => act(() => setThreadState(thread.id, { archived: !thread.archived }), () => !thread.archived && router.push(base))} className={tool}>
           {thread.archived ? <Inbox size={15} /> : <Archive size={15} />} {thread.archived ? "Riporta in arrivo" : "Archivia"}
