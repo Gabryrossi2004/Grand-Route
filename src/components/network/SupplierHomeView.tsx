@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, BarChart3, CalendarDays, CheckCircle2, Circle, ClipboardList, FileText, Inbox, Mail, Plus, Receipt, Search } from "lucide-react";
+import { ArrowRight, BadgeCheck, BarChart3, CalendarDays, CheckCircle2, Circle, ClipboardList, FileText, Inbox, Mail, Plus, Receipt, Search, Users } from "lucide-react";
 import ServiceCard from "@/components/network/ServiceCard";
 import { addDays } from "@/lib/orders/shared";
 import { dayLabel, onDay, waitingForMe, type AgendaRow } from "@/lib/network/agenda";
@@ -200,6 +200,7 @@ export default function SupplierHomeView({ me, today, hour, agendaError, agenda,
           { href: "/rete/statistiche", label: "Statistiche e andamento", icon: <BarChart3 size={18} /> },
           { href: "/rete/messaggi", label: "Richieste e collaborazioni", icon: <Inbox size={18} /> },
           { href: "/rete", label: "Trova altri partner", icon: <Search size={18} /> },
+          { href: "/rete/invita", label: "Invita un collega: −20% per 3 mesi", icon: <Users size={18} /> },
         ].map((q) => (
           <Link key={q.href} href={q.href} className="flex min-h-12 items-center gap-2.5 rounded-2xl border border-[#e6d7bb] bg-white px-4 text-sm font-semibold text-[#233c5e] transition hover:bg-[#faf3e6] active:scale-[0.98]">
             {q.icon} {q.label}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Gift } from "lucide-react";
 import type { AiUsageSummary } from "@/lib/aiQuota";
 import { AI_PLANS, SHOW_PLAN_PRICES, formatEuro, type AiPlanId } from "@/lib/aiPricing";
 import { ASSISTANT_NAME } from "@/lib/assistant";
@@ -26,7 +27,9 @@ export default function ZefiroUsageCard({ summary }: { summary: AiUsageSummary }
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const budget = AI_PLANS.find((p) => p.id === plan)?.dailyBudgetEur ?? summary.dailyBudgetEur;
+  // con il bonus di benvenuto vale il più ampio tra il pacchetto scelto e quello regalato
+  const bonusBudget = summary.bonus ? (AI_PLANS.find((p) => p.id === summary.bonus!.plan)?.dailyBudgetEur ?? 0) : 0;
+  const budget = Math.max(AI_PLANS.find((p) => p.id === plan)?.dailyBudgetEur ?? summary.dailyBudgetEur, bonusBudget);
   const percent = Math.min(100, Math.round((summary.spentTodayEur / budget) * 100));
   const remaining = Math.max(0, budget - summary.spentTodayEur);
   const barColor = percent >= 90 ? "bg-red-500" : percent >= 70 ? "bg-amber-500" : "bg-[#cda876]";
@@ -60,6 +63,16 @@ export default function ZefiroUsageCard({ summary }: { summary: AiUsageSummary }
       <p className="mb-4 text-xs text-slate-500">
         Costo reale delle richieste fatte a {ASSISTANT_NAME}. Il budget giornaliero si rinnova a mezzanotte.
       </p>
+
+      {summary.bonus && (
+        <p className="mb-4 flex items-start gap-2 rounded-lg border border-[#cda876] bg-[#fdf6e6] p-3 text-sm text-[#233c5e]">
+          <Gift size={18} className="mt-0.5 shrink-0 text-[#c58f2d]" aria-hidden />
+          <span>
+            <strong>Regalo di benvenuto:</strong> hai {ASSISTANT_NAME} <strong>{AI_PLANS.find((p) => p.id === summary.bonus!.plan)?.name}</strong> gratis ancora{" "}
+            <strong>{summary.bonus.daysLeft} {summary.bonus.daysLeft === 1 ? "giorno" : "giorni"}</strong> (fino al {new Date(summary.bonus.until).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}).
+          </span>
+        </p>
+      )}
 
       {!summary.available && (
         <p className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800">

@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { cleanReferralCode } from "@/lib/referral";
 import { isBusinessKind, isTradeKind } from "@/lib/network/kinds";
 import { formToRecord, hasBusinessInput, validateNetworkProfile } from "@/lib/network/validate";
 
@@ -23,7 +24,8 @@ export async function signup(_prevState: State, formData: FormData): Promise<Sta
 
   // Dati dell'attività: obbligatori per i fornitori, facoltativi per agenzie e tour operator (si completano nella Rete)
   const record = formToRecord(formData);
-  for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth"]) delete record[k];
+  const referral = cleanReferralCode(formData.get("referral"));
+  for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth", "referral"]) delete record[k];
   const trade = isTradeKind(kind);
   let draft: Record<string, unknown> | null = null;
   if (!trade || hasBusinessInput(record)) {
@@ -41,6 +43,7 @@ export async function signup(_prevState: State, formData: FormData): Promise<Sta
       data: {
         full_name: fullName,
         business_kind: kind,
+        ...(referral ? { referral_code: referral } : {}),
         ...(draft ? { network_draft: draft } : {}),
       },
     },

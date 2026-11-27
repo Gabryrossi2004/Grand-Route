@@ -27,5 +27,7 @@ export async function professionalLogin(_prev: ProLoginState, formData: FormData
     await supabase.auth.signOut();
     return { error: "Questo account è di un cliente o di un viaggiatore, non di un professionista del turismo.", otherDoor: true };
   }
+  // Chi si è registrato dal link di un collega: lega l'invito (una volta sola; senza la migrazione 0074 non succede nulla)
+  await supabase.rpc("claim_referral");
   redirect(safeNext("pro", next) ?? decision.to);
 }

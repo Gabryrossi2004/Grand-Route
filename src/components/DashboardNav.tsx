@@ -50,6 +50,7 @@ const navItems: NavItem[] = [
     children: [
       { href: "/dashboard/settings", label: "Impostazioni" },
       { href: "/dashboard/sconto", label: "Sconto Rotta", hint: "Viaggi verificati e sconto sul piano" },
+      { href: "/dashboard/invita", label: "Invita un collega", hint: "−20% per 3 mesi a entrambi" },
       { href: "/dashboard/settings/guida", label: "Guida all'uso" },
       { href: "/dashboard?iniziare=1", label: "Per iniziare", hint: "Riapri la lista di benvenuto" },
     ],

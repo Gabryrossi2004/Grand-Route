@@ -13,7 +13,7 @@ import { BUSINESS_KINDS, KIND_INFO, isBusinessKind, isTradeKind, type BusinessKi
 const ICONS = { briefcase: Briefcase, building: Building2, map: MapPinned, compass: Compass, car: Car, hotel: Hotel, mountain: Mountain, shapes: Shapes };
 const input = "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#cda876] focus:ring-2 focus:ring-[#f2e2c4]";
 
-export default function SignupForm({ initialKind }: { initialKind?: string }) {
+export default function SignupForm({ initialKind, referral }: { initialKind?: string; referral?: string | null }) {
   const [state, setState] = useState<Awaited<ReturnType<typeof signup>>>();
   const [pending, start] = useTransition();
   // Invio manuale: con l'azione automatica il modulo si svuota dopo un errore e si perderebbe tutto quello che hai scritto
@@ -51,9 +51,15 @@ export default function SignupForm({ initialKind }: { initialKind?: string }) {
       <AuthBrandHeader />
       <h1 className="mb-1 text-xl font-semibold text-slate-900">Crea il tuo account</h1>
       <p className="mb-6 text-sm text-slate-500">Per chi lavora nel turismo: agenzie, tour operator, guide, autisti, strutture e fornitori.</p>
+      {referral && (
+        <p className="-mt-3 mb-6 rounded-xl border border-[#cda876] bg-[#fdf6e6] px-4 py-3 text-sm text-[#233c5e]">
+          <strong>Sei stato invitato da un collega!</strong> Quando il tuo profilo sarà verificato e avrai iniziato a lavorare su Grand Route avrai uno sconto di benvenuto.
+        </p>
+      )}
 
       <form onSubmit={onSubmit} className="flex flex-col gap-6">
         <input type="hidden" name="kind" value={kind} />
+        {referral && <input type="hidden" name="referral" value={referral} />}
 
         <section>
           <h2 className="mb-3 text-base font-semibold text-slate-900">1. Che attività svolgi?</h2>

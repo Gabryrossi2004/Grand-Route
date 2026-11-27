@@ -6,12 +6,14 @@ import DepartureCalendar from "@/components/DepartureCalendar";
 import { buildAccountingBriefing, buildBriefing, type AccountingBriefingData } from "@/lib/agencyBriefing";
 import { riconfermaDays } from "@/lib/opsSheet";
 import { romeToday } from "@/lib/destinationInfo";
-import { Plane } from "lucide-react";
+import { Plane, Users } from "lucide-react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import WelcomeZefiro from "@/components/WelcomeZefiro";
 import RottaCard from "@/components/RottaCard";
+import WelcomeBonusBanner from "@/components/WelcomeBonusBanner";
+import { welcomeBonus } from "@/lib/welcomeBonus";
 import type { RottaSummary } from "@/lib/rotta";
 import { agencySteps, shouldShowWelcome, type OnboardingStatus } from "@/lib/onboarding";
 
@@ -94,11 +96,12 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
     supabase.rpc("network_accounting_briefing"),
     // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora)
     supabase.rpc("onboarding_status"),
-    supabase.from("profiles").select("full_name").eq("id", user?.id ?? "").maybeSingle(),
+    supabase.from("profiles").select("full_name, created_at").eq("id", user?.id ?? "").maybeSingle(),
     // Sconto Rotta (vuoto se la migrazione 0073 non c'è ancora)
     supabase.rpc("rotta_summary"),
   ]);
   const rottaSummary = (rotta as RottaSummary | null) ?? null;
+  const bonus = welcomeBonus((me as { created_at?: string } | null)?.created_at);
   const onboardingStatus = (onboarding as OnboardingStatus | null) ?? null;
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
@@ -210,9 +213,19 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
         <WelcomeZefiro steps={agencySteps(onboardingStatus)} name={String((me as { full_name?: string | null } | null)?.full_name ?? "").split(" ")[0] || undefined} reopen={reopenStart} />
       )}
 
+      {bonus && <WelcomeBonusBanner bonus={bonus} />}
+
       <ZefiroBriefing items={briefing} hour={romeHour} />
 
       {rottaSummary && <RottaCard s={rottaSummary} />}
+
+      <Link
+        href="/dashboard/invita"
+        className="flex items-center gap-3 rounded-2xl border border-[#e6d7bb] bg-white px-4 py-3 text-sm text-[#233c5e] shadow-sm transition hover:bg-[#faf3e6]"
+      >
+        <Users size={20} className="shrink-0 text-[#c58f2d]" aria-hidden />
+        <span><strong>Invita un collega:</strong> −20% per 3 mesi a te e a lui, quando è verificato e inizia a lavorare.</span>
+      </Link>
 
       <Suspense fallback={null}>
         <ContactTodayCard ownerId={user?.id ?? ""} trips={allTrips} />

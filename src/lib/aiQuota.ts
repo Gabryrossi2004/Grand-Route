@@ -1,5 +1,6 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { costInEuro, formatEuro, parseAiPlan, planById, type AiPlanId, type AiUsageTokens, type PricedModel } from "@/lib/aiPricing";
+import { effectivePlan, welcomeBonus, type WelcomeBonus } from "@/lib/welcomeBonus";
 
 // Limiti d'uso delle funzioni AI (generazione itinerario, lettura listini,
 // lettura richieste dei clienti). Ogni chiamata costa denaro: questi tetti
@@ -51,8 +52,9 @@ export async function recordAiCost(kind: AiKind, usage: AiUsageTokens | null | u
 }
 
 export type AiUsageSummary = {
-  plan: AiPlanId;
-  dailyBudgetEur: number;
+  plan: AiPlanId; // il pacchetto scelto
+  dailyBudgetEur: number; // quello che vale oggi (con il bonus di benvenuto, se c'è)
+  bonus: { daysLeft: number; until: string; plan: AiPlanId } | null;
   spentTodayEur: number;
   spentMonthEur: number;
   callsToday: number;
@@ -61,10 +63,14 @@ export type AiUsageSummary = {
   available: boolean; // false se la migrazione 0035 non è stata eseguita
 };
 
-async function readPlan(userId: string): Promise<AiPlanId> {
+// Pacchetto scelto e bonus di benvenuto (30 giorni di Plus in regalo ai professionisti appena registrati)
+async function readPlan(userId: string): Promise<{ plan: AiPlanId; bonus: WelcomeBonus | null }> {
   const supabase = await createClient();
-  const { data } = await supabase.from("profiles").select("ai_plan").eq("id", userId).maybeSingle();
-  return parseAiPlan((data as { ai_plan?: string } | null)?.ai_plan);
+  const { data } = await supabase.from("profiles").select("ai_plan, created_at, is_professional, is_traveler").eq("id", userId).maybeSingle();
+  const row = data as { ai_plan?: string; created_at?: string; is_professional?: boolean | null; is_traveler?: boolean | null } | null;
+  const plan = parseAiPlan(row?.ai_plan);
+  const eligible = row?.is_professional !== false && !row?.is_traveler;
+  return { plan, bonus: eligible ? welcomeBonus(row?.created_at) : null };
 }
 
 // Consumi dell'utente: oggi e nel mese, con il dettaglio per funzione.
@@ -72,7 +78,8 @@ export async function getAiUsageSummary(): Promise<AiUsageSummary | null> {
   const user = await getCachedUser();
   if (!user) return null;
   const supabase = await createClient();
-  const plan = await readPlan(user.id);
+  const { plan: chosenPlan, bonus } = await readPlan(user.id);
+  const plan = chosenPlan;
   const { day, month } = romeBoundaries();
 
   const { data, error } = await supabase
@@ -83,7 +90,11 @@ export async function getAiUsageSummary(): Promise<AiUsageSummary | null> {
     .gte("created_at", month.toISOString())
     .limit(5000);
 
-  const base = { plan, dailyBudgetEur: planById(plan).dailyBudgetEur };
+  const base = {
+    plan,
+    dailyBudgetEur: planById(effectivePlan(plan, bonus)).dailyBudgetEur,
+    bonus: bonus ? { daysLeft: bonus.daysLeft, until: bonus.until.toISOString(), plan: bonus.plan } : null,
+  };
   if (error) {
     return { ...base, spentTodayEur: 0, spentMonthEur: 0, callsToday: 0, callsMonth: 0, byFeature: [], available: false };
   }
