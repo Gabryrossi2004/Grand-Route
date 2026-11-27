@@ -240,12 +240,14 @@ async function importRows(
 export type AutoImportResult =
   | { status: "added"; count: number }
   | { status: "none" } // nessun servizio nuovo (già tutti nell'Operativo, o itinerario senza attività da importare)
-  | { status: "off" } // spento nelle Impostazioni
+  | { status: "import_off" } // pulsante «Importa i servizi dagli itinerari» spento nelle Impostazioni
+  | { status: "off" } // aggiunta automatica spenta nelle Impostazioni
   | { status: "no_dates" } // il viaggio non ha le date
   | { status: "error" };
 
-/** Viaggio appena segnato «finale»: i suoi servizi entrano da soli nella scheda operativa, già «Confermato»
- *  (si spegne in Impostazioni → Operativo day by day). Quelli già presenti non si duplicano.
+/** Viaggio appena segnato «finale»: se in Impostazioni → Operativo day by day è attiva l'importazione dagli itinerari
+ *  (e non è stata spenta l'aggiunta automatica), i suoi servizi entrano da soli nella scheda operativa, già «Confermato».
+ *  Quelli già presenti non si duplicano.
  *  Non fa mai fallire il cambio di stato del viaggio: dice solo com'è andata. */
 export async function autoImportOnFinal(tripId: string): Promise<AutoImportResult> {
   try {
@@ -257,6 +259,7 @@ export async function autoImportOnFinal(tripId: string): Promise<AutoImportResul
       supabase.from("trips").select("start_date, end_date").eq("id", tripId).eq("owner_id", companyId).maybeSingle(),
     ]);
     const prefs = (profile?.ai_preferences as Record<string, string> | null) ?? {};
+    if (prefs.ops_import !== "on") return { status: "import_off" };
     if (prefs.ops_auto === "off") return { status: "off" };
     const from = (trip as { start_date?: string | null } | null)?.start_date;
     const to = (trip as { end_date?: string | null } | null)?.end_date ?? from;

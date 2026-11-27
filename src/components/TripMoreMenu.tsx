@@ -45,6 +45,7 @@ export default function TripMoreMenu({
   const wrapRef = useRef<HTMLDivElement>(null);
   const [stagePending, startStage] = useTransition();
   const [stageNote, setStageNote] = useState<{ ok: boolean; text: string } | null>(null);
+  const [opsHint, setOpsHint] = useState(false);
 
   // Segna come finale/preliminare e dice cosa è successo nell'Operativo
   const toggleStage = () =>
@@ -53,10 +54,25 @@ export default function TripMoreMenu({
       setOpen(false);
       const o = res.ops;
       if (!o) return setStageNote({ ok: true, text: "Itinerario segnato come preliminare." });
+      // importazione spenta: la prima volta spieghiamo come attivarla, poi non lo diciamo più
+      if (o.status === "import_off" || o.status === "off") {
+        if (o.status === "import_off") {
+          let seen = false;
+          try {
+            seen = window.localStorage.getItem("gr-ops-hint") === "1";
+            window.localStorage.setItem("gr-ops-hint", "1");
+          } catch {
+            // senza memoria del browser lo mostriamo ogni volta: va bene lo stesso
+          }
+          if (!seen) setOpsHint(true);
+        }
+        return;
+      }
       const msg: Record<AutoImportResult["status"], { ok: boolean; text: string }> = {
         added: { ok: true, text: `Itinerario finale: ${o.status === "added" ? o.count : 0} ${o.status === "added" && o.count === 1 ? "servizio aggiunto" : "servizi aggiunti"} all'Operativo, già «Confermato».` },
         none: { ok: true, text: "Itinerario finale. Nessun servizio nuovo per l'Operativo: sono già tutti presenti, oppure l'itinerario non ha attività da importare (le «Info» e il programma a giornata intera non diventano servizi)." },
-        off: { ok: true, text: "Itinerario finale. L'aggiunta automatica all'Operativo è spenta (Impostazioni → Operativo day by day)." },
+        off: { ok: true, text: "" },
+        import_off: { ok: true, text: "" },
         no_dates: { ok: false, text: "Itinerario finale, ma il viaggio non ha le date: aggiungile per far entrare i servizi nell'Operativo, poi segnalo di nuovo come finale." },
         error: { ok: false, text: "Itinerario finale, ma non sono riuscito ad aggiungere i servizi all'Operativo. Puoi usare «Importa dai viaggi» nell'Operativo." },
       };
@@ -92,6 +108,28 @@ export default function TripMoreMenu({
 
   return (
     <div ref={wrapRef} className="relative">
+      {opsHint && (
+        <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-[#17283f]/45 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Servizi nell'Operativo">
+          <div className="modal-card w-full max-w-md rounded-2xl border border-[#e6d7bb] bg-[#fffaf0] p-6 text-center shadow-2xl">
+            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#233c5e] text-[#cda876]">
+              <FileCheck2 size={22} aria-hidden />
+            </span>
+            <h3 className="mt-3 font-[family-name:var(--font-display)] text-xl font-semibold text-[#233c5e]">Itinerario finale</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              Vuoi che i servizi dei viaggi finali entrino da soli nell&apos;<strong>Operativo</strong>, già confermati? Attiva
+              <strong> «Importa i servizi dagli itinerari»</strong> in Impostazioni → Operativo day by day.
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              <button type="button" onClick={() => setOpsHint(false)} className="rounded-full border border-[#cbbfa6] px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white">
+                Non ora
+              </button>
+              <Link href="/dashboard/settings#operativo" onClick={() => setOpsHint(false)} className="rounded-full bg-[#233c5e] px-4 py-2 text-sm font-semibold text-white hover:bg-[#17283f]">
+                Vai alle Impostazioni
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
       {stageNote && (
         <div
           role="status"
@@ -127,7 +165,7 @@ export default function TripMoreMenu({
           <button type="button" role="menuitem" className={item} onClick={toggleStage} disabled={stagePending}>
             <FileCheck2 size={16} /> {stagePending ? "Un attimo…" : isFinal ? "Segna come preliminare" : "Segna come finale"}
           </button>
-          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario. Quando diventa «finale» i servizi entrano da soli nell&apos;Operativo, già confermati.</p>
+          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario. Con l&apos;importazione attiva nelle Impostazioni, quando diventa «finale» i servizi entrano da soli nell&apos;Operativo, già confermati.</p>
 
           {!hasContent && (
             <>

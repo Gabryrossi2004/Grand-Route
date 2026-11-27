@@ -29,7 +29,7 @@ export default function OpsSettingsCard({ initiallyOn, initiallyAuto }: { initia
   }
 
   return (
-    <section className="mb-6 rounded-xl border border-[#e6d7bb] bg-white p-6">
+    <section id="operativo" className="mb-6 scroll-mt-24 rounded-xl border border-[#e6d7bb] bg-white p-6">
       <h2 className="mb-1 text-lg font-medium text-[#233c5e]">Operativo day by day</h2>
       <p className="mb-4 text-xs text-slate-500">
         Per i tour operator e chi gestisce i servizi a destinazione: nella scheda «Operativo» compare il pulsante «Importa dai viaggi», che trasforma
@@ -40,12 +40,12 @@ export default function OpsSettingsCard({ initiallyOn, initiallyAuto }: { initia
         <input type="checkbox" checked={on} disabled={saving} onChange={(e) => toggle(e.target.checked)} />
         Importa i servizi dagli itinerari nella scheda operativa
       </label>
-      <label className="mt-3 flex items-start gap-2 text-sm font-medium text-slate-800">
+      <label className={`mt-3 flex items-start gap-2 text-sm font-medium ${on ? "text-slate-800" : "text-slate-400"}`}>
         <input
           type="checkbox"
           className="mt-0.5"
-          checked={auto}
-          disabled={saving}
+          checked={on && auto}
+          disabled={saving || !on}
           onChange={async (e) => {
             const next = e.target.checked;
             setAuto(next);
