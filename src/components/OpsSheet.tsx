@@ -1076,20 +1076,7 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
                 const st = opsStatusInfo(r.status);
                 return (
                   <td key={c.key} className="relative border-b border-r border-slate-200 px-1.5 py-1.5 align-top" style={{ background: rowBg }}>
-                    <select
-                      value={r.status}
-                      onChange={(e) => onStatus(r.id, e.target.value as OpsStatus | "")}
-                      aria-label="Stato del servizio"
-                      className="w-full cursor-pointer appearance-none rounded-full border-0 px-2 py-0.5 text-center text-[11.5px] font-semibold leading-5 focus:shadow-none"
-                      style={{ background: st?.bg ?? "#f1f5f9", color: st?.fg ?? "#94a3b8" }}
-                    >
-                      <option value="">— stato —</option>
-                      {OPS_STATUSES.map((o) => (
-                        <option key={o.id} value={o.id}>
-                          {o.label}
-                        </option>
-                      ))}
-                    </select>
+                    <StatusPicker value={r.status} onChange={(next) => onStatus(r.id, next)} />
                   </td>
                 );
               }
@@ -1221,5 +1208,82 @@ function CellEditor({
       className={`${cls} ${column.key === "pax" ? "text-center" : column.key === "meeting_time" ? "text-right" : ""}`}
       style={{ boxShadow: "none" }}
     />
+  );
+}
+
+// Stato del servizio: tendina con ogni voce già del suo colore (la tendina del browser non si può colorare ovunque).
+// Si apre «sopra» la tabella (posizione fissa), così non viene tagliata dallo scorrimento della scheda.
+export function StatusPicker({ value, onChange }: { value: string; onChange: (next: OpsStatus) => void }) {
+  const [pos, setPos] = useState<{ left: number; top: number; width: number; up: boolean } | null>(null);
+  const btn = useRef<HTMLButtonElement>(null);
+  const st = opsStatusInfo(value);
+
+  useEffect(() => {
+    if (!pos) return;
+    const close = () => setPos(null);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    window.addEventListener("scroll", close, true);
+    window.addEventListener("resize", close);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("scroll", close, true);
+      window.removeEventListener("resize", close);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [pos]);
+
+  const open = () => {
+    const r = btn.current?.getBoundingClientRect();
+    if (!r) return;
+    const height = OPS_STATUSES.length * 34 + 12;
+    const up = r.bottom + height > window.innerHeight - 8 && r.top > height;
+    const width = Math.max(r.width, 176);
+    setPos({ left: Math.min(r.left, window.innerWidth - width - 8), top: up ? r.top - height - 4 : r.bottom + 4, width, up });
+  };
+
+  return (
+    <>
+      <button
+        ref={btn}
+        type="button"
+        onClick={() => (pos ? setPos(null) : open())}
+        aria-haspopup="listbox"
+        aria-expanded={!!pos}
+        aria-label={`Stato del servizio: ${st?.label ?? "nessuno"}`}
+        className="w-full cursor-pointer rounded-full px-2 py-0.5 text-center text-[11.5px] font-semibold leading-5"
+        style={{ background: st?.bg ?? "#f1f5f9", color: st?.fg ?? "#94a3b8" }}
+      >
+        {st?.label ?? "—"}
+      </button>
+      {pos && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setPos(null)} />
+          <ul
+            role="listbox"
+            aria-label="Stato del servizio"
+            className="picker-pop fixed z-50 flex flex-col gap-1 rounded-xl border border-[#e6d7bb] bg-white p-1.5 shadow-xl"
+            style={{ left: pos.left, top: pos.top, width: pos.width }}
+          >
+            {OPS_STATUSES.map((o) => (
+              <li key={o.id}>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={o.id === value}
+                  onClick={() => {
+                    setPos(null);
+                    if (o.id !== value) onChange(o.id);
+                  }}
+                  className={`w-full rounded-full px-3 py-1 text-center text-[12px] font-semibold leading-5 transition hover:brightness-95 ${o.id === value ? "ring-2 ring-[#233c5e] ring-offset-1" : ""}`}
+                  style={{ background: o.bg, color: o.fg }}
+                >
+                  {o.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
   );
 }
