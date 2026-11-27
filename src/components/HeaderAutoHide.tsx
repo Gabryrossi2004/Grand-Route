@@ -38,7 +38,7 @@ export default function HeaderAutoHide({
 
   return (
     <header
-      className={`sticky top-0 z-20 transition-transform duration-300 ${
+      className={`sticky top-0 z-40 transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       } ${className ?? ""}`}
     >
