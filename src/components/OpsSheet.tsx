@@ -108,8 +108,14 @@ function sortRows(a: OpsRow, b: OpsRow, mode: "cliente" | "orario", fresh: Set<s
 }
 
 // colonne che restano ferme scorrendo di lato: la data sempre, codice e cliente sugli schermi larghi
-const STICKY_TD: Record<number, string> = { 0: "sticky left-[30px] z-10", 1: "relative lg:sticky lg:left-[94px] lg:z-10", 2: "relative lg:sticky lg:left-[180px] lg:z-10" };
-const STICKY_TH: Record<number, string> = { 0: "left-[30px] z-30", 1: "z-20 lg:left-[94px] lg:z-30", 2: "z-20 lg:left-[180px] lg:z-30" };
+// Le prime tre colonne restano bloccate a sinistra: la posizione (--l) dipende dalle larghezze scelte
+const STICKY_TD: Record<number, string> = { 0: "sticky left-(--l) z-10", 1: "relative lg:sticky lg:left-(--l) lg:z-10", 2: "relative lg:sticky lg:left-(--l) lg:z-10" };
+const STICKY_TH: Record<number, string> = { 0: "left-(--l) z-30", 1: "z-20 lg:left-(--l) lg:z-30", 2: "z-20 lg:left-(--l) lg:z-30" };
+const MIN_COL = 64;
+const MAX_COL = 700;
+const WIDTHS_KEY = "gr-ops-widths";
+type Widths = Record<string, number>;
+const defaultWidths = (): Widths => Object.fromEntries(OPS_COLUMNS.map((c) => [c.key, c.width]));
 
 export default function OpsSheet({ initialRows, view, anchor, from, to, today, trip, missingCode, trips, importEnabled, openRiconferme, suppliers, agencyName, clientNames, suggestions, onNavigate, busy = false }: Props) {
   const router = useRouter();
@@ -131,6 +137,30 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const [riconfermeOpen, setRiconfermeOpen] = useState(openRiconferme);
   const [changesFor, setChangesFor] = useState<{ id: string; x: number; y: number } | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  // larghezze delle colonne: si trascinano dal bordo dell'intestazione (doppio clic = larghezza di partenza) e si ricordano
+  const [widths, setWidths] = useState<Widths>(defaultWidths);
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(WIDTHS_KEY) ?? "null") as Widths | null;
+      if (saved) setWidths((cur) => ({ ...cur, ...Object.fromEntries(Object.entries(saved).filter(([k, v]) => k in cur && Number.isFinite(v)).map(([k, v]) => [k, Math.min(MAX_COL, Math.max(MIN_COL, v))])) }));
+    } catch {
+      // senza memoria del browser si parte dalle larghezze standard
+    }
+  }, []);
+  const saveWidths = (next: Widths) => {
+    try {
+      window.localStorage.setItem(WIDTHS_KEY, JSON.stringify(next));
+    } catch {
+      // niente: le larghezze valgono per questa visita
+    }
+  };
+  const resizeCol = (key: string, w: number, commit = false) =>
+    setWidths((cur) => {
+      const next = { ...cur, [key]: Math.round(Math.min(MAX_COL, Math.max(MIN_COL, w))) };
+      if (commit) saveWidths(next);
+      return next;
+    });
+  const widthsChanged = OPS_COLUMNS.some((c) => widths[c.key] !== c.width);
   const [agendaOpen, setAgendaOpen] = useState(false);
   const editToken = useRef(0);
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -420,7 +450,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
         views: [{ state: "frozen", ySplit: 1 }],
         pageSetup: { orientation: "landscape", fitToPage: true, fitToWidth: 1, fitToHeight: 0, paperSize: 9 },
       });
-      ws.columns = OPS_COLUMNS.map((c) => ({ header: c.label.toUpperCase(), key: c.key, width: Math.max(8, Math.round(c.width / 7)) }));
+      ws.columns = OPS_COLUMNS.map((c) => ({ header: c.label.toUpperCase(), key: c.key, width: Math.max(8, Math.round((widths[c.key] ?? c.width) / 7)) }));
       const head = ws.getRow(1);
       head.font = { bold: true, color: { argb: "FFFFFFFF" } };
       head.alignment = { vertical: "middle", horizontal: "center", wrapText: true };
@@ -486,7 +516,9 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     void save(row.id, { [key]: ch.to, changes: rest } as Partial<OpsRow>);
   }
 
-  const tableWidth = MENU_W + OPS_COLUMNS.reduce((s, c) => s + c.width, 0);
+  const tableWidth = MENU_W + OPS_COLUMNS.reduce((s, c) => s + (widths[c.key] ?? c.width), 0);
+  // dove si ferma ogni colonna bloccata a sinistra
+  const lefts = [MENU_W, MENU_W + (widths[OPS_COLUMNS[0].key] ?? OPS_COLUMNS[0].width), MENU_W + (widths[OPS_COLUMNS[0].key] ?? OPS_COLUMNS[0].width) + (widths[OPS_COLUMNS[1].key] ?? OPS_COLUMNS[1].width)];
   const menuRow = menu ? rows.find((r) => r.id === menu.id) : null;
   const filterCls = "h-9 w-full rounded-lg border border-[#e6d7bb] bg-white px-2 text-sm font-normal text-[#233c5e]";
 
@@ -787,6 +819,20 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
           {visible.length} {visible.length === 1 ? "servizio" : "servizi"}
           {activeFilters && rows.length !== visible.length ? ` su ${rows.length}` : ""}
         </span>
+        {widthsChanged && (
+          <button
+            type="button"
+            onClick={() => {
+              const base = defaultWidths();
+              setWidths(base);
+              saveWidths(base);
+            }}
+            className="inline-flex h-9 items-center gap-1 rounded-full px-3 text-sm text-slate-500 hover:bg-white hover:text-[#233c5e]"
+            title="Rimette le colonne alla larghezza di partenza"
+          >
+            <X className="h-3.5 w-3.5" /> Larghezze standard
+          </button>
+        )}
       </div>
 
       {/* filtri attivi: si tolgono uno per uno */}
@@ -858,7 +904,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
             <colgroup>
               <col className="ops-noprint" style={{ width: MENU_W }} />
               {OPS_COLUMNS.map((c) => (
-                <col key={c.key} style={{ width: c.width }} />
+                <col key={c.key} style={{ width: widths[c.key] ?? c.width }} />
               ))}
             </colgroup>
             <thead>
@@ -867,9 +913,16 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                 {OPS_COLUMNS.map((c, i) => (
                   <th
                     key={c.key}
-                    className={`sticky top-0 border-b-2 border-r border-[#cdbb97] border-r-[#e6d7bb] bg-[#f3ead8] px-2 py-2.5 text-center text-[12.5px] font-semibold uppercase leading-tight tracking-wide text-[#233c5e] ${STICKY_TH[i] ?? "z-20"}`}
+                    className={`sticky top-0 border-b-2 border-r border-[#cdbb97] border-r-[#e6d7bb] bg-[#f3ead8] px-2 py-2.5 text-center text-[12.5px] font-semibold uppercase leading-tight tracking-wide text-[#233c5e] [overflow-wrap:anywhere] ${STICKY_TH[i] ?? "z-20"}`}
+                    style={i < 3 ? ({ "--l": `${lefts[i]}px` } as React.CSSProperties) : undefined}
                   >
                     {c.label}
+                    <ColResizer
+                      label={c.label}
+                      width={widths[c.key] ?? c.width}
+                      onResize={(w, commit) => resizeCol(c.key, w, commit)}
+                      onReset={() => resizeCol(c.key, c.width, true)}
+                    />
                   </th>
                 ))}
               </tr>
@@ -890,6 +943,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                   onKey={onEditorKey}
                   onPick={(v) => commit(null, true, v)}
                   onNavigate={moveCell}
+                  lefts={lefts}
                   suggestFor={(key) => options[key] ?? []}
                   onCellColor={setCellColor}
                   onChanges={(id, el) => {
@@ -1106,6 +1160,7 @@ type GroupProps = {
   onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) => void;
   onPick: (value: string) => void;
   onNavigate: (dir: "up" | "down" | "left" | "right") => void;
+  lefts: number[];
   suggestFor: (key: ColKey) => Suggestion[];
   onCellColor: (id: string, key: OpsTextKey, color: OpsColor | null) => void;
   onMenu: (id: string, el: HTMLElement) => void;
@@ -1115,7 +1170,7 @@ type GroupProps = {
   showHeader: boolean;
 };
 
-function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onPick, onNavigate, suggestFor, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
+function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onPick, onNavigate, lefts, suggestFor, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
   const d = parseIsoDate(day);
   return (
     <>
@@ -1192,7 +1247,7 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
                   key={c.key}
                   onClick={() => !isEditing && onStartEdit(r.id, c.key)}
                   className={`${sticky || "relative"} cursor-text border-b border-r border-slate-200 px-2 py-1.5 align-top ${align} ${isEditing ? "outline outline-2 -outline-offset-2 outline-[#233c5e]" : "hover:shadow-[inset_0_0_0_1px_#cda876]"} ${c.key === "client" && !isEditing ? "font-medium" : ""} ${c.key === "trip_code" ? "font-mono text-[12px] tracking-wider" : ""} ${fieldChanged && !isEditing ? "ring-2 ring-inset ring-amber-300" : ""} ${cancelled && c.key !== "service_date" ? "text-red-900 line-through decoration-red-900/50" : ""}`}
-                  style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined }}
+                  style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined, ...(i < 3 ? ({ "--l": `${lefts[i]}px` } as React.CSSProperties) : {}) }}
                 >
                   {isEditing ? (
                     <CellEditor column={c} selectAll={!!editing?.selectAll} draft={draft} setDraft={setDraft} onCommit={() => onBlurCommit(editing!.token)} onKey={onKey} onPick={onPick} onNavigate={onNavigate} suggestions={suggestFor(c.key)} />
@@ -1202,7 +1257,7 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
                       <span className="text-[10px] uppercase text-slate-400">{d.toLocaleDateString("it-IT", { weekday: "short" })}</span>
                     </span>
                   ) : (
-                    <span className="block min-h-[1.25rem] whitespace-pre-wrap break-words">{r[c.key]}</span>
+                    <span className="block min-h-[1.25rem] whitespace-pre-wrap [overflow-wrap:anywhere]">{r[c.key]}</span>
                   )}
                   {isEditing && c.key !== "service_date" && (
                     <div
@@ -1629,5 +1684,45 @@ function OpsAgenda({
         </div>
       </div>
     </>
+  );
+}
+
+// Maniglia sul bordo destro dell'intestazione: si trascina per cambiare la larghezza (anche col dito), con le frecce
+// da tastiera e doppio clic per tornare alla larghezza di partenza. Il testo delle celle va a capo da solo.
+function ColResizer({ label, width, onResize, onReset }: { label: string; width: number; onResize: (w: number, commit?: boolean) => void; onReset: () => void }) {
+  const drag = useRef<{ x: number; w: number } | null>(null);
+  return (
+    <span
+      role="separator"
+      aria-orientation="vertical"
+      aria-label={`Larghezza della colonna ${label}`}
+      tabIndex={0}
+      title="Trascina per cambiare la larghezza · doppio clic per ripristinarla"
+      className="ops-noprint group/rz absolute -right-1.5 top-0 z-40 flex h-full w-3 cursor-col-resize touch-none select-none items-stretch justify-center outline-none"
+      onPointerDown={(e) => {
+        e.preventDefault();
+        e.currentTarget.setPointerCapture(e.pointerId);
+        drag.current = { x: e.clientX, w: width };
+      }}
+      onPointerMove={(e) => {
+        if (drag.current) onResize(drag.current.w + (e.clientX - drag.current.x));
+      }}
+      onPointerUp={(e) => {
+        if (!drag.current) return;
+        onResize(drag.current.w + (e.clientX - drag.current.x), true);
+        drag.current = null;
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }}
+      onPointerCancel={() => (drag.current = null)}
+      onDoubleClick={onReset}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+          e.preventDefault();
+          onResize(width + (e.key === "ArrowRight" ? 12 : -12), true);
+        }
+      }}
+    >
+      <span className="w-0.5 rounded-full bg-transparent transition group-hover/rz:bg-[#cda876] group-focus-visible/rz:bg-[#233c5e]" />
+    </span>
   );
 }
