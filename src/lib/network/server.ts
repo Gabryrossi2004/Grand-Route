@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import { isBusinessKind, type BusinessKind } from "./kinds";
 import { validateNetworkProfile, type FormRecord } from "./validate";
 
@@ -8,7 +9,8 @@ export const getBusinessKind = cache(async (): Promise<BusinessKind | null> => {
   const user = await getCachedUser();
   if (!user) return null;
   const supabase = await createClient();
-  const { data, error } = await supabase.from("profiles").select("business_kind").eq("id", user.id).maybeSingle();
+  const companyId = (await getTeamContext())?.companyId ?? user.id;
+  const { data, error } = await supabase.from("profiles").select("business_kind").eq("id", companyId).maybeSingle();
   if (error) return null;
   const k = (data as { business_kind?: string | null } | null)?.business_kind;
   return isBusinessKind(k) ? k : null;

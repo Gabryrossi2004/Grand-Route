@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import BillingSettingsForm from "@/components/orders/BillingSettingsForm";
 import { DEFAULT_SETTINGS, type BillingSettings } from "@/lib/invoicing/draft";
 
 export const metadata = { title: "Impostazioni di fatturazione" };
 
 export default async function BillingSettingsPage() {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect("/professionisti?next=/rete/fatture/impostazioni");
   const supabase = await createClient();
   const [{ data, error }, { data: profile }] = await Promise.all([

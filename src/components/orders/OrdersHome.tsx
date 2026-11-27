@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Settings } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import OrdersBoard from "@/components/orders/OrdersBoard";
 import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
 
 // Pagina degli ordini, per chi svolge i servizi («lavori») e per chi li compra («ordini»)
 export default async function OrdersHome({ role, base, invoiceBase, switchHref }: { role: "seller" | "buyer"; base: string; invoiceBase: string; switchHref?: { href: string; label: string } }) {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect(`/professionisti?next=${base}`);
   const supabase = await createClient();
   const [{ data, error }, { data: partners }, { data: settings }, { data: profile }] = await Promise.all([

@@ -75,7 +75,8 @@ export type NavTeam = { isMember: boolean; isTitolare: boolean; accountMode: "in
 function hiddenFor(team: NavTeam): Set<string> {
   const hidden = new Set<string>();
   if (!(team.isTitolare && team.accountMode === "azienda")) hidden.add("/dashboard/team");
-  if (team.isMember) ["/rete", "/dashboard/posta", "/dashboard/ordini", "/dashboard/invita"].forEach((h) => hidden.add(h));
+  // l'invito dei colleghi con sconto (codice personale) resta di chi ha aperto l'account
+  if (team.isMember) hidden.add("/dashboard/invita");
   if (!team.isTitolare) hidden.add("/dashboard/sconto");
   return hidden;
 }

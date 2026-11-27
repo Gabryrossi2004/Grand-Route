@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { ArrowLeft, FileMinus } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import InvoiceEditor from "@/components/orders/InvoiceEditor";
 import InvoiceView from "@/components/orders/InvoiceView";
 import InvoiceActions from "@/components/orders/InvoiceActions";
@@ -17,7 +18,7 @@ type Row = {
 // Una fattura (o nota di credito): il fornitore la prepara e la emette; il cliente la vede da emessa in poi.
 export default async function InvoicePage({ id, backHref, backLabel }: { id: string; backHref: string; backLabel: string }) {
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect("/professionisti");
   const supabase = await createClient();
   const { data } = await supabase.from("network_invoices").select("*").eq("id", id).maybeSingle();

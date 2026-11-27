@@ -49,10 +49,10 @@ export default async function DashboardLayout({
         .neq("author_id", user.id),
       supabase.rpc("is_platform_admin"),
       // Ordini, variazioni e fatture dei fornitori da guardare (0 se la migrazione 0065 non c'è ancora).
-      // Rete Partner e Posta per ora sono solo del fondatore (fase 2 del team)
-      isMember ? Promise.resolve({ data: null }) : supabase.rpc("network_todo_counts"),
+      // (per i colleghi del team: quelli dell'agenzia)
+      supabase.rpc("network_todo_counts"),
       // Posta non letta (0 se la migrazione 0067 non c'è ancora)
-      isMember ? Promise.resolve({ data: null }) : supabase.rpc("mail_unread_count"),
+      supabase.rpc("mail_unread_count"),
     ]);
     own = (ownData as OwnPrefs | null) ?? null;
     mailUnread = typeof mailCount === "number" ? mailCount : 0;

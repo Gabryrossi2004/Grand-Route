@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import AgendaView from "@/components/network/AgendaView";
 import type { ReminderDraft } from "@/components/network/ReminderDrafts";
 import type { CalEvent } from "@/components/network/CalendarEvents";
@@ -10,7 +11,7 @@ export const metadata = { title: "Agenda" };
 
 // Agenda dei servizi: qui si caricano i dati, la pagina è in AgendaView
 export default async function AgendaPage({ searchParams }: { searchParams: Promise<{ vista?: string; data?: string }> }) {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect("/professionisti?next=/rete/agenda");
   const { vista: v, data } = await searchParams;
   const vista = v === "mese" ? "mese" : "settimana";

@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import ThreadView from "@/components/mail/ThreadView";
 import type { MailAttachment, MailMessage } from "@/lib/mail/shared";
 import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
@@ -7,7 +8,7 @@ import type { OrderPartner, OrderRow } from "@/lib/orders/shared";
 // Una conversazione: messaggi, eventi dell'ordine, allegati. Aprendola si segna come letta.
 export default async function ThreadPage({ id, base, invoiceBase }: { id: string; base: string; invoiceBase: string }) {
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect(`/professionisti?next=${base}/${id}`);
   const supabase = await createClient();
   const { data: t } = await supabase.from("mail_threads").select("id, subject, kind, order_id").eq("id", id).maybeSingle();

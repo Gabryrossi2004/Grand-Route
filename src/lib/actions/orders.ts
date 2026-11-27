@@ -1,7 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 import { sendMail } from "@/lib/email";
 import { checkInvoice, computeTotals, isValidIban, type InvoiceDoc, type InvoiceLine, type Natura } from "@/lib/invoicing/engine";
@@ -284,7 +285,7 @@ export async function syncServiceCost(orderId: string): Promise<ActionResult<{ a
 
 // ---------------- Impostazioni di fatturazione ----------------
 export async function saveBillingSettings(input: BillingSettings): Promise<ActionResult> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
   const iban = (input.iban ?? "").replace(/\s+/g, "").toUpperCase() || null;
   if (iban && !isValidIban(iban)) return { ok: false, error: "L'IBAN non è valido: controllalo." };
@@ -491,7 +492,7 @@ export async function setInvoicePaid(id: string, paid: boolean, date: string | n
 export async function createCreditNote(invoiceId: string, full: boolean): Promise<ActionResult<{ id: string }>> {
   if (!UUID.test(invoiceId)) return { ok: false, error: "Fattura non trovata." };
   const supabase = await createClient();
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
   const { data } = await supabase.from("network_invoices").select("doc, number, issue_date, currency").eq("id", invoiceId).eq("seller_id", user.id).maybeSingle();
   const inv = data as { doc: InvoiceDoc; number: string; issue_date: string; currency: string } | null;

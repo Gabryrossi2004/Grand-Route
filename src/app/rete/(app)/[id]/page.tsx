@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, BadgeCheck, FileText, Globe, Languages, Lock, MapPin } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { nameItOfCode } from "@/lib/geo/countryCodes";
 import { kindLabel } from "@/lib/network/kinds";
 import { Rating, type NetworkRow } from "@/components/network/ProfileCard";
@@ -16,7 +17,7 @@ import { FILES_BUCKET, brandOf, mediaUrl } from "@/lib/network/media";
 export default async function NetworkProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   const supabase = await createClient();
   const { data } = await supabase.rpc("network_get", { p_user: id });
   const row = ((data ?? []) as NetworkRow[])[0];

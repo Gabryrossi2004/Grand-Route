@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { BadgeCheck, Clock, XCircle } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { getBusinessKind } from "@/lib/network/server";
 import { KIND_INFO, KIND_FIELDS, isBusinessKind, isTradeKind, type BusinessKind } from "@/lib/network/kinds";
 import ProfileForm from "@/components/network/ProfileForm";
@@ -16,7 +17,7 @@ const STATUS: Record<string, { label: string; tone: string; text: string }> = {
 };
 
 export default async function NetworkProfilePageEdit() {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect("/professionisti?next=/rete/profilo");
   const supabase = await createClient();
   const kindFromProfile = await getBusinessKind();

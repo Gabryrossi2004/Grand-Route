@@ -82,3 +82,12 @@ export const getTeamPeople = cache(async (): Promise<TeamPerson[]> => {
     ...members.map((m) => ({ id: m.user_id, name: nameOf(m.user_id), role: m.role as TeamRole, isFounder: false })),
   ];
 });
+
+// Nella rete Partner e nella Posta si agisce a nome dell'agenzia: restituisce l'utente collegato con l'id
+// dell'AZIENDA al posto del suo (personId resta la persona). Per chi lavora da solo è identico a prima.
+export async function getNetworkUser(): Promise<{ id: string; email?: string; personId: string } | null> {
+  const user = await getCachedUser();
+  if (!user) return null;
+  const team = await getTeamContext();
+  return { ...user, id: team?.companyId ?? user.id, personId: user.id };
+}

@@ -1,7 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 import { deliverReminder } from "@/lib/reminders/services";
 import type { ReminderService } from "@/lib/reminders/template";
@@ -22,7 +23,7 @@ export type ReminderPrefs = { mode: "auto" | "manual" | "off"; subject: string; 
 
 // Promemoria della sera prima: modalità (automatico / lo rivedo io / spento) e testo dell'email (vuoto = testo standard)
 export async function setReminderPrefs(p: ReminderPrefs): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Accedi di nuovo." };
   if (!["auto", "manual", "off"].includes(p.mode)) return { ok: false, error: "Scelta non valida." };
   if (p.subject.length > 200 || p.intro.length > 1500 || p.outro.length > 1500) return { ok: false, error: "Il testo è troppo lungo." };
@@ -59,7 +60,7 @@ export async function sendReminderDraft(input: { buyerId: string; subject: strin
   if (!subject) return { ok: false, error: "Scrivi l'oggetto dell'email." };
   if (body.length < 10) return { ok: false, error: "Il testo dell'email è troppo corto." };
   const supabase = await createClient();
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Accedi di nuovo." };
   const { data, error } = await supabase.rpc("network_reminder_claim", { p_buyer: input.buyerId });
   if (error) return fail(error.message);
@@ -88,7 +89,7 @@ export async function sendReminderDraft(input: { buyerId: string; subject: strin
 
 // ---------- Calendario interno: i tuoi impegni ----------
 export async function addCalendarEvent(input: { kind: "non_disponibile" | "nota"; title: string; from: string; to: string }): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Accedi di nuovo." };
   if (!["non_disponibile", "nota"].includes(input.kind)) return { ok: false, error: "Scelta non valida." };
   if (!ISO.test(input.from) || !ISO.test(input.to)) return { ok: false, error: "Scegli le date." };
@@ -116,7 +117,7 @@ export async function deleteCalendarEvent(id: string): Promise<Result> {
 // Il fornitore decide se mostrare ai partner (collaborazione attiva) i giorni in cui non è disponibile e, se vuole,
 // anche quelli già impegnati con altri servizi: mai nomi, luoghi o note.
 export async function setAvailabilitySharing(input: { share: boolean; busy: boolean }): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { ok: false, error: "Accedi di nuovo." };
   const supabase = await createClient();
   const { error } = await supabase.from("network_prefs").upsert({

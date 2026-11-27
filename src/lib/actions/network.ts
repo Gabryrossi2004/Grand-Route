@@ -1,7 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { isBusinessKind, isTradeKind } from "@/lib/network/kinds";
 import { formToRecord, validateNetworkProfile } from "@/lib/network/validate";
 import { getBusinessKind } from "@/lib/network/server";
@@ -14,7 +15,7 @@ const rpcMessage = (m: string | undefined) => (m && !/function|relation|schema c
 
 // Salva (o crea) il profilo professionale dell'account collegato
 export async function saveNetworkProfile(_prev: Result | undefined, formData: FormData): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
   const kindFromProfile = await getBusinessKind();
   const kindField = String(formData.get("kind") ?? "");
@@ -81,7 +82,7 @@ const NOT_READY_SHOWCASE = "Per la vetrina serve l'aggiornamento del database (m
 const ownPath = (userId: string, path: string) => path.startsWith(`${userId}/`) && !path.includes("..") && path.length <= 300;
 
 async function currentShowcase() {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return null;
   const supabase = await createClient();
   const { data, error } = await supabase.from("network_profiles").select("cover_path, logo_path, gallery").eq("user_id", user.id).maybeSingle();
@@ -147,7 +148,7 @@ export async function removeGalleryPhoto(path: string): Promise<Result> {
 }
 
 export async function addNetworkFile(input: { title: string; path: string; size: number; mime: string; visibility: "rete" | "partner" }): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
   const title = input.title.trim().slice(0, 80);
   if (title.length < 2 || !ownPath(user.id, input.path)) return { error: "Scrivi un titolo per il documento." };
@@ -169,7 +170,7 @@ export async function addNetworkFile(input: { title: string; path: string; size:
 }
 
 export async function setNetworkFileVisibility(id: string, visibility: "rete" | "partner"): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user || !/^[0-9a-f-]{36}$/i.test(id)) return { error: "Dati non validi." };
   const supabase = await createClient();
   const { error } = await supabase.from("network_files").update({ visibility: visibility === "partner" ? "partner" : "rete" }).eq("id", id).eq("user_id", user.id);
@@ -179,7 +180,7 @@ export async function setNetworkFileVisibility(id: string, visibility: "rete" | 
 }
 
 export async function removeNetworkFile(id: string): Promise<Result> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user || !/^[0-9a-f-]{36}$/i.test(id)) return { error: "Dati non validi." };
   const supabase = await createClient();
   const { data } = await supabase.from("network_files").select("path").eq("id", id).eq("user_id", user.id).maybeSingle();

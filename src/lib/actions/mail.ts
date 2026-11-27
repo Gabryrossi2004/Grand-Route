@@ -1,7 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
 import { sendMail } from "@/lib/email";
 import { reserveAiCall } from "@/lib/aiQuota";
@@ -27,7 +28,7 @@ function refresh(threadId?: string) {
 }
 
 async function myName(): Promise<string> {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) return "";
   const supabase = await createClient();
   const [{ data: np }, { data: pr }] = await Promise.all([
@@ -177,7 +178,7 @@ export async function ensureOrderThread(orderId: string): Promise<MailResult<{ t
   const o = ((rows ?? []) as OrderRow[]).find((r) => r.id === orderId);
   if (!o) return { ok: false, error: "Ordine non trovato." };
   const kind = o.created_by === o.counterpart ? (o.role === "buyer" ? "lavoro" : "richiesta") : o.role === "buyer" ? "richiesta" : "lavoro";
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   // il testo della richiesta lo scrive solo chi ha creato l'ordine; per gli altri la conversazione si apre vuota
   const iCreated = !!user && o.created_by === user.id;
   const sender = iCreated ? await myName() : "";

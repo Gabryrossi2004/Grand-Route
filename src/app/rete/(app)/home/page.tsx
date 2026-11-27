@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getNetworkUser } from "@/lib/team";
 import SupplierHomeView from "@/components/network/SupplierHomeView";
 import { addDays, todayRome } from "@/lib/orders/shared";
 import type { AgendaRow } from "@/lib/network/agenda";
@@ -9,7 +10,7 @@ export const metadata = { title: "Home" };
 
 // Home del fornitore: qui si caricano i dati, la pagina è in SupplierHomeView
 export default async function SupplierHome({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
-  const user = await getCachedUser();
+  const user = await getNetworkUser();
   if (!user) redirect("/professionisti?next=/rete/home");
   const supabase = await createClient();
   const today = todayRome();
