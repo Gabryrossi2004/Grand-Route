@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
   BellRing,
+  CalendarDays,
   ChevronLeft,
   ChevronRight,
   Copy,
@@ -15,10 +16,11 @@ import {
   Plus,
   Printer,
   Search,
+  SlidersHorizontal,
   Trash2,
   X,
 } from "lucide-react";
-import { createOpsRow, deleteOpsRow, importOpsFromTrips, updateOpsRow } from "@/lib/actions/opsSheet";
+import { createOpsRow, deleteOpsRow, importOpsFromTrips, opsServiceDays, updateOpsRow } from "@/lib/actions/opsSheet";
 import OpsRiconferme from "@/components/OpsRiconferme";
 import {
   OPS_COLOR_STYLE,
@@ -65,7 +67,6 @@ type Filters = { client: string; agent: string; supplier: string; responsible: s
 const NO_FILTERS: Filters = { client: "", agent: "", supplier: "", responsible: "", day: "", color: "", status: "" };
 const hasChanges = (r: OpsRow) => Object.keys(r.changes ?? {}).length > 0;
 const MENU_W = 30;
-const MONTHS = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
 
 const norm = (s: string) => s.trim().toLocaleLowerCase("it");
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -126,6 +127,8 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const [exporting, setExporting] = useState(false);
   const [riconfermeOpen, setRiconfermeOpen] = useState(openRiconferme);
   const [changesFor, setChangesFor] = useState<{ id: string; x: number; y: number } | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [agendaOpen, setAgendaOpen] = useState(false);
   const editToken = useRef(0);
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -134,8 +137,6 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   const searchCode = normalizeTripCode(search);
   const codeMatch = searchCode.length === 6 && searchCode !== trip?.code ? trips.find((t) => t.code === searchCode) : undefined;
   const step = (dir: 1 | -1) => go(view, view === "mese" ? shiftMonths(anchor, dir) : shiftDays(anchor, dir * (view === "settimana" ? 7 : 1)));
-  const anchorYear = parseIsoDate(anchor).getFullYear();
-  const anchorMonth = parseIsoDate(anchor).getMonth();
   const tomorrow = shiftDays(today, 1);
 
   // ── Suggerimenti per le celle, come nei fogli di calcolo: i testi già scritti nella stessa colonna
@@ -204,6 +205,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
   }, [visible, sortMode, fresh]);
 
   const activeFilters = search.trim() !== "" || Object.values(filters).some(Boolean);
+  const activeCount = (search.trim() ? 1 : 0) + Object.values(filters).filter(Boolean).length;
 
   // ── Salvataggi ──
   function patchLocal(id: string, patch: Partial<OpsRow>) {
@@ -256,6 +258,22 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
     }
     if (next) startEdit(next.id, next.key, selectNext);
     else setEditing(null);
+  }
+
+  // Frecce: passa alla cella accanto (sinistra/destra) o alla stessa colonna della riga sopra/sotto
+  function moveCell(dir: "up" | "down" | "left" | "right", picked?: string) {
+    if (!editing) return;
+    const editable = OPS_COLUMNS.filter((c) => c.key !== "status");
+    const flat = groups.flatMap((g) => g.rows);
+    const ri = flat.findIndex((r) => r.id === editing.id);
+    const ci = editable.findIndex((c) => c.key === editing.key);
+    if (ri < 0 || ci < 0) return;
+    let target: { id: string; key: ColKey } | null = null;
+    if (dir === "left" && ci > 0) target = { id: editing.id, key: editable[ci - 1].key };
+    if (dir === "right" && ci < editable.length - 1) target = { id: editing.id, key: editable[ci + 1].key };
+    if (dir === "up" && ri > 0) target = { id: flat[ri - 1].id, key: editing.key };
+    if (dir === "down" && ri < flat.length - 1) target = { id: flat[ri + 1].id, key: editing.key };
+    if (target) commit(target, true, picked);
   }
 
   function cancelEdit() {
@@ -467,7 +485,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
 
   const tableWidth = MENU_W + OPS_COLUMNS.reduce((s, c) => s + c.width, 0);
   const menuRow = menu ? rows.find((r) => r.id === menu.id) : null;
-  const selectCls = "h-9 w-[calc(50%-4px)] rounded-lg border border-[#e6d7bb] bg-white px-2 text-sm text-[#233c5e] sm:w-auto sm:max-w-[11rem]";
+  const filterCls = "h-9 w-full rounded-lg border border-[#e6d7bb] bg-white px-2 text-sm font-normal text-[#233c5e]";
 
   return (
     <div className="flex flex-col gap-4" style={{ width: "calc(100vw - 32px)", marginLeft: "calc(50% - 50vw + 16px)" }}>
@@ -488,7 +506,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-medium tracking-tight text-[#233c5e]">Operativo day by day</h1>
-          <p className="text-sm text-slate-500">Tutti i servizi giorno per giorno: clicca una cella per scrivere, Tab per passare alla successiva.</p>
+          <p className="text-sm text-slate-500">Tutti i servizi giorno per giorno: clicca una cella per scrivere; con Tab e le frecce passi da una cella all&apos;altra.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {importEnabled && (view !== "viaggio" || trip?.start) && (
@@ -575,9 +593,9 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
         </div>
       )}
 
-      {/* ── Periodo ── */}
+      {/* ── Periodo: Oggi / Domani / Settimana / Mese, frecce e agenda ── */}
       <div className="flex flex-wrap items-center gap-2">
-        <div className="inline-flex rounded-lg border border-[#e6d7bb] bg-white p-0.5 text-sm">
+        <div className="inline-flex rounded-full border border-[#e6d7bb] bg-white p-1 text-sm shadow-sm">
           {(
             [
               ["Oggi", "giorno", today],
@@ -592,7 +610,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                 key={label}
                 type="button"
                 onClick={() => go(v, d)}
-                className={`rounded-md px-3 py-1.5 ${active ? "bg-[#233c5e] text-white" : "text-[#233c5e] hover:bg-[#faf3e6]"}`}
+                className={`rounded-full px-3.5 py-1.5 font-medium transition ${active ? "bg-[#233c5e] text-white shadow-sm" : "text-[#233c5e] hover:bg-[#faf3e6]"}`}
               >
                 {label}
               </button>
@@ -600,7 +618,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
           })}
         </div>
         {view === "viaggio" && trip ? (
-          <div className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-[#cda876] bg-[#faf3e6] px-3 py-1.5 text-sm text-[#233c5e]">
+          <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[#cda876] bg-[#faf3e6] px-3 py-1.5 text-sm text-[#233c5e]">
             <span className="rounded bg-[#233c5e] px-1.5 py-0.5 font-mono text-xs tracking-wider text-white">{trip.code}</span>
             <span className="font-medium">{trip.client ? `${trip.client} · ` : ""}{trip.title}</span>
             {trip.start && <span className="text-slate-500">{trip.end && trip.end !== trip.start ? `dal ${shortDate(trip.start)} al ${shortDate(trip.end)}` : shortDate(trip.start)}</span>}
@@ -612,113 +630,182 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
             </button>
           </div>
         ) : (
-        <div className="inline-flex items-center gap-1">
-          <button type="button" onClick={() => step(-1)} className="rounded-lg p-2 text-[#233c5e] hover:bg-white" aria-label="Periodo precedente">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <span className="min-w-[9rem] text-center font-medium text-[#233c5e]">{periodLabel(view, from, to)}</span>
-          <button type="button" onClick={() => step(1)} className="rounded-lg p-2 text-[#233c5e] hover:bg-white" aria-label="Periodo successivo">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-        )}
-        {view === "mese" && (
-          <div className="flex flex-wrap items-center gap-0.5 text-sm">
-            {MONTHS.map((m, i) => (
-              <button
-                key={m}
-                type="button"
-                onClick={() => go("mese", isoDate(new Date(anchorYear, i, 1)))}
-                className={`rounded-md px-2 py-1 ${i === anchorMonth ? "bg-[#cda876] font-medium text-white" : "text-slate-600 hover:bg-white"}`}
-              >
-                {m}
-              </button>
-            ))}
+          <div className="relative inline-flex items-center gap-0.5 rounded-full border border-[#e6d7bb] bg-white p-1 shadow-sm">
+            <button type="button" onClick={() => step(-1)} className="rounded-full p-1.5 text-[#233c5e] hover:bg-[#faf3e6]" aria-label="Indietro">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setAgendaOpen((o) => !o)}
+              aria-expanded={agendaOpen}
+              className="inline-flex min-w-[10rem] items-center justify-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-[#233c5e] hover:bg-[#faf3e6]"
+            >
+              <CalendarDays className="h-4 w-4 text-[#c58f2d]" aria-hidden /> {periodLabel(view, from, to)}
+            </button>
+            <button type="button" onClick={() => step(1)} className="rounded-full p-1.5 text-[#233c5e] hover:bg-[#faf3e6]" aria-label="Avanti">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+            {agendaOpen && (
+              <OpsAgenda
+                anchor={view === "giorno" ? anchor : from}
+                from={from}
+                to={to}
+                today={today}
+                onClose={() => setAgendaOpen(false)}
+                onDay={(d) => {
+                  setAgendaOpen(false);
+                  go("giorno", d);
+                }}
+                onMonth={(d) => {
+                  setAgendaOpen(false);
+                  go("mese", d);
+                }}
+              />
+            )}
           </div>
         )}
-      </div>
 
-      {/* ── Ricerca e filtri ── */}
-      <div className="flex flex-wrap items-center gap-2">
-        <label className="relative w-full sm:w-auto">
-          <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && codeMatch) openTrip(codeMatch.code);
-            }}
-            placeholder="Cerca codice viaggio, cliente, fornitore, servizio…"
-            className="h-9 w-[calc(100vw-32px)] rounded-lg border sm:w-72 border-[#e6d7bb] bg-white pl-8 pr-2 text-sm"
-          />
-        </label>
-        {(
-          [
-            ["client", "Cliente"],
-            ["agent", "Agente"],
-            ["supplier", "Fornitore"],
-            ["responsible", "Responsabile"],
-          ] as const
-        ).map(([k, label]) => (
-          <select key={k} value={filters[k]} onChange={(e) => setFilters((f) => ({ ...f, [k]: e.target.value }))} className={selectCls} aria-label={label}>
-            <option value="">{label}: tutti</option>
-            {filterOptions[k].map((v) => (
-              <option key={v} value={v}>
-                {v}
-              </option>
-            ))}
-          </select>
-        ))}
-        {view !== "giorno" && (
-          <select value={filters.day} onChange={(e) => setFilters((f) => ({ ...f, day: e.target.value }))} className={selectCls} aria-label="Giorno">
-            <option value="">Giorno: tutti</option>
-            {filterOptions.day.map((d) => (
-              <option key={d} value={d}>
-                {dayLabel(d)}
-              </option>
-            ))}
-          </select>
-        )}
-        <select value={filters.status} onChange={(e) => setFilters((f) => ({ ...f, status: e.target.value }))} className={selectCls} aria-label="Stato">
-          <option value="">Stato: tutti</option>
-          {OPS_STATUSES.map((st) => (
-            <option key={st.id} value={st.id}>
-              {st.label}
-            </option>
-          ))}
-          <option value="nessuno">Senza stato</option>
-          <option value="cambiate">Cambiate nell&apos;itinerario</option>
-        </select>
-        <select value={filters.color} onChange={(e) => setFilters((f) => ({ ...f, color: e.target.value }))} className={selectCls} aria-label="Evidenziate">
-          <option value="">Evidenziate: tutte le righe</option>
-          <option value="evidenziate">Solo evidenziate</option>
-          {OPS_COLORS.map((c) => (
-            <option key={c} value={c}>
-              Solo {OPS_COLOR_STYLE[c].label.toLowerCase()}
-            </option>
-          ))}
-        </select>
-        <select value={sortMode} onChange={(e) => setSortMode(e.target.value as "cliente" | "orario")} className={selectCls} aria-label="Ordine">
-          <option value="cliente">Ordina per cliente</option>
-          <option value="orario">Ordina per orario</option>
-        </select>
-        {activeFilters && (
+        {/* ── Filtri: un solo pulsante con tutto dentro ── */}
+        <div className="relative">
           <button
             type="button"
-            onClick={() => {
-              setSearch("");
-              setFilters(NO_FILTERS);
-            }}
-            className="inline-flex h-9 items-center gap-1 rounded-lg px-2 text-sm text-slate-600 hover:bg-white"
+            onClick={() => setFiltersOpen((o) => !o)}
+            aria-expanded={filtersOpen}
+            className={`inline-flex h-9 items-center gap-2 rounded-full border px-4 text-sm font-medium shadow-sm transition ${activeFilters ? "border-[#233c5e] bg-[#233c5e] text-white" : "border-[#e6d7bb] bg-white text-[#233c5e] hover:bg-[#faf3e6]"}`}
           >
-            <X className="h-4 w-4" /> Azzera filtri
+            <SlidersHorizontal className="h-4 w-4" aria-hidden /> Filtri
+            {activeCount > 0 && <span className="rounded-full bg-[#cda876] px-1.5 text-xs font-bold text-[#17283f]">{activeCount}</span>}
           </button>
-        )}
+          {filtersOpen && (
+            <>
+              <div className="fixed inset-0 z-30" onClick={() => setFiltersOpen(false)} />
+              <div className="picker-pop absolute left-0 top-full z-30 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-[#e6d7bb] bg-[#fffaf0] p-4 shadow-xl">
+                <label className="relative block">
+                  <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
+                  <input
+                    value={search}
+                    autoFocus
+                    onChange={(e) => setSearch(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && codeMatch) openTrip(codeMatch.code);
+                    }}
+                    placeholder="Cerca codice, cliente, fornitore, servizio…"
+                    className="h-9 w-full rounded-lg border border-[#e6d7bb] bg-white pl-8 pr-2 text-sm"
+                  />
+                </label>
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  {(
+                    [
+                      ["client", "Cliente"],
+                      ["agent", "Agente"],
+                      ["supplier", "Fornitore"],
+                      ["responsible", "Responsabile"],
+                    ] as const
+                  ).map(([k, label]) => (
+                    <label key={k} className="flex flex-col gap-1 text-xs font-medium text-slate-500">
+                      {label}
+                      <select value={filters[k]} onChange={(e) => setFilters((f) => ({ ...f, [k]: e.target.value }))} className={filterCls}>
+                        <option value="">Tutti</option>
+                        {filterOptions[k].map((v) => (
+                          <option key={v} value={v}>
+                            {v}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  ))}
+                  {view !== "giorno" && (
+                    <label className="flex flex-col gap-1 text-xs font-medium text-slate-500">
+                      Giorno
+                      <select value={filters.day} onChange={(e) => setFilters((f) => ({ ...f, day: e.target.value }))} className={filterCls}>
+                        <option value="">Tutti</option>
+                        {filterOptions.day.map((d) => (
+                          <option key={d} value={d}>
+                            {dayLabel(d)}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  )}
+                  <label className="flex flex-col gap-1 text-xs font-medium text-slate-500">
+                    Stato
+                    <select value={filters.status} onChange={(e) => setFilters((f) => ({ ...f, status: e.target.value }))} className={filterCls}>
+                      <option value="">Tutti</option>
+                      {OPS_STATUSES.map((st) => (
+                        <option key={st.id} value={st.id}>
+                          {st.label}
+                        </option>
+                      ))}
+                      <option value="nessuno">Senza stato</option>
+                      <option value="cambiate">Cambiate nell&apos;itinerario</option>
+                    </select>
+                  </label>
+                  <label className="flex flex-col gap-1 text-xs font-medium text-slate-500">
+                    Evidenziate
+                    <select value={filters.color} onChange={(e) => setFilters((f) => ({ ...f, color: e.target.value }))} className={filterCls}>
+                      <option value="">Tutte le righe</option>
+                      <option value="evidenziate">Solo evidenziate</option>
+                      {OPS_COLORS.map((c) => (
+                        <option key={c} value={c}>
+                          Solo {OPS_COLOR_STYLE[c].label.toLowerCase()}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="flex flex-col gap-1 text-xs font-medium text-slate-500">
+                    Ordine
+                    <select value={sortMode} onChange={(e) => setSortMode(e.target.value as "cliente" | "orario")} className={filterCls}>
+                      <option value="cliente">Per cliente</option>
+                      <option value="orario">Per orario</option>
+                    </select>
+                  </label>
+                </div>
+                <div className="mt-4 flex items-center justify-between gap-2 border-t border-[#efe3cb] pt-3">
+                  <button
+                    type="button"
+                    disabled={!activeFilters}
+                    onClick={() => {
+                      setSearch("");
+                      setFilters(NO_FILTERS);
+                    }}
+                    className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm text-slate-600 hover:bg-white disabled:opacity-40"
+                  >
+                    <X className="h-4 w-4" /> Azzera
+                  </button>
+                  <button type="button" onClick={() => setFiltersOpen(false)} className="rounded-full bg-[#233c5e] px-4 py-1.5 text-sm font-semibold text-white hover:bg-[#17283f]">
+                    Fatto
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
         <span className="text-sm text-slate-500">
-          {visible.length} {visible.length === 1 ? "riga" : "righe"}
+          {visible.length} {visible.length === 1 ? "servizio" : "servizi"}
           {activeFilters && rows.length !== visible.length ? ` su ${rows.length}` : ""}
         </span>
       </div>
+
+      {/* filtri attivi: si tolgono uno per uno */}
+      {activeFilters && (
+        <div className="-mt-1 flex flex-wrap items-center gap-1.5">
+          {search.trim() && <FilterChip label={`«${search.trim()}»`} onClear={() => setSearch("")} />}
+          {(["client", "agent", "supplier", "responsible"] as const).map((k) => filters[k] && <FilterChip key={k} label={filters[k]} onClear={() => setFilters((f) => ({ ...f, [k]: "" }))} />)}
+          {filters.day && <FilterChip label={dayLabel(filters.day)} onClear={() => setFilters((f) => ({ ...f, day: "" }))} />}
+          {filters.status && (
+            <FilterChip
+              label={filters.status === "nessuno" ? "Senza stato" : filters.status === "cambiate" ? "Cambiate" : (opsStatusInfo(filters.status)?.label ?? filters.status)}
+              onClear={() => setFilters((f) => ({ ...f, status: "" }))}
+            />
+          )}
+          {filters.color && (
+            <FilterChip
+              label={filters.color === "evidenziate" ? "Evidenziate" : `Solo ${OPS_COLOR_STYLE[filters.color as OpsColor].label.toLowerCase()}`}
+              onClear={() => setFilters((f) => ({ ...f, color: "" }))}
+            />
+          )}
+        </div>
+      )}
 
       {changedCount > 0 && filters.status !== "cambiate" && (
         <div className="flex flex-wrap items-center gap-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
@@ -799,6 +886,7 @@ export default function OpsSheet({ initialRows, view, anchor, from, to, today, t
                   onBlurCommit={(token) => token === editToken.current && commit(null)}
                   onKey={onEditorKey}
                   onPick={(v) => commit(null, true, v)}
+                  onNavigate={moveCell}
                   suggestFor={(key) => options[key] ?? []}
                   onCellColor={setCellColor}
                   onChanges={(id, el) => {
@@ -1014,6 +1102,7 @@ type GroupProps = {
   onBlurCommit: (token: number) => void;
   onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) => void;
   onPick: (value: string) => void;
+  onNavigate: (dir: "up" | "down" | "left" | "right") => void;
   suggestFor: (key: ColKey) => Suggestion[];
   onCellColor: (id: string, key: OpsTextKey, color: OpsColor | null) => void;
   onMenu: (id: string, el: HTMLElement) => void;
@@ -1023,7 +1112,7 @@ type GroupProps = {
   showHeader: boolean;
 };
 
-function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onPick, suggestFor, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
+function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, onBlurCommit, onKey, onPick, onNavigate, suggestFor, onCellColor, onMenu, onChanges, onStatus, onAdd, showHeader }: GroupProps) {
   const d = parseIsoDate(day);
   return (
     <>
@@ -1103,7 +1192,7 @@ function DayGroup({ day, isToday, rows, editing, draft, setDraft, onStartEdit, o
                   style={{ background: isEditing ? "#ffffff" : bg, zIndex: isEditing ? 25 : undefined }}
                 >
                   {isEditing ? (
-                    <CellEditor column={c} selectAll={!!editing?.selectAll} draft={draft} setDraft={setDraft} onCommit={() => onBlurCommit(editing!.token)} onKey={onKey} onPick={onPick} suggestions={suggestFor(c.key)} />
+                    <CellEditor column={c} selectAll={!!editing?.selectAll} draft={draft} setDraft={setDraft} onCommit={() => onBlurCommit(editing!.token)} onKey={onKey} onPick={onPick} onNavigate={onNavigate} suggestions={suggestFor(c.key)} />
                   ) : c.key === "service_date" ? (
                     <span className="flex flex-col leading-tight">
                       <span className="text-[15px] font-semibold text-[#233c5e]">{d.getDate()}</span>
@@ -1184,6 +1273,7 @@ function CellEditor({
   onCommit,
   onKey,
   onPick,
+  onNavigate,
   suggestions,
 }: {
   column: OpsColumn;
@@ -1193,12 +1283,15 @@ function CellEditor({
   onCommit: () => void;
   onKey: (e: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, picked?: string) => void;
   onPick: (value: string) => void;
+  onNavigate: (dir: "up" | "down" | "left" | "right") => void;
   suggestions: Suggestion[];
 }) {
   const areaRef = useRef<HTMLTextAreaElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [active, setActive] = useState(0);
   const [closed, setClosed] = useState(false);
+  // finché non si scrive, le frecce spostano tra le celle (come nei fogli di calcolo); dopo muovono il cursore nel testo
+  const [typed, setTyped] = useState(false);
   const [box, setBox] = useState<{ left: number; top: number; width: number } | null>(null);
   const matches = closed ? [] : matchSuggestions(suggestions, draft);
 
@@ -1236,9 +1329,30 @@ function CellEditor({
         return;
       }
     }
+    if (e.key.startsWith("Arrow") && !e.shiftKey && !e.altKey && !e.metaKey && !e.ctrlKey) {
+      const el = e.currentTarget;
+      const start = el.selectionStart ?? 0;
+      const end = el.selectionEnd ?? 0;
+      const len = el.value.length;
+      const before = el.value.slice(0, start);
+      const after = el.value.slice(end);
+      const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
+      const go =
+        !typed ||
+        (dir === "up" && !before.includes("\n")) ||
+        (dir === "down" && !after.includes("\n")) ||
+        (dir === "left" && start === 0 && end === 0) ||
+        (dir === "right" && start === len && end === len);
+      if (go) {
+        e.preventDefault();
+        onNavigate(dir);
+        return;
+      }
+    }
     onKey(e);
   };
   const change = (v: string) => {
+    setTyped(true);
     setDraft(v);
     setActive(0);
     setClosed(false);
@@ -1399,6 +1513,118 @@ export function StatusPicker({ value, onChange }: { value: string; onChange: (ne
           </ul>
         </>
       )}
+    </>
+  );
+}
+
+function FilterChip({ label, onClear }: { label: string; onClear: () => void }) {
+  return (
+    <span className="inline-flex max-w-[16rem] items-center gap-1 rounded-full border border-[#cda876] bg-[#fdf6e6] py-0.5 pl-3 pr-1 text-xs font-medium text-[#233c5e]">
+      <span className="truncate">{label}</span>
+      <button type="button" onClick={onClear} className="rounded-full p-0.5 text-[#a08a5e] hover:bg-white hover:text-[#233c5e]" aria-label={`Togli il filtro ${label}`}>
+        <X className="h-3.5 w-3.5" />
+      </button>
+    </span>
+  );
+}
+
+const WEEKDAYS = ["L", "M", "M", "G", "V", "S", "D"];
+const MONTH_NAMES = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+
+// Agenda del mese: ogni giorno segna quanti servizi ci sono; si sceglie un giorno o si apre tutto il mese
+function OpsAgenda({
+  anchor,
+  from,
+  to,
+  today,
+  onDay,
+  onMonth,
+  onClose,
+}: {
+  anchor: string;
+  from: string;
+  to: string;
+  today: string;
+  onDay: (d: string) => void;
+  onMonth: (firstDay: string) => void;
+  onClose: () => void;
+}) {
+  const start = parseIsoDate(anchor);
+  const [month, setMonth] = useState({ y: start.getFullYear(), m: start.getMonth() });
+  const [counts, setCounts] = useState<Record<string, number>>({});
+  const first = new Date(month.y, month.m, 1);
+  const days = new Date(month.y, month.m + 1, 0).getDate();
+  const lead = (first.getDay() + 6) % 7; // lunedì per primo
+  const monthFrom = isoDate(first);
+  const monthTo = isoDate(new Date(month.y, month.m, days));
+
+  useEffect(() => {
+    let alive = true;
+    opsServiceDays(monthFrom, monthTo).then(
+      (c) => alive && setCounts(c),
+      () => {},
+    );
+    return () => {
+      alive = false;
+    };
+  }, [monthFrom, monthTo]);
+
+  const shift = (n: number) => setMonth((cur) => ({ y: cur.m + n < 0 ? cur.y - 1 : cur.m + n > 11 ? cur.y + 1 : cur.y, m: (cur.m + n + 12) % 12 }));
+  const cells = [...Array(lead).fill(null), ...Array.from({ length: days }, (_, i) => isoDate(new Date(month.y, month.m, i + 1)))];
+
+  return (
+    <>
+      <div className="fixed inset-0 z-30" onClick={onClose} />
+      <div className="picker-pop absolute left-1/2 top-full z-30 mt-2 w-[19rem] -translate-x-1/2 rounded-2xl border border-[#e6d7bb] bg-[#fffaf0] p-3 shadow-xl">
+        <div className="mb-2 flex items-center justify-between">
+          <button type="button" onClick={() => shift(-1)} className="rounded-full p-1.5 text-[#233c5e] hover:bg-white" aria-label="Mese precedente">
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button type="button" onClick={() => onMonth(monthFrom)} className="rounded-full px-3 py-1 font-[family-name:var(--font-display)] text-base font-semibold text-[#233c5e] hover:bg-white" title="Apri tutto il mese">
+            {MONTH_NAMES[month.m]} {month.y}
+          </button>
+          <button type="button" onClick={() => shift(1)} className="rounded-full p-1.5 text-[#233c5e] hover:bg-white" aria-label="Mese successivo">
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+        <div className="grid grid-cols-7 gap-1 text-center text-[11px] font-semibold uppercase text-slate-400">
+          {WEEKDAYS.map((w, i) => (
+            <span key={i}>{w}</span>
+          ))}
+        </div>
+        <div className="mt-1 grid grid-cols-7 gap-1">
+          {cells.map((d, i) => {
+            if (!d) return <span key={`v${i}`} />;
+            const n = counts[d] ?? 0;
+            const inRange = d >= from && d <= to;
+            const isToday = d === today;
+            return (
+              <button
+                key={d}
+                type="button"
+                onClick={() => onDay(d)}
+                title={n ? `${n} ${n === 1 ? "servizio" : "servizi"}` : "Nessun servizio"}
+                className={`relative flex h-10 flex-col items-center justify-center rounded-xl text-sm transition ${
+                  inRange ? "bg-[#233c5e] font-semibold text-white" : isToday ? "bg-[#cda876]/30 font-semibold text-[#233c5e]" : "text-[#233c5e] hover:bg-white"
+                }`}
+              >
+                {Number(d.slice(8))}
+                {n > 0 && (
+                  <span className={`mt-0.5 min-w-4 rounded-full px-1 text-[9.5px] font-bold leading-[14px] ${inRange ? "bg-[#cda876] text-[#17283f]" : "bg-[#c58f2d] text-white"}`}>
+                    {n}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+        <div className="mt-3 flex items-center justify-between border-t border-[#efe3cb] pt-2 text-xs text-slate-500">
+          <span>Il numero indica i servizi del giorno</span>
+          <button type="button" onClick={() => onDay(today)} className="rounded-full px-2.5 py-1 font-semibold text-[#233c5e] hover:bg-white">
+            Oggi
+          </button>
+        </div>
+      </div>
     </>
   );
 }

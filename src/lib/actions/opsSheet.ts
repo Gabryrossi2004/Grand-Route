@@ -250,3 +250,23 @@ export async function autoImportOnFinal(tripId: string): Promise<number> {
     return 0;
   }
 }
+
+/** Quanti servizi (non cancellati) ci sono in ogni giorno del periodo: per l'agenda dell'Operativo. */
+export async function opsServiceDays(from: string, to: string): Promise<Record<string, number>> {
+  const c = await ctx();
+  if (!c || !date.safeParse(from).success || !date.safeParse(to).success || from > to || nightsBetween(from, to) > 62) return {};
+  const { data, error } = await c.supabase
+    .from("ops_rows")
+    .select("service_date, status")
+    .eq("owner_id", c.companyId)
+    .gte("service_date", from)
+    .lte("service_date", to)
+    .limit(5000);
+  if (error) return {};
+  const out: Record<string, number> = {};
+  for (const r of (data ?? []) as { service_date: string; status: string | null }[]) {
+    if (r.status === "cancellato") continue;
+    out[r.service_date] = (out[r.service_date] ?? 0) + 1;
+  }
+  return out;
+}
