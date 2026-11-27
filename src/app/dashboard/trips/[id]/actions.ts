@@ -5,7 +5,7 @@ import { loadAiRules } from "@/lib/aiRulesServer";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { autoImportOnFinal } from "@/lib/actions/opsSheet";
+import { autoImportOnFinal, type AutoImportResult } from "@/lib/actions/opsSheet";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
 import {
@@ -287,14 +287,16 @@ export async function updateTripEmergencyButton(tripId: string, formData: FormDa
 // "2 versioni" dello stesso viaggio: preliminare (bozza generica, inviata al
 // cliente/agente per conferma) o finale (dettagli reali dopo la prenotazione
 // dei servizi). Un unico interruttore, nessuna scheda duplicata.
-export async function updateItineraryStage(tripId: string, currentStage: ItineraryStage) {
+export async function updateItineraryStage(tripId: string, currentStage: ItineraryStage): Promise<{ stage: ItineraryStage; ops: AutoImportResult | null }> {
   const supabase = await createClient();
   const nextStage: ItineraryStage = currentStage === "finale" ? "preliminare" : "finale";
   await supabase.from("trips").update({ itinerary_stage: nextStage }).eq("id", tripId);
-  // diventato «finale»: i servizi entrano da soli nell'Operativo (se attivato nelle Impostazioni)
-  if (nextStage === "finale" && (await autoImportOnFinal(tripId)) > 0) revalidatePath("/dashboard/operativo");
+  // diventato «finale»: i servizi entrano da soli nell'Operativo (si spegne nelle Impostazioni)
+  const ops = nextStage === "finale" ? await autoImportOnFinal(tripId) : null;
+  if (ops?.status === "added") revalidatePath("/dashboard/operativo");
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath(`/trips/${tripId}/preview`);
+  return { stage: nextStage, ops };
 }
 
 export async function togglePublish(tripId: string, isPublished: boolean) {

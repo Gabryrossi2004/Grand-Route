@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
+import type { AutoImportResult } from "@/lib/actions/opsSheet";
 import Link from "next/link";
 import { BookmarkPlus, CalendarDays, Copy, FileCheck2, FileDown, Globe2, Languages, ListChecks, MoreHorizontal } from "lucide-react";
 import SaveAsProposalDialog from "@/components/SaveAsProposalDialog";
@@ -27,7 +28,7 @@ export default function TripMoreMenu({
 }: {
   tripId: string;
   isFinal: boolean;
-  stageAction: () => void | Promise<void>;
+  stageAction: () => Promise<{ stage: string; ops: AutoImportResult | null }>;
   duplicateAction: () => void | Promise<void>;
   modeAction: () => void | Promise<void>;
   mode: "activities" | "days";
@@ -42,6 +43,25 @@ export default function TripMoreMenu({
   const [countriesOpen, setCountriesOpen] = useState(false);
   const [proposalOpen, setProposalOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const [stagePending, startStage] = useTransition();
+  const [stageNote, setStageNote] = useState<{ ok: boolean; text: string } | null>(null);
+
+  // Segna come finale/preliminare e dice cosa è successo nell'Operativo
+  const toggleStage = () =>
+    startStage(async () => {
+      const res = await stageAction();
+      setOpen(false);
+      const o = res.ops;
+      if (!o) return setStageNote({ ok: true, text: "Itinerario segnato come preliminare." });
+      const msg: Record<AutoImportResult["status"], { ok: boolean; text: string }> = {
+        added: { ok: true, text: `Itinerario finale: ${o.status === "added" ? o.count : 0} ${o.status === "added" && o.count === 1 ? "servizio aggiunto" : "servizi aggiunti"} all'Operativo, già «Confermato».` },
+        none: { ok: true, text: "Itinerario finale. Nessun servizio nuovo per l'Operativo: sono già tutti presenti, oppure l'itinerario non ha attività da importare (le «Info» e il programma a giornata intera non diventano servizi)." },
+        off: { ok: true, text: "Itinerario finale. L'aggiunta automatica all'Operativo è spenta (Impostazioni → Operativo day by day)." },
+        no_dates: { ok: false, text: "Itinerario finale, ma il viaggio non ha le date: aggiungile per far entrare i servizi nell'Operativo, poi segnalo di nuovo come finale." },
+        error: { ok: false, text: "Itinerario finale, ma non sono riuscito ad aggiungere i servizi all'Operativo. Puoi usare «Importa dai viaggi» nell'Operativo." },
+      };
+      setStageNote(msg[o.status]);
+    });
 
   // Zefiro (il personaggio) può aprire la traduzione
   useEffect(() => {
@@ -72,6 +92,18 @@ export default function TripMoreMenu({
 
   return (
     <div ref={wrapRef} className="relative">
+      {stageNote && (
+        <div
+          role="status"
+          className={`absolute right-0 top-full z-40 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-xl border px-4 py-3 text-sm shadow-lg ${stageNote.ok ? "border-emerald-200 bg-emerald-50 text-emerald-900" : "border-amber-300 bg-amber-50 text-amber-900"}`}
+        >
+          <p>{stageNote.text}</p>
+          <div className="mt-2 flex items-center justify-end gap-3">
+            <Link href="/dashboard/operativo" className="text-xs font-semibold underline">Apri l&apos;Operativo</Link>
+            <button type="button" onClick={() => setStageNote(null)} className="text-xs font-semibold">OK</button>
+          </div>
+        </div>
+      )}
       <button
         type="button"
         aria-haspopup="menu"
@@ -92,12 +124,10 @@ export default function TripMoreMenu({
             <FileDown size={16} /> Salva in PDF
           </Link>
 
-          <form action={stageAction}>
-            <button type="submit" role="menuitem" className={item}>
-              <FileCheck2 size={16} /> {isFinal ? "Segna come preliminare" : "Segna come finale"}
-            </button>
-          </form>
-          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario. Con l&apos;Operativo day by day attivo, quando diventa «finale» i servizi entrano da soli nella scheda operativa.</p>
+          <button type="button" role="menuitem" className={item} onClick={toggleStage} disabled={stagePending}>
+            <FileCheck2 size={16} /> {stagePending ? "Un attimo…" : isFinal ? "Segna come preliminare" : "Segna come finale"}
+          </button>
+          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario. Quando diventa «finale» i servizi entrano da soli nell&apos;Operativo, già confermati.</p>
 
           {!hasContent && (
             <>

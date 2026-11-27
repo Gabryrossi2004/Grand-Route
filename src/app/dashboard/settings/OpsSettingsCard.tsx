@@ -40,12 +40,12 @@ export default function OpsSettingsCard({ initiallyOn, initiallyAuto }: { initia
         <input type="checkbox" checked={on} disabled={saving} onChange={(e) => toggle(e.target.checked)} />
         Importa i servizi dagli itinerari nella scheda operativa
       </label>
-      <label className={`mt-3 flex items-start gap-2 text-sm font-medium ${on ? "text-slate-800" : "text-slate-400"}`}>
+      <label className="mt-3 flex items-start gap-2 text-sm font-medium text-slate-800">
         <input
           type="checkbox"
           className="mt-0.5"
-          checked={on && auto}
-          disabled={saving || !on}
+          checked={auto}
+          disabled={saving}
           onChange={async (e) => {
             const next = e.target.checked;
             setAuto(next);
@@ -66,7 +66,7 @@ export default function OpsSettingsCard({ initiallyOn, initiallyAuto }: { initia
           }}
         />
         <span>
-          In automatico quando un viaggio diventa «finale»
+          Aggiungi i servizi all&apos;Operativo quando un viaggio diventa «finale»
           <span className="block text-xs font-normal text-slate-500">
             Si presume che i servizi siano tutti confermati: entrano da soli nell&apos;Operativo, già segnati come confermati. Quelli già presenti non si
             duplicano.

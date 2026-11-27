@@ -147,12 +147,23 @@ export async function importOpsFromTrips(
   if (!c || !date.safeParse(from).success || !date.safeParse(to).success || from > to) return { ok: false, error: "Periodo non valido." };
   if (tripId !== undefined && !z.string().uuid().safeParse(tripId).success) return { ok: false, error: "Viaggio non valido." };
   if (nightsBetween(from, to) > (tripId ? 400 : 62)) return { ok: false, error: "Importa al massimo due mesi alla volta." };
-  const { supabase, companyId } = c;
 
-  // l'importazione si attiva nelle Impostazioni (serve ai tour operator, non alle agenzie)
-  const { data: profile } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
+  // il pulsante «Importa dai viaggi» si attiva nelle Impostazioni (serve ai tour operator, non alle agenzie)
+  const { data: profile } = await c.supabase.from("profiles").select("ai_preferences").eq("id", c.companyId).maybeSingle();
   if ((profile?.ai_preferences as Record<string, string> | null)?.ops_import !== "on")
     return { ok: false, error: "L'importazione dai viaggi è spenta: puoi attivarla in Impostazioni → Operativo day by day." };
+  return importRows(c, from, to, includeUnconfirmed, tripId, markConfirmed);
+}
+
+async function importRows(
+  c: NonNullable<Awaited<ReturnType<typeof ctx>>>,
+  from: string,
+  to: string,
+  includeUnconfirmed: boolean,
+  tripId: string | undefined,
+  markConfirmed: boolean,
+): Promise<{ ok: true; rows: OpsRow[]; skipped: number } | Fail> {
+  const { supabase, companyId } = c;
 
   let dayQuery = supabase
     .from("trip_days")
@@ -226,28 +237,36 @@ export async function importOpsFromTrips(
   return { ok: true, rows, skipped: already.size };
 }
 
-/** Viaggio appena segnato «finale»: se l'agenzia lo ha attivato (Impostazioni → Operativo day by day), i suoi servizi
- *  entrano da soli nella scheda operativa, già «Confermato». Quelli già presenti non si duplicano. Non fa mai fallire
- *  il cambio di stato del viaggio. Restituisce quante righe ha aggiunto (0 se spento o se non c'era nulla). */
-export async function autoImportOnFinal(tripId: string): Promise<number> {
+export type AutoImportResult =
+  | { status: "added"; count: number }
+  | { status: "none" } // nessun servizio nuovo (già tutti nell'Operativo, o itinerario senza attività da importare)
+  | { status: "off" } // spento nelle Impostazioni
+  | { status: "no_dates" } // il viaggio non ha le date
+  | { status: "error" };
+
+/** Viaggio appena segnato «finale»: i suoi servizi entrano da soli nella scheda operativa, già «Confermato»
+ *  (si spegne in Impostazioni → Operativo day by day). Quelli già presenti non si duplicano.
+ *  Non fa mai fallire il cambio di stato del viaggio: dice solo com'è andata. */
+export async function autoImportOnFinal(tripId: string): Promise<AutoImportResult> {
   try {
     const c = await ctx();
-    if (!c || !z.string().uuid().safeParse(tripId).success) return 0;
+    if (!c || !z.string().uuid().safeParse(tripId).success) return { status: "error" };
     const { supabase, companyId } = c;
     const [{ data: profile }, { data: trip }] = await Promise.all([
       supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle(),
       supabase.from("trips").select("start_date, end_date").eq("id", tripId).eq("owner_id", companyId).maybeSingle(),
     ]);
     const prefs = (profile?.ai_preferences as Record<string, string> | null) ?? {};
-    if (prefs.ops_import !== "on" || prefs.ops_auto === "off") return 0;
+    if (prefs.ops_auto === "off") return { status: "off" };
     const from = (trip as { start_date?: string | null } | null)?.start_date;
     const to = (trip as { end_date?: string | null } | null)?.end_date ?? from;
-    if (!from || !to || from > to) return 0;
-    const res = await importOpsFromTrips(from, to, false, tripId, true);
-    return res.ok ? res.rows.length : 0;
+    if (!from || !to || from > to) return { status: "no_dates" };
+    const res = await importRows(c, from, to, false, tripId, true);
+    if (!res.ok) return { status: "error" };
+    return res.rows.length > 0 ? { status: "added", count: res.rows.length } : { status: "none" };
   } catch (error) {
     console.error("[operativo] importazione automatica", error);
-    return 0;
+    return { status: "error" };
   }
 }
 
