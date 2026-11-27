@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { UserRound } from "lucide-react";
 import { assignTrip } from "@/lib/actions/tripAssign";
 
-// Chi della squadra segue questo viaggio
+// Chi del team segue questo viaggio
 export default function TripAssignee({
   tripId,
   assignedTo,

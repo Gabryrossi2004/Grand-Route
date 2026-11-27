@@ -18,7 +18,7 @@ export function JoinSignupForm({ token, email }: { token: string; email: string 
           <Link href="/professionisti" className="font-medium underline">
             accedi
           </Link>{" "}
-          con la tua email e la password: entrerai direttamente nella squadra.
+          con la tua email e la password: entrerai direttamente nel team.
         </p>
       </div>
     );
@@ -51,7 +51,7 @@ export function JoinSignupForm({ token, email }: { token: string; email: string 
         disabled={pending}
         className="rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17283f] disabled:opacity-60"
       >
-        {pending ? "Un attimo…" : "Entra nella squadra"}
+        {pending ? "Un attimo…" : "Entra nel team"}
       </button>
     </form>
   );
@@ -74,7 +74,7 @@ export function JoinAsCurrentUser({ token }: { token: string }) {
         }
         className="rounded-lg bg-[#233c5e] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17283f] disabled:opacity-60"
       >
-        {pending ? "Un attimo…" : "Entra nella squadra"}
+        {pending ? "Un attimo…" : "Entra nel team"}
       </button>
       {error && <p className="text-sm text-red-600">{error}</p>}
     </div>

@@ -84,7 +84,7 @@ async function currentRole(supabase: Awaited<ReturnType<typeof createClient>>, t
   if (!user) return null;
   const { data: trip } = await supabase.from("trips").select("owner_id, title").eq("id", tripId).maybeSingle();
   if (!trip) return null;
-  // agenzia = il viaggio è dell'agenzia di chi scrive (anche un collaboratore della squadra)
+  // agenzia = il viaggio è dell'agenzia di chi scrive (anche un collaboratore del team)
   const companyId = await companyIdOf(user.id);
   return { user, title: trip.title as string, role: (trip.owner_id === companyId ? "agency" : "client") as "agency" | "client" };
 }

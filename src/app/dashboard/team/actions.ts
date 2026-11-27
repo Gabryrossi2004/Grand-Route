@@ -13,14 +13,14 @@ const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 // per i confronti con ilike (senza caratteri jolly)
 const likeExact = (v: string) => v.replace(/[%_\\]/g, "\\$&");
 
-// Messaggi per gli esiti delle funzioni della squadra (migrazione 0075)
+// Messaggi per gli esiti delle funzioni del team (migrazione 0075)
 const RESULT_TEXT: Record<string, string> = {
   non_autorizzato: NOT_TITOLARE,
   ruolo: "Ruolo non valido.",
   fondatore: "Chi ha aperto l'account dell'agenzia resta sempre titolare e non si può togliere.",
-  non_trovato: "Questa persona non fa parte della squadra.",
+  non_trovato: "Questa persona non fa parte del team.",
   ultimo_titolare: "Deve restare almeno un titolare.",
-  ha_squadra: "Prima togli i colleghi dalla squadra, poi puoi tornare all'account individuale.",
+  ha_squadra: "Prima rimuovi i colleghi dal team, poi puoi tornare all'account individuale.",
   non_professionista: "Per ora l'account aziendale è per agenzie, tour operator e DMC.",
   modo: "Scelta non valida.",
 };
@@ -45,11 +45,11 @@ export async function inviteMember(_prev: InviteState, formData: FormData): Prom
   if (!isTeamRole(role)) return { error: "Scegli un ruolo." };
 
   const supabase = await createClient();
-  // chi è già nella squadra non va invitato di nuovo
+  // chi è già nel team non va invitato di nuovo
   const { data: members } = await supabase.from("team_members").select("user_id").eq("company_id", team.companyId);
   const ids = [team.companyId, ...((members as { user_id: string }[] | null) ?? []).map((m) => m.user_id)];
   const { data: already } = await supabase.from("profiles").select("id").in("id", ids).ilike("email", likeExact(email)).limit(1);
-  if (already && already.length > 0) return { error: "Questa persona fa già parte della squadra." };
+  if (already && already.length > 0) return { error: "Questa persona fa già parte del team." };
 
   // un solo invito valido per email: i precedenti ancora aperti si annullano
   await supabase
@@ -66,7 +66,7 @@ export async function inviteMember(_prev: InviteState, formData: FormData): Prom
     .select("token")
     .single();
   if (error || !invite) {
-    console.error("[squadra] invito non creato:", error?.message);
+    console.error("[team] invito non creato:", error?.message);
     return { error: /team_invites|relation|does not exist/i.test(error?.message ?? "") ? "Serve l'aggiornamento del database (migrazione 0075)." : "Invito non creato. Riprova." };
   }
 
@@ -81,7 +81,7 @@ export async function inviteMember(_prev: InviteState, formData: FormData): Prom
   const mail = buildTeamInviteEmail({ agencyName, inviterName: m.full_name ?? "", role, link });
   const sent = await sendMail({ to: email, ...mail, replyTo: m.email || c.email || null, fromName: agencyName });
 
-  revalidatePath("/dashboard/squadra");
+  revalidatePath("/dashboard/team");
   return { link, email, emailSent: sent.ok };
 }
 
@@ -95,7 +95,7 @@ export async function revokeInvite(id: string): Promise<{ ok: true } | { error: 
     .eq("id", id)
     .eq("company_id", check.team.companyId);
   if (error) return { error: "Invito non annullato. Riprova." };
-  revalidatePath("/dashboard/squadra");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -107,7 +107,7 @@ export async function changeMemberRole(userId: string, role: string): Promise<{ 
   const { data, error } = await supabase.rpc("team_set_role", { p_user: userId, p_role: role });
   if (error) return { error: "Ruolo non cambiato. Riprova." };
   if (data !== "ok") return { error: RESULT_TEXT[String(data)] ?? "Ruolo non cambiato." };
-  revalidatePath("/dashboard/squadra");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -119,7 +119,7 @@ export async function removeMember(userId: string): Promise<{ ok: true } | { err
   const { data, error } = await supabase.rpc("team_remove", { p_user: userId });
   if (error) return { error: "Non è stato possibile togliere il collega. Riprova." };
   if (data !== "ok") return { error: RESULT_TEXT[String(data)] ?? "Non è stato possibile togliere il collega." };
-  revalidatePath("/dashboard/squadra");
+  revalidatePath("/dashboard/team");
   revalidatePath("/dashboard/trips");
   return { ok: true };
 }

@@ -150,7 +150,7 @@ export async function createTrip(
   });
   if ("error" in created) return created;
 
-  // Con la squadra il viaggio nuovo lo segue chi l'ha creato (si cambia dalla pagina del viaggio)
+  // Con il team il viaggio nuovo lo segue chi l'ha creato (si cambia dalla pagina del viaggio)
   const team = await getTeamContext();
   if (team && (team.isMember || team.accountMode === "azienda")) {
     await supabase.from("trips").update({ assigned_to: user.id }).eq("id", created.id);

@@ -30,7 +30,7 @@ export async function professionalLogin(_prev: ProLoginState, formData: FormData
   }
   // Chi si è registrato dal link di un collega: lega l'invito (una volta sola; senza la migrazione 0074 non succede nulla)
   await supabase.rpc("claim_referral");
-  // Chi si è registrato dall'invito di un'agenzia entra nella sua squadra (senza la migrazione 0075 non succede nulla)
+  // Chi si è registrato dall'invito di un'agenzia entra nel suo team (senza la migrazione 0075 non succede nulla)
   const teamToken = (data.user.user_metadata as { team_invite?: unknown } | null)?.team_invite;
   if (typeof teamToken === "string" && teamToken) {
     const { data: outcome } = await supabase.rpc("accept_team_invite");

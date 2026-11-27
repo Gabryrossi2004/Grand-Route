@@ -63,7 +63,7 @@ export async function companyIdOf(userId: string): Promise<string> {
 
 export type TeamPerson = { id: string; name: string; role: TeamRole; isFounder: boolean };
 
-// Le persone della squadra (fondatore + colleghi), per «assegnato a» e il filtro «I miei viaggi».
+// Le persone del team (fondatore + colleghi), per «assegnato a» e il filtro «I miei viaggi».
 // Vuoto per gli account individuali senza colleghi (e se la migrazione 0075 non c'è ancora).
 export const getTeamPeople = cache(async (): Promise<TeamPerson[]> => {
   const team = await getTeamContext();

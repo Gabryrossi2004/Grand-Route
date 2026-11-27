@@ -4,13 +4,13 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getTeamContext, getTeamPeople } from "@/lib/team";
 
-// «Lo segue»: assegna il viaggio a una persona della squadra (o a nessuno)
+// «Lo segue»: assegna il viaggio a una persona del team (o a nessuno)
 export async function assignTrip(tripId: string, userId: string | null): Promise<{ ok: true } | { error: string }> {
   const team = await getTeamContext();
   if (!team) return { error: "Sessione scaduta: accedi di nuovo." };
   if (userId) {
     const people = await getTeamPeople();
-    if (!people.some((p) => p.id === userId)) return { error: "Questa persona non fa parte della squadra." };
+    if (!people.some((p) => p.id === userId)) return { error: "Questa persona non fa parte del team." };
   }
   const supabase = await createClient();
   const { data, error } = await supabase

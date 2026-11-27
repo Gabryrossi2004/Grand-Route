@@ -9,7 +9,7 @@ export default async function TripsPage() {
   // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
   const team = await getTeamContext();
   const companyId = team?.companyId ?? "";
-  // con la squadra: filtro «I miei viaggi» e chi segue ogni viaggio
+  // con il team: filtro «I miei viaggi» e chi segue ogni viaggio
   const people = await getTeamPeople();
 
   const [{ data: trips }, { data: groups }] = await Promise.all([

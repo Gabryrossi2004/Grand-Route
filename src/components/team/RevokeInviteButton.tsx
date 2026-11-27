@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { revokeInvite } from "@/app/dashboard/squadra/actions";
+import { revokeInvite } from "@/app/dashboard/team/actions";
 
 export default function RevokeInviteButton({ id }: { id: string }) {
   const [pending, start] = useTransition();

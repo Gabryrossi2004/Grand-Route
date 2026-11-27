@@ -118,7 +118,7 @@ export default function SignupForm({ initialKind, referral }: { initialKind?: st
                 {(
                   [
                     { id: "individuale", Icon: User, label: "Individuale", text: "Lavori da solo: un account, una persona." },
-                    { id: "azienda", Icon: Users, label: "Azienda / squadra", text: "Puoi invitare i colleghi, ognuno con la sua email e il suo ruolo." },
+                    { id: "azienda", Icon: Users, label: "Azienda / team", text: "Puoi invitare i colleghi, ognuno con la sua email e il suo ruolo." },
                   ] as const
                 ).map(({ id, Icon, label, text }) => (
                   <button

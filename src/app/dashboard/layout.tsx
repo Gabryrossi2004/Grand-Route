@@ -49,7 +49,7 @@ export default async function DashboardLayout({
         .neq("author_id", user.id),
       supabase.rpc("is_platform_admin"),
       // Ordini, variazioni e fatture dei fornitori da guardare (0 se la migrazione 0065 non c'è ancora).
-      // Rete Partner e Posta per ora sono solo del fondatore (fase 2 della squadra)
+      // Rete Partner e Posta per ora sono solo del fondatore (fase 2 del team)
       isMember ? Promise.resolve({ data: null }) : supabase.rpc("network_todo_counts"),
       // Posta non letta (0 se la migrazione 0067 non c'è ancora)
       isMember ? Promise.resolve({ data: null }) : supabase.rpc("mail_unread_count"),
@@ -66,7 +66,7 @@ export default async function DashboardLayout({
   // I viaggiatori privati hanno la loro area
   if ((profile as { is_traveler?: boolean } | null)?.is_traveler || own?.is_traveler) redirect("/viaggiatore");
   // I fornitori (guide, autisti, strutture...) usano solo la sezione Partner: entrano dalla loro Home
-  // (non i collaboratori di una squadra: la rete Partner per loro non è ancora aperta)
+  // (non i collaboratori di un team: la rete Partner per loro non è ancora aperta)
   if (!isMember && !isTradeKind((profile as { business_kind?: string | null } | null)?.business_kind)) redirect("/rete/home");
   // Chi si è registrato con i dati dell'attività li trova già nel profilo della Rete
   if (!isMember) await adoptSignupDraft();

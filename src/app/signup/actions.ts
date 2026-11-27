@@ -27,7 +27,7 @@ export async function signup(_prevState: State, formData: FormData): Promise<Sta
   const referral = cleanReferralCode(formData.get("referral"));
   for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth", "referral", "accountMode"]) delete record[k];
   const trade = isTradeKind(kind);
-  // Account aziendale (con la squadra) o individuale: la squadra è per agenzie, tour operator e DMC
+  // Account aziendale (con il team) o individuale: il team è per agenzie, tour operator e DMC
   const accountMode = trade && formData.get("accountMode") === "azienda" ? "azienda" : "individuale";
   let draft: Record<string, unknown> | null = null;
   if (!trade || hasBusinessInput(record)) {

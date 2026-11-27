@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import { UserPlus } from "lucide-react";
-import { inviteMember, type InviteState } from "@/app/dashboard/squadra/actions";
+import { inviteMember, type InviteState } from "@/app/dashboard/team/actions";
 import { ROLE_HINTS, ROLE_LABELS, TEAM_ROLES } from "@/lib/teamRoles";
 import CopyLinkButton from "./CopyLinkButton";
 

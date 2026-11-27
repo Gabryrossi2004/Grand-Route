@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { changeMemberRole, removeMember } from "@/app/dashboard/squadra/actions";
+import { changeMemberRole, removeMember } from "@/app/dashboard/team/actions";
 import { ROLE_LABELS, TEAM_ROLES, type TeamRole } from "@/lib/teamRoles";
 
 // Ruolo e uscita di un collega (solo per i titolari)
@@ -24,8 +24,8 @@ export default function MemberControls({ userId, role, name, isSelf }: { userId:
   }
   function onRemove() {
     const question = isSelf
-      ? "Vuoi uscire dalla squadra? Non vedrai più i dati dell'agenzia."
-      : `Togliere ${name} dalla squadra? Perde subito l'accesso; i viaggi e i dati restano all'agenzia.`;
+      ? "Vuoi uscire dal team? Non vedrai più i dati dell'agenzia."
+      : `Rimuovere ${name} dal team? Perde subito l'accesso; i viaggi e i dati restano all'agenzia.`;
     if (!window.confirm(question)) return;
     setError(null);
     start(async () => {
@@ -55,7 +55,7 @@ export default function MemberControls({ userId, role, name, isSelf }: { userId:
         disabled={pending}
         className="rounded-full border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-700 transition hover:bg-red-50 disabled:opacity-60"
       >
-        {isSelf ? "Esci" : "Togli"}
+        {isSelf ? "Esci" : "Rimuovi"}
       </button>
       {error && <p className="w-full text-xs text-red-700">{error}</p>}
     </div>

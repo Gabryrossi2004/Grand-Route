@@ -13,7 +13,7 @@ type StatusFilter = "tutti" | "pubblicati" | "bozze";
 // qualche gruppo e tante varianti create nel tempo la lista diventerebbe
 // caotica. Le altre varianti restano raggiungibili dalla sezione dedicata
 // dentro la pagina del viaggio.
-// team: con la squadra, il filtro «I miei viaggi / Tutti» e il nome di chi segue ogni viaggio
+// team: con il team, il filtro «I miei viaggi / Tutti» e il nome di chi segue ogni viaggio
 export default function TripsList({
   trips,
   groups,

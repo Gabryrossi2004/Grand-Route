@@ -19,7 +19,7 @@ export default async function NetworkLayout({ children }: { children: React.Reac
   const user = await getCachedUser();
   if (!user) redirect("/professionisti?next=/rete");
   await redirectIfSuspended();
-  // Account di squadra, fase 1: la rete Partner è ancora solo del fondatore dell'agenzia
+  // Account di team, fase 1: la rete Partner è ancora solo del fondatore dell'agenzia
   if ((await getTeamContext())?.isMember) redirect("/dashboard/in-arrivo");
   const supabase = await createClient();
   const { data: profile } = await supabase.from("profiles").select("is_traveler, is_professional, business_kind").eq("id", user.id).maybeSingle();

@@ -4,7 +4,7 @@ import { ArrowLeft, Users } from "lucide-react";
 // Sezioni non ancora aperte ai collaboratori (rete Partner, Posta, ordini ai fornitori…) o riservate ai titolari.
 export default function TeamComingSoon({
   title = "In arrivo per i collaboratori",
-  text = "La rete Partner, la Posta con i partner e gli ordini ai fornitori per ora li usa solo chi ha aperto l'account dell'agenzia. Presto saranno disponibili anche per la squadra.",
+  text = "La rete Partner, la Posta con i partner e gli ordini ai fornitori per ora li usa solo chi ha aperto l'account dell'agenzia. Presto saranno disponibili anche per il team.",
 }: {
   title?: string;
   text?: string;

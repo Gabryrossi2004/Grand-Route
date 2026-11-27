@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
     account: true,
     children: [
       { href: "/dashboard/settings", label: "Impostazioni" },
-      { href: "/dashboard/squadra", label: "Squadra", hint: "Colleghi, ruoli e inviti" },
+      { href: "/dashboard/team", label: "Team", hint: "Colleghi, ruoli e inviti" },
       { href: "/dashboard/sconto", label: "Sconto Rotta", hint: "Viaggi verificati e sconto sul piano" },
       { href: "/dashboard/invita", label: "Invita un collega", hint: "−20% per 3 mesi a entrambi" },
       { href: "/dashboard/settings/guida", label: "Guida all'uso" },
@@ -70,11 +70,11 @@ const isGroup = (item: NavItem): item is NavGroup => "children" in item;
 
 export type NavTeam = { isMember: boolean; isTitolare: boolean; accountMode: "individuale" | "azienda" };
 
-// Voci nascoste secondo l'account: la Squadra solo ai titolari di un account aziendale; rete Partner, Posta,
+// Voci nascoste secondo l'account: la Team solo ai titolari di un account aziendale; rete Partner, Posta,
 // ordini ai fornitori e «Invita un collega» per ora solo al fondatore (fase 2); Sconto Rotta solo ai titolari.
 function hiddenFor(team: NavTeam): Set<string> {
   const hidden = new Set<string>();
-  if (!(team.isTitolare && team.accountMode === "azienda")) hidden.add("/dashboard/squadra");
+  if (!(team.isTitolare && team.accountMode === "azienda")) hidden.add("/dashboard/team");
   if (team.isMember) ["/rete", "/dashboard/posta", "/dashboard/ordini", "/dashboard/invita"].forEach((h) => hidden.add(h));
   if (!team.isTitolare) hidden.add("/dashboard/sconto");
   return hidden;

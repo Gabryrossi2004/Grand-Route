@@ -13,7 +13,7 @@ async function inviteInfo(token: string): Promise<InviteInfo> {
   return (data as InviteInfo) ?? null;
 }
 
-// Nuovo collaboratore: crea l'account con l'email dell'invito. Entra nella squadra al primo accesso
+// Nuovo collaboratore: crea l'account con l'email dell'invito. Entra nel team al primo accesso
 // (subito, se Supabase non chiede di confermare l'email).
 export async function joinTeamSignup(token: string, _prev: JoinState, formData: FormData): Promise<JoinState> {
   const fullName = String(formData.get("fullName") ?? "").trim();
@@ -43,7 +43,7 @@ export async function joinTeamSignup(token: string, _prev: JoinState, formData: 
 
   const { data: outcome } = await supabase.rpc("accept_team_invite");
   if (outcome === "ok" || outcome === "gia_membro") redirect("/dashboard");
-  return { error: ACCEPT_MESSAGES[String(outcome)] ?? "Account creato, ma non sono riuscito a farti entrare nella squadra. Riprova ad accedere." };
+  return { error: ACCEPT_MESSAGES[String(outcome)] ?? "Account creato, ma non sono riuscito a farti entrare nel team. Riprova ad accedere." };
 }
 
 // Chi ha già un account (senza dati propri) ed è collegato con l'email dell'invito
@@ -52,5 +52,5 @@ export async function joinTeamAsCurrentUser(token: string): Promise<{ error: str
   const { data, error } = await supabase.rpc("accept_team_invite", { p_token: token });
   if (error) return { error: "Serve l'aggiornamento del database (migrazione 0075)." };
   if (data === "ok" || data === "gia_membro") redirect("/dashboard");
-  return { error: ACCEPT_MESSAGES[String(data)] ?? "Non è stato possibile entrare nella squadra." };
+  return { error: ACCEPT_MESSAGES[String(data)] ?? "Non è stato possibile entrare nel team." };
 }
