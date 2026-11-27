@@ -5,6 +5,7 @@ import { loadAiRules } from "@/lib/aiRulesServer";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { autoImportOnFinal } from "@/lib/actions/opsSheet";
 import { generatePublicSlug } from "@/lib/slug";
 import { CHECK_OUT_DATE_KEY, confirmationDetailKey, detailFields } from "@/lib/activityTypes";
 import {
@@ -290,6 +291,8 @@ export async function updateItineraryStage(tripId: string, currentStage: Itinera
   const supabase = await createClient();
   const nextStage: ItineraryStage = currentStage === "finale" ? "preliminare" : "finale";
   await supabase.from("trips").update({ itinerary_stage: nextStage }).eq("id", tripId);
+  // diventato «finale»: i servizi entrano da soli nell'Operativo (se attivato nelle Impostazioni)
+  if (nextStage === "finale" && (await autoImportOnFinal(tripId)) > 0) revalidatePath("/dashboard/operativo");
   revalidatePath(`/dashboard/trips/${tripId}`);
   revalidatePath(`/trips/${tripId}/preview`);
 }

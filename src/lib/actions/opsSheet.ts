@@ -141,6 +141,7 @@ export async function importOpsFromTrips(
   to: string,
   includeUnconfirmed: boolean,
   tripId?: string,
+  markConfirmed = false,
 ): Promise<{ ok: true; rows: OpsRow[]; skipped: number } | Fail> {
   const c = await ctx();
   if (!c || !date.safeParse(from).success || !date.safeParse(to).success || from > to) return { ok: false, error: "Periodo non valido." };
@@ -198,7 +199,17 @@ export async function importOpsFromTrips(
     .map((a) => {
       const day = dayById.get(a.trip_day_id)!;
       const source = sourceFromActivity(a, day, services.get(a.id));
-      return { owner_id: companyId, ...source, agent: "", responsible: "", source, trip_id: day.trips!.id, activity_id: a.id };
+      return {
+        owner_id: companyId,
+        ...source,
+        agent: "",
+        responsible: "",
+        source,
+        trip_id: day.trips!.id,
+        activity_id: a.id,
+        // viaggio appena segnato «finale»: si presume che i servizi siano confermati
+        ...(markConfirmed ? { status: "confermato" as const } : {}),
+      };
     });
 
   const rows: OpsRow[] = [];
@@ -213,4 +224,29 @@ export async function importOpsFromTrips(
     rows.push(...((data ?? []) as OpsRow[]));
   }
   return { ok: true, rows, skipped: already.size };
+}
+
+/** Viaggio appena segnato «finale»: se l'agenzia lo ha attivato (Impostazioni → Operativo day by day), i suoi servizi
+ *  entrano da soli nella scheda operativa, già «Confermato». Quelli già presenti non si duplicano. Non fa mai fallire
+ *  il cambio di stato del viaggio. Restituisce quante righe ha aggiunto (0 se spento o se non c'era nulla). */
+export async function autoImportOnFinal(tripId: string): Promise<number> {
+  try {
+    const c = await ctx();
+    if (!c || !z.string().uuid().safeParse(tripId).success) return 0;
+    const { supabase, companyId } = c;
+    const [{ data: profile }, { data: trip }] = await Promise.all([
+      supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle(),
+      supabase.from("trips").select("start_date, end_date").eq("id", tripId).eq("owner_id", companyId).maybeSingle(),
+    ]);
+    const prefs = (profile?.ai_preferences as Record<string, string> | null) ?? {};
+    if (prefs.ops_import !== "on" || prefs.ops_auto === "off") return 0;
+    const from = (trip as { start_date?: string | null } | null)?.start_date;
+    const to = (trip as { end_date?: string | null } | null)?.end_date ?? from;
+    if (!from || !to || from > to) return 0;
+    const res = await importOpsFromTrips(from, to, false, tripId, true);
+    return res.ok ? res.rows.length : 0;
+  } catch (error) {
+    console.error("[operativo] importazione automatica", error);
+    return 0;
+  }
 }

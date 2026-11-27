@@ -126,7 +126,10 @@ export default async function SettingsPage() {
       {titolare && (
       <div className="mt-6">
         <AutoMessagesCard initiallyOn={(profile as Profile).ai_preferences?.auto_messages === "on"} />
-        <OpsSettingsCard initiallyOn={(profile as Profile).ai_preferences?.ops_import === "on"} />
+        <OpsSettingsCard
+          initiallyOn={(profile as Profile).ai_preferences?.ops_import === "on"}
+          initiallyAuto={(profile as Profile).ai_preferences?.ops_auto !== "off"}
+        />
         <AiRulesCard profile={profile as Profile} />
         {usage && <ZefiroUsageCard summary={usage} />}
         <ClientZefiroCard

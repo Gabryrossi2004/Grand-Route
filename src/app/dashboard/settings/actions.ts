@@ -331,7 +331,7 @@ export async function saveClientZefiroConfig(
 }
 
 // Scheda operativa: pulsante «Importa dai viaggi» (utile ai tour operator, spento per le agenzie)
-export async function setOpsImport(enabled: boolean): Promise<{ ok: true } | { error: string }> {
+export async function setOpsImport(enabled: boolean, key: "ops_import" | "ops_auto" = "ops_import"): Promise<{ ok: true } | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -342,7 +342,7 @@ export async function setOpsImport(enabled: boolean): Promise<{ ok: true } | { e
   if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
   const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
-  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), ops_import: enabled ? "on" : "off" };
+  const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), [key]: enabled ? "on" : "off" };
   const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setOpsImport]", error.message);

@@ -4,8 +4,9 @@ import { useState } from "react";
 import { setOpsImport } from "./actions";
 
 // Scheda operativa «day by day»: importazione dei servizi dagli itinerari (per i tour operator)
-export default function OpsSettingsCard({ initiallyOn }: { initiallyOn: boolean }) {
+export default function OpsSettingsCard({ initiallyOn, initiallyAuto }: { initiallyOn: boolean; initiallyAuto: boolean }) {
   const [on, setOn] = useState(initiallyOn);
+  const [auto, setAuto] = useState(initiallyAuto);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -38,6 +39,39 @@ export default function OpsSettingsCard({ initiallyOn }: { initiallyOn: boolean 
       <label className="flex items-center gap-2 text-sm font-medium text-slate-800">
         <input type="checkbox" checked={on} disabled={saving} onChange={(e) => toggle(e.target.checked)} />
         Importa i servizi dagli itinerari nella scheda operativa
+      </label>
+      <label className={`mt-3 flex items-start gap-2 text-sm font-medium ${on ? "text-slate-800" : "text-slate-400"}`}>
+        <input
+          type="checkbox"
+          className="mt-0.5"
+          checked={on && auto}
+          disabled={saving || !on}
+          onChange={async (e) => {
+            const next = e.target.checked;
+            setAuto(next);
+            setSaving(true);
+            setMessage(null);
+            try {
+              const result = await setOpsImport(next, "ops_auto");
+              if ("error" in result) {
+                setAuto(!next);
+                setMessage(result.error);
+              }
+            } catch {
+              setAuto(!next);
+              setMessage("Non è stato possibile salvare. Riprova.");
+            } finally {
+              setSaving(false);
+            }
+          }}
+        />
+        <span>
+          In automatico quando un viaggio diventa «finale»
+          <span className="block text-xs font-normal text-slate-500">
+            Si presume che i servizi siano tutti confermati: entrano da soli nell&apos;Operativo, già segnati come confermati. Quelli già presenti non si
+            duplicano.
+          </span>
+        </span>
       </label>
       {message && <p className="mt-2 text-sm text-red-700">{message}</p>}
     </section>

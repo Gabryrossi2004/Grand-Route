@@ -97,7 +97,7 @@ export default function TripMoreMenu({
               <FileCheck2 size={16} /> {isFinal ? "Segna come preliminare" : "Segna come finale"}
             </button>
           </form>
-          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario.</p>
+          <p className={hint}>Il cliente vede l&apos;etichetta «preliminare» o «finale» in cima all&apos;itinerario. Con l&apos;Operativo day by day attivo, quando diventa «finale» i servizi entrano da soli nella scheda operativa.</p>
 
           {!hasContent && (
             <>
