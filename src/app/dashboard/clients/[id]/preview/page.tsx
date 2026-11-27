@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Eye } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import ClientTripsGrid, { type TripWithAgency } from "@/components/ClientTripsGrid";
 
 export default async function ClientPreviewPage({
@@ -11,13 +12,14 @@ export default async function ClientPreviewPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const { data: client } = await supabase
     .from("clients")
     .select("*")
     .eq("id", id)
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .single();
   if (!client) notFound();
 

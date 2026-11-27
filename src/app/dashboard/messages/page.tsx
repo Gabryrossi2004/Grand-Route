@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { TripMessage } from "@/lib/types";
 
 type TripRow = { id: string; title: string; clients: { full_name: string } | { full_name: string }[] | null };
@@ -18,12 +19,13 @@ function when(iso: string) {
 // chi ha scritto, senza aprire i viaggi uno per uno.
 export default async function MessagesPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const { data: trips } = await supabase
     .from("trips")
     .select("id, title, clients(full_name)")
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .not("client_id", "is", null);
   const tripRows = (trips as TripRow[] | null) ?? [];
   const ids = tripRows.map((t) => t.id);

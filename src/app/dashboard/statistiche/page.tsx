@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import { romeToday } from "@/lib/destinationInfo";
 import { Bars, Columns } from "@/components/StatsCharts";
 
@@ -33,18 +34,19 @@ function Card({ title, note, children }: { title: string; note?: string; childre
 
 export default async function StatsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
   const { data: tripsData } = await supabase
     .from("trips")
     .select("id, title, start_date, end_date, client_id, countries, auto_countries")
-    .eq("owner_id", user?.id ?? "");
+    .eq("owner_id", companyId);
   const trips = (tripsData as TripRow[] | null) ?? [];
   const ids = trips.map((t) => t.id);
   const [{ data: paidData }, { data: clientsData }] = await Promise.all([
     ids.length
       ? supabase.from("trip_payments").select("trip_id, amount, paid_date").in("trip_id", ids).eq("direction", "incasso").not("paid_date", "is", null)
       : Promise.resolve({ data: [] }),
-    supabase.from("clients").select("id, full_name").eq("owner_id", user?.id ?? ""),
+    supabase.from("clients").select("id, full_name").eq("owner_id", companyId),
   ]);
   const paid = (paidData as { trip_id: string; amount: number; paid_date: string }[] | null) ?? [];
   const clientName = new Map(((clientsData as { id: string; full_name: string }[] | null) ?? []).map((c) => [c.id, c.full_name]));

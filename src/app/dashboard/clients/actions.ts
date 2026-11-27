@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { encryptField } from "@/lib/encryption";
+import { companyIdOf } from "@/lib/team";
 
 // Dati anagrafici e documenti d'identità: cifrati prima di essere salvati
 // (vedi src/lib/encryption.ts), così restano illeggibili anche con accesso
@@ -31,6 +32,7 @@ export async function createClientRecord(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Devi essere loggato." };
+  const companyId = await companyIdOf(user.id);
 
   const fullName = String(formData.get("full_name") ?? "").trim();
   if (!fullName) return { error: "Il nome è obbligatorio." };
@@ -38,7 +40,7 @@ export async function createClientRecord(
   const { data: client, error } = await supabase
     .from("clients")
     .insert({
-      owner_id: user.id,
+      owner_id: companyId,
       full_name: fullName,
       email: String(formData.get("email") ?? "").trim() || null,
       phone: String(formData.get("phone") ?? "").trim() || null,

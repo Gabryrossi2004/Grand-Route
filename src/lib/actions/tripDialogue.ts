@@ -6,6 +6,7 @@ import { sendPushToTargets } from "@/lib/webpush";
 import { getLang } from "@/lib/i18n/server";
 import { translate, type Lang } from "@/lib/i18n";
 import type { TKey } from "@/lib/i18n/dictionary";
+import { companyIdOf } from "@/lib/team";
 
 type Result = { ok: true } | { error: string };
 
@@ -83,7 +84,9 @@ async function currentRole(supabase: Awaited<ReturnType<typeof createClient>>, t
   if (!user) return null;
   const { data: trip } = await supabase.from("trips").select("owner_id, title").eq("id", tripId).maybeSingle();
   if (!trip) return null;
-  return { user, title: trip.title as string, role: (trip.owner_id === user.id ? "agency" : "client") as "agency" | "client" };
+  // agenzia = il viaggio è dell'agenzia di chi scrive (anche un collaboratore della squadra)
+  const companyId = await companyIdOf(user.id);
+  return { user, title: trip.title as string, role: (trip.owner_id === companyId ? "agency" : "client") as "agency" | "client" };
 }
 
 export async function sendTripMessage(

@@ -1,17 +1,19 @@
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { Supplier, SupplierPriceListItem } from "@/lib/types";
 import SuppliersList from "@/components/SuppliersList";
 
 export default async function SuppliersPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const [{ data: suppliers }, { data: priceListItems }] = await Promise.all([
-    supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
+    supabase.from("suppliers").select("*").eq("owner_id", companyId).order("full_name", { ascending: true }),
     supabase
       .from("supplier_price_list_items")
       .select("*")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .order("title", { ascending: true }),
   ]);
 

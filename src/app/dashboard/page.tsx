@@ -7,7 +7,8 @@ import { buildAccountingBriefing, buildBriefing, type AccountingBriefingData } f
 import { riconfermaDays } from "@/lib/opsSheet";
 import { romeToday } from "@/lib/destinationInfo";
 import { Plane, Users } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { Trip, TripChecklistItem } from "@/lib/types";
 import { formatEuro, getDisplayPrice } from "@/lib/price";
 import WelcomeZefiro from "@/components/WelcomeZefiro";
@@ -23,16 +24,19 @@ function dateLabel(value: string) {
 
 export default async function DashboardHomePage({ searchParams }: { searchParams: Promise<{ iniziare?: string }> }) {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  const team = await getTeamContext();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = team?.companyId ?? "";
+  const isMember = team?.isMember ?? false;
   // «Per iniziare» dal menu Account: Zefiro riapre la lista dei primi passi
   const reopenStart = Boolean((await searchParams).iniziare);
 
   const [{ data: trips }, { count: clientsCount }] = await Promise.all([
-    supabase.from("trips").select("*").eq("owner_id", user?.id ?? ""),
+    supabase.from("trips").select("*").eq("owner_id", companyId),
     supabase
       .from("clients")
       .select("id", { count: "exact", head: true })
-      .eq("owner_id", user?.id ?? ""),
+      .eq("owner_id", companyId),
   ]);
 
   const allTrips = (trips as Trip[]) || [];
@@ -82,26 +86,28 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
       ? supabase
           .from("clients")
           .select("id, full_name, id_card_number, passport_number, passport_expiry, date_of_birth")
-          .eq("owner_id", user?.id ?? "")
+          .eq("owner_id", companyId)
       : Promise.resolve({ data: [] }),
     supabase
       .from("ops_rows")
       .select("supplier, status")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .in("service_date", reconfirmDays)
       .neq("supplier", "")
       .not("status", "in", "(riconfermato,cancellato)")
       .limit(2000),
     // Fatture e ordini tra partner per la colonna «Contabilità» (vuoto se la migrazione 0068 non c'è ancora)
-    supabase.rpc("network_accounting_briefing"),
-    // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora)
-    supabase.rpc("onboarding_status"),
-    supabase.from("profiles").select("full_name, created_at").eq("id", user?.id ?? "").maybeSingle(),
-    // Sconto Rotta (vuoto se la migrazione 0073 non c'è ancora)
-    supabase.rpc("rotta_summary"),
+    // (rete Partner: per ora solo del fondatore)
+    isMember ? Promise.resolve({ data: null }) : supabase.rpc("network_accounting_briefing"),
+    // Lista «Per iniziare» (vuota se la migrazione 0072 non c'è ancora): la prepara chi ha aperto l'agenzia
+    isMember ? Promise.resolve({ data: null }) : supabase.rpc("onboarding_status"),
+    supabase.from("profiles").select("full_name, created_at").eq("id", team?.userId ?? "").maybeSingle(),
+    // Sconto Rotta (vuoto se la migrazione 0073 non c'è ancora): riguarda il piano, lo vedono i titolari
+    team && !team.isTitolare ? Promise.resolve({ data: null }) : supabase.rpc("rotta_summary"),
   ]);
   const rottaSummary = (rotta as RottaSummary | null) ?? null;
-  const bonus = welcomeBonus((me as { created_at?: string } | null)?.created_at);
+  // Il bonus di benvenuto è dell'agenzia: un collaboratore non lo vede
+  const bonus = isMember ? null : welcomeBonus((me as { created_at?: string } | null)?.created_at);
   const onboardingStatus = (onboarding as OnboardingStatus | null) ?? null;
 
   const reconfirmRows = (openReconfirm as { supplier: string; status: string }[] | null) ?? [];
@@ -219,16 +225,18 @@ export default async function DashboardHomePage({ searchParams }: { searchParams
 
       {rottaSummary && <RottaCard s={rottaSummary} />}
 
-      <Link
-        href="/dashboard/invita"
-        className="flex items-center gap-3 rounded-2xl border border-[#e6d7bb] bg-white px-4 py-3 text-sm text-[#233c5e] shadow-sm transition hover:bg-[#faf3e6]"
-      >
-        <Users size={20} className="shrink-0 text-[#c58f2d]" aria-hidden />
-        <span><strong>Invita un collega:</strong> −20% per 3 mesi a te e a lui, quando è verificato e inizia a lavorare.</span>
-      </Link>
+      {!isMember && (
+        <Link
+          href="/dashboard/invita"
+          className="flex items-center gap-3 rounded-2xl border border-[#e6d7bb] bg-white px-4 py-3 text-sm text-[#233c5e] shadow-sm transition hover:bg-[#faf3e6]"
+        >
+          <Users size={20} className="shrink-0 text-[#c58f2d]" aria-hidden />
+          <span><strong>Invita un collega:</strong> −20% per 3 mesi a te e a lui, quando è verificato e inizia a lavorare.</span>
+        </Link>
+      )}
 
       <Suspense fallback={null}>
-        <ContactTodayCard ownerId={user?.id ?? ""} trips={allTrips} />
+        <ContactTodayCard ownerId={companyId} trips={allTrips} />
       </Suspense>
 
       {clientAttention.length > 0 && (

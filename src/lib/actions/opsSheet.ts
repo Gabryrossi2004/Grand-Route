@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { companyIdOf } from "@/lib/team";
 import { OPS_COLORS, OPS_SOURCE_KEYS, OPS_STATUS_IDS, OPS_TEXT_KEYS, type OpsRow, type OpsStatus } from "@/lib/opsSheet";
 import { DAY_BLOCK_TITLE } from "@/lib/itineraryMode";
 import { chunks, loadServices, nightsBetween, sourceFromActivity, type ImportActivity, type ImportDay } from "@/lib/opsImport";
@@ -43,10 +44,11 @@ const rowSchema = z
 const SELECT =
   "id, service_date, trip_code, client, agent, supplier, supplier_contact, pax, service, meeting_time, meeting_point, notes, responsible, status, changes, row_color, cell_colors, trip_id, activity_id, created_at";
 
+// companyId: l'agenzia (per un collaboratore: quella in cui lavora), a cui appartengono le righe
 async function ctx() {
   const user = await getCachedUser();
   if (!user) return null;
-  return { user, supabase: await createClient() };
+  return { user, companyId: await companyIdOf(user.id), supabase: await createClient() };
 }
 
 export async function createOpsRow(input: unknown): Promise<{ ok: true; row: OpsRow } | Fail> {
@@ -55,7 +57,7 @@ export async function createOpsRow(input: unknown): Promise<{ ok: true; row: Ops
   if (!c || !parsed.success) return { ok: false, error: "Dati non validi." };
   const { data, error } = await c.supabase
     .from("ops_rows")
-    .insert({ ...parsed.data, owner_id: c.user.id })
+    .insert({ ...parsed.data, owner_id: c.companyId })
     .select(SELECT)
     .single();
   if (error) {
@@ -73,7 +75,7 @@ export async function updateOpsRow(id: string, patch: unknown): Promise<{ ok: tr
     .from("ops_rows")
     .update({ ...parsed.data, updated_at: new Date().toISOString() })
     .eq("id", id)
-    .eq("owner_id", c.user.id);
+    .eq("owner_id", c.companyId);
   if (error) {
     console.error("[operativo] update", error.message);
     return { ok: false, error: SAVE_ERROR };
@@ -84,7 +86,7 @@ export async function updateOpsRow(id: string, patch: unknown): Promise<{ ok: tr
 export async function deleteOpsRow(id: string): Promise<{ ok: true } | Fail> {
   const c = await ctx();
   if (!c || !z.string().uuid().safeParse(id).success) return { ok: false, error: "Dati non validi." };
-  const { error } = await c.supabase.from("ops_rows").delete().eq("id", id).eq("owner_id", c.user.id);
+  const { error } = await c.supabase.from("ops_rows").delete().eq("id", id).eq("owner_id", c.companyId);
   if (error) {
     console.error("[operativo] delete", error.message);
     return { ok: false, error: "Non sono riuscito a eliminare la riga. Riprova." };
@@ -103,7 +105,7 @@ export async function setOpsStatus(ids: string[], next: OpsStatus | ""): Promise
     .from("ops_rows")
     .update({ status: next, updated_at: new Date().toISOString() })
     .in("id", parsedIds.data)
-    .eq("owner_id", c.user.id);
+    .eq("owner_id", c.companyId);
   if (error) {
     console.error("[operativo] stato", error.message);
     return { ok: false, error: error.message.includes("status") ? "Serve l'aggiornamento del database (SQL 0048)." : SAVE_ERROR };
@@ -119,7 +121,7 @@ export async function getRiconferme(dates: string[]): Promise<{ ok: true; rows: 
   const { data, error } = await c.supabase
     .from("ops_rows")
     .select(SELECT)
-    .eq("owner_id", c.user.id)
+    .eq("owner_id", c.companyId)
     .in("service_date", parsed.data)
     .neq("status", "cancellato")
     .order("service_date")
@@ -144,17 +146,17 @@ export async function importOpsFromTrips(
   if (!c || !date.safeParse(from).success || !date.safeParse(to).success || from > to) return { ok: false, error: "Periodo non valido." };
   if (tripId !== undefined && !z.string().uuid().safeParse(tripId).success) return { ok: false, error: "Viaggio non valido." };
   if (nightsBetween(from, to) > (tripId ? 400 : 62)) return { ok: false, error: "Importa al massimo due mesi alla volta." };
-  const { supabase, user } = c;
+  const { supabase, companyId } = c;
 
   // l'importazione si attiva nelle Impostazioni (serve ai tour operator, non alle agenzie)
-  const { data: profile } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: profile } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   if ((profile?.ai_preferences as Record<string, string> | null)?.ops_import !== "on")
     return { ok: false, error: "L'importazione dai viaggi è spenta: puoi attivarla in Impostazioni → Operativo day by day." };
 
   let dayQuery = supabase
     .from("trip_days")
     .select("id, trip_id, day_date, trips!inner(id, code, title, owner_id, itinerary_stage, approval_status, clients(full_name))")
-    .eq("trips.owner_id", user.id)
+    .eq("trips.owner_id", companyId)
     .gte("day_date", from)
     .lte("day_date", to);
   if (tripId) dayQuery = dayQuery.eq("trip_id", tripId);
@@ -185,7 +187,7 @@ export async function importOpsFromTrips(
 
   const already = new Set<string>();
   for (const ids of chunks(acts.map((a) => a.id), 150)) {
-    const { data: existing, error: exErr } = await supabase.from("ops_rows").select("activity_id").eq("owner_id", user.id).in("activity_id", ids);
+    const { data: existing, error: exErr } = await supabase.from("ops_rows").select("activity_id").eq("owner_id", companyId).in("activity_id", ids);
     if (exErr) return { ok: false, error: exErr.code === "42P01" ? NOT_READY : "Non sono riuscito a leggere la scheda. Riprova." };
     for (const r of existing ?? []) if (r.activity_id) already.add(r.activity_id);
   }
@@ -196,7 +198,7 @@ export async function importOpsFromTrips(
     .map((a) => {
       const day = dayById.get(a.trip_day_id)!;
       const source = sourceFromActivity(a, day, services.get(a.id));
-      return { owner_id: user.id, ...source, agent: "", responsible: "", source, trip_id: day.trips!.id, activity_id: a.id };
+      return { owner_id: companyId, ...source, agent: "", responsible: "", source, trip_id: day.trips!.id, activity_id: a.id };
     });
 
   const rows: OpsRow[] = [];

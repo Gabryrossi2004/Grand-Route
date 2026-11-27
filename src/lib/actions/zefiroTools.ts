@@ -8,6 +8,7 @@ import { reserveAiCall } from "@/lib/aiQuota";
 import { activityTypes } from "@/lib/activityTypes";
 import { DAY_BLOCK_TITLE, parseMode } from "@/lib/itineraryMode";
 import { SuggestionSchema, buildChecklist, describeActivities, suggestForDay, type DescribeInput, type Suggestion } from "@/lib/tripToolsAi";
+import { companyIdOf } from "@/lib/team";
 
 type Act = {
   id: string;
@@ -29,7 +30,8 @@ async function load(tripId: string) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." } as const;
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const companyId = await companyIdOf(user.id);
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." } as const;
   const { data: days } = await supabase
     .from("trip_days")

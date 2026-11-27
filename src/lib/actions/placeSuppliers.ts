@@ -2,6 +2,7 @@
 
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import type { SupplierCategory } from "@/lib/types";
+import { companyIdOf } from "@/lib/team";
 
 export type PlaceSupplier = { id: string; full_name: string; category: SupplierCategory; email: string | null; phone: string | null; notes: string | null };
 export type PlaceSuppliers = { ready: boolean; tagged: PlaceSupplier[]; used: PlaceSupplier[] };
@@ -17,9 +18,10 @@ export async function getSuppliersForPlace(country: string, region?: string): Pr
   if (!/^[A-Z]{2}$/.test(code)) return empty;
   const user = await getCachedUser();
   if (!user) return empty;
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
 
-  const tagged = await supabase.from("suppliers").select(`${COLS}, regions`).eq("owner_id", user.id).contains("countries", [code]).order("full_name");
+  const tagged = await supabase.from("suppliers").select(`${COLS}, regions`).eq("owner_id", companyId).contains("countries", [code]).order("full_name");
   if (tagged.error) return MISSING.test(tagged.error.message) ? empty : { ...empty, ready: true };
   let taggedRows = (tagged.data as (PlaceSupplier & { regions: string[] })[]) ?? [];
   if (region) taggedRows = taggedRows.filter((s) => s.regions.length === 0 || s.regions.includes(region));
@@ -29,7 +31,7 @@ export async function getSuppliersForPlace(country: string, region?: string): Pr
     const { data: trips } = await supabase
       .from("trips")
       .select("id")
-      .eq("owner_id", user.id)
+      .eq("owner_id", companyId)
       .or(`countries.cs.{${code}},auto_countries.cs.{${code}}`)
       .limit(500);
     const tripIds = ((trips as { id: string }[] | null) ?? []).map((t) => t.id);
@@ -37,7 +39,7 @@ export async function getSuppliersForPlace(country: string, region?: string): Pr
       const { data: services } = await supabase.from("trip_services").select("supplier_id").in("trip_id", tripIds).not("supplier_id", "is", null).limit(2000);
       const ids = [...new Set(((services as { supplier_id: string }[] | null) ?? []).map((s) => s.supplier_id))].filter((id) => !taggedRows.some((t) => t.id === id));
       if (ids.length) {
-        const { data } = await supabase.from("suppliers").select(COLS).eq("owner_id", user.id).in("id", ids).order("full_name");
+        const { data } = await supabase.from("suppliers").select(COLS).eq("owner_id", companyId).in("id", ids).order("full_name");
         usedRows = (data as PlaceSupplier[] | null) ?? [];
       }
     }

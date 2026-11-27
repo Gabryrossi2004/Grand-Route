@@ -1,4 +1,5 @@
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { Client, PromptStyle } from "@/lib/types";
 import NewTripForm from "./NewTripForm";
 
@@ -7,10 +8,11 @@ export const maxDuration = 60;
 
 export default async function NewTripPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
   const [{ data: clients }, { data: promptStyles }] = await Promise.all([
     supabase.from("clients").select("*").order("full_name", { ascending: true }),
-    supabase.from("prompt_styles").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: true }),
+    supabase.from("prompt_styles").select("*").eq("owner_id", companyId).order("created_at", { ascending: true }),
   ]);
 
   return (

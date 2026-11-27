@@ -1,22 +1,27 @@
 import Link from "next/link";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext, getTeamPeople } from "@/lib/team";
 import type { Trip, TripGroup } from "@/lib/types";
 import TripsList from "@/components/TripsList";
 
 export default async function TripsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const team = await getTeamContext();
+  const companyId = team?.companyId ?? "";
+  // con la squadra: filtro «I miei viaggi» e chi segue ogni viaggio
+  const people = await getTeamPeople();
 
   const [{ data: trips }, { data: groups }] = await Promise.all([
     supabase
       .from("trips")
       .select("*, trip_days(count)")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .order("created_at", { ascending: false }),
     supabase
       .from("trip_groups")
       .select("*")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .order("created_at", { ascending: false }),
   ]);
 
@@ -37,7 +42,11 @@ export default async function TripsPage() {
         </Link>
       </div>
 
-      <TripsList trips={tripsWithDayCount} groups={(groups as TripGroup[]) || []} />
+      <TripsList
+        trips={tripsWithDayCount}
+        groups={(groups as TripGroup[]) || []}
+        team={team && people.length > 0 ? { userId: team.userId, names: Object.fromEntries(people.map((p) => [p.id, p.name])) } : null}
+      />
     </div>
   );
 }

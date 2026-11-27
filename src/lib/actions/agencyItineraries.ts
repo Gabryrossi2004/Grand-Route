@@ -5,6 +5,7 @@ import { z } from "zod";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { GeneratedItinerarySchema, type GeneratedItinerary } from "@/lib/itineraryAi";
 import { countryOptions } from "@/lib/geo/countryCodes";
+import { companyIdOf } from "@/lib/team";
 
 // Itinerari scritti dall'agenzia e salvati in Libreria per un paese o una regione italiana.
 // Compaiono nella scheda paese/regione dell'Atlante e in «Consulta proposte» di Zefiro.
@@ -46,8 +47,9 @@ export async function listAgencyItineraries(
 ): Promise<{ ok: true; items: AgencyItinerary[] } | { ok: false; error: string; notReady?: boolean }> {
   const user = await getCachedUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
-  let query = supabase.from("agency_itineraries").select(COLUMNS).eq("owner_id", user.id).order("created_at", { ascending: false }).limit(300);
+  let query = supabase.from("agency_itineraries").select(COLUMNS).eq("owner_id", companyId).order("created_at", { ascending: false }).limit(300);
   if (filter) query = query.eq("kind", filter.kind).eq("place_key", filter.key);
   const { data, error } = await query;
   if (error) {
@@ -92,10 +94,11 @@ export async function saveTripAsItinerary(input: z.input<typeof SaveFromTripInpu
   if (!parsed.success) return { ok: false, error: "Controlla destinazione e titolo." };
   const user = await getCachedUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
   const { tripId, kind, key, label, title, description, route } = parsed.data;
   const supabase = await createClient();
 
-  const { data: trip } = await supabase.from("trips").select("id").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("id").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { ok: false, error: "Viaggio non trovato." };
   const { data: days } = await supabase.from("trip_days").select("id, day_order, title").eq("trip_id", tripId).order("day_order");
   if (!days || days.length === 0) return { ok: false, error: "Questo viaggio non ha ancora giorni da salvare." };
@@ -133,7 +136,7 @@ export async function saveTripAsItinerary(input: z.input<typeof SaveFromTripInpu
   if (!checked.success) return { ok: false, error: "Il programma di questo viaggio non si può salvare così com'è." };
 
   const { error } = await supabase.from("agency_itineraries").insert({
-    owner_id: user.id,
+    owner_id: companyId,
     kind,
     place_key: key,
     place_label: label,
@@ -163,12 +166,13 @@ export async function updateAgencyItinerary(input: z.input<typeof UpdateInput>):
   if (!parsed.success) return { ok: false, error: "Il titolo deve avere almeno 2 caratteri." };
   const user = await getCachedUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
   const { error } = await supabase
     .from("agency_itineraries")
     .update({ title: parsed.data.title, description: parsed.data.description || null, route: parsed.data.route || null })
     .eq("id", parsed.data.id)
-    .eq("owner_id", user.id);
+    .eq("owner_id", companyId);
   if (error) return { ok: false, error: "Non sono riuscito a salvare. Riprova." };
   revalidatePath("/dashboard/library");
   return { ok: true };
@@ -178,8 +182,9 @@ export async function deleteAgencyItinerary(id: string): Promise<{ ok: true } | 
   if (!z.string().uuid().safeParse(id).success) return { ok: false, error: "Itinerario non valido." };
   const user = await getCachedUser();
   if (!user) return { ok: false, error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
-  const { error } = await supabase.from("agency_itineraries").delete().eq("id", id).eq("owner_id", user.id);
+  const { error } = await supabase.from("agency_itineraries").delete().eq("id", id).eq("owner_id", companyId);
   if (error) return { ok: false, error: "Non sono riuscito a eliminarlo. Riprova." };
   revalidatePath("/dashboard/library");
   return { ok: true };
@@ -190,8 +195,9 @@ export async function createTripFromAgencyItinerary(id: string): Promise<{ error
   if (!z.string().uuid().safeParse(id).success) return { error: "Itinerario non valido." };
   const user = await getCachedUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
-  const { data } = await supabase.from("agency_itineraries").select(COLUMNS).eq("id", id).eq("owner_id", user.id).maybeSingle();
+  const { data } = await supabase.from("agency_itineraries").select(COLUMNS).eq("id", id).eq("owner_id", companyId).maybeSingle();
   if (!data) return { error: "Itinerario non trovato." };
   const it = data as AgencyItinerary;
   const { createTripFromProposals } = await import("@/app/dashboard/trips/new/zefiroActions");

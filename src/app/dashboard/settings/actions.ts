@@ -14,6 +14,7 @@ import {
 } from "@/lib/aiRules";
 import { generateRulesSample } from "@/lib/rulesSampleAi";
 import { ZEFIRO_MODES } from "@/lib/assistant";
+import { NOT_TITOLARE, companyIdOf, getTeamContext } from "@/lib/team";
 
 export async function updateProfile(
   _prevState: { error?: string; success?: boolean } | undefined,
@@ -24,6 +25,8 @@ export async function updateProfile(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Devi essere loggato." };
+  const team = await getTeamContext();
+  const companyId = team?.companyId ?? user.id;
 
   const kindRaw = String(formData.get("business_kind") ?? "");
   const agencyName = String(formData.get("agency_name") ?? "").trim() || null;
@@ -33,23 +36,38 @@ export async function updateProfile(
   const uiFontFamily = String(formData.get("ui_font_family") ?? "predefinito");
   const emergencyPhone = String(formData.get("emergency_phone") ?? "").trim() || null;
 
-  const updates: Record<string, unknown> = {
+  // Dati dell'agenzia (solo i titolari) e preferenze personali (lettura e notifiche: di ciascuno)
+  const agency: Record<string, unknown> = {
     account_type: "agency",
     agency_name: agencyName,
     brand_color: brandColor,
     terms_and_conditions: termsAndConditions,
+    emergency_phone: emergencyPhone,
+  };
+  const personal: Record<string, unknown> = {
     ui_font_size: ["normale", "grande", "molto_grande"].includes(uiFontSize) ? uiFontSize : "normale",
     ui_font_family: ["predefinito", "leggibile", "classico"].includes(uiFontFamily) ? uiFontFamily : "predefinito",
-    emergency_phone: emergencyPhone,
     notify_trips: formData.get("notify_trips") === "on",
     notify_community: formData.get("notify_community") === "on",
     notify_emergencies: formData.get("notify_emergencies") === "on",
   };
 
-  const { error } = await supabase.from("profiles").update(updates).eq("id", user.id);
-  if (error) return { error: "Errore durante il salvataggio." };
+  if (companyId === user.id) {
+    // account individuale o fondatore: tutto sul proprio profilo, come sempre
+    const { error } = await supabase.from("profiles").update({ ...agency, ...personal }).eq("id", user.id);
+    if (error) return { error: "Errore durante il salvataggio." };
+  } else {
+    const { error } = await supabase.from("profiles").update(personal).eq("id", user.id);
+    if (error) return { error: "Errore durante il salvataggio." };
+    if (team?.isTitolare) {
+      const { error: agencyError } = await supabase.from("profiles").update(agency).eq("id", companyId);
+      if (agencyError) return { error: "Errore durante il salvataggio dei dati dell'agenzia." };
+    }
+  }
   // il tipo di attività si salva a parte: funziona dopo la migrazione 0061, prima viene ignorato
-  if (["agenzia", "tour_operator", "dmc"].includes(kindRaw)) await supabase.from("profiles").update({ business_kind: kindRaw }).eq("id", user.id);
+  if (team?.isTitolare !== false && ["agenzia", "tour_operator", "dmc"].includes(kindRaw)) {
+    await supabase.from("profiles").update({ business_kind: kindRaw }).eq("id", companyId);
+  }
 
   revalidatePath("/dashboard/settings");
   revalidatePath("/dashboard", "layout");
@@ -64,15 +82,18 @@ export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { e
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
   const file = formData.get("logo");
   if (!(file instanceof File) || file.size === 0) return { error: "Nessun file selezionato." };
   const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
   if (fileError) return { error: fileError };
 
-  const { data: current } = await supabase.from("profiles").select("logo_url").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("logo_url").eq("id", companyId).maybeSingle();
 
-  const path = `${user.id}/logo-${Date.now()}-${safeStorageName(file.name)}`;
+  const path = `${companyId}/logo-${Date.now()}-${safeStorageName(file.name)}`;
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
     .upload(path, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
@@ -82,7 +103,7 @@ export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { e
   }
 
   const { data } = supabase.storage.from("public-assets").getPublicUrl(path);
-  const { error: updateError } = await supabase.from("profiles").update({ logo_url: data.publicUrl }).eq("id", user.id);
+  const { error: updateError } = await supabase.from("profiles").update({ logo_url: data.publicUrl }).eq("id", companyId);
   if (updateError) {
     console.error("[uploadLogo] salvataggio:", updateError.message);
     await supabase.storage.from("public-assets").remove([path]);
@@ -91,7 +112,7 @@ export async function uploadLogo(formData: FormData): Promise<{ ok: true } | { e
 
   // Pulizia: il vecchio logo non serve più (solo file della propria cartella).
   const oldPath = current?.logo_url?.split("/public-assets/")[1];
-  if (oldPath && oldPath.startsWith(`${user.id}/`) && oldPath !== path) {
+  if (oldPath && oldPath.startsWith(`${companyId}/`) && oldPath !== path) {
     await supabase.storage.from("public-assets").remove([decodeURIComponent(oldPath)]);
   }
 
@@ -118,16 +139,19 @@ export async function saveAiRules(formData: FormData): Promise<{ ok: true } | { 
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
   const { preferences, text } = readAiRules(formData);
   // Si uniscono alle altre preferenze già salvate (per esempio se Zefiro è
   // visibile sullo schermo), che non vanno perse.
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), ...preferences };
   const { error } = await supabase
     .from("profiles")
     .update({ ai_rules: text || null, ai_preferences: merged })
-    .eq("id", user.id);
+    .eq("id", companyId);
   if (error) {
     console.error("[saveAiRules]", error.message);
     return { error: "Non è stato possibile salvare le regole. Riprova tra poco." };
@@ -161,10 +185,13 @@ export async function setAvatarVisible(visible: boolean): Promise<{ ok: true } |
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), avatar: visible ? "on" : "off" };
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setAvatarVisible]", error.message);
     return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
@@ -181,10 +208,13 @@ export async function setAvatarStyle(style: string): Promise<{ ok: true } | { er
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), avatar_style: style };
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setAvatarStyle]", error.message);
     return { error: "Non è stato possibile salvare il costume. Riprova tra poco." };
@@ -201,8 +231,11 @@ export async function setLogoShape(shape: string): Promise<{ ok: true } | { erro
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { error } = await supabase.from("profiles").update({ logo_shape: shape }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ logo_shape: shape }).eq("id", companyId);
   if (error) {
     console.error("[setLogoShape]", error.message);
     return {
@@ -222,8 +255,11 @@ export async function setAiPlan(plan: string): Promise<{ ok: true } | { error: s
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { error } = await supabase.from("profiles").update({ ai_plan: plan }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_plan: plan }).eq("id", companyId);
   if (error) {
     console.error("[setAiPlan]", error.message);
     return {
@@ -243,10 +279,13 @@ export async function setClientZefiroDefault(enabled: boolean): Promise<{ ok: tr
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), client_zefiro: enabled ? "on" : "off" };
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setClientZefiroDefault]", error.message);
     return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
@@ -270,8 +309,11 @@ export async function saveClientZefiroConfig(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged: Record<string, string> = {
     ...((current?.ai_preferences as Record<string, string> | null) ?? {}),
     client_topics: chosen.join(","),
@@ -279,7 +321,7 @@ export async function saveClientZefiroConfig(
   if (cleanGuide) merged.client_guide = cleanGuide;
   else delete merged.client_guide;
 
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[saveClientZefiroConfig]", error.message);
     return { error: "Non è stato possibile salvare. Riprova tra poco." };
@@ -295,10 +337,13 @@ export async function setOpsImport(enabled: boolean): Promise<{ ok: true } | { e
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), ops_import: enabled ? "on" : "off" };
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setOpsImport]", error.message);
     return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };
@@ -315,10 +360,13 @@ export async function setAutoMessages(enabled: boolean): Promise<{ ok: true } | 
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
+  // impostazioni dell'agenzia: solo i titolari
+  if (!(await getTeamContext())?.isTitolare) return { error: NOT_TITOLARE };
 
-  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", user.id).maybeSingle();
+  const { data: current } = await supabase.from("profiles").select("ai_preferences").eq("id", companyId).maybeSingle();
   const merged = { ...((current?.ai_preferences as Record<string, string> | null) ?? {}), auto_messages: enabled ? "on" : "off" };
-  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", user.id);
+  const { error } = await supabase.from("profiles").update({ ai_preferences: merged }).eq("id", companyId);
   if (error) {
     console.error("[setAutoMessages]", error.message);
     return { error: "Non è stato possibile salvare la preferenza. Riprova tra poco." };

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { fillMissingCountries } from "@/lib/tripCountries";
 import AgencyGlobeView, { type AgencyTrip } from "@/components/AgencyGlobeView";
+import { companyIdOf } from "@/lib/team";
 
 // La prima apertura ricava i paesi dei viaggi dalle località degli itinerari (poi restano salvati),
 // e la scheda paese con Zefiro richiede qualche secondo.
@@ -26,12 +27,13 @@ type TripRow = {
 export default async function AgencyGlobePage() {
   const user = await getCachedUser();
   if (!user) redirect("/professionisti");
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
 
   const { data, error } = await supabase
     .from("trips")
     .select("id, title, destination, start_date, end_date, countries, auto_countries, itinerary_stage, approval_status, clients(full_name)")
-    .eq("owner_id", user.id)
+    .eq("owner_id", companyId)
     .order("start_date", { ascending: false, nullsFirst: false })
     .limit(2000);
 

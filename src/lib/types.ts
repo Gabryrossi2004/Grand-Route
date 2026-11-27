@@ -94,6 +94,7 @@ export type TripMessage = {
 export type Trip = {
   id: string;
   owner_id: string;
+  assigned_to?: string | null; // collega della squadra che segue il viaggio (migrazione 0075)
   approval_status?: ApprovalStatus;
   client_zefiro?: "default" | "on" | "off";
   client_id: string | null;

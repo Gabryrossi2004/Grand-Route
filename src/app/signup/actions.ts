@@ -25,8 +25,10 @@ export async function signup(_prevState: State, formData: FormData): Promise<Sta
   // Dati dell'attività: obbligatori per i fornitori, facoltativi per agenzie e tour operator (si completano nella Rete)
   const record = formToRecord(formData);
   const referral = cleanReferralCode(formData.get("referral"));
-  for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth", "referral"]) delete record[k];
+  for (const k of ["email", "fullName", "kind", "acceptTerms", "acceptTruth", "referral", "accountMode"]) delete record[k];
   const trade = isTradeKind(kind);
+  // Account aziendale (con la squadra) o individuale: la squadra è per agenzie, tour operator e DMC
+  const accountMode = trade && formData.get("accountMode") === "azienda" ? "azienda" : "individuale";
   let draft: Record<string, unknown> | null = null;
   if (!trade || hasBusinessInput(record)) {
     const checked = validateNetworkProfile(kind, record);
@@ -43,6 +45,7 @@ export async function signup(_prevState: State, formData: FormData): Promise<Sta
       data: {
         full_name: fullName,
         business_kind: kind,
+        account_mode: accountMode,
         ...(referral ? { referral_code: referral } : {}),
         ...(draft ? { network_draft: draft } : {}),
       },

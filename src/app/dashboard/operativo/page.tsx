@@ -3,6 +3,7 @@ import { createClient, getCachedUser } from "@/lib/supabase/server";
 import OpsSheet from "@/components/OpsSheet";
 import { syncImportedRows } from "@/lib/opsImport";
 import { normalizeTripCode, opsRange, opsToday, TRIP_CODE_RE, type OpsRow, type OpsSource, type OpsTripRef, type OpsView } from "@/lib/opsSheet";
+import { companyIdOf } from "@/lib/team";
 
 // controlla gli itinerari e aggiorna le righe importate (può richiedere qualche secondo con molti viaggi)
 export const maxDuration = 30;
@@ -18,20 +19,21 @@ type TripRow = { id: string; code: string | null; title: string; start_date: str
 export default async function OperativoPage({ searchParams }: { searchParams: Promise<{ v?: string; d?: string; codice?: string; riconferme?: string }> }) {
   const user = await getCachedUser();
   if (!user) redirect("/professionisti");
+  const companyId = await companyIdOf(user.id);
   const sp = await searchParams;
   const today = opsToday();
   const supabase = await createClient();
 
   const [{ data: profile }, { data: suppliers }, { data: clients }, { data: recent }, tripsRes] = await Promise.all([
-    supabase.from("profiles").select("ai_preferences, agency_name").eq("id", user.id).maybeSingle(),
-    supabase.from("suppliers").select("full_name, phone, email").eq("owner_id", user.id).order("full_name").limit(2000),
-    supabase.from("clients").select("full_name").eq("owner_id", user.id).order("full_name").limit(5000),
+    supabase.from("profiles").select("ai_preferences, agency_name").eq("id", companyId).maybeSingle(),
+    supabase.from("suppliers").select("full_name, phone, email").eq("owner_id", companyId).order("full_name").limit(2000),
+    supabase.from("clients").select("full_name").eq("owner_id", companyId).order("full_name").limit(5000),
     // valori già usati negli altri periodi, per i suggerimenti mentre si scrive
-    supabase.from("ops_rows").select("client, agent, supplier, responsible").eq("owner_id", user.id).order("service_date", { ascending: false }).limit(3000),
+    supabase.from("ops_rows").select("client, agent, supplier, responsible").eq("owner_id", companyId).order("service_date", { ascending: false }).limit(3000),
     supabase
       .from("trips")
       .select("id, code, title, start_date, end_date, clients(full_name)")
-      .eq("owner_id", user.id)
+      .eq("owner_id", companyId)
       .not("code", "is", null)
       .order("start_date", { ascending: false, nullsFirst: false })
       .limit(3000),
@@ -53,7 +55,7 @@ export default async function OperativoPage({ searchParams }: { searchParams: Pr
   const anchor = /^\d{4}-\d{2}-\d{2}$/.test(sp.d ?? "") && !Number.isNaN(Date.parse(sp.d!)) ? sp.d! : (trip?.start ?? today);
   let { from, to } = opsRange(view, anchor);
 
-  let query = supabase.from("ops_rows").select(ROW_FIELDS).eq("owner_id", user.id);
+  let query = supabase.from("ops_rows").select(ROW_FIELDS).eq("owner_id", companyId);
   if (trip) {
     view = "viaggio";
     from = trip.start ?? today;

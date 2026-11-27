@@ -1,4 +1,5 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { companyIdOf } from "@/lib/team";
 import {
   DEFAULT_PLATFORM_RULES,
   buildAgencyRulesBlock,
@@ -22,7 +23,8 @@ export async function loadAiRules(): Promise<{ text: string; platform: Required<
       const supabase = await createClient();
       const [rulesResult, profileResult] = await Promise.all([
         supabase.rpc("get_ai_platform_rules"),
-        supabase.from("profiles").select("ai_rules, ai_preferences").eq("id", user.id).maybeSingle(),
+        // regole dell'agenzia (per un collaboratore: quelle dell'agenzia in cui lavora)
+        supabase.from("profiles").select("ai_rules, ai_preferences").eq("id", await companyIdOf(user.id)).maybeSingle(),
       ]);
 
       if (!rulesResult.error && Array.isArray(rulesResult.data)) {

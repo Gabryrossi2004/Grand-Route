@@ -7,6 +7,7 @@ import { loadAiRules } from "@/lib/aiRulesServer";
 import { MAX_DRAFT_CHARS, reserveAiCall } from "@/lib/aiQuota";
 import { EditOpSchema, buildSnapshot, proposeEdits, type EditOp, type EditSnapshot } from "@/lib/tripEditAi";
 import { activityTypes } from "@/lib/activityTypes";
+import { companyIdOf } from "@/lib/team";
 
 export type EditChange = { id: number; text: string; reason: string; op: EditOp };
 export type ProposeResult = { error: string } | { questions: string[]; summary: string } | { summary: string; changes: EditChange[] };
@@ -28,7 +29,8 @@ async function loadTrip(tripId: string) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." } as const;
-  const { data: trip } = await supabase.from("trips").select("id, itinerary_mode").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const companyId = await companyIdOf(user.id);
+  const { data: trip } = await supabase.from("trips").select("id, itinerary_mode").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." } as const;
   const { data: days } = await supabase
     .from("trip_days")

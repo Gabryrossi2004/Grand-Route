@@ -1,4 +1,5 @@
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { ActivityTemplate, PromptStyle } from "@/lib/types";
 import LibraryTabs from "@/components/LibraryTabs";
 import { seedDefaultPromptStylesIfEmpty } from "./actions";
@@ -10,7 +11,8 @@ export default async function LibraryPage({ searchParams }: { searchParams: Prom
   const { tab } = await searchParams;
 
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
   const [{ data: templates }, { data: styles }, itineraries, { data: trips }] = await Promise.all([
     supabase.from("activity_templates").select("*").order("created_at", { ascending: false }),
     supabase.from("prompt_styles").select("*").order("created_at", { ascending: true }),
@@ -18,7 +20,7 @@ export default async function LibraryPage({ searchParams }: { searchParams: Prom
     supabase
       .from("trips")
       .select("id, title, destination")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .order("created_at", { ascending: false })
       .limit(200),
   ]);

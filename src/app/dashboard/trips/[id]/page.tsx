@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { loadTripDays } from "@/lib/tripDays";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext, getTeamPeople } from "@/lib/team";
+import TripAssignee from "@/components/team/TripAssignee";
 import type {
   ApprovalStatus,
   TripMessage,
@@ -88,13 +90,15 @@ export default async function TripDetailPage({
   const { id } = await params;
   const { chat } = await searchParams;
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const team = await getTeamContext();
+  const companyId = team?.companyId ?? "";
 
   const { data: trip, error: tripError } = await supabase
     .from("trips")
     .select("*")
     .eq("id", id)
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .maybeSingle();
   // Un errore temporaneo NON deve sembrare «viaggio inesistente»: mostriamo «Riprova»
   if (tripError) {
@@ -128,11 +132,11 @@ export default async function TripDetailPage({
       .select("*")
       .eq("trip_id", id)
       .order("service_order", { ascending: true }),
-    supabase.from("suppliers").select("*").eq("owner_id", user?.id ?? "").order("full_name", { ascending: true }),
+    supabase.from("suppliers").select("*").eq("owner_id", companyId).order("full_name", { ascending: true }),
     supabase.from("trip_payments").select("*").eq("trip_id", id).order("due_date", { ascending: true }),
-    supabase.from("profiles").select("*").eq("id", user?.id ?? "").single(),
+    supabase.from("profiles").select("*").eq("id", companyId).single(),
     supabase.from("documents").select("*").eq("trip_id", id).order("uploaded_at", { ascending: false }),
-    supabase.from("prompt_styles").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: true }),
+    supabase.from("prompt_styles").select("*").eq("owner_id", companyId).order("created_at", { ascending: true }),
     trip.group_id
       ? supabase
           .from("trips")
@@ -184,6 +188,9 @@ export default async function TripDetailPage({
     })),
   );
 
+  // Squadra: chi segue il viaggio (solo con un account aziendale o con dei colleghi)
+  const people = await getTeamPeople();
+
   // Cliente collegato al viaggio (per il pulsante "Invia al cliente")
   const { data: tripClient } = trip.client_id
     ? await supabase.from("clients").select("full_name, email").eq("id", trip.client_id).maybeSingle()
@@ -232,6 +239,14 @@ export default async function TripDetailPage({
         networkOrders={(networkOrders as NetworkServiceOrder[] | null) ?? []}
         networkPartners={(networkPartners as OrderPartner[] | null) ?? []}
       />
+      {team && people.length > 0 && (
+        <TripAssignee
+          tripId={id}
+          assignedTo={(trip as Trip).assigned_to ?? null}
+          people={people.map((p) => ({ id: p.id, name: p.name }))}
+          currentUserId={team.userId}
+        />
+      )}
       <div className="flex flex-wrap items-start gap-4">
         <TripInfoForm trip={trip} />
 

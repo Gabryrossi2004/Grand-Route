@@ -6,6 +6,7 @@ import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { sendMail } from "@/lib/email";
 import { buildTripEmail } from "@/lib/tripEmail";
+import { companyIdOf } from "@/lib/team";
 
 export type SendTripResult = { ok: true; email: string; at: string } | { error: string };
 
@@ -19,9 +20,10 @@ export async function sendTripToClient(tripId: string): Promise<SendTripResult> 
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
 
   // Solo il proprietario del viaggio può inviarlo
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." };
   if (!trip.is_published) return { error: "Pubblica prima il viaggio, poi invialo al cliente." };
   if (!trip.client_id) return { error: "Collega prima un cliente a questo viaggio." };
@@ -33,7 +35,7 @@ export async function sendTripToClient(tripId: string): Promise<SendTripResult> 
   const last = trip.client_notified_at ? new Date(trip.client_notified_at).getTime() : 0;
   if (Date.now() - last < COOLDOWN_MS) return { error: "Hai appena inviato questo viaggio: aspetta qualche secondo." };
 
-  const { data: profile } = await supabase.from("profiles").select("agency_name, email").eq("id", user.id).maybeSingle();
+  const { data: profile } = await supabase.from("profiles").select("agency_name, email").eq("id", companyId).maybeSingle();
   const agencyName = profile?.agency_name?.trim() || "La tua agenzia di viaggi";
 
   const host = (await headers()).get("host");

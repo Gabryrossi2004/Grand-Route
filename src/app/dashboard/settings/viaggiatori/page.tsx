@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import SubmitButton from "@/components/SubmitButton";
 import CountryChips from "./CountryChips";
 import { saveTravelerListing } from "./actions";
@@ -10,8 +11,9 @@ export const metadata = { title: "Vetrina per i viaggiatori" };
 export default async function TravelerListingPage({ searchParams }: { searchParams: Promise<{ saved?: string; error?: string }> }) {
   const { saved, error: err } = await searchParams;
   const supabase = await createClient();
-  const user = await getCachedUser();
-  const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", user?.id ?? "").maybeSingle();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
+  const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", companyId).maybeSingle();
   const ready = !error && profile && "traveler_listing" in profile;
   const listing = Boolean((profile as { traveler_listing?: boolean } | null)?.traveler_listing);
   const blurb = (profile as { traveler_blurb?: string | null } | null)?.traveler_blurb ?? "";
@@ -33,6 +35,7 @@ export default async function TravelerListingPage({ searchParams }: { searchPara
       {!ready && <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per attivare questa sezione serve l&apos;aggiornamento del database 0060 (Supabase → SQL Editor).</p>}
       {saved && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">Salvato.</p>}
       {err === "nome" && <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Per comparire in elenco scrivi prima il nome dell&apos;agenzia in Impostazioni.</p>}
+      {err === "titolare" && <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">La vetrina dell&apos;agenzia la cambia il titolare.</p>}
       {err === "db" && <p className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">Non sono riuscito a salvare. Riprova.</p>}
 
       <form action={saveTravelerListing} className="flex flex-col gap-4 rounded-2xl border border-[#e6d7bb] bg-white p-5">

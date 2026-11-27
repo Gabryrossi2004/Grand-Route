@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Archive, BookOpen, ChevronRight, Gift, Users } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
+import AccountModeCard from "@/components/team/AccountModeCard";
 import type { Profile } from "@/lib/types";
 import SettingsForm from "./SettingsForm";
 import LogoUploader from "./LogoUploader";
@@ -18,13 +20,24 @@ import { getAvatarStyle, isAvatarVisible } from "@/lib/assistant";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  const team = await getTeamContext();
+  const titolare = team?.isTitolare ?? true;
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user!.id)
-    .single();
+  // Profilo dell'agenzia (per un collaboratore: quello dell'agenzia in cui lavora) e il proprio, per le preferenze personali
+  const [{ data: company }, { data: own }] = await Promise.all([
+    supabase.from("profiles").select("*").eq("id", team?.companyId ?? "").single(),
+    team?.isMember ? supabase.from("profiles").select("*").eq("id", team.userId).single() : Promise.resolve({ data: null }),
+  ]);
+  const profile = (own
+    ? {
+        ...(company as Profile),
+        ui_font_size: (own as Profile).ui_font_size,
+        ui_font_family: (own as Profile).ui_font_family,
+        notify_trips: (own as Profile).notify_trips,
+        notify_community: (own as Profile).notify_community,
+        notify_emergencies: (own as Profile).notify_emergencies,
+      }
+    : company) as Profile | null;
 
   const { data: isAdmin } = await supabase.rpc("is_platform_admin");
   const usage = await getAiUsageSummary();
@@ -67,6 +80,9 @@ export default async function SettingsPage() {
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
 
+      {titolare && team && <AccountModeCard mode={team.accountMode} />}
+
+      {titolare && (
       <Link
         href="/dashboard/settings/viaggiatori"
         className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-[#e6d7bb] bg-white px-5 py-4 transition hover:shadow-sm"
@@ -82,6 +98,7 @@ export default async function SettingsPage() {
         </span>
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
+      )}
 
       <Link
         href="/dashboard/settings/zefiro"
@@ -101,10 +118,12 @@ export default async function SettingsPage() {
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
 
-      <LogoUploader logoUrl={(profile as Profile).logo_url} initialShape={parseLogoShape((profile as Profile).logo_shape)} />
+      {titolare && <LogoUploader logoUrl={(profile as Profile).logo_url} initialShape={parseLogoShape((profile as Profile).logo_shape)} />}
 
-      <SettingsForm profile={profile as Profile} />
+      <SettingsForm profile={profile as Profile} canEditAgency={titolare} />
 
+      {/* Zefiro, messaggi automatici e piano: impostazioni dell'agenzia, le cambia il titolare */}
+      {titolare && (
       <div className="mt-6">
         <AutoMessagesCard initiallyOn={(profile as Profile).ai_preferences?.auto_messages === "on"} />
         <OpsSettingsCard initiallyOn={(profile as Profile).ai_preferences?.ops_import === "on"} />
@@ -121,6 +140,7 @@ export default async function SettingsPage() {
           initialStyle={getAvatarStyle((profile as Profile).ai_preferences)}
         />
       </div>
+      )}
 
       {isAdmin === true && (
         <Link

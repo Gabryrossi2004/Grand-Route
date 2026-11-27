@@ -14,6 +14,7 @@ import { GeneratedItinerarySchema, generateItineraryFromDraft, type DraftImage, 
 import { generateProposalItinerary, planTripFromBrief } from "@/lib/tripBriefAi";
 import { addDaysIso, insertGeneratedItinerary } from "@/lib/itineraryInsert";
 import { parseMode, type ItineraryMode } from "@/lib/itineraryMode";
+import { companyIdOf } from "@/lib/team";
 
 export type PlanConcept = { name: string; route: string; summary: string };
 export type PlanOk = {
@@ -235,6 +236,7 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
 
   const createdTripIds: string[] = [];
   let groupId: string | null = null;
@@ -244,7 +246,7 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
   };
 
   if (proposals.length > 1) {
-    const { data: group } = await supabase.from("trip_groups").insert({ owner_id: user.id, client_id: clientId, title }).select("id").single();
+    const { data: group } = await supabase.from("trip_groups").insert({ owner_id: companyId, client_id: clientId, title }).select("id").single();
     groupId = group?.id ?? null;
     if (!groupId) return { error: "Non è stato possibile creare il gruppo di varianti. Riprova." };
   }
@@ -258,7 +260,7 @@ export async function createTripFromProposals(input: z.input<typeof SaveInput>):
       .map((n) => `• ${n}`)
       .join("\n");
     const base = {
-      owner_id: user.id,
+      owner_id: companyId,
       title: tripTitle,
       destination,
       client_id: clientId,
@@ -317,8 +319,9 @@ export async function applyProposalsToTrip(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
 
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." };
 
   const { data: dayRows } = await supabase.from("trip_days").select("id").eq("trip_id", tripId);
@@ -340,7 +343,7 @@ export async function applyProposalsToTrip(
   if (variantProposals.length > 0 && !groupId) {
     const { data: group } = await supabase
       .from("trip_groups")
-      .insert({ owner_id: user.id, client_id: trip.client_id, title: trip.title })
+      .insert({ owner_id: companyId, client_id: trip.client_id, title: trip.title })
       .select("id")
       .single();
     groupId = group?.id ?? null;
@@ -359,7 +362,7 @@ export async function applyProposalsToTrip(
   for (const proposal of variantProposals) {
     const days = proposal.itinerary.days.length;
     const base = {
-      owner_id: user.id,
+      owner_id: companyId,
       title: proposal.name ? `${trip.title} · ${proposal.name}` : `${trip.title} (variante)`,
       destination: trip.destination,
       client_id: trip.client_id,

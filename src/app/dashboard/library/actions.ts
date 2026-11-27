@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { defaultPromptStyles } from "@/lib/defaultPromptStyles";
+import { companyIdOf } from "@/lib/team";
 
 export async function deleteTemplate(templateId: string) {
   const supabase = await createClient();
@@ -19,16 +20,17 @@ export async function seedDefaultPromptStylesIfEmpty() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const { count } = await supabase
     .from("prompt_styles")
     .select("id", { count: "exact", head: true })
-    .eq("owner_id", user.id);
+    .eq("owner_id", companyId);
   if ((count ?? 0) > 0) return;
 
   await supabase
     .from("prompt_styles")
-    .insert(defaultPromptStyles.map((style) => ({ owner_id: user.id, ...style })));
+    .insert(defaultPromptStyles.map((style) => ({ owner_id: companyId, ...style })));
 }
 
 export async function addPromptStyle(formData: FormData) {
@@ -37,12 +39,13 @@ export async function addPromptStyle(formData: FormData) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const title = String(formData.get("title") ?? "").trim();
   const promptText = String(formData.get("prompt_text") ?? "").trim();
   if (!title || !promptText) return;
 
-  await supabase.from("prompt_styles").insert({ owner_id: user.id, title, prompt_text: promptText });
+  await supabase.from("prompt_styles").insert({ owner_id: companyId, title, prompt_text: promptText });
   revalidatePath("/dashboard/library");
 }
 

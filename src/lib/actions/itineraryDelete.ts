@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
+import { companyIdOf } from "@/lib/team";
 
 // Eliminazione di attività e giorni: avviene SUBITO sul server (così non si perde mai, anche se si
 // cambia giorno, si ricarica la pagina o si chiude il browser) e restituisce una "fotografia" di
@@ -20,7 +21,8 @@ async function ownedTrip(supabase: Db, tripId: string) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return null;
-  const { data } = await supabase.from("trips").select("id").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const companyId = await companyIdOf(user.id);
+  const { data } = await supabase.from("trips").select("id").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   return data ? user : null;
 }
 

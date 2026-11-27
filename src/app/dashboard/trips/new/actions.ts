@@ -17,6 +17,7 @@ import {
 } from "@/lib/clientRequestAi";
 import type { DraftImage } from "@/lib/itineraryAi";
 import { parseMode } from "@/lib/itineraryMode";
+import { companyIdOf, getTeamContext } from "@/lib/team";
 
 const MAX_AUTO_DAYS = 90;
 
@@ -120,13 +121,14 @@ export async function createTrip(
   if (!user) {
     return { error: "Devi essere loggato." };
   }
+  const companyId = await companyIdOf(user.id);
 
   const title = String(formData.get("title") ?? "").trim();
   if (!title) {
     return { error: "Il titolo del viaggio è obbligatorio." };
   }
 
-  const created = await insertTripWithDays(supabase, user.id, {
+  const created = await insertTripWithDays(supabase, companyId, {
     title,
     destination: String(formData.get("destination") ?? "").trim() || null,
     startDate: String(formData.get("start_date") ?? "") || null,
@@ -147,6 +149,12 @@ export async function createTrip(
     itineraryMode: String(formData.get("itinerary_mode") ?? "activities"),
   });
   if ("error" in created) return created;
+
+  // Con la squadra il viaggio nuovo lo segue chi l'ha creato (si cambia dalla pagina del viaggio)
+  const team = await getTeamContext();
+  if (team && (team.isMember || team.accountMode === "azienda")) {
+    await supabase.from("trips").update({ assigned_to: user.id }).eq("id", created.id);
+  }
 
   redirect(`/dashboard/trips/${created.id}`);
 }

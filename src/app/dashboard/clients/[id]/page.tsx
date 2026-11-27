@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Eye } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import { decryptField } from "@/lib/encryption";
 import type { Client, Trip } from "@/lib/types";
 import ClientDetailsFields from "@/components/ClientDetailsFields";
@@ -16,13 +17,14 @@ export default async function ClientDetailPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const { data: client } = await supabase
     .from("clients")
     .select("*")
     .eq("id", id)
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .single();
   if (!client) notFound();
 
@@ -46,7 +48,7 @@ export default async function ClientDetailPage({
     supabase
       .from("trips")
       .select("id, title, destination")
-      .eq("owner_id", user?.id ?? "")
+      .eq("owner_id", companyId)
       .or(`client_id.neq.${id},client_id.is.null`)
       .order("created_at", { ascending: false }),
   ]);
@@ -133,7 +135,7 @@ export default async function ClientDetailPage({
         </SubmitButton>
       </form>
 
-      <ClientLoyaltyCard clientId={id} ownerId={user?.id ?? ""} />
+      <ClientLoyaltyCard clientId={id} ownerId={companyId} />
 
       <section>
         <h2 className="mb-3 text-lg font-semibold text-slate-900">Viaggi di questo cliente</h2>

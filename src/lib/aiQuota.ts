@@ -1,4 +1,5 @@
 import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { companyIdOf } from "@/lib/team";
 import { costInEuro, formatEuro, parseAiPlan, planById, type AiPlanId, type AiUsageTokens, type PricedModel } from "@/lib/aiPricing";
 import { effectivePlan, welcomeBonus, type WelcomeBonus } from "@/lib/welcomeBonus";
 
@@ -63,7 +64,8 @@ export type AiUsageSummary = {
   available: boolean; // false se la migrazione 0035 non è stata eseguita
 };
 
-// Pacchetto scelto e bonus di benvenuto (30 giorni di Plus in regalo ai professionisti appena registrati)
+// Pacchetto scelto e bonus di benvenuto (30 giorni di Plus in regalo ai professionisti appena registrati).
+// Il pacchetto è dell'agenzia: un collaboratore usa quello del suo titolare (i consumi restano contati per persona).
 async function readPlan(userId: string): Promise<{ plan: AiPlanId; bonus: WelcomeBonus | null }> {
   const supabase = await createClient();
   const { data } = await supabase.from("profiles").select("ai_plan, created_at, is_professional, is_traveler").eq("id", userId).maybeSingle();
@@ -78,7 +80,7 @@ export async function getAiUsageSummary(): Promise<AiUsageSummary | null> {
   const user = await getCachedUser();
   if (!user) return null;
   const supabase = await createClient();
-  const { plan: chosenPlan, bonus } = await readPlan(user.id);
+  const { plan: chosenPlan, bonus } = await readPlan(await companyIdOf(user.id));
   const plan = chosenPlan;
   const { day, month } = romeBoundaries();
 

@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { buildTemplate } from "@/lib/messageTemplates";
 import { TEMPLATE_KINDS, type TemplateKind } from "@/lib/messageTemplateKinds";
 import type { Activity, Trip, TripDay, TripPayment } from "@/lib/types";
+import { companyIdOf } from "@/lib/team";
 
 // Modello di messaggio compilato con i dati del viaggio (senza AI)
 export async function templateMessage(tripId: string, kind: TemplateKind): Promise<{ text?: string; error?: string }> {
@@ -13,14 +14,15 @@ export async function templateMessage(tripId: string, kind: TemplateKind): Promi
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const companyId = await companyIdOf(user.id);
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." };
   const t = trip as Trip;
   const [{ data: days }, { data: payments }, { data: client }, { data: profile }] = await Promise.all([
     supabase.from("trip_days").select("*, activities(*)").eq("trip_id", tripId).order("day_order", { ascending: true }),
     supabase.from("trip_payments").select("*").eq("trip_id", tripId).eq("direction", "incasso"),
     t.client_id ? supabase.from("clients").select("full_name").eq("id", t.client_id).maybeSingle() : Promise.resolve({ data: null }),
-    supabase.from("profiles").select("agency_name, emergency_phone, ai_preferences").eq("id", user.id).maybeSingle(),
+    supabase.from("profiles").select("agency_name, emergency_phone, ai_preferences").eq("id", companyId).maybeSingle(),
   ]);
   const prefs = (profile?.ai_preferences as Record<string, string> | null) ?? {};
   const ordered = ((days as (TripDay & { activities: Activity[] })[]) ?? []).map((d) => ({

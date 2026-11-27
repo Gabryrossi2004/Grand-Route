@@ -26,7 +26,7 @@ function formatDateRange(trip: Trip) {
 
 const LONG_PRESS_MS = 550;
 
-export default function TripCard({ trip, variantCount }: { trip: Trip; variantCount?: number }) {
+export default function TripCard({ trip, variantCount, assignee }: { trip: Trip; variantCount?: number; assignee?: string | null }) {
   const [menuPos, setMenuPos] = useState<{ x: number; y: number } | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -101,6 +101,7 @@ export default function TripCard({ trip, variantCount }: { trip: Trip; variantCo
             )}
           </div>
           {trip.destination && <p className="text-sm text-slate-500">{trip.destination}</p>}
+          {assignee && <p className="mt-1 text-xs font-medium text-[#c58f2d]">Lo segue: {assignee}</p>}
           <div className="mt-2 flex items-center justify-between gap-2">
             <p className="text-xs text-slate-500">
               {formatDateRange(trip)}

@@ -14,6 +14,7 @@ import { SHEET_SECTIONS } from "@/lib/countrySheetShared";
 import { findCountryPhotos, type SheetPhoto } from "@/lib/countryPhotos";
 import { nameItOfCode } from "@/lib/geo/countryCodes";
 import { LIBRARY_UPDATED_AT, librarySheet } from "@/lib/countrySheetLibrary";
+import { companyIdOf } from "@/lib/team";
 
 // fromLibrary: è la scheda Grand Route; libraryAvailable: l'agenzia ha la sua versione ma può tornare a quella Grand Route
 export type CountrySheet = { code: string; content: CountrySheetContent; photos: SheetPhoto[]; updatedAt: string; fromLibrary?: boolean; libraryAvailable?: boolean };
@@ -29,8 +30,10 @@ async function agencyUser() {
   const { data: profile } = await supabase.from("profiles").select("id").eq("id", user.id).maybeSingle();
   // i clienti hanno un account ma nessun profilo agenzia: la scheda paese è solo per l'agenzia
   const { data: asClient } = await supabase.from("clients").select("id").eq("user_id", user.id).limit(1);
-  if (!profile || (asClient && asClient.length > 0 && !(await ownsTrips(user.id)))) return null;
-  return { user, supabase };
+  const companyId = await companyIdOf(user.id);
+  if (!profile || (asClient && asClient.length > 0 && !(await ownsTrips(companyId)))) return null;
+  // le schede sono dell'agenzia (per un collaboratore: di quella in cui lavora)
+  return { user, companyId, supabase };
 }
 
 async function ownsTrips(userId: string) {
@@ -46,7 +49,7 @@ export async function getCountrySheet(code: string): Promise<Result> {
   const { data, error } = await ctx.supabase
     .from("country_sheets")
     .select("country_code, content, photos, updated_at")
-    .eq("owner_id", ctx.user.id)
+    .eq("owner_id", ctx.companyId)
     .eq("country_code", code)
     .maybeSingle();
   // senza una scheda personalizzata dell'agenzia: quella della libreria Grand Route, se c'è
@@ -113,7 +116,7 @@ export async function generateCountrySheet(code: string): Promise<Result> {
   const updatedAt = new Date().toISOString();
   const { error } = await ctx.supabase
     .from("country_sheets")
-    .upsert({ owner_id: ctx.user.id, country_code: code, content, photos, updated_at: updatedAt }, { onConflict: "owner_id,country_code" });
+    .upsert({ owner_id: ctx.companyId, country_code: code, content, photos, updated_at: updatedAt }, { onConflict: "owner_id,country_code" });
   if (error) {
     console.error("[countrySheet] salvataggio", error.message);
     return { ok: false, error: "Scheda preparata ma non salvata. Riprova." };
@@ -172,7 +175,7 @@ export async function saveCountrySheet(code: string, content: unknown, photos: u
   const { error } = await ctx.supabase
     .from("country_sheets")
     .upsert(
-      { owner_id: ctx.user.id, country_code: code, content: parsed.data, photos: photoList.success ? photoList.data : [], updated_at: updatedAt },
+      { owner_id: ctx.companyId, country_code: code, content: parsed.data, photos: photoList.success ? photoList.data : [], updated_at: updatedAt },
       { onConflict: "owner_id,country_code" },
     );
   if (error) {
@@ -190,7 +193,7 @@ export async function resetCountrySheet(code: string): Promise<Result> {
   if (!validCode(code)) return { ok: false, error: "Paese non valido." };
   const ctx = await agencyUser();
   if (!ctx) return { ok: false, error: "Accesso non valido." };
-  const { error } = await ctx.supabase.from("country_sheets").delete().eq("owner_id", ctx.user.id).eq("country_code", code);
+  const { error } = await ctx.supabase.from("country_sheets").delete().eq("owner_id", ctx.companyId).eq("country_code", code);
   if (error) return { ok: false, error: "Non sono riuscito a ripristinare la scheda. Riprova." };
   return getCountrySheet(code);
 }

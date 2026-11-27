@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import { DEFAULT_LEVELS, levelFor, parseLevels, pointsFrom } from "@/lib/benefits";
 import { romeToday } from "@/lib/destinationInfo";
 import { Bars, Columns } from "@/components/StatsCharts";
@@ -41,8 +42,9 @@ function Kpi({ label, value, sub }: { label: string; value: string; sub?: string
 // richieste di preventivo e offerte. Si calcola tutto dai dati che ci sono già.
 export default async function BenefitsStatsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
-  const uid = user?.id ?? "";
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
+  const uid = companyId;
 
   const [{ data: loyalty, error: loyaltyError }, clientsRes, { data: tripRows }, adjRes, leadsRes, offersRes] = await Promise.all([
     supabase.from("agency_loyalty").select("*").eq("owner_id", uid).maybeSingle(),

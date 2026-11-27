@@ -1,17 +1,19 @@
 import Link from "next/link";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { Client } from "@/lib/types";
 import ClientsList from "@/components/ClientsList";
 import LeadsPanel from "@/components/LeadsPanel";
 
 export default async function ClientsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const { data: clients } = await supabase
     .from("clients")
     .select("*")
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .order("full_name", { ascending: true });
 
   return (
@@ -26,7 +28,7 @@ export default async function ClientsPage() {
         </Link>
       </div>
 
-      <LeadsPanel ownerId={user?.id ?? ""} />
+      <LeadsPanel ownerId={companyId} />
 
       <ClientsList clients={(clients as Client[]) || []} />
     </div>

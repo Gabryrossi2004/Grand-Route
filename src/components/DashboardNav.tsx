@@ -49,6 +49,7 @@ const navItems: NavItem[] = [
     account: true,
     children: [
       { href: "/dashboard/settings", label: "Impostazioni" },
+      { href: "/dashboard/squadra", label: "Squadra", hint: "Colleghi, ruoli e inviti" },
       { href: "/dashboard/sconto", label: "Sconto Rotta", hint: "Viaggi verificati e sconto sul piano" },
       { href: "/dashboard/invita", label: "Invita un collega", hint: "−20% per 3 mesi a entrambi" },
       { href: "/dashboard/settings/guida", label: "Guida all'uso" },
@@ -66,6 +67,18 @@ function CountBadge({ count }: { count: number }) {
 }
 
 const isGroup = (item: NavItem): item is NavGroup => "children" in item;
+
+export type NavTeam = { isMember: boolean; isTitolare: boolean; accountMode: "individuale" | "azienda" };
+
+// Voci nascoste secondo l'account: la Squadra solo ai titolari di un account aziendale; rete Partner, Posta,
+// ordini ai fornitori e «Invita un collega» per ora solo al fondatore (fase 2); Sconto Rotta solo ai titolari.
+function hiddenFor(team: NavTeam): Set<string> {
+  const hidden = new Set<string>();
+  if (!(team.isTitolare && team.accountMode === "azienda")) hidden.add("/dashboard/squadra");
+  if (team.isMember) ["/rete", "/dashboard/posta", "/dashboard/ordini", "/dashboard/invita"].forEach((h) => hidden.add(h));
+  if (!team.isTitolare) hidden.add("/dashboard/sconto");
+  return hidden;
+}
 
 // "Home" è attiva solo sulla pagina esatta (le altre voci iniziano con /dashboard).
 function isActive(pathname: string, href: string) {
@@ -85,22 +98,29 @@ export default function DashboardNav({
   ordersTodo = 0,
   mailUnread = 0,
   isAdmin = false,
+  team = { isMember: false, isTitolare: true, accountMode: "individuale" },
 }: {
   signOut: () => Promise<void> | void;
   unreadMessages?: number;
   ordersTodo?: number;
   mailUnread?: number;
   isAdmin?: boolean;
+  team?: NavTeam;
 }) {
   // Contatore accanto a una voce (messaggi dei clienti, ordini e fatture dei fornitori da guardare)
   const countFor = (href: string) => (href === "/dashboard/messages" ? unreadMessages : href === "/dashboard/ordini" ? ordersTodo : href === "/dashboard/posta" ? mailUnread : 0);
   const pathname = usePathname();
   // Gli amministratori hanno una voce in più nel menu Account
-  const items: NavItem[] = isAdmin
-    ? navItems.map((item) =>
-        isGroup(item) && item.account ? { ...item, children: [{ href: "/dashboard/admin", label: "Amministrazione" }, ...item.children] } : item,
-      )
-    : navItems;
+  const hidden = hiddenFor(team);
+  const items: NavItem[] = (
+    isAdmin
+      ? navItems.map((item) =>
+          isGroup(item) && item.account ? { ...item, children: [{ href: "/dashboard/admin", label: "Amministrazione" }, ...item.children] } : item,
+        )
+      : navItems
+  )
+    .map((item) => (isGroup(item) ? { ...item, children: item.children.filter((c) => !hidden.has(c.href)) } : item))
+    .filter((item) => !isGroup(item) || item.children.length > 0);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const groupOpen = openGroup !== null;
   const [mobileOpen, setMobileOpen] = useState(false);

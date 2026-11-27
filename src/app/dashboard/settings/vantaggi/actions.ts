@@ -3,12 +3,14 @@
 import { revalidatePath } from "next/cache";
 import { createClient, getCachedUser } from "@/lib/supabase/server";
 import { sendPushToTargets, type PushTarget } from "@/lib/webpush";
+import { companyIdOf } from "@/lib/team";
 
 const PATH = "/dashboard/settings/vantaggi";
 
 export async function saveLoyalty(formData: FormData) {
   const user = await getCachedUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
   const levels = [0, 1, 2, 3, 4]
     .map((i) => ({
       name: String(formData.get(`level_name_${i}`) ?? "").trim().slice(0, 40),
@@ -20,7 +22,7 @@ export async function saveLoyalty(formData: FormData) {
   const rate = Number(String(formData.get("euros_per_point") ?? "10").replace(",", "."));
   const supabase = await createClient();
   const base = {
-    owner_id: user.id,
+    owner_id: companyId,
     enabled: formData.get("enabled") === "on",
     euros_per_point: Number.isFinite(rate) && rate > 0 ? Math.min(10000, rate) : 10,
     intro: String(formData.get("intro") ?? "").trim().slice(0, 1000) || null,
@@ -42,12 +44,13 @@ export async function saveLoyalty(formData: FormData) {
 export async function addOffer(formData: FormData) {
   const user = await getCachedUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
   const title = String(formData.get("title") ?? "").trim().slice(0, 120);
   if (title.length < 3) return;
   const until = String(formData.get("valid_until") ?? "");
   const supabase = await createClient();
   const base = {
-    owner_id: user.id,
+    owner_id: companyId,
     title,
     body: String(formData.get("body") ?? "").trim().slice(0, 2000) || null,
     valid_until: /^\d{4}-\d{2}-\d{2}$/.test(until) ? until : null,
@@ -97,12 +100,13 @@ export async function deleteOffer(id: string) {
 export async function addAdjustment(clientId: string, formData: FormData) {
   const user = await getCachedUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
   const raw = Math.trunc(Number(formData.get("points")) || 0);
   const points = formData.get("kind") === "usa" ? -Math.abs(raw) : Math.abs(raw);
   const reason = String(formData.get("reason") ?? "").trim().slice(0, 200);
   if (!points || !reason) return;
   const supabase = await createClient();
-  await supabase.from("loyalty_adjustments").insert({ owner_id: user.id, client_id: clientId, points, reason });
+  await supabase.from("loyalty_adjustments").insert({ owner_id: companyId, client_id: clientId, points, reason });
   revalidatePath(`/dashboard/clients/${clientId}`);
 }
 
@@ -123,6 +127,7 @@ export async function setLeadStatus(id: string, status: "contattata" | "archivia
 export async function convertLead(id: string) {
   const user = await getCachedUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
   const supabase = await createClient();
   const { data: lead } = await supabase.from("agency_leads").select("*").eq("id", id).maybeSingle();
   if (!lead || lead.status === "cliente") return;
@@ -131,7 +136,7 @@ export async function convertLead(id: string) {
   const phone = email ? null : contact.trim();
   const fromTraveler = lead.source === "privato";
   const newClient = {
-    owner_id: user.id,
+    owner_id: companyId,
     full_name: lead.name,
     email,
     phone,
@@ -149,14 +154,14 @@ export async function convertLead(id: string) {
   }
   // Il viaggio che il viaggiatore ha mandato passa al nuovo cliente
   if (created && fromTraveler && lead.trip_id) {
-    await supabase.from("trips").update({ client_id: created.id }).eq("id", lead.trip_id).eq("owner_id", user.id);
+    await supabase.from("trips").update({ client_id: created.id }).eq("id", lead.trip_id).eq("owner_id", companyId);
   }
   if (lead.referrer_client_id && !lead.bonus_given) {
-    const { data: loyalty } = await supabase.from("agency_loyalty").select("enabled, referral_bonus").eq("owner_id", user.id).maybeSingle();
+    const { data: loyalty } = await supabase.from("agency_loyalty").select("enabled, referral_bonus").eq("owner_id", companyId).maybeSingle();
     const bonus = Number(loyalty?.referral_bonus ?? 0);
     if (loyalty?.enabled && bonus > 0) {
       await supabase.from("loyalty_adjustments").insert({
-        owner_id: user.id,
+        owner_id: companyId,
         client_id: lead.referrer_client_id,
         points: bonus,
         reason: `Hai presentato un amico: ${String(lead.name).split(" ")[0]}`,

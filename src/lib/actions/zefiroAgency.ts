@@ -20,6 +20,7 @@ import {
 } from "@/lib/translation";
 import { revalidatePath } from "next/cache";
 import type { Activity, Trip, TripDay, TripMessage, TripPayment } from "@/lib/types";
+import { companyIdOf } from "@/lib/team";
 
 const DraftSchema = z.object({
   message: z.string().describe("Il testo del messaggio, pronto da rileggere e inviare."),
@@ -44,8 +45,9 @@ export async function draftClientMessage(tripId: string, kind: DraftKind, note?:
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+    const companyId = await companyIdOf(user.id);
 
-    const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+    const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
     if (!trip) return { error: "Viaggio non trovato." };
 
     const [{ data: days }, { data: payments }, { data: client }, { data: profile }, { data: thread }] = await Promise.all([
@@ -54,7 +56,7 @@ export async function draftClientMessage(tripId: string, kind: DraftKind, note?:
       (trip as Trip).client_id
         ? supabase.from("clients").select("full_name").eq("id", (trip as Trip).client_id!).maybeSingle()
         : Promise.resolve({ data: null }),
-      supabase.from("profiles").select("agency_name, ai_rules, ai_preferences").eq("id", user.id).maybeSingle(),
+      supabase.from("profiles").select("agency_name, ai_rules, ai_preferences").eq("id", companyId).maybeSingle(),
       supabase.from("trip_messages").select("*").eq("trip_id", tripId).order("created_at", { ascending: false }).limit(8),
     ]);
 
@@ -160,8 +162,9 @@ export async function translateTrip(tripId: string, languageCode: string): Promi
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
 
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." };
   const source = trip as Trip;
 
@@ -194,7 +197,7 @@ export async function translateTrip(tripId: string, languageCode: string): Promi
     if (!groupId) {
       const { data: group } = await supabase
         .from("trip_groups")
-        .insert({ owner_id: user.id, client_id: source.client_id, title: source.title })
+        .insert({ owner_id: companyId, client_id: source.client_id, title: source.title })
         .select("id")
         .single();
       groupId = group?.id ?? null;
@@ -204,7 +207,7 @@ export async function translateTrip(tripId: string, languageCode: string): Promi
     const { data: newTrip, error: tripError } = await supabase
       .from("trips")
       .insert({
-        owner_id: user.id,
+        owner_id: companyId,
         client_id: null,
         group_id: groupId,
         title: `${pick(translated, "t.title", source.title)} (${language.code.toUpperCase()})`,

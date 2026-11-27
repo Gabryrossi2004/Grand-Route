@@ -6,11 +6,18 @@ import type { Profile } from "@/lib/types";
 import PushNotificationToggle from "@/components/PushNotificationToggle";
 import BrandColorField from "./BrandColorField";
 
-export default function SettingsForm({ profile }: { profile: Profile }) {
+// canEditAgency = false per i collaboratori non titolari: i dati dell'agenzia si vedono ma non si cambiano
+export default function SettingsForm({ profile, canEditAgency = true }: { profile: Profile; canEditAgency?: boolean }) {
   const [state, formAction, pending] = useActionState(updateProfile, undefined);
 
   return (
     <form action={formAction} className="flex flex-col gap-5 rounded-xl border border-[#e6d7bb] bg-white p-6">
+      {!canEditAgency && (
+        <p className="rounded-lg bg-[#faf3e6] px-3 py-2 text-xs text-[#6b5f4a]">
+          Nome, colori, termini e numero d&apos;emergenza dell&apos;agenzia li cambia il titolare. Qui puoi scegliere il testo e le notifiche che preferisci.
+        </p>
+      )}
+      <fieldset disabled={!canEditAgency} className="flex flex-col gap-5 disabled:opacity-60">
       <div>
         <label htmlFor="business_kind" className="mb-1 block text-sm font-medium text-slate-700">
           Tipo di attività
@@ -41,6 +48,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
       </div>
 
       <BrandColorField defaultColor={profile.brand_color ?? "#233c5e"} logoUrl={profile.logo_url} />
+      </fieldset>
 
       <div>
         <label className="mb-2 block text-sm font-medium text-slate-700">Dimensione del testo</label>
@@ -87,6 +95,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
         </select>
       </div>
 
+      <fieldset disabled={!canEditAgency} className="flex flex-col gap-5 disabled:opacity-60">
       <div>
         <label htmlFor="terms_and_conditions" className="mb-1 block text-sm font-medium text-slate-700">
           Termini e Condizioni standard
@@ -122,6 +131,7 @@ export default function SettingsForm({ profile }: { profile: Profile }) {
           className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#cda876]"
         />
       </div>
+      </fieldset>
 
       <div>
         <label className="mb-2 block text-sm font-medium text-slate-700">Notifiche push</label>

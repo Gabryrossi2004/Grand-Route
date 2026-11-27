@@ -7,6 +7,7 @@ import type { SupplierCategory } from "@/lib/types";
 import { validateSpreadsheetFile, validateTextFile } from "@/lib/fileValidation";
 import { parseExcelToText } from "@/lib/itineraryFileParsing";
 import { extractPriceListItems, type PriceListExtraction } from "@/lib/priceListAi";
+import { companyIdOf } from "@/lib/team";
 
 function readSupplierFields(formData: FormData) {
   return {
@@ -32,13 +33,14 @@ export async function createSupplier(formData: FormData) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const fields = readSupplierFields(formData);
   if (!fields.full_name) return;
 
   const places = readPlaces(formData);
-  const { error } = await supabase.from("suppliers").insert({ owner_id: user.id, ...fields, ...places });
-  if (error && MISSING_COLUMN.test(error.message)) await supabase.from("suppliers").insert({ owner_id: user.id, ...fields });
+  const { error } = await supabase.from("suppliers").insert({ owner_id: companyId, ...fields, ...places });
+  if (error && MISSING_COLUMN.test(error.message)) await supabase.from("suppliers").insert({ owner_id: companyId, ...fields });
   revalidatePath("/dashboard/suppliers");
 }
 
@@ -78,11 +80,12 @@ export async function createPriceListItem(supplierId: string, formData: FormData
   const supabase = await createClient();
   const user = await getCachedUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const fields = readPriceListItemFields(formData);
   if (!fields.title) return;
 
-  await supabase.from("supplier_price_list_items").insert({ owner_id: user.id, supplier_id: supplierId, ...fields });
+  await supabase.from("supplier_price_list_items").insert({ owner_id: companyId, supplier_id: supplierId, ...fields });
   revalidatePath("/dashboard/suppliers");
 }
 
@@ -157,10 +160,11 @@ export async function savePriceListItems(supplierId: string, items: PriceListExt
   const supabase = await createClient();
   const user = await getCachedUser();
   if (!user || items.length === 0) return;
+  const companyId = await companyIdOf(user.id);
 
   await supabase.from("supplier_price_list_items").insert(
     items.map((item) => ({
-      owner_id: user.id,
+      owner_id: companyId,
       supplier_id: supplierId,
       ...item,
     })),

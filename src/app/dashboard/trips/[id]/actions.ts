@@ -18,6 +18,7 @@ import {
 } from "@/lib/fileValidation";
 import { generateItineraryFromDraft, type DraftImage } from "@/lib/itineraryAi";
 import { parseExcelToText } from "@/lib/itineraryFileParsing";
+import { companyIdOf } from "@/lib/team";
 import type {
   Activity,
   ActivityType,
@@ -633,12 +634,13 @@ export async function saveActivityToLibrary(tripId: string, activityId: string) 
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const { data: activity } = await supabase.from("activities").select("*").eq("id", activityId).single();
   if (!activity) return;
 
   await supabase.from("activity_templates").insert({
-    owner_id: user.id,
+    owner_id: companyId,
     activity_type: activity.activity_type,
     title: activity.title,
     description: activity.description,
@@ -750,13 +752,14 @@ export async function uploadDocument(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: SESSION_EXPIRED };
+  const companyId = await companyIdOf(user.id);
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
   const fileError = validateDocumentFile(file) ?? (await verifyFileSignature(file, true));
   if (fileError) return { error: fileError };
 
-  const filePath = `${user.id}/${tripId}/${Date.now()}-${safeStorageName(file.name)}`;
+  const filePath = `${companyId}/${tripId}/${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
@@ -858,6 +861,7 @@ export async function uploadDocumentCover(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: SESSION_EXPIRED };
+  const companyId = await companyIdOf(user.id);
 
   const file = formData.get("file");
   if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
@@ -870,7 +874,7 @@ export async function uploadDocumentCover(
     .eq("id", documentId)
     .maybeSingle();
 
-  const coverPath = `${user.id}/${tripId}/covers/${documentId}-${Date.now()}-${safeStorageName(file.name)}`;
+  const coverPath = `${companyId}/${tripId}/covers/${documentId}-${Date.now()}-${safeStorageName(file.name)}`;
   const { error: uploadError } = await supabase.storage
     .from("trip-documents")
     .upload(coverPath, file, { contentType: (await detectFileMime(file)) ?? (file.type || undefined) });
@@ -916,13 +920,14 @@ export async function uploadActivityPhoto(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: SESSION_EXPIRED };
+  const companyId = await companyIdOf(user.id);
 
   const file = formData.get("photo");
   if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
   const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
   if (fileError) return { error: fileError };
 
-  const filePath = `${user.id}/activities/${activityId}/${Date.now()}-${safeStorageName(file.name)}`;
+  const filePath = `${companyId}/activities/${activityId}/${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
@@ -964,13 +969,14 @@ export async function uploadCover(tripId: string, formData: FormData): Promise<{
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: SESSION_EXPIRED };
+  const companyId = await companyIdOf(user.id);
 
   const file = formData.get("cover");
   if (!(file instanceof File) || file.size === 0) return { error: NO_FILE };
   const fileError = validateImageFile(file) ?? (await verifyFileSignature(file));
   if (fileError) return { error: fileError };
 
-  const filePath = `${user.id}/trips/${tripId}/cover-${Date.now()}-${safeStorageName(file.name)}`;
+  const filePath = `${companyId}/trips/${tripId}/cover-${Date.now()}-${safeStorageName(file.name)}`;
 
   const { error: uploadError } = await supabase.storage
     .from("public-assets")
@@ -1004,6 +1010,7 @@ export async function duplicateTripAsVariant(tripId: string) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return;
+  const companyId = await companyIdOf(user.id);
 
   const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).single();
   if (!trip) return;
@@ -1012,7 +1019,7 @@ export async function duplicateTripAsVariant(tripId: string) {
   if (!groupId) {
     const { data: group } = await supabase
       .from("trip_groups")
-      .insert({ owner_id: user.id, client_id: trip.client_id, title: trip.title })
+      .insert({ owner_id: companyId, client_id: trip.client_id, title: trip.title })
       .select("id")
       .single();
     groupId = group?.id ?? null;
@@ -1024,7 +1031,7 @@ export async function duplicateTripAsVariant(tripId: string) {
   const { data: newTrip } = await supabase
     .from("trips")
     .insert({
-      owner_id: user.id,
+      owner_id: companyId,
       client_id: trip.client_id,
       group_id: groupId,
       title: `${trip.title} (variante)`,
@@ -1274,6 +1281,7 @@ export async function applyAiItineraryDraft(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Non autenticato." };
+  const companyId = await companyIdOf(user.id);
 
   let draftText = String(formData.get("draft_text") ?? "").trim();
   let image: DraftImage | null = null;
@@ -1341,7 +1349,7 @@ export async function applyAiItineraryDraft(
         : Promise.resolve({ data: null as { prompt_text: string } | null }),
       supabase.from("trips").select("*").eq("id", tripId).single(),
       supabase.from("trip_days").select("id").eq("trip_id", tripId),
-      supabase.from("trips").select("id").eq("owner_id", user.id).neq("id", tripId).limit(10),
+      supabase.from("trips").select("id").eq("owner_id", companyId).neq("id", tripId).limit(10),
     ]);
   const styleInstructions = styleRow?.prompt_text ?? null;
 

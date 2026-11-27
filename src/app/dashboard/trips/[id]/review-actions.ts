@@ -12,6 +12,7 @@ import {
   type ReviewSuggestions,
 } from "@/lib/tripReviewAi";
 import type { Trip } from "@/lib/types";
+import { companyIdOf } from "@/lib/team";
 
 const MAX_ANSWERS = 5;
 
@@ -23,8 +24,9 @@ async function loadDigest(tripId: string): Promise<{ digest: string } | { error:
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Sessione scaduta: accedi di nuovo." };
+  const companyId = await companyIdOf(user.id);
 
-  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", user.id).maybeSingle();
+  const { data: trip } = await supabase.from("trips").select("*").eq("id", tripId).eq("owner_id", companyId).maybeSingle();
   if (!trip) return { error: "Viaggio non trovato." };
 
   const { data: days } = await supabase

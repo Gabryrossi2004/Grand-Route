@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import { DEFAULT_LEVELS, parseLevels } from "@/lib/benefits";
 import { countryOptions, flagOf, nameItOfCode } from "@/lib/geo/countryCodes";
 import SubmitButton from "@/components/SubmitButton";
@@ -16,10 +17,11 @@ const dateIt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("
 
 export default async function BenefitsSettingsPage() {
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
   const [{ data: loyalty, error }, { data: offerRows }] = await Promise.all([
-    supabase.from("agency_loyalty").select("*").eq("owner_id", user?.id ?? "").maybeSingle(),
-    supabase.from("agency_offers").select("*").eq("owner_id", user?.id ?? "").order("created_at", { ascending: false }),
+    supabase.from("agency_loyalty").select("*").eq("owner_id", companyId).maybeSingle(),
+    supabase.from("agency_offers").select("*").eq("owner_id", companyId).order("created_at", { ascending: false }),
   ]);
   const notReady = Boolean(error);
   const levels = loyalty ? parseLevels(loyalty.levels) : DEFAULT_LEVELS;

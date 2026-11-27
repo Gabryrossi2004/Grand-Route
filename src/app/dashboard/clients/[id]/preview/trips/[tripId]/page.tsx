@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
 import { loadTripDays } from "@/lib/tripDays";
-import { createClient, getCachedUser } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { getTeamContext } from "@/lib/team";
 import type { Activity, ActivityPhoto, Profile, TripDay } from "@/lib/types";
 import TripItineraryView from "@/components/TripItineraryView";
 import { getLang } from "@/lib/i18n/server";
@@ -22,14 +23,15 @@ export default async function ClientPreviewTripPage({
 }) {
   const { id, tripId } = await params;
   const supabase = await createClient();
-  const user = await getCachedUser();
+  // Dati dell'agenzia (per un collaboratore: quelli dell'agenzia in cui lavora)
+  const companyId = (await getTeamContext())?.companyId ?? "";
 
   const { data: trip } = await supabase
     .from("trips")
     .select("*")
     .eq("id", tripId)
     .eq("client_id", id)
-    .eq("owner_id", user?.id ?? "")
+    .eq("owner_id", companyId)
     .single();
   if (!trip) notFound();
 

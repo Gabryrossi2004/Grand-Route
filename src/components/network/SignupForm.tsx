@@ -3,7 +3,7 @@
 import { areaHref, CLIENT_LOGIN } from "@/lib/areas";
 import { useState, useTransition } from "react";
 import Link from "next/link";
-import { Briefcase, Building2, Car, Compass, Hotel, MapPinned, Mountain, Shapes } from "lucide-react";
+import { Briefcase, Building2, Car, Compass, Hotel, MapPinned, Mountain, Shapes, User, Users } from "lucide-react";
 import AuthBrandHeader from "@/components/AuthBrandHeader";
 import AuthShell from "@/components/AuthShell";
 import BusinessFields from "@/components/network/BusinessFields";
@@ -24,6 +24,8 @@ export default function SignupForm({ initialKind, referral }: { initialKind?: st
   };
   const [kind, setKind] = useState<BusinessKind>(isBusinessKind(initialKind) ? initialKind : "agenzia");
   const trade = isTradeKind(kind);
+  // Account individuale (si lavora da soli) o aziendale (si possono invitare i colleghi): solo per agenzie, TO e DMC
+  const [mode, setMode] = useState<"individuale" | "azienda">("individuale");
   const errors = state?.errors ?? {};
 
   if (state?.success) {
@@ -59,6 +61,7 @@ export default function SignupForm({ initialKind, referral }: { initialKind?: st
 
       <form onSubmit={onSubmit} className="flex flex-col gap-6">
         <input type="hidden" name="kind" value={kind} />
+        <input type="hidden" name="accountMode" value={trade ? mode : "individuale"} />
         {referral && <input type="hidden" name="referral" value={referral} />}
 
         <section>
@@ -108,6 +111,38 @@ export default function SignupForm({ initialKind, referral }: { initialKind?: st
               <input id="password" name="password" type="password" required minLength={6} className={input} />
             </div>
           </div>
+          {trade && (
+            <div className="mt-5">
+              <p className="mb-2 text-sm font-medium text-slate-700">Come lavori?</p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {(
+                  [
+                    { id: "individuale", Icon: User, label: "Individuale", text: "Lavori da solo: un account, una persona." },
+                    { id: "azienda", Icon: Users, label: "Azienda / squadra", text: "Puoi invitare i colleghi, ognuno con la sua email e il suo ruolo." },
+                  ] as const
+                ).map(({ id, Icon, label, text }) => (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => setMode(id)}
+                    aria-pressed={mode === id}
+                    className={`flex items-start gap-3 rounded-xl border p-3 text-left transition ${
+                      mode === id ? "border-[#233c5e] bg-[#233c5e]/5 ring-2 ring-[#233c5e]/20" : "border-[#e6d7bb] bg-white hover:border-[#c58f2d]"
+                    }`}
+                  >
+                    <span className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${mode === id ? "bg-[#233c5e] text-white" : "bg-[#faf3e6] text-[#233c5e]"}`}>
+                      <Icon size={18} />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-slate-900">{label}</span>
+                      <span className="block text-xs text-slate-500">{text}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-xs text-slate-500">Puoi passare all&apos;account aziendale anche dopo, dalle Impostazioni.</p>
+            </div>
+          )}
         </section>
 
         <section>
